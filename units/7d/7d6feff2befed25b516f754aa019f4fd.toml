@@ -1,0 +1,12 @@
+unit_id = "7d6feff2befed25b516f754aa019f4fd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Using the hardware single step feature is almost the same as regular
+running. The debugger just sets {dcsr-step} in {csr-dcsr} before letting the hart run. The hart
+behaves exactly as in the running case, except that interrupts may be
+disabled (depending on {dcsr-stepie}) and it only fetches and executes a single
+instruction before re-entering Debug Mode.'''
+zh = '''
+使用硬件单步功能几乎与常规运行相同。调试器只需在让硬件线程运行之前，在 {csr-dcsr} 中设置 {dcsr-step}。硬件线程的行为与运行情况完全相同，不同之处在于中断可能被禁用（取决于 {dcsr-stepie}），并且它在重新进入调试模式之前只取指并执行一条指令。'''

@@ -1,0 +1,18 @@
+unit_id = "3fcc30ef450f208fa19eea330dc8c28b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We considered but did not include a _store instruction word_ instruction as in
+cite:[majc]. JIT compilers may generate a large trace of instructions before a
+single insn:fence.i[], and amortize any instruction cache snooping or
+invalidation overhead by writing translated instructions to memory regions that
+are known not to reside in the instruction cache.
+===='''
+zh = '''
+[NOTE]
+====
+我们曾考虑过 cite:[majc] 中的 _store instruction word_ 指令，但未将其纳入。JIT 编译器可以在单条 insn:fence.i[] 之前生成一大段指令轨迹，并通过将翻译后的指令写入已知不会驻留在指令缓存中的内存区域，来分摊任何指令缓存侦听或失效的开销。
+===='''

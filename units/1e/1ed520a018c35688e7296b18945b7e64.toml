@@ -1,0 +1,18 @@
+unit_id = "1ed520a018c35688e7296b18945b7e64"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the resync is required, the primary objective is to output a format
+3 packet, so that the decoder can start tracing from that point without
+needing any of the history. However, if the decoder is already synced,
+then it is also required that it can continue to follow the execution
+path up to and through the format 3 packet seamlessly. As such, before
+outputting a format 3 packet, it is necessary to output a format 1
+packet for the preceding instruction if there are any unreported
+branches (because format 3 does not contain a branch map). The format 3
+will be sent if the resync timer has been exceeded. On the cycle before
+this (when the resync timer value has been exactly reached), a format 1
+will be generated if the branch map is not empty.'''
+zh = '''
+当需要重同步时，首要目标是输出一个格式 3 包，以便解码器无需任何历史信息即可从该点开始跟踪。然而，如果解码器已经同步，则还要求它能够无缝地继续沿执行路径跟踪直至并穿过该格式 3 包。因此，在输出格式 3 包之前，如果存在任何未报告的分支，则有必要为前一条指令输出一个格式 1 包（因为格式 3 不包含分支映射）。如果重同步定时器已超时，则将发送格式 3。在其前一个周期（当重同步定时器值恰好到达时），如果分支映射不为空，则将生成格式 1。'''

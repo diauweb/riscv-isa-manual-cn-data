@@ -1,0 +1,30 @@
+unit_id = "b732b78006f0e2bbcce671cf1fb9d4c8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Virtual Supervisor Control Transfer Records Control Register Field Definitions
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|Field |Description
+|S |Enable transfer recording in VS-mode.
+|U |Enable transfer recording in VU-mode.
+|STE |Enables recording of traps to VS-mode when S=0.  See <<External Traps>>.
+|BPFRZ |Set `sctrstatus`.FROZEN on a breakpoint exception that traps to VS-mode. See <<Freeze>>.
+|LCOFIFRZ |Set `sctrstatus`.FROZEN on local-counter-overflow interrupt (LCOFI) that traps to VS-mode. See <<Freeze>>.
+2+|Other field definitions match those of `sctrctl`.  The optional fields implemented in `vsctrctl` should match those implemented in `sctrctl`.
+|==='''
+zh = '''
+.虚拟监管控制转移记录控制寄存器字段定义
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|字段 |描述
+|S |在 VS 模式中启用转移记录。
+|U |在 VU 模式中启用转移记录。
+|STE |当 S=0 时，启用记录陷入 VS 模式的陷阱。参见 <<External Traps>>。
+|BPFRZ |在陷入 VS 模式的断点异常上设置 `sctrstatus`.FROZEN。参见 <<Freeze>>。
+|LCOFIFRZ |在陷入 VS 模式的本地计数器溢出中断（LCOFI）上设置 `sctrstatus`.FROZEN。参见 <<Freeze>>。
+2+|其他字段定义与 `sctrctl` 的字段定义相同。`vsctrctl` 中实现的可选字段应与 `sctrctl` 中实现的字段一致。
+|==='''

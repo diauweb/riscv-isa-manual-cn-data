@@ -1,0 +1,10 @@
+unit_id = "e1436ae63c27567ffe21275afba74752"
+kind = "code"
+translatable = false
+en = '''
+----
+# Signed saturating and rounding fractional multiply
+# See vxrm  description for rounding calculation
+vsmul.vv vd, vs2, vs1, vm  # vd[i] = clip(roundoff_signed(vs2[i]*vs1[i], SEW-1))
+vsmul.vx vd, vs2, rs1, vm  # vd[i] = clip(roundoff_signed(vs2[i]*x[rs1], SEW-1))
+----'''

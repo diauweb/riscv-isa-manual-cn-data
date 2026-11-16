@@ -1,0 +1,14 @@
+unit_id = "9ec7bf4b520df3494ee03d801b473050"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_addr_registers]#The PMP address registers are CSRs named `pmpaddr0`-`pmpaddr63`.# [#norm:pmp_addr_encoding]#Each
+PMP address register encodes bits 33-2 of a 34-bit physical address for
+RV32, as shown in <<pmpaddr-rv32>>. For RV64,
+each PMP address register encodes bits 55-2 of a 56-bit physical
+address, as shown in <<pmpaddr-rv64>>.# [#norm:pmp_addr_warl]#Not all
+physical address bits may be implemented, and so the `pmpaddr` registers
+are *WARL*.#'''
+zh = '''
+[#norm:pmp_addr_registers]#PMP 地址寄存器是名为 `pmpaddr0`-`pmpaddr63` 的 CSR。# [#norm:pmp_addr_encoding]#对于 RV32，每个 PMP 地址寄存器编码 34 位物理地址的第 33-2 位，如 <<pmpaddr-rv32>> 所示。对于 RV64，每个 PMP 地址寄存器编码 56 位物理地址的第 55-2 位，如 <<pmpaddr-rv64>> 所示。# [#norm:pmp_addr_warl]#并非所有物理地址位都可以被实现，因此 `pmpaddr` 寄存器是 *WARL*。#'''

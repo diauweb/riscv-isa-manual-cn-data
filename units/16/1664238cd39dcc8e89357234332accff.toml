@@ -1,0 +1,15 @@
+unit_id = "1664238cd39dcc8e89357234332accff"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mcounteren_clr_ill_inst_exc]#When the csr::[cy], csr::[tm], csr::[ir], or HPM__n__ bit in the csr:mcounteren[] register is
+clear, attempts to read the csr:cycle[], csr:time[], csr:instret[], or
+`hpmcounter__n__` register while executing in S-mode or U-mode will cause an
+illegal-instruction exception.#
+[#norm:mcounteren_set_nxt_priv]#When one of these bits is set, access to
+the corresponding register is permitted in the next implemented
+privilege mode (S-mode if implemented, otherwise U-mode).#'''
+zh = '''
+[#norm:mcounteren_clr_ill_inst_exc]#当 csr:mcounteren[] 寄存器中的 csr::[cy]、csr::[tm]、csr::[ir] 或 HPM__n__ 位为 0 时，在 S 模式或 U 模式下执行时尝试读取 csr:cycle[]、csr:time[]、csr:instret[] 或 `hpmcounter__n__` 寄存器将引发非法指令异常。#
+[#norm:mcounteren_set_nxt_priv]#当这些位之一被置位时，允许在下一个已实现的特权模式（如果实现了 S 模式则为 S 模式，否则为 U 模式）中访问相应寄存器。#'''

@@ -1,0 +1,12 @@
+unit_id = "88fd1d9f312bec7e417670d160e6713b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+`vadc` and `vsbc` add or subtract the source operands and the carry-in or
+borrow-in, and write the result to vector register `vd`.
+These instructions are encoded as masked instructions (`vm=0`), but they operate
+on and write back all body elements.
+Encodings corresponding to the unmasked versions (`vm=1`) are reserved.'''
+zh = '''
+`vadc` 和 `vsbc` 对源操作数和进位输入或借位输入进行加法或减法，并将结果写入向量寄存器 `vd`。这些指令编码为掩码指令（`vm=0`），但它们对所有主体元素进行操作并写回。对应于无掩码版本（`vm=1`）的编码保留。'''

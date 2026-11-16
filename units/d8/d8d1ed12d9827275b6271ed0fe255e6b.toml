@@ -1,0 +1,10 @@
+unit_id = "d8d1ed12d9827275b6271ed0fe255e6b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+ * the result of *orc.b* on a chunk that does not contain any *NUL* bytes will be all-ones, and
+ * after a bitwise-negation of the result of *orc.b*, the number of data bytes before the  first *NUL* byte (if any) can be detected by *ctz*/*clz* (depending on the endianness of data).'''
+zh = '''
+* 在不包含任何 *NUL* 字节的数据块上，*orc.b* 的结果将为全 1，并且
+ * 对 *orc.b* 的结果进行按位取反后，可通过 *ctz*/*clz* 检测出第一个 *NUL* 字节（如果存在）之前的数据字节数（取决于数据的字节序）。'''

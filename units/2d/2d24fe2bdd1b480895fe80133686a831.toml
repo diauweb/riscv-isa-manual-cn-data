@@ -1,0 +1,22 @@
+unit_id = "2d24fe2bdd1b480895fe80133686a831"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The TVM mechanism improves virtualization efficiency by permitting guest
+operating systems to execute in S-mode, rather than classically
+virtualizing them in U-mode. This approach obviates the need to trap
+accesses to most S-mode CSRs.
+
+Trapping `satp` accesses and the SFENCE.VMA and SINVAL.VMA instructions
+provides the hooks necessary to lazily populate shadow page tables.
+===='''
+zh = '''
+[NOTE]
+====
+TVM 机制通过允许客户操作系统在 S 模式下执行（而不是像传统方式那样在 U 模式下虚拟化它们）来提高虚拟化效率。这种方法免除了对大多数 S 模式 CSR 访问进行陷阱的需要。
+
+对 `satp` 访问以及 SFENCE.VMA 和 SINVAL.VMA 指令进行陷阱，提供了惰性填充影子页表所需的钩子。
+===='''

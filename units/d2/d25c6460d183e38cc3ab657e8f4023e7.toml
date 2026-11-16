@@ -1,0 +1,12 @@
+unit_id = "d25c6460d183e38cc3ab657e8f4023e7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_mdt_clr_mnret]#When the Smdbltrp extension is implemented, the `MNRET` instruction, provided by the Smrnmi extension, sets the `MDT` bit to 0 if the new privilege mode is not M.#
+[#norm:sstatus_sdt_clr_mnret]#If the Ssdbltrp extension is also implemented, and the new privilege mode is U, VS, or VU, then `sstatus.SDT` is also set to 0.#
+[#norm:vsstatus_sdt_clr_mnret]#Additionally, if it is VU, then `vsstatus.SDT` is also set to 0.#'''
+zh = '''
+[#norm:mstatus_mdt_clr_mnret]#当实现了 Smdbltrp 扩展时，由 Smrnmi 扩展提供的 `MNRET` 指令在新的特权模式不是 M 时将 `MDT` 位设置为 0。#
+[#norm:sstatus_sdt_clr_mnret]#如果还实现了 Ssdbltrp 扩展，且新的特权模式为 U、VS 或 VU，则 `sstatus.SDT` 也被设置为 0。#
+[#norm:vsstatus_sdt_clr_mnret]#此外，如果为 VU，则 `vsstatus.SDT` 也被设置为 0。#'''

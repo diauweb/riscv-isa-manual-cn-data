@@ -1,0 +1,23 @@
+unit_id = "121e8e26c4fc338037a5d44643fc4d5e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* PPO rules <<overlapping-ordering, 1>> and <<overlapping-ordering, 3-6>> reflect
+well-understood rules that should pose few surprises to architects.
+* PPO rule <<overlapping-ordering, 2>> reflects a natural and common hardware
+optimization, but one that is very subtle and hence is worth double
+checking carefully.
+* PPO rule <<overlapping-ordering, 7>> may not be immediately obvious to
+architects, but it is a standard memory model requirement
+* The load value axiom, the atomicity axiom, and PPO rules
+<<overlapping-ordering, 8-13>> reflect rules that most
+hardware implementations will enforce naturally, unless they contain
+extreme optimizations. Of course, implementations should make sure to
+double check these rules nevertheless. Hardware must also ensure that
+syntactic dependencies are not `optimized away`.'''
+zh = '''
+* PPO 规则 <<overlapping-ordering, 1>> 和 <<overlapping-ordering, 3-6>> 反映了架构师应不会感到意外的、已被充分理解的规则。
+* PPO 规则 <<overlapping-ordering, 2>> 反映了一种自然且常见的硬件优化，但它非常微妙，因此值得仔细复核。
+* PPO 规则 <<overlapping-ordering, 7>> 对架构师而言可能不是立即显而易见的，但它是标准的内存模型要求
+* 加载值公理、原子性公理以及 PPO 规则 <<overlapping-ordering, 8-13>> 反映了大多数硬件实现将自然强制的规则，除非它们包含极端优化。当然，实现仍应确保复核这些规则。硬件还必须确保语法依赖不被 `optimized away`。'''

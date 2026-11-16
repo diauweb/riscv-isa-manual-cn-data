@@ -1,0 +1,14 @@
+unit_id = "6a76fa8a9ee6fe49ecb3cd3c24d4e5ea"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For instruction set architectures such as RISC-V where all instructions
+are executed unconditionally or at least their execution can be
+determined based on the program binary, the instructions between the
+deltas are assumed to be executed sequentially. Consequently, there is
+no need to report them in the trace. The trace only needs to contain
+whether branches were taken or not, the addresses of taken indirect
+jumps, or other program counter discontinuities.'''
+zh = '''
+对于 RISC-V 这类所有指令都无条件执行、或者至少其执行情况可以根据程序二进制确定的指令集架构，增量之间的指令被假定为按顺序执行。因此，无需在跟踪中报告它们。跟踪只需包含分支是否被跳转、已跳转的间接跳转的地址，或其他程序计数器不连续。'''

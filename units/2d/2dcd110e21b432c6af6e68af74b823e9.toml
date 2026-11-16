@@ -1,0 +1,18 @@
+unit_id = "2dcd110e21b432c6af6e68af74b823e9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_C.MV expands to a different instruction than the canonical MV
+pseudoinstruction, which instead uses ADDI. Implementations that handle
+MV specially, e.g. using register-renaming hardware, may find it more
+convenient to expand C.MV to MV instead of ADD, at slight additional
+hardware cost._
+===='''
+zh = '''
+[NOTE]
+====
+_C.MV 展开为与规范 MV 伪指令不同的指令，后者使用 ADDI。对 MV 进行特殊处理的实现（例如使用寄存器重命名硬件）可能会发现将 C.MV 展开为 MV 而不是 ADD 更方便，代价是略微增加硬件成本。_
+===='''

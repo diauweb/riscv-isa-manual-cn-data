@@ -1,0 +1,1976 @@
+{
+  "chap_hash": "bba9ed1357189aa3",
+  "id": "chap:debug",
+  "sectname": "chapter",
+  "sectnum": "1",
+  "title_en": "Debug",
+  "title_unit_id": "6e7f721bcc3ebf07d48b2db57ef11ac5",
+  "source_path": "src/debug-trace/debug.adoc",
+  "sections": [
+    {
+      "id": "chap:debug",
+      "level": 1,
+      "sectnum": "1",
+      "title": "Debug",
+      "heading_unit_id": "6e7f721bcc3ebf07d48b2db57ef11ac5",
+      "heading_anchor_id": "chap:debug",
+      "blocks": []
+    },
+    {
+      "id": "debug-preface",
+      "level": 2,
+      "sectnum": "1.1",
+      "title": "Preface",
+      "heading_unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "heading_anchor_id": "debug-preface",
+      "blocks": [
+        "af6d330fa65ddd93cbc8e9b8afc8163e",
+        "0d6c17c2fc3624cb3dba444b2bfa55b5"
+      ]
+    },
+    {
+      "id": "intro",
+      "level": 2,
+      "sectnum": "1.2",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "heading_anchor_id": "intro",
+      "blocks": [
+        "00e3fd5922b3e320927334df9591ec96",
+        "dff89ac8c93ede674a83bf1262e4c211",
+        "8362e9b3b84e3d095743f8c6a7da293f"
+      ]
+    },
+    {
+      "id": "_terminology",
+      "level": 3,
+      "sectnum": "1.2.1",
+      "title": "Terminology",
+      "heading_unit_id": "8ad0c2e0575cdbfa6c8dc381da368b57",
+      "blocks": [
+        "8772ff6490dd73a0a1f5da36a4114b59"
+      ]
+    },
+    {
+      "id": "_context",
+      "level": 3,
+      "sectnum": "1.2.2",
+      "title": "Context",
+      "heading_unit_id": "0fd844f4b4158e0094419c04223e24c3",
+      "blocks": [
+        "8d4e8353ea77413ed1c19cd9cbc20a8b",
+        "e43369fb7c217c53cc81fca97f087aef"
+      ]
+    },
+    {
+      "id": "_versions",
+      "level": 4,
+      "sectnum": "1.2.2.1",
+      "title": "Versions",
+      "heading_unit_id": "ab7108304b46785ab96bc2654e3e5984",
+      "blocks": [
+        "da2b6827c666f44a0694bdb644c2447f",
+        "3e6a207aa14d636580c77364ddce233e",
+        "fac1aaf543ae7d14792babfd0e839bd6"
+      ]
+    },
+    {
+      "id": "_bugfixes_from_0_13_to_1_0",
+      "level": 5,
+      "sectnum": null,
+      "title": "Bugfixes from 0.13 to 1.0",
+      "heading_unit_id": "2b5b92311c75b49dd739a12be2a0aa53",
+      "blocks": [
+        "5ea7e5ff3f63711a4279cfe3d0c5fef3",
+        "f9d355a66583ec6dad55a8848fe48381"
+      ]
+    },
+    {
+      "id": "_incompatible_changes_from_0_13_to_1_0",
+      "level": 5,
+      "sectnum": null,
+      "title": "Incompatible Changes from 0.13 to 1.0",
+      "heading_unit_id": "7438c777c84d143641828c8b805ce611",
+      "blocks": [
+        "77fa8f9a9d31baa246f4264656017344",
+        "0cdea2c7720092b679d7b580a3a7c0c0"
+      ]
+    },
+    {
+      "id": "_minor_changes_from_0_13_to_1_0",
+      "level": 5,
+      "sectnum": null,
+      "title": "Minor Changes from 0.13 to 1.0",
+      "heading_unit_id": "b8e1216f674c9ddeeee499193e76835b",
+      "blocks": [
+        "47f504a5272e9195935ded60d69af5df",
+        "f4d198308e556844952d1cebe7e30a3c"
+      ]
+    },
+    {
+      "id": "_new_features_from_0_13_to_1_0",
+      "level": 5,
+      "sectnum": null,
+      "title": "New Features from 0.13 to 1.0",
+      "heading_unit_id": "f6dea3c9d3f52b94527ea535dcedf0de",
+      "blocks": [
+        "b04bb5631b2069a5163504c69a98148d",
+        "e77152fdde5b3e2c8a4a60250638dbe6"
+      ]
+    },
+    {
+      "id": "_incompatible_changes_during_1_0_stable",
+      "level": 5,
+      "sectnum": null,
+      "title": "Incompatible Changes During 1.0 Stable",
+      "heading_unit_id": "526ca9498fb8bacaf2f23537343b9d4c",
+      "blocks": [
+        "017811f8d8dadcf13be61852d0c65dcf",
+        "d5c1836250af3f9dda484300f50a31c6"
+      ]
+    },
+    {
+      "id": "_incompatible_changes_between_1_0_0_rc1_and_1_0_0_rc2",
+      "level": 5,
+      "sectnum": null,
+      "title": "Incompatible Changes Between 1.0.0-rc1 and 1.0.0-rc2",
+      "heading_unit_id": "1b5732eb8a6eff7f714f877d151dffed",
+      "blocks": [
+        "7d529c3c35856cfdcbbe0eba7e2c5dd7",
+        "d55a9f79b668cb0f7c863a1ce5636c0b"
+      ]
+    },
+    {
+      "id": "_about_this_volume",
+      "level": 3,
+      "sectnum": "1.2.3",
+      "title": "About This Volume",
+      "heading_unit_id": "04b845dae22a488b00c734332bc3b665",
+      "blocks": []
+    },
+    {
+      "id": "_structure",
+      "level": 4,
+      "sectnum": "1.2.3.1",
+      "title": "Structure",
+      "heading_unit_id": "d09f87aa3cbc84c7d295487c7a9e0c2f",
+      "blocks": [
+        "2824b380de4ba8537828042d0b2f136b"
+      ]
+    },
+    {
+      "id": "_isa_vs_non_isa",
+      "level": 4,
+      "sectnum": "1.2.3.2",
+      "title": "ISA vs. non-ISA",
+      "heading_unit_id": "73547f35827bc9cc344e53883cf2fe86",
+      "blocks": [
+        "ebcb423101056b41b40e08d886a43360"
+      ]
+    },
+    {
+      "id": "_register_definition_format",
+      "level": 4,
+      "sectnum": "1.2.3.3",
+      "title": "Register Definition Format",
+      "heading_unit_id": "467be3766ca5f3c9635f4fcb6ec33f94",
+      "blocks": [
+        "3fb8364d35ee333906cdd3ee1cdb0ab4",
+        "2b72c71eca3eadf48857bfdde72a77d4",
+        "2868bb8943bc005b554c14073f9ee108",
+        "f65ad6b363e5cc002b35ba8fe4ea8c01",
+        "8c0cddab85b1885135a044863a3d6c23"
+      ]
+    },
+    {
+      "id": "shortname",
+      "level": 5,
+      "sectnum": null,
+      "title": "Long Name (((shortname)), at 0x123)",
+      "heading_unit_id": "7d3911494f3473c4c66aff77f6540510",
+      "heading_anchor_id": "shortname",
+      "blocks": [
+        "c36e1221738e1122982a0c3d967f0f46",
+        "911664757f71c0f05337bdc773e33491",
+        {
+          "unit_id": "ceedeccfe42b19919fe38d3c767aaaf4",
+          "anchor_id": "tab:access"
+        }
+      ]
+    },
+    {
+      "id": "_background_3",
+      "level": 3,
+      "sectnum": "1.2.4",
+      "title": "Background",
+      "heading_unit_id": "91d1e1b57162004d103f48d03d2493c9",
+      "blocks": [
+        "f46a9cf9a3da07eabfe07af8422bcf39",
+        "9aeba30f55fdd2e2e2475e66a42a5c0c",
+        "fedd82a9d0e170b7621a4a1e6a6b466c"
+      ]
+    },
+    {
+      "id": "_supported_features",
+      "level": 3,
+      "sectnum": "1.2.5",
+      "title": "Supported Features",
+      "heading_unit_id": "4afe290caf441ba7db81b95f879114f8",
+      "blocks": [
+        "fbbd6e7d559f03cb6b49a70e487ef773",
+        "cff5802972bbd3613d8522b4344a9bc6",
+        "c2c1c2947a5826d750d15a791340799f",
+        "845c7edafb71b41a553b5851765b4b84"
+      ]
+    },
+    {
+      "id": "overview",
+      "level": 2,
+      "sectnum": "1.3",
+      "title": "System Overview",
+      "heading_unit_id": "e268b26e800df6cc26cc68c57bada180",
+      "heading_anchor_id": "overview",
+      "blocks": [
+        "2448070ca4f8b5bc466d97998cc2ffed",
+        "8959c8a98d96d3896b625fecc8953049",
+        "d0c75f9fbaa353afd44ac79d5a554b68",
+        "3ad965d2641bcfb4382735cf5ca2e0a9",
+        "66f77c0517a823248525fcd675701e30",
+        "e5cc42f852e714e9e5edc6c58bf39ad5",
+        {
+          "unit_id": "eb8bb89e57ecd8cf43fd96c0d52dc077",
+          "anchor_id": "systemoverview"
+        }
+      ]
+    },
+    {
+      "id": "dm",
+      "level": 2,
+      "sectnum": "1.4",
+      "title": "Debug Module (DM) (non-ISA extension)",
+      "heading_unit_id": "ef4a3561cefae8d68182f2d1ee153e26",
+      "heading_anchor_id": "dm",
+      "blocks": [
+        "4d1a73f32102ed6fcaea9bf90baa3543",
+        "c75b31e9300f39e98cfe335ee3851c94",
+        "e9caabd63a0ee369d8db86445d31b117",
+        "a5b6cadae4863462920351591ccd62d3",
+        "ef86351b5352f3c653fad3bc5d265155"
+      ]
+    },
+    {
+      "id": "dmi",
+      "level": 3,
+      "sectnum": "1.4.1",
+      "title": "Debug Module Interface (DMI)",
+      "heading_unit_id": "78c8daf31c4af00410b6b6fd59b20b89",
+      "heading_anchor_id": "dmi",
+      "blocks": [
+        "2298acfd1f30131ebec6aafac0950b09",
+        "66d5a641f48470882a6b10b9af20b9e7",
+        "77c51cb87a51c405d9c985e2567771ee"
+      ]
+    },
+    {
+      "id": "dm-reset",
+      "level": 3,
+      "sectnum": "1.4.2",
+      "title": "Reset Control",
+      "heading_unit_id": "5f6d1d1dee5d8a1d617ef05b093a0dd2",
+      "heading_anchor_id": "dm-reset",
+      "blocks": [
+        "841be1580baa53666d8e6e5d5d2fdb50",
+        "77b22495cb827903c3ecdcbdf75dc2f3",
+        "cbad8dd69ba570dad4dff3ad9704146c",
+        "14b726373e87434aad5e22b8d873a949",
+        "4816378e26a93d03a64ae342d9cf822b",
+        "53e340467140919c7dcd39ad4112b258"
+      ]
+    },
+    {
+      "id": "selectingharts",
+      "level": 3,
+      "sectnum": "1.4.3",
+      "title": "Selecting Harts",
+      "heading_unit_id": "4c08ce9574c1b7b88b96d378dfb73820",
+      "heading_anchor_id": "selectingharts",
+      "blocks": [
+        "726f5e4f39ca55db78166962d62f7b0f",
+        "40e24ff8f8f78297e24abc9785e9dc4e",
+        "3047b37be3b8afbf1521b41b37016690"
+      ]
+    },
+    {
+      "id": "_selecting_a_single_hart",
+      "level": 4,
+      "sectnum": "1.4.3.1",
+      "title": "Selecting a Single Hart",
+      "heading_unit_id": "9739a8dfaf2c750adb848087650ce6a4",
+      "blocks": [
+        "75a2ad564b3c928d58877772feb9c784"
+      ]
+    },
+    {
+      "id": "hartarraymask",
+      "level": 4,
+      "sectnum": "1.4.3.2",
+      "title": "Selecting Multiple Harts",
+      "heading_unit_id": "822a2aa0a675bc68fbf15fb16c2ef6b6",
+      "heading_anchor_id": "hartarraymask",
+      "blocks": [
+        "af4d923e5b9106f16c2dd2aad6932fb5",
+        "af6d1170b3541fe630b85fd5374f7d72",
+        "f327b6ac9896d2580edff02e049e8bfd"
+      ]
+    },
+    {
+      "id": "_hart_dm_states",
+      "level": 3,
+      "sectnum": "1.4.4",
+      "title": "Hart DM States",
+      "heading_unit_id": "ef1937077e7d431ab28d62a9eac5b4f0",
+      "blocks": [
+        "04548c4d739dd4bbd396b8f328575521",
+        "48121b2b3c15fd7b7e1be4753e705593",
+        "bcecaf06f10c7860f5abaee30e86e13e",
+        "0ecadcfb0de9eb8249c7590029c8414e",
+        "45d0f1a5f079ca5e4e1b5786cc8e168c",
+        "07f1d9452c36157d45ec724124516f9f",
+        "e608e7b5c3efd06bc83b0209b6b44a6c"
+      ]
+    },
+    {
+      "id": "runcontrol",
+      "level": 3,
+      "sectnum": "1.4.5",
+      "title": "Run Control",
+      "heading_unit_id": "ec82485db002f6384199dae4935697b6",
+      "heading_anchor_id": "runcontrol",
+      "blocks": [
+        "6a424f129ce18ede58d579be940c0f1a",
+        "79fcd7d33ea105a9efaab72ea005e714",
+        "be113f4da58604e7af9aa3d273ae41a4",
+        "cd5cc3679f555396919b49a7c77c9dbe",
+        "99f28c3a5fe90a2847e29d8a848eb62d",
+        "f4e5b85dca9b8fb5a3a6c42d7b225149"
+      ]
+    },
+    {
+      "id": "hrgroups",
+      "level": 3,
+      "sectnum": "1.4.6",
+      "title": "Halt Groups, Resume Groups, and External Triggers",
+      "heading_unit_id": "adb94b8870c672c584ac0dc6f375dcfa",
+      "heading_anchor_id": "hrgroups",
+      "blocks": [
+        "89cbc2546d8a55a5fd644036f3ae175f",
+        "8d9b1e2b5df79f7797392f081f9a9ab0",
+        "24d569723ebdedc75185c03afc6280f7",
+        "ae4db7fa42538e44d828611b4e63a72d",
+        "1f9e7d90c0dc2bc0ef98e660f4241e07",
+        "3ebbecf8cbfcc58f7983a470c7014eed",
+        "e4e072aa8bca17fe297f0255a56b703c",
+        "dfe920a3ceae58a87aaa7163f63295d2",
+        "cafd19469105a51e8f09b47e290c0d33",
+        "7a4885ed496ff989dc3483b32824899b",
+        "b8949a12123add211c6dcc651c5fc630",
+        "dc5bd3555a0d4138f786ce64b9cee8b1",
+        "d03a726efd3785c4e97d527a3a595ff3",
+        "2498a23e750ae44365697f338e7194e4",
+        "53dc0efab3b298e67e4fd232234bc926",
+        "f8e8e202c6c54191300fd5c0d128d398"
+      ]
+    },
+    {
+      "id": "abstractcommands",
+      "level": 3,
+      "sectnum": "1.4.7",
+      "title": "Abstract Commands",
+      "heading_unit_id": "8f7f6df0c837001c90388f799df5a300",
+      "heading_anchor_id": "abstractcommands",
+      "blocks": [
+        "852efcc180806743712bd787e64005e1",
+        "cfa80366e07049f6c35543d8773a2c1c",
+        "d2cd036a80ee9903648252a2bb00b005",
+        "1320320978fa3cf58cb7aa17c0383a46",
+        {
+          "unit_id": "790e2ea12d47d58b0ca97fb92947edfa",
+          "anchor_id": "tab:datareg"
+        },
+        "8cbb9a594f47349a122b778efcbd5ace",
+        "c427eb44e1bfbb1826be1804be5eaf50",
+        "892d68673a73fa04652ba27829775c5e",
+        "889cf24804ab4b91f023c901ff15e3bf"
+      ]
+    },
+    {
+      "id": "_abstract_command_listing",
+      "level": 4,
+      "sectnum": "1.4.7.1",
+      "title": "Abstract Command Listing",
+      "heading_unit_id": "20c1bd827920a06ced912fc639f025df",
+      "blocks": [
+        "b208b73718e07c99e88584457c3605a9",
+        "3cdc9a80a8ea96080ed9d95261769d57",
+        {
+          "unit_id": "5410cc65fdc99c4c9abaa0cf6299ca33",
+          "anchor_id": "tab:cmdtype"
+        }
+      ]
+    },
+    {
+      "id": "ac-accessregister",
+      "level": 5,
+      "sectnum": null,
+      "title": "((Access Register))",
+      "heading_unit_id": "867ad42911c603eff77579424435deb2",
+      "heading_anchor_id": "ac-accessregister",
+      "blocks": [
+        "21457522e4b7abae3b30efb77ea1ba29",
+        "268986a07de7fce30b80e80d7c206239",
+        "e126216666e2db171de7eac0fa9a0210",
+        "abaddea0e8a22c4614fdc1c502778945",
+        "9a67670d5c7a0662543e092891bb3568",
+        {
+          "unit_id": "9e9689166fd7bb49fa0f7c938c9af626",
+          "anchor_id": "tab:regno"
+        },
+        "af3e2da8a184a81db8507278cce0511a",
+        "126591bbd5ef07ebbc66c50065e68cbd",
+        "dfed4c97348a6086be282a1d52f5b2c4",
+        "fe46799c4f1115cb4cffc3fa0a04e7c7"
+      ]
+    },
+    {
+      "id": "ac-quickaccess",
+      "level": 5,
+      "sectnum": null,
+      "title": "((Quick Access))",
+      "heading_unit_id": "6110412d11d6d2a9ab549faa6f6c2c26",
+      "heading_anchor_id": "ac-quickaccess",
+      "blocks": [
+        "2d9cebe7fdea80bde516b56838651eb6",
+        "6c985102a4744ff408cf2df58f697924",
+        "7aa0a7d47f06d7fcd11f701f36ba87d5",
+        "2c0e1e91719b0d0c49989d5a084b49f8",
+        "9395747560d6cec61f74087b1c6d6e01",
+        "9f121b7938f948efc15447498ad9ef93"
+      ]
+    },
+    {
+      "id": "ac-accessmemory",
+      "level": 5,
+      "sectnum": null,
+      "title": "((Access Memory))",
+      "heading_unit_id": "0741ad6f82f02bb19326a332d5dca0d9",
+      "heading_anchor_id": "ac-accessmemory",
+      "blocks": [
+        "cd6080f03a9e7e8cd557721ceb48a4ba",
+        "a48caea560d9bf19efd472462ed53766",
+        "d52eab50c957640ac0ec606cfe3517eb",
+        "cbcfbf0f08579ebfb12465e6f5af825e",
+        "30bf1545be34e2c5653d260366fbaac9",
+        "f2be7fabd51060caf94a1417ae3286ab",
+        "95f9e2a63d4e8125db2a00de6846db2f",
+        "04bfc6b01792dd66bc8cdfadb0da928d"
+      ]
+    },
+    {
+      "id": "programbuffer",
+      "level": 3,
+      "sectnum": "1.4.8",
+      "title": "Program Buffer",
+      "heading_unit_id": "51b058c863ce45332f63d1fde50d9233",
+      "heading_anchor_id": "programbuffer",
+      "blocks": [
+        "1cc4c651b7da9d385997b63e9cbadb4f",
+        "2d1aabed039ba729eb2457b357102db7",
+        "637411a8b41d186ae564fa3900fbf2d0",
+        "3ab6aeb95499f5df65379c53590433ec",
+        "844951c0c6f08e3d641408da26fa874f",
+        "c180408eb35f1a83f1f3dd7f45e2bbd0",
+        "eda739717cd67df2a03187d933ca31bd"
+      ]
+    },
+    {
+      "id": "_overview_of_hart_debug_states",
+      "level": 3,
+      "sectnum": "1.4.9",
+      "title": "Overview of Hart Debug States",
+      "heading_unit_id": "2876ff971ea431719ad39c5686c91ce2",
+      "blocks": [
+        "06428aa8bd0426a411eb7b198a21a01c",
+        {
+          "unit_id": "32a23d1d6288289e60045a13b293522a",
+          "anchor_id": "abstract_sm"
+        }
+      ]
+    },
+    {
+      "id": "systembusaccess",
+      "level": 3,
+      "sectnum": "1.4.10",
+      "title": "System Bus Access",
+      "heading_unit_id": "72447a6af210e92129512cc81da3817b",
+      "heading_anchor_id": "systembusaccess",
+      "blocks": [
+        "d189e67d957f3bfd8ac19db67402bc6c",
+        "2857773119ed527c9240869ee5238736",
+        {
+          "unit_id": "9b2278477c86287a2947fe0e41f3857c",
+          "anchor_id": "sbdatabits"
+        },
+        "282f68ef3c130970bfd10742a87f60d6",
+        "71ee1373b82e0f107c325f06392c2a93"
+      ]
+    },
+    {
+      "id": "_minimally_intrusive_debugging",
+      "level": 3,
+      "sectnum": "1.4.11",
+      "title": "Minimally Intrusive Debugging",
+      "heading_unit_id": "144a6e0e6f84aed4c0ff71b5f1eb2f75",
+      "blocks": [
+        "0da584971661fd14c0eed5de64d16279",
+        "7b4aa21cd3ec7daa34189ef2f66dc80e",
+        "c33f4b0fcf8e9ff74295e97d83626ac3",
+        "dab325d52f219144b746e2da2aebec9c"
+      ]
+    },
+    {
+      "id": "_security",
+      "level": 3,
+      "sectnum": "1.4.12",
+      "title": "Security",
+      "heading_unit_id": "1bbae3b70eb53566a41c9825f2d98120",
+      "blocks": [
+        "4cf62e39ab5d5da6732670c604360b49",
+        "d463cbaf5c750f980a75537d4377286b",
+        "ea485e305dcc5b38a82c4f069e8928b9",
+        "4327a8e7c83d95f0ce1d724ce7a8d43a"
+      ]
+    },
+    {
+      "id": "_version_detection",
+      "level": 3,
+      "sectnum": "1.4.13",
+      "title": "Version Detection",
+      "heading_unit_id": "8c2dbc43e192621b11164d01f8bb7e5e",
+      "blocks": [
+        "5849d101d3c6e9a9cd4558886c3f2cdc",
+        "125a9d6aeb0a8c35dc03d0ee214a5ae7",
+        "3c20f69c8d614b7b2b53606debb2eee6",
+        "f111447c98143f63b48e6274f18ba2e8",
+        "ca4d46b618182ce1964bf1a968afbff0"
+      ]
+    },
+    {
+      "id": "debbus",
+      "level": 3,
+      "sectnum": "1.4.14",
+      "title": "Debug Module Registers",
+      "heading_unit_id": "b23563e75a293f0bc712c5860a74b0ee",
+      "heading_anchor_id": "debbus",
+      "blocks": [
+        "45f491e4f0efd76a178795afa5c5c09e",
+        "75da1dcc4b986c6c4d15a4b64f5fa15f",
+        {
+          "unit_id": "0a698519dadb5e2d2989d733e0b1e5ed",
+          "anchor_id": "tab:dm-registers"
+        }
+      ]
+    },
+    {
+      "id": "dm-dmstatus",
+      "level": 4,
+      "sectnum": "1.4.14.1",
+      "title": "Debug Module Status (((dmstatus)), at 0x11)",
+      "heading_unit_id": "8556a0ea2ded46bf5a8ecbb49f5028c8",
+      "heading_anchor_id": "dm-dmstatus",
+      "blocks": [
+        "9818bc028ee26508cdec1857cfce9631",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "0864c1d074279f0222421806c323843e",
+        "6b03b12e0af50015e670cce5ab4d4db7",
+        "e306837beaa54d78b9125fac516d8ff5",
+        "671db1c12f15d825f379f6b53e0828b0"
+      ]
+    },
+    {
+      "id": "dm-dmcontrol",
+      "level": 4,
+      "sectnum": "1.4.14.2",
+      "title": "Debug Module Control (((dmcontrol)), at 0x10)",
+      "heading_unit_id": "dfda39cf4ff8bb7222cc8c3cecaf918f",
+      "heading_anchor_id": "dm-dmcontrol",
+      "blocks": [
+        "1df2674a1033b31e9b81c80d63645318",
+        {
+          "unit_id": "35b518f4aca9628de4ba8be03b608cdb",
+          "anchor_id": "hartsel"
+        },
+        "af466fd0e78e1034e79fd8bd88a1f36f",
+        "036c3086cef2ce12e57a88a97ec7776d",
+        {
+          "unit_id": "e7953647d0ee5b2133e1b54c5e3e9df1",
+          "anchor_id": "resethaltreq"
+        },
+        {
+          "unit_id": "c4087c0c497bbe465ee09eff4c64f12c",
+          "anchor_id": "keepalive"
+        },
+        "445b230fc10960b24de127350cf9c4bf",
+        "30b0f3909100e97386edc28b5fa707dc",
+        "bc664236327f43f3a4d174f4bc3aeb21",
+        "56ccf788fae63818431b9213218d0e90"
+      ]
+    },
+    {
+      "id": "dm-hartinfo",
+      "level": 4,
+      "sectnum": "1.4.14.3",
+      "title": "Hart Info (((hartinfo)), at 0x12)",
+      "heading_unit_id": "44b55ffa6c00277b69144445304bb9ea",
+      "heading_anchor_id": "dm-hartinfo",
+      "blocks": [
+        "6336abed9054a319ba56bb1854280141",
+        "2c7a8002766cecce0a6cc71112d77ab7",
+        "72d21103523aaa999988705ab8883dbd",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "7c050d730a1a38504ad00443ea17bdcb",
+        "82e567657eb47cdde8c0dfaa16077d59"
+      ]
+    },
+    {
+      "id": "dm-hawindowsel",
+      "level": 4,
+      "sectnum": "1.4.14.4",
+      "title": "Hart Array Window Select (((hawindowsel)), at 0x14)",
+      "heading_unit_id": "f8dfcbc4b032d7f27128aa3157612381",
+      "heading_anchor_id": "dm-hawindowsel",
+      "blocks": [
+        "b4404cfadea2de8bfec79fe257c1be51",
+        "ae44a7f88f314d3bc27f38be70bca00d",
+        "3f36691ead398d3fa3b01e1d4a913cb2"
+      ]
+    },
+    {
+      "id": "dm-hawindow",
+      "level": 4,
+      "sectnum": "1.4.14.5",
+      "title": "Hart Array Window (((hawindow)), at 0x15)",
+      "heading_unit_id": "47073f5c8ae20a52e7c30b363068575b",
+      "heading_anchor_id": "dm-hawindow",
+      "blocks": [
+        "e796fa83f65a14d088b36e4f9b32c569",
+        "d95942f624e30941422342182e8c9fa8",
+        "9c87a40a1751337cf758550e36f4a35f"
+      ]
+    },
+    {
+      "id": "dm-abstractcs",
+      "level": 4,
+      "sectnum": "1.4.14.6",
+      "title": "Abstract Control and Status (((abstractcs)), at 0x16)",
+      "heading_unit_id": "c09556b4c45c252dace2bf009ec3e1bd",
+      "heading_anchor_id": "dm-abstractcs",
+      "blocks": [
+        "5ead94c7b699e0bc8b4b1c08e63e178e",
+        "c793703cb2d8aabe45739afad01c16f5",
+        "5e3dce67d3aab2176f08681d180397e1",
+        "984aca6712c47e857731f40d8aae6d1e"
+      ]
+    },
+    {
+      "id": "dm-command",
+      "level": 4,
+      "sectnum": "1.4.14.7",
+      "title": "Abstract Command (((command)), at 0x17)",
+      "heading_unit_id": "d16e65f2073e0624138f92a719e31328",
+      "heading_anchor_id": "dm-command",
+      "blocks": [
+        "a2d2ba279956b0f66e2969530fda8c76",
+        "a1cd0fc8e8dbae5114d7f77e54ffbc1d",
+        "3d89e2afd28f3d8c20d8d3fa72b6e979",
+        "2e153286ee1c33dfeb770eba1402dce0",
+        "fa556efa9a8d727c1ba5e76fa7f3574a",
+        "66bc9071a62a887c9bf8f4eeb8df7e11"
+      ]
+    },
+    {
+      "id": "dm-abstractauto",
+      "level": 4,
+      "sectnum": "1.4.14.8",
+      "title": "Abstract Command Autoexec (((abstractauto)), at 0x18)",
+      "heading_unit_id": "4b0b461df6cb9acdb923492c48b0f05b",
+      "heading_anchor_id": "dm-abstractauto",
+      "blocks": [
+        "4821808176fb4c1b5fcca2d8c38936f6",
+        "d86af84f7cb11d4327e57fded4a553b7",
+        "db5a472356b347d32ea042aedabcc6cd",
+        "ffdad2ff2a5b427ac4df38a0e8f4bedc",
+        "bd5d8926645933f68046d5b46075a531"
+      ]
+    },
+    {
+      "id": "dm-confstrptr0",
+      "level": 4,
+      "sectnum": "1.4.14.9",
+      "title": "Configuration Structure Pointer 0 (((confstrptr0)), at 0x19)",
+      "heading_unit_id": "bc418c76fc9537db06fe7bf22b37c457",
+      "heading_anchor_id": "dm-confstrptr0",
+      "blocks": [
+        "db13acf7f7f8adca612aed8e2a9f6420",
+        "7236a45d20d0684b9c09f25d05fe1245",
+        "829405e9258f2c9cff30e5550282dca4",
+        "00771e97b1bdb7ed63948f5facb77eeb",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "acf644429d46f93c7639f89507690210"
+      ]
+    },
+    {
+      "id": "dm-confstrptr1",
+      "level": 4,
+      "sectnum": "1.4.14.10",
+      "title": "Configuration Structure Pointer 1 (((confstrptr1)), at 0x1a)",
+      "heading_unit_id": "a80801a4e48f96e21c562efd343da7f2",
+      "heading_anchor_id": "dm-confstrptr1",
+      "blocks": [
+        "8794bab9169c7737409195422961d176",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "acf644429d46f93c7639f89507690210"
+      ]
+    },
+    {
+      "id": "dm-confstrptr2",
+      "level": 4,
+      "sectnum": "1.4.14.11",
+      "title": "Configuration Structure Pointer 2 (((confstrptr2)), at 0x1b)",
+      "heading_unit_id": "d9521f21bb07da4e0c3d8baa3a093be2",
+      "heading_anchor_id": "dm-confstrptr2",
+      "blocks": [
+        "ba51940203a80b8afbabbf0d8c3e5fa3",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "acf644429d46f93c7639f89507690210"
+      ]
+    },
+    {
+      "id": "dm-confstrptr3",
+      "level": 4,
+      "sectnum": "1.4.14.12",
+      "title": "Configuration Structure Pointer 3 (((confstrptr3)), at 0x1c)",
+      "heading_unit_id": "42b6d24bcfe6e187554ba6c544a7270a",
+      "heading_anchor_id": "dm-confstrptr3",
+      "blocks": [
+        "aa99d95671d1c46333ac52b1b4f3dd19",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "acf644429d46f93c7639f89507690210"
+      ]
+    },
+    {
+      "id": "dm-nextdm",
+      "level": 4,
+      "sectnum": "1.4.14.13",
+      "title": "Next Debug Module (((nextdm)), at 0x1d)",
+      "heading_unit_id": "775690aae9c84f47c4b7062f710c6d52",
+      "heading_anchor_id": "dm-nextdm",
+      "blocks": [
+        "59f1e2bbd4ee8005255b66032980a78a",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "acf644429d46f93c7639f89507690210"
+      ]
+    },
+    {
+      "id": "dm-data0",
+      "level": 4,
+      "sectnum": "1.4.14.14",
+      "title": "Abstract Data 0 (((data0)), at 0x04)",
+      "heading_unit_id": "2f38226006c1351a02d3503167c9eb08",
+      "heading_anchor_id": "dm-data0",
+      "blocks": [
+        "4feb48556332893068fe5b1c2a9a8f41",
+        "c02bcb9456989b866a4e94973cfd3bb0",
+        "180695bd1ea6254f3c58225ff12a7aef",
+        "d0ee232ae0399c228a27093117c68701",
+        "ac0934c6665df5bbb8938c192fbebdba"
+      ]
+    },
+    {
+      "id": "dm-progbuf0",
+      "level": 4,
+      "sectnum": "1.4.14.15",
+      "title": "Program Buffer 0 (((progbuf0)), at 0x20)",
+      "heading_unit_id": "70c35780f0fe7772fa310aaa0060d148",
+      "heading_anchor_id": "dm-progbuf0",
+      "blocks": [
+        "00c3dedf8481967bb0296d46a01e55fa",
+        "cf1f354b80a22afe83ec449a337610fc",
+        "c02bcb9456989b866a4e94973cfd3bb0",
+        "180695bd1ea6254f3c58225ff12a7aef",
+        "ac0934c6665df5bbb8938c192fbebdba"
+      ]
+    },
+    {
+      "id": "dm-authdata",
+      "level": 4,
+      "sectnum": "1.4.14.16",
+      "title": "Authentication Data (((authdata)), at 0x30)",
+      "heading_unit_id": "25b3d122a752a027b735ce40c7ddcf4d",
+      "heading_anchor_id": "dm-authdata",
+      "blocks": [
+        "ad2f474d7f76732c92d8450d16c2829d",
+        "c05b37596b6b704f70be12b2ac3cdba9",
+        "ac0934c6665df5bbb8938c192fbebdba"
+      ]
+    },
+    {
+      "id": "dm-dmcs2",
+      "level": 4,
+      "sectnum": "1.4.14.17",
+      "title": "Debug Module Control and Status 2 (((dmcs2)), at 0x32)",
+      "heading_unit_id": "40e61ea20f9c1c5cd8501862837715de",
+      "heading_anchor_id": "dm-dmcs2",
+      "blocks": [
+        "ab12cc94f32f6c3a7c67235ce7444897",
+        "e5c236fa46382e9fbb6b7949c654a908",
+        "876ddc9cf9a03399e98a5889097e6fcc",
+        "78d420a2747e1df70a271141fe9134a3",
+        "8b25d57637b9d81e6a76b83aabfbbf0d",
+        "0cb2360449ca7eab1442b7964365c7cb"
+      ]
+    },
+    {
+      "id": "dm-haltsum0",
+      "level": 4,
+      "sectnum": "1.4.14.18",
+      "title": "Halt Summary 0 (((haltsum0)), at 0x40)",
+      "heading_unit_id": "3ff5dc4fe7941ba9bd4acc7082ea9113",
+      "heading_anchor_id": "dm-haltsum0",
+      "blocks": [
+        "4b040b344eea869275ae2772e8d3520c",
+        "8a96e4c5c71324b38db199f2e7708ed4",
+        "f82b6126b16aad28d4a4ca815407f3d0",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "191b49b9d51b213108d52578ccf09b13"
+      ]
+    },
+    {
+      "id": "dm-haltsum1",
+      "level": 4,
+      "sectnum": "1.4.14.19",
+      "title": "Halt Summary 1 (((haltsum1)), at 0x13)",
+      "heading_unit_id": "4e83f258455b09f81e3dc7d446ce1250",
+      "heading_anchor_id": "dm-haltsum1",
+      "blocks": [
+        "7dafa14abc701f878b994655e31a7b42",
+        "f2aed914a05437fd7e7166afb0aaedf7",
+        "fc0233048cd4c2d40447c7eeaf909427",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "158942a195755a5d6222918253514073"
+      ]
+    },
+    {
+      "id": "dm-haltsum2",
+      "level": 4,
+      "sectnum": "1.4.14.20",
+      "title": "Halt Summary 2 (((haltsum2)), at 0x34)",
+      "heading_unit_id": "1b3de376b23fb71c292a65e261479012",
+      "heading_anchor_id": "dm-haltsum2",
+      "blocks": [
+        "7dafa14abc701f878b994655e31a7b42",
+        "d93423c047d2cbc8f994c1bf3c0d28ea",
+        "84dfea5d54634b0ba88ce826f5b70241",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "8405b7f095ab2626b6e3a10236e80e3c"
+      ]
+    },
+    {
+      "id": "dm-haltsum3",
+      "level": 4,
+      "sectnum": "1.4.14.21",
+      "title": "Halt Summary 3 (((haltsum3)), at 0x35)",
+      "heading_unit_id": "964f18a63d72fc2bb47486a6fcda5eb0",
+      "heading_anchor_id": "dm-haltsum3",
+      "blocks": [
+        "7dafa14abc701f878b994655e31a7b42",
+        "ddccf92b9599359821d40f092a3068ec",
+        "6883f0f2bc69360e3b6ded2a815e3c81",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "945c98ec9de70f49da168299a8224ce5"
+      ]
+    },
+    {
+      "id": "dm-sbcs",
+      "level": 4,
+      "sectnum": "1.4.14.22",
+      "title": "System Bus Access Control and Status (((sbcs)), at 0x38)",
+      "heading_unit_id": "14ed44f9b64ae11457c2ed0a7e3cb741",
+      "heading_anchor_id": "dm-sbcs",
+      "blocks": [
+        "ea6303c20fab5545b52ab627c4a5caea",
+        "b798429841af45ad9bf44458b23efbf9",
+        "393d28ad813221def67c8437d36533ed"
+      ]
+    },
+    {
+      "id": "dm-sbaddress0",
+      "level": 4,
+      "sectnum": "1.4.14.23",
+      "title": "System Bus Address 31:0 (((sbaddress0)), at 0x39)",
+      "heading_unit_id": "3840793d224e55c0f03d2cf93a9ab57a",
+      "heading_anchor_id": "dm-sbaddress0",
+      "blocks": [
+        "a7ebbd5d41380e13d4d1c8add74f5385",
+        "f34616ea82f551f78f017c25d0a61917",
+        "9f02a836b2fb0e75a7d65a7a82f4187d",
+        "096e4c4cb4bda523011ec01c09fdba18",
+        "7454abf7061a4d72741172ae7505c787",
+        "1bfef22e49fe62184df1d476910fe27e"
+      ]
+    },
+    {
+      "id": "dm-sbaddress1",
+      "level": 4,
+      "sectnum": "1.4.14.24",
+      "title": "System Bus Address 63:32 (((sbaddress1)), at 0x3a)",
+      "heading_unit_id": "7a4defcfa8ff8e7571fb88b547a1bef0",
+      "heading_anchor_id": "dm-sbaddress1",
+      "blocks": [
+        "dd2797d100c6322329ee9c266e5c8b0f",
+        "f34616ea82f551f78f017c25d0a61917",
+        "7454abf7061a4d72741172ae7505c787",
+        "08294d1edca4c94c4bb3e2d48abe280a"
+      ]
+    },
+    {
+      "id": "dm-sbaddress2",
+      "level": 4,
+      "sectnum": "1.4.14.25",
+      "title": "System Bus Address 95:64 (((sbaddress2)), at 0x3b)",
+      "heading_unit_id": "6409c66601d85b9f1e18b733af9e16f5",
+      "heading_anchor_id": "dm-sbaddress2",
+      "blocks": [
+        "3b0b9d1c30ac701c169f59aa58a092a4",
+        "f34616ea82f551f78f017c25d0a61917",
+        "7454abf7061a4d72741172ae7505c787",
+        "6d19aaa4ea00546be3707976c9825cc5"
+      ]
+    },
+    {
+      "id": "dm-sbaddress3",
+      "level": 4,
+      "sectnum": "1.4.14.26",
+      "title": "System Bus Address 127:96 (((sbaddress3)), at 0x37)",
+      "heading_unit_id": "cedacad738c1808a74d68cf6bd7cf6f5",
+      "heading_anchor_id": "dm-sbaddress3",
+      "blocks": [
+        "66af060694d1c151290c5ba4eaf5b425",
+        "f34616ea82f551f78f017c25d0a61917",
+        "7454abf7061a4d72741172ae7505c787",
+        "edef2d31367c0362a5f8f53caa90b7ed"
+      ]
+    },
+    {
+      "id": "dm-sbdata0",
+      "level": 4,
+      "sectnum": "1.4.14.27",
+      "title": "System Bus Data 31:0 (((sbdata0)), at 0x3c)",
+      "heading_unit_id": "4d485f4d8592f5202c238978e95ce7c5",
+      "heading_anchor_id": "dm-sbdata0",
+      "blocks": [
+        "534b894084d4a96fdf6de3fa0d52b67a",
+        "73e4a435beb9f1f9a65369a9681ac2da",
+        "5c9f848a4a5a63afcacab0065183d6fd",
+        "06ec1263bad2d7c316890ad9cc09aa8e",
+        "4630fd6882aa68b004c20ca5c2b61ded",
+        "5303f4ca53675aaa6c4a0579de5fc0fe",
+        "7bf17eb7934eada6250240923cd9d236",
+        "7e1ef2c855aa1f5c3fd6f96c0316e1ff",
+        "d6fa10571ca90316a9b32f2fe95344ca",
+        "ac0934c6665df5bbb8938c192fbebdba",
+        "4ea9fb3612f14c88603d5d66723c58fc"
+      ]
+    },
+    {
+      "id": "dm-sbdata1",
+      "level": 4,
+      "sectnum": "1.4.14.28",
+      "title": "System Bus Data 63:32 (((sbdata1)), at 0x3d)",
+      "heading_unit_id": "d2103b3362f164c520fcb6846038c121",
+      "heading_anchor_id": "dm-sbdata1",
+      "blocks": [
+        "22ae95b2b77e77a4f192192eed240355",
+        "06ec1263bad2d7c316890ad9cc09aa8e",
+        "ac0934c6665df5bbb8938c192fbebdba",
+        "22d68cde581fd7b65bf0095920ee972b"
+      ]
+    },
+    {
+      "id": "dm-sbdata2",
+      "level": 4,
+      "sectnum": "1.4.14.29",
+      "title": "System Bus Data 95:64 (((sbdata2)), at 0x3e)",
+      "heading_unit_id": "9517b035423b18459097da87cfc6ab17",
+      "heading_anchor_id": "dm-sbdata2",
+      "blocks": [
+        "8e3282925b55fd0193045de6c90d52f0",
+        "06ec1263bad2d7c316890ad9cc09aa8e",
+        "ac0934c6665df5bbb8938c192fbebdba",
+        "d9db9533c16f6f36ed54195b08ec9dc5"
+      ]
+    },
+    {
+      "id": "dm-sbdata3",
+      "level": 4,
+      "sectnum": "1.4.14.30",
+      "title": "System Bus Data 127:96 (((sbdata3)), at 0x3f)",
+      "heading_unit_id": "70054171cc40c90c4c9a1e30cad6fdc0",
+      "heading_anchor_id": "dm-sbdata3",
+      "blocks": [
+        "8e3282925b55fd0193045de6c90d52f0",
+        "06ec1263bad2d7c316890ad9cc09aa8e",
+        "ac0934c6665df5bbb8938c192fbebdba",
+        "c0847ab250afe26294077f5d0b901333"
+      ]
+    },
+    {
+      "id": "dm-custom",
+      "level": 4,
+      "sectnum": "1.4.14.31",
+      "title": "Custom Features (((custom)), at 0x1f)",
+      "heading_unit_id": "df80ecf05d531695bcc2b5bee2bf9a81",
+      "heading_anchor_id": "dm-custom",
+      "blocks": [
+        "ed9bbd5c89086cd23cc7864512047062"
+      ]
+    },
+    {
+      "id": "dm-custom0",
+      "level": 4,
+      "sectnum": "1.4.14.32",
+      "title": "Custom Features 0 (((custom0)), at 0x70)",
+      "heading_unit_id": "0db59f2a7a42cf8e2d6802fdfe972dd4",
+      "heading_anchor_id": "dm-custom0",
+      "blocks": [
+        "d19eb8a6c8187c333243079654c7bb4e"
+      ]
+    },
+    {
+      "id": "core_debug",
+      "level": 2,
+      "sectnum": "1.5",
+      "title": "Sdext (ISA Extension)",
+      "heading_unit_id": "753a8d4e02ab797fb7508b39ac8730c1",
+      "heading_anchor_id": "core_debug",
+      "blocks": [
+        "b3887bc99779816ceeed9fd1f6844b2f",
+        "810edfbfd38055a3ac240d16ec49438d",
+        "d09cb6e6b8d5d6ef20d965c94e835987",
+        "eb79358de8c0c8d10a86f1a81ed79f5b"
+      ]
+    },
+    {
+      "id": "debugmode",
+      "level": 3,
+      "sectnum": "1.5.1",
+      "title": "Debug Mode",
+      "heading_unit_id": "9313bb5caadae2f9a55312a1280ccb9a",
+      "heading_anchor_id": "debugmode",
+      "blocks": [
+        "73893880a5e2ab4501d59676b2f72e2c",
+        "c76a7b76b10f9765b7ed5773c8d5dfa9",
+        "ee627a8a63d50d73253d0757c0f55eeb",
+        "d481102163bb167b3e15a3cc503a34b4"
+      ]
+    },
+    {
+      "id": "_load_reservedstore_conditional_instructions",
+      "level": 3,
+      "sectnum": "1.5.2",
+      "title": "Load-Reserved/Store-Conditional Instructions",
+      "heading_unit_id": "f269f7c15c458cebb3a17eacc4d451e7",
+      "blocks": [
+        "dc86ca6e83b611c1db95748f747cd034",
+        "dc2cd420c2d059773d620ea937010361"
+      ]
+    },
+    {
+      "id": "_wait_for_interrupt_instruction",
+      "level": 3,
+      "sectnum": "1.5.3",
+      "title": "Wait for Interrupt Instruction",
+      "heading_unit_id": "47bf241a9773bb194b5172169467423a",
+      "blocks": [
+        "9826635e348c965e11df34e8e71d89f5"
+      ]
+    },
+    {
+      "id": "_wait_on_reservation_set_instructions_2",
+      "level": 3,
+      "sectnum": "1.5.4",
+      "title": "Wait-on-Reservation-Set Instructions",
+      "heading_unit_id": "9fec60438efbf0ac40339c6e8d04c28a",
+      "blocks": [
+        "bf9d3b5ec4c6ab13ee56816ad064c9b5"
+      ]
+    },
+    {
+      "id": "_single_step",
+      "level": 3,
+      "sectnum": "1.5.5",
+      "title": "Single Step",
+      "heading_unit_id": "e6d7e29812caaf2c502add1ba9999762",
+      "blocks": []
+    },
+    {
+      "id": "stepbit",
+      "level": 4,
+      "sectnum": "1.5.5.1",
+      "title": "Step Bit In Dcsr",
+      "heading_unit_id": "fe8edb796a6344977025c6dbe5e56d44",
+      "heading_anchor_id": "stepbit",
+      "blocks": [
+        "768acb76a9980dc565901ade85925e4c",
+        "92f9a30d1338cdab4003d6f9f00256ab",
+        "81a9651452dca5539c7a86639e30cd0f",
+        "082d06577ed876168fed822317b723d9",
+        "ea4e8cfd4819c672c0682e406122d01e",
+        "2802eacdeb172ae5012404749ff9fe85"
+      ]
+    },
+    {
+      "id": "stepicount",
+      "level": 4,
+      "sectnum": "1.5.5.2",
+      "title": "Icount Trigger",
+      "heading_unit_id": "87a81854b8b5b049d16826b71b42cda0",
+      "heading_anchor_id": "stepicount",
+      "blocks": [
+        "da5048435b1c29c135dc813e4a05c22d",
+        "7c49d15d0431cbea9592bbd73a0f2806",
+        "a69e7a471f6337206013bd2c2f788b25",
+        "86351392328148d4ab93688a6f604697"
+      ]
+    },
+    {
+      "id": "_reset",
+      "level": 3,
+      "sectnum": "1.5.6",
+      "title": "Reset",
+      "heading_unit_id": "ba387a7b1af8b6911cd8ccb646b57654",
+      "blocks": [
+        "ec31b2854fe1fbf5f95baeb1dcdeaccd"
+      ]
+    },
+    {
+      "id": "_halt",
+      "level": 3,
+      "sectnum": "1.5.7",
+      "title": "Halt",
+      "heading_unit_id": "79c465c5179fc250f2da14a421a41636",
+      "blocks": [
+        "c8851c7d469b61f167ffbbb435ba54a0",
+        "f7b01b257950be3456847b3f132b842f"
+      ]
+    },
+    {
+      "id": "_resume",
+      "level": 3,
+      "sectnum": "1.5.8",
+      "title": "Resume",
+      "heading_unit_id": "da8c0100602035211213a1101c416906",
+      "blocks": [
+        "710b0e2595064418f0eaac37cbace1f4",
+        "c3876d85efe0bc989a12c410f3df4452"
+      ]
+    },
+    {
+      "id": "debreg",
+      "level": 3,
+      "sectnum": "1.5.9",
+      "title": "Core Debug Registers",
+      "heading_unit_id": "91ce9d4731e37eaffa4ec6aeaa88316d",
+      "heading_anchor_id": "debreg",
+      "blocks": [
+        "49a871a354d901cdcc46845bc2536027",
+        "5bb44437c45e4e70e11c2ced76d055a8",
+        "f1ec87f2316687e16546df33ca953b02",
+        {
+          "unit_id": "82f7bec19e478865cb5e467c267feff7",
+          "anchor_id": "tab:core"
+        }
+      ]
+    },
+    {
+      "id": "csr-dcsr",
+      "level": 4,
+      "sectnum": "1.5.9.1",
+      "title": "Debug Control and Status (((dcsr)), at 0x7b0)",
+      "heading_unit_id": "e77b6786f567aa17a6533247ddd9b930",
+      "heading_anchor_id": "csr-dcsr",
+      "blocks": [
+        "5ed4681768baa4b55a0f4d5318910943",
+        "9e6574d338bb354fb10b5c27d7f7ffd5",
+        "f506532d0c87195ff608f974e0a43331",
+        {
+          "unit_id": "c8e2349868e6c8b52afad658361be2e7",
+          "anchor_id": "tab:dcsrcausepriority"
+        },
+        "6a27144f5a236e43c6afc1a290fe6eb3",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "4d2a09efca65e0166523477c258668c8",
+        "7ba32d44902936340959dc6156bc43da",
+        "e331b7923b9f73ed9f8782a2f38d64f6"
+      ]
+    },
+    {
+      "id": "csr-dpc",
+      "level": 4,
+      "sectnum": "1.5.9.2",
+      "title": "Debug PC (((dpc)), at 0x7b1)",
+      "heading_unit_id": "c92b8f6257a65eaee6fec4487fe7331e",
+      "heading_anchor_id": "csr-dpc",
+      "blocks": [
+        "e9a2c354ce959259091bc3f2526f1386",
+        {
+          "unit_id": "1ccfbca50d6a1939e11b496f0f14fc3f",
+          "anchor_id": "tab:dpc"
+        },
+        "8e77b1ee285b081f5859e09ce027a33a",
+        "b47f9b7d229c0b9eb53395f0061a689a",
+        "1886f94b082a20b89735dac55a4be1a1",
+        "5f44a8276e22464986d808fc0f96666e",
+        "826388afbfa4e52478d8311f3a7cc842",
+        "e18ee159fc84393404e07bfdb20732fd",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "bf4e573923ee429ec0ba71ec47a00da6"
+      ]
+    },
+    {
+      "id": "csr-dscratch0",
+      "level": 4,
+      "sectnum": "1.5.9.3",
+      "title": "Debug Scratch Register 0 (((dscratch0)), at 0x7b2)",
+      "heading_unit_id": "1922a3a187a475e10236401965f1f0a0",
+      "heading_anchor_id": "csr-dscratch0",
+      "blocks": [
+        "43e7a2082b7f9d9a2dd1f4f58ae732f4",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "c4d7961cde30ce64407992a3988b22cf"
+      ]
+    },
+    {
+      "id": "csr-dscratch1",
+      "level": 4,
+      "sectnum": "1.5.9.4",
+      "title": "Debug Scratch Register 1 (((dscratch1)), at 0x7b3)",
+      "heading_unit_id": "7d01419e5a487e1b6b8046e737bf0e5a",
+      "heading_anchor_id": "csr-dscratch1",
+      "blocks": [
+        "43e7a2082b7f9d9a2dd1f4f58ae732f4",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "2091077660bea9541e476b7c8abe3b55"
+      ]
+    },
+    {
+      "id": "virtreg",
+      "level": 3,
+      "sectnum": "1.5.10",
+      "title": "Virtual Debug Registers",
+      "heading_unit_id": "56aa9b064095c7dd7bbd5bb1bce080a4",
+      "heading_anchor_id": "virtreg",
+      "blocks": [
+        "e40e839ced065242d1d12c9cc2c69a60",
+        {
+          "unit_id": "0e21549d75db2f8a953873688ecfeaad",
+          "anchor_id": "tab:virtual"
+        }
+      ]
+    },
+    {
+      "id": "virt-priv",
+      "level": 4,
+      "sectnum": "1.5.10.1",
+      "title": "Privilege Mode (((priv)), at virtual)",
+      "heading_unit_id": "3ce60399a9359b2b7b0f617b20e9c7a2",
+      "heading_anchor_id": "virt-priv",
+      "blocks": [
+        "b3afd229d8edacbb587099be2b5bf646",
+        "164acab1b2542f5c55940dac1fe049fb",
+        {
+          "unit_id": "6c038ab563d352984ad1de13f8ecdc9e",
+          "anchor_id": "tab:privmode"
+        },
+        "55de65a8ed271b8c7f71d104e9d5b374",
+        "86d1b847b9d8302fb916cd51396ea91c"
+      ]
+    },
+    {
+      "id": "trigger",
+      "level": 2,
+      "sectnum": "1.6",
+      "title": "Sdtrig (ISA Extension)",
+      "heading_unit_id": "3fbfd25fea70c98d4cbbe767ea0ab151",
+      "heading_anchor_id": "trigger",
+      "blocks": [
+        "a7e9f9790c006b510d6beb9f498fb1dc",
+        "e9ee8aaf7ef3418811435cde52c3d67a",
+        "aeea299a9f5571f78596a63cd5e88ad7",
+        "b2b0648a235c2952486a200436be7a56",
+        "c41f5ec30cd135540d5b44955cfd0f7c"
+      ]
+    },
+    {
+      "id": "_enumeration",
+      "level": 3,
+      "sectnum": "1.6.1",
+      "title": "Enumeration",
+      "heading_unit_id": "a5fa1539a162ff252b39bf3ff92e34e7",
+      "blocks": [
+        "3be676ded87bd20fdd22864cb9deba30",
+        "21939b68b545e46629ec30eb16b381d7",
+        "180fc87289b2ab43f0beea6681306e09"
+      ]
+    },
+    {
+      "id": "_actions",
+      "level": 3,
+      "sectnum": "1.6.2",
+      "title": "Actions",
+      "heading_unit_id": "cffba1f6a8232283ee6f0809ebe6601a",
+      "blocks": [
+        "8dedef48ed632d46d75f2bd829af5458",
+        {
+          "unit_id": "68224bd180b29ec88a7502ea3bae47e1",
+          "anchor_id": "tab:action"
+        },
+        "979249a04565d1ccd0859aa3e3abe935"
+      ]
+    },
+    {
+      "id": "_priority",
+      "level": 3,
+      "sectnum": "1.6.3",
+      "title": "Priority",
+      "heading_unit_id": "19d1c26302738b0b2cf036764da3a2a8",
+      "blocks": [
+        "fd76aa444b0a2e993b062f37f4bdd2d3",
+        "b6289d4f980d50cab56c16e28fcf6a96",
+        {
+          "unit_id": "5e286da3696f21d30beaf8dafd30a419",
+          "anchor_id": "tab:priority"
+        },
+        "f799a2240c8de0004e2deb5eaf283937"
+      ]
+    },
+    {
+      "id": "nativetrigger",
+      "level": 3,
+      "sectnum": "1.6.4",
+      "title": "Native Triggers",
+      "heading_unit_id": "61436511af91207ab1ff61b4bfa0f0bb",
+      "heading_anchor_id": "nativetrigger",
+      "blocks": [
+        "e22a4480aa1211698d97139d03a5c5a3",
+        "5b3610caec8cceae660aeb3afd2a7721",
+        "dd28e9774727638aaba66d25ed48a4a1",
+        "f9e879b5a265c2738a56db53167b5f23",
+        "61892836c48b0ab722fcaf0d30b34fcc",
+        "fb42bd3e5a3039d892ec9dfbdfb472d2"
+      ]
+    },
+    {
+      "id": "_memory_access_triggers",
+      "level": 3,
+      "sectnum": "1.6.5",
+      "title": "Memory Access Triggers",
+      "heading_unit_id": "35d57aa64cb2a7c4b1aaac2d263c9864",
+      "blocks": [
+        "4bb7092f29c387d3e8f938be1e9a1da5"
+      ]
+    },
+    {
+      "id": "_a_extension",
+      "level": 4,
+      "sectnum": "1.6.5.1",
+      "title": "A Extension",
+      "heading_unit_id": "79ddb7a46e15ee4af513c35103e4ee45",
+      "blocks": [
+        "a20252d68a9701c2b87c4faf109595fe",
+        "991988b4ed9d3b2220b3aa70b4cab33f"
+      ]
+    },
+    {
+      "id": "_combined_accesses",
+      "level": 4,
+      "sectnum": "1.6.5.2",
+      "title": "Combined Accesses",
+      "heading_unit_id": "a4e3e9fb75e206e79258a5621a56e984",
+      "blocks": [
+        "c7527ad07fd0751bedb0ae8e751bf068"
+      ]
+    },
+    {
+      "id": "_cache_operations",
+      "level": 4,
+      "sectnum": "1.6.5.3",
+      "title": "Cache Operations",
+      "heading_unit_id": "24a6a1cbea0f1a384ac0bba9c4e58fde",
+      "blocks": [
+        "0049280751d44b3aa56fa9af93e8c219",
+        "5e31556190c8768eaefd3ece419f0689",
+        "0472436a04c3a806f11e2e7c7f1b79a2",
+        "61827c6e07c2ec87beec4b785d840a10",
+        "ad7294a43210cee191e91690a1a1c9d0",
+        "df88738f0f5b5f1f476251047e52a5a3"
+      ]
+    },
+    {
+      "id": "_address_matches",
+      "level": 4,
+      "sectnum": "1.6.5.4",
+      "title": "Address Matches",
+      "heading_unit_id": "0160ae47d49a8fd71ab84d55a97cd6d3",
+      "blocks": [
+        "32a296fe678fde20676e4a174460cdf5",
+        "88920e62dcd1b8db28ebef2c9e425f49"
+      ]
+    },
+    {
+      "id": "_invalid_addresses",
+      "level": 5,
+      "sectnum": null,
+      "title": "Invalid Addresses",
+      "heading_unit_id": "870f36f5e08186ee4d11c8e54f4e7d83",
+      "blocks": [
+        "9db37fae3da1613bba093e961547b87d",
+        "4fb14f35d98d9383335e953fc92e1d0c",
+        "ccc94daa1b4f0d8782b38783ad0e48b0"
+      ]
+    },
+    {
+      "id": "multistate",
+      "level": 3,
+      "sectnum": "1.6.6",
+      "title": "Multiple State Change Instructions",
+      "heading_unit_id": "30715de8727fdc80704210c9bfa1aaed",
+      "heading_anchor_id": "multistate",
+      "blocks": [
+        "1779b7f592667a1e169517772257b663",
+        "c3891b5a313e8451cf22ab66556886f3"
+      ]
+    },
+    {
+      "id": "_trigger_module_registers",
+      "level": 3,
+      "sectnum": "1.6.7",
+      "title": "Trigger Module Registers",
+      "heading_unit_id": "bb64670f8f577907c9c967e8fef8acbb",
+      "blocks": [
+        "36d58e0907a7def09562e5445b54050e",
+        "643d0da0f8d5b17867830936dfc10005",
+        "8a18aaad0a4f96c0af2bfb785afb577e",
+        "8397dddd0da14e3ab613946b82629301",
+        "873b2ec016f27cc7191a4a1f6e784c66",
+        "7475de16647dca27a2e973b355099277",
+        "37d1a862393981db23a634b6575e0c61",
+        "009a608ba11fbe893dced6604a6ed20c",
+        "018f13f8caa6c4600968e30846343490",
+        {
+          "unit_id": "c4b8f5f586e349ab08349714768ff6f8",
+          "anchor_id": "tab:trigger"
+        }
+      ]
+    },
+    {
+      "id": "csr-tselect",
+      "level": 4,
+      "sectnum": "1.6.7.1",
+      "title": "Trigger Select (((tselect)), at 0x7a0)",
+      "heading_unit_id": "a4862c033f3976f6703452d00e7704c9",
+      "heading_anchor_id": "csr-tselect",
+      "blocks": [
+        "0c64d9f5426fb72b014a96ffaec0cf1e",
+        "7527982bf746e80455faf9ed43752269",
+        "5dc3752574675c79c4d341bd6e599774",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "a9543e2c2338f47101adb30a0e8ecf41"
+      ]
+    },
+    {
+      "id": "csr-tdata1",
+      "level": 4,
+      "sectnum": "1.6.7.2",
+      "title": "Trigger Data 1 (((tdata1)), at 0x7a1)",
+      "heading_unit_id": "684036f8682f161e3beed2785fbba75d",
+      "heading_anchor_id": "csr-tdata1",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "f7ae44408c39b1b424d60cfbe90c95e6",
+        "9f85b3c95ee0144b0dde56456fbaf5e5",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "72228fa1a1e81c9feeae2265d1e13768",
+        "688594c9d9637571a0ebe3bf4dcf12d1"
+      ]
+    },
+    {
+      "id": "csr-tdata2",
+      "level": 4,
+      "sectnum": "1.6.7.3",
+      "title": "Trigger Data 2 (((tdata2)), at 0x7a2)",
+      "heading_unit_id": "f6f482a0993c3d1f9cff8d513927559d",
+      "heading_anchor_id": "csr-tdata2",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "9a574962e214346f4c2500a184fbb084",
+        "e0cba08d2d41c7cfa7ab32568bc476cf",
+        "bb5318d92b0a3d1dab2884e3cc88b897",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "b1cd68848c6d5617f99f3beac022991c"
+      ]
+    },
+    {
+      "id": "csr-tdata3",
+      "level": 4,
+      "sectnum": "1.6.7.4",
+      "title": "Trigger Data 3 (((tdata3)), at 0x7a3)",
+      "heading_unit_id": "74a19f565fb44107bb1107d0b6bfd232",
+      "heading_anchor_id": "csr-tdata3",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "9a574962e214346f4c2500a184fbb084",
+        "e0cba08d2d41c7cfa7ab32568bc476cf",
+        "bb5318d92b0a3d1dab2884e3cc88b897",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "b1cd68848c6d5617f99f3beac022991c"
+      ]
+    },
+    {
+      "id": "csr-tinfo",
+      "level": 4,
+      "sectnum": "1.6.7.5",
+      "title": "Trigger Info (((tinfo)), at 0x7a4)",
+      "heading_unit_id": "e8fed36268279430ce4d131b91889940",
+      "heading_anchor_id": "csr-tinfo",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "c4a4fb3221071c25cf75b550604c8dfb",
+        "02a1313861c032fe0afc56755c5e53a9",
+        "d781b05fd45477adf2e4ee03ebc56f1b",
+        "8113290894646253845ae47826f971c4"
+      ]
+    },
+    {
+      "id": "csr-tcontrol",
+      "level": 4,
+      "sectnum": "1.6.7.6",
+      "title": "Trigger Control (((tcontrol)), at 0x7a5)",
+      "heading_unit_id": "f6c03f9927c403a147d808e3689b2014",
+      "heading_anchor_id": "csr-tcontrol",
+      "blocks": [
+        "d5cc09fc30c80abeefa999b1ba3b8442",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "5c5c1be1d53cee1fb6008cca20ef7241",
+        "db8d51b0fb23e555254081e755d3084b"
+      ]
+    },
+    {
+      "id": "csr-hcontext",
+      "level": 4,
+      "sectnum": "1.6.7.7",
+      "title": "Hypervisor Context (((hcontext)), at 0x6a8)",
+      "heading_unit_id": "ebc069373233d7ab77b2bdf5720e9f6b",
+      "heading_anchor_id": "csr-hcontext",
+      "blocks": [
+        "998f233af2bc62a84e2659da1c636c46",
+        "74a377b28fa43185ddfbfa1a91701a70",
+        "f445c5ec09f63bca4e316bdd45eab651"
+      ]
+    },
+    {
+      "id": "csr-scontext",
+      "level": 4,
+      "sectnum": "1.6.7.8",
+      "title": "Supervisor Context (((scontext)), at 0x5a8)",
+      "heading_unit_id": "ee684bf51e1cf6bfdc23d08798681cd3",
+      "heading_anchor_id": "csr-scontext",
+      "blocks": [
+        "99371c26da699995d0431e4d4c5e5e49",
+        "05c44bbd3dbbe7083f509d5a497c28c3",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "bc30de3453fb60056ddb4fa981e4f0d4",
+        "1b82a192a6404e7943eed658a5d41eeb"
+      ]
+    },
+    {
+      "id": "csr-mcontext",
+      "level": 4,
+      "sectnum": "1.6.7.9",
+      "title": "Machine Context (((mcontext)), at 0x7a8)",
+      "heading_unit_id": "c8b1b3837fef44786a5fc156cd46caaa",
+      "heading_anchor_id": "csr-mcontext",
+      "blocks": [
+        "ca514e94e434c2cbfed4151a53bff57e",
+        "7d009b999c5bbdc29b76e343d72179d2",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "4f6d692a12feeae939a79773226147f5",
+        "7a525053d6e50aa5c4661dace905782a"
+      ]
+    },
+    {
+      "id": "csr-mscontext",
+      "level": 4,
+      "sectnum": "1.6.7.10",
+      "title": "Machine Supervisor Context (((mscontext)), at 0x7aa)",
+      "heading_unit_id": "ae7e614428e3bbb72f21027f094eafa3",
+      "heading_anchor_id": "csr-mscontext",
+      "blocks": [
+        "e70ca9a6fee4e88c480565e4b7b26970",
+        "5f93cbea03958330f496d22fe6085dd5"
+      ]
+    },
+    {
+      "id": "csr-mcontrol",
+      "level": 4,
+      "sectnum": "1.6.7.11",
+      "title": "Match Control (((mcontrol)), at 0x7a1)",
+      "heading_unit_id": "f6014069b7a901ad83973a158cab1cd5",
+      "heading_anchor_id": "csr-mcontrol",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "ec94f05c69cc935762608d2fb3147d34",
+        "523c7ba52bb0ee9e981170b8c61004e3",
+        "e8fb6a0f0537cc09f90ffe23e9ce9e31",
+        "9873297683d299f37f88e58455b66576",
+        "12ae442fc9a0b35a7dd57c895329d47d",
+        "5a8e10f85e634a588ca59e02b3bdb095",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "11163597db42b599c84b9a583568a371",
+        "e659e0ffb2c074c5533e1d4f9ea7d295",
+        "39f18dcd4c2a20eacf790ddcbc00a47a"
+      ]
+    },
+    {
+      "id": "csr-mcontrol6",
+      "level": 4,
+      "sectnum": "1.6.7.12",
+      "title": "Match Control Type 6 (((mcontrol6)), at 0x7a1)",
+      "heading_unit_id": "fabbed84fccb4c221a215ea4ff426684",
+      "heading_anchor_id": "csr-mcontrol6",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "305ba6aad2eaf83a9eeb8c464e469a42",
+        "5051ba5dc25a1788fa3eb4f78ca60cbc",
+        "f2635f0f9c420a83381432e817f23a68",
+        "642ee7589c575e5ff5733b386d823ee1",
+        "4ad5fa4e653768c4d3acbb9c9170d985",
+        {
+          "unit_id": "99fcca10373a9e9938b8ce63bcf2720f",
+          "anchor_id": "tab:hwbp_timing"
+        },
+        "3f533492c29eae96865332f41e19ad16",
+        "c69cac2868965a2a475cb01a4a611a34",
+        "756745e17f15217f5a21b42e6672d831",
+        "ac5cb145f6fe61aa7dc4872fb6f5b3db",
+        "5a8e10f85e634a588ca59e02b3bdb095",
+        "235e3be3624d6994decb3b95090a0445",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "4887a9a7604e21a3bbf246302683809d",
+        "c17fcf78e75ee192f2a370ce6614b121",
+        "8c58d5246b29e82769f87784c9dba504"
+      ]
+    },
+    {
+      "id": "csr-icount",
+      "level": 4,
+      "sectnum": "1.6.7.13",
+      "title": "Instruction Count (((icount)), at 0x7a1)",
+      "heading_unit_id": "7fb6bd54c705187b46744345cd9ac3b1",
+      "heading_anchor_id": "csr-icount",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "e68c5309f07e4ed3309a96a6608582f3",
+        "6cfe0848ce56c2566bf22c6f43dd0683",
+        "d7b062db78f7c1da443f27e362f07ecb",
+        "e80a831a49731605013e708726003825",
+        "4189841bcb4566010077a7b093004fba",
+        "3881fd36e09cc2ce0cbfefdd8fc61224",
+        "f1d0ca1b18a989ebe7d9223f3c32c285",
+        "3a65b2af4cb2e823ad90132f65b5807e",
+        "50ba8999486352adc130dcc2576f1678",
+        "c049abe7fa22a57065a9736d44d25b98",
+        "576264330f16685bbc9835893796b74e",
+        "5e7684140cf4c4966f1339414179b117",
+        "023fefef4ff20d0bf2c2c7dc77421084",
+        "5a8e10f85e634a588ca59e02b3bdb095",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "4c1be755e9f3196d308a60457c775650",
+        "5a6b17b50023223bea3e815132c40605"
+      ]
+    },
+    {
+      "id": "csr-itrigger",
+      "level": 4,
+      "sectnum": "1.6.7.14",
+      "title": "Interrupt Trigger (((itrigger)), at 0x7a1)",
+      "heading_unit_id": "b66c993606544cc12eec247402c78a44",
+      "heading_anchor_id": "csr-itrigger",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "74ba5a7a78b3d763c0f1c09f7080de22",
+        "310fe63960c41034b1dd764b402e98fd",
+        "f1f106b4ee471a0ac008e7ac12a58f94",
+        "310837958c4b2131a8a1fc3083e74502",
+        "8fbea1d3b42a77a6372773e6dee450b0",
+        "1777206ff42c7992f762d43a84d6e8a7",
+        "5a8e10f85e634a588ca59e02b3bdb095",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "f3c2e4f997b282eff70e2d1a90d8ef6e",
+        "d09336ef64e02d42b5740114e2b140f4"
+      ]
+    },
+    {
+      "id": "csr-etrigger",
+      "level": 4,
+      "sectnum": "1.6.7.15",
+      "title": "Exception Trigger (((etrigger)), at 0x7a1)",
+      "heading_unit_id": "546318a671b35e03a17f6819fbe02e69",
+      "heading_anchor_id": "csr-etrigger",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "98df8be72791c068182a6fd6b8805b5a",
+        "8c9029801107af4619106a73f533273a",
+        "95c15417902c0bfb51d3cca9e94512f6",
+        "fce0262493b4ccecb653729cf378e41d",
+        "1c789c9a4e53992992007cd9108b5f2b",
+        "5a8e10f85e634a588ca59e02b3bdb095",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "96db2775860b482d79694543075a1335",
+        "07cf7ba722af796aa8c06557dbc5cc0f"
+      ]
+    },
+    {
+      "id": "csr-tmexttrigger",
+      "level": 4,
+      "sectnum": "1.6.7.16",
+      "title": "External Trigger (((tmexttrigger)), at 0x7a1)",
+      "heading_unit_id": "d4ad920643c95a5b028c6e36ab76f46d",
+      "heading_anchor_id": "csr-tmexttrigger",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "8ffbbe58a78f2b649919f06f05272abf",
+        "c29b11fca61de243907934f91a7ace56",
+        "a897aa10362f1325c36f9949160821f9",
+        "401313d4217ca5c3d8d33c01c9d8d6f7",
+        "e2753c5907b1d69aaf437ffb376c2f20",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "681ecd1ccbf8eb7e3acb3e609cab986e",
+        "2034654a24fb277484fd737338015759"
+      ]
+    },
+    {
+      "id": "csr-textra32",
+      "level": 4,
+      "sectnum": "1.6.7.17",
+      "title": "Trigger Extra (RV32) (((textra32)), at 0x7a3)",
+      "heading_unit_id": "ef50d5087b909723f845d5384f2f0fd3",
+      "heading_anchor_id": "csr-textra32",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "1523039432154e722dba76f3edd984ca",
+        "44e6b5a8f0f142e515c181ffecb55601",
+        "db4e942c0322df5f01a62a0e194cb5c0",
+        "72f3231ee01f941803d98b3d983bf77b",
+        "22b387975bc649bbdee123896c67ab33",
+        "e8c1bbeed0e35786095778c213e1e689",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "10951a1e3878cc3d142ecbae47d8c21b",
+        "e85cd8a320dc33293dd1714d8065b77c"
+      ]
+    },
+    {
+      "id": "csr-textra64",
+      "level": 4,
+      "sectnum": "1.6.7.18",
+      "title": "Trigger Extra (RV64) (((textra64)), at 0x7a3)",
+      "heading_unit_id": "059490307c5569fb82260b86b2b92aae",
+      "heading_anchor_id": "csr-textra64",
+      "blocks": [
+        "ad901a6f3d0b10125f2d1c316b7c3eb8",
+        "362b98444149f17c23edf961cbd585fa",
+        "a08ff2e121fa4e9f5eda2714542c6ee6",
+        "18a3b1ceed6d44197c2292976e869780",
+        "9e64f2deb8e23f04e7a31f8994e9b524",
+        "4a5ea9fa8ac0286e697ff2b8978d0532",
+        "efe764229912f0c1b8fa6b17a2dd3f67"
+      ]
+    },
+    {
+      "id": "dtm",
+      "level": 2,
+      "sectnum": "1.7",
+      "title": "Debug Transport Module (DTM) (non-ISA extension)",
+      "heading_unit_id": "f33096d2efd64b046d2dc99aefdb9416",
+      "heading_anchor_id": "dtm",
+      "blocks": [
+        "712f46d75388b6caadbc9f2e276c61bc",
+        "d207ac4f0415e2defffe2c63c18c0ed0",
+        "c98f0415f7aaa2ab1755ea6ed1289b72",
+        "fdfc0a736787cccac6a886d752a32d72",
+        "f3664e6614f2029ba10c604203ff6091"
+      ]
+    },
+    {
+      "id": "sec:jtagdtm",
+      "level": 3,
+      "sectnum": "1.7.1",
+      "title": "JTAG Debug Transport Module",
+      "heading_unit_id": "ff311b7de924a411f9ec8a7e73a5faf9",
+      "heading_anchor_id": "sec:jtagdtm",
+      "blocks": [
+        "965c159f9cd8b2bddca36959043ec008"
+      ]
+    },
+    {
+      "id": "_jtag_background",
+      "level": 4,
+      "sectnum": "1.7.1.1",
+      "title": "JTAG Background",
+      "heading_unit_id": "28859184f4b573d301f2ab02a1f96861",
+      "blocks": [
+        "3f9cbb8d94f0da42202dde73ea6310b5"
+      ]
+    },
+    {
+      "id": "_jtag_dtm_registers",
+      "level": 4,
+      "sectnum": "1.7.1.2",
+      "title": "JTAG DTM Registers",
+      "heading_unit_id": "333da803da50de43d396174457c87083",
+      "blocks": [
+        "682bf7be7f3bbb84f61b00a64fff3585",
+        {
+          "unit_id": "52e81df5b66c30990454d78934e1365e",
+          "anchor_id": "tab:jtag_registers"
+        }
+      ]
+    },
+    {
+      "id": "dtm-idcode",
+      "level": 4,
+      "sectnum": "1.7.1.3",
+      "title": "((IDCODE)) (at 0x01)",
+      "heading_unit_id": "f877392aeaf54f22df45c0f1c55f30e8",
+      "heading_anchor_id": "dtm-idcode",
+      "blocks": [
+        "58a7b043d9e7645db731497230fe2f14",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "9e8d76a2420bbb70556e0e111bcada54",
+        "29e0257f0a9890caf5ea3dce957a9f15"
+      ]
+    },
+    {
+      "id": "dtm-dtmcs",
+      "level": 4,
+      "sectnum": "1.7.1.4",
+      "title": "DTM Control and Status (((dtmcs)), at 0x10)",
+      "heading_unit_id": "7e7475346e78bdad7e67475695264adc",
+      "heading_anchor_id": "dtm-dtmcs",
+      "blocks": [
+        "deaa606073432c50ce2527dbfa260429",
+        "4ba237c96c3acab4ea41c9e1cd3e1aff",
+        "fd60b483ca0932e5705cd15722042f91"
+      ]
+    },
+    {
+      "id": "dtm-dmi",
+      "level": 4,
+      "sectnum": "1.7.1.5",
+      "title": "Debug Module Interface Access (((dmi)), at 0x11)",
+      "heading_unit_id": "63514906463d61d738fb3edb0a03d3b7",
+      "heading_anchor_id": "dtm-dmi",
+      "blocks": [
+        "dc438d7e481602c3ea6feba6d46f8913",
+        "57a08549ff73841cc6e31f1299331923",
+        "df1e31c01954acc8c86b6f0927228e65",
+        "ff0bf1cd1d1eae6e45cd7117283c1371",
+        "677e631b7a5905b16d4225cf15100ef4",
+        "849eedf0ee88d0f3e439e04b01dce394",
+        "4eb94a807405356b16f1cabb26375260"
+      ]
+    },
+    {
+      "id": "dtm-bypass",
+      "level": 4,
+      "sectnum": "1.7.1.6",
+      "title": "((BYPASS)) (at 0x1f)",
+      "heading_unit_id": "568d1f7f881ef64c4883a11e156822a8",
+      "heading_anchor_id": "dtm-bypass",
+      "blocks": [
+        "bd6e3652c0efa793bf7e766dd83f6f44",
+        "b5b880a47504ed89b19a78dfe753007f",
+        "2146e76291fb64200bface180087679e"
+      ]
+    },
+    {
+      "id": "_jtag_connector",
+      "level": 4,
+      "sectnum": "1.7.1.7",
+      "title": "JTAG Connector",
+      "heading_unit_id": "fa98d7412914b5e559348617b9222695",
+      "blocks": []
+    },
+    {
+      "id": "_recommended_jtag_connector",
+      "level": 5,
+      "sectnum": null,
+      "title": "Recommended JTAG Connector",
+      "heading_unit_id": "308eb46c147fc6ff8d9790a6c2d8cbe6",
+      "blocks": [
+        "c4d5d6e5b239bdd58b2e3dc57f82cec5",
+        "570e588102461ca88b4acdbc4662f8df",
+        "6304cd3061ebba5b69dad13d3aaa5c29",
+        {
+          "unit_id": "bd2063a5fc9fb0b3bb588ef93c5768f3",
+          "anchor_id": "tab:mipiten"
+        },
+        "85490775c6bd7e05e9a9cededc23260a"
+      ]
+    },
+    {
+      "id": "_alternate_jtag_connector",
+      "level": 5,
+      "sectnum": null,
+      "title": "Alternate JTAG Connector",
+      "heading_unit_id": "b3d481aa7372a6992935f0c759c70366",
+      "blocks": [
+        "dbe2d9540fdd67a644bd8b5a61bf8355",
+        "bbb991726c7f32a3efa1879ec99844c7",
+        {
+          "unit_id": "f8e0b820cae071430a15fd51180023ee",
+          "anchor_id": "tab:pinout"
+        },
+        {
+          "unit_id": "d9fa209c3a5da9ff997afd4405440e08",
+          "anchor_id": "tab:mipitwenty"
+        }
+      ]
+    },
+    {
+      "id": "_cjtag",
+      "level": 4,
+      "sectnum": "1.7.1.8",
+      "title": "cJTAG",
+      "heading_unit_id": "7e09ace46f5fc0cba606c7b5dd803182",
+      "blocks": [
+        "9090083fe4a721212086a735b8d362a8",
+        "20ec25bf0fb1a08e3be4790e7b11783c",
+        "5b237fdfaad5bdcc4db9ee235210a4d8",
+        {
+          "unit_id": "3eb38472268eeeb5eab1579f7f94effa",
+          "anchor_id": "tab:mipicjtag"
+        }
+      ]
+    }
+  ]
+}

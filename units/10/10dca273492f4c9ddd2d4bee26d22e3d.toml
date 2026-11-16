@@ -1,0 +1,8 @@
+unit_id = "10dca273492f4c9ddd2d4bee26d22e3d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ccounter_ccv]#The CC value is valid only when the Cycle Count Valid (CCV) bit is set.  If CCV=0, the CC value might not hold the correct count of elapsed active cycles since the last recorded transfer.  The next record will have CCV=0 after a write to `__x__ctrctl`, or execution of SCTRCLR, since CtrCycleCounter is reset.  CCV should additionally be cleared after any other implementation-specific scenarios where active cycles might not be counted in CtrCycleCounter.#'''
+zh = '''
+[#norm:ccounter_ccv]#仅当周期计数有效（CCV）位置位时，CC 值才有效。如果 CCV=0，则 CC 值可能不包含自上次已记录转移以来经过的活动周期的正确计数。在写入 `__x__ctrctl` 或执行 SCTRCLR 后，由于 CtrCycleCounter 被复位，下一条记录将具有 CCV=0。此外，在任何其他实现特定场景（其中活动周期可能未计入 CtrCycleCounter）之后，应清除 CCV。#'''

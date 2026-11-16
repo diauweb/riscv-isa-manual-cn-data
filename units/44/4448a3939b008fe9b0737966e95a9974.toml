@@ -1,0 +1,19 @@
+unit_id = "4448a3939b008fe9b0737966e95a9974"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. <<reg_read, Register read>>
+. <<initiate_load, Initiate memory load operations>>
+. <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>> and/or <<sat_from_mem, Satisfy memory load operation from memory>> (as many as needed to satisfy all the load operations of the
+instance)
+. <<complete_loads, Complete load operations>>
+. <<reg_write, Register write>>
+. <<finish, Finish instruction>>'''
+zh = '''
+. <<reg_read, 寄存器读>>
+. <<initiate_load, 发起内存加载操作>>
+. <<sat_by_forwarding, 通过从未传播存储转发来满足内存加载操作>> 和/或 <<sat_from_mem, 从内存满足内存加载操作>>（次数与满足该实例所有加载操作所需一样多）
+. <<complete_loads, 完成加载操作>>
+. <<reg_write, 寄存器写>>
+. <<finish, 结束指令>>'''

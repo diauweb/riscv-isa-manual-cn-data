@@ -1,0 +1,17 @@
+unit_id = "8708cfc000623815b4d3636ec1e95105"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<rvc-form>> shows the nine compressed instruction
+formats. CR, CI, and CSS can use any of the 32 RVI registers, but [#norm:Zca_regs8]#CIW,
+CL, CS, CA, and CB are limited to just 8 of them.
+<<registers>> lists these popular registers, which
+correspond to registers `x8` to `x15`.# Note that there is a separate
+version of load and store instructions that use the stack pointer as the
+base address register, since saving to and restoring from the stack are
+so prevalent, and that they use the CI and CSS formats to allow access
+to all 32 data registers. CIW supplies an 8-bit immediate for the
+insn:addi4spn[] instruction.'''
+zh = '''
+<<rvc-form>> 展示了九种压缩指令格式。CR、CI 和 CSS 可以使用 32 个 RVI 寄存器中的任意一个，但 [#norm:Zca_regs8]#CIW、CL、CS、CA 和 CB 仅限于其中的 8 个。<<registers>> 列出了这些常用寄存器，它们对应于寄存器 `x8` 到 `x15`。# 请注意，加载和存储指令有一个单独的版本，使用栈指针作为基址寄存器，因为保存到栈和从栈恢复非常普遍，并且它们使用 CI 和 CSS 格式以允许访问所有 32 个数据寄存器。CIW 为 insn:addi4spn[] 指令提供 8 位立即数。'''

@@ -1,0 +1,34 @@
+unit_id = "157783e6cc64dd6a2caab4de1e69fa9d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Trap and Trap Return Recording
+[%unbreakable]
+[width="100%",cols="18%,17%,30%,35%",]
+|===
+.2+|*Transfer Type* .2+| *Source Mode* 2+|*Target Mode*
+|*Enabled* |*Disabled*
+.2+|*Trap* |*Enabled* |[#norm:ctr_trap_ee]#Recorded#. | [#norm:ctr_trap_ed]#External trap.  Not recorded by default,# but see <<External Traps>>.
+
+|*Disabled* |[#norm:ctr_trap_de]#Recorded, `ctrsource`.PC is 0.# |[#norm:ctr_trap_dd]#Not recorded.#
+
+.2+|*Trap Return* |*Enabled* |[#norm:ctr_trapret_ee]#Recorded.# |[#norm:ctr_trapret_ed]#Recorded, `ctrtarget`.PC is 0.#
+
+|*Disabled* |[#norm:ctr_trapret_de]#Not recorded.# |[#norm:ctr_trapret_dd]#Not recorded.#
+|==='''
+zh = '''
+.陷阱和陷阱返回的记录
+[%unbreakable]
+[width="100%",cols="18%,17%,30%,35%",]
+|===
+.2+|*转移类型* .2+| *源模式* 2+|*目标模式*
+|*已使能* |*禁用*
+.2+|*陷阱* |*已使能* |[#norm:ctr_trap_ee]#记录#。 | [#norm:ctr_trap_ed]#外部陷阱。默认不记录，# 但参见 <<External Traps>>。
+
+|*禁用* |[#norm:ctr_trap_de]#记录，`ctrsource`.PC 为 0。# |[#norm:ctr_trap_dd]#不记录。#
+
+.2+|*陷阱返回* |*已使能* |[#norm:ctr_trapret_ee]#记录。# |[#norm:ctr_trapret_ed]#记录，`ctrtarget`.PC 为 0。#
+
+|*禁用* |[#norm:ctr_trapret_de]#不记录。# |[#norm:ctr_trapret_dd]#不记录。#
+|==='''

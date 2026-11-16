@@ -1,0 +1,14 @@
+unit_id = "60b9e2b629de01776d24632c1e56453e"
+kind = "diagram"
+translatable = false
+en = '''
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7,  name: 'opcode', attr: ['7', 'SYSTEM', 'SYSTEM', 'SYSTEM', 'SYSTEM', 'SYSTEM', 'SYSTEM'] },
+  {bits: 5,  name: 'rd',     attr: ['5', 'dest', 'dest', 'dest', 'dest', 'dest', 'dest'] },
+  {bits: 3,  name: 'funct3', attr: ['3', 'CSRRW', 'CSRRS', 'CSRRC', 'CSRRWI', 'CSRRSI', 'CSRRCI'] },
+  {bits: 5,  name: 'rs1',    attr: ['5', 'source', 'source', 'source', 'uimm[4:0]', 'uimm[4:0]', 'uimm[4:0]'] },
+  {bits: 12, name: 'csr',    attr: ['12', 'source/dest', 'source/dest', 'source/dest', 'source/dest', 'source/dest', 'source/dest'], },
+]}
+....'''

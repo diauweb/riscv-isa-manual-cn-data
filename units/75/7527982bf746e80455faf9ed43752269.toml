@@ -1,0 +1,14 @@
+unit_id = "7527982bf746e80455faf9ed43752269"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This register is *WARL*.
+Writes of values greater than or equal to the number of supported
+triggers may result in a different value in this register than what was
+written or may point to a trigger where {tdata1-type}=0.
+To verify that what they wrote is a valid index, debuggers can
+read back the value and check that {csr-tselect} holds what they wrote
+and read {csr-tdata1} to see that {tdata1-type} is non-zero.'''
+zh = '''
+此寄存器是 *WARL*。写入大于或等于受支持触发器数量的值可能导致此寄存器中的值与写入值不同，或可能指向 {tdata1-type}=0 的触发器。为了验证写入的是有效索引，调试器可以读回该值并检查 {csr-tselect} 是否保持其写入的值，并读取 {csr-tdata1} 以查看 {tdata1-type} 是否非零。'''

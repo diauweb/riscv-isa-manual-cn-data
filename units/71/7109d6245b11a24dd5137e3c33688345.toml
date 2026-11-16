@@ -1,0 +1,30 @@
+unit_id = "7109d6245b11a24dd5137e3c33688345"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If the reported address is the instruction following a return, and it
+is not mis-predicted, the encoder must report the current stack depth or
+call count if it is non-zero. Without this, the decoder would attempt to
+follow the execution path until it encountered the reported address from
+the outermost nested call;
+* If the reported address is not the instruction following a return, the
+encoder must report the current stack depth or call count unless:
+** There have been no returns since the last call (in which case the
+decoder will correctly stop in the innermost call), or
+** There has been at least one branch since the last return (in which
+case the decoder will correctly stop in the call where there are no
+unprocessed branches).
++
+Without this, the decoder would follow the execution path until it
+encountered the reported address, and in most cases this would be the
+correct point. However, this cannot be guaranteed for recursive
+functions, as the reported address will occur multiple times in the
+execution path.'''
+zh = '''
+* 如果报告的地址是返回之后的指令，且未被误预测，则当当前栈深度或调用计数非零时，编码器必须报告它。否则，解码器会尝试沿执行路径前进，直到从最外层嵌套调用处遇到报告的地址；
+* 如果报告的地址不是返回之后的指令，则编码器必须报告当前栈深度或调用计数，除非：
+** 自上次调用以来没有返回（此时解码器将正确地在最内层调用处停止），或
+** 自上次返回以来至少有一个分支（此时解码器将正确地在没有未处理分支的调用处停止）。
++
+否则，解码器会沿执行路径前进，直到遇到报告的地址，在大多数情况下这会是正确的点。然而，对于递归函数，这无法保证，因为报告的地址会在执行路径中出现多次。'''

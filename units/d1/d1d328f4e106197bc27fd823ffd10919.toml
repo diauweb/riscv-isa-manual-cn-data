@@ -1,0 +1,13 @@
+unit_id = "d1d328f4e106197bc27fd823ffd10919"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstateen_bit_63_roz]#Bit 63 of each `mstateen` CSR may be read-only zero only if the hypervisor
+extension is not implemented and the matching supervisor-level `sstateen` CSR is
+all read-only zeros.# In that case, machine-level software should emulate
+attempts to access the affected `sstateen` CSR from S-mode, ignoring writes and
+returning zero for reads. [#norm:hstateen_bit_63_writable]#Bit 63 of each `hstateen` CSR is always writable (not
+read-only).#'''
+zh = '''
+[#norm:mstateen_bit_63_roz]#每个 `mstateen` CSR 的第 63 位只有在未实现管理程序扩展且相应的监管级 `sstateen` CSR 全为只读零时才可以为只读零。# 在这种情况下，机器级软件应模拟从 S 模式对受影响的 `sstateen` CSR 的访问尝试，忽略写入并在读取时返回零。 [#norm:hstateen_bit_63_writable]#每个 `hstateen` CSR 的第 63 位始终是可写的（不是只读的）。#'''

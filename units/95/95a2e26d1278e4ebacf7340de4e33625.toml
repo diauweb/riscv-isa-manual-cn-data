@@ -1,0 +1,34 @@
+unit_id = "95a2e26d1278e4ebacf7340de4e33625"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Signals for the suggested DMI between one DTM and one DM
+[%autowidth,align="center",float="center",cols="<,<,<,<",options="header",frame=ends]
+|===
+|Signal |Width |Source |Description
+|REQ_VALID |1 |DTM |Indicates that a valid request is pending
+|REQ_READY |1 |DM |Indicates that the DM is able to process a request
+|REQ_ADDRESS |{dtmcs-abits} |DTM |Requested address
+|REQ_DATA |32 |DTM |Requested data
+|REQ_OP |2 |DTM |Same meaning as the {dmi-op} field
+|RSP_VALID |1 |DM |Indicates that a valid response is pending
+|RSP_READY |1 |DTM |Indicates that the DTM is able to process a response
+|RSP_DATA |32 |DM |Response data
+|RSP_OP |2 |DM |Same meaning as the {dmi-op} field
+|==='''
+zh = '''
+.建议的单 DTM 与单 DM 之间 DMI 的信号
+[%autowidth,align="center",float="center",cols="<,<,<,<",options="header",frame=ends]
+|===
+|信号 |宽度 |来源 |描述
+|REQ_VALID |1 |DTM |表示有一个有效请求待处理
+|REQ_READY |1 |DM |表示 DM 能够处理请求
+|REQ_ADDRESS |{dtmcs-abits} |DTM |请求的地址
+|REQ_DATA |32 |DTM |请求的数据
+|REQ_OP |2 |DTM |含义与 {dmi-op} 字段相同
+|RSP_VALID |1 |DM |表示有一个有效响应待处理
+|RSP_READY |1 |DTM |表示 DTM 能够处理响应
+|RSP_DATA |32 |DM |响应数据
+|RSP_OP |2 |DM |含义与 {dmi-op} 字段相同
+|==='''

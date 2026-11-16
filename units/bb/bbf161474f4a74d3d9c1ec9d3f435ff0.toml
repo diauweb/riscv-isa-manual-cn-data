@@ -1,0 +1,32 @@
+unit_id = "bbf161474f4a74d3d9c1ec9d3f435ff0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Rounding mode encoding.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|Rounding Mode |Mnemonic |Meaning
+|000 |RNE |Round to Nearest, ties to Even
+|001 |RTZ |Round towards Zero
+|010 |RDN |Round Down (towards −{inf})
+|011 |RUP |Round Up (towards +{inf})
+|100 |RMM |Round to Nearest, ties to Max Magnitude
+|101 | |_Reserved for future use._
+|110 | |_Reserved for future use._
+|111 |DYN |In instruction's _rm_ field, selects dynamic rounding mode; In Rounding Mode register, _reserved_.
+|==='''
+zh = '''
+.舍入模式编码。
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|舍入模式 |助记符 |含义
+|000 |RNE |舍入到最近值，中间值取偶
+|001 |RTZ |向零舍入
+|010 |RDN |向下舍入（朝向 −{inf}）
+|011 |RUP |向上舍入（朝向 +{inf}）
+|100 |RMM |舍入到最近值，中间值取最大幅值
+|101 | |_保留供将来使用。_
+|110 | |_保留供将来使用。_
+|111 |DYN |在指令的 _rm_ 字段中，选择动态舍入模式；在舍入模式寄存器中，_保留_。
+|==='''

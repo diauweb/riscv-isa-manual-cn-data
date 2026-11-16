@@ -1,0 +1,32 @@
+unit_id = "304aaeb36cf81b6bd201f628f4e5a53a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#MSEO Transitions]
+.Transitions of MSEO Bits
+[cols="40%,60%",options="header",align=center,width=80%]
+|====
+|MSEO Function|Previous-*Current* MSEO[1:0] Sequence
+|Start of message|11-*00*
+|Middle of field|00 (or 01)-*00*
+|End of variable-length field|00 (or 01)-*01*
+|End of message|00 (or 01)-*11*
+|Idle (no message)|11-*11*
+|Reserved|11-*01*
+|Reserved|any-*10*
+|===='''
+zh = '''
+[#MSEO Transitions]
+.MSEO 位的转换
+[cols="40%,60%",options="header",align=center,width=80%]
+|====
+|MSEO 功能|前一个-*当前* MSEO[1:0] 序列
+|消息开始|11-*00*
+|字段中间|00（或 01）-*00*
+|可变长度字段结束|00（或 01）-*01*
+|消息结束|00（或 01）-*11*
+|空闲（无消息）|11-*11*
+|保留|11-*01*
+|保留|任意-*10*
+|===='''

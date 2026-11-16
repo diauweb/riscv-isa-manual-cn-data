@@ -1,0 +1,22 @@
+unit_id = "795798dd7096a916d269140ab564912a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The terms in <<mem-dependencies>> work as follows. Instructions
+are said to carry dependencies from their
+source register(s) to their destination register(s) whenever the value
+written into each destination register is a function of the source
+register(s). For most instructions, this means that the destination
+register(s) carry a dependency from all source register(s). However,
+there are a few notable exceptions. In the case of memory instructions,
+the value written into the destination register ultimately comes from
+the memory system rather than from the source register(s) directly, and
+so this breaks the chain of dependencies carried from the source
+register(s). In the case of unconditional jumps, the value written into
+the destination register comes from the current `pc` (which is never
+considered a source register by the memory model), and so likewise, JALR
+(the only jump with a source register) does not carry a dependency from
+_rs1_ to _rd_.'''
+zh = '''
+<<mem-dependencies>> 中的术语如下所述。每当写入每个目标寄存器的值是源寄存器的函数时，就称指令携带从源寄存器到目标寄存器的依赖。对于大多数指令，这意味着目标寄存器携带来自所有源寄存器的依赖。然而，有一些值得注意的例外。对于内存指令，写入目标寄存器的值最终来自内存系统，而不是直接来自源寄存器，因此这打破了从源寄存器携带的依赖链。对于无条件跳转，写入目标寄存器的值来自当前 `pc`（内存模型从不将其视为源寄存器），因此同样，JALR（唯一带有源寄存器的跳转）不携带从 _rs1_ 到 _rd_ 的依赖。'''

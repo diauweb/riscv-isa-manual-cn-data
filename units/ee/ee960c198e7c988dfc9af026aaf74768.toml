@@ -1,0 +1,100 @@
+unit_id = "ee960c198e7c988dfc9af026aaf74768"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Trace Encoder Parameters and Controls
+[cols="25%,15%,~",options="header"]
+|======================================================================================================
+|Trace Control Field|Applicability|Description
+|trTeActive |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeEnable |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeInstTracing |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeEmpty |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|[[trTeInstMode]] trTeInstMode |*Required*|
+*3:* Generate instruction trace using <<mode_BTM,BTM>> (Branch Trace Messaging) mode. +
+*6:* Generate instruction trace using <<mode_HTM,HTM>> (History Trace Messaging) mode. +
+*0, 7:* See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification. +
+*1-2, 4-5:* Reserved for future N-Trace use. +
+At least a value of *3* or *6* must be settable.
+|[[trTeContext]] trTeContext|Optional|Controls generation of <<msg2_Ownership,Ownership>> messages.
+|trTeInstTrigEnable |Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeInstStallOrOverflow |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeInstStallEna |Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|[[trTeInhibitSrc]] trTeInhibitSrc|Optional|Controls generation of <<field_SRC,SRC>> field.
+|[[trTeInstSyncMode]] trTeInstSyncMode |*Required*|Controls generation of <<Synchronizing Messages,Synchronizing Messages>> with <<field_SYNC,SYNC>> field=2.
+|[[trTeInstSyncMax]] trTeInstSyncMax |*Required*|Controls generation of <<Synchronizing Messages,Synchronizing Messages>> with <<field_SYNC,SYNC>> field=2.
+|trTeFormat |*Required*|Must be set to *1* (which denotes N-Trace format).
+|trTeVerMajor |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeVerMinor |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeCompType |*Required*|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|[[trTeProtocolMajor]] trTeProtocolMajor|*Required*|*Must be 1* to encode this version (1.0) of N-Trace protocol. Value different than 1 is considered a non-compatible version and must be rejected by the trace tool if it is only compliant with version 1.0 of the N-trace protocol.
+|[[trTeProtocolMinor]] trTeProtocolMinor|*Required*|*Must be 0* to encode this version (1.0) of N-Trace protocol. When trTeProtocolMajor is 1, values other than 0 are considered down compatible extension and should be accepted by the trace tool. Any future non-compatible feature should be specifically enabled (by new control bits), so older tools (which never set these new bits) should work with it.
+|trTeInstNoAddrDiff|Not applicable|Must be hard coded as *0*.
+|trTeInstNoTrapAddr|Not applicable|Must be hard coded as *0*.
+|[[trTeInstEnSequentialJump]] trTeInstEnSequentialJump|Optional|See <<Sequential Jump Optimization,Sequential Jump Optimization>> chapter.
+|[[trTeInstEnImplicitReturn]] trTeInstEnImplicitReturn|Optional|See <<Implicit Return Optimization,Implicit Return Optimization>> chapter.
+|trTeInstEnBranchPrediction|Not applicable|Must be hard coded as *0*.
+|trTeInstEnJumpTargetCache|Not applicable|Must be hard coded as *0*.
+|[[trTeInstImplicitReturnMode]] trTeInstImplicitReturnMode|Optional|See <<Implicit Return Optimization,Implicit Return Optimization>> chapter.
+|[[trTeInstEnRepeatedHistory]] trTeInstEnRepeatedHistory|Optional|See <<Repeated History Optimization,Repeated History Optimization>> chapter.
+|[[trTeInstEnAllJumps]] trTeInstEnAllJumps|Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|[[trTeInstExtendAddrMSB]] trTeInstExtendAddrMSB|Optional|See <<Virtual Addresses Optimization, Virtual Addresses Optimization>> chapter.
+|[[trTeSrcID]] trTeSrcID|Optional|Controls generation of <<field_SRC,SRC>> field.
+|[[trTeSrcBits]] trTeSrcBits|Optional|Controls generation of <<field_SRC,SRC>> field.
+|trTeInstFilters|Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|trTeDataImplemented|Not applicable|*Must be 0* as IEEE-5001 Nexus Standard data trace messages are not part of version 1.0 of N-Trace specification.
+|*Other* trTeData...|Not applicable|*Must be 0* as IEEE-5001 Nexus Standard defines data trace messages, future versions of N-Trace may allow these (as an optional extension).
+|*All* trTeTrig...|Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|*All* trTeFilter...|Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|*All* trTeComp...|Optional|See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification.
+|[[trTsEnable]] trTsEnable|Optional| Part of potentially shared Timestamp Unit controls generation of <<field_TSTAMP,TSTAMP>> field. See <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> Specification for details of the Timestamp Unit.
+|======================================================================================================'''
+zh = '''
+.跟踪编码器参数与控制
+[cols="25%,15%,~",options="header"]
+|======================================================================================================
+|跟踪控制字段|适用性|描述
+|trTeActive |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeEnable |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeInstTracing |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeEmpty |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|[[trTeInstMode]] trTeInstMode |*必需*|
+*3：* 使用 <<mode_BTM,BTM>>（Branch Trace Messaging）模式生成指令跟踪。 +
+*6：* 使用 <<mode_HTM,HTM>>（History Trace Messaging）模式生成指令跟踪。 +
+*0、7：* 参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。 +
+*1-2、4-5：* 保留供未来 N-Trace 使用。 +
+至少必须能够设置值 *3* 或 *6*。
+|[[trTeContext]] trTeContext|可选|控制 <<msg2_Ownership,Ownership>> 消息的生成。
+|trTeInstTrigEnable |可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeInstStallOrOverflow |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeInstStallEna |可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|[[trTeInhibitSrc]] trTeInhibitSrc|可选|控制 <<field_SRC,SRC>> 字段的生成。
+|[[trTeInstSyncMode]] trTeInstSyncMode |*必需*|控制带 <<field_SYNC,SYNC>> 字段=2 的 <<Synchronizing Messages,Synchronizing Messages>> 的生成。
+|[[trTeInstSyncMax]] trTeInstSyncMax |*必需*|控制带 <<field_SYNC,SYNC>> 字段=2 的 <<Synchronizing Messages,Synchronizing Messages>> 的生成。
+|trTeFormat |*必需*|必须设置为 *1*（表示 N-Trace 格式）。
+|trTeVerMajor |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeVerMinor |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeCompType |*必需*|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|[[trTeProtocolMajor]] trTeProtocolMajor|*必需*|编码本版本（1.0）N-Trace 协议时**必须为 1**。不同于 1 的值被视为不兼容版本；如果跟踪工具仅符合 N-trace 协议 1.0 版，则必须拒绝该值。
+|[[trTeProtocolMinor]] trTeProtocolMinor|*必需*|编码本版本（1.0）N-Trace 协议时**必须为 0**。当 trTeProtocolMajor 为 1 时，0 以外的值被视为向下兼容扩展，跟踪工具应接受。任何未来不兼容特性都应（通过新控制位）专门启用，以便较旧工具（从不设置这些新位）仍可工作。
+|trTeInstNoAddrDiff|不适用|必须硬连线为 *0*。
+|trTeInstNoTrapAddr|不适用|必须硬连线为 *0*。
+|[[trTeInstEnSequentialJump]] trTeInstEnSequentialJump|可选|参见 <<Sequential Jump Optimization,Sequential Jump Optimization>> 章节。
+|[[trTeInstEnImplicitReturn]] trTeInstEnImplicitReturn|可选|参见 <<Implicit Return Optimization,Implicit Return Optimization>> 章节。
+|trTeInstEnBranchPrediction|不适用|必须硬连线为 *0*。
+|trTeInstEnJumpTargetCache|不适用|必须硬连线为 *0*。
+|[[trTeInstImplicitReturnMode]] trTeInstImplicitReturnMode|可选|参见 <<Implicit Return Optimization,Implicit Return Optimization>> 章节。
+|[[trTeInstEnRepeatedHistory]] trTeInstEnRepeatedHistory|可选|参见 <<Repeated History Optimization,Repeated History Optimization>> 章节。
+|[[trTeInstEnAllJumps]] trTeInstEnAllJumps|可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|[[trTeInstExtendAddrMSB]] trTeInstExtendAddrMSB|可选|参见 <<Virtual Addresses Optimization, Virtual Addresses Optimization>> 章节。
+|[[trTeSrcID]] trTeSrcID|可选|控制 <<field_SRC,SRC>> 字段的生成。
+|[[trTeSrcBits]] trTeSrcBits|可选|控制 <<field_SRC,SRC>> 字段的生成。
+|trTeInstFilters|可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|trTeDataImplemented|不适用|*必须为 0*，因为 IEEE-5001 Nexus 标准数据跟踪消息不属于 N-Trace 规范 1.0 版的一部分。
+|*其他* trTeData...|不适用|*必须为 0*，因为 IEEE-5001 Nexus 标准定义了数据跟踪消息，未来 N-Trace 版本可能允许这些消息（作为可选扩展）。
+|*所有* trTeTrig...|可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|*所有* trTeFilter...|可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|*所有* trTeComp...|可选|参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|[[trTsEnable]] trTsEnable|可选|潜在共享的时间戳单元的一部分，控制 <<field_TSTAMP,TSTAMP>> 字段的生成。有关时间戳单元的详细信息，请参见 <<RISC-V_Trace_Control_Interface,RISC-V Trace Control Interface>> 规范。
+|======================================================================================================'''

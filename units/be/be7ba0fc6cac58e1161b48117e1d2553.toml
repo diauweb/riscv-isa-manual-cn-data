@@ -1,0 +1,15 @@
+unit_id = "be7ba0fc6cac58e1161b48117e1d2553"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+As an example of side-channel analysis, we note that the entropy
+polling interface is typically not "constant time." One needs to
+analyze what kind of information is revealed via the timing oracle;
+one way of doing it is to model `seed` as a rejection
+sampler. Such a timing oracle can reveal information about the noise
+source type and entropy source usage, but not about the random output
+`entropy` bits themselves. If it does, additional countermeasures are
+necessary.'''
+zh = '''
+作为侧信道分析的一个例子，我们注意到熵轮询接口通常不是“常数时间”的。需要分析通过时序预言机揭示了何种信息；一种方法是把 `seed` 建模为拒绝采样器。这样的时序预言机可以揭示有关噪声源类型和熵源使用情况的信息，但不能揭示随机输出 `entropy` 位本身。如果确实揭示了，则需要额外的对策。'''

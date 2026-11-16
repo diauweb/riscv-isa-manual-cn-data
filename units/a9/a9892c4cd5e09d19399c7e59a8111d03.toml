@@ -1,0 +1,29 @@
+unit_id = "a9892c4cd5e09d19399c7e59a8111d03"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Changed MRET and SRET to clear `mstatus`.MPRV when leaving M-mode.
+* Reserved additional `satp` patterns for future use.
+* Stated that the `scause` Exception Code field must implement bits 4–0
+at minimum.
+* Relaxed I/O regions have been specified to follow RVWMO. The previous
+specification implied that PPO rules other than fences and
+acquire/release annotations did not apply.
+* Constrained the LR/SC reservation set size and shape when using
+page-based virtual memory.
+* PMP changes require an SFENCE.VMA on any hart that implements
+page-based virtual memory, even if VM is not currently enabled.
+* Allowed for speculative updates of page table entry A bits.
+* Clarify that if the address-translation algorithm non-speculatively
+reaches a PTE in which a bit reserved for future standard use is set, a
+page-fault exception must be raised.'''
+zh = '''
+* 更改了 MRET 和 SRET，使其在离开 M 模式时清除 `mstatus`.MPRV。
+* 为未来使用保留了额外的 `satp` 模式。
+* 声明 `scause` 的异常代码字段至少必须实现位 4–0。
+* 规定宽松 I/O 区域遵循 RVWMO。先前的规范暗示除屏障和获取/释放标注之外的 PPO 规则不适用。
+* 在使用基于页的虚拟内存时，限制了 LR/SC 保留集的大小和形状。
+* 任何实现了基于页的虚拟内存的硬件线程（即使 VM 当前未启用）在进行 PMP 更改时都需要执行 SFENCE.VMA。
+* 允许对页表项 A 位进行推测性更新。
+* 澄清了如果地址转换算法非推测性地到达一个设置了未来标准用途保留位的 PTE，则必须引发页错误异常。'''

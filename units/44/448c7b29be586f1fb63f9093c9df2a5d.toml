@@ -1,0 +1,19 @@
+unit_id = "448c7b29be586f1fb63f9093c9df2a5d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An unsuccessful `AMOCAS.W/D/Q` may either not perform a memory write or may
+write back the old value loaded from memory. The memory write, if produced, does
+not have release semantics, regardless of `rl`.
+Irrespective of whether a write is actually performed, the instruction is
+treated as an AMO for the purposes of the RVWMO PPO rules.
+===='''
+zh = '''
+[NOTE]
+====
+未成功的 `AMOCAS.W/D/Q` 可以既不执行内存写，也可以写回从内存加载的旧值。若产生内存写，无论 `rl` 为何，该写均不具有释放语义。
+无论是否实际执行写，出于 RVWMO PPO 规则的目的，该指令均被视为 AMO。
+===='''

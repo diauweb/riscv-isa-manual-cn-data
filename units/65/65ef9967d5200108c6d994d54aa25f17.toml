@@ -1,0 +1,9 @@
+unit_id = "65ef9967d5200108c6d994d54aa25f17"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let index = shamt & (XLEN - 1);
+X(rd) = X(rs1) & ~(1 << index)
+--'''

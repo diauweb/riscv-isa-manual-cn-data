@@ -1,0 +1,24 @@
+unit_id = "71b46af737c5ea56ee8781c726f3432a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+2+| csr:vxrm[][1:0] | Abbreviation | Rounding Mode | Rounding increment, `r`
+
+| 0 | 0 | rnu | round-to-nearest-up (add +0.5 LSB)          | `v[d-1]`
+| 0 | 1 | rne | round-to-nearest-even                       | `v[d-1] & (v[d-2:0]{ne}0 \| v[d])`
+| 1 | 0 | rdn | round-down                                  | `0`
+| 1 | 1 | rod | round-to-odd (OR bits into LSB, aka "`jam`")  | `!v[d] & v[d-1:0]{ne}0`
+|==='''
+zh = '''
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+2+| csr:vxrm[][1:0] | 缩写 | 舍入模式 | 舍入增量 `r`
+
+| 0 | 0 | rnu | 向最近舍入-向上（加 +0.5 LSB）          | `v[d-1]`
+| 0 | 1 | rne | 向最近舍入-取偶                       | `v[d-1] & (v[d-2:0]{ne}0 \| v[d])`
+| 1 | 0 | rdn | 向下舍入                                  | `0`
+| 1 | 1 | rod | 向奇舍入（将位 OR 进 LSB，又称“jam”）  | `!v[d] & v[d-1:0]{ne}0`
+|==='''

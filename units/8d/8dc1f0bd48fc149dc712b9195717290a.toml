@@ -1,0 +1,24 @@
+unit_id = "8dc1f0bd48fc149dc712b9195717290a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_seip_mie_seie_op]#If supervisor mode is implemented, bits csr:mip[seip] and csr:mie[seie] are
+the interrupt-pending and interrupt-enable bits for supervisor-level external interrupts.#
+[#norm:mip_seip_acc]#csr::[seip] is writable in csr:mip[]#, and may be written by
+M-mode software to indicate to S-mode that an external interrupt is
+pending. Additionally, the platform-level interrupt controller may
+generate supervisor-level external interrupts.
+[#norm:intr_sei_op]#Supervisor-level external interrupts are made pending based on the logical-OR of the
+software-writable csr::[seip] bit and the signal from the external interrupt controller.#
+[#norm:mip_seip_rdcsr]#When csr:mip[] is read with a CSR instruction, the value of the
+csr::[seip] bit returned in the _rd_ destination register is the logical-OR of
+the software-writable bit and the interrupt signal from the interrupt
+controller#, but [#norm:mip_seip_wrcsr]#the signal from the interrupt controller is not used to
+calculate the value written to csr::[seip]. Only the software-writable csr::[seip] bit
+participates in the read-modify-write sequence of a insn:csrrs[] or insn:csrrc[] instruction.#'''
+zh = '''
+[#norm:mip_seip_mie_seie_op]#如果实现了监管模式，则位 csr:mip[seip] 和 csr:mie[seie] 是监管级外部中断的中断挂起位和中断使能位。#
+[#norm:mip_seip_acc]#csr::[seip] 在 csr:mip[] 中可写#，M 模式软件可以写入它以向 S 模式指示外部中断挂起。此外，平台级中断控制器可以生成监管级外部中断。
+[#norm:intr_sei_op]#监管级外部中断基于软件可写 csr::[seip] 位与来自外部中断控制器的信号的逻辑或而变为挂起。#
+[#norm:mip_seip_rdcsr]#当使用 CSR 指令读取 csr:mip[] 时，目标寄存器 _rd_ 中返回的 csr::[seip] 位的值是软件可写位与来自中断控制器的中断信号的逻辑或#，但 [#norm:mip_seip_wrcsr]#来自中断控制器的信号不用于计算写入 csr::[seip] 的值。只有软件可写的 csr::[seip] 位参与 insn:csrrs[] 或 insn:csrrc[] 指令的读-修改-写序列。#'''

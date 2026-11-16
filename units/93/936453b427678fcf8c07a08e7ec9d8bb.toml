@@ -1,0 +1,21 @@
+unit_id = "936453b427678fcf8c07a08e7ec9d8bb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:fetch_page_fault_no_x]#Attempting to fetch an instruction from a page that does not have
+execute permissions raises a fetch page-fault exception.#
+[#norm:load_page_fault_no_r]#Attempting to execute a load or load-reserved
+instruction whose effective address lies
+within a page without read permissions raises a load page-fault exception.#
+[#norm:store_page_fault_no_w]#Attempting to execute a store, store-conditional, AMO, or cache-block zero
+instruction whose effective address lies within a page without write
+permissions raises a store page-fault exception.#
+[#norm:cbm_page_fault]#The permissions required for a cache-block management instruction are
+defined in <<cmo>>; when address translation does not permit any access, the instruction raises a
+store page-fault exception.#'''
+zh = '''
+[#norm:fetch_page_fault_no_x]#尝试从没有执行权限的页取指会引发取指页错误异常。#
+[#norm:load_page_fault_no_r]#尝试执行有效地址位于没有读权限的页内的加载或加载保留指令会引发加载页错误异常。#
+[#norm:store_page_fault_no_w]#尝试执行有效地址位于没有写权限的页内的存储、存储条件、AMO 或缓存块零指令会引发存储页错误异常。#
+[#norm:cbm_page_fault]#缓存块管理指令所需的权限在 <<cmo>> 中定义；当地址转换不允许任何访问时，该指令引发存储页错误异常。#'''

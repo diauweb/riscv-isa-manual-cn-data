@@ -1,0 +1,25 @@
+unit_id = "19977ebd7d5122e92edbb1815976f5c6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Notes to software developers
+[NOTE,caption="SH"]
+====
+The insn:pack*[] instructions are
+useful for re-arranging halfwords within words, and
+generally getting data into the right shape prior to applying transforms.
+This is particularly useful for cryptographic algorithms which pass inputs
+around as (potentially unaligned) byte strings, but can operate on words
+made out of those byte strings.
+This occurs (for example) in AES when loading blocks and keys (which may not
+be word aligned) into registers to perform the round functions.
+===='''
+zh = '''
+.致软件开发者
+[NOTE,caption="SH"]
+====
+insn:pack*[] 指令对于在字内重新排列半字，以及在应用变换之前将数据整理成正确形状通常很有用。
+这对于以（可能未对齐的）字节串形式传递输入，但可以对这些字节串构成的字进行操作的密码算法特别有用。
+例如，在 AES 中，当将块和密钥（可能不是字对齐的）加载到寄存器中以执行轮函数时，就会出现这种情况。
+===='''

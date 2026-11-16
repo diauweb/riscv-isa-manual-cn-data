@@ -1,0 +1,11 @@
+unit_id = "4fb69b41d33b4bce24d57bbfaa5cb92b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_inc_ialign]#Writing `misa` may increase IALIGN, e.g., by disabling the "C"
+extension. If an instruction that would write `misa` increases IALIGN,
+and the subsequent instruction's address is not IALIGN-bit aligned, the
+write to `misa` is suppressed, leaving `misa` unchanged.#'''
+zh = '''
+[#norm:misa_inc_ialign]#写入 `misa` 可能增大 IALIGN，例如通过禁用 "C" 扩展。若一条将要写入 `misa` 的指令增大了 IALIGN，而随后那条指令的地址不是 IALIGN 位对齐的，则该次对 `misa` 的写入被抑制，`misa` 保持不变。#'''

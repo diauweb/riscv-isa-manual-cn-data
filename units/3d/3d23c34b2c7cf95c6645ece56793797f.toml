@@ -1,0 +1,11 @@
+unit_id = "3d23c34b2c7cf95c6645ece56793797f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When V=1, both `vsstatus`.FS and the HS-level `sstatus`.FS are in
+effect. Attempts to execute a floating-point instruction when either
+field is 0 (Off) raise an illegal-instruction exception. Modifying the
+floating-point state when V=1 causes both fields to be set to 3 (Dirty).'''
+zh = '''
+当 V=1 时，`vsstatus`.FS 和 HS 级 `sstatus`.FS 均生效。当任一字段为 0（Off）时尝试执行浮点指令会引发非法指令异常。当 V=1 时修改浮点状态会使两个字段均被设置为 3（Dirty）。'''

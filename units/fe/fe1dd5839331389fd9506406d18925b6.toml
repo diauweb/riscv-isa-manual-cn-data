@@ -1,0 +1,24 @@
+unit_id = "fe1dd5839331389fd9506406d18925b6"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} | `fmv.x.s s0, f1` |
+| Write | `progbuf1` | `ebreak` |
+| Write | {dm-command} | {accessregister-postexec} | Execute program buffer
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-regno} = 0x1008 | read `s0`
+| Read | {dm-data0} | - | Returns the value that was in `f1`
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `fmv.x.s s0, f1` |
+| 写 | `progbuf1` | `ebreak` |
+| 写 | {dm-command} | {accessregister-postexec} | 执行程序缓冲区
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-regno} = 0x1008 | 读取 `s0`
+| 读 | {dm-data0} | - | 返回 `f1` 中原有的值
+|==='''

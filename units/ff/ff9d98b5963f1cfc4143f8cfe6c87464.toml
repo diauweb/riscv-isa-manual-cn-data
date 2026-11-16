@@ -1,0 +1,23 @@
+unit_id = "ff9d98b5963f1cfc4143f8cfe6c87464"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Let `M` be the smallest power of 2 such that `M` {ge} `min(ILEN,XLEN)/8`.
+Let `N` be the `pc` modulo `M`.
+Atomically fetch `M` - `N` bytes from memory at address `pc`.
+Let `T` be the running total of bytes fetched, initially `M` - `N`.
+
+. If the `T` bytes fetched begin with a complete instruction of length `L` {le}
+`T`, then execute that instruction, discard the remaining `T` - `L` bytes
+fetched, and go back to step 1, using the updated `pc`.
+Otherwise, atomically fetch `M` bytes from memory at address `pc` + `T`,
+increment `T` by `M`, and repeat step 2.'''
+zh = '''
+. 令 `M` 为满足 `M` {ge} `min(ILEN,XLEN)/8` 的最小 2 的幂。
+令 `N` 为 `pc` 对 `M` 取模。
+从地址 `pc` 处的内存原子地取指 `M` - `N` 个字节。
+令 `T` 为已取指字节的运行总数，初始为 `M` - `N`。
+
+. 如果已取指的 `T` 个字节以一条长度 `L` {le} `T` 的完整指令开始，则执行该指令，丢弃已取指的其余 `T` - `L` 个字节，并使用更新后的 `pc` 回到步骤 1。
+否则，从地址 `pc` + `T` 处的内存原子地取指 `M` 个字节，将 `T` 增加 `M`，并重复步骤 2。'''

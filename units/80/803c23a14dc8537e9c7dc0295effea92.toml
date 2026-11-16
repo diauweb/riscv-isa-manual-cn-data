@@ -1,0 +1,13 @@
+unit_id = "803c23a14dc8537e9c7dc0295effea92"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-flw_op]#insn:c.flw[] is an RV32FC-only instruction that loads a single-precision
+floating-point value from memory into floating-point register
+`_rd′_`. It computes an effective address by adding the
+_zero_-extended offset, scaled by 4, to the base address in register
+`_rs1′_`. It expands to
+insn:flw[rd′,offset(rs1′)].#'''
+zh = '''
+[#norm:c-flw_op]#insn:c.flw[] 是仅限 RV32FC 的指令，从内存加载单精度浮点值到浮点寄存器 `_rd′_`。它通过将按 4 缩放的__零__扩展偏移量加到寄存器 `_rs1′_` 中的基址上来计算有效地址。它展开为 insn:flw[rd′,offset(rs1′)]。#'''

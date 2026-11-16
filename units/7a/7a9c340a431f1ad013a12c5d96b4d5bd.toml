@@ -1,0 +1,14 @@
+unit_id = "7a9c340a431f1ad013a12c5d96b4d5bd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Return-address prediction stacks are a common feature of
+high-performance instruction-fetch units, but require accurate detection
+of instructions used for procedure calls and returns to be effective.
+For RISC-V, hints as to the instructions' usage are encoded implicitly
+via the register numbers used. A JAL instruction should push the return
+address onto a return-address stack (RAS) only when _rd_ is 'x1' or
+`x5`. JALR instructions should push/pop a RAS as shown in <<rashints>>.'''
+zh = '''
+返回地址预测栈是高性能指令取指单元的常见特性，但需要准确检测用于过程调用和返回的指令才能有效。对于 RISC-V，关于指令用途的提示通过所使用的寄存器号隐式编码。JAL 指令应仅在 _rd_ 为 'x1' 或 `x5` 时将返回地址压入返回地址栈（RAS）。JALR 指令应按照 <<rashints>> 所示压入/弹出 RAS。'''

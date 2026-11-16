@@ -1,0 +1,42 @@
+unit_id = "71e22e68329576a5262e38c42f3e98c2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Allowed Connections Between Components*
+[cols="15%,15%,~",options="header"]
+|===
+|*Input* |*Output* |*Description*
+|Ingress Port|Trace Encoder|Ingress Port (from hart) providing raw trace to be encoded
+
+|Trace Encoder|Trace RAM Sink|Single hart tracing to RAM buffer
+|Trace Encoder|Trace PIB Sink|Single hart tracing via pins
+|Trace Encoder|Trace ATB Bridge|Single hart tracing to Arm ATB infrastructure
+|Trace Encoder|Trace Funnel|Sending trace from single hart to Trace Funnel (to be combined from other RISC-V trace)
+
+|Trace Funnel|Trace Funnel|Sending combined trace from multiple harts to higher level Trace Funnel (to be combined from other RISC-V trace)
+|Trace Funnel|Trace RAM Sink|Sending combined trace from multiple harts to RAM buffer
+|Trace Funnel|Trace PIB Sink|Sending combined trace from multiple harts via pins
+|Trace Funnel|Trace ATB Bridge|Sending combined trace from multiple harts to Arm ATB infrastructure
+
+|Trace ATB Bridge |Arm ATB bus|Sending trace to ATB (to combine RISC-V trace with other Arm components on the system)
+|==='''
+zh = '''
+.*组件之间允许的连接*
+[cols="15%,15%,~",options="header"]
+|===
+|*输入* |*输出* |*描述*
+|入口端口|跟踪编码器|入口端口（来自硬件线程）提供要编码的原始跟踪
+
+|跟踪编码器|跟踪 RAM 接收端|单硬件线程跟踪到 RAM 缓冲区
+|跟踪编码器|跟踪 PIB 接收端|单硬件线程通过引脚进行跟踪
+|跟踪编码器|跟踪 ATB 桥|单硬件线程跟踪到 Arm ATB 基础设施
+|跟踪编码器|跟踪漏斗|将单硬件线程的跟踪发送到跟踪漏斗（以便与其他 RISC-V 跟踪组合）
+
+|跟踪漏斗|跟踪漏斗|将来自多个硬件线程的组合跟踪发送到更高层跟踪漏斗（以便与其他 RISC-V 跟踪组合）
+|跟踪漏斗|跟踪 RAM 接收端|将来自多个硬件线程的组合跟踪发送到 RAM 缓冲区
+|跟踪漏斗|跟踪 PIB 接收端|将来自多个硬件线程的组合跟踪通过引脚发送
+|跟踪漏斗|跟踪 ATB 桥|将来自多个硬件线程的组合跟踪发送到 Arm ATB 基础设施
+
+|跟踪 ATB 桥 |Arm ATB 总线|将跟踪发送到 ATB（以便将 RISC-V 跟踪与系统上的其他 Arm 组件组合）
+|==='''

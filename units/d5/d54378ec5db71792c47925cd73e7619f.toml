@@ -1,0 +1,41 @@
+unit_id = "d54378ec5db71792c47925cd73e7619f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Optional sideband encoder input signals
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*impdef*[_impdef_width_p_-1:0] | O | Implementation defined sideband
+signals. A typical use for these would be for filtering (see
+<<ch:filtering>>.
+|*trigger*[2+:0] | [1:0]: O +
+[2+]: OR | A pulse on bit 0 will cause the
+encoder to start tracing, and continue until further notice, subject to
+other filtering criteria also being met. A pulse on bit 1 will cause the
+encoder to stop tracing until further notice. See <<sec:trigger>>).
+|*halted* | O | Hart is halted. Upon assertion, the encoder will output a
+packet to report the address of the last instruction retired before
+halting, followed by a support packet to indicate that tracing has
+stopped. Upon deassertion, the encoder will start tracing again,
+commencing with a synchronization packet. *Note:* If this signal is not
+provided, it is strongly recommended that Debug mode can be signalled
+via a 3-bit *privilege* signal. This will allow tracing in Debug mode to
+be controlled via the optional filtering capabilities.
+|*reset* | O | Hart is in reset. Provided the encoder is in a different
+reset domain to the hart, this allows the encoder to indicate that
+tracing has ended on entry to reset, and restarted on exit. Behavior is
+as described above for halt.
+|==='''
+zh = '''
+.可选的边带编码器输入信号
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *信号* | *组* | *功能*
+|*impdef*[_impdef_width_p_-1:0] | O | 实现定义的边带信号。其典型用途是用于过滤（见 <<ch:filtering>>）。
+|*trigger*[2+:0] | [1:0]: O +
+[2+]: OR | 第 0 位上的脉冲将使编码器开始跟踪，并持续到另行通知为止，前提是其他过滤条件也满足。第 1 位上的脉冲将使编码器停止跟踪，直到另行通知。见 <<sec:trigger>>。
+|*halted* | O | 硬件线程已停住。一旦置位，编码器将输出一个包，报告停住前退役的最后一条指令的地址，随后输出一个支持包以指示跟踪已停止。一旦撤销置位，编码器将重新开始跟踪，并以同步包开始。*注意：* 如果未提供该信号，强烈建议能够通过 3 位的 *privilege* 信号来指示调试模式。这将允许通过可选的过滤能力来控制调试模式下的跟踪。
+|*reset* | O | 硬件线程处于复位状态。只要编码器与硬件线程处于不同的复位域，这便允许编码器指示跟踪已在进入复位时结束，并在退出复位时重新开始。行为与上文针对停住所描述的相同。
+|==='''

@@ -1,0 +1,40 @@
+unit_id = "51dfa76864fa896350957ae0a098dc5e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mappings from ARM operations to RISC-V operations
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!ARM Operation !RVWMO Mapping
+!Load !`l{b|h|w|d}`
+!Load-Acquire !`fence rw, rw; l{b|h|w|d}; fence r,rw`
+!Load-Exclusive !`lr.{w|d}`
+!Load-Acquire-Exclusive !`lr.{w|d}.aqrl`
+!Store !`s{b|h|w|d}`
+!Store-Release !`fence rw,w; s{b|h|w|d}`
+!Store-Exclusive !`sc.{w|d}`
+!Store-Release-Exclusive !`sc.{w|d}.rl`
+!`dmb` !`fence rw,rw`
+!`dmb.ld` !`fence r,rw`
+!`dmb.st` !`fence w,w`
+!`isb` !`fence.i; fence r,r`
+|==='''
+zh = '''
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+.从 ARM 操作到 RISC-V 操作的映射
+|===
+!ARM 操作 !RVWMO 映射
+!加载 !`l{b|h|w|d}`
+!加载-获取 !`fence rw, rw; l{b|h|w|d}; fence r,rw`
+!加载-独占 !`lr.{w|d}`
+!加载-获取-独占 !`lr.{w|d}.aqrl`
+!存储 !`s{b|h|w|d}`
+!存储-释放 !`fence rw,w; s{b|h|w|d}`
+!存储-独占 !`sc.{w|d}`
+!存储-释放-独占 !`sc.{w|d}.rl`
+!`dmb` !`fence rw,rw`
+!`dmb.ld` !`fence r,rw`
+!`dmb.st` !`fence w,w`
+!`isb` !`fence.i; fence r,r`
+|==='''

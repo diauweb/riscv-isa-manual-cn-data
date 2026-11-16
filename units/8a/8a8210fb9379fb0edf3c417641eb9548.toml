@@ -1,0 +1,14 @@
+unit_id = "8a8210fb9379fb0edf3c417641eb9548"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the ext:zama16b[] extension is implemented, then the
+<<sec:misaligned-atomicity-granule,misaligned atomicity granule>>
+in main memory regions with both the coherence and cacheability PMAs is 16 bytes.
+Misaligned loads, stores and AMOs to those regions that do not cross a naturally
+aligned 16-byte boundary are atomic.'''
+zh = '''
+如果实现了 ext:zama16b[] 扩展，那么主内存区域中同时具有一致性和可缓存性 PMA 的
+<<sec:misaligned-atomicity-granule,非对齐原子性粒度>> 为 16 字节。
+对这些区域的不跨越自然对齐 16 字节边界的非对齐加载、存储和 AMO 是原子的。'''

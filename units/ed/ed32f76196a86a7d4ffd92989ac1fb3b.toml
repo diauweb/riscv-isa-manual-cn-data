@@ -1,0 +1,18 @@
+unit_id = "ed32f76196a86a7d4ffd92989ac1fb3b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[IMPORTANT]
+====
+* Values of *I-CNT=4 or 6 or 9* are *INCORRECT* as it would mean that only half of corresponding 32-bit instruction was executed/retired.
+* Decoders must report such incorrect I-CNT values and immediately abandon the decoding as it means that either an encoder is not conforming to this specification or a trace was captured incorrectly.
+* Decoding may resume at the next <<Synchronizing Messages,synchronizing message>>, but it is not mandatory for all decoders to do so.
+===='''
+zh = '''
+[IMPORTANT]
+====
+* *I-CNT=4 或 6 或 9* 的值是**不正确的**，因为这意味着仅执行/退休了相应 32 位指令的一半。
+* 解码器必须报告此类不正确的 I-CNT 值，并立即放弃解码，因为这意味着编码器不符合本规范，或者跟踪捕获不正确。
+* 解码可以在下一个 <<Synchronizing Messages,synchronizing message>> 处恢复，但并非所有解码器都必须这样做。
+===='''

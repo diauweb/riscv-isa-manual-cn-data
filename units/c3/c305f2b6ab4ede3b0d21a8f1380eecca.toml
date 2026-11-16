@@ -1,0 +1,31 @@
+unit_id = "c305f2b6ab4ede3b0d21a8f1380eecca"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For RV32, `SSAMOSWAP.W` atomically loads a 32-bit data value from address of a
+shadow stack location in `rs1`, puts the loaded value into register `rd`, and
+stores the 32-bit value held in `rs2` to the original address in `rs1`.
+`SSAMOSWAP.D` (RV64 only) is similar to `SSAMOSWAP.W` but operates on 64-bit
+data values.'''
+zh = '''
+对于 RV32，`SSAMOSWAP.W` 从 `rs1` 中的影子栈位置地址原子加载一个 32 位数据值，将加载的值放入寄存器 `rd`，并将 `rs2` 中保存的 32 位值存储到 `rs1` 中的原地址。`SSAMOSWAP.D`（仅 RV64）与 `SSAMOSWAP.W` 类似，但操作 64 位数据值。
+
+.RV32 的 `SSAMOSWAP.W` 和 `SSAMOSWAP.D`（仅 RV64）操作
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      X(rd) = mem[X(rs1)]
+      mem[X(rs1)] = X(rs2)
+  endif
+----'''

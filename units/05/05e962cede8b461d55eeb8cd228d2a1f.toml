@@ -1,0 +1,20 @@
+unit_id = "05e962cede8b461d55eeb8cd228d2a1f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Store-to-load forwarding is a common technique employed by high-performance
+processor implementations. ext:zicfiss[] implementations may prevent forwarding from
+a non-shadow-stack store to insn:sspopchk[] or insn:c.sspopchk[]. A
+non-shadow-stack store causes a fault if done to a page mapped as a shadow
+stack. However, such determination may be delayed till the PTE has been examined
+and thus may be used to transiently forward the data from such stores to
+insn:sspopchk[] or to insn:c.sspopchk[].
+===='''
+zh = '''
+[NOTE]
+====
+存储到加载转发是高性能处理器实现常用的一种技术。ext:zicfiss[] 实现可以阻止从非影子栈存储到 insn:sspopchk[] 或 insn:c.sspopchk[] 的转发。如果对映射为影子栈的页执行非影子栈存储，则会引发错误。然而，这种判定可能会延迟到检查 PTE 之后，因此可能被用于将来自此类存储的数据瞬态转发到 insn:sspopchk[] 或 insn:c.sspopchk[]。
+===='''

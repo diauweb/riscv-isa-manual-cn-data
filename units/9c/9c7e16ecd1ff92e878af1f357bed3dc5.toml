@@ -1,0 +1,46 @@
+unit_id = "9c7e16ecd1ff92e878af1f357bed3dc5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Unified load or store, with address and data
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 2 or 3 | Transaction type: +
+000: Unified load or split load address, aligned +
+001: Unified load or split load address, unaligned +
+010: Store, aligned address +
+011: Store, unaligned address +
+(other codes select other packet formats)
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*diff* | 2 | 00: Full address and data (sync) +
+01: Differential address, XOR-compressed data +
+10: Differential address, full data +
+11: Differentail address, differential data
+|*data_len* | *size* | Number of bytes of data is *data_len* + 1
+|*data* | 8 * (*data_len* + 1) | Data
+|*address* | _daddress_width_p_ | Byte address if format is unaligned,
+otherwise shift left by *size* to recover byte address
+|==='''
+zh = '''
+.统一加载或存储包格式，带地址和数据
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名* | *位数* | *描述*
+|*format* | 2 或 3 | 事务类型： +
+000：统一加载或分离加载地址，对齐 +
+001：统一加载或分离加载地址，非对齐 +
+010：存储，对齐地址 +
+011：存储，非对齐地址 +
+（其他代码选择其他包格式）
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*diff* | 2 | 00：完整地址和数据（同步） +
+01：差分地址，XOR 压缩数据 +
+10：差分地址，完整数据 +
+11：差分地址，差分数据
+|*data_len* | *size* | 数据字节数为 *data_len* + 1
+|*data* | 8 * (*data_len* + 1) | 数据
+|*address* | _daddress_width_p_ | 如果格式为非对齐则为字节地址，否则左移 *size* 位以恢复字节地址
+|==='''

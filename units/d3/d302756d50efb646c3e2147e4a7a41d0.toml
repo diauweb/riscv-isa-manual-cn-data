@@ -1,0 +1,29 @@
+unit_id = "d302756d50efb646c3e2147e4a7a41d0"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+RV64:
+
+switch (rlist) {
+  case  4.. 5: stack_adj_base =  16;
+  case  6.. 7: stack_adj_base =  32;
+  case  8.. 9: stack_adj_base =  48;
+  case 10..11: stack_adj_base =  64;
+  case 12..13: stack_adj_base =  80;
+  case     14: stack_adj_base =  96;
+  case     15: stack_adj_base = 112;
+}
+
+Valid values:
+switch (rlist) {
+  case  4.. 5: stack_adj = [ 16| 32| 48| 64];
+  case  6.. 7: stack_adj = [ 32| 48| 64| 80];
+  case  8.. 9: stack_adj = [ 48| 64| 80| 96];
+  case 10..11: stack_adj = [ 64| 80| 96|112];
+  case 12..13: stack_adj = [ 80| 96|112|128];
+  case     14: stack_adj = [ 96|112|128|144];
+  case     15: stack_adj = [112|128|144|160];
+}
+----'''

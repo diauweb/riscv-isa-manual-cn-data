@@ -1,0 +1,14 @@
+unit_id = "ce5b01047e6712406b61ee0f7429ae8f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+It is observable that the Store_ea can occur before the value to be
+stored is determined. For example, for the litmus test
+LB+fence.r.rw+data-po to be allowed by the operational model (as it is
+by RVWMO), the first store in Hart 1 has to take the Store_ea step
+before its value is determined, so that the second store can see it is
+to a non-overlapping memory footprint, allowing the second store to be
+committed out of order without violating coherence.'''
+zh = '''
+可以观察到，Store_ea 可以在要存储的值确定之前发生。例如，为了使 litmus 测试 LB+fence.r.rw+data-po 被操作模型允许（正如 RVWMO 所允许的那样），硬件线程 1 中的第一个存储必须在其值确定之前执行 Store_ea 步骤，以便第二个存储可以看到它是非重叠内存足迹，从而允许第二个存储乱序提交而不违反一致性。'''

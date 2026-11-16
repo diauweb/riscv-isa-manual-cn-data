@@ -1,0 +1,14 @@
+unit_id = "c1148b74401a79dcd7732be635de380d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The hypervisor should copy the value written to `senvcfg.PMM` by the guest to the `hstatus.HUPMM` field prior to invoking `HLV.\*` or `HSV.*` instructions in U-mode.
+===='''
+zh = '''
+[NOTE]
+====
+Hypervisor 应在 U 模式中调用 `HLV.\*` 或 `HSV.*` 指令之前，将客户机写入 `senvcfg.PMM` 的值复制到 `hstatus.HUPMM` 字段。
+===='''

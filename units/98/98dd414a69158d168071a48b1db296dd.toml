@@ -1,0 +1,11 @@
+unit_id = "98dd414a69158d168071a48b1db296dd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The pseudocode of each instruction performs at most one store or one
+load, except for AMOs that perform exactly one load and one store. Those
+memory accesses are then split apart into the architecturally atomic
+units by the hart semantics (see <<initiate_load, Initiate memory load operations>> and <<initiate_store_footprint, Initiate memory store operation footprints>> below).'''
+zh = '''
+每条指令的伪代码最多执行一个存储或一个加载，除了 AMO 恰好执行一个加载和一个存储。然后，这些内存访问由硬件线程语义拆分为架构上原子的单元（见下面的 <<initiate_load, 发起内存加载操作>> 和 <<initiate_store_footprint, 发起内存存储操作足迹>>）。'''

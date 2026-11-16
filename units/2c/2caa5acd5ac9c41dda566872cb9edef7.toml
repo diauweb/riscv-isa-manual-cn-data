@@ -1,0 +1,14 @@
+unit_id = "2caa5acd5ac9c41dda566872cb9edef7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zalasr_signext_rd]#The ext:zalasr[] instructions always sign-extend the value placed in _rd_# and [#norm:zalasr_ignore_rs2_upper]#ignore the upper bits of the value of _rs2_.#
+[#norm:zalasr_natural_align]#The instructions in the ext:zalasr[] extension require that the address held in _rs1_ be naturally aligned to the size in bytes (2^width^) of the operand.#
+[#norm:zalasr_misaligned_exception]#If the address is not naturally aligned, an address-misaligned exception or an access-fault exception will be generated.#
+The access-fault exception can be generated for a memory access that would otherwise be able to complete except for the misalignment, if the misaligned access should not be emulated.'''
+zh = '''
+[#norm:zalasr_signext_rd]#ext:zalasr[] 指令总是对写入 _rd_ 的值进行符号扩展#，并[#norm:zalasr_ignore_rs2_upper]##忽略 _rs2_ 值的高位##。
+[#norm:zalasr_natural_align]#ext:zalasr[] 扩展中的指令要求 _rs1_ 中保存的地址按操作数大小（以字节计，2^width^）自然对齐。#
+[#norm:zalasr_misaligned_exception]#如果地址未自然对齐，将产生地址非对齐异常或访问故障异常。#
+如果非对齐访问不应被模拟，那么对于本可完成、仅因非对齐而无法完成的内存访问，可以产生访问故障异常。'''

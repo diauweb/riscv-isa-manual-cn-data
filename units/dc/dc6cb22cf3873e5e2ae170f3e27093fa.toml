@@ -1,0 +1,33 @@
+unit_id = "dc6cb22cf3873e5e2ae170f3e27093fa"
+kind = "diagram"
+translatable = false
+en = '''
+.Trace Encoder Interfaces
+["ditaa",shadows=true, separation=false, fontsize: 14]
+....
+
+                      +--- Control register
+                      |    read/write
+                      |
+      +----------+    V    +---------------------+
+      |          |         | Trace Control Layer |
+      | Debug    |<=======>|                     |-----> Control of other
+      | Module   |         |  +-------------+    |       trace components
+      |          |<------->|  |Trace Encoder|    |       (transport/storage)
+      +----------+    ^    +--|  Control    |----+
+            ^         |       +-------------+
+            | <--- triggers,      ^
+            |      stall etc.     |
+            V                     | <------ Encoder control/status signals
++----------------+                |         (bits/fields in registers)
+| RISC−V Hart    |                V
+|          +---------+       +---------+
+|          |  Trace  |       |  Trace  |                To N−Trace transport
+|          | Ingress |======>| Encoder |==============> for multiplexing/
+|          |  Port   |   ^   |         |       ^        storage/export
+|          +---------+   |   +---------+       |
+|                |       |                     +--- Encoded trace messages
+|                |       |   Ingress port           for single hart (with
++----------------+       +-- signals defined        optional source ID)
+                             in E−Trace spec
+....'''

@@ -1,0 +1,12 @@
+unit_id = "6f1fb6ed5f3322bd02c98749e201fe6c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Notice that writing to memory is split into two steps, Store_ea and
+Store_memv: the first one makes the memory footprint of the store
+provisionally known, and the second one adds the value to be stored. We
+ensure these are paired in the pseudocode (Store_ea followed by
+Store_memv), but there may be other steps between them.'''
+zh = '''
+注意，写内存被拆分为两个步骤：Store_ea 和 Store_memv：第一个步骤使存储的内存足迹暂时已知，第二个步骤添加要存储的值。我们确保它们在伪代码中成对出现（Store_ea 后跟 Store_memv），但它们之间可能存在其他步骤。'''

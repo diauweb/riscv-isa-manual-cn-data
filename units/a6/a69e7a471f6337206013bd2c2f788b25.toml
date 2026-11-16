@@ -1,0 +1,13 @@
+unit_id = "a69e7a471f6337206013bd2c2f788b25"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Interrupts will fire as usual. Debuggers that want to disable interrupts
+while stepping must disable them by changing `mstatus`, and specially handle
+instructions that read `mstatus`.
+. `wfi` instructions are not treated specially and might take a very long
+time to complete.'''
+zh = '''
+. 中断将照常触发。希望在单步期间禁用中断的调试器必须通过更改 `mstatus` 来禁用它们，并特殊处理读取 `mstatus` 的指令。
+. `wfi` 指令不被特殊处理，并且可能需要很长时间才能完成。'''

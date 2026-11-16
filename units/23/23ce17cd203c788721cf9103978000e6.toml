@@ -1,0 +1,71 @@
+unit_id = "23ce17cd203c788721cf9103978000e6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+By default, the FENCE instruction ensures that all memory accesses from
+instructions preceding the fence in program order (the "predecessor
+set") appear earlier in the global memory order than memory accesses
+from instructions appearing after the fence in program order (the
+"successor set"). However, fences can optionally further restrict the
+predecessor set and/or the successor set to a smaller set of memory
+accesses in order to provide some speedup. Specifically, fences have PR,
+PW, SR, and SW bits which restrict the predecessor and/or successor
+sets. The predecessor set includes loads (resp.stores) if and only if PR
+(resp.PW) is set. Similarly, the successor set includes loads
+(resp.stores) if and only if SR (resp.SW) is set.
+
+The FENCE encoding currently has nine non-trivial combinations of the
+four bits PR, PW, SR, and SW, plus one extra encoding FENCE.TSO which
+facilitates mapping of "acquire+release" or RVTSO semantics. The
+remaining seven combinations have empty predecessor and/or successor
+sets and hence are no-ops. Of the ten non-trivial options, only six are
+commonly used in practice:
+
+* FENCE RW,RW
+* FENCE.TSO
+* FENCE RW,W
+* FENCE R,RW
+* FENCE R,R
+* FENCE W,W
+
+FENCE instructions using any other combination of PR, PW, SR, and SW are
+reserved. We strongly recommend that programmers stick to these six.
+Other combinations may have unknown or unexpected interactions with the
+memory model.
+
+Finally, we note that since RISC-V uses a multi-copy atomic memory
+model, programmers can reason about fences bits in a thread-local
+manner. Fences in RISC-V are not cumulative, as they are in some
+non-multi-copy-atomic memory models.
+
+[[sec:memory:acqrel]]
+==== Explicit Synchronization (<<overlapping-ordering, Rules 5-8>>)
+
+[IMPORTANT]
+===='''
+zh = '''
+====
+
+默认情况下，FENCE 指令确保在程序顺序中位于栅栏之前的指令产生的所有内存访问（“前驱集合”）在全局内存顺序中比在程序顺序中位于栅栏之后的指令产生的内存访问（“后继集合”）更早出现。然而，栅栏可以选择进一步将前驱集合和/或后继集合限制为更小的内存访问集合，以提供一些加速。具体来说，栅栏具有 PR、PW、SR 和 SW 位，用于限制前驱和/或后继集合。前驱集合包括加载（分别地，存储），当且仅当 PR（分别地，PW）被设置。同样，后继集合包括加载（分别地，存储），当且仅当 SR（分别地，SW）被设置。
+
+FENCE 编码目前有 PR、PW、SR 和 SW 四位的九种非平凡组合，外加一个额外编码 FENCE.TSO，它便于映射“获取+释放”或 RVTSO 语义。其余七种组合具有空的前驱和/或后继集合，因此是空操作。在这十个非平凡选项中，实践中常用只有六个：
+
+* FENCE RW,RW
+* FENCE.TSO
+* FENCE RW,W
+* FENCE R,RW
+* FENCE R,R
+* FENCE W,W
+
+使用 PR、PW、SR 和 SW 任何其他组合的 FENCE 指令是保留的。我们强烈建议程序员坚持使用这六种。其他组合可能与内存模型产生未知或意外的交互。
+
+最后，我们注意到，由于 RISC-V 使用多副本原子内存模型，程序员可以以线程本地方式推理栅栏位。RISC-V 中的栅栏不是累积的，不像某些非多副本原子内存模型中那样。
+
+[[sec:memory:acqrel]]
+==== 显式同步（<<overlapping-ordering, 规则 5-8>>）
+
+[IMPORTANT]
+===='''

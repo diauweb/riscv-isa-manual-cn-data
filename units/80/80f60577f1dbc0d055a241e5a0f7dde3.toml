@@ -1,0 +1,9 @@
+unit_id = "80f60577f1dbc0d055a241e5a0f7dde3"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+let result_wide = to_bits(2 * sizeof(xlen), signed(X(rsdc)) * signed(X(rs2c)));
+X(rsdc) = result_wide[(sizeof(xlen) - 1) .. 0];
+----'''

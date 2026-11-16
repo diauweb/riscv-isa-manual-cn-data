@@ -1,0 +1,12 @@
+unit_id = "79fcd7d33ea105a9efaab72ea005e714"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a debugger writes 1 to {dmcontrol-haltreq}, each selected hart's halt request bit is
+set. When a running hart, or a hart just coming out of reset, sees its
+halt request bit high, it responds by halting, deasserting its running
+signal, and asserting its halted signal. Halted harts ignore their halt
+request bit.'''
+zh = '''
+当调试器向 {dmcontrol-haltreq} 写 1 时，每个选中硬件线程的停止请求位被置位。当正在运行的硬件线程或刚退出复位的硬件线程看到其停止请求位为高时，它通过停止、清除其 running 信号并置位其 halted 信号来响应。已停止的硬件线程忽略其停止请求位。'''

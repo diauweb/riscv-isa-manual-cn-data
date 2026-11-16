@@ -1,0 +1,14 @@
+unit_id = "3cc8ced83fff521574516f9f15efb928"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hgatp_root_pt_sz_align]#As explained in <<guest-addr-translation>>, for the
+paged virtual-memory schemes (Sv32x4, Sv39x4, Sv48x4, and Sv57x4), the
+root page table is 16 KiB and must be aligned to a 16-KiB boundary.# [#norm:hgatp_ppn_op]#In
+these modes, the lowest two bits of the physical page number (PPN) in
+`hgatp` always read as zeros.# [#norm:hgatp_ppn_acc]#An implementation that supports only the
+defined paged virtual-memory schemes and/or Bare may make PPN[1:0]
+read-only zero.#'''
+zh = '''
+[#norm:hgatp_root_pt_sz_align]#如 <<guest-addr-translation>> 中所解释，对于分页虚拟内存方案（Sv32x4、Sv39x4、Sv48x4 和 Sv57x4），根页表为 16 KiB，并且必须对齐到 16 KiB 边界。# [#norm:hgatp_ppn_op]#在这些模式下，`hgatp` 中物理页号（PPN）的最低两位始终读为零。# [#norm:hgatp_ppn_acc]#仅支持已定义的分页虚拟内存方案和/或 Bare 的实现可以使 PPN[1:0] 为只读零。#'''

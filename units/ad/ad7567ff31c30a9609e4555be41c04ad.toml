@@ -1,0 +1,17 @@
+unit_id = "ad7567ff31c30a9609e4555be41c04ad"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If software at any privilege level does not support multiple contexts for
+less-privilege levels, then it may choose to maximize less-privileged access to
+all state by writing a value of all ones to the `stateen` CSRs at its level (the
+`mstateen` CSRs for machine level, the `sstateen` CSRs for an OS, and the `hstateen`
+CSRs for a hypervisor), without knowing all the state to which it is granting
+access. This is justified because there is no risk of a covert channel between
+execution contexts at the less-privileged level when only one context exists
+at that level. This situation is expected to be common for machine level, and
+it might also arise, for example, for a type-1 hypervisor that hosts only a
+single guest virtual machine.'''
+zh = '''
+如果任何特权级的软件不支持较低特权级的多个上下文，那么它可以选择通过向其所在级别的 `stateen` CSR（机器级为 `mstateen` CSR、操作系统为 `sstateen` CSR、管理程序为 `hstateen` CSR）写入全一值，来将较低特权级对所有状态的访问最大化，而无需知道它正在授予访问权限的所有状态。这是合理的，因为当较低特权级只存在一个上下文时，该级别的执行上下文之间不存在隐蔽信道的风险。这种情况预期在机器级很常见，也可能出现在其他情形，例如一个仅承载单个客户虚拟机的 type-1 管理程序。'''

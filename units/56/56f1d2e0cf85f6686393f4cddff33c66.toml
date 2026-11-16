@@ -1,0 +1,8 @@
+unit_id = "56f1d2e0cf85f6686393f4cddff33c66"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Without being able to protect less-privileged modes from Machine mode, it is not possible to prevent the mentioned attack vector. This becomes even more important for RISC-V than on other architectures, since implementations are allowed where a hart only has Machine and User modes available, so the whole OS will run on Machine mode instead of the non-existent Supervisor mode. In such implementations the attack surface is greatly increased, and the same kind of attacks performed on Supervisor mode and mitigated through the virtual-memory system, can be performed on Machine mode without any available mitigations. Even on implementations with Supervisor mode present attacks are still possible against the Firmware and/or the Secure Monitor running on Machine mode.'''
+zh = '''
+如果无法保护低特权模式免受机器模式的影响，就不可能阻止上述攻击向量。这对 RISC-V 而言比其他架构更为重要，因为允许实现中硬件线程只有机器模式和用户模式可用，这样整个 OS 将运行在机器模式上，而不是运行在并不存在的监管模式上。在此类实现中，攻击面大大增加，那些在监管模式上实施、并通过虚拟内存系统缓解的同类攻击，可以在机器模式上实施而没有任何可用的缓解措施。即使在存在监管模式的实现中，仍然可能对运行在机器模式上的固件和/或安全监控器发起攻击。'''

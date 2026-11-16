@@ -1,0 +1,28 @@
+unit_id = "7e2e3658e4dd350d46fcd46e726dd825"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Profiling tools often collect call stacks along with each sample. Stack
+walking, however, is a complex and often slow process that may require
+recompilation (e.g., -fno-omit-frame-pointer) to work reliably. With RAS
+emulation, tools can ask CTR hardware to save call stacks even for
+unmodified code._
+
+_CTR RAS emulation has limitations.  The CTR buffer will contain only partial stacks in cases where the call stack depth was greater than the CTR depth, CTR recording was enabled at a lower point in the call stack than main(), or where the CTR buffer was cleared since main()._
+
+_The CTR stack may be corrupted in cases where calls and returns are not symmetric, such as with stack unwinding (e.g., setjmp/longjmp, C++ exceptions), where stale call entries may be left on the CTR stack, or user stack switching, where calls from multiple stacks may be intermixed._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_剖析工具通常会在每个样本处收集调用栈。然而，栈回溯是一个复杂且往往缓慢的过程，可能需要重新编译（例如，-fno-omit-frame-pointer）才能可靠工作。借助 RAS 仿真，工具可以要求 CTR 硬件即使对未修改的代码也保存调用栈。_
+
+_CTR RAS 仿真存在局限性。在以下情况下，CTR 缓冲区将只包含部分栈：调用栈深度大于 CTR 深度、CTR 记录在调用栈中低于 main() 的位置才启用，或自 main() 以来 CTR 缓冲区已被清除。_
+
+_在调用与返回不对称的情况下（例如栈展开（如 setjmp/longjmp、C++ 异常），其中可能在 CTR 栈上留下过时的调用条目），或用户栈切换（其中来自多个栈的调用可能混合在一起），CTR 栈可能被破坏。_
+===='''

@@ -1,0 +1,80 @@
+unit_id = "b5b3651cb5d865388d23d8d073a3c012"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of PTE R/W/X fields.
+[%autowidth,float="center",align="center",cols="^,^,^,<",options="header"]
+|===
+|X |W |R |Meaning
+|0 +
+0 +
+0 +
+0 +
+1 +
+1 +
+1 +
+1
+|0 +
+0 +
+1 +
+1 +
+0 +
+0 +
+1 +
+1
+|0 +
+1 +
+0 +
+1 +
+0 +
+1 +
+0 +
+1
+|Pointer to next level of page table. +
+Read-only page. +
+_Reserved for future use._ +
+Read-write page. +
+Execute-only page. +
+Read-execute page. +
+_Reserved for future use._ +
+Read-write-execute page.
+|==='''
+zh = '''
+.PTE R/W/X 字段的编码。
+[%autowidth,float="center",align="center",cols="^,^,^,<",options="header"]
+|===
+|X |W |R |含义
+|0 +
+0 +
+0 +
+0 +
+1 +
+1 +
+1 +
+1
+|0 +
+0 +
+1 +
+1 +
+0 +
+0 +
+1 +
+1
+|0 +
+1 +
+0 +
+1 +
+0 +
+1 +
+0 +
+1
+|指向下一级页表。 +
+只读页。 +
+_保留供未来使用。_ +
+读写页。 +
+仅执行页。 +
+读执行页。 +
+_保留供未来使用。_ +
+读写执行页。
+|==='''

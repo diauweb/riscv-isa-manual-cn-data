@@ -1,0 +1,18 @@
+unit_id = "867511267ccca624cfa1eb8a8c274d49"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The indirect jump instruction JALR (jump and link register) uses the I-type encoding.
+[#norm:jalr_target]#The target address is obtained by adding the
+sign-extended 12-bit I-immediate to the register _rs1_, then setting the
+least-significant bit of the result to zero.#
+[#norm:jalr_op]#The address of the
+instruction following the jump (`pc`+4) is written to register _rd_.#
+Register `x0` can be used as the destination if the result is not
+required.'''
+zh = '''
+间接跳转指令 JALR（跳转并链接寄存器）使用 I 型编码。
+[#norm:jalr_target]#目标地址通过将符号扩展的 12 位 I 立即数加到寄存器 _rs1_ 上，然后将结果的最低有效位设为零来获得。#
+[#norm:jalr_op]#跳转之后那条指令的地址（`pc`+4）被写入寄存器 _rd_。#
+如果不需要结果，可以使用寄存器 `x0` 作为目标。'''

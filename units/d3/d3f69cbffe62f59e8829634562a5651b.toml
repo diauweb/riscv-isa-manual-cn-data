@@ -1,0 +1,13 @@
+unit_id = "d3f69cbffe62f59e8829634562a5651b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicbom extension adds the `CBCFE` (Cache Block Clean and Flush instruction
+Enable) field to `senvcfg` to control execution of the `CBO.CLEAN` and
+`CBO.FLUSH` instructions in U-mode. Execution of these instructions in U-mode is
+enabled only if execution of these instructions is enabled for use in S-mode and
+`CBCFE` is set to 1; otherwise, an illegal-instruction exception is raised. When
+the Zicbom extension is not implemented, `CBCFE` is read-only zero.'''
+zh = '''
+Zicbom 扩展向 `senvcfg` 添加了 `CBCFE`（缓存块清理和刷新指令使能）字段，以控制 U 模式下 `CBO.CLEAN` 和 `CBO.FLUSH` 指令的执行。仅当这些指令被使能用于 S 模式且 `CBCFE` 被置为 1 时，才允许在 U 模式下执行这些指令；否则引发非法指令异常。当未实现 Zicbom 扩展时，`CBCFE` 为只读零。'''

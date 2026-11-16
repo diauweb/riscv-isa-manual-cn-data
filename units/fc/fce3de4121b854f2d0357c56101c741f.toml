@@ -1,0 +1,17 @@
+unit_id = "fce3de4121b854f2d0357c56101c741f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Returns can only be treated as inferable if the associated call has
+already been reported in an earlier packet. The encoder must ensure that
+this is the case. This can be accomplished by utilizing a counter to
+keep track of the number of nested calls being traced. The counter
+increments on calls (but not tail calls), and decrements on returns (see
+<<JumpClasses>> for definitions). The counter
+will not over or underflow, and is reset to 0 whenever a synchronization
+packet is sent. Returns will be treated as inferable and will not
+generate a trace packet if the count is non-zero (i.e. the associated
+call was already reported in an earlier packet).'''
+zh = '''
+仅当相关联的调用已在较早的包中报告过时，才能将返回视为可推断。编码器必须确保情况确实如此。这可以通过使用计数器来跟踪正在被跟踪的嵌套调用数量来实现。计数器在调用（但不包括尾调用）时递增，在返回时递减（定义见 <<JumpClasses>>）。计数器不会上溢或下溢，并且每当发送同步包时都被复位为 0。如果计数非零（即相关联的调用已在较早的包中报告过），则返回将被视为可推断，且不会生成跟踪包。'''

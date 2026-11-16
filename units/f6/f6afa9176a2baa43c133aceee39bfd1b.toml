@@ -1,0 +1,21 @@
+unit_id = "f6afa9176a2baa43c133aceee39bfd1b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We chose a relaxed memory model to allow high performance from simple
+machine implementations and from likely future coprocessor or
+accelerator extensions. We separate out I/O ordering from memory R/W
+ordering to avoid unnecessary serialization within a device-driver hart
+and also to support alternative non-memory paths to control added
+coprocessors or I/O devices. Simple implementations may additionally
+ignore the _predecessor_ and _successor_ fields and always execute a
+conservative insn:fence[] on all operations.
+===='''
+zh = '''
+[NOTE]
+====
+我们选择了宽松内存模型，以允许简单机器实现以及未来可能的协处理器或加速器扩展获得高性能。我们将 I/O 排序与内存 R/W 排序分开，以避免在设备驱动硬件线程内不必要的串行化，并支持到新增协处理器或 I/O 设备的替代非内存路径。简单实现还可以忽略 _predecessor_ 和 _successor_ 字段，并始终对所有操作执行保守的 insn:fence[]。
+===='''

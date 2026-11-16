@@ -1,0 +1,23 @@
+unit_id = "0d0dfd578ee8d7f7fd033d22b2333213"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In some applications, it is important to be able to read multiple
+counters at the same instant in time. When run under a multitasking
+environment, a user thread can suffer a context switch while attempting
+to read the counters. One solution is for the user thread to read the
+real-time counter before and after reading the other counters to
+determine if a context switch occurred in the middle of the sequence, in
+which case the reads can be retried. We considered adding output latches
+to allow a user thread to snapshot the counter values atomically, but
+this would increase the size of the user context, especially for
+implementations with a richer set of counters.
+===='''
+zh = '''
+[NOTE]
+====
+在某些应用中，能够在同一时刻读取多个计数器很重要。在多任务环境下运行时，用户线程在尝试读取计数器时可能会遭遇上下文切换。一种解决方案是用户线程在读取其他计数器之前和之后读取实时计数器，以确定序列中间是否发生了上下文切换，如果发生了，则可以重试读取。我们考虑过添加输出锁存器，以允许用户线程原子地对计数器值进行快照，但这会增加用户上下文的大小，对于具有更丰富计数器集的实现尤其如此。
+===='''

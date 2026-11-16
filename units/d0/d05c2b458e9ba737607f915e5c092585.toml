@@ -1,0 +1,11 @@
+unit_id = "d05c2b458e9ba737607f915e5c092585"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtimecmp_rv32_wr]#In RV32, memory-mapped writes to `mtimecmp` modify only one 32-bit part
+of the register.#
+The following code sequence sets a 64-bit `mtimecmp` value without spuriously generating a
+timer interrupt due to the intermediate value of the comparand:'''
+zh = '''
+[#norm:mtimecmp_rv32_wr]#在 RV32 中，对 `mtimecmp` 的内存映射写入只修改该寄存器的一个 32 位部分。# 以下代码序列设置 64 位的 `mtimecmp` 值，而不会因比较值的中间值而虚假地产生定时器中断：'''

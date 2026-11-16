@@ -1,0 +1,15 @@
+unit_id = "96e804d9dff630e1380d989b34f03704"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicbom extension adds the `CBIE` (Cache Block Invalidate instruction Enable)
+WARL field to `menvcfg` to control execution of the cache block invalidate
+instruction (`CBO.INVAL`) in modes less privileged than M. When `CBIE` is set to
+`00b`, the instruction raises an illegal-instruction exception in modes less
+privileged than M. When the Zicbom extension is not implemented, `CBIE` is
+read-only zero. The encoding `10b` is reserved. When `CBIE` is set to `01b`
+or `11b`, and when enabled for execution in modes less privileged than M, it
+behaves as follows:'''
+zh = '''
+Zicbom 扩展在 `menvcfg` 中添加了 `CBIE`（Cache Block Invalidate instruction Enable，缓存块无效化指令使能）WARL 字段，以控制缓存块无效化指令（`CBO.INVAL`）在低于 M 的模式下的执行。当 `CBIE` 被设置为 `00b` 时，该指令在低于 M 的模式下引发非法指令异常。当未实现 Zicbom 扩展时，`CBIE` 为只读零。编码 `10b` 为保留。当 `CBIE` 被设置为 `01b` 或 `11b`，且允许在低于 M 的模式下执行时，其行为如下：'''

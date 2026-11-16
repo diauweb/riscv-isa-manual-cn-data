@@ -1,0 +1,19 @@
+unit_id = "0b82e979f7ede5613f070a0513456dd8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The `rmem` tool records, for every register write, the set of register
+writes from other instructions that have been read by this instruction
+at the point of performing the write. By carefully arranging the
+pseudocode of the instructions covered by the tool we were able to make
+it so that this is exactly the set of register writes on which the write
+depends on.
+===='''
+zh = '''
+[NOTE]
+====
+`rmem` 工具为每次寄存器写记录：在执行该写时，该指令已读取的其他指令的寄存器写集合。通过仔细安排该工具所覆盖指令的伪代码，我们能够使其恰好是该写所依赖的寄存器写集合。
+===='''

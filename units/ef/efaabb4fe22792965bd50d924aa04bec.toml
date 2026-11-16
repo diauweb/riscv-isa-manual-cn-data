@@ -1,0 +1,25 @@
+unit_id = "efaabb4fe22792965bd50d924aa04bec"
+kind = "diagram"
+translatable = false
+en = '''
+.Local RAM Sink: Three-hart cluster plus extra hart with own RAM Sink (in SRAM mode)
+["ditaa",shadows=false, separation=false, fontsize: 12]
+....
++-------------------------+
+| 3 Harts with 3 Encoders |
+|     and local Funnel    |---+
+|       (see above)       |   |
++-------------------------+   |
+                              |
++-----------+   +---------+   |   +--------+     +-------------+
+| Hart #4   |   |  Trace  |   +-->| Trace  |     | Trace Sink  |
+|           |==>| Encoder |------>| Funnel |---->|    or       |
+|           |   |   #4    |---+   | (top)  |     | ATB Bridge  |
++-----------+   +---------+   |   +--------+     +-------------+
+                              |
+                              v
+                      +----------------+
+                      | Trace RAM Sink |
+                      | (in SRAM mode) |
+                      +----------------+
+....'''

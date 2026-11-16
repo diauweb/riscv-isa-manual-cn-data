@@ -1,0 +1,15 @@
+unit_id = "8a95d20535a97451e98bbbdf86489c15"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Since the security of most cryptographic operations depends on the
+entropy source, a system-wide "`default deny`" security policy approach
+is appropriate for most entropy source failures. A hardware test failure
+should at least result in the `DEAD` state and possibly reset/halt.
+It’s a show stopper: The entropy source (or its cryptographic client
+application) _must not_ be allowed to run if its secure operation
+can’t be guaranteed.'''
+zh = '''
+由于大多数密码操作的安全性取决于熵源，因此对于大多数熵源故障，系统范围的“默认拒绝”安全策略方法是适当的。硬件测试失败至少应导致 `DEAD` 状态，并可能复位/停机。
+这是一个停止性问题：如果无法保证熵源（或其密码客户端应用）的安全运行，则 _不得_ 允许其运行。'''

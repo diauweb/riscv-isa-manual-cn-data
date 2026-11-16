@@ -1,0 +1,12 @@
+unit_id = "cc6240eb69a8533983937732606a29b3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_uxl_acc_mxlen64]#When MXLEN=64, if U-mode is not supported, then csr::[uxl] is read-only zero.
+Otherwise, it is a *WARL* field that encodes the current value of UXLEN.#
+In particular, [#norm:mstatus_uxl_rdonly_mxlen64]#an implementation may make csr::[uxl] be a read-only field whose
+value always ensures that UXLEN=MXLEN or UXLEN=SXLEN.#'''
+zh = '''
+[#norm:mstatus_uxl_acc_mxlen64]#当 MXLEN=64 时，如果不支持 U 模式，则 csr::[uxl] 为只读零。否则，它是一个 *WARL* 字段，编码 UXLEN 的当前值。#
+特别地，[#norm:mstatus_uxl_rdonly_mxlen64]#实现可以将 csr::[uxl] 设为只读字段，其值始终确保 UXLEN=MXLEN 或 UXLEN=SXLEN。#'''

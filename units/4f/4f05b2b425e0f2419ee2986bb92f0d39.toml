@@ -1,0 +1,16 @@
+unit_id = "4f05b2b425e0f2419ee2986bb92f0d39"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The FMV.W.X and FMV.X.W instructions were previously called FMV.S.X and FMV.X.S. The use of W is more consistent with their semantics as an instruction that moves 32 bits without interpreting them. This became clearer after defining NaN-boxing. To avoid disturbing existing code, both the W and S versions will be supported by tools.
+===='''
+zh = '''
+[NOTE]
+====
+FMV.W.X 和 FMV.X.W 指令以前称为 FMV.S.X 和 FMV.X.S。使用 W 更符合其语义，
+即一条移动 32 位而不对其作解释的指令。在定义 NaN 装箱（NaN-boxing）之后，这一点变得更加清晰。
+为避免干扰现有代码，工具将同时支持 W 和 S 两种版本。
+===='''

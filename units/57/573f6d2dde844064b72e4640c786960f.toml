@@ -1,0 +1,13 @@
+unit_id = "573f6d2dde844064b72e4640c786960f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vfmv.s.f` instruction copies the scalar floating-point register
+to element 0 of the destination vector register.  The other elements
+in the destination vector register ( 0 < index < VLEN/SEW) are treated
+as tail elements using the current tail agnostic/undisturbed policy.
+If `vstart` {ge} `vl`, no operation is performed and the destination
+register is not updated.'''
+zh = '''
+`vfmv.s.f` 指令将标量浮点寄存器复制到目标向量寄存器的元素 0。目标向量寄存器中的其他元素（0 < index < VLEN/SEW）使用当前尾部不可知/不可扰动策略作为尾部元素处理。如果 `vstart` {ge} `vl`，则不执行任何操作，目标寄存器不被更新。'''

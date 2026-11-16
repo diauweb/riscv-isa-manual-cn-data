@@ -1,0 +1,15 @@
+unit_id = "fd4d86cea490d76bff4bc5666073dc57"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Guest-page-fault traps may be delegated from M-mode to HS-mode under the
+control of CSR csr:medeleg[], but cannot be delegated to other privilege
+modes. On a guest-page fault, CSR csr:mtval[] or csr:stval[] is written with the
+faulting guest virtual address as usual, and csr:mtval2[] or csr:htval[] is
+written either with zero or with the faulting guest physical address,
+shifted right by qty:2[bits]. CSR csr:mtinst[] or csr:htinst[] may also be written
+with information about the faulting instruction or other reason for the
+access, as explained in <<tinst-vals>>.'''
+zh = '''
+客户页故障陷阱可以在 CSR csr:medeleg[] 的控制下从 M-mode 委托给 HS-mode，但不能委托给其他特权模式。在客户页故障时，CSR csr:mtval[] 或 csr:stval[] 照常被写入故障客户虚拟地址，而 csr:mtval2[] 或 csr:htval[] 被写入零或故障客户物理地址右移 qty:2[位]。CSR csr:mtinst[] 或 csr:htinst[] 也可能被写入有关故障指令或访问其他原因的信息，如 <<tinst-vals>> 中所解释。'''

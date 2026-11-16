@@ -1,0 +1,21 @@
+unit_id = "c6922c25cda17755d28d563f80ba2bba"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+It is not possible to represent the address 2^XLEN+2^ as the top of a range,
+so, for example, in an RV32 system with 34-bit physical addresses, a TOR PMP
+cannot be used to give less-privileged modes access to the uppermost word of
+memory.
+Either a NAPOT PMP can be used, or that memory can be left inaccessible to
+less-privileged modes.
+If the supervisor manages memory at base-page granularity, just 0.00002% of
+the 16{nbsp}GiB address space is lost.
+===='''
+zh = '''
+[NOTE]
+====
+不可能将地址 2^XLEN+2^ 表示为范围的顶部，因此例如在具有 34 位物理地址的 RV32 系统中，无法使用 TOR PMP 为较低特权模式授予对内存最上端字的访问权限。可以使用 NAPOT PMP，或者让该内存对较低特权模式不可访问。如果监管程序以基页粒度管理内存，则仅损失 16{nbsp}GiB 地址空间的 0.00002%。
+===='''

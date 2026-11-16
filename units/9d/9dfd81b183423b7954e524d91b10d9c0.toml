@@ -1,0 +1,14 @@
+unit_id = "9dfd81b183423b7954e524d91b10d9c0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-flwsp_op]#C.FLWSP is an RV32FC-only instruction that loads a single-precision
+floating-point value from memory into floating-point register _rd_. It
+computes its effective address by adding the _zero_-extended offset,
+scaled by 4, to the stack pointer, `x2`. It expands to
+`flw rd, offset(x2)`.
+C.FLWSP uses the <<rvc-form,CI format>>.#'''
+zh = '''
+[#norm:c-flwsp_op]#C.FLWSP 是仅限 RV32FC 的指令，从内存加载单精度浮点值到浮点寄存器 _rd_。它通过将按 4 缩放的__零__扩展偏移量加到栈指针 `x2` 上来计算有效地址。它展开为 `flw rd, offset(x2)`。
+C.FLWSP 使用 <<rvc-form,CI format>>。#'''

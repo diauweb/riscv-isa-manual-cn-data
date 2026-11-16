@@ -1,0 +1,12 @@
+unit_id = "f40ac830b88ab5a69dcbff866399cdd8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For RV32, insn:ssamoswap.w[] atomically loads a 32-bit data value from address of a
+shadow stack location in `rs1`, puts the loaded value into register `rd`, and
+stores the 32-bit value held in `rs2` to the original address in `rs1`.
+insn:ssamoswap.d[] (RV64 only) is similar to insn:ssamoswap.w[] but operates on 64-bit
+data values.'''
+zh = '''
+对于 RV32，insn:ssamoswap.w[] 从 `rs1` 中的影子栈位置地址原子加载一个 32 位数据值，将加载的值放入寄存器 `rd`，并将 `rs2` 中保存的 32 位值存储到 `rs1` 中的原始地址。insn:ssamoswap.d[]（仅 RV64）与 insn:ssamoswap.w[] 类似，但操作 64 位数据值。'''

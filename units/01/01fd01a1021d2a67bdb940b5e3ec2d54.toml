@@ -1,0 +1,12 @@
+unit_id = "01fd01a1021d2a67bdb940b5e3ec2d54"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Upon entry into Debug Mode, the `pelp` bit in `dcsr` is updated with the `ELP`
+at the privilege level the hart was previously in, and the `ELP` is set to
+`NO_LP_EXPECTED`. When a hart resumes from Debug Mode, if the new privilege mode
+is `y`, then `ELP` is set to the value of `pelp` if `__y__LPE` (see <<FCFIACT>>)
+is 1; otherwise, it is set to `NO_LP_EXPECTED`.'''
+zh = '''
+进入调试模式时，`dcsr` 中的 `pelp` 位被更新为硬件线程此前所处特权级别的 `ELP`，且 `ELP` 被设置为 `NO_LP_EXPECTED`。当硬件线程从调试模式恢复时，若新的特权模式为 `y`，则当 `__y__LPE`（参见 <<FCFIACT>>）为 1 时，`ELP` 被设置为 `pelp` 的值；否则被设置为 `NO_LP_EXPECTED`。'''

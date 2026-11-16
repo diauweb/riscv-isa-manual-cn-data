@@ -1,0 +1,14 @@
+unit_id = "37f177cc1f9af61b70efdcb437bdf57a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sscratch]#The `sscratch` CSR is an SXLEN-bit read/write register, dedicated
+for use by the supervisor.# Typically, `sscratch` is used to hold a
+pointer to the hart-local supervisor context while the hart is executing
+user code.
+At the beginning of a trap handler, software normally uses a CSRRW
+instruction to swap `sscratch` with an integer register to obtain an
+initial working register.'''
+zh = '''
+[#norm:sscratch]#`sscratch` CSR 是一个 SXLEN 位读/写寄存器，专供监管者使用。# 通常，`sscratch` 用于在硬件线程执行用户代码时保存指向硬件线程本地监管上下文的指针。在陷阱处理程序开始时，软件通常使用 CSRRW 指令将 `sscratch` 与一个整数寄存器交换，以获得一个初始工作寄存器。'''

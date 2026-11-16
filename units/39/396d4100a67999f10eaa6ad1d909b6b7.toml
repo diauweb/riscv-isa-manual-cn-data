@@ -1,0 +1,18 @@
+unit_id = "396d4100a67999f10eaa6ad1d909b6b7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:veccrypto_vsins_vs2]#In the case of the insn:*.vs[] instructions defined in this specification, _vs2_ holds a 128-bit scalar element group.#
+[#norm:veccrypto_vsins_vdvs2overlap]#For implementations with VLEN ≥ 128, _vs2_ refers to a single register. Thus, the _vd_ register group must not
+overlap the _vs2_ register.
+However, in implementations where VLEN < 128, _vs2_ refers to a register group comprised of the number
+of registers needed to hold the 128-bit scalar element group. In this case, the _vd_ register group must not
+overlap this _vs2_ register group.#'''
+zh = '''
+[#norm:veccrypto_vsins_vs2]#对于本规范中定义的 insn:*.vs[] 指令，_vs2_ 保存一个 128 位标量元素组。#
+[#norm:veccrypto_vsins_vdvs2overlap]#对于 VLEN ≥ 128 的实现，_vs2_ 指单个寄存器。因此，_vd_ 寄存器组不得
+与 _vs2_ 寄存器重叠。
+然而，在 VLEN < 128 的实现中，_vs2_ 指由保存 128 位标量元素组所需数量的寄存器
+组成的寄存器组。在这种情况下，_vd_ 寄存器组不得
+与该 _vs2_ 寄存器组重叠。#'''

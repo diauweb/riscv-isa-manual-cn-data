@@ -1,0 +1,12 @@
+unit_id = "a01a28bd21dff6ee20341ba8f137d8b5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The number of bits implemented in `vl` depends on the
+implementation's maximum vector length of the smallest supported
+type. The smallest vector implementation with VLEN=32 and supporting
+SEW=8 would need at least six bits in `vl` to hold the values 0-32
+(VLEN=32, with LMUL=8 and SEW=8, yields VLMAX=32).'''
+zh = '''
+NOTE: `vl` 中实现的位数取决于实现对所支持最小类型的最大向量长度。最小的向量实现若 VLEN=32 且支持 SEW=8，则 `vl` 中至少需要六位来保存 0-32 的值（VLEN=32、LMUL=8、SEW=8 时 VLMAX=32）。'''

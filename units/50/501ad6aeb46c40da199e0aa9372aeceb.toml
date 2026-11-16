@@ -1,0 +1,13 @@
+unit_id = "501ad6aeb46c40da199e0aa9372aeceb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the hypervisor extension is implemented, the Svinval extension also
+provides two additional instructions: HINVAL.VVMA and HINVAL.GVMA. These
+have the same semantics as SINVAL.VMA, except that they combine with
+SFENCE.W.INVAL and SFENCE.INVAL.IR to replace HFENCE.VVMA and
+HFENCE.GVMA, respectively, instead of SFENCE.VMA. In addition,
+HINVAL.GVMA uses VMIDs instead of ASIDs.'''
+zh = '''
+如果实现了管理程序扩展，Svinval 扩展还提供两条附加指令：HINVAL.VVMA 和 HINVAL.GVMA。它们的语义与 SINVAL.VMA 相同，区别在于它们分别与 SFENCE.W.INVAL 和 SFENCE.INVAL.IR 组合以替代 HFENCE.VVMA 和 HFENCE.GVMA，而不是替代 SFENCE.VMA。此外，HINVAL.GVMA 使用 VMID 而不是 ASID。'''

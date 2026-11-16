@@ -1,0 +1,15 @@
+unit_id = "fd33ef389baa2e2f59b38495bc2eb5e6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The number of ASID bits is UNSPECIFIED and may be zero. The number of implemented
+ASID bits, termed _ASIDLEN_, may be determined by writing one to every
+bit position in the ASID field, then reading back the value in `satp` to
+see which bit positions in the ASID field hold a one. The
+least-significant bits of ASID are implemented first: that is, if
+ASIDLEN latexmath:[$>$] 0, ASID[ASIDLEN-1:0] is writable. The maximal
+value of ASIDLEN, termed ASIDMAX, is 9 for Sv32 or 16 for Sv39, Sv48,
+and Sv57.'''
+zh = '''
+ASID 位数是 UNSPECIFIED 的，可以为零。已实现的 ASID 位数（称为 _ASIDLEN_）可以通过向 ASID 字段中的每个位位置写 1，然后读回 `satp` 中的值以查看 ASID 字段中哪些位位置保持为 1 来确定。ASID 的最低有效位首先被实现：也就是说，如果 ASIDLEN latexmath:[$>$] 0，则 ASID[ASIDLEN-1:0] 可写。ASIDLEN 的最大值（称为 ASIDMAX）对于 Sv32 为 9，对于 Sv39、Sv48 和 Sv57 为 16。'''

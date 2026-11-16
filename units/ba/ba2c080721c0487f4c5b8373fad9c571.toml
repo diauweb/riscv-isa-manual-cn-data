@@ -1,0 +1,18 @@
+unit_id = "ba2c080721c0487f4c5b8373fad9c571"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Load-pair and store-pair instructions are contained in a separate extension
+(see Section <<sec:zilsd,Extensions for Load/Store pair for RV32>>).
+In case this is not available, transferring double-precision operands in
+RV32Zdinx from or to memory requires two loads or stores. Register moves need
+only a single FSGNJ.D instruction, however.
+===='''
+zh = '''
+[NOTE]
+====
+加载对和存储对指令包含在单独的扩展中（参见 <<sec:zilsd,RV32 的加载/存储对扩展>> 一节）。若该扩展不可用，则在 RV32Zdinx 中与内存之间传输双精度操作数需要两次加载或存储。不过，寄存器移动仅需一条 FSGNJ.D 指令。
+===='''

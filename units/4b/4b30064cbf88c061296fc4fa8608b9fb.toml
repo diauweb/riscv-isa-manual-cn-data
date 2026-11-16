@@ -1,0 +1,42 @@
+unit_id = "4b30064cbf88c061296fc4fa8608b9fb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. If tracing is started (or restarted after it was disabled), a <<msg_ProgTraceSync,ProgTraceSync>> message is generated.
+** This message specifies the reason for the start in the <<field_SYNC,SYNC>> field and includes full address in the <<field_F-ADDR,F-ADDR>> field.
+. A retired 16-bit instruction increments the <<field_I-CNT,I-CNT>> counter by 1, while a retired 32-bit instruction increments it by 2.
+. The following types of instructions allow trace decoders to determine the next PC and encoder should not generate any trace for them.
+** Instruction which is not control transfer instructions should advance PC to the next instruction (increment by 2 or 4).
+** Direct (inferable) unconditional jump should set next PC to jump destination (PC plus an offset obtained from opcode).
+** Not-taken direct conditional branch (in BTM mode) should advance PC to the next instruction (increment by 2 or 4).
+. Indirect, unconditional jump instruction is handled as:
+** In BTM mode, an <<msg2_IndirectBranch,IndirectBranch>> message is generated.
+** In HTM mode, an <<msg2_IndirectBranchHist,IndirectBranchHist>> message is generated. Should the <<field_HIST,HIST>> field be empty, an <<msg2_IndirectBranch,IndirectBranch>> message may optionally be generated instead.
+. Direct, conditional branch instruction is handled as:
+** In BTM mode, a <<msg_DirectBranch,DirectBranch>> message is generated, but only if the branch is taken.
+** In HTM mode, the outcome of the branch (1 for taken or 0 for not taken) is appended as a single bit into the branch history buffer (<<field_HIST,HIST>> register).
+. When tracing is stopped or disabled, a <<msg_ProgTraceCorrelation,ProgTraceCorrelation>> message is generated.
+** This message included a reason for stopping or disabling (specified in the <<field_EVCODE,EVCODE>> field), the <<field_I-CNT,I-CNT>> and an optional <<field_HIST,HIST>> field. These details allow for the calculation of the last PC.
+. When a generated message includes <<field_I-CNT,I-CNT>> counter value or <<field_HIST,HIST>> register value, the corresponding counter and/or register are reset.
+** If the I-CNT counter is full, a <<msg_ResourceFull,ResourceFull>> message, indicating that I-CNT counter is full, is generated. Subsequently, the I-CNT is reset.
+** Similarily, if the HIST register reaches it capacity, a <<msg_ResourceFull,ResourceFull>> message, specifying that the HIST register is full, is generated. The HIST register is then reset.'''
+zh = '''
+. 如果跟踪启动（或在禁用后重新启动），则生成 <<msg_ProgTraceSync,ProgTraceSync>> 消息。
+** 该消息在 <<field_SYNC,SYNC>> 字段中指定启动原因，并在 <<field_F-ADDR,F-ADDR>> 字段中包含完整地址。
+. 一条已退休的 16 位指令使 <<field_I-CNT,I-CNT>> 计数器加 1，而已退休的 32 位指令使其加 2。
+. 以下类型的指令允许跟踪解码器确定下一个 PC，编码器不应为它们生成任何跟踪。
+** 非控制转移指令应将 PC 推进到下一条指令（增加 2 或 4）。
+** 直接（可推断）无条件跳转应将下一个 PC 设置为跳转目标（PC 加上从操作码获得的偏移）。
+** 未跳转的直接条件分支（在 BTM 模式下）应将 PC 推进到下一条指令（增加 2 或 4）。
+. 间接无条件跳转指令处理如下：
+** 在 BTM 模式下，生成 <<msg2_IndirectBranch,IndirectBranch>> 消息。
+** 在 HTM 模式下，生成 <<msg2_IndirectBranchHist,IndirectBranchHist>> 消息。如果 <<field_HIST,HIST>> 字段为空，则可选地生成 <<msg2_IndirectBranch,IndirectBranch>> 消息。
+. 直接条件分支指令处理如下：
+** 在 BTM 模式下，生成 <<msg_DirectBranch,DirectBranch>> 消息，但仅当分支已跳转时。
+** 在 HTM 模式下，分支结果（已跳转为 1，未跳转为 0）作为单个位追加到分支历史缓冲区（<<field_HIST,HIST>> 寄存器）。
+. 当跟踪停止或禁用时，生成 <<msg_ProgTraceCorrelation,ProgTraceCorrelation>> 消息。
+** 该消息包含停止或禁用的原因（在 <<field_EVCODE,EVCODE>> 字段中指定）、<<field_I-CNT,I-CNT>> 以及可选的 <<field_HIST,HIST>> 字段。这些细节允许计算最后一个 PC。
+. 当生成的消息包含 <<field_I-CNT,I-CNT>> 计数器值或 <<field_HIST,HIST>> 寄存器值时，相应计数器和/或寄存器将被复位。
+** 如果 I-CNT 计数器已满，则生成一条 <<msg_ResourceFull,ResourceFull>> 消息，指示 I-CNT 计数器已满。随后 I-CNT 被复位。
+** 类似地，如果 HIST 寄存器达到其容量，则生成一条 <<msg_ResourceFull,ResourceFull>> 消息，指定 HIST 寄存器已满。然后 HIST 寄存器被复位。'''

@@ -1,0 +1,16 @@
+unit_id = "3f08b4a467315c2891cf7898d7b7129f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When `ebreak` is executed (indicating the end of the Program Buffer
+code) the hart returns to its park loop. If an exception is encountered,
+the hart jumps to an address within the Debug Module. The code there
+causes the hart to write to the Debug Module indicating an exception.
+Then the hart jumps back to the park loop. The DM infers from the write
+that there was an exception, and sets {abstractcs-cmderr} appropriately. Typically the hart
+will execute a `fence` instruction before entering the park loop, to
+ensure that any effects from the abstract command, such as a write to {dm-data0},
+take effect before the DM returns {abstractcs-busy} to 0.'''
+zh = '''
+当 `ebreak` 被执行时（表示程序缓冲区代码结束），硬件线程返回其驻留循环。如果遇到异常，硬件线程会跳转到调试模块内的某个地址。那里的代码使硬件线程向调试模块写入，以表明发生了异常。然后硬件线程跳回驻留循环。DM 从该写入推断出发生了异常，并相应地设置 {abstractcs-cmderr}。通常，硬件线程会在进入驻留循环之前执行一条 `fence` 指令，以确保抽象命令的任何效果（例如对 {dm-data0} 的写入）在 DM 将 {abstractcs-busy} 置回 0 之前生效。'''

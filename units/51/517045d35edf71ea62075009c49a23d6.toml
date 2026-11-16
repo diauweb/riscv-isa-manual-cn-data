@@ -1,0 +1,85 @@
+unit_id = "517045d35edf71ea62075009c49a23d6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Variable-length instruction sets have long been used to improve code
+density. For example, the IBM Stretch cite:[stretch], developed in the late 1950s, had
+an ISA with 32-bit and 64-bit instructions, where some of the 32-bit
+instructions were compressed versions of the full 64-bit instructions.
+Stretch also employed the concept of limiting the set of registers that
+were addressable in some of the shorter instruction formats, with short
+branch instructions that could only refer to one of the index registers.
+The later IBM 360 architecture cite:[ibm360] supported a simple variable-length
+instruction encoding with 16-bit, 32-bit, or 48-bit instruction formats.
+
+In 1963, CDC introduced the Cray-designed CDC 6600 cite:[cdc6600], a precursor to RISC
+architectures, that introduced a register-rich load-store architecture
+with instructions of two lengths, 15-bits and 30-bits. The later Cray-1
+design used a very similar instruction format, with 16-bit and 32-bit
+instruction lengths.
+
+The initial RISC ISAs from the 1980s all picked performance over code
+size, which was reasonable for a workstation environment, but not for
+embedded systems. Hence, both ARM and MIPS subsequently made versions of
+the ISAs that offered smaller code size by offering an alternative
+16-bit wide instruction set instead of the standard 32-bit wide
+instructions. The compressed RISC ISAs reduced code size relative to
+their starting points by about 25-30%, yielding code that was
+significantly smaller than 80x86. This result surprised some, as their
+intuition was that the variable-length CISC ISA should be smaller than
+RISC ISAs that offered only 16-bit and 32-bit formats.
+
+Since the original RISC ISAs did not leave sufficient opcode space free
+to include these unplanned compressed instructions, they were instead
+developed as complete new ISAs. This meant compilers needed different
+code generators for the separate compressed ISAs. The first compressed
+RISC ISA extensions (e.g., ARM Thumb and MIPS16) used only a fixed
+16-bit instruction size, which gave good reductions in static code size
+but caused an increase in dynamic instruction count, which led to lower
+performance compared to the original fixed-width 32-bit instruction
+size. This led to the development of a second generation of compressed
+RISC ISA designs with mixed 16-bit and 32-bit instruction lengths (e.g.,
+ARM Thumb2, microMIPS, PowerPC VLE), so that performance was similar to
+pure 32-bit instructions but with significant code size savings.
+Unfortunately, these different generations of compressed ISAs are
+incompatible with each other and with the original uncompressed ISA,
+leading to significant complexity in documentation, implementations, and
+software tools support.
+
+Of the commonly used 64-bit ISAs, only PowerPC and microMIPS currently
+supports a compressed instruction format. It is surprising that the most
+popular 64-bit ISA for mobile platforms (ARM v8) does not include a
+compressed instruction format given that static code size and dynamic
+instruction fetch bandwidth are important metrics. Although static code
+size is not a major concern in larger systems, instruction fetch
+bandwidth can be a major bottleneck in servers running commercial
+workloads, which often have a large instruction working set.
+
+Benefiting from 25 years of hindsight, RISC-V was designed to support
+compressed instructions from the outset, leaving enough opcode space for
+the compressed extensions to be added on top of the base ISA (along with
+many other extensions). The philosophy of ext:zca[] is to reduce code size for
+embedded applications _and_ to improve performance and energy-efficiency
+for all applications due to fewer misses in the instruction cache.
+Waterman shows a 25%-30% reduction in static instruction bits, which
+reduces instruction cache misses by 20%-25%, or roughly the same
+performance impact as doubling the instruction cache size. cite:[waterman-ms]
+===='''
+zh = '''
+[NOTE]
+====
+可变长度指令集长期以来一直用于提高代码密度。例如，20 世纪 50 年代末开发的 IBM Stretch cite:[stretch] 具有包含 32 位和 64 位指令的 ISA，其中一些 32 位指令是完整 64 位指令的压缩版本。Stretch 还采用了在某些较短指令格式中限制可寻址寄存器集合的概念，其短分支指令只能引用一个索引寄存器。后来的 IBM 360 架构 cite:[ibm360] 支持一种简单的可变长度指令编码，具有 16 位、32 位或 48 位指令格式。
+
+1963 年，CDC 推出了由 Cray 设计的 CDC 6600 cite:[cdc6600]，它是 RISC 架构的前身，引入了寄存器丰富的加载-存储架构，其指令有两种长度：15 位和 30 位。后来的 Cray-1 设计使用了非常相似的指令格式，具有 16 位和 32 位指令长度。
+
+20 世纪 80 年代最初的 RISC ISA 都选择了性能而非代码大小，这对于工作站环境是合理的，但不适用于嵌入式系统。因此，ARM 和 MIPS 随后都推出了 ISA 版本，通过提供替代的 16 位宽指令集而不是标准的 32 位宽指令来提供更小的代码大小。压缩 RISC ISA 相对于其起点将代码大小减少了约 25-30%，产生的代码明显小于 80x86。这一结果让一些人感到惊讶，因为他们的直觉是可变长度 CISC ISA 应该比仅提供 16 位和 32 位格式的 RISC ISA 更小。
+
+由于最初的 RISC ISA 没有留下足够的操作码空间来包含这些计划外的压缩指令，因此它们被开发为全新的 ISA。这意味着编译器需要为单独的压缩 ISA 使用不同的代码生成器。第一代压缩 RISC ISA 扩展（例如 ARM Thumb 和 MIPS16）仅使用固定的 16 位指令大小，这在静态代码大小方面取得了良好的缩减，但导致动态指令数增加，从而导致性能低于原始的固定宽度 32 位指令大小。这导致了第二代压缩 RISC ISA 设计的发展，其混合了 16 位和 32 位指令长度（例如 ARM Thumb2、microMIPS、PowerPC VLE），因此性能与纯 32 位指令相似，但显著节省了代码大小。不幸的是，这些不同代的压缩 ISA 彼此不兼容，也与原始未压缩 ISA 不兼容，导致文档、实现和软件工具支持方面出现显著的复杂性。
+
+在常用的 64 位 ISA 中，目前只有 PowerPC 和 microMIPS 支持压缩指令格式。令人惊讶的是，鉴于静态代码大小和动态指令取指带宽是重要指标，最流行的移动平台 64 位 ISA（ARM v8）却不包含压缩指令格式。尽管静态代码大小在较大的系统中不是主要关注点，但指令取指带宽可能是运行商业工作负载的服务器中的主要瓶颈，这些工作负载通常具有较大的指令工作集。
+
+得益于 25 年的后见之明，RISC-V 从一开始就被设计为支持压缩指令，留下足够的操作码空间，使压缩扩展可以作为基础 ISA 之上的扩展添加（以及许多其他扩展）。ext:zca[] 的理念是减小嵌入式应用的代码大小，__并且__由于指令缓存未命中减少而提高所有应用的性能和能效。Waterman 表明，静态指令位数减少了 25%-30%，这将指令缓存未命中减少了 20%-25%，大致相当于将指令缓存大小加倍所带来的性能影响。cite:[waterman-ms]
+===='''

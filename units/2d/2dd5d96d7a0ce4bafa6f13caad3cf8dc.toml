@@ -1,0 +1,14 @@
+unit_id = "2dd5d96d7a0ce4bafa6f13caad3cf8dc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In this example the test executes an illegal opcode (at line labelled
+14) and traps. We show the output from the patched spike execution in
+line 30. The input signals to the encoder are shown in lines labelled
+38-46. The HART will have set the signals shown in line 42 when the
+illegal instruction is executed and as can be seen it is not retired.
+Lines labelled 53, 56 and 59 show the packets output from the encoder
+for this fragment.'''
+zh = '''
+在本示例中，测试执行了一条非法操作码（位于标号为 14 的行）并触发陷阱。我们在标号为 30 的行展示了打过补丁的 spike 执行的输出。编码器的输入信号在标号为 38-46 的行中给出。当执行到非法指令时，硬件线程会置位第 42 行所示的信号，并且可以看到该指令并未退休。标号为 53、56 和 59 的行展示了该片段由编码器输出的数据包。'''

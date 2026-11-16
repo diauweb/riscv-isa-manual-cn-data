@@ -1,0 +1,22 @@
+unit_id = "d98c2c15ee3d980c7374eb4481399c9d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Trap handlers must be designed to neither enable interrupts nor cause exceptions
+during the phase of handling where the trap handler preserves the critical state
+information required to handle and resume from the trap. An exception or
+interrupt in this critical phase of trap handling may lead to a trap that can
+overwrite such critical state. This could result in the loss of data needed to
+recover from the initial trap. Further, if an exception occurs in the code path
+needed to handle traps, then such a situation may lead to an infinite loop of
+traps. To prevent this, trap handlers must be meticulously designed to identify
+and safely manage exceptions within their operational flow.
+===='''
+zh = '''
+[NOTE]
+====
+陷阱处理程序在设计时必须保证，在处理陷阱并保留处理和恢复陷阱所需关键状态信息的阶段，既不使能中断也不引发异常。在陷阱处理的这一关键阶段出现异常或中断，可能导致发生会覆盖此类关键状态的陷阱。这可能造成恢复初始陷阱所需数据的丢失。此外，若在处理陷阱所需的代码路径中发生异常，则可能导致陷阱的无限循环。为防止这种情况，陷阱处理程序必须经过精心设计，以识别并安全地管理其操作流程中的异常。
+===='''

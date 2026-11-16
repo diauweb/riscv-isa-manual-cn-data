@@ -1,0 +1,13 @@
+unit_id = "c078400cfce0076cc9354be16dba26a4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vfmv_op]#The vector floating-point move instruction __splats__ a floating-point
+scalar operand to a vector register group.  The instruction copies a
+scalar `f` register value to all active elements of a vector register
+group.#  This instruction is encoded as an unmasked instruction (`vm=1`).
+[#norm:vfmv_vs2_nv0_rsv]#The instruction must have the `vs2` field set to `v0`, with all other
+values for `vs2` reserved.#'''
+zh = '''
+[#norm:vfmv_op]#向量浮点移动指令将一个浮点标量操作数__广播__到向量寄存器组。该指令将标量 `f` 寄存器值复制到向量寄存器组的所有活动元素。#  该指令以无掩码指令形式编码（`vm=1`）。[#norm:vfmv_vs2_nv0_rsv]#该指令的 `vs2` 字段必须设为 `v0`，`vs2` 的所有其他值都是保留的。#'''

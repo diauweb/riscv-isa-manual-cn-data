@@ -1,0 +1,17 @@
+unit_id = "4bd93044df8fcbe9e6450155243449c3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sv39 implementations support a 39-bit virtual address space, divided
+into pages. An Sv39 address is partitioned as shown in
+<<sv39va>>. Instruction fetch addresses and load and
+store effective addresses, which are 64 bits,
+[#norm:Sv39_va_signext]#must have bits 63–39 all equal to bit 38, or else
+a page-fault exception will occur#.
+The [#norm:Sv39_vpn_sz]#27-bit VPN# is translated into a
+[#norm:satp-ppn_sv39_sz]#44-bit PPN# via a
+[#norm:Sv39_levels]#three-level page table#, while the
+[#norm:Sv39_page_offset_sz]#12-bit page offset is untranslated#.'''
+zh = '''
+Sv39 实现支持 39 位虚拟地址空间，划分为页。Sv39 地址的划分如 <<sv39va>> 所示。取指地址以及加载和存储有效地址为 64 位，[#norm:Sv39_va_signext]#其位 63–39 必须全部等于位 38，否则将发生页错误异常#。[#norm:Sv39_vpn_sz]#27 位 VPN# 通过 [#norm:Sv39_levels]#三级页表# 被转换为 [#norm:satp-ppn_sv39_sz]#44 位 PPN#，而 [#norm:Sv39_page_offset_sz]#12 位页偏移不被转换#。'''

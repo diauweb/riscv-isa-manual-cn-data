@@ -1,0 +1,25 @@
+unit_id = "b75a2adc781915bf54c5e7c8a1b4729c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The MPRV and MXR mechanisms were conceived to improve the efficiency of
+M-mode routines that emulate missing hardware features, e.g., misaligned
+loads and stores. MPRV obviates the need to perform address translation
+in software. MXR allows instruction words to be loaded from pages marked
+execute-only.
+
+The current privilege mode and the privilege mode specified by MPP might
+have different XLEN settings. When MPRV=1, load and store memory
+addresses are treated as though the current XLEN were set to MPP’s XLEN,
+following the rules in <<xlen-control>>.
+===='''
+zh = '''
+[NOTE]
+====
+MPRV 和 MXR 机制是为了提高模拟缺失硬件特性（例如非对齐加载和存储）的 M 模式例程的效率而设计的。MPRV 免除了在软件中执行地址转换的需要。MXR 允许从标记为仅可执行的页加载指令字。
+
+当前特权模式和 MPP 指定的特权模式可能具有不同的 XLEN 设置。当 MPRV=1 时，加载和存储内存地址按当前 XLEN 被设为 MPP 的 XLEN 来处理，遵循 <<xlen-control>> 中的规则。
+===='''

@@ -1,0 +1,15 @@
+unit_id = "7007e7e81a3fd001cbb6d87b9eb813c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The BASE field in `stvec` is a  field that can hold any valid virtual or
+physical address, subject to the following alignment constraints: the
+address must be 4-byte aligned, and MODE settings other than Direct
+might impose additional alignment constraints on the value in the BASE
+field.
+Note that the CSR contains only bits XLEN-1 through 2 of the address BASE.
+When used as an address, the lower two bits are filled with zeroes to obtain
+an XLEN-bit address that is always aligned on a 4-byte boundary.'''
+zh = '''
+`stvec` 中的 BASE 字段是一个可保存任何有效虚拟或物理地址的字段，受以下对齐约束：地址必须 4 字节对齐，且 Direct 以外的 MODE 设置可能对 BASE 字段中的值施加额外的对齐约束。注意，该 CSR 仅包含地址 BASE 的位 XLEN-1 至 2。当用作地址时，低两位填充为零，以获得始终在 4 字节边界上对齐的 XLEN 位地址。'''

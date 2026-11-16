@@ -1,0 +1,16 @@
+unit_id = "59a6f9d1c587cd2009e16d72df922d48"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When V=1, the virtual-address argument to SFENCE.VMA is a guest virtual
+address within the current virtual machine, and the ASID argument is a
+VS-level ASID within the current virtual machine. The current virtual
+machine is identified by the VMID field of CSR `hgatp`, and the
+effective ASID is the combination of this VMID with
+the VS-level ASID. The SFENCE.VMA instruction orders stores only to the
+VS-level address-translation structures with subsequent VS-stage address
+translations for the same virtual machine, i.e., only when `hgatp`.VMID
+is the same as when the SFENCE.VMA executed.'''
+zh = '''
+当 V=1 时，SFENCE.VMA 的虚拟地址参数为当前虚拟机内的客户虚拟地址，ASID 参数为当前虚拟机内的 VS 级 ASID。当前虚拟机由 CSR `hgatp` 的 VMID 字段标识，有效 ASID 是该 VMID 与 VS 级 ASID 的组合。SFENCE.VMA 指令仅对 VS 级地址翻译结构中的存储与同一虚拟机的后续 VS 级地址翻译进行排序，即仅当 `hgatp`.VMID 与执行 SFENCE.VMA 时相同时。'''

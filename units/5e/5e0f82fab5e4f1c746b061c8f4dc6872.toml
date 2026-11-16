@@ -1,0 +1,59 @@
+unit_id = "5e0f82fab5e4f1c746b061c8f4dc6872"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Removed the ext:n[] extension.
+* Defined the mandatory RV32-only CSR csr:mstatush[], which contains most of
+the same fields as the upper 32 bits of RV64’s csr:mstatus[].
+* Defined the mandatory CSR csr:mconfigptr[], which if nonzero contains the
+address of a configuration data structure.
+* Defined csr:mseccfg[] and csr:mseccfgh[] CSRs, which control the
+machine’s security configuration.
+* Defined csr:menvcfg[], csr:henvcfg[], and csr:senvcfg[] CSRs (and RV32-only
+csr:menvcfgh[] and csr:henvcfgh[] CSRs), which control various characteristics
+of the execution environment.
+* Designated part of SYSTEM major opcode for custom use.
+* Permitted the unconditional delegation of less-privileged interrupts.
+* Added optional big-endian and bi-endian support.
+* Made priority of load/store/AMO address-misaligned exceptions
+implementation-defined relative to load/store/AMO page-fault and
+access-fault exceptions.
+* PMP reset values are now platform-defined.
+* An additional 48 optional PMP registers have been defined.
+* Slightly relaxed the atomicity requirement for A and D bit updates
+performed by the implementation.
+* Clarify the architectural behavior of address-translation caches
+* Added ext:sv57[] and ext:sv57x4[] address translation modes.
+* Software breakpoint exceptions are permitted to write either 0 or the
+`pc` to `__x__tval`.
+* Clarified that bare S-mode need not support the insn:sfence.vma[]
+instruction.
+* Specified relaxed constraints for implicit reads of non-idempotent
+regions.
+* Added the Svnapot Standard Extension, along with the N bit in ext:sv39[],
+ext:sv48[], and ext:sv57[] PTEs.
+* Added the ext:svpbmt[] Standard Extension, along with the PBMT bits in ext:sv39[],
+ext:sv48[], and ext:sv57[] PTEs.
+* Added the ext:svinval[] Standard Extension and associated instructions.'''
+zh = '''
+* 移除了 ext:n[] 扩展。
+* 定义了强制性的仅 RV32 的 CSR csr:mstatush[]，它包含与 RV64 的 csr:mstatus[] 高 32 位大部分相同的字段。
+* 定义了强制性 CSR csr:mconfigptr[]，若非零则包含配置数据结构的地址。
+* 定义了 csr:mseccfg[] 和 csr:mseccfgh[] CSR，它们控制机器的安全配置。
+* 定义了 csr:menvcfg[]、csr:henvcfg[] 和 csr:senvcfg[] CSR（以及仅 RV32 的 csr:menvcfgh[] 和 csr:henvcfgh[] CSR），它们控制执行环境的各项特性。
+* 将 SYSTEM 主操作码的一部分指定为自定义用途。
+* 允许无条件委托较低特权级中断。
+* 增加了可选的大端和双端支持。
+* 使加载/存储/AMO 地址非对齐异常的优先级相对于加载/存储/AMO 页错误和访问错误异常由实现定义。
+* PMP 复位值现在由平台定义。
+* 定义了额外 48 个可选 PMP 寄存器。
+* 略微放宽了实现所执行的 A 位和 D 位更新的原子性要求。
+* 澄清地址转换缓存的架构行为。
+* 增加了 ext:sv57[] 和 ext:sv57x4[] 地址转换模式。
+* 允许软件断点异常向 `__x__tval` 写入 0 或 `pc`。
+* 澄清了裸 S 模式无需支持 insn:sfence.vma[] 指令。
+* 规定了对非幂等区域隐式读取的放宽约束。
+* 增加了 Svnapot 标准扩展，以及 ext:sv39[]、ext:sv48[] 和 ext:sv57[] PTE 中的 N 位。
+* 增加了 ext:svpbmt[] 标准扩展，以及 ext:sv39[]、ext:sv48[] 和 ext:sv57[] PTE 中的 PBMT 位。
+* 增加了 ext:svinval[] 标准扩展及相关指令。'''

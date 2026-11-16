@@ -1,0 +1,15 @@
+unit_id = "85e25e01851662473540c61ec119a81c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmask_vstart]#As with other vector instructions, the elements with indices less than
+csr:vstart[] are unchanged, and csr:vstart[] is reset to zero after execution.#
+[#norm:vmasklogical_unmasked]#Vector mask logical instructions are always unmasked,# [#norm:vmasklogical_masked_rsv]#so there are no
+inactive elements, and the encodings with `vm=0` are reserved.#
+[#norm:vmasklogical_tail_agnostic]#Mask elements past csr:vl[], the tail elements, are
+always updated with a tail-agnostic policy.#'''
+zh = '''
+[#norm:vmask_vstart]#与其他向量指令一样，索引小于 csr:vstart[] 的元素保持不变，并且执行后 csr:vstart[] 重置为零。#
+[#norm:vmasklogical_unmasked]#向量掩码逻辑指令始终无掩码，# [#norm:vmasklogical_masked_rsv]#因此没有非活动元素，`vm=0` 的编码保留。#
+[#norm:vmasklogical_tail_agnostic]#超过 csr:vl[] 的掩码元素（尾部元素）始终以尾部不可知策略更新。#'''

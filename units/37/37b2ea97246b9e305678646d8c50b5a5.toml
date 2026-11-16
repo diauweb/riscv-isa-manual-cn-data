@@ -1,0 +1,20 @@
+unit_id = "37b2ea97246b9e305678646d8c50b5a5"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+The insn:xperm4[] instruction operates on nibbles.
+The _rs1_ register contains a vector of XLEN/4 4-bit elements.
+The _rs2_ register contains a vector of XLEN/4 4-bit indexes.
+Each element of the result is formed by using the corresponding index element
+from _rs2_ to select an element from _rs1_, or zero if the index element is out
+of bounds.'''
+zh = '''
+描述::
+insn:xperm4[] 指令按半字节操作。
+_rs1_ 寄存器包含一个由 XLEN/4 个 4 位元素组成的向量。
+_rs2_ 寄存器包含一个由 XLEN/4 个 4 位索引组成的向量。
+结果的每个元素通过使用 _rs2_ 中相应的索引元素
+从 _rs1_ 中选择一个元素来形成；如果索引元素
+越界，则为零。'''

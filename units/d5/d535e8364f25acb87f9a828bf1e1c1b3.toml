@@ -1,0 +1,17 @@
+unit_id = "d535e8364f25acb87f9a828bf1e1c1b3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:satp_mode]#<<norm:satp_mode_enc>> shows the encodings of the MODE field when
+SXLEN=32 and SXLEN=64.# [#norm:satp_mode_bare_op]#When MODE=Bare, supervisor virtual addresses are
+equal to supervisor physical addresses, and there is no additional
+memory protection beyond the physical memory protection scheme described
+in <<pmp>>.# [#norm:satp_mode_bare_zero_fields]#To select MODE=Bare, software must write
+zero to the remaining fields of `satp` (bits 30–0 when SXLEN=32, or bits
+59–0 when SXLEN=64).# [#norm:satp_mode_bare_nonzero_unspec]#Attempting to select MODE=Bare with a nonzero
+pattern in the remaining fields has an UNSPECIFIED effect on the value that the
+remaining fields assume and an UNSPECIFIED effect on address translation and
+protection behavior.#'''
+zh = '''
+[#norm:satp_mode]#<<norm:satp_mode_enc>> 显示了 SXLEN=32 和 SXLEN=64 时 MODE 字段的编码。# [#norm:satp_mode_bare_op]#当 MODE=Bare 时，监管虚拟地址等于监管物理地址，并且除了 <<pmp>> 中描述的物理内存保护方案之外，没有额外的内存保护。# [#norm:satp_mode_bare_zero_fields]#要选择 MODE=Bare，软件必须向 `satp` 的其余字段（SXLEN=32 时为位 30–0，SXLEN=64 时为位 59–0）写零。# [#norm:satp_mode_bare_nonzero_unspec]#试图以其余字段中的非零模式选择 MODE=Bare，会对这些其余字段所采用的值产生 UNSPECIFIED 的影响，并对地址转换和保护行为产生 UNSPECIFIED 的影响。#'''

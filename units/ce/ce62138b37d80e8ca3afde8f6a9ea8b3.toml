@@ -1,0 +1,14 @@
+unit_id = "ce62138b37d80e8ca3afde8f6a9ea8b3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some read/write CSR fields specify behavior for only a subset of
+possible bit encodings, with other bit encodings reserved. Software
+should not write anything other than legal values to such a field, and
+should not assume a read will return a legal value unless the last write
+was of a legal value, or the register has not been written since another
+operation (e.g., reset) set the register to a legal value. These fields
+are labeled *WLRL* in the register descriptions.'''
+zh = '''
+某些读写 CSR 字段仅对可能位编码的子集规定了行为，其他位编码保留。软件不应向此类字段写入合法值以外的任何值，并且不应假定读取会返回合法值，除非最后一次写入的是合法值，或者自另一操作（例如复位）将该寄存器设置为合法值以来该寄存器未被写入。这些字段在寄存器描述中标记为 *WLRL*。'''

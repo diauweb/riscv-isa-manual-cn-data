@@ -1,0 +1,15 @@
+unit_id = "7efc239809f349243cb870ae060a8302"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+Uses the two 64-bit source registers to represent the entire AES state,
+and produces _half_ of the next round output, applying the Inverse ShiftRows
+and SubBytes steps.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+描述::
+使用两个 64 位源寄存器表示整个 AES 状态，并产生下一轮输出的 _一半_，应用逆 ShiftRows 和 SubBytes 步骤。
+该指令必须 _始终_ 以实现为其执行延迟不依赖于所操作数据的方式实现。'''

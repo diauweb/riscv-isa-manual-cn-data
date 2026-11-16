@@ -1,0 +1,22 @@
+unit_id = "20e49cfcfa907f6b8d6e54f58e7f108e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter__i__MatchEcauseLow : Filter _i_ Ecause Match Control (low) Register (trBaseEncoder+0x408 + 0x20__i__)*
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|31:0   |trTeFilterMatchChoiceEcauseLow |
+When `trTeFilterMatchEcause` field for filter #__i__ is set, match all excepion causes for which the corresponding bit is set. If bit N is 1, then match if the *ecause* is N.
+|WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trTeFilter__i__MatchEcauseLow：过滤器 _i_ Ecause 匹配控制（低）寄存器（trBaseEncoder+0x408 + 0x20__i__）*
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|31:0   |trTeFilterMatchChoiceEcauseLow |
+当过滤器 #__i__ 的 `trTeFilterMatchEcause` 字段置位时，匹配对应位被置位的所有异常原因。如果位 N 为 1，则当 *ecause* 为 N 时匹配。
+|WARL|<<Undef,Undef>>
+|==='''

@@ -1,0 +1,38 @@
+unit_id = "bdc9472af2c4b68698bc0591c7f83d18"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="4,12"]
+|===
+| Field      | Description
+
+| rs1[4:0]   | specifies x register holding base address
+| rs2[4:0]   | specifies x register holding stride
+| vs2[4:0]   | specifies v register holding address offsets
+| vs3[4:0]   | specifies v register holding store data
+| vd[4:0]    | specifies v register destination of load
+| vm         | specifies whether vector masking is enabled (0 = mask enabled, 1 = mask disabled)
+| width[2:0] | specifies size of memory elements, and distinguishes from FP scalar
+| mew        | extended memory element width. See <<sec-vector-loadstore-width-encoding>>
+| mop[1:0]   | specifies memory addressing mode
+| nf[2:0]    | specifies the number of fields in each segment, for segment load/stores
+| lumop[4:0]/sumop[4:0] | are additional fields encoding variants of unit-stride instructions
+|==='''
+zh = '''
+[cols="4,12"]
+|===
+| 字段      | 描述
+
+| rs1[4:0]   | 指定保存基地址的 x 寄存器
+| rs2[4:0]   | 指定保存步长的 x 寄存器
+| vs2[4:0]   | 指定保存地址偏移的 v 寄存器
+| vs3[4:0]   | 指定保存存储数据的 v 寄存器
+| vd[4:0]    | 指定加载的 v 寄存器目标
+| vm         | 指定是否启用向量掩码（0 = 启用掩码，1 = 禁用掩码）
+| width[2:0] | 指定内存元素的大小，并与 FP 标量区分
+| mew        | 扩展内存元素宽度。参见 <<sec-vector-loadstore-width-encoding>>
+| mop[1:0]   | 指定内存寻址模式
+| nf[2:0]    | 对于段加载/存储，指定每个段中的字段数
+| lumop[4:0]/sumop[4:0] | 是编码单位步长指令变体的附加字段
+|==='''

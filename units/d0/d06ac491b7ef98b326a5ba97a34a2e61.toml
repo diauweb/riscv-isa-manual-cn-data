@@ -1,0 +1,34 @@
+unit_id = "d06ac491b7ef98b326a5ba97a34a2e61"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The page-based G-stage address translation scheme for RV32, Sv32x4, is
+defined to support a 34-bit guest physical address so that an RV32
+hypervisor need not be limited in its ability to virtualize real 32-bit
+RISC-V machines, even those with 33-bit or 34-bit physical addresses.
+This may include the possibility of a machine virtualizing itself, if it
+happens to use 33-bit or 34-bit physical addresses. Multiplying the size
+and alignment of the root page table by a factor of four is the cheapest
+way to extend Sv32 to cover a 34-bit address. The possible wastage of
+12 KiB for an unnecessarily large root page table is expected to be of
+negligible consequence for most (maybe all) real uses.
+
+A consistent ability to virtualize machines having as much as four times
+the physical address space as virtual address space is believed to be of
+some utility also for RV64. For a machine implementing 39-bit virtual
+addresses (Sv39), for example, this allows the hypervisor extension to
+support up to a 41-bit guest physical address space without either
+necessitating hardware support for 48-bit virtual addresses (Sv48) or
+falling back to emulating the larger address space using shadow page
+tables.
+===='''
+zh = '''
+[NOTE]
+====
+RV32 的基于页的 G 级地址转换方案 Sv32x4 被定义为支持 34 位客户物理地址，以便 RV32 虚拟机监控器在虚拟化真实 32 位 RISC-V 机器（即使具有 33 位或 34 位物理地址的机器）时其能力不受限制。这可能包括机器虚拟化自身的可能性，若它恰好使用 33 位或 34 位物理地址。将根页表的大小和对齐扩大四倍是将 Sv32 扩展到覆盖 34 位地址的最廉价方式。对于不必要的大根页表可能浪费 12 KiB，对于大多数（也许所有）实际用途，预计影响可忽略不计。
+
+一致地能够虚拟化物理地址空间多达虚拟地址空间四倍的机器，据信对 RV64 也有一定用处。例如，对于实现 39 位虚拟地址（Sv39）的机器，这允许虚拟机监控器扩展支持高达 41 位的客户物理地址空间，而无需硬件支持 48 位虚拟地址（Sv48），也无需回退到使用影子页表来模拟更大的地址空间。
+===='''

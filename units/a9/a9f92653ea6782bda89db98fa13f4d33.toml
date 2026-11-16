@@ -1,0 +1,12 @@
+unit_id = "a9f92653ea6782bda89db98fa13f4d33"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A program using backward-edge CFI has two stacks: a regular
+stack and a shadow stack. The shadow stack is used to spill the link register,
+if required, by non-leaf functions. An additional register, shadow-stack-pointer
+(csr:ssp[]), is introduced in the architecture to hold the address of the top of the
+active shadow stack.'''
+zh = '''
+使用后向边 CFI 的程序有两个栈：常规栈和影子栈。影子栈用于在需要时由非叶子函数保存链接寄存器。架构中引入了额外的寄存器——影子栈指针（csr:ssp[]），用于保存活动影子栈顶部的地址。'''

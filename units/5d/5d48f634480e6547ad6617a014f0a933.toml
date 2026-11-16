@@ -1,0 +1,23 @@
+unit_id = "5d48f634480e6547ad6617a014f0a933"
+kind = "code"
+translatable = false
+en = '''
+----
+# Assembly syntax pattern for vector ternary arithmetic instructions (multiply-add)
+
+# Integer operations overwriting sum input
+vop.vv vd, vs1, vs2, vm  # vd[i] = vs1[i] * vs2[i] + vd[i]
+vop.vx vd, rs1, vs2, vm  # vd[i] = x[rs1] * vs2[i] + vd[i]
+
+# Integer operations overwriting product input
+vop.vv vd, vs1, vs2, vm  # vd[i] = vs1[i] * vd[i] + vs2[i]
+vop.vx vd, rs1, vs2, vm  # vd[i] = x[rs1] * vd[i] + vs2[i]
+
+# Floating-point operations overwriting sum input
+vfop.vv vd, vs1, vs2, vm  # vd[i] = vs1[i] * vs2[i] + vd[i]
+vfop.vf vd, rs1, vs2, vm  # vd[i] = f[rs1] * vs2[i] + vd[i]
+
+# Floating-point operations overwriting product input
+vfop.vv vd, vs1, vs2, vm  # vd[i] = vs1[i] * vd[i] + vs2[i]
+vfop.vf vd, rs1, vs2, vm  # vd[i] = f[rs1] * vd[i] + vs2[i]
+----'''

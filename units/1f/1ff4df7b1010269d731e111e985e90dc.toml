@@ -1,0 +1,13 @@
+unit_id = "1ff4df7b1010269d731e111e985e90dc"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (AES64ES(rs2, rs1, rd)) = {
+  let sr : bits(64) = aes_rv64_shiftrows_fwd(X(rs2)[63..0], X(rs1)[63..0]);
+  let wd : bits(64) = sr[63..0];
+  X(rd) = aes_apply_fwd_sbox_to_each_byte(wd);
+  RETIRE_SUCCESS
+}
+--'''

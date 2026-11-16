@@ -1,0 +1,13 @@
+unit_id = "af4d923e5b9106f16c2dd2aad6932fb5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Debug Modules may implement a Hart Array Mask register to allow
+selecting multiple harts at once. The __n__th bit in the Hart
+Array Mask register applies to the hart with index _n_. If
+the bit is 1 then the hart is selected. Usually a DM will have a Hart
+Array Mask register exactly wide enough to select all the harts it
+supports, but it's allowed to tie any of these bits to 0.'''
+zh = '''
+调试模块可以实现硬件线程数组掩码寄存器，以允许一次选择多个硬件线程。硬件线程数组掩码寄存器中的第 __n__ 位适用于索引为 _n_ 的硬件线程。如果该位为 1，则选择该硬件线程。通常，DM 的硬件线程数组掩码寄存器宽度恰好足以选择其支持的所有硬件线程，但允许将这些位中的任何一位硬连线为 0。'''

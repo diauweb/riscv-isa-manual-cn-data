@@ -1,0 +1,13 @@
+unit_id = "b72a55a36a0d8aac26263ae15e393b56"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:trap_unexp_hndl_rnmi]#When the Smrnmi extension is implemented and csr:mnstatus[nmie] is 1, the hart
+  traps to the RNMI interrupt trap handler. To deliver this trap, the csr:mnepc[] and
+  csr:mncause[] registers are written with the values that the _unexpected trap_ would have
+  written to the csr:mepc[] and csr:mcause[] registers respectively. The privilege
+  mode information fields in the csr:mnstatus[] register are written to indicate
+  M-mode and its csr::[nmie] field is set to 0.#'''
+zh = '''
+* [#norm:trap_unexp_hndl_rnmi]#当实现了 Smrnmi 扩展且 csr:mnstatus[nmie] 为 1 时，硬件线程陷入 RNMI 中断陷阱处理程序。为递送此陷阱，csr:mnepc[] 和 csr:mncause[] 寄存器分别被写入__意外陷阱__原本会写入 csr:mepc[] 和 csr:mcause[] 寄存器的值。csr:mnstatus[] 寄存器中的特权模式信息字段被写入以指示 M 模式，且其 csr::[nmie] 字段被设置为 0。#'''

@@ -1,0 +1,17 @@
+unit_id = "340af86dc970bece0f9820288ced3a52"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instructions HLVX.HU and HLVX.WU are the same as HLV.HU and HLV.WU,
+except that _execute_ permission takes the place of _read_ permission
+during address translation. That is, the memory being read must be
+executable in both stages of address translation, but read permission is
+not required. For the supervisor physical address that results from
+address translation, the supervisor physical memory attributes must
+grant both _execute_ and _read_ permissions. (The _supervisor physical
+memory attributes_ are the machine’s physical memory attributes as
+modified by physical memory protection, <<pmp>>, for
+supervisor level.)'''
+zh = '''
+指令 HLVX.HU 和 HLVX.WU 与 HLV.HU 和 HLV.WU 相同，只是在地址转换期间以__执行__权限代替__读__权限。也就是说，所读取的内存在地址转换的两个阶段中都必须可执行，但不要求读权限。对于地址转换产生的监管物理地址，监管物理内存属性必须同时授予__执行__和__读__权限。（__监管物理内存属性__是机器的物理内存属性经物理内存保护（<<pmp>>）为监管级修改后的结果。）'''

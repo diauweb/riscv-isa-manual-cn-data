@@ -1,0 +1,13 @@
+unit_id = "cc62cb6cffe695e2bb563297ac478bd1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By default, the target of an indirect unconditional jump is always considered an uninferable PC discontinuity.
+However, if the register that specifies the jump target was loaded with a constant then it can be
+considered inferable under some circumstances. The hart must identify indirect unconditional jumps with sequentially
+inferable targets and provide this information separately to the encoder. The final decision as to
+whether to treat the indirect unconditional jump as inferable or not must be made by the encoder. Both the constant
+load and the indirect unconditional jump must be traced as consecutive instructions in the same message for the decoder to be able to infer the indirect unconditional jump target.'''
+zh = '''
+默认情况下，间接无条件跳转的目标始终被视为不可推断的 PC 不连续。然而，如果指定跳转目标的寄存器装入了一个常量，则在某些情况下可将其视为可推断。硬件线程必须识别具有顺序可推断目标的间接无条件跳转，并将此信息单独提供给编码器。是否将间接无条件跳转视为可推断的最终决定必须由编码器做出。常量加载和间接无条件跳转必须作为连续指令跟踪在同一消息中，以便解码器能够推断间接无条件跳转目标。'''

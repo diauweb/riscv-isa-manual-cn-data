@@ -1,0 +1,34 @@
+unit_id = "46bde1198b9056e1ae7b06b7bdfb397b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%header, cols="25%,75%", options="header"]
+.Example of PM address translation for RV64 under Sv57
+|===
+|Page-based profile|Sv57 on RV64
+|Effective Address |0xABFFFFFF12345678 +
+NVBITS[1010101]  VBITS[11111111111111111111111110001...000]
+|PMLEN|7
+|Mask|0x01FFFFFFFFFFFFFF +
+NVBITS[0000000]  VBITS[11111111111111111111111111111...111]
+|PMLEN+1st bit from the top (i.e., bit XLEN-PMLEN-1)|1
+|Transformed effective address |0xFFFFFFFF12345678 +
+NVBITS[1111111]  VBITS[11111111111111111111111110001...000]
+
+|==='''
+zh = '''
+[%header, cols="25%,75%", options="header"]
+.RV64 在 Sv57 下的 PM 地址转换示例
+|===
+|页式配置文件|RV64 上的 Sv57
+|有效地址 |0xABFFFFFF12345678 +
+NVBITS[1010101]  VBITS[11111111111111111111111110001...000]
+|PMLEN|7
+|掩码|0x01FFFFFFFFFFFFFF +
+NVBITS[0000000]  VBITS[11111111111111111111111111111...111]
+|从最高位起的第 PMLEN+1 位（即第 XLEN-PMLEN-1 位）|1
+|转换后的有效地址 |0xFFFFFFFF12345678 +
+NVBITS[1111111]  VBITS[11111111111111111111111110001...000]
+
+|==='''

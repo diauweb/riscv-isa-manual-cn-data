@@ -1,0 +1,9 @@
+unit_id = "0285347026342a221711aaa8f08a81c7"
+kind = "code"
+translatable = false
+en = '''
+----
+vmerge.vvm vd, vs2, vs1, v0  # vd[i] = v0.mask[i] ? vs1[i] : vs2[i]
+vmerge.vxm vd, vs2, rs1, v0  # vd[i] = v0.mask[i] ? x[rs1] : vs2[i]
+vmerge.vim vd, vs2, imm, v0  # vd[i] = v0.mask[i] ? imm    : vs2[i]
+----'''

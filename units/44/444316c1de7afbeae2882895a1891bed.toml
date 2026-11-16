@@ -1,0 +1,12 @@
+unit_id = "444316c1de7afbeae2882895a1891bed"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A RISC-V hart has a single byte-addressable address space of 2^XLEN^ bytes for
+all memory accesses, where a byte is qty:8[bits]. The memory address space is
+circular, so that the byte at address 2^XLEN^−1 is adjacent to the byte at
+address zero. Accordingly, memory address computations done by the hardware
+ignore overflow and instead wrap around modulo 2^XLEN^.'''
+zh = '''
+一个 RISC-V 硬件线程具有单一的、按字节寻址的地址空间，大小为 2^XLEN^ 字节，用于所有内存访问，其中字节为 qty:8[bits]。内存地址空间是循环的，因此地址 2^XLEN^−1 处的字节与地址零处的字节相邻。相应地，硬件进行的内存地址计算会忽略溢出，而是按 2^XLEN^ 取模回绕。'''

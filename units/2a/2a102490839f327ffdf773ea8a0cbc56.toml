@@ -1,0 +1,33 @@
+unit_id = "2a102490839f327ffdf773ea8a0cbc56"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If the conditions that necessitate a pseudoinstruction value can ever
+occur for M-mode, then `mtinst` cannot be entirely read-only zero; and
+likewise for HS-mode and `htinst`. However, in that case, the trap
+instruction registers may minimally support only values 0 and
+`0x00002000` or `0x00003000`, and possibly `0x00002020` or `0x00003020`,
+requiring as few as one or two flip-flops in hardware, per register.
+
+***
+
+There is no harm here in ignoring the atomicity requirement for page
+table updates, because a hypervisor is not expected in these
+circumstances to emulate an implicit memory access that fails. Rather,
+the hypervisor is given enough information about the faulting access to
+be able to make the memory accessible (e.g. by restoring a missing page
+of virtual memory) before resuming execution by retrying the faulting
+instruction.
+===='''
+zh = '''
+[NOTE]
+====
+如果需要伪指令值的条件在 M-mode 中可能出现，则 `mtinst` 不能完全为只读零；HS-mode 和 `htinst` 同样如此。然而，在这种情况下，陷阱指令寄存器可以最低限度地仅支持值 0 和 `0x00002000` 或 `0x00003000`，可能还有 `0x00002020` 或 `0x00003020`，每个寄存器在硬件中仅需一两个触发器。
+
+***
+
+这里忽略页表更新的原子性要求没有害处，因为在这些情况下，虚拟机监控器预期不会仿真失败的隐式内存访问。相反，虚拟机监控器被给予有关故障访问的足够信息，以便在通过重试导致故障的指令恢复执行之前使内存可访问（例如，通过恢复缺失的虚拟内存页）。
+===='''

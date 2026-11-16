@@ -1,0 +1,15 @@
+unit_id = "87d15ecbbe3aff564bf43562434193b6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Such use cases involve polling on memory locations, and such busy loops can be a
+wasteful expenditure of energy. To mitigate the wasteful looping in such usages,
+a `WRS.NTO` (WRS-with-no-timeout) instruction is provided. Instead of polling
+for a store to a specific memory location, software registers a reservation set
+that includes all the bytes of the memory location using the `LR` instruction.
+[#norm:Zawrs_wrs-nto_stall_exec]#Then a subsequent `WRS.NTO` instruction would cause the hart to temporarily
+stall execution in a low-power state until a store occurs to the reservation set
+or an interrupt is observed.#'''
+zh = '''
+此类用例涉及对内存位置的轮询，而这类忙循环可能造成能源的浪费性消耗。为减轻此类用法中的浪费性循环，提供了 `WRS.NTO`（无超时 WRS）指令。软件不用轮询对特定内存位置的存储，而是使用 `LR` 指令注册一个包含该内存位置全部字节的预约集。[#norm:Zawrs_wrs-nto_stall_exec]#随后的一条 `WRS.NTO` 指令将使硬件线程以低功耗状态暂时停顿执行，直到发生对该预约集的存储或观察到中断。#'''

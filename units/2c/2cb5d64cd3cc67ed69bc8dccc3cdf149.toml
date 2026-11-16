@@ -1,0 +1,13 @@
+unit_id = "2cb5d64cd3cc67ed69bc8dccc3cdf149"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+`mseccfg.RLB` (Rule Locking Bypass) is a WARL field that provides a mechanism
+to temporarily modify *Locked* PMP rules. When `mseccfg.RLB` is 1, locked PMP
+rules may be removed or modified. When
+`mseccfg.RLB` is 0 and `pmpcfg.L` is 1 in any rule or entry (including disabled
+entries), then `mseccfg.RLB` remains 0 and any further modifications to
+`mseccfg.RLB` are ignored until a *PMP reset*.'''
+zh = '''
+`mseccfg.RLB`（Rule Locking Bypass，规则锁定绕过）是一个 WARL 字段，提供一种临时修改**已锁定** PMP 规则的机制。当 `mseccfg.RLB` 为 1 时，已锁定的 PMP 规则可以被移除或修改。当 `mseccfg.RLB` 为 0 且任何规则或条目（包括被禁用的条目）中的 `pmpcfg.L` 为 1 时，`mseccfg.RLB` 保持为 0，且对 `mseccfg.RLB` 的任何进一步修改都被忽略，直到发生 *PMP 复位*。'''

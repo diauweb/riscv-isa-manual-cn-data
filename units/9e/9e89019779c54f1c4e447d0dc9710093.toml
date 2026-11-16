@@ -1,0 +1,23 @@
+unit_id = "9e89019779c54f1c4e447d0dc9710093"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The trap handler in privilege mode `x` must save the csr::[xpelp] bit and the
+`x7` register before performing an indirect call/jump if `xLPE=1`. If the
+privilege mode `x` can respond to interrupts and `xLPE=1`, then the trap handler
+should also save these values before enabling interrupts.
+
+The trap handler in privilege mode `x` must restore the saved csr::[xpelp] bit
+and the `x7` register before executing the insn:xret[] instruction to return from
+a trap.
+===='''
+zh = '''
+[NOTE]
+====
+若 `xLPE=1`，特权模式 `x` 中的陷阱处理程序必须在执行间接调用/跳转之前保存 csr::[xpelp] 位和 `x7` 寄存器。若特权模式 `x` 能够响应中断且 `xLPE=1`，则陷阱处理程序还应在使能中断之前保存这些值。
+
+特权模式 `x` 中的陷阱处理程序必须在执行 insn:xret[] 指令以从陷阱返回之前，恢复所保存的 csr::[xpelp] 位和 `x7` 寄存器。
+===='''

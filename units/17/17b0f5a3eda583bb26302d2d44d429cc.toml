@@ -1,0 +1,20 @@
+unit_id = "17b0f5a3eda583bb26302d2d44d429cc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Effective virtualization requires that as many instructions run natively
+as possible inside a virtualized environment, while any privileged
+accesses trap to the virtual machine monitor. cite:[goldbergvm] CSRs that are read-only
+at some lower privilege level are shadowed into separate CSR addresses
+if they are made read-write at a higher privilege level. This avoids
+trapping permitted lower-privilege accesses while still causing traps on
+illegal accesses. Currently, the counters are the only shadowed CSRs.
+===='''
+zh = '''
+[NOTE]
+====
+有效的虚拟化要求尽可能多的指令在虚拟化环境中本机运行，同时任何特权访问都陷入到虚拟机监视器。cite:[goldbergvm] 在某些较低特权级别为只读的 CSR，如果在更高特权级别被设为可读写，则会被影子映射到单独的 CSR 地址。这避免了对允许的较低特权级别访问进行陷阱，同时仍对非法访问产生陷阱。目前，计数器是唯一被影子映射的 CSR。
+===='''

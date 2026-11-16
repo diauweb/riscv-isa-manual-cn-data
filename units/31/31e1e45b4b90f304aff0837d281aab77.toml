@@ -1,0 +1,19 @@
+unit_id = "31e1e45b4b90f304aff0837d281aab77"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[sum] (permit Supervisor User Memory access) bit modifies the
+privilege with which S-mode loads and stores access virtual memory.
+[#norm:mstatus_sum_op]#When csr::[sum]=0, S-mode memory accesses to pages that are accessible by U-mode
+(U=1 in <<sv32pte>>) will fault. When csr::[sum]=1, these accesses are permitted.#
+[#norm:mstatus_sum_op_no_vm]#csr::[sum] has no effect when page-based virtual memory is not in effect.#
+Note that, [#norm:mstatus_sum_op_mprv_mpp]#while csr::[sum] is ordinarily ignored when not
+executing in S-mode, it _is_ in effect when csr::[mprv]=1 and csr::[mpp]=S.#
+[#norm:mstatus_sum_rdonly0]#csr::[sum] is read-only 0 if S-mode is not supported or if csr:satp[mode] is read-only 0; otherwise, it must be writable.#'''
+zh = '''
+csr::[sum]（permit Supervisor User Memory access，允许监管程序访问用户内存）位修改 S 模式加载和存储访问虚拟内存时所用的权限。
+[#norm:mstatus_sum_op]#当 csr::[sum]=0 时，S 模式对 U 模式可访问页（<<sv32pte>> 中 U=1）的内存访问将出错。当 csr::[sum]=1 时，允许这些访问。#
+[#norm:mstatus_sum_op_no_vm]#当基于页的虚拟内存未生效时，csr::[sum] 没有效果。#
+注意，[#norm:mstatus_sum_op_mprv_mpp]#虽然 csr::[sum] 在未以 S 模式执行时通常被忽略，但当 csr::[mprv]=1 且 csr::[mpp]=S 时它__确实__生效。#
+[#norm:mstatus_sum_rdonly0]#如果不支持 S 模式，或者 csr:satp[mode] 为只读 0，则 csr::[sum] 为只读 0；否则，它必须可写。#'''

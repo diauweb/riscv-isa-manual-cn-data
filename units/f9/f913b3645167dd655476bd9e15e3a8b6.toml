@@ -1,0 +1,13 @@
+unit_id = "f913b3645167dd655476bd9e15e3a8b6"
+kind = "code"
+translatable = false
+en = '''
+----
+    for element index x
+    prestart(x) = (0 <= x < vstart)
+    body(x)     = (vstart <= x < vl)
+    tail(x)     = (vl <= x < max(VLMAX,VLEN/SEW))
+    mask(x)     = unmasked || v0.mask[x] == 1
+    active(x)   = body(x) && mask(x)
+    inactive(x) = body(x) && !mask(x)
+----'''

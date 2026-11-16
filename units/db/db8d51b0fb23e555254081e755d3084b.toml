@@ -1,0 +1,55 @@
+unit_id = "db8d51b0fb23e555254081e755d3084b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[tcontrol-mpte]] `((mpte))`
+a|M-mode previous trigger enable field.
+
+{tcontrol-mpte} and {tcontrol-mte} provide one solution to a problem
+regarding triggers with action=0 firing in M-mode trap handlers. See
+xref:nativetrigger[] for more details.
+
+When any trap into M-mode is taken, {tcontrol-mpte} is set to the value of
+{tcontrol-mte}.
+a|*WARL*
+a|0
+|[[tcontrol-mte]] `((mte))`
+a|M-mode trigger enable field.
+
+0 (disabled): Triggers with action=0 do not match/fire while the hart is in M-mode.
+
+
+1 (enabled): Triggers do match/fire while the hart is in M-mode.
+
+When any trap into M-mode is taken, {tcontrol-mte} is set to 0. When `mret` is executed, {tcontrol-mte} is set to the value of {tcontrol-mpte}.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[tcontrol-mpte]] `((mpte))`
+a|M 模式先前触发器使能字段。
+
+{tcontrol-mpte} 和 {tcontrol-mte} 为有关 action=0 的触发器在 M 模式陷阱处理程序中触发的问题提供了一种解决方案。更多细节参见 xref:nativetrigger[]。
+
+当接受任何进入 M 模式的陷阱时，{tcontrol-mpte} 设置为 {tcontrol-mte} 的值。
+a|*WARL*
+a|0
+|[[tcontrol-mte]] `((mte))`
+a|M 模式触发器使能字段。
+
+0（disabled）：当硬件线程处于 M 模式时，action=0 的触发器不匹配/触发。
+
+
+1（enabled）：当硬件线程处于 M 模式时，触发器确实匹配/触发。
+
+当接受任何进入 M 模式的陷阱时，{tcontrol-mte} 设置为 0。当执行 `mret` 时，{tcontrol-mte} 设置为 {tcontrol-mpte} 的值。
+a|*WARL*
+a|0
+|==='''

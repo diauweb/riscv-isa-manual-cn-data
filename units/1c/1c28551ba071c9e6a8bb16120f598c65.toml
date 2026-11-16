@@ -1,0 +1,44 @@
+unit_id = "1c28551ba071c9e6a8bb16120f598c65"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Write subsumption litmus test, allowed execution
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",]
+!===
+2+!Hart 0 2+^!Hart 1
+2+!li t1, 3 2+^!li t3, 2
+! !li t2, 1 ! !
+!(a) !sw t1,0(s0) !(d) !lw a0,0(s1)
+!(b) !fence w, w !(e) !sw a0,0(s0)
+!(c) !sw t2,0(s1) !(f) !sw t3,0(s0)
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_subsumption.txt[]
+a! image::graphviz/litmus_subsumption.png[]
+!===
+|==='''
+zh = '''
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+.写归并 litmus 测试，允许的执行
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+2+!li t1, 3 2+^!li t3, 2
+! !li t2, 1 ! !
+!(a) !sw t1,0(s0) !(d) !lw a0,0(s1)
+!(b) !fence w, w !(e) !sw a0,0(s0)
+!(c) !sw t2,0(s1) !(f) !sw t3,0(s0)
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_subsumption.txt[]
+a! image::graphviz/litmus_subsumption.png[]
+!===
+|==='''

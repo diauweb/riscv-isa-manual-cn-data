@@ -1,0 +1,38 @@
+unit_id = "d0ee39925999d44864d70ae786ea3d46"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If an invalidate operation _i_ precedes a load _r_ and operates on a byte _x_
+  returned by _r_, and no store to _x_ appears between _i_ and _r_ in program
+  order or in the global memory order, then _r_ returns any of the following
+  values for _x_:
+
+. [#norm:invalidate_load_val_no_preceding_cmo]#If no clean or flush operations on _x_ precede _i_ in the global memory order,
+  either the initial value of _x_ or the value of any store to _x_ that precedes
+  _i_#
+
+. [#norm:invalidate_load_val_no_store_before_cmo]#If no store to _x_ precedes a clean or flush operation on _x_ in the global
+  memory order and if the clean or flush operation on _x_ precedes _i_ in the
+  global memory order, either the initial value of _x_ or the value of any store
+  to _x_ that precedes _i_#
+
+. [#norm:invalidate_load_val_store_before_cmo]#If a store to _x_ precedes a clean or flush operation on _x_ in the global
+  memory order and if the clean or flush operation on _x_ precedes _i_ in the
+  global memory order, either the value of the latest store to _x_ that precedes
+  the latest clean or flush operation on _x_ or the value of any store to _x_
+  that both precedes _i_ and succeeds the latest clean or flush operation on _x_
+  that precedes _i_#
+
+. [#norm:invalidate_load_val_noncoherent_store]#The value of any store to _x_ by a non-coherent agent regardless of the above
+  conditions#'''
+zh = '''
+* 如果无效化操作 _i_ 先于加载 _r_，并且作用于 _r_ 返回的字节 _x_，且在程序顺序或全局内存顺序中，_i_ 与 _r_ 之间没有对 _x_ 的存储操作，则 _r_ 对 _x_ 返回以下值之一：
+
+. [#norm:invalidate_load_val_no_preceding_cmo]#如果在全局内存顺序中没有对 _x_ 的清理或刷新操作先于 _i_，则返回 _x_ 的初始值或先于 _i_ 的任何对 _x_ 的存储操作的值#
+
+. [#norm:invalidate_load_val_no_store_before_cmo]#如果在全局内存顺序中没有对 _x_ 的存储操作先于对 _x_ 的清理或刷新操作，并且如果对 _x_ 的清理或刷新操作在全局内存顺序中先于 _i_，则返回 _x_ 的初始值或先于 _i_ 的任何对 _x_ 的存储操作的值#
+
+. [#norm:invalidate_load_val_store_before_cmo]#如果对 _x_ 的存储操作在全局内存顺序中先于对 _x_ 的清理或刷新操作，并且如果对 _x_ 的清理或刷新操作在全局内存顺序中先于 _i_，则返回先于最近一次对 _x_ 的清理或刷新操作的最新存储操作的值，或者返回既先于 _i_ 又后于先于 _i_ 的最近一次对 _x_ 的清理或刷新操作的任何对 _x_ 的存储操作的值#
+
+. [#norm:invalidate_load_val_noncoherent_store]#无论上述条件如何，返回非一致性代理对 _x_ 的任何存储操作的值#'''

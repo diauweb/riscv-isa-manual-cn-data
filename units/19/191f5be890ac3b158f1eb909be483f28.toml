@@ -1,0 +1,13 @@
+unit_id = "191f5be890ac3b158f1eb909be483f28"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Just as for AMOs in the ext:zaamo[] extension,
+[#norm:Zacas_amocas_rs1_addr_alignment]#insn:amocas.w/d/q[] requires that the address
+held in `rs1` be naturally aligned to the size of the operand (i.e., 16-byte
+aligned for _quadwords_, eight-byte aligned for _doublewords_, and four-byte
+aligned for _words_).# And the same exception options apply if the address
+is not naturally aligned.'''
+zh = '''
+正如 ext:zaamo[] 扩展中的 AMO 一样，[#norm:Zacas_amocas_rs1_addr_alignment]#insn:amocas.w/d/q[] 要求 `rs1` 中保存的地址按操作数大小自然对齐（即，__四字__为 16 字节对齐，__双字__为 8 字节对齐，__字__为 4 字节对齐）。# 如果地址未自然对齐，则同样适用相同的异常选项。'''

@@ -1,0 +1,19 @@
+unit_id = "d6383206454cd82b459300bbb1dcc6fc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This choice of behavior for csr:vl[]=0 reduces implementation
+complexity as it is consistent with other operations on vector
+register state.  For the common case that the source and destination
+scalar operand are the same vector register, this behavior also
+produces the expected result.  For the uncommon case that the source
+and destination scalar operand are in different vector registers, this
+instruction will not copy the source into the destination when csr:vl[]=0.
+However, it is expected that in most of these cases it will be
+statically known that csr:vl[] is not zero.  In other cases, a check for
+csr:vl[]=0 will have to be added to ensure that the source scalar is
+copied to the destination (e.g., by explicitly setting csr:vl[]=1 and
+performing a register-register copy).'''
+zh = '''
+NOTE: 对 csr:vl[]=0 的这种行为选择降低了实现复杂性，因为它与对向量寄存器状态的其他操作一致。对于源和目标标量操作数位于同一向量寄存器的常见情况，此行为也产生预期结果。对于源和目标标量操作数位于不同向量寄存器的不常见情况，当 csr:vl[]=0 时此指令不会将源复制到目标。然而，预期在大多数这些情况下，将静态地已知 csr:vl[] 不为零。在其他情况下，将必须添加对 csr:vl[]=0 的检查以确保源标量被复制到目标（例如，通过显式设置 csr:vl[]=1 并执行寄存器-寄存器复制）。'''

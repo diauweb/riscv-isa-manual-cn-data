@@ -1,0 +1,11 @@
+unit_id = "f4d04654aa11bd385f0721702dfaeb57"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Implementations that internally reorganize data according to EEW
+can shuffle the internal representation according to SEW.
+Implementations that do not internally reorganize data can dynamically
+elide this instruction (aside from resetting csr:vstart[] to 0).'''
+zh = '''
+NOTE: 在内部根据 EEW 重新组织数据的实现可以根据 SEW 重排内部表示。不在内部重新组织数据的实现可以动态省略此指令（除了将 csr:vstart[] 重置为 0）。'''

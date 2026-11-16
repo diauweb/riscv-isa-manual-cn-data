@@ -1,0 +1,12 @@
+unit_id = "8fdea9423600d11b0f2035da03b91482"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+First, the debugger should restore any registers that it has
+overwritten. Then it can let the selected harts run by setting {dmcontrol-resumereq}. Once {dmstatus-allresumeack} is
+set, the debugger knows the selected harts have resumed. Harts might
+halt very quickly after resuming (e.g. by hitting a software breakpoint)
+so the debugger cannot use {dmstatus-allhalted}/{dmstatus-anyhalted} to check whether the hart resumed.'''
+zh = '''
+首先，调试器应恢复其已覆写的任何寄存器。然后它可以通过设置 {dmcontrol-resumereq} 让选定的硬件线程运行。一旦 {dmstatus-allresumeack} 置位，调试器就知道选定的硬件线程已恢复运行。硬件线程可能在恢复后非常快地暂停（例如命中软件断点），因此调试器不能使用 {dmstatus-allhalted}/{dmstatus-anyhalted} 来检查硬件线程是否已恢复运行。'''

@@ -1,0 +1,12 @@
+unit_id = "4cce3bbaf8de8e4c6928276ff19bf40f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mcause` register is an MXLEN-bit read-write register formatted as
+shown in <<mcausereg>>. When a trap is taken into
+M-mode, `mcause` is written with a code indicating the event that
+caused the trap. Otherwise, `mcause` is never written by the
+implementation, though it may be explicitly written by software.'''
+zh = '''
+`mcause` 寄存器是一个 MXLEN 位读写寄存器，格式如 <<mcausereg>> 所示。当陷阱被捕获到 M 模式时，`mcause` 被写入指示导致陷阱的事件的代码。否则，`mcause` 从不由实现写入，尽管它可以由软件显式写入。'''

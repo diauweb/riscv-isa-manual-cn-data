@@ -1,0 +1,18 @@
+unit_id = "e0d1fff309f5716b77765920bef13ba9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Informally, the global memory order represents the order in which loads
+and stores perform. The formal memory model literature has moved away
+from specifications built around the concept of performing, but the idea
+is still useful for building up informal intuition. A load is said to
+have performed when its return value is determined. A store is said to
+have performed not when it has executed inside the pipeline, but rather
+only when its value has been propagated to globally visible memory. In
+this sense, the global memory order also represents the contribution of
+the coherence protocol and/or the rest of the memory system to
+interleave the (possibly reordered) memory accesses being issued by each
+hart into a single total order agreed upon by all harts.'''
+zh = '''
+非正式地说，全局内存顺序表示加载和存储执行的顺序。形式化内存模型文献已经不再采用围绕“执行（performing）”概念构建的规范，但这个概念对于建立非正式直觉仍然有用。当一个加载的返回值被确定时，称该加载已经执行。一个存储并不是在流水线内执行时就算已经执行，而是只有当其值已传播到全局可见内存时才称其已经执行。在这个意义上，全局内存顺序还表示一致性协议和/或内存系统其余部分将每个硬件线程发出的（可能被重排序的）内存访问交织成所有硬件线程一致同意的单一全序所作出的贡献。'''

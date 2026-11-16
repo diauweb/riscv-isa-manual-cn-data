@@ -1,0 +1,13 @@
+unit_id = "575384990a2a08567d0ad805b877a996"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Speculative executions of the address-translation algorithm behave as
+non-speculative executions of the algorithm do, except that they must
+not set the dirty bit for a PTE, they must not trigger an exception, and
+they must not create address-translation cache entries if those entries
+would have been invalidated by any SFENCE.VMA instruction executed by
+the hart since the speculative execution of the algorithm began.'''
+zh = '''
+地址转换算法的推测执行表现得如同该算法的非推测执行，除了它们不得为 PTE 置位脏位，不得触发异常，并且如果自该算法的推测执行开始以来硬件线程执行的任何 SFENCE.VMA 指令本会使那些条目无效，则它们不得创建地址转换缓存条目。'''

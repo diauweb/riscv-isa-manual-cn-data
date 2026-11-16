@@ -1,0 +1,8 @@
+unit_id = "656e14b3d5c7fd12cc8c286202dd9872"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Trace Funnel combines messages/packets from multiple sources into a single trace stream. It is implementation dependent how many incoming messages/packets are accepted before it is switching to another input source and in what order. But a continuous stream of messages/packets at one input cannot cause other inputs to not be handled. Suggested implementation would be to process just a single message/packet from each input in a round-robin fashion.'''
+zh = '''
+跟踪漏斗将来自多个源的消息/数据包组合成单个跟踪流。在切换到另一个输入源之前接受多少传入消息/数据包以及以什么顺序接受取决于实现。但是，一个输入上的连续消息/数据包流不能导致其他输入不被处理。建议的实现是以轮询方式仅处理来自每个输入的一个消息/数据包。'''

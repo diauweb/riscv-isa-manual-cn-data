@@ -1,0 +1,8 @@
+unit_id = "82c365a56177632cae851accbe4cb6d0"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: `trFunnelDisInput` register is optional. When not implemented (or never set) it will read as 0, which means that all inputs are always enabled. When implemented, it can be set to 0xFFFF to detect which inputs may be disabled in that trace funnel. Disabling inputs is needed when a single trace encoder may provide output to more than one possible active destination/sink. This register can be also used by trace tools to easily configure a trace in complex systems. Without the ability to disable individual funnel inputs, the trace tool must assure all trace sources which should not be traced are disabled.'''
+zh = '''
+NOTE: `trFunnelDisInput` 寄存器是可选的。当未实现（或从未设置）时，它将读为 0，这意味着所有输入始终使能。当实现时，可以将其设置为 0xFFFF，以检测该跟踪漏斗中哪些输入可以被禁用。当单个跟踪编码器可能向多于一个可能的活动目的地/接收端提供输出时，需要禁用输入。跟踪工具也可以使用此寄存器在复杂系统中轻松配置跟踪。如果无法禁用各个漏斗输入，则跟踪工具必须确保所有不应被跟踪的跟踪源都被禁用。'''

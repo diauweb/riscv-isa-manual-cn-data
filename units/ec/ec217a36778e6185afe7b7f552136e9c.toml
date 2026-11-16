@@ -1,0 +1,17 @@
+unit_id = "ec217a36778e6185afe7b7f552136e9c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_extensions_enc_txt]#The Extensions field encodes the presence of the standard extensions,
+with a single bit per letter of the alphabet (bit 0 encodes presence of
+extension "A" , bit 1 encodes presence of extension "B", through to
+bit 25 which encodes "Z").#
+[#norm:misa_i_op]#The "I" bit will be set for the RV32I and RV64I base ISAs#,
+and [#norm:misa_e_op]#the "E" bit will be set for RV32E and RV64E.#
+[#norm:misa_extensions_warl_op]#The Extensions field is a *WARL* field that can contain writable bits where the
+implementation allows the supported ISA to be modified.#
+[#norm:misa_extensions_rst]#At reset, the Extensions field shall contain the maximal set of supported extensions,
+and "I" shall be selected over "E" if both are available.#'''
+zh = '''
+[#norm:misa_extensions_enc_txt]#Extensions 字段编码标准扩展的存在，字母表中每个字母对应一位（位 0 编码扩展 "A" 的存在，位 1 编码扩展 "B" 的存在，一直到编码 "Z" 的位 25）。# [#norm:misa_i_op]#对于 RV32I 和 RV64I 基本 ISA，"I" 位将被置位#，并且 [#norm:misa_e_op]#对于 RV32E 和 RV64E，"E" 位将被置位。# [#norm:misa_extensions_warl_op]#Extensions 字段是一个 *WARL* 字段，在实现允许修改所支持 ISA 的地方可以包含可写位。# [#norm:misa_extensions_rst]#复位时，Extensions 字段应包含所支持扩展的最大集合，并且如果 "I" 和 "E" 都可用，则应选择 "I" 而非 "E"。#'''

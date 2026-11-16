@@ -1,0 +1,15 @@
+unit_id = "e83ca414090bc758ba31f5730be8492e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some standard CSRs, such as the counter CSRs of extension
+ext:zicntr[], are always 64-bit, even when XLEN=32 (RV32).
+For each such 64-bit CSR (for example, counter csr:time[]),
+a corresponding 32-bit _high-half CSR_ is usually defined with
+the same name but with the letter '`h`' appended at the end (csr:timeh[]).
+[#norm:Zicsr_high_half_alias]#The high-half CSR aliases bits 63:32 of its namesake
+64-bit CSR, thus providing a way for RV32 software
+to read and modify the otherwise-unreachable qty:32[bits].#'''
+zh = '''
+某些标准 CSR（例如扩展 ext:zicntr[] 的计数器 CSR）始终为 64 位，即使在 XLEN=32（RV32）时也是如此。对于每个这样的 64 位 CSR（例如计数器 csr:time[]），通常定义一个对应的 32 位__高半部分 CSR__，其名称相同，但在末尾附加字母 ‘h’（csr:timeh[]）。[#norm:Zicsr_high_half_alias]#高半部分 CSR 是其同名 64 位 CSR 的位 63:32 的别名，从而为 RV32 软件提供了一种读取和修改原本无法访问的 qty:32[位]的方法。#'''

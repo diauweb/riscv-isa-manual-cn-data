@@ -1,0 +1,13 @@
+unit_id = "66d5a641f48470882a6b10b9af20b9e7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The DMI uses between 7 and 32 address bits. Each address points at a
+single 32-bit register that can be read or written. The bottom of the
+address space is used for the first (and usually only) DM. Extra space
+can be used for custom debug devices, other cores, additional DMs, etc.
+If there are additional DMs on this DMI, the base address of the next DM
+in the DMI address space is given in {dm-nextdm}.'''
+zh = '''
+DMI 使用 7 到 32 个地址位。每个地址指向一个可读或写的单个 32 位寄存器。地址空间底部用于第一个（通常也是唯一的）DM。额外空间可用于自定义调试设备、其他核心、附加 DM 等。如果此 DMI 上有附加 DM，则 DMI 地址空间中下一个 DM 的基地址在 {dm-nextdm} 中给出。'''

@@ -1,0 +1,32 @@
+unit_id = "3de538d1956623e961c96773cdc02296"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.csr:vtype[] register layout
+[cols=">2,4,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|     Bits | Name         | Description
+
+|   XLEN-1 | csr::[vill]  | Illegal value if set
+| XLEN-2:8 | --           | Reserved if non-zero
+|        7 | csr::[vma]   | Vector mask agnostic
+|        6 | csr::[vta]   | Vector tail agnostic
+|      5:3 | csr::[vsew]  | Selected element width (SEW) setting
+|      2:0 | csr::[vlmul] | Vector register group multiplier (LMUL) setting
+|==='''
+zh = '''
+.csr:vtype[] 寄存器布局
+[cols=">2,4,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|     位 | 名称         | 描述
+
+|   XLEN-1 | csr::[vill]  | 若置位则为非法值
+| XLEN-2:8 | --           | 若非零则保留
+|        7 | csr::[vma]   | 向量掩码不可知
+|        6 | csr::[vta]   | 向量尾部不可知
+|      5:3 | csr::[vsew]  | 选定元素宽度（SEW）设置
+|      2:0 | csr::[vlmul] | 向量寄存器组乘数（LMUL）设置
+|==='''

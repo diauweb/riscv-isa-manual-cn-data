@@ -1,0 +1,16 @@
+unit_id = "123bc4d0644d8d0118b9a5349ed77bd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For implementations that conform to the RISC-V Unix Platform
+Specification, I/O devices and DMA operations are required to access
+memory coherently and via strongly ordered I/O channels. Therefore,
+accesses to regular main memory regions that are concurrently accessed
+by external devices can also use the standard synchronization
+mechanisms. Implementations that do not conform to the Unix Platform
+Specification and/or in which devices do not access memory coherently
+will need to use mechanisms (which are currently platform-specific or
+device-specific) to enforce coherency.'''
+zh = '''
+对于符合 RISC-V Unix 平台规范的实现，I/O 设备和 DMA 操作要求以一致方式并通过强序 I/O 通道访问内存。因此，对由外部设备并发访问的常规主存区域的访问也可以使用标准同步机制。不符合 Unix 平台规范和/或设备不以一致方式访问内存的实现将需要使用机制（目前是平台特定或设备特定的）来强制一致性。'''

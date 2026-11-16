@@ -1,0 +1,20 @@
+unit_id = "d85a65244adae89f4b32c2e880834a05"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If the input is normal or infinity, the BF16 encoded value is shifted
+to the left by 16 places and the
+least significant 16 bits are written with 0s.
+
+The result is NaN-boxed by writing the most significant `FLEN`-32 bits with 1s.
+===='''
+zh = '''
+[NOTE]
+====
+如果输入是正规数或无穷大,则将 BF16 编码值左移 16 位,并将最低的 16 位置 0。
+
+结果通过将最高的 `FLEN`-32 位置 1 来进行 NaN 装箱。
+===='''

@@ -1,0 +1,18 @@
+unit_id = "3fa8e3a0feb228d8e356a2c57ccc51d9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction is implemented on RV32 only.
+Used to compute the Sum0 transform of the SHA2-512 hash function.
+The transform is a 64-bit to 64-bit function, so the input and output
+is represented by two 32-bit registers.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+描述::
+该指令仅在 RV32 上实现。
+用于计算 SHA2-512 哈希函数的 Sum0 变换。
+该变换是 64 位到 64 位的函数，因此输入和输出由两个 32 位寄存器表示。
+该指令必须 _始终_ 以实现为其执行延迟不依赖于所操作数据的方式实现。'''

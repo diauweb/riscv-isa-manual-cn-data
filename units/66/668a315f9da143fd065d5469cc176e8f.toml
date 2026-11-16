@@ -1,0 +1,12 @@
+unit_id = "668a315f9da143fd065d5469cc176e8f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:epc_vstart_op_V_trap]#On a trap during a vector instruction (caused by either a synchronous
+exception or an asynchronous interrupt), the existing csr:*epc[] CSR is
+written with a pointer to the trapping vector instruction, while the
+csr:vstart[] CSR contains the element index on which the trap was
+taken.#'''
+zh = '''
+[#norm:epc_vstart_op_V_trap]#在向量指令期间发生陷阱时（由同步异常或异步中断引起），现有的 csr:*epc[] CSR 被写入指向陷入向量指令的指针，而 csr:vstart[] CSR 包含发生陷阱的元素索引。#'''

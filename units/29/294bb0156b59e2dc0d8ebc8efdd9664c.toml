@@ -1,0 +1,13 @@
+unit_id = "294bb0156b59e2dc0d8ebc8efdd9664c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Otherwise, for misaligned loads and stores that cause guest-page faults,
+a nonzero guest physical address in `mtval2` corresponds to the faulting
+portion of the access as indicated by the virtual address in `mtval`.
+For instruction guest-page faults on systems with variable-length
+instructions, a nonzero `mtval2` corresponds to the faulting portion of
+the instruction as indicated by the virtual address in `mtval`.'''
+zh = '''
+否则，对于导致客户页故障的未对齐加载和存储，`mtval2` 中的非零客户物理地址对应于由 `mtval` 中的虚拟地址所指示的访问的故障部分。对于具有可变长度指令的系统上的指令客户页故障，非零 `mtval2` 对应于由 `mtval` 中的虚拟地址所指示的指令的故障部分。'''

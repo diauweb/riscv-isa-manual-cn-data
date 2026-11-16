@@ -1,0 +1,19 @@
+unit_id = "67217be2783effee08a61bdf019bfb81"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((MUL, MULH)))
+(((MUL, MULHU)))
+(((MUL, MULHSU)))
+[#norm:mul_op]#insn:mul[] performs an XLEN-bit×XLEN-bit multiplication of
+`rs1` by `rs2` and places the lower XLEN bits in the destination
+register.# [#norm:mulh_mulhu_mulhsu_op]#insn:mulh[], insn:mulhu[], and insn:mulhsu[] perform the same multiplication but
+return the upper XLEN bits of the full 2×XLEN-bit
+product, for signed×signed,
+unsigned×unsigned, and `rs1`×unsigned `rs2` multiplication.#'''
+zh = '''
+(((MUL, MULH)))
+(((MUL, MULHU)))
+(((MUL, MULHSU)))
+[#norm:mul_op]#insn:mul[] 执行 `rs1` 乘以 `rs2` 的 XLEN 位×XLEN 位乘法，并将低 XLEN 位放入目标寄存器。# [#norm:mulh_mulhu_mulhsu_op]#insn:mulh[]、insn:mulhu[] 和 insn:mulhsu[] 执行相同的乘法，但返回完整 2×XLEN 位乘积的高 XLEN 位，分别用于有符号×有符号、无符号×无符号以及 `rs1`×无符号 `rs2` 乘法。#'''

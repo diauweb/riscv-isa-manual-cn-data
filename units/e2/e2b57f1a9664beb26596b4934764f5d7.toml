@@ -1,0 +1,20 @@
+unit_id = "e2b57f1a9664beb26596b4934764f5d7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+M-mode software can determine whether a privilege mode is implemented by
+writing that mode to csr::[mpp] then reading it back.
+
+If the machine provides only U and M modes, then only a single hardware
+storage bit is required to represent either 00 or 11 in csr::[mpp].
+===='''
+zh = '''
+[NOTE]
+====
+M 模式软件可以通过将某特权模式写入 csr::[mpp] 再读回来确定该特权模式是否已实现。
+
+如果机器仅提供 U 和 M 模式，则只需要单个硬件存储位来表示 csr::[mpp] 中的 00 或 11。
+===='''

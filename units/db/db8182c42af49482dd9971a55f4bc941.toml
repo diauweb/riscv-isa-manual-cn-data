@@ -1,0 +1,33 @@
+unit_id = "db8182c42af49482dd9971a55f4bc941"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+insn:pause[] is encoded as a hint within the insn:fence[] opcode because some
+implementations are expected to deliberately stall the insn:pause[] instruction
+until outstanding memory transactions have completed. Because the
+successor set is null, however, insn:pause[] does not _mandate_ any particular
+memory ordering—hence, it truly is a HINT.
+(((PAUSE, encoding)))
+
+Like other insn:fence[] instructions, insn:pause[] cannot be used within LR/SC
+sequences without voiding the forward-progress guarantee.
+(((PAUSE, LR/RC sequences)))
+
+The choice of a predecessor set of W is arbitrary, since the successor
+set is null. Other HINTs similar to insn:pause[] might be encoded with other
+predecessor sets.
+===='''
+zh = '''
+[NOTE]
+====
+insn:pause[] 被编码为 insn:fence[] 操作码内的一个提示，因为预期某些实现会故意停顿 insn:pause[] 指令，直到未完成的内存事务完成为止。然而，由于后继集合为空，insn:pause[] 并不 _强制_ 任何特定的内存顺序——因此，它确实是一个 HINT。
+(((PAUSE, encoding)))
+
+与其他 insn:fence[] 指令一样，在 LR/SC 序列中使用 insn:pause[] 会使前向进展保证失效。
+(((PAUSE, LR/RC sequences)))
+
+由于后继集合为空，前驱集合选择 W 是任意的。其他类似于 insn:pause[] 的 HINT 可能会使用其他前驱集合进行编码。
+===='''

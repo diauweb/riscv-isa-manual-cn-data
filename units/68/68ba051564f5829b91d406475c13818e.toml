@@ -1,0 +1,12 @@
+unit_id = "68ba051564f5829b91d406475c13818e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Changes to the `sstatus` fields SUM and MXR take effect immediately,
+without the need to execute an SFENCE.VMA instruction. Changing
+`satp`.MODE from Bare to other modes and vice versa also takes effect
+immediately, without the need to execute an SFENCE.VMA instruction.
+Likewise, changes to `satp`.ASID take effect immediately.'''
+zh = '''
+对 `sstatus` 字段 SUM 和 MXR 的更改立即生效，无需执行 SFENCE.VMA 指令。将 `satp`.MODE 从 Bare 更改为其他模式以及反之也立即生效，无需执行 SFENCE.VMA 指令。同样，对 `satp`.ASID 的更改立即生效。'''

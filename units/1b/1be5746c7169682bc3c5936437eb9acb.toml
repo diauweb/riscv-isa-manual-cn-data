@@ -1,0 +1,22 @@
+unit_id = "1be5746c7169682bc3c5936437eb9acb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Very first field is always fixed-length *TCODE* (Transport Code) which defines the meaning and format of subsequent fields.
+* In case of simultaneous tracing from more than one hart, the second field is always fixed-length *SRC* (Message Source) field, which provides a unique ID of message source.
+** This field allows trace decoders to separate messages from different trace sources (Trace Encoders, harts) without knowing any details of each of the messages.
+** This method can be used to handle different (opaque) trace or debug or performance data using N-Trace transport/storage/export infrastructure.
+* One or more (fixed-length or variable-length) payload fields. Sequence and selection of these fields depend on the value of *TCODE* field.
+** In some rare cases one of preceding fields may define number of following fields.
+* Very last field is (optional) variable-length *TSTAMP* (Timestamp) field.
+** It may be possible to generate and analyze timestamps in a unified (simpler) way.'''
+zh = '''
+* 最开始的字段始终是固定长度 *TCODE*（Transport Code），它定义后续字段的含义和格式。
+* 在同时跟踪多个硬件线程的情况下，第二个字段始终是固定长度 *SRC*（Message Source）字段，它提供消息源的唯一 ID。
+** 该字段使跟踪解码器无需了解每条消息的任何细节即可分离来自不同跟踪源（跟踪编码器、硬件线程）的消息。
+** 该方法可用于通过 N-Trace 传输/存储/导出基础设施处理不同的（不透明）跟踪、调试或性能数据。
+* 一个或多个（固定长度或可变长度）有效载荷字段。这些字段的顺序和选择取决于 *TCODE* 字段的值。
+** 在少数情况下，前面的某个字段可能定义后续字段的数量。
+* 最后一个字段是（可选的）可变长度 *TSTAMP*（时间戳）字段。
+** 可以以统一（更简单）的方式生成和分析时间戳。'''

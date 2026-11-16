@@ -1,0 +1,13 @@
+unit_id = "13617063da07c1dedca85351d793bc7a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An interrupt _i_ will trap to M-mode (causing the privilege mode to
+change to M-mode) if all of the following are true: (a) either the
+current privilege mode is M and the MIE bit in the `mstatus` register is
+set, or the current privilege mode has less privilege than M-mode;
+(b) bit _i_ is set in both `mip` and `mie`; and (c) if register
+`mideleg` exists, bit _i_ is not set in `mideleg`.'''
+zh = '''
+如果以下所有条件都成立，则中断 _i_ 将陷入 M 模式（导致特权模式变为 M 模式）：(a) 当前特权模式为 M 且 `mstatus` 寄存器中的 MIE 位被置位，或者当前特权模式的特权级低于 M 模式；(b) 位 _i_ 在 `mip` 和 `mie` 中都被置位；以及 (c) 如果寄存器 `mideleg` 存在，则位 _i_ 在 `mideleg` 中未被置位。'''

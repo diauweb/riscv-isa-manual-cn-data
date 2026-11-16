@@ -1,0 +1,19 @@
+unit_id = "462bf0ee6b88d818f6930ada4b4417db"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This approach can be extended to cope with small sections of
+deterministically dynamic code by arranging for the decoder to request
+instruction memory from the target. Memory lookups generally lead to a
+prohibitive reduction in performance, although they are suitable for
+examining modest jump tables, such as the exception/interrupt vector
+pointers of an operating system which may be adjusted at boot up and
+when services are registered. Both static and dynamically linked
+programs can be traced using this approach. Statically linked programs
+are straightforward as they generally operate in a known address space,
+often mapping directly to physical memory. Dynamically linked programs
+require the debugger to keep track of memory allocation operations using
+either trace or stop-mode debugging.'''
+zh = '''
+通过让解码器向目标请求指令存储器内容，该方法可扩展至处理小的确定性动态代码段。内存查找通常会导致性能下降到难以接受的程度，尽管它们适用于检查适度的跳转表，例如操作系统在启动时以及注册服务时可能调整的异常/中断向量指针。使用该方法可以跟踪静态链接和动态链接的程序。静态链接程序较为简单，因为它们通常在已知地址空间中运行，往往直接映射到物理内存。动态链接程序则要求调试器使用跟踪或停止模式调试来跟踪内存分配操作。'''

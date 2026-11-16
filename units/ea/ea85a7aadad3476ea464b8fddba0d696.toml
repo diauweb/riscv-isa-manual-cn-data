@@ -1,0 +1,14 @@
+unit_id = "ea85a7aadad3476ea464b8fddba0d696"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction returns _rs1_ with a single bit set at the index specified in _shamt_.
+The index is read from the lower log2(XLEN) bits of _shamt_.
+[#norm:bseti_shamt_rsv_rv32]#For RV32, the encodings corresponding to shamt[5]=1 are reserved.#'''
+zh = '''
+描述::
+此指令返回 _rs1_，其中在 _shamt_ 指定的索引处置位单个比特。
+该索引从 _shamt_ 的低 log2(XLEN) 位读取。
+[#norm:bseti_shamt_rsv_rv32]#对于 RV32，与 shamt[5]=1 对应的编码为保留。#'''

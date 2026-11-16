@@ -1,0 +1,26 @@
+unit_id = "c3876d85efe0bc989a12c410f3df4452"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. `pc` changes to the value stored in {csr-dpc}.
+. The current privilege mode and virtualization mode are changed to that
+specified by {dcsr-prv} and {dcsr-v}.
+. If the Zicfilp extension is enabled at the new privilege mode, the current
+  `ELP` state is changed to that specified by {dcsr-pelp} else it is set to
+  `NO_LP_EXPECTED`. {dcsr-pelp} is set to `NO_LP_EXPECTED`.
+. If the new privilege mode is less privileged than M-mode, `MPRV` in `mstatus` is cleared.
+. If the Smdbltrp extension is implemented and the new privilege mode is not M,
+  then the `MDT` bit is set to 0.
+. If the Ssdbltrp extension is implemented and the new privilege mode is U, VS,
+  or VU, then `sstatus.SDT` is set to 0. Additionally, if it is VU, then
+  `vsstatus.SDT` is also set to 0.
+. The hart is no longer in debug mode.'''
+zh = '''
+. `pc` 更改为 {csr-dpc} 中存储的值。
+. 当前特权模式和虚拟化模式更改为 {dcsr-prv} 和 {dcsr-v} 指定的模式。
+. 如果在新特权模式下启用了 Zicfilp 扩展，则当前 `ELP` 状态更改为 {dcsr-pelp} 指定的状态，否则设置为 `NO_LP_EXPECTED`。{dcsr-pelp} 设置为 `NO_LP_EXPECTED`。
+. 如果新特权模式低于 M 模式，则清除 `mstatus` 中的 `MPRV`。
+. 如果实现了 Smdbltrp 扩展且新特权模式不是 M，则将 `MDT` 位设置为 0。
+. 如果实现了 Ssdbltrp 扩展且新特权模式为 U、VS 或 VU，则将 `sstatus.SDT` 设置为 0。此外，如果为 VU，则 `vsstatus.SDT` 也设置为 0。
+. 硬件线程不再处于调试模式。'''

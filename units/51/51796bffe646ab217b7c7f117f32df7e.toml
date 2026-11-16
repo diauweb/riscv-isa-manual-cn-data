@@ -1,0 +1,58 @@
+unit_id = "51796bffe646ab217b7c7f117f32df7e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Unified atomic with data only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+110: Unified atomic or split atomic address +
+(other codes other packet formats)
+|*subtype* | 3 | Atomic sub-type +
+000: Swap +
+001: ADD +
+010: AND +
+011: OR +
+100: XOR +
+101: MAX +
+110: MIN +
+111: reserved
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*diff* | 1 or 2 | 00: Full data (sync) +
+01: Compressed data (XOR if 2 bits) +
+10: reserved +
+11: Differential data
+|*op_len* | *size* | Number of bytes of operand is *op_len* + 1
+|*operand* | 8 * (*op_len* + 1) | Operand. Value from rs2 before operator
+applied
+|*data* | _data_width_p_ | Data
+|==='''
+zh = '''
+.统一原子操作包格式，仅带数据
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名* | *位数* | *描述*
+|*format* | 3 | 事务类型 +
+110：统一原子或分离原子地址 +
+（其他代码为其他包格式）
+|*subtype* | 3 | 原子子类型 +
+000：交换 +
+001：ADD +
+010：AND +
+011：OR +
+100：XOR +
+101：MAX +
+110：MIN +
+111：保留
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*diff* | 1 或 2 | 00：完整数据（同步） +
+01：压缩数据（若为 2 位则 XOR） +
+10：保留 +
+11：差分数据
+|*op_len* | *size* | 操作数字节数为 *op_len* + 1
+|*operand* | 8 * (*op_len* + 1) | 操作数。应用操作符之前来自 rs2 的值
+|*data* | _data_width_p_ | 数据
+|==='''

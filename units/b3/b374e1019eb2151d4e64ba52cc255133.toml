@@ -1,0 +1,29 @@
+unit_id = "b374e1019eb2151d4e64ba52cc255133"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Strong ordering can be used to improve compatibility with legacy device
+driver code, or to enable increased performance compared to insertion of
+explicit ordering instructions when the implementation is known to not
+reorder accesses.
+
+Local strong ordering (channel 0) is the default form of strong ordering
+as it is often straightforward to provide if there is only a single
+in-order communication path between the hart and the I/O device.
+
+Generally, different strongly ordered I/O regions can share the same
+ordering channel without additional ordering hardware if they share the
+same interconnect path and the path does not reorder requests.
+===='''
+zh = '''
+[NOTE]
+====
+强排序可用于改善与遗留设备驱动程序代码的兼容性，或在已知实现不会重排访问的情况下，相较于插入显式排序指令可实现更高的性能。
+
+本地强排序（通道 0）是强排序的默认形式，因为当硬件线程与 I/O 设备之间只有单一按序通信路径时，通常很容易提供。
+
+通常，不同的强排序 I/O 区域若共享相同的互连路径且该路径不重排请求，则可以共享相同的排序通道而无需额外的排序硬件。
+===='''

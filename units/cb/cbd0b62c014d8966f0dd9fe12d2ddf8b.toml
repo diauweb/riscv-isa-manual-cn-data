@@ -1,0 +1,13 @@
+unit_id = "cbd0b62c014d8966f0dd9fe12d2ddf8b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmv-s-x_op]#The `vmv.s.x` instruction copies the scalar integer register to element 0 of
+the destination vector register.  If SEW < XLEN, the least-significant bits
+are copied and the upper XLEN-SEW bits are ignored.  If SEW > XLEN, the value
+is sign-extended to SEW bits.  The other elements in the destination vector
+register ( 0 < index < VLEN/SEW) are treated as tail elements using the current tail agnostic/undisturbed policy.#  [#norm:vmv-s-x_vstart_ge_vl]#If `vstart` {ge} `vl`, no
+operation is performed and the destination register is not updated.#'''
+zh = '''
+[#norm:vmv-s-x_op]#`vmv.s.x` 指令将标量整数寄存器复制到目标向量寄存器元素 0。若 SEW < XLEN，则复制低位并忽略高 XLEN-SEW 位。若 SEW > XLEN，则值符号扩展至 SEW 位。目标向量寄存器中的其他元素（0 < index < VLEN/SEW）按当前尾部 agnostic/undisturbed 策略作为尾部元素处理。[#norm:vmv-s-x_vstart_ge_vl]#若 `vstart` {ge} `vl`，则不执行操作且不更新目标寄存器。#'''

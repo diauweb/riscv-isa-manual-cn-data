@@ -1,0 +1,17 @@
+unit_id = "bc30de3453fb60056ddb4fa981e4f0d4"
+kind = "diagram"
+translatable = false
+en = '''
+[bytefield]
+----
+(def row-height 45)
+(def row-header-fn nil)
+(def boxes-per-row 24)
+(draw-column-headers {:font-size 15 :height 17 :labels ["" "XLEN-1" "32" "31" "" "" "" "" "" "" "" "0" "" "" "" "" "" "" "" "" "" "" "" ""]})
+(draw-box (text "0" {:font-size 20}) {:span 3})
+(draw-box (text "data" {:font-size 20}) {:span 9})
+(draw-box "" {:span 12 :borders {}})
+(draw-box "XLEN - 32" {:span 3 :borders {}})
+(draw-box "32" {:span 9 :borders {}})
+(draw-box "" {:span 12 :borders {}})
+----'''

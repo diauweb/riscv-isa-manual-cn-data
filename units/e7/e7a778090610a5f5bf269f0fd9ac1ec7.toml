@@ -1,0 +1,12 @@
+unit_id = "e7a778090610a5f5bf269f0fd9ac1ec7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SIE bit enables or disables all interrupts in supervisor mode. When
+SIE is clear, interrupts are not taken while in supervisor mode. When
+the hart is running in user-mode, the value in SIE is ignored, and
+supervisor-level interrupts are enabled. The supervisor can disable
+individual interrupt sources using the `sie` CSR.'''
+zh = '''
+SIE 位使能或禁止监管模式下的所有中断。当 SIE 为 0 时，在监管模式下不会接受中断。当硬件线程运行在用户模式时，SIE 的值被忽略，监管级中断处于使能状态。监管模式可以使用 `sie` CSR 禁用各个中断源。'''

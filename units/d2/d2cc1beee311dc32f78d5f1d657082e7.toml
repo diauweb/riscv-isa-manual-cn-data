@@ -1,0 +1,15 @@
+unit_id = "d2cc1beee311dc32f78d5f1d657082e7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point operations use either a static rounding mode encoded in
+the instruction, or a dynamic rounding mode held in `frm`. Rounding
+modes are encoded as shown in <<rm>>. A value of 111 in the
+instruction's _rm_ field selects the dynamic rounding mode held in
+`frm`. The behavior of floating-point instructions that depend on
+rounding mode when executed with a reserved rounding mode is _reserved_, including both static reserved rounding modes (101-110) and dynamic reserved rounding modes (101-111). Some instructions, including widening conversions, have the _rm_ field but are nevertheless mathematically unaffected by the rounding mode; software should set their _rm_ field to
+RNE (000) but implementations must treat the _rm_ field as usual (in
+particular, with regard to decoding legal vs. reserved encodings).'''
+zh = '''
+浮点运算使用指令中编码的静态舍入模式，或 `frm` 中保存的动态舍入模式。舍入模式的编码如 <<rm>> 所示。指令的 _rm_ 字段值为 111 时选择 `frm` 中保存的动态舍入模式。当使用保留的舍入模式执行时，依赖于舍入模式的浮点指令的行为是__保留的__，包括静态保留舍入模式（101-110）和动态保留舍入模式（101-111）。某些指令（包括扩展转换）具有 _rm_ 字段，但在数学上不受舍入模式影响；软件应将其 _rm_ 字段设置为 RNE（000），但实现必须像往常一样处理 _rm_ 字段（特别是关于解码合法编码与保留编码）。'''

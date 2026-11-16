@@ -1,0 +1,16 @@
+unit_id = "c5150d9dfea49499b0fccea4b4599190"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There is an additional problem with using {csr-icount} to single step. An instruction
+may cause an exception into a more privileged mode where the trigger is
+not enabled. The exception handler might address the cause of the
+exception, and then restart the instruction. Examples of this include
+page faults, FPU instructions when the FPU is not yet enabled, and
+interrupts. When a user is single stepping through such code, they will
+have to step twice to get past the restarted instruction. The first time
+the exception handler runs, and the second time the instruction actually
+executes. That is confusing and usually undesirable.'''
+zh = '''
+使用 {csr-icount} 进行单步还存在另一个问题。一条指令可能导致异常进入更高特权模式，而在该模式中触发器未启用。异常处理程序可能会处理异常原因，然后重新启动该指令。示例包括缺页异常、FPU 尚未启用时的 FPU 指令以及中断。当用户单步执行此类代码时，他们将不得不单步两次才能越过重新启动的指令。第一次异常处理程序运行，第二次指令实际执行。这令人困惑，而且通常不可取。'''

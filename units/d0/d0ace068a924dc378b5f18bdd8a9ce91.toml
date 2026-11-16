@@ -1,0 +1,12 @@
+unit_id = "d0ace068a924dc378b5f18bdd8a9ce91"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A program using backward-edge control-flow integrity has two stacks: a regular
+stack and a shadow stack. The shadow stack is used to spill the link register,
+if required, by non-leaf functions. An additional register, shadow-stack-pointer
+(`ssp`), is introduced in the architecture to hold the address of the top of the
+active shadow stack.'''
+zh = '''
+使用后向边控制流完整性的程序有两个栈：常规栈和影子栈。影子栈用于在需要时由非叶子函数溢出保存链接寄存器。架构中引入了附加寄存器影子栈指针（`ssp`），用于保存活动影子栈栈顶的地址。'''

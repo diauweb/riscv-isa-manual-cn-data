@@ -1,0 +1,16 @@
+unit_id = "888d43b41383662b91cfd63b3d915fb9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_stip_mie_stie_op]#If supervisor mode is implemented, its csr:mip[stip] and csr:mie[stie] are
+the interrupt-pending and interrupt-enable bits for supervisor-level timer interrupts.#
+[#norm:mip_stip_no_stimecmp_acc]#If the csr:stimecmp[] register is not implemented, csr::[stip] is writable in
+csr:mip[]#, and [#norm:mip_stip_no_stimecmp_mmode_write]#may be written by M-mode software to deliver timer interrupts to
+S-mode.# [#norm:mip_stip_stimecmp_acc]#If the csr:stimecmp[] (supervisor-mode timer compare) register is
+implemented, csr::[stip] is read-only in csr:mip[]# and [#norm:mip_stip_reflects_stimecmp]#reflects the supervisor-level timer
+interrupt signal resulting from csr:stimecmp[].# [#norm:mip_stip_stimecmp_clr]#This timer interrupt signal is
+cleared by writing csr:stimecmp[] with a value greater than the current time value.#'''
+zh = '''
+[#norm:mip_stip_mie_stie_op]#如果实现了监管模式，则其 csr:mip[stip] 和 csr:mie[stie] 是监管级定时器中断的中断挂起位和中断使能位。#
+[#norm:mip_stip_no_stimecmp_acc]#如果未实现 csr:stimecmp[] 寄存器，则 csr::[stip] 在 csr:mip[] 中可写#，并且 [#norm:mip_stip_no_stimecmp_mmode_write]#可以由 M 模式软件写入，以向 S 模式递送定时器中断。# [#norm:mip_stip_stimecmp_acc]#如果实现了 csr:stimecmp[]（监管模式定时器比较）寄存器，则 csr::[stip] 在 csr:mip[] 中为只读#，并且 [#norm:mip_stip_reflects_stimecmp]#反映由 csr:stimecmp[] 产生的监管级定时器中断信号。# [#norm:mip_stip_stimecmp_clr]#该定时器中断信号通过向 csr:stimecmp[] 写入大于当前时间值的值来清除。#'''

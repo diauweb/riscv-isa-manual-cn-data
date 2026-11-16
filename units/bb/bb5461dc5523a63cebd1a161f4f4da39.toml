@@ -1,0 +1,18 @@
+unit_id = "bb5461dc5523a63cebd1a161f4f4da39"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We required the counters be 64 bits wide, even when XLEN=32, as
+otherwise it is very difficult for software to determine if values have
+overflowed.
+The sample code <<zicntr-rv32-sample>> shows how the full 64-bit width value can
+be safely read using the individual 32-bit width pseudoinstructions.
+===='''
+zh = '''
+[NOTE]
+====
+我们要求计数器宽度为 64 位，即使 XLEN=32 也是如此，否则软件很难判断值是否已溢出。示例代码 <<zicntr-rv32-sample>> 展示了如何使用各个 32 位宽伪指令安全地读取完整的 64 位宽值。
+===='''

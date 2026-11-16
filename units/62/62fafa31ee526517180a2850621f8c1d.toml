@@ -1,0 +1,17 @@
+unit_id = "62fafa31ee526517180a2850621f8c1d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RV32I is a load-store architecture, where only load and store
+instructions access memory and arithmetic instructions only operate on
+CPU registers. RV32I provides a 32-bit address space that is
+byte-addressed. The EEI will define what portions of the address space
+are legal to access with which instructions (e.g., some addresses might
+be read only, or support word access only).
+[#norm:load_exc_x0]#Loads with a destination of
+`x0` must still raise any exceptions and cause any other side effects
+even though the load value is discarded.#'''
+zh = '''
+RV32I 是一种加载-存储架构，其中只有加载和存储指令访问内存，算术指令只对 CPU 寄存器操作。RV32I 提供按字节寻址的 32 位地址空间。EEI 将定义地址空间的哪些部分可以用哪些指令合法访问（例如，某些地址可能是只读的，或仅支持字访问）。
+[#norm:load_exc_x0]#目标为 `x0` 的加载仍必须引发任何异常并造成任何其他副作用，即使加载值被丢弃。#'''

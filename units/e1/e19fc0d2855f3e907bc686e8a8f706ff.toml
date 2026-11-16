@@ -1,0 +1,20 @@
+unit_id = "e19fc0d2855f3e907bc686e8a8f706ff"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We reserved several PTE bits for a possible extension that improves
+support for sparse address spaces by allowing page-table levels to be
+skipped, reducing memory usage and TLB refill latency. These reserved
+bits may also be used to facilitate research experimentation. The cost
+is reducing the physical address space, but is presently ample. When it
+no longer suffices, the reserved bits that remain unallocated could be
+used to expand the physical address space.
+===='''
+zh = '''
+[NOTE]
+====
+我们保留了若干 PTE 位，供可能的扩展使用，该扩展通过允许跳过页表级别来改进对稀疏地址空间的支持，从而减少内存使用和 TLB 重填延迟。这些保留位也可用于促进研究实验。代价是减小物理地址空间，但目前足够充裕。当它不再充裕时，剩余未分配的保留位可用于扩展物理地址空间。
+===='''

@@ -1,0 +1,19 @@
+unit_id = "682bf7be7f3bbb84f61b00a64fff3585"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+JTAG TAPs used as a DTM must have an IR of at least 5 bits. When the TAP
+is reset, IR must default to 00001, selecting the IDCODE instruction. A
+full list of JTAG registers along with their encoding is in
+<<tab:jtag_registers>>. If the IR
+actually has more than 5 bits, then the encodings in
+<<tab:jtag_registers>> should be
+extended with 0's in their most significant bits, except for the 0x1f
+encoding of BYPASS, which must be extended with 1's in the most
+significant bits. The only regular JTAG registers a debugger might use
+are BYPASS and IDCODE, but this specification leaves IR space for many
+other standard JTAG instructions. Unimplemented instructions must select
+the BYPASS register.'''
+zh = '''
+用作 DTM 的 JTAG TAP 必须具有至少 5 位的 IR。当 TAP 复位时，IR 必须默认为 00001，选择 IDCODE 指令。JTAG 寄存器的完整列表及其编码见 <<tab:jtag_registers>>。如果 IR 实际超过 5 位，则 <<tab:jtag_registers>> 中的编码应在其最高有效位用 0 扩展，但 BYPASS 的 0x1f 编码除外，其最高有效位必须用 1 扩展。调试器可能使用的唯一常规 JTAG 寄存器是 BYPASS 和 IDCODE，但本规范为许多其他标准 JTAG 指令留出了 IR 空间。未实现的指令必须选择 BYPASS 寄存器。'''

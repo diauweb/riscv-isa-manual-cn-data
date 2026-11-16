@@ -1,0 +1,13 @@
+unit_id = "d463cbaf5c750f980a75537d4377286b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Another option is to allow the DM to be unlocked only by users who have
+an access key. Between {dmstatus-authenticated}, {dmstatus-authbusy}, and {dm-authdata} arbitrarily complex authentication
+mechanisms can be supported. When {dmstatus-authenticated} is clear, the DM must not interact with
+the rest of the hardware platform, nor expose details about the harts
+connected to the DM. All DM registers should read 0, while writes should
+be ignored, with the following mandatory exceptions:'''
+zh = '''
+另一种选择是仅允许拥有访问密钥的用户解锁 DM。通过 {dmstatus-authenticated}、{dmstatus-authbusy} 和 {dm-authdata}，可以支持任意复杂的认证机制。当 {dmstatus-authenticated} 为清除时，DM 不得与硬件平台的其他部分交互，也不得暴露有关连接到 DM 的硬件线程的详细信息。所有 DM 寄存器应读为 0，而写入应被忽略，但以下强制例外除外：'''

@@ -1,0 +1,11 @@
+unit_id = "0892154c6ba80191db3d9420434bb1b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Any level of PTE may be a leaf PTE, so in addition to 4 KiB pages, Sv32
+supports 4 MiB _megapages_. A megapage must be virtually and physically
+aligned to a 4 MiB boundary; a page-fault exception is raised if the
+physical address is insufficiently aligned.'''
+zh = '''
+任何级别的 PTE 都可以是叶 PTE，因此除了 4 KiB 页之外，Sv32 还支持 4 MiB 的__兆页__。兆页必须在虚拟和物理上对齐到 4 MiB 边界；如果物理地址对齐不足，则引发页错误异常。'''

@@ -1,0 +1,12 @@
+unit_id = "d694c93eda56bd89dfd3a12146d39c06"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Additionally, invalidate, clean, and flush operations are classified as W or O
+(depending on the physical memory attributes for the corresponding physical
+addresses) for the purposes of predecessor and successor sets in `FENCE`
+instructions. These operations are _not_ ordered by other instructions that
+order stores, e.g. `FENCE.I` and `SFENCE.VMA`.'''
+zh = '''
+此外，就 `FENCE` 指令中的前驱集和后继集而言，无效化、清理和冲刷操作根据（对应物理地址的物理内存属性）被归类为 W 或 O。这些操作__不__受对其他存储进行排序的指令（例如 `FENCE.I` 和 `SFENCE.VMA`）排序。'''

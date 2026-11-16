@@ -1,0 +1,35 @@
+unit_id = "957a7dae68582cca41f330b93de26de9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If __rs1__=`x0` and __rs2__=`x0`, the fence orders all reads and writes
+made to any level of the page tables, for all address spaces. The fence
+also invalidates all address-translation cache entries, for all address
+spaces.
+* If __rs1__=`x0` and __rs2__&#8800;``x0``, the fence orders all
+reads and writes made to any level of the page tables, but only for the
+address space identified by integer register _rs2_. Accesses to _global_
+mappings (see <<translation>>) are not ordered. The
+fence also invalidates all address-translation cache entries matching
+the address space identified by integer register _rs2_, except for
+entries containing global mappings.
+* If __rs1__&#8800;``x0`` and __rs2__=`x0`, the fence orders only
+reads and writes made to leaf page table entries corresponding to the
+virtual address in __rs1__, for all address spaces. The fence also
+invalidates all address-translation cache entries that contain leaf page
+table entries corresponding to the virtual address in _rs1_, for all
+address spaces.
+* If __rs1__&#8800;``x0`` and __rs2__&#8800;``x0``, the
+fence orders only reads and writes made to leaf page table entries
+corresponding to the virtual address in _rs1_, for the address space
+identified by integer register _rs2_. Accesses to global mappings are
+not ordered. The fence also invalidates all address-translation cache
+entries that contain leaf page table entries corresponding to the
+virtual address in _rs1_ and that match the address space identified by
+integer register _rs2_, except for entries containing global mappings.'''
+zh = '''
+* 如果 __rs1__=`x0` 且 __rs2__=`x0`，则该栅栏对针对页表任意层级的所有读和写进行排序，适用于所有地址空间。该栅栏还会使所有地址空间的所有地址转换缓存条目无效。
+* 如果 __rs1__=`x0` 且 __rs2__&#8800;``x0``，则该栅栏对针对页表任意层级的所有读和写进行排序，但仅针对由整数寄存器 _rs2_ 标识的地址空间。对 _global_ 映射（见 <<translation>>）的访问不排序。该栅栏还会使与整数寄存器 _rs2_ 标识的地址空间匹配的所有地址转换缓存条目无效，但包含全局映射的条目除外。
+* 如果 __rs1__&#8800;``x0`` 且 __rs2__=`x0`，则该栅栏仅对与 __rs1__ 中虚拟地址对应的叶页表条目所做的读和写进行排序，适用于所有地址空间。该栅栏还会使包含与 _rs1_ 中虚拟地址对应的叶页表条目的所有地址转换缓存条目无效，适用于所有地址空间。
+* 如果 __rs1__&#8800;``x0`` 且 __rs2__&#8800;``x0``，则该栅栏仅对与 _rs1_ 中虚拟地址对应的叶页表条目所做的读和写进行排序，适用于由整数寄存器 _rs2_ 标识的地址空间。对全局映射的访问不排序。该栅栏还会使包含与 _rs1_ 中虚拟地址对应的叶页表条目、且与由整数寄存器 _rs2_ 标识的地址空间匹配的所有地址转换缓存条目无效，但包含全局映射的条目除外。'''

@@ -1,0 +1,15 @@
+unit_id = "6ff4c7a4b3d71a080579d2e42e6b5dd2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Alternatively, the encoder can maintain a stack of expected return
+addresses, and only treat a return as inferable if the actual return
+address matches the prediction. This is fully robust for all programs,
+but is more expensive to implement. In this case, if a return address
+does not match the prediction, it must be reported explicitly via a
+packet, along with the number of return addresses currently on the
+stack. This ensures that the decoder can determine which return is being
+reported.'''
+zh = '''
+或者，编码器可以维护一个预期返回地址栈，仅当实际返回地址与预测匹配时才将返回视为可推断。这对所有程序都完全鲁棒，但实现成本更高。在这种情况下，如果返回地址与预测不匹配，则必须通过一个包显式报告该地址，并同时报告当前栈上的返回地址数量。这确保解码器能够确定正在报告的是哪一次返回。'''

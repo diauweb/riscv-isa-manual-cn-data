@@ -1,0 +1,20 @@
+unit_id = "5fbc4c4b9adbf55dbb533fd9166ee00d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sstateen_bit_correspondence]#For every bit with a defined purpose in an `sstateen` CSR, the same bit is
+defined in the matching `mstateen` CSR to control access below machine level to
+the same state.# The upper 32 bits of an `mstateen` CSR (or for RV32, the
+corresponding high-half CSR) control access to state that is inherently
+inaccessible to user level, so no corresponding enable bits in the
+supervisor-level `sstateen` CSR are applicable. [#norm:mstateen_bit_allocation]#The intention is to allocate bits
+for this purpose starting at the most-significant end, bit 63, through to bit
+32, and then on to the next-higher `mstateen` CSR.# [#norm:mstateen_bit_encroachment]#If the rate that bits are
+being allocated from the least-significant end for `sstateen` CSRs is
+sufficiently low, allocation from the most-significant end of `mstateen` CSRs may
+be allowed to encroach on the lower 32 bits before jumping to the next-higher
+`mstateen` CSR.# [#norm:sstateen_encroachment_bits_roz]#In that case, the bit positions of "encroaching" bits will remain
+forever read-only zeros in the matching `sstateen` CSRs.#'''
+zh = '''
+[#norm:sstateen_bit_correspondence]#对于 `sstateen` CSR 中每个具有已定义用途的位，在相应的 `mstateen` CSR 中也定义了相同的位，以控制低于机器级对同一状态的访问。# `mstateen` CSR 的高 32 位（或对 RV32 而言，相应的高半部分 CSR）控制对用户级本质上不可访问的状态的访问，因此监管级 `sstateen` CSR 中不存在相应的使能位。 [#norm:mstateen_bit_allocation]#其意图是从最高有效端第 63 位开始，一直到第 32 位，然后再到下一个编号更高的 `mstateen` CSR，来分配用于此目的的各位。# [#norm:mstateen_bit_encroachment]#如果从最低有效端为 `sstateen` CSR 分配位的速率足够低，可以允许从 `mstateen` CSR 的最高有效端进行的分配在跳到下一个编号更高的 `mstateen` CSR 之前侵入低 32 位。# [#norm:sstateen_encroachment_bits_roz]#在这种情况下，"侵入" 位的位置在相应的 `sstateen` CSR 中将永远保持为只读零。#'''

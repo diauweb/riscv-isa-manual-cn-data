@@ -1,0 +1,18 @@
+unit_id = "2c049f2827e64ba61aed62236c4582aa"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Bit `trTeInstTracing` must be implemented (to start/stop instruction trace output from Trace Encoder).
+* One of `trTeInstMode` = 3 (Baseline instruction trace) or 6 (Optimized instruction trace) must be implemented (can be a hard coded value).
+* At least one of the non-0 values of `trTeInstSyncMode` must be settable (or hard coded).
+* Field `trTeFormat` must correspond to implemented trace protocol (0 for E-Trace or 1 for N-Trace).
+* Fields `trTeProtocolMajor` and `trTeProtocolMinor` must return versions of implemented protocol.
+* All other registers/fields/bits may be tied to 0.'''
+zh = '''
+* 必须实现位 `trTeInstTracing`（用于启动/停止跟踪编码器的指令跟踪输出）。
+* 必须实现 `trTeInstMode` = 3（基线指令跟踪）或 6（优化指令跟踪）之一（可以是硬连线值）。
+* `trTeInstSyncMode` 的至少一个非 0 值必须可设置（或硬连线）。
+* 字段 `trTeFormat` 必须对应已实现的跟踪协议（0 表示 E-Trace，1 表示 N-Trace）。
+* 字段 `trTeProtocolMajor` 和 `trTeProtocolMinor` 必须返回已实现协议的版本。
+* 所有其他寄存器/字段/位可固定为 0。'''

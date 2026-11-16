@@ -1,0 +1,20 @@
+unit_id = "31d2765ce9c211777f247775b1a369c4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Software Hint
+[NOTE, caption="SW"]
+===============================================================
+Calculating the absolute value of a signed integer can be performed
+using the following sequence: *neg rD,rS* followed by *max
+rD,rS,rD*. When using this common sequence, it is suggested that they
+are scheduled with no intervening instructions so that
+implementations that are so optimized can fuse them together.
+==============================================================='''
+zh = '''
+.软件提示
+[NOTE, caption="SW"]
+===============================================================
+可以使用以下序列计算有符号整数的绝对值：*neg rD,rS* 后跟 *max rD,rS,rD*。当使用此常见序列时，建议将它们调度为中间没有其他指令，以便经过此类优化的实现可以将它们融合在一起。
+==============================================================='''

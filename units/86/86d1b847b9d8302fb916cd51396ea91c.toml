@@ -1,0 +1,37 @@
+unit_id = "86d1b847b9d8302fb916cd51396ea91c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[priv-v]] `((v))`
+a|Contains the virtualization mode the hart was operating in when Debug
+Mode was entered. The encoding is described in <<tab:privmode>>,
+and matches the virtualization mode encoding from the Privileged Spec.
+A user can write this value to change the hart's virtualization mode
+when exiting Debug Mode.
+a|*WARL*
+a|0
+|[[priv-prv]] `((prv))`
+a|Contains the privilege mode the hart was operating in when Debug
+Mode was entered. The encoding is described in <<tab:privmode>>, and matches the privilege mode encoding from
+the Privileged Spec. A user can write this
+value to change the hart's privilege mode when exiting Debug Mode.
+a|*R/W*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[priv-v]] `((v))`
+a|包含进入调试模式时硬件线程所运行的虚拟化模式。编码在 <<tab:privmode>> 中描述，并与特权规范中的虚拟化模式编码匹配。用户可以写入此值，以在退出调试模式时更改硬件线程的虚拟化模式。
+a|*WARL*
+a|0
+|[[priv-prv]] `((prv))`
+a|包含进入调试模式时硬件线程所运行的特权模式。编码在 <<tab:privmode>> 中描述，并与特权规范中的特权模式编码匹配。用户可以写入此值，以在退出调试模式时更改硬件线程的特权模式。
+a|*R/W*
+a|0
+|==='''

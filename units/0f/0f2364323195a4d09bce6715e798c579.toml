@@ -1,0 +1,27 @@
+unit_id = "0f2364323195a4d09bce6715e798c579"
+kind = "code"
+translatable = false
+en = '''
+----
+# Compare equal
+vmfeq.vv vd, vs2, vs1, vm  # Vector-vector
+vmfeq.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Compare not equal
+vmfne.vv vd, vs2, vs1, vm  # Vector-vector
+vmfne.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Compare less than
+vmflt.vv vd, vs2, vs1, vm  # Vector-vector
+vmflt.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Compare less than or equal
+vmfle.vv vd, vs2, vs1, vm  # Vector-vector
+vmfle.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Compare greater than
+vmfgt.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Compare greater than or equal
+vmfge.vf vd, vs2, rs1, vm  # vector-scalar
+----'''

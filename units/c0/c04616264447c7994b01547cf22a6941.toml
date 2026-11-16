@@ -1,0 +1,36 @@
+unit_id = "c04616264447c7994b01547cf22a6941"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Split load - Address only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+000: Unified load or split load address, aligned +
+001: Unified load or split load address, unaligned +
+(other codes select other packet formats)
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*lrid* | _lrid_width_p_ | Load request ID
+|*diff* | 1 | 0: Full address (sync) +
+1: Differential address
+|*address* | _daddress_width_p_ | Byte address if format is unaligned,
+otherwise shift left by *size* to recover byte address
+|==='''
+zh = '''
+.分离加载包格式 - 仅地址
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名* | *位数* | *描述*
+|*format* | 3 | 事务类型 +
+000：统一加载或分离加载地址，对齐 +
+001：统一加载或分离加载地址，非对齐 +
+（其他代码选择其他包格式）
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*lrid* | _lrid_width_p_ | 加载请求 ID
+|*diff* | 1 | 0：完整地址（同步） +
+1：差分地址
+|*address* | _daddress_width_p_ | 如果格式为非对齐则为字节地址，否则左移 *size* 位以恢复字节地址
+|==='''

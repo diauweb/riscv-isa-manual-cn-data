@@ -1,0 +1,39 @@
+unit_id = "ea97f11dcc70f1b808222a174fde8ddc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Software can use the PAUSE instruction to reduce energy consumption
+while executing spin-wait code sequences. Multithreaded cores might
+temporarily relinquish execution resources to other harts when PAUSE is
+executed. It is recommended that a PAUSE instruction generally be
+included in the code sequence for a spin-wait loop.
+(((PAUSE, energy consumption)))
+
+The duration of a PAUSE instruction's effect may vary significantly
+within and among implementations. In typical implementations this
+duration should be much less than the time to perform a context switch,
+probably more on the rough order of an on-chip cache miss latency or a
+cacheless access to main memory.
+(((PAUSE, duration)))
+
+A series of PAUSE instructions can be used to create a cumulative delay
+loosely proportional to the number of PAUSE instructions. In spin-wait
+loops in portable code, however, only one PAUSE instruction should be
+used before re-evaluating loop conditions, else the hart might stall
+longer than optimal on some implementations, degrading system
+performance.
+===='''
+zh = '''
+[NOTE]
+====
+软件可以使用 PAUSE 指令来降低执行自旋等待代码序列时的能耗。当执行 PAUSE 时，多线程核心可能暂时将执行资源让给其他硬件线程。通常建议在自旋等待循环的代码序列中包含一条 PAUSE 指令。
+(((PAUSE, energy consumption)))
+
+PAUSE 指令生效的持续时间在同一实现内部以及不同实现之间可能显著变化。在典型实现中，该持续时间应远小于执行一次上下文切换的时间，可能大致相当于片上缓存缺失延迟或无缓存主存访问的量级。
+(((PAUSE, duration)))
+
+一连串 PAUSE 指令可用于产生与 PAUSE 指令数量粗略成比例的累积延迟。然而，在可移植代码的自旋等待循环中，在重新评估循环条件之前只应使用一条 PAUSE 指令，否则在某些实现上硬件线程可能停顿得比最优情况更久，从而降低系统性能。
+===='''

@@ -1,0 +1,106 @@
+unit_id = "5a6b17b50023223bea3e815132c40605"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[icount-vs]] `((vs))`
+a|When set, enable this trigger in VS-mode.
+This bit is hard-wired to 0 if the hart does not support
+virtualization mode.
+a|*WARL*
+a|0
+|[[icount-vu]] `((vu))`
+a|When set, enable this trigger in VU-mode.
+This bit is hard-wired to 0 if the hart does not support
+virtualization mode.
+a|*WARL*
+a|0
+|[[icount-hit]] `((hit))`
+a|If this bit is implemented, the hardware sets it when this
+trigger fires. The trigger's user can set or clear it at any
+time. It is used to determine which
+trigger(s) fires.  If the bit is not implemented, it is always 0
+and writing it has no effect.
+a|*WARL*
+a|0
+|[[icount-count]] `((count))`
+a|The trigger will generally fire after {icount-count} instructions
+in enabled modes have been executed. See above for the precise behavior.
+a|*WARL*
+a|1
+|[[icount-m]] `((m))`
+a|When set, enable this trigger in M-mode.
+a|*WARL*
+a|0
+|[[icount-pending]] `((pending))`
+a|This bit becomes set when {icount-count} is decremented from 1
+to 0. It is cleared when the trigger fires, which will happen just
+before executing the next instruction in one of the enabled modes.
+a|*R/W*
+a|0
+|[[icount-s]] `((s))`
+a|When set, enable this trigger in S/HS-mode.
+This bit is hard-wired to 0 if the hart does not support
+S-mode.
+a|*WARL*
+a|0
+|[[icount-u]] `((u))`
+a|When set, enable this trigger in U-mode.
+This bit is hard-wired to 0 if the hart does not support
+U-mode.
+a|*WARL*
+a|0
+|[[icount-action]] `((action))`
+a|The action to take when the trigger fires. The values are explained
+in xref:tab:action[].
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[icount-vs]] `((vs))`
+a|置位时，在 VS 模式使能此触发器。
+若硬件线程不支持虚拟化模式，则此位硬连线为 0。
+a|*WARL*
+a|0
+|[[icount-vu]] `((vu))`
+a|置位时，在 VU 模式使能此触发器。
+若硬件线程不支持虚拟化模式，则此位硬连线为 0。
+a|*WARL*
+a|0
+|[[icount-hit]] `((hit))`
+a|若实现此位，则硬件在触发器触发时将其置位。触发器的用户可以随时设置或清除它。它用于确定哪个（些）触发器触发。若此位未实现，则始终为 0，写入它没有效果。
+a|*WARL*
+a|0
+|[[icount-count]] `((count))`
+a|触发器通常会在使能模式下执行了 {icount-count} 条指令之后触发。精确行为见上文。
+a|*WARL*
+a|1
+|[[icount-m]] `((m))`
+a|置位时，在 M 模式使能此触发器。
+a|*WARL*
+a|0
+|[[icount-pending]] `((pending))`
+a|当 {icount-count} 从 1 递减到 0 时，此位置位。它在触发器触发时被清除；触发将在某个使能模式下执行下一条指令之前立即发生。
+a|*R/W*
+a|0
+|[[icount-s]] `((s))`
+a|置位时，在 S/HS 模式使能此触发器。
+若硬件线程不支持 S 模式，则此位硬连线为 0。
+a|*WARL*
+a|0
+|[[icount-u]] `((u))`
+a|置位时，在 U 模式使能此触发器。
+若硬件线程不支持 U 模式，则此位硬连线为 0。
+a|*WARL*
+a|0
+|[[icount-action]] `((action))`
+a|触发器触发时要执行的动作。各值的解释见 xref:tab:action[]。
+a|*WARL*
+a|0
+|==='''

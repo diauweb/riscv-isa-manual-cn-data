@@ -1,0 +1,22 @@
+unit_id = "ace14879eac67008febbf6d79dcbd093"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trRamWPLow: Trace RAM Sink Write Pointer Register (trBaseRamSink+0x020)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trRamWrap |Set to 1 by hardware when `trRamWP` wraps. It is only set to 0 if `trRamWPLow` is written|WARL|<<Undef,Undef>>
+|1 |--|Always 0 (bit B1 of 32-bit address)|RO|0
+|31:2 |trRamWPLow |Absolute 32-bit part of address in trace sink memory where next trace message will be written. Fixed to a natural boundary. After a trace word write occurs while `trRamWP` = `trRamLimit`, `trRamWP` is set to `trRamStart`.|WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trRamWPLow：跟踪 RAM 接收端写指针寄存器（trBaseRamSink+0x020）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trRamWrap |当 `trRamWP` 回绕时由硬件置 1。仅当写入 `trRamWPLow` 时才清为 0|WARL|<<Undef,Undef>>
+|1 |--|始终为 0（32 位地址的 B1 位）|RO|0
+|31:2 |trRamWPLow |跟踪接收端内存中将写入下一个跟踪消息的地址的绝对 32 位部分。固定到自然边界。当 `trRamWP` = `trRamLimit` 时发生跟踪字写入后，`trRamWP` 被设置为 `trRamStart`。|WARL|<<Undef,Undef>>
+|==='''

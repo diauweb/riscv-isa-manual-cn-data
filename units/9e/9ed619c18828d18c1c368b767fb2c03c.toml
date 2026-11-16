@@ -1,0 +1,14 @@
+unit_id = "9ed619c18828d18c1c368b767fb2c03c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_If privileged software is configuring CTR on behalf of less privileged software, it should ensure that its privilege mode enable bit (e.g., `sctrctl`.S for Supervisor software) is cleared before a trap return to the less privileged mode.  Otherwise the trap return will be recorded, leaking the privileged source `pc`._
+===='''
+zh = '''
+[NOTE]
+====
+_如果特权软件代表较低特权软件配置 CTR，则它应确保在陷阱返回到较低特权模式之前清除其特权模式使能位（例如，对于监管软件，为 `sctrctl`.S）。否则，陷阱返回将被记录，从而泄露特权源 `pc`。_
+===='''

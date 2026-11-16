@@ -1,0 +1,12 @@
+unit_id = "d55a9f79b668cb0f7c863a1ce5636c0b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. https://github.com/riscv/riscv-debug-spec/pull/981[#981] made
+{csr-scontext}.{scontext-data}, {csr-mcontext}.{mcontext-hcontext},
+{textra64-sbytemask}, and {csr-textra64}.`svalue` narrower. This avoids confusion
+about the contents of {csr-scontext} and {csr-mcontext} when XLEN is reduced and
+increased again.'''
+zh = '''
+. https://github.com/riscv/riscv-debug-spec/pull/981[#981] 使 {csr-scontext}.{scontext-data}、{csr-mcontext}.{mcontext-hcontext}、{textra64-sbytemask} 和 {csr-textra64}.`svalue` 变窄。这避免了当 XLEN 被减小并再次增大时，对 {csr-scontext} 和 {csr-mcontext} 内容产生混淆。'''

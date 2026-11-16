@@ -1,0 +1,30 @@
+unit_id = "c8e2349868e6c8b52afad658361be2e7"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Priority of reasons for entering Debug Mode from highest to lowest.
+[%autowidth,align="center",float="center",cols="^,^",options="header"]
+|===
+| {dcsr-cause} encoding | Cause
+| 7 ({dcsr-extcause}=0) | critical error
+| 5 | resethaltreq
+| 6 | halt group
+| 3 | haltreq
+| 2 | trigger (See <<tab:priority>> for detailed priority)
+| 1 | ebreak
+| 4 | step
+|==='''
+zh = '''
+.进入调试模式原因的优先级（从高到低）。
+[%autowidth,align="center",float="center",cols="^,^",options="header"]
+|===
+| {dcsr-cause} 编码 | 原因
+| 7（{dcsr-extcause}=0） | 严重错误
+| 5 | resethaltreq
+| 6 | 停止组
+| 3 | haltreq
+| 2 | 触发器（详细优先级参见 <<tab:priority>>）
+| 1 | ebreak
+| 4 | 单步
+|==='''

@@ -1,0 +1,19 @@
+unit_id = "01f0e7bf386b5cb23cdc1ca4c0d7fcd2"
+kind = "code"
+translatable = false
+en = '''
+----
+# Vector strided loads and stores
+
+# vd destination, rs1 base address, rs2 byte stride
+vlse8.v    vd, (rs1), rs2, vm  #    8-bit strided load
+vlse16.v   vd, (rs1), rs2, vm  #   16-bit strided load
+vlse32.v   vd, (rs1), rs2, vm  #   32-bit strided load
+vlse64.v   vd, (rs1), rs2, vm  #   64-bit strided load
+
+# vs3 store data, rs1 base address, rs2 byte stride
+vsse8.v    vs3, (rs1), rs2, vm  #    8-bit strided store
+vsse16.v   vs3, (rs1), rs2, vm  #   16-bit strided store
+vsse32.v   vs3, (rs1), rs2, vm  #   32-bit strided store
+vsse64.v   vs3, (rs1), rs2, vm  #   64-bit strided store
+----'''

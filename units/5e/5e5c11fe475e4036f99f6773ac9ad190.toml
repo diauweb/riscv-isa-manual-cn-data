@@ -1,0 +1,10 @@
+unit_id = "5e5c11fe475e4036f99f6773ac9ad190"
+kind = "code"
+translatable = false
+en = '''
+[source,asm]
+--
+vfwcvtbf16.f.f.v T1, vs1, vm
+vfwcvtbf16.f.f.v T2, vs2, vm
+vfmacc.vv        vd, T1, T2, vm
+--'''

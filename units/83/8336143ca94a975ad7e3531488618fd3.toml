@@ -1,0 +1,22 @@
+unit_id = "8336143ca94a975ad7e3531488618fd3"
+kind = "code"
+translatable = false
+en = '''
+    .text
+    .balign 4
+    .global sgemm_nn
+# RV64IDV system
+#
+# void
+# sgemm_nn(size_t n,
+#          size_t m,
+#          size_t k,
+#          const float*a,   // m * k matrix
+#          size_t lda,
+#          const float*b,   // k * n matrix
+#          size_t ldb,
+#          float*c,         // m * n matrix
+#          size_t ldc)
+#
+#  c += a*b (alpha=1, no transpose on input matrices)
+#  matrices stored in C row-major order'''

@@ -1,0 +1,26 @@
+unit_id = "171afd0165e4336515079c2260c2e5e3"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Debug Module trigger support (*_mcontrol_ action*)
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| *Value* | *Description*
+| 2 | _Trace-on_. This should be connected to *trigger[0]* if the encoder
+provides it.
+| 3 |_Trace-off_. This should be connected to *trigger[1]* if the encoder
+provides it.
+| 4 |_Trace-notify_. This should be connected to **trigger[1 + _blocks_:**2] if the encoder provides it. This will cause the encoder to
+output a packet containing the address of the last instruction in the
+block if it is enabled. One bit per block.
+|==='''
+zh = '''
+.调试模块触发器支持（*_mcontrol_ action*）
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| *值* | *描述*
+| 2 | _Trace-on_（开启跟踪）。如果编码器提供 *trigger[0]*，则应将其连接到该信号。
+| 3 |_Trace-off_（关闭跟踪）。如果编码器提供 *trigger[1]*，则应将其连接到该信号。
+| 4 |_Trace-notify_（跟踪通知）。如果编码器提供 **trigger[1 + _blocks_:**2]，则应将其连接到该信号。如果编码器已启用，这将使编码器输出一个包含块中最后一条指令地址的包。每个块一位。
+|==='''

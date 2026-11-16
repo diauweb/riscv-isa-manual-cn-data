@@ -1,0 +1,18 @@
+unit_id = "ac5cb145f6fe61aa7dc4872fb6f5b3db"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Write {csr-tdata1}=0, in case the current {csr-tdata2} value is not supported with mcontrol6 triggers.
+. Write {csr-tdata2}=0, which is always supported with mcontrol6 triggers.
+. Write {csr-tdata1} with {tdata1-type}=mcontrol6 and {mcontrol6-match}=1.
+. Read {mcontrol6-match}. If it is not 1 then NAPOT matching is not supported.
+. Write all ones to {csr-tdata2}.
+. Read {csr-tdata2}. The value of maskmax6 is the index of the most significant 0 bit plus 1.'''
+zh = '''
+. 写入 {csr-tdata1}=0，以防当前 {csr-tdata2} 值不被 mcontrol6 触发器支持。
+. 写入 {csr-tdata2}=0，这始终受 mcontrol6 触发器支持。
+. 写入 {csr-tdata1}，其中 {tdata1-type}=mcontrol6 且 {mcontrol6-match}=1。
+. 读取 {mcontrol6-match}。如果它不是 1，则不支持 NAPOT 匹配。
+. 向 {csr-tdata2} 写全 1。
+. 读取 {csr-tdata2}。maskmax6 的值是最高有效 0 位的索引加 1。'''

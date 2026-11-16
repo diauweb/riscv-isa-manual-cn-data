@@ -1,0 +1,28 @@
+unit_id = "a881d96224e965c1e881f6f1b460a56b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Notes to software developers
+[NOTE,caption="SH"]
+====
+The `pack*` instructions are
+useful for re-arranging halfwords within words, and
+generally getting data into the right shape prior to applying transforms.
+This is particularly useful for cryptographic algorithms which pass inputs
+around as (potentially unaligned) byte strings, but can operate on words
+made out of those byte strings.
+This occurs (for example) in AES when loading blocks and keys (which may not
+be word aligned) into registers to perform the round functions.
+===='''
+zh = '''
+.致软件开发者的说明
+[NOTE,caption="SH"]
+====
+`pack*` 指令可用于在字内重新排列半字，
+以及在应用变换之前将数据整理成正确形态。
+这对于以（可能未对齐的）字节串传递输入，
+但可对这些字节串构成的字进行操作的密码算法特别有用。
+例如，在 AES 中将块和密钥（可能不是字对齐的）加载到寄存器以执行轮函数时，
+就会出现这种情况。
+===='''

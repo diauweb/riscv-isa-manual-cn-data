@@ -1,0 +1,20 @@
+unit_id = "ec5a6ba9e4e7881775a13af0e0539c02"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trRamStartLow: Trace RAM Sink Start Register (trBaseRamSink+0x010)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|1:0 |--|Always 0 (two LSB of 32-bit address)|RO|0
+|31:2 |trRamStartLow |Byte address of start of trace sink circular buffer. It is always aligned on at least a 32-bit/4-byte boundary. An SRAM sink will usually have `trRamStartLow` fixed at 0. |WARL|<<Undef,Undef>> or fixed to 0
+|==='''
+zh = '''
+.*寄存器：trRamStartLow：跟踪 RAM 接收端起始寄存器（trBaseRamSink+0x010）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|1:0 |--|始终为 0（32 位地址的两个 LSB）|RO|0
+|31:2 |trRamStartLow |跟踪接收端环形缓冲区的起始字节地址。它始终至少按 32 位/4 字节边界对齐。SRAM 接收端通常将 `trRamStartLow` 固定为 0。 |WARL|<<Undef,Undef>> 或固定为 0
+|==='''

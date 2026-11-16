@@ -1,0 +1,15 @@
+unit_id = "d48c221c760fc616ec7ba155ca880f4f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This chapter defines the "Zifencei" extension, which includes the
+FENCE.I instruction that provides explicit synchronization between
+writes to instruction memory and instruction fetches on the same hart.
+Currently, this instruction is the only standard mechanism to ensure
+that stores visible to a hart will also be visible to its instruction
+fetches.
+(((store instruction word, not included)))'''
+zh = '''
+本章定义 "Zifencei" 扩展，其中包含 FENCE.I 指令，该指令在同一硬件线程上提供对指令内存的写入与取指之间的显式同步。目前，该指令是确保对某个硬件线程可见的存储操作也对其取指可见的唯一标准机制。
+(((store instruction word, not included)))'''

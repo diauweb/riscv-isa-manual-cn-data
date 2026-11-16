@@ -1,0 +1,12 @@
+unit_id = "6da36967186c16b1308de10ad44660b3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicbom extension adds the `CBIE` (Cache Block Invalidate instruction Enable)
+WARL field to `henvcfg`. The `CBIE` field controls execution of the cache block
+invalidate instruction (`CBO.INVAL`) in privilege modes VS and VU. The encoding
+`0b10` is reserved. When the Zicbom extension is not implemented, `CBIE` is
+read-only zero.'''
+zh = '''
+Zicbom 扩展向 `henvcfg` 添加了 `CBIE`（Cache Block Invalidate instruction Enable，缓存块无效化指令使能）WARL 字段。`CBIE` 字段控制特权模式 VS 和 VU 中缓存块无效化指令（`CBO.INVAL`）的执行。编码 `0b10` 是保留的。当未实现 Zicbom 扩展时，`CBIE` 为只读零。'''

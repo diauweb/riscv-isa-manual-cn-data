@@ -1,0 +1,9 @@
+unit_id = "14b726373e87434aad5e22b8d873a949"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Debug Module's own state and registers should only be reset at
+power-up and while {dmcontrol-dmactive} in {dm-dmcontrol} is 0. If there is another mechanism to reset the DM, this mechanism must also reset all the harts accessible to the DM.'''
+zh = '''
+调试模块自身的状态和寄存器只应在上电时以及 {dm-dmcontrol} 中的 {dmcontrol-dmactive} 为 0 时复位。如果存在另一种复位 DM 的机制，则该机制也必须复位该 DM 可访问的所有硬件线程。'''

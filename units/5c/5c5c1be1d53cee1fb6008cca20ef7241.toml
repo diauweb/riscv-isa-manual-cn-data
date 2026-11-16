@@ -1,0 +1,23 @@
+unit_id = "5c5c1be1d53cee1fb6008cca20ef7241"
+kind = "diagram"
+translatable = false
+en = '''
+[bytefield]
+----
+(def row-height 45)
+(def row-header-fn nil)
+(def boxes-per-row 24)
+(draw-column-headers {:font-size 15 :height 17 :labels ["" "XLEN-1" "" "" "" "" "8" "" "7" "" "6" "" "" "" "4" "3" "2" "" "" "" "0" "" "" ""]})
+(draw-box (text "0" {:font-size 20}) {:span 7})
+(draw-box (text "mpte" {:font-size 20}) {:span 3})
+(draw-box (text "0" {:font-size 20}) {:span 5})
+(draw-box (text "mte" {:font-size 20}) {:span 1})
+(draw-box (text "0" {:font-size 20}) {:span 5})
+(draw-box "" {:span 3 :borders {}})
+(draw-box "XLEN - 8" {:span 7 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "3" {:span 5 :borders {}})
+(draw-box "1" {:span 1 :borders {}})
+(draw-box "3" {:span 5 :borders {}})
+(draw-box "" {:span 3 :borders {}})
+----'''

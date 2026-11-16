@@ -1,0 +1,15 @@
+unit_id = "897015da13dc720be8183703f770b57e"
+kind = "code"
+translatable = false
+en = '''
+----
+# Format
+# In this syntax, <nf> equals NFIELDS and is an integer in the range [2, 8].
+vlseg<nf>e<eew>.v vd, (rs1), vm      # Unit-stride segment load template
+vsseg<nf>e<eew>.v vs3, (rs1), vm     # Unit-stride segment store template
+
+# Examples
+vlseg8e8.v vd, (rs1), vm   # Load eight vector registers with eight byte fields.
+
+vsseg3e32.v vs3, (rs1), vm  # Store packed vector of 3*4-byte segments from vs3,vs3+1,vs3+2 to memory
+----'''

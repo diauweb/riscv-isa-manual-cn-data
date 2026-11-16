@@ -1,0 +1,20 @@
+unit_id = "c4f623fe653320dc7e7e7fd9b7632d21"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The encoder may skip any number of most significant identical bits in the U-ADDR/F-ADDR fields. However, it must ensure that if any bits are skipped, then the number of transmitted bits is a multiple of the MDO size. Additionally, the most significant transmitted bit must have the same value as the skipped bits.
+
+* If F-ADDR/U-ADDR field is received by decoder, then the last (most significant) bit of the very last MDO record must be extended up to bit#63 or bit#31 (depending on XLEN of the core). It is like sign-extension, but it is NOT a sign bit.
+
+* This method does NOT require a trace decoder to know what a virtual memory system mode is or if an address is physical or virtual. The decoder must look at the most significant bit of the last MDO in F-ADDR/U-ADDR field and either extend or not.
+
+* Simple implementations may not implement an enable bit and always send full address. Benefits of using it on 32-bit cores is small, so it may not be implemented.'''
+zh = '''
+* 编码器可以跳过 U-ADDR/F-ADDR 字段中任意数量的最高有效相同位。但是，它必须确保如果有任何位被跳过，则发送的位数是 MDO 大小的整数倍。此外，发送的最高有效位必须与被跳过的位具有相同的值。
+
+* 如果解码器接收到 F-ADDR/U-ADDR 字段，则最后一个 MDO 记录的最后（最高有效）位必须扩展到第#63 位或第#31 位（取决于核心的 XLEN）。这类似符号扩展，但它不是符号位。
+
+* 此方法不要求跟踪解码器知道虚拟内存系统模式，也不要求知道地址是物理地址还是虚拟地址。解码器必须查看 F-ADDR/U-ADDR 字段中最后一个 MDO 的最高有效位，并决定是否扩展。
+
+* 简单实现可以不实现使能位并始终发送完整地址。在 32 位核心上使用它的好处很小，因此可以不实现。'''

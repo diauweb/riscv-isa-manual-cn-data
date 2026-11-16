@@ -1,0 +1,20 @@
+unit_id = "05be512d48dc345877aa387206f1090f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Only in contrived scenarios will a given memory-management data
+structure be interpreted as both little-endian and big-endian. In
+practice, csr::[sbe] will only be changed at runtime on world switches, in
+which case neither the old nor new memory-management data structure will
+be reinterpreted in a different endianness. In this case, no additional
+insn:sfence.vma[] is necessary, beyond what would ordinarily be required for a
+world switch.
+===='''
+zh = '''
+[NOTE]
+====
+只有在人为构造的场景中，给定的内存管理数据结构才会同时被解释为小端序和大端序。在实践中，csr::[sbe] 通常只在世界切换时于运行时更改，在这种情况下，旧的和新的内存管理数据结构都不会以不同的字节序被重新解释。在这种情况下，除了世界切换通常所需的之外，不需要额外的 insn:sfence.vma[]。
+===='''

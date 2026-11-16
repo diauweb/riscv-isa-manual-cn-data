@@ -1,0 +1,18 @@
+unit_id = "9379ea3727ce8b8f8b0405308806606a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The round number, which ranges from 1 to 10, comes from `uimm[3:0]`;
+`uimm[4]` is ignored.
+The out-of-range `uimm[3:0]` values of 0 and 11-15 are mapped to in-range
+values by inverting `uimm[3]`. Thus, 0 maps to 8, and 11-15 maps to 3-7.
+The round number is used to specify a round constant which is used in generating
+the first round key word.'''
+zh = '''
+轮编号范围为 1 到 10，来自 `uimm[3:0]`；
+`uimm[4]` 被忽略。
+超出范围的 `uimm[3:0]` 值 0 和 11-15 通过反转 `uimm[3]` 映射到范围内
+值。因此，0 映射到 8，11-15 映射到 3-7。
+轮编号用于指定轮常量，该常量用于生成
+第一个轮密钥字。'''

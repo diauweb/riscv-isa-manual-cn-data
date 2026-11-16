@@ -1,0 +1,16 @@
+unit_id = "1142eeb17d867b2ffbebf431e8874cb1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((RV64I-only, ADDW)))
+(((RV64I-only, SUBW)))
+[#norm:addw_subw_op]#ADDW and SUBW are RV64I-only instructions that are defined analogously
+to ADD and SUB but operate on 32-bit values and produce signed 32-bit results.#
+[#norm:addw_subw_overflow]#Overflows are ignored, and the low 32-bits of the result is
+sign-extended to 64-bits and written to the destination register.#'''
+zh = '''
+(((RV64I-only, ADDW)))
+(((RV64I-only, SUBW)))
+[#norm:addw_subw_op]#ADDW 和 SUBW 是仅限 RV64I 的指令，其定义与 ADD 和 SUB 类似，但操作 32 位值并产生有符号 32 位结果。#
+[#norm:addw_subw_overflow]#溢出被忽略，结果的低 32 位被符号扩展到 64 位并写入目的寄存器。#'''

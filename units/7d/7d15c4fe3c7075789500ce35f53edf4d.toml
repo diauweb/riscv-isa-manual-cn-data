@@ -1,0 +1,16 @@
+unit_id = "7d15c4fe3c7075789500ce35f53edf4d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In such cases, the `ELP` prior to the trap, the previous `ELP`, must be
+preserved by the trap delivery such that it can be restored on a return from the
+trap. [#norm:cfi_mstatus_mpelp_op]#To store the previous `ELP` state on trap delivery to M-mode, an
+csr::[mpelp] bit is provided in the csr:mstatus[] CSR.# [#norm:cfi_mstatus_spelp_op]#To store the previous `ELP` state on trap
+delivery to S/HS-mode, an csr::[spelp] bit is provided in the csr:mstatus[] CSR.# [#norm:cfi_sstatus_spelp_op]#The
+csr::[spelp] bit in `mstatus` can be accessed through the csr:sstatus[] CSR.# [#norm:vsstatus_spelp_exists]#To store
+the previous `ELP` state on traps to VS-mode, a csr::[spelp] bit is defined in the
+csr:vsstatus[] (VS-modes version of csr:sstatus[]).# [#norm:dcsr_pelp_op]#To store the previous `ELP` state on
+transition to Debug Mode, a csr::[pelp] bit is defined in the csr:dcsr[] register.#'''
+zh = '''
+在此类情况下，陷阱之前的 `ELP`（即先前的 `ELP`）必须由陷阱递送过程予以保留，以便在从陷阱返回时能够恢复。[#norm:cfi_mstatus_mpelp_op]#为了在陷阱递送到 M 模式时保存先前的 `ELP` 状态，csr:mstatus[] CSR 中提供了一个 csr::[mpelp] 位。# [#norm:cfi_mstatus_spelp_op]#为了在陷阱递送到 S/HS 模式时保存先前的 `ELP` 状态，csr:mstatus[] CSR 中提供了一个 csr::[spelp] 位。# [#norm:cfi_sstatus_spelp_op]#`mstatus` 中的 csr::[spelp] 位可通过 csr:sstatus[] CSR 访问。# [#norm:vsstatus_spelp_exists]#为了在陷阱递送到 VS 模式时保存先前的 `ELP` 状态，csr:vsstatus[]（csr:sstatus[] 的 VS 模式版本）中定义了 csr::[spelp] 位。# [#norm:dcsr_pelp_op]#为了在转换到调试模式时保存先前的 `ELP` 状态，csr:dcsr[] 寄存器中定义了 csr::[pelp] 位。#'''

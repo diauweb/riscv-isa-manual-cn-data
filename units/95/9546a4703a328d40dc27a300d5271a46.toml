@@ -1,0 +1,34 @@
+unit_id = "9546a4703a328d40dc27a300d5271a46"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="1,1,1,2,2,5,5"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+  3+| vlmul[2:0] | LMUL | #groups | VLMAX      | Registers grouped with register __n__
+
+| 1 | 0 | 0 |   -  |     -   |     -      | reserved
+| 1 | 0 | 1 |   1/8|     32  | VLEN/SEW/8 | `v` __n__ (single register in group)
+| 1 | 1 | 0 |   1/4|     32  | VLEN/SEW/4 | `v` __n__ (single register in group)
+| 1 | 1 | 1 |   1/2|     32  | VLEN/SEW/2 | `v` __n__ (single register in group)
+| 0 | 0 | 0 |   1  |     32  |   VLEN/SEW | `v` __n__ (single register in group)
+| 0 | 0 | 1 |   2  |     16  | 2*VLEN/SEW | `v` __n__, `v` __n__+1
+| 0 | 1 | 0 |   4  |      8  | 4*VLEN/SEW | `v` __n__, ..., `v` __n__+3
+| 0 | 1 | 1 |   8  |      4  | 8*VLEN/SEW | `v` __n__, ..., `v` __n__+7
+|==='''
+zh = '''
+[cols="1,1,1,2,2,5,5"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+  3+| vlmul[2:0] | LMUL | 组数 | VLMAX      | 与寄存器 __n__ 分组的寄存器
+
+| 1 | 0 | 0 |   -  |     -   |     -      | 保留
+| 1 | 0 | 1 |   1/8|     32  | VLEN/SEW/8 | `v` __n__（组中的单个寄存器）
+| 1 | 1 | 0 |   1/4|     32  | VLEN/SEW/4 | `v` __n__（组中的单个寄存器）
+| 1 | 1 | 1 |   1/2|     32  | VLEN/SEW/2 | `v` __n__（组中的单个寄存器）
+| 0 | 0 | 0 |   1  |     32  |   VLEN/SEW | `v` __n__（组中的单个寄存器）
+| 0 | 0 | 1 |   2  |     16  | 2*VLEN/SEW | `v` __n__、`v` __n__+1
+| 0 | 1 | 0 |   4  |      8  | 4*VLEN/SEW | `v` __n__、...、`v` __n__+3
+| 0 | 1 | 1 |   8  |      4  | 8*VLEN/SEW | `v` __n__、...、`v` __n__+7
+|==='''

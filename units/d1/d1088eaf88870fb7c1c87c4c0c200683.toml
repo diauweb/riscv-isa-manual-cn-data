@@ -1,0 +1,14 @@
+unit_id = "d1088eaf88870fb7c1c87c4c0c200683"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The execution environment is responsible for ensuring the eventual
+forward progress of each of its harts. For a given hart, that
+responsibility is suspended while the hart is exercising a mechanism
+that explicitly waits for an event, such as the wait-for-interrupt
+instruction defined in <<wfi>>; and that
+responsibility ends if the hart is terminated. The following events
+constitute forward progress:'''
+zh = '''
+执行环境负责确保其每个硬件线程最终向前推进。对于给定的硬件线程，当该硬件线程正在执行显式等待事件的机制（例如 <<wfi>> 中定义的等待中断指令）时，该责任暂停；如果该硬件线程被终止，该责任结束。以下事件构成向前推进：'''

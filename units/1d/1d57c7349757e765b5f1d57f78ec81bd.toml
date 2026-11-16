@@ -1,0 +1,22 @@
+unit_id = "1d57c7349757e765b5f1d57f78ec81bd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The _aq_ bit is mandatory because the two encodings that would be produced are not seen as useful at this time.
+The version with neither the _aq_ nor the _rl_ bit set would correspond to a load with no ordering annotations that was guaranteed to be performed atomically.
+This can be achieved with ordinary load instructions by suitably aligning pointers.
+The version with only the _rl_ bit would correspond to load-release.
+Load-release has theoretical applications in seqlocks, but is not supported in language-level memory models and so is not included.
+===='''
+zh = '''
+[NOTE]
+====
+_aq_ 位是必需的，因为由此产生的另外两种编码目前不被认为有用。
+既未设置 _aq_ 位也未设置 _rl_ 位的版本对应于没有顺序标注、但保证以原子方式执行的加载。
+这可以通过适当地对齐指针，使用普通加载指令来实现。
+仅设置 _rl_ 位的版本对应于加载-释放。
+加载-释放（load-release）在顺序锁中有理论上的应用，但语言级内存模型不支持它，因此未予纳入。
+===='''

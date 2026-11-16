@@ -1,0 +1,17 @@
+unit_id = "591d16b902df37de92b977b1c99ccaf8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Misaligned accesses to shadow stack are not required and enforcing alignment is
+more secure to detect errors in the program. An access-fault exception is raised
+instead of address-misaligned exception in such cases to indicate fatality and
+that the instruction must not be emulated by a trap handler.
+===='''
+zh = '''
+[NOTE]
+====
+不要求对影子栈进行非对齐访问，强制对齐能更安全地检测程序中的错误。在此类情况下引发访问故障异常而非地址非对齐异常，以表示致命性，并表明该指令不得由陷阱处理程序模拟。
+===='''

@@ -1,0 +1,46 @@
+unit_id = "bcaa0e19f9ea3ce45e46fd2aba680721"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The unconditional jump instructions all use PC-relative addressing to
+help support position-independent code. The JALR instruction was defined
+to enable a two-instruction sequence to jump anywhere in a 32-bit
+absolute address range. A LUI instruction can first load _rs1_ with the
+upper 20 bits of a target address, then JALR can add in the lower bits.
+Similarly, AUIPC then JALR can jump anywhere in a 32-bit `pc`-relative
+address range.
+
+Note that the JALR instruction does not treat the 12-bit immediate as
+multiples of 2 bytes, unlike the conditional branch instructions. This
+avoids one more immediate format in hardware. In practice, most uses of
+JALR will have either a zero immediate or be paired with a LUI or AUIPC,
+so the slight reduction in range is not significant.
+
+Clearing the least-significant bit when calculating the JALR target
+address both simplifies the hardware slightly and allows the low bit of
+function pointers to be used to store auxiliary information. Although
+there is potentially a slight loss of error checking in this case, in
+practice jumps to an incorrect instruction address will usually quickly
+raise an exception.
+
+When used with a base _rs1_=`x0`, JALR can be used to
+implement a single instruction subroutine call to the lowest 2 KiB or highest
+2 KiB address region from anywhere in the address space, which could be used
+to implement fast calls to a small runtime library. Alternatively, an
+ABI could dedicate a general-purpose register to point to a library
+elsewhere in the address space.
+===='''
+zh = '''
+[NOTE]
+====
+所有无条件跳转指令都使用 PC 相对寻址，以帮助支持位置无关代码。JALR 指令的定义使得双指令序列可以跳转到 32 位绝对地址范围内的任何位置。LUI 指令可以首先将目标地址的高 20 位加载到 _rs1_，然后 JALR 可以加上低位。类似地，AUIPC 然后 JALR 可以跳转到 32 位 `pc` 相对地址范围内的任何位置。
+
+注意，与条件分支指令不同，JALR 指令不将 12 位立即数视为 2 字节的倍数。这避免了硬件中再多一种立即数格式。在实践中，JALR 的大多数使用要么具有零立即数，要么与 LUI 或 AUIPC 配对，因此范围的轻微减少并不显著。
+
+在计算 JALR 目标地址时清除最低有效位，既稍微简化了硬件，又允许函数指针的低位用于存储辅助信息。虽然在这种情况下可能会稍微损失错误检查，但在实践中，跳转到错误指令地址通常会很快引发异常。
+
+当与基址 _rs1_=`x0` 一起使用时，JALR 可用于实现从地址空间任何位置到最低 2 KiB 或最高 2 KiB 地址区域的单指令子程序调用，这可用于实现对小型运行时库的快速调用。或者，ABI 可以专门指定一个通用寄存器指向地址空间中其他位置的库。
+===='''

@@ -1,0 +1,12 @@
+unit_id = "ff467e8ba780ddbe9880ddaac5ae1364"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If an implementation allows IALIGN to be either 16 or 32 (by changing
+CSR `misa`, for example), then, whenever IALIGN=32, bit `mnepc[1]` is
+masked on reads so that it appears to be 0. This masking occurs also for
+the implicit read by the MNRET instruction. Though masked, `mnepc[1]`
+remains writable when IALIGN=32.'''
+zh = '''
+如果实现允许 IALIGN 为 16 或 32（例如通过更改 CSR `misa`），那么每当 IALIGN=32 时，位 `mnepc[1]` 在读取时被屏蔽，使其看起来为 0。MNRET 指令的隐式读取也会发生这种屏蔽。尽管被屏蔽，当 IALIGN=32 时 `mnepc[1]` 仍可写。'''

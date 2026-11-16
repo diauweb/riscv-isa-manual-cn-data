@@ -1,0 +1,22 @@
+unit_id = "be298ca115b205b34ad4d654c44a0c86"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+On some simple platforms, cycle count might represent a valid
+implementation of insn:rdtime[], in which case insn:rdtime[] and insn:rdcycle[] may return
+the same result.
+
+It is difficult to provide a strict mandate on clock period given the
+wide variety of possible implementation platforms. The maximum error
+bound should be set based on the requirements of the platform.
+===='''
+zh = '''
+[NOTE]
+====
+在某些简单平台上，周期计数可能代表 insn:rdtime[] 的有效实现，在这种情况下 insn:rdtime[] 和 insn:rdcycle[] 可能返回相同的结果。
+
+鉴于可能的实现平台种类繁多，很难对时钟周期提供严格的强制要求。最大误差界限应根据平台的要求来设定。
+===='''

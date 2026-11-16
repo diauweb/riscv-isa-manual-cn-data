@@ -1,0 +1,74 @@
+unit_id = "260aec6bd64bb8f359630d08a589ecd0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of `hgatp` MODE field.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|HSXLEN=32
+|Value |Name |Description
+|0 +
+1
+|Bare +
+Sv32x4
+|No translation or protection. +
+Page-based 34-bit virtual addressing (2-bit extension of
+Sv32).
+3+s|HSXLEN=64
+|Value |Name |Description
+|0 +
+1-7 +
+8 +
+9 +
+10 +
+11-15
+|Bare +
+— +
+Sv39x4 +
+Sv48x4 +
+Sv57x4 +
+—
+|No translation or protection. +
+_Reserved_ +
+Page-based 41-bit virtual addressing (2-bit extension of
+Sv39). +
+Page-based 50-bit virtual addressing (2-bit extension of
+Sv48). +
+Page-based 59-bit virtual addressing (2-bit extension of
+Sv57). +
+_Reserved_
+|==='''
+zh = '''
+.`hgatp` MODE 字段的编码。
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|HSXLEN=32
+|值 |名称 |描述
+|0 +
+1
+|Bare +
+Sv32x4
+|无翻译或保护。 +
+基于页的 34 位虚拟寻址（Sv32 的 2 位扩展）。
+3+s|HSXLEN=64
+|值 |名称 |描述
+|0 +
+1-7 +
+8 +
+9 +
+10 +
+11-15
+|Bare +
+— +
+Sv39x4 +
+Sv48x4 +
+Sv57x4 +
+—
+|无翻译或保护。 +
+_保留_ +
+基于页的 41 位虚拟寻址（Sv39 的 2 位扩展）。 +
+基于页的 50 位虚拟寻址（Sv48 的 2 位扩展）。 +
+基于页的 59 位虚拟寻址（Sv57 的 2 位扩展）。 +
+_保留_
+|==='''

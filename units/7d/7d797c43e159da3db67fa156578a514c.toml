@@ -1,0 +1,14 @@
+unit_id = "7d797c43e159da3db67fa156578a514c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Each field will be held in successively numbered vector register
+groups.  When EMUL>1, each field will occupy a vector register group
+held in multiple successively numbered vector registers, and the
+vector register group for each field must follow the usual vector
+register alignment constraints (e.g., when EMUL=2 and NFIELDS=4, each
+field's vector register group must start at an even vector register,
+but does not have to start at a multiple of 8 vector register number).'''
+zh = '''
+每个字段将保存在连续编号的向量寄存器组中。当 EMUL>1 时，每个字段将占用一个保存在多个连续编号向量寄存器中的向量寄存器组，并且每个字段的向量寄存器组必须遵循通常的向量寄存器对齐约束（例如，当 EMUL=2 且 NFIELDS=4 时，每个字段的向量寄存器组必须从偶数向量寄存器开始，但不必从 8 的倍数向量寄存器编号开始）。'''

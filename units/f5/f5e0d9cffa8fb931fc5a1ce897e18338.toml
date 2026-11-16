@@ -1,0 +1,10 @@
+unit_id = "f5e0d9cffa8fb931fc5a1ce897e18338"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The registers below divide the filter logic into filters and comparators to provide maximum flexibility at low cost. The number of filters and comparators depends on the system. Each filter unit can specify filtering against instruction and optionally against data trace inputs from the hart. When filter __i__ is implemented, the registers `trTeFilter__i__Control` and `trTeInstFilters` must be implemented to enable it. And to apply filter __i__ to the data trace, the `trTeDataFilters` register must also be present. And if a match bit in the `trTeFilter__i__Control` register can be set to 1 (= enabling a filter option), the corresponding register from the bit's description must have a correct value already set as otherwise the trigger may fire unintentionally. Each of the mentioned comparator units is a pair of comparators (primary and secondary, or P and S), so a limited range can be matched with a single comparator unit if needed.
+Each enabled filter define independent condition where trace is enabled - if several filters are enabled they act as `logical OR`. Several conditions for single filter act as `logical AND`.'''
+zh = '''
+下面的寄存器将过滤逻辑划分为过滤器和比较器，以便以低成本提供最大灵活性。过滤器和比较器的数量取决于系统。每个过滤器单元可以指定针对指令的过滤，并可选地针对来自 hart 的数据跟踪输入进行过滤。当实现过滤器 __i__ 时，必须实现 `trTeFilter__i__Control` 和 `trTeInstFilters` 寄存器才能启用它。而要将过滤器 __i__ 应用于数据跟踪，还必须存在 `trTeDataFilters` 寄存器。并且，如果 `trTeFilter__i__Control` 寄存器中的某个匹配位可以被置为 1（= 启用某个过滤器选项），则该位描述中对应的寄存器必须已经设置了正确的值，否则触发器可能会意外触发。上述每个比较器单元都是一对比较器（主比较器和次比较器，或称 P 和 S），因此在需要时可以用单个比较器单元匹配有限的范围。
+每个已启用的过滤器定义一个独立条件，在这些条件下启用跟踪——如果启用了多个过滤器，它们表现为 `logical OR`。单个过滤器的多个条件表现为 `logical AND`。'''

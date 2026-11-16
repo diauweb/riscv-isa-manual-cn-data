@@ -1,0 +1,40 @@
+unit_id = "8b72109e47604118e2e75c9374cdcb22"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Numerous additions and improvements to the commentary sections.
+* Separate version numbers for each chapter.
+* Modification to long instruction encodings >64 bits to
+avoid moving the _rd_ specifier in very long instruction formats.
+* CSR instructions are now described in the base integer format where
+the counter registers are introduced, as opposed to only being
+introduced later in the floating-point section (and the companion
+privileged architecture manual).
+* The SCALL and SBREAK instructions have been renamed to `ECALL` and
+`EBREAK`, respectively. Their encoding and functionality are unchanged.
+* Clarification of floating-point NaN handling, and a new canonical NaN
+value.
+* Clarification of values returned by floating-point to integer
+conversions that overflow.
+* Clarification of `LR/SC` allowed successes and required failures,
+including use of compressed instructions in the sequence.
+* A new `RV32E` base ISA proposal for reduced integer register counts,
+supports `MAC` extensions.
+* A revised calling convention.
+* Relaxed stack alignment for soft-float calling convention, and
+description of the RV32E calling convention.
+* A revised proposal for the `C` compressed extension, version 1.9 .'''
+zh = '''
+* 对注释部分进行了大量增补和改进。
+* 每个章节有单独的版本号。
+* 修改了长指令编码 >64 位，以避免在超长指令格式中移动 _rd_ 说明符。
+* CSR 指令现在在引入计数器寄存器的基础整数格式中描述，而不是仅在后面的浮点部分（以及配套的特权架构手册）中引入。
+* SCALL 和 SBREAK 指令分别重命名为 `ECALL` 和 `EBREAK`。它们的编码和功能未变。
+* 澄清了浮点 NaN 处理，并新增了规范 NaN 值。
+* 澄清了浮点到整数转换溢出时返回的值。
+* 澄清了 `LR/SC` 允许的成功和必需的失败，包括在序列中使用压缩指令。
+* 新的 `RV32E` 基础 ISA 提案，用于减少整数寄存器数量，支持 `MAC` 扩展。
+* 修订的调用约定。
+* 放宽了软浮点调用约定的栈对齐要求，并描述了 RV32E 调用约定。
+* `C` 压缩扩展的修订提案，版本 1.9。'''

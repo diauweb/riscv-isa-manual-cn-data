@@ -1,0 +1,11 @@
+unit_id = "7475de16647dca27a2e973b355099277"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Code that restores CSR context of triggers that might be configured to
+fire in the current privilege mode must use this same sequence to
+restore the triggers. This avoids the problem of a partially written
+trigger firing at a different time than is expected.'''
+zh = '''
+恢复可能配置为在当前特权模式中触发的触发器的 CSR 上下文的代码，必须使用相同的序列来恢复触发器。这避免了部分写入的触发器在不同于预期时间触发的问题。'''

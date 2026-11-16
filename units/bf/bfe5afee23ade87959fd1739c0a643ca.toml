@@ -1,0 +1,19 @@
+unit_id = "bfe5afee23ade87959fd1739c0a643ca"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Release orderings work exactly the same as acquire orderings, just in
+the opposite direction. Release semantics require all loads and stores
+preceding the release operation in program order to also precede the
+release operation in the global memory order. This ensures, for example,
+that memory accesses in a critical section appear before the
+lock-releasing store in the global memory order. Just as for acquire
+semantics, release semantics can be enforced using release annotations
+or with a FENCE RW,W operation. Using the same examples, the ordering
+between the loads and stores in the critical section and the "Arbitrary
+unrelated store" at the end of the code snippet is enforced only by the
+FENCE RW,W in <<spinlock_fences, Example 2>>, not by
+the _rl_ in <<spinlock_atomics, Example 1>>.'''
+zh = '''
+释放排序与获取排序完全相同，只是方向相反。释放语义要求程序顺序中位于释放操作之前的所有加载和存储在全局内存顺序中也位于该释放操作之前。例如，这确保临界区中的内存访问在全局内存顺序中出现在释放锁的存储之前。与获取语义一样，释放语义可以使用释放注解或 FENCE RW,W 操作来强制。使用同样的示例，临界区中的加载和存储与代码片段末尾的“任意无关存储”之间的顺序仅由 <<spinlock_fences, Example 2>> 中的 FENCE RW,W 强制，而不是由 <<spinlock_atomics, Example 1>> 中的 _rl_ 强制。'''

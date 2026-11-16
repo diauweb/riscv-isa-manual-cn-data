@@ -1,0 +1,13 @@
+unit_id = "ee939a5a4a8d47e5cc767effe435dae1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicbom extension adds the `CBCFE` (Cache Block Clean and Flush instruction
+Enable) field to `menvcfg`. When the `CBCFE` field is set to 1, it enables
+execution of the cache block clean instruction (`CBO.CLEAN`) and the cache block
+flush instruction (`CBO.FLUSH`) in modes less privileged than M. Otherwise, these
+instructions raise an illegal-instruction exception in modes less privileged
+than M. When the Zicbom extension is not implemented, `CBCFE` is read-only zero.'''
+zh = '''
+Zicbom 扩展在 `menvcfg` 中添加了 `CBCFE`（Cache Block Clean and Flush instruction Enable，缓存块清理和刷新指令使能）字段。当 `CBCFE` 字段被置为 1 时，它允许在特权级低于 M 的模式中执行缓存块清理指令（`CBO.CLEAN`）和缓存块刷新指令（`CBO.FLUSH`）。否则，这些指令在特权级低于 M 的模式中引发非法指令异常。当未实现 Zicbom 扩展时，`CBCFE` 为只读零。'''

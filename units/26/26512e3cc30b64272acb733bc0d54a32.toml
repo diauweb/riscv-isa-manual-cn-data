@@ -1,0 +1,24 @@
+unit_id = "26512e3cc30b64272acb733bc0d54a32"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The operation of the `SSPOPCHK` and `C.SSPOPCHK` instructions is as follows:'''
+zh = '''
+`SSPOPCHK` 和 `C.SSPOPCHK` 指令的操作如下：
+
+.`SSPOPCHK` 和 `C.SSPOPCHK` 操作
+[listing]
+----
+if (xSSE == 1)
+    temp = mem[ssp]            # Load temp from address in ssp and
+    if temp != X(src)          # Compare temp to value in src and
+                               # cause an software-check exception
+                               # if they are not bitwise equal.
+                               # Only x1 and x5 may be used as src
+       raise software-check exception
+    else
+       ssp = ssp + (XLEN/8)    # increment ssp by XLEN/8.
+    endif
+endif
+----'''

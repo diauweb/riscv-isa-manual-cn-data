@@ -1,0 +1,12 @@
+unit_id = "6725b7bebe16613603afba64d5599293"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: [#norm:pma_mag_op_rsrv]#LR/SC instructions are unaffected by this PMA and so always raise an
+exception when misaligned.#
+[#norm:pma_mag_op_vec]#Vector memory accesses are also unaffected, so might execute non-atomically even
+when contained within a misaligned atomicity granule.#
+[#norm:pma_mag_op_implicit]#Implicit accesses are similarly unaffected by this PMA.#'''
+zh = '''
+NOTE: [#norm:pma_mag_op_rsrv]#LR/SC 指令不受该 PMA 影响，因此非对齐时总是引发异常。# [#norm:pma_mag_op_vec]#向量内存访问也不受影响，因此即使包含在非对齐原子性粒度内也可能以非原子方式执行。# [#norm:pma_mag_op_implicit]#隐式访问同样不受该 PMA 影响。#'''

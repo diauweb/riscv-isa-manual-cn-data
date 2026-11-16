@@ -1,0 +1,16 @@
+unit_id = "643d0da0f8d5b17867830936dfc10005"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Almost all trigger functionality is optional. All `tdata` registers
+follow write-any-read-legal semantics. If a debugger writes an
+unsupported configuration, the register will read back a value that is
+supported (which may simply be a disabled trigger). This means that a
+debugger must always read back values it writes to `tdata` registers,
+unless it already knows what is supported. Writes to one `tdata`
+register must not modify the contents of other `tdata` registers, nor
+the configuration of any trigger besides the one that is currently
+selected.'''
+zh = '''
+几乎所有触发器功能都是可选的。所有 `tdata` 寄存器都遵循写任意值、读合法值的语义。如果调试器写入不支持的配置，寄存器将读回受支持的值（可能只是禁用的触发器）。这意味着调试器必须始终读回它写入 `tdata` 寄存器的值，除非它已经知道支持什么。写入一个 `tdata` 寄存器不得修改其他 `tdata` 寄存器的内容，也不得修改除当前选中触发器之外任何触发器的配置。'''

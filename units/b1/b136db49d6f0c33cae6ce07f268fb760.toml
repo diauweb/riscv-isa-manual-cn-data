@@ -1,0 +1,16 @@
+unit_id = "b136db49d6f0c33cae6ce07f268fb760"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Informally, each bit of a register read should be satisfied from a
+register write by the most recent (in program order) instruction
+instance that can write that bit (or from the hart’s initial register
+state if there is no such write). Hence, it is essential to know the
+register write footprint of each instruction instance, which we
+calculate when the instruction instance is created (see the <<fetch, Fetch instruction>> action of
+below). We ensure in the pseudocode that each instruction does at most
+one register write to each register bit, and also that it does not try
+to read a register value it just wrote.'''
+zh = '''
+非正式地说，寄存器读的每一位应由最近（按程序顺序）能写该位的指令实例的寄存器写来满足（如果没有这样的写，则由硬件线程的初始寄存器状态满足）。因此，必须知道每个指令实例的寄存器写足迹，我们在创建指令实例时计算它（见下面的 <<fetch, 取指令>> 动作）。我们在伪代码中确保每条指令对每个寄存器位最多执行一次寄存器写，并且它不会尝试读取它刚刚写入的寄存器值。'''

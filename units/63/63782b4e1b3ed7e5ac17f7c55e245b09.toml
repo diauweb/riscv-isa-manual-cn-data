@@ -1,0 +1,13 @@
+unit_id = "63782b4e1b3ed7e5ac17f7c55e245b09"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vsstatus` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sstatus`, formatted as shown
+in <<vsstatusreg-rv32>> when VSXLEN=32 and
+<<vsstatusreg>> when VSXLEN=64. When V=1,
+`vsstatus` substitutes for the usual `sstatus`, so instructions that
+normally read or modify `sstatus` actually access `vsstatus` instead.'''
+zh = '''
+`vsstatus` 寄存器是一个 VSXLEN 位读/写寄存器，是监管寄存器 `sstatus` 的 VS-mode 版本，当 VSXLEN=32 时格式如 <<vsstatusreg-rv32>> 所示，当 VSXLEN=64 时格式如 <<vsstatusreg>> 所示。当 V=1 时，`vsstatus` 替代常规 `sstatus`，因此通常读取或修改 `sstatus` 的指令实际上改为访问 `vsstatus`。'''

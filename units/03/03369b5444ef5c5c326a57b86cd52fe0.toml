@@ -1,0 +1,16 @@
+unit_id = "03369b5444ef5c5c326a57b86cd52fe0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mhpmevent_of_bit_set]#Generation of a count-overflow-interrupt request by an `hpmcounter` sets the
+associated OF bit.#
+[#norm:LCOFIP_op]#When an OF bit is set, it eventually, but not necessarily immediately, sets
+the LCOFIP bit in the `mip`/`sip` registers.#
+The LCOFIP bit is cleared by software before servicing the count overflow
+interrupt resulting from one or more count overflows. The `mideleg` register controls the delegation of this interrupt to S-mode
+versus M-mode.#'''
+zh = '''
+[#norm:mhpmevent_of_bit_set]#由 `hpmcounter` 产生计数溢出中断请求会置位关联的 OF 位。#
+[#norm:LCOFIP_op]#当某个 OF 位置位时，它最终（但不一定立即）置位 `mip`/`sip` 寄存器中的 LCOFIP 位。#
+在处理由一个或多个计数溢出所导致的计数溢出中断之前，LCOFIP 位由软件清除。`mideleg` 寄存器控制该中断委托给 S 模式还是 M 模式。#'''

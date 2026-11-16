@@ -1,0 +1,26 @@
+unit_id = "c8f3884b3f69210ed272d1985d141cd4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[%unbreakable]
+[NOTE]
+====
+Requiring a range of 0–0xFFF for `vsiselect`, even though most or all of
+the space may be reserved or inaccessible, permits a hypervisor to
+emulate indirectly accessed registers in this implemented range,
+including registers that may be standardized in the future.
+
+More generally it is recommended that `vsiselect` and `siselect` be
+implemented with the same number of bits. This also avoids creation of a
+virtualization hole due to observable differences between `vsiselect` and
+`siselect` widths.
+===='''
+zh = '''
+[%unbreakable]
+[NOTE]
+====
+要求 `vsiselect` 支持 0–0xFFF 的范围，即使该空间的大部分或全部可能被保留或不可访问，也允许虚拟机监控器仿真此已实现范围内的间接访问寄存器，包括将来可能标准化的寄存器。
+
+更一般地，建议 `vsiselect` 和 `siselect` 使用相同的位数实现。这也避免了由于 `vsiselect` 和 `siselect` 宽度之间可观察到的差异而产生虚拟化漏洞。
+===='''

@@ -1,0 +1,17 @@
+unit_id = "4708b923b8cbfdc5d4c66579c85b563b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The counter pseudoinstructions are mapped to the read-only
+insn:csrrs[rd,counter,x0] canonical form, but the other read-only CSR
+instruction forms (based on insn:csrrc[]/insn:csrrsi[]/insn:csrrci[]) are also legal ways to
+read these CSRs.
+===='''
+zh = '''
+[NOTE]
+====
+计数器伪指令映射到只读的 insn:csrrs[rd,counter,x0] 规范形式，但其他只读 CSR 指令形式（基于 insn:csrrc[]/insn:csrrsi[]/insn:csrrci[]）也是读取这些 CSR 的合法方式。
+===='''

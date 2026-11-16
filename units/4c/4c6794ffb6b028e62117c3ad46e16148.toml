@@ -1,0 +1,13 @@
+unit_id = "4c6794ffb6b028e62117c3ad46e16148"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_l_bit_m_mode_enforcement]#In addition to locking the PMP entry, the L bit indicates whether the
+R/W/X permissions are additionally enforced on M-mode accesses.
+When the L bit is
+set, these permissions are enforced for all privilege modes. When the L
+bit is clear, any M-mode access matching the PMP entry will succeed; the
+R/W/X permissions apply only to S and U modes.#'''
+zh = '''
+[#norm:pmp_l_bit_m_mode_enforcement]#除了锁定 PMP 条目之外，L 位还指示 R/W/X 权限是否额外在 M 模式访问上强制执行。当 L 位被置位时，这些权限对所有特权模式强制执行。当 L 位被清零时，任何匹配该 PMP 条目的 M 模式访问都会成功；R/W/X 权限仅适用于 S 和 U 模式。#'''

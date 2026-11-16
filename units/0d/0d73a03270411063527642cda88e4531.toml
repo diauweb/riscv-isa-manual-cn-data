@@ -1,0 +1,39 @@
+unit_id = "0d73a03270411063527642cda88e4531"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Shadow stack loads and stores will trigger a store/AMO page-fault if the
+accessed page is read-only, to support copy-on-write (COW) of a shadow stack
+page. If the page has been marked read-only for COW tracking, the page-fault
+handler responds by creating a copy of the page and updates the `pte.xwr` to
+`0b010`, thereby designating each copy as a shadow stack page. Conversely, if
+the access targets a genuinely read-only page, the fault being reported as a
+store/AMO page-fault signals to the operating system that the fault is fatal
+and non-recoverable. Reporting the fault as a store/AMO page-fault, even for
+insn:sspopchk[] initiated memory access, aids in the determination of fatality; if
+these were reported as load page-faults, access to a truly read-only page
+might be mistakenly treated as a recoverable fault, leading to the faulting
+instruction being retried indefinitely. The PTE does not provide a read-only
+shadow stack encoding.
+
+Attempts by shadow stack instructions to access pages marked as read-write,
+read-write-execute, read-execute, or execute-only result in a store/AMO
+access-fault exception, similarly indicating a fatal condition.
+
+Shadow stacks should be bounded at each end by guard pages to prevent accidental
+underflows or overflows from one shadow stack into another. Conventionally, a
+guard page for a stack is a page that is not accessible by the process that owns
+the stack.
+===='''
+zh = '''
+[NOTE]
+====
+如果所访问的页是只读页，影子栈加载和存储将触发存储/AMO 页故障，以支持影子栈页的写时复制（COW）。如果该页已被标记为只读以进行 COW 跟踪，则页故障处理程序通过创建该页的副本并更新 `pte.xwr` 为 `0b010` 来响应，从而将每个副本指定为影子栈页。反之，如果访问的目标是真正的只读页，则报告为存储/AMO 页故障的故障向操作系统表明该故障是致命的且不可恢复。即使对于由 insn:sspopchk[] 发起的内存访问，也将故障报告为存储/AMO 页故障，这有助于判断其致命性；如果这些被报告为加载页故障，则对真正只读页的访问可能被误认为可恢复故障，导致出错指令被无限重试。PTE 不提供只读影子栈编码。
+
+影子栈指令尝试访问标记为读写、读写执行、读执行或仅执行的页时，会导致存储/AMO 访问故障异常，同样表示致命情况。
+
+影子栈应在两端由防护页界定，以防止一个影子栈意外下溢或上溢到另一个影子栈中。按照惯例，栈的防护页是拥有该栈的进程不可访问的页。
+===='''

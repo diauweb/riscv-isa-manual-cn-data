@@ -1,0 +1,16 @@
+unit_id = "3affe5d896aaf34f0bc23209be6d8e92"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The RVC standard extension for compressed instructions provides unconditional
+jump and conditional branch instructions. The `C.J` and `C.JAL` instructions
+encode an offset in the immediate field of the instruction and thus are not
+susceptible to control-flow subversion. The `C.JR` and `C.JALR` RVC instructions
+perform an unconditional control transfer to the address in register `rs1`. The
+`C.JALR` additionally writes the address of the instruction following the jump
+(`pc+2`) to the link register `x1` and is a procedure call. The `C.JR` is a
+return from procedure if `rs1` is a conventional link register (i.e. `x1` or
+`x5`); else it is an indirect jump.'''
+zh = '''
+压缩指令的 RVC 标准扩展提供无条件跳转和条件分支指令。`C.J` 和 `C.JAL` 指令在指令的立即数字段中编码偏移量，因此不易受到控制流颠覆。`C.JR` 和 `C.JALR` RVC 指令执行到寄存器 `rs1` 中地址的无条件控制转移。`C.JALR` 还会将跳转后指令的地址（`pc+2`）写入链接寄存器 `x1`，并且是一次过程调用。如果 `rs1` 是常规链接寄存器（即 `x1` 或 `x5`），则 `C.JR` 是一次从过程返回；否则它是间接跳转。'''

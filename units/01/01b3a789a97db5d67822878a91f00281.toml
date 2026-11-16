@@ -1,0 +1,16 @@
+unit_id = "01b3a789a97db5d67822878a91f00281"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: We chose to add a `vstart` CSR to allow resumption of a
+partially executed vector instruction to reduce interrupt latencies
+and to simplify forward-progress guarantees.  This is similar to the
+scheme in the IBM 3090 vector facility.  To ensure forward progress
+without the `vstart` CSR, implementations would have to guarantee an
+entire vector instruction can always complete atomically without
+generating a trap.  This is particularly difficult to ensure in the
+presence of constant-stride or scatter/gather operations and demand-paged
+virtual memory.'''
+zh = '''
+NOTE: 我们选择添加 `vstart` CSR，以允许恢复部分执行的向量指令，从而减少中断延迟并简化向前进展保证。这类似于 IBM 3090 向量设施中的方案。为了在没有 `vstart` CSR 的情况下确保向前进展，实现必须保证整个向量指令始终可以原子地完成而不产生陷阱。在存在恒定步长或分散/聚集操作以及按需分页虚拟内存的情况下，这尤其难以确保。'''

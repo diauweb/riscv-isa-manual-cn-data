@@ -1,0 +1,11 @@
+unit_id = "a4e1f65531f775ff138102c188b2649c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zilsd_align8_no_exc]#As the access size is 64-bit, accesses are only considered naturally aligned for effective addresses that are a multiple of 8.
+In this case, these instructions are guaranteed to not raise an address-misaligned exception.#
+[#norm:Zilsd_align8_atomic]#Even if naturally aligned, the memory access might not be performed atomically.#'''
+zh = '''
+[#norm:Zilsd_align8_no_exc]#由于访问大小为 64 位，仅当有效地址为 8 的倍数时，访问才被视为自然对齐。在这种情况下，这些指令保证不会引发地址未对齐异常。#
+[#norm:Zilsd_align8_atomic]#即使自然对齐，内存访问也可能不会以原子方式执行。#'''

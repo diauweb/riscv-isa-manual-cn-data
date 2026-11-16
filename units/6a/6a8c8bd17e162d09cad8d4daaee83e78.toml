@@ -1,0 +1,12 @@
+unit_id = "6a8c8bd17e162d09cad8d4daaee83e78"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the CY, TM, IR, or HPM__n__ bit in the `scounteren` register is
+clear, attempts to read the `cycle`, `time`, `instret`, or `hpmcountern`
+register while executing in U-mode will cause an illegal-instruction
+exception. When one of these bits is set, access to the corresponding
+register is permitted.'''
+zh = '''
+当 `scounteren` 寄存器中的 CY、TM、IR 或 HPM__n__ 位为 0 时，在 U 模式下执行时尝试读取 `cycle`、`time`、`instret` 或 `hpmcountern` 寄存器将导致非法指令异常。当这些位之一置位时，允许访问相应的寄存器。'''

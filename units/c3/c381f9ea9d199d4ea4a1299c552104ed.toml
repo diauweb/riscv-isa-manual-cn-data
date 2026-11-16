@@ -1,0 +1,20 @@
+unit_id = "c381f9ea9d199d4ea4a1299c552104ed"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The RVWMO and RVTSO memory models by no means preclude
+microarchitectures from employing sophisticated speculation techniques
+or other forms of optimization in order to deliver higher performance.
+The models also do not impose any requirement to use any one particular
+cache hierarchy, nor even to use a cache coherence protocol at all.
+Instead, these models only specify the behaviors that can be exposed to
+software. Microarchitectures are free to use any pipeline design, any
+coherent or non-coherent cache hierarchy, any on-chip interconnect,
+etc., as long as the design only admits executions that satisfy the
+memory model rules. That said, to help people understand the actual
+implementations of the memory model, in this section we provide some
+guidelines on how architects and programmers should interpret the
+models' rules.'''
+zh = '''
+RVWMO 和 RVTSO 内存模型绝不排除微架构采用复杂推测技术或其他优化形式来提供更高性能。这些模型也不要求使用任何特定的缓存层次结构，甚至不要求使用缓存一致性协议。相反，这些模型只规定可以暴露给软件的行为。微架构可以自由使用任何流水线设计、任何一致性或非一致性缓存层次结构、任何片上互连等，只要该设计仅允许满足内存模型规则的执行。话虽如此，为帮助人们理解内存模型的实际实现，我们在本节提供一些关于架构师和程序员应如何解释模型规则的指南。'''

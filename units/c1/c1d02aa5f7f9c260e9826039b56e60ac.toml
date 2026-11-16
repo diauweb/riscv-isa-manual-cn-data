@@ -1,0 +1,20 @@
+unit_id = "c1d02aa5f7f9c260e9826039b56e60ac"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For example, consider an RV32 system supporting 34 bits of physical
+address. When the value of `satp`.MODE is Sv32, a 34-bit physical
+address is produced directly, and therefore no zero extension is needed.
+When the value of `satp`.MODE is Bare, the 32-bit virtual address is
+translated (unmodified) into a 32-bit physical address, and then that
+physical address is zero-extended into a 34-bit machine-level physical
+address.
+===='''
+zh = '''
+[NOTE]
+====
+例如，考虑一个支持 34 位物理地址的 RV32 系统。当 `satp`.MODE 的值为 Sv32 时，直接产生 34 位物理地址，因此不需要零扩展。当 `satp`.MODE 的值为 Bare 时，32 位虚拟地址被（原样）转换为 32 位物理地址，然后该物理地址被零扩展为 34 位机器级物理地址。
+===='''

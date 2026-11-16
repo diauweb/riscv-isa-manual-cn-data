@@ -1,0 +1,59 @@
+unit_id = "20e9ab6097d8efad7fb362400785fac0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 1 - address, branch map
+[align="center",float="center",cols="<1,<1,<3",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 01 (diff-delta): includes branch information and may
+include differential address
+|*branches*| 5| Number of valid bits *branch_map*. The number of bits
+of *branch_map* is determined as follows: : (cannot occur for this
+format) : 1 bit -3: 3 bits -7: 7 bits -15: 15 bits -31: 31 bits For
+example if branches = 12, *branch_map* is 15 bits long, and the 12 LSBs
+are valid.
+|*branch_map*| Determined by *branches* field.| An array of bits
+indicating whether branches are taken or not. Bit 0 represents the
+oldest branch instruction executed. For each bit: : branch taken :
+branch not taken
+|*address*| _iaddress_width_p - iaddress_lsb_p_| Differential
+instruction address.
+|*notify*| 1| If the value of this bit is different from the MSB of
+*address*, it indicates that this packet is reporting an instruction
+that is not the target of an uninferable discontinuity because a
+notification was requested via *trigger[2]* (see <<sec:trigger>>).
+|*updiscon*| 1| If the value of this bit is different from the MSB of
+*notify*, it indicates that this packet is reporting the instruction
+following an uninferable discontinuity and is also the instruction
+before an exception, privilege change or resync (i.e. it will be
+followed immediately by a format 3 _te_inst_).
+|*irreport*| 1| If the value of this bit is different from *updiscon*,
+it indicates that this packet is reporting an instruction that is
+either: following a return because its address differs from the
+predicted return address at the top of the implicit_return return
+address stack, or the last retired before an exception, interrupt,
+privilege change or resync because it is necessary to report the current
+address stack depth or nested call count.
+|*irdepth*| _return_stack_size_p (return_stack_size_p > 0 ? 1 : 0)
+call_counter_size_p_| If the value of *irreport* is different from
+*updiscon*, this field indicates the number of entries on the return
+address stack (i.e. the entry number of the return that failed) or
+nested call count. If *irreport* is the same value as *updiscon*, all
+bits in this field will also be the same value as *updiscon*.
+|==='''
+zh = '''
+.包格式 1 - 地址、分支映射
+[align="center",float="center",cols="<1,<1,<3",options="header"]
+|===
+| *字段名*| *位数*| *描述*
+|*format*| 2| 01 (diff-delta)：包含分支信息，可能包含差分地址
+|*branches*| 5| *branch_map* 的有效位数。*branch_map* 的位数确定如下：:（此格式不会出现）: 1 位 -3：3 位 -7：7 位 -15：15 位 -31：31 位。例如，如果 branches = 12，则 *branch_map* 长 15 位，其中 12 个 LSB 有效。
+|*branch_map*| 由 *branches* 字段确定。| 一个位数组，指示分支是否被采用。位 0 表示最早执行的分支指令。对于每一位：: 分支采用 : 分支未采用
+|*address*| _iaddress_width_p - iaddress_lsb_p_| 差分指令地址。
+|*notify*| 1| 如果此位的值与 *address* 的 MSB 不同，则表示此包报告的是由于通过 *trigger[2]* 请求了通知（见 <<sec:trigger>>）而出现的、不是不可推断不连续点目标的指令。
+|*updiscon*| 1| 如果此位的值与 *notify* 的 MSB 不同，则表示此包报告的是不可推断不连续点之后的指令，同时也是异常、特权变更或重新同步之前的指令（即它后面紧跟着一个格式 3 的 _te_inst_）。
+|*irreport*| 1| 如果此位的值与 *updiscon* 不同，则表示此包报告的指令是：返回之后的指令，因为其地址与 implicit_return 返回地址栈顶的预测返回地址不同；或者是异常、中断、特权变更或重新同步之前最后退休的指令，因为需要报告当前地址栈深度或嵌套调用计数。
+|*irdepth*| _return_stack_size_p (return_stack_size_p > 0 ? 1 : 0) call_counter_size_p_| 如果 *irreport* 的值与 *updiscon* 不同，此字段指示返回地址栈上的条目数（即失败返回的条目编号）或嵌套调用计数。如果 *irreport* 与 *updiscon* 的值相同，此字段的所有位也将与 *updiscon* 的值相同。
+|==='''

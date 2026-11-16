@@ -1,0 +1,42 @@
+unit_id = "29e0257f0a9890caf5ea3dce957a9f15"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[idcode-version]] `((Version))`
+a|Identifies the release version of this part.
+a|*R*
+a|Preset
+|[[idcode-partnumber]] `((PartNumber))`
+a|Identifies the designer's part number of this part.
+a|*R*
+a|Preset
+|[[idcode-manufid]] `((ManufId))`
+a|Identifies the designer/manufacturer of this part. Bits 6:0 must be
+bits 6:0 of the designer/manufacturer's Identification Code as
+assigned by JEDEC Standard JEP106. Bits 10:7 contain the modulo-16
+count of the number of continuation characters (0x7f) in that same
+Identification Code.
+a|*R*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[idcode-version]] `((Version))`
+a|标识此部件的发布版本。
+a|*R*
+a|Preset
+|[[idcode-partnumber]] `((PartNumber))`
+a|标识此部件的设计者部件号。
+a|*R*
+a|Preset
+|[[idcode-manufid]] `((ManufId))`
+a|标识此部件的设计者/制造商。位 6:0 必须是由 JEDEC Standard JEP106 分配的设计者/制造商标识码的位 6:0。位 10:7 包含同一标识码中续接字符（0x7f）数量的模 16 计数。
+a|*R*
+a|Preset
+|==='''

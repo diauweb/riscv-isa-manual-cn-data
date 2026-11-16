@@ -1,0 +1,12 @@
+unit_id = "1b540e3efa45bb72dac4b32f64aa19a7"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SHA512SIG1H(rs2, rs1, rd)) = {
+  X(rd) = EXTS((X(rs1) <<  3) ^ (X(rs1) >>  6) ^ (X(rs1) >> 19) ^
+               (X(rs2) >> 29)                  ^ (X(rs2) << 13) );
+  RETIRE_SUCCESS
+}
+--'''

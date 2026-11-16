@@ -1,0 +1,14 @@
+unit_id = "cb1fd5f535edc7dc55cb797c96efcbdc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((RV64I-only, ADDW))) (((RV64I-only, SUBW)))
+[#norm:addw_subw_op]#insn:addw[] and insn:subw[] are RV64I-only instructions that are defined analogously
+to insn:add[] and insn:sub[] but operate on 32-bit values and produce signed 32-bit results.#
+[#norm:addw_subw_overflow]#Overflows are ignored, and the low 32-bits of the result is
+sign-extended to 64-bits and written to the destination register.#'''
+zh = '''
+(((RV64I-only, ADDW))) (((RV64I-only, SUBW)))
+[#norm:addw_subw_op]#insn:addw[] 和 insn:subw[] 是仅限 RV64I 的指令，其定义类似于 insn:add[] 和 insn:sub[]，但操作 32 位值并产生有符号 32 位结果。#
+[#norm:addw_subw_overflow]#溢出被忽略，结果的低 32 位符号扩展到 64 位并写入目的寄存器。#'''

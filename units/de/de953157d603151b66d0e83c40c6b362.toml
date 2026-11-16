@@ -1,0 +1,16 @@
+unit_id = "de953157d603151b66d0e83c40c6b362"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Let latexmath:[$msoss$] be the set of all unpropagated memory store
+operation slices from non-`sc` store instruction instances that are
+program-order-before latexmath:[$i$] and have already calculated the
+value to be stored, that overlap with the unsatisfied slices of
+latexmath:[$mlo$], and which are not superseded by intervening store
+operations or store operations that are read from by an intervening
+load. The last condition requires, for each memory store operation slice
+latexmath:[$msos$] in latexmath:[$msoss$] from instruction
+latexmath:[$i'$]:'''
+zh = '''
+令 latexmath:[$msoss$] 为来自非 `sc` 存储指令实例的所有未传播内存存储操作切片的集合，这些存储指令实例程序顺序在 latexmath:[$i$] 之前且已经计算出要存储的值，这些切片与 latexmath:[$mlo$] 的未满足切片重叠，并且不被介入的存储操作或介入加载所读取的存储操作所取代。最后一个条件要求，对于来自指令 latexmath:[$i'$] 的 latexmath:[$msoss$] 中的每个内存存储操作切片 latexmath:[$msos$]：'''

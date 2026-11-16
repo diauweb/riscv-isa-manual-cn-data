@@ -1,0 +1,59 @@
+unit_id = "2b3082f0696431c16fe6a2d7c265be59"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Coherence is straightforward to provide for a shared memory region that
+is not cached by any agent. The PMA for such a region would simply
+indicate it should not be cached in a private or shared cache.
+
+Coherence is also straightforward for read-only regions, which can be
+safely cached by multiple agents without requiring a cache-coherence
+scheme. The PMA for this region would indicate that it can be cached,
+but that writes are not supported.
+
+Some read-write regions might only be accessed by a single agent, in
+which case they can be cached privately by that agent without requiring
+a coherence scheme. The PMA for such regions would indicate they can be
+cached. The data can also be cached in a shared cache, as other agents
+should not access the region.
+
+If an agent can cache a read-write region that is accessible by other
+agents, whether caching or non-caching, a cache-coherence scheme is
+required to avoid use of stale values. In regions lacking hardware cache
+coherence (hardware-incoherent regions), cache coherence can be
+implemented entirely in software, but software coherence schemes are
+notoriously difficult to implement correctly and often have severe
+performance impacts due to the need for conservative software-directed
+cache-flushing. Hardware cache-coherence schemes require more complex
+hardware and can impact performance due to the cache-coherence probes,
+but are otherwise invisible to software.
+
+For each hardware cache-coherent region, the PMA would indicate that the
+region is coherent and which hardware coherence controller to use if the
+system has multiple coherence controllers. For some systems, the
+coherence controller might be an outer-level shared cache, which might
+itself access further outer-level cache-coherence controllers
+hierarchically.
+
+Most memory regions within a platform will be coherent to software,
+because they will be fixed as either uncached, read-only, hardware
+cache-coherent, or only accessed by one agent.
+===='''
+zh = '''
+[NOTE]
+====
+对于不被任何代理缓存的共享内存区域，提供一致性是直接的。此类区域的 PMA 将简单地指示它不应在私有或共享缓存中被缓存。
+
+对于只读区域，一致性也是直接的，这些区域可以由多个代理安全地缓存而无需缓存一致性方案。该区域的 PMA 将指示它可以被缓存，但不支持写入。
+
+某些读写区域可能仅由单个代理访问，在这种情况下，它们可以由该代理私有缓存而无需一致性方案。此类区域的 PMA 将指示它们可以被缓存。数据也可以缓存在共享缓存中，因为其他代理不应访问该区域。
+
+如果代理可以缓存其他代理可访问的读写区域，无论是缓存还是非缓存，都需要缓存一致性方案以避免使用陈旧值。在缺少硬件缓存一致性的区域（硬件非一致区域）中，缓存一致性可以完全在软件中实现，但软件一致性方案众所周知难以正确实现，并且由于需要保守的软件引导的缓存刷新而通常具有严重的性能影响。硬件缓存一致性方案需要更复杂的硬件，并且由于缓存一致性探测而可能影响性能，但对软件而言是不可见的。
+
+对于每个硬件缓存一致区域，PMA 将指示该区域是一致的，以及如果系统有多个一致性控制器时应使用哪个硬件一致性控制器。对于某些系统，一致性控制器可能是外层共享缓存，它本身可能以分层方式访问更外层的一致性控制器。
+
+平台内的大多数内存区域对软件而言将是一致的，因为它们将被固定为不可缓存、只读、硬件缓存一致，或仅由一个代理访问。
+===='''

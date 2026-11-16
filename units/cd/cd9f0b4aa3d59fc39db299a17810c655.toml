@@ -1,0 +1,16 @@
+unit_id = "cd9f0b4aa3d59fc39db299a17810c655"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:flt-s_fle-s_signaling]#insn:flt.s[] and insn:fle.s[] perform what IEEE 754-2008
+refers to as _signaling_ comparisons: that is, they set the invalid
+operation exception flag if either input is NaN#.
+[#norm:feq-s_quiet]#insn:feq.s[] performs a _quiet_ comparison: it only sets
+the invalid operation exception flag if either input is a signaling NaN#.
+[#norm:feq-s_flt-s_fle-s_NaN_input]#For all three instructions, the
+result is 0 if either operand is NaN#.'''
+zh = '''
+[#norm:flt-s_fle-s_signaling]#insn:flt.s[] 和 insn:fle.s[] 执行 IEEE 754-2008 所称的__信号__比较：也就是说，如果任一输入为 NaN，则设置无效操作异常标志#。
+[#norm:feq-s_quiet]#insn:feq.s[] 执行__静默__比较：仅当任一输入是信号 NaN 时才设置无效操作异常标志#。
+[#norm:feq-s_flt-s_fle-s_NaN_input]#对于所有三条指令，如果任一操作数为 NaN，则结果为 0#。'''

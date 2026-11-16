@@ -1,0 +1,24 @@
+unit_id = "268986a07de7fce30b80e80d7c206239"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. If {accessregister-write} is clear and {accessregister-transfer} is set, then copy data from
+the register specified by {accessregister-regno} into the `arg0` region of
+`data`, and perform any side effects that occur when this
+register is read from M-mode.
+. If {accessregister-write} is set and {accessregister-transfer} is set, then copy data from the
+`arg0` region of `data` into the register specified by
+{accessregister-regno}, and perform any side effects that occur when this register
+is written from M-mode.
+. If {accessregister-aarpostincrement} and
+{accessregister-transfer} are set, increment
+{accessregister-regno}. {accessregister-regno} may also be
+incremented if {accessregister-aarpostincrement} is set and
+{accessregister-transfer} is clear.
+. Execute the Program Buffer, if {accessregister-postexec} is set.'''
+zh = '''
+. 如果 {accessregister-write} 为清除且 {accessregister-transfer} 为置位，则将 {accessregister-regno} 指定的寄存器中的数据复制到 `data` 的 `arg0` 区域，并执行从 M 模式读取此寄存器时发生的任何副作用。
+. 如果 {accessregister-write} 为置位且 {accessregister-transfer} 为置位，则将 `data` 的 `arg0` 区域中的数据复制到 {accessregister-regno} 指定的寄存器，并执行从 M 模式写入此寄存器时发生的任何副作用。
+. 如果 {accessregister-aarpostincrement} 和 {accessregister-transfer} 为置位，则递增 {accessregister-regno}。如果 {accessregister-aarpostincrement} 为置位且 {accessregister-transfer} 为清除，{accessregister-regno} 也可以递增。
+. 如果 {accessregister-postexec} 为置位，则执行程序缓冲区。'''

@@ -1,0 +1,15 @@
+unit_id = "d2005885a001b18a3f56133e38623d95"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This definition permits LD and SD instructions giving rise to exactly one
+memory access, regardless of alignment.
+If instructions with 4-byte-aligned effective address are decomposed
+into two 32b operations, there is no constraint on the order in which the
+operations are performed and each operation is guaranteed to be atomic.
+These decomposed sequences are interruptible.
+Exceptions might occur on subsequent operations, making the effects of previous
+operations within the same instruction visible.'''
+zh = '''
+NOTE: 该定义允许 LD 和 SD 指令无论对齐如何都只产生恰好一次内存访问。如果有效地址为 4 字节对齐的指令被分解为两个 32 位操作，则这些操作的执行顺序不受约束，且每个操作都保证是原子的。这些分解后的序列是可中断的。异常可能发生在后续操作上，从而使同一指令中先前操作的效应可见。'''

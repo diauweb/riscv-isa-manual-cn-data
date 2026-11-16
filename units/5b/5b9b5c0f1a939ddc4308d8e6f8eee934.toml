@@ -1,0 +1,13 @@
+unit_id = "5b9b5c0f1a939ddc4308d8e6f8eee934"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hstatus-spv_op]#The SPV bit (Supervisor Previous Virtualization mode) is written by the
+implementation whenever a trap is taken into HS-mode. Just as the SPP
+bit in `sstatus` is set to the (nominal) privilege mode at the time of
+the trap, the SPV bit in `hstatus` is set to the value of the
+virtualization mode V at the time of the trap.# [#norm:hstatus-spv_sret]#When an SRET instruction
+is executed when V=0, V is set to SPV.#'''
+zh = '''
+[#norm:hstatus-spv_op]#SPV 位（监管前一虚拟化模式）由实现在陷阱进入 HS-mode 时写入。正如 `sstatus` 中的 SPP 位被设置为陷阱时的（名义）特权模式，`hstatus` 中的 SPV 位被设置为陷阱时虚拟化模式 V 的值。# [#norm:hstatus-spv_sret]#当 V=0 时执行 SRET 指令，V 被设置为 SPV。#'''

@@ -1,0 +1,12 @@
+unit_id = "e86df1e740e6e5a7b678b0dbe2fa1fcb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.BEQZ performs conditional control transfers. The offset is
+sign-extended and added to the `pc` to form the branch target address.
+It can therefore target a {pm}256 B range. C.BEQZ takes the
+branch if the value in register _rs1′_ is zero. It
+expands to `beq rs1′, x0, offset`.'''
+zh = '''
+C.BEQZ 执行条件控制转移。偏移量进行符号扩展并加到 `pc` 上以形成分支目标地址。因此它可以以 {pm}256 B 范围为目标。如果寄存器 _rs1′_ 中的值为零，C.BEQZ 则采用分支。它展开为 `beq rs1′, x0, offset`。'''

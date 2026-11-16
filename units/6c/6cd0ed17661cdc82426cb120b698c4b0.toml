@@ -1,0 +1,14 @@
+unit_id = "6cd0ed17661cdc82426cb120b698c4b0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An insn:mret[] or insn:sret[] instruction is used to return from a trap in M-mode or S-mode respectively.
+[#norm:mstatus_xret_op]#When executing an __x__RET instruction, supposing
+__x__PP holds the value _y_, __x__IE is set to __x__PIE; the privilege mode is
+changed to _y_; __x__PIE is set to 1; and __x__PP is set to the
+least-privileged supported mode (U if U-mode is implemented, else M). If
+__y__{ne}M, __x__RET also sets csr::[mprv]=0.#'''
+zh = '''
+insn:mret[] 或 insn:sret[] 指令分别用于从 M 模式或 S 模式的陷阱返回。
+[#norm:mstatus_xret_op]#执行 __x__RET 指令时，假设 __x__PP 保存的值为 _y_，则 __x__IE 被设置为 __x__PIE；特权模式变更为 _y_；__x__PIE 被设置为 1；__x__PP 被设置为所支持的最低特权模式（如果实现了 U 模式则为 U，否则为 M）。如果 __y__{ne}M，__x__RET 还会设置 csr::[mprv]=0。#'''

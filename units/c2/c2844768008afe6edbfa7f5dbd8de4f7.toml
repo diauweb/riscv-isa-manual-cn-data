@@ -1,0 +1,16 @@
+unit_id = "c2844768008afe6edbfa7f5dbd8de4f7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Much of the debate surrounding this extension centered on whether a facility
+similar to x86's MONITOR/MWAIT should instead be provided.
+We concluded that, even if such a facility were to be defined for RISC-V,
+it would not supplant PAUSE.
+PAUSE is more appropriate when polling for non-memory events, when polling for
+multiple events, or when software does not know precisely what events it is
+polling for.
+(Perhaps surprisingly, the latter case is ubiquitous, in part because it is
+the mechanism expected by the Linux kernel's `cpu_relax` API.)'''
+zh = '''
+围绕该扩展的许多讨论都集中在是否应改为提供类似于 x86 的 MONITOR/MWAIT 的机制。我们的结论是，即使为 RISC-V 定义了这样的机制，它也不会取代 PAUSE。PAUSE 更适用于轮询非内存事件、轮询多个事件，或软件并不确切知道它正在轮询哪些事件的情况。（也许令人意外的是，后一种情况无处不在，部分原因是它是 Linux 内核的 `cpu_relax` API 所期望的机制。）'''

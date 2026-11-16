@@ -1,0 +1,19 @@
+unit_id = "d82c7be6a93f6452b9d19a005c04f23d"
+kind = "code"
+translatable = false
+en = '''
+.`SSPOPCHK` and `C.SSPOPCHK` operation
+[listing]
+----
+if (xSSE == 1)
+    temp = mem[ssp]            # Load temp from address in ssp and
+    if temp != X(src)          # Compare temp to value in src and
+                               # cause a software-check exception
+                               # if they are not bitwise equal.
+                               # Only x1 and x5 may be used as src
+       raise software-check exception
+    else
+       ssp = ssp + (XLEN/8)    # increment ssp by XLEN/8.
+    endif
+endif
+----'''

@@ -1,0 +1,16 @@
+unit_id = "35b252425942db5a9cbb3d5b23aba96b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In such cases, the `ELP` prior to the trap, the previous `ELP`, must be
+preserved by the trap delivery such that it can be restored on a return from the
+trap. [#norm:mstatus-mpelp_op]#To store the previous `ELP` state on trap delivery to M-mode, an `MPELP`
+bit is provided in the `mstatus` CSR.# [#norm:mstatus-spelp_op]#To store the previous `ELP` state on trap
+delivery to S/HS-mode, an `SPELP` bit is provided in the `mstatus` CSR.# [#norm:sstatus-spelp_op]#The
+`SPELP` bit in `mstatus` can be accessed through the `sstatus` CSR.# [#norm:vsstatus-spelp_op2]#To store
+the previous `ELP` state on traps to VS-mode, a `SPELP` bit is defined in the
+`vsstatus` (VS-modes version of `sstatus`).# [#norm:dcsr-pelp_op]#To store the previous `ELP` state on
+transition to Debug Mode, a `pelp` bit is defined in the `dcsr` register.#'''
+zh = '''
+在此类情况下，陷阱之前的 `ELP`（即先前的 `ELP`）必须由陷阱递送过程保留，以便在从陷阱返回时能够恢复。[#norm:mstatus-mpelp_op]#为了在向 M 模式递送陷阱时存储先前的 `ELP` 状态，在 `mstatus` CSR 中提供了 `MPELP` 位。# [#norm:mstatus-spelp_op]#为了在向 S/HS 模式递送陷阱时存储先前的 `ELP` 状态，在 `mstatus` CSR 中提供了 `SPELP` 位。# [#norm:sstatus-spelp_op]#`mstatus` 中的 `SPELP` 位可通过 `sstatus` CSR 访问。# [#norm:vsstatus-spelp_op2]#为了在向 VS 模式递送陷阱时存储先前的 `ELP` 状态，在 `vsstatus`（`sstatus` 的 VS 模式版本）中定义了 `SPELP` 位。# [#norm:dcsr-pelp_op]#为了在转换到调试模式时存储先前的 `ELP` 状态，在 `dcsr` 寄存器中定义了 `pelp` 位。#'''

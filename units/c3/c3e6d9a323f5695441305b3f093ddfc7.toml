@@ -1,0 +1,18 @@
+unit_id = "c3e6d9a323f5695441305b3f093ddfc7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The round number, which [#norm:vaeskf1_uimm_src]#ranges from 1 to 10, comes from `uimm[3:0]`;
+`uimm[4]` is ignored.#
+[#norm:vaeskf1_uimm_map]#The out-of-range `uimm[3:0]` values of 0 and 11-15 are mapped to in-range
+values by inverting `uimm[3]`.# Thus, 0 maps to 8, and 11-15 maps to 3-7.
+The round number is used to specify a round constant which is used in generating
+the first round key word.'''
+zh = '''
+轮编号[#norm:vaeskf1_uimm_src]##范围为 1 到 10，来自 `uimm[3:0]`；
+`uimm[4]` 被忽略。##
+[#norm:vaeskf1_uimm_map]#超出范围的 `uimm[3:0]` 值 0 和 11-15 通过反转 `uimm[3]`
+映射到范围内的值。# 因此，0 映射为 8，11-15 映射为 3-7。
+轮编号用于指定生成
+第一个轮密钥字时使用的轮常量。'''

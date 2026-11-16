@@ -1,0 +1,26 @@
+unit_id = "c6c4d3482c6c0d04139d6e65fc1ff8c5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_The above event has been added to accommodate cache coherence protocols that
+cannot distinguish between invalidations for stores and invalidations for
+cache-block management operations._
+
+_Aside from the above event, CMO instructions neither change the properties of
+constrained LR/SC loops nor modify the eventuality guarantee provided by them.
+For example, executing a CMO instruction may cause a constrained LR/SC loop on
+any hart to fail periodically or may cause a unconstrained LR/SC sequence on the
+same hart to fail always. Additionally, executing a cache-block prefetch
+instruction does not impact the eventuality guarantee provided by constrained
+LR/SC loops executed on any hart._
+===='''
+zh = '''
+[NOTE]
+====
+_添加上述事件是为了适应无法区分存储引起的无效化与缓存块管理操作引起的无效化的缓存一致性协议。_
+
+_除上述事件外，CMO 指令既不改变受限 LR/SC 循环的性质，也不修改其提供的最终性保证。例如，执行 CMO 指令可能导致任何硬件线程上的受限 LR/SC 循环周期性地失败，或导致同一硬件线程上的非受限 LR/SC 序列总是失败。此外，执行缓存块预取指令不影响任何硬件线程上执行的受限 LR/SC 循环所提供的最终性保证。_
+===='''

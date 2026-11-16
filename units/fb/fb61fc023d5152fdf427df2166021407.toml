@@ -1,0 +1,22 @@
+unit_id = "fb61fc023d5152fdf427df2166021407"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The current state of eight 32-bit words is read in as an element group from `vd`. Eight 32-bit
+message words are read in as an element group from `vs2`, although only four of them are used.
+All of the 32-bit input words are byte-swapped from big endian to little endian.
+These inputs are processed somewhat differently based on the round group (as specified in rnds),
+and the next state is generated as an element group of eight 32-bit words.
+The next state of eight 32-bit words are generated,
+swapped from little endian to big endian, and are returned in
+an eight-element group.'''
+zh = '''
+八个 32 位字的当前状态作为元素组从 `vd` 读入。八个 32 位
+消息字作为元素组从 `vs2` 读入，尽管其中仅使用四个。
+所有 32 位输入字均从大端字节序交换为小端字节序。
+这些输入根据轮组（如 rnds 中所指定）以略有不同的方式处理，
+下一状态生成为八个 32 位字的元素组。
+生成八个 32 位字的下一状态，
+从小端字节序交换为大端字节序，并在
+八元素组中返回。'''

@@ -1,0 +1,18 @@
+unit_id = "6d01b3aa7123213afa24b4d1e75c32c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By default, the FENCE instruction ensures that all memory accesses from
+instructions preceding the fence in program order (the "`predecessor
+set`") appear earlier in the global memory order than memory accesses
+from instructions appearing after the fence in program order (the
+"`successor set`"). However, fences can optionally further restrict the
+predecessor set and/or the successor set to a smaller set of memory
+accesses in order to provide some speedup. Specifically, fences have PR,
+PW, SR, and SW bits which restrict the predecessor and/or successor
+sets. The predecessor set includes loads (resp.stores) if and only if PR
+(resp.PW) is set. Similarly, the successor set includes loads
+(resp.stores) if and only if SR (resp.SW) is set.'''
+zh = '''
+默认情况下，FENCE 指令确保程序顺序中位于 fence 之前的指令（“前驱集”）的所有内存访问在全局内存顺序中比程序顺序中位于 fence 之后的指令（“后继集”）的内存访问出现得更早。然而，fence 可以选择进一步将前驱集和/或后继集限制为更小的内存访问集合，以提供一定的加速。具体而言，fence 具有 PR、PW、SR 和 SW 位，用于限制前驱集和/或后继集。当且仅当 PR（分别为 PW）被置位时，前驱集包含加载（分别为存储）。类似地，当且仅当 SR（分别为 SW）被置位时，后继集包含加载（分别为存储）。'''

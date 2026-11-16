@@ -1,0 +1,8 @@
+unit_id = "edeb125511c73db9e9688c31eaa7589c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Debug module triggers are signals from the hart that a trigger was hit, but the action associated with that trigger is a trace-related action. Action identifiers 2-5 are reserved for trace actions in the RISC-V Debug Specification, where triggers are defined. Actions 2-4 are defined by the Efficient Trace for RISC-V (E-Trace) Specification. The desired action is written to the `action` field of the Match Control `mcontrol` CSR (0x7a1). As not all harts may support all trace actions, the debugger should read back the `mcontrol` CSR after setting the desired trace action to verify that the option exists.'''
+zh = '''
+调试模块触发是来自硬件线程的信号，表示命中了某个触发，但与该触发关联的动作是跟踪相关动作。动作标识符 2-5 在 RISC-V Debug Specification（其中定义了触发）中保留用于跟踪动作。动作 2-4 由 Efficient Trace for RISC-V（E-Trace）规范定义。所需动作写入 Match Control `mcontrol` CSR（0x7a1）的 `action` 字段。由于并非所有硬件线程都可能支持所有跟踪动作，调试器应在设置所需跟踪动作后回读 `mcontrol` CSR，以验证该选项是否存在。'''

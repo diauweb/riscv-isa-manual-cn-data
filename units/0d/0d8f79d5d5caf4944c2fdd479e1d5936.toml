@@ -1,0 +1,48 @@
+unit_id = "0d8f79d5d5caf4944c2fdd479e1d5936"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of `satp` MODE field.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|SXLEN=32
+|Value |Name |Description
+
+|0 |Bare |No translation or protection.
+|1 |Sv32 |Page-based 32-bit virtual addressing (see <<sv32>>).
+
+3+|*SXLEN=64*
+|Value |Name |Description
+
+|0    |Bare |No translation or protection.
+|1-7  |-    |_Reserved for standard use_
+|8    |Sv39 |Page-based 39-bit virtual addressing (see <<sv39>>).
+|9    |Sv48 |Page-based 48-bit virtual addressing (see <<sv48>>).
+|10   |Sv57 |Page-based 57-bit virtual addressing (see <<sv57>>).
+|11   |Sv64 |_Reserved for page-based 64-bit virtual addressing._
+|12-13|-    |_Reserved for standard use_
+|14-15|-    |_Designated for custom use_
+|==='''
+zh = '''
+.`satp` MODE 字段的编码。
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|SXLEN=32
+|值 |名称 |描述
+
+|0 |Bare |无转换或保护。
+|1 |Sv32 |基于页的 32 位虚拟寻址（见 <<sv32>>）。
+
+3+|*SXLEN=64*
+|值 |名称 |描述
+
+|0    |Bare |无转换或保护。
+|1-7  |-    |_保留供标准使用_
+|8    |Sv39 |基于页的 39 位虚拟寻址（见 <<sv39>>）。
+|9    |Sv48 |基于页的 48 位虚拟寻址（见 <<sv48>>）。
+|10   |Sv57 |基于页的 57 位虚拟寻址（见 <<sv57>>）。
+|11   |Sv64 |_保留供基于页的 64 位虚拟寻址。_
+|12-13|-    |_保留供标准使用_
+|14-15|-    |_指定用于自定义使用_
+|==='''

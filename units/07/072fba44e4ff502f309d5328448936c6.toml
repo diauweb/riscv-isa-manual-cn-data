@@ -1,0 +1,21 @@
+unit_id = "072fba44e4ff502f309d5328448936c6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A device might observe an access to a memory location via some external
+communication mechanism, e.g., a memory-mapped control register that
+drives an interrupt signal to an interrupt controller. This
+communication is outside the scope of the insn:fence[] ordering mechanism and
+hence insn:fence[] instructions can provide no guarantee on when a change in
+the interrupt signal is visible to the interrupt controller. Specific
+devices might provide additional ordering guarantees to reduce software
+overhead but those are outside the scope of the RISC-V memory model.
+===='''
+zh = '''
+[NOTE]
+====
+设备可能通过某种外部通信机制观察到对内存位置的访问，例如，驱动中断信号到中断控制器的内存映射控制寄存器。这种通信超出了 insn:fence[] 排序机制的范围，因此 insn:fence[] 指令无法保证中断信号的变化何时对中断控制器可见。特定设备可能提供额外的排序保证以减少软件开销，但这些超出了 RISC-V 内存模型的范围。
+===='''

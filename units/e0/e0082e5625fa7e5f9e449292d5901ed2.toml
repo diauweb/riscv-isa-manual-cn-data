@@ -1,0 +1,44 @@
+unit_id = "e0082e5625fa7e5f9e449292d5901ed2"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The _prestart_ elements are those whose element index is less than the
+initial value in the `vstart` register.  The prestart elements do not
+raise exceptions and do not update the destination vector register.
+
+* The _body_ elements are those whose element index is greater than or equal
+to the initial value in the `vstart` register, and less than the current
+vector length setting in `vl`. The body can be split into two disjoint subsets:
+
+** The _active_ elements during a vector instruction's execution are the
+elements within the body and where the current mask is enabled at that element
+position.  The active elements can raise exceptions and update the destination
+vector register group.
+
+** The _inactive_ elements are the elements within the body
+but where the current mask is disabled at that element
+position.  The inactive elements do not raise exceptions and do not
+update any destination vector register group unless masked agnostic is
+specified (`vtype.vma`=1), in which case inactive elements may be
+overwritten with 1s.
+
+* The _tail_ elements during a vector instruction's execution are the
+elements past the current vector length setting specified in `vl`.
+The tail elements do not raise exceptions, and do not update any
+destination vector register group unless tail agnostic is specified
+(`vtype.vta`=1), in which case tail elements may be overwritten with
+1s, or with the result of the instruction in the case of
+mask-producing instructions except for mask loads.  When LMUL < 1, the
+tail includes the elements past VLMAX that are held in the same vector
+register.'''
+zh = '''
+* _起始前_ 元素是其元素索引小于 `vstart` 寄存器中初始值的元素。起始前元素不引发异常，也不更新目标向量寄存器。
+
+* _主体_ 元素是其元素索引大于或等于 `vstart` 寄存器中初始值且小于 `vl` 中当前向量长度设置的元素。主体可以分为两个不相交的子集：
+
+** 在向量指令执行期间的 _活动_ 元素是主体内且当前掩码在该元素位置启用的元素。活动元素可以引发异常并更新目标向量寄存器组。
+
+** _非活动_ 元素是主体内但当前掩码在该元素位置禁用的元素。非活动元素不引发异常，也不更新任何目标向量寄存器组，除非指定了掩码不可知（`vtype.vma`=1），在这种情况下非活动元素可以用 1 覆盖。
+
+* 在向量指令执行期间的 _尾部_ 元素是超过 `vl` 中指定的当前向量长度设置的元素。尾部元素不引发异常，也不更新任何目标向量寄存器组，除非指定了尾部不可知（`vtype.vta`=1），在这种情况下尾部元素可以用 1 覆盖，或者在掩码生成指令（掩码加载除外）的情况下用指令结果覆盖。当 LMUL < 1 时，尾部包括保存在同一向量寄存器中的超过 VLMAX 的元素。'''

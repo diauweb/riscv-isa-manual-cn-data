@@ -1,0 +1,36 @@
+unit_id = "6f24c8f6281e530d5d3d102a2585453e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* P1 *[PTG.2.1]* Start-up tests map to T1 and reset-triggered (on-demand)
+`BIST` tests.
+* P2 *[PTG.2.2]* Continuous testing total failure maps to T2 and the
+`DEAD` state.
+* P3 *[PTG.2.3]* Online tests are continuous tests of T2 – entropy output
+is prevented in the `BIST` state.
+* P4 *[PTG.2.4]* Is related to the design of effective entropy source
+health tests, which we encourage.
+* P5 *[PTG.2.5]* Raw random sequence may be checked via the GetNoise
+interface (<<crypto_scalar_es_getnoise>>).
+* P6 *[PTG.2.6]* Test Procedure A cite:[KiSc11] (Sect 2.4.4.1) is a
+part of the evaluation process, and we suggest self-evaluation using these
+tests even if AIS-31 certification is not sought.
+* P7 *[PTG.2.7]* Average Shannon entropy of "`internal random bits`"
+exceeds 0.997.'''
+zh = '''
+* P1 *[PTG.2.1]* 启动测试映射到 T1 和由复位触发的（按需）
+`BIST` 测试。
+* P2 *[PTG.2.2]* 连续测试完全失败映射到 T2 和
+`DEAD` 状态。
+* P3 *[PTG.2.3]* 在线测试是 T2 的连续测试——在 `BIST` 状态下阻止
+熵输出。
+* P4 *[PTG.2.4]* 与有效的熵源
+健康测试设计相关，我们鼓励这样做。
+* P5 *[PTG.2.5]* 原始随机序列可通过 GetNoise
+接口（<<crypto_scalar_es_getnoise>>）检查。
+* P6 *[PTG.2.6]* 测试程序 A cite:[KiSc11]（第 2.4.4.1 节）是
+评估过程的一部分，即使不寻求 AIS-31 认证，我们也建议使用这些
+测试进行自我评估。
+* P7 *[PTG.2.7]* “内部随机位”的平均香农熵
+超过 0.997。'''

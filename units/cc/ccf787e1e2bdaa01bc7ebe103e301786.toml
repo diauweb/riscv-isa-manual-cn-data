@@ -1,0 +1,21 @@
+unit_id = "ccf787e1e2bdaa01bc7ebe103e301786"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If the maximum packet payload length is 2^N^-1 (for example, if N is
+5, then the maximum length is 31 bytes), and the minimum packet payload
+length is 1, then a sequence of at least 2^N^ zero bytes cannot occur
+within a packet payload, and therefore the first non-zero byte seen
+after a sequence of at least 2^N^ zero bytes must be the first byte of a
+packet. This approach can be used for alignment in either memory or a
+data stream;
+* An alternative approach suitable for packets written to memory is to
+divide memory into blocks of M bytes (e.g. 1kbyte blocks), and write
+packets to memory such that the first byte in every block is always the
+first byte of a packet. This means packets cannot span block boundaries,
+and so zero bytes must be used to pad between the end of the last
+message in a block and the block boundary.'''
+zh = '''
+* 如果最大包有效载荷长度为 2^N^-1（例如，如果 N 为 5，则最大长度为 31 字节），且最小包有效载荷长度为 1，则在包有效载荷内不可能出现至少 2^N^ 个连续零字节的序列，因此在至少 2^N^ 个连续零字节之后出现的第一个非零字节必定是某个包的第一个字节。这种方法可用于存储器或数据流中的对齐；
+* 另一种适用于写入存储器的包的方案是将存储器划分为 M 字节的块（例如 1KB 的块），并按照每个块中的第一个字节始终是某个包的第一个字节的方式将包写入存储器。这意味着包不能跨越块边界，因此必须使用零字节在块中最后一条消息的末尾与块边界之间进行填充。'''

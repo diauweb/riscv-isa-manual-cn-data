@@ -1,0 +1,16 @@
+unit_id = "1054033f29bdae475621a4975aeb1cbf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the underlying physical memory attribute for a page is main memory,
+and the page has PBMT=IO, then
+[#norm:Svpbmt_memory_pma_io_pbmt_strong_io_ordering]#accesses to that page obey strong channel
+0 I/O ordering rules.# However,
+[#norm:Svpbmt_memory_pma_io_pbmt_treated_as_io_and_memory]#accesses to
+such pages are considered to be _both_ I/O and main memory accesses for
+the purposes of FENCE, _.aq_, and _.rl_.#'''
+zh = '''
+如果某页的底层物理内存属性为主存，且该页具有 PBMT=IO，则
+[#norm:Svpbmt_memory_pma_io_pbmt_strong_io_ordering]#对该页的访问遵循强通道 0 I/O 排序规则。# 然而，
+[#norm:Svpbmt_memory_pma_io_pbmt_treated_as_io_and_memory]#就 FENCE、_.aq_ 和 _.rl_ 而言，对此类页的访问被视为__既是__ I/O 访问__又是__主存访问。#'''

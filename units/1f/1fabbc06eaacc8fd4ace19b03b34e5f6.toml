@@ -1,0 +1,12 @@
+unit_id = "1fabbc06eaacc8fd4ace19b03b34e5f6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For non-leaf PTEs, bits 62-61 are reserved for future standard use.
+[#norm:Svpbmt_nonleaf_pte_pbmt_must_be_zero]#Until their use is defined by a standard extension, they must be cleared
+by software for forward compatibility, or else a page-fault exception is
+raised.#'''
+zh = '''
+对于非叶页表项，第 62-61 位保留供未来标准使用。
+[#norm:Svpbmt_nonleaf_pte_pbmt_must_be_zero]#在标准扩展定义其用途之前，软件必须将其清零以保证向前兼容，否则会引发缺页异常。#'''

@@ -1,0 +1,44 @@
+unit_id = "0f5b94c155fd5e39a38525e6584d5192"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Fields in Messages
+[cols="22%,8%,5%,6%,8%,14%,7%,8%,8%,~",options="header",]
+|===========================================================================================
+| Message ID/Field [size]|<<field_TCODE,TCODE>> [6]|<<field_SRC,SRC>> [Cfg]|<<field_SYNC,SYNC>> [4]|<<field_B-TYPE,B-TYPE>> [2]|Other fields|<<field_I-CNT,I-CNT>> [Var]|<<Address Compression,x-ADDR>> [Var]|<<field_HIST,HIST>> [Var]|<<field_TSTAMP,TSTAMP>> [Var,Cfg]
+|[[msg_Ownership]]<<msg2_Ownership,Ownership>>   |2    |Cfg|    |     |<<field_PROCESS,PROCESS>> *[Var]*        |    |     ||Cfg
+|[[msg_DirectBranch]]<<msg2_DirectBranch,DirectBranch>>          |3    |Cfg|    |     |                  |Yes |     ||Cfg
+|[[msg_IndirectBranch]]<<msg2_IndirectBranch,IndirectBranch>>        |4    |Cfg|    |Yes  |                  |Yes |<<field_U-ADDR,U-ADDR>>||Cfg
+|[[msg_Error]]<<msg2_Error,Error>>                 |8    |Cfg|    |     |<<field_ETYPE,ETYPE>> *[4]* + <<field_ECODE,ECODE>> *[Var]*  |    |     ||Cfg
+|[[msg_ProgTraceSync]]<<msg2_ProgTraceSync,ProgTraceSync>>         |9    |Cfg|Yes |     |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_DirectBranchSync]]<<msg2_DirectBranchSync,DirectBranchSync>>      |11   |Cfg|Yes |     |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_IndirectBranchSync]]<<msg2_IndirectBranchSync,IndirectBranchSync>>    |12   |Cfg|Yes |Yes  |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_ResourceFull]]<<msg2_ResourceFull,ResourceFull>>          |27   |Cfg|    |     |<<field_RCODE,RCODE>> *[4]* + <<field_RDATA,RDATA>> *[Var]*|    |     ||Cfg
+|[[msg_IndirectBranchHist]]<<msg2_IndirectBranchHist,IndirectBranchHist>>    |28   |Cfg|    |Yes  |                  |Yes |<<field_U-ADDR,U-ADDR>>|Yes|Cfg
+|[[msg_IndirectBranchHistSync]]<<msg2_IndirectBranchHistSync,IndirectBranchHistSync>>|29   |Cfg|Yes |Yes  |                  |Yes |<<field_F-ADDR,F-ADDR>>|Yes|Cfg
+|[[msg_RepeatBranch]]<<msg2_RepeatBranch,RepeatBranch>>          |30   |Cfg|    |     |<<field_B-CNT,B-CNT>> *[Var]*           |    |     ||Cfg
+|[[msg_ProgTraceCorrelation]]<<msg2_ProgTraceCorrelation,ProgTraceCorrelation>>  |33   |Cfg|    |     |<<field_EVCODE,EVCODE>> *[4]* + <<field_CDF,CDF>> *[2]* |Yes |     |*Cfg*|Cfg
+|<<msg_other,Vendor Defined>>|56..62|Cfg 7+| Designated for use by Vendor Defined messages
+|<<msg_other,Reserved>>|other|Cfg 7+| Reserved for future extensions of N-Trace specification
+|==========================================================================================='''
+zh = '''
+.消息中的字段
+[cols="22%,8%,5%,6%,8%,14%,7%,8%,8%,~",options="header",]
+|===========================================================================================
+| 消息 ID/字段 [大小]|<<field_TCODE,TCODE>> [6]|<<field_SRC,SRC>> [Cfg]|<<field_SYNC,SYNC>> [4]|<<field_B-TYPE,B-TYPE>> [2]|其他字段|<<field_I-CNT,I-CNT>> [Var]|<<Address Compression,x-ADDR>> [Var]|<<field_HIST,HIST>> [Var]|<<field_TSTAMP,TSTAMP>> [Var,Cfg]
+|[[msg_Ownership]]<<msg2_Ownership,Ownership>>   |2    |Cfg|    |     |<<field_PROCESS,PROCESS>> *[Var]*        |    |     ||Cfg
+|[[msg_DirectBranch]]<<msg2_DirectBranch,DirectBranch>>          |3    |Cfg|    |     |                  |Yes |     ||Cfg
+|[[msg_IndirectBranch]]<<msg2_IndirectBranch,IndirectBranch>>        |4    |Cfg|    |Yes  |                  |Yes |<<field_U-ADDR,U-ADDR>>||Cfg
+|[[msg_Error]]<<msg2_Error,Error>>                 |8    |Cfg|    |     |<<field_ETYPE,ETYPE>> *[4]* + <<field_ECODE,ECODE>> *[Var]*  |    |     ||Cfg
+|[[msg_ProgTraceSync]]<<msg2_ProgTraceSync,ProgTraceSync>>         |9    |Cfg|Yes |     |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_DirectBranchSync]]<<msg2_DirectBranchSync,DirectBranchSync>>      |11   |Cfg|Yes |     |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_IndirectBranchSync]]<<msg2_IndirectBranchSync,IndirectBranchSync>>    |12   |Cfg|Yes |Yes  |                  |Yes |<<field_F-ADDR,F-ADDR>>||Cfg
+|[[msg_ResourceFull]]<<msg2_ResourceFull,ResourceFull>>          |27   |Cfg|    |     |<<field_RCODE,RCODE>> *[4]* + <<field_RDATA,RDATA>> *[Var]*|    |     ||Cfg
+|[[msg_IndirectBranchHist]]<<msg2_IndirectBranchHist,IndirectBranchHist>>    |28   |Cfg|    |Yes  |                  |Yes |<<field_U-ADDR,U-ADDR>>|Yes|Cfg
+|[[msg_IndirectBranchHistSync]]<<msg2_IndirectBranchHistSync,IndirectBranchHistSync>>|29   |Cfg|Yes |Yes  |                  |Yes |<<field_F-ADDR,F-ADDR>>|Yes|Cfg
+|[[msg_RepeatBranch]]<<msg2_RepeatBranch,RepeatBranch>>          |30   |Cfg|    |     |<<field_B-CNT,B-CNT>> *[Var]*           |    |     ||Cfg
+|[[msg_ProgTraceCorrelation]]<<msg2_ProgTraceCorrelation,ProgTraceCorrelation>>  |33   |Cfg|    |     |<<field_EVCODE,EVCODE>> *[4]* + <<field_CDF,CDF>> *[2]* |Yes |     |*Cfg*|Cfg
+|<<msg_other,Vendor Defined>>|56..62|Cfg 7+| 指定供 Vendor Defined 消息使用
+|<<msg_other,Reserved>>|other|Cfg 7+| 保留供 N-Trace 规范未来扩展使用
+|==========================================================================================='''

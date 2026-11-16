@@ -1,0 +1,11 @@
+unit_id = "807eda971db14f3d55e7e95d78121280"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-sdsp_op]#C.SDSP is an RV64C-only instruction that stores a 64-bit value in
+register _rs2_ to memory. It computes an effective address by adding the
+_zero_-extended offset, scaled by 8, to the stack pointer, `x2`. It
+expands to `sd rs2, offset(x2)`.#'''
+zh = '''
+[#norm:c-sdsp_op]#C.SDSP 是仅限 RV64C 的指令，将寄存器 _rs2_ 中的 64 位值存储到内存。它通过将按 8 缩放的__零__扩展偏移量加到栈指针 `x2` 上来计算有效地址。它展开为 `sd rs2, offset(x2)`。#'''

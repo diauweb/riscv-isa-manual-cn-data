@@ -1,0 +1,13 @@
+unit_id = "7422014206c620a3ec2e94c157b78270"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vsepc` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sepc`, formatted as shown in
+<<vsepcreg>>. When V=1, `vsepc` substitutes for the
+usual `sepc`, so instructions that normally read or modify `sepc`
+actually access `vsepc` instead. When V=0, `vsepc` does not directly
+affect the behavior of the machine.'''
+zh = '''
+`vsepc` 寄存器是一个 VSXLEN 位读/写寄存器，是监管寄存器 `sepc` 的 VS-mode 版本，格式如 <<vsepcreg>> 所示。当 V=1 时，`vsepc` 替代常规 `sepc`，因此通常读取或修改 `sepc` 的指令实际上改为访问 `vsepc`。当 V=0 时，`vsepc` 不直接影响机器的行为。'''

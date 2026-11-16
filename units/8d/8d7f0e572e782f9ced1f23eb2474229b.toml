@@ -1,0 +1,19 @@
+unit_id = "8d7f0e572e782f9ced1f23eb2474229b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction is implemented on RV32 only.
+Used to compute the Sigma1 transform of the SHA2-512 hash function
+in conjunction with the insn:sha512sig1l[] instruction.
+The transform is a 64-bit to 64-bit function, so the input and output
+are each represented by two 32-bit registers.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+描述::
+该指令仅在 RV32 上实现。
+与 insn:sha512sig1l[] 指令结合使用，用于计算 SHA2-512 哈希函数的 Sigma1 变换。
+该变换是 64 位到 64 位的函数，因此输入和输出各由两个 32 位寄存器表示。
+该指令必须 _始终_ 以实现为其执行延迟不依赖于所操作数据的方式实现。'''

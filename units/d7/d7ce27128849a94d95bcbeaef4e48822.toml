@@ -1,0 +1,15 @@
+unit_id = "d7ce27128849a94d95bcbeaef4e48822"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A guest-page fault may arise due to an implicit memory access during
+first-stage (VS-stage) address translation, in which case a guest
+physical address written to `htval` is that of the implicit memory
+access that faulted—for example, the address of a VS-level page table
+entry that could not be read. (The guest physical address corresponding
+to the original virtual address is unknown when VS-stage translation
+fails to complete.) Additional information is provided in CSR `htinst`
+to disambiguate such situations.'''
+zh = '''
+客户页故障可能由于第一级（VS 级）地址转换期间的隐式内存访问而产生，在这种情况下，写入 `htval` 的客户物理地址就是出错的隐式内存访问的地址——例如无法读取的 VS 级页表项的地址。（当 VS 级转换无法完成时，原始虚拟地址对应的客户物理地址是未知的。）CSR `htinst` 中提供了额外信息以消除此类情况的歧义。'''

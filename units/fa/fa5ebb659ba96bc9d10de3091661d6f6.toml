@@ -1,0 +1,14 @@
+unit_id = "fa5ebb659ba96bc9d10de3091661d6f6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The PTE format for Sv57 is shown in <<sv57pte>>.
+Bits 63–54 and 9–0 have the same meaning as for Sv39. Any level of PTE
+may be a leaf PTE, so in addition to pages, Sv57 supports _megapages_,
+_gigapages_, _terapages_, and _petapages_, each of which must be
+virtually and physically aligned to a boundary equal to its size. A
+page-fault exception is raised if the physical address is insufficiently
+aligned.'''
+zh = '''
+Sv57 的 PTE 格式如 <<sv57pte>> 所示。位 63–54 和 9–0 的含义与 Sv39 相同。任何级别的 PTE 都可以是叶 PTE，因此除了页之外，Sv57 还支持__兆页__、_吉页_、__太页__和__拍页__，它们各自必须在虚拟和物理上对齐到等于其大小的边界。如果物理地址对齐不足，则引发页错误异常。'''

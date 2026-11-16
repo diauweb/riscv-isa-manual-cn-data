@@ -1,0 +1,23 @@
+unit_id = "d06b2a3352055c48b9f63688e5a1bc91"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* (d) stalls (for whatever reason; perhaps it's stalled waiting
+for some other preceding instruction)
+* (e) executes and enters the store buffer (but does not yet
+drain to memory)
+* (f) executes and forwards from (e) in the store buffer
+* (g), (h), and (i) execute
+* (a) executes and drains to memory, (b) executes, and (c)
+executes and drains to memory
+* (d) unstalls and executes
+* (e) drains from the store buffer to memory'''
+zh = '''
+* (d) 停顿（无论出于何种原因；也许它在等待某条更早的指令而停顿）
+* (e) 执行并进入存储缓冲区（但尚未排空到内存）
+* (f) 执行并从存储缓冲区中的 (e) 转发
+* (g)、(h) 和 (i) 执行
+* (a) 执行并排空到内存，(b) 执行，且 (c) 执行并排空到内存
+* (d) 解除停顿并执行
+* (e) 从存储缓冲区排空到内存'''

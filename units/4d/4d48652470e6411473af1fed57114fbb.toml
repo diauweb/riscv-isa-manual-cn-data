@@ -1,0 +1,13 @@
+unit_id = "4d48652470e6411473af1fed57114fbb"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (AES64IM(rs1, rd)) = {
+  let w0 : bits(32) = aes_mixcolumn_inv(X(rs1)[31.. 0]);
+  let w1 : bits(32) = aes_mixcolumn_inv(X(rs1)[63..32]);
+  X(rd)  = w1 @ w0;
+  RETIRE_SUCCESS
+}
+--'''

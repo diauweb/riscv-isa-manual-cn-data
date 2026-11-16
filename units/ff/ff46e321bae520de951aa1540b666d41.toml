@@ -1,0 +1,38 @@
+unit_id = "ff46e321bae520de951aa1540b666d41"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} | `sw s1, 0(s0)` |
+| Write | `progbuf1` | `addi s0, s0, 4` |
+| Write | `progbuf2` | `ebreak` |
+| Write | {dm-data0} | address |
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | Write `s0`
+| Write | {dm-data0} | value0 |
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1009 | Write `s1`, then execute program buffer
+| Write | {dm-abstractauto} | {abstractauto-autoexecdata}[0] | Set {abstractauto-autoexecdata}[0]
+| Write | {dm-data0} | value1 |
+| ... | ... | ... | ...
+| Write | {dm-data0} | valueN |
+| Write | {dm-abstractauto} | 0 | Clear {abstractauto-autoexecdata}[0]
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `sw s1, 0(s0)` |
+| 写 | `progbuf1` | `addi s0, s0, 4` |
+| 写 | `progbuf2` | `ebreak` |
+| 写 | {dm-data0} | 地址 |
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | 写入 `s0`
+| 写 | {dm-data0} | value0 |
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1009 | 写入 `s1`，然后执行程序缓冲区
+| 写 | {dm-abstractauto} | {abstractauto-autoexecdata}[0] | 设置 {abstractauto-autoexecdata}[0]
+| 写 | {dm-data0} | value1 |
+| ... | ... | ... | ...
+| 写 | {dm-data0} | valueN |
+| 写 | {dm-abstractauto} | 0 | 清除 {abstractauto-autoexecdata}[0]
+|==='''

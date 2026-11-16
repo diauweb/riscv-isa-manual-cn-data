@@ -1,0 +1,102 @@
+unit_id = "6f5f2db6374dcc12f214647fdab9c47c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mappings from Linux memory primitives to RISC-V primitives.
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!Linux Operation !RVWMO Mapping
+
+!`smp_mb()` !`fence rw,rw`
+
+!`smp_rmb()` !`fence r,r`
+
+!`smp_wmb()` !`fence w,w`
+
+!`dma_rmb()` !`fence r,r`
+
+!`dma_wmb()` !`fence w,w`
+
+!`mb()` !`fence iorw,iorw`
+
+!`rmb()` !`fence ri,ri`
+
+!`wmb()` !`fence wo,wo`
+
+!`smp_load_acquire()` !`l{b|h|w|d}; fence r,rw`
+
+!`smp_store_release()` !`fence.tso; s{b|h|w|d}`
+
+!Linux Construct !RVWMO AMO Mapping
+
+!`atomic <op> relaxed` !`amo <op>.{w|d}`
+
+!`atomic <op> acquire` !`amo <op>.{w|d}.aq`
+
+!`atomic <op> release` !`amo <op>.{w|d}.rl`
+
+!`atomic <op>` !`amo <op>.{w|d}.aqrl`
+
+!Linux Construct !RVWMO LR/SC Mapping
+
+!`atomic <op> relaxed` !`loop:lr.{w|d}; <op>; sc.{w|d}; bnez loop`
+
+!`atomic <op> acquire` !`loop:lr.{w|d}.aq; <op>; sc.{w|d}; bnez loop`
+
+!`atomic <op> release` !`loop:lr.{w|d}; <op>; sc.{w|d}.aqrl^*^; bnez loop OR`
+
+! !`fence.tso; loop:lr.{w|d}; <op >; sc.{w|d}^*^; bnez loop`
+
+!`atomic <op>` !`loop:lr.{w|d}.aq;` `<op>; sc.{w|d}.aqrl; bnez loop`
+
+|==='''
+zh = '''
+.从 Linux 内存原语到 RISC-V 原语的映射。
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!Linux 操作 !RVWMO 映射
+
+!`smp_mb()` !`fence rw,rw`
+
+!`smp_rmb()` !`fence r,r`
+
+!`smp_wmb()` !`fence w,w`
+
+!`dma_rmb()` !`fence r,r`
+
+!`dma_wmb()` !`fence w,w`
+
+!`mb()` !`fence iorw,iorw`
+
+!`rmb()` !`fence ri,ri`
+
+!`wmb()` !`fence wo,wo`
+
+!`smp_load_acquire()` !`l{b|h|w|d}; fence r,rw`
+
+!`smp_store_release()` !`fence.tso; s{b|h|w|d}`
+
+!Linux 构造 !RVWMO AMO 映射
+
+!`atomic <op> relaxed` !`amo <op>.{w|d}`
+
+!`atomic <op> acquire` !`amo <op>.{w|d}.aq`
+
+!`atomic <op> release` !`amo <op>.{w|d}.rl`
+
+!`atomic <op>` !`amo <op>.{w|d}.aqrl`
+
+!Linux 构造 !RVWMO LR/SC 映射
+
+!`atomic <op> relaxed` !`loop:lr.{w|d}; <op>; sc.{w|d}; bnez loop`
+
+!`atomic <op> acquire` !`loop:lr.{w|d}.aq; <op>; sc.{w|d}; bnez loop`
+
+!`atomic <op> release` !`loop:lr.{w|d}; <op>; sc.{w|d}.aqrl^*^; bnez loop OR`
+
+! !`fence.tso; loop:lr.{w|d}; <op >; sc.{w|d}^*^; bnez loop`
+
+!`atomic <op>` !`loop:lr.{w|d}.aq;` `<op>; sc.{w|d}.aqrl; bnez loop`
+
+|==='''

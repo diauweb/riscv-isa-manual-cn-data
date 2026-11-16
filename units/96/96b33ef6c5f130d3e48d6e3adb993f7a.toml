@@ -1,0 +1,17 @@
+unit_id = "96b33ef6c5f130d3e48d6e3adb993f7a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+New floating-point-to-integer and integer-to-floating-point conversion
+instructions are added. These instructions are defined analogously to
+the double-precision-to-integer and integer-to-double-precision
+conversion instructions. [#norm:fcvt-w-q_fcvt-l-q_op]#FCVT.W.Q or FCVT.L.Q converts a quad-precision
+floating-point number to a signed 32-bit or 64-bit integer,
+respectively#. [#norm:fcvt-q-w_fcvt-q-l_op]#FCVT.Q.W or FCVT.Q.L converts a 32-bit or 64-bit signed
+integer, respectively, into a quad-precision floating-point number#.
+[#norm:fcvt-wu-q_fcvt-lu-q_fcvt-q-wu_fcvt-q-lu_op]#FCVT.WU.Q, FCVT.LU.Q, FCVT.Q.WU, and FCVT.Q.LU variants convert to or
+from unsigned integer values#. [#norm:fcvt_long_quad_rv64_only]#FCVT.L[U].Q and FCVT.Q.L[U] are RV64-only
+instructions#. Note FCVT.Q.L[U] always produces an exact result and is unaffected by rounding mode.'''
+zh = '''
+新增了浮点到整数和整数到浮点转换指令。这些指令的定义与双精度到整数和整数到双精度转换指令类似。[#norm:fcvt-w-q_fcvt-l-q_op]#FCVT.W.Q 或 FCVT.L.Q 分别将四倍精度浮点数转换为有符号 32 位或 64 位整数#。[#norm:fcvt-q-w_fcvt-q-l_op]#FCVT.Q.W 或 FCVT.Q.L 分别将有符号 32 位或 64 位整数转换为四倍精度浮点数#。[#norm:fcvt-wu-q_fcvt-lu-q_fcvt-q-wu_fcvt-q-lu_op]#FCVT.WU.Q、FCVT.LU.Q、FCVT.Q.WU 和 FCVT.Q.LU 变体用于与无符号整数值相互转换#。[#norm:fcvt_long_quad_rv64_only]#FCVT.L[U].Q 和 FCVT.Q.L[U] 是仅 RV64 指令#。注意，FCVT.Q.L[U] 始终产生精确结果，并且不受舍入模式影响。'''

@@ -1,0 +1,52 @@
+unit_id = "9ae5dccec77fe64e7c5076e945b89dd7"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Zalasr Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination Registers |Accumulating CSRs|
+
+|insn:lb.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:lh.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:lw.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:ld.{aq,aqrl}[]†^*^ |_rs1_ ^A^ |_rd_ | |
+
+|insn:sb.{rl,aqrl}[] |_rs1_ ^A^, _rs2_ ^D^ | | |
+
+|insn:sh.{rl,aqrl}[] |_rs1_ ^A^, _rs2_ ^D^ | | |
+
+|insn:sw.{rl,aqrl}[] |_rs1_ ^A^, _rs2_ ^D^ | | |
+
+|insn:sd.{rl,aqrl}[]^*^ |_rs1_ ^A^, _rs2_ ^D^ | | |
+
+5+| ^*^ insn:ld.{aq,aqrl}[] and insn:sd.{rl,aqrl}[] are RV64-only
+|==='''
+zh = '''
+.Zalasr 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目的寄存器 |累积 CSR|
+
+|insn:lb.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:lh.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:lw.{aq,aqrl}[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:ld.{aq,aqrl}[]†^*^ |_rs1_ ^A^ |_rd_ | |
+
+|insn:sb.{rl,aqrl}[] |_rs1_ ^A^、_rs2_ ^D^ | | |
+
+|insn:sh.{rl,aqrl}[] |_rs1_ ^A^、_rs2_ ^D^ | | |
+
+|insn:sw.{rl,aqrl}[] |_rs1_ ^A^、_rs2_ ^D^ | | |
+
+|insn:sd.{rl,aqrl}[]^*^ |_rs1_ ^A^、_rs2_ ^D^ | | |
+
+5+| ^*^ insn:ld.{aq,aqrl}[] 和 insn:sd.{rl,aqrl}[] 仅适用于 RV64
+|==='''

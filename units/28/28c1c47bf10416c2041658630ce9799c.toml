@@ -1,0 +1,14 @@
+unit_id = "28c1c47bf10416c2041658630ce9799c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An instruction fetch is a memory read operation that appears in the global
+memory order, in program order with respect to other instruction fetches
+from the same hart.
+For each instruction byte fetched from memory, memory
+supplies the value written by the most recent store that precedes the read in
+global memory order.'''
+zh = '''
+指令取指是一种内存读操作，它出现在全局内存顺序中，相对于同一硬件线程的其他指令取指按程序顺序出现。
+对于从内存取指的每个指令字节，内存提供在全局内存顺序中先于该读取操作的最近一次存储所写入的值。'''

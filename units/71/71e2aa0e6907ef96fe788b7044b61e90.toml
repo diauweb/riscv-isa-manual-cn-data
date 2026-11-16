@@ -1,0 +1,202 @@
+unit_id = "71e2aa0e6907ef96fe788b7044b61e90"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The motivation for a NAPOT PTE is that it can be cached in a TLB as one
+or more entries representing the contiguous region as if it were a
+single (large) page covered by a single translation. This compaction can
+help relieve TLB pressure in some scenarios. The encoding is designed to
+fit within the pre-existing Sv39, Sv48, and Sv57 PTE formats so as not
+to disrupt existing implementations or designs that choose not to
+implement the scheme. It is also designed so as not to complicate the
+definition of the address-translation algorithm.
+
+The address translation cache abstraction captures the behavior that
+would result from the creation of a single TLB entry covering the entire
+NAPOT region. It is also designed to be consistent with implementations
+that support NAPOT PTEs by splitting the NAPOT region into TLB entries
+covering any smaller power-of-two region sizes. For example, a 64 KiB
+NAPOT PTE might trigger the creation of 16 standard 4 KiB TLB entries,
+all with contents generated from the NAPOT PTE (even if the PTEs for the
+other 4 KiB regions have different contents).
+
+In typical usage scenarios, NAPOT PTEs in the same region will have the
+same attributes, same PPNs, and same values for bits 5-0. RSW remains
+reserved for supervisor software control. It is the responsibility of
+the OS and/or hypervisor to configure the page tables in such a way that
+there are no inconsistencies between NAPOT PTEs and other NAPOT or
+non-NAPOT PTEs that overlap the same address range. If an update needs
+to be made, the OS generally should first mark all of the PTEs invalid,
+then issue SFENCE.VMA instruction(s) covering all 4 KiB regions within
+the range (either via a single SFENCE.VMA with _rs1_=`x0`, or with
+multiple SFENCE.VMA instructions with _rs1_≠`x0`), then update the PTE(s), as described in <<sfence.vma>>, unless any inconsistencies are known to be benign. If any inconsistencies do exist, then the effect is the same as when SFENCE.VMA
+is used incorrectly: one of the translations will be chosen, but the
+choice is unpredictable.
+
+If an implementation chooses to use a NAPOT PTE (or cached version
+thereof), it might not consult the PTE directly specified by the
+algorithm in <<sv32algorithm>> at all. Therefore, the D
+and A bits may not be identical across all mappings of the same address
+range even in typical use cases The operating system must query all
+NAPOT aliases of a page to determine whether that page has been accessed
+and/or is dirty. If the OS manually sets the A and/or D bits for a page,
+it is recommended that the OS also set the A and/or D bits for other
+NAPOT aliases as appropriate in order to avoid unnecessary traps.
+
+Just as with normal PTEs, TLBs are permitted to cache NAPOT PTEs whose V
+(Valid) bit is clear.
+
+Depending on need, the NAPOT scheme may be extended to other
+intermediate page sizes and/or to other levels of the page table in the
+future. The encoding is designed to accommodate other NAPOT sizes should
+that need arise. For example:
+
+__
+
+[%autowidth,float="center",align="center",cols="^,^,<,^",options="header"]
+|===
+|i |_pte_._ppn_[_i_] |Description |_pte_.__napot_bits__
+|0 +
+0 +
+0 +
+0 +
+0 +
+... +
+1 +
+1 +
+...
+|`x xxxx xxx1` +
+`x xxxx xx10` +
+`x xxxx x100` +
+`x xxxx 1000` +
+`x xxx1 0000` +
+... +
+`x xxxx xxx1` +
+`x xxxx xx10` +
+...
+|8 KiB contiguous region +
+16 KiB contiguous region +
+32 KiB contiguous region +
+64 KiB contiguous region +
+128 KiB contiguous region +
+... +
+4 MiB contiguous region +
+8 MiB contiguous region +
+...
+| 1 +
+2 +
+3 +
+4 +
+5 +
+... +
+1 +
+2 +
+...
+|===
+
+In such a case, an implementation may or may not support all options.
+The discoverability mechanism for this extension would be extended to
+allow system software to determine which sizes are supported.
+
+Other sizes may remain deliberately excluded, so that PPN bits not being
+used to indicate a valid NAPOT region size (e.g., the least-significant
+bit of _pte_._ppn_[_i_]) may be repurposed for other uses in the
+future.
+
+However, in case finer-grained intermediate page size support proves not
+to be useful, we have chosen to standardize only 64 KiB support as a
+first step.
+===='''
+zh = '''
+[NOTE]
+====
+引入 NAPOT PTE 的动机在于：它可以作为表示该连续区域的一个或多个 TLB
+项缓存在 TLB 中，就如同该连续区域是由单个翻译所覆盖的单个（大）页一样。
+这种压缩有助于在某些场景下缓解 TLB 压力。该编码的设计使其适配已有的
+Sv39、Sv48 和 Sv57 PTE 格式，从而不会干扰现有实现或选择不实现该方案的
+设计。它的设计也避免使地址翻译算法的定义复杂化。
+
+地址翻译缓存抽象捕捉了创建覆盖整个 NAPOT 区域的单个 TLB 项所导致的
+行为。它的设计也与通过将 NAPOT 区域拆分为覆盖任意较小 2 的幂区域大小的
+TLB 项来支持 NAPOT PTE 的实现保持一致。例如，一个 64 KiB 的 NAPOT PTE
+可能触发创建 16 个标准 4 KiB TLB 项，其内容均由该 NAPOT PTE 生成（即使
+其他 4 KiB 区域的 PTE 内容不同）。
+
+在典型使用场景中，同一区域内的 NAPOT PTE 将具有相同的属性、相同的 PPN
+以及相同的位 5-0 取值。RSW 仍保留给监管软件控制。操作系统和/或虚拟机
+管理程序有责任以如下方式配置页表：确保 NAPOT PTE 与重叠同一地址范围的
+其他 NAPOT 或非 NAPOT PTE 之间不存在不一致。若需要进行更新，除非已知
+任何不一致是无害的，否则操作系统一般应先将所有相关 PTE 标记为无效，
+然后发出覆盖该范围内所有 4 KiB 区域的 SFENCE.VMA 指令（可以是通过一条
+_rs1_=`x0` 的 SFENCE.VMA，也可以是使用多条 _rs1_≠`x0` 的 SFENCE.VMA
+指令），然后更新 PTE，如 <<sfence.vma>> 所述。若确实存在任何不一致，
+则其效果与错误使用 SFENCE.VMA 时相同：将选择其中一个翻译，但选择是
+不可预测的。
+
+若实现选择使用 NAPOT PTE（或其缓存版本），则它可能完全不查阅
+<<sv32algorithm>> 中算法直接指定的 PTE。因此，即使在典型用例中，同一
+地址范围的所有映射之间的 D 位和 A 位也可能不完全相同。操作系统必须查询
+某页的所有 NAPOT 别名，以确定该页是否已被访问和/或是否为脏。若操作系统
+手动设置某页的 A 位和/或 D 位，建议操作系统也酌情设置其他 NAPOT 别名的
+A 位和/或 D 位，以避免不必要的陷阱。
+
+与普通 PTE 一样，TLB 也被允许缓存 V（有效）位为 0 的 NAPOT PTE。
+
+未来可根据需要将 NAPOT 方案扩展到其他中间页大小和/或其他页表级别。该编码
+的设计使其在出现此类需求时能够容纳其他 NAPOT 大小。例如：
+
+__
+
+[%autowidth,float="center",align="center",cols="^,^,<,^",options="header"]
+|===
+|i |_pte_._ppn_[_i_] |描述 |_pte_.__napot_bits__
+|0 +
+0 +
+0 +
+0 +
+0 +
+... +
+1 +
+1 +
+...
+|`x xxxx xxx1` +
+`x xxxx xx10` +
+`x xxxx x100` +
+`x xxxx 1000` +
+`x xxx1 0000` +
+... +
+`x xxxx xxx1` +
+`x xxxx xx10` +
+...
+|8 KiB 连续区域 +
+16 KiB 连续区域 +
+32 KiB 连续区域 +
+64 KiB 连续区域 +
+128 KiB 连续区域 +
+... +
+4 MiB 连续区域 +
+8 MiB 连续区域 +
+...
+| 1 +
+2 +
+3 +
+4 +
+5 +
+... +
+1 +
+2 +
+...
+|===
+
+在这种情况下，实现可能支持也可能不支持所有选项。该扩展的可发现性机制
+将得到扩展，以允许系统软件确定支持哪些大小。
+
+其他大小可能被有意排除在外，这样未用于指示有效 NAPOT 区域大小的 PPN 位
+（例如 _pte_._ppn_[_i_] 的最低有效位）可以在未来被重新用于其他用途。
+
+然而，考虑到更细粒度的中间页大小支持是否有效尚无定论，我们选择作为第一
+步仅将 64 KiB 支持标准化。
+===='''

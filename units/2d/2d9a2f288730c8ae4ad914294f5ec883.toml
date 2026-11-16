@@ -1,0 +1,17 @@
+unit_id = "2d9a2f288730c8ae4ad914294f5ec883"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[[norm:inst:fence-tso:ordering_rw_rw_allowed]]
+Because `FENCE RW,RW` imposes a superset of the orderings that `FENCE.TSO`
+imposes, it is correct to ignore the _fm_ field and implement `FENCE.TSO` as `FENCE RW,RW`.
+===='''
+zh = '''
+[NOTE]
+====
+[[norm:inst:fence-tso:ordering_rw_rw_allowed]]
+因为 `FENCE RW,RW` 施加的排序是 `FENCE.TSO` 所施加排序的超集，所以忽略 _fm_ 字段并将 `FENCE.TSO` 实现为 `FENCE RW,RW` 是正确的。
+===='''

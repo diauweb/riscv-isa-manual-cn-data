@@ -1,0 +1,14 @@
+unit_id = "f272cc7b2b6c661276470c4cf080ffbb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For a non-AMO load instruction instance _i_ in state
+Pending_mem_loads(_load_continuation_), and a memory load operation
+_mlo_ in _i.mem_loads_ that has
+unsatisfied slices, the memory load operation can be partially or
+entirely satisfied by forwarding from unpropagated memory store
+operations by store instruction instances that are program-order-before
+_i_ if:'''
+zh = '''
+对于处于 Pending_mem_loads(_load_continuation_) 状态的非 AMO 加载指令实例 _i_，以及 _i.mem_loads_ 中具有未满足切片的某个内存加载操作 _mlo_，如果满足以下条件，则可以通过从程序顺序在 _i_ 之前且尚未传播的存储指令实例的内存存储操作转发，来部分或全部满足该内存加载操作：'''

@@ -1,0 +1,78 @@
+unit_id = "b962f5847653df4f950dcb7214978037"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trBaseEncoder/Funnel+0x040 trTsControl: Timestamp Control Register*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trTsActive |Primary activate/reset bit for timestamp unit.
+This must either be RW or, if separated reset for timestamp component is not implemented, a read-only copy of the corresponding `trTeActive` or `trFunnelActive` bit.
+See <<Reset and Discovery,Reset and Discovery>> chapter for more details.|WARL|SD
+|1 |trTsCount |*Internal System or Core* timestamp only. +
+*1:* counter runs, +
+*0:* counter stopped.
+|WARL|<<Undef,Undef>>
+|2 |trTsReset |*Internal System or Core* timestamp only. +
+Write 1 to reset the timestamp counter.|W1|--
+|3 |trTsRunInDebug |*Internal Core* timestamp only. +
+*1:* counter runs when hart is halted (in debug mode), +
+*0:* stopped
+|WARL|<<Undef,Undef>>
+|6:4 |trTsMode a|
+Mode used by Timestamp unit: +
+*0:* None +
+*1:* External +
+*2:* Internal System +
+*3:* Internal Core +
+*4:* Shared +
+*5-7:* Vendor-specific mode
+|WARL|<<Undef,Undef>>
+|7 |--|Reserved|--|0
+|9:8 |trTsPrescale |*Internal System or Core* timestamp only. +
+Prescale timestamp input clock by 2^(2*trTsPrescale). It will be divided by 1, 4, 16, 64 respectively.
+|WARL|<<Undef,Undef>>
+|14:10 |--|Reserved|--|0
+|15 |trTsEnable |Enable for timestamp field in trace messages/packets (for Trace Encoder only). |WARL|<<Undef,Undef>>
+|23:16 | |Vendor-specific bits to control what message/packet types include timestamp fields. |WARL|<<Undef,Undef>>
+|29:24 |trTsWidth |Width of timestamp in bits (0..63)|RO|<<SD,SD>>
+|31:30 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trBaseEncoder/Funnel+0x040 trTsControl：时间戳控制寄存器*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trTsActive |时间戳单元的主激活/复位位。
+该位必须是 RW，或者，如果未实现时间戳组件的独立复位，则是对应 `trTeActive` 或 `trFunnelActive` 位的只读副本。
+更多细节见 <<Reset and Discovery,Reset and Discovery>> 章。|WARL|SD
+|1 |trTsCount |仅 *内部系统或核心* 时间戳。 +
+*1:* 计数器运行， +
+*0:* 计数器停止。
+|WARL|<<Undef,Undef>>
+|2 |trTsReset |仅 *内部系统或核心* 时间戳。 +
+写 1 复位时间戳计数器。|W1|--
+|3 |trTsRunInDebug |仅 *内部核心* 时间戳。 +
+*1:* 当硬件线程暂停（处于调试模式）时计数器运行， +
+*0:* 停止
+|WARL|<<Undef,Undef>>
+|6:4 |trTsMode a|
+时间戳单元使用的模式： +
+*0:* 无 +
+*1:* 外部 +
+*2:* 内部系统 +
+*3:* 内部核心 +
+*4:* 共享 +
+*5-7:* 供应商特定模式
+|WARL|<<Undef,Undef>>
+|7 |--|保留|--|0
+|9:8 |trTsPrescale |仅 *内部系统或核心* 时间戳。 +
+将时间戳输入时钟按 2^(2*trTsPrescale) 预分频。其将分别除以 1、4、16、64。
+|WARL|<<Undef,Undef>>
+|14:10 |--|保留|--|0
+|15 |trTsEnable |使能跟踪消息/数据包中的时间戳字段（仅用于跟踪编码器）。 |WARL|<<Undef,Undef>>
+|23:16 | |用于控制哪些消息/数据包类型包含时间戳字段的供应商特定位。 |WARL|<<Undef,Undef>>
+|29:24 |trTsWidth |时间戳的位宽（0..63）|RO|<<SD,SD>>
+|31:30 |--|保留|--|0
+|==='''

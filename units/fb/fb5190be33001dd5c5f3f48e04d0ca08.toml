@@ -1,0 +1,20 @@
+unit_id = "fb5190be33001dd5c5f3f48e04d0ca08"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Currently recommended DRBGs are defined in NIST SP 800-90A (Rev 1)
+cite:[BaKe15]: `CTR_DRBG`, `Hash_DRBG`, and `HMAC_DRBG`.
+Certification often requires known answer tests (KATs) for the symmetric
+components and the DRBG as a whole. These are significantly easier to
+implement in software than in hardware. In addition to the directly
+certifiable SP 800-90A DRBGs, a Linux-style random pool construction
+based on ChaCha20 cite:[Mu20] can be used, or an appropriate construction
+based on SHAKE256 cite:[nist:fips:202].'''
+zh = '''
+当前推荐的 DRBG 定义于 NIST SP 800-90A（Rev 1）
+cite:[BaKe15]：`CTR_DRBG`、`Hash_DRBG` 和 `HMAC_DRBG`。
+认证通常需要对对称组件和整体 DRBG 进行已知答案测试（KAT）。
+这些在软件中实现比在硬件中容易得多。除了可直接认证的 SP 800-90A DRBG 外，
+还可以使用基于 ChaCha20 cite:[Mu20] 的 Linux 风格随机池构造，
+或基于 SHAKE256 cite:[nist:fips:202] 的适当构造。'''

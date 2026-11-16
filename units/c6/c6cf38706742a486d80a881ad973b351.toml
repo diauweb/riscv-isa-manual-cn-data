@@ -1,0 +1,35 @@
+unit_id = "c6cf38706742a486d80a881ad973b351"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In the simplest form, a program can be built with a single label value to
+implement a coarse-grained version of forward-edge CFI. By
+constraining gadgets to be preceded by a landing pad instruction that marks
+the start of indirect callable functions, the program can significantly reduce
+the available gadget space. A second form of label generation may generate a
+signature, such as a MAC, using the prototype of the function. Programs that use
+this approach would further constrain the gadgets accessible from a call site to
+only indirectly callable functions that match the prototype of the called
+functions. Another approach to label generation involves analyzing the
+control-flow graph (CFG) of the program, which can lead to even more stringent
+constraints on the set of reachable gadgets. Such programs may further use
+multiple labels per function, which means that if a function is called from two
+or more call sites, the functions can be labeled as being reachable from each of
+the call sites. For instance, consider two call sites A and B, where A calls the
+functions X and Y, and B calls the functions Y and Z. In a single label scheme,
+functions X, Y, and Z would need to be assigned the same label so that both call
+sites A and B can invoke the common function Y. This scheme would allow call
+site A to also call function Z and call site B to also call function X. However,
+if function Y was assigned two labels - one corresponding to call site A and the
+other to call site B, then Y can be invoked by both call sites, but X can only be
+invoked by call site A and Z can only be invoked by call site B. To support
+multiple labels, the compiler could generate a call-site-specific entry point
+for shared functions, with each entry point having its own landing pad
+instruction followed by a direct branch to the start of the function. This would
+allow the function to be labeled with multiple labels, each corresponding to a
+specific call site. A portion of the label space may be dedicated to labeled
+landing pads that are only valid targets of an indirect jump (and not an
+indirect call).'''
+zh = '''
+在最简单的形式中，程序可以使用单个标签值构建，以实现粗粒度的前向边 CFI。通过约束 gadget 前面必须有一条标记可间接调用函数起始位置的着陆垫指令，程序可以显著减少可用的 gadget 空间。第二种标签生成形式可以使用函数原型生成签名，例如 MAC。使用这种方法的程序会进一步将从调用点可访问的 gadget 约束为仅匹配被调用函数原型的可间接调用函数。另一种标签生成方法涉及分析程序的控制流图（CFG），这可以对可到达的 gadget 集合施加更严格的约束。此类程序还可以为每个函数使用多个标签，这意味着如果一个函数从两个或更多调用点被调用，则该函数可以被标记为可从每个调用点到达。例如，考虑两个调用点 A 和 B，其中 A 调用函数 X 和 Y，B 调用函数 Y 和 Z。在单标签方案中，函数 X、Y 和 Z 需要被赋予相同的标签，以便调用点 A 和 B 都能调用公共函数 Y。该方案将允许调用点 A 也调用函数 Z，并允许调用点 B 也调用函数 X。然而，如果函数 Y 被赋予两个标签——一个对应调用点 A，另一个对应调用点 B，那么 Y 可以被两个调用点调用，但 X 只能由调用点 A 调用，Z 只能由调用点 B 调用。为了支持多个标签，编译器可以为共享函数生成调用点特定的入口点，每个入口点都有自己的着陆垫指令，后跟一条到函数起始位置的直接分支。这将允许函数被标记多个标签，每个标签对应一个特定调用点。标签空间的一部分可以专用于带标签的着陆垫，这些着陆垫仅作为间接跳转（而非间接调用）的有效目标。'''

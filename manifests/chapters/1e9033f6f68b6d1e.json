@@ -1,0 +1,964 @@
+{
+  "chap_hash": "1e9033f6f68b6d1e",
+  "id": "chap:ntrace",
+  "sectname": "chapter",
+  "sectnum": "4",
+  "title_en": "N-Trace",
+  "title_unit_id": "457c47ee2e192613b1ef96c713dd8f2a",
+  "source_path": "src/debug-trace/ntrace.adoc",
+  "sections": [
+    {
+      "id": "chap:ntrace",
+      "level": 1,
+      "sectnum": "4",
+      "title": "N-Trace",
+      "heading_unit_id": "457c47ee2e192613b1ef96c713dd8f2a",
+      "heading_anchor_id": "chap:ntrace",
+      "blocks": []
+    },
+    {
+      "id": "ntrace-preface",
+      "level": 2,
+      "sectnum": "4.1",
+      "title": "Preface",
+      "heading_unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "heading_anchor_id": "ntrace-preface",
+      "blocks": [
+        "b6ad1444c8893d13d3e8d8e5a22b98e7",
+        "a289b73ca05a7a1c7384829ae266d9d9",
+        "301a5dde20372043d73fb6d99ebd98e2",
+        "2e40ad3def980dab6baa748b2faa75d7"
+      ]
+    },
+    {
+      "id": "_introduction_to_n_trace",
+      "level": 2,
+      "sectnum": "4.2",
+      "title": "Introduction to N-Trace",
+      "heading_unit_id": "0289f552d3d22c044e84421e70a25047",
+      "blocks": [
+        "921f1aca455e3b75bca16793ac251a31",
+        "45cadea1ea82a1ac47c366978a96c412",
+        "36976bc795dbd788a342ec16bf05d29d",
+        "c09c6a38df18fb0f6a256d0ff28a1d18",
+        "46250867625d1fdfe3b9bc6a5b36a942",
+        "cb8f4310c98b2f941e1137188f3b0dfc",
+        "de12be09d3c7c6c9cf72c321fd3eac8e",
+        "cfaae3bf5f5260ea59aea6c9cb284671"
+      ]
+    },
+    {
+      "id": "_related_specifications",
+      "level": 3,
+      "sectnum": "4.2.1",
+      "title": "Related Specifications",
+      "heading_unit_id": "516e5ce760e2ce04124fe3fb3174bed7",
+      "blocks": [
+        "488169ea132644c3652d628e61645e29",
+        {
+          "unit_id": "08f3f7a659f89441a23958bd34a75dc8",
+          "anchor_id": "RISC-V_Trace_Control_Interface"
+        },
+        {
+          "unit_id": "f6b1ec6233c2d881be60f9bece7364b8",
+          "anchor_id": "E-Trace_Specification"
+        },
+        "4667b4cf1f183857196ed9ff1f7eb68c"
+      ]
+    },
+    {
+      "id": "_trace_encoder_interfaces",
+      "level": 3,
+      "sectnum": "4.2.2",
+      "title": "Trace Encoder Interfaces",
+      "heading_unit_id": "132c7dd011c8d38148ea16826229e183",
+      "blocks": [
+        "6f9e287cc685107878d7c689a925207d",
+        {
+          "unit_id": "dc6cb22cf3873e5e2ae170f3e27093fa",
+          "anchor_id": "fig:trace-encoder-interfaces"
+        },
+        "f7a2188bddf4325f7d02ace7117c776c"
+      ]
+    },
+    {
+      "id": "_definitions_and_terminology",
+      "level": 3,
+      "sectnum": "4.2.3",
+      "title": "Definitions and Terminology",
+      "heading_unit_id": "57b2075ed3bcc194731bff39d4f4d704",
+      "blocks": [
+        "31ec81707944c96b1219ee6162d1b46e"
+      ]
+    },
+    {
+      "id": "_trace_ingress_port",
+      "level": 2,
+      "sectnum": "4.3",
+      "title": "Trace Ingress Port",
+      "heading_unit_id": "a4853cdedfa9c21fdd82567864f8334c",
+      "blocks": [
+        "b882d096cf8ac01137533fcc451783cf",
+        "585bead79a0177d872fe121585920d0d",
+        "4aaeead6bc6aea01ecf12844dba5249a",
+        "2846f5662737af912aca6d387b432aae",
+        {
+          "unit_id": "f541e543654f3d38b86369cd8d575d04",
+          "anchor_id": "itype_branch"
+        },
+        {
+          "unit_id": "10effdc38f755ddbcd3c0f95fbacf51f",
+          "anchor_id": "itype_3_4"
+        },
+        {
+          "unit_id": "d0a744d2ce7d53174c3eea778e77e1b9",
+          "anchor_id": "link"
+        },
+        {
+          "unit_id": "4fd488b9cf659475e59c4ba4dc602473",
+          "anchor_id": "zcmt"
+        },
+        "990a3ec734f118e5178dba96a8d2f647",
+        "313b5785d6113ffa07ac8a6764fc9be5",
+        "61f8aa348ea3adbcefd5bd8557ed6675",
+        "46137d8f1d3ca013eb91004fef948a84",
+        {
+          "unit_id": "c20cc91675331aa17eb9a39934b39cc1",
+          "anchor_id": "same_handling"
+        },
+        "fa5169ae6c1fa0a13d917bdaf606667f",
+        "79bf5a25f56c5a86b80a785b0544c473",
+        "771c292e7fdde18b723da3db8fd63622"
+      ]
+    },
+    {
+      "id": "_n_trace_transmission_protocol",
+      "level": 2,
+      "sectnum": "4.4",
+      "title": "N-Trace Transmission Protocol",
+      "heading_unit_id": "14f5f22c5367a639899339129c1f9a68",
+      "blocks": [
+        "eeb7157d5de7fe7eabc8ffcee645c677",
+        "d268b0e03e0fe67aed45b1eea94758b8",
+        "bd3fb287e5d12f7592a6b8f5f0506a8b",
+        "1cefa9d3754e6404d175372e1a19ab6a",
+        "90df630582ed45553763ed54d4832c47",
+        "f89605738e90fcc7e71a772261f4f20d",
+        "ff4bfca457e86ef0e2ac3ab650a3cec9",
+        "7405c4142dfe90153bb60829c235b782",
+        "121a4f444b7cc4ced43680d857067192"
+      ]
+    },
+    {
+      "id": "_mseo_sequences",
+      "level": 3,
+      "sectnum": "4.4.1",
+      "title": "MSEO Sequences",
+      "heading_unit_id": "821398ef62fbfe6747189aa8e26e5cab",
+      "blocks": [
+        "844b4b4f7c9a637191d2f5b81f6a65aa",
+        "a2e8e59bd737808fa0f81790f04f6686",
+        "86a4fe6f822448d0db70912181a78e4a",
+        "304aaeb36cf81b6bd201f628f4e5a53a",
+        "a56b0db8d3d92df1b43c04278cb946e3"
+      ]
+    },
+    {
+      "id": "_unified_n_trace_message_structure",
+      "level": 3,
+      "sectnum": "4.4.2",
+      "title": "Unified N-Trace Message Structure",
+      "heading_unit_id": "184ba1cf3ef9a110b47d28b224e2685d",
+      "blocks": [
+        "2603c98d50fe398ce09adfb06e832bae",
+        "1be5746c7169682bc3c5936437eb9acb"
+      ]
+    },
+    {
+      "id": "_order_of_bits_and_bytes",
+      "level": 3,
+      "sectnum": "4.4.3",
+      "title": "Order of bits and bytes",
+      "heading_unit_id": "37ff8167f20bd2ca11bf627098a6c53c",
+      "blocks": [
+        "af2dd4559ed28e7925fd8f693f4dee47",
+        "faaf5ccbd9ca5286e2c8cbc96959f58b",
+        "92053695c1ee4ba3ca7e5211d4bb86cc"
+      ]
+    },
+    {
+      "id": "_pib_idle_cycles_explained",
+      "level": 3,
+      "sectnum": "4.4.4",
+      "title": "PIB Idle Cycles Explained",
+      "heading_unit_id": "a4296b38a77a01c18fd993ace4829565",
+      "blocks": [
+        "9a1085873d2290a743cf51ca25368782",
+        "5404228b1ad755e5f58db349215413fc",
+        "2bab78116f2473909a5a33c5abe2d497",
+        "04d369d69a85155404143e086837e6c8",
+        "415435c5fe0c927c306c6aa9039a5bb0",
+        "ac048667a1e86726f3e8238f28c3c461",
+        "4890704eacdbf9dc407056ed830f48d3",
+        "ca425dcfeef2ae8b730e6c058105f6d5",
+        "9513423fe6211560bd9337bfb38ad49f",
+        "ac8169c87d3b3a31349ca33009bb6f2d"
+      ]
+    },
+    {
+      "id": "_n_trace_message_example",
+      "level": 3,
+      "sectnum": "4.4.5",
+      "title": "N-Trace Message Example",
+      "heading_unit_id": "c35efa12ce6d0316a3d07f9efbbfe9ac",
+      "blocks": [
+        "b3194ef06cb5f2b3a3af441bfcf1499e",
+        "74da44dcaef137b70a8e0f7bba6c1182"
+      ]
+    },
+    {
+      "id": "_n_trace_specific_trace_controls",
+      "level": 2,
+      "sectnum": "4.5",
+      "title": "N-Trace Specific Trace Controls",
+      "heading_unit_id": "d0f2368874d7b4bb6b08a97044bd8750",
+      "blocks": [
+        "45ac2f1ae339bf68f3f442e4e411540f",
+        "ee83d1ed5fc99a8cd3b0b586d80aa5b0",
+        {
+          "unit_id": "ee960c198e7c988dfc9af026aaf74768",
+          "anchor_id": "Details_Control_Parameters"
+        }
+      ]
+    },
+    {
+      "id": "_main_n_trace_trace_modes",
+      "level": 2,
+      "sectnum": "4.6",
+      "title": "Main N-Trace Trace Modes",
+      "heading_unit_id": "308d4d291edb0991d7e0d57e03c7ac14",
+      "blocks": [
+        "a9c5a983ec58caf1a2ea2b1a6b002841",
+        {
+          "unit_id": "10ed1f6a748b14a9d7645129d5a4c6dc",
+          "anchor_id": "mode_BTM"
+        },
+        {
+          "unit_id": "260c85042484a33dc6a8baf93234f2cf",
+          "anchor_id": "mode_HTM"
+        },
+        "db1547ff856c4960627ce5420e46fbd3",
+        "7006703490519f1d30355e34b58a019f",
+        "8274e8e1ca8214a9731ff38588a9b97c"
+      ]
+    },
+    {
+      "id": "_n_trace_messages_overview",
+      "level": 2,
+      "sectnum": "4.7",
+      "title": "N-Trace Messages (Overview)",
+      "heading_unit_id": "900720310af02197d63914f15119e5eb",
+      "blocks": [
+        "74044971d2793c9f5cb0ae2e2d72ee80"
+      ]
+    },
+    {
+      "id": "_fields_in_messages",
+      "level": 3,
+      "sectnum": "4.7.1",
+      "title": "Fields in Messages",
+      "heading_unit_id": "8b5e118cdef4ebe0a1d119d4890a983a",
+      "blocks": [
+        "0521da5d5bfce8a96fabc4bd74e77c3c",
+        "67ddc1d34f052ae863ce08abc95b30d4",
+        "595e7d655335a596647b842e33113114",
+        "0f5b94c155fd5e39a38525e6584d5192",
+        "a7cc26c4fd611d9cfb09dc7044a92aa0",
+        {
+          "unit_id": "09db0edfd8bd02222b28056a51864899",
+          "anchor_id": "msg_other"
+        },
+        "75860a2df239ea01de0743d48788ba54",
+        "d31df9930d3397f8dbab75582dc8ac20",
+        "1725a741d2b3cd02bf1b4b7b1315d534"
+      ]
+    },
+    {
+      "id": "_common_fields",
+      "level": 3,
+      "sectnum": "4.7.2",
+      "title": "Common Fields",
+      "heading_unit_id": "d3f156043a67521677fc91fbd4d5f1ee",
+      "blocks": [
+        "3b9d634fde02929b4a23a4c708bb27e0",
+        "3aa4ba6f2d80a4ad55e0cf5d36ad58fe",
+        "8c813f63df6b07a76636b43022154c13",
+        {
+          "unit_id": "19d6eb2ef8a4f7a3a226f56115d1850b",
+          "anchor_id": "Max_Field_Sizes"
+        }
+      ]
+    },
+    {
+      "id": "_n_trace_messages_details",
+      "level": 2,
+      "sectnum": "4.8",
+      "title": "N-Trace Messages (Details)",
+      "heading_unit_id": "e41a1d5f550e1a5eebc3cb13a480dded",
+      "blocks": [
+        "7c246ca55e30b3319a73b5c95b661e58",
+        "9d01927de3ba46dd2705020525616116",
+        "c39307570625b5bfd616c9b16e6d3aa0",
+        "dd44cb1505eda7416dbd2a3641ecd7be",
+        "0dcf509784481e8b261f1cce04de74f2",
+        "d87183dc8eddbfa3364a4dcb0701d0af"
+      ]
+    },
+    {
+      "id": "msg2_Ownership",
+      "level": 3,
+      "sectnum": "4.8.1",
+      "title": "Ownership Message",
+      "heading_unit_id": "850436c233c96a83d6c401505f5f5329",
+      "heading_anchor_id": "msg2_Ownership",
+      "blocks": [
+        "9e2c5d180f03264002d449ce6015db0f",
+        "4bee852ce9292e744650f5d75c98f5a4",
+        "29ba2bb2292e5c565693b5323aefd483",
+        "99c068e59030ff60050bc8658c5611d3",
+        "7a79119f24dc77d53b0af3dccb4a6f1b",
+        {
+          "unit_id": "35d2e2cf14c0fe89cd27ff13740d3e18",
+          "anchor_id": "Fields_Ownership"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "96e8dbfcee75c3bbdb56c9efd537d11a",
+        "8f32400b908461b7098902f940eddd09",
+        "02b01e7e0b0f91f230c1046e189f4361",
+        "43ee9838359449e830f9560cc84a4fdd",
+        "40103eb665b2d925df6713accd2c90b8",
+        "a35d0b9c61c7fb023824777d6012226a",
+        "ff147bf3ffc7b954066818af118b253d",
+        "8e340bf147da847f221bc0cc5fb3641e"
+      ]
+    },
+    {
+      "id": "msg2_DirectBranch",
+      "level": 3,
+      "sectnum": "4.8.2",
+      "title": "DirectBranch Message",
+      "heading_unit_id": "9e430e545c10c9159d960fb90d08872d",
+      "heading_anchor_id": "msg2_DirectBranch",
+      "blocks": [
+        "469c39ac0217465a7bdcaffdb1f8d1ac",
+        "a493938e98b4d0bb1f4d4398fd188a9b",
+        {
+          "unit_id": "fdd0ecaa002d36e43d14c4f0eb34a2ec",
+          "anchor_id": "Fields_DirectBranch"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "8ac4096e42357396c9152d983de8321c",
+        "e25fa3766a0811c5cbd30fecb7612076"
+      ]
+    },
+    {
+      "id": "msg2_IndirectBranch",
+      "level": 3,
+      "sectnum": "4.8.3",
+      "title": "IndirectBranch Message",
+      "heading_unit_id": "4374e2ef20e1c41660e4adaf337937ec",
+      "heading_anchor_id": "msg2_IndirectBranch",
+      "blocks": [
+        "469c39ac0217465a7bdcaffdb1f8d1ac",
+        "fbc5bca4984711b018a209d3486ec180",
+        "f79af720b642a837701be93bb3ddd69b",
+        {
+          "unit_id": "9dc01a71c78ba6fdfac09c6b5b5d9b2e",
+          "anchor_id": "Fields_IndirectBranch"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "6ea076a0337cba281053f4067ec5b228",
+        "c4c41be887fc1d55b3e54a63b84f51ae"
+      ]
+    },
+    {
+      "id": "msg2_Error",
+      "level": 3,
+      "sectnum": "4.8.4",
+      "title": "Error Message",
+      "heading_unit_id": "57ce8b6d4a739d00da7c2e67dfd665b0",
+      "heading_anchor_id": "msg2_Error",
+      "blocks": [
+        "4816707d7afc51e514e98f6b5852cbcc",
+        {
+          "unit_id": "48b264442576103bee46ce4fa68e1388",
+          "anchor_id": "Fields_Error"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "835ff08046f4720f98dfcfcb7318448d",
+        "02a46bd1617e30eb1cc467308b21f6c8"
+      ]
+    },
+    {
+      "id": "msg2_ProgTraceSync",
+      "level": 3,
+      "sectnum": "4.8.5",
+      "title": "ProgTraceSync Message",
+      "heading_unit_id": "4655d2dd4a8f301ae7bb22160a339dc8",
+      "heading_anchor_id": "msg2_ProgTraceSync",
+      "blocks": [
+        {
+          "unit_id": "aae6eab6b384d3593af666356245ab75",
+          "anchor_id": "Fields_ProgTraceSync"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "a90d5098bffc8826e42da390e0b456e8",
+        "adb4e80b730f5777df6023b336eb4c31"
+      ]
+    },
+    {
+      "id": "msg2_DirectBranchSync",
+      "level": 3,
+      "sectnum": "4.8.6",
+      "title": "DirectBranchSync Message",
+      "heading_unit_id": "f4bf30f08f6fac715242e13ace55b3b4",
+      "heading_anchor_id": "msg2_DirectBranchSync",
+      "blocks": [
+        {
+          "unit_id": "c372c3c7701a10a20f86bc8dd34ab9a4",
+          "anchor_id": "Fields_DirectBranchSync"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "5fe3b640cfbc52effc24ba216c75cc1b",
+        "adb4e80b730f5777df6023b336eb4c31"
+      ]
+    },
+    {
+      "id": "msg2_IndirectBranchSync",
+      "level": 3,
+      "sectnum": "4.8.7",
+      "title": "IndirectBranchSync Message",
+      "heading_unit_id": "ff1d5de41f4d8bb2003a65d2fc3bc150",
+      "heading_anchor_id": "msg2_IndirectBranchSync",
+      "blocks": [
+        {
+          "unit_id": "816989467da0cd833fe638fdac8d1567",
+          "anchor_id": "Fields_IndirectBranchSync"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "c960ea76a6ebeae827b206b53ba5d3e2",
+        "a7c70d871a8bdbac3cef5655a2db550b"
+      ]
+    },
+    {
+      "id": "msg2_ResourceFull",
+      "level": 3,
+      "sectnum": "4.8.8",
+      "title": "ResourceFull Message",
+      "heading_unit_id": "8c4bd580cf1c1bb8934d975680e57002",
+      "heading_anchor_id": "msg2_ResourceFull",
+      "blocks": [
+        "cf1178025ed3fc174fe7325ddc4ba4aa",
+        {
+          "unit_id": "627b40a16c93a6ab94e3148fd3d97c5c",
+          "anchor_id": "Fields_ResourceFull"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "6f896cebd0aac7e26659f478405d7dc2",
+        "3433682b7d275a2ec3de788b3797f307",
+        "69ac6a1f89ad92d03c1eaac475f2e67e"
+      ]
+    },
+    {
+      "id": "msg2_IndirectBranchHist",
+      "level": 3,
+      "sectnum": "4.8.9",
+      "title": "IndirectBranchHist Message",
+      "heading_unit_id": "34812a1ecce80afd6e7012f26406c60f",
+      "heading_anchor_id": "msg2_IndirectBranchHist",
+      "blocks": [
+        {
+          "unit_id": "b285c80aeb0384ac8eadb43e670ce14a",
+          "anchor_id": "Fields_IndirectBranchHist"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "7b97e598d5e9e0aa01b08c4e86ad327f",
+        "7e22c1806ee48d529aa2bb0a35a47d6e"
+      ]
+    },
+    {
+      "id": "msg2_IndirectBranchHistSync",
+      "level": 3,
+      "sectnum": "4.8.10",
+      "title": "IndirectBranchHistSync Message",
+      "heading_unit_id": "9de522495af12d822720b74411e65853",
+      "heading_anchor_id": "msg2_IndirectBranchHistSync",
+      "blocks": [
+        {
+          "unit_id": "29cb2612d14f663d6e8ef893b656606d",
+          "anchor_id": "Fields_IndirectBranchHistSync"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "7a0f2c27cc4c20a78ce4cef0520e83e3",
+        "a7c70d871a8bdbac3cef5655a2db550b"
+      ]
+    },
+    {
+      "id": "msg2_RepeatBranch",
+      "level": 3,
+      "sectnum": "4.8.11",
+      "title": "RepeatBranch Message",
+      "heading_unit_id": "a5e3cdd489319bba21693971d41eaca1",
+      "heading_anchor_id": "msg2_RepeatBranch",
+      "blocks": [
+        {
+          "unit_id": "a5f85970c43d242b2092615dae00c040",
+          "anchor_id": "Fields_RepeatBranch"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "da8116374f6d022037ad6ae5e716b3ef"
+      ]
+    },
+    {
+      "id": "msg2_ProgTraceCorrelation",
+      "level": 3,
+      "sectnum": "4.8.12",
+      "title": "ProgTraceCorrelation Message",
+      "heading_unit_id": "a27c45ab3852e7139a36fdc14fcf0b32",
+      "heading_anchor_id": "msg2_ProgTraceCorrelation",
+      "blocks": [
+        "14dd75bb4a63675c858be3bd29ebaf51",
+        {
+          "unit_id": "16df4566cbaf5b5a5c22be75e7d56a2d",
+          "anchor_id": "Fields_ProgTraceCorrelation"
+        },
+        "e0a6e2a776c4d265902fa157048a6e3e",
+        "fe261d9e6dc7645e9946e4583e2e7c78",
+        "776e1e865564021e347b5cdd13b92675"
+      ]
+    },
+    {
+      "id": "_field_encoding_and_calculation_techniques",
+      "level": 2,
+      "sectnum": "4.9",
+      "title": "Field Encoding and Calculation Techniques",
+      "heading_unit_id": "74733cee2c0bae477f71a1db5d63b496",
+      "blocks": [
+        "d2ab436688f4bed64401ed3c2f846ba6"
+      ]
+    },
+    {
+      "id": "_address_compression",
+      "level": 3,
+      "sectnum": "4.9.1",
+      "title": "Address Compression",
+      "heading_unit_id": "73abd443069a371829ebc1ca7f095203",
+      "blocks": [
+        "f5b31695aa85c2183763935a3e540268",
+        "fe55143893b3c7bc7d6f8ce2b787d32f",
+        "b0dbe0c85c950645c1305bcc30f633f6",
+        "b90be3cca100ea30d3ae7cd7110c7860",
+        "2b0a7d9e874d273b78a00d0da07174ec"
+      ]
+    },
+    {
+      "id": "_hist_field_generation",
+      "level": 3,
+      "sectnum": "4.9.2",
+      "title": "HIST Field Generation",
+      "heading_unit_id": "a211cccdf8ebd65ff71e2fe4b325748a",
+      "blocks": [
+        "3e5b9c200c5d7f2acbeea06ba0043c86",
+        "207585418226bf7809fba44132db286c",
+        "f92b325c54403649550bce166ef50d6c",
+        "ff147bf3ffc7b954066818af118b253d",
+        "b67230235beec7b97b97d3218e2d79a4",
+        "4ca6bb5382a173fd3f3a98855f597c40",
+        "a10631fb6e6074033ed92b33be7c5c5f"
+      ]
+    },
+    {
+      "id": "_hist_field_full",
+      "level": 4,
+      "sectnum": "4.9.2.1",
+      "title": "HIST Field Full",
+      "heading_unit_id": "66e82a28d64c3077b7d60cf781630174",
+      "blocks": [
+        "3c31861bff6193c15b6a43d7676ee185",
+        "0dae9432973376a9f63d89278d24cee6",
+        "6456c502ae3231e926e754818e41b95e"
+      ]
+    },
+    {
+      "id": "_i_cnt_details",
+      "level": 3,
+      "sectnum": "4.9.3",
+      "title": "I-CNT Details",
+      "heading_unit_id": "dafb509e5831440b2f44c55933b968dc",
+      "blocks": [
+        "9f3bdf67c5d0708e9cb46b70ebee247e",
+        "7098ad5c40e7403aae37862a4074a876",
+        "53d528354f54ed7906bcffd8dc988fdd",
+        "c2419c1a3ee092745951d17083da195b",
+        "9cfa4ddbc4ed2e558d33fce55d4e13d9",
+        "8e6a9778a0aab95fe73a26717e8225ad",
+        "5b085642abd1fe2f222cfc2cf3c0e2f9",
+        "d2838aab4db4eca769ff7cc088bd3862",
+        "9d244e8fd48495234b492f3f2eaddd12"
+      ]
+    },
+    {
+      "id": "_example_of_i_cnt_handling_in_btm_mode",
+      "level": 4,
+      "sectnum": "4.9.3.1",
+      "title": "Example of I-CNT Handling in BTM mode",
+      "heading_unit_id": "948c46b6d104666dff510d5598fe915e",
+      "blocks": [
+        "e9ac4fc72255a69c97ecc2b6c2533f06",
+        {
+          "unit_id": "433d8dfdeb56b3c9b0b11761ef456098",
+          "anchor_id": "ICNT_code"
+        },
+        "d3db24ec9854e39ecb4fa9a18cf72296",
+        "39fff042a49fc7c26b5e131bb14c174b",
+        "e8e36108304cdb0815d7ad4d661dae44",
+        "f48be1f77da2254fe81ece69403df624",
+        "260a0083586f9ea13f99b18805a68350",
+        "eb0dd923e8ca9ff5ac026c9ef3bce127",
+        "fa30e280c072dc658a2a397cf8e3bfa2",
+        "ed32f76196a86a7d4ffd92989ac1fb3b"
+      ]
+    },
+    {
+      "id": "_example_of_i_cnt_handling_in_htm_mode",
+      "level": 4,
+      "sectnum": "4.9.3.2",
+      "title": "Example of I-CNT Handling in HTM mode",
+      "heading_unit_id": "e6ccca52c4f974fed515f957758f84f8",
+      "blocks": [
+        "0dda4583457451e9db1dbd10fc039a06",
+        "61606a1bf13ce232012977eec9ac86bb",
+        "d8e4bde6185bef986c827c1030446fbf"
+      ]
+    },
+    {
+      "id": "_examples_of_i_cnt_field_full_generation",
+      "level": 4,
+      "sectnum": "4.9.3.3",
+      "title": "Examples of I-CNT Field Full Generation",
+      "heading_unit_id": "ece3ba99769e6ce2562fad8012e348bb",
+      "blocks": [
+        "5bde7e64c860d0bbbd5e5093b7d50751",
+        "42df2b5d939a5938e477de2c897e10e4",
+        "f93aa9664c3ce790080c3ca588770a59",
+        "c4881c61d5011a04fc256f94d830edd6",
+        "e92633df2fc48e7dfb87e665e27cde49",
+        "8129759894285b8682302c988af37399",
+        "180a30a7a9e983f5103d1cb374cf30db",
+        "4d483c476699e8af37aecad9dd319f16",
+        "4bbd2978fc5a7a233bdf46a3692b7440"
+      ]
+    },
+    {
+      "id": "_synchronizing_messages",
+      "level": 3,
+      "sectnum": "4.9.4",
+      "title": "Synchronizing Messages",
+      "heading_unit_id": "d91ade791c9ccac3ff09996528a33d14",
+      "blocks": [
+        "305aae1bb980beb281932cfa3556d730",
+        "4787ada7205e8beb534d8dfe51f12c6e",
+        "783d03466940daf1351f649d07acd353",
+        "58148bf1e347d25514388a39361d9939",
+        "4f7bf04b15271788cf3a95589f8ab42f",
+        "ee2e9ff31d20967812ea30657879586f",
+        "642fac4f47bf70cc43ad75b9db895be3",
+        "2bfc107f461b85dd2a1d58758c9a6501"
+      ]
+    },
+    {
+      "id": "_examples_of_synchronizing_messages",
+      "level": 4,
+      "sectnum": "4.9.4.1",
+      "title": "Examples of Synchronizing Messages",
+      "heading_unit_id": "b1c3b9e11ccf5e2d05b9d2f57baebe8d",
+      "blocks": [
+        "41d865cb6e900a582f2fdadccf5c9048",
+        "19e1d2094c1c65155bcc7ae3de814bc1",
+        "52c86cc784d269bdedb1104ced77dce3",
+        "39bca756a4809e9808fd82dbdd872d7f",
+        "e82df4b0fc89f18222391d9f12ec1e3e",
+        "efd131237f82596522a49aea37e43df1",
+        "26f69dce0b0d6fb30b498a2f106768f3",
+        "d79a9bdadf860c8c373810dd0e625a57",
+        "4000b93cf464bc87d0478d3cc3948ea6",
+        "72220f0c47a764bdcc3ab44c064afef2",
+        "fa3d815f25bd31e0b6d2380f78c9dac8",
+        "286fdf8a21b3835843224fa5cc5ba62d",
+        "9de8106285db4a48433c04f18c518ba3",
+        "044db831b407f0f0f69c683357f7a4b8",
+        "b65f70cb07e27f2e3a9e097032ae5641",
+        "83a90b046c0400632d9aa5653535dd7e",
+        "99e6fb6c7a5196706c86e8879f47c8f0"
+      ]
+    },
+    {
+      "id": "_timestamp_reporting",
+      "level": 3,
+      "sectnum": "4.9.5",
+      "title": "Timestamp Reporting",
+      "heading_unit_id": "7c245354ce030462ee33e3193cb95e79",
+      "blocks": [
+        "3d8caade626399f853d5fc8ed5527348",
+        "c36e3d1cd5f21fea09acd107d31665b0",
+        "5d618ae58760422517995a293be622e4",
+        "d0a97bef6f102c28ba1a561533cd3450",
+        "ffb8d737efec053da674224b37268036",
+        "d60245d96eeb61e7d3e40cd3d6cf1312",
+        "45f99833a0d02068aa220cb5cea37cc5"
+      ]
+    },
+    {
+      "id": "_corner_cases_and_sequences",
+      "level": 3,
+      "sectnum": "4.9.6",
+      "title": "Corner Cases and Sequences",
+      "heading_unit_id": "c8d632b86bf270329fec82d30c505d43",
+      "blocks": [
+        "db9cb9728c1a85f3ffdf1b2c6bb69085",
+        "3bf936ad956d08e64f94cb697721f388",
+        "e392c7baa360c06298cb3b0ff0cf8fc2"
+      ]
+    },
+    {
+      "id": "_optimization_extensions",
+      "level": 2,
+      "sectnum": "4.10",
+      "title": "Optimization Extensions",
+      "heading_unit_id": "a918105b17261c25bcb05d3ba12a8a78",
+      "blocks": [
+        "37c6a8683e9d85c1b1ac839286fa6764"
+      ]
+    },
+    {
+      "id": "_sequential_jump_optimization",
+      "level": 3,
+      "sectnum": "4.10.1",
+      "title": "Sequential Jump Optimization",
+      "heading_unit_id": "f3c0a5a167fb4770d679f88ee92b9bbb",
+      "blocks": [
+        "a00acc2af88e171833908a5b4fe46bfd",
+        "cc62cb6cffe695e2bb563297ac478bd1",
+        "7ad8a47a735815d2f40e3b63fcbe8152",
+        "5e3654817c9a55c283286f1de30347d1",
+        "f54cc91d8e82fa7b7d89b8690064273e",
+        "bdb81e0df4b620639533b19402a6602b"
+      ]
+    },
+    {
+      "id": "_implicit_return_optimization",
+      "level": 3,
+      "sectnum": "4.10.2",
+      "title": "Implicit Return Optimization",
+      "heading_unit_id": "614ad4a40f824e894c212d333f596d0e",
+      "blocks": [
+        "1a3e77cf472c4e52e04269ecb34469fd",
+        "0cb1fc265b779149492a0b284b2ce624",
+        "10359716596ae1ca537c03ac28045561",
+        "19f8111953ac5a1f1187fc06c0b9dbf7",
+        "eaf3fa815c3e8586b71ddfbce05dd2f9",
+        "dca892035c5d57ccf3eac6c7b7bf77a9",
+        "f9a8763a3ecf754774473fa615d7ff13",
+        "4910a27b3e48ed4324cc465b1a293e48",
+        "f00a9029cf9b49d1699b72273cb963c8",
+        "d8e9f94bf3fae63dbe543b65532643fb",
+        "12a3b21fbd588a506d89a62b490c29d0"
+      ]
+    },
+    {
+      "id": "_repeated_history_optimization",
+      "level": 3,
+      "sectnum": "4.10.3",
+      "title": "Repeated History Optimization",
+      "heading_unit_id": "dc6ebd51d728baad440cbab29429dfbf",
+      "blocks": [
+        "e5e1d5e8eea2aa19f243954997e77259",
+        "904e1fd654f234682c71962c3b39798d",
+        "f517dd380f1c3e018f3079e7fed87796",
+        "5d6cf136688c1d1fb8252d653e714007",
+        "b00c81893842583f1af6ff31af5072aa",
+        "f8c7238759a9a86a01c005845d304f75",
+        "7b5f5ea79043b2aa10654aacb30c32a7",
+        "d7c34cbd72a0c1e8ca54679260f370b5",
+        "ffe5aa649cf779598e35fcddc3284cac",
+        "57bccdd67695adcc1bbc302a6cae24aa",
+        "f6e8f5dd3d405a012dc2a93ae0ffc6cb",
+        "588d33239a75c3d12013e3759fb77911",
+        "7d249214447cdb2944f11f8a50e52f10",
+        "e2ada126b4f0c340916d3fea1e8c4d21",
+        "0e9267eef96c2e92125bcb25f6507345",
+        "b65ea7c36b0aa78b9c1e6f9914975afc",
+        "8eb500cf79c7350ba8616a16f69ef1e1",
+        "8e837af47cee53c16a48cb0b65cb717a"
+      ]
+    },
+    {
+      "id": "_virtual_addresses_optimization",
+      "level": 3,
+      "sectnum": "4.10.4",
+      "title": "Virtual Addresses Optimization",
+      "heading_unit_id": "a3b003a513a87df64aa774ab7f411170",
+      "blocks": [
+        "53c8677bee4c7aab08e68d9624494c87",
+        "daa96d67684f242c0b4ab76e72426e03",
+        "88dbad8761f6afe2289c6497136374ac",
+        "c4f623fe653320dc7e7e7fd9b7632d21",
+        "51148e4b07c65bb82e2af2230f2de58b",
+        "2e4ac785a3718224ae29117f16203d95",
+        "7282e4f310531c8942fdbf3393e6915c",
+        "a48c7bcee865cff596664f90b0bc4620",
+        "6181b6802f8324f231844ef09fc3901e",
+        "2fdbc05a711ec55190147060a42a52cc",
+        "da7a39d6fdd333dbbcf8e479520df6bc",
+        "af47e03d16ce843d8d8bf85d8bf34fba",
+        "92efdb824e853a95f948d4f355aac2a6",
+        "31c6ecf2cb2720a1de0a3b4f1aed4ebd",
+        "23b101916a2932a061e5083028885125",
+        "ed8d26474487fca4b2aca4d5b3f9e401",
+        "4050b6289033c7dc84623d5f6cb3b41d"
+      ]
+    },
+    {
+      "id": "_rules_of_generating_messages",
+      "level": 2,
+      "sectnum": "4.11",
+      "title": "Rules of Generating Messages",
+      "heading_unit_id": "c520bd6c52cd633fb8dd72ec833c5627",
+      "blocks": [
+        "1760586a05b1cf9232867308c646ecd0",
+        "411d1c268808e2334cf46d08c4bade32",
+        "cc6982bf79350a1e47406f5dfdee7ba1",
+        "e8a9fb467131464dcc09b5bb07d04c2b",
+        "4b30064cbf88c061296fc4fa8608b9fb",
+        "92b88c03bec8289297e527580c575a2a",
+        "e7ff5f0ce5acf5f45e89e5a7396e0992",
+        "49fe6afa154554de86a4d935826fbe7f"
+      ]
+    },
+    {
+      "id": "_custom_instructions",
+      "level": 3,
+      "sectnum": "4.11.1",
+      "title": "Custom Instructions",
+      "heading_unit_id": "5dea6cc44e0fc4225fe08f66b49f1a9d",
+      "blocks": [
+        "e51dd79a33f6b8f4f644c2a86f3a7bf2",
+        "fe7d0ee3cfc6787aaa75ded675e61bca",
+        "a92cf771f330f3f91bd1928bb2acee24",
+        "ad1b1269f41ea59e262c6c78d75bc6f9",
+        "4684614e261920f0f1ff437af18aab15",
+        "366c81c2916dbb5e6c3a113eb1aee5fe",
+        "6e142769dba777057a0b77cb46ce678a",
+        "c961fa6a0782b1577ee782f7c0f92def",
+        "cb06e7f1eadf1948634da6da660f5e33"
+      ]
+    },
+    {
+      "id": "_pseudo_code_of_simple_n_trace_encoder",
+      "level": 3,
+      "sectnum": "4.11.2",
+      "title": "Pseudo-code of Simple N-Trace Encoder",
+      "heading_unit_id": "80b2c4a6a896d1d2174cde3b47bd526f",
+      "blocks": [
+        "a99497a446d1b0c3d61cdf02a2f80202",
+        "b83054f6de6a78f21fd1f4fc8af41fbe",
+        "f0ea82a4d77c338864a44b11d9f1bde9"
+      ]
+    },
+    {
+      "id": "_n_trace_decoding_guidelines",
+      "level": 2,
+      "sectnum": "4.12",
+      "title": "N-Trace Decoding Guidelines",
+      "heading_unit_id": "a263930e0d1390bb66cb5573ee272d66",
+      "blocks": [
+        "80531a407248f051d53f3994e7a6e787",
+        "3d15486c6e76bb89ed88333fc589a7fc",
+        "abb7178c3301f777bcbd34817873c90a",
+        "4001ca491fde50a3ef0a6bbfb294a820"
+      ]
+    },
+    {
+      "id": "_decoding_algorithm_principles",
+      "level": 3,
+      "sectnum": "4.12.1",
+      "title": "Decoding Algorithm Principles",
+      "heading_unit_id": "e4d8dab90ea9373b4077ef776cc07fad",
+      "blocks": [
+        "b10da07f32eccce11d7b68e8504e9b80",
+        "c63121513697a67f24ef30474a5444a3",
+        "0b0960400b928349a2ba8681510986e3"
+      ]
+    },
+    {
+      "id": "_decoding_trace_from_multiple_harts",
+      "level": 3,
+      "sectnum": "4.12.2",
+      "title": "Decoding trace from multiple harts",
+      "heading_unit_id": "afb8ca61980efbe991308bf309a4a482",
+      "blocks": [
+        "35ac46538aa77cbf74da99e47df945fb"
+      ]
+    },
+    {
+      "id": "_decoding_trace_of_operating_systems",
+      "level": 3,
+      "sectnum": "4.12.3",
+      "title": "Decoding trace of operating systems",
+      "heading_unit_id": "d80925f710f38f2ed682b9c51c0e295b",
+      "blocks": [
+        "5946c42b62932eea0d29399c00b2c32c",
+        "e15a95416a575ae56640784a4ec408d5"
+      ]
+    },
+    {
+      "id": "_decoding_self_modifying_or_jit_just_in_time_compiled_code",
+      "level": 3,
+      "sectnum": "4.12.4",
+      "title": "Decoding self-modifying or JIT (Just In Time compiled) code",
+      "heading_unit_id": "8288e56fc1beaa748dec55250718d915",
+      "blocks": [
+        "595f053271ab3c780b57d6dfebe8e8bd"
+      ]
+    },
+    {
+      "id": "_ieee_5001_nexus_standard_compliance",
+      "level": 2,
+      "sectnum": "4.13",
+      "title": "IEEE-5001 Nexus Standard Compliance",
+      "heading_unit_id": "2c271fb8d0729e15ad8eee436963afec",
+      "blocks": [
+        "7a433b0586896f7ae8d1d3f2f62f3364",
+        "584add5efa5edffb9086dce9c78d6d60",
+        "164f7ab658845f6bddab3b43a5aff34e"
+      ]
+    },
+    {
+      "id": "_additional_material",
+      "level": 2,
+      "sectnum": "4.14",
+      "title": "Additional Material",
+      "heading_unit_id": "a74d49b8a0abfc5a299dcfef7e84b0f3",
+      "blocks": [
+        "8d59c07533c97f9cac1f5a7de65afd39",
+        "3e86cc2b5483484bf1ab822af902f439",
+        "70f7548625e2fe12347ea481baa8e28a",
+        "4d0a6fdb5c52b84a3fc6d426d670e38f",
+        "e87ff808fbad17e55895ab3fc9c1d02c",
+        "f858a7bef44c589e209ac7a436560c9f",
+        "7bbfad5914774e9ad26f1505dd9f8a8d",
+        "55cb2cd8d546bfe079fbf497be180c71"
+      ]
+    }
+  ]
+}

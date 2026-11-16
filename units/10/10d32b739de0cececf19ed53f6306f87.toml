@@ -1,0 +1,20 @@
+unit_id = "10d32b739de0cececf19ed53f6306f87"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A virtual supervisor timer interrupt becomes pending, as reflected in the
+VSTIP bit in the `hip` register, whenever (`time` + `htimedelta`), truncated
+to 64 bits, contains a value greater than or equal to `vstimecmp`, treating
+the values as unsigned integers.
+If the result of this comparison changes, it is guaranteed to be reflected in
+VSTIP eventually, but not necessarily immediately.
+The interrupt remains posted until `vstimecmp` becomes greater than (`time`
++ `htimedelta`), typically as a result of writing `vstimecmp`.
+The interrupt will be taken based on the standard interrupt enable and
+delegation rules while V=1.'''
+zh = '''
+只要（`time` + `htimedelta`）截断为 64 位后包含的值大于或等于 `vstimecmp`（将这些值视为无符号整数），虚拟监管定时器中断就变为挂起状态，并反映在 `hip` 寄存器的 VSTIP 位中。
+如果此比较的结果发生变化，则保证最终会反映在 VSTIP 中，但不一定立即反映。
+该中断保持挂起状态，直到 `vstimecmp` 变得大于（`time` + `htimedelta`），这通常是通过写入 `vstimecmp` 实现的。
+在 V=1 时，该中断将根据标准的中断使能和委托规则被接受。'''

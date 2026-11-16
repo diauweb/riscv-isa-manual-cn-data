@@ -1,0 +1,11 @@
+unit_id = "ca1561e546804a3dd31958089212b6d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtval_vaddr_wr1]#If `mtval` is written with a nonzero value when a breakpoint,
+address-misaligned, access-fault, page-fault, or hardware-error exception
+occurs on an instruction fetch, load, or store, then `mtval` will contain the
+faulting virtual address.#'''
+zh = '''
+[#norm:mtval_vaddr_wr1]#若在指令取指、加载或存储时发生断点、地址非对齐、访问故障、页故障或硬件错误异常时，`mtval` 被写入非零值，则 `mtval` 将包含出错的虚拟地址。#'''

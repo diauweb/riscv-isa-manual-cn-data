@@ -1,0 +1,16 @@
+unit_id = "412da8d67e42d0e112b393278edfacf5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:divw_divuw_op]#DIVW and DIVUW are RV64 instructions that divide the lower 32 bits of
+`rs1` by the lower 32 bits of `rs2`, treating them as signed and
+unsigned integers, placing the 32-bit quotient in `rd`,
+sign-extended to 64 bits.# [#norm:remw_remuw_op]#REMW and REMUW are RV64 instructions that
+provide the corresponding signed and unsigned remainder
+operations.# [#norm:remw_remuw_result_sign]#BothREMW and REMUW always sign-extend the 32-bit result
+to 64 bits, including on a divide by zero.#
+(((MUL, div by zero)))'''
+zh = '''
+[#norm:divw_divuw_op]#DIVW 和 DIVUW 是 RV64 指令，它们将 `rs1` 的低 32 位除以 `rs2` 的低 32 位，将其视为有符号和无符号整数，并将 32 位商写入 `rd`，符号扩展至 64 位。# [#norm:remw_remuw_op]#REMW 和 REMUW 是 RV64 指令，提供相应的有符号和无符号余数操作。# [#norm:remw_remuw_result_sign]#REMW 和 REMUW 均始终将 32 位结果符号扩展至 64 位，包括除零时。#
+(((MUL, div by zero)))'''

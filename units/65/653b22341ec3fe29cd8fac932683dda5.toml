@@ -1,0 +1,12 @@
+unit_id = "653b22341ec3fe29cd8fac932683dda5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The product ceil(EMUL) * NFIELDS represents the number of underlying
+vector registers that will be touched by a segmented load or store
+instruction.  This constraint makes this total no larger than 1/4 of
+the architectural register file, and the same as for regular
+operations with EMUL=8.'''
+zh = '''
+NOTE: 乘积 ceil(EMUL) * NFIELDS 表示段加载或存储指令将触及的底层向量寄存器数量。此约束使该总数不超过架构寄存器文件的 1/4，并且与 EMUL=8 的常规操作相同。'''

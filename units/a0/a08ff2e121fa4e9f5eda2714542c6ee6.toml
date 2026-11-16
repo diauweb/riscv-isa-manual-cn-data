@@ -1,0 +1,13 @@
+unit_id = "a08ff2e121fa4e9f5eda2714542c6ee6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Byte-granular comparison of {csr-scontext} to {textra64-svalue} in
+{csr-textra64} allows {csr-scontext} to be defined to include
+more than one element of comparison.  For example, software instrumentation
+can program the {csr-scontext} value to be the concatenation of different ID contexts
+such as process ID and thread ID.  The user can then program byte compares based on
+{textra64-sbytemask} to include one or more of the contexts in the compare.'''
+zh = '''
+将 {csr-scontext} 与 {csr-textra64} 中的 {textra64-svalue} 进行字节粒度比较，允许将 {csr-scontext} 定义为包含多个比较元素。例如，软件插桩可以将 {csr-scontext} 值编程为不同 ID 上下文（如进程 ID 和线程 ID）的拼接。用户随后可以基于 {textra64-sbytemask} 编程字节比较，以将一个或多个上下文包含在比较中。'''

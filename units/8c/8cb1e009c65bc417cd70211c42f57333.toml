@@ -1,0 +1,345 @@
+unit_id = "8cb1e009c65bc417cd70211c42f57333"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+=== Case Sensitivity
+
+The ISA naming strings are case insensitive.
+
+=== Base Integer ISA
+
+RISC-V ISA strings begin with either RV32I, RV32E, RV64I, or RV64E,
+indicating the supported address space size in bits for the base integer
+ISA.
+
+=== Instruction-Set Extension Names
+
+Standard ISA extensions are given a name consisting of a single letter.
+For example, the first four standard extensions to the integer bases
+are: "M" for integer multiplication and division, "A" for atomic
+memory instructions, "F" for single-precision floating-point
+instructions, and "D" for double-precision floating-point
+instructions. Any RISC-V instruction-set variant can be succinctly
+described by concatenating the base integer prefix with the names of the
+included extensions, e.g., "RV64IMAFD".
+
+We have also defined an abbreviation "G" to represent the
+"IMAFDZicsr_Zifencei" base and extensions, as this is intended to
+represent our standard general-purpose ISA.
+
+Standard extensions to the RISC-V ISA are given other reserved letters,
+e.g., "Q" for quad-precision floating-point, or "C" for the 16-bit
+compressed instruction format.
+
+Some ISA extensions depend on the presence of other extensions, e.g.,
+"D" depends on "F" and "F" depends on "Zicsr". These dependencies
+may be implicit in the ISA name: for example, RV32IF is equivalent to
+RV32IFZicsr, and RV32ID is equivalent to RV32IFD and RV32IFDZicsr.
+
+=== Underscores
+
+Underscores "_" may be used to separate ISA extensions to improve
+readability and to provide disambiguation, e.g., "RV32I2_M2_A2".
+
+=== Additional Standard Unprivileged Extension Names
+
+Standard unprivileged extensions can also be named by using a single "Z" followed by an
+alphanumeric name. The name must end with an alphabetical character.
+The second letter from the end cannot be numeric if the
+last letter is "p". For example, "Zifencei" names the instruction-fetch fence extension
+described in <<zifencei>>.
+
+The first letter following the "Z" conventionally indicates the most
+closely related alphabetical extension category, IMAFDQLCBKJTPVH. For the
+"Zfa" extension for additional floating-point instructions, for example, the letter "f"
+indicates the extension is related to the "F" standard extension. If
+multiple "Z" extensions are named, they should be ordered first by
+category, then alphabetically within a category—for example,
+"Zicsr_Zifencei_Ztso".
+
+All multi-letter extensions, including those with the "Z" prefix, must be
+separated from other multi-letter extensions by an underscore, e.g.,
+"RV32IMACZicsr_Zifencei".
+
+=== Supervisor-level Instruction-Set Extension Names
+
+Standard extensions that extend the supervisor-level virtual-memory
+architecture are prefixed with the letters "Sv", followed by an alphanumeric
+name. Other standard extensions that extend the supervisor-level architecture are
+prefixed with the letters "Ss", followed by an alphanumeric name. The name
+must end with an alphabetical character. The second letter from the end cannot
+be numeric if the last letter is "p". These extensions are further defined in
+Volume II.
+
+The extensions "sv32", "sv39", "sv48", and "sv59" were defined before the rule
+against extension names ending in numbers was established.
+
+Standard supervisor-level extensions should be listed after standard
+unprivileged extensions, and like other multi-letter extensions, must be
+separated from other multi-letter extensions by an underscore. If multiple
+supervisor-level extensions are listed, they should be ordered alphabetically.
+
+=== Hypervisor-level Instruction-Set Extension Names
+
+Standard extensions that extend the hypervisor-level architecture are prefixed
+with the letters "Sh".
+If multiple hypervisor-level extensions are listed, they should be ordered
+alphabetically.
+
+NOTE: Many augmentations to the hypervisor-level architecture are more
+naturally defined as supervisor-level extensions, following the scheme
+described in the previous section.
+The "Sh" prefix is used by the few hypervisor-level extensions that have no
+supervisor-visible effects.
+
+=== Machine-level Instruction-Set Extension Names
+
+Standard machine-level instruction-set extensions are prefixed with the
+letters "Sm".
+
+Standard machine-level extensions should be listed after standard
+lesser-privileged extensions, and like other multi-letter extensions, must be
+separated from other multi-letter extensions by an underscore. If multiple
+machine-level extensions are listed, they should be ordered alphabetically.
+
+=== Non-Standard Extension Names
+
+Non-standard extensions are named by using a single "X" followed by the alphanumeric
+name. The name must end with an alphabetic character. The
+second letter from the end cannot be numeric if the last letter is
+"p". For example, "Xhwacha" names the Hwacha vector-fetch ISA
+extension.
+
+Non-standard extensions must be listed after all standard extensions, and,
+like other multi-letter extensions, must be separated from other multi-letter
+extensions by an underscore.
+For example, an ISA with non-standard extensions Argle and
+Bargle may be named "RV64IZifencei_Xargle_Xbargle".
+
+If multiple non-standard extensions are listed, they should be ordered
+alphabetically. Like other multi-letter extensions, they should be
+separated from other multi-letter extensions by an underscore.
+
+=== Version Numbers
+
+Recognizing that instruction sets may expand or alter over time, we
+encode extension version numbers following the extension name. Version
+numbers are divided into major and minor version numbers, separated by a
+"p". If the minor version is "0", then "p0" can be omitted from
+the version string. To avoid ambiguity, no extension name may end with a number
+or a "p" preceded by a number.
+
+Because the "P" extension for Packed SIMD can be confused for the
+decimal point in a version number, it must be preceded by an underscore
+if it follows another extension with a version number. For example, "rv32i2p2"
+means version 2.2 of RV32I, whereas "rv32i2_p2" means version 2.0 of RV32I with
+version 2.0 of the P extension.
+
+Changes in major version numbers imply a loss of
+backwards compatibility, whereas changes in only the minor version
+number must be backwards-compatible. For example, the original 64-bit
+standard ISA defined in release 1.0 of this manual can be written in
+full as "RV64I1p0M1p0A1p0F1p0D1p0", more concisely as
+"RV64I1M1A1F1D1".
+
+We introduced the version numbering scheme with the second release.
+Hence, we define the default version of a standard extension to be the
+version present at that time, e.g., "RV32I" is equivalent to
+"RV32I2".
+
+=== Subset Naming Convention
+
+<<isanametable>> summarizes the standardized extension
+names. The table also defines the canonical
+order in which extension names must appear in the name string, with
+top-to-bottom in table indicating first-to-last in the name string,
+e.g., RV32IMACV is legal, whereas RV32IMAVC is not.
+
+[[isanametable]]
+.Standard ISA extension names.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|Subset |Name |Implies
+
+|Base ISA | |
+
+|Integer |I |
+
+|Reduced Integer |E |
+
+3+|*Standard Unprivileged Extensions*
+
+|Integer Multiplication and Division |M |Zmmul
+
+|Atomics |A |
+
+|Single-Precision Floating-Point |F |Zicsr
+
+|Double-Precision Floating-Point |D |F
+
+|General |G |IMAFDZicsr_Zifencei
+
+|Quad-Precision Floating-Point |Q |D
+
+|16-bit Compressed Instructions |C |
+
+|B Extension |B |
+
+|Packed-SIMD Extensions |P |
+
+|Vector Extension |V |D
+
+|Hypervisor Extension |H |
+
+3+|*Additional Standard Unprivileged Extensions*
+
+|Additional Standard unprivileged extensions "abc" |Zabc |
+
+3+|*Standard Supervisor-Level Extensions*
+
+|Supervisor-level extension "def" |Ssdef |
+
+3+|*Standard Hypervisor-Level Extensions*
+
+|Hypervisor-level extension "ghi" |Shghi |
+
+3+|*Standard Machine-Level Extensions*
+
+|Machine-level extension "jkl" |Smjkl |
+
+3+|*Non-Standard Extensions*
+
+|Non-standard extension "mno" |Xmno |
+|==='''
+zh = '''
+====
+=== 大小写敏感性
+
+ISA 命名字符串不区分大小写。
+
+=== 基本整数 ISA
+
+RISC-V ISA 字符串以 RV32I、RV32E、RV64I 或 RV64E 之一开头，表示基本整数 ISA 支持的地址空间大小（以位为单位）。
+
+=== 指令集扩展名称
+
+标准 ISA 扩展使用由单个字母组成的名称。例如，整数基础的前四个标准扩展是：表示整数乘除法的 "M"，表示原子内存指令的 "A"，表示单精度浮点指令的 "F"，以及表示双精度浮点指令的 "D"。任何 RISC-V 指令集变体都可以通过将基本整数前缀与所包含扩展的名称连接来简洁描述，例如 "RV64IMAFD"。
+
+我们还定义了缩写 "G" 来表示 "IMAFDZicsr_Zifencei" 基础与扩展，因为它旨在代表我们的标准通用 ISA。
+
+RISC-V ISA 的标准扩展被赋予其他保留字母，例如 "Q" 表示四精度浮点，或 "C" 表示 16 位压缩指令格式。
+
+一些 ISA 扩展依赖于其他扩展的存在，例如 "D" 依赖于 "F"，而 "F" 依赖于 "Zicsr"。这些依赖关系可以隐含在 ISA 名称中：例如，RV32IF 等价于 RV32IFZicsr，RV32ID 等价于 RV32IFD 和 RV32IFDZicsr。
+
+=== 下划线
+
+可以使用下划线 "_" 分隔 ISA 扩展，以提高可读性并提供消歧，例如 "RV32I2_M2_A2"。
+
+=== 附加标准非特权扩展名称
+
+标准非特权扩展也可以通过使用单个 "Z" 后跟字母数字名称来命名。名称必须以字母字符结尾。如果最后一个字母是 "p"，则倒数第二个字母不能为数字。例如，"Zifencei" 命名了 <<zifencei>> 中描述的取指栅栏扩展。
+
+"Z" 后的第一个字母按惯例表示最密切相关的字母扩展类别，即 IMAFDQLCBKJTPVH。例如，对于附加浮点指令的 "Zfa" 扩展，字母 "f" 表示该扩展与 "F" 标准扩展相关。如果命名多个 "Z" 扩展，则应首先按类别排序，然后在类别内按字母顺序排序——例如 "Zicsr_Zifencei_Ztso"。
+
+所有多字母扩展，包括带 "Z" 前缀的扩展，都必须用下划线与其他多字母扩展分隔，例如 "RV32IMACZicsr_Zifencei"。
+
+=== 监管级指令集扩展名称
+
+扩展监管级虚拟内存架构的标准扩展以字母 "Sv" 为前缀，后跟字母数字名称。扩展监管级架构的其他标准扩展以字母 "Ss" 为前缀，后跟字母数字名称。名称必须以字母字符结尾。如果最后一个字母是 "p"，则倒数第二个字母不能为数字。这些扩展在第二卷中进一步定义。
+
+扩展 "sv32"、"sv39"、"sv48" 和 "sv59" 是在禁止扩展名称以数字结尾的规则建立之前定义的。
+
+标准监管级扩展应列在标准非特权扩展之后，并且像其他多字母扩展一样，必须用下划线与其他多字母扩展分隔。如果列出多个监管级扩展，则应按字母顺序排序。
+
+=== 虚拟机监控器级指令集扩展名称
+
+扩展虚拟机监控器级架构的标准扩展以字母 "Sh" 为前缀。如果列出多个虚拟机监控器级扩展，则应按字母顺序排序。
+
+NOTE: 许多对虚拟机监控器级架构的增强更自然地定义为监管级扩展，遵循上一节描述的方案。"Sh" 前缀用于少数没有监管程序可见效果的虚拟机监控器级扩展。
+
+=== 机器级指令集扩展名称
+
+标准机器级指令集扩展以字母 "Sm" 为前缀。
+
+标准机器级扩展应列在标准较低特权扩展之后，并且像其他多字母扩展一样，必须用下划线与其他多字母扩展分隔。如果列出多个机器级扩展，则应按字母顺序排序。
+
+=== 非标准扩展名称
+
+非标准扩展通过使用单个 "X" 后跟字母数字名称来命名。名称必须以字母字符结尾。如果最后一个字母是 "p"，则倒数第二个字母不能为数字。例如，"Xhwacha" 命名了 Hwacha 向量取指 ISA 扩展。
+
+非标准扩展必须列在所有标准扩展之后，并且像其他多字母扩展一样，必须用下划线与其他多字母扩展分隔。例如，具有非标准扩展 Argle 和 Bargle 的 ISA 可以命名为 "RV64IZifencei_Xargle_Xbargle"。
+
+如果列出多个非标准扩展，则应按字母顺序排序。像其他多字母扩展一样，它们应使用下划线与其他多字母扩展分隔。
+
+=== 版本号
+
+认识到指令集可能随时间扩展或改变，我们在扩展名称后编码扩展版本号。版本号分为主版本号和次版本号，用 "p" 分隔。如果次版本号为 "0"，则版本字符串中可以省略 "p0"。为避免歧义，任何扩展名称不得以数字或数字后面的 "p" 结尾。
+
+由于用于打包 SIMD 的 "P" 扩展可能与版本号中的小数点混淆，如果它跟在另一个带版本号的扩展之后，则必须在其前面加下划线。例如，"rv32i2p2" 表示 RV32I 的 2.2 版，而 "rv32i2_p2" 表示 RV32I 的 2.0 版以及 P 扩展的 2.0 版。
+
+主版本号的变化意味着失去向后兼容性，而仅次版本号的变化必须向后兼容。例如，本手册 1.0 版中定义的原始 64 位标准 ISA 可以完整写为 "RV64I1p0M1p0A1p0F1p0D1p0"，更简洁地写为 "RV64I1M1A1F1D1"。
+
+我们在第二版中引入了版本编号方案。因此，我们将标准扩展的默认版本定义为当时存在的版本，例如 "RV32I" 等价于 "RV32I2"。
+
+=== 子集命名约定
+
+<<isanametable>> 总结了标准化扩展名称。该表还定义了扩展名称在名称字符串中必须出现的规范顺序，表中从上到下表示名称字符串中从先到后，例如 RV32IMACV 合法，而 RV32IMAVC 不合法。
+
+[[isanametable]]
+.标准 ISA 扩展名称。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|子集 |名称 |隐含
+
+|基本 ISA | |
+
+|整数 |I |
+
+|精简整数 |E |
+
+3+|*标准非特权扩展*
+
+|整数乘除法 |M |Zmmul
+
+|原子操作 |A |
+
+|单精度浮点 |F |Zicsr
+
+|双精度浮点 |D |F
+
+|通用 |G |IMAFDZicsr_Zifencei
+
+|四精度浮点 |Q |D
+
+|16 位压缩指令 |C |
+
+|B 扩展 |B |
+
+|打包 SIMD 扩展 |P |
+
+|向量扩展 |V |D
+
+|虚拟机监控器扩展 |H |
+
+3+|*附加标准非特权扩展*
+
+|附加标准非特权扩展 "abc" |Zabc |
+
+3+|*标准监管级扩展*
+
+|监管级扩展 "def" |Ssdef |
+
+3+|*标准虚拟机监控器级扩展*
+
+|虚拟机监控器级扩展 "ghi" |Shghi |
+
+3+|*标准机器级扩展*
+
+|机器级扩展 "jkl" |Smjkl |
+
+3+|*非标准扩展*
+
+|非标准扩展 "mno" |Xmno |
+|==='''

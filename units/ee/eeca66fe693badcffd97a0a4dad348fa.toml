@@ -1,0 +1,20 @@
+unit_id = "eeca66fe693badcffd97a0a4dad348fa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+When mapping between narrower and wider addresses, RISC-V zero-extends a
+narrower physical address to a wider size. The mapping between 64-bit
+virtual addresses and the 39-bit usable address space of Sv39 is not
+based on zero extension but instead follows an entrenched convention
+that allows an OS to use one or a few of the most-significant bits of a
+full-size (64-bit) virtual address to quickly distinguish user and
+supervisor address regions.
+===='''
+zh = '''
+[NOTE]
+====
+在较窄和较宽地址之间映射时，RISC-V 将较窄的物理地址零扩展为较宽的大小。64 位虚拟地址与 Sv39 的 39 位可用地址空间之间的映射不是基于零扩展，而是遵循一项根深蒂固的惯例，该惯例允许操作系统使用完整大小（64 位）虚拟地址的少数最高有效位来快速区分用户地址区域和监管地址区域。
+===='''

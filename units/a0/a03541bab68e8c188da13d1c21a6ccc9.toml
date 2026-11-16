@@ -1,0 +1,36 @@
+unit_id = "a03541bab68e8c188da13d1c21a6ccc9"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Semantics for division by zero and division overflow. L is the width of the operation in bits: XLEN for DIV[U] and REM[U], or 32 for DIV[U]W and REM[U]W.
+[cols="<2,^,^,^,^,^,^",options="header",]
+|===
+|Condition |Dividend |Divisor |DIVU[W] |REMU[W] |DIV[W] |REM[W]
+
+|Division by zero +
+Overflow (signed only) |_x_ +
+-2^L-1^ |0 +
+−1 |2^L^-1 +
+ - |_x_ +
+ - |−1 +
+ -2^L-1^ +
+  |_x_ +
+  0
+|==='''
+zh = '''
+.除以零和除法溢出的语义。L 为操作的位宽：DIV[U] 和 REM[U] 为 XLEN，DIV[U]W 和 REM[U]W 为 32。
+[cols="<2,^,^,^,^,^,^",options="header",]
+|===
+|条件 |被除数 |除数 |DIVU[W] |REMU[W] |DIV[W] |REM[W]
+
+|除以零 +
+溢出（仅限有符号） |_x_ +
+-2^L-1^ |0 +
+−1 |2^L^-1 +
+ - |_x_ +
+ - |−1 +
+ -2^L-1^ +
+  |_x_ +
+  0
+|==='''

@@ -1,0 +1,16 @@
+unit_id = "53188bd4f275b0a70b4b779396bd0d8d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The benefit of using dependencies as a lightweight synchronization
+mechanism is that the ordering enforcement requirement is limited only
+to the specific two instructions in question. Other non-dependent
+instructions may be freely reordered by aggressive implementations. One
+alternative would be to use a load-acquire, but this would enforce
+ordering for the first load with respect to _all_ subsequent
+instructions. Another would be to use a FENCE R,R, but this would
+include all previous and all subsequent loads, making this option more
+expensive.'''
+zh = '''
+使用依赖作为轻量级同步机制的好处是，排序强制要求仅限于所涉及的特定两条指令。其他非依赖指令可以被激进实现自由重排。一种替代方案是使用加载-获取，但这将强制第一个加载相对于__所有__后续指令的排序。另一种是使用 FENCE R,R，但这将包括所有先前和所有后续加载，使此选项更昂贵。'''

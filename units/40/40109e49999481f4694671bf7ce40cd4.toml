@@ -1,0 +1,18 @@
+unit_id = "40109e49999481f4694671bf7ce40cd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Any AMO can be emulated by an LR/SC pair, but care must be taken to
+ensure that any PPO orderings that originate from the LR are also made
+to originate from the SC, and that any PPO orderings that terminate at
+the SC are also made to terminate at the LR. For example, the LR must
+also be made to respect any data dependencies that the AMO has, given
+that load operations do not otherwise have any notion of a data
+dependency. Likewise, the effect a FENCE R,R elsewhere in the same hart
+must also be made to apply to the SC, which would not otherwise respect
+that fence. The emulator may achieve this effect by simply mapping AMOs
+onto `lr.aq; <op>; sc.aqrl`, matching the mapping used elsewhere for
+fully ordered atomics.'''
+zh = '''
+任何 AMO 都可以由 LR/SC 对仿真，但必须注意确保源自 LR 的任何 PPO 排序也源自 SC，并且终止于 SC 的任何 PPO 排序也终止于 LR。例如，还必须使 LR 尊重 AMO 所具有的任何数据依赖，因为加载操作本来没有数据依赖的概念。同样，同一硬件线程中其他位置的 FENCE R,R 的效果也必须适用于 SC，而 SC 本来不会尊重该 fence。仿真器可以通过简单地将 AMO 映射为 `lr.aq; <op>; sc.aqrl` 来实现这一效果，与其他位置用于全序原子操作的映射相匹配。'''

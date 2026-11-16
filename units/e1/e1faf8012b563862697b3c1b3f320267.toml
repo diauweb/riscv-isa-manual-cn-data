@@ -1,0 +1,28 @@
+unit_id = "e1faf8012b563862697b3c1b3f320267"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 3, subformat 2
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 11 (sync): synchronisation
+|*subformat*| 2| 10 (context): Context change
+|*privilege*| _privilege_width_p_| The privilege level of the new
+context.
+|*time*| _time_width_p_ or 0 if _notime_p_ is 1| The time value
+|*context*| _context_width_p_, or 0 if _nocontext_p_ is 1| The
+instruction context.
+|==='''
+zh = '''
+.包格式 3，子格式 2
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名*| *位数*| *描述*
+|*format*| 2| 11 (sync)：同步
+|*subformat*| 2| 10 (context)：上下文改变
+|*privilege*| _privilege_width_p_| 新上下文的特权级别。
+|*time*| _time_width_p_，若 _notime_p_ 为 1 则为 0| 时间值
+|*context*| _context_width_p_，若 _nocontext_p_ 为 1 则为 0| 指令上下文。
+|==='''

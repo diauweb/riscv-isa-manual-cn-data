@@ -1,0 +1,24 @@
+unit_id = "b6daf902cfa9fe7c644f4b6f0ad42b3d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We considered propagating NaN payloads, as is recommended by IEEE
+754-2008, but this decision would have increased hardware cost. Moreover,
+since this feature is optional in IEEE 754-2008, it cannot be used in
+portable code.
+
+Implementers are free to provide a NaN payload propagation scheme as a
+nonstandard extension enabled by a nonstandard operating mode. However,
+the canonical NaN scheme described above must always be supported and
+should be the default mode.
+===='''
+zh = '''
+[NOTE]
+====
+我们曾考虑传播 NaN 载荷，正如 IEEE 754-2008 所推荐的那样，但这一决定会增加硬件成本。此外，由于该特性在 IEEE 754-2008 中是可选的，因此无法在可移植代码中使用。
+
+实现者可以自由提供 NaN 载荷传播方案，作为由非标准操作模式启用的非标准扩展。然而，上述规范 NaN 方案必须始终得到支持，并且应作为默认模式。
+===='''

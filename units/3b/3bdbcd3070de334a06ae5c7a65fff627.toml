@@ -1,0 +1,18 @@
+unit_id = "3bdbcd3070de334a06ae5c7a65fff627"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Preventing overlap between `vd` and `vs1` or `vs2` simplifies implementation with `VLEN < EGW`.
+This restriction does not have any coding impact since proper implementation of the algorithm requires
+that `vd`, `vs1` and `vs2` each contain different portions of the message schedule.
+===='''
+zh = '''
+[NOTE]
+====
+防止 `vd` 与 `vs1` 或 `vs2` 之间的重叠，可简化 `VLEN < EGW` 时的实现。
+该限制不会对编码产生任何影响，因为算法的正确实现要求
+`vd`、`vs1` 和 `vs2` 各自包含消息调度的不同部分。
+===='''

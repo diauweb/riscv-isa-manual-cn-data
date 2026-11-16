@@ -1,0 +1,14 @@
+unit_id = "bb105d916e1188c0e4ae5f2f3bee177d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vaaddu_vaadd_vasubu_vasub_op]#The averaging add and subtract instructions right shift the result by
+one bit and round off the result according to the setting in csr:vxrm[].
+Computation is performed in infinite precision before rounding and truncating.#
+Both unsigned and signed versions are provided.
+For insn:vaaddu[] and insn:vaadd[] there can be no overflow in the result.
+[#norm:vasub_vasubu_op_overflow]#For insn:vasub[] and insn:vasubu[], overflow is ignored and the result wraps around.#'''
+zh = '''
+[#norm:vaaddu_vaadd_vasubu_vasub_op]#平均加法和减法指令将结果右移一位，并根据 csr:vxrm[] 中的设置对结果进行舍入。计算在舍入和截断之前以无限精度执行。#
+提供无符号和有符号版本。对于 insn:vaaddu[] 和 insn:vaadd[]，结果不会溢出。[#norm:vasub_vasubu_op_overflow]#对于 insn:vasub[] 和 insn:vasubu[]，溢出被忽略，结果回绕。#'''

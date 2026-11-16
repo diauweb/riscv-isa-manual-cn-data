@@ -1,0 +1,19 @@
+unit_id = "437c3eab563adbdcd004e56c26e8c1c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+One of the common approaches to handling a large number of elements is
+"`strip mining`" where each iteration of a loop handles some number of elements,
+and the iterations continue until all elements have been processed. The RISC-V
+vector specification provides direct, portable support for this approach.
+The application specifies the total number of elements to be processed (the application vector length or AVL) as a
+candidate value for csr:vl[], and the hardware responds via a general-purpose
+register with the (frequently smaller) number of elements that the hardware
+will handle per iteration (stored in csr:vl[]), based on the microarchitectural
+implementation and the csr:vtype[] setting. A straightforward loop structure,
+shown in <<example-stripmine-sew>>, depicts the ease with which the code keeps
+track of the remaining number of elements and the amount per iteration handled
+by hardware.'''
+zh = '''
+处理大量元素的一种常见方法是“条带挖掘”（strip mining），其中循环的每次迭代处理一定数量的元素，迭代持续到所有元素都被处理完毕。RISC-V 向量规范为这种方法提供了直接、可移植的支持。应用程序指定要处理的元素总数（应用程序向量长度或 AVL）作为 csr:vl[] 的候选值，硬件通过通用寄存器响应每次迭代硬件将处理的（通常更小的）元素数量（存储在 csr:vl[] 中），这基于微架构实现和 csr:vtype[] 设置。<<example-stripmine-sew>> 中展示了一个简单的循环结构，描绘了代码跟踪剩余元素数量和硬件每次迭代处理量的轻松程度。'''

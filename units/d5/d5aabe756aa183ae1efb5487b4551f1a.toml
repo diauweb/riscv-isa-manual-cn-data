@@ -1,0 +1,18 @@
+unit_id = "d5aabe756aa183ae1efb5487b4551f1a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+It is important to note that the detection of tininess after rounding requires its own rounding
+that is different from the final result rounding.  This tininess detection requires rounding as if the
+exponent were unbounded.
+This means that the input to the rounder is always a normal number.
+This is different from the final result rounding where the input to the rounder is a subnormal number when
+the value is too small to be represented as a normal number in the target format.
+The two different roundings can result in underflow being signalled for results that are rounded
+back to the normal range.'''
+zh = '''
+需要注意的是,舍入后极小性的检测需要其自身的一次舍入,这次舍入不同于最终结果的舍入。该极小性检测要求按指数无界的方式进行舍入。
+这意味着送入舍入器的输入始终是正规数。
+这与最终结果的舍入不同:在最终结果舍入中,当数值小到无法在目标格式中表示为正规数时,送入舍入器的输入是次正规数。
+这两种不同的舍入可能导致:对于被舍入回正规范围的结果,却发出下溢标志。'''

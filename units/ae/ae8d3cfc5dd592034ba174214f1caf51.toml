@@ -1,0 +1,13 @@
+unit_id = "ae8d3cfc5dd592034ba174214f1caf51"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RV32I reserves a large encoding space for HINT instructions, which are
+usually used to communicate performance hints to the microarchitecture.
+Like the NOP instruction, [#norm:hints_op]#HINTs do not change any architecturally
+visible state, except for advancing the `pc` and any applicable
+performance counters. Implementations are always allowed to ignore the
+encoded hints.#'''
+zh = '''
+RV32I 为 HINT 指令保留了很大的编码空间，HINT 指令通常用于向微架构传达性能提示。与 NOP 指令一样，[#norm:hints_op]#HINT 不改变任何架构上可见的状态，除了推进 `pc` 以及任何适用的性能计数器。实现始终允许忽略所编码的提示。#'''

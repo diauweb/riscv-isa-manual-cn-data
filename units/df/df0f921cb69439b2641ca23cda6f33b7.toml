@@ -1,0 +1,24 @@
+unit_id = "df0f921cb69439b2641ca23cda6f33b7"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of FS[1:0], VS[1:0], and XS[1:0] status fields
+[%autowidth,float="center",align="center",cols=">,<,<",options="header",]
+|===
+|Status |FS and VS Meaning |XS Meaning
+|0 |Off     |All off
+|1 |Initial |None dirty or clean, some on
+|2 |Clean   |None dirty, some clean
+|3 |Dirty   |Some dirty
+|==='''
+zh = '''
+.FS[1:0]、VS[1:0] 和 XS[1:0] 状态字段的编码
+[%autowidth,float="center",align="center",cols=">,<,<",options="header",]
+|===
+|状态 |FS 和 VS 含义 |XS 含义
+|0 |Off     |全部关闭
+|1 |Initial |无脏或干净，部分开启
+|2 |Clean   |无脏，部分干净
+|3 |Dirty   |部分脏
+|==='''

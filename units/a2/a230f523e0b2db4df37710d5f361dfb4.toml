@@ -1,0 +1,17 @@
+unit_id = "a230f523e0b2db4df37710d5f361dfb4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Zifencei is not classed as a supported option in the user-mode
+profile because it is not sufficient by itself to produce the desired
+effect in a multiprogrammed multiprocessor environment without OS
+support, and so the instruction cache flush should always be performed
+using an OS call rather than using the `fence.i` instruction.
+`fence.i` semantics can be expensive to implement for some hardware
+memory hierarchy designs, and so alternative non-standard
+instruction-cache coherence mechanisms can be used behind the OS
+abstraction.  A separate extension is being developed for more general
+and efficient instruction cache coherence.'''
+zh = '''
+注意：Zifencei 在用户模式配置中未归类为受支持的选项，因为如果没有操作系统支持，它本身不足以在多程序多处理器环境中产生期望效果，因此指令缓存刷新应始终使用操作系统调用而不是使用 `fence.i` 指令来执行。对于某些硬件内存层次结构设计，`fence.i` 语义的实现可能代价高昂，因此可以在操作系统抽象背后使用替代的非标准指令缓存一致性机制。正在开发一个单独的扩展，以实现更通用、更高效的指令缓存一致性。'''

@@ -1,0 +1,52 @@
+unit_id = "f25c4f48dc89168932185ddd2049c37e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. if latexmath:[$i$] is a load instruction:
+.. all program-order-previous load-acquire instructions are finished;
+.. all program-order-previous `fence` instructions with `.sr` set are
+finished;
+.. for every program-order-previous `fence.tso` instruction,
+latexmath:[$f$], that is not finished, all load instructions that are
+program-order-before latexmath:[$f$] are finished; and
+.. it is guaranteed that the values read by the memory load operations
+of latexmath:[$i$] will not cause coherence violations, i.e., for any
+program-order-previous instruction instance latexmath:[$i'$], let
+latexmath:[$\textit{cfp}$] be the combined footprint of propagated
+memory store operations from store instructions program-order-between
+latexmath:[$i$] and latexmath:[$i'$], and _fixed memory store
+operations_ that were forwarded to latexmath:[$i$] from store
+instructions program-order-between latexmath:[$i$] and latexmath:[$i'$]
+including latexmath:[$i'$], and let
+latexmath:[$\overline{\textit{cfp}}$] be the complement of
+latexmath:[$\textit{cfp}$] in the memory footprint of latexmath:[$i$].
+If latexmath:[$\overline{\textit{cfp}}$] is not empty:
+... latexmath:[$i'$] has a fully determined memory footprint;
+... latexmath:[$i'$] has no unpropagated memory store operations that
+overlap with latexmath:[$\overline{\textit{cfp}}$]; and
+... if latexmath:[$i'$] is a load with a memory footprint that overlaps
+with latexmath:[$\overline{\textit{cfp}}$], then all the memory load
+operations of latexmath:[$i'$] that overlap with
+latexmath:[$\overline{\textit{cfp}}$] are satisfied and latexmath:[$i'$]
+is _non-restartable_ (see the <<prop_store, Propagate store operation>> transition for how to determined if an
+instruction is non-restartable).
++
+Here, a memory store operation is called fixed if the store instruction
+has fully determined data.
+. latexmath:[$i$] has a fully determined data; and
+. if latexmath:[$i$] is not a fence, all program-order-previous
+conditional branch and indirect jump instructions are finished.'''
+zh = '''
+. 如果 latexmath:[$i$] 是加载指令：
+.. 所有程序顺序前驱 load-acquire 指令都已结束；
+.. 所有设置了 `.sr` 的程序顺序前驱 `fence` 指令都已结束；
+.. 对于每个未结束的程序顺序前驱 `fence.tso` 指令 latexmath:[$f$]，所有程序顺序在 latexmath:[$f$] 之前的加载指令都已结束；并且
+.. 保证 latexmath:[$i$] 的内存加载操作读取的值不会导致一致性违反，即，对于任何程序顺序前驱指令实例 latexmath:[$i'$]，令 latexmath:[$\textit{cfp}$] 为来自程序顺序在 latexmath:[$i$] 和 latexmath:[$i'$] 之间的存储指令的已传播内存存储操作，以及从程序顺序在 latexmath:[$i$] 和 latexmath:[$i'$] 之间（包括 latexmath:[$i'$]）的存储指令转发到 latexmath:[$i$] 的 _固定内存存储操作_ 的组合足迹，并令 latexmath:[$\overline{\textit{cfp}}$] 为 latexmath:[$\textit{cfp}$] 在 latexmath:[$i$] 的内存足迹中的补集。如果 latexmath:[$\overline{\textit{cfp}}$] 非空：
+... latexmath:[$i'$] 具有完全确定的内存足迹；
+... latexmath:[$i'$] 没有与 latexmath:[$\overline{\textit{cfp}}$] 重叠的未传播内存存储操作；并且
+... 如果 latexmath:[$i'$] 是内存足迹与 latexmath:[$\overline{\textit{cfp}}$] 重叠的加载，则 latexmath:[$i'$] 的所有与 latexmath:[$\overline{\textit{cfp}}$] 重叠的内存加载操作都已满足，并且 latexmath:[$i'$] 是 _不可重启的_（关于如何确定指令是否不可重启，见 <<prop_store, 传播存储操作>> 转换）。
++
+这里，一个内存存储操作被称为固定的，如果该存储指令具有完全确定的数据。
+. latexmath:[$i$] 具有完全确定的数据；并且
+. 如果 latexmath:[$i$] 不是 fence，则所有程序顺序前驱条件分支和间接跳转指令都已结束。'''

@@ -1,0 +1,235 @@
+{
+  "chap_hash": "985d063d5e8a1ef4",
+  "id": "mm",
+  "sectname": "chapter",
+  "sectnum": "5",
+  "title_en": "RISC-V Memory Models",
+  "title_unit_id": "0a7c7deb83e56d3240bf9a721925a7e5",
+  "source_path": "src/unpriv/memory-models.adoc",
+  "sections": [
+    {
+      "id": "mm",
+      "level": 1,
+      "sectnum": "5",
+      "title": "RISC-V Memory Models",
+      "heading_unit_id": "0a7c7deb83e56d3240bf9a721925a7e5",
+      "heading_anchor_id": "mm",
+      "blocks": [
+        "5a74cebea2424d6b43def06f0a7a33c2",
+        "278d0ae05a6e6262bea8a5208c49558e",
+        "b1eac478fadf9090727e215c2762b96d"
+      ]
+    },
+    {
+      "id": "memorymodel",
+      "level": 2,
+      "sectnum": "5.1",
+      "title": "RVWMO Memory Consistency Model, Version 2.0",
+      "heading_unit_id": "6e9eba70e7015043c8ac425db29e9226",
+      "heading_anchor_id": "memorymodel",
+      "blocks": [
+        "0b647f96b744b939557440628dab4349",
+        "f70457bc36a1c50b15440503567dcb4d",
+        "3b11f5f78f86a904d25a7c230bd85667",
+        "4b5eb88ab9580cb6d7cba8e0c4ceb000",
+        "52ff0bb5861a9c11ff1b56556e89d629"
+      ]
+    },
+    {
+      "id": "rvwmo",
+      "level": 3,
+      "sectnum": "5.1.1",
+      "title": "Definition of the RVWMO Memory Model",
+      "heading_unit_id": "7af3ebaeda444c9b6347660e327b63ac",
+      "heading_anchor_id": "rvwmo",
+      "blocks": [
+        "08abeb0dc31690ec7945c413c7524d87",
+        "52f590d00a2cf5a6cfd05b8221c85626"
+      ]
+    },
+    {
+      "id": "rvwmo-primitives",
+      "level": 4,
+      "sectnum": "5.1.1.1",
+      "title": "Memory Model Primitives",
+      "heading_unit_id": "fd4c19110b40f541db89e11122eee4e1",
+      "heading_anchor_id": "rvwmo-primitives",
+      "blocks": [
+        "e2db559b1d3189b09bab7fda1b327940",
+        "dea39d679bf93205c087bff066f84de3",
+        "1ecbc301553aaba9d3fdc3e4204ac117",
+        "66c58346e6c960682a1107a4ee6b6041",
+        "bf4030416dbd2f380641133126c068a7",
+        "2971d5f8c764a3252ec08d6f404e9a69",
+        "a7e5b4324ecf4bb4e68179ff624c85e9",
+        "ca70c8e7045d9c6ad8e3ed1677bb27ef",
+        "0871997d4a0d10ddb2bbb61a7139a129",
+        "7619c9156fc7a179ba274215e4cdb41a"
+      ]
+    },
+    {
+      "id": "mem-dependencies",
+      "level": 4,
+      "sectnum": "5.1.1.2",
+      "title": "Syntactic Dependencies",
+      "heading_unit_id": "661f96a813c4e83caad5cd33cb646da2",
+      "heading_anchor_id": "mem-dependencies",
+      "blocks": [
+        "4657538281a613caa4c43162a7c38b05",
+        "b1b2fb88aedc2be54a53a3817c07d6a9",
+        "5d948a067e0397836dd5d26a6c03d7c6",
+        "04a9f962c180a54bf33b29933105f8af",
+        "b276f0958977dda9a59367aeda3e68ac",
+        "e9408ea4266d29c1d8d8153c1e8000b2",
+        "233eef85951a06751f7013e5303583d5",
+        "13895b9962dbab4dfbad700f5ac28f10",
+        "d76e3cc6215313c65a392aaa1630048e",
+        "584a3c2de06fa9f59e5afcb6577189b2",
+        "5131817faa5adb5ee7396394b98db03d",
+        "af4fdb1ea62ccc6636cc04445b399acd",
+        "5f8926c8919b0f3d33867e11e3109a54",
+        "12931b5f1260778a5c50c88a68fd0607",
+        "c025d95958bf1bab1564729b97833d70",
+        "69423233a91d04e73e7342377b567537"
+      ]
+    },
+    {
+      "id": "_preserved_program_order",
+      "level": 4,
+      "sectnum": "5.1.1.3",
+      "title": "Preserved Program Order",
+      "heading_unit_id": "3e0d288e614a295db38a6f2528a267f5",
+      "blocks": [
+        {
+          "unit_id": "38f77b3dfddfcd693c7107401db6fdbe",
+          "anchor_id": "ppo"
+        },
+        {
+          "unit_id": "d7ca3166fa19ccbe6982ddbae1f681e1",
+          "anchor_id": "norm:rvwmo_ppo_lead-in"
+        },
+        {
+          "unit_id": "90076a14854cce6a2c9f618d9c1841db",
+          "anchor_id": "overlapping-ordering"
+        }
+      ]
+    },
+    {
+      "id": "_memory_model_axioms",
+      "level": 4,
+      "sectnum": "5.1.1.4",
+      "title": "Memory Model Axioms",
+      "heading_unit_id": "279159f090c9f5e78959dfb03850036c",
+      "blocks": [
+        {
+          "unit_id": "e12f96c1aacd0da8455d99248032567f",
+          "anchor_id": "norm:rvwmo_obeyed"
+        }
+      ]
+    },
+    {
+      "id": "ax-load",
+      "level": 5,
+      "sectnum": null,
+      "title": "Load Value Axiom",
+      "heading_unit_id": "00bf6d65c632c0e36281a6d58efd2a7b",
+      "heading_anchor_id": "ax-load",
+      "blocks": [
+        {
+          "unit_id": "fe861c4c16c935d5863a3127ed33dede",
+          "anchor_id": "norm:rvwmo_ld_val_axiom_lead-in"
+        },
+        {
+          "unit_id": "183c7564ecc7e8f170fe57180f300959",
+          "anchor_id": "norm:rvwmo_ld_val_axiom_list"
+        }
+      ]
+    },
+    {
+      "id": "ax-atom",
+      "level": 5,
+      "sectnum": null,
+      "title": "Atomicity Axiom",
+      "heading_unit_id": "5e1d6598582ede14b3d2e921e73a3fae",
+      "heading_anchor_id": "ax-atom",
+      "blocks": [
+        {
+          "unit_id": "1bc8ceaf05e4efd6397811262b06d7c1",
+          "anchor_id": "norm:rvwmo_atomicity_axiom"
+        },
+        "c2ae507ddc7cf98c8c4d6c14c7fd5db7"
+      ]
+    },
+    {
+      "id": "ax-prog",
+      "level": 5,
+      "sectnum": null,
+      "title": "Progress Axiom",
+      "heading_unit_id": "b335d5ec6027116425869cc27d2a6001",
+      "heading_anchor_id": "ax-prog",
+      "blocks": [
+        {
+          "unit_id": "436d69cccf5688ab7a5ff80c06d750ce",
+          "anchor_id": "norm:rvwmo_progress_axiom"
+        }
+      ]
+    },
+    {
+      "id": "csr-granularity",
+      "level": 3,
+      "sectnum": "5.1.2",
+      "title": "CSR Dependency Tracking Granularity",
+      "heading_unit_id": "8cbc9e4e53b61f7253d0811ce39c88d2",
+      "heading_anchor_id": "csr-granularity",
+      "blocks": [
+        "f56553c7d72385604073768cd8ec616f",
+        "48541929d79a8b2df13a686363ebbb20"
+      ]
+    },
+    {
+      "id": "source-dest-regs",
+      "level": 3,
+      "sectnum": "5.1.3",
+      "title": "Source and Destination Register Listings",
+      "heading_unit_id": "80efab9d6878143a0a288828a2c46654",
+      "heading_anchor_id": "source-dest-regs",
+      "blocks": [
+        "7d753a47fc5acad2e360ebd1b461e4df",
+        "4ed196a071c4a274dba05920c7d2e512",
+        "5e6340535fe9dbb2b2ec058b13d94d7d",
+        "5f0ae5bf5e3c6ea79d01f0e116284fcb",
+        "fceb84aa74615707d33ea79d76d8ea45",
+        "a3c0b953efee527ee33c45e34531c150",
+        "3ee21ba4b76769eb38441994f90563bf",
+        "301574e89aa775448f9c572a803fe580",
+        "d794b940476d3606388df56348c36eca",
+        "ed7607fa23a9cd127343fc19ca5ae317",
+        "6a0ae747140fad11390a2b9b54ebc497",
+        "c4871cb8362de3081110db1a296640d9",
+        "39689d57462a76f4d869c5f48b0e2471",
+        "109c689507a7dda6bb0a0e9e9bd881b7",
+        "f8d8336e024e14bb25f2c68631fb3191"
+      ]
+    },
+    {
+      "id": "ztso",
+      "level": 2,
+      "sectnum": "5.2",
+      "title": "\"Ztso\" Extension for Total Store Ordering, Version 1.0",
+      "heading_unit_id": "30b027a1f012564174a78af743ce4dfd",
+      "heading_anchor_id": "ztso",
+      "blocks": [
+        "4dc1f25ab0f5a57fe08b5d62dc30b78e",
+        "7bde9cc887fe804250a5d2094a1d2d1a",
+        {
+          "unit_id": "2d5f63dd87e1e274504fc5c6572368d8",
+          "anchor_id": "norm:rvtso_adj_rvwmo"
+        },
+        "7704552751cdf6ac981f9aa4c7b8ae42",
+        "ec2de0b8160a5cb6eedb869e0032cd26",
+        "d6e0c51b8920c1a056416425be5a2304",
+        "ef33990c02e4f1bb5b37330cd18f635f"
+      ]
+    }
+  ]
+}

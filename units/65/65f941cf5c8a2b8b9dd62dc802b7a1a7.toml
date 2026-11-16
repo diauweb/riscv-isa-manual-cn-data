@@ -1,0 +1,26 @@
+unit_id = "65f941cf5c8a2b8b9dd62dc802b7a1a7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Implicit return mode (see
+<<sec:implicit-return>>) requires the
+encoder to keep track of the number of nested function calls, and to do
+this it must be aware of all calls and returns regardless of whether the
+target can be inferred or not;
+* A simpler algorithm useful for basic code profiling would only report
+function calls and returns, again regardless of whether the target can
+be inferred or not;
+* Branch prediction techniques can be used to further improve the
+encoder efficiency, particularly for loops (see
+<<sec:branch-prediction>>). This requires
+the encoder to be aware of the address of all branches, whether they are
+taken or not.
+* Uninferable jumps can be treated as inferable (which don't need to be
+reported in the trace output) if both the jump and the preceding
+instruction which loads the target into a register have been traced.'''
+zh = '''
+* 隐式返回模式（见 <<sec:implicit-return>>）要求编码器跟踪嵌套函数调用的数量，为此它必须知悉所有调用和返回，无论其目标是否可推断；
+* 一种适用于基本代码剖析的更简单算法只报告函数调用和返回，同样无论其目标是否可推断；
+* 分支预测技术可用于进一步提高编码器效率，特别是对于循环（见 <<sec:branch-prediction>>）。这要求编码器知悉所有分支的地址及其是否被跳转。
+* 如果跳转以及将目标加载到寄存器中的前一条指令都已被跟踪，则不可推断跳转可以被视为可推断（无需在跟踪输出中报告）。'''

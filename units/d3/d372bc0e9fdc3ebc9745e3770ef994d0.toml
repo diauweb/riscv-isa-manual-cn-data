@@ -1,0 +1,28 @@
+unit_id = "d372bc0e9fdc3ebc9745e3770ef994d0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* program-order-successors of latexmath:[$j$] that have data-flow
+dependency on a register write of latexmath:[$j$];
+* program-order-successors of latexmath:[$j$] that have a memory load
+operation that reads from a memory store operation of latexmath:[$j$]
+(by forwarding);
+* if latexmath:[$j$] is a load-acquire, all the program-order-successors
+of latexmath:[$j$];
+* if latexmath:[$j$] is a load, for every `fence`, latexmath:[$f$], with
+`.sr` and `.pr` set, and `.pw` not set, that is a
+program-order-successor of latexmath:[$j$], all the load instructions
+that are program-order-successors of latexmath:[$f$];
+* if latexmath:[$j$] is a load, for every `fence.tso`, latexmath:[$f$],
+that is a program-order-successor of latexmath:[$j$], all the load
+instructions that are program-order-successors of latexmath:[$f$]; and
+* (recursively) all the restart-dependents of all the instruction
+instances above.'''
+zh = '''
+* 对 latexmath:[$j$] 的寄存器写具有数据流依赖的 latexmath:[$j$] 的程序顺序后继；
+* 具有从 latexmath:[$j$] 的内存存储操作读取（通过转发）的内存加载操作的 latexmath:[$j$] 的程序顺序后继；
+* 如果 latexmath:[$j$] 是 load-acquire，则 latexmath:[$j$] 的所有程序顺序后继；
+* 如果 latexmath:[$j$] 是加载，则对于每个设置了 `.sr` 和 `.pr`、且未设置 `.pw` 的 `fence` latexmath:[$f$]，如果它是 latexmath:[$j$] 的程序顺序后继，则所有是 latexmath:[$f$] 的程序顺序后继的加载指令；
+* 如果 latexmath:[$j$] 是加载，则对于每个是 latexmath:[$j$] 的程序顺序后继的 `fence.tso` latexmath:[$f$]，所有是 latexmath:[$f$] 的程序顺序后继的加载指令；以及
+* （递归地）上述所有指令实例的所有重启依赖项。'''

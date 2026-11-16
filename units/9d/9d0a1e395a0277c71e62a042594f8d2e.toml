@@ -1,0 +1,33 @@
+unit_id = "9d0a1e395a0277c71e62a042594f8d2e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The initial RISC-V paged virtual-memory architectures have been designed
+as straightforward implementations to support existing operating
+systems. We have architected page table layouts to support a hardware
+page-table walker. Software TLB refills are a performance bottleneck on
+high-performance systems, and are especially troublesome with decoupled
+specialized coprocessors. An implementation can choose to implement
+software TLB refills using a machine-mode trap handler as an extension
+to M-mode.
+
+***
+
+Some ISAs architecturally expose _virtually indexed, physically tagged_
+caches, in that accesses to the same physical address via different
+virtual addresses might not be coherent unless the virtual addresses lie
+within the same cache set. Implicitly, this specification does not
+permit such behavior to be architecturally exposed.
+===='''
+zh = '''
+[NOTE]
+====
+最初的 RISC-V 分页虚拟内存架构被设计为直接了当的实现，以支持现有操作系统。我们将页表布局设计为支持硬件页表遍历器。软件 TLB 重填在高性能系统上是性能瓶颈，对解耦的专用协处理器尤其棘手。实现可以选择使用机器模式陷阱处理程序作为 M 模式的扩展来实现软件 TLB 重填。
+
+***
+
+一些 ISA 在架构上暴露__虚拟索引、物理标记__的缓存，即通过不同虚拟地址访问同一物理地址时可能不保持一致，除非这些虚拟地址位于同一缓存组内。本规范隐含地不允许在架构上暴露此类行为。
+===='''

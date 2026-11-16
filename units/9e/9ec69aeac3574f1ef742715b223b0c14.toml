@@ -1,0 +1,14 @@
+unit_id = "9ec69aeac3574f1ef742715b223b0c14"
+kind = "code"
+translatable = false
+en = '''
+----
+vslidedown behavior for source elements for element i in slide (vstart < vl)
+                0 <= i+OFFSET < VLMAX   src[i] = vs2[i+OFFSET]
+            VLMAX <= i+OFFSET           src[i] = 0
+
+vslidedown behavior for destination element i in slide (vstart < vl)
+                 0 <= i < vstart         Unchanged
+            vstart <= i < vl             vd[i] = src[i] if v0.mask[i] enabled
+                vl <= i < VLMAX          Follow tail policy
+----'''

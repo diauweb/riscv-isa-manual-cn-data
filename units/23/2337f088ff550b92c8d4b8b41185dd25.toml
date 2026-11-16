@@ -1,0 +1,17 @@
+unit_id = "2337f088ff550b92c8d4b8b41185dd25"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _H_ or some other hart executes a successful SC to the reservation set
+of the LR instruction in _H_'s constrained LR/SC loops.
+* Some other hart executes an unconditional store or AMO instruction to
+the reservation set of the LR instruction in _H_'s constrained LR/SC
+loop, or some other device in the system writes to that reservation set.
+* _H_ executes a branch or jump that exits the constrained LR/SC loop.
+* _H_ traps.#'''
+zh = '''
+* _H_ 或某个其他硬件线程对 _H_ 的受约束 LR/SC 循环中 LR 指令的保留集执行成功的 SC。
+* 某个其他硬件线程对 _H_ 的受约束 LR/SC 循环中 LR 指令的保留集执行无条件存储或 AMO 指令，或者系统中的某个其他设备写入该保留集。
+* _H_ 执行退出受约束 LR/SC 循环的分支或跳转。
+* _H_ 陷入陷阱。#'''

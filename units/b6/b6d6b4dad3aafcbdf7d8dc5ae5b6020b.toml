@@ -1,0 +1,27 @@
+unit_id = "b6d6b4dad3aafcbdf7d8dc5ae5b6020b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The compiler and calling convention maintain an invariant that all
+32-bit values are held in a sign-extended format in 64-bit registers.
+Even 32-bit unsigned integers extend bit 31 into bits 63 through 32.
+Consequently, conversion between unsigned and signed 32-bit integers is
+a no-op, as is conversion from a signed 32-bit integer to a signed
+64-bit integer. Existing 64-bit wide SLTU and unsigned branch compares
+still operate correctly on unsigned 32-bit integers under this
+invariant. Similarly, existing 64-bit wide logical operations on 32-bit
+sign-extended integers preserve the sign-extension property.
+The insn:addw[], insn:addiw[], insn:subw[], insn:sllw[], insn:slliw[],
+insn:srlw[], insn:srliw[], insn:sraw[], and insn:sraiw[] instructions are
+required for addition and shifts to
+ensure reasonable performance for 32-bit values.
+===='''
+zh = '''
+[NOTE]
+====
+编译器和调用约定维护一个不变量：所有 32 位值在 64 位寄存器中都以符号扩展格式保存。即使是 32 位无符号整数，也会将第 31 位扩展到第 63 位至第 32 位。因此，无符号与有符号 32 位整数之间的转换是空操作，从有符号 32 位整数到有符号 64 位整数的转换也是如此。在此不变量下，现有的 64 位宽 SLTU 和无符号分支比较仍能正确操作无符号 32 位整数。同样，对 32 位符号扩展整数执行现有的 64 位宽逻辑运算会保持符号扩展属性。
+为了确保 32 位值具有合理的性能，需要 insn:addw[]、insn:addiw[]、insn:subw[]、insn:sllw[]、insn:slliw[]、insn:srlw[]、insn:srliw[]、insn:sraw[] 和 insn:sraiw[] 指令来进行加法和移位。
+===='''

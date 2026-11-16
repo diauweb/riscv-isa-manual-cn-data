@@ -1,0 +1,13 @@
+unit_id = "06bc002c2b366c7f8f564855a9a19182"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:medeleg_mideleg_mandatory_s_mode]#In harts with S-mode, the `medeleg` and `mideleg` registers must
+exist#, and [#norm:medeleg_mideleg_delegate_op]#setting a bit in csr:medeleg[] or csr:mideleg[] will delegate the
+corresponding trap, when occurring in S-mode or U-mode, to the S-mode
+trap handler.#
+[#norm:medeleg_mideleg_omit_wo_s_mode]#In harts without S-mode, the csr:medeleg[] and csr:mideleg[] registers should not exist.#'''
+zh = '''
+[#norm:medeleg_mideleg_mandatory_s_mode]#在具有 S 模式的硬件线程中，`medeleg` 和 `mideleg` 寄存器必须存在#，并且 [#norm:medeleg_mideleg_delegate_op]#在 csr:medeleg[] 或 csr:mideleg[] 中设置某一位，会将相应的陷阱（当发生在 S 模式或 U 模式时）委托给 S 模式陷阱处理程序。#
+[#norm:medeleg_mideleg_omit_wo_s_mode]#在没有 S 模式的硬件线程中，csr:medeleg[] 和 csr:mideleg[] 寄存器不应存在。#'''

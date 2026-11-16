@@ -1,0 +1,16 @@
+unit_id = "f3befe11099e80cbda8ebb61cd71ea35"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The `fence.tso` instruction was incorrectly described as
+optional in the 2019 ratified specifications. However, `fence.tso` is
+encoded within the standard `fence` encoding such that implementations
+must treat it as a simple global fence if they do not natively support
+TSO-ordering optimizations.  As software can always assume without any
+penalty that `fence.tso` is being exploited by a hardware
+implementation, there is no advantage to making the instruction a
+profile option.  Later versions of the unprivileged ISA specifications
+correctly indicate that `fence.tso` is mandatory.'''
+zh = '''
+NOTE: 在 2019 年已批准的规范中，`fence.tso` 指令被错误地描述为可选。然而，`fence.tso` 编码在标准 `fence` 编码之内，因此如果实现本身不支持 TSO 排序优化，就必须将其视为简单的全局栅栏。由于软件始终可以无任何代价地假定 `fence.tso` 会被硬件实现所利用，因此将该指令设为配置选项没有任何好处。后续版本的非特权 ISA 规范正确地指出 `fence.tso` 是强制性的。'''

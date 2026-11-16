@@ -1,0 +1,15 @@
+unit_id = "d50a4ffce4fb62a943550df28be49ebf"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The value of 128 was chosen as a compromise for application
+processors. Providing a larger VLEN allows strip-mining code to be
+elided in some cases for short vectors, but also increases the size of
+the minimum implementation.  Note that larger LMUL can be used to
+avoid strip mining for longer known-size application vectors at the
+cost of having fewer available vector register groups. For example, an
+LMUL of 8 allows vectors of up to sixteen 64-bit elements to be
+processed without strip mining using four vector register groups.'''
+zh = '''
+NOTE: 选择 128 作为应用处理器的折衷值。提供更大的 VLEN 允许在某些情况下对短向量省略 strip-mining 代码，但也增加最小实现的规模。注意，较大的 LMUL 可用于避免对较长已知大小的应用向量进行 strip mining，代价是可用向量寄存器组较少。例如，LMUL 为 8 允许使用四个向量寄存器组处理最多十六个 64 位元素的向量而无需 strip mining。'''

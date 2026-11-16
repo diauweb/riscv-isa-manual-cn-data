@@ -1,0 +1,20 @@
+unit_id = "84bed32f97bc613c05347e44a67f24c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Suppose the hart is capable of retiring up to 4 instructions in a cycle,
+via a single block. Instruction trace is enabled throughout, but the
+requirement is to collect data trace for the 1st load (instruction 1),
+and filtering is configured to match the address of this instruction
+only. However, information about instruction addresses is passed to the
+encoder at the block level, and the block boundaries are invisible to
+the decoder. For instruction trace, all instructions in a block are
+traced if any of the instructions in that block match the filtering
+criteria. That is fine for instruction trace - the address of the 1st
+and last traced instruction are output explicitly. There will be some
+fuzziness about precisely what those addresses will be depending on
+where the block boundaries fall, but this is not a concern as everything
+is always self-consistent.'''
+zh = '''
+假设硬件线程通过单个块每周期最多可退役 4 条指令。指令跟踪全程启用，但要求仅为第 1 次加载（指令 1）收集数据跟踪，并且过滤配置为仅匹配该指令的地址。然而，指令地址信息是按块级别传递给编码器的，而块的边界对解码器是不可见的。对于指令跟踪，只要块中任何一条指令匹配过滤条件，块中的所有指令都会被跟踪。这对指令跟踪来说没问题——第 1 条和最后一条被跟踪指令的地址都会被显式输出。根据块边界落在何处，这些地址具体是什么会有一些模糊性，但这并不构成问题，因为一切始终是自洽的。'''

@@ -1,0 +1,37 @@
+unit_id = "dc9b9b6a2adfd1c314e68baf31b15b65"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The SUM mechanism prevents supervisor software from inadvertently
+accessing user memory. Operating systems can execute the majority of
+code with SUM clear; the few code segments that should access user
+memory can temporarily set SUM.
+
+The SUM mechanism does not avail S-mode software of permission to
+execute instructions in user code pages. Legitimate use cases for
+execution from user memory in supervisor context are rare in general and
+nonexistent in POSIX environments. However, bugs in supervisors that
+lead to arbitrary code execution are much easier to exploit if the
+supervisor exploit code can be stored in a user buffer at a virtual
+address chosen by an attacker.
+
+Some non-POSIX single address space operating systems do allow certain
+privileged software to partially execute in supervisor mode, while most
+programs run in user mode, all in a shared address space. This use case
+can be realized by mapping the physical code pages at multiple virtual
+addresses with different permissions, possibly with the assistance of
+the instruction page-fault handler to direct supervisor software to use
+the alternate mapping.
+===='''
+zh = '''
+[NOTE]
+====
+SUM 机制防止监管软件无意中访问用户内存。操作系统可以在 SUM 为 0 的情况下执行大部分代码；少数应访问用户内存的代码段可以临时设置 SUM。
+
+SUM 机制并不为 S 模式软件提供在用户代码页中执行指令的权限。在监管上下文中从用户内存执行的正当用例总体上很少，在 POSIX 环境中则不存在。然而，如果监管模式漏洞利用代码可以存储在攻击者选择的虚拟地址处的用户缓冲区中，那么导致任意代码执行的监管模式缺陷就更容易被利用。
+
+一些非 POSIX 的单一地址空间操作系统确实允许某些特权软件部分地在监管模式下执行，而大多数程序在用户模式下运行，且全部处于共享地址空间中。这种用例可以通过以不同权限将物理代码页映射到多个虚拟地址来实现，或许可以借助指令页错误处理程序来引导监管软件使用备用映射。
+===='''

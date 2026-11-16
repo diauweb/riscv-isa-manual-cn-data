@@ -1,0 +1,426 @@
+unit_id = "07bf938fcd6c8e51db2a8b225a2e9ff9"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V hypervisor and VS CSR addresses.
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Hypervisor Trap Setup
+
+|`0x600` +
+`0x602` +
+`0x603` +
+`0x604` +
+`0x606` +
+`0x607` +
+`0x612`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`hstatus` +
+`hedeleg` +
+`hideleg` +
+`hie` +
+`hcounteren` +
+`hgeie` +
+`hedelegh`
+|Hypervisor status register. +
+Hypervisor exception delegation register. +
+Hypervisor interrupt delegation register. +
+Hypervisor interrupt-enable register. +
+Hypervisor counter enable. +
+Hypervisor guest external interrupt-enable register. +
+Upper 32 bits of `hedeleg`, RV32 only.
+
+4+^|Hypervisor Trap Handling
+
+|`0x643` +
+`0x644` +
+`0x645` +
+`0x64A` +
+`0xE12`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRO
+|`htval` +
+`hip` +
+`hvip` +
+`htinst` +
+`hgeip`
+|Hypervisor trap value. +
+Hypervisor interrupt pending. +
+Hypervisor virtual interrupt pending. +
+Hypervisor trap instruction (transformed). +
+Hypervisor guest external interrupt pending.
+
+4+^|Hypervisor Configuration
+
+|`0x60A` +
+`0x61A`
+|HRW +
+HRW
+|`henvcfg` +
+`henvcfgh`
+|Hypervisor environment configuration register. +
+Upper 32 bits of `henvcfg`, RV32 only.
+
+4+^|Hypervisor Protection and Translation
+
+|`0x680` |HRW |`hgatp` |Hypervisor guest address translation and protection.
+
+4+^|Debug/Trace Registers
+
+|`0x6A8` |HRW |`hcontext` |Hypervisor-mode context register.
+
+4+^|Hypervisor Counter/Timer Virtualization Registers
+
+|`0x605` +
+`0x615`
+|HRW +
+HRW
+|`htimedelta` +
+`htimedeltah`
+|Delta for VS/VU-mode timer. +
+Upper 32 bits of `htimedelta`, RV32 only.
+
+4+^|Hypervisor State Enable Registers
+|`0x60C` +
+ `0x60D` +
+ `0x60E` +
+ `0x60F` +
+ `0x61C` +
+ `0x61D` +
+ `0x61E` +
+ `0x61F`
+|HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW
+|`hstateen0`  +
+ `hstateen1`  +
+ `hstateen2`  +
+ `hstateen3`  +
+ `hstateen0h` +
+ `hstateen1h` +
+ `hstateen2h` +
+ `hstateen3h`
+|Hypervisor State Enable 0 Register. +
+ Hypervisor State Enable 1 Register. +
+ Hypervisor State Enable 2 Register. +
+ Hypervisor State Enable 3 Register. +
+ Upper 32 bits of Hypervisor State Enable 0 Register, RV32 only. +
+ Upper 32 bits of Hypervisor State Enable 1 Register, RV32 only. +
+ Upper 32 bits of Hypervisor State Enable 2 Register, RV32 only. +
+ Upper 32 bits of Hypervisor State Enable 3 Register, RV32 only.
+
+4+^|Virtual Supervisor Registers
+
+|`0x200` +
+`0x204` +
+`0x205` +
+`0x240` +
+`0x241` +
+`0x242` +
+`0x243` +
+`0x244` +
+`0x280`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`vsstatus` +
+`vsie` +
+`vstvec` +
+`vsscratch` +
+`vsepc` +
+`vscause` +
+`vstval` +
+`vsip` +
+`vsatp`
+|Virtual supervisor status register. +
+Virtual supervisor interrupt-enable register. +
+Virtual supervisor trap handler base address. +
+Virtual supervisor scratch register. +
+Virtual supervisor exception program counter. +
+Virtual supervisor trap cause. +
+Virtual supervisor trap value. +
+Virtual supervisor interrupt pending. +
+Virtual supervisor address translation and protection.
+
+4+^|Virtual Supervisor Indirect
+
+|`0x250` +
+`0x251` +
+`0x252` +
+`0x253` +
+`0x255` +
+`0x256` +
+`0x257`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`vsiselect` +
+`vsireg` +
+`vsireg2` +
+`vsireg3` +
+`vsireg4` +
+`vsireg5` +
+`vsireg6`
+|Virtual supervisor indirect register select. +
+Virtual supervisor indirect register alias. +
+Virtual supervisor indirect register alias 2. +
+Virtual supervisor indirect register alias 3. +
+Virtual supervisor indirect register alias 4. +
+Virtual supervisor indirect register alias 5. +
+Virtual supervisor indirect register alias 6.
+
+4+^|Virtual Supervisor Timer Compare
+
+|`0x24D` +
+`0x25D`
+|HRW +
+HRW
+|`vstimecmp` +
+`vstimecmph`
+|Virtual supervisor timer compare. +
+Upper 32 bits of `vstimecmp`, RV32 only.
+
+4+^|Virtual Supervisor Control Transfer Records Configuration
+|`0x24E`
+|HRW
+|`vsctrctl`
+|Virtual Supervisor Control Transfer Records Control Register.
+
+|==='''
+zh = '''
+.目前已分配的 RISC-V 管理程序与 VS CSR 地址。
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |特权 |名称 |描述
+4+^|管理程序陷阱设置
+
+|`0x600` +
+`0x602` +
+`0x603` +
+`0x604` +
+`0x606` +
+`0x607` +
+`0x612`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`hstatus` +
+`hedeleg` +
+`hideleg` +
+`hie` +
+`hcounteren` +
+`hgeie` +
+`hedelegh`
+|管理程序状态寄存器。 +
+管理程序异常委托寄存器。 +
+管理程序中断委托寄存器。 +
+管理程序中继使能寄存器。 +
+管理程序计数器使能。 +
+管理程序客户机外部中断使能寄存器。 +
+`hedeleg` 的高 32 位，仅 RV32。
+
+4+^|管理程序陷阱处理
+
+|`0x643` +
+`0x644` +
+`0x645` +
+`0x64A` +
+`0xE12`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRO
+|`htval` +
+`hip` +
+`hvip` +
+`htinst` +
+`hgeip`
+|管理程序陷阱值。 +
+管理程序中断挂起。 +
+管理程序虚拟中断挂起。 +
+管理程序陷阱指令（已转换）。 +
+管理程序客户机外部中断挂起。
+
+4+^|管理程序配置
+
+|`0x60A` +
+`0x61A`
+|HRW +
+HRW
+|`henvcfg` +
+`henvcfgh`
+|管理程序环境配置寄存器。 +
+`henvcfg` 的高 32 位，仅 RV32。
+
+4+^|管理程序保护与地址转换
+
+|`0x680` |HRW |`hgatp` |管理程序客户机地址转换与保护。
+
+4+^|调试/跟踪寄存器
+
+|`0x6A8` |HRW |`hcontext` |管理程序模式上下文寄存器。
+
+4+^|管理程序计数器/定时器虚拟化寄存器
+
+|`0x605` +
+`0x615`
+|HRW +
+HRW
+|`htimedelta` +
+`htimedeltah`
+|VS/VU 模式定时器的增量。 +
+`htimedelta` 的高 32 位，仅 RV32。
+
+4+^|管理程序状态使能寄存器
+|`0x60C` +
+ `0x60D` +
+ `0x60E` +
+ `0x60F` +
+ `0x61C` +
+ `0x61D` +
+ `0x61E` +
+ `0x61F`
+|HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW +
+ HRW
+|`hstateen0`  +
+ `hstateen1`  +
+ `hstateen2`  +
+ `hstateen3`  +
+ `hstateen0h` +
+ `hstateen1h` +
+ `hstateen2h` +
+ `hstateen3h`
+|管理程序状态使能 0 寄存器。 +
+ 管理程序状态使能 1 寄存器。 +
+ 管理程序状态使能 2 寄存器。 +
+ 管理程序状态使能 3 寄存器。 +
+ 管理程序状态使能 0 寄存器的高 32 位，仅 RV32。 +
+ 管理程序状态使能 1 寄存器的高 32 位，仅 RV32。 +
+ 管理程序状态使能 2 寄存器的高 32 位，仅 RV32。 +
+ 管理程序状态使能 3 寄存器的高 32 位，仅 RV32。
+
+4+^|虚拟监管寄存器
+
+|`0x200` +
+`0x204` +
+`0x205` +
+`0x240` +
+`0x241` +
+`0x242` +
+`0x243` +
+`0x244` +
+`0x280`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`vsstatus` +
+`vsie` +
+`vstvec` +
+`vsscratch` +
+`vsepc` +
+`vscause` +
+`vstval` +
+`vsip` +
+`vsatp`
+|虚拟监管状态寄存器。 +
+虚拟监管中断使能寄存器。 +
+虚拟监管陷阱处理程序基地址。 +
+虚拟监管暂存寄存器。 +
+虚拟监管异常程序计数器。 +
+虚拟监管陷阱原因。 +
+虚拟监管陷阱值。 +
+虚拟监管中断挂起。 +
+虚拟监管地址转换与保护。
+
+4+^|虚拟监管间接
+
+|`0x250` +
+`0x251` +
+`0x252` +
+`0x253` +
+`0x255` +
+`0x256` +
+`0x257`
+|HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW +
+HRW
+|`vsiselect` +
+`vsireg` +
+`vsireg2` +
+`vsireg3` +
+`vsireg4` +
+`vsireg5` +
+`vsireg6`
+|虚拟监管间接寄存器选择。 +
+虚拟监管间接寄存器别名。 +
+虚拟监管间接寄存器别名 2。 +
+虚拟监管间接寄存器别名 3。 +
+虚拟监管间接寄存器别名 4。 +
+虚拟监管间接寄存器别名 5。 +
+虚拟监管间接寄存器别名 6。
+
+4+^|虚拟监管定时器比较
+
+|`0x24D` +
+`0x25D`
+|HRW +
+HRW
+|`vstimecmp` +
+`vstimecmph`
+|虚拟监管定时器比较。 +
+`vstimecmp` 的高 32 位，仅 RV32。
+
+4+^|虚拟监管控制转移记录配置
+|`0x24E`
+|HRW
+|`vsctrctl`
+|虚拟监管控制转移记录控制寄存器。
+
+|==='''

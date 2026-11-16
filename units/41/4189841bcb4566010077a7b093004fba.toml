@@ -1,0 +1,24 @@
+unit_id = "4189841bcb4566010077a7b093004fba"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For use in single step, icount must match for traps where the
+instruction will not be reexecuted after the handler, such as
+illegal instructions that are emulated by privileged software and
+the instruction being emulated never retires. Ideally, icount would
+not match for traps where the instruction will later be retried by
+the handler, such as page faults where privileged software modifies
+the page tables and returns to the faulting instruction which
+ultimately retires. Trying to distinguish the two cases leads to
+complex rules, so instead the rule is simply that all traps match.
+See also xref:stepicount[].
+===='''
+zh = '''
+[NOTE]
+====
+用于单步时，icount 必须对处理程序之后不会重新执行指令的陷阱匹配，例如由特权软件模拟的非法指令，且被模拟的指令永远不会退休。理想情况下，icount 对于指令稍后会被处理程序重试的陷阱不应匹配，例如特权软件修改页表并返回到最终会退休的故障指令的页错误。试图区分这两种情况会导致复杂的规则，因此规则很简单：所有陷阱都匹配。
+另见 xref:stepicount[]。
+===='''

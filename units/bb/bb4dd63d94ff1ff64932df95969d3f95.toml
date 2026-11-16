@@ -1,0 +1,14 @@
+unit_id = "bb4dd63d94ff1ff64932df95969d3f95"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `f` registers of the RISC-V floating-point extensions and the `v` registers of
+the vector extension would similarly be potential covert channels between user
+threads, except for the existence of the FS and VS fields in the `sstatus`
+register. Even if an OS is unaware of, say, the vector extension and its `v`
+registers, access to those registers is blocked when the VS field is
+initialized to zero, either at machine level or by the OS itself initializing
+`sstatus`.'''
+zh = '''
+类似地，RISC-V 浮点扩展的 `f` 寄存器和向量扩展的 `v` 寄存器本来也可能是用户线程之间的潜在隐蔽信道，只是由于 `sstatus` 寄存器中存在 FS 和 VS 字段才得以避免。即使操作系统不知道例如向量扩展及其 `v` 寄存器，只要 VS 字段被初始化为零（无论是在机器级初始化，还是由操作系统自己初始化 `sstatus`），对这些寄存器的访问就会被阻止。'''

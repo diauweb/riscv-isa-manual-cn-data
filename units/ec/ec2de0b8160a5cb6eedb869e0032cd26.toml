@@ -1,0 +1,27 @@
+unit_id = "ec2de0b8160a5cb6eedb869e0032cd26"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_These rules render all PPO rules except
+<<overlapping-ordering, 4-7>> redundant. They also make
+redundant any non-I/O fences that do not have both PW and SR set.
+Finally, they also imply that no memory operation will be reordered past
+an AMO in either direction._
+
+_In the context of RVTSO, as is the case for RVWMO, the storage ordering
+annotations are concisely and completely defined by PPO rules
+<<overlapping-ordering, 5-7>>. In both of these
+memory models, it is the <<ax-load>> that allows a hart to forward a value from its
+store buffer to a subsequent (in program order) load—that is to say that
+stores can be forwarded locally before they are visible to other harts._
+===='''
+zh = '''
+[NOTE]
+====
+_这些规则使除 <<overlapping-ordering, 4-7>> 之外的所有 PPO 规则均变为冗余。它们还使任何未同时设置 PW 和 SR 的非 I/O 栅栏变为冗余。最后，它们还意味着任何内存操作都不会以任一方向越过 AMO 被重排序。_
+
+_在 RVTSO 的语境下，与 RVWMO 的情况一样，存储定序标注由 PPO 规则 <<overlapping-ordering, 5-7>> 简洁而完整地定义。在这两种内存模型中，正是 <<ax-load>> 允许硬件线程将其存储缓冲区中的值转发给后续（按程序顺序）的加载——也就是说，存储在被其他硬件线程可见之前可以在本地被转发。_
+===='''

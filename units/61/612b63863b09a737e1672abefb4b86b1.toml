@@ -1,0 +1,27 @@
+unit_id = "612b63863b09a737e1672abefb4b86b1"
+kind = "code"
+translatable = false
+en = '''
+----
+# Produce difference with borrow.
+
+# vd[i] = vs2[i] - vs1[i] - v0.mask[i]
+vsbc.vvm   vd, vs2, vs1, v0  # Vector-vector
+
+# vd[i] = vs2[i] - x[rs1] - v0.mask[i]
+vsbc.vxm   vd, vs2, rs1, v0  # Vector-scalar
+
+# Produce borrow out in mask register format
+
+# vd.mask[i] = borrow_out(vs2[i] - vs1[i] - v0.mask[i])
+vmsbc.vvm   vd, vs2, vs1, v0  # Vector-vector
+
+# vd.mask[i] = borrow_out(vs2[i] - x[rs1] - v0.mask[i])
+vmsbc.vxm   vd, vs2, rs1, v0  # Vector-scalar
+
+# vd.mask[i] = borrow_out(vs2[i] - vs1[i])
+vmsbc.vv    vd, vs2, vs1      # Vector-vector, no borrow-in
+
+# vd.mask[i] = borrow_out(vs2[i] - x[rs1])
+vmsbc.vx    vd, vs2, rs1      # Vector-scalar, no borrow-in
+----'''

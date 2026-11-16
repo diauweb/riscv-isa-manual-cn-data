@@ -1,0 +1,31 @@
+unit_id = "21257172d6a571fb6be6c1be7b1eb37a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+These HINT encodings have been chosen so that simple implementations can
+ignore HINTs altogether, and instead execute a HINT as a regular
+instruction that happens not to mutate the architectural state. For
+example, ADD is a HINT if the destination register is `x0`; the five-bit
+_rs1_ and _rs2_ fields encode arguments to the HINT. However, a simple
+implementation can simply execute the HINT as an ADD of _rs1_ and _rs2_
+that writes `x0`, which has no architecturally visible effect.
+
+As another example, a FENCE instruction with a zero _pred_ field and a
+zero _fm_ field is a HINT; the _succ_, _rs1_, and _rd_ fields encode the
+arguments to the HINT. A simple implementation can simply execute the
+HINT as a FENCE that orders the null set of prior memory accesses before
+whichever subsequent memory accesses are encoded in the _succ_ field.
+Since the intersection of the predecessor and successor sets is null,
+the instruction imposes no memory orderings, and so it has no
+architecturally visible effect.
+===='''
+zh = '''
+[NOTE]
+====
+选择这些 HINT 编码是为了让简单实现可以完全忽略 HINT，而是将 HINT 作为恰好不改变架构状态的常规指令执行。例如，如果目的寄存器是 `x0`，ADD 就是 HINT；5 位 _rs1_ 和 _rs2_ 字段编码 HINT 的参数。然而，简单实现可以简单地将 HINT 作为写入 `x0` 的 _rs1_ 和 _rs2_ 的 ADD 执行，这没有架构可见效果。
+
+另一个例子，具有零 _pred_ 字段和零 _fm_ 字段的 FENCE 指令是 HINT；_succ_、_rs1_ 和 _rd_ 字段编码 HINT 的参数。简单实现可以简单地将 HINT 作为 FENCE 执行，该 FENCE 将空的前驱内存访问集合排序在 _succ_ 字段中编码的任何后续内存访问之前。由于前驱和后继集合的交集为空，该指令不施加任何内存排序，因此没有架构可见效果。
+===='''

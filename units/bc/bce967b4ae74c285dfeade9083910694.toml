@@ -1,0 +1,11 @@
+unit_id = "bce967b4ae74c285dfeade9083910694"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_h_op]#The hypervisor extension is enabled by setting bit 7 in the `misa` CSR#,
+which corresponds to the letter H. RISC-V harts that implement the
+hypervisor extension are encouraged not to hardwire `misa`[7], so that
+the extension may be disabled.'''
+zh = '''
+[#norm:misa_h_op]#通过设置 `misa` CSR 中的第 7 位来启用虚拟机监控器扩展#，该位对应字母 H。鼓励实现虚拟机监控器扩展的 RISC-V 硬件线程不要将 `misa`[7] 硬连线，以便该扩展可被禁用。'''

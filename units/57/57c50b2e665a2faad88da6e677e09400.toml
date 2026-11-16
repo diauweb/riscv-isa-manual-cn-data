@@ -1,0 +1,14 @@
+unit_id = "57c50b2e665a2faad88da6e677e09400"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For a table jump instruction, the table entry that the instruction selects is considered an extension of the instruction itself.
+Hence, the execution of a table jump instruction involves two instruction fetches, the first to read the instruction (_cm.jt_/_cm.jalt_)
+and the second to read from the jump vector table (JVT). Both instruction fetches are _implicit_ reads, and both require
+execute permission; read permission is irrelevant. It is recommended that the second fetch be ignored for hardware triggers and breakpoints.'''
+zh = '''
+对于表跳转指令，该指令所选择的表项被视为指令本身的扩展。
+因此，表跳转指令的执行涉及两次指令取指：第一次读取指令（_cm.jt_/_cm.jalt_），
+第二次从跳转向量表（JVT）读取。两次指令取指都是__隐式__读取，且都需要
+执行权限；读权限无关紧要。建议对硬件触发器和断点忽略第二次取指。'''

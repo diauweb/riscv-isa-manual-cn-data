@@ -1,0 +1,23 @@
+unit_id = "775d79d518b5d93b62a74b16f08e67cb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Many coprocessor extensions are only used in limited contexts that
+allows software to safely unconfigure or even disable units when done.
+This reduces the context-switch overhead of large stateful coprocessors.
+
+We separate out floating-point state from other extension state, as when
+a floating-point unit is present the floating-point registers are part
+of the standard calling convention, and so user-mode software cannot
+know when it is safe to disable the floating-point unit.
+===='''
+zh = '''
+[NOTE]
+====
+许多协处理器扩展仅在有限的上下文中使用，这允许软件在完成后安全地取消配置甚至禁用单元。这降低了大型有状态协处理器的上下文切换开销。
+
+我们将浮点状态与其他扩展状态分开，因为当存在浮点单元时，浮点寄存器是标准调用约定的一部分，因此用户模式软件无法知道何时可以安全地禁用浮点单元。
+===='''

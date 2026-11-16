@@ -1,0 +1,20 @@
+unit_id = "db2e8b9506e26a672a11aed497f833af"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The access size for CMO instructions is equal to the size of the cache
+block, however in some cases that access can be decomposed into multiple
+memory operations. PMP checks are applied to each memory operation
+independently. For example a 64-byte insn:cbo.zero[] that spans two 32-byte PMP
+regions would succeed if it was decomposed into two 32-byte memory operations
+(and the PMP access control bits are the same in both regions), but if
+performed as a single 64-byte memory operation it would cause an access fault.
+===='''
+zh = '''
+[NOTE]
+====
+CMO 指令的访问大小等于缓存块的大小，但在某些情况下该访问可以分解为多个内存操作。PMP 检查对每个内存操作独立应用。例如，一条跨两个 32 字节 PMP 区域的 64 字节 insn:cbo.zero[] 如果被分解为两个 32 字节的内存操作（并且两个区域中的 PMP 访问控制位相同），则会成功；但如果作为单个 64 字节内存操作执行，则会导致访问错误。
+===='''

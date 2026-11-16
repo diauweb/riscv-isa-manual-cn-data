@@ -1,0 +1,12 @@
+unit_id = "1fa7001d317a5daa60c4e7296b7a4322"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+LMUL constraints::
+[#norm:veccrypto_lmul_egwconstr]#For element-group instructions, LMUL{times}VLEN must always be at least as large as EGW, otherwise an
+_illegal-instruction exception_ is raised, even if csr:vl[]=0.#'''
+zh = '''
+LMUL 约束::
+[#norm:veccrypto_lmul_egwconstr]#对于元素组指令，LMUL{times}VLEN 必须始终至少与 EGW 一样大，否则会引发
+_非法指令异常_，即使 csr:vl[]=0 也是如此。#'''

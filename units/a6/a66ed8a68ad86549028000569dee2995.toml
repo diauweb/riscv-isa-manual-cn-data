@@ -1,0 +1,17 @@
+unit_id = "a66ed8a68ad86549028000569dee2995"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Guest external interrupts represent interrupts directed to individual
+virtual machines at VS-level. If a RISC-V platform supports placing a
+physical device under the direct control of a guest OS with minimal
+hypervisor intervention (known as _pass-through_ or _direct assignment_
+between a virtual machine and the physical device), then, in such
+circumstance, interrupts from the device are intended for a specific
+virtual machine. Each bit of `hgeip` summarizes _all_ pending interrupts
+directed to one virtual hart, as collected and reported by an interrupt
+controller. To distinguish specific pending interrupts from multiple
+devices, software must query the interrupt controller.'''
+zh = '''
+客户外部中断表示指向各个虚拟机在 VS 级的中断。若 RISC-V 平台支持在虚拟机监控器干预最少的情况下将物理设备置于客户操作系统的直接控制之下（称为虚拟机与物理设备之间的__直通__或__直接分配__），那么在这种情况下，来自设备的中断就是面向特定虚拟机的。`hgeip` 的每一位汇总了由一个中断控制器收集和报告的、指向一个虚拟硬件线程的__所有__待决中断。为区分来自多个设备的特定待决中断，软件必须查询中断控制器。'''

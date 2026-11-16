@@ -1,0 +1,17 @@
+unit_id = "4608cf2515eff882486d90b95c167229"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The execution environment determines the mapping of hardware resources
+into a hart's address space. Different address ranges of a hart's
+address space may (1) contain _main memory_, or
+(2) contain one or more _I/O devices_. Reads and writes of I/O devices
+may have visible side effects, but accesses to main memory cannot.
+Vacant address ranges are not a separate category but can be represented as
+either main memory or I/O regions that are not accessible.
+Although it is possible for the execution environment to call everything
+in a hart's address space an I/O device, it is usually expected that
+some portion will be specified as main memory.'''
+zh = '''
+执行环境决定硬件资源到硬件线程地址空间的映射。硬件线程地址空间的不同地址范围可以 (1) 包含__主存__，或 (2) 包含一个或多个 _I/O 设备_。对 I/O 设备的读写可能具有可见的副作用，但对主存的访问则不能。空置的地址范围不是单独的类别，但可以表示为主存或不可访问的 I/O 区域。尽管执行环境可以将硬件线程地址空间中的所有内容都称为 I/O 设备，但通常期望其中一部分被指定为主存。'''

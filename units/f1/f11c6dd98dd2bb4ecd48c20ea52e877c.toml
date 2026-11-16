@@ -1,0 +1,72 @@
+unit_id = "f11c6dd98dd2bb4ecd48c20ea52e877c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If a need is anticipated, the set of `stateen` CSRs could in the future be
+doubled by adding these:
+
+* `0x38C mstateen4`, `0x39C mstateen4h`
+
+* `0x38D mstateen5`, `0x39D mstateen5h`
+
+* `0x38E mstateen6`, `0x39E mstateen6h`
+
+* `0x38F mstateen7`, `0x39F mstateen7h`
+
+* `0x18C sstateen4`
+
+* `0x18D sstateen5`
+
+* `0x18E sstateen6`
+
+* `0x18F sstateen7`
+
+* `0x68C hstateen4`, `0x69C hstateen4h`
+
+* `0x68D hstateen5`, `0x69D hstateen5h`
+
+* `0x68E hstateen6`, `0x69E hstateen6h`
+
+* `0x68F hstateen7`, `0x69F hstateen7h`
+
+These additional CSRs are not a definite part of the original proposal because
+it is unclear whether they will ever be needed, and it is believed the rate of
+consumption of bits in the first group, registers numbered 0-3, will be slow
+enough that any looming shortage will be perceptible many years in advance. At
+the moment, it is not known even how many years it may take to exhaust just
+`mstateen0`, `sstateen0`, and `hstateen0`.
+===='''
+zh = '''
+[NOTE]
+====
+如果预见到有此需要，将来可以通过添加以下内容将 `stateen` CSR 的集合加倍：
+
+* `0x38C mstateen4`, `0x39C mstateen4h`
+
+* `0x38D mstateen5`, `0x39D mstateen5h`
+
+* `0x38E mstateen6`, `0x39E mstateen6h`
+
+* `0x38F mstateen7`, `0x39F mstateen7h`
+
+* `0x18C sstateen4`
+
+* `0x18D sstateen5`
+
+* `0x18E sstateen6`
+
+* `0x18F sstateen7`
+
+* `0x68C hstateen4`, `0x69C hstateen4h`
+
+* `0x68D hstateen5`, `0x69D hstateen5h`
+
+* `0x68E hstateen6`, `0x69E hstateen6h`
+
+* `0x68F hstateen7`, `0x69F hstateen7h`
+
+这些额外的 CSR 并非原始提案中确定的一部分，因为尚不清楚将来是否会用得上它们，而且相信第一组（编号为 0-3 的寄存器）中位的消耗速度会足够慢，任何迫近的短缺都会提前许多年被察觉。目前甚至不知道仅仅耗尽 `mstateen0`、`sstateen0` 和 `hstateen0` 可能需要多少年。
+===='''

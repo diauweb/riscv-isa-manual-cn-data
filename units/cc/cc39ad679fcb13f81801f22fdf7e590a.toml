@@ -1,0 +1,11 @@
+unit_id = "cc39ad679fcb13f81801f22fdf7e590a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Software should ensure that all writable bits of `sstateen` CSRs are initialized
+to zeros when an OS at supervisor level is first entered. The OS can then set
+bits in these registers to enable user-level access to the controlled state,
+presumably because it knows how to context-swap the state.'''
+zh = '''
+软件应确保在首次进入监管级的操作系统时，所有可写的 `sstateen` 位都被初始化为零。然后操作系统可以在这些寄存器中设置位，以允许用户级访问受控状态，这想必是因为它知道如何对状态进行上下文切换。'''

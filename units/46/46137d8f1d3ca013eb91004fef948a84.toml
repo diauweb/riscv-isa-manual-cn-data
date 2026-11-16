@@ -1,0 +1,52 @@
+unit_id = "46137d8f1d3ca013eb91004fef948a84"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Handling of 4-bit itype values]
+.Handling of 4-bit itype values
+[cols="5%,20%,63%,12%",options="header"]
+|======================================================================================================
+|#|itype|Encoder Action|Stack Action
+|8|Indirect call|Update <<field_I-CNT,I-CNT>> field. Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0.|Push
+|9|Direct call|Only update <<field_I-CNT,I-CNT>> field.|Push
+|10|Indirect jump (without linkage)|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0. +
+<<same_handling,Same handing>> as *itype=14*.|-
+|11|Direct jump (without linkage)|Only update <<field_I-CNT,I-CNT>> field. +
+<<same_handling,Same handing>> as *itype=15*.|-
+|12|Co-routine swap|Update <<field_I-CNT,I-CNT>> field. +
+If Pop does not returns the same address as PC at next valid ingress port cycle, emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0.|Pop,Push
+|13|Return|Update <<field_I-CNT,I-CNT>> field. +
+If Pop does not returns the same address as PC at next valid ingress port cycle, emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0.
+|Pop
+|14|Other indirect jump (with linkage)|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0. +
+<<same_handling,Same handing>> as *itype=10*.|-
+|15|Other direct jump (with linkage)|Only update <<field_I-CNT,I-CNT>> field. +
+<<same_handling,Same handing>> as *itype=11*.|-
+|======================================================================================================'''
+zh = '''
+[#Handling of 4-bit itype values]
+.4 位 itype 值的处理
+[cols="5%,20%,63%,12%",options="header"]
+|======================================================================================================
+|#|itype|编码器动作|栈动作
+|8|间接调用|更新 <<field_I-CNT,I-CNT>> 字段。发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。|压栈
+|9|直接调用|仅更新 <<field_I-CNT,I-CNT>> 字段。|压栈
+|10|间接跳转（不带链接）|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。 +
+与 *itype=14* 的 <<same_handling,Same handing>> 相同。|-
+|11|直接跳转（不带链接）|仅更新 <<field_I-CNT,I-CNT>> 字段。 +
+与 *itype=15* 的 <<same_handling,Same handing>> 相同。|-
+|12|协程交换|更新 <<field_I-CNT,I-CNT>> 字段。 +
+如果出栈返回的地址与下一个有效入口端口周期时的 PC 不相同，则发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。|出栈,压栈
+|13|返回|更新 <<field_I-CNT,I-CNT>> 字段。 +
+如果出栈返回的地址与下一个有效入口端口周期时的 PC 不相同，则发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。
+|出栈
+|14|其他间接跳转（带链接）|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。 +
+与 *itype=10* 的 <<same_handling,Same handing>> 相同。|-
+|15|其他直接跳转（带链接）|仅更新 <<field_I-CNT,I-CNT>> 字段。 +
+与 *itype=11* 的 <<same_handling,Same handing>> 相同。|-
+|======================================================================================================'''

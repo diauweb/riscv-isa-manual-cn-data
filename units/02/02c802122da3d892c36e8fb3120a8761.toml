@@ -1,0 +1,10 @@
+unit_id = "02c802122da3d892c36e8fb3120a8761"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* When *trTsEnable* in the _trTsControl_ register is 1, a timestamp may be optionally included, via the *timestamp* field in the encapsulated packets.  When present, *header.extend* will be 1 as described in <<_section_Timestamp>>;
+* *trTsWidth* in the _trTsControl_ register indicates the number of bits in *timestamp* fields.'''
+zh = '''
+* 当 _trTsControl_ 寄存器中的 *trTsEnable* 为 1 时，可以通过封装数据包中的 *timestamp* 字段可选地包含时间戳。包含时，*header.extend* 将为 1，如 <<_section_Timestamp>> 所述；
+* _trTsControl_ 寄存器中的 *trTsWidth* 指示 *timestamp* 字段的位数。'''

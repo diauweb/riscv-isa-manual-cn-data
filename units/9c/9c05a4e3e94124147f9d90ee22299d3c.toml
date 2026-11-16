@@ -1,0 +1,21 @@
+unit_id = "9c05a4e3e94124147f9d90ee22299d3c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:amo_misaligned_atomicity_granule]#The misaligned atomicity granule PMA, defined in Volume II of this manual,
+optionally relaxes this alignment requirement.
+If present, the misaligned atomicity granule PMA specifies the size
+of a misaligned atomicity granule, a power-of-two number of bytes.
+The misaligned atomicity granule PMA applies only to AMOs, loads and stores
+defined in the base ISAs, and loads and stores of no more than XLEN bits
+defined in the F, D, and Q extensions, and compressed encodings thereof.
+For an instruction in that set, if all accessed bytes lie within the same
+misaligned atomicity granule, the instruction will not raise an exception for
+reasons of address alignment, and the instruction will give rise to only one
+memory operation for the purposes of RVWMO--i.e., it will execute atomically.#'''
+zh = '''
+[#norm:amo_misaligned_atomicity_granule]#本手册第二卷中定义的非对齐原子性粒度 PMA 可选地放宽此对齐要求。
+如果存在，非对齐原子性粒度 PMA 指定非对齐原子性粒度的大小，该大小为 2 的幂个字节。
+非对齐原子性粒度 PMA 仅适用于 AMO、基础 ISA 中定义的加载和存储，以及 F、D 和 Q 扩展中定义的不超过 XLEN 位的加载和存储及其压缩编码。
+对于该集合中的指令，如果所有被访问的字节都位于同一个非对齐原子性粒度内，则该指令不会因地址对齐原因引发异常，并且就 RVWMO 而言，该指令只会产生一次内存操作——即，它将以原子方式执行。#'''

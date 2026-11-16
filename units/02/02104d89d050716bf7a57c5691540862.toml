@@ -1,0 +1,15 @@
+unit_id = "02104d89d050716bf7a57c5691540862"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtime_acc]#Platforms provide a real-time counter, exposed as a memory-mapped
+machine-mode read-write register, `mtime`.#
+[#norm:mtime_op]#`mtime` must increment at constant frequency#, and
+[#norm:mtime_tick_period]#the platform must provide a mechanism for
+determining the period of an `mtime` tick.#
+[#norm:mtime_wrap]#The `mtime` register will wrap around if the count overflows.#'''
+zh = '''
+[#norm:mtime_acc]#平台提供一个实时计数器，以内存映射的机器模式读写寄存器 `mtime` 的形式呈现。#
+[#norm:mtime_op]#`mtime` 必须以恒定频率递增#，并且 [#norm:mtime_tick_period]#平台必须提供一种机制来确定 `mtime` 一个滴答的周期。#
+[#norm:mtime_wrap]#如果计数溢出，`mtime` 寄存器将回绕。#'''

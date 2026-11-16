@@ -1,0 +1,15 @@
+unit_id = "e8fe127f60fb5e46aaf6b9aa5fd781dc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_xs_acc]#In harts without additional user extensions requiring new state, the
+csr::[xs] field is read-only zero.#
+[#norm:mstatus_xs_equiv]#Every additional extension with state
+provides a CSR field that encodes the equivalent of the csr::[xs] states.#
+[#norm:mstatus_xs_summary_op]#The csr::[xs] field represents a summary of all extensions' status as shown in
+<<norm:mstatus_fs_vs_xs_enc>>.#'''
+zh = '''
+[#norm:mstatus_xs_acc]#在不需要新状态的附加用户扩展的硬件线程中，csr::[xs] 字段为只读零。#
+[#norm:mstatus_xs_equiv]#每个具有状态的附加扩展都提供一个 CSR 字段，编码与 csr::[xs] 状态等效的信息。#
+[#norm:mstatus_xs_summary_op]#csr::[xs] 字段表示所有扩展状态的摘要，如 <<norm:mstatus_fs_vs_xs_enc>> 所示。#'''

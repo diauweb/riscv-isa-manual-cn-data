@@ -1,0 +1,14 @@
+unit_id = "f4a376d979edabc1cad17474224dd550"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: For RV32, the `pack` instruction with _rs2_=`x0` is the `zext.h`
+instruction.
+Hence, for RV32, any extension that contains the `pack` instruction also
+contains the `zext.h` instruction (but not necessarily the `c.zext.h`
+instruction, which is only guaranteed to exist if both the Zcb and Zbb
+extensions are implemented).'''
+zh = '''
+NOTE: 对于 RV32，_rs2_=`x0` 的 `pack` 指令就是 `zext.h` 指令。
+因此，对于 RV32，任何包含 `pack` 指令的扩展也包含 `zext.h` 指令（但不一定包含 `c.zext.h` 指令，只有在同时实现 Zcb 和 Zbb 扩展时才保证存在该指令）。'''

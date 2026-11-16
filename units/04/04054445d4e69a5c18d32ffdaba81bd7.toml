@@ -1,0 +1,14 @@
+unit_id = "04054445d4e69a5c18d32ffdaba81bd7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Usually when an exception or interrupt occurs, the cause is reported
+along with the 1st address of the trap handler, when that instruction
+retires. In this case, *thaddr* is 1. However, if a second interrupt or
+exception occurs immediately, details of this must still be reported,
+even though the 1st instruction of the handler hasn't retired. In this
+situation, *thaddr* is 0, and *address* is undefined (unless it contains
+the EPC as outlined in the previous paragraph).'''
+zh = '''
+通常当异常或中断发生时，会在陷阱处理程序的第一条指令退休时报告原因以及该地址。在这种情况下，*thaddr* 为 1。然而，如果紧接着又发生第二个中断或异常，则即使处理程序的第一条指令尚未退休，也必须报告其详细信息。在这种情况下，*thaddr* 为 0，且 *address* 未定义（除非按上一段所述包含 EPC）。'''

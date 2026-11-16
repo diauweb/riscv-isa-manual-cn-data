@@ -1,0 +1,37 @@
+unit_id = "13c5fa606098a21f3aaee3b8855c66b4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The primary intent of the ext:ziccid[] extension is to accelerate JIT
+compilation in multiprocessor systems.
+
+In straightforward implementations, maintaining coherence between instruction
+caches and the data-memory system suffices to satisfy this extension's
+eventuality property.
+The ext:ziccid[] extension can be viewed as a means to codify the concept of
+instruction-cache coherence.
+
+The in-order fetch property, expected by some JIT compilers, is also
+provided naturally by most straightforward microarchitectures.
+An example of a technique that might violate this property, however, is an
+instruction buffer that is populated out of program order, e.g., while fetching
+down the predicted path following an instruction-cache miss.
+Example solutions include buffering instructions only in program order, or
+keeping the buffer coherent by making the coherent instruction cache inclusive
+of the buffer.
+===='''
+zh = '''
+[NOTE]
+====
+ext:ziccid[] 扩展的主要意图是加速多处理器系统中的 JIT 编译。
+
+在直接的实现中，保持指令缓存与数据内存系统之间的一致性就足以满足该扩展的最终性（eventuality）属性。
+ext:ziccid[] 扩展可被视为对指令缓存一致性概念的规范化。
+
+某些 JIT 编译器所期望的按序取指属性，也由大多数直接的微架构自然提供。
+然而，可能违反该属性的一种技术示例是乱序填充的指令缓冲，例如在指令缓存缺失后沿预测路径取指时填充。
+示例解决方案包括仅按程序顺序缓冲指令，或者通过使一致性指令缓存包含该缓冲来保持缓冲一致。
+===='''

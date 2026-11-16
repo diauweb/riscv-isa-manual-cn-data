@@ -1,0 +1,138 @@
+unit_id = "688594c9d9637571a0ebe3bf4dcf12d1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[tdata1-type]] `((type))`
+a|
+
+0 (none): There is no trigger at this {csr-tselect}.
+
+
+1 (legacy): The trigger is a legacy SiFive address match trigger. These
+should not be implemented and aren't further documented here.
+
+
+2 (mcontrol): The trigger is an address/data match trigger. The remaining bits
+in this register act as described in {csr-mcontrol}.
+
+
+3 (icount): The trigger is an instruction count trigger. The remaining bits
+in this register act as described in {csr-icount}.
+
+
+4 (itrigger): The trigger is an interrupt trigger. The remaining bits
+in this register act as described in {csr-itrigger}.
+
+
+5 (etrigger): The trigger is an exception trigger. The remaining bits
+in this register act as described in {csr-etrigger}.
+
+
+6 (mcontrol6): The trigger is an address/data match trigger. The remaining bits
+in this register act as described in {csr-mcontrol6}. This is similar
+to a type 2 trigger, but provides additional functionality and
+should be used instead of type 2 in newer implementations.
+
+
+7 (tmexttrigger): The trigger is a trigger source external to the TM.  The
+remaining bits in this register act as described in {csr-tmexttrigger}.
+
+
+12--14 (custom): These trigger types are available for non-standard use.
+
+
+15 (disabled): This trigger is disabled. In this state, {csr-tdata2} and
+{csr-tdata3} can be written with any value that is supported for
+any of the types this trigger implements.
+The remaining bits in this register, except for {tdata1-dmode},
+are ignored.
+
+Other values are reserved for future use.
+a|*WARL*
+a|Preset
+|[[tdata1-dmode]] `((dmode))`
+a|If {tdata1-type} is 0, then this bit is hard-wired to 0.
+
+0 (both): Both Debug and M-mode can write the `tdata` registers at the
+selected {csr-tselect}.
+
+
+1 (dmode): Only Debug Mode can write the `tdata` registers at the
+selected {csr-tselect}.  Writes from other modes are ignored.
+
+This bit is only writable from Debug Mode.
+In ordinary use, external debuggers will always set this bit when
+configuring a trigger.
+When clearing this bit, debuggers should also set the action field
+(whose location depends on {tdata1-type}) to something other
+than 1.
+a|*WARL*
+a|0
+|[[tdata1-data]] `((data))`
+a|If {tdata1-type} is 0, then this field is hard-wired to 0.
+
+Trigger-specific data.
+a|*WARL*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[tdata1-type]] `((type))`
+a|
+
+0（none）：此 {csr-tselect} 处没有触发器。
+
+
+1（legacy）：触发器是旧式 SiFive 地址匹配触发器。这些不应被实现，此处不再进一步记录。
+
+
+2（mcontrol）：触发器是地址/数据匹配触发器。此寄存器中其余位按 {csr-mcontrol} 中所述行动。
+
+
+3（icount）：触发器是指令计数触发器。此寄存器中其余位按 {csr-icount} 中所述行动。
+
+
+4（itrigger）：触发器是中断触发器。此寄存器中其余位按 {csr-itrigger} 中所述行动。
+
+
+5（etrigger）：触发器是异常触发器。此寄存器中其余位按 {csr-etrigger} 中所述行动。
+
+
+6（mcontrol6）：触发器是地址/数据匹配触发器。此寄存器中其余位按 {csr-mcontrol6} 中所述行动。这类似于类型 2 触发器，但提供附加功能，在较新实现中应使用它代替类型 2。
+
+
+7（tmexttrigger）：触发器是 TM 外部的触发源。此寄存器中其余位按 {csr-tmexttrigger} 中所述行动。
+
+
+12--14（custom）：这些触发器类型可用于非标准用途。
+
+
+15（disabled）：此触发器被禁用。在此状态下，{csr-tdata2} 和 {csr-tdata3} 可写入此触发器实现的任何类型所支持的任何值。此寄存器中其余位（{tdata1-dmode} 除外）被忽略。
+
+其他值保留供将来使用。
+a|*WARL*
+a|预设
+|[[tdata1-dmode]] `((dmode))`
+a|如果 {tdata1-type} 为 0，则此位硬连线为 0。
+
+0（both）：调试模式和 M 模式都可以写入选中 {csr-tselect} 处的 `tdata` 寄存器。
+
+
+1（dmode）：只有调试模式可以写入选中 {csr-tselect} 处的 `tdata` 寄存器。来自其他模式的写入被忽略。
+
+此位只能从调试模式写入。在通常使用中，外部调试器在配置触发器时将始终设置此位。清除此位时，调试器还应将 action 字段（其位置取决于 {tdata1-type}）设置为 1 以外的值。
+a|*WARL*
+a|0
+|[[tdata1-data]] `((data))`
+a|如果 {tdata1-type} 为 0，则此字段硬连线为 0。
+
+触发器特定数据。
+a|*WARL*
+a|预设
+|==='''

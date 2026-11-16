@@ -1,0 +1,15 @@
+unit_id = "8bd36975a05e4398cc857c384ba2d46e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_lcofip_mie_lcofie_op]#If the ext:sscofpmf[] extension is implemented, bits csr:mip[lcofip] and
+csr:mie[lcofie] are the interrupt-pending and interrupt-enable bits for local-counter-overflow interrupts.#
+[#norm:mip_lcofip_acc]#csr::[lcofip] is read-write in csr:mip[]# and [#norm:mip_lcofip_reflects_overflow]#reflects the occurrence of a local
+counter-overflow overflow interrupt request resulting from any of the `mhpmevent__n__.OF` bits being set.#
+[#norm:mip_lcofip_mie_lcofie_rdonly0]#If the ext:sscofpmf[] extension is not implemented, csr:mip[lcofip] and csr:mie[lcofie] are
+read-only zeros.#'''
+zh = '''
+[#norm:mip_lcofip_mie_lcofie_op]#如果实现了 ext:sscofpmf[] 扩展，则位 csr:mip[lcofip] 和 csr:mie[lcofie] 是本地计数器溢出中断的中断挂起位和中断使能位。#
+[#norm:mip_lcofip_acc]#csr::[lcofip] 在 csr:mip[] 中可读写#，并且 [#norm:mip_lcofip_reflects_overflow]#反映由任何 `mhpmevent__n__.OF` 位被置位而产生的本地计数器溢出中断请求。#
+[#norm:mip_lcofip_mie_lcofie_rdonly0]#如果未实现 ext:sscofpmf[] 扩展，则 csr:mip[lcofip] 和 csr:mie[lcofie] 为只读零。#'''

@@ -1,0 +1,13 @@
+unit_id = "043a05137609778fb790e9ddd23a837b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Plain unconditional indirect jumps (assembler pseudoinstruction insn:jr[]) are
+encoded as a insn:jalr[] with _rd_=`x0`.
+Procedure returns in the standard calling convention (assembler
+pseudoinstruction insn:ret[]) are encoded as a insn:jalr[] with _rd_=`x0`, _rs1_=`x1`, and
+_imm_=0.'''
+zh = '''
+纯无条件间接跳转（汇编伪指令 insn:jr[]）编码为 _rd_=`x0` 的 insn:jalr[]。
+标准调用约定中的过程返回（汇编伪指令 insn:ret[]）编码为 _rd_=`x0`、_rs1_=`x1`、_imm_=0 的 insn:jalr[]。'''

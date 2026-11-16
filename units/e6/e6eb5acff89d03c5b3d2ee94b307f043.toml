@@ -1,0 +1,14 @@
+unit_id = "e6eb5acff89d03c5b3d2ee94b307f043"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mnstatus_mnpp_op]#The `mnstatus` CSR holds a two-bit field, MNPP, which on entry to the
+RNMI trap handler holds the privilege mode of the interrupted context,
+encoded in the same manner as `mstatus`.MPP.# [#norm:mnstatus_mnpv_op]#If the H extension is also
+implemented, `mnstatus` also holds a one-bit
+field, MNPV, which on entry to the RNMI trap handler holds the virtualization
+mode of the interrupted context, encoded in the same manner as
+`mstatus`.MPV.#'''
+zh = '''
+[#norm:mnstatus_mnpp_op]#`mnstatus` CSR 包含一个两位字段 MNPP，在进入 RNMI 陷阱处理程序时，该字段保存被中断上下文的特权模式，其编码方式与 `mstatus`.MPP 相同。# [#norm:mnstatus_mnpv_op]#如果还实现了 H 扩展，`mnstatus` 还包含一个一位字段 MNPV，在进入 RNMI 陷阱处理程序时，该字段保存被中断上下文的虚拟化模式，其编码方式与 `mstatus`.MPV 相同。#'''

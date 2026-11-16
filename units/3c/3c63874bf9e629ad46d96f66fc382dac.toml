@@ -1,0 +1,15 @@
+unit_id = "3c63874bf9e629ad46d96f66fc382dac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If both the quotient and remainder are required from the same division, the
+recommended code sequence is insn:div[rdq,rs1,rs2] followed by rem[rdr,rs1,rs2].
+insn:divu[] and insn:remu[] can also be used if appropriate. Note that `rdq` can
+not be the same as `rs1` or `rs2`.
+Microarchitectures can then fuse these into a single divide operation instead of
+performing two separate divides.'''
+zh = '''
+如果同一次除法既需要商又需要余数，推荐的代码序列为 insn:div[rdq,rs1,rs2] 后跟 rem[rdr,rs1,rs2]。
+在适当情况下也可以使用 insn:divu[] 和 insn:remu[]。注意 `rdq` 不能与 `rs1` 或 `rs2` 相同。
+微架构随后可将这些指令融合为单次除法操作，而不是执行两次独立的除法。'''

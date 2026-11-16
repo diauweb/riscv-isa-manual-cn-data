@@ -1,0 +1,502 @@
+unit_id = "85eb5142b239ee8a5ef869541d403c0c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[.monocell]
+.Currently allocated RISC-V machine-level CSR addresses.
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Machine Information Registers
+
+|`0xF11` +
+`0xF12` +
+`0xF13` +
+`0xF14` +
+`0xF15`
+|MRO +
+MRO +
+MRO +
+MRO +
+MRO
+|`mvendorid` +
+`marchid` +
+`mimpid` +
+`mhartid` +
+`mconfigptr`
+|Vendor ID. +
+Architecture ID. +
+Implementation ID. +
+Hardware thread ID. +
+Pointer to configuration data structure.
+
+4+^|Machine Trap Setup
+
+|`0x300` +
+`0x301` +
+`0x302` +
+`0x303` +
+`0x304` +
+`0x305` +
+`0x306` +
+`0x310` +
+`0x312`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mstatus` +
+`misa` +
+`medeleg` +
+`mideleg` +
+`mie` +
+`mtvec` +
+`mcounteren` +
+`mstatush` +
+`medelegh`
+|Machine status register. +
+ISA and extensions +
+Machine exception delegation register. +
+Machine interrupt delegation register. +
+Machine interrupt-enable register. +
+Machine trap-handler base address. +
+Machine counter enable. +
+Additional machine status register, RV32 only. +
+Upper 32 bits of `medeleg`, RV32 only.
+
+4+^|Machine Counter Configuration
+
+|`0x321` +
+`0x322` +
+`0x721` +
+`0x722`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mcyclecfg` +
+`minstretcfg` +
+`mcyclecfgh` +
+`minstretcfgh`
+|Machine cycle counter configuration register. +
+Machine instret counter configuration register. +
+Upper 32 bits of `mcyclecfg`, RV32 only. +
+Upper 32 bits of `minstretcfg`, RV32 only.
+
+4+^|Machine Trap Handling
+
+|`0x340` +
+`0x341` +
+`0x342` +
+`0x343` +
+`0x344` +
+`0x34A` +
+`0x34B`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mscratch` +
+`mepc` +
+`mcause` +
+`mtval` +
+`mip` +
+`mtinst` +
+`mtval2`
+|Machine scratch register. +
+Machine exception program counter. +
+Machine trap cause. +
+Machine trap value. +
+Machine interrupt pending. +
+Machine trap instruction (transformed). +
+Machine second trap value.
+
+4+^|Machine Indirect
+
+|`0x350` +
+`0x351` +
+`0x352` +
+`0x353` +
+`0x355` +
+`0x356` +
+`0x357`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`miselect` +
+`mireg` +
+`mireg2` +
+`mireg3` +
+`mireg4` +
+`mireg5` +
+`mireg6`
+|Machine indirect register select. +
+Machine indirect register alias. +
+Machine indirect register alias 2. +
+Machine indirect register alias 3. +
+Machine indirect register alias 4. +
+Machine indirect register alias 5. +
+Machine indirect register alias 6.
+
+4+^|Machine Configuration
+
+|`0x30A` +
+`0x31A` +
+`0x747` +
+`0x757`
+|MRW +
+MRW +
+MRW +
+MRW
+|`menvcfg` +
+`menvcfgh` +
+`mseccfg` +
+`mseccfgh`
+|Machine environment configuration register. +
+Upper 32 bits of `menvcfg`, RV32 only. +
+Machine security configuration register. +
+Upper 32 bits of `mseccfg`, RV32 only.
+
+4+^|Machine Memory Protection
+
+|`0x3A0` +
+`0x3A1` +
+`0x3A2` +
+`0x3A3` +
+&#160; +
+`0x3AE` +
+`0x3AF` +
+`0x3B0` +
+`0x3B1` +
+&#160; +
+`0x3EF`
+|MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW
+|`pmpcfg0` +
+`pmpcfg1` +
+`pmpcfg2` +
+`pmpcfg3` +
+&#8943; +
+`pmpcfg14` +
+`pmpcfg15` +
+`pmpaddr0` +
+`pmpaddr1` +
+&#8943; +
+`pmpaddr63`
+|Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+&#160; +
+Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+Physical memory protection address register. +
+Physical memory protection address register. +
+&#160; +
+Physical memory protection address register.
+
+4+^|Machine State Enable Registers
+|`0x30C` +
+ `0x30D` +
+ `0x30E` +
+ `0x30F` +
+ `0x31C` +
+ `0x31D` +
+ `0x31E` +
+ `0x31F`
+|MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW
+|`mstateen0`  +
+ `mstateen1`  +
+ `mstateen2`  +
+ `mstateen3`  +
+ `mstateen0h` +
+ `mstateen1h` +
+ `mstateen2h` +
+ `mstateen3h`
+|Machine State Enable 0 Register. +
+ Machine State Enable 1 Register. +
+ Machine State Enable 2 Register. +
+ Machine State Enable 3 Register. +
+ Upper 32 bits of Machine State Enable 0 Register, RV32 only. +
+ Upper 32 bits of Machine State Enable 1 Register, RV32 only. +
+ Upper 32 bits of Machine State Enable 2 Register, RV32 only. +
+ Upper 32 bits of Machine State Enable 3 Register, RV32 only.
+|==='''
+zh = '''
+[.monocell]
+.目前已分配的 RISC-V 机器级 CSR 地址。
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |特权 |名称 |描述
+4+^|机器信息寄存器
+
+|`0xF11` +
+`0xF12` +
+`0xF13` +
+`0xF14` +
+`0xF15`
+|MRO +
+MRO +
+MRO +
+MRO +
+MRO
+|`mvendorid` +
+`marchid` +
+`mimpid` +
+`mhartid` +
+`mconfigptr`
+|厂商 ID。 +
+架构 ID。 +
+实现 ID。 +
+硬件线程 ID。 +
+配置数据结构指针。
+
+4+^|机器陷阱设置
+
+|`0x300` +
+`0x301` +
+`0x302` +
+`0x303` +
+`0x304` +
+`0x305` +
+`0x306` +
+`0x310` +
+`0x312`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mstatus` +
+`misa` +
+`medeleg` +
+`mideleg` +
+`mie` +
+`mtvec` +
+`mcounteren` +
+`mstatush` +
+`medelegh`
+|机器状态寄存器。 +
+ISA 与扩展 +
+机器异常委托寄存器。 +
+机器中断委托寄存器。 +
+机器中断使能寄存器。 +
+机器陷阱处理程序基地址。 +
+机器计数器使能。 +
+附加机器状态寄存器，仅 RV32。 +
+`medeleg` 的高 32 位，仅 RV32。
+
+4+^|机器计数器配置
+
+|`0x321` +
+`0x322` +
+`0x721` +
+`0x722`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mcyclecfg` +
+`minstretcfg` +
+`mcyclecfgh` +
+`minstretcfgh`
+|机器周期计数器配置寄存器。 +
+机器已退休指令计数器配置寄存器。 +
+`mcyclecfg` 的高 32 位，仅 RV32。 +
+`minstretcfg` 的高 32 位，仅 RV32。
+
+4+^|机器陷阱处理
+
+|`0x340` +
+`0x341` +
+`0x342` +
+`0x343` +
+`0x344` +
+`0x34A` +
+`0x34B`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mscratch` +
+`mepc` +
+`mcause` +
+`mtval` +
+`mip` +
+`mtinst` +
+`mtval2`
+|机器暂存寄存器。 +
+机器异常程序计数器。 +
+机器陷阱原因。 +
+机器陷阱值。 +
+机器中断挂起。 +
+机器陷阱指令（已转换）。 +
+机器第二陷阱值。
+
+4+^|机器间接
+
+|`0x350` +
+`0x351` +
+`0x352` +
+`0x353` +
+`0x355` +
+`0x356` +
+`0x357`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`miselect` +
+`mireg` +
+`mireg2` +
+`mireg3` +
+`mireg4` +
+`mireg5` +
+`mireg6`
+|机器间接寄存器选择。 +
+机器间接寄存器别名。 +
+机器间接寄存器别名 2。 +
+机器间接寄存器别名 3。 +
+机器间接寄存器别名 4。 +
+机器间接寄存器别名 5。 +
+机器间接寄存器别名 6。
+
+4+^|机器配置
+
+|`0x30A` +
+`0x31A` +
+`0x747` +
+`0x757`
+|MRW +
+MRW +
+MRW +
+MRW
+|`menvcfg` +
+`menvcfgh` +
+`mseccfg` +
+`mseccfgh`
+|机器环境配置寄存器。 +
+`menvcfg` 的高 32 位，仅 RV32。 +
+机器安全配置寄存器。 +
+`mseccfg` 的高 32 位，仅 RV32。
+
+4+^|机器内存保护
+
+|`0x3A0` +
+`0x3A1` +
+`0x3A2` +
+`0x3A3` +
+&#160; +
+`0x3AE` +
+`0x3AF` +
+`0x3B0` +
+`0x3B1` +
+&#160; +
+`0x3EF`
+|MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW
+|`pmpcfg0` +
+`pmpcfg1` +
+`pmpcfg2` +
+`pmpcfg3` +
+&#8943; +
+`pmpcfg14` +
+`pmpcfg15` +
+`pmpaddr0` +
+`pmpaddr1` +
+&#8943; +
+`pmpaddr63`
+|物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+&#160; +
+物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+物理内存保护地址寄存器。 +
+物理内存保护地址寄存器。 +
+&#160; +
+物理内存保护地址寄存器。
+
+4+^|机器状态使能寄存器
+|`0x30C` +
+ `0x30D` +
+ `0x30E` +
+ `0x30F` +
+ `0x31C` +
+ `0x31D` +
+ `0x31E` +
+ `0x31F`
+|MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW
+|`mstateen0`  +
+ `mstateen1`  +
+ `mstateen2`  +
+ `mstateen3`  +
+ `mstateen0h` +
+ `mstateen1h` +
+ `mstateen2h` +
+ `mstateen3h`
+|机器状态使能 0 寄存器。 +
+ 机器状态使能 1 寄存器。 +
+ 机器状态使能 2 寄存器。 +
+ 机器状态使能 3 寄存器。 +
+ 机器状态使能 0 寄存器的高 32 位，仅 RV32。 +
+ 机器状态使能 1 寄存器的高 32 位，仅 RV32。 +
+ 机器状态使能 2 寄存器的高 32 位，仅 RV32。 +
+ 机器状态使能 3 寄存器的高 32 位，仅 RV32。
+|==='''

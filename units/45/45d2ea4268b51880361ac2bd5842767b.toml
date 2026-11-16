@@ -1,0 +1,13 @@
+unit_id = "45d2ea4268b51880361ac2bd5842767b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some fences and/or memory ordering annotations in code written for RVWMO
+may become redundant under RVTSO; the cost that the default of RVWMO
+imposes on Ztso implementations is the incremental overhead of fetching
+those fences (e.g., FENCE R,RW and FENCE RW,W) which become no-ops on
+that implementation. However, these fences must remain present in the
+code if compatibility with non-Ztso implementations is desired.'''
+zh = '''
+为 RVWMO 编写的代码中的某些 fence 和/或内存排序注解在 RVTSO 下可能变得冗余；RVWMO 默认值对 Ztso 实现施加的成本是取指这些 fence（例如 FENCE R,RW 和 FENCE RW,W）的增量开销，这些 fence 在该实现上变为空操作。然而，如果希望与非 Ztso 实现兼容，这些 fence 必须保留在代码中。'''

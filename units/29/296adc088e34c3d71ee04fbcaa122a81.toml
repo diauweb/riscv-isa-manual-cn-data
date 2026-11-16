@@ -1,0 +1,13 @@
+unit_id = "296adc088e34c3d71ee04fbcaa122a81"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To support implementations where (XLEN-PMLEN) can be less than the GPA width
+supported by `hgatp.MODE`, hypervisors should execute an `HFENCE.GVMA` with
+_rs1_=`x0` if either `henvcfg.PMM` or `hstatus.HUPMM` is changed from or to a
+value where (XLEN-PMLEN) is less than GPA width supported by the `hgatp`
+translation mode of that guest.
+Specifically, these cases are:'''
+zh = '''
+为了支持 (XLEN-PMLEN) 可能小于 `hgatp.MODE` 所支持 GPA 宽度的实现，如果 `henvcfg.PMM` 或 `hstatus.HUPMM` 中任一个被改为或改自一个值，而该值使得 (XLEN-PMLEN) 小于该客户的 `hgatp` 翻译模式所支持的 GPA 宽度，则虚拟机监控器应执行 _rs1_=`x0` 的 `HFENCE.GVMA`。具体而言，这些情况是：'''

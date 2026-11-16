@@ -1,0 +1,8 @@
+unit_id = "654320cada340b68c800bf4a5f2f82e0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In a system with Funnels, typically all the Funnels are built with a Timestamp Unit. The top-level Funnel is the source of the timestamp (Internal System or External) and all the Encoders and other Funnels have a Shared timestamp. This assures that all timestamps in the system are the same and trace from different harts may be time-correlated. To perform the forwarding function, the mid-level Funnels must be programmed with `trFunnelActive` = 1 (which is natural as all trace messages must pass through that funnel).'''
+zh = '''
+在具有漏斗的系统中，通常所有漏斗都内置时间戳单元。顶层漏斗是时间戳的源（内部系统或外部），所有编码器和其他漏斗具有共享时间戳。这确保系统中的所有时间戳相同，并且来自不同硬件线程的跟踪可以进行时间关联。要执行转发功能，中间层漏斗必须编程为 `trFunnelActive` = 1（这是自然的，因为所有跟踪消息必须经过该漏斗）。'''

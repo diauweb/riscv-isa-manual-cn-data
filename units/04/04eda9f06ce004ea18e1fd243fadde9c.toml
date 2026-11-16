@@ -1,0 +1,15 @@
+unit_id = "04eda9f06ce004ea18e1fd243fadde9c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the ext:zfh[] or ext:zvfh[] extension is implemented, insn:fli.h[] performs the
+analogous operation, but loads a half-precision floating-point value
+into register _rd_. Note that entry 1 (corresponding to the minimum
+positive normal value) has a numerically different value for
+half-precision. Furthermore, since 2^16^ is not
+representable in half-precision floating-point, entry 29 in the table
+instead loads positive infinity—i.e., it is redundant with entry 30.
+insn:fli.h[] is encoded like insn:fli.s[], but with _fmt_=H.'''
+zh = '''
+如果实现了 ext:zfh[] 或 ext:zvfh[] 扩展，insn:fli.h[] 执行类似的操作，但将半精度浮点值加载到寄存器 _rd_ 中。注意，条目 1（对应于最小正规格化值）在半精度下的数值不同。此外，由于 2^16^ 在半精度浮点中无法表示，表中的条目 29 改为加载正无穷大——即它与条目 30 冗余。insn:fli.h[] 的编码与 insn:fli.s[] 类似，但 _fmt_=H。'''

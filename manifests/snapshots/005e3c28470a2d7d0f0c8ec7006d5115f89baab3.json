@@ -1,0 +1,3202 @@
+{
+  "sha": "005e3c28470a2d7d0f0c8ec7006d5115f89baab3",
+  "parent_sha": "e3de516d031900cfef94ece1a45e5badae8b22c2",
+  "is_baseline": false,
+  "date": "2026-05-08T16:21:09-07:00",
+  "title": "Zv, vector-common: Use macros (#3052)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-005e3c2-2026-05-08",
+    "riscv-isa-release-e3de516-2026-05-08"
+  ],
+  "diff": {
+    "added": 7,
+    "modified": 322,
+    "moved": 42,
+    "deleted": 7,
+    "touched_chapters": [
+      "unpriv/vector"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector",
+      "slot": 2,
+      "unit_id": "f0cb762e3f1867703e6033d29d588a11",
+      "status": "modified",
+      "prev_unit_id": "4e61a62d3a5c1ebca884fb39ddf8cdb6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector",
+      "slot": 3,
+      "unit_id": "70b5ed767e74b62473fc1c9f5425aff1",
+      "status": "modified",
+      "prev_unit_id": "d72d8019ab59044a4e70323393cb904a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_base_vector_architecture",
+      "slot": 1,
+      "unit_id": "2d5206fcbca0ddf84c70ee4813437f78",
+      "status": "modified",
+      "prev_unit_id": "05cac766439518dd15d19d2d5d7a383d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_implementation_defined_constant_parameters",
+      "slot": 2,
+      "unit_id": "c0ef2e181e60b6cd3a955ab1cecc507e",
+      "status": "modified",
+      "prev_unit_id": "bf358a674027d0dc9c4e3aa7c65522bb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_implementation_defined_constant_parameters",
+      "slot": 3,
+      "unit_id": "3d5c50332102280fb811de3110f71d74",
+      "status": "modified",
+      "prev_unit_id": "b8449db5dd8811cb2efa405545b5e54c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_extension_programmers_model",
+      "slot": 0,
+      "unit_id": "f480a63bd8caf8267aa8f42af59b1f69",
+      "status": "modified",
+      "prev_unit_id": "9a52b6fb107ff1b38759ac638a1ac4b7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_extension_programmers_model",
+      "slot": 1,
+      "unit_id": "12099382f0daab21bf619125b35ffb4d",
+      "status": "modified",
+      "prev_unit_id": "b2bc5f7fe0de470e856ca6d7793ddcc3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_extension_programmers_model",
+      "slot": 2,
+      "unit_id": "aa0edcbd0024ec2e84fb3be43679e1a2",
+      "status": "modified",
+      "prev_unit_id": "b21e95cda5be2201077183e31c352a3a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": "heading",
+      "unit_id": "d8ac6c3ad0dddd9f357727557c0663a2",
+      "status": "modified",
+      "prev_unit_id": "3c585b00c09f618cd2d4727e26c10e1a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 0,
+      "unit_id": "de5fb98853f785f0f06b2b683a6acef4",
+      "status": "modified",
+      "prev_unit_id": "06017ad82ba320bd9595b991061b016d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 1,
+      "unit_id": "4d17764149744689718ebf1bac56d7bb",
+      "status": "modified",
+      "prev_unit_id": "8f2016005636f9f869833a2307388811"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 2,
+      "unit_id": "9c975208b02e5099ca8db7a87107eb65",
+      "status": "modified",
+      "prev_unit_id": "962656297a220561310cf92a7861d3dd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 3,
+      "unit_id": "3d3a9c4c6c96ef4689b6015a438414f2",
+      "status": "modified",
+      "prev_unit_id": "4661c7a50650c02349cab9482c714475"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 4,
+      "unit_id": "6afc2552b731ae9fc2fe998c2a4a2c0a",
+      "status": "modified",
+      "prev_unit_id": "0437ae0aec11ed0eafb7bacaed6ad07c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 5,
+      "unit_id": "d3a16109b8aff17fd8b6ce8ac9e8e549",
+      "status": "modified",
+      "prev_unit_id": "1ecb5336e2fd4e7f182f7aaf00961f97"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrmstatus",
+      "slot": 6,
+      "unit_id": "a0d62bc0818079452201316b60ebf581",
+      "status": "modified",
+      "prev_unit_id": "ec4a010e4e250bfc60baf31bf8287868"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": "heading",
+      "unit_id": "eac3d530d09014d67e05f72ac4de4469",
+      "status": "modified",
+      "prev_unit_id": "d4f0078627c8ce7c99c15a51b593d704"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 0,
+      "unit_id": "da109fdebc621f254995db56267e517a",
+      "status": "modified",
+      "prev_unit_id": "e7e4190e0b12596030d4267975704cd6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 1,
+      "unit_id": "8407b513e5ef916f1e9f05451f0adb39",
+      "status": "modified",
+      "prev_unit_id": "530cc378b6eeb6ddefd8cff2dbd636a4"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 2,
+      "unit_id": "326a165402a470808ae3614dec244853",
+      "status": "modified",
+      "prev_unit_id": "432fb96d70337e60557324498df91666"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 3,
+      "unit_id": "a59f2f25e3bf9d074185b51e38de3d4c",
+      "status": "modified",
+      "prev_unit_id": "11b1e36111ca119bc00e58dcd96cc1cd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 4,
+      "unit_id": "6afc2552b731ae9fc2fe998c2a4a2c0a",
+      "status": "modified",
+      "prev_unit_id": "0437ae0aec11ed0eafb7bacaed6ad07c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_context_status_in_csrvsstatus",
+      "slot": 5,
+      "unit_id": "3eee54eabe08b9d6a1d0e142d23899df",
+      "status": "modified",
+      "prev_unit_id": "b12266ae2afc3602e13ec1a08e0cd4c4"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": "heading",
+      "unit_id": "eed6a17eb05d9f30085106e76b69e7d4",
+      "status": "modified",
+      "prev_unit_id": "8d4d28355dd947790a3a1f99177faee2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 0,
+      "unit_id": "5b5203497d7e7b05d7d60b2feeab072e",
+      "status": "modified",
+      "prev_unit_id": "112aeabe3899466bc4fd1bad66e21944"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 1,
+      "unit_id": "6c5facb587d71d757640d2c7486901be",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 2,
+      "unit_id": "faf7a3bfbda1e04e53ee9c5b05ad5c23",
+      "status": "modified",
+      "prev_unit_id": "b5ea70337f77d1e0212de7f44f231c15"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 3,
+      "unit_id": "788a8831a165baa7920daa81ed43dfd8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_vtype_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 4,
+      "unit_id": "b3fb480b4a4e6f49a8399b103f109be9",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_vtype_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 5,
+      "unit_id": "77504b4b3de44075526727e4267324c1",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_vtype_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 6,
+      "unit_id": "96d5e66182ec93c8903a15eafcc9009e",
+      "status": "modified",
+      "prev_unit_id": "6813c4276bfae4f40f790cdeb3cff8f0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 7,
+      "unit_id": "f253060a89b1551ba8327ece43a1aee3",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_vtype_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_csrvtype_register",
+      "slot": 8,
+      "unit_id": "2c4f375babe9f082c76048a17deb7853",
+      "status": "modified",
+      "prev_unit_id": "fb3e8df58f56300679fd48303f284c5b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": "heading",
+      "unit_id": "612fb07fb52b29514c62f58a8e955d25",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 0,
+      "unit_id": "031abc710c1437a11eb9e3d8d9ad699d",
+      "status": "modified",
+      "prev_unit_id": "5e8b9a4712b1cc0dc8af1cb0b16ada56"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 1,
+      "unit_id": "f0b4567c2db06bf29d23b9bc02f61be2",
+      "status": "modified",
+      "prev_unit_id": "96318398bb3d54e8d81c448df2dc3220"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 2,
+      "unit_id": "df12568e749f32fa33324b9cd4eb6ed4",
+      "status": "modified",
+      "prev_unit_id": "162fe1de2fcaa3357946b1c66696507f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 3,
+      "unit_id": "4310c1b526c082433ad3c00c948c2383",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_selected_element_width_vsew20"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 4,
+      "unit_id": "87f6193af6878f1ab006827756989d6f",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_selected_element_width_vsew20"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_csrvsew",
+      "slot": 5,
+      "unit_id": "0883f91c06ad65fb98f04d158942143c",
+      "status": "modified",
+      "prev_unit_id": "6eb82577c3faa742a186dd65fe7d7867"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": "heading",
+      "unit_id": "85d1eaeedff81360a743521b68d28d31",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 0,
+      "unit_id": "181779e72bc99fa331b77222e118b220",
+      "status": "modified",
+      "prev_unit_id": "cc33787d5d6dbcfb4164a135d9b09af6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 7,
+      "unit_id": "141b8cd6b1cd8c2a3bebfc308518991c",
+      "status": "modified",
+      "prev_unit_id": "e74ce02e8d13b8586f79ce46a583d38b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 8,
+      "unit_id": "e5452a62cc599710bfb855255665832b",
+      "status": "modified",
+      "prev_unit_id": "97793bdd622afae98a558b221af14541"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 9,
+      "unit_id": "ce1c93a45572beb99c0a31b8b23b61b5",
+      "status": "modified",
+      "prev_unit_id": "2b90693f8fca4dc74abcbcae4c552210"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 10,
+      "unit_id": "4612b45c756550acf74cd9020f7bea72",
+      "status": "modified",
+      "prev_unit_id": "1888cd52264f736439795b0e4d5e4dcf"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "slot": 12,
+      "unit_id": "1cbc1380209e68007d2c6d8045628a31",
+      "status": "modified",
+      "prev_unit_id": "9546a4703a328d40dc27a300d5271a46"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": "heading",
+      "unit_id": "374ff0bc001c9121efb7336e82ee02a3",
+      "status": "modified",
+      "prev_unit_id": "4117e68cd70e15f59103f85877106520"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 2,
+      "unit_id": "596441a8e3e7d2026740fd96fb1888ee",
+      "status": "modified",
+      "prev_unit_id": "fd578c3ded73fa65d8148ce992014ae3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 3,
+      "unit_id": "c6ecaed37da2b7756e0fa34063d1fa60",
+      "status": "modified",
+      "prev_unit_id": "e5874bff18fabfab9c0e0e01d252be5a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 8,
+      "unit_id": "6f20ef9bb5fc11488de0a43a068aba2d",
+      "status": "modified",
+      "prev_unit_id": "ebd9e4c1c210588029d02b3faa4eafcb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 11,
+      "unit_id": "5113e6434a22c80b31f5a0d6b5ccf9ac",
+      "status": "modified",
+      "prev_unit_id": "41fec04ca1bd8b6fd37f740f6f70147b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 13,
+      "unit_id": "2a29d5a1318c7b316af4a770f6b401a3",
+      "status": "modified",
+      "prev_unit_id": "674bb0a8881fc002950718b5172186b3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-agnostic",
+      "slot": 15,
+      "unit_id": "a73c64faa766e9d670d1b3a0eccd3a7c",
+      "status": "modified",
+      "prev_unit_id": "1461e051c0719b02b660be3fcd4873ae"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": "heading",
+      "unit_id": "b06593029b242b4b1fe0023019d9a16e",
+      "status": "modified",
+      "prev_unit_id": "8c3339bfdf865f31e36a7cd0894a2758"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": 0,
+      "unit_id": "25f4836e2959f19268c174031d64eefc",
+      "status": "modified",
+      "prev_unit_id": "8a822b6d2ece8316b06e5af1a3fddd94"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": 1,
+      "unit_id": "d56163184332c88841cf21e8da2b8a3e",
+      "status": "modified",
+      "prev_unit_id": "74712ed31f7d50496605348d3dcb6f78"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": 2,
+      "unit_id": "1483bdc49ed21a2a5cab379f0e82ef6d",
+      "status": "modified",
+      "prev_unit_id": "371ba493d306b76ddf2659eee8336e84"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": 3,
+      "unit_id": "d97347a74d2ee3883e02711d0613a295",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_csrvill",
+      "slot": 4,
+      "unit_id": "19369f981c1e6991d4b0d77d144acbed",
+      "status": "modified",
+      "prev_unit_id": "c5654c228d01a63d994698d57c5cc65b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_csrvl_register",
+      "slot": "heading",
+      "unit_id": "12712f0d3aa54721c7972234680021ad",
+      "status": "modified",
+      "prev_unit_id": "441191525f9ec7880a1fe48d1a1e203e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_csrvl_register",
+      "slot": 0,
+      "unit_id": "6bb96689f7c475c4efebb5fc52c20f5c",
+      "status": "modified",
+      "prev_unit_id": "4ac55806856d921003247f369967473e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_csrvl_register",
+      "slot": 1,
+      "unit_id": "3a22a245d300c8634a88cdb86b8b4cb5",
+      "status": "modified",
+      "prev_unit_id": "5cab4eb76dead11a9915e904f9d69320"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_csrvl_register",
+      "slot": 2,
+      "unit_id": "a6f953ce51edcd89d7e98fc3573bd6f5",
+      "status": "modified",
+      "prev_unit_id": "a01a28bd21dff6ee20341ba8f137d8b5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_csrvlenb_register",
+      "slot": "heading",
+      "unit_id": "7450edc40dc58a5912a40c61af39302d",
+      "status": "modified",
+      "prev_unit_id": "f07b15efc21850286b83b50dda79c260"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_csrvlenb_register",
+      "slot": 0,
+      "unit_id": "c7447b6ea37ee83a1c88b6f915e3f65f",
+      "status": "modified",
+      "prev_unit_id": "4a20e3c1b2e040b111bf22ad3753be29"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_csrvlenb_register",
+      "slot": 1,
+      "unit_id": "4def04cd1ae45d58f0f89c4b0d0bca1b",
+      "status": "modified",
+      "prev_unit_id": "f2f54257d5091ae8d922834c3ca207df"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_csrvlenb_register",
+      "slot": 2,
+      "unit_id": "f0cd3bd07ab7f43d7c7f8a0c41422fb7",
+      "status": "modified",
+      "prev_unit_id": "f17bed794262f062ed1262b1bb168906"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": "heading",
+      "unit_id": "6f523b5b6f13a77c4f6e305361c06247",
+      "status": "modified",
+      "prev_unit_id": "152d44603d0fb83fb6523e59b859e3d4"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 0,
+      "unit_id": "33901065198785095eceedb6923e56a4",
+      "status": "modified",
+      "prev_unit_id": "1a92bc078a28bfbd7d318b821c5cd90f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 1,
+      "unit_id": "50dd8c2833d13e33ccbf9a9c766da1a0",
+      "status": "modified",
+      "prev_unit_id": "73824379ec1c3b486fd16c8996d0f5cd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 2,
+      "unit_id": "b1bd28d051f69101d60d9f3775164ae5",
+      "status": "modified",
+      "prev_unit_id": "f1240ee6bebd864ba18c54a2317580a0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 3,
+      "unit_id": "ebe10400db6d671e2612653ca11a8d06",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 4,
+      "unit_id": "cd08b54eb26bc979a57b598f6c9acfc7",
+      "status": "modified",
+      "prev_unit_id": "21913f0692f9113f4878f279d7ed37af"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 5,
+      "unit_id": "08e80e4417326387ab1bca2e2cedbe67",
+      "status": "modified",
+      "prev_unit_id": "10012ad2c4399494be9c8d4c821c77a2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 6,
+      "unit_id": "764780f415dec47ab275617432b6ddd0",
+      "status": "modified",
+      "prev_unit_id": "6690bad2cd133bbcd59c6d78d87f90d6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 7,
+      "unit_id": "b767b905807cf174ed618c5b20685082",
+      "status": "modified",
+      "prev_unit_id": "dfada0037f150737ac36973e133d8764"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 8,
+      "unit_id": "a1dde35cdf5cb0391e59b352538912f1",
+      "status": "modified",
+      "prev_unit_id": "0946a9fcd744ffbb55473c9ccabda3c5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 9,
+      "unit_id": "7849d85a4c31f46dfaffdce3efcf3f63",
+      "status": "modified",
+      "prev_unit_id": "495c971f5eee2ecec8e66d50a3a0d978"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 10,
+      "unit_id": "7842d9e4894afee8347eff38a417ec7f",
+      "status": "modified",
+      "prev_unit_id": "1022b53be7f7faa5668a3c45e80410f6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 11,
+      "unit_id": "d5352b83553bfab6c6b187873e4effad",
+      "status": "modified",
+      "prev_unit_id": "3589bf39ea5fadf1cedfb3352fea1e3a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 12,
+      "unit_id": "9822f2def1d66625d80f18625e31d33b",
+      "status": "modified",
+      "prev_unit_id": "686b781b46166ff766b41963e38457e9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_csrvstart_register",
+      "slot": 13,
+      "unit_id": "7263f1c309fdea2deb85cad367c1e97a",
+      "status": "modified",
+      "prev_unit_id": "f8dcb3e3fdbfad7395acc254fcf9dcbc"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": "heading",
+      "unit_id": "623c642bb887c9652dc4d405ca1f7603",
+      "status": "modified",
+      "prev_unit_id": "8066c2ce786503957cd53c298e5d93b6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 0,
+      "unit_id": "a6ecb9e177a06e367e6189b7dbe98d7e",
+      "status": "modified",
+      "prev_unit_id": "ae31981836b7d7996c376215e8359fae"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 1,
+      "unit_id": "f82ff0f04bf6187f591f987c74129b36",
+      "status": "modified",
+      "prev_unit_id": "01e46feb03d86e09e60b85590fa1951b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 2,
+      "unit_id": "748c91ebc4818059662c3bb5a15703d3",
+      "status": "modified",
+      "prev_unit_id": "22b1d9e2c708046e4345bd522f4933ab"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 3,
+      "unit_id": "495733cadbdfd7126d0b6d61c13a75c8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_vxrm_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 4,
+      "unit_id": "79f4b1636551ee16ebd7d38a0eb825cb",
+      "status": "modified",
+      "prev_unit_id": "f531ec920ec70227b71d2c783cbb3776"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 5,
+      "unit_id": "d466668f7837ce302674951db60ae829",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_vxrm_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 6,
+      "unit_id": "5411ae9b45a2dee8ae7b464c9127efee",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_vxrm_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_csrvxrm_register",
+      "slot": 7,
+      "unit_id": "307d93d7282aa926a82bc1edb688150f",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_vxrm_register"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_saturation_flag_csrvxsat",
+      "slot": "heading",
+      "unit_id": "33afe34fe317a160ef48cdae5d3ccba7",
+      "status": "modified",
+      "prev_unit_id": "be78b4feb82d4632396bc4696999e7c8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_saturation_flag_csrvxsat",
+      "slot": 0,
+      "unit_id": "e4ec3b66daa651285b8c821b3499e865",
+      "status": "modified",
+      "prev_unit_id": "694f24826e14f6eb385bd1319562417b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_saturation_flag_csrvxsat",
+      "slot": 1,
+      "unit_id": "cf3bf4f9116f7fbe4cf379275f0eed16",
+      "status": "modified",
+      "prev_unit_id": "79c3e6fb92da5f784fed24024761f79b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_csrvcsr_register",
+      "slot": "heading",
+      "unit_id": "1a80587aa9954162dd9c82ac1d23b0a9",
+      "status": "modified",
+      "prev_unit_id": "db141a1c19bead33a28c73e074437f3a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_csrvcsr_register",
+      "slot": 0,
+      "unit_id": "56d8f5549865c83428d6923640cf1bde",
+      "status": "modified",
+      "prev_unit_id": "f98d3ab24433d707fc492dc8af0c546c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_csrvcsr_register",
+      "slot": 1,
+      "unit_id": "6b7c9416ae4745d1579b8d8640d2d909",
+      "status": "modified",
+      "prev_unit_id": "915b45d532976a5ac3c304715c769097"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_state_of_vector_extension_at_reset",
+      "slot": 0,
+      "unit_id": "1269c20ab79479283cb268a56e6759a6",
+      "status": "modified",
+      "prev_unit_id": "ca4715a041fe2c3ed919a4be6871b4d3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_state_of_vector_extension_at_reset",
+      "slot": 1,
+      "unit_id": "2cc7c1bab8eb496d0565c7c36cf5d96b",
+      "status": "modified",
+      "prev_unit_id": "c6ffae0923de7768952baa3a95addc1e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_state_of_vector_extension_at_reset",
+      "slot": 2,
+      "unit_id": "a545a4cb284dc08cd4032992c272c3b6",
+      "status": "modified",
+      "prev_unit_id": "d7da5122e3c69921ccebabb505550cac"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_state_of_vector_extension_at_reset",
+      "slot": 3,
+      "unit_id": "d7a31dbc6892a5933420d7a719e41265",
+      "status": "modified",
+      "prev_unit_id": "e71891616a042de21ebb4d354b49e75f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mapping-mixed",
+      "slot": 0,
+      "unit_id": "912f06778f1e875ca6f6284420cef1ee",
+      "status": "modified",
+      "prev_unit_id": "b568ef524ba27c94b8433e640ccb03ea"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_scalar_operands",
+      "slot": 1,
+      "unit_id": "23f15d9e27e414670f0df34ea6880bb0",
+      "status": "modified",
+      "prev_unit_id": "7dcd6e65c346825f79e6e0fd7be9920c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_scalar_operands",
+      "slot": 2,
+      "unit_id": "903ef2d07c42d09eb8bd49eadc279869",
+      "status": "modified",
+      "prev_unit_id": "9124ff27f64e02b391cac11bd4c66cdd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vec-operands",
+      "slot": 0,
+      "unit_id": "d48a0b1f0b7690aa60183d91582fa323",
+      "status": "modified",
+      "prev_unit_id": "73abaf1e3617f739a8f41112291fe612"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vec-operands",
+      "slot": 6,
+      "unit_id": "870fabe1951dd2c34a37849e799ac0a6",
+      "status": "modified",
+      "prev_unit_id": "1e85c95e18b39b9f4d6458905ff43949"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vec-operands",
+      "slot": 10,
+      "unit_id": "dae853da5c997ea9408f92e33fef78ce",
+      "status": "modified",
+      "prev_unit_id": "2b9adfab77357a8e6d9db751ebbf13d5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_masking",
+      "slot": 0,
+      "unit_id": "9377a53615bd8eb78628aa30a69285fa",
+      "status": "modified",
+      "prev_unit_id": "12a680040a5b49b21160fe6c547fe793"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_masking",
+      "slot": 5,
+      "unit_id": "1ffeb4cd9a3e2ff13c5177c42c926c8a",
+      "status": "modified",
+      "prev_unit_id": "272bb23013d563b8ea6f31fdfda94ee4"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_masking",
+      "slot": 6,
+      "unit_id": "00cc970cbd52e03d095b03c2e8b7f49f",
+      "status": "modified",
+      "prev_unit_id": "ae9da1cd66e2a7cccc736e6382e0609f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-mask-encoding",
+      "slot": 0,
+      "unit_id": "244bfcd88796b3ffedc651de6fe05250",
+      "status": "modified",
+      "prev_unit_id": "3b81974364186073c45f7053126a80d9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-inactive-defs",
+      "slot": 1,
+      "unit_id": "27f73303bf8fd11492bda7862857a557",
+      "status": "modified",
+      "prev_unit_id": "19ca1bd6bc50142ee57063546a90b28c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-inactive-defs",
+      "slot": 3,
+      "unit_id": "1fdca85c6195b2cfa09ab7343bee6a1a",
+      "status": "modified",
+      "prev_unit_id": "c495c1d0dd101eef8a53a0551d6bf67d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-inactive-defs",
+      "slot": 4,
+      "unit_id": "90de693f0ac41c7a60f03c187697720d",
+      "status": "modified",
+      "prev_unit_id": "addf10383f3ab5d7d351b85d14111f27"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-inactive-defs",
+      "slot": 5,
+      "unit_id": "065ab65f6a2afe1113a2115c1a092b54",
+      "status": "modified",
+      "prev_unit_id": "0182ab90c1235a4b35e314fd2e62ab0c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-inactive-defs",
+      "slot": 6,
+      "unit_id": "75c0f72ea53dedc91c1b66ea70ef7e45",
+      "status": "modified",
+      "prev_unit_id": "21accddb5871966df598b1f67dfd83e7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-config",
+      "slot": "heading",
+      "unit_id": "964ca0a0fb98fb99df59773327234b8d",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-config",
+      "slot": 0,
+      "unit_id": "74c6d42e66fdb407c67166d51ad7a685",
+      "status": "modified",
+      "prev_unit_id": "53963abe813e388984081ac7db8aff5e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-config",
+      "slot": 1,
+      "unit_id": "be03bbb4a63b683e01b980c3e6b2c134",
+      "status": "modified",
+      "prev_unit_id": "bcf6e8e29481da199cad1c7b2c9ea609"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": "heading",
+      "unit_id": "1b9b646532c812b30c28695a2f9dea86",
+      "status": "modified",
+      "prev_unit_id": "0fa237611b42fe28b29de519dd4f849c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 0,
+      "unit_id": "e89a091b9a3ead98b3c8e97a62e04c12",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vtype_encoding"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 1,
+      "unit_id": "b3fb480b4a4e6f49a8399b103f109be9",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vtype_encoding"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 2,
+      "unit_id": "77504b4b3de44075526727e4267324c1",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vtype_encoding"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 3,
+      "unit_id": "57ba6ec5684caeccf9293276e33fd6e4",
+      "status": "modified",
+      "prev_unit_id": "3cd57a24db45b516fd217f6d90374c8e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 4,
+      "unit_id": "f2c412b0dd5ae5137d9af497b4e06752",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vtype_encoding"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_csrvtype_encoding",
+      "slot": 5,
+      "unit_id": "5599eea91519f2415cbc24f831142048",
+      "status": "modified",
+      "prev_unit_id": "0f3274a243adb12f794c21caaffd5e3e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": "heading",
+      "unit_id": "72ebbaedbe67eac7456561deb95ec3be",
+      "status": "modified",
+      "prev_unit_id": "340c2139cd7a0851853ac4c45f9e16a3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": 0,
+      "unit_id": "f344537de4071c1f7a7ae976221f1996",
+      "status": "modified",
+      "prev_unit_id": "ce5ec611da775e34142f20847659ac67"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": 1,
+      "unit_id": "523ffc45327c4a2b6a0f8deaf750cee0",
+      "status": "modified",
+      "prev_unit_id": "9d042fec61cc0f4f76a9dee29d9e4b93"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": 2,
+      "unit_id": "da0cd9507f53cba69156fc53dff00015",
+      "status": "modified",
+      "prev_unit_id": "fb06541e9f74037f9d4084cdd0f03cfa"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": 3,
+      "unit_id": "5c25e718bc1e4c88170bf1e45e9b5661",
+      "status": "modified",
+      "prev_unit_id": "5335b2eb7c43b8a8da6790b6a6c12148"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unsupported_csrvtype_values",
+      "slot": 4,
+      "unit_id": "227ae2758ad93bf7f4a505382ee709bf",
+      "status": "modified",
+      "prev_unit_id": "d9d998b0f22df67a072ade9dae820a64"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 0,
+      "unit_id": "d0bc009168c6e59e36bd3986ee736596",
+      "status": "modified",
+      "prev_unit_id": "c130f7c2588469fbd3df42d42e0cae07"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 1,
+      "unit_id": "fb0aa46c999dba86d9b408a7a77ebe9a",
+      "status": "modified",
+      "prev_unit_id": "93777047a42737d33d7fadc77f15a2c6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 2,
+      "unit_id": "967c07d82588e32d7c52102a302f4da9",
+      "status": "modified",
+      "prev_unit_id": "9999400562276a7eb5379f54eabef6a5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 4,
+      "unit_id": "50cacc11c53b94efa5aa51d24a32cd66",
+      "status": "modified",
+      "prev_unit_id": "59ec850cb285fa39cd2ab3f1b2593e18"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 5,
+      "unit_id": "a3340ea62cc8a7955ada0b0760194f81",
+      "status": "modified",
+      "prev_unit_id": "13cb517fb41e596b6311499c2536c2a0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 6,
+      "unit_id": "aa17cb2020eb564f83a9d5d7b9ba6d58",
+      "status": "modified",
+      "prev_unit_id": "6eaf72928eba2f53675e52f94c02619e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 7,
+      "unit_id": "ce7282ba7f80be2c8b4eeb970767a9fa",
+      "status": "modified",
+      "prev_unit_id": "2d22fc3eb5ffaad347654533463eecec"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_avl_encoding",
+      "slot": 8,
+      "unit_id": "8544e06b97356c613cb50a9fbc838ac1",
+      "status": "modified",
+      "prev_unit_id": "d894780907682bbff54fa9f5a5d7611a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "constraints-on-setting-vl",
+      "slot": "heading",
+      "unit_id": "811758bc5a7f564c0bd904970bb539fe",
+      "status": "modified",
+      "prev_unit_id": "b969cb14520db87102917dbf5104ad70"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "constraints-on-setting-vl",
+      "slot": 0,
+      "unit_id": "1bc05003749ebae6ed39811bf02e05ec",
+      "status": "modified",
+      "prev_unit_id": "f6e1628d1520c78981ba8b6b7ed786d8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "constraints-on-setting-vl",
+      "slot": 1,
+      "unit_id": "de2a195c58b1456aecda07b09d114e91",
+      "status": "modified",
+      "prev_unit_id": "6875790aa2f2246ee7af4b77db8bab16"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "constraints-on-setting-vl",
+      "slot": 2,
+      "unit_id": "3e500c45f70cc499cc43765c1de8e894",
+      "status": "modified",
+      "prev_unit_id": "99876597400e6978842b4c6d38c3ba51"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-memory",
+      "slot": 0,
+      "unit_id": "9e5b6098f3c23aedceab5a8ae53c6e59",
+      "status": "modified",
+      "prev_unit_id": "b7d8c91e3c4edef334e16c3b42e5a45b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-memory",
+      "slot": 1,
+      "unit_id": "e37401bf87ae7171a1e3ff706a1609e1",
+      "status": "modified",
+      "prev_unit_id": "5d32147fd78f500cd18e305c7213a91f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_loadstore_instruction_encoding",
+      "slot": 10,
+      "unit_id": "b6761936ea83e88aeec73e985217da57",
+      "status": "modified",
+      "prev_unit_id": "b4154f8ce37ea2270095669958041de9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_loadstore_addressing_modes",
+      "slot": 0,
+      "unit_id": "61c902af0ed922233a1c08007a5e0025",
+      "status": "modified",
+      "prev_unit_id": "9d8814fb23b7794463bc914de2d330c8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-loadstore-width-encoding",
+      "slot": 1,
+      "unit_id": "f4175ff7448800a2af4338dfd40c3f75",
+      "status": "modified",
+      "prev_unit_id": "980b44badcfc4ad54b48e2daac8f472b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_instructions",
+      "slot": 1,
+      "unit_id": "2d8d147bca69f096ef5e5349350907f4",
+      "status": "modified",
+      "prev_unit_id": "bc6c5db56249128e68235b65064b53a2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_instructions",
+      "slot": 3,
+      "unit_id": "622bf6c082364b12ccdc6501adb2344a",
+      "status": "modified",
+      "prev_unit_id": "e290ff055f6524b3f0e69c54ae58cb98"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_instructions",
+      "slot": 4,
+      "unit_id": "79ed7aa16c63bd762263242f89b55a69",
+      "status": "modified",
+      "prev_unit_id": "6f0d1823adfebbebc211a0dbd7792eac"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_instructions",
+      "slot": 5,
+      "unit_id": "437f27b1dfe0f23d4c15d7357fe96dbb",
+      "status": "modified",
+      "prev_unit_id": "1bdf5b8accfee76afc9f0d80a9e423a3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_instructions",
+      "slot": 6,
+      "unit_id": "7f36a04878c8d5cd5d888e54ab687d59",
+      "status": "modified",
+      "prev_unit_id": "e0bf624942cc1c89ff3645e32ca8e1d2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_constant_stride_instructions",
+      "slot": 3,
+      "unit_id": "419c86d060ad599cf643edba3566f9f5",
+      "status": "modified",
+      "prev_unit_id": "20632d05f4dc8f4a389ce67dfd8810a9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unit_stride_fault_only_first_loads",
+      "slot": 0,
+      "unit_id": "51ea60994835f0f82a0d052884d8ed8a",
+      "status": "modified",
+      "prev_unit_id": "6406a534e908003b2a861bd9ceb405a2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unit_stride_fault_only_first_loads",
+      "slot": 5,
+      "unit_id": "3587b327577dc105a6ffabb4e6c40d5e",
+      "status": "modified",
+      "prev_unit_id": "3e97aa2942c0a730bc578e3738894194"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unit_stride_fault_only_first_loads",
+      "slot": 6,
+      "unit_id": "64b652a2566b686d622938f3785317fb",
+      "status": "modified",
+      "prev_unit_id": "59baa2ad9fc6d44a8a177f658e81ac49"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_unit_stride_fault_only_first_loads",
+      "slot": 7,
+      "unit_id": "a9d078b5e257b9ba7eafb5a3218221a8",
+      "status": "modified",
+      "prev_unit_id": "3c3b66b605f426a92d398fbcaf9b6f5b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-aos",
+      "slot": 9,
+      "unit_id": "2655071c14c958e3644dad26bd942f31",
+      "status": "modified",
+      "prev_unit_id": "e2f23e7ae320543729be00b08bc6ac98"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-aos",
+      "slot": 11,
+      "unit_id": "02bf1350c613c1ead6b4d0d4961d3bf8",
+      "status": "modified",
+      "prev_unit_id": "613257915b4db854cf55027a808d1268"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_segment_loads_and_stores",
+      "slot": 4,
+      "unit_id": "acceb3d8aa32816ebd761bd522bcbee7",
+      "status": "modified",
+      "prev_unit_id": "dbd99efc7f1b684647f35f1c0c506191"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unit_stride_segment_loads_and_stores",
+      "slot": 8,
+      "unit_id": "55147a4d96db856c4da7287e2a1cbb8b",
+      "status": "modified",
+      "prev_unit_id": "3aa81257e51671b4732ed3c3519c0070"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_constant_stride_segment_loads_and_stores",
+      "slot": 0,
+      "unit_id": "dd485bcd6caf387b44670c7f7b80c6e9",
+      "status": "modified",
+      "prev_unit_id": "85d28a289e81bb1c0f57c6207c9f0f3c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_indexed_segment_loads_and_stores",
+      "slot": 0,
+      "unit_id": "2ce57a0d37f2e9fc75c42da3247c48de",
+      "status": "modified",
+      "prev_unit_id": "1f3dd4fd5872ff832ffa9fad8e96fdf8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_loadstore_whole_register_instructions",
+      "slot": 5,
+      "unit_id": "b0f4520cc5c3a2b53338e878c6b359b5",
+      "status": "modified",
+      "prev_unit_id": "8b38c3ec4ffadbc884e41660554c64fb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_loadstore_whole_register_instructions",
+      "slot": 10,
+      "unit_id": "ef0fa7efbe31492b6c038b0ef40b5476",
+      "status": "modified",
+      "prev_unit_id": "0a5f8e636f7d38e2b66e432c7cc7cae6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_loadstore_whole_register_instructions",
+      "slot": 15,
+      "unit_id": "feedafbbf7def43083497ca7b96cd9ff",
+      "status": "modified",
+      "prev_unit_id": "2a0410fd8ca2f161ae63aa634f1d4840"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_memory_consistency_model",
+      "slot": 1,
+      "unit_id": "977e32aaa045d117ede0d2db91b8d86b",
+      "status": "modified",
+      "prev_unit_id": "d6ce0fe16b2b79987becd36696f09d90"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_memory_consistency_model",
+      "slot": 4,
+      "unit_id": "4f32585f7101f436687b938d163cca17",
+      "status": "modified",
+      "prev_unit_id": "fba97021bee61b597e945f0c8506e84d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_memory_consistency_model",
+      "slot": 6,
+      "unit_id": "ee85e3082b1fc1d627390fac7f076a2d",
+      "status": "modified",
+      "prev_unit_id": "56e8b67670a4a91d058d0662ef1a2e5d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-arithmetic-encoding",
+      "slot": 4,
+      "unit_id": "30fedf81c86219372a2db67b52182a40",
+      "status": "modified",
+      "prev_unit_id": "51218054871a8e5a29be5068f764f5cd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-arithmetic-encoding",
+      "slot": 10,
+      "unit_id": "35ebd512d5704ae0c5426ef9b27c3e81",
+      "status": "modified",
+      "prev_unit_id": "616cc346b9f2b93817fd17b48af7a687"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-widening",
+      "slot": 0,
+      "unit_id": "cab2b9ba6df366ea09fea8cda3cdbc27",
+      "status": "modified",
+      "prev_unit_id": "70e34484d32eb450c36e8bfd17e8d4cd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-widening",
+      "slot": 4,
+      "unit_id": "d8298303b8831b96e0535a09ac3cf0c7",
+      "status": "modified",
+      "prev_unit_id": "5f2d78f273a403371255f56691573384"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-narrowing",
+      "slot": 1,
+      "unit_id": "9d689d2c6ef25f9d0ebb07b0185bc758",
+      "status": "modified",
+      "prev_unit_id": "e09ed4eb5b333822e8801a50844e97d7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-narrowing",
+      "slot": 3,
+      "unit_id": "3e62435e93e6297b23d8b91b631e2fe1",
+      "status": "modified",
+      "prev_unit_id": "ec9517851babb0db0d90e820dc22e0f8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_integer_add_and_subtract",
+      "slot": 2,
+      "unit_id": "4052e064eacbba4be38e629c53d444b5",
+      "status": "modified",
+      "prev_unit_id": "646fcb8dba584d2cb4146befa4e47b8f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_widening_integer_addsubtract",
+      "slot": 2,
+      "unit_id": "28014dae2ef92c85fa0b5e48a8a1a03b",
+      "status": "modified",
+      "prev_unit_id": "c8facf4686a3f3793852f7dcceecb105"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "slot": 2,
+      "unit_id": "d0c8579cc1a42bae3c1cfdbe3cb07d56",
+      "status": "modified",
+      "prev_unit_id": "746daadc6303eba51e3a498f4f37840e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "slot": 3,
+      "unit_id": "1514276a1790a343dc4d0cdbebd77c12",
+      "status": "modified",
+      "prev_unit_id": "daf2a4eb4ad765f79bde4525e83a7783"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "slot": 7,
+      "unit_id": "315c580d7e264324144edd502366c9d3",
+      "status": "modified",
+      "prev_unit_id": "39ccdf07149e21040729e3c22b6a27ff"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "slot": 9,
+      "unit_id": "1de3acf0d0e7c7706c42306e774fb406",
+      "status": "modified",
+      "prev_unit_id": "4f39478aa53c41547411f6f72b9ed6f5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "slot": 10,
+      "unit_id": "fca586e8facff454dcdcc8c24b69912b",
+      "status": "modified",
+      "prev_unit_id": "57c4ec2ad2fb2ce030ab368ed4f10bf9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_bitwise_logical_instructions",
+      "slot": 1,
+      "unit_id": "13fa41da9e42f35571b3868ea174cd3d",
+      "status": "modified",
+      "prev_unit_id": "440ac091155a42a00f1d6868746bac7d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_shift_instructions",
+      "slot": 0,
+      "unit_id": "20bf670939cbbbddf7282b38f51c4e13",
+      "status": "modified",
+      "prev_unit_id": "7820512983bf45aee772a550c0d6a869"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_integer_right_shift_instructions",
+      "slot": 0,
+      "unit_id": "aacbfe712462dfa5e09aacb7db828f92",
+      "status": "modified",
+      "prev_unit_id": "aaf372bdb02d557fd679b7f88f9a4fbb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_integer_right_shift_instructions",
+      "slot": 3,
+      "unit_id": "7263ddf9a2a79f4f16ca474ae103aa0a",
+      "status": "modified",
+      "prev_unit_id": "deafb7fee925711470d7a5a56bac8a0c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 4,
+      "unit_id": "84f125fe03c6cfa1a87b0d1bc58d8963",
+      "status": "modified",
+      "prev_unit_id": "7eba6466b45158fcbcc62c13c6fa0347"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 5,
+      "unit_id": "b202b6e97691c7f26e65290fa5223c33",
+      "status": "modified",
+      "prev_unit_id": "3f72809ffb69b5c9c0d9496eb9e67f87"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 6,
+      "unit_id": "2078baae32cb8b71d18ee24a2942f4cd",
+      "status": "modified",
+      "prev_unit_id": "0c29b10eb8a444ebefb7e5a81380f2df"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 7,
+      "unit_id": "28d1bb43dd3230ac52816839f8b72405",
+      "status": "modified",
+      "prev_unit_id": "6a211f308d7162f7a7e7dac7e4e020e9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 8,
+      "unit_id": "39b0404ac7ce29833d6df5fadf4dae62",
+      "status": "modified",
+      "prev_unit_id": "cc62467f66913f6d02234e48e340d3a9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 9,
+      "unit_id": "e137e9e1eec1aae744ec3672b00da8b5",
+      "status": "modified",
+      "prev_unit_id": "5d3c05aeff837bd7733db782642ba860"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_compare_instructions",
+      "slot": 10,
+      "unit_id": "086c90fe813b730daeb7159b2dd1b2c5",
+      "status": "modified",
+      "prev_unit_id": "c87037964cdce5139219814adcaed00c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_integer_multiply_instructions",
+      "slot": 2,
+      "unit_id": "f28d0aca81a05e52b87e282eb94f4e9f",
+      "status": "modified",
+      "prev_unit_id": "1b234afd8138aad3b5046cb82eaa89ca"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_integer_multiply_instructions",
+      "slot": 3,
+      "unit_id": "4678ea7ef92154a9542fef19c226bfc3",
+      "status": "modified",
+      "prev_unit_id": "7e55c5c4ab02aeb54badf2134df20df5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_integer_multiply_add_instructions",
+      "slot": 0,
+      "unit_id": "e55ad9e517378b5c082c809a803b9a31",
+      "status": "modified",
+      "prev_unit_id": "672b2f7bb032b48961b61014eb78c393"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_integer_multiply_add_instructions",
+      "slot": 2,
+      "unit_id": "3cd80228b39327fbdab0ade7ad6997ed",
+      "status": "modified",
+      "prev_unit_id": "a0aa10201fbd369019cbbaba3fabe6a2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_merge_instructions",
+      "slot": 0,
+      "unit_id": "d843739d8888a259d9575844122636b7",
+      "status": "modified",
+      "prev_unit_id": "3e64dba66769000204fca0dfb1aed487"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_merge_instructions",
+      "slot": 1,
+      "unit_id": "d8a04cd44473745a65babed0d065e33c",
+      "status": "modified",
+      "prev_unit_id": "a65b082c42544516ed8f3d39577df242"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_move_instructions",
+      "slot": 0,
+      "unit_id": "9db68367fe3b11d758d586d557183003",
+      "status": "modified",
+      "prev_unit_id": "3d411c5b8c0437b2116707d205d433f5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_move_instructions",
+      "slot": 2,
+      "unit_id": "1904410be15a49b9a1ce24ae060774d5",
+      "status": "modified",
+      "prev_unit_id": "aad22d05a89c4bf1ec8fb0ab8f3559c0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_move_instructions",
+      "slot": 4,
+      "unit_id": "2d681590dffbccda381282fe251773cc",
+      "status": "modified",
+      "prev_unit_id": "5fa6441635a2e49759968f960396e994"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_move_instructions",
+      "slot": 5,
+      "unit_id": "f4d04654aa11bd385f0721702dfaeb57",
+      "status": "modified",
+      "prev_unit_id": "00f406c05340a7dbd4f514ff436d5a92"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_integer_move_instructions",
+      "slot": 6,
+      "unit_id": "d082d5503ded05bda850c1b6b432a568",
+      "status": "modified",
+      "prev_unit_id": "aa9dc6d3f31290f97f83ce67229ec126"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_saturating_add_and_subtract",
+      "slot": 0,
+      "unit_id": "46ab09865b7e79d76eeede6f94de47db",
+      "status": "modified",
+      "prev_unit_id": "8625a7a4bf86fc1700f2d13bb26ba90b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_averaging_add_and_subtract",
+      "slot": 0,
+      "unit_id": "bb105d916e1188c0e4ae5f2f3bee177d",
+      "status": "modified",
+      "prev_unit_id": "cc350c50b6ef87c1add99a87ca644053"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_averaging_add_and_subtract",
+      "slot": 1,
+      "unit_id": "d9a30c8c9e6136f04de387b275975ad5",
+      "status": "modified",
+      "prev_unit_id": "7415bdbb05264f1e2060773e9931a614"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_fractional_multiply_with_rounding_and_saturation",
+      "slot": 0,
+      "unit_id": "d018865e1070e1d6ded311bbced4b509",
+      "status": "modified",
+      "prev_unit_id": "dbce68b534e0811d36954fb31bc815f1"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_fractional_multiply_with_rounding_and_saturation",
+      "slot": 3,
+      "unit_id": "103d5fdbdb3456e043243fb9b6044f18",
+      "status": "modified",
+      "prev_unit_id": "c762676d1a192c23e57be017b1f5a2f5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_scaling_shift_instructions",
+      "slot": 0,
+      "unit_id": "652587661267ad684eff252ca750af35",
+      "status": "modified",
+      "prev_unit_id": "1baed532027308b74099945021621b71"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 0,
+      "unit_id": "8da8d43075de49c31a8b13a8e7bced15",
+      "status": "modified",
+      "prev_unit_id": "8d8e4c4909c4fb08a1bce04d0a0da1df"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 2,
+      "unit_id": "c6ef9cd58c8371aa7a7ed26e8fbbce11",
+      "status": "modified",
+      "prev_unit_id": "cf892b13a24c279fab287bf9017d8e6b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 3,
+      "unit_id": "57382026b1b626b602e428b10b666c89",
+      "status": "modified",
+      "prev_unit_id": "346097afb553b120ac2704a1e921ba97"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 4,
+      "unit_id": "1788a7cf7b248c74195a89dca44872aa",
+      "status": "modified",
+      "prev_unit_id": "4f4fbfc4db22f841a4fb2bec94e792bd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 5,
+      "unit_id": "aaf3acd4d4ebeb672103d1e03937f615",
+      "status": "modified",
+      "prev_unit_id": "ca9e791980cc808c352020dddb5c0890"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_narrowing_fixed_point_clip_instructions",
+      "slot": 6,
+      "unit_id": "57b1a17e00ea3b17784a0976d9da697c",
+      "status": "modified",
+      "prev_unit_id": "72a3028ba0a83e88c1d4c3714473e80e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float",
+      "slot": 4,
+      "unit_id": "b3d0af044ef2148a00bab3d0852009e2",
+      "status": "modified",
+      "prev_unit_id": "59a5afc2f9477b95cd0ce871a4460c02"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float",
+      "slot": 5,
+      "unit_id": "48be7230b95f53b49bca29ba06192494",
+      "status": "modified",
+      "prev_unit_id": "9ba67849dc5d4cffc7638c626afc52fd"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_exception_flags",
+      "slot": 0,
+      "unit_id": "48fac98eacba64b061f43338319887a9",
+      "status": "modified",
+      "prev_unit_id": "61646f832886550d5adab1a1f64681e6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_square_root_instruction",
+      "slot": 0,
+      "unit_id": "419639a745497f27ca200146f93cdc34",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_reciprocal_square_root_estimate_instruction",
+      "slot": 2,
+      "unit_id": "069cb00515645b2246af056cceba8747",
+      "status": "modified",
+      "prev_unit_id": "65142c6ee554da907522aa534bb77ea8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_reciprocal_estimate_instruction",
+      "slot": 1,
+      "unit_id": "8512e8a4c7ecc2766dcabef206a5dad1",
+      "status": "modified",
+      "prev_unit_id": "a8056f2c8b512cdbf5afb9ddd6313cc2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_minmax_instructions",
+      "slot": 0,
+      "unit_id": "bf92b62dd334658c3006bede19a3075d",
+      "status": "modified",
+      "prev_unit_id": "ca503de5898239f28ad00006363e101b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_sign_injection_instructions",
+      "slot": 2,
+      "unit_id": "68b3f6044326e36081dab0affe78e2bf",
+      "status": "modified",
+      "prev_unit_id": "63e25627899469009e84fff2a0ef7e6f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_sign_injection_instructions",
+      "slot": 3,
+      "unit_id": "36be776c31e4f188db716e1a85677f22",
+      "status": "modified",
+      "prev_unit_id": "01b1b029c9c4dc2b5dd657b00121c01e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_compare_instructions",
+      "slot": 1,
+      "unit_id": "d10f58027a165fb1d20b17aa62ecca1f",
+      "status": "modified",
+      "prev_unit_id": "033bcc049a18a707f4a33ea3e80d6977"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_compare_instructions",
+      "slot": 7,
+      "unit_id": "3ae9f5264a647bc3aee47ea427c08483",
+      "status": "modified",
+      "prev_unit_id": "a47363f31dc65132ae0c0111aad81838"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_merge_instruction",
+      "slot": 0,
+      "unit_id": "692c8dd5c2de3f2335aa65222ac7e5d1",
+      "status": "modified",
+      "prev_unit_id": "090a23a648b5cf5beb392bd6e7dccad5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_merge_instruction",
+      "slot": 1,
+      "unit_id": "f99d86c434371dfba0ec2110dedfecef",
+      "status": "modified",
+      "prev_unit_id": "e20fa471258673dd9641b3da531b7938"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_move_instruction",
+      "slot": 2,
+      "unit_id": "c34c080a53d07c0f9e7dca2d8f5bef52",
+      "status": "modified",
+      "prev_unit_id": "3aa555d94ad2288daf3f9a2d70e9ffa6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_single_width_floating_pointinteger_type_convert_instructions",
+      "slot": 2,
+      "unit_id": "0e4e5535ef3b95ab423ad67c2c90b58f",
+      "status": "modified",
+      "prev_unit_id": "694e590a41b2bde8d5a8faeec3d51bbe"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_narrowing_floating_pointinteger_type_convert_instructions",
+      "slot": 3,
+      "unit_id": "aea6b9f96cca0a3102b53596f069e4e3",
+      "status": "modified",
+      "prev_unit_id": "926f825f1e94eb2133146b54ad205965"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_narrowing_floating_pointinteger_type_convert_instructions",
+      "slot": 4,
+      "unit_id": "a1277e4d09484d5b978d8e8ff679b6b5",
+      "status": "modified",
+      "prev_unit_id": "32783e8aa7994b8bbcf3c3dd337fbb81"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_reduction_operations",
+      "slot": 4,
+      "unit_id": "889647072e9bb3f84a88447f21e173f0",
+      "status": "modified",
+      "prev_unit_id": "8766922605f071082fd6a40bd14f1e6a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_reduction_operations",
+      "slot": 5,
+      "unit_id": "42c672e5ed65b4a589139b54031fc1b2",
+      "status": "modified",
+      "prev_unit_id": "088ec67b450f52a5073ba917061c2a6b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_reduction_operations",
+      "slot": 6,
+      "unit_id": "d6383206454cd82b459300bbb1dcc6fc",
+      "status": "modified",
+      "prev_unit_id": "b782892656a98e1fc0879e289c8de758"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_reduction_operations",
+      "slot": 7,
+      "unit_id": "b03e69537b87a4452842b43efb7ceeb5",
+      "status": "modified",
+      "prev_unit_id": "2e3d50e0a51a5e3184250051d261b130"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_reduction_operations",
+      "slot": 8,
+      "unit_id": "6f32f15f55bdd9a06dfbf4d9ffb37e5e",
+      "status": "modified",
+      "prev_unit_id": "1d628c68d97f08bad3dd86cd0ddc7a35"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-integer-reduce-widen",
+      "slot": 0,
+      "unit_id": "ee3c6ad5412d29faa06d95c9145ed3fd",
+      "status": "modified",
+      "prev_unit_id": "6a23ab66b2854fd56963df52d6344850"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-integer-reduce-widen",
+      "slot": 1,
+      "unit_id": "4c7793c9207d595518a2d21f76133c61",
+      "status": "modified",
+      "prev_unit_id": "ef0ff6f2ffa6ecf6f8103b7379c6a7a1"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-integer-reduce-widen",
+      "slot": 2,
+      "unit_id": "001c455a5f5c44167ace1b7778381560",
+      "status": "modified",
+      "prev_unit_id": "cb78b6f75f00a31049ed05e2b0982422"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-reduce",
+      "slot": 1,
+      "unit_id": "a5b642b230c86b8784655fe55ec2b105",
+      "status": "modified",
+      "prev_unit_id": "a6b7e48eca06ddc857c91852463f9b04"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_ordered_single_width_floating_point_sum_reduction",
+      "slot": 0,
+      "unit_id": "242c498f2c602c49022104d7383bd8ae",
+      "status": "modified",
+      "prev_unit_id": "52edf34ee0300581e57608ceb8578648"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unordered_single_width_floating_point_sum_reduction",
+      "slot": 0,
+      "unit_id": "8bce2a8080aee2f8c9f72e3fa8c943f3",
+      "status": "modified",
+      "prev_unit_id": "fe531baff8e1e0fa5a9d028e867a7a02"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unordered_single_width_floating_point_sum_reduction",
+      "slot": 3,
+      "unit_id": "3792fd695bb49055322cd3df07a6c9ec",
+      "status": "modified",
+      "prev_unit_id": "0c211d8841440f630dd81b2e2e28ca75"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unordered_single_width_floating_point_sum_reduction",
+      "slot": 4,
+      "unit_id": "1f70819a3e7057b8356b03da4be91827",
+      "status": "modified",
+      "prev_unit_id": "c930c35cf00c6e123ab5a0d1873c4298"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_unordered_single_width_floating_point_sum_reduction",
+      "slot": 5,
+      "unit_id": "fef20749203f86708142f79bc8efec5f",
+      "status": "modified",
+      "prev_unit_id": "2e46c5a5c31eda11f2b7ec21a93a98ea"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_single_width_floating_point_max_and_min_reductions",
+      "slot": 0,
+      "unit_id": "0408941d4f9d5c7fb6334e9b6d560376",
+      "status": "modified",
+      "prev_unit_id": "a82832a8682082a200af8fdd317c6e7a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-reduce-widen",
+      "slot": 2,
+      "unit_id": "881c9b9dd9b5c7ba6c919750d3d6acb9",
+      "status": "modified",
+      "prev_unit_id": "952590f2a2b94610be0b5e7686c45fcc"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-reduce-widen",
+      "slot": 4,
+      "unit_id": "ca343eb7daeca1a0998cf246f31d26bd",
+      "status": "modified",
+      "prev_unit_id": "0f8c6f4d8cf102a023ecd7f9c8f1e9f6"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mask-register-logical",
+      "slot": 0,
+      "unit_id": "ab26a9169d81b8209beb707885cd8dd0",
+      "status": "modified",
+      "prev_unit_id": "188e5b2d7ec3ba6494d188a65fc6c755"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mask-register-logical",
+      "slot": 1,
+      "unit_id": "85e25e01851662473540c61ec119a81c",
+      "status": "modified",
+      "prev_unit_id": "67b9d3ec9f303bd56aa76d027f8d46c2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mask-register-logical",
+      "slot": 3,
+      "unit_id": "6add53208a7ff7f8ea11fbfb282d310d",
+      "status": "modified",
+      "prev_unit_id": "499b0b93b1f06a3c3c2344cebeb7cea7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mask-register-logical",
+      "slot": 6,
+      "unit_id": "c89d7d1c3b0da276bc550bd70c5363aa",
+      "status": "modified",
+      "prev_unit_id": "5c62c960ce3766f83d1d781ed01c74ce"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-mask-register-logical",
+      "slot": 9,
+      "unit_id": "b952f1fae63dd8f2b19fb7f62d0298fc",
+      "status": "modified",
+      "prev_unit_id": "11c10b867122e979a35004ef21f144e2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": "heading",
+      "unit_id": "b77632f9265175773bbd9c752d1024d7",
+      "status": "modified",
+      "prev_unit_id": "ed03809ee62560ecacda81bff9d5047b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 0,
+      "unit_id": "4643b4cbf99cedfe9203e7674ad310d0",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_count_population_in_mask_vcpop_m"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 1,
+      "unit_id": "733eac071b93c173b072b9246662a629",
+      "status": "modified",
+      "prev_unit_id": "ddacafad906f5bd5aac4da30d6d4834f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 2,
+      "unit_id": "769269066e200dd24ddec073a0aaec8f",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_count_population_in_mask_vcpop_m"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 3,
+      "unit_id": "50b5e29a3774ba483d4406e041726e34",
+      "status": "modified",
+      "prev_unit_id": "dab063677c28b3c17cf86536d70cd6ac"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 4,
+      "unit_id": "98ec37892c1a860ace7d1334a91ce640",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_count_population_in_mask_vcpop_m"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 5,
+      "unit_id": "1a925ffe113fe0b6359f083cd9cd1180",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_count_population_in_mask_vcpop_m"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 6,
+      "unit_id": "18f63c3a6d0c6497e7c9ece48c90eeea",
+      "status": "modified",
+      "prev_unit_id": "8366aa5c98fb3985ccc90ca0996d106a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_count_population_in_mask_insnvcpop_m",
+      "slot": 7,
+      "unit_id": "19c66882d63ef5446b49ae40ca3dd88c",
+      "status": "modified",
+      "prev_unit_id": "31884f5521bd15b004ba4e55b0dc276f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": "heading",
+      "unit_id": "76a0978d0c32dcbc8a117f51b34818c0",
+      "status": "modified",
+      "prev_unit_id": "d3c8ad45d0b7ec282b9d900acdb7bb1a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": 0,
+      "unit_id": "2f43b259fea0e13e26ce697536868e86",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vfirst_find_first_set_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": 1,
+      "unit_id": "c7723f94adb6e1622e1c74c7e86ab0f9",
+      "status": "modified",
+      "prev_unit_id": "8657d75c5afdc7efdbd6e2fe40aa01f3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": 2,
+      "unit_id": "6a07f5b4689251701211c6833b28e49d",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vfirst_find_first_set_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": 3,
+      "unit_id": "545376a54fa118be492bdd01fd3a100b",
+      "status": "modified",
+      "prev_unit_id": "133f34ea81936e26b93563030032bb4c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvfirst_find_first_set_mask_bit",
+      "slot": 4,
+      "unit_id": "fbf220025642f41176e856901dfe2773",
+      "status": "modified",
+      "prev_unit_id": "a96a0831f26d19605873f97dfc71c9b9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": "heading",
+      "unit_id": "c16bc031da9c4c824e8154fa5f5012a0",
+      "status": "modified",
+      "prev_unit_id": "565c221f6e514054368a8b79ef712829"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": 0,
+      "unit_id": "61b860c4c5d625c5fbc1d7e2eb3b311a",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsbf_m_set_before_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": 1,
+      "unit_id": "6fee93e57c9355fe1a0a62cc37d3b52f",
+      "status": "modified",
+      "prev_unit_id": "81334940d0ac8ab82b9f7378a019d92f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": 2,
+      "unit_id": "dc0f85bdbc5f51ca8e94641fe6eada69",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsbf_m_set_before_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": 3,
+      "unit_id": "1c8d86ce1e361246d0cbbb4b2e480e8f",
+      "status": "modified",
+      "prev_unit_id": "b76fad48437bdcc9deb3c71441953b58"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsbf_m_set_before_first_mask_bit",
+      "slot": 4,
+      "unit_id": "3904b13001f6bf401ff174d7c9341db8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsbf_m_set_before_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": "heading",
+      "unit_id": "c29aecb722bfdcf166eb7057123df436",
+      "status": "modified",
+      "prev_unit_id": "5a02ed3316dfaf32a71c4e834b022236"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": 0,
+      "unit_id": "2b9ef4601c3b997ed3f2d35850047312",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsif_m_set_including_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": 1,
+      "unit_id": "3c59a4f4056a932dd02852555010af08",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsif_m_set_including_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": 2,
+      "unit_id": "ecd6f604944bc8dbd73268dfb414e8c5",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsif_m_set_including_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": 3,
+      "unit_id": "628f723af8e1ea5d816f09e2b9bab8e9",
+      "status": "modified",
+      "prev_unit_id": "091dec5bf102f6c4f6d812d128aa79cc"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsif_m_set_including_first_mask_bit",
+      "slot": 4,
+      "unit_id": "3c6df1cb49bb6b4b09ee7a5b6b2d6018",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsif_m_set_including_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": "heading",
+      "unit_id": "0925826a85324f56a2109f174efaaca6",
+      "status": "modified",
+      "prev_unit_id": "c71d99a38056ba0ddfe5e3111b8e2891"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": 0,
+      "unit_id": "3d3938e89c85eb7a3e2a82e3ba2116f7",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsof_m_set_only_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": 1,
+      "unit_id": "8bebcc8bff7e29a29834d724208e40e5",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsof_m_set_only_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": 2,
+      "unit_id": "82e32e026c155376a640d922acf9173d",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsof_m_set_only_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": 3,
+      "unit_id": "25a31209e034dfd268777bc319b960bf",
+      "status": "modified",
+      "prev_unit_id": "c0e6b5a9ec977a3fc0def0d95c32e935"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_insnvmsof_m_set_only_first_mask_bit",
+      "slot": 4,
+      "unit_id": "963d7961b639b185dabcacccb3c59a4e",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vmsof_m_set_only_first_mask_bit"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_iota_instruction",
+      "slot": 0,
+      "unit_id": "c834ce13ec74f790929731f626a5c708",
+      "status": "modified",
+      "prev_unit_id": "308127bebc4fe5a780679adfebe4e2b8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_iota_instruction",
+      "slot": 4,
+      "unit_id": "cb25139607e8c16706cb55b3cb5d7ebf",
+      "status": "modified",
+      "prev_unit_id": "e7b897afe4ce4ef28267ddd522af4c92"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_iota_instruction",
+      "slot": 6,
+      "unit_id": "4dd339be973f810b2b4003faf804b88d",
+      "status": "modified",
+      "prev_unit_id": "0c1dca7c6288bec6bde5547e12b24734"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_element_index_instruction",
+      "slot": 0,
+      "unit_id": "329526e4d407f86705dc32a2999fcb45",
+      "status": "modified",
+      "prev_unit_id": "df532d066faf3b73358280de114ed8f5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_element_index_instruction",
+      "slot": 5,
+      "unit_id": "8d6d38fcb790305460a4ec5ea1bbf7ca",
+      "status": "modified",
+      "prev_unit_id": "c54f52f35aa0dc75466c8aa06fb395e9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_integer_scalar_move_instructions",
+      "slot": 2,
+      "unit_id": "0d79c93d7dbc6d9193c823d70f474a60",
+      "status": "modified",
+      "prev_unit_id": "fd7931f221b293e76408b9b95ce2994d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_integer_scalar_move_instructions",
+      "slot": 3,
+      "unit_id": "7881c9eb65259ffee23b33c45e6954fe",
+      "status": "modified",
+      "prev_unit_id": "d74a93dff97b7c9616282ba9776e5972"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_integer_scalar_move_instructions",
+      "slot": 4,
+      "unit_id": "e8e2081a0ba287940130779fadccf721",
+      "status": "modified",
+      "prev_unit_id": "6cf10a8cbc8cd98edc111cc185a262ca"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_integer_scalar_move_instructions",
+      "slot": 5,
+      "unit_id": "da3e8b04516ec2cc13592bbf7ed34f34",
+      "status": "modified",
+      "prev_unit_id": "6c0bec18a978d0f4b5d2529e1d5a0704"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_integer_scalar_move_instructions",
+      "slot": 6,
+      "unit_id": "6ca1e97f3ab5e9453f6931478e63650e",
+      "status": "modified",
+      "prev_unit_id": "186cfc5aa88eaeccdca78f5ad6a6c708"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_instructions",
+      "slot": 1,
+      "unit_id": "53a7cfbd80e51204eeb708f296ed3bad",
+      "status": "modified",
+      "prev_unit_id": "411bd841f657704198c980e970e38680"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_instructions",
+      "slot": 2,
+      "unit_id": "ef6d9ce3174ab88bc2d668bb5d29bc44",
+      "status": "modified",
+      "prev_unit_id": "62e5b059e99a140a94bedfe4f0c6605c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_instructions",
+      "slot": 3,
+      "unit_id": "da3e8b04516ec2cc13592bbf7ed34f34",
+      "status": "modified",
+      "prev_unit_id": "6c0bec18a978d0f4b5d2529e1d5a0704"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_up_instructions",
+      "slot": 1,
+      "unit_id": "de5d7b2aba121d8d3ea5a77011fecc1f",
+      "status": "modified",
+      "prev_unit_id": "c8e69a05d0f9e7dadd078018ed7a7a11"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_up_instructions",
+      "slot": 3,
+      "unit_id": "dbc397dd8c1443d1736c8ec938c6d8f6",
+      "status": "modified",
+      "prev_unit_id": "eccf7d9d5a706d5d1f6f267190d4a9be"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_up_instructions",
+      "slot": 4,
+      "unit_id": "67374bed44d6b8287efc9bed71bf71bb",
+      "status": "modified",
+      "prev_unit_id": "54a779d69e8ce74fad24913df8a4ef3a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_down_instructions",
+      "slot": 1,
+      "unit_id": "646d70b141d137e25072e0399c026e91",
+      "status": "modified",
+      "prev_unit_id": "d82e313fc5528a28c665fcf07312fb5d"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_up",
+      "slot": 2,
+      "unit_id": "d16b2fb8004c946dc7a59e31fc1cd20f",
+      "status": "modified",
+      "prev_unit_id": "db06f6457cc3ac4bf18f05be520f439b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_up",
+      "slot": 3,
+      "unit_id": "c2e123464d6dc7b77d347b759f8b8882",
+      "status": "modified",
+      "prev_unit_id": "75e6fe59213290ea6b268f86890a4d15"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_up",
+      "slot": 4,
+      "unit_id": "46035552479f3ebfb810f827005cff08",
+      "status": "modified",
+      "prev_unit_id": "20dcba5a45ee260fcde65609321084d0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_up",
+      "slot": 6,
+      "unit_id": "453990d8c45fa771f58dffae49399353",
+      "status": "modified",
+      "prev_unit_id": "55f6fed4cbdd4c099e45f49efa77b5a9"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_down_instruction",
+      "slot": 0,
+      "unit_id": "8bcf10cfc7a659899b63c0aaff44eaca",
+      "status": "modified",
+      "prev_unit_id": "5c09da6c05060dfed097595ac67bee59"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_down_instruction",
+      "slot": 1,
+      "unit_id": "71708567286447b9a8bdf4167e4b0741",
+      "status": "modified",
+      "prev_unit_id": "0455df84e7cf5305ae14a74588aba281"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_down_instruction",
+      "slot": 3,
+      "unit_id": "6e6abcb1ed9fa5ec1ab3f09e7e0d751d",
+      "status": "modified",
+      "prev_unit_id": "ca1b21c7cda9df77f6031f7e7c34dfe1"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_slide_1_down_instruction",
+      "slot": 5,
+      "unit_id": "cca5001d3b93cdeeedef004d7ed59d48",
+      "status": "modified",
+      "prev_unit_id": "ea7b122706f30d94817fe0ccb70f9bf8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_register_gather_instructions",
+      "slot": 0,
+      "unit_id": "04e2eb88288997a35f8841116b8760d0",
+      "status": "modified",
+      "prev_unit_id": "58162aa3a47650d6137be8ba6059c868"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_register_gather_instructions",
+      "slot": 2,
+      "unit_id": "38a3ae0f9e7f91728e27358a93ece498",
+      "status": "modified",
+      "prev_unit_id": "f56db013fa2b36ee4a1ca6abaa552d2c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_register_gather_instructions",
+      "slot": 3,
+      "unit_id": "51e92782dbd7aeb804e65e2b15005c71",
+      "status": "modified",
+      "prev_unit_id": "1c439e9325b1464bbdc34b5eff0f7ef7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_register_gather_instructions",
+      "slot": 8,
+      "unit_id": "c97be68c15b443b76ecf46669427a736",
+      "status": "modified",
+      "prev_unit_id": "588b29abacf4dc60da94d802c07e7d3f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_compress_instruction",
+      "slot": 2,
+      "unit_id": "da9de7f956e78fa27e1493f1f5b4170b",
+      "status": "modified",
+      "prev_unit_id": "e50b6d22fb371689cc113b8b282d720f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_compress_instruction",
+      "slot": 4,
+      "unit_id": "8f32220eddd0f2c69cfba7b472322630",
+      "status": "modified",
+      "prev_unit_id": "ef3a6101bff71ea6467b094eab4af669"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_compress_instruction",
+      "slot": 6,
+      "unit_id": "43ea26c6a751b72ff0e473bac98d3c75",
+      "status": "modified",
+      "prev_unit_id": "c84dc5e4d2faa6acd3dd111d12f844bb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_compress_instruction",
+      "slot": 7,
+      "unit_id": "8b0baff47c401ba06c32679c6d2238d5",
+      "status": "modified",
+      "prev_unit_id": "f78b903f08832be655ab79ec2546d112"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_synthesizing_insnvdecompress",
+      "slot": "heading",
+      "unit_id": "31f3e84822a0eb2db0e43875ab627c1b",
+      "status": "modified",
+      "prev_unit_id": "71962dbbb83e5acbf37b2133aa7506ab"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_synthesizing_insnvdecompress",
+      "slot": 0,
+      "unit_id": "fecf3becb29bdba323fa4fbf76802db2",
+      "status": "modified",
+      "prev_unit_id": "9c0360e29b689225f1a8cef4bae71af3"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_synthesizing_insnvdecompress",
+      "slot": 1,
+      "unit_id": "c0c28c0fbfef478d33bf0d76f05c98ed",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_synthesizing_vdecompress"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_synthesizing_insnvdecompress",
+      "slot": 2,
+      "unit_id": "74b8958704ef25cd078b3ca50325c41f",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_synthesizing_vdecompress"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_synthesizing_insnvdecompress",
+      "slot": 3,
+      "unit_id": "a8e8cf042d4f146c587ba9501edad68a",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_synthesizing_vdecompress"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_whole_vector_register_move",
+      "slot": 0,
+      "unit_id": "f47b165d0d0ee5771843aee84f62af65",
+      "status": "modified",
+      "prev_unit_id": "a7520f6f8e75bae8c7cedad0cd2bb60a"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_whole_vector_register_move",
+      "slot": 1,
+      "unit_id": "0b8f1336ce7f7aecf1641955c3b433ab",
+      "status": "modified",
+      "prev_unit_id": "6ff8a732dcaaf5303e4883696c6434fe"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_whole_vector_register_move",
+      "slot": 2,
+      "unit_id": "6bde3d8087d94acedb592e11da98def4",
+      "status": "modified",
+      "prev_unit_id": "08f3e0a65b255d0b120e4cec7ed74672"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_whole_vector_register_move",
+      "slot": 7,
+      "unit_id": "679b265ce6706f62f2338ccf18f42dd1",
+      "status": "modified",
+      "prev_unit_id": "1f907a63b35fe372b02ecdd4c055114c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-move",
+      "slot": 2,
+      "unit_id": "9b55404e7aad720b0b1e5ec0f7baa8f5",
+      "status": "modified",
+      "prev_unit_id": "e9c35e3c120fa46a6662a34d81935592"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-move",
+      "slot": 3,
+      "unit_id": "3c0c4db33791b308000229575530259c",
+      "status": "modified",
+      "prev_unit_id": "410e884ad815053d77159e39cb5ac0a7"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-move",
+      "slot": 4,
+      "unit_id": "b8f0f2e0cacb4fb27d4bb3f76435b038",
+      "status": "modified",
+      "prev_unit_id": "0990c90760c6024ec1c9a5f49cd480f5"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-move",
+      "slot": 5,
+      "unit_id": "da3e8b04516ec2cc13592bbf7ed34f34",
+      "status": "modified",
+      "prev_unit_id": "6c0bec18a978d0f4b5d2529e1d5a0704"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-float-move",
+      "slot": 6,
+      "unit_id": "b219bb596f0f4bd0cc358bb50c4f6720",
+      "status": "modified",
+      "prev_unit_id": "26957cb1cf9b09f3adb31e0a2a0cd856"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vfslide1up",
+      "slot": 1,
+      "unit_id": "3b572318efe266f8063ac5761f2614cf",
+      "status": "modified",
+      "prev_unit_id": "22fd99971bec8194116c3f3d16211880"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vfslide1down",
+      "slot": 1,
+      "unit_id": "2c517ea8649534f8d67b01ec4927c4fd",
+      "status": "modified",
+      "prev_unit_id": "c1f6c68f89b40a04f3eb8162a8656473"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_exception_handling_3",
+      "slot": 0,
+      "unit_id": "668a315f9da143fd065d5469cc176e8f",
+      "status": "modified",
+      "prev_unit_id": "b2af6fa8c1264e9d6579f11322c4eab2"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_exception_handling_3",
+      "slot": 1,
+      "unit_id": "d2da6a53fa1f02df3b9cdc4d348d784f",
+      "status": "modified",
+      "prev_unit_id": "01b3a789a97db5d67822878a91f00281"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_precise_vector_traps",
+      "slot": 2,
+      "unit_id": "8b4e4936ea50450c293140e938e4d838",
+      "status": "modified",
+      "prev_unit_id": "4b4efd4f3d2b89d66516f39f00dc2d48"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_precise_vector_traps",
+      "slot": 3,
+      "unit_id": "70436099deb9d2a83eb00b92399d6b52",
+      "status": "modified",
+      "prev_unit_id": "e90885ab7e570c95ef61fabf5c48257b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_precise_vector_traps",
+      "slot": 5,
+      "unit_id": "fccd44011f41e6b472966a447b4dd9c3",
+      "status": "modified",
+      "prev_unit_id": "4a797506b9f429eef54c502a2d807c5f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_precise_vector_traps",
+      "slot": 6,
+      "unit_id": "6a63c968636104650795058fb9ad7dc0",
+      "status": "modified",
+      "prev_unit_id": "6d19ce5f836f79848d26efc083cd4e5b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_imprecise_vector_traps",
+      "slot": 0,
+      "unit_id": "39f47442e04cd40a6c15029fcaff095d",
+      "status": "modified",
+      "prev_unit_id": "1481ee165bd56f4c2b9d64866e92a20b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_imprecise_vector_traps",
+      "slot": 2,
+      "unit_id": "fcbf5609622916b7042da28f6ab0e7a3",
+      "status": "modified",
+      "prev_unit_id": "90c76ece734ad996f5693ff704163dad"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-extensions",
+      "slot": 0,
+      "unit_id": "a2679c5758e5b1fb57032d6eb57eb849",
+      "status": "modified",
+      "prev_unit_id": "62c60bdaa37575901eb483b0d712fc0f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": "heading",
+      "unit_id": "83a548e074bafa26750dd4784af6e21e",
+      "status": "modified",
+      "prev_unit_id": "749d99bf46a31d26129522cc0a251c57"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 0,
+      "unit_id": "9f1528add3287656ff4cd8c28b1a1fa7",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_zvl_minimum_vector_length_extensions"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 1,
+      "unit_id": "51253e57d17c96b85c7d0403e93c9800",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_zvl_minimum_vector_length_extensions"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 2,
+      "unit_id": "c81a83368d3caa711005189a2bd213a0",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_zvl_minimum_vector_length_extensions"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 3,
+      "unit_id": "b06737227df53e1210e7d5b3665f7ce8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_zvl_minimum_vector_length_extensions"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 4,
+      "unit_id": "2072eb5f9f84c15bad82b006eafac277",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_zvl_minimum_vector_length_extensions"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_extzvl_minimum_vector_length_extensions",
+      "slot": 5,
+      "unit_id": "dbf90ceb39d11c4eaaf5948fe054743c",
+      "status": "modified",
+      "prev_unit_id": "592f7381d0e27225b3e2ef0a18f45ace"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-element-groups",
+      "slot": 0,
+      "unit_id": "cff76fee50056208d56c7225496f4f67",
+      "status": "modified",
+      "prev_unit_id": "67410b12b2cb6fd762ae9e2a93cdf4fe"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_element_group_size",
+      "slot": 0,
+      "unit_id": "6b6fb20140b239a16be4a21f29a90707",
+      "status": "modified",
+      "prev_unit_id": "d0d9651df6beaaedbcd55d47e166058c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_element_group_size",
+      "slot": 1,
+      "unit_id": "8bf89ec282f2f51494c9c3340e99455f",
+      "status": "modified",
+      "prev_unit_id": "f729f15d45b0b5e06861256e914161bc"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_element_group_size",
+      "slot": 4,
+      "unit_id": "1739d1c6326863d9e8295e13b7fdef6a",
+      "status": "modified",
+      "prev_unit_id": "f5cab7fe90ea4311ab2d8f30fbc42c40"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": "heading",
+      "unit_id": "a5fc25a3c09c15ff55940b5a297e99f3",
+      "status": "modified",
+      "prev_unit_id": "bd891b2f76aac5d11786f1903fced62f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 0,
+      "unit_id": "aa28a5f97c357c13e1e3e84eb38cfd3f",
+      "status": "modified",
+      "prev_unit_id": "f8af30c8933ea369b417191dabebcc3c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 1,
+      "unit_id": "3b979778b3575f16232df34bd7ded4d1",
+      "status": "modified",
+      "prev_unit_id": "cd5d17c29ba3d43b8ae009470331b548"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 2,
+      "unit_id": "2c24626c0bf1d57f58f7cd5f9f811d04",
+      "status": "modified",
+      "prev_unit_id": "16b7ecc549855ba82589892a06c9cfe1"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 3,
+      "unit_id": "1e51f8de3e498baabfc6ccdebdc4df40",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_setting_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 4,
+      "unit_id": "564d841ed4d919893f9998289958ab08",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_setting_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 5,
+      "unit_id": "4d068559944ba1f0f1ecde2d642051f1",
+      "status": "modified",
+      "prev_unit_id": "553bf717051b307e005bfc2a341dad8c"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_setting_csrvl",
+      "slot": 6,
+      "unit_id": "097eaf9a43d45ace823dcdcd03b664f4",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_setting_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_determining_eew",
+      "slot": 0,
+      "unit_id": "05f7310e36f37ccd10ac3e75e15d2742",
+      "status": "modified",
+      "prev_unit_id": "c9e4d779b08e851104aa63699690f1f0"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_determining_emul",
+      "slot": 0,
+      "unit_id": "f9a79007ddf612343a0b82a389afbb9b",
+      "status": "modified",
+      "prev_unit_id": "822b32fac2149df94380e0958b05abf8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_element_group_width",
+      "slot": 0,
+      "unit_id": "8214a5a77bf1eecb2a92315ca3ccc21d",
+      "status": "modified",
+      "prev_unit_id": "6389ecdf9a835bfce517f8d1eb63576c"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "after_unit_id": "112aeabe3899466bc4fd1bad66e21944",
+      "unit_id": "a2e4bc12e8a11fb03a45d5b933f03e0b"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_selected_element_width_vsew20",
+      "after_unit_id": null,
+      "unit_id": "ce8b6a5529cb52aa00c635d952aaaf88"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "vector-register-grouping",
+      "after_unit_id": null,
+      "unit_id": "de6772c950fb21d5ee63235065eb8754"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_illegal_vill",
+      "after_unit_id": "371ba493d306b76ddf2659eee8336e84",
+      "unit_id": "3fa97ad24235866639b508bef2c56eba"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "after_unit_id": "f1240ee6bebd864ba18c54a2317580a0",
+      "unit_id": "f33a4c749fb38e4eee9eea20f623d333"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "sec-vector-config",
+      "after_unit_id": null,
+      "unit_id": "db24cdca5bda4c45106ce9bdbec4affc"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_floating_point_square_root_instruction",
+      "after_unit_id": "8cff8a9f8b9573498bafc0633cdefe8b",
+      "unit_id": "a5373b6a235698c33a731a07ad7b5829"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/unpriv/unpriv.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "0ed42eef2175f4d8"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "83563445f8849706"
+        },
+        {
+          "id": "base",
+          "chap_hash": "ec51cbe8f129f5de"
+        },
+        {
+          "id": "mm",
+          "chap_hash": "777c631398da6ebb"
+        },
+        {
+          "id": "zi",
+          "chap_hash": "84ffc83ca80aff54"
+        },
+        {
+          "id": "za",
+          "chap_hash": "75e2b7c9150bd1ae"
+        },
+        {
+          "id": "zf",
+          "chap_hash": "e916548e1ceebc7a"
+        },
+        {
+          "id": "zc",
+          "chap_hash": "4e0faa7e84663e92"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "c81d98f749076165"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "da2181758f5de5c7"
+        },
+        {
+          "id": "zp",
+          "chap_hash": "915e6463a22dd5a7"
+        },
+        {
+          "id": "crypto",
+          "chap_hash": "f39df0e0ae7c42b4"
+        },
+        {
+          "id": "matrix",
+          "chap_hash": "a6345517c8c4b6f2"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "cb826c319f201d54"
+        },
+        {
+          "id": "app:mm",
+          "chap_hash": "78e1191a0d39547d"
+        },
+        {
+          "id": "app:naming",
+          "chap_hash": "50e1cc5d8b0a0d85"
+        },
+        {
+          "id": "app:code-examples",
+          "chap_hash": "3a1f7d039e569a03"
+        },
+        {
+          "id": "app:rationale",
+          "chap_hash": "8ae690e20dc4d03b"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/priv/priv.adoc",
+      "chapters": [
+        {
+          "id": "_preface_2",
+          "chap_hash": "185273a6acdec241"
+        },
+        {
+          "id": "_introduction_2",
+          "chap_hash": "8981d3c862f62dcf"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "0185310812358f1f"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "8538c774e27e95e8"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "c9301ebc17fc0880"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "420d6810e5d89a18"
+        },
+        {
+          "id": "sm",
+          "chap_hash": "8040df290574b242"
+        },
+        {
+          "id": "sv",
+          "chap_hash": "2cf65231e3481cdb"
+        },
+        {
+          "id": "ss",
+          "chap_hash": "2044087951a3537d"
+        },
+        {
+          "id": "sh",
+          "chap_hash": "f54a4085d051a503"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "debe87e4bcecc48f"
+        },
+        {
+          "id": "app:priv-rationale",
+          "chap_hash": "ea0a5da83728b94b"
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "title_en": "The RISC-V Instruction Set Manual, Volume III: Profiles",
+      "title_unit_id": "654555b9357d4601eff4650d45dc9b85",
+      "entry_file": "src/profiles/profiles.adoc",
+      "chapters": [
+        {
+          "id": "_preface_3",
+          "chap_hash": "aab3cc2b65a873ec"
+        },
+        {
+          "id": "_introduction_6",
+          "chap_hash": "f0b4ff34de19f9c0"
+        },
+        {
+          "id": "_rvi20_profiles",
+          "chap_hash": "699b26195a7fcbd7"
+        },
+        {
+          "id": "_rva20_profiles",
+          "chap_hash": "8e2963aeb61ff099"
+        },
+        {
+          "id": "_rva22_profiles",
+          "chap_hash": "3eaec99308d3c03a"
+        },
+        {
+          "id": "_rva23_profiles",
+          "chap_hash": "d1af26ea50016a01"
+        },
+        {
+          "id": "_rvb23_profiles",
+          "chap_hash": "66835f719039f492"
+        }
+      ]
+    }
+  ]
+}

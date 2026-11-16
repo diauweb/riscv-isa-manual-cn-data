@@ -1,0 +1,21 @@
+unit_id = "47239f56cb61f4e1587b568f8be1b172"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_mdt_sz_warl]#The M-mode-disable-trap (csr::[mdt]) bit is a WARL field introduced by the ext:smdbltrp[] extension.#
+[#norm:mstatus_mdt_rst]#Upon reset, the csr::[mdt] field is set to 1.#
+[#norm:mstatus_mie_clr_by_mdt]#When the csr::[mdt] bit is set to 1 by an explicit CSR write,
+the csr::[mie] (Machine Interrupt Enable) bit is cleared to 0.#
+[#norm:mstatus_mie_clr_by_mdt_rv64]#For RV64, this clearing occurs regardless of the value written, if any, to the csr::[mie] bit by the same write.#
+[#norm:mstatus_mie_set_mdt_0]#The csr::[mie] bit can only be set to 1 by an
+explicit CSR write if the csr::[mdt] bit is already 0#
+[#norm:mstatus_mie_set_mdt_0_rv64]#or, for RV64, is being set to 0 by the same write#
+(For RV32, the csr::[mdt] bit is in csr:mstatush[] and the csr::[mie] bit in csr:mstatus[] register).'''
+zh = '''
+[#norm:mstatus_mdt_sz_warl]#M 模式禁用陷阱（csr::[mdt]）位是 ext:smdbltrp[] 扩展引入的 WARL 字段。#
+[#norm:mstatus_mdt_rst]#复位时，csr::[mdt] 字段被设置为 1。#
+[#norm:mstatus_mie_clr_by_mdt]#当通过显式 CSR 写入将 csr::[mdt] 位设置为 1 时，csr::[mie]（机器中断使能）位被清除为 0。#
+[#norm:mstatus_mie_clr_by_mdt_rv64]#对于 RV64，无论同一次写入是否向 csr::[mie] 位写入了任何值，都会发生此清除。#
+[#norm:mstatus_mie_set_mdt_0]#仅当 csr::[mdt] 位已经为 0#，[#norm:mstatus_mie_set_mdt_0_rv64]#或者对于 RV64，在同一次写入中正被设置为 0# 时，才能通过显式 CSR 写入将 csr::[mie] 位设置为 1
+（对于 RV32，csr::[mdt] 位在 csr:mstatush[] 中，csr::[mie] 位在 csr:mstatus[] 寄存器中）。'''

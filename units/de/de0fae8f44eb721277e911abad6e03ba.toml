@@ -1,0 +1,17 @@
+unit_id = "de0fae8f44eb721277e911abad6e03ba"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By default, the target of an indirect jump is always considered an
+uninferable PC discontinuity. However, if the register that specifies
+the jump target was loaded with a constant then it can be considered
+inferable under some circumstances. The hart must identify jumps with
+sequentially inferable targets and provide this information separately
+to the encoder. The final decision as to whether to treat the jump as
+inferable or not must be made by the encoder. Both the constant load and
+the jump must be traced in order for the decoder to be able to infer the
+jump target. See <<JumpClasses>> for details
+of what constitutes a sequentially inferable jump.'''
+zh = '''
+默认情况下，间接跳转的目标始终被视为不可推断的 PC 不连续。然而，如果指定跳转目标的寄存器被加载了常量，则在某些情况下可将其视为可推断。硬件线程必须识别具有顺序可推断目标的跳转，并将此信息单独提供给编码器。是否将跳转视为可推断的最终决定必须由编码器做出。为使解码器能够推断跳转目标，常量加载和跳转都必须被跟踪。关于什么构成顺序可推断跳转的细节，见 <<JumpClasses>>。'''

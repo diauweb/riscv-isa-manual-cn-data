@@ -1,0 +1,26 @@
+unit_id = "d2773a232b9e295d4907871e9e54eea1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mappings from TSO operations to RISC-V operations
+[%autowidth,float="center", align="center",cols="<,<",options="header",separator=!]
+|===
+!x86/TSO Operation !RVWMO Mapping
+!Load ! `l{b|h|w|d}; fence r,rw`
+!Store !`fence rw,w; s{b|h|w|d}`
+!Atomic RMW !`amo<op>.{w|d}.aqrl OR` +
+`loop:lr.{w|d}.aq; <op>; sc.{w|d}.aqrl; bnez loop`
+!Fence !`fence rw,rw`
+|==='''
+zh = '''
+[%autowidth,float="center", align="center",cols="<,<",options="header",separator=!]
+.从 TSO 操作到 RISC-V 操作的映射
+|===
+!x86/TSO 操作 !RVWMO 映射
+!加载 ! `l{b|h|w|d}; fence r,rw`
+!存储 !`fence rw,w; s{b|h|w|d}`
+!原子 RMW !`amo<op>.{w|d}.aqrl OR` +
+`loop:lr.{w|d}.aq; <op>; sc.{w|d}.aqrl; bnez loop`
+!FENCE !`fence rw,rw`
+|==='''

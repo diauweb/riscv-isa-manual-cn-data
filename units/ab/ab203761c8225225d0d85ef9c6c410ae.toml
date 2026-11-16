@@ -1,0 +1,16 @@
+unit_id = "ab203761c8225225d0d85ef9c6c410ae"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The atomic memory operation (AMO) instructions perform read-modify-write
+operations for multiprocessor synchronization and are encoded with an
+R-type instruction format. These AMO instructions atomically load a data
+value from the address in _rs1_, place the value into register _rd_,
+apply a binary operator to the loaded value and the original value in
+_rs2_, then store the result back to the original address in _rs1_. [#norm:amo_operand_size]#AMOs
+can either operate on _doublewords_ (RV64 only) or _words_ in memory. For
+RV64, 32-bit AMOs always sign-extend the value placed in _rd_, and
+ignore the upper 32 bits of the original value of _rs2_.#'''
+zh = '''
+原子内存操作（AMO）指令执行读-修改-写操作，用于多处理器同步，并采用 R 型指令格式编码。这些 AMO 指令原子地从 _rs1_ 中的地址加载一个数据值，将该值放入寄存器 _rd_，对加载值与 _rs2_ 中的原始值应用二元运算符，然后将结果存回 _rs1_ 中的原始地址。[#norm:amo_operand_size]#AMO 可以操作内存中的__双字__（仅 RV64）或__字__。对于 RV64，32 位 AMO 总是对放入 _rd_ 的值进行符号扩展，并忽略 _rs2_ 原始值的高 32 位。#'''

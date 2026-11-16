@@ -1,0 +1,25 @@
+unit_id = "15cf283d8fc44647e146b551fb39ae59"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point-to-integer and integer-to-floating-point conversion
+instructions are encoded in the OP-FP major opcode space. [#norm:fcvt-l-s_fcvt-w-s_op]#FCVT.W.S or
+FCVT.L.S converts a floating-point number in floating-point register
+_rs1_ to a signed 32-bit or 64-bit integer, respectively, in integer
+register _rd_#. [#norm:fcvt-s-w_fcvt-s-l_op]#FCVT.S.W or FCVT.S.L converts a 32-bit or 64-bit signed
+integer, respectively, in integer register _rs1_ into a floating-point
+number in floating-point register _rd_#. [#norm:fcvt-wu-s_fcvt-lu-s_fcvt-s-wu_fcvt-s-lu_op]#FCVT.WU.S, FCVT.LU.S, FCVT.S.WU,
+and FCVT.S.LU variants convert to or from unsigned integer values. For
+XLEN>32, FCVT.W[U].S sign-extends the 32-bit result to the destination register width#.
+[#norm:fcvt_long_float_rv64_only]#FCVT.L[U].S and FCVT.S.L[U] are RV64-only instructions#.
+[#norm:fcvt_unrepresentable_nv]#If the rounded result is not representable in the
+destination format, it is clipped to the nearest value and the invalid
+flag is set#. [#norm:fcvt_int_float_valid_input]#<<int_conv>> gives the range of valid inputs
+for FCVT._int_.S and the behavior for invalid inputs#.
+(((floating-point, conversion)))'''
+zh = '''
+浮点到整数以及整数到浮点的转换指令编码在 OP-FP 主操作码空间中。[#norm:fcvt-l-s_fcvt-w-s_op]#FCVT.W.S 或 FCVT.L.S 分别将浮点寄存器 _rs1_ 中的浮点数转换为整数寄存器 _rd_ 中的有符号 32 位或 64 位整数#。[#norm:fcvt-s-w_fcvt-s-l_op]#FCVT.S.W 或 FCVT.S.L 分别将整数寄存器 _rs1_ 中的 32 位或 64 位有符号整数转换为浮点寄存器 _rd_ 中的浮点数#。[#norm:fcvt-wu-s_fcvt-lu-s_fcvt-s-wu_fcvt-s-lu_op]#FCVT.WU.S、FCVT.LU.S、FCVT.S.WU 和 FCVT.S.LU 变体用于转换为无符号整数值或从无符号整数值转换。对于 XLEN>32，FCVT.W[U].S 将 32 位结果符号扩展至目标寄存器宽度#。
+[#norm:fcvt_long_float_rv64_only]#FCVT.L[U].S 和 FCVT.S.L[U] 是仅限 RV64 的指令#。
+[#norm:fcvt_unrepresentable_nv]#如果舍入后的结果无法在目标格式中表示，则将其截断到最近的值并设置无效标志#。[#norm:fcvt_int_float_valid_input]#<<int_conv>> 给出了 FCVT._int_.S 的有效输入范围以及无效输入的行为#。
+(((floating-point, conversion)))'''

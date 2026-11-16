@@ -1,0 +1,12 @@
+unit_id = "d4c5fbab8ff220f7ba8b45cb3429019f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:andi_ori_xori_op]#insn:andi[], insn:ori[], insn:xori[] are logical operations that perform bitwise AND, OR, and
+XOR on register _rs1_ and the sign-extended 12-bit immediate and place
+the result in _rd_.#
+Note, insn:xori[rd,rs1,-1] performs a bitwise logical inversion of register _rs1_ (assembler pseudoinstruction insn:not[rd,rs]).'''
+zh = '''
+[#norm:andi_ori_xori_op]#insn:andi[]、insn:ori[]、insn:xori[] 是逻辑操作，对寄存器 _rs1_ 和符号扩展的 12 位立即数执行按位 AND、OR 和 XOR，并将结果放入 _rd_。#
+注意，insn:xori[rd,rs1,-1] 对寄存器 _rs1_ 执行按位逻辑取反（汇编伪指令 insn:not[rd,rs]）。'''

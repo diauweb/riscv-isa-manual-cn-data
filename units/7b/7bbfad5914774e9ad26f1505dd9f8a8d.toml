@@ -1,0 +1,34 @@
+unit_id = "7bbfad5914774e9ad26f1505dd9f8a8d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Future Enhancements]
+.Future Enhancements
+[cols="17%,17%,~",options="header"]
+|====
+|Enhancement|Conformance|Notes
+|Instrumentation Data Trace|Nexus Compatible|Very likely (Nexus defines appropriate messages). It will require software to be instrumented by code sending data using trace infrastructure (Arm CoreSight ITM enabled many use-cases).
+|Selective Data Trace|Nexus Compatible|Very likely (Nexus defines appropriate messages). It will allow sending some data in response to triggers (from debug module or external).
+|Full Data Trace|Nexus Compatible|Likely (E-Trace supports it), but necessary bandwidth may be a problem.
+|Smaller field sizes|Nexus Extension|Unlikely (too much of a change). Some of the fields may be made shorter (as not all cases are needed), but it may not be justified.
+|System Bus Trace|Nexus Compatible|Likely (Nexus defines appropriate messages and there is a need for more than trace of harts).
+|Additional TCODE|Nexus Extension|Possible, but more real-life examples are needed to justify it.
+|Single MSEO bit|Nexus Compatible|Unlikely to be considered. It may provide (12.5% instead of 25% MSEO overhead), but it is more complex to handle by both encoder and decoders.
+|More MDO bits|Nexus Compatible|Very unlikely to be considered. To keep byte alignment, 14 or 22 or 30-bit MDO may be considered. Even 14-bit will cause a lot of 'wasted' bits.
+|===='''
+zh = '''
+[#Future Enhancements]
+.Future Enhancements
+[cols="17%,17%,~",options="header"]
+|====
+|增强|符合性|说明
+|插桩数据跟踪|Nexus 兼容|非常可能（Nexus 定义了适当消息）。它将要求软件通过使用跟踪基础设施发送数据的代码进行插桩（Arm CoreSight ITM 支持了许多用例）。
+|选择性数据跟踪|Nexus 兼容|非常可能（Nexus 定义了适当消息）。它将允许响应触发（来自调试模块或外部）发送一些数据。
+|完整数据跟踪|Nexus 兼容|可能（E-Trace 支持它），但必要带宽可能成为问题。
+|更小字段大小|Nexus 扩展|不太可能（改动太大）。某些字段可以缩短（因为并非所有情况都需要），但可能不合理。
+|系统总线跟踪|Nexus 兼容|可能（Nexus 定义了适当消息，并且除了硬件线程跟踪之外还有需求）。
+|附加 TCODE|Nexus 扩展|可能，但需要更多实际示例来证明其合理性。
+|单 MSEO 位|Nexus 兼容|不太可能被考虑。它可以提供（12.5% 而不是 25% 的 MSEO 开销），但编码器和解码器处理起来都更复杂。
+|更多 MDO 位|Nexus 兼容|非常不可能被考虑。为保持字节对齐，可以考虑 14 或 22 或 30 位 MDO。即使 14 位也会导致大量“浪费”位。
+|===='''

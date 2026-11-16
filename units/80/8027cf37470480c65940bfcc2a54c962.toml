@@ -1,0 +1,12 @@
+unit_id = "8027cf37470480c65940bfcc2a54c962"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In addition, when the TM bit in the `hcounteren` register is clear, attempts to
+access the `vstimecmp` register (via stimecmp) while executing in VS-mode will
+cause a virtual-instruction  exception if the same bit in `mcounteren` is set.
+When this bit and the same bit in `mcounteren` are both set, access to the
+`vstimecmp` register (if implemented) is permitted in VS-mode.'''
+zh = '''
+此外，当 `hcounteren` 寄存器中的 TM 位为 0 时，在 VS 模式中执行时尝试访问 `vstimecmp` 寄存器（通过 stimecmp），如果 `mcounteren` 中的相同位为 1，则将导致虚拟指令异常。当此位与 `mcounteren` 中的相同位均为 1 时，允许在 VS 模式中访问 `vstimecmp` 寄存器（如果已实现）。'''

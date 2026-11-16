@@ -1,0 +1,18 @@
+unit_id = "a280fd5d5dd7d2307111d68094c2bfd3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+We use the term _greenfield extension_ to describe an extension that
+begins populating a new instruction encoding space, and hence can only
+cause encoding conflicts at the prefix level. We use the term
+_brownfield extension_ to describe an extension that fits around
+existing encodings in a previously defined instruction space. A
+brownfield extension is necessarily tied to a particular greenfield
+parent encoding, and there may be multiple brownfield extensions to the
+same greenfield parent encoding. For example, the base ISAs are
+greenfield encodings of a 30-bit instruction space, while the FDQ
+floating-point extensions are all brownfield extensions adding to the
+parent base ISA 30-bit encoding space.'''
+zh = '''
+我们使用术语 _绿地扩展_ 来描述开始填充新指令编码空间的扩展，因此它只会在前缀层面引起编码冲突。我们使用术语 _棕地扩展_ 来描述适合先前定义的指令空间中现有编码周围的扩展。棕地扩展必然绑定到特定的绿地父编码，并且同一绿地父编码可以有多个棕地扩展。例如，基础 ISA 是 30 位指令空间的绿地编码，而 FDQ 浮点扩展都是添加到父基础 ISA 30 位编码空间的棕地扩展。'''

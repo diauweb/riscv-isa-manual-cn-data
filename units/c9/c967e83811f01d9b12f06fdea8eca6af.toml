@@ -1,0 +1,48 @@
+unit_id = "c967e83811f01d9b12f06fdea8eca6af"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.A key for the litmus test diagrams drawn in this appendix
+[%autowidth,cols="<,<",align="center",float="center",options="header",]
+|===
+|Edge |Full Name (and explanation)
+|rf |Reads From (from each store to the loads that return a value
+written by that store)
+
+|co |Coherence (a total order on the stores to each address)
+
+|fr |From-Reads (from each load to co-successors of the store from which
+the load returned a value)
+
+|ppo |Preserved Program Order
+
+|fence |Orderings enforced by a FENCE instruction
+
+|addr |Address Dependency
+
+|ctrl |Control Dependency
+
+|data |Data Dependency
+|==='''
+zh = '''
+.本附录中所绘试金石测试图的图例
+[%autowidth,cols="<,<",align="center",float="center",options="header",]
+|===
+|边 |全名（及解释）
+|rf |Reads From（从每个存储到返回由该存储写入的值的加载）
+
+|co |Coherence（对每个地址的存储的全序）
+
+|fr |From-Reads（从每个加载到该加载所返回值的来源存储的 co 后继）
+
+|ppo |Preserved Program Order（保持的程序顺序）
+
+|fence |由 FENCE 指令强制的排序
+
+|addr |地址依赖
+
+|ctrl |控制依赖
+
+|data |数据依赖
+|==='''

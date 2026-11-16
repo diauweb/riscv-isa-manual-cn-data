@@ -1,0 +1,36 @@
+unit_id = "97e20c02bfd878bc15b5a7a48f0c96e6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Capturing the faulting instruction in `mtval` reduces the overhead of
+instruction emulation, potentially avoiding several partial instruction
+loads if the instruction is misaligned, and likely data cache misses or
+slow uncached accesses when loads are used to fetch the instruction into
+a data register. There is also a problem of atomicity if another agent
+is manipulating the instruction memory, as might occur in a dynamic
+translation system.
+
+A requirement is that the entire instruction (or at least the first
+MXLEN bits) are fetched into `mtval` before taking the trap. This should
+not constrain implementations, which would typically fetch the entire
+instruction before attempting to decode the instruction, and avoids
+complicating software handlers.
+
+A value of zero in `mtval` signifies either that the feature is not
+supported, or an illegal zero instruction was fetched. A load from the
+instruction memory pointed to by `mepc` can be used to distinguish these
+two cases (or alternatively, the system configuration information can be
+interrogated to install the appropriate trap handling before runtime).
+===='''
+zh = '''
+[NOTE]
+====
+在 `mtval` 中捕获出错指令可减少指令模拟的开销，如果指令非对齐，可能避免多次部分指令加载，并且当使用加载将指令取到数据寄存器时，可能避免数据缓存缺失或缓慢的非缓存访问。如果另一个代理正在操作指令内存（例如在动态翻译系统中可能发生），还存在原子性问题。
+
+一项要求是在捕获陷阱之前将整个指令（或至少前 MXLEN 位）取到 `mtval` 中。这不应约束实现，因为实现通常会在尝试解码指令之前取整个指令，并避免使软件处理程序复杂化。
+
+`mtval` 中的零值表示要么不支持该特性，要么取到了非法的零指令。可以使用从 `mepc` 指向的指令内存进行的加载来区分这两种情况（或者，可以查询系统配置信息，以便在运行时之前安装适当的陷阱处理）。
+===='''

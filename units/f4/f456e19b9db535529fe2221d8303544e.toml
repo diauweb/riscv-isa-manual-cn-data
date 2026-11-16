@@ -1,0 +1,16 @@
+unit_id = "f456e19b9db535529fe2221d8303544e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The execution environment determines what portions of the
+address space are accessible for each kind of memory access. For
+example, the set of locations that can be implicitly read for
+instruction fetch may or may not have any overlap with the set of
+locations that can be explicitly read by a load instruction; and the set
+of locations that can be explicitly written by a store instruction may
+be only a subset of locations that can be read. Ordinarily, if an
+instruction attempts to access memory at an inaccessible address, an
+exception is raised for the instruction.'''
+zh = '''
+执行环境决定地址空间的哪些部分对于每种内存访问是可访问的。例如，可为指令取指隐式读取的位置集合，与可由加载指令显式读取的位置集合，可能重叠也可能不重叠；而可由存储指令显式写入的位置集合，可能只是可读取位置集合的一个子集。通常，如果一条指令试图访问不可访问地址处的内存，则会为该指令引发异常。'''

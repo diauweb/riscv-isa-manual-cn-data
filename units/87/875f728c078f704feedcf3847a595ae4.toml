@@ -1,0 +1,24 @@
+unit_id = "875f728c078f704feedcf3847a595ae4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeDataFilters: Trace Data Filters Register (trBaseEncoder+0x01C)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|15:0 |trTeDataFilters|
+Determine which filters defined in <<Trace Encoder Filter Registers, Trace Encoder Filter Registers>> chapter qualify data trace. If bit *__n__* is a 1 then data accessed will be traced when filter *__n__* matches. If all bits are 0, all data accesses are traced.
+|WARL|<<Undef,Undef>>
+|31:16 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trTeDataFilters：跟踪数据过滤器寄存器（trBaseEncoder+0x01C）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|15:0 |trTeDataFilters|
+确定 <<Trace Encoder Filter Registers, Trace Encoder Filter Registers>> 章中定义的哪些过滤器限定数据跟踪。如果位 *__n__* 为 1，则当过滤器 *__n__* 匹配时跟踪被访问的数据。如果所有位均为 0，则跟踪所有数据访问。
+|WARL|<<Undef,Undef>>
+|31:16 |--|保留|--|0
+|==='''

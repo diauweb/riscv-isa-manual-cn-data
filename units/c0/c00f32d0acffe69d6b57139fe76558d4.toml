@@ -1,0 +1,32 @@
+unit_id = "c00f32d0acffe69d6b57139fe76558d4"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. The PUSH instruction
+** adjusts the stack pointer to create the stack frame
+** pushes (stores) the registers specified in the register list to the stack frame
+
+. The POP instruction
+** pops (loads) the registers in the register list from the stack frame
+** adjusts the stack pointer to destroy the stack frame
+
+. The POPRET instructions
+** pop (load) the registers in the register list from the stack frame
+** _cm.popretz_ also moves zero into _a0_ as the return value
+** adjust the stack pointer  to destroy the stack frame
+** execute a _ret_ instruction to return from the function'''
+zh = '''
+. PUSH 指令
+** 调整栈指针以创建栈帧
+** 将寄存器列表中指定的寄存器压入（存储）到栈帧
+
+. POP 指令
+** 从栈帧中弹出（加载）寄存器列表中的寄存器
+** 调整栈指针以销毁栈帧
+
+. POPRET 指令
+** 从栈帧中弹出（加载）寄存器列表中的寄存器
+** _cm.popretz_ 还会将零移入 _a0_ 作为返回值
+** 调整栈指针以销毁栈帧
+** 执行 _ret_ 指令以从函数返回'''

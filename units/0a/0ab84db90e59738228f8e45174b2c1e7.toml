@@ -1,0 +1,18 @@
+unit_id = "0ab84db90e59738228f8e45174b2c1e7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The consequence of this specification is that on occurrence of double trap the
+RNMI handler is not provided with information that a trap reports in the
+csr:mtval[] and the csr:mtval2[] registers. This information, if needed, can be obtained
+by the RNMI handler by decoding the instruction at the address in csr:mnepc[] and
+examining its source register contents.
+===='''
+zh = '''
+[NOTE]
+====
+本规范的结果是，在发生双重陷阱时，RNMI 处理程序不会获得陷阱在 csr:mtval[] 和 csr:mtval2[] 寄存器中报告的信息。如果需要这些信息，RNMI 处理程序可以通过解码 csr:mnepc[] 中地址处的指令并检查其源寄存器内容来获得。
+===='''

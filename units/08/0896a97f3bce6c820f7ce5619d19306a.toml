@@ -1,0 +1,34 @@
+unit_id = "0896a97f3bce6c820f7ce5619d19306a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The tracking of csr::[elp] and the requirement for a landing pad instruction
+at the target of indirect call and jump enables a processor implementation to
+significantly reduce or to prevent speculation to non-landing-pad instructions.
+Constraining speculation using this technique, greatly reduces the gadget space
+and increases the difficulty of using techniques such as branch-target-injection,
+also known as Spectre cite:[spectre] variant 2, which use speculative execution to leak data
+through side channels.
+
+The insn:lpad[] requires a 4-byte alignment to address the concatenation of two
+instructions insn:a[] and insn:b[] accidentally forming an unintended landing pad in the
+program. For example, consider a 32-bit instruction where the bytes 3 and 2 have
+a pattern of `0x?017` (for example, the immediate fields of a insn:lui[], insn:auipc[], or
+a insn:jal[] instruction), followed by a 16-bit or a 32-bit instruction. When
+patterns that can accidentally form a valid landing pad are detected, the
+assembler or linker can force instruction insn:a[] to be aligned to a 4-byte
+boundary to force the unintended insn:lpad[] pattern to become misaligned, and thus
+not a valid landing pad, or may use an alternate register allocation to prevent
+the accidental landing pad.
+===='''
+zh = '''
+[NOTE]
+====
+对 csr::[elp] 的跟踪以及在间接调用和跳转目标处要求着陆垫指令，使处理器实现能够显著减少或阻止对非着陆垫指令的推测。
+使用这种技术约束推测，可极大地减少 gadget 空间，并增加使用诸如分支目标注入（又称 Spectre cite:[spectre] 变体 2）等技术（利用推测执行通过侧信道泄露数据）的难度。
+
+insn:lpad[] 要求 4 字节对齐，以避免两条指令 insn:a[] 和 insn:b[] 的拼接意外在程序中形成非预期的着陆垫。例如，考虑一条 32 位指令，其字节 3 和 2 具有 `0x?017` 的模式（例如 insn:lui[]、insn:auipc[] 或 insn:jal[] 指令的立即数字段），后跟一条 16 位或 32 位指令。当检测到可能意外形成有效着陆垫的模式时，汇编器或链接器可以强制指令 insn:a[] 对齐到 4 字节边界，以迫使非预期的 insn:lpad[] 模式变为非对齐，从而不构成有效着陆垫，或者可以使用替代的寄存器分配来防止意外的着陆垫。
+===='''

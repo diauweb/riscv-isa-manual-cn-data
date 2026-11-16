@@ -1,0 +1,13 @@
+unit_id = "6a424f129ce18ede58d579be940c0f1a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For every hart, the Debug Module tracks 4 conceptual bits of state: halt
+request, resume ack, halt-on-reset request, and hart reset. (The hart
+reset and halt-on-reset request bits are optional.) These 4 bits reset
+to 0, except for resume ack, which may reset to either 0 or 1. The DM
+receives halted, running, and havereset signals from each hart. The
+debugger can observe the state of resume ack in {dmstatus-allresumeack} and {dmstatus-anyresumeack}, and the state of halted, running, and havereset signals in {dmstatus-allhalted}, {dmstatus-anyhalted}, {dmstatus-allrunning}, {dmstatus-anyrunning}, {dmstatus-allhavereset}, and {dmstatus-anyhavereset}. The state of the other bits cannot be observed directly.'''
+zh = '''
+对于每个硬件线程，调试模块跟踪 4 个概念状态位：停止请求、恢复确认、复位时停止请求和硬件线程复位。（硬件线程复位和复位时停止请求位是可选的。）这 4 位复位为 0，但恢复确认除外，它可以复位为 0 或 1。DM 从每个硬件线程接收 halted、running 和 havereset 信号。调试器可以在 {dmstatus-allresumeack} 和 {dmstatus-anyresumeack} 中观察恢复确认状态，并在 {dmstatus-allhalted}、{dmstatus-anyhalted}、{dmstatus-allrunning}、{dmstatus-anyrunning}、{dmstatus-allhavereset} 和 {dmstatus-anyhavereset} 中观察 halted、running 和 havereset 信号的状态。其他位的状态无法直接观察。'''

@@ -1,0 +1,11 @@
+unit_id = "6a5b7a4e24ff2ffbd559c0ff9496aa3c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a guest-page-fault trap is taken into HS-mode, csr:htval[] is written
+with either zero or the guest physical address that faulted, shifted
+right by qty:2[bits]. For other traps, csr:htval[] is set to zero, but a future
+standard or extension may redefine csr:htval[]'s setting for other traps.'''
+zh = '''
+当客户页故障陷阱进入 HS-mode 时，csr:htval[] 被写入零或导致故障的客户物理地址右移 qty:2[位]。对于其他陷阱，csr:htval[] 被设置为零，但未来的标准或扩展可能会重新定义 csr:htval[] 对其他陷阱的设置。'''

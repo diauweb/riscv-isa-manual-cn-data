@@ -1,0 +1,30 @@
+unit_id = "2a02dcfd6b52205ba58e3703fc1e1aec"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+BF16 addition, subtraction, multiplication, division, and square-root operations can be
+faithfully emulated by converting the BF16 operands to single-precision, performing the
+operation using single-precision arithmetic, and then converting back to BF16. Performing
+BF16 fused multiply-addition using this method can produce results that differ by 1-ulp
+on some inputs for the RNE and RMM rounding modes.
+
+Conversions between BF16 and formats larger than FP32 can be
+faithfully emulated.
+Exact widening conversions from BF16 can be synthesized by first
+converting to FP32 and then converting from FP32 to the target
+precision. Conversions narrowing to BF16 can be synthesized by first
+converting to FP32 through a series of halving steps using
+insn:vfncvt.rod.f.f.w[]. The final convert from FP32 to BF16 would use
+the desired rounding mode.
+===='''
+zh = '''
+[NOTE]
+====
+BF16 的加法、减法、乘法、除法和平方根操作可以通过将 BF16 操作数转换为单精度、使用单精度算术执行操作、然后转换回 BF16 来忠实仿真。使用此方法执行 BF16 融合乘加，在 RNE 和 RMM 舍入模式下对某些输入可能产生相差 1-ulp 的结果。
+
+BF16 与大于 FP32 的格式之间的转换可以忠实仿真。
+从 BF16 的精确加宽转换可以通过先转换为 FP32、然后从 FP32 转换为目标精度来合成。收窄到 BF16 的转换可以通过使用 insn:vfncvt.rod.f.f.w[] 经过一系列减半步骤先转换为 FP32 来合成。从 FP32 到 BF16 的最终转换将使用所需的舍入模式。
+===='''

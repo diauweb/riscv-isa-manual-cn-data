@@ -1,0 +1,15 @@
+unit_id = "02ca040a1debb06c92d6e10a013c680f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-addiw_op]#insn:c.addiw[] is an XLEN=64-only instruction that performs the same
+computation but produces a 32-bit result, then sign-extends result to 64
+bits. It expands into insn:addiw[rd,rd,imm]. The immediate can be
+zero for insn:c.addiw[], where this corresponds to insn:sext.w[rd].#
+[#norm:c-addiw_rsv]#insn:c.addiw[] is
+valid only when _rd_≠`x0`; the code points with
+_rd_=`x0` are reserved.#'''
+zh = '''
+[#norm:c-addiw_op]#insn:c.addiw[] 是仅适用于 XLEN=64 的指令，执行相同的计算但产生 32 位结果，然后将结果符号扩展到 64 位。它展开为 insn:addiw[rd,rd,imm]。insn:c.addiw[] 的立即数可以为零，此时对应于 insn:sext.w[rd]。#
+[#norm:c-addiw_rsv]#insn:c.addiw[] 仅在 _rd_≠`x0` 时有效；_rd_=`x0` 的代码点保留。#'''

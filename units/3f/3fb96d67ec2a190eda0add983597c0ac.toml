@@ -1,0 +1,18 @@
+unit_id = "3fb96d67ec2a190eda0add983597c0ac"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+insn:c.mv[] expands to a different instruction than the canonical
+insn:mv[] pseudoinstruction, which instead uses insn:addi[]. Implementations that handle
+insn:mv[] specially, e.g. using register-renaming hardware, may find it more
+convenient to expand insn:c.mv[] to insn:mv[] instead of insn:add[], at slight additional
+hardware cost.
+===='''
+zh = '''
+[NOTE]
+====
+insn:c.mv[] 展开为与规范 insn:mv[] 伪指令不同的指令，后者使用 insn:addi[]。对 insn:mv[] 进行特殊处理的实现（例如使用寄存器重命名硬件）可能会发现将 insn:c.mv[] 展开为 insn:mv[] 而不是 insn:add[] 更方便，代价是略微增加硬件成本。
+===='''

@@ -1,0 +1,69 @@
+unit_id = "18f08b888b258aa53718ff3ed3455159"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VSM3ME(vs2, vs1)) = {
+  if(LMUL*VLEN < EGW)  then {
+    handle_illegal();  // illegal-instruction exception
+    RETIRE_FAIL
+  } else {
+
+  eg_len = (vl/EGS)
+  eg_start = (vstart/EGS)
+
+  foreach (i from eg_start to eg_len-1) {
+    let w[7:0]  : bits(256) = get_velem(vs1, 256, i);
+    let w[15:8] : bits(256) = get_velem(vs2, 256, i);
+
+    // Byte Swap inputs from big-endian to little-endian
+    let w15 = rev8(w[15]);
+    let w14 = rev8(w[14]);
+    let w13 = rev8(w[13]);
+    let w12 = rev8(w[12]);
+    let w11 = rev8(w[11]);
+    let w10 = rev8(w[10]);
+    let w9  = rev8(w[9]);
+    let w8  = rev8(w[8]);
+    let w7  = rev8(w[7]);
+    let w6  = rev8(w[6]);
+    let w5  = rev8(w[5]);
+    let w4  = rev8(w[4]);
+    let w3  = rev8(w[3]);
+    let w2  = rev8(w[2]);
+    let w1  = rev8(w[1]);
+    let w0  = rev8(w[0]);
+
+    // Note that some of the newly computed words are used in later invocations.
+    let w16 = ZVKSH_W(w0 @  w7 @  w13 @   w3 @  w10);
+    let w17 = ZVKSH_W(w1 @  w8 @  w14 @   w4 @  w11);
+    let w18 = ZVKSH_W(w2 @  w9 @  w15 @   w5 @  w12);
+    let w19 = ZVKSH_W(w3 @ w10 @  w16 @   w6 @  w13);
+    let w20 = ZVKSH_W(w4 @ w11 @  w17 @   w7 @  w14);
+    let w21 = ZVKSH_W(w5 @ w12 @  w18 @   w8 @  w15);
+    let w22 = ZVKSH_W(w6 @ w13 @  w19 @   w9 @  w16);
+    let w23 = ZVKSH_W(w7 @ w14 @  w20 @  w10 @  w17);
+
+  // Byte swap outputs from little-endian back to big-endian
+    let w[16] : bits(32) = rev8(w16);
+    let w[17] : bits(32) = rev8(w17);
+    let w[18] : bits(32) = rev8(w18);
+    let w[19] : bits(32) = rev8(w19);
+    let w[20] : bits(32) = rev8(w20);
+    let w[21] : bits(32) = rev8(w21);
+    let w[22] : bits(32) = rev8(w22);
+    let w[23] : bits(32) = rev8(w23);
+
+    // Update the destination register.
+    set_velem(vd, 256, i, w[23:16]);
+  }
+  RETIRE_SUCCESS
+  }
+}
+
+  function P_1(X) ((X) ^ ROL32((X), 15) ^ ROL32((X), 23))
+
+  function ZVKSH_W(M16, M9, M3, M13, M6) = \
+  (P1( (M16) ^  (M9) ^ ROL32((M3), 15) ) ^ ROL32((M13), 7) ^ (M6))
+--'''

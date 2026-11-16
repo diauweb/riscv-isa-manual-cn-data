@@ -1,0 +1,13 @@
+unit_id = "93c4e467a378be18163a9ae129d2a372"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A store instruction instance latexmath:[$i$] in state
+Pending_mem_stores(_store_continuation_), for which all the memory store
+operations in latexmath:[$i.\textit{mem\_stores}$] have been propagated,
+can always be completed (not to be confused with finished). Action:
+update the state of latexmath:[$i$] to
+Plain(_store_continuation(true)_).'''
+zh = '''
+处于 Pending_mem_stores(_store_continuation_) 状态的存储指令实例 latexmath:[$i$]，如果 latexmath:[$i.\textit{mem\_stores}$] 中的所有内存存储操作都已传播，则总是可以被完成（不要与结束混淆）。动作：将 latexmath:[$i$] 的状态更新为 Plain(_store_continuation(true)_)。'''

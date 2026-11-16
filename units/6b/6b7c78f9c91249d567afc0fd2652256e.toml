@@ -1,0 +1,21 @@
+unit_id = "6b7c78f9c91249d567afc0fd2652256e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The four words of current state are read as a 4-element group from 'vd'
+and the round keys are read from either the corresponding 4-element group
+in `vs2` (vector-vector form) or the scalar element group in `vs2`
+(vector-scalar form).
+The next four words of state are generated
+by iteratively XORing the last three words of the state with
+the corresponding round key, performing
+a byte-wise substitution, and then performing XORs between rotated
+versions of this value and the corresponding current state.'''
+zh = '''
+当前状态的四个字作为 4 元素组从 'vd' 读入，
+轮密钥从 `vs2` 中对应的 4 元素组（向量-向量形式）
+或 `vs2` 中的标量元素组（向量-标量形式）读入。
+接下来的四个状态字通过以下方式生成：
+将状态的后三个字与对应的轮密钥迭代异或，
+执行按字节替换，然后在该值的旋转版本与对应的当前状态之间执行异或。'''

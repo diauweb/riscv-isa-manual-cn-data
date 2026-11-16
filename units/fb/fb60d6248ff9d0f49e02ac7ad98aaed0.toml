@@ -1,0 +1,12 @@
+unit_id = "fb60d6248ff9d0f49e02ac7ad98aaed0"
+kind = "heading"
+translatable = true
+status = "machine"
+en = '''
+"Zihintpause" Extension for Pause Hint'''
+zh = '''
+用于暂停提示的 "Zihintpause" 扩展
+
+PAUSE 指令向硬件线程提示：它应暂时降低执行速率。它通常用于在轮询时节省能量和执行资源，例如在等待自旋锁变为空闲时。
+
+围绕此扩展的大部分争论集中在是否应改为提供类似于 x86 的 MONITOR/MWAIT 的设施。我们得出的结论是，即使为 RISC-V 定义了此类设施，它也不会取代 PAUSE。在轮询非内存事件、轮询多个事件，或软件不确切知道其所轮询的事件时，PAUSE 更为合适。（也许令人意外的是，后一种情况无处不在，部分原因是它是 Linux 内核 `cpu_relax` API 所期望的机制。）'''

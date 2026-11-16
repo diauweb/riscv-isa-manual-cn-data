@@ -1,0 +1,13 @@
+unit_id = "5d4c222a2ce5b543f20fb6550ff43d1b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For _implicit_ accesses to supervisor-level memory management data
+structures, such as page tables, endianness is always controlled by SBE.
+Since changing SBE alters the implementation’s interpretation of these
+data structures, if any such data structures remain in use across a
+change to SBE, M-mode software must follow such a change to SBE by
+executing an SFENCE.VMA instruction with _rs1_=`x0` and _rs2_=`x0`.'''
+zh = '''
+对于对监管级内存管理数据结构（例如页表）的__隐式__访问，字节序始终由 SBE 控制。由于更改 SBE 会改变实现对这些数据结构的解释，如果在对 SBE 的更改期间仍有任何此类数据结构在使用，则 M 模式软件必须在对 SBE 进行此类更改后，执行一条 _rs1_=`x0` 且 _rs2_=`x0` 的 SFENCE.VMA 指令。'''

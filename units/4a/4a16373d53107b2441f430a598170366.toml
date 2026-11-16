@@ -1,0 +1,22 @@
+unit_id = "4a16373d53107b2441f430a598170366"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Optional sideband encoder output signals
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*stall* | O | Stall request to hart. Some applications may require
+lossless trace, which can be achieved by using this signal to stall the
+hart if the trace encoder is unable to output a trace packet (for
+example due to back-pressure from the packet transport
+infrastructure).
+|==='''
+zh = '''
+.可选的边带编码器输出信号
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *信号* | *组* | *功能*
+|*stall* | O | 向硬件线程发出的停转请求。某些应用可能要求无损跟踪，这可以通过以下方式实现：当跟踪编码器无法输出跟踪包时（例如由于包传输基础设施的反压），使用该信号使硬件线程停转。
+|==='''

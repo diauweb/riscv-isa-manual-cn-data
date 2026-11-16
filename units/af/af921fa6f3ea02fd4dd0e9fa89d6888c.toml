@@ -1,0 +1,19 @@
+unit_id = "af921fa6f3ea02fd4dd0e9fa89d6888c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For implementations with a cacheability-control mechanism, the situation
+may arise that a program uncacheably accesses a memory location that is
+currently cache-resident. In this situation, the cached copy must be
+ignored. This constraint is necessary to prevent more-privileged modes’
+speculative cache refills from affecting the behavior of less-privileged
+modes’ uncacheable accesses.
+===='''
+zh = '''
+[NOTE]
+====
+对于具有可缓存性控制机制的实现，可能出现程序以不可缓存方式访问当前驻留在缓存中的内存位置的情况。在这种情况下，必须忽略缓存副本。此约束是必要的，以防止较高特权模式的推测性缓存重新填充影响较低特权模式的不可缓存访问的行为。
+===='''

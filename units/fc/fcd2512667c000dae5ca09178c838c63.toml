@@ -1,0 +1,12 @@
+unit_id = "fcd2512667c000dae5ca09178c838c63"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mtval` register can optionally also be used to return the faulting
+instruction bits on an illegal-instruction exception (`mepc` points to
+the faulting instruction in memory). If `mtval` is written with a
+nonzero value when an illegal-instruction exception occurs, then `mtval`
+will contain the shortest of:'''
+zh = '''
+`mtval` 寄存器还可以选择性地用于在非法指令异常时返回出错指令位（`mepc` 指向内存中的出错指令）。如果在发生非法指令异常时 `mtval` 被写入非零值，则 `mtval` 将包含以下各项中最短的：'''

@@ -1,0 +1,26 @@
+unit_id = "d4ca91aa6d9c54111b1144925a08317b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.`xSSE` determination when S-mode is implemented
+[width=100%]
+[%header, cols="^4,^12"]
+|===
+|Privilege Mode| `xSSE`
+|  M           | `0`
+|  S or HS     | `menvcfg.SSE`
+|  VS          | `henvcfg.SSE`
+|  U or VU     | `senvcfg.SSE`
+|==='''
+zh = '''
+.实现 S 模式时 `xSSE` 的确定
+[width=100%]
+[%header, cols="^4,^12"]
+|===
+|特权模式| `xSSE`
+|  M           | `0`
+|  S 或 HS     | `menvcfg.SSE`
+|  VS          | `henvcfg.SSE`
+|  U 或 VU     | `senvcfg.SSE`
+|==='''

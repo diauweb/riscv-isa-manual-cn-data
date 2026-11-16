@@ -1,0 +1,13 @@
+unit_id = "1fe288135bae321f1a58368cd8f6a813"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicboz extension adds the `CBZE` (Cache Block Zero instruction enable) field
+to `senvcfg`. The `CBZE` field controls execution of the cache block zero
+instruction (`CBO.ZERO`) in U-mode. Execution of `CBO.ZERO` in U-mode is enabled
+only if execution of the instruction is enabled for use in S-mode and `CBZE` is
+set to 1; otherwise, an illegal-instruction exception is raised. When the Zicboz
+extension is not implemented, `CBZE` is read-only zero.'''
+zh = '''
+Zicboz 扩展向 `senvcfg` 添加了 `CBZE`（Cache Block Zero instruction enable，缓存块零指令使能）字段。`CBZE` 字段控制 U 模式下缓存块零指令（`CBO.ZERO`）的执行。只有当该指令的执行在 S 模式下被使能并且 `CBZE` 置为 1 时，才使能 U 模式下 `CBO.ZERO` 的执行；否则引发非法指令异常。当未实现 Zicboz 扩展时，`CBZE` 为只读零。'''

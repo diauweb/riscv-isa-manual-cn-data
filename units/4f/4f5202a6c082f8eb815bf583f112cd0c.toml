@@ -1,0 +1,22 @@
+unit_id = "4f5202a6c082f8eb815bf583f112cd0c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* One `Trace Encoder` per hart being traced is required.
+* At least one of Trace RAM or Trace PIB sinks or Trace ATB Bridge is required as the final destination of an encoded RISC-V trace.
+** Implementations providing custom transport only are NOT considered fully compliant with this specification as custom trace tools will be needed.
+* Each trace component in a system is required to implement `tr??Control` and `tr??Impl` registers.
+** `tr??Active` bit must be settable to 0 or 1, although reset itself is NOT required.
+** `tr??Enable` bit must be settable to 0 or 1 and must support flushing (if applicable) when changed from 1 to 0.
+** `tr??Empty` bit must read as 0 when the trace component has some trace data internally buffered (if trace component it not buffering any trace data, this bit may be hard coded to 1).
+** `tr??VerMajor`, `tr??VerMinor` and `tr??CompType` must be implemented.'''
+zh = '''
+* 每个被跟踪的 hart 需要一个 `Trace Encoder`。
+* 至少需要 Trace RAM 或 Trace PIB sink 或 Trace ATB Bridge 之一作为编码后的 RISC-V 跟踪的最终目的地。
+** 仅提供自定义传输的实现不被视为完全符合本规范，因为将需要自定义跟踪工具。
+* 系统中的每个跟踪组件都必须实现 `tr??Control` 和 `tr??Impl` 寄存器。
+** `tr??Active` 位必须可设置为 0 或 1，尽管不要求复位本身。
+** `tr??Enable` 位必须可设置为 0 或 1，并且当从 1 变为 0 时必须支持刷新（如适用）。
+** 当跟踪组件内部缓冲了某些跟踪数据时，`tr??Empty` 位必须读为 0（如果跟踪组件不缓冲任何跟踪数据，则该位可硬连线为 1）。
+** 必须实现 `tr??VerMajor`、`tr??VerMinor` 和 `tr??CompType`。'''

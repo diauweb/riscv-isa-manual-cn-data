@@ -1,0 +1,16 @@
+unit_id = "d87507f3c9ed97fa3e2fcf1034050e5a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RISC-V contains two types of atomics: AMOs and LR/SC pairs. These
+conceptually behave differently, in the following way. LR/SC behave as
+if the old value is brought up to the core, modified, and written back
+to memory, all while a reservation is held on that memory location. AMOs
+on the other hand conceptually behave as if they are performed directly
+in memory. AMOs are therefore inherently atomic, while LR/SC pairs are
+atomic in the slightly different sense that the memory location in
+question will not be modified by another hart during the time the
+original hart holds the reservation.'''
+zh = '''
+RISC-V 包含两类原子操作：AMO 和 LR/SC 对。它们在概念上以如下方式不同地表现。LR/SC 的行为就好像旧值被带到核心，经修改后写回内存，同时在该内存位置上持有保留。另一方面，AMO 在概念上表现为直接在内存中执行。因此，AMO 本质上是原子的，而 LR/SC 对则以略有不同的意义原子：在原始硬件线程持有保留期间，所讨论的内存位置不会被另一硬件线程修改。'''

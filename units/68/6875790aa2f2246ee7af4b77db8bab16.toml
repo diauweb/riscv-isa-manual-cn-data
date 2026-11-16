@@ -1,0 +1,27 @@
+unit_id = "6875790aa2f2246ee7af4b77db8bab16"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. `vl = AVL` if `AVL {le} VLMAX`
+. `ceil(AVL / 2) {le} vl {le} VLMAX` if `AVL < (2 * VLMAX)`
+. `vl = VLMAX` if `AVL {ge} (2 * VLMAX)`
+. Deterministic on any given implementation for same input AVL and VLMAX values
+. These specific properties follow from the prior rules:
+.. `vl = 0` if  `AVL = 0`
+.. `vl > 0` if `AVL > 0`
+.. `vl {le} VLMAX`
+.. `vl {le} AVL`
+.. a value read from `vl` when used as the AVL argument to `vset{i}vl{i}` results in the same
+value in `vl`, provided the resultant VLMAX equals the value of VLMAX at the time that `vl` was read'''
+zh = '''
+. 如果 `AVL {le} VLMAX`，则 `vl = AVL`
+. 如果 `AVL < (2 * VLMAX)`，则 `ceil(AVL / 2) {le} vl {le} VLMAX`
+. 如果 `AVL {ge} (2 * VLMAX)`，则 `vl = VLMAX`
+. 对于相同的输入 AVL 和 VLMAX 值，在任何给定实现上具有确定性
+. 以下具体性质由前述规则推出：
+.. 如果 `AVL = 0`，则 `vl = 0`
+.. 如果 `AVL > 0`，则 `vl > 0`
+.. `vl {le} VLMAX`
+.. `vl {le} AVL`
+.. 当把从 `vl` 读出的值用作 `vset{i}vl{i}` 的 AVL 参数时，结果 `vl` 中的值相同，前提是结果 VLMAX 等于读取 `vl` 时的 VLMAX 值'''

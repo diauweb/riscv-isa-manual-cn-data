@@ -1,0 +1,13 @@
+unit_id = "b41fab59ec38f7972cec42f09f0df477"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-fsd_op]#C.FSD is an RV32DC/RV64DC-only instruction that stores a
+double-precision floating-point value in floating-point register
+`_rs2′_` to memory. It computes an effective address by
+adding the _zero_-extended offset, scaled by 8, to the base address in
+register `_rs1′_`. It expands to
+`fsd rs2′, offset(rs1′)`.#'''
+zh = '''
+[#norm:c-fsd_op]#C.FSD 是一条仅限 RV32DC/RV64DC 的指令，将浮点寄存器 `_rs2′_` 中的一个双精度浮点值存储到内存。它通过将 __零__扩展的偏移量（按 8 缩放）加到寄存器 `_rs1′_` 中的基地址上来计算有效地址。它扩展为 `fsd rs2′, offset(rs1′)`。#'''

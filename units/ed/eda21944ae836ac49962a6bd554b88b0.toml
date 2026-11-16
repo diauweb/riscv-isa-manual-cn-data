@@ -1,0 +1,91 @@
+unit_id = "eda21944ae836ac49962a6bd554b88b0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Parameters to the encoder - instruction trace
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Parameter name* | *Range* | *Description*
+|_arch_p_ |  |  The architecture specification version with which the
+encoder is compliant (0 for initial version).
+|_blocks_p_ |  |  Number of times *iretire*, *itype* etc. are replicated
+|_bpred_size_p_ |  |  Number of entries in the branch predictor is
+2^*bpred_size_p*^. Minimum number of entries is 2, so a value of 0
+indicates that there is no branch predictor implemented.
+|_cache_size_p_ |  |  Number of entries in the jump target cache is
+2^*cache_size_p*^. Minimum number of entries is 2, so a value of 0
+indicates that there is no jump target cache implemented.
+|_call_counter_size_p_ |  |  Number of bits in the nested call counter is
+2^*call_counter_size_p*^. Minimum number of entries is 2, so a value of
+0 indicates that there is no implicit return call counter implemented.
+|_ctype_width_p_ |  |  Width of the *ctype* bus
+|_context_width_p_ |  |  Width of *context* bus
+|_time_width_p_ |  |  Width of *time* bus
+|_ecause_width_p_ |  |  Width of *exception cause* bus
+|_ecause_choice_p_ |  |  Number of bits of exception cause to match using
+multiple choice
+|_f0s_width_p_ |  |  Width of the *subformat* field in format 0 _te_inst_
+packets (see <<sec:f0s>>).
+|_filter_context_p_ | 0 or 1 | Filtering on context supported when 1
+|_filter_time_p_ | 0 or 1 | Filtering on time supported when 1
+|_filter_excint_p_ |  |  Filtering on exception cause or interrupt
+supported when non_zero. Number of nested exceptions supported is
+2^filter_excint_p^
+|_filter_privilege_p_ | 0 or 1 | Filtering on privilege supported when
+1
+|_filter_tval_p_ | 0 or 1 | Filtering on trap value supported when 1
+(provided _filter_excint_p_ is non-zero)
+|_iaddress_lsb_p_ |  |  LSB of instruction *address* bus to trace. 1 is
+compressed instructions are supported, 2 otherwise
+|_iaddress_width_p_ |  |  Width of instruction *address* bus. This is the
+same as _DXLEN_
+|_iretire_width_p_ |  |  Width of the *iretire* bus
+|_ilastsize_width_p_ |  |  Width of the *ilastsize* bus
+|_itype_width_p_ |  |  Width of the *itype* bus
+|_nocontext_p_ | 0 or 1 | Exclude context from _te_inst_ packets if 1
+|_notime_p_ | 0 or 1 | Exclude time from _te_inst_ packets if 1
+|_privilege_width_p_ |  |  Width of *privilege* bus
+|_retires_p_ |  |  Maximum number of instructions that can be retired per
+block
+|_return_stack_size_p_ |  |  Number of entries in the return address stack
+is 2^*return_stack_size_p*^. Minimum number of entries is 2, so a value
+of 0 indicates that there is no implicit return stack implemented.
+|_sijump_p_ | 0 or 1 | *sijump* is used to identify sequentially
+inferable jumps
+|_impdef_width_p_ |  |  Width of *implementation-defined input* bus
+|==='''
+zh = '''
+.编码器参数 - 指令跟踪
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *参数名* | *范围* | *描述*
+|_arch_p_ |  |  编码器所符合的架构规范版本（0 表示初始版本）。
+|_blocks_p_ |  |  *iretire*、*itype* 等被复制的次数
+|_bpred_size_p_ |  |  分支预测器中的条目数为 2^*bpred_size_p*^。最少条目数为 2，因此值为 0 表示未实现分支预测器。
+|_cache_size_p_ |  |  跳转目标缓存中的条目数为 2^*cache_size_p*^。最少条目数为 2，因此值为 0 表示未实现跳转目标缓存。
+|_call_counter_size_p_ |  |  嵌套调用计数器的位数为 2^*call_counter_size_p*^。最少条目数为 2，因此值为 0 表示未实现隐式返回调用计数器。
+|_ctype_width_p_ |  |  *ctype* 总线的宽度
+|_context_width_p_ |  |  *context* 总线的宽度
+|_time_width_p_ |  |  *time* 总线的宽度
+|_ecause_width_p_ |  |  *exception cause* 总线的宽度
+|_ecause_choice_p_ |  |  使用多选匹配的异常原因位数
+|_f0s_width_p_ |  |  格式 0 的 _te_inst_ 包中 *subformat* 字段的宽度（见 <<sec:f0s>>）。
+|_filter_context_p_ | 0 或 1 | 为 1 时支持对上下文进行过滤
+|_filter_time_p_ | 0 或 1 | 为 1 时支持对时间进行过滤
+|_filter_excint_p_ |  |  非零时支持对异常原因或中断进行过滤。支持的嵌套异常数为 2^filter_excint_p^
+|_filter_privilege_p_ | 0 或 1 | 为 1 时支持对特权级别进行过滤
+|_filter_tval_p_ | 0 或 1 | 为 1 时支持对陷阱值进行过滤（前提是 _filter_excint_p_ 非零）
+|_iaddress_lsb_p_ |  |  要跟踪的指令 *address* 总线的 LSB。如果有压缩指令则为 1，否则为 2
+|_iaddress_width_p_ |  |  指令 *address* 总线的宽度。这等同于 _DXLEN_
+|_iretire_width_p_ |  |  *iretire* 总线的宽度
+|_ilastsize_width_p_ |  |  *ilastsize* 总线的宽度
+|_itype_width_p_ |  |  *itype* 总线的宽度
+|_nocontext_p_ | 0 或 1 | 为 1 时从 _te_inst_ 包中排除上下文
+|_notime_p_ | 0 或 1 | 为 1 时从 _te_inst_ 包中排除时间
+|_privilege_width_p_ |  |  *privilege* 总线的宽度
+|_retires_p_ |  |  每个块最多可退休的指令数
+|_return_stack_size_p_ |  |  返回地址栈中的条目数为 2^*return_stack_size_p*^。最少条目数为 2，因此值为 0 表示未实现隐式返回栈。
+|_sijump_p_ | 0 或 1 | *sijump* 用于识别顺序可推断跳转
+|_impdef_width_p_ |  |  *implementation-defined input* 总线的宽度
+|==='''

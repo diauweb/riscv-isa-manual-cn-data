@@ -1,0 +1,24 @@
+unit_id = "c28c34799d74b5abd19c30dde5021fe1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeInstFilters: Trace Instruction Filters Register (trBaseEncoder+0x00C)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|15:0 |trTeInstFilters |
+Determine which filters defined in <<Trace Encoder Filter Registers, Trace Encoder Filter Registers>> chapter qualify an instruction trace. If bit *__n__* is a 1 then instructions will be traced when filter *__n__* matches. If all bits are 0, all instructions are traced.
+|WARL|<<Undef,Undef>>
+|31:16 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trTeInstFilters：跟踪指令过滤器寄存器（trBaseEncoder+0x00C）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|15:0 |trTeInstFilters |
+确定 <<Trace Encoder Filter Registers, Trace Encoder Filter Registers>> 章中定义的哪些过滤器限定指令跟踪。如果位 *__n__* 为 1，则当过滤器 *__n__* 匹配时跟踪指令。如果所有位均为 0，则跟踪所有指令。
+|WARL|<<Undef,Undef>>
+|31:16 |--|保留|--|0
+|==='''

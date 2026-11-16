@@ -1,0 +1,18 @@
+unit_id = "767c8f422c2f0da7e57c54f3f1b1eb9d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The choice of sizes (1, 3, 7, 15, 31) is designed to minimize efficiency
+loss. On average there will be some 'wasted' bits because the number of
+branches to report is less than the selected size of the *branch_map*
+field. Using a tapered set of sizes means that the number of wasted bits
+will on average be less for shorter packets. If the number of branches
+between updiscons is randomly distributed then the probability of
+generating packets with large branch counts will be lower, in which case
+increased waste for longer packets will have less overall impact.
+Furthermore, the rate at which packets are generated can be higher for
+lower branch counts, and so reducing waste for this case will improve
+overall bandwidth at times where it is most important.'''
+zh = '''
+大小（1、3、7、15、31）的选择旨在尽量减少效率损失。平均而言，由于要报告的分支数少于 *branch_map* 字段所选大小，会有一些"浪费"的位。使用渐变的一组大小意味着对于较短的包，平均浪费的位数会更少。如果不可推断不连续点之间的分支数是随机分布的，那么生成具有较大分支计数的包的概率会较低，此时较长包增加的浪费对整体影响较小。此外，对于较少的分支计数，包的生成速率可能更高，因此在这种情况下减少浪费将在最关键的时候改善整体带宽。'''

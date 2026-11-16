@@ -1,0 +1,21 @@
+unit_id = "2f2b28ccea1d349e74e8c087c6bcd6c4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This chapter describes the RISC-V hypervisor extension, which
+virtualizes the supervisor-level architecture to support the efficient
+hosting of guest operating systems atop a type-1 or type-2 hypervisor.
+The hypervisor extension changes supervisor mode into
+_hypervisor-extended supervisor mode_ (HS-mode, or _hypervisor mode_ for
+short), where a hypervisor or a hosting-capable operating system runs.
+The hypervisor extension also adds another stage of address translation,
+from _guest physical addresses_ to supervisor physical addresses, to
+virtualize the memory and memory-mapped I/O subsystems for a guest
+operating system. HS-mode acts the same as S-mode, but with additional
+instructions and CSRs that control the new stage of address translation
+and support hosting a guest OS in virtual S-mode (VS-mode). Regular
+S-mode operating systems can execute without modification either in
+HS-mode or as VS-mode guests.'''
+zh = '''
+本章介绍 RISC-V 虚拟机（hypervisor）扩展，它虚拟化监管级架构，以支持在类型 1 或类型 2 虚拟机监控器之上高效地托管客户操作系统。虚拟机扩展将监管模式变为__监管扩展模式__（HS-mode，或简称__虚拟机模式__），虚拟机监控器或具备托管能力的操作系统在其中运行。虚拟机扩展还增加了另一级地址翻译，从__客户物理地址__到监管物理地址，以便为客户操作系统虚拟化内存和内存映射 I/O 子系统。HS-mode 的行为与 S-mode 相同，但增加了额外的指令和 CSR，用于控制新的地址翻译级并支持在虚拟 S-mode（VS-mode）中托管客户 OS。常规的 S-mode 操作系统无需修改即可在 HS-mode 中运行，或作为 VS-mode 客户运行。'''

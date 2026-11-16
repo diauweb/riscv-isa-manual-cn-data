@@ -1,0 +1,15 @@
+unit_id = "2992d245ab26a0a52074c686bd88527f"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let rs1_val = X(rs1);
+let rs2_val = X(rs2);
+
+let result = if   rs1_val <_s rs2_val
+             then rs2_val
+             else rs1_val;
+
+X(rd) = result;
+--'''

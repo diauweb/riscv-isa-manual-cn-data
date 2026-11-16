@@ -1,0 +1,12 @@
+unit_id = "41fdb6d5d0094298086a9e3de0736f85"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations are allowed to raise a misaligned address exception on
+whole register loads and stores if the base address is not naturally
+aligned to the larger of the size of the encoded EEW in bytes (EEW/8)
+or the implementation's smallest supported SEW size in bytes
+(SEW~MIN~/8).'''
+zh = '''
+如果基地址未天然对齐到所编码 EEW 的字节大小（EEW/8）与实现所支持最小 SEW 字节大小（SEW~MIN~/8）两者中较大者，则允许实现在整寄存器加载和存储上引发地址未对齐异常。'''

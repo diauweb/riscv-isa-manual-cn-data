@@ -1,0 +1,18 @@
+unit_id = "3550527827824264c3f2e64361b24277"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Preventing overlap between `vd` and `vs1` or `vs2` simplifies implementation with `VLEN < EGW`.
+This restriction does not have any coding impact since proper implementation of the algorithm requires
+that `vd`, `vs1` and `vs2` each are different registers.
+===='''
+zh = '''
+[NOTE]
+====
+防止 `vd` 与 `vs1` 或 `vs2` 之间的重叠，可简化 `VLEN < EGW` 时的实现。
+该限制不会对编码产生任何影响，因为算法的正确实现要求
+`vd`、`vs1` 和 `vs2` 各自为不同的寄存器。
+===='''

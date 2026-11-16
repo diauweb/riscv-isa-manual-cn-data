@@ -1,0 +1,22 @@
+unit_id = "93db7f23ec4d02cc9add231e41328fca"
+kind = "code"
+translatable = false
+en = '''
+[source,asm]
+----
+# any bytes from sp-1 to sp-28 may be written multiple times before
+# the instruction completes therefore these updates may be visible in
+# the interrupt/exception handler below the stack pointer
+sw  s5, -4(sp)
+sw  s4, -8(sp)
+sw  s3,-12(sp)
+sw  s2,-16(sp)
+sw  s1,-20(sp)
+sw  s0,-24(sp)
+sw  ra,-28(sp)
+
+# this must only execute once, and will only execute after all stores
+# completed without any precise faults, therefore this update is only
+# visible in the interrupt/exception handler if cm.push has completed
+addi sp, sp, -64
+----'''

@@ -1,0 +1,33 @@
+unit_id = "39bc0af645c4dcf1ee878f114ebd1052"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. _i_ has fully determined data;
+. all program-order-previous conditional branch and indirect jump
+instructions are finished;
+. all program-order-previous `fence` instructions with `.sw` set are
+finished;
+. all program-order-previous `fence.tso` instructions are finished;
+. all program-order-previous load-acquire instructions are finished;
+. all program-order-previous store-acquire-release instructions are
+finished;
+. if _i_ is a store-release, all program-order-previous
+instructions are finished;
+. all program-order-previous memory access instructions have a fully
+determined memory footprint;
+. all program-order-previous store instructions, except for `sc` that failed,
+have initiated and so have non-empty _mem_stores_; and
+. all program-order-previous load instructions have initiated and so have
+non-empty _mem_loads_.'''
+zh = '''
+. _i_ 具有完全确定的数据；
+. 所有程序顺序前驱的条件分支和间接跳转指令都已结束；
+. 所有设置了 `.sw` 的程序顺序前驱 `fence` 指令都已结束；
+. 所有程序顺序前驱 `fence.tso` 指令都已结束；
+. 所有程序顺序前驱 load-acquire 指令都已结束；
+. 所有程序顺序前驱 store-acquire-release 指令都已结束；
+. 如果 _i_ 是 store-release，则所有程序顺序前驱指令都已结束；
+. 所有程序顺序前驱内存访问指令都具有完全确定的内存足迹；
+. 所有程序顺序前驱存储指令（失败的 `sc` 除外）都已发起，因此具有非空 _mem_stores_；并且
+. 所有程序顺序前驱加载指令都已发起，因此具有非空 _mem_loads_。'''

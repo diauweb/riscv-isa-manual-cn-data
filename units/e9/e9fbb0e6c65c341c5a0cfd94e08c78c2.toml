@@ -1,0 +1,24 @@
+unit_id = "e9fbb0e6c65c341c5a0cfd94e08c78c2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth,align="center",float="center",cols="^,^,^"]
+|===
+| {csr-tdata1} 0 | 0x69801902 | type=6, dmode=1, action=1, chain=1, select=0, match=2, vs=1, vu=1, store=1
+| {csr-tdata2} 0 | 0x80007c80 | start address (inclusive)
+| {csr-textra32} 0 | 0x03000000 | mhselect=6, mhvalue=0
+| {csr-tdata1} 1 | 0x69801182 | type=6, dmode=1, action=1, select=0, match=3, vs=1, vu=1, store=1
+| {csr-tdata2} 1 | 0x80007cf0 | end address (exclusive)
+| {csr-textra32} 1 | 0x03000000 | mhselect=6, mhvalue=0
+|==='''
+zh = '''
+[%autowidth,align="center",float="center",cols="^,^,^"]
+|===
+| {csr-tdata1} 0 | 0x69801902 | type=6, dmode=1, action=1, chain=1, select=0, match=2, vs=1, vu=1, store=1
+| {csr-tdata2} 0 | 0x80007c80 | 起始地址（含）
+| {csr-textra32} 0 | 0x03000000 | mhselect=6, mhvalue=0
+| {csr-tdata1} 1 | 0x69801182 | type=6, dmode=1, action=1, select=0, match=3, vs=1, vu=1, store=1
+| {csr-tdata2} 1 | 0x80007cf0 | 结束地址（不含）
+| {csr-textra32} 1 | 0x03000000 | mhselect=6, mhvalue=0
+|==='''

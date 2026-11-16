@@ -1,0 +1,9 @@
+unit_id = "56311d1eba4de872fea5ab5ff5d1d5b6"
+kind = "code"
+translatable = false
+en = '''
+----
+# (a < b) && (b < c) in two instructions when mask-undisturbed
+vmslt.vv    v0, va, vb        # All body elements written
+vmslt.vv    v0, vb, vc, v0.t  # Only update at set mask
+----'''

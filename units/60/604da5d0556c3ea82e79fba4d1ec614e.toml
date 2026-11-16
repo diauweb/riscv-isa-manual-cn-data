@@ -1,0 +1,18 @@
+unit_id = "604da5d0556c3ea82e79fba4d1ec614e"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VBREV(vs2)) = {
+
+  foreach (i from vstart to vl-1) {
+    let input = get_velem(vs2, SEW, i);
+    let output : bits(SEW) = 0;
+    foreach (i from 0 to SEW-1)
+      let output[SEW-1-i] = input[i];
+    set_velem(vd, SEW, i, output)
+  }
+  RETIRE_SUCCESS
+}
+--'''

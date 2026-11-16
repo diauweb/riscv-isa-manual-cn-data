@@ -1,0 +1,35 @@
+unit_id = "2ecfdd461865587083601c6075782f7c"
+kind = "code"
+translatable = false
+en = '''
+.The RVWMO memory model formalized in Alloy (2/5: Axioms)
+[,io]
+....
+// =RVWMO axioms=
+
+// Load Value Axiom
+fun candidates[r: MemoryEvent] : set MemoryEvent {
+  (r.~^gmo & Store & same_addr[r]) // writes preceding r in gmo
+  + (r.^~po & Store & same_addr[r]) // writes preceding r in po
+}
+
+fun latest_among[s: set Event] : Event { s - s.~^gmo }
+
+pred LoadValue {
+  all w: Store | all r: Load |
+    w->r in rf <=> w = latest_among[candidates[r]]
+}
+
+// Atomicity Axiom
+pred Atomicity {
+  all r: Store.~pair |            // starting from the lr,
+    no x: Store & same_addr[r] |  // there is no store x to the same addr
+      x not in same_hart[r]       // such that x is from a different hart,
+      and x in r.~rf.^gmo         // x follows (the store r reads from) in gmo,
+      and r.pair in x.^gmo        // and r follows x in gmo
+}
+
+// Progress Axiom implicit: Alloy only considers finite executions
+
+pred RISCV_mm { LoadValue and Atomicity /* and Progress */ }
+....'''

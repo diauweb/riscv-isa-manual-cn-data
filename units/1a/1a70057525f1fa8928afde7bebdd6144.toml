@@ -1,0 +1,15 @@
+unit_id = "1a70057525f1fa8928afde7bebdd6144"
+kind = "code"
+translatable = false
+en = '''
+----
+# Assembly syntax pattern for vector widening arithmetic instructions
+
+# Double-width result, two single-width sources: 2*SEW = SEW op SEW
+vwop.vv  vd, vs2, vs1, vm  # integer vector-vector      vd[i] = vs2[i] op vs1[i]
+vwop.vx  vd, vs2, rs1, vm  # integer vector-scalar      vd[i] = vs2[i] op x[rs1]
+
+# Double-width result, first source double-width, second source single-width: 2*SEW = 2*SEW op SEW
+vwop.wv  vd, vs2, vs1, vm  # integer vector-vector      vd[i] = vs2[i] op vs1[i]
+vwop.wx  vd, vs2, rs1, vm  # integer vector-scalar      vd[i] = vs2[i] op x[rs1]
+----'''

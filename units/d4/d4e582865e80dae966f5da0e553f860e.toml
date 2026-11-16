@@ -1,0 +1,11 @@
+unit_id = "d4e582865e80dae966f5da0e553f860e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a guest-page-fault trap is taken into M-mode, csr:mtval2[] is written
+with either zero or the guest physical address that faulted, shifted
+right by qty:2[bits]. For other traps, csr:mtval2[] is set to zero, but a future
+standard or extension may redefine csr:mtval2[]'s setting for other traps.'''
+zh = '''
+当客户页故障陷阱进入 M-mode 时，csr:mtval2[] 被写入零或导致故障的客户物理地址右移 qty:2[位]。对于其他陷阱，csr:mtval2[] 被设置为零，但未来的标准或扩展可能会重新定义 csr:mtval2[] 对其他陷阱的设置。'''

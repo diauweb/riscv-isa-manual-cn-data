@@ -1,0 +1,8 @@
+unit_id = "0c7843ecb7116573fb8a480c2b9ae27d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+IMPORTANT: In SMEM mode (`trRamMode` = 1) trace tool should never set `trRamStart??` and `trRamLimit??` registers outside of range provided by the user as otherwise raw trace being written to memory may corrupt running code and/or data or stack. This type of errors may be very difficult to diagnose as in complex system code (or data) being overwritten by trace may be used way, way later after actual corruption was made.'''
+zh = '''
+IMPORTANT: 在 SMEM 模式（`trRamMode` = 1）下，跟踪工具绝不应将 `trRamStart??` 和 `trRamLimit??` 寄存器设置到用户提供的范围之外，否则写入内存的原始跟踪可能会破坏正在运行的代码和/或数据或栈。此类错误可能非常难以诊断，因为在复杂系统中，被跟踪覆盖的代码（或数据）可能会在实际损坏发生很久之后才被使用。'''

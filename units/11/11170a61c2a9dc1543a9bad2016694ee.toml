@@ -1,0 +1,14 @@
+unit_id = "11170a61c2a9dc1543a9bad2016694ee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To keep the examples readable, they all assume that everything succeeds,
+and that they complete faster than the debugger can perform the next
+access. This will be the case in a typical JTAG setup. However, the
+debugger must always check the sticky error status bits after performing
+a sequence of actions. If it sees any that are set, then it should
+attempt the same actions again, possibly while adding in some delay, or
+explicit checks for status bits.'''
+zh = '''
+为保持示例可读，所有示例都假设一切成功，并且完成速度快于调试器执行下一次访问。典型 JTAG 设置中情况如此。然而，调试器在执行一系列操作后必须始终检查粘滞错误状态位。如果发现任何置位，则应再次尝试相同操作，可能增加一些延迟，或显式检查状态位。'''

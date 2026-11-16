@@ -1,0 +1,19 @@
+unit_id = "b276f0958977dda9a59367aeda3e68ac"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* In the opcode of _i_, _rs1_, _rs2_, or _rs3_ is set to
+_r_
+* _i_ is a CSR instruction, and in the opcode of
+_i_, _csr_ is set to _r_, unless _i_
+is CSRRW or CSRRWI and _rd_ is set to `x0`
+* _r_ is a CSR and an implicit source register for
+_i_, as defined in <<source-dest-regs>>
+* _r_ is a CSR that aliases with another source register for
+_i_'''
+zh = '''
+* 在 _i_ 的操作码中，_rs1_、_rs2_ 或 _rs3_ 被设为 _r_
+* _i_ 是 CSR 指令，且在 _i_ 的操作码中，_csr_ 被设为 _r_，除非 _i_ 是 CSRRW 或 CSRRWI 且 _rd_ 被设为 `x0`
+* _r_ 是一个 CSR，并且是 _i_ 的隐式源寄存器，如 <<source-dest-regs>> 中所定义
+* _r_ 是一个 CSR，且与 _i_ 的另一个源寄存器互为别名'''

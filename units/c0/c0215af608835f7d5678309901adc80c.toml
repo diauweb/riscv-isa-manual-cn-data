@@ -1,0 +1,32 @@
+unit_id = "c0215af608835f7d5678309901adc80c"
+kind = "code"
+translatable = false
+en = '''
+.`riscv.cat`, an alternative herd presentation of the RVWMO memory model (3/3)
+[source,asm]
+....
+Partial
+
+(***************)
+(* Definitions *)
+(***************)
+
+(* Define ppo *)
+include "riscv-defs.cat"
+
+(* Compute coherence relation *)
+include "cos-opt.cat"
+
+(**********)
+(* Axioms *)
+(**********)
+
+(* Sc per location *)
+acyclic co|rf|fr|po-loc as Coherence
+
+(* Main model axiom *)
+acyclic co|rfe|fr|ppo as Model
+
+(* Atomicity axiom *)
+empty rmw & (fre;coe) as Atomic
+....'''

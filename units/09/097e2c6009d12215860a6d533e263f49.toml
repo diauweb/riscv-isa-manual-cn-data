@@ -1,0 +1,15 @@
+unit_id = "097e2c6009d12215860a6d533e263f49"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:seed_ro_illegal]#Attempts to access the csr:seed[] CSR using a read-only CSR-access instruction
+(insn:csrrs[]/insn:csrrc[] with _rs1_=`x0` or insn:csrrsi[]/insn:csrrci[] with _uimm_=0) raise an
+illegal-instruction exception; any other CSR-access instruction may be used
+to access csr:seed[].#
+[#norm:seed_write_ignore]#The write value (in _rs1_ or _uimm_) must be ignored by implementations.#
+The purpose of the write is to signal polling and flushing.'''
+zh = '''
+[#norm:seed_ro_illegal]#尝试使用只读 CSR 访问指令（_rs1_=`x0` 的 insn:csrrs[]/insn:csrrc[] 或 _uimm_=0 的 insn:csrrsi[]/insn:csrrci[]）访问 csr:seed[] CSR 会引发非法指令异常；任何其他 CSR 访问指令均可用于访问 csr:seed[]。#
+[#norm:seed_write_ignore]#写入值（在 _rs1_ 或 _uimm_ 中）必须被实现忽略。#
+写入的目的是发出轮询和刷新信号。'''

@@ -1,0 +1,23 @@
+unit_id = "b1007933c491d2de07e9a27f9ffc9dec"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For a hypervisor to benefit from the extension context status, it must
+have its own copy in the HS-level `sstatus`, maintained independently of
+a guest OS running in VS-mode. While a version of the extension context
+status obviously must exist in `vsstatus` for VS-mode, a hypervisor
+cannot rely on this version being maintained correctly, given that
+VS-level software can change `vsstatus`.FS arbitrarily. If the HS-level
+`sstatus`.FS were not independently active and maintained by the
+hardware in parallel with `vsstatus`.FS while V=1, hypervisors would
+always be forced to conservatively swap all floating-point state when
+context-switching between virtual machines.
+===='''
+zh = '''
+[NOTE]
+====
+为使虚拟机监控器从扩展上下文状态中受益，它必须在 HS 级 `sstatus` 中拥有自己的副本，独立于在 VS 模式中运行的客户操作系统进行维护。虽然扩展上下文状态的某个版本显然必须存在于 `vsstatus` 中以供 VS 模式使用，但鉴于 VS 级软件可任意更改 `vsstatus`.FS，虚拟机监控器不能依赖此版本被正确维护。若 HS 级 `sstatus`.FS 在 V=1 时不独立活动并由硬件与 `vsstatus`.FS 并行维护，则虚拟机监控器将始终被迫在虚拟机之间进行上下文切换时保守地交换所有浮点状态。
+===='''

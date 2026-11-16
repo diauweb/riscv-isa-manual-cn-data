@@ -1,0 +1,17 @@
+unit_id = "018f13f8caa6c4600968e30846343490"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In this section XLEN refers to the effective XLEN in the current execution
+mode. On systems where XLEN values can differ between modes, this is handled
+as follows.
+Fields retain their values regardless of XLEN, which only affects where
+in the register these fields appear (e.g. {tdata1-type}). Some fields
+are wider when XLEN is 64 than when it is 32 (e.g.
+{textra32-svalue}). The high bits in such fields retain their
+value but are not readable when XLEN is 32.
+A modification of a register when XLEN is 32 clears any inaccessible bits
+in that register.'''
+zh = '''
+在本节中，XLEN 指当前执行模式中的有效 XLEN。在 XLEN 值可能因模式而不同的系统上，按如下方式处理。字段无论 XLEN 如何都保留其值，XLEN 仅影响这些字段在寄存器中出现的位置（例如 {tdata1-type}）。某些字段在 XLEN 为 64 时比 XLEN 为 32 时更宽（例如 {textra32-svalue}）。这些字段中的高位保留其值，但当 XLEN 为 32 时不可读。当 XLEN 为 32 时修改寄存器会清除该寄存器中任何不可访问的位。'''

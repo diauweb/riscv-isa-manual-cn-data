@@ -1,0 +1,17 @@
+unit_id = "782137f28a808ab34003e9dc6b3a7b09"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The setting of a bit in `mcounteren` does not affect whether the
+corresponding bit in `scounteren` is writable. However, U-mode may only
+access a counter if the corresponding bits in `scounteren` and
+`mcounteren` are both set.
+===='''
+zh = '''
+[NOTE]
+====
+`mcounteren` 中某位的设置不影响 `scounteren` 中相应位是否可写。然而，只有当 `scounteren` 和 `mcounteren` 中的相应位均置位时，U 模式才能访问计数器。
+===='''

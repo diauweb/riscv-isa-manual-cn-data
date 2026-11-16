@@ -1,0 +1,34 @@
+unit_id = "c63121513697a67f24ef30474a5444a3"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Copy *HIST* and *I-CNT* fields (if available) to corresponding registers.
+* Handle <<field_HIST,HIST>> register (while not empty):
+** Analyze code from the current PC through direct (inferable) unconditional jumps (all types) and direct conditional branches (each direct conditional branch will 'consume' a single bit from the *HIST* register).
+** Each encountered instruction should subtract 1 or 2 (INST_LEN/16) from I-CNT (depending on the size of that instruction).
+** At the end (after the least significant bit from *HIST* is processed), the PC will be of the instruction executed after the last conditional branch (either taken or not-taken).
+* Handle <<field_I-CNT,I-CNT>> register (while greater than 0x0):
+** Analyze code from current PC through direct (inferable) unconditional jumps (all types) - each encountered direct conditional branch must be treated as not-taken.
+** Each encountered instruction should subtract 1 or 2 (INST_LEN/16) from I-CNT (depending on the size of that instruction).
+* It will reach either indirect, unconditional jump or I-CNT will become 0 to denote that some other 'event' (like exception, interrupt, trace off, trigger etc.) happened.
+** In BTM mode, direct conditional branch may be reached as last instruction. Next PC should be the destination address of that taken branch.
+* At the last step the <<field_F-ADDR,F-ADDR>> or <<field_U-ADDR,U-ADDR>> field (if available) should be applied.
+** This is either a destination address of indirect unconditional jump or an address of an exception/interrupt handler.
+** This will be the next PC where analysis of the next trace message should start.
+* Handle the <<field_B-CNT,B-CNT>> or <<field_RCODE,RCODE>> fields by repeating processing of the fields from previous trace message.'''
+zh = '''
+* 将 *HIST* 和 *I-CNT* 字段（如果可用）复制到相应寄存器。
+* 处理 <<field_HIST,HIST>> 寄存器（当其非空时）：
+** 从当前 PC 开始分析代码，经过直接（可推断）无条件跳转（所有类型）和直接条件分支（每个直接条件分支将“消耗” *HIST* 寄存器中的一位）。
+** 每遇到一条指令，应根据该指令的大小从 I-CNT 中减去 1 或 2（INST_LEN/16）。
+** 在结束时（处理完 *HIST* 的最低有效位之后），PC 将是最后一条条件分支（无论已跳转还是未跳转）之后执行的指令的地址。
+* 处理 <<field_I-CNT,I-CNT>> 寄存器（当其大于 0x0 时）：
+** 从当前 PC 开始分析代码，经过直接（可推断）无条件跳转（所有类型）——每条遇到的直接条件分支都必须视为未跳转。
+** 每遇到一条指令，应根据该指令的大小从 I-CNT 中减去 1 或 2（INST_LEN/16）。
+* 它将到达间接无条件跳转，或者 I-CNT 变为 0，以表示发生了其他“事件”（如异常、中断、跟踪关闭、触发等）。
+** 在 BTM 模式下，直接条件分支可能作为最后一条指令到达。下一个 PC 应为该已跳转分支的目标地址。
+* 在最后一步，应应用 <<field_F-ADDR,F-ADDR>> 或 <<field_U-ADDR,U-ADDR>> 字段（如果可用）。
+** 这要么是间接无条件跳转的目标地址，要么是异常/中断处理程序的地址。
+** 这将是下一条跟踪消息分析应开始的下一个 PC。
+* 通过重复处理前一条跟踪消息中的字段来处理 <<field_B-CNT,B-CNT>> 或 <<field_RCODE,RCODE>> 字段。'''

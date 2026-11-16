@@ -1,0 +1,20 @@
+unit_id = "4ac983d33adb36b38e3600a76fb64feb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Cache Management Operations (CMOs) must respect and take into account pointer masking. Otherwise, a few serious security problems can appear, including:
+
+* CBO.ZERO may work as a STORE operation. If pointer masking is not respected, it would be possible to write to memory bypassing the mask enforcement.
+* If CMOs did not respect pointer masking, it would be possible to weaponize this in a side-channel attack. For example, U-mode would be able to flush a physical address (without masking) that it should not be permitted to.
+===='''
+zh = '''
+[NOTE]
+====
+缓存管理操作（CMO）必须遵守并考虑指针掩码。否则，可能会出现一些严重的安全问题，包括：
+
+* CBO.ZERO 可能作为 STORE 操作工作。如果不遵守指针掩码，就可能绕过掩码强制执行而写入内存。
+* 如果 CMO 不遵守指针掩码，就可能将其武器化用于侧信道攻击。例如，U 模式将能够刷新一个它本不应被允许刷新的物理地址（未经过掩码）。
+===='''

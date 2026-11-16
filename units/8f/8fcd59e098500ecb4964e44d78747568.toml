@@ -1,0 +1,12 @@
+unit_id = "8fcd59e098500ecb4964e44d78747568"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<powermappings>> provides a mapping from Power memory
+operations onto RISC-V memory instructions. Power ISYNC maps on RISC-V
+to a FENCE.I followed by a FENCE R,R; the latter fence is needed because
+ISYNC is used to define a "control+control fence" dependency that is
+not present in RVWMO.'''
+zh = '''
+<<powermappings>> 提供了从 Power 内存操作到 RISC-V 内存指令的映射。Power ISYNC 在 RISC-V 上映射为 FENCE.I 后跟 FENCE R,R；后一个 fence 是必要的，因为 ISYNC 用于定义 RVWMO 中不存在的“控制+控制 fence”依赖。'''

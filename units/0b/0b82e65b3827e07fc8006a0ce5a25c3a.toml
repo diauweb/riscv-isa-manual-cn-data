@@ -1,0 +1,13 @@
+unit_id = "0b82e65b3827e07fc8006a0ce5a25c3a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Providing the LSBs of the data access instruction address allows the
+decoder to determine precisely whether the data access should be traced
+or not, and removes the dependency on the block sizes and boundaries.
+The number of bits required is one more bit than the number required to
+index within the block because blocks can start on any half-word
+boundary.'''
+zh = '''
+提供数据访问指令地址的低位，使解码器能够精确判定该数据访问是否应被跟踪，并消除了对块大小和块边界的依赖。所需位数比在块内索引所需的位数多一位，因为块可以从任意半字边界开始。'''

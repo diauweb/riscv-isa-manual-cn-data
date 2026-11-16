@@ -1,0 +1,13 @@
+unit_id = "c9b3b9b2d77a3cac7bce4e0145ab6b02"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If bit FIOM (Fence of I/O implies Memory) is set to one in `henvcfg`,
+FENCE instructions executed when V=1 are modified so the requirement to
+order accesses to device I/O implies also the requirement to order main
+memory accesses. <<henvcfg-FIOM>> details the modified
+interpretation of FENCE instruction bits PI, PO, SI, and SO when FIOM=1
+and V=1.'''
+zh = '''
+若 `henvcfg` 中的位 FIOM（I/O 栅栏蕴含内存）被设置为 1，则当 V=1 时执行的 FENCE 指令被修改，使得对设备 I/O 访问排序的要求也蕴含对主内存访问排序的要求。<<henvcfg-FIOM>> 详述了当 FIOM=1 且 V=1 时 FENCE 指令位 PI、PO、SI 和 SO 的修改后解释。'''

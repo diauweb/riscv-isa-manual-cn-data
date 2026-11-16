@@ -1,0 +1,28 @@
+unit_id = "4f192f4e28171d48a527336f7942edfa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*PIB Calibration Patterns*
+[cols="25%,30%,~",options="header",align=center,width=80%]
+|===
+|*Mode* |*Calibration Bytes* |*Wire Sequence*
+|UART, Manchester |AA 55 00 FF |alternating 1/0, then all 0, then all 1
+| 1-bit parallel  |AA 55 00 FF |alternating 1/0, then all 0, then all 1
+| 2-bit parallel  |66 66 CC 33 |2, 1, 2, 1, 2, 1, 2, 1, 0, 3, 0, 3, 3, 0, 3, 0
+| 4-bit parallel  |5A 5A F0 0F |A, 5, A, 5, 0, F, F, 0
+| 8-bit parallel  |AA 55 00 FF |AA, 55, 00, FF
+| 16-bit parallel |AA AA 55 55 00 00 FF FF|AAAA, 5555, 0000, FFFF
+|==='''
+zh = '''
+.*PIB 校准图案*
+[cols="25%,30%,~",options="header",align=center,width=80%]
+|===
+|*模式* |*校准字节* |*线序*
+|UART、Manchester |AA 55 00 FF |交替 1/0，然后全 0，然后全 1
+| 1 位并行  |AA 55 00 FF |交替 1/0，然后全 0，然后全 1
+| 2 位并行  |66 66 CC 33 |2, 1, 2, 1, 2, 1, 2, 1, 0, 3, 0, 3, 3, 0, 3, 0
+| 4 位并行  |5A 5A F0 0F |A, 5, A, 5, 0, F, F, 0
+| 8 位并行  |AA 55 00 FF |AA, 55, 00, FF
+| 16 位并行 |AA AA 55 55 00 00 FF FF|AAAA, 5555, 0000, FFFF
+|==='''

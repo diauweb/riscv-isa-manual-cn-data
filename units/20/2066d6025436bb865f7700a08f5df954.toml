@@ -1,0 +1,11 @@
+unit_id = "2066d6025436bb865f7700a08f5df954"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An interrupt _i_ will trap to S-mode if both of the following are true:
+(a) either the current privilege mode is S and the SIE bit in the
+`sstatus` register is set, or the current privilege mode has less
+privilege than S-mode; and (b) bit _i_ is set in both `sip` and `sie`.'''
+zh = '''
+中断 _i_ 将在以下两个条件均成立时陷入 S 模式：(a) 当前特权模式为 S 且 `sstatus` 寄存器中的 SIE 位置位，或当前特权模式的特权低于 S 模式；且 (b) 位 _i_ 在 `sip` 和 `sie` 中均置位。'''

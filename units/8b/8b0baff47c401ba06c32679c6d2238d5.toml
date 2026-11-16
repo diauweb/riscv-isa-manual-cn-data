@@ -1,0 +1,12 @@
+unit_id = "8b0baff47c401ba06c32679c6d2238d5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Although possible, insn:vcompress[] is one of the most difficult
+instructions to restart with a non-zero csr:vstart[], so assumption is
+implementations will choose not do that but will instead restart from
+element 0.  This does mean elements in destination register after
+csr:vstart[] will already have been updated.'''
+zh = '''
+NOTE: 尽管可能，insn:vcompress[] 是以非零 csr:vstart[] 重新启动最困难的指令之一，因此假设实现将选择不这样做，而是从元素 0 重新启动。这确实意味着 csr:vstart[] 之后的目标寄存器中的元素将已经被更新。'''

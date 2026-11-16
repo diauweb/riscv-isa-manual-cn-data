@@ -1,0 +1,12 @@
+unit_id = "9822f2def1d66625d80f18625e31d33b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: For example, some implementations will never take interrupts during
+execution of a vector arithmetic instruction, instead waiting until the
+instruction completes to take the interrupt.  Such implementations are
+permitted to raise an illegal-instruction exception when attempting to execute
+a vector arithmetic instruction when csr:vstart[] is nonzero.'''
+zh = '''
+NOTE: 例如，某些实现在执行向量算术指令期间永远不会接受中断，而是等到指令完成后再接受中断。此类实现允许在 csr:vstart[] 非零时尝试执行向量算术指令时引发非法指令异常。'''

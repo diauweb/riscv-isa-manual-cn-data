@@ -1,0 +1,13 @@
+unit_id = "04fad62505dcb44027b341ad6cc1c28d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Unlike instruction trace, compression options for data trace are
+somewhat limited. Following a synchronization instruction trace packet,
+the first data trace packet for a given access size must include the
+full (unencoded) data access address. Thereafter, the address may be
+reported differentially (i.e. address of this data access, minus the
+address of the previous data access of the same size).'''
+zh = '''
+与指令跟踪不同，数据跟踪的压缩选项有些有限。在同步指令跟踪包之后，给定访问大小的第一个数据跟踪包必须包含完整（未编码）的数据访问地址。此后，地址可以差分方式报告（即此数据访问的地址减去相同大小的前一个数据访问的地址）。'''

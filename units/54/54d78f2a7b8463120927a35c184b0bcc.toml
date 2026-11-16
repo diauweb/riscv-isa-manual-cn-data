@@ -1,0 +1,13 @@
+unit_id = "54d78f2a7b8463120927a35c184b0bcc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+As with other vector instructions, the elements with indices less than
+`vstart` are unchanged, and `vstart` is reset to zero after execution.
+Vector mask logical instructions are always unmasked, so there are no
+inactive elements, and the encodings with `vm=0` are reserved.
+Mask elements past `vl`, the tail elements, are
+always updated with a tail-agnostic policy.'''
+zh = '''
+与其他向量指令一样，索引小于 `vstart` 的元素保持不变，并且执行后 `vstart` 重置为零。向量掩码逻辑指令始终无掩码，因此没有非活动元素，`vm=0` 的编码保留。超过 `vl` 的掩码元素（尾部元素）始终以尾部不可知策略更新。'''

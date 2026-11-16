@@ -1,0 +1,15 @@
+unit_id = "9373c0f7be2c39c99c81e3e697f4bfae"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtval_warl]#If `mtval` is not read-only zero, it is a *WARL* register# that
+[#norm:mtval_vaddr_and_0_sz]#must be able to hold all valid virtual addresses and the value zero.#
+It need not be capable of holding all possible invalid addresses.
+[#norm:mtval_inv_addr_conv]#Prior to writing `mtval`, implementations may convert an invalid address
+into some other invalid address that `mtval` is capable of holding.#
+[#norm:mtval_instr_bits_sz]#If the feature to return the faulting instruction bits is implemented,
+`mtval` must also be able to hold all values less than 2^__N__^, where
+_N_ is the smaller of MXLEN and ILEN.#'''
+zh = '''
+[#norm:mtval_warl]#若 `mtval` 不是只读零，则它是一个 *WARL* 寄存器#，[#norm:mtval_vaddr_and_0_sz]#必须能够保存所有有效虚拟地址和值零。# 它不必能够保存所有可能的无效地址。[#norm:mtval_inv_addr_conv]#在写入 `mtval` 之前，实现可以将无效地址转换为 `mtval` 能够保存的某个其他无效地址。# [#norm:mtval_instr_bits_sz]#若实现了返回出错指令位的特性，则 `mtval` 还必须能够保存所有小于 2^__N__^ 的值，其中 _N_ 为 MXLEN 和 ILEN 中的较小者。#'''

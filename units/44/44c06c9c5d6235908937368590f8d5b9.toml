@@ -1,0 +1,27 @@
+unit_id = "44c06c9c5d6235908937368590f8d5b9"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 1 - no address, branch map
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 01 (diff-delta): includes branch information and may
+include differential address
+|*branches*| 5| Number of valid bits in *branch_map*. The length of
+*branch_map* is determined as follows: : 31 bits, no *address* in packet
+-31: (cannot occur for this format)
+|*branch_map*| 31| An array of bits indicating whether branches are
+taken or not. Bit 0 represents the oldest branch instruction executed.
+For each bit: : branch taken : branch not taken
+|==='''
+zh = '''
+.包格式 1 - 无地址、分支映射
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名*| *位数*| *描述*
+|*format*| 2| 01 (diff-delta)：包含分支信息，可能包含差分地址
+|*branches*| 5| *branch_map* 中有效位数。*branch_map* 的长度确定如下：: 31 位，包中无 *address* -31：（此格式不会出现）
+|*branch_map*| 31| 一个位数组，指示分支是否被采用。位 0 表示最早执行的分支指令。对于每一位：: 分支采用 : 分支未采用
+|==='''

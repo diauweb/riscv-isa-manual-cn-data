@@ -1,0 +1,12 @@
+unit_id = "a2ae6f3ac11f6eff2451c25a9cadc6a4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:wrs.nto[] and insn:wrs.sto[] instructions cause the hart to temporarily stall
+execution in a low-power state as long as the reservation set is valid and no
+pending interrupts, even if disabled, are observed. For insn:wrs.sto[] the stall
+duration is bounded by an implementation defined short timeout. These
+instructions are available in all privilege modes.'''
+zh = '''
+只要预留集有效且未观察到任何挂起中断（即使中断被禁用），insn:wrs.nto[] 和 insn:wrs.sto[] 指令就会使硬件线程以低功耗状态暂时停顿执行。对于 insn:wrs.sto[]，停顿持续时间受实现定义的短超时限制。这些指令在所有特权模式下均可用。'''

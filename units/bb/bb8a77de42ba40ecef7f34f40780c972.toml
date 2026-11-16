@@ -1,0 +1,15 @@
+unit_id = "bb8a77de42ba40ecef7f34f40780c972"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Like other modern memory models, the RVWMO memory model uses syntactic
+rather than semantic dependencies. In other words, this definition
+depends on the identities of the registers being accessed by different
+instructions, not the actual contents of those registers. This means
+that an address, control, or data dependency must be enforced even if
+the calculation could seemingly be `optimized away`. This choice
+ensures that RVWMO remains compatible with code that uses these false
+syntactic dependencies as a lightweight ordering mechanism.'''
+zh = '''
+与其他现代内存模型一样，RVWMO 内存模型使用语法依赖而非语义依赖。换言之，此定义取决于不同指令所访问寄存器的标识，而非这些寄存器的实际内容。这意味着即使计算看起来可以被 `optimized away`，也必须强制地址、控制或数据依赖。这一选择确保 RVWMO 与将此类虚假语法依赖用作轻量级排序机制的代码保持兼容。'''

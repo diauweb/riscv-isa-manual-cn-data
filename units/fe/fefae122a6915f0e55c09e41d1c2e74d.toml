@@ -1,0 +1,14 @@
+unit_id = "fefae122a6915f0e55c09e41d1c2e74d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap is taken into HS-mode, virtualization mode V is set to 0,
+and `hstatus`.SPV and `sstatus`.SPP are set according to
+<<norm:H_trap_hs_spv_spp_tbl>>. If V was 1 before the trap, field SPVP in
+`hstatus` is set the same as `sstatus`.SPP; otherwise, SPVP is left
+unchanged. A trap into HS-mode also writes field GVA in `hstatus`,
+fields SPIE and SIE in `sstatus`, and CSRs `sepc`, `scause`, `stval`,
+`htval`, and `htinst`.'''
+zh = '''
+当陷阱进入 HS-mode 时，虚拟化模式 V 被设置为 0，`hstatus`.SPV 和 `sstatus`.SPP 根据 <<norm:H_trap_hs_spv_spp_tbl>> 设置。如果陷阱之前 V 为 1，则 `hstatus` 中的字段 SPVP 被设置为与 `sstatus`.SPP 相同；否则 SPVP 保持不变。进入 HS-mode 的陷阱还会写入 `hstatus` 中的字段 GVA、`sstatus` 中的字段 SPIE 和 SIE，以及 CSR `sepc`、`scause`、`stval`、`htval` 和 `htinst`。'''

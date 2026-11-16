@@ -1,0 +1,16 @@
+unit_id = "7ba4fb3c3c53c29aa0836defd8faddf6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Much of the debate surrounding this extension centered on whether a facility
+similar to x86's MONITOR/MWAIT should instead be provided.
+We concluded that, even if such a facility were to be defined for RISC-V,
+it would not supplant insn:pause[].
+insn:pause[] is more appropriate when polling for non-memory events, when polling for
+multiple events, or when software does not know precisely what events it is
+polling for.
+(Perhaps surprisingly, the latter case is ubiquitous, in part because it is
+the mechanism expected by the Linux kernel's `cpu_relax` API.)'''
+zh = '''
+围绕此扩展的大部分争论集中在是否应改为提供类似于 x86 的 MONITOR/MWAIT 的设施。我们得出的结论是，即使为 RISC-V 定义了此类设施，它也不会取代 insn:pause[]。在轮询非内存事件、轮询多个事件，或软件不确切知道它在轮询什么事件时，insn:pause[] 更为合适。（也许令人惊讶的是，后一种情况无处不在，部分原因是它是 Linux 内核 `cpu_relax` API 所期望的机制。）'''

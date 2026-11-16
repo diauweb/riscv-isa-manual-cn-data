@@ -1,0 +1,22 @@
+unit_id = "325eb8d14cecf37ee105d579b98d2f44"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. update the shared memory state with _mso_;
+. update _i.mem_stores_ to indicate that
+_mso_ was propagated; and
+. restart any speculative instructions which have violated coherence as
+a result of this, i.e., for every non-finished instruction
+_i'_ program-order-after _i_ and every memory
+load operation _mlo'_ of _i'_ that was satisfied
+from _msoss'_, if there exists a memory store operation
+slice _msos'_ in _msoss'_ that overlaps with
+_mso_ and is not from _mso_, and
+_msos'_ is not from a program-order-successor of
+_i_, restart _i'_ and its _restart-dependents_
+(see <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>).'''
+zh = '''
+. 用 _mso_ 更新共享内存状态；
+. 更新 _i.mem_stores_，以指示 _mso_ 已传播；并且
+. 重启任何因此违反一致性的推测指令，即，对于每个未结束的、程序顺序在 _i_ 之后的指令 _i'_，以及 _i'_ 的每个从 _msoss'_ 满足的内存加载操作 _mlo'_，如果存在 _msoss'_ 中的内存存储操作切片 _msos'_，它与 _mso_ 重叠且不是来自 _mso_，并且 _msos'_ 不是来自 _i_ 的程序顺序后继，则重启 _i'_ 及其 _重启依赖项_（见 <<sat_by_forwarding, 通过从未传播存储转发来满足内存加载操作>>）。'''

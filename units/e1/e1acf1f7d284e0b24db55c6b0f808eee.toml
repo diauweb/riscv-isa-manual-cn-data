@@ -1,0 +1,12 @@
+unit_id = "e1acf1f7d284e0b24db55c6b0f808eee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_ssip_mie_ssie_op]#If supervisor mode is implemented, bits csr:mip[ssip] and csr:mie[ssie] are
+the interrupt-pending and interrupt-enable bits for supervisor-level software interrupts.#
+[#norm:mip_ssip_acc]#csr::[ssip] is writable in csr:mip[]# and [#norm:mip_ssip_intr_ctrl]#may also be set to 1
+by a platform-specific interrupt controller.#'''
+zh = '''
+[#norm:mip_ssip_mie_ssie_op]#如果实现了监管模式，则位 csr:mip[ssip] 和 csr:mie[ssie] 是监管级软件中断的中断挂起位和中断使能位。#
+[#norm:mip_ssip_acc]#csr::[ssip] 在 csr:mip[] 中可写#，并且 [#norm:mip_ssip_intr_ctrl]#也可以由平台特定的中断控制器设置为 1。#'''

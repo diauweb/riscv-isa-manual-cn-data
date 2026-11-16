@@ -1,0 +1,17 @@
+unit_id = "36ae59928888cec3a7577fe87747c9eb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicfiss_enc]#The ext:zicfiss[] instructions, except insn:ssamoswap.w[] and insn:ssamoswap.d[], are encoded using a subset of
+May-Be-Operation instructions defined by the ext:zimop[] and ext:zcmop[] extensions.#
+This subset of instructions revert to their ext:zimop[]- or ext:zcmop[]-defined behavior when
+the ext:zicfiss[] extension is not implemented or if the extension has not been
+activated. A program that is built with ext:zicfiss[] instructions can thus continue
+to operate correctly, but without backward-edge CFI, on
+processors that do not support the ext:zicfiss[] extension or if the ext:zicfiss[] extension
+is not active. The ext:zicfiss[] extension may be activated for use individually and
+independently for each privilege mode.'''
+zh = '''
+[#norm:Zicfiss_enc]#除 insn:ssamoswap.w[] 和 insn:ssamoswap.d[] 之外，ext:zicfiss[] 指令使用由 ext:zimop[] 和 ext:zcmop[] 扩展定义的可能为操作指令的一个子集编码。#
+当未实现 ext:zicfiss[] 扩展或该扩展未被激活时，该指令子集恢复为其由 ext:zimop[] 或 ext:zcmop[] 定义的行为。因此，使用 ext:zicfiss[] 指令构建的程序在不支持 ext:zicfiss[] 扩展的处理器上，或在 ext:zicfiss[] 扩展未激活时，仍可继续正确运行，但不具备后向边 CFI。ext:zicfiss[] 扩展可以针对每个特权模式单独且独立地激活使用。'''

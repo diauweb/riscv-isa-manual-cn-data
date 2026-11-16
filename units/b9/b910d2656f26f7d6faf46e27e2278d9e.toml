@@ -1,0 +1,23 @@
+unit_id = "b910d2656f26f7d6faf46e27e2278d9e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This extension primarily provides instructions that consume
+half-precision operands and produce half-precision results. However, it
+is also common to compute on half-precision data using higher
+intermediate precision. Although this extension provides explicit
+conversion instructions that suffice to implement that pattern, future
+extensions might further accelerate such computation with additional
+instructions that implicitly widen their operands—e.g.,
+half{times}half+single->single—or
+implicitly narrow their results—e.g.,
+half+single->half.
+===='''
+zh = '''
+[NOTE]
+====
+本扩展主要提供使用半精度操作数并产生半精度结果的指令。然而，使用更高中间精度对半精度数据进行计算也很常见。尽管本扩展提供了足以实现该模式的显式转换指令，未来的扩展可能会通过额外指令进一步加速此类计算，这些指令隐式扩展其操作数——例如 half{times}half+single->single——或隐式收窄其结果——例如 half+single->half。
+===='''

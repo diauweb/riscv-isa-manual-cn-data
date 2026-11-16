@@ -1,0 +1,124 @@
+unit_id = "81cfab010ba6fcdeb2d2363d1f61bed6"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Standard ISA extension names.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|Subset |Name |Implies
+
+3+^|*Base ISA*
+
+|Integer |I |
+
+|Reduced Integer |E |
+
+3+^|*Standard Unprivileged Extensions*
+
+|Integer Multiplication and Division |M |Zmmul
+
+|Atomics |A |
+
+|Single-Precision Floating-Point |F |Zicsr
+
+|Double-Precision Floating-Point |D |F
+
+|General |G |IMAFDZicsr_Zifencei
+
+|Quad-Precision Floating-Point |Q |D
+
+|16-bit Compressed Instructions |C |
+
+|Bit Manipulation Extension |B |
+
+|Packed SIMD Extension |P |
+
+|Vector Extension |V |D
+
+|Hypervisor Extension |H |
+
+3+^|*Additional Standard Unprivileged Extensions*
+
+|Additional Standard unprivileged extensions "abc" |Zabc |
+
+3+^|*Standard User-Level Extensions*
+
+|Supervisor-level extension "def" |Sudef |
+
+3+^|*Standard Supervisor-Level Extensions*
+
+|Supervisor-level extension "ghi" |Ssghi |
+
+3+^|*Standard Hypervisor-Level Extensions*
+
+|Hypervisor-level extension "jkl" |Shjkl |
+
+3+^|*Standard Machine-Level Extensions*
+
+|Machine-level extension "mno" |Smmno |
+
+3+^|*Non-Standard Extensions*
+
+|Non-standard extension "pqr" |Xpqr |
+|==='''
+zh = '''
+.标准 ISA 扩展名称。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|子集 |名称 |隐含
+
+3+^|*基础 ISA*
+
+|整数 |I |
+
+|精简整数 |E |
+
+3+^|*标准非特权扩展*
+
+|整数乘除法 |M |Zmmul
+
+|原子操作 |A |
+
+|单精度浮点 |F |Zicsr
+
+|双精度浮点 |D |F
+
+|通用 |G |IMAFDZicsr_Zifencei
+
+|四精度浮点 |Q |D
+
+|16 位压缩指令 |C |
+
+|位操作扩展 |B |
+
+|Packed SIMD 扩展 |P |
+
+|向量扩展 |V |D
+
+|虚拟化管理扩展 |H |
+
+3+^|*其他标准非特权扩展*
+
+|其他标准非特权扩展 "abc" |Zabc |
+
+3+^|*标准用户级扩展*
+
+|监管级扩展 "def" |Sudef |
+
+3+^|*标准监管级扩展*
+
+|监管级扩展 "ghi" |Ssghi |
+
+3+^|*标准虚拟化管理级扩展*
+
+|虚拟化管理级扩展 "jkl" |Shjkl |
+
+3+^|*标准机器级扩展*
+
+|机器级扩展 "mno" |Smmno |
+
+3+^|*非标准扩展*
+
+|非标准扩展 "pqr" |Xpqr |
+|==='''

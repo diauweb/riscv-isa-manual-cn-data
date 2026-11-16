@@ -1,0 +1,33 @@
+unit_id = "3c161aa4fa61651d5897786882022bd1"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Return-address prediction stacks are a common feature of high-performance
+instruction-fetch units, but they require accurate detection of instructions
+used for procedure calls and returns to be effective. For RISC-V, hints as to
+the instructions' usage are encoded implicitly via the register numbers used.
+The return-address stack (RAS) actions to pop and/or push onto the RAS are
+specified in <<rashints>>.
+
+Using `x1` or `x5` as the link register allows a program to benefit from the
+return-address prediction stacks. Additionally, since the shadow stack
+instructions are designed around the use of `x1` or `x5` as the link register,
+using any other register as a link register would incur the cost of additional
+register movements.
+
+Compilers, when generating code with backward-edge CFI, must protect the link
+register, e.g., `x1` and/or `x5`, from arbitrary modification by not emitting
+unsafe code sequences.
+===='''
+zh = '''
+[NOTE]
+====
+返回地址预测栈是高性能取指单元的常见特性，但它们需要准确检测用于过程调用和返回的指令才能有效。对于 RISC-V，关于指令用途的提示通过所使用的寄存器号隐式编码。弹出和/或压入返回地址栈（RAS）的 RAS 动作在 <<rashints>> 中规定。
+
+使用 `x1` 或 `x5` 作为链接寄存器使程序能够受益于返回地址预测栈。此外，由于影子栈指令是围绕使用 `x1` 或 `x5` 作为链接寄存器设计的，使用任何其他寄存器作为链接寄存器都会带来额外寄存器移动的开销。
+
+编译器在使用后向边 CFI 生成代码时，必须通过不生成不安全的代码序列来保护链接寄存器（例如 `x1` 和/或 `x5`）免受任意修改。
+===='''

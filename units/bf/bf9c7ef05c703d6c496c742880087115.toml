@@ -1,0 +1,30 @@
+unit_id = "bf9c7ef05c703d6c496c742880087115"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Defined the csr:misa[b] field to reflect that the ext:b[] extension has been
+implemented.
+* Defined the csr:misa[v] field to reflect that the ext:v[] extension has been
+implemented.
+* Defined the RV32-only csr:medelegh[] and csr:hedelegh[] CSRs.
+* Defined the misaligned atomicity granule PMA, superseding the proposed ext:zam[]
+  extension.
+* Allocated interrupt 13 for ext:sscofpmf[] csr::[lcofi] interrupt.
+* Defined hardware-error and software-check exception codes.
+* Specified synchronization requirements when changing the csr::[pbmte] and csr::[adue] fields
+in csr:menvcfg[] and csr:henvcfg[].
+* Exposed count-overflow interrupts to VS-mode via the ext:shlcofideleg[] extension.
+* Relaxed behavior of some HINTs when MXLEN > XLEN.
+* Defined the format of the memory-mapped csr:msip[] registers.'''
+zh = '''
+* 定义了 csr:misa[b] 字段，以反映已实现 ext:b[] 扩展。
+* 定义了 csr:misa[v] 字段，以反映已实现 ext:v[] 扩展。
+* 定义了仅 RV32 的 csr:medelegh[] 和 csr:hedelegh[] CSR。
+* 定义了非对齐原子性粒度 PMA，取代了拟议的 ext:zam[] 扩展。
+* 为 ext:sscofpmf[] 的 csr::[lcofi] 中断分配了中断 13。
+* 定义了硬件错误和软件检查异常代码。
+* 规定了更改 csr:menvcfg[] 和 csr:henvcfg[] 中 csr::[pbmte] 和 csr::[adue] 字段时的同步要求。
+* 通过 ext:shlcofideleg[] 扩展向 VS 模式暴露计数溢出中断。
+* 放宽了 MXLEN > XLEN 时某些 HINT 的行为。
+* 定义了内存映射 csr:msip[] 寄存器的格式。'''

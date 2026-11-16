@@ -1,0 +1,20 @@
+unit_id = "385e17b3fb9b1a881b8cd1e84a93e2d7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Generally speaking, non-AMO load instructions do not have data source
+registers, and unconditional non-AMO store instructions do not have
+destination registers. However, a successful insn:sc[] instruction is
+considered to have the register specified in _rd_ as a destination
+register, and hence it is possible for an instruction to have a
+syntactic dependency on a successful insn:sc[] instruction that precedes it in
+program order.
+===='''
+zh = '''
+[NOTE]
+====
+一般而言，非 AMO 加载指令没有数据源寄存器，无条件非 AMO 存储指令没有目的寄存器。然而，成功的 insn:sc[] 指令被认为将 _rd_ 中指定的寄存器作为目的寄存器，因此一条指令有可能对程序顺序中位于其前面的成功 insn:sc[] 指令具有语法依赖。
+===='''

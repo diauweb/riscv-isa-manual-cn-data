@@ -1,0 +1,8 @@
+unit_id = "7f114a54bb327a1e3f0779e6757c5e1d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ccounter_inc]#The elapsed cycle counter (CtrCycleCounter) increments at the same rate as the `mcycle` counter.  Only cycles while CTR is active are counted, where active implies that the current privilege mode is enabled for recording and CTR is not frozen.  The CC field is encoded such that CCE holds 0 if the CtrCycleCounter value is less than 4096, otherwise it holds the index of the most significant one bit in the CtrCycleCounter value, minus 11.  CCM holds CtrCycleCounter bits CCE+10:CCE-1.#'''
+zh = '''
+[#norm:ccounter_inc]#经过周期计数器（CtrCycleCounter）以与 `mcycle` 计数器相同的速率递增。仅当 CTR 活动时才计数周期，其中活动意味着当前特权模式已使能用于记录且 CTR 未冻结。CC 字段的编码方式为：如果 CtrCycleCounter 值小于 4096，则 CCE 为 0；否则 CCE 保存 CtrCycleCounter 值中最高有效 1 位的索引减去 11。CCM 保存 CtrCycleCounter 的位 CCE+10:CCE-1。#'''

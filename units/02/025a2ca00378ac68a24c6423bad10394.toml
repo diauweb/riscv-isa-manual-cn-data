@@ -1,0 +1,14 @@
+unit_id = "025a2ca00378ac68a24c6423bad10394"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An LR instruction and an SC instruction are said to be _paired_ if the
+LR precedes the SC in program order and if there are no other LR or SC
+instructions in between; the corresponding memory operations are said to
+be paired as well (except in case of a failed SC, where no store
+operation is generated). The complete list of conditions determining
+whether an SC must succeed, may succeed, or must fail is defined in
+<<sec:lrsc>>.'''
+zh = '''
+如果 LR 在程序顺序中先于 SC，且两者之间没有其他 LR 或 SC 指令，则称一条 LR 指令和一条 SC 指令是__配对的__；相应的内存操作也被称为配对的（除非 SC 失败，此时不产生存储操作）。确定 SC 必须成功、可以成功或必须失败的条件完整列表定义于 <<sec:lrsc>>。'''

@@ -1,0 +1,40 @@
+unit_id = "ae339b208e43bf2d7c833ac08f704979"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Unified CSR, with address only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+101: CSR +
+other codes other packet formats
+|*subtype* | 3 | CSR sub-type +
+00: RW +
+01: RS +
+10: RC +
+11: reserved
+|*diff* | 0 or 1 | 0: Full address +
+1: Differential address
+|*addr_msbs* | 6 | Address[11:6]
+|*addr_lsbs* | 6 | Address[5:0]
+|==='''
+zh = '''
+.统一 CSR 包格式，仅带地址
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名* | *位数* | *描述*
+|*format* | 3 | 事务类型 +
+101：CSR +
+其他代码为其他包格式
+|*subtype* | 3 | CSR 子类型 +
+00：RW +
+01：RS +
+10：RC +
+11：保留
+|*diff* | 0 或 1 | 0：完整地址 +
+1：差分地址
+|*addr_msbs* | 6 | 地址[11:6]
+|*addr_lsbs* | 6 | 地址[5:0]
+|==='''

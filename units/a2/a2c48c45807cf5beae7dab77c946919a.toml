@@ -1,0 +1,12 @@
+unit_id = "a2c48c45807cf5beae7dab77c946919a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* A synchronization sequence must have a length of N+1 bytes (N defined above), comprising:
+- For unframed data streams, N consecutive _null.idle_ packets, directly followed by one _null.alignment_ packet;
+- For framed data streams, N consecutive _null.idle_ packets, directly followed by one _null.idle_ or _null.alignment_ packet.'''
+zh = '''
+* 同步序列的长度必须为 N+1 字节（N 如上定义），包括：
+- 对于无帧数据流，连续 N 个 _null.idle_ 数据包，紧随其后的是 1 个 _null.alignment_ 数据包；
+- 对于带帧数据流，连续 N 个 _null.idle_ 数据包，紧随其后的是 1 个 _null.idle_ 或 _null.alignment_ 数据包。'''

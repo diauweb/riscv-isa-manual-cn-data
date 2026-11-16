@@ -1,0 +1,11 @@
+unit_id = "20276ee404312c7a0d3286a057978e2f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Similarly, if the setting of the PBMTE or ADUE bits in `menvcfg` are changed, an
+HFENCE.GVMA instruction with _rs1_=`x0` and _rs2_=`x0` suffices to synchronize
+with respect to the altered interpretation of G-stage and VS-stage PTEs' PBMT
+and A/D bit fields, respectively.'''
+zh = '''
+类似地，如果 `menvcfg` 中 PBMTE 或 ADUE 位的设置被更改，_rs1_=`x0` 且 _rs2_=`x0` 的 HFENCE.GVMA 指令足以就 G 级和 VS 级 PTE 的 PBMT 和 A/D 位字段解释的改变分别进行同步。'''

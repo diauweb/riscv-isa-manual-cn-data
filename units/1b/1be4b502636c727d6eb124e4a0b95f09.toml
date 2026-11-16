@@ -1,0 +1,19 @@
+unit_id = "1be4b502636c727d6eb124e4a0b95f09"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: There is a security concern with fault-on-first loads, as they
+can be used to probe for valid effective addresses.  The unit-stride
+versions only allow probing a region immediately contiguous to a known
+region, and so reduce the security impact when used in unprivileged
+code.  However, code running in S-mode can establish arbitrary page
+translations that allow probing of random guest physical addresses
+provided by a hypervisor. Constant-stride and scatter/gather fault-only-first
+instructions are not provided due to lack of encoding space, but they
+can also represent a larger security hole, allowing even unprivileged
+software to easily check multiple random pages for accessibility
+without experiencing a trap.  This standard does not address possible
+security mitigations for fault-only-first instructions.'''
+zh = '''
+NOTE: 仅首错加载存在安全问题，因为它们可用于探测有效的有效地址。单位步长版本仅允许探测与已知区域紧邻的区域，因此在非特权代码中使用时可减少安全影响。然而，在 S 模式中运行的代码可以建立任意页转换，从而允许探测由管理程序提供的随机客户机物理地址。由于编码空间不足，未提供恒定步长和分散/聚集仅首错指令，但它们也可能代表更大的安全漏洞，甚至允许非特权软件轻松检查多个随机页面的可访问性而不会经历陷阱。本标准不涉及仅首错指令的可能安全缓解措施。'''

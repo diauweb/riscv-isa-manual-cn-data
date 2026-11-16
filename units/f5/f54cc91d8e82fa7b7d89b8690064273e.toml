@@ -1,0 +1,9 @@
+unit_id = "f54cc91d8e82fa7b7d89b8690064273e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Such indirect unconditional jump targets are classified as sequentially inferable if the pair of instructions are retired
+consecutively (i.e. the *AUIPC*, *LUI* or *C.LUI* immediately precedes the indirect unconditional jump). When decoder is processing instructions (always forward) it must encounter the *AUIPC*, *LUI* or *C.LUI* immediately directly before *JR* and then calculate target address of a jump. I-CNT in that message must span over both (consecutive) instruction.'''
+zh = '''
+此类间接无条件跳转目标，如果这对指令是连续退休的（即 *AUIPC*、*LUI* 或 *C.LUI* 紧挨在间接无条件跳转之前），则归类为顺序可推断。当解码器处理指令（始终向前）时，它必须紧接在 *JR* 之前遇到 *AUIPC*、*LUI* 或 *C.LUI*，然后计算跳转的目标地址。该消息中的 I-CNT 必须覆盖两条（连续）指令。'''

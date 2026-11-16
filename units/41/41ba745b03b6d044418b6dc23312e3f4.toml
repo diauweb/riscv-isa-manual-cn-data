@@ -1,0 +1,16 @@
+unit_id = "41ba745b03b6d044418b6dc23312e3f4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstateen_zero_initialization]#On reset, all writable `mstateen` bits are initialized by the hardware to zeros.#
+[#norm:hstateen_sstateen_zero_initialization]#If machine-level software changes these values, it is responsible for
+initializing the corresponding writable bits of the `hstateen` and `sstateen` CSRs
+to zeros too.# Software at each privilege level should set its respective
+`stateen` CSRs to indicate the state it is prepared to allow less-privileged
+software to access. For OSes and hypervisors, this usually means the state that
+the OS or hypervisor is prepared to swap on a context switch, or to manage in
+some other way.'''
+zh = '''
+[#norm:mstateen_zero_initialization]#复位时，所有可写的 `mstateen` 位由硬件初始化为零。#
+[#norm:hstateen_sstateen_zero_initialization]#如果机器级软件改变了这些值，则它有责任将 `hstateen` 和 `sstateen` CSR 中相应的可写位也初始化为零。# 每个特权级的软件都应设置其各自的 `stateen` CSR，以表明它准备允许较低特权级软件访问哪些状态。对于操作系统和管理程序而言，这通常意味着该操作系统或管理程序准备在上下文切换时交换、或以其他方式管理的状态。'''

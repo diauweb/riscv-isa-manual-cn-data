@@ -1,0 +1,24 @@
+unit_id = "f1bbb9ecd3cfb2487b8b231b752eeb24"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As of this writing, there are no other exceptions to this rule, and so
+the insn:ntl[] instructions affect all memory-access instructions defined in
+the base ISAs and the ext:a[], ext:f[], ext:d[], ext:q[], ext:c[], and ext:v[] standard extensions, as well
+as those defined within the hypervisor extension in <<hypervisor>>.
+
+The insn:ntl[] instructions can affect cache-management operations other than
+those in the ext:zicbom[] extension. For example, insn:ntl.pall[] followed by
+insn:cbo.zero[] might indicate that the line should be allocated in L3 and
+zeroed, but not allocated in L1 or L2.
+===='''
+zh = '''
+[NOTE]
+====
+截至本文撰写时，此规则没有其他例外，因此 insn:ntl[] 指令影响基本 ISA 以及 ext:a[]、ext:f[]、ext:d[]、ext:q[]、ext:c[] 和 ext:v[] 标准扩展中定义的所有内存访问指令，也影响 <<hypervisor>> 中虚拟机监控器扩展内定义的指令。
+
+insn:ntl[] 指令可以影响 ext:zicbom[] 扩展之外的缓存管理操作。例如，insn:ntl.pall[] 后跟 insn:cbo.zero[] 可能指示该缓存行应在 L3 中分配并清零，但不在 L1 或 L2 中分配。
+===='''

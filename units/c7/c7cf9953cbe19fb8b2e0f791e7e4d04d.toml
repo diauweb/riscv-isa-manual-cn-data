@@ -1,0 +1,11 @@
+unit_id = "c7cf9953cbe19fb8b2e0f791e7e4d04d"
+kind = "code"
+translatable = false
+en = '''
+.Ordering memory and I/O accesses
+[.text-center,source%linenums,asm]
+----
+sd t0, 0(a0)
+fence w,o
+sd a0, 0(a1)
+----'''

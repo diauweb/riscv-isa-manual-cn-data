@@ -1,0 +1,11 @@
+unit_id = "5927bbd09c1b10806d45e45dbc17d3d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When multiple floating-point precisions are supported, then valid values
+of narrower _n_-bit types, _n_<FLEN, are represented in the lower _n_ bits of an FLEN-bit NaN value, in a process termed NaN-boxing. The upper bits of a valid NaN-boxed value must be all 1s. Valid NaN-boxed _n_-bit values
+therefore appear as negative quiet NaNs (qNaNs) when viewed as any wider
+_m_-bit value, _n_ < _m_ {le} FLEN. Any operation that writes a narrower result to an `f` register must write all 1s to the uppermost FLEN-_n_ bits to yield a legal NaN-boxedvalue.'''
+zh = '''
+当支持多种浮点精度时，较窄的 _n_ 位类型（_n_<FLEN）的有效值表示在 FLEN 位 NaN 值的低 _n_ 位中，这一过程称为 NaN 装箱。有效 NaN 装箱值的高位必须全为 1。因此，当作为任意更宽的 _m_ 位值（_n_ < _m_ {le} FLEN）查看时，有效的 NaN 装箱 _n_ 位值表现为负的静默 NaN（qNaN）。任何将较窄结果写入 `f` 寄存器的操作都必须将最高 FLEN-_n_ 位全部写为 1，以产生合法的 NaN 装箱值。'''

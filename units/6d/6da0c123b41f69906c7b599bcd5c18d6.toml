@@ -1,0 +1,11 @@
+unit_id = "6da0c123b41f69906c7b599bcd5c18d6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: For breakpoint exceptions raised by [C.]EBREAK, the virtual address of
+the instruction is already recorded in `mepc`.
+Recording the same address in `mtval` is redundant; the option is provided for
+backwards compatibility.'''
+zh = '''
+NOTE: 对于由 [C.]EBREAK 引发的断点异常，该指令的虚拟地址已记录在 `mepc` 中。在 `mtval` 中记录相同地址是冗余的；提供该选项是为了向后兼容。'''

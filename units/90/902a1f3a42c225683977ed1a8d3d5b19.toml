@@ -1,0 +1,16 @@
+unit_id = "902a1f3a42c225683977ed1a8d3d5b19"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Header - 1 byte
+* Index - N bits. As an example use 6 bits and the value of 0xA
+* Optional Siemens timestamp - 2 bytes. This example has no timestamp
+* A type field for the packet of 2 bits '01' meaning instruction trace
+* Payload - [0xBD 0xAA 0xAA 0x68 0x00 0x00 0x20]'''
+zh = '''
+* 头部 - 1 字节
+* 索引 - N 位。例如使用 6 位和值 0xA
+* 可选的 Siemens 时间戳 - 2 字节。本示例没有时间戳
+* 数据包的 2 位类型字段 '01'，表示指令跟踪
+* 有效载荷 - [0xBD 0xAA 0xAA 0x68 0x00 0x00 0x20]'''

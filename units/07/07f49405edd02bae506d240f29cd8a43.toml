@@ -1,0 +1,11 @@
+unit_id = "07f49405edd02bae506d240f29cd8a43"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When an RNMI interrupt is detected, the interrupted PC is written to the
+`mnepc` CSR, the type of RNMI to the `mncause` CSR, and the privilege
+mode of the interrupted context to the `mnstatus` CSR. The
+`mnstatus`.NMIE bit is cleared, masking all interrupts.'''
+zh = '''
+当检测到 RNMI 中断时，被中断的 PC 被写入 `mnepc` CSR，RNMI 的类型被写入 `mncause` CSR，被中断上下文的特权模式被写入 `mnstatus` CSR。`mnstatus`.NMIE 位被清除，屏蔽所有中断。'''

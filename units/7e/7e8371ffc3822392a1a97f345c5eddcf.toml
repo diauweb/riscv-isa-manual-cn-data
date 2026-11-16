@@ -1,0 +1,19 @@
+unit_id = "7e8371ffc3822392a1a97f345c5eddcf"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The alternate link register supports calling millicode routines (e.g.,
+those to save and restore registers in compressed code) while preserving
+the regular return address register. The register `x5` was chosen as the
+alternate link register as it maps to a temporary in the standard
+calling convention, and has an encoding that is only one bit different
+than the regular link register.
+===='''
+zh = '''
+[NOTE]
+====
+备用链接寄存器支持调用 millicode 例程（例如在压缩代码中保存和恢复寄存器的例程），同时保留常规返回地址寄存器。选择寄存器 `x5` 作为备用链接寄存器，是因为它在标准调用约定中映射到一个临时寄存器，且其编码与常规链接寄存器仅有一位不同。
+===='''

@@ -1,0 +1,12 @@
+unit_id = "7e32bc39882750eb5c9013ad704be028"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.FSWSP is an RV32FC-only instruction that stores a single-precision
+floating-point value in floating-point register _rs2_ to memory. It
+computes an effective address by adding the _zero_-extended offset,
+scaled by 4, to the stack pointer, `x2`. It expands to
+`fsw rs2, offset(x2)`.'''
+zh = '''
+C.FSWSP 是仅限 RV32FC 的指令，将浮点寄存器 _rs2_ 中的单精度浮点值存储到内存。它通过将按 4 缩放的__零__扩展偏移量加到栈指针 `x2` 上来计算有效地址。它展开为 `fsw rs2, offset(x2)`。'''

@@ -1,0 +1,13 @@
+unit_id = "d16eb2c47c839420506974d1772e2928"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:inst:addiw:operation]#ADDIW is an RV64I instruction that adds the sign-extended 12-bit
+immediate to register _rs1_ and produces the proper sign extension of a
+32-bit result in _rd_.# [#norm:inst:addiw:overflow]#Overflows are ignored and the result is the low
+32 bits of the result sign-extended to 64 bits.# Note, ADDIW _rd, rs1, 0_
+writes the sign extension of the lower 32 bits of register _rs1_ into
+register _rd_ (assembler pseudoinstruction SEXT.W).'''
+zh = '''
+[#norm:inst:addiw:operation]#ADDIW 是一条 RV64I 指令，它将符号扩展的 12 位立即数加到寄存器 _rs1_ 上，并在 _rd_ 中产生 32 位结果的正确符号扩展。# [#norm:inst:addiw:overflow]#溢出被忽略，结果是结果的低 32 位符号扩展至 64 位。# 注意，ADDIW _rd, rs1, 0_ 将寄存器 _rs1_ 低 32 位的符号扩展写入寄存器 _rd_（汇编器伪指令 SEXT.W）。'''

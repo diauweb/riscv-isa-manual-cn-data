@@ -1,0 +1,17 @@
+unit_id = "cc755d4970654b56d3a5656bf4b07a0f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Under RVWMO, code running on a single hart appears to execute in order
+from the perspective of other memory instructions in the same hart, but
+memory instructions from another hart may observe the memory
+instructions from the first hart being executed in a different order.
+Therefore, multithreaded code may require explicit synchronization to
+guarantee ordering between memory instructions from different harts. The
+base RISC-V ISA provides a FENCE instruction for this purpose, described
+in <<fence>>, while the atomics extension "A" additionally defines load-reserved/store-conditional and atomic read-modify-write instructions.
+(((atomics, misaligned)))'''
+zh = '''
+在 RVWMO 下，运行在单个硬件线程上的代码从同一硬件线程中其他内存指令的角度看似乎是按序执行的，但来自另一个硬件线程的内存指令可能会观察到第一个硬件线程的内存指令以不同的顺序执行。因此，多线程代码可能需要显式同步来保证不同硬件线程之间内存指令的顺序。基础 RISC-V ISA 为此提供了 FENCE 指令，在 <<fence>> 中描述，而原子扩展 "A" 还额外定义了加载保留/条件存储以及原子读-修改-写指令。
+(((atomics, misaligned)))'''

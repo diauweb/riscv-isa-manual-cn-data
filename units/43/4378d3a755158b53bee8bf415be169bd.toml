@@ -1,0 +1,22 @@
+unit_id = "4378d3a755158b53bee8bf415be169bd"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Supervisor Control Transfer Records Status Register Field Definitions
+[%unbreakable]
+[width="100%",cols="15%,85%",options="header",]
+|===
+|Field |Description
+|WRPTR |WARL field that indicates the physical CTR buffer entry to be written next.  It is incremented after new transfers are recorded (see <<Behavior>>), though there are exceptions when `__x__ctrctl`.RASEMU=1, see <<RAS (Return Address Stack) Emulation Mode>>.  For a given CTR depth (where depth = 2^(DEPTH+4)^), WRPTR wraps to 0 on an increment when the value matches depth-1, and to depth-1 on a decrement when the value is 0.  Bits above those needed to represent depth-1 (e.g., bits 7:4 for a depth of 16) are read-only 0. On depth changes, WRPTR holds an unspecified but legal value.
+|FROZEN |Inhibit transfer recording. See <<Freeze>>.
+|==='''
+zh = '''
+.监管控制转移记录状态寄存器字段定义
+[%unbreakable]
+[width="100%",cols="15%,85%",options="header",]
+|===
+|字段 |描述
+|WRPTR |指示下一个要写入的物理 CTR 缓冲区条目的 WARL 字段。在记录新转移后它递增（参见 <<Behavior>>），但当 `__x__ctrctl`.RASEMU=1 时存在例外，参见 <<RAS (Return Address Stack) Emulation Mode>>。对于给定 CTR 深度（其中 depth = 2^(DEPTH+4)^），当值等于 depth-1 时，WRPTR 在递增时回绕到 0；当值为 0 时，在递减时回绕到 depth-1。表示 depth-1 所需位以上的位（例如深度为 16 时的位 7:4）为只读 0。深度变化时，WRPTR 保存未指定但合法的值。
+|FROZEN |禁止转移记录。参见 <<Freeze>>。
+|==='''

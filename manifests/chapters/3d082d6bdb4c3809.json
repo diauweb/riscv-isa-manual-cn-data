@@ -1,0 +1,1347 @@
+{
+  "chap_hash": "3d082d6bdb4c3809",
+  "id": "zi",
+  "sectname": "chapter",
+  "sectnum": "4",
+  "title_en": "Scalar Integer Extensions",
+  "title_unit_id": "6ea0aecd7381f2d8bf95dbe67efcd5d6",
+  "source_path": "src/unpriv/zi.adoc",
+  "sections": [
+    {
+      "id": "zi",
+      "level": 1,
+      "sectnum": "4",
+      "title": "Scalar Integer Extensions",
+      "heading_unit_id": "6ea0aecd7381f2d8bf95dbe67efcd5d6",
+      "heading_anchor_id": "zi",
+      "blocks": [
+        "5a74cebea2424d6b43def06f0a7a33c2",
+        "1af96f10feb458c82ea6ec6ab9b5c2d0"
+      ]
+    },
+    {
+      "id": "ext:zifencei",
+      "level": 2,
+      "sectnum": "4.1",
+      "title": "Zifencei Extension for Instruction-Fetch Fence",
+      "heading_unit_id": "e07d5046eee5f83ed54873164a791ae2",
+      "heading_anchor_id": "ext:zifencei",
+      "blocks": [
+        "ffcf32f5a54ed796291a8a80cd813b98",
+        "3fcc30ef450f208fa19eea330dc8c28b",
+        "007b61720e6f43e368b4f5cea2c7eb1b",
+        "d9a20b3d34e183ec47035756b229d0e6",
+        {
+          "unit_id": "d7117e123a12271523f096e370c49b1e",
+          "anchor_id": "zifencei-ff"
+        },
+        {
+          "unit_id": "ac98fc315d0cf336662d1e8e401d26fc",
+          "anchor_id": "insn:fence.i"
+        },
+        {
+          "unit_id": "51cbf0919054381373a340c69cf07741",
+          "anchor_id": "norm:fence_i_op"
+        },
+        "e11b367a247c46f26392123cdb88334a",
+        "315b819dc8a64a5ccd95daa9d745b20a",
+        {
+          "unit_id": "015bae747a57e56c66122bc67766bac9",
+          "anchor_id": "norm:fence_i_rsv"
+        },
+        "15f7badd0dc9eefbbccef7f7cd8d340f"
+      ]
+    },
+    {
+      "id": "ext:zicsr",
+      "level": 2,
+      "sectnum": "4.2",
+      "title": "Zicsr Extension for Control and Status Register (CSR) Instructions",
+      "heading_unit_id": "616fc390b0e0cbfd3d2012113089ccc7",
+      "heading_anchor_id": "ext:zicsr",
+      "blocks": [
+        "450d1fafd3ff4753ba5d2e32a0609a85",
+        "0e0e559c897d21d3f85180488e4a17a3"
+      ]
+    },
+    {
+      "id": "_csr_instructions",
+      "level": 3,
+      "sectnum": "4.2.1",
+      "title": "CSR Instructions",
+      "heading_unit_id": "18b32d9d504bf4ed39e5d1f45a805bba",
+      "blocks": [
+        "dac832c1a2bffe920cb462d005da8a7a",
+        "60b9e2b629de01776d24632c1e56453e",
+        {
+          "unit_id": "37a3bc04ba0bfaf64424c03ed4ba256e",
+          "anchor_id": "norm:csrrw_op"
+        },
+        {
+          "unit_id": "55f79660856d82804ad142dc8da4e6f0",
+          "anchor_id": "norm:csrrs_op"
+        },
+        {
+          "unit_id": "58184778dbb11a4c99787d5ca8e78e1f",
+          "anchor_id": "norm:csrrc_op"
+        },
+        "a7f066c86e5b7b53da8114c6813be2fc",
+        {
+          "unit_id": "8a2c59f5af27714e8c5fae3122af35d0",
+          "anchor_id": "norm:csrrs_csrrc_rs1_x0"
+        },
+        {
+          "unit_id": "f7094c9cb4cfd1acee70d87b7540da32",
+          "anchor_id": "norm:csrrw_rs1_x0"
+        },
+        {
+          "unit_id": "7babbf1218a1d72247a621495e1d4638",
+          "anchor_id": "norm:csrrwi_csrrsi_csrrci_ops"
+        },
+        {
+          "unit_id": "b973e33620402fcc80636d58f782db75",
+          "anchor_id": "csrsideeffects"
+        },
+        {
+          "unit_id": "1764d574136d46a2a5ba7542b47f54fc",
+          "anchor_id": "norm:csr_side_effects"
+        },
+        "3ed533c4d42f53f1f1a52e436940ba29",
+        "62504009859d29e6cdc4ddb232fb3a3c",
+        "b91f5d559fc5d99829b3cea8abf10ca5",
+        "02cc7ad01ce8f65855079d092feda927",
+        "da633a4275a7515d243dd9cb67ab47aa",
+        "16361f2d1db28a89d76ed65a17bfbf94",
+        "63edec669271c155c2e9bf8bbd58ac37"
+      ]
+    },
+    {
+      "id": "_csr_access_ordering",
+      "level": 4,
+      "sectnum": "4.2.1.1",
+      "title": "CSR Access Ordering",
+      "heading_unit_id": "142ff4e6aefee256df1883bab791e6d8",
+      "blocks": [
+        "369ccbfcdf6c454b54a7f2eb53995c9f",
+        "25e45a8cfb9015f4027b1c9f68954996",
+        "e95090e1e0264e5ec0a6bc8d63801bb9",
+        "59512de3e73ac1e3a62c530222a2b643",
+        "6e190c9af3dd3b7ee2456b5a5a519c48",
+        "b1b968bad157d39e91e31e5af4e048bb"
+      ]
+    },
+    {
+      "id": "ext:zicntr",
+      "level": 2,
+      "sectnum": "4.3",
+      "title": "Zicntr Extension for Base Counters and Timers",
+      "heading_unit_id": "0c086ff8021a26409c3677fe96d83f70",
+      "heading_anchor_id": "ext:zicntr",
+      "blocks": [
+        "1684f54fe069ff735c76f10f106805fc",
+        "ade99574b959f7149ef17ab3be59c33c",
+        "89889f09be12d1fb190bb3f9b765a152",
+        "f38a42981ad69c50976bb1758f5bc989",
+        "f31e4543968906d5c2e2ad1e86ebb527",
+        "4708b923b8cbfdc5d4c66579c85b563b",
+        "87e03092525ce9bf02f4eb48fbfa15bd",
+        "bb5461dc5523a63cebd1a161f4f4da39",
+        "958a040f5c2aaef4d5e96fff9ea2e511",
+        "417b104b43609f21d556d5a2340f7515",
+        "15d5da543c3434f1b611859ecee6a06d",
+        "be298ca115b205b34ad4d654c44a0c86",
+        "419e7a40ff4406c1a4131a2bf52a5fb1",
+        "0761a29ac5e05d8b144e9b65de33bd27",
+        "c8be55c511cf7289547e935a4ba70796",
+        "59bf1f848e6680c5f873b9750ddb86b8",
+        "0620bbfe2f565987aa97dc528a1319e3",
+        {
+          "unit_id": "6e02e490be6796d070ca301c9d85d7a5",
+          "anchor_id": "zicntr-rv32-sample"
+        }
+      ]
+    },
+    {
+      "id": "ext:zihpm",
+      "level": 2,
+      "sectnum": "4.4",
+      "title": "Zihpm Extension for Hardware Performance Counters",
+      "heading_unit_id": "7fc9ab92a727943d031077fbd2d09e87",
+      "heading_anchor_id": "ext:zihpm",
+      "blocks": [
+        "3e805afc2c570cfe40db4927e5ef9ee3",
+        "0d0dfd578ee8d7f7fd033d22b2333213",
+        "1c7a7b383370bda3d257daeec59355bd",
+        "83a47da75bf2b06bb6618f90bffd63f2",
+        "5cb696fabac35e1517f8f5e05b37e602"
+      ]
+    },
+    {
+      "id": "ext:m",
+      "level": 2,
+      "sectnum": "4.5",
+      "title": "M Extension for Integer Multiplication and Division",
+      "heading_unit_id": "d7dbc0baadf77e8971cb30b2a1f2b5ce",
+      "heading_anchor_id": "ext:m",
+      "blocks": [
+        "e394d05c03e2993366abf5548e79cd20",
+        "777c4cb8325b2e798e434c95a8046af3"
+      ]
+    },
+    {
+      "id": "m-mul",
+      "level": 3,
+      "sectnum": "4.5.1",
+      "title": "Multiplication Operations",
+      "heading_unit_id": "37446220d7a12bfaae0f59fb097d6387",
+      "heading_anchor_id": "m-mul",
+      "blocks": [
+        "dfd0f8ae303c612b367cf32943835a1a",
+        {
+          "unit_id": "2086a277fbb752cacec1b382dd98e371",
+          "anchor_id": "m-st-ext-for-int-mult"
+        },
+        "5ad5f33d9b6c86ed371bf19fe0d74603",
+        "c167b6da4a22a98a86ccfaa6f655d0fe",
+        "5ea9d2743a9c38ab8382b6356b068a16",
+        "716bb4c3a684bd6e5d6372d1ce87bd33"
+      ]
+    },
+    {
+      "id": "_division_operations",
+      "level": 3,
+      "sectnum": "4.5.2",
+      "title": "Division Operations",
+      "heading_unit_id": "d23b41bb2c20a1bc81174376abde0ed7",
+      "blocks": [
+        "845c3acb12d1c6ab43dba69d19d60f84",
+        {
+          "unit_id": "0cb9ab16782d37e2e6618f699eb236bb",
+          "anchor_id": "division-op"
+        },
+        "d8dee1e484d7ea06ec9dc1718dc6c98e",
+        "3c63874bf9e629ad46d96f66fc382dac",
+        "fbb3a6d8a54e6a36203cbaf6808c3a55",
+        {
+          "unit_id": "00000751f06c241eff7d6543a3ee9df4",
+          "anchor_id": "divby0"
+        },
+        "542a93f1b31b513e3f3140d5c312d6fe"
+      ]
+    },
+    {
+      "id": "ext:zmmul",
+      "level": 2,
+      "sectnum": "4.6",
+      "title": "Zmmul Extension for Integer Multiplication",
+      "heading_unit_id": "590eec6e12767be9a2f5f93536712914",
+      "heading_anchor_id": "ext:zmmul",
+      "blocks": [
+        "17023c9d72b86457861549b0033f952b",
+        "f7cb8fc1db7e1f8a6222b7e2695d420f"
+      ]
+    },
+    {
+      "id": "ext:zicond",
+      "level": 2,
+      "sectnum": "4.7",
+      "title": "Zicond Extension for Integer Conditional Operations",
+      "heading_unit_id": "2e263721e6dd226fa50e958a41ab6779",
+      "heading_anchor_id": "ext:zicond",
+      "blocks": [
+        "d458e3c6922107049f8ad74db5791257",
+        "76e47e054a1934ec717c6fe153e37a84"
+      ]
+    },
+    {
+      "id": "_instructions_in_alphabetical_order",
+      "level": 3,
+      "sectnum": "4.7.1",
+      "title": "Instructions (in alphabetical order)",
+      "heading_unit_id": "69f708a923cf578f03af619f86f81f47",
+      "blocks": []
+    },
+    {
+      "id": "insns-czero-eqz",
+      "level": 4,
+      "sectnum": "4.7.1.1",
+      "title": "CZERO.EQZ",
+      "heading_unit_id": "6473bb69efe80567dcb85efe95d0fdbd",
+      "heading_anchor_id": "insns-czero-eqz",
+      "blocks": [
+        "7856ec278aad5a47c3d18b2c10625736",
+        "fc18cb2daebc85507ef018cb3bf93d00",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "ee9b0493cba4b6b66bda8870ba87d821",
+          "anchor_id": "norm:czero-eqz_op"
+        },
+        "93dc3a292109dbbd13627488d619a952",
+        {
+          "unit_id": "7a8cf3d7330ca0b3b6c3d745a7bac474",
+          "anchor_id": "norm:czero-eqz_inst_ctime"
+        },
+        "63b399a51eb1c8b119e0f1d8e91459a7",
+        "17feea4d74833fe9bd4c8ae139f5a69e"
+      ]
+    },
+    {
+      "id": "insns-czero-nez",
+      "level": 4,
+      "sectnum": "4.7.1.2",
+      "title": "CZERO.NEZ",
+      "heading_unit_id": "2a4c5d40d19b7204dd8055cbd48eb40e",
+      "heading_anchor_id": "insns-czero-nez",
+      "blocks": [
+        "cf8a79c4374795c72a2621faa0090a1f",
+        "3976ba5d0f178708fa0840148dbb5aef",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "4ffae8481831173c767e69d001b58cbe",
+          "anchor_id": "norm:czero-nez_op"
+        },
+        "93dc3a292109dbbd13627488d619a952",
+        {
+          "unit_id": "7a8cf3d7330ca0b3b6c3d745a7bac474",
+          "anchor_id": "norm:czero-nez_zkt_timing"
+        },
+        "63b399a51eb1c8b119e0f1d8e91459a7",
+        "fab5dc6671b7cdde54edc9480212f1fc"
+      ]
+    },
+    {
+      "id": "_usage_examples",
+      "level": 3,
+      "sectnum": "4.7.2",
+      "title": "Usage examples",
+      "heading_unit_id": "81f8e0a38ddfda6697145d531a6ed04b",
+      "blocks": [
+        "b37561e3717d092f17fc028b2568fd4b"
+      ]
+    },
+    {
+      "id": "_instruction_sequences",
+      "level": 4,
+      "sectnum": "4.7.2.1",
+      "title": "Instruction sequences",
+      "heading_unit_id": "e53fd6ec267f9c52d8b4b0a6072bc85c",
+      "blocks": [
+        "dbd040b36075cf0c1a25126342e03dae"
+      ]
+    },
+    {
+      "id": "ext:zilsd",
+      "level": 2,
+      "sectnum": "4.8",
+      "title": "Zilsd Extension for Load/Store Pair Instructions",
+      "heading_unit_id": "3094c32b54cb2df3b420dd87e933655e",
+      "heading_anchor_id": "ext:zilsd",
+      "blocks": [
+        "f6960bcdec606c982250165c4dc5ea11",
+        "ca5dc0aac493b263bad6a3a0740a2229",
+        "617c2b1a957ae777c3754a8c67e65f52",
+        "5b473a640f1609073eb419edf229f6dc",
+        "20c62720fa00b9368dbcd4c2306d5823",
+        "a4e1f65531f775ff138102c188b2649c",
+        "ee6ba431d95db1de97a898e832b10d6c",
+        "b617413a282495a87f16da4a21291b09",
+        "8835bfe4cb806aae9484ae63a740eaf2",
+        "c829c230e8c83b2e44bff097b2e3bf0a",
+        "18eb976639353005c5c14e552b6574a9"
+      ]
+    },
+    {
+      "id": "_use_of_x0_as_operand",
+      "level": 3,
+      "sectnum": "4.8.1",
+      "title": "Use of x0 as operand",
+      "heading_unit_id": "b909d539903186e9f0ecfaaf455dbbeb",
+      "blocks": [
+        "38889ad0c34e1bf2f88dd3db5dc73a2e",
+        {
+          "unit_id": "41504806dbd0715655fa3e77edd1a40c",
+          "anchor_id": "norm:Zilsd_sd_x0"
+        }
+      ]
+    },
+    {
+      "id": "_exception_handling",
+      "level": 3,
+      "sectnum": "4.8.2",
+      "title": "Exception Handling",
+      "heading_unit_id": "66ae4a6426ca01d04c2706a19de79449",
+      "blocks": [
+        "d533ea847d8850d735c08ec07a18d791",
+        "488706b324cf53a96875e4041d7eee09",
+        "70f553afc687b60bb580f7d81e3e257c"
+      ]
+    },
+    {
+      "id": "_instructions",
+      "level": 3,
+      "sectnum": "4.8.3",
+      "title": "Instructions",
+      "heading_unit_id": "1ddd76143eb213c420f1510467b3edd3",
+      "blocks": []
+    },
+    {
+      "id": "insns-ld",
+      "level": 4,
+      "sectnum": "4.8.3.1",
+      "title": "LD",
+      "heading_unit_id": "5e21fefa409ced6caf79b5736b793c36",
+      "heading_anchor_id": "insns-ld",
+      "blocks": [
+        "2c70cfb2e5251f55a13fd9c4cd103dcf",
+        "930e04ffc739f903b15b274601e3c9b1",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "70077af0b00e7d2ebc0be2f42f8d60db",
+          "anchor_id": "norm:Zilsd_ld_op"
+        },
+        "b68f13ea00adbcb1869cc13b04caccd4"
+      ]
+    },
+    {
+      "id": "insns-sd",
+      "level": 4,
+      "sectnum": "4.8.3.2",
+      "title": "SD",
+      "heading_unit_id": "b6a21a8546100ae0cc4c369496631256",
+      "heading_anchor_id": "insns-sd",
+      "blocks": [
+        "3e82a21de64ddb4878b83a841318c147",
+        "d5a2073f7e519c526cee6f7a44a96352",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "d88e71a2e6fca41307cdbf7f65886f9a",
+          "anchor_id": "norm:Zilsd_sd_op"
+        },
+        "b68f13ea00adbcb1869cc13b04caccd4"
+      ]
+    },
+    {
+      "id": "ext:ziccif",
+      "level": 2,
+      "sectnum": "4.9",
+      "title": "Ziccif Extension for Instruction-Fetch Atomicity",
+      "heading_unit_id": "4f7bb9511aec62556d60646c4b37d2d7",
+      "heading_anchor_id": "ext:ziccif",
+      "blocks": [
+        "6b61d49799ef6a188307859c4d964be2",
+        {
+          "unit_id": "822e3de8bd59317cd0417587a327d3cb",
+          "anchor_id": "norm:ziccif_if_atomicity"
+        },
+        {
+          "unit_id": "6e6241394e3f0dcb713c0fe9dded3e40",
+          "anchor_id": "norm:ziccif_fetch_mechanism"
+        },
+        "ff9d98b5963f1cfc4143f8cfe6c87464",
+        "4c45531e1fd734f8191b23833e43b44a",
+        {
+          "unit_id": "20a7f992148269538944eea2945e4b7d",
+          "anchor_id": "norm:ziccif_pma_application"
+        },
+        "6dc105c9d0a8741cefc5410ef9279205"
+      ]
+    },
+    {
+      "id": "_extziccid_extension_for_instructiondata_coherence_and_consistency",
+      "level": 2,
+      "sectnum": "4.10",
+      "title": "Ziccid Extension for Instruction/Data Coherence and Consistency",
+      "heading_unit_id": "933faf3b74dc6c62823d044649db2758",
+      "blocks": [
+        "906457dbecabccec56b00f67da9b1c0b",
+        "13c5fa606098a21f3aaee3b8855c66b4",
+        "f9ed07b9b611cde64cbdcf619c613379",
+        "2898c6b0df809995578899d4af7690d9",
+        "6a0f679a2ea97a1dd34957273e63f5e1"
+      ]
+    },
+    {
+      "id": "_operational_model_of_the_extziccid_extension",
+      "level": 3,
+      "sectnum": "4.10.1",
+      "title": "Operational Model of the Ziccid Extension",
+      "heading_unit_id": "7d16a9fa7b41f3215f1dff91242cceca",
+      "blocks": [
+        "a934ef2bcf3256382df05cc77901c3d1",
+        "1cfeb7a3f5ca4d473ac3bd0f0df3df01",
+        "8fad10149b49721805122c9281d19b85",
+        "28c1c47bf10416c2041658630ce9799c",
+        "a71936dc4b7c433f1a76e8c85277f800",
+        "6f7022f06fac18ba46a8328391d71773",
+        "c545a01c476989339ca95a3b4685a17c",
+        "30de81b6b1327f5a10641a3e34107f4e",
+        "f59ad7c8eadbd4a37cce3fb2224052f8",
+        "65b0ca79947123e0bddad494407e2adb",
+        "87af3ba003e20de6358433ca16dfe7c8",
+        "7052acd271dba891aae7de34404e9131",
+        "b4374217d6580d38cc8b434e5c256010",
+        "55b84ba3b0394fc2c298881498c97988"
+      ]
+    },
+    {
+      "id": "ext:ziccrse",
+      "level": 2,
+      "sectnum": "4.11",
+      "title": "Ziccrse Extension for Main Memory Reservability",
+      "heading_unit_id": "58542e8b8e99838780c272ca7ee17f4b",
+      "heading_anchor_id": "ext:ziccrse",
+      "blocks": [
+        {
+          "unit_id": "5283ad3af06f62b4e9e704e7d240eabe",
+          "anchor_id": "norm:ziccrse_rsrv_eventual"
+        }
+      ]
+    },
+    {
+      "id": "ext:ziccamoa",
+      "level": 2,
+      "sectnum": "4.12",
+      "title": "Ziccamoa Extension for Main Memory Atomics",
+      "heading_unit_id": "bb7c399e7090a2a4a7d463115fb5b27d",
+      "heading_anchor_id": "ext:ziccamoa",
+      "blocks": [
+        {
+          "unit_id": "22d26f29215d19de8ef7f68e945867bb",
+          "anchor_id": "norm:ziccamoa_amo_pma"
+        }
+      ]
+    },
+    {
+      "id": "ext:ziccamoc",
+      "level": 2,
+      "sectnum": "4.13",
+      "title": "Ziccamoc Extension for Main Memory Compare-and-Swap",
+      "heading_unit_id": "0a813287c915110112b74eeb583e1218",
+      "heading_anchor_id": "ext:ziccamoc",
+      "blocks": [
+        {
+          "unit_id": "4bae0bdb909f9e0dc9a2eb02df421822",
+          "anchor_id": "norm:ziccamoc_casq_pma"
+        }
+      ]
+    },
+    {
+      "id": "ext:zicclsm",
+      "level": 2,
+      "sectnum": "4.14",
+      "title": "Zicclsm Extension for Main Memory Misaligned Accesses",
+      "heading_unit_id": "751110998ce16b6781143763731e031e",
+      "heading_anchor_id": "ext:zicclsm",
+      "blocks": [
+        {
+          "unit_id": "0621d02462a1ff5f92e08264179bdb61",
+          "anchor_id": "norm:zicclsm_misaligned_support"
+        },
+        "f041190e270ec8cf54876117fa9cec95",
+        "f055a261a466cae145556872866c3746"
+      ]
+    },
+    {
+      "id": "ext:zic64b",
+      "level": 2,
+      "sectnum": "4.15",
+      "title": "Zic64b Extension for 64-byte Cache Blocks",
+      "heading_unit_id": "4c8f4097bde1e384ec52d27e529d0df9",
+      "heading_anchor_id": "ext:zic64b",
+      "blocks": [
+        {
+          "unit_id": "0bd594edcc2dca1adf7d7a272c4db857",
+          "anchor_id": "norm:zic64b_cache_block_size"
+        }
+      ]
+    },
+    {
+      "id": "ext:zimop",
+      "level": 2,
+      "sectnum": "4.16",
+      "title": "Zimop Extension for May-Be-Operations",
+      "heading_unit_id": "dd4d4299281f8a9994cb46b0e413775e",
+      "heading_anchor_id": "ext:zimop",
+      "blocks": [
+        "04215c0522dbbdef678a23bac33491f5",
+        "a352b35e4351d87afa31bcd45000ce31",
+        "919b116a3a619b131877bcd3d8267ddf",
+        {
+          "unit_id": "ebade763a10c3546b17d4b50ddd2e4b1",
+          "anchor_id": "norm:Zimop_mop-r_enc"
+        },
+        {
+          "unit_id": "611d3da9bb03bc8ba4ba4ce8c8be822e",
+          "anchor_id": "mop-r"
+        },
+        {
+          "unit_id": "c6c7daa681088a6074b029fe15586ffe",
+          "anchor_id": "norm:Zimop_mop-rr_enc"
+        },
+        {
+          "unit_id": "e1cd0b938e105bef06790863d2038706",
+          "anchor_id": "mop-rr"
+        },
+        "8acedfd32b01078c7788105a0161c164",
+        "202fc6cd31b3b5123ac75974fe9125f8",
+        "a90ee3e809869ea5a7b1e3bf4646ecd6",
+        "8c041a90853b91ea07e913aea6acd3d1"
+      ]
+    },
+    {
+      "id": "unpriv-cfi",
+      "level": 2,
+      "sectnum": "4.17",
+      "title": "Control-Flow Integrity (CFI)",
+      "heading_unit_id": "37077f2fabdef38a82478e9a8e349514",
+      "heading_anchor_id": "unpriv-cfi",
+      "blocks": [
+        "cb07f39f3b0b5650e6a2217ee1d7c04f",
+        "ae6391d07cc6bb07b71ba75279c6dc8c",
+        "47832784ae5c59e56616ac58008e923c",
+        "bfb6a0fe25244855456b5d9ec2055eb6",
+        {
+          "unit_id": "02f566b265482415ed3f6349d9c9e31b",
+          "anchor_id": "norm:cfi_call_term"
+        },
+        {
+          "unit_id": "2a51e837c5bb9188fe0c9746c92571fd",
+          "anchor_id": "norm:cfi_return_term"
+        },
+        {
+          "unit_id": "e258258a32e3d968f677e67297101b28",
+          "anchor_id": "norm:cfi_indirect-jump_term"
+        },
+        "f06cc56a518356820d8da89c9e36d692",
+        "f5fbb4a085ea6f76b22ac3cf8f522a90"
+      ]
+    },
+    {
+      "id": "ext:zicfilp",
+      "level": 3,
+      "sectnum": "4.17.1",
+      "title": "Zicfilp for Landing Pad",
+      "heading_unit_id": "0243b2d0b633844b7761009cc13d6c7e",
+      "heading_anchor_id": "ext:zicfilp",
+      "blocks": [
+        "b82e5b7bdd4236b38372bb01b4a65b7b",
+        "fc59e623a370b27ada34e962abd1e26e",
+        "163127e62f546e503887e5678d232a2f",
+        "8f643e28525534f67c9cba06a9b5e227",
+        "c6cf38706742a486d80a881ad973b351",
+        "e42ce8b526dbe86c33c7b4f1719bc887",
+        "7e10d9f5e1a41b663c788ed0a36346f4",
+        "f1f3f6de3fda8c9fc54c23c133ee64b4",
+        "c4031ed92ba7c1fbc9ef34df7d39cb90",
+        "fa5baf93347963743de8e199be3ba9a1"
+      ]
+    },
+    {
+      "id": "_landing_pad_enforcement",
+      "level": 4,
+      "sectnum": "4.17.1.1",
+      "title": "Landing Pad Enforcement",
+      "heading_unit_id": "873b18c5dd3f6b7a85a2e5cd7173db3a",
+      "blocks": [
+        "75d280883b9ed535d3b1b9242def636a",
+        "46fe7cb50db2ea07b4eefd5d1df6e00d",
+        "cd42ff5e2a19e3263caf67bf803a83b8",
+        {
+          "unit_id": "bf2df22afc4e7cac1e6039db58f3d2fd",
+          "anchor_id": "norm:zicfilp_lpad_expected"
+        },
+        {
+          "unit_id": "73527ffdb029155f9b7aa6b24abb84e0",
+          "anchor_id": "IND_CALL_JMP"
+        },
+        {
+          "unit_id": "a777f1e5b08c578de0d1a0cb055271fd",
+          "anchor_id": "norm:zicfilp_indirect_branch_lpad"
+        },
+        "ef08a4f7fcb858c6204645b0cea25177",
+        "01884281408f0a3c26257e27a32304ed",
+        {
+          "unit_id": "a5f4588c35c27eacba1f098455090c48",
+          "anchor_id": "norm:zicfilp_elp_lpad_expected"
+        },
+        "0896a97f3bce6c820f7ce5619d19306a"
+      ]
+    },
+    {
+      "id": "LP_INST",
+      "level": 4,
+      "sectnum": "4.17.1.2",
+      "title": "Landing Pad Instruction",
+      "heading_unit_id": "829dec8052b2323eaf24e157e34166f2",
+      "heading_anchor_id": "LP_INST",
+      "blocks": [
+        "039739264a8524e6d8f5783d749005ab",
+        "0175d4f706c9481c282028e6224068d6",
+        {
+          "unit_id": "c181deab0e1dda4360766677f4cabb90",
+          "anchor_id": "norm:zicfilp_lpad_no_sw_exception"
+        },
+        "3d7a05ee227db129a9bf6e43450ab7d7",
+        "4de8c5625cffb9aad6432354932cc1b7",
+        "5ee04360463c417b56fc65c4ea8e465e"
+      ]
+    },
+    {
+      "id": "ext:zicfiss",
+      "level": 3,
+      "sectnum": "4.17.2",
+      "title": "Shadow Stack (Zicfiss)",
+      "heading_unit_id": "c7fcbaca5ed487ca7eeb1634dcfc7a68",
+      "heading_anchor_id": "ext:zicfiss",
+      "blocks": [
+        "c8c0264819d218ba49f07bb15d6125ef",
+        "01f645ac767782f47484c0080b3d0209",
+        "a9f92653ea6782bda89db98fa13f4d33",
+        "2df9502ce1e18b19e460fc955065c978",
+        "85a3d27959b5569c9da62101e44d9bba",
+        "bad81c0e15e4d06874e8db12eaeaeef5",
+        "c6ab7d8d429114569ddc9c676183665f",
+        "ab880e59651d49d95f29590e4f4891bd",
+        "ca4280b5facb3dfc03356566d6f8ae5f",
+        "5cb59ed82915adc9547811fa35be494a",
+        "1116e7d93b3958e9f1987301aabed671",
+        "1958f779148846633a9905589be3db1d"
+      ]
+    },
+    {
+      "id": "_extzicfiss_instructions_summary",
+      "level": 4,
+      "sectnum": "4.17.2.1",
+      "title": "Zicfiss Instructions Summary",
+      "heading_unit_id": "8fb588fb5afdbb5b2505447e79291d78",
+      "blocks": [
+        "c0686b146a827da312c02b0633500c90",
+        "c26f88437675cedd7843604673a5dabe",
+        "d9b7d9ddb686217f36dbdb9ad2afbebd"
+      ]
+    },
+    {
+      "id": "_shadow_stack_pointer_csrssp",
+      "level": 4,
+      "sectnum": "4.17.2.2",
+      "title": "Shadow Stack Pointer (ssp)",
+      "heading_unit_id": "5775d2f3f08ed96c122dc2a2d33808c6",
+      "blocks": [
+        "a2aec7f03a6b985342bd94576255baea"
+      ]
+    },
+    {
+      "id": "_extzicfiss_instructions",
+      "level": 4,
+      "sectnum": "4.17.2.3",
+      "title": "Zicfiss Instructions",
+      "heading_unit_id": "5336a4048970661993746fb70e6bf5b0",
+      "blocks": []
+    },
+    {
+      "id": "SS_PUSH",
+      "level": 4,
+      "sectnum": "4.17.2.4",
+      "title": "Push to the Shadow Stack",
+      "heading_unit_id": "f58581e642f4a2c805fb2524a45a815a",
+      "heading_anchor_id": "SS_PUSH",
+      "blocks": [
+        {
+          "unit_id": "7d0f4f69a37e300366e3ce654a0bca0e",
+          "anchor_id": "norm:ss_push"
+        },
+        "d6e92c84109f2485545077431500a20c",
+        "4c8bdea1eb11ece9fe893973856996b2",
+        "5bdd09adffd4375c4d18e0c66e5c332e",
+        {
+          "unit_id": "f94a9fd510c4e2a881ffa009a41f5fe0",
+          "anchor_id": "norm:sspush_c-sspush_instr"
+        },
+        "68aea042a8b70df544c29eb96541e2bb",
+        "dcf52aab76959e84f0c36fbb83ca1358",
+        {
+          "unit_id": "4140d66745ab5125fabadb1b459250c1",
+          "anchor_id": "norm:sspush_c-sspush_decrement"
+        }
+      ]
+    },
+    {
+      "id": "SS_POP",
+      "level": 4,
+      "sectnum": "4.17.2.5",
+      "title": "Pop from the Shadow Stack",
+      "heading_unit_id": "ae0e2b16eb26ccb27e88258d6df3039a",
+      "heading_anchor_id": "SS_POP",
+      "blocks": [
+        {
+          "unit_id": "2a18bd3604d6ebf505726d01e59c95de",
+          "anchor_id": "norm:ss_pop"
+        },
+        "0c73a85b409c2b3c23ded03df4d44d88",
+        "804cc98867a0bb20895bfeda388aa986",
+        "619cde93d9a6e2fa322842129a0f7c1c",
+        "f66ce5940fdfc33b6c45f26cb4e30585",
+        {
+          "unit_id": "c40e7bf07d390abfe338e69637f3300b",
+          "anchor_id": "norm:sspopchk_shadow_return_pop"
+        },
+        "410584ffefd79357a17bde332fa3e331",
+        "3c161aa4fa61651d5897786882022bd1",
+        "aa22ec51fbdb38e5e3f5030849d5817c",
+        {
+          "unit_id": "6c7ffd51def1f35499b9989dd24b4e14",
+          "anchor_id": "norm:sspopchk-c_load_op"
+        },
+        "97cc1b8e480240e595b6fd3543685c67",
+        "fa9777fdee80998873f13e333fc4f72c",
+        {
+          "unit_id": "ee9a6151b4d011c6453eec9b0cb78662",
+          "anchor_id": "norm:sspop_exception"
+        },
+        {
+          "unit_id": "5055731e19924c2aa1a0914515cfddb5",
+          "anchor_id": "norm:sspop_increment"
+        },
+        "1c68ea53bd9f04db965c836aec471f64",
+        "05e962cede8b461d55eeb8cd228d2a1f"
+      ]
+    },
+    {
+      "id": "SSP_READ",
+      "level": 4,
+      "sectnum": "4.17.2.6",
+      "title": "Read ssp into a Register",
+      "heading_unit_id": "3ee97e97073789138e0f3a8318867364",
+      "heading_anchor_id": "SSP_READ",
+      "blocks": [
+        {
+          "unit_id": "22422d9d4e28ce4cb8504627c71c370b",
+          "anchor_id": "norm:ssrdp_read"
+        },
+        "a3f9e3b8a7db93278e3fb638bb6b1fc9",
+        "b88df658461b39449b0555df92d112a9",
+        "ad229ce89f01e6e8db73c97c6c879d3f",
+        "ac8af1965224d33b3572042b4ab18042",
+        "298382f7229e95623f7725bd5a12d464",
+        "42255534f89d0e3defef56a3d67dab24"
+      ]
+    },
+    {
+      "id": "SSAMOSWAP",
+      "level": 4,
+      "sectnum": "4.17.2.7",
+      "title": "Atomic Swap from a Shadow Stack Location",
+      "heading_unit_id": "d6c600272f0b37f36cc3bd5ee7246618",
+      "heading_anchor_id": "SSAMOSWAP",
+      "blocks": [
+        "7b6b76e438d184bf5c6b603f3f0516a9",
+        {
+          "unit_id": "f40ac830b88ab5a69dcbff866399cdd8",
+          "anchor_id": "norm:rv32_ssamoswap-w_op"
+        },
+        "0083a15d51535e668da7b05e605880ae",
+        {
+          "unit_id": "886634e46c1d3426004851437ad93c82",
+          "anchor_id": "norm:rv64_ssamoswap-w_op"
+        },
+        "74b702377cb2a0d9af21d17f4db8c443",
+        {
+          "unit_id": "76675523439ac433458e6e48aabfbec4",
+          "anchor_id": "norm:ssamoswap_address"
+        },
+        "da585e23f111c6d7982ab8733f496df8",
+        "575f6489563dd457c4e29de6d0201ede",
+        "e36b2bdfe6df7e07c623dd663aa29da5"
+      ]
+    },
+    {
+      "id": "ext:zihintntl",
+      "level": 2,
+      "sectnum": "4.18",
+      "title": "Zihintntl Extension for Non-Temporal Locality Hints",
+      "heading_unit_id": "0fde06a2429f1d0b3d0c05b3a794ee0f",
+      "heading_anchor_id": "ext:zihintntl",
+      "blocks": [
+        "bba5a09d09b93ca072f3c2c886966883",
+        "3d37f2a49e8d814521968eb6e605f0dc",
+        "6c76446b8d47db1df139ea27fb602f62",
+        "382e5027df50f1b960a97bcf36f73136",
+        "4aa1a121930828be2d70d9cfe6dc10a2",
+        "b4b914dc3542c59a4ee2d5e070246f0b",
+        "9452f978c0b3f044d3a8859bdedee296",
+        {
+          "unit_id": "5e3664ee7cbbc24ed302f8cd14e43775",
+          "anchor_id": "ntl-portable"
+        },
+        "d3724a739e2b76e73aeb280c41870618",
+        "859b2061a7a0abb767241c70b5370d3b",
+        "f6b3ff9a8727c304d6cc2053c0c2abb3",
+        "110b2dd9fdec47a1ac3f45acfef949ce",
+        "f1bbb9ecd3cfb2487b8b231b752eeb24",
+        {
+          "unit_id": "8abdbf4691307df612811399ca7131a9",
+          "anchor_id": "ntl"
+        },
+        "c1cbf24f234f9b6e96adad187c95a13b",
+        "e40fe547c29abeaec51f33fc2be0d004",
+        "86c8f9e3864def7efdc5347aad7cfc55",
+        "0b164cd79a4df05959ee1947df8f9bac",
+        "96f5ed863d545037e5bd73d57c4380ac",
+        {
+          "unit_id": "8485f5ee45b4d9d21d1c378edd5d37b2",
+          "anchor_id": "norm:NTL-LR_SC_exception"
+        }
+      ]
+    },
+    {
+      "id": "ext:zihintpause",
+      "level": 2,
+      "sectnum": "4.19",
+      "title": "Zihintpause Extension for Pause Hint",
+      "heading_unit_id": "02cd233c80edcf18db813b11f900f474",
+      "heading_anchor_id": "ext:zihintpause",
+      "blocks": [
+        "7c8cc9a377c197427b94d470fc8ad9f8",
+        "e188c3c499b334f04cec8e2b18e51fdf",
+        "8273d04805d45d4986f9d72f0be97c3a",
+        "14de4752030cb753415072ec166a2942"
+      ]
+    },
+    {
+      "id": "cmo",
+      "level": 2,
+      "sectnum": "4.20",
+      "title": "Cache Management Operations (CMOs)",
+      "heading_unit_id": "79e3b31739b9e0801b0e371fa098fb0b",
+      "heading_anchor_id": "cmo",
+      "blocks": []
+    },
+    {
+      "id": "intro-cmo",
+      "level": 3,
+      "sectnum": "4.20.1",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "heading_anchor_id": "intro-cmo",
+      "blocks": [
+        "0000d6cd3a035539dd604f7ad2485f76",
+        "4ad8b4202aa5968eab39b5a7129c23b2",
+        "d4ecfd40a31579b2a7a8647dfbedc424",
+        "67e8d8f508bc0189db5deaf2d3d8b70e",
+        "1873187564135b80ae011b4feef73a47",
+        "f34f0de6d62526c5b0f214274f6e45a9",
+        "394f8bc066a1594337bc292f0d4bba08"
+      ]
+    },
+    {
+      "id": "background",
+      "level": 3,
+      "sectnum": "4.20.2",
+      "title": "Background",
+      "heading_unit_id": "91d1e1b57162004d103f48d03d2493c9",
+      "heading_anchor_id": "background",
+      "blocks": [
+        "46080b53deaf3eae5f84f208bd680c5f"
+      ]
+    },
+    {
+      "id": "memory-caches",
+      "level": 4,
+      "sectnum": "4.20.2.1",
+      "title": "Memory and Caches",
+      "heading_unit_id": "08b1d96729e7032ba90ca2a19c5cffe2",
+      "heading_anchor_id": "memory-caches",
+      "blocks": [
+        "6de815ca75956a844e9fe00a427de26a",
+        "0d4b2543ec66c48b09bd60e523c05b74",
+        "9a6f1bd33259020d19cd605fd74e81ce",
+        "7547e9975a127fb7f789786e211768b1",
+        "803a890eacf4c6359efda395628eb5c0",
+        "e7d0ae7721691e68269ff9f7dd721277",
+        "e7bf81df524e98efe57fe6001a4e3605",
+        "68d82f36f891d92e47b448e0b1097d45"
+      ]
+    },
+    {
+      "id": "_cache_block_operations",
+      "level": 4,
+      "sectnum": "4.20.2.2",
+      "title": "Cache-Block Operations",
+      "heading_unit_id": "60b969eecae76843cfafef35bc9e7ce0",
+      "blocks": [
+        "4742e7b97bc305e63e406e75d82976cf",
+        "f3069db78aaccba1d8e272f3c38d38e5",
+        "c909ecb262993a536321a4226c3d5e8c",
+        "5e3def5688e4316c1a996f9e41e17c55",
+        "66efc0ef49d7f60f1a9f5bbe50220407",
+        "a00d8d4df1dd0c91ab67c18311455525"
+      ]
+    },
+    {
+      "id": "coherent-agents-caches",
+      "level": 3,
+      "sectnum": "4.20.3",
+      "title": "Coherent Agents and Caches",
+      "heading_unit_id": "0b4417d142f33452c47272f817644d9a",
+      "heading_anchor_id": "coherent-agents-caches",
+      "blocks": [
+        "586790bb9c08b755efcaad8235ab5521",
+        "4f2e49adaba5eef1a88d368cde831702",
+        "626f098c6c09f07c3ef89f63ddb92d69",
+        "aec680013e488bbff56c017c62ad2940",
+        "cd8a00805ce18c58c90bd7d75b8bf48d",
+        "db2cd82b78006fe53a90c538b7a49342",
+        "95375584a25891a556075088c06035ec",
+        "26018755169667ae93dff26a35e43ce7",
+        "187780fa000495de68497032a98833ac",
+        "28502a50e5791c5cd18c2115dc220098"
+      ]
+    },
+    {
+      "id": "_memory_ordering",
+      "level": 4,
+      "sectnum": "4.20.3.1",
+      "title": "Memory Ordering",
+      "heading_unit_id": "b7219b79f003b0f803de670a9e7ddb15",
+      "blocks": []
+    },
+    {
+      "id": "_preserved_program_order",
+      "level": 5,
+      "sectnum": null,
+      "title": "Preserved Program Order",
+      "heading_unit_id": "3e0d288e614a295db38a6f2528a267f5",
+      "blocks": [
+        "7c8bcdc21795703c514a1fcc79381812",
+        "a200a46f3cb429171c2622c317ae0ee6",
+        "12bdd842e1c993ae1db3480ba0118eeb",
+        "ded17f7aa8b6a9ae89ade261615fac82",
+        "3982270327a93aa18c155a82314fe54e",
+        "4b55812a9d14f362c54b1ef2c89ed6d3",
+        "430f5067a5888b1a9eb99df782cc07a7"
+      ]
+    },
+    {
+      "id": "_load_values",
+      "level": 5,
+      "sectnum": null,
+      "title": "Load Values",
+      "heading_unit_id": "c10725ceffd20f922efa629970876146",
+      "blocks": [
+        "35676e963927b7517be31212ecb7d5f3",
+        "045ee7f9f212e2d3b34d6355b3d451e0",
+        "cfc9274020dbd2f6880b24b95a6d0833"
+      ]
+    },
+    {
+      "id": "_traps",
+      "level": 4,
+      "sectnum": "4.20.3.2",
+      "title": "Traps",
+      "heading_unit_id": "5c47820689220d9068f4c983b39a4d3b",
+      "blocks": [
+        "bf8d87189a3760d94096bcb1e7c3511e"
+      ]
+    },
+    {
+      "id": "_illegal_instruction_and_virtual_instruction_exceptions",
+      "level": 5,
+      "sectnum": null,
+      "title": "Illegal-Instruction and Virtual-Instruction Exceptions",
+      "heading_unit_id": "a2650811f0479b3e9bda46f318706945",
+      "blocks": [
+        "e636e9de704824520495a5e64e4dc9a4",
+        "be83f8f7dd14362ec3fad28bffa84138"
+      ]
+    },
+    {
+      "id": "_page_fault_guest_page_fault_and_access_fault_exceptions",
+      "level": 5,
+      "sectnum": null,
+      "title": "Page-Fault, Guest-Page-Fault, and Access-Fault Exceptions",
+      "heading_unit_id": "d89a7ae227051384b39fc1b327c9a1fc",
+      "blocks": [
+        "42dd8f3428d4e884972554a065a11e47",
+        "bfb1ef1f3e36c8b19312c1e1622531e4",
+        "deffb213563a148614550c3f6c8e4d22",
+        "f8b7832343ba288229c60ef13f2736a4",
+        "db2e8b9506e26a672a11aed497f833af",
+        "1b390e529884b5fe407e3534f124ab18",
+        "7b208dd47128b7a2ebf97cc4ae3951f2",
+        "1d69a6e821ba84f1db8bffd3e3a0b4aa",
+        "c86ac4d964c62be172e81fc82c025ed8",
+        "4ab31a21669894dd52d6e9348716e02a",
+        "33e1994b5fea7bfaaef050015219435a",
+        "2ba3f65c78d3ae1690e77e55c3854cca"
+      ]
+    },
+    {
+      "id": "_address_misaligned_exceptions",
+      "level": 5,
+      "sectnum": null,
+      "title": "Address-Misaligned Exceptions",
+      "heading_unit_id": "49156c0e5d13fa3bea06a2c338b3d22c",
+      "blocks": [
+        {
+          "unit_id": "2748b7263ade4f487255b4fd897baa9a",
+          "anchor_id": "norm:no_addr_misaligned_excep"
+        }
+      ]
+    },
+    {
+      "id": "_breakpoint_exceptions_and_debug_mode_entry",
+      "level": 5,
+      "sectnum": null,
+      "title": "Breakpoint Exceptions and Debug Mode Entry",
+      "heading_unit_id": "7dc3f398d54b25e04373c2ef2f5bd9ff",
+      "blocks": [
+        "36fdd27c29c3749e5d3be3dcf8d65a30",
+        "5179dbd1cabcfdab8de599da4cb0af52"
+      ]
+    },
+    {
+      "id": "_hypervisor_extension",
+      "level": 5,
+      "sectnum": null,
+      "title": "Hypervisor Extension",
+      "heading_unit_id": "ca5c9a82da734ed7b2c78fbbd7e5702a",
+      "blocks": [
+        {
+          "unit_id": "17f0506c00055edb97301ae60bdac598",
+          "anchor_id": "norm:h_trans_cache"
+        },
+        "277139f1b2e85abcb21de98fad36054c",
+        "ba83aaa486d42784effa1753826ad6a7",
+        "ac19debe85db2239335a754fdbdd67aa"
+      ]
+    },
+    {
+      "id": "_effects_on_constrained_lrsc_loops",
+      "level": 4,
+      "sectnum": "4.20.3.3",
+      "title": "Effects on Constrained LR/SC Loops",
+      "heading_unit_id": "5ce135cd452fc39897357aba210f2ee0",
+      "blocks": [
+        "455ef392c42ad813ed9afb03300c4f71",
+        "1543afa2d30508df4d21407c5effcb59",
+        "079ea090537cb3ec52cad97d17fb1b60"
+      ]
+    },
+    {
+      "id": "_software_discovery",
+      "level": 4,
+      "sectnum": "4.20.3.4",
+      "title": "Software Discovery",
+      "heading_unit_id": "9541d06f87ade9e604d19d0a9c4294a1",
+      "blocks": [
+        "a3e8bb3976f9dc3f3223c9cd63cb7c8f",
+        "b74f8f4c5809404f9e8a483c8396381a",
+        "c99de8fca796ffcd2b64db2d3a704c5f"
+      ]
+    },
+    {
+      "id": "csr_state",
+      "level": 3,
+      "sectnum": "4.20.4",
+      "title": "CSR controls for CMO instructions",
+      "heading_unit_id": "bc54bde8064e411145d23f13942a89e5",
+      "heading_anchor_id": "csr_state",
+      "blocks": [
+        "b543c60735ef3fc7d9af3d96739c99ce",
+        {
+          "unit_id": "b31c67190104b8e600a058b0ebc0953c",
+          "anchor_id": "norm:cbo-inval"
+        },
+        "e1766b690a47af67f9469efe1dafb797",
+        "d4682c96d655f1ebba7877b6282dc17c",
+        {
+          "unit_id": "8285fe6169ce8e3abeb3ee368cdd3fb5",
+          "anchor_id": "norm:cbo-clean_cbo-flush"
+        },
+        "0fe44fc214d1569c5c84657800d2e6e2",
+        {
+          "unit_id": "c21323feee0d3ee20b4a6acafdb26f74",
+          "anchor_id": "norm:cbo-zero_basedon_xenvcfg-CBZE"
+        },
+        "cfb6e289cb1500a39d5e33d712981710",
+        {
+          "unit_id": "1865b837144fde161eac157e3b8b085b",
+          "anchor_id": "norm:cbxe_unaffected"
+        },
+        "1c77419962c9e9bb2b1152d3d2251d48"
+      ]
+    },
+    {
+      "id": "ext:zicbom",
+      "level": 3,
+      "sectnum": "4.20.5",
+      "title": "Zicbom Extension for Cache-Block Management",
+      "heading_unit_id": "47782a14e46f6be8c0e3930d7db6fb04",
+      "heading_anchor_id": "ext:zicbom",
+      "blocks": [
+        "8ed1c6f00e44542e03b60000f9ca9472",
+        "ffc977d3863fb67b1350e5fc2c70fbe1",
+        "dfb223a17a88074af36d5ea1e59483d8",
+        "72c2039458fc4743ff2a17be7d7e469c",
+        "a08557f6c7d5e6dd452c32cd8b4c4c3e",
+        "03a253fc831a1b1b078466e80d5ad92a",
+        "2cc875f432104699fddafe4d0397345d",
+        "4f3f55313faa6948c29a11ebfbf0e713"
+      ]
+    },
+    {
+      "id": "ext:zicboz",
+      "level": 3,
+      "sectnum": "4.20.6",
+      "title": "Zicboz Extension for Cache-Block Zero",
+      "heading_unit_id": "e739929330032779b5c8d401ab1e500f",
+      "heading_anchor_id": "ext:zicboz",
+      "blocks": [
+        "f58282c74cec0978f72e7a77bb563d3a",
+        "6f80fee52075562c465f3c131a1f5541",
+        "5c7fff327f390af24bc2d0a10c05aa0f",
+        "b862160bf68adcf47280904b32b2e60a",
+        "d7672647dc919d688d9a0463014eb5f5"
+      ]
+    },
+    {
+      "id": "ext:zicbop",
+      "level": 3,
+      "sectnum": "4.20.7",
+      "title": "Zicbop Extension for Cache-Block Prefetch",
+      "heading_unit_id": "e4404487c79a9aac9f84591266c62022",
+      "heading_anchor_id": "ext:zicbop",
+      "blocks": [
+        "b9b2097f988e1b1921d699cd58c8c4f4",
+        "977fbaf606a6876de0ae42508fc3d590",
+        "c23e8a95cd306d050bdff54ea99c2f72",
+        "0149ad5e21c2ef0e455d528304cca3b5",
+        "b41964469490b983a6264291ad488a5c"
+      ]
+    },
+    {
+      "id": "insns",
+      "level": 3,
+      "sectnum": "4.20.8",
+      "title": "Instructions",
+      "heading_unit_id": "1ddd76143eb213c420f1510467b3edd3",
+      "heading_anchor_id": "insns",
+      "blocks": []
+    },
+    {
+      "id": "insns-cbo_clean",
+      "level": 4,
+      "sectnum": "4.20.8.1",
+      "title": "CBO.CLEAN",
+      "heading_unit_id": "368c357fab2eed4ebd27bc2baccbb7fa",
+      "heading_anchor_id": "insns-cbo_clean",
+      "blocks": [
+        "74c8346fcf545ae100d1a6a2df69d3c8",
+        "ac6b10a8c970bc6d0938f0e36f9a3834",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "fd5898fc6d3635c6b34706e3a95e507c"
+      ]
+    },
+    {
+      "id": "insns-cbo_flush",
+      "level": 4,
+      "sectnum": "4.20.8.2",
+      "title": "CBO.FLUSH",
+      "heading_unit_id": "ce2122ba27462ea4627b15cd7eef8076",
+      "heading_anchor_id": "insns-cbo_flush",
+      "blocks": [
+        "2efb0e2a45c7e610a56a272d7a606fdb",
+        "97712b91beeaa3d14e5c503e2b4082d5",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "aa8823dae3a0f23033b7a39cdf3f74e9"
+      ]
+    },
+    {
+      "id": "insns-cbo_inval",
+      "level": 4,
+      "sectnum": "4.20.8.3",
+      "title": "CBO.INVAL",
+      "heading_unit_id": "792d8abaac38d4c9bf4a74c7f3b56074",
+      "heading_anchor_id": "insns-cbo_inval",
+      "blocks": [
+        "b08a7190daf9746e05862de4aa245410",
+        "7943c04e4097526e010db4fa3a2b33af",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "ea4cd83ed7159589f279498bef38eb7b",
+        "aa8823dae3a0f23033b7a39cdf3f74e9",
+        "f19e669c39e9b4ee36aa43e75ca5c248"
+      ]
+    },
+    {
+      "id": "insns-cbo_zero",
+      "level": 4,
+      "sectnum": "4.20.8.4",
+      "title": "CBO.ZERO",
+      "heading_unit_id": "82e6bb646a6cd4c07f843f23310540f6",
+      "heading_anchor_id": "insns-cbo_zero",
+      "blocks": [
+        "7499c51daa5ac8321e26d9602db1fcf8",
+        "322bc361e9acb5e81dc9bff5ec503204",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "aa8823dae3a0f23033b7a39cdf3f74e9",
+          "anchor_id": "norm:cbo-zero_offset"
+        }
+      ]
+    },
+    {
+      "id": "insns-prefetch_i",
+      "level": 4,
+      "sectnum": "4.20.8.5",
+      "title": "PREFETCH.I",
+      "heading_unit_id": "b6393931b5d1eb01e8bc278fc6f7f808",
+      "heading_anchor_id": "insns-prefetch_i",
+      "blocks": [
+        "b70aa41af21e27e7cef4f193eb1af045",
+        "e0b3ec5578ef1e64f826dfa97e80c620",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "5c293c18681d5c7b9e57ff06412b932a",
+          "anchor_id": "norm:prefetch-i_op"
+        },
+        "f89bdb8b404cc457abae642c957ae677"
+      ]
+    },
+    {
+      "id": "insns-prefetch_r",
+      "level": 4,
+      "sectnum": "4.20.8.6",
+      "title": "PREFETCH.R",
+      "heading_unit_id": "287126bf3b84f3f7af372c69c99e0fec",
+      "heading_anchor_id": "insns-prefetch_r",
+      "blocks": [
+        "ae5be857dd409622548f986619ce2c7c",
+        "8542c91908164f2b262b7cc7c1bc9b2f",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "261277d70d9c9701468476c4ecdcf039",
+          "anchor_id": "norm:prefetch-r_op"
+        },
+        "a1f8f02a7a83433131f27a11dfc5769a"
+      ]
+    },
+    {
+      "id": "insns-prefetch_w",
+      "level": 4,
+      "sectnum": "4.20.8.7",
+      "title": "PREFETCH.W",
+      "heading_unit_id": "7a8a14e22e611b84b5ee481facbb773b",
+      "heading_anchor_id": "insns-prefetch_w",
+      "blocks": [
+        "d91104c37d2953128356f98259c9ba62",
+        "8512c23b7d6b3aff73d0cb6c950ca2b8",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "500c66bb87362841e9cdc1d6611c990b",
+          "anchor_id": "norm:prefetch-w_op"
+        },
+        "4addc7247626c385196c251907c94b20"
+      ]
+    }
+  ]
+}

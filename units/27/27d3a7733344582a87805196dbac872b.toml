@@ -1,0 +1,12 @@
+unit_id = "27d3a7733344582a87805196dbac872b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:addi_op]#insn:addi[] adds the sign-extended 12-bit immediate to register _rs1_.#
+[#norm:addi_overflow]#Arithmetic overflow is ignored and the result is simply the low XLEN bits of the result.#
+insn:addi[rd,rs1,0] is used to implement the insn:mv[rd,rs1] assembler pseudoinstruction.'''
+zh = '''
+[#norm:addi_op]#insn:addi[] 将符号扩展的 12 位立即数加到寄存器 _rs1_。#
+[#norm:addi_overflow]#算术溢出被忽略，结果就是结果的低 XLEN 位。#
+insn:addi[rd,rs1,0] 用于实现 insn:mv[rd,rs1] 汇编伪指令。'''

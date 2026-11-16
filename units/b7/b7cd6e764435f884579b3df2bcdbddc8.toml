@@ -1,0 +1,51 @@
+unit_id = "b7cd6e764435f884579b3df2bcdbddc8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Instruction Type (*itype*) encoding
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| *Value* | *Description*
+| 0 |Final instruction in the block is none of the other named *itype*
+codes
+|1 | Exception. An exception that traps occurred following the final
+retired instruction in the block
+|2 | Interrupt. An interrupt that traps occurred following the final
+retired instruction in the block
+|3 | Exception or interrupt return
+|4 | Nontaken branch
+|5 | Taken branch
+|6 | Uninferable jump if _itype_width_p_ is 3, reserved otherwise
+|7 | reserved
+|8 | Uninferable call
+|9 | Inferrable call
+|10 | Uninferable jump
+|11 | Inferrable jump
+|12 | Co-routine swap
+|13 | Return
+|14 | Other uninferable jump
+|15 | Other inferable jump
+|==='''
+zh = '''
+.指令类型（*itype*）编码
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| *值* | *描述*
+| 0 |块中的最后一条指令不是其他任何已命名的 *itype* 代码
+|1 | 异常。在本块最后一条退役指令之后发生了会陷入的异常
+|2 | 中断。在本块最后一条退役指令之后发生了会陷入的中断
+|3 | 异常或中断返回
+|4 | 未跳转分支
+|5 | 已跳转分支
+|6 | 不可推断跳转（如果 _itype_width_p_ 为 3），否则保留
+|7 | 保留
+|8 | 不可推断调用
+|9 | 可推断调用
+|10 | 不可推断跳转
+|11 | 可推断跳转
+|12 | 协程交换
+|13 | 返回
+|14 | 其他不可推断跳转
+|15 | 其他可推断跳转
+|==='''

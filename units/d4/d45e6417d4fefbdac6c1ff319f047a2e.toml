@@ -1,0 +1,10 @@
+unit_id = "d45e6417d4fefbdac6c1ff319f047a2e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.MV copies the value in register _rs2_ into register _rd_. C.MV expands
+into `add rd, x0, rs2`. C.MV is valid only when
+_rs2_≠`x0`; the code points with _rs2_=`x0` correspond to the C.JR instruction. The code points with _rs2_≠`x0` and _rd_=`x0` are HINTs.'''
+zh = '''
+C.MV 将寄存器 _rs2_ 中的值复制到寄存器 _rd_。C.MV 展开为 `add rd, x0, rs2`。C.MV 仅在 _rs2_≠`x0` 时有效；_rs2_=`x0` 的代码点对应于 C.JR 指令。_rs2_≠`x0` 且 _rd_=`x0` 的代码点是 HINT。'''

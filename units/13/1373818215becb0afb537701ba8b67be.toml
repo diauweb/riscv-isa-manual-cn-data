@@ -1,0 +1,20 @@
+unit_id = "1373818215becb0afb537701ba8b67be"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:add_op]#insn:add[] performs the addition of _rs1_ and _rs2_.#
+[#norm:sub_op]#insn:sub[] performs the subtraction of _rs2_ from _rs1_.#
+[#norm:add_sub_overflow]#Overflows are ignored and the low XLEN bits of results are written to the destination _rd_.#
+[#norm:slt_sltu_op]#insn:slt[] and insn:sltu[] perform signed and unsigned compares respectively, writing 1 to _rd_ if
+_rs1_ < _rs2_, 0 otherwise.#
+Note, insn:sltu[rd,x0,rs2] sets _rd_ to 1 if _rs2_ is not equal to zero,
+otherwise sets _rd_ to zero (assembler pseudoinstruction insn:snez[rd,rs]).
+[#norm:and_or_xor_op]#insn:and[], insn:or[], and insn:xor[] perform bitwise logical operations.#'''
+zh = '''
+[#norm:add_op]#insn:add[] 执行 _rs1_ 和 _rs2_ 的加法。#
+[#norm:sub_op]#insn:sub[] 执行从 _rs1_ 减去 _rs2_ 的减法。#
+[#norm:add_sub_overflow]#溢出被忽略，结果的低 XLEN 位写入目的寄存器 _rd_。#
+[#norm:slt_sltu_op]#insn:slt[] 和 insn:sltu[] 分别执行有符号和无符号比较，如果 _rs1_ < _rs2_ 则将 1 写入 _rd_，否则写入 0。#
+注意，如果 _rs2_ 不等于零，insn:sltu[rd,x0,rs2] 将 _rd_ 置为 1，否则将 _rd_ 置为零（汇编伪指令 insn:snez[rd,rs]）。
+[#norm:and_or_xor_op]#insn:and[]、insn:or[] 和 insn:xor[] 执行按位逻辑操作。#'''

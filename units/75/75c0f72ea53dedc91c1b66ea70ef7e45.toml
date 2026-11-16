@@ -1,0 +1,11 @@
+unit_id = "75c0f72ea53dedc91c1b66ea70ef7e45"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Some instructions such as insn:vslidedown[] and insn:vrgather[] may read
+indices past csr:vl[] or even VLMAX in source vector register groups.  The
+general policy is to return the value 0 when the index is greater than
+VLMAX in the source vector register group.'''
+zh = '''
+NOTE: 某些指令（如 insn:vslidedown[] 和 insn:vrgather[]）可能会读取源向量寄存器组中超过 csr:vl[] 甚至超过 VLMAX 的索引。一般策略是当索引大于源向量寄存器组中的 VLMAX 时返回值 0。'''

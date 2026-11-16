@@ -1,0 +1,10 @@
+unit_id = "5b3610caec8cceae660aeb3afd2a7721"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In these cases such a trigger may cause a breakpoint exception while
+already in a trap handler. This might leave the hart unable to resume
+normal execution because state such as `mcause` and `mepc` would be overwritten.'''
+zh = '''
+在这些情况下，这样的触发器可能在已经处于陷阱处理程序时导致断点异常。这可能使硬件线程无法恢复正常的执行，因为诸如 `mcause` 和 `mepc` 等状态将被覆盖。'''

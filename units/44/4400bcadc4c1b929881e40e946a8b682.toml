@@ -1,0 +1,16 @@
+unit_id = "4400bcadc4c1b929881e40e946a8b682"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For the non-exceptional cases, the low bit of the exponent and the six high
+bits of significand (after the leading one) are concatenated and used to
+address the following table.
+The output of the table becomes the seven high bits of the result significand
+(after the leading one); the remainder of the result significand is zero.
+Subnormal inputs are normalized and the exponent adjusted appropriately before
+the lookup.
+The output exponent is chosen to make the result approximate the reciprocal of
+the square root of the argument.'''
+zh = '''
+对于非异常情况，指数的低位和有效数的高六位（在前导 1 之后）被连接起来，用于寻址下表。表的输出成为结果有效数的高七位（在前导 1 之后）；结果有效数的其余部分为零。次正规输入被规格化，并在查找之前适当调整指数。选择输出指数以使结果近似于参数的平方根的倒数。'''

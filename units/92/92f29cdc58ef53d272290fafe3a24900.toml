@@ -1,0 +1,24 @@
+unit_id = "92f29cdc58ef53d272290fafe3a24900"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This feature is intended to be used as a debug mechanism, or as a temporary
+workaround during the boot process for simplifying software, and optimizing the
+allocation of memory and PMP rules. Using this functionality under normal
+operation, after the boot process is completed, should be avoided since it
+weakens the protection of _M-mode-only_ rules. Vendors who don’t need this
+functionality may hardwire this field to 0.
+
+The terminology used to specify the fields introduced by the Smepmp extension
+is listed in Section <<smepmp_terms>>.
+===='''
+zh = '''
+[NOTE]
+====
+此特性旨在用作调试机制，或在启动过程中作为临时变通方法，以简化软件并优化内存和 PMP 规则的分配。在正常操作中（即启动过程完成之后）应避免使用此功能，因为它会削弱对 _M-mode-only_ 规则的保护。不需要此功能的厂商可以将该字段硬连线为 0。
+
+用于规定 Smepmp 扩展所引入字段的术语列于第 <<smepmp_terms>> 节。
+===='''

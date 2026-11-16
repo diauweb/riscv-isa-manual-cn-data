@@ -1,0 +1,16 @@
+unit_id = "0b8ead1a06c3b751373bfedfe1b13a3f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Alternatives to <<tsomappings>> are also possible. A TSO
+store can be mapped onto AMOSWAP with _rl_ set. However, since RVWMO PPO
+Rule <<overlapping-ordering, 3>> forbids forwarding of values from
+AMOs to subsequent loads, the use of AMOSWAP for stores may negatively
+affect performance. A TSO load can be mapped using LR with _aq_ set: all
+such LR instructions will be unpaired, but that fact in and of itself
+does not preclude the use of LR for loads. However, again, this mapping
+may also negatively affect performance if it puts more pressure on the
+reservation mechanism than was originally intended.'''
+zh = '''
+<<tsomappings>> 的替代方案也是可能的。TSO 存储可以映射为置位 _rl_ 的 AMOSWAP。然而，由于 RVWMO PPO 规则 <<overlapping-ordering, 3>> 禁止从 AMO 向后续加载转发值，使用 AMOSWAP 进行存储可能对性能产生负面影响。TSO 加载可以使用置位 _aq_ 的 LR 映射：所有此类 LR 指令将是不配对的，但这一事实本身并不排除使用 LR 进行加载。然而，同样，如果此映射对保留机制施加的压力超出原本的意图，也可能对性能产生负面影响。'''

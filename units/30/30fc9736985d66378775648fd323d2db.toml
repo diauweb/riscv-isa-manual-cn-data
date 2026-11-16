@@ -1,0 +1,31 @@
+unit_id = "30fc9736985d66378775648fd323d2db"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Decoding register specifiers is usually on the critical paths in
+implementations, and so the instruction format was chosen to keep all
+register specifiers at the same position in all formats at the expense
+of having to move immediate bits across formats (a property shared with
+RISC-IV aka. SPUR cite:[spur-jsscc1989]).
+
+In practice, most immediates are either small or require all XLEN bits.
+We chose an asymmetric immediate split (12 bits in regular instructions
+plus a special load-upper-immediate instruction with 20 bits) to
+increase the opcode space available for regular instructions.
+
+Immediates are sign-extended because we did not observe a benefit to
+using zero extension for some immediates as in the MIPS ISA and wanted
+to keep the ISA as simple as possible.
+===='''
+zh = '''
+[NOTE]
+====
+在实现中，寄存器说明符的解码通常位于关键路径上，因此指令格式的选择是将所有寄存器说明符保持在所有格式中的相同位置，代价是必须在不同格式之间移动立即数位（这一特性与 RISC-IV，即 SPUR 共享 cite:[spur-jsscc1989]）。
+
+在实践中，大多数立即数要么很小，要么需要全部 XLEN 位。我们选择了非对称的立即数划分（常规指令中 12 位，外加一条特殊的加载高位立即数指令使用 20 位），以增加常规指令可用的操作码空间。
+
+立即数是符号扩展的，因为我们没有观察到像 MIPS ISA 中那样对某些立即数使用零扩展有任何好处，并且希望保持 ISA 尽可能简单。
+===='''

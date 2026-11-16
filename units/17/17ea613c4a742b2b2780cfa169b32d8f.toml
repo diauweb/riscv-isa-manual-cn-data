@@ -1,0 +1,14 @@
+unit_id = "17ea613c4a742b2b2780cfa169b32d8f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An option that was considered but discarded was to allow implementations to set PMLEN depending on the active addressing mode. For example, PMLEN could be set to 16 for Sv48 and to 25 for Sv39. However, having a single value of PMLEN (e.g., setting PMLEN to 16 for both Sv39 and Sv48 rather than 25) facilitates TLB implementations in designs that support Sv39 and Sv48 but not Sv57. 16 bits are sufficient for current pointer masking use cases but allow for a TLB implementation that matches against the same number of virtual tag bits independently of whether it is running with Sv39 or Sv48. However, if Sv57 is supported, tag matching may need to be conditional on the current address translation mode.
+===='''
+zh = '''
+[NOTE]
+====
+曾考虑但被放弃的一个选项是允许实现根据活动寻址模式设置 PMLEN。例如，对于 Sv48 可以将 PMLEN 设置为 16，对于 Sv39 可以设置为 25。然而，使用单个 PMLEN 值（例如，对于 Sv39 和 Sv48 都将 PMLEN 设置为 16 而不是 25）有助于支持 Sv39 和 Sv48 但不支持 Sv57 的设计中的 TLB 实现。16 位足以满足当前指针掩码用例，但允许 TLB 实现无论运行在 Sv39 还是 Sv48 下都匹配相同数量的虚拟标签位。然而，如果支持 Sv57，则标签匹配可能需要以当前地址转换模式为条件。
+===='''

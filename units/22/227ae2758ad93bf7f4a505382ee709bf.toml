@@ -1,0 +1,12 @@
+unit_id = "227ae2758ad93bf7f4a505382ee709bf"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: In particular, all XLEN bits of the register csr:vtype[] argument to
+the insn:vsetvl[] instruction must be checked.  Implementations cannot
+ignore fields they do not implement. All bits must be checked to
+ensure that new code assuming unsupported vector features in csr:vtype[]
+traps instead of executing incorrectly on an older implementation.'''
+zh = '''
+NOTE: 特别是，必须检查 insn:vsetvl[] 指令的寄存器 csr:vtype[] 参数的所有 XLEN 位。实现不能忽略它们未实现的字段。必须检查所有位，以确保假定 csr:vtype[] 中不支持的向量特性的新代码在旧实现上陷入陷阱而不是错误执行。'''

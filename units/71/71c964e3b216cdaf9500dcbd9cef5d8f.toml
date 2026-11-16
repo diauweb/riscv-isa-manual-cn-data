@@ -1,0 +1,60 @@
+unit_id = "71c964e3b216cdaf9500dcbd9cef5d8f"
+kind = "code"
+translatable = false
+en = '''
+....
+
+1: ***********************************************************************************
+2: ****************** Fragment 0x20010522 - 0x20010528:startup_xrle ******************
+3: ***********************************************************************************
+4:   KEY: ">" means pre-fragment execution, "<" means post-fragment execution
+5: ^^^^^^^^^^^^^^^^^^^^^^^^^^ Part 1 of 1 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+6:
+7: elf:
+8:     20010522 <main>:
+9:     20010522:    1141                    addi    sp,sp,-16
+10:    20010524:    c606                    sw  ra,12(sp)
+11:    20010526:    c422                    sw  s0,8(sp)
+12:    20010528:    0800                    addi    s0,sp,16
+13: <  2001052a:    800107b7            lui a5,0x80010
+14: <  2001052e:    6721                    lui a4,0x8
+15: <  20010530:    e8670713            addi    a4,a4,-378 # 7e86 <__heap_size+0x7686>
+16: <  20010534:    1ae7aa23            sw  a4,436(a5) # 800101b4 <_sp+0xfffffbfc>
+17:
+18: trace_spike:
+19: ******** Data from xrle.spike_pc_trace line 2 ********
+20:    ADDRESS=20010522, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+21:    ADDRESS=20010524, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+22:    ADDRESS=20010526, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+23:    ADDRESS=20010528, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+24: <  ADDRESS=2001052a, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+25: <  ADDRESS=2001052e, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+26: <  ADDRESS=20010530, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+27: <  ADDRESS=20010534, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+28:
+29: encoder_input:
+30: ******** Data from xrle.encoder_input line 2 ********
+31:    ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010522, context=0, ctype=0, ilastsize_0=2
+32:    ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010524, context=0, ctype=0, ilastsize_0=2
+33:    ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010526, context=0, ctype=0, ilastsize_0=2
+34:    ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010528, context=0, ctype=0, ilastsize_0=2
+35: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=2001052a, context=0, ctype=0, ilastsize_0=4
+36: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=2001052e, context=0, ctype=0, ilastsize_0=2
+37: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010530, context=0, ctype=0, ilastsize_0=4
+38: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=20010534, context=0, ctype=0, ilastsize_0=4
+39:
+40: te_inst:
+41: ******** Data from xrle.te_inst_annotated line 2 ********
+42: >  format=3, subformat=SUPPORT, enable=1, encoder_mode=0, options=4, qual_status=0 Payload[1f 04]
+43:    next=20010522
+44:    next=20010524 curr=20010522
+45:    format=3, subformat=START, address=20010522, branch=1, context=0,
+                                             privilege=3, Reason[ppccd]
+                                                  Payload[73 00 00 00 00 91 82 00 10]
+46:    next=20010526 curr=20010524 prev=20010522
+47:    next=20010528 curr=20010526 prev=20010524
+48: <  next=2001052a curr=20010528 prev=20010526
+49: <  next=2001052e curr=2001052a prev=20010528
+50: <  next=20010530 curr=2001052e prev=2001052a
+51: <  next=20010534 curr=20010530 prev=2001052e
+....'''

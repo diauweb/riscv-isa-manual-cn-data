@@ -1,0 +1,23 @@
+unit_id = "b32fa889b082e0ae7f737587dfdd5a84"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+[circle]
+* <<initiate_store_footprint, Initiate memory store operation footprints>>: At this point the memory footprint of the store is provisionally
+known.
+
+* <<instantiate_store_value, Instantiate memory store operation values>>: At this point the memory store operations have their values and
+program-order-successor memory load operations can be satisfied by
+forwarding from them.
+
+* <<commit_stores, Commit store instruction>>: At this point the store operations are guaranteed to happen (the
+instruction can no longer be restarted or discarded), and they can start
+being propagated to memory.'''
+zh = '''
+[circle]
+* <<initiate_store_footprint, 发起内存存储操作足迹>>：此时存储的内存足迹暂时已知。
+
+* <<instantiate_store_value, 实例化内存存储操作值>>：此时内存存储操作具有其值，并且程序顺序后继的内存加载操作可以通过从它们转发来满足。
+
+* <<commit_stores, 提交存储指令>>：此时存储操作保证会发生（指令不能再被重启或丢弃），并且它们可以开始传播到内存。'''

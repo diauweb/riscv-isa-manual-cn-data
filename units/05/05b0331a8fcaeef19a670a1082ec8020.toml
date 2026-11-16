@@ -1,0 +1,12 @@
+unit_id = "05b0331a8fcaeef19a670a1082ec8020"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A program-order-previous store operation that was not available when
+taking the transition above might make latexmath:[$msoss$] provisionally
+unsound (violating coherence) when it becomes available. That store will
+prevent the load from being finished (see <<finish, Finish instruction>>), and will cause it to
+restart when that store operation is propagated (see <<prop_store, Propagate store operation>>).'''
+zh = '''
+采取上述转换时不可用的程序顺序先前存储操作，在变为可用时可能使 latexmath:[$msoss$] 临时不可靠（违反一致性）。该存储将阻止加载完成（见 <<finish, 完成指令>>），并将在该存储操作传播时导致其重启（见 <<prop_store, 传播存储操作>>）。'''

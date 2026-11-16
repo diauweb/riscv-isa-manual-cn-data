@@ -1,0 +1,32 @@
+unit_id = "6c038ab563d352984ad1de13f8ecdc9e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Privilege Mode and Virtualization Mode Encoding
+[%autowidth,align="center",float="center",cols="^,^,^,<,<",options="header"]
+|===
+| H extension supported |v |prv |Abbreviation |Name
+| No | 0 | 0 | U-mode | User mode
+| No | 0 | 1 | S-mode | Supervisor mode
+| No | 0 | 3 | M-mode | Machine mode
+| Yes | 0 | 0 | U-mode | User mode
+| Yes | 0 | 1 | HS-mode | Hypervisor-enabled supervisor mode
+| Yes | 0 | 3 | M-mode | Machine mode
+| Yes | 1 | 0 | VU-mode | Virtual user mode
+| Yes | 1 | 1 | VS-mode | Virtual supervisor mode
+|==='''
+zh = '''
+.特权模式和虚拟化模式编码
+[%autowidth,align="center",float="center",cols="^,^,^,<,<",options="header"]
+|===
+| 支持 H 扩展 |v |prv |缩写 |名称
+| 否 | 0 | 0 | U-mode | 用户模式
+| 否 | 0 | 1 | S-mode | 监管模式
+| 否 | 0 | 3 | M-mode | 机器模式
+| 是 | 0 | 0 | U-mode | 用户模式
+| 是 | 0 | 1 | HS-mode | 启用 Hypervisor 的监管模式
+| 是 | 0 | 3 | M-mode | 机器模式
+| 是 | 1 | 0 | VU-mode | 虚拟用户模式
+| 是 | 1 | 1 | VS-mode | 虚拟监管模式
+|==='''

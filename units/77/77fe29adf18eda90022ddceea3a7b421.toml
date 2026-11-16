@@ -1,0 +1,24 @@
+unit_id = "77fe29adf18eda90022ddceea3a7b421"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As of this writing, there are no other exceptions to this rule, and so
+the NTL instructions affect all memory-access instructions defined in
+the base ISAs and the A, F, D, Q, C, and V standard extensions, as well
+as those defined within the hypervisor extension in Volume II.
+
+The NTL instructions can affect cache-management operations other than
+those in the Zicbom extension. For example, NTL.PALL followed by
+CBO.ZERO might indicate that the line should be allocated in L3 and
+zeroed, but not allocated in L1 or L2.
+===='''
+zh = '''
+[NOTE]
+====
+截至本文撰写时，此规则没有其他例外，因此 NTL 指令影响基本 ISA 以及 A、F、D、Q、C 和 V 标准扩展中定义的所有内存访问指令，也影响第二卷中虚拟机监控器扩展内定义的指令。
+
+NTL 指令可以影响 Zicbom 扩展之外的缓存管理操作。例如，NTL.PALL 后跟 CBO.ZERO 可能指示该缓存行应在 L3 中分配并清零，但不在 L1 或 L2 中分配。
+===='''

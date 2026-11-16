@@ -1,0 +1,38 @@
+unit_id = "96acb9fc9484a2f2bc7e70ad2f16aaec"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Value of `mstatus`/`mstatush` fields MPV and MPP after a trap into M-mode.  Upon trap return, MPV is ignored when MPP=3.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|Previous Mode |MPV |MPP
+|U-mode +
+HS-mode +
+M-mode|0 +
+0 +
+0|0 +
+1 +
+3
+|VU-mode +
+VS-mode|1 +
+1|0 +
+1
+|==='''
+zh = '''
+.陷阱进入 M 模式后 `mstatus`/`mstatush` 字段 MPV 和 MPP 的值。陷阱返回时，如果 MPP=3，则忽略 MPV。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|前一模式 |MPV |MPP
+|U 模式 +
+HS 模式 +
+M 模式|0 +
+0 +
+0|0 +
+1 +
+3
+|VU 模式 +
+VS 模式|1 +
+1|0 +
+1
+|==='''

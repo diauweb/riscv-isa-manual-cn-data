@@ -1,0 +1,12 @@
+unit_id = "27a6c8d476900093a2bd03a95d46ae9f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zalasr_def]#The Zalasr (Load-Acquire and Store-Release) extension provides load-acquire and store-release instructions in RISC-V.
+These can be important for high performance designs by enabling finer-grained synchronisation than is possible with fences alone, by providing a unidirectional fence.#
+Load-acquire and store-release are widely used in language-level memory models:
+both the Java and {cpp} memory models make use of acquire-release semantics, and {cpp}'s `atomic` provides primitives that are meant to map directly to load-acquire and store-release instructions.'''
+zh = '''
+[#norm:zalasr_def]#Zalasr（加载-获取与存储-释放）扩展在 RISC-V 中提供加载-获取和存储-释放指令。通过提供单向屏障，这些指令能够实现比仅使用屏障更细粒度的同步，从而对高性能设计具有重要意义。#
+加载-获取和存储-释放被广泛用于语言级内存模型：Java 和 {cpp} 内存模型都使用了获取-释放语义，并且 {cpp} 的 `atomic` 提供了旨在直接映射到加载-获取和存储-释放指令的原语。'''

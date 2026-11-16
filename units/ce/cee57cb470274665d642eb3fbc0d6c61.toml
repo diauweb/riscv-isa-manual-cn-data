@@ -1,0 +1,13 @@
+unit_id = "cee57cb470274665d642eb3fbc0d6c61"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mseccfg.MMWP` (Machine-Mode Allowlist Policy) is a WARL field. This field
+changes the default PMP policy for Machine mode when accessing memory regions
+that don't have a matching PMP rule. This is a sticky bit, meaning that once
+set it cannot be unset until a *PMP reset*. When set it changes the default
+PMP policy for M-mode when accessing memory regions that don’t have a matching
+*PMP rule*, to *denied* instead of *ignored*.'''
+zh = '''
+`mseccfg.MMWP`（Machine-Mode Allowlist Policy，机器模式允许列表策略）是一个 WARL 字段。当访问没有匹配 PMP 规则的内存区域时，该字段改变机器模式的默认 PMP 策略。这是一个粘滞位，意味着一旦置位，直到发生 *PMP 复位* 之前都不能清除。置位后，它将 M 模式在访问没有匹配 *PMP 规则* 的内存区域时的默认 PMP 策略从**忽略**改为**拒绝**。'''

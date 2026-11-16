@@ -1,0 +1,12 @@
+unit_id = "a49fdfad1a9a5f8cfa101cd78fab224f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Trace-on and Trace-off actions provide a means for the hart to control
+when tracing starts and stops. It is recommended that tracing starts
+from the oldest instruction retired in the cycle that Trace-on is
+asserted, and stops following the newest instruction retired in the
+cycle that Trace-off is asserted (subject to any optional filtering).'''
+zh = '''
+Trace-on 和 Trace-off 动作提供了硬件线程控制跟踪开始和停止的手段。建议跟踪从 Trace-on 置位所在周期中最早退役的指令开始，并在 Trace-off 置位所在周期中最晚退役的指令之后停止（受任何可选过滤的约束）。'''

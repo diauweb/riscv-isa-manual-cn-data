@@ -1,0 +1,19 @@
+unit_id = "0ee4a48b1416c1e10c7b6d7b46aed9d8"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VREV8(vs2)) = {
+  foreach (i from vstart to vl-1) {
+    input = get_velem(vs2, SEW, i);
+    let output : SEW = 0;
+    let j = SEW - 1;
+    foreach (k from 0 to (SEW - 8) by 8) {
+      output[k..(k + 7)] = input[(j - 7)..j];
+      j = j - 8;
+    set_velem(vd, SEW, i, output)
+  }
+  RETIRE_SUCCESS
+}
+--'''

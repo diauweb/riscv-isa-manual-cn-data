@@ -1,0 +1,10 @@
+unit_id = "086c90fe813b730daeb7159b2dd1b2c5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:vmsge.vx[] and insn:vmsgeu.vx[] operations can be synthesized by reducing the
+value of `x` by 1 and using the insn:vmsgt.vx[] and insn:vmsgtu.vx[] instructions, when it is
+known that this will not underflow the representation in `x`.'''
+zh = '''
+当已知这不会使 `x` 中的表示下溢时，可以通过将 `x` 的值减 1 并使用 insn:vmsgt.vx[] 和 insn:vmsgtu.vx[] 指令来合成 insn:vmsge.vx[] 和 insn:vmsgeu.vx[] 操作。'''

@@ -1,0 +1,15 @@
+unit_id = "f42105eedad1b91b092b529f29fe5998"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the Svadu extension is implemented, the ADUE bit controls whether hardware
+updating of PTE A/D bits is enabled for VS-stage address translation.
+When ADUE=1, hardware updating of PTE A/D bits is enabled during VS-stage
+address translation, and the implementation behaves as though the Svade
+extension were not implemented for VS-mode address translation.
+When ADUE=0, the implementation behaves as though Svade were implemented for
+VS-stage address translation.
+If Svadu is not implemented, ADUE is read-only zero.'''
+zh = '''
+若实现 Svadu 扩展，ADUE 位控制是否为 VS 级地址转换启用 PTE A/D 位的硬件更新。当 ADUE=1 时，在 VS 级地址转换期间启用 PTE A/D 位的硬件更新，且实现的行为如同 Svade 扩展未针对 VS 模式地址转换实现。当 ADUE=0 时，实现的行为如同 Svade 已针对 VS 级地址转换实现。若未实现 Svadu，则 ADUE 为只读零。'''

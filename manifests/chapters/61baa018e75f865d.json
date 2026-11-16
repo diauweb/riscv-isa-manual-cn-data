@@ -1,0 +1,755 @@
+{
+  "chap_hash": "61baa018e75f865d",
+  "id": "chap:tci",
+  "sectname": "chapter",
+  "sectnum": "5",
+  "title_en": "Trace Control Interface",
+  "title_unit_id": "850c9de9898937d09a055557a036efbc",
+  "source_path": "src/debug-trace/tci.adoc",
+  "sections": [
+    {
+      "id": "chap:tci",
+      "level": 1,
+      "sectnum": "5",
+      "title": "Trace Control Interface",
+      "heading_unit_id": "850c9de9898937d09a055557a036efbc",
+      "heading_anchor_id": "chap:tci",
+      "blocks": []
+    },
+    {
+      "id": "tci-preface",
+      "level": 2,
+      "sectnum": "5.1",
+      "title": "Preface",
+      "heading_unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "heading_anchor_id": "tci-preface",
+      "blocks": [
+        "f4b103ae47bc7992338849237b23b1b7",
+        "8790ac0355462c235af79959319273c5",
+        "75e1eb650029f106ca713384c51403c8",
+        "74ac6ed66d10dd9cf7634c4a0cbd9b56"
+      ]
+    },
+    {
+      "id": "_introduction_7",
+      "level": 2,
+      "sectnum": "5.2",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "blocks": [
+        "4b6a741699f2ea5293c6a55a99ed2163",
+        "fe50aaad8374c398f2ed00180697bc11",
+        "31e647b1b6d4b10b0f3eaf55e8080d8b",
+        "7b2ef24e1286709fb687545b6c84a095"
+      ]
+    },
+    {
+      "id": "_glossary_2",
+      "level": 3,
+      "sectnum": "5.2.1",
+      "title": "Glossary",
+      "heading_unit_id": "a1fdf70aa0192ad22c94194cb01fbe99",
+      "blocks": [
+        "666b58a72b80fbf6f914f119d9bc08fa",
+        "17a3fb3d792a21431db3b8991e109601",
+        "8ac994cca2147eaca66b10819a317bf9",
+        "7d05b58c0fd630ce428a9d7deeb5cc38",
+        "2a0b34210879ca1f1b3eb4216833ee04",
+        "3a57aba14794bcd9996b75d634619cff",
+        "92168e12a34d0481440e77dd78879aab",
+        "8a8c05e0771d6a296a1338c747b1ba49",
+        "b67a01f3334abc0f66939fab60fbc107",
+        "80fa84e6e491792a08d75e0ed5a9718f",
+        {
+          "unit_id": "a4b617012edc98bfc540840d84c17920",
+          "anchor_id": "SD"
+        },
+        {
+          "unit_id": "0d82b62e774ad69518f58e7ba370dd98",
+          "anchor_id": "Undef"
+        },
+        "17411399ab0e2f3ad83736b5f2e14af0",
+        "b7bc31342154e37c8acdad5433d27005",
+        "21ec530311c724f6e78206c898fb050f"
+      ]
+    },
+    {
+      "id": "_trace_protocols_and_trace_control",
+      "level": 2,
+      "sectnum": "5.3",
+      "title": "Trace Protocols and Trace Control",
+      "heading_unit_id": "a1b30e7364f9b42ea9119b633041709e",
+      "blocks": [
+        "8a73c8deabb97647dd75ea5c31e29444",
+        {
+          "unit_id": "3710af29d9d00877e290f4666a4b2a6b",
+          "anchor_id": "tci-ntrace-specification"
+        },
+        {
+          "unit_id": "5bf45d6ab531a504c69169c954a5934e",
+          "anchor_id": "tci-etrace-specification"
+        },
+        "b6bdbeb68e7443d99c78c2de36e82efc",
+        "65dce8cea061d48dd905b89c7b4fef1d",
+        "2cf2d273b0013fb12e468b88cd5f785c"
+      ]
+    },
+    {
+      "id": "_trace_system_overview",
+      "level": 2,
+      "sectnum": "5.4",
+      "title": "Trace System Overview",
+      "heading_unit_id": "67d2be58885aca1e4ad628967d750a90",
+      "blocks": [
+        "6e4d8e4e554936731e990bca27de25bf"
+      ]
+    },
+    {
+      "id": "_trace_encoder",
+      "level": 3,
+      "sectnum": "5.4.1",
+      "title": "Trace Encoder",
+      "heading_unit_id": "a27816864b47fa7a5b6ade76b49ad8fb",
+      "blocks": [
+        "31b326e9aad8452421dcf65e508f21d0"
+      ]
+    },
+    {
+      "id": "_branch_trace_messaging",
+      "level": 4,
+      "sectnum": "5.4.1.1",
+      "title": "Branch Trace Messaging",
+      "heading_unit_id": "b56ff63e7bc215e6879a8178cd489ed1",
+      "blocks": [
+        "55a491c1d75708f96c82ca2307734ed0",
+        "8a1f400c705c77872c2ce91ff807ad04"
+      ]
+    },
+    {
+      "id": "_branch_history_messaging",
+      "level": 4,
+      "sectnum": "5.4.1.2",
+      "title": "Branch History Messaging",
+      "heading_unit_id": "698f0952a6c50046dc27db2ee9ba95b9",
+      "blocks": [
+        "783216c65cce28970447c46e16e990a7"
+      ]
+    },
+    {
+      "id": "_other_optimizations",
+      "level": 4,
+      "sectnum": "5.4.1.3",
+      "title": "Other Optimizations",
+      "heading_unit_id": "d0f5102846fc72627f2ee4f615ef3ba2",
+      "blocks": [
+        "276a49e9c676c8ae74d88d82d31db278"
+      ]
+    },
+    {
+      "id": "_trace_sinks",
+      "level": 3,
+      "sectnum": "5.4.2",
+      "title": "Trace Sinks",
+      "heading_unit_id": "a210c56c100d414a4d0eefdea071866f",
+      "blocks": [
+        "62a315e65786803d930f1e3bab5f4779",
+        "15d6932dd0f96692e0ff06604a937cc1"
+      ]
+    },
+    {
+      "id": "_sram_sink",
+      "level": 4,
+      "sectnum": "5.4.2.1",
+      "title": "SRAM Sink",
+      "heading_unit_id": "0e20548e1690757e0e8acbfd4821aa3a",
+      "blocks": [
+        "fe3a5d6c7697e41f37aa520f34d4f4f0"
+      ]
+    },
+    {
+      "id": "_system_memory_sink",
+      "level": 4,
+      "sectnum": "5.4.2.2",
+      "title": "System Memory Sink",
+      "heading_unit_id": "108fdf5aecf65759485cfc7c00662426",
+      "blocks": [
+        "177e057e8435fa0f07002397de4c639b"
+      ]
+    },
+    {
+      "id": "_pib_sink",
+      "level": 4,
+      "sectnum": "5.4.2.3",
+      "title": "PIB Sink",
+      "heading_unit_id": "af1d049e6c034dc4a62d0cafdb88627a",
+      "blocks": [
+        "080e7b6a7c8beac98e1aa5b7c768e768"
+      ]
+    },
+    {
+      "id": "_atb_bridge",
+      "level": 3,
+      "sectnum": "5.4.3",
+      "title": "ATB Bridge",
+      "heading_unit_id": "0d678d9f3f7ec4e6567d0828d3bdc7e0",
+      "blocks": [
+        "ddfb92e4cb32d423220c9bc5d0a72c49",
+        "1754dab4c91f5a4f6677e9a4de438763"
+      ]
+    },
+    {
+      "id": "_trace_funnel",
+      "level": 3,
+      "sectnum": "5.4.4",
+      "title": "Trace Funnel",
+      "heading_unit_id": "eb3bf0e4daa53a001571b1398f1fc5b2",
+      "blocks": [
+        "ee493b5f8412d343877d989e3739a196",
+        "8308b04ce5cc968c5fa1e9c8f2cd3413"
+      ]
+    },
+    {
+      "id": "_trace_control_interface_overview",
+      "level": 2,
+      "sectnum": "5.5",
+      "title": "Trace Control Interface Overview",
+      "heading_unit_id": "00aea8b7438b404fa727d389196a9aeb",
+      "blocks": [
+        "51a2104108488477de6efb80f2608d7e"
+      ]
+    },
+    {
+      "id": "_trace_components",
+      "level": 3,
+      "sectnum": "5.5.1",
+      "title": "Trace Components",
+      "heading_unit_id": "74be8b0f525aac956fd3896c530272dd",
+      "blocks": [
+        "7421fa33d1c37cce741435ddfd480f05",
+        "c1b97b5b62f85f5e8b759d50465b8382",
+        "875b32858bec8fbe86f394335a82f1dd",
+        "4df9d3348eadaf67181711513de54d13",
+        "cb033b839684aaecb8b442946e69d38e"
+      ]
+    },
+    {
+      "id": "_connections_between_components",
+      "level": 4,
+      "sectnum": "5.5.1.1",
+      "title": "Connections Between Components",
+      "heading_unit_id": "c3f65a133576ccc7a6076312a7ddcd79",
+      "blocks": [
+        "acd17a8029db6dd7a57ddb53c7d895db",
+        "69b2fb95062ca3cc52698a12fbd492e8",
+        "71e22e68329576a5262e38c42f3e98c2",
+        "41cc3ad5c80f542cfa9694902a8ddaa0"
+      ]
+    },
+    {
+      "id": "_example_component_connection_diagrams",
+      "level": 4,
+      "sectnum": "5.5.1.2",
+      "title": "Example Component Connection Diagrams",
+      "heading_unit_id": "8d0b43307f54afb5dd4565f50c2943d7",
+      "blocks": [
+        {
+          "unit_id": "6053365dfc1100b3e1b3068f1224acbd",
+          "anchor_id": "fig:trace-topo-single"
+        },
+        {
+          "unit_id": "2263fe54f7d0b8dfd39f26249baa4737",
+          "anchor_id": "fig:trace-topo-multi"
+        },
+        {
+          "unit_id": "e4b7e7df7c1353ef5e9b40c268c01c11",
+          "anchor_id": "fig:trace-topo-clusters"
+        },
+        {
+          "unit_id": "efaabb4fe22792965bd50d924aa04bec",
+          "anchor_id": "fig:trace-topo-mixed"
+        },
+        "6e5a76788686fc82104cb24cc4f8481b"
+      ]
+    },
+    {
+      "id": "_accessing_trace_control_registers",
+      "level": 3,
+      "sectnum": "5.5.2",
+      "title": "Accessing Trace Control Registers",
+      "heading_unit_id": "73364612cfddd36236afc77f2203127d",
+      "blocks": [
+        "b551fa61b32dd883fbce0aa30fa51aa5",
+        "430aeff05f4cd6d7510ea9ab31c5babb",
+        "d5e58ebfc994c9e4b2ef2598002ffe0d",
+        "67f1eab75d9fe7e19ef1df085dfb2235",
+        "ed953a1e266191230349b12d6bf54c2f",
+        "7040631ee9db1dac2c9439384362715e"
+      ]
+    },
+    {
+      "id": "register-map",
+      "level": 3,
+      "sectnum": "5.5.3",
+      "title": "Trace Component Register Map",
+      "heading_unit_id": "f5f3f24261cadef0d78f096765a7556e",
+      "heading_anchor_id": "register-map",
+      "blocks": [
+        "5e713fa8039b8c2370c3d449eb644e5c",
+        "8b9d52b022bfcca9f6110827caccd729",
+        "430faeb81713578cddaf81f3dee52a95",
+        "bd12110a41bb956f59c0ef5e2692d062",
+        "e7f41b295660ce139bee0abcb8205abc",
+        "da5abfbafeaff3f630d1db2dae1e3f00",
+        "6d6da75e330a20c95cf18856aef726df",
+        "cdb95abdc119675df7ad8bd4068f0efd",
+        "77c62e99a5a2f6e85fad7197c8961ddd"
+      ]
+    },
+    {
+      "id": "_summary_of_trace_encoder_registers",
+      "level": 4,
+      "sectnum": "5.5.3.1",
+      "title": "Summary of Trace Encoder Registers",
+      "heading_unit_id": "caf286eec69657ceada6113137631c6b",
+      "blocks": [
+        "b134092a8d2767f4c1febb379344127c"
+      ]
+    },
+    {
+      "id": "_summary_of_trace_ram_sink_registers",
+      "level": 4,
+      "sectnum": "5.5.3.2",
+      "title": "Summary of Trace RAM Sink Registers",
+      "heading_unit_id": "31a8bb071aa036ed71379192508f6fdc",
+      "blocks": [
+        "49bb98fd18308ef90a25b6c03308eddf"
+      ]
+    },
+    {
+      "id": "_summary_of_trace_pib_sink_registers",
+      "level": 4,
+      "sectnum": "5.5.3.3",
+      "title": "Summary of Trace PIB Sink Registers",
+      "heading_unit_id": "8c2efbd20e858339040cc8d30ba20d20",
+      "blocks": [
+        "44ce08de4f606b6a9cc1567624efbef8"
+      ]
+    },
+    {
+      "id": "_summary_of_trace_funnel_registers",
+      "level": 4,
+      "sectnum": "5.5.3.4",
+      "title": "Summary of Trace Funnel Registers",
+      "heading_unit_id": "a1d1d942549bc5d2eb779fdd2e41b8a3",
+      "blocks": [
+        "2ba90c3c97c66d40458925d100702e7c",
+        "813213cd8d9336296794a962c2b33309"
+      ]
+    },
+    {
+      "id": "_summary_of_trace_atb_bridge_registers",
+      "level": 4,
+      "sectnum": "5.5.3.5",
+      "title": "Summary of Trace ATB Bridge Registers",
+      "heading_unit_id": "342cb358c9748d143d6b61a1ac1d9371",
+      "blocks": [
+        "3d306a008f5dd4449f614d85a54ecc56"
+      ]
+    },
+    {
+      "id": "_versioning_of_components",
+      "level": 2,
+      "sectnum": "5.6",
+      "title": "Versioning of Components",
+      "heading_unit_id": "6f6475442b08d3318c120702fcabd406",
+      "blocks": [
+        "2abc5f8ade4d564629793e7959be8da8",
+        "54a60fac6166fc99b8c3e1fa6df89ca4",
+        "494c08a38a6fa00e18dda7fa396d8044",
+        "423bed2d41d40a66f9dcd48818ed84c2"
+      ]
+    },
+    {
+      "id": "_trace_encoder_control_interface",
+      "level": 2,
+      "sectnum": "5.7",
+      "title": "Trace Encoder Control Interface",
+      "heading_unit_id": "402aef76a5229206d63cadfbc7c224cb",
+      "blocks": [
+        "d389607e754ed32769367991a27cdc27",
+        "c7e156571923a7e8318174c738d7ab13",
+        "b2b4c86f16e3e4251f623ce2dcd20883",
+        "4cc427906919915bf853cbdd6a59a0d7",
+        "86ceabc9b9246549229fb56d8ed0c75d",
+        "678aa30723ce49b11d9f8142e86d372f",
+        "4bd765a07f49b71a88466c011c8e531f",
+        "c28c34799d74b5abd19c30dde5021fe1",
+        "f957ae9cd004f1c3fb5272b3d9c38e93",
+        "d957a53b4042ff7ed5d1ca658eb2b94c",
+        "1aff958b3448cd43b2c4ba697e4b1453",
+        "875f728c078f704feedcf3847a595ae4"
+      ]
+    },
+    {
+      "id": "_timestamp_unit",
+      "level": 3,
+      "sectnum": "5.7.1",
+      "title": "Timestamp Unit",
+      "heading_unit_id": "658f2a0b837489966af4e48df2dbee11",
+      "blocks": [
+        "018118bc46ac31e81ff622881a5be44e",
+        "75db2aca1103157e64e31047d2eadd10",
+        "43c3ba260eb874e438fae662ab6ec0c6",
+        "846f4978b7c3fd6fa129287e54cbbdfa",
+        "654320cada340b68c800bf4a5f2f82e0",
+        "abca5650f7e5a6238c838a5dfb4fca64",
+        "9ad4391106bb4506d8b34e9bd17562c4",
+        "b962f5847653df4f950dcb7214978037",
+        "c380ec60547d32039c49025e7d43d020",
+        "5b67ecd4c3ea25eeb6853d2de1d693a2"
+      ]
+    },
+    {
+      "id": "_trace_encoder_triggers",
+      "level": 3,
+      "sectnum": "5.7.2",
+      "title": "Trace Encoder Triggers",
+      "heading_unit_id": "73f53ec9c078c372cebd26033c5f4c30",
+      "blocks": []
+    },
+    {
+      "id": "_debug_trigger_module",
+      "level": 4,
+      "sectnum": "5.7.2.1",
+      "title": "Debug Trigger Module",
+      "heading_unit_id": "2b486a646c570ccc64f36ee6d0ed57c1",
+      "blocks": [
+        "edeb125511c73db9e9688c31eaa7589c",
+        "c93d16fc1b81c0abb5e294e441453e14",
+        "2758f706c47dfc2fdb4acd2f0fcaa82c",
+        "52c230499dfebcc6806b8074379077d3"
+      ]
+    },
+    {
+      "id": "_external_trace_triggers",
+      "level": 4,
+      "sectnum": "5.7.2.2",
+      "title": "External Trace Triggers",
+      "heading_unit_id": "5abc8dd20960b70c9969d2925ce55245",
+      "blocks": [
+        "5d1bd496dd3b2e1c75d8cb80dd58a5ce",
+        "64aa5c616bcf22a8089f948a14589b25",
+        "1b758e1faf8d2dba3c2eaa141aff851b",
+        "e5013751ca07e33ef4f547bd4336e1a2"
+      ]
+    },
+    {
+      "id": "_triggers_precedence",
+      "level": 4,
+      "sectnum": "5.7.2.3",
+      "title": "Triggers Precedence",
+      "heading_unit_id": "e7dadc4e646b79dbf0a12cd54afaf305",
+      "blocks": [
+        "6305ada1c49e1e667d62a58655e8b871"
+      ]
+    },
+    {
+      "id": "_trace_encoder_filter_registers",
+      "level": 3,
+      "sectnum": "5.7.3",
+      "title": "Trace Encoder Filter Registers",
+      "heading_unit_id": "033d9cb22fdd4b8f35760553d05fc9e9",
+      "blocks": [
+        "c4f267bed8ad408a05fda9d4b6f15272",
+        "a515735090587f0bec311221b0f3fa83",
+        "f5e0d9cffa8fb931fc5a1ce897e18338",
+        "fca28c166a98284c74c319571fe15999",
+        "8697ce40a5412723e1c111ee154a232c",
+        "38bf2d3920a5f4e53b7ee69bf3e49d2f",
+        "3cd6489bfc3ac1af42b6514a1035eced",
+        "1d7fa603318b9e575bf1e563ab672679",
+        "be8f028ef0b20419d91139c07f4b8eaa",
+        "20e49cfcfa907f6b8d6e54f58e7f108e",
+        "d08e503a30c67e4c1acfe58db4b62a8e",
+        "fe016af9d3ecaa311a12ed9bed972ecf",
+        "aa629f841f41fc3dadffb932c3cccd4d",
+        "2bd19586d1338d162a710fcc8daeac3a",
+        "bb52d3e6f949347a6f750dd76f5db4ad",
+        "9db2e9c71e8d104cd7880f23d5bd9f90",
+        "997ec50832233f42b75f964c84e89b81",
+        "928c9a6b434cdc563906e171f9c821b2",
+        "d20d4ee5f7bfe87374ce8f05b7c83a23",
+        "a517bb2521df8f6c101bb81ba047baff"
+      ]
+    },
+    {
+      "id": "_trace_ram_sink",
+      "level": 2,
+      "sectnum": "5.8",
+      "title": "Trace RAM Sink",
+      "heading_unit_id": "cf27f61ca7143223fbc69554c067f174",
+      "blocks": [
+        "43e74d56afb081dfe3649991cda700b8",
+        "a88f8a5aad326d1b99ee8ae9be47ad54",
+        "533136cc637c8522bdfc0a58e5b86a06",
+        "9060b2c563f3d9e907768fa949f684f7",
+        "96d132aa995357bafec7c68c11eb5341",
+        "b2d202bc7966f725b28224cffed64168",
+        "ec5a6ba9e4e7881775a13af0e0539c02",
+        "040bf50306c9581612daaa7d81f3aa32",
+        "cfd9c04f9b63a7b81f42c7d16919fb97",
+        "61dd5aa1b1eeff9c8eb272498e13d521",
+        "c777afc05e23df8181fbed346ad0c9c3",
+        "ace14879eac67008febbf6d79dcbd093",
+        "7419515c60f63cbfd2b4b47f3aa488dd",
+        "24fb00477b3d93f505d49d02634d1597",
+        "00b3d3d8ffe05bdb47fb5fe1ac69135d",
+        "4a7138df1cc0186c613824e665696b91",
+        "2f1304a6026cf413d0b0499f56ab7f6e",
+        "dbab6d6298000d3e5424c74fee7e6601",
+        "c1404c44060c479c121de2f520d879b5",
+        "136883ee68a76ca02cb413799408c41b"
+      ]
+    },
+    {
+      "id": "_accessing_and_detecting_ram_sink_registers",
+      "level": 3,
+      "sectnum": "5.8.1",
+      "title": "Accessing and Detecting RAM Sink Registers",
+      "heading_unit_id": "faef5c37290a27bc36198e2ea8a247f9",
+      "blocks": [
+        "d16541037fdd417a0c8eb744f40308fc",
+        "d51d96bfe35fc2ae168eb8ed1e9c7a40",
+        "d7b452c639cc05fece80f110ac58911f",
+        "2d7c5032c7aeeae420896e7ddd13f51b",
+        "b747f52587026a92146d7651cdc5b3d4",
+        "6305dead2193268239764cf8430a3f18",
+        "a2c23b25b716e32e6dc18f26b81a8adb",
+        "0c7843ecb7116573fb8a480c2b9ae27d",
+        "50d2ef1668bd9cdb8d3e81cbfb7b0d76",
+        "32b0190e4753f64c1019a21701bf3ef4",
+        "e0ed20649e381f66f4af626d0646cb52",
+        "0d7f43d0c534d35e693ee49329e278d8",
+        "31323cda0c3fdfef4d511fb4a0c09ccc",
+        "bc59b155405c370b0b9f29bedca6fbbc"
+      ]
+    },
+    {
+      "id": "_trace_funnel_2",
+      "level": 2,
+      "sectnum": "5.9",
+      "title": "Trace Funnel",
+      "heading_unit_id": "eb3bf0e4daa53a001571b1398f1fc5b2",
+      "blocks": [
+        "656e14b3d5c7fd12cc8c286202dd9872",
+        "ae8c7aede11a11130d7cc5c4465f518e",
+        "98519a40655a09c0bbe6cbe4d1282ae3",
+        "eac772cb7e772bc003b16ecb9add9d84",
+        "82c365a56177632cae851accbe4cb6d0"
+      ]
+    },
+    {
+      "id": "_timestamp_unit_2",
+      "level": 3,
+      "sectnum": "5.9.1",
+      "title": "Timestamp Unit",
+      "heading_unit_id": "658f2a0b837489966af4e48df2dbee11",
+      "blocks": [
+        "86aac511d55c533960f2c896a3a1d1ad"
+      ]
+    },
+    {
+      "id": "_trace_pib_sink",
+      "level": 2,
+      "sectnum": "5.10",
+      "title": "Trace PIB Sink",
+      "heading_unit_id": "12675110193a2c4c115c2e67454d0440",
+      "blocks": [
+        "b8884eed293599841eb417bac5617feb",
+        "6bb7254b5be1f3aecd30a2bfcaa9f41b",
+        "9f3aeb04c12dd76a5540c876238c3845",
+        "ffaebb602f2273163e61736d273e2ef8",
+        "981f6fe1d41d2c5dbfddcfe81a784482",
+        "fe9eeb2ec97887b14419d35d98f0d327",
+        "44375cd8a45a6abf0ba4c0e60b49022a",
+        "cee19d251112d3b97091d8f0b57d5d66",
+        "ceb4c60b4f2b9f3dd276fcf4b3e3a4f6"
+      ]
+    },
+    {
+      "id": "_order_of_bits_and_bytes_2",
+      "level": 3,
+      "sectnum": "5.10.1",
+      "title": "Order of bits and bytes",
+      "heading_unit_id": "37ff8167f20bd2ca11bf627098a6c53c",
+      "blocks": [
+        "e1c4745c49a8ab93b99935dd07028c02"
+      ]
+    },
+    {
+      "id": "_pib_parallel_protocol",
+      "level": 3,
+      "sectnum": "5.10.2",
+      "title": "PIB Parallel Protocol",
+      "heading_unit_id": "236f505885a7f02c61290d470fe4a3a1",
+      "blocks": [
+        "9e11e3be24363054a9487d448226cd46",
+        "bf2523aa5562ce1294721c7ee6ebd640",
+        "45e2f1f08be32beca876587ecc3aa661"
+      ]
+    },
+    {
+      "id": "_pib_clock_center",
+      "level": 4,
+      "sectnum": "5.10.2.1",
+      "title": "PIB Clock Center",
+      "heading_unit_id": "6f69a007a166d7a2a36f4d0663f579e0",
+      "blocks": [
+        "3a2d086a85389b796e4e12aaa46ff9a2",
+        "b5db745c2d45a582a4ac448c1463da92",
+        "d194fde0ccf82bb4968a6f7f43dd7cd6",
+        "3d3cd6f2f5bf9851519c83934fa23f6a",
+        "2ae34e0965accc79b26e937f250cae38"
+      ]
+    },
+    {
+      "id": "_swt_manchester_protocol",
+      "level": 3,
+      "sectnum": "5.10.3",
+      "title": "SWT Manchester Protocol",
+      "heading_unit_id": "786cd2d05dac9acbd2216754dca07492",
+      "blocks": [
+        "0ee372947b639f3ac09589d9fb7380a2",
+        "5b720a82d25b2d80590d2a27aea55251",
+        "57c12859311add07e83dac706f819238"
+      ]
+    },
+    {
+      "id": "_swt_uart_protocol",
+      "level": 3,
+      "sectnum": "5.10.4",
+      "title": "SWT UART Protocol",
+      "heading_unit_id": "2c9c76e31bf63f985604d991b3239237",
+      "blocks": [
+        "5b23e8bfa00a9abd69f8f4eadfc60b3c",
+        "daf49c549af834b84a3e60aabb470d38"
+      ]
+    },
+    {
+      "id": "_calibration_mode",
+      "level": 3,
+      "sectnum": "5.10.5",
+      "title": "Calibration Mode",
+      "heading_unit_id": "276b26c7e37b63e2084bab7048951d88",
+      "blocks": [
+        "f96ff5caa9eabb2b79019b8400e2a865",
+        "4f192f4e28171d48a527336f7942edfa",
+        "b129e2a624113980d84f0b85637be6c1"
+      ]
+    },
+    {
+      "id": "_trace_atb_bridge",
+      "level": 2,
+      "sectnum": "5.11",
+      "title": "Trace ATB Bridge",
+      "heading_unit_id": "1893853936e2ca05cdee31e2575ed1a3",
+      "blocks": [
+        "e68bafc4a0ecf907ab8d5a7d28afde4e",
+        "b2101c04928fd09e17420674aad0eced",
+        "013e2f2a661e804cae5fc507b2a2952e",
+        "8f4c190f0758cad4e1eb527b25aff7dd",
+        "7060b6ef6834b3581ba679cf93f5604c"
+      ]
+    },
+    {
+      "id": "_additional_material_2",
+      "level": 2,
+      "sectnum": "5.12",
+      "title": "Additional Material",
+      "heading_unit_id": "a74d49b8a0abfc5a299dcfef7e84b0f3",
+      "blocks": []
+    },
+    {
+      "id": "_minimal_implementation",
+      "level": 3,
+      "sectnum": "5.12.1",
+      "title": "Minimal Implementation",
+      "heading_unit_id": "e47aed96c3c5797bfe8ed63a556185fe",
+      "blocks": [
+        "eef7834bcc1c893a5366887f7e0d278c",
+        "6a50d9636c7b4c2497f283fdf72fa379",
+        "c6b43880587a971b175ee45946b0b147",
+        "4f5202a6c082f8eb815bf583f112cd0c",
+        "a76c6fee946a46a3cb5f72ea1bc78dc8",
+        "2c049f2827e64ba61aed62236c4582aa",
+        "5095cf1b5d3b316b1ab782cb070a447a",
+        "71e3756d0cac31318a5fcd449a997925",
+        "9427a4a671ffcc864823858fb9d7f4d4",
+        "1edea2adecc8d1e05945d0bdb8a60ec6",
+        "bf6609bda6aba48288ff3bfbaa20fdce",
+        "fcc54843e61dfbb966de2ce5691fc595",
+        "31d167cfc62a699808d6740488548026",
+        "5a2f112176bd1f71e7522cba70064a02",
+        "0086a369065274fc8c8165bea0146a30",
+        "438ea745c63efff16d1c9a8fdd37f7ef"
+      ]
+    },
+    {
+      "id": "_reset_and_discovery",
+      "level": 3,
+      "sectnum": "5.12.2",
+      "title": "Reset and Discovery",
+      "heading_unit_id": "b57939a7f6d96c7ebc7e003ae45522bf",
+      "blocks": [
+        "ae5f02dbcb6f49523689dbef670fafb8",
+        "68e368e3ed4e7e40fe9dbd3cc21d3519",
+        "3529250679c66e470e0b92aaf31819e9",
+        "9a7de3062c99788a40d257c443e65a98",
+        "7b8fa02cdae4b98c5d51eec59125a269",
+        "48fce9d176fcc5434875cba5440680c4",
+        "251ce4e97f377cf0f3068795a46282e7",
+        "6dc553d2db9877418dd3e0205902b36e",
+        "ee2021a1a0a9c621a7b8e18172fb33e4",
+        "de22ceeecc2ae37f5034e390bbd36e54",
+        "081dde69eca8b9d8f93eb6dbca5ea305",
+        "7c1db70db7b518f67ddd29b35be156d8",
+        "620a220bddeaf3961934f6008f666260",
+        "fe5341a1380df5522bfd6efc58d69b66",
+        "c947e5e8dff68db8bb1c6568fd921a49",
+        "2a0f50ac695575d39ca0599910120bd1"
+      ]
+    },
+    {
+      "id": "_enabling_and_disabling",
+      "level": 3,
+      "sectnum": "5.12.3",
+      "title": "Enabling and Disabling",
+      "heading_unit_id": "f1fa6e2dfeffa32804eec8cbaa26562f",
+      "blocks": [
+        "25fbb58141c76187bca1a544d679f917",
+        "20d7cb31c4056dd7028812a1148de18c",
+        "7433ad66ed4c180a09ed0e08b1506c83",
+        "a90acc8f49965575dc134039733ccca0",
+        "3a0650ffbd859c2ee6a7f3cf933cfe74",
+        "495439b86d4dd75cfddca89c6ed8a745",
+        "f6cf186033f3aec51de9420f1f00e1cb",
+        "0d1d0d201916dc533a737d7cb905bbdc",
+        "24766af19b9bdafab80e318f771c29b5"
+      ]
+    },
+    {
+      "id": "_pre_ratifiedinitial_interface_version",
+      "level": 3,
+      "sectnum": "5.12.4",
+      "title": "Pre-ratified/Initial Interface Version",
+      "heading_unit_id": "2602e14653a8e7b58446a32ae59c78f7",
+      "blocks": [
+        "7de146e4667a3ef9ab4385812dec5b90",
+        "d3822c3f99d1e7e62f24be807b9098be",
+        "63adc28792be5d7dda895205309492d0",
+        "52a24c4ba649054534ee27fba5c4e337",
+        "f6a180547348bed9deabe1be042d9aad"
+      ]
+    }
+  ]
+}

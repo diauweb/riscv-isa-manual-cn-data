@@ -1,0 +1,18 @@
+unit_id = "44e0535f65a990fc9ee4754a9e977b9e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:trap_def_m_mode]#By default, all traps at any privilege level are handled in machine
+mode#, though a machine-mode handler can redirect traps back to the
+appropriate level with the insn:mret[] instruction (<<otherpriv>>). To increase performance,
+[#norm:medeleg_mideleg_per_bit_rw]#implementations can provide individual read/write bits within
+csr:medeleg[] and csr:mideleg[] to indicate that certain exceptions and interrupts should
+be processed directly by a lower privilege level.#
+[#norm:medeleg_sz_acc]#The machine exception delegation register (csr:medeleg[]) is a 64-bit read/write register.#
+[#norm:mideleg_sz_acc]#The machine interrupt delegation (csr:mideleg[]) register is an MXLEN-bit
+read/write register.#'''
+zh = '''
+[#norm:trap_def_m_mode]#默认情况下，任何特权级的所有陷阱都在机器模式中处理#，不过机器模式处理程序可以用 insn:mret[] 指令将陷阱重定向回适当的级别（<<otherpriv>>）。为提高性能，[#norm:medeleg_mideleg_per_bit_rw]#实现可以在 csr:medeleg[] 和 csr:mideleg[] 中提供单独的读/写位，以指示某些异常和中断应由较低特权级直接处理。#
+[#norm:medeleg_sz_acc]#机器异常委托寄存器（csr:medeleg[]）是一个 64 位读写寄存器。#
+[#norm:mideleg_sz_acc]#机器中断委托寄存器（csr:mideleg[]）是一个 MXLEN 位读写寄存器。#'''

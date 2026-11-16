@@ -1,0 +1,13 @@
+unit_id = "d959672b790514e827d754545ef5c279"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mtinst` register is an MXLEN-bit read/write register formatted as
+shown in <<mtinstreg>>. When a trap is taken into
+M-mode, `mtinst` is written with a value that, if nonzero, provides
+information about the instruction that trapped, to assist software in
+handling the trap. The values that may be written to `mtinst` on a trap
+are documented in <<tinst-vals>>.'''
+zh = '''
+`mtinst` 寄存器是一个 MXLEN 位读/写寄存器，格式如 <<mtinstreg>> 所示。当陷阱进入 M 模式时，`mtinst` 写入一个值，若该值非零，则提供有关陷入的指令的信息，以协助软件处理该陷阱。陷阱时可能写入 `mtinst` 的值记录于 <<tinst-vals>>。'''

@@ -1,0 +1,18 @@
+unit_id = "6812ae7519772046a30348261c6c5f30"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The primary motivation for the csr:vtype[] CSR is to allow the
+vector instruction set to fit into a 32-bit instruction encoding
+space.  A separate insn:vset*[] instruction can be used to set csr:vl[]
+and/or csr:vtype[] fields before execution of a vector instruction, and
+implementations may choose to fuse these two instructions into a single
+internal vector microop.  In many cases, the csr:vl[] and csr:vtype[] values
+can be reused across multiple instructions, reducing the static and
+dynamic instruction overhead from the insn:vset*[] instructions.  It
+is anticipated that a future extended 64-bit instruction encoding
+would allow these fields to be specified statically in the instruction
+encoding.'''
+zh = '''
+NOTE: csr:vtype[] CSR 的主要动机是使向量指令集能够放入 32 位指令编码空间。可以在执行向量指令之前使用单独的 insn:vset*[] 指令设置 csr:vl[] 和/或 csr:vtype[] 字段，实现可以选择将这两条指令融合为单个内部向量微操作。在许多情况下，csr:vl[] 和 csr:vtype[] 的值可以在多条指令之间重用，从而减少来自 insn:vset*[] 指令的静态和动态指令开销。预计未来扩展的 64 位指令编码将允许在指令编码中静态指定这些字段。'''

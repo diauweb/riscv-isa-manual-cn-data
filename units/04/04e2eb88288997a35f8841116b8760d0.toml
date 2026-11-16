@@ -1,0 +1,16 @@
+unit_id = "04e2eb88288997a35f8841116b8760d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The vector register gather instructions read elements from a first
+source vector register group at locations given by a second source
+vector register group.  [#norm:vrgather_vrgatherei16_vs2_uint]#The index values in the second vector are
+treated as unsigned integers.#  [#norm:vrgather_vrgatherei16_vs_ignore_vl]#The source vector can be read at any
+index < VLMAX regardless of csr:vl[].#  [#norm:vrgather_vrgatherei16_vl]#The maximum number of elements to write to
+the destination register is given by csr:vl[],# [#norm:vrgather_vrgatherei16_tail]#and the remaining elements
+past csr:vl[] are handled according to the current tail policy
+(<<sec-agnostic>>).#  [#norm:vrgather_vrgatherei16_mask]#The operation can be masked, and the mask
+undisturbed/agnostic policy is followed for inactive elements.#'''
+zh = '''
+向量寄存器收集指令从第一个源向量寄存器组中读取由第二个源向量寄存器组给出的位置处的元素。[#norm:vrgather_vrgatherei16_vs2_uint]#第二个向量中的索引值被视为无符号整数。#  [#norm:vrgather_vrgatherei16_vs_ignore_vl]#源向量可以在任何索引 < VLMAX 处读取，而不管 csr:vl[] 如何。#  [#norm:vrgather_vrgatherei16_vl]#要写入目标寄存器的最大元素数量由 csr:vl[] 给出，# [#norm:vrgather_vrgatherei16_tail]#并且超过 csr:vl[] 的其余元素根据当前尾部策略处理（<<sec-agnostic>>）。#  [#norm:vrgather_vrgatherei16_mask]#该操作可以被掩码，非活动元素遵循掩码不受干扰/不可知策略。#'''

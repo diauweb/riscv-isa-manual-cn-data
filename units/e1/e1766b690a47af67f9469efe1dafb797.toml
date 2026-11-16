@@ -1,0 +1,37 @@
+unit_id = "e1766b690a47af67f9469efe1dafb797"
+kind = "code"
+translatable = false
+en = '''
+[source,sail,subs="attributes+"]
+--
+
+// illegal-instruction exceptions
+if (((priv_mode != M) && (menvcfg.CBIE == 00)) ||
+    ((priv_mode == U) && (senvcfg.CBIE == 00)))
+{
+  <raise illegal-instruction exception>
+}
+// virtual-instruction exceptions
+else if (((priv_mode == VS) && (henvcfg.CBIE == 00)) ||
+         ((priv_mode == VU) && ((henvcfg.CBIE == 00) || (senvcfg.CBIE == 00))))
+{
+  <raise virtual-instruction exception>
+}
+// execute instruction
+else
+{
+  if (((priv_mode != M) && (menvcfg.CBIE == 01)) ||
+      ((priv_mode == U) && (senvcfg.CBIE == 01)) ||
+      ((priv_mode == VS) && (henvcfg.CBIE == 01)) ||
+      ((priv_mode == VU) && ((henvcfg.CBIE == 01) || (senvcfg.CBIE == 01))))
+  {
+    <execute CBO.INVAL and perform flush operation>
+  }
+  else
+  {
+    <execute CBO.INVAL and perform invalidate operation>
+  }
+}
+
+
+--'''

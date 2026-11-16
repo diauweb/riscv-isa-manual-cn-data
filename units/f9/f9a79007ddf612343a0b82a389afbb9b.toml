@@ -1,0 +1,15 @@
+unit_id = "f9a79007ddf612343a0b82a389afbb9b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:egs_lmul_emul]#The csr:vtype[] LMUL setting can be used to indicate or calculate the
+effective length multiplier (EMUL) for one or more operands.  Element
+group instructions tend to exhibit a much wider range of relationships
+between various operand EEW/EMUL values.  For example, an instruction
+might take a vector of length N of 4-element groups with EEW=8b and
+reduce each group to produce a vector length N of 1-element groups
+with EEW=32b. In this case, the input and output EMUL values are equal
+even though the EEW settings differ by a factor of 4.#'''
+zh = '''
+[#norm:egs_lmul_emul]#csr:vtype[] LMUL 设置可用于指示或计算一个或多个操作数的有效长度乘数（EMUL）。元素组指令往往表现出各种操作数 EEW/EMUL 值之间更广泛的关系。例如，一条指令可能取长度为 N 的 4 元素组向量，EEW=8b，并将每个组归约以产生长度为 N 的 1 元素组向量，EEW=32b。在这种情况下，输入和输出 EMUL 值相等，即使 EEW 设置相差 4 倍。#'''

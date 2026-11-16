@@ -1,0 +1,12 @@
+unit_id = "aeb6aae4ba2b7838c55c211b7cceff44"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: `slli x0, x0, 0x1f` and `srai x0, x0, 7` were previously designated as
+custom HINTs, but they have been appropriated for use in semihosting calls, as
+described in <<ecall-ebreak>>.
+To reflect their usage in practice, the base ISA spec has been changed to
+designate them as standard HINTs.'''
+zh = '''
+NOTE: `slli x0, x0, 0x1f` 和 `srai x0, x0, 7` 以前被指定为自定义 HINT，但它们已被用于半主机调用，如 <<ecall-ebreak>> 所述。为了反映其实际使用情况，基础 ISA 规范已将其改为标准 HINT。'''

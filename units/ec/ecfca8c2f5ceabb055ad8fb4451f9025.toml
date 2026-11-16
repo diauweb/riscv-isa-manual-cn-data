@@ -1,0 +1,16 @@
+unit_id = "ecfca8c2f5ceabb055ad8fb4451f9025"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:csr:mvendorid:encoding]#JEDEC manufacturer IDs are ordinarily encoded as a sequence of one-byte
+continuation codes `0x7f`, terminated by a one-byte ID not equal to
+`0x7f`, with an odd parity bit in the most-significant bit of each byte.
+`mvendorid` encodes the number of one-byte continuation codes in the
+Bank field, and encodes the final byte in the Offset field, discarding
+the parity bit.# For example, the JEDEC manufacturer ID
+`0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x8a`
+(twelve continuation codes followed by `0x8a`) would be encoded in the
+`mvendorid` CSR as `0x60a`.'''
+zh = '''
+[#norm:csr:mvendorid:encoding]#JEDEC 制造商 ID 通常编码为一串单字节延续码 `0x7f`，以一个不等于 `0x7f` 的单字节 ID 终止，每个字节的最高有效位为奇校验位。`mvendorid` 在 Bank 字段中编码单字节延续码的个数，并在 Offset 字段中编码最后一个字节，丢弃校验位。# 例如，JEDEC 制造商 ID `0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x7f 0x8a`（十二个延续码后跟 `0x8a`）将在 `mvendorid` CSR 中编码为 `0x60a`。'''

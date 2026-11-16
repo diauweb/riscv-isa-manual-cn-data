@@ -1,0 +1,15 @@
+unit_id = "78a9bd504c68d7b2b094ccd32690be05"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Ssqosid_smstateen_srmcfg_requires_mstateen0]#If extension Smstateen is implemented together with Ssqosid, then Ssqosid also
+requires the SRMCFG bit in `mstateen0` to be implemented.#
+[#norm:Ssqosid_srmcfg_access_illegal_instruction]#If `mstateen0`.SRMCFG is 0, attempts to access `srmcfg` in privilege modes
+less privileged than M-mode raise an illegal-instruction exception.#
+[#norm:Ssqosid_srmcfg_access_virtual_instruction]#If `mstateen0`.SRMCFG is 1 or if extension Smstateen is not implemented,
+attempts to access `srmcfg` when `V=1` raise a virtual-instruction exception.#'''
+zh = '''
+[#norm:Ssqosid_smstateen_srmcfg_requires_mstateen0]#如果扩展 Smstateen 与 Ssqosid 一起实现，则 Ssqosid 还要求实现 `mstateen0` 中的 SRMCFG 位。#
+[#norm:Ssqosid_srmcfg_access_illegal_instruction]#如果 `mstateen0`.SRMCFG 为 0，则在特权级低于 M 模式的特权模式中访问 `srmcfg` 会引发非法指令异常。#
+[#norm:Ssqosid_srmcfg_access_virtual_instruction]#如果 `mstateen0`.SRMCFG 为 1，或者未实现扩展 Smstateen，则当 `V=1` 时访问 `srmcfg` 会引发虚拟指令异常。#'''

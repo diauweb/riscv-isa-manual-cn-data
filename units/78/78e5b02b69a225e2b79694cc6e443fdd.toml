@@ -1,0 +1,13 @@
+unit_id = "78e5b02b69a225e2b79694cc6e443fdd"
+kind = "code"
+translatable = false
+en = '''
+----
+# Vector unit-stride fault-only-first loads
+
+# vd destination, rs1 base address, vm is mask encoding (v0.t or <missing>)
+vle8ff.v    vd, (rs1), vm  #    8-bit unit-stride fault-only-first load
+vle16ff.v   vd, (rs1), vm  #   16-bit unit-stride fault-only-first load
+vle32ff.v   vd, (rs1), vm  #   32-bit unit-stride fault-only-first load
+vle64ff.v   vd, (rs1), vm  #   64-bit unit-stride fault-only-first load
+----'''

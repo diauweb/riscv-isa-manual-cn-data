@@ -1,0 +1,22 @@
+unit_id = "45ccedf1bc3baff225f73407d4f5fe35"
+kind = "code"
+translatable = false
+en = '''
+.insn:ssamoswap.w[] for RV32 and insn:ssamoswap.d[] (RV64 only) operation
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      X(rd) = mem[X(rs1)]
+      mem[X(rs1)] = X(rs2)
+  endif
+----'''

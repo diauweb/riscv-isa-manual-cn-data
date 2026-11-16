@@ -1,0 +1,32 @@
+unit_id = "5f5d9d7df647b9785a575754d059fef5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Modified interpretation of FENCE predecessor and successor sets for modes less privileged than M when FIOM=1.
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|Instruction bit |Meaning when set
+|PI +
+PO
+|Predecessor device input and memory reads (PR implied) +
+Predecessor device output and memory writes (PW implied)
+|SI +
+SO
+|Successor device input and memory reads (SR implied) +
+Successor device output and memory writes (SW implied)
+|==='''
+zh = '''
+.当 FIOM=1 时，对于特权级低于 M 的模式，FENCE 前驱集和后继集的修改后解释。
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|指令位 |置位时的含义
+|PI +
+PO
+|前驱设备输入和内存读取（隐含 PR） +
+前驱设备输出和内存写入（隐含 PW）
+|SI +
+SO
+|后继设备输入和内存读取（隐含 SR） +
+后继设备输出和内存写入（隐含 SW）
+|==='''

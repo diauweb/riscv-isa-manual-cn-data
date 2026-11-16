@@ -1,0 +1,26 @@
+unit_id = "6ccd7a052cd336d12bed804d5452c82e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For example, in a system with a private L1 and shared L2, NTL.P1
+followed by PREFETCH.R might prefetch into L2 with read intent.
+
+To prefetch into the innermost level of cache, do not prefix the
+prefetch instruction with an NTL instruction.
+
+In some systems, NTL.ALL followed by a prefetch instruction might
+prefetch into a cache or prefetch buffer internal to a memory
+controller.
+===='''
+zh = '''
+[NOTE]
+====
+例如，在具有私有 L1 和共享 L2 的系统中，NTL.P1 后跟 PREFETCH.R 可能以读取意图预取到 L2 中。
+
+要预取到最内层缓存，请不要在预取指令前加上 NTL 指令。
+
+在某些系统中，NTL.ALL 后跟预取指令可能会预取到内存控制器内部的缓存或预取缓冲区中。
+===='''

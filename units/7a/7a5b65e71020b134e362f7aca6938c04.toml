@@ -1,0 +1,31 @@
+unit_id = "7a5b65e71020b134e362f7aca6938c04"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[%unbreakable]
+[NOTE]
+====
+CSRs are accessed indirectly via this extension using select values, in
+contrast to being accessed directly using standard CSR numbers. [#norm:csr_access]#A CSR
+accessible via one method may or may not be accessible via the other
+method.# [#norm:select_value_separate_address_space]#Select values are a separate address space from CSR numbers, and
+from tselect values in the Sdtrig extension.# [#norm:select_value_unrelated]#If a CSR is both directly
+and indirectly accessible, the CSR's select value is unrelated to its
+CSR number.#
+
+Further, Machine-level and Supervisor-level select values are separate
+address spaces from each other; however, [#norm:csrs_alias]#Machine-level and
+Supervisor-level CSRs with the same select value may be defined by an
+extension as partial or full aliases with respect to each other.# This
+typically would be done for CSRs that can be delegated from
+Machine-level to Supervisor-level.
+===='''
+zh = '''
+[%unbreakable]
+[NOTE]
+====
+CSR 通过该扩展使用选择值进行间接访问，这与使用标准 CSR 编号直接访问相对。 [#norm:csr_access]#通过一种方法可访问的 CSR 可能通过另一种方法可访问，也可能不可访问。# [#norm:select_value_separate_address_space]#选择值与 CSR 编号以及 Sdtrig 扩展中的 tselect 值属于不同的地址空间。# [#norm:select_value_unrelated]#如果某个 CSR 既可直接访问又可间接访问，则该 CSR 的选择值与其 CSR 编号无关。#
+
+此外，机器级和监管级选择值彼此属于不同的地址空间；然而， [#norm:csrs_alias]#具有相同选择值的机器级和监管级 CSR 可以由扩展定义为彼此的部分或完全别名。# 这通常针对可从机器级委托到监管级的 CSR 执行。
+===='''

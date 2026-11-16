@@ -1,0 +1,13 @@
+unit_id = "d9d637e5f7c1ebeac90698d79e78e61b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When executed in M-mode or HS-mode (i.e., V=0), SRET first determines
+what the new privilege mode will be according to the values in
+`hstatus`.SPV and `sstatus`.SPP, as encoded in
+<<norm:H_trap_hs_spv_spp_tbl>>. SRET then sets `hstatus`.SPV=0, and in
+`sstatus` sets SPP=0, SIE=SPIE, and SPIE=1. Lastly, SRET sets the
+privilege mode as previously determined, and sets `pc`=`sepc`.'''
+zh = '''
+当在 M-mode 或 HS-mode 中执行（即 V=0）时，SRET 首先根据 `hstatus`.SPV 和 `sstatus`.SPP 中的值（如 <<norm:H_trap_hs_spv_spp_tbl>> 中所编码）确定新的特权模式将是什么。然后 SRET 设置 `hstatus`.SPV=0，并在 `sstatus` 中设置 SPP=0、SIE=SPIE 和 SPIE=1。最后，SRET 将特权模式设置为先前确定的值，并设置 `pc`=`sepc`。'''

@@ -1,0 +1,29 @@
+unit_id = "66c58346e6c960682a1107a4ee6b6041"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Among instructions in RV32GC and RV64GC, the following are exceptions to the
+rule that an aligned memory instruction gives rise to exactly one memory
+operation:
+
+* [#norm:rvwmo_sc_fail_no_memop]#An unsuccessful SC instruction does not give rise to any memory operations.#
+* Floating-point load and store instructions that access more than XLEN bits
+  (e.g., FLD/FSD in RV32) may each give rise to multiple memory operations.
+
+[#norm:rvwmo_v_p_multi_memops]#ISA extensions such as *V* (Vector) and the upcoming *P* (SIMD)
+may give rise to multiple memory operations.# However, the memory model for these extensions
+has not yet been formalized.
+===='''
+zh = '''
+[NOTE]
+====
+在 RV32GC 和 RV64GC 的指令中，以下是对"一条对齐内存指令恰好产生一个内存操作"这一规则的例外：
+
+* [#norm:rvwmo_sc_fail_no_memop]#一条未成功的 SC 指令不产生任何内存操作。#
+* 访问超过 XLEN 位的浮点加载和存储指令（例如 RV32 中的 FLD/FSD）各自可能产生多个内存操作。
+
+[#norm:rvwmo_v_p_multi_memops]#诸如 *V*（向量）和即将推出的 *P*（SIMD）等 ISA 扩展可能产生多个内存操作。# 但是，这些扩展的内存模型尚未形式化。
+===='''

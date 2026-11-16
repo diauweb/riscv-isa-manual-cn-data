@@ -1,0 +1,17 @@
+unit_id = "c54444a1ac5b3bc67196ed7909a743db"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+While compare-and-swap for XLEN wide data may be accomplished using LR/SC, the
+CAS atomic instructions scale better to highly parallel systems than LR/SC.
+Many lock-free algorithms, such as a lock-free queue, require manipulation of
+pointer variables. A simple CAS operation may not be sufficient to guard against
+what is commonly referred to as the ABA problem in such algorithms that
+manipulate pointer variables. To avoid the ABA problem, the algorithms associate
+a reference counter with the pointer variable and perform updates using a
+quadword compare and swap (of both the pointer and the counter). The double and
+quadword CAS instructions support implementation of algorithms for ABA problem
+avoidance.'''
+zh = '''
+虽然 XLEN 宽数据的比较并交换可以使用 LR/SC 完成，但 CAS 原子指令比 LR/SC 更能扩展到高度并行的系统。许多无锁算法（例如无锁队列）需要操作指针变量。在此类操作指针变量的算法中，简单的 CAS 操作可能不足以防范通常所说的 ABA 问题。为避免 ABA 问题，算法将引用计数器与指针变量关联，并使用四字比较并交换（同时交换指针和计数器）来执行更新。双字和四字 CAS 指令支持实现用于避免 ABA 问题的算法。'''

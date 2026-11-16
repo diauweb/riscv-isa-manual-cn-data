@@ -1,0 +1,18 @@
+unit_id = "bdb69c26cc3f4ca9d28997a3ca6a696f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Accesses by one hart to an I/O region are observable not only by other
+harts and bus mastering devices but also by the targeted I/O devices,
+and I/O regions may be accessed with either _relaxed_ or _strong_
+ordering. Accesses to an I/O region with relaxed ordering are generally
+observed by other harts and bus mastering devices in a manner similar to
+the ordering of accesses to an RVWMO memory region, as discussed in
+the I/O Ordering section in the RVWMO Explanatory Material appendix
+of Volume I of this specification.
+By contrast, accesses
+to an I/O region with strong ordering are generally observed by other
+harts and bus mastering devices in program order.'''
+zh = '''
+一个硬件线程对 I/O 区域的访问不仅可被其他硬件线程和总线主控设备观察到，还可被目标 I/O 设备观察到，并且 I/O 区域可以以__宽松__或__强__排序方式访问。对具有宽松排序的 I/O 区域的访问通常由其他硬件线程和总线主控设备以类似于对 RVWMO 内存区域访问排序的方式观察到，如本规范第一卷 RVWMO 解释材料附录的 I/O 排序一节所述。相比之下，对具有强排序的 I/O 区域的访问通常由其他硬件线程和总线主控设备按程序顺序观察到。'''

@@ -1,0 +1,12 @@
+unit_id = "32a296fe678fde20676e4a174460cdf5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For address matches without a mask, {csr-tdata2} must be able to hold all valid
+addresses in all supported translation modes. That means that after writing any
+of these valid addresses, the exact same XLEN-wide value is read back,
+including any high bits. An implementation may be able to optimize the storage
+required, depending on the widest addresses it supports.'''
+zh = '''
+对于无掩码的地址匹配，{csr-tdata2} 必须能够保存所有支持转换模式下的所有有效地址。这意味着在写入任何这些有效地址后，读回的应是完全相同的 XLEN 宽值，包括任何高位。实现可以能够优化所需存储，取决于其支持的最宽地址。'''

@@ -1,0 +1,18 @@
+unit_id = "d2923a3f1dd63ffcff1838460e3b0b60"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point to floating-point sign-injection instructions, FSGNJ.S,
+FSGNJN.S, and FSGNJX.S, produce a result that takes all bits except the
+sign bit from _rs1_. For FSGNJ, the result's sign bit is _rs2_'s sign
+bit; for FSGNJN, the result's sign bit is the opposite of _rs2_'s sign
+bit; and for FSGNJX, the sign bit is the XOR of the sign bits of _rs1_
+and _rs2_. Sign-injection instructions do not set floating-point
+exception flags, nor do they canonicalize NaNs. Note, FSGNJ.S _rx, ry,
+ry_ moves _ry_ to _rx_ (assembler pseudoinstruction FMV.S _rx, ry_);
+FSGNJN.S _rx, ry, ry_ moves the negation of _ry_ to _rx_ (assembler
+pseudoinstruction FNEG.S _rx, ry_); and FSGNJX.S _rx, ry, ry_ moves the absolute value of _ry_ to _rx_ (assembler pseudoinstruction FABS.S _rx,
+ry_).'''
+zh = '''
+浮点到浮点符号注入指令 FSGNJ.S、FSGNJN.S 和 FSGNJX.S 产生的结果除符号位外所有位均取自 _rs1_。对于 FSGNJ，结果的符号位是 _rs2_ 的符号位；对于 FSGNJN，结果的符号位是 _rs2_ 符号位的相反值；对于 FSGNJX，符号位是 _rs1_ 和 _rs2_ 符号位的异或。符号注入指令不设置浮点异常标志，也不规范化 NaN。注意，FSGNJ.S _rx, ry, ry_ 将 _ry_ 移动到 _rx_（汇编器伪指令 FMV.S _rx, ry_）；FSGNJN.S _rx, ry, ry_ 将 _ry_ 的取负值移动到 _rx_（汇编器伪指令 FNEG.S _rx, ry_）；FSGNJX.S _rx, ry, ry_ 将 _ry_ 的绝对值移动到 _rx_（汇编器伪指令 FABS.S _rx, ry_）。'''

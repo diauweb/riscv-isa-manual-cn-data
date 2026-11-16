@@ -1,0 +1,15 @@
+unit_id = "788e538dbdf96956d1c1f78d74ef74de"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the halt request bit is set, the Debug Module raises a special
+interrupt to the selected harts. This interrupt causes each hart to
+enter Debug Mode and jump to a defined memory region that is serviced by
+the DM and is only accessible to the harts in Debug Mode. Accesses to
+this memory should be uncached to avoid side effects from debugging
+operations. When taking this jump, `pc` is saved to {csr-dpc} and {dcsr-cause} is updated in {csr-dcsr}. This
+jump is similar to a trap but it is not architecturally considered a
+trap, so for instance doesn't count as a trap for trigger behavior.'''
+zh = '''
+当暂停请求位被置位时，调试模块向选定的硬件线程发出一个特殊中断。该中断使每个硬件线程进入调试模式，并跳转到一个已定义的内存区域，该区域由 DM 提供服务，且仅对处于调试模式的硬件线程可访问。对此内存的访问应为非缓存访问，以避免调试操作产生副作用。执行该跳转时，`pc` 被保存到 {csr-dpc}，并在 {csr-dcsr} 中更新 {dcsr-cause}。该跳转类似于陷阱，但在架构上不被视为陷阱，因此例如在触发器的行为中不计为一次陷阱。'''

@@ -1,0 +1,12 @@
+unit_id = "93abb840919ab4ee6901d5b283d23bcb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a `stateen` CSR prevents access to state for a privilege mode, attempting to
+execute in that privilege mode an instruction that _implicitly_ updates the
+state without reading it may or may not raise an illegal-instruction or virtual-instruction
+exception. Such cases must be disambiguated by being explicitly
+specified one way or the other.'''
+zh = '''
+当某个 `stateen` CSR 阻止某个特权模式访问状态时，在该特权模式尝试执行一条__隐式__更新该状态而不读取该状态的指令，可能会也可能不会引发非法指令或虚拟指令异常。此类情况必须通过明确规定采用哪种方式加以澄清。'''

@@ -1,0 +1,15 @@
+unit_id = "0855b563083999f72557e94ca86415c7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The M-mode-disable-trap (`MDT`) bit is a WARL field introduced by the Smdbltrp
+extension. Upon reset, the `MDT` field is set to 1. When the `MDT` bit is set to
+1 by an explicit CSR write, the `MIE` (Machine Interrupt Enable) bit is cleared
+to 0. For RV64, this clearing occurs regardless of the value written, if any, to
+the `MIE` bit by the same write. The `MIE` bit can only be set to 1 by an
+explicit CSR write if the `MDT` bit is already 0 or, for RV64, is being set to 0
+by the same write (For RV32, the `MDT` bit is in `mstatush` and the `MIE` bit in
+`mstatus` register).'''
+zh = '''
+M 模式禁用陷阱（`MDT`）位是 Smdbltrp 扩展引入的 WARL 字段。复位时，`MDT` 字段被设置为 1。当通过显式 CSR 写入将 `MDT` 位设置为 1 时，`MIE`（机器中断使能）位被清除为 0。对于 RV64，无论同一次写入是否向 `MIE` 位写入了任何值，都会发生此清除。仅当 `MDT` 位已经为 0，或者对于 RV64，在同一次写入中正被设置为 0 时，才能通过显式 CSR 写入将 `MIE` 位设置为 1（对于 RV32，`MDT` 位在 `mstatush` 中，`MIE` 位在 `mstatus` 寄存器中）。'''

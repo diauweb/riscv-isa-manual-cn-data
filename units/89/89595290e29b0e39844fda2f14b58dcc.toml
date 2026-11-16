@@ -1,0 +1,14 @@
+unit_id = "89595290e29b0e39844fda2f14b58dcc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A vector register cannot be used to provide source operands with more
+than one EEW for a single instruction.  A mask register source is
+considered to have EEW=1 for this constraint.  An encoding that would
+result in the same vector register being read with two or more
+different EEWs, including when the vector register appears at
+different positions within two or more vector register groups, is
+reserved.'''
+zh = '''
+对于单条指令，向量寄存器不能用于提供具有多个 EEW 的源操作数。对于此约束，掩码寄存器源被视为具有 EEW=1。会导致同一向量寄存器以两个或更多不同 EEW 读取的编码（包括当该向量寄存器出现在两个或更多向量寄存器组中的不同位置时）是保留的。'''

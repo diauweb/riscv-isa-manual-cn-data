@@ -1,0 +1,12 @@
+unit_id = "5dff52284e0379fd051a6c61d1370bee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Smcdeleg_delegated_access]#The `siselect` (and `vsiselect`) index range 0x40-0x5F is reserved for
+delegated counter access. When a counter _i_ is delegated
+(`mcounteren`[_i_]=1 and `menvcfg`.CDE=1) and `siselect` is
+0x40+__i__, `sireg*` aliases counter _i_.# The counter state accessible via alias CSRs is shown in
+the table below.'''
+zh = '''
+[#norm:Smcdeleg_delegated_access]#`siselect`（以及 `vsiselect`）的索引范围 0x40-0x5F 保留用于已委托计数器的访问。当计数器 _i_ 被委托（`mcounteren`[_i_]=1 且 `menvcfg`.CDE=1）且 `siselect` 为 0x40+__i__ 时，`sireg*` 为计数器 _i_ 的别名。# 可通过别名 CSR 访问的计数器状态如下表所示。'''

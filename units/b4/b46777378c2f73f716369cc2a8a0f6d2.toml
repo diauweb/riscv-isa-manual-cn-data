@@ -1,0 +1,13 @@
+unit_id = "b46777378c2f73f716369cc2a8a0f6d2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Sstc extension adds the `STCE` (STimecmp Enable) bit to `henvcfg` CSR. When
+the Sstc extension is not implemented, `STCE` is read-only zero. The `STCE` bit
+enables `vstimecmp` for VS-mode when set to one. When `STCE` bit is `henvcfg` is
+zero, an attempt to access `stimecmp` (really `vstimecmp`) when V = 1 raises a
+virtual-instruction exception, and `VSTIP` in `hip` reverts to its defined behavior
+as if this extension is not implemented.'''
+zh = '''
+Sstc 扩展向 `henvcfg` CSR 添加了 `STCE`（STimecmp Enable）位。当未实现 Sstc 扩展时，`STCE` 为只读零。当 `STCE` 位设置为 1 时，它为 VS-mode 启用 `vstimecmp`。当 `henvcfg` 中的 `STCE` 位为零时，在 V = 1 时尝试访问 `stimecmp`（实际上是 `vstimecmp`）会引发虚拟指令异常，且 `hip` 中的 `VSTIP` 恢复为其已定义的行为，如同未实现此扩展。'''

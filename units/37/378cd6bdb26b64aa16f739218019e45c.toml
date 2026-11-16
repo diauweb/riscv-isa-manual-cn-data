@@ -1,0 +1,40 @@
+unit_id = "378cd6bdb26b64aa16f739218019e45c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encodings for PBMT field in Sv39, Sv48, and Sv57 PTEs.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|Mode |Value |Requested Memory Attributes
+|PMA +
+NC +
+IO +
+-
+|0 +
+1 +
+2 +
+3
+|None +
+Non-cacheable, idempotent, weakly-ordered (RVWMO), main memory +
+Non-cacheable, non-idempotent, strongly-ordered (I/O ordering), I/O +
+_Reserved for future standard use_
+|==='''
+zh = '''
+.Sv39、Sv48 和 Sv57 的 PTE 中 PBMT 字段的编码。
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|模式 |值 |请求的内存属性
+|PMA +
+NC +
+IO +
+-
+|0 +
+1 +
+2 +
+3
+|无 +
+不可缓存、幂等、弱排序（RVWMO）、主存 +
+不可缓存、非幂等、强排序（I/O 排序）、I/O +
+_保留供未来标准使用_
+|==='''

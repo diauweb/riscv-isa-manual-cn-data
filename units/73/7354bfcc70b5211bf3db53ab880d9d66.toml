@@ -1,0 +1,16 @@
+unit_id = "7354bfcc70b5211bf3db53ab880d9d66"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _reg_list_ is a list containing 1 to 13 registers (ra and 0 to 12 s registers)
+** valid values: {ra}, {ra, s0}, {ra, s0-s1}, {ra, s0-s2}, ..., {ra, s0-s8}, {ra, s0-s9}, {ra, s0-s11}
+** note that {ra, s0-s10} is _not_ valid, giving 12 lists not 13 for better encoding
+* _stack_adj_ is the total size of the stack frame.
+** valid values vary with register list length and the specific encoding, see the instruction pages for details.'''
+zh = '''
+* _reg_list_ 是包含 1 到 13 个寄存器的列表（ra 和 0 到 12 个 s 寄存器）
+** 有效值：{ra}、{ra, s0}、{ra, s0-s1}、{ra, s0-s2}、...、{ra, s0-s8}、{ra, s0-s9}、{ra, s0-s11}
+** 注意 {ra, s0-s10} __不__有效，因此为获得更好的编码，共有 12 个列表而非 13 个
+* _stack_adj_ 是栈帧的总大小。
+** 有效值随寄存器列表长度和具体编码而变化，详见各指令页面。'''

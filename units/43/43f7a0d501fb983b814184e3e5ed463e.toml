@@ -1,0 +1,22 @@
+unit_id = "43f7a0d501fb983b814184e3e5ed463e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Granularities at which syntactic dependencies are tracked through CSRs
+[%autowidth,float="center",align="center",cols="<,<,<",options="header",]
+|===
+|Name |Portions Tracked as Independent Units |Aliases
+|csr:fflags[] |Bits 4, 3, 2, 1, 0 |csr:fcsr[]
+|csr:frm[] |entire CSR |csr:fcsr[]
+|csr:fcsr[] |Bits 7-5, 4, 3, 2, 1, 0 |csr:fflags[], csr:frm[]
+|==='''
+zh = '''
+.通过 CSR 跟踪语法依赖的粒度
+[%autowidth,float="center",align="center",cols="<,<,<",options="header",]
+|===
+|名称 |作为独立单元跟踪的部分 |别名
+|csr:fflags[] |位 4、3、2、1、0 |csr:fcsr[]
+|csr:frm[] |整个 CSR |csr:fcsr[]
+|csr:fcsr[] |位 7-5、4、3、2、1、0 |csr:fflags[]、csr:frm[]
+|==='''

@@ -1,0 +1,196 @@
+unit_id = "205891ee19cf5e5aa25b2db69cdaa00a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V hypervisor and VS CSR addresses
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Hypervisor Trap Setup
+
+|`0x600` |HRW |csr:hstatus[]    |Hypervisor status register
+|`0x602` |HRW |csr:hedeleg[]    |Hypervisor exception delegation register
+|`0x603` |HRW |csr:hideleg[]    |Hypervisor interrupt delegation register
+|`0x604` |HRW |csr:hie[]        |Hypervisor interrupt-enable register
+|`0x606` |HRW |csr:hcounteren[] |Hypervisor counter enable
+|`0x607` |HRW |csr:hgeie[]      |Hypervisor guest external interrupt-enable register
+|`0x608` |HRW |csr:hvien[]      |Hypervisor virtual interrupt enables
+|`0x609` |HRW |csr:hvictl[]     |Hypervisor virtual interrupt control
+|`0x612` |HRW |csr:hedelegh[]   |Upper qty:32[bits] of csr:hedeleg[], RV32 only
+|`0x613` |HRW |csr:hidelegh[]   |Upper qty:32[bits] of csr:hideleg[], RV32 only
+|`0x618` |HRW |csr:hvienh[]     |Upper qty:32[bits] of csr:hvien[], RV32 only
+|`0x646` |HRW |csr:hviprio1[]   |Hypervisor VS-level interrupt priorities
+|`0x647` |HRW |csr:hviprio2[]   |Hypervisor VS-level interrupt priorities
+|`0x656` |HRW |csr:hviprio1h[]  |Upper qty:32[bits] of csr:hviprio1[], RV32 only
+|`0x657` |HRW |csr:hviprio2h[]  |Upper qty:32[bits] of csr:hviprio2[], RV32 only
+
+4+^|Hypervisor Trap Handling
+
+|`0x643` |HRW |csr:htval[]  |Hypervisor trap value
+|`0x644` |HRW |csr:hip[]    |Hypervisor interrupt pending
+|`0x645` |HRW |csr:hvip[]   |Hypervisor virtual interrupt pending
+|`0x64A` |HRW |csr:htinst[] |Hypervisor trap instruction (transformed)
+|`0x655` |HRW |csr:hviph[]  |Upper qty:32[bits] of csr:hvip[], RV32 only
+|`0xE12` |HRO |csr:hgeip[]  |Hypervisor guest external interrupt pending
+
+4+^|Hypervisor Configuration
+
+|`0x60A` |HRW |csr:henvcfg[]  |Hypervisor environment configuration register
+|`0x61A` |HRW |csr:henvcfgh[] |Upper qty:32[bits] of csr:henvcfg[], RV32 only
+
+4+^|Hypervisor Protection and Translation
+
+|`0x680` |HRW |csr:hgatp[] |Hypervisor guest address translation and protection
+
+4+^|Debug/Trace Registers
+
+|`0x6A8` |HRW |csr:hcontext[] |Hypervisor-mode context register
+
+4+^|Hypervisor Counter/Timer Virtualization Registers
+
+|`0x605` |HRW |csr:htimedelta[]  |Delta for VS/VU-mode timer
+|`0x615` |HRW |csr:htimedeltah[] |Upper qty:32[bits] of csr:htimedelta[], RV32 only
+
+4+^|Hypervisor State Enable Registers
+
+|`0x60C` |HRW |csr:hstateen0[]  |Hypervisor State Enable 0 Register
+|`0x60D` |HRW |csr:hstateen1[]  |Hypervisor State Enable 1 Register
+|`0x60E` |HRW |csr:hstateen2[]  |Hypervisor State Enable 2 Register
+|`0x60F` |HRW |csr:hstateen3[]  |Hypervisor State Enable 3 Register
+|`0x61C` |HRW |csr:hstateen0h[] |Upper qty:32[bits] of Hypervisor State Enable 0 Register, RV32 only
+|`0x61D` |HRW |csr:hstateen1h[] |Upper qty:32[bits] of Hypervisor State Enable 1 Register, RV32 only
+|`0x61E` |HRW |csr:hstateen2h[] |Upper qty:32[bits] of Hypervisor State Enable 2 Register, RV32 only
+|`0x61F` |HRW |csr:hstateen3h[] |Upper qty:32[bits] of Hypervisor State Enable 3 Register, RV32 only
+
+4+^|Virtual Supervisor Registers
+
+|`0x200` |HRW |csr:vsstatus[]  |Virtual supervisor status register
+|`0x204` |HRW |csr:vsie[]      |Virtual supervisor interrupt-enable register
+|`0x205` |HRW |csr:vstvec[]    |Virtual supervisor trap handler base address
+|`0x214` |HRW |csr:vsieh[]     |Upper qty:32[bits] of csr:vsie[], RV32 only
+|`0x240` |HRW |csr:vsscratch[] |Virtual supervisor scratch register
+|`0x241` |HRW |csr:vsepc[]     |Virtual supervisor exception program counter
+|`0x242` |HRW |csr:vscause[]   |Virtual supervisor trap cause
+|`0x243` |HRW |csr:vstval[]    |Virtual supervisor trap value
+|`0x244` |HRW |csr:vsip[]      |Virtual supervisor interrupt pending
+|`0x254` |HRW |csr:vsiph[]     |Upper qty:32[bits] of csr:vsip[], RV32 only
+|`0x25C` |HRW |csr:vstopei[]   |Virtual supervisor top external interrupt
+|`0x280` |HRW |csr:vsatp[]     |Virtual supervisor address translation and protection
+|`0xEB0` |HRO |csr:vstopi[]    |Virtual supervisor top interrupt
+
+4+^|Virtual Supervisor Indirect
+
+|`0x250` |HRW |csr:vsiselect[] |Virtual supervisor indirect register select
+|`0x251` |HRW |csr:vsireg[]    |Virtual supervisor indirect register alias
+|`0x252` |HRW |csr:vsireg2[]   |Virtual supervisor indirect register alias 2
+|`0x253` |HRW |csr:vsireg3[]   |Virtual supervisor indirect register alias 3
+|`0x255` |HRW |csr:vsireg4[]   |Virtual supervisor indirect register alias 4
+|`0x256` |HRW |csr:vsireg5[]   |Virtual supervisor indirect register alias 5
+|`0x257` |HRW |csr:vsireg6[]   |Virtual supervisor indirect register alias 6
+4+^|Virtual Supervisor Timer Compare
+
+|`0x24D` |HRW |csr:vstimecmp[]  |Virtual supervisor timer compare
+|`0x25D` |HRW |csr:vstimecmph[] |Upper qty:32[bits] of csr:vstimecmp[], RV32 only
+
+4+^|Virtual Supervisor Control Transfer Records Configuration
+
+|`0x24E` |HRW |csr:vsctrctl[] |Virtual Supervisor Control Transfer Records Control Register
+
+|==='''
+zh = '''
+.目前已分配的 RISC-V 管理程序与 VS CSR 地址
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |特权 |名称 |描述
+4+^|管理程序陷阱设置
+
+|`0x600` |HRW |csr:hstatus[]    |管理程序状态寄存器
+|`0x602` |HRW |csr:hedeleg[]    |管理程序异常委托寄存器
+|`0x603` |HRW |csr:hideleg[]    |管理程序中断委托寄存器
+|`0x604` |HRW |csr:hie[]        |管理程序中断使能寄存器
+|`0x606` |HRW |csr:hcounteren[] |管理程序计数器使能
+|`0x607` |HRW |csr:hgeie[]      |管理程序客户外部中断使能寄存器
+|`0x608` |HRW |csr:hvien[]      |管理程序虚拟中断使能
+|`0x609` |HRW |csr:hvictl[]     |管理程序虚拟中断控制
+|`0x612` |HRW |csr:hedelegh[]   |csr:hedeleg[] 的高 qty:32[位]，仅 RV32
+|`0x613` |HRW |csr:hidelegh[]   |csr:hideleg[] 的高 qty:32[位]，仅 RV32
+|`0x618` |HRW |csr:hvienh[]     |csr:hvien[] 的高 qty:32[位]，仅 RV32
+|`0x646` |HRW |csr:hviprio1[]   |管理程序 VS 级中断优先级
+|`0x647` |HRW |csr:hviprio2[]   |管理程序 VS 级中断优先级
+|`0x656` |HRW |csr:hviprio1h[]  |csr:hviprio1[] 的高 qty:32[位]，仅 RV32
+|`0x657` |HRW |csr:hviprio2h[]  |csr:hviprio2[] 的高 qty:32[位]，仅 RV32
+
+4+^|管理程序陷阱处理
+
+|`0x643` |HRW |csr:htval[]  |管理程序陷阱值
+|`0x644` |HRW |csr:hip[]    |管理程序中断挂起
+|`0x645` |HRW |csr:hvip[]   |管理程序虚拟中断挂起
+|`0x64A` |HRW |csr:htinst[] |管理程序陷阱指令（已变换）
+|`0x655` |HRW |csr:hviph[]  |csr:hvip[] 的高 qty:32[位]，仅 RV32
+|`0xE12` |HRO |csr:hgeip[]  |管理程序客户外部中断挂起
+
+4+^|管理程序配置
+
+|`0x60A` |HRW |csr:henvcfg[]  |管理程序环境配置寄存器
+|`0x61A` |HRW |csr:henvcfgh[] |csr:henvcfg[] 的高 qty:32[位]，仅 RV32
+
+4+^|管理程序保护与地址转换
+
+|`0x680` |HRW |csr:hgatp[] |管理程序客户地址转换与保护
+
+4+^|调试/追踪寄存器
+
+|`0x6A8` |HRW |csr:hcontext[] |管理程序模式上下文寄存器
+
+4+^|管理程序计数器/定时器虚拟化寄存器
+
+|`0x605` |HRW |csr:htimedelta[]  |VS/VU 模式定时器的差值
+|`0x615` |HRW |csr:htimedeltah[] |csr:htimedelta[] 的高 qty:32[位]，仅 RV32
+
+4+^|管理程序状态使能寄存器
+
+|`0x60C` |HRW |csr:hstateen0[]  |管理程序状态使能 0 寄存器
+|`0x60D` |HRW |csr:hstateen1[]  |管理程序状态使能 1 寄存器
+|`0x60E` |HRW |csr:hstateen2[]  |管理程序状态使能 2 寄存器
+|`0x60F` |HRW |csr:hstateen3[]  |管理程序状态使能 3 寄存器
+|`0x61C` |HRW |csr:hstateen0h[] |管理程序状态使能 0 寄存器的高 qty:32[位]，仅 RV32
+|`0x61D` |HRW |csr:hstateen1h[] |管理程序状态使能 1 寄存器的高 qty:32[位]，仅 RV32
+|`0x61E` |HRW |csr:hstateen2h[] |管理程序状态使能 2 寄存器的高 qty:32[位]，仅 RV32
+|`0x61F` |HRW |csr:hstateen3h[] |管理程序状态使能 3 寄存器的高 qty:32[位]，仅 RV32
+
+4+^|虚拟监管寄存器
+
+|`0x200` |HRW |csr:vsstatus[]  |虚拟监管状态寄存器
+|`0x204` |HRW |csr:vsie[]      |虚拟监管中断使能寄存器
+|`0x205` |HRW |csr:vstvec[]    |虚拟监管陷阱处理程序基地址
+|`0x214` |HRW |csr:vsieh[]     |csr:vsie[] 的高 qty:32[位]，仅 RV32
+|`0x240` |HRW |csr:vsscratch[] |虚拟监管暂存寄存器
+|`0x241` |HRW |csr:vsepc[]     |虚拟监管异常程序计数器
+|`0x242` |HRW |csr:vscause[]   |虚拟监管陷阱原因
+|`0x243` |HRW |csr:vstval[]    |虚拟监管陷阱值
+|`0x244` |HRW |csr:vsip[]      |虚拟监管中断挂起
+|`0x254` |HRW |csr:vsiph[]     |csr:vsip[] 的高 qty:32[位]，仅 RV32
+|`0x25C` |HRW |csr:vstopei[]   |虚拟监管最高外部中断
+|`0x280` |HRW |csr:vsatp[]     |虚拟监管地址转换与保护
+|`0xEB0` |HRO |csr:vstopi[]    |虚拟监管最高中断
+
+4+^|虚拟监管间接
+
+|`0x250` |HRW |csr:vsiselect[] |虚拟监管间接寄存器选择
+|`0x251` |HRW |csr:vsireg[]    |虚拟监管间接寄存器别名
+|`0x252` |HRW |csr:vsireg2[]   |虚拟监管间接寄存器别名 2
+|`0x253` |HRW |csr:vsireg3[]   |虚拟监管间接寄存器别名 3
+|`0x255` |HRW |csr:vsireg4[]   |虚拟监管间接寄存器别名 4
+|`0x256` |HRW |csr:vsireg5[]   |虚拟监管间接寄存器别名 5
+|`0x257` |HRW |csr:vsireg6[]   |虚拟监管间接寄存器别名 6
+4+^|虚拟监管定时器比较
+
+|`0x24D` |HRW |csr:vstimecmp[]  |虚拟监管定时器比较
+|`0x25D` |HRW |csr:vstimecmph[] |csr:vstimecmp[] 的高 qty:32[位]，仅 RV32
+
+4+^|虚拟监管控制转移记录配置
+
+|`0x24E` |HRW |csr:vsctrctl[] |虚拟监管控制转移记录控制寄存器
+
+|==='''

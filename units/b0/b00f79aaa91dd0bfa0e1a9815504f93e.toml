@@ -1,0 +1,31 @@
+unit_id = "b00f79aaa91dd0bfa0e1a9815504f93e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+DIEL helps protect against side-channel timing attacks that are used
+to determine data values that are intended to be kept secret. Such
+values include cryptographic keys, plain text, and partially encrypted
+text. DIEL is not intended to keep software (and cryptographic
+algorithms contained therein) secret as it is assumed that an adversary
+would already know these. This is why DIEL doesn't apply to constants
+embedded in instruction encodings.
+
+It is important that the _values_ of elements that are not in the body or that are masked off do not affect the execution
+latency of the instruction. Sometimes such elements contain data that
+also needs to be kept secret.
+===='''
+zh = '''
+[NOTE]
+====
+DIEL 有助于防范用于确定意图保密的数据值的侧信道时序攻击。此类
+值包括密码密钥、明文和部分加密的
+文本。DIEL 并非旨在对软件（及其包含的密码学
+算法）保密，因为假定对手
+已经知道这些内容。这就是 DIEL 不适用于嵌入指令编码中的常量的原因。
+
+重要的是，不在主体中或被掩码屏蔽的元素的 _值_ 不得影响指令的执行
+延迟。有时此类元素包含同样需要保密的数据。
+===='''

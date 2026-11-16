@@ -1,0 +1,8 @@
+unit_id = "b905b48b59e56800746132551d63c0eb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In cases where the number of bits of *payload* + *srcID* is not a multiple of 8, some padding bits are required.  These must be placed in the most significant bits of the final byte of the packet.  Their value is "don't care", but they must not "leak" information (for example, the previous contents of an intermediate buffer that may relate to a different trace session which the current recipient of trace is not authorised to receive).'''
+zh = '''
+当 *payload* 与 *srcID* 的位数之和不是 8 的整数倍时，需要一些填充位。这些填充位必须放在数据包最后一个字节的最高有效位中。其值无关紧要（"don't care"），但不得"泄露"信息（例如，中间缓冲区先前的内容可能涉及另一个跟踪会话，而当前跟踪接收方无权接收该会话）。'''

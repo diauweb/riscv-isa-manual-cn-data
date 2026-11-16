@@ -1,0 +1,15 @@
+unit_id = "9ae84c4f789a15fb3e8b1cd9e4b5a307"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When _rs1_=`x0` and _rd_=`x0`, the instructions operate as if the current
+vector length in `vl` is used as the AVL, and the resulting value is
+written to `vl`, but not to a destination register.  This form can
+only be used when VLMAX and hence `vl` is not actually changed by the
+new SEW/LMUL ratio.  Use of the instructions with a new SEW/LMUL ratio
+that would result in a change of VLMAX is reserved.
+Use of the instructions is also reserved if `vill` was 1 beforehand.
+Implementations may set `vill` in either case.'''
+zh = '''
+当 _rs1_=`x0` 且 _rd_=`x0` 时，这些指令的操作如同使用 `vl` 中的当前向量长度作为 AVL，并将结果值写入 `vl`，但不写入目标寄存器。此形式只能在 VLMAX 以及因此 `vl` 实际上不被新的 SEW/LMUL 比率改变时使用。将这些指令用于会导致 VLMAX 改变的新 SEW/LMUL 比率是保留的。如果事先 `vill` 为 1，则这些指令的使用也是保留的。实现在任一情况下都可以设置 `vill`。'''

@@ -1,0 +1,220 @@
+unit_id = "2d5b309e19aaed6ac4d7320e2f1aec5d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV32I Base Integer Instruction Set
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination  Registers|Accumulating CSRs|
+
+|insn:lui[] | |_rd_ | |
+
+|insn:auipc[] | |_rd_ ||
+
+|insn:jal[] | |_rd_ ||
+
+|insn:jalr[]† |_rs1_ |_rd_ ||
+
+|insn:beq[] |_rs1_, _rs2_ | ||
+
+|insn:bne[] |_rs1_, _rs2_ | ||
+
+|insn:blt[] |_rs1_, _rs2_ | ||
+
+|insn:bge[] |_rs1_, _rs2_ | ||
+
+|insn:bltu[] |_rs1_, _rs2_ | ||
+
+|insn:bgeu[] |_rs1_, _rs2_ | ||
+
+|insn:lb[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lh[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lw[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lbu[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lhu[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:sb[] |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|insn:sh[] |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|insn:sw[] |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|insn:addi[] |_rs1_ |_rd_ ||
+
+|insn:slti[] |_rs1_ |_rd_ ||
+
+|insn:sltiu[] |_rs1_ |_rd_ ||
+
+|insn:xori[] |_rs1_ |_rd_ ||
+
+|insn:ori[] |_rs1_ |_rd_ ||
+
+|insn:andi[] |_rs1_ |_rd_ ||
+
+|insn:slli[] |_rs1_ |_rd_ ||
+
+|insn:srli[] |_rs1_ |_rd_ ||
+
+|insn:srai[] |_rs1_ |_rd_ ||
+
+|insn:add[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:sub[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:sll[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:slt[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:sltu[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:xor[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:srl[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:sra[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:or[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:and[] |_rs1_, _rs2_ |_rd_ ||
+
+|insn:fence[] | | ||
+
+|insn:fence.i[] | | ||
+
+|insn:ecall[] | | ||
+
+|insn:ebreak[] | | ||
+
+|insn:csrrw[]‡ |_rs1_, _csr_^*^ | _rd_, _csr_ | |^*^unless _rd_=`x0`
+
+5+| ‡ carries a dependency from _rs1_ to _csr_ and from _csr_ to _rd_
+
+|insn:csrrs[]‡ |_rs1_, _csr_ |_rd_, _csr_^*^ | |^*^unless _rs1_=`x0`
+
+|insn:csrrc[]‡ |_rs1_, _csr_  |_rd_, _csr_^*^ | |^*^unless _rs1_=`x0`
+
+5+| ‡ carries a dependency from _csr_ and _rs1_ to _csr_ and from _csr_ to _rd_
+
+|insn:csrrwi[]‡ |_csr_ ^*^ |_rd_, _csr_  | |^*^unless _rd_=_x0_
+
+5+| ‡ carries a dependency from _csr_ to _rd_
+
+|insn:csrrsi[]‡ |_csr_ |_rd_, _csr_^*^  | |^*^unless uimm[4:0]=0
+
+|insn:csrrci[]‡ |_csr_ |_rd_, _csr_^*^  | |^*^unless uimm[4:0]=0
+
+5+| ‡ carries a dependency from _csr_ to _rd_ and _csr_
+|==='''
+zh = '''
+.RV32I 基础整数指令集
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目的寄存器|累积 CSR|
+
+|insn:lui[] | |_rd_ | |
+
+|insn:auipc[] | |_rd_ ||
+
+|insn:jal[] | |_rd_ ||
+
+|insn:jalr[]† |_rs1_ |_rd_ ||
+
+|insn:beq[] |_rs1_、_rs2_ | ||
+
+|insn:bne[] |_rs1_、_rs2_ | ||
+
+|insn:blt[] |_rs1_、_rs2_ | ||
+
+|insn:bge[] |_rs1_、_rs2_ | ||
+
+|insn:bltu[] |_rs1_、_rs2_ | ||
+
+|insn:bgeu[] |_rs1_、_rs2_ | ||
+
+|insn:lb[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lh[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lw[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lbu[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:lhu[]† | _rs1_  ^A^ | _rd_ ||
+
+|insn:sb[] |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|insn:sh[] |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|insn:sw[] |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|insn:addi[] |_rs1_ |_rd_ ||
+
+|insn:slti[] |_rs1_ |_rd_ ||
+
+|insn:sltiu[] |_rs1_ |_rd_ ||
+
+|insn:xori[] |_rs1_ |_rd_ ||
+
+|insn:ori[] |_rs1_ |_rd_ ||
+
+|insn:andi[] |_rs1_ |_rd_ ||
+
+|insn:slli[] |_rs1_ |_rd_ ||
+
+|insn:srli[] |_rs1_ |_rd_ ||
+
+|insn:srai[] |_rs1_ |_rd_ ||
+
+|insn:add[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:sub[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:sll[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:slt[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:sltu[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:xor[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:srl[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:sra[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:or[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:and[] |_rs1_、_rs2_ |_rd_ ||
+
+|insn:fence[] | | ||
+
+|insn:fence.i[] | | ||
+
+|insn:ecall[] | | ||
+
+|insn:ebreak[] | | ||
+
+|insn:csrrw[]‡ |_rs1_、_csr_^*^ | _rd_、_csr_ | |^*^除非 _rd_=`x0`
+
+5+| ‡ 从 _rs1_ 向 _csr_ 以及从 _csr_ 向 _rd_ 携带依赖
+
+|insn:csrrs[]‡ |_rs1_、_csr_ |_rd_、_csr_^*^ | |^*^除非 _rs1_=`x0`
+
+|insn:csrrc[]‡ |_rs1_、_csr_  |_rd_、_csr_^*^ | |^*^除非 _rs1_=`x0`
+
+5+| ‡ 从 _csr_ 和 _rs1_ 向 _csr_ 以及从 _csr_ 向 _rd_ 携带依赖
+
+|insn:csrrwi[]‡ |_csr_ ^*^ |_rd_、_csr_  | |^*^除非 _rd_=_x0_
+
+5+| ‡ 从 _csr_ 向 _rd_ 携带依赖
+
+|insn:csrrsi[]‡ |_csr_ |_rd_、_csr_^*^  | |^*^除非 uimm[4:0]=0
+
+|insn:csrrci[]‡ |_csr_ |_rd_、_csr_^*^  | |^*^除非 uimm[4:0]=0
+
+5+| ‡ 从 _csr_ 向 _rd_ 以及 _csr_ 携带依赖
+|==='''

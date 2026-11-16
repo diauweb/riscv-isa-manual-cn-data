@@ -1,0 +1,14 @@
+unit_id = "db007423fedd1be71f0032c62fc06a3f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Similarly, following a synchronization instruction trace packet, the
+first data trace packet for a given access size must include the full
+(unencoded) data value. Beyond this, data may be encoded or unencoded
+depending on whichever results in the most efficient represenation.
+Implementors may chose to offer one of XOR or differential compression,
+or both. XOR compression will be simpler to implement, and avoids the
+need for performing subtraction of large values.'''
+zh = '''
+类似地，在同步指令跟踪包之后，给定访问大小的第一个数据跟踪包必须包含完整（未编码）的数据值。除此之外，数据可以根据哪种方式产生最高效的表示来进行编码或不编码。实现者可以选择提供 XOR 或差分压缩之一，或两者都提供。XOR 压缩实现更简单，且避免了对大值执行减法的需要。'''

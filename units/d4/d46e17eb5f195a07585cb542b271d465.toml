@@ -1,0 +1,36 @@
+unit_id = "d46e17eb5f195a07585cb542b271d465"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|Register
+|Direction
+|EGW
+|EGS
+|EEW
+|Definition
+
+| _vd_   | input  | 128  | 4 | 32 | Previous Round key
+| _uimm_ | input  | -    | - | -  | Round Number (rnd)
+| _vs2_  | input  | 128  | 4 | 32 | Current Round key
+| _vd_   | output | 128  | 4 | 32 | Next round key
+|==='''
+zh = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|寄存器
+|方向
+|EGW
+|EGS
+|EEW
+|定义
+
+| _vd_   | 输入  | 128  | 4 | 32 | 上一轮密钥
+| _uimm_ | 输入  | -    | - | -  | 轮编号 (rnd)
+| _vs2_  | 输入  | 128  | 4 | 32 | 当前轮密钥
+| _vd_   | 输出 | 128  | 4 | 32 | 下一轮密钥
+|==='''

@@ -1,0 +1,12 @@
+unit_id = "80687a786b438baaedece88eeba7ff82"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The execution environment must provide a means to synchronize writes to
+instruction memory with instruction fetches, the implementation of which
+likely relies on the ext:zifencei[] extension.
+For example, RISC-V Linux supplies the `__riscv_flush_icache` system call and
+a corresponding vDSO call.'''
+zh = '''
+注意：执行环境必须提供一种将指令内存写入与指令取指同步的手段，其实现可能依赖于 ext:zifencei[] 扩展。例如，RISC-V Linux 提供了 `__riscv_flush_icache` 系统调用以及相应的 vDSO 调用。'''

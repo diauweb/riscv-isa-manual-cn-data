@@ -1,0 +1,28 @@
+unit_id = "aee4ec3778eccadf8b52aa019817c88f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The MIPS ISA allocated two user registers (`k0`/`k1`) for use by the
+operating system. Although the MIPS scheme provides a fast and simple
+implementation, it also reduces available user registers, and does not
+scale to further privilege levels, or nested traps. It can also require
+both registers are cleared before returning to user level to avoid a
+potential security hole and to provide deterministic debugging behavior.
+
+The RISC-V user ISA was designed to support many possible privileged
+system environments and so we did not want to infect the user-level ISA
+with any OS-dependent features. The RISC-V CSR swap instructions can
+quickly save/restore values to the `mscratch` register. Unlike the MIPS
+design, the OS can rely on holding a value in the `mscratch` register
+while the user context is running.
+===='''
+zh = '''
+[NOTE]
+====
+MIPS ISA 分配了两个用户寄存器（`k0`/`k1`）供操作系统使用。虽然 MIPS 方案提供了快速而简单的实现，但它也减少了可用的用户寄存器，并且无法扩展到更多特权级或嵌套陷阱。它还可能要求在返回用户级之前清除这两个寄存器，以避免潜在的安全漏洞并提供确定性的调试行为。
+
+RISC-V 用户 ISA 被设计为支持许多可能的特权系统环境，因此我们不想用任何依赖操作系统的特性来污染用户级 ISA。RISC-V 的 CSR 交换指令可以快速地将值保存到 `mscratch` 寄存器或从中恢复。与 MIPS 设计不同，操作系统可以在用户上下文运行期间依赖在 `mscratch` 寄存器中保存的值。
+===='''

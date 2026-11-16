@@ -1,0 +1,17 @@
+unit_id = "433d8dfdeb56b3c9b0b11761ef456098"
+kind = "code"
+translatable = false
+en = '''
+    0x100:  c.add ...       ; 16-bit instruction
+    0x102:  b... 0x200      ; 32-bit instruction (direct conditional branch)
+    0x106:  add ...         ; 32-bit instruction
+    0x10A:  b... 0x300      ; 32-bit instruction (direct conditional branch)
+    0x10E:  c.add ...       ; 16-bit instruction
+    0x110:  add ...         ; 32-bit instruction
+    0x114:  c.ebreak        ; 16-bit breakpoint (to stop the code)
+    ...
+    0x200:  c.add ...       ; 16-bit instruction
+    0x202:  c.ebreak        ; 16-bit breakpoint (to stop the code)
+    ...
+    0x300:  add ...         ; 32-bit instruction
+    0x304:  c.ebreak        ; 16-bit breakpoint (to stop the code)'''

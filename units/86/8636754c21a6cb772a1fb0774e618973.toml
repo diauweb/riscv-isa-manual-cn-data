@@ -1,0 +1,65 @@
+unit_id = "8636754c21a6cb772a1fb0774e618973"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _te_inst._ The name of the packet type emitted by the encoder (see
+<<packets>>);
+* _inst._ Abbreviation for 'instruction';
+* _exception. Exception or interrupt signalled;_
+* _updiscon._ Uninferable PC discontinuity. This identifies an
+instruction that causes the program counter to be changed by an amount
+that cannot be predicted from the source code alone (*itype* values 8,
+10, 12 or 14);
+* _Qualified?_ An instruction that meets the filtering criteria is
+qualified, and will be traced;
+* _Branch?_ Is the instruction a branch or not (*itype* values 4 or 5);
+* _branch map._ A vector where each bit represents the outcome of a
+branch. A 0 indicates the branch was taken, a 1 indicates that it was
+not;
+* _ppccd._ Privilege has changed, or context has changed and needs to be
+reported precisely or treated as an uninferable PC discontinuity (see
+<<tab:context-type>>);
+* _ppccd_br._ As above, but branch map not empty;
+* _er_n._ Instruction retirement and exception signalled on the same
+cycle, or Trace notify trigger (see
+<<tab:debugModuleTriggerSupport>>);
+* _exc_only._ Exception or interrupt signalled without simultaneous
+retirement;
+* _cci._ context change that can be reported imprecisely (see
+<<tab:context-type>>);
+* _rpt_br._ Report branches due to full branch map or misprediction;
+* _branches._ The number of branches encountered but not yet reported to
+the decoder;
+* _pbc._ Correctly predicted branches count (always zero if branch
+predictor disabled or not present);
+* _Reported?_ "Exception previous" reported with *thaddr* = 0 on the
+cycle it occured because it was preceded by an updiscon or immediately
+followed by another exception;
+* _resync count._ A counter used to keep track of when it is necessary
+to send a synchronization packet (see <<sec:resync>>);
+* _max_resync._ The resync counter value that schedules a
+synchronization packet (see <<sec:resync>>);
+* _resync_br._ The resync counter has reached the maximum value and
+there are entries in the branch map that have not yet been output (see
+<<sec:resync>>).'''
+zh = '''
+* _te_inst._ 编码器发出的包类型名称（见 <<packets>>）；
+* _inst._ “指令”的缩写；
+* _exception. 发出异常或中断信号；_
+* _updiscon._ 不可推断的 PC 不连续。它标识这样一条指令：它使程序计数器发生改变的量为仅凭源代码无法预测的（*itype* 值为 8、10、12 或 14）；
+* _Qualified?_ 满足过滤条件的指令为合格指令，将被跟踪；
+* _Branch?_ 该指令是否为分支（*itype* 值为 4 或 5）；
+* _branch map._ 一个向量，其中每一位表示一个分支的结果。0 表示分支被跳转，1 表示未被跳转；
+* _ppccd._ 特权发生了改变，或上下文发生了改变且需要精确报告，或需按不可推断的 PC 不连续处理（见 <<tab:context-type>>）；
+* _ppccd_br._ 同上，但分支映射不为空；
+* _er_n._ 同一周期内既发生指令退役又发出异常信号，或跟踪通知触发器（见 <<tab:debugModuleTriggerSupport>>）；
+* _exc_only._ 发出异常或中断信号但没有同时退役指令；
+* _cci._ 可以不精确报告的上下文改变（见 <<tab:context-type>>）；
+* _rpt_br._ 由于分支映射已满或预测错误而报告分支；
+* _branches._ 已遇到但尚未报告给解码器的分支数量；
+* _pbc._ 正确预测的分支计数（若分支预测器被禁用或不存在，则始终为 0）；
+* _Reported?_ 在其发生的周期内以 *thaddr* = 0 报告了“前一个异常”，原因是它之前有一个 updiscon，或紧随其后的是另一个异常；
+* _resync count._ 用于记录何时需要发送同步包的计数器（见 <<sec:resync>>）；
+* _max_resync._ 触发同步包调度的重同步计数器值（见 <<sec:resync>>）；
+* _resync_br._ 重同步计数器已达到最大值，且分支映射中仍有尚未输出的条目（见 <<sec:resync>>）。'''

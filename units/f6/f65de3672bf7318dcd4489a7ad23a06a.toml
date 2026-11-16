@@ -1,0 +1,15 @@
+unit_id = "f65de3672bf7318dcd4489a7ad23a06a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A load instruction instance _i_ in state
+Pending_mem_loads(_load_continuation_) can be completed (not to be
+confused with finished) if all the memory load operations
+_i.mem_loads_ are entirely satisfied (i.e. there
+are no unsatisfied slices). Action: update the state of _i_
+to Plain(_load_continuation(mem_value)_), where _mem_value_ is assembled
+from all the memory store operation slices that satisfied
+_i.mem_loads_.'''
+zh = '''
+处于 Pending_mem_loads(_load_continuation_) 状态的加载指令实例 _i_ 可以在所有内存加载操作 _i.mem_loads_ 都已完全满足（即没有未满足切片）时完成（不要与已完成混淆）。动作：将 _i_ 的状态更新为 Plain(_load_continuation(mem_value)_)，其中 _mem_value_ 由满足 _i.mem_loads_ 的所有内存存储操作切片组装而成。'''

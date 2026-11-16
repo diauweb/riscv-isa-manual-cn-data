@@ -1,0 +1,46 @@
+unit_id = "30eeb9fd46cbbc6923e00c92c1488202"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+By allowing wake-up when interrupts are disabled, an alternate entry
+point to an interrupt handler can be called that does not require saving
+the current context, as the current context can be saved or discarded
+before the WFI is executed.
+
+As implementations are free to implement WFI as a NOP, software must
+explicitly check for any relevant pending but disabled interrupts in the
+code following an WFI, and should loop back to the WFI if no suitable
+interrupt was detected. The `mip` or `sip` registers can be interrogated
+to determine the presence of any interrupt in machine or supervisor mode
+respectively.
+
+The operation of WFI is unaffected by the delegation register settings.
+
+WFI is defined so that an implementation can trap into a higher
+privilege mode, either immediately on encountering the WFI or after some
+interval to initiate a machine-mode transition to a lower power state,
+for example.
+
+***
+
+The same "wait-for-event" template might be used for possible future
+extensions that wait on memory locations changing, or message arrival.
+===='''
+zh = '''
+[NOTE]
+====
+通过允许在中断被禁用时唤醒，可以调用中断处理程序的备用入口点，该入口点不需要保存当前上下文，因为当前上下文可以在执行 WFI 之前保存或丢弃。
+
+由于实现可以自由地将 WFI 实现为空操作，软件必须在 WFI 之后的代码中显式检查任何相关的挂起但被禁用的中断，并且如果没有检测到合适的中断，应循环回到 WFI。可以查询 `mip` 或 `sip` 寄存器以分别确定机器模式或监管模式下是否存在任何中断。
+
+WFI 的操作不受委托寄存器设置的影响。
+
+WFI 的定义使得实现可以陷入更高特权模式，例如在遇到 WFI 时立即陷入，或在某个间隔之后陷入，以启动到较低功耗状态的机器模式转换。
+
+***
+
+同样的 "等待事件" 模板可能用于未来可能的扩展，这些扩展等待内存位置变化或消息到达。
+===='''

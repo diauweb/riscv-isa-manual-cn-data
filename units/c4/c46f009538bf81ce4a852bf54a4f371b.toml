@@ -1,0 +1,13 @@
+unit_id = "c46f009538bf81ce4a852bf54a4f371b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+These conditions for an interrupt trap to occur must be evaluated in a
+bounded amount of time from when an interrupt becomes, or ceases to be,
+pending in `sip`, and must also be evaluated immediately following the
+execution of an SRET instruction or an explicit write to a CSR on which
+these interrupt trap conditions expressly depend (including `sip`, `sie`
+and `sstatus`).'''
+zh = '''
+产生中断陷阱的这些条件必须在有限的时间内从 `sip` 中中断变为挂起或不再挂起时起进行评估，并且必须在 SRET 指令执行后或对这些中断陷阱条件明确依赖的 CSR（包括 `sip`、`sie` 和 `sstatus`）进行显式写入后立即评估。'''

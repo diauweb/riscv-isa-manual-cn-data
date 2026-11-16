@@ -1,0 +1,52 @@
+unit_id = "3fd91e0bcb6c93a24f8e84c71fa0a30d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[[cas]]
+[source,asm]
+.Sample code for compare-and-swap function using LR/SC.
+        # a0 holds address of memory location
+        # a1 holds expected value
+        # a2 holds desired value
+        # a0 holds return value, 0 if successful, !0 otherwise
+    cas:
+        lr.w t0, (a0)        # Load original value.
+        bne t0, a1, fail     # Doesn't match, so fail.
+        sc.w t0, a2, (a0)    # Try to update.
+        bnez t0, cas         # Retry if store-conditional failed.
+        li a0, 0             # Set return to success.
+        jr ra                # Return.
+    fail:
+        li a0, 1             # Set return to failure.
+        jr ra                # Return.
+
+insn:lr[]/insn:sc[] can be used to construct lock-free data structures. An example
+using insn:lr[]/insn:sc[] to implement a compare-and-swap function is shown in
+<<cas>>. If inlined, compare-and-swap functionality need only take four instructions.
+===='''
+zh = '''
+[NOTE]
+====
+[[cas]]
+[source,asm]
+使用 LR/SC 的比较并交换函数示例代码。
+        # a0 保存内存位置的地址
+        # a1 保存期望值
+        # a2 保存期望的新值
+        # a0 保存返回值，成功时为 0，否则为 !0
+    cas:
+        lr.w t0, (a0)        # 加载原始值。
+        bne t0, a1, fail     # 不匹配，因此失败。
+        sc.w t0, a2, (a0)    # 尝试更新。
+        bnez t0, cas         # 如果条件存储失败则重试。
+        li a0, 0             # 将返回值设为成功。
+        jr ra                # 返回。
+    fail:
+        li a0, 1             # 将返回值设为失败。
+        jr ra                # 返回。
+
+insn:lr[]/insn:sc[] 可用于构建无锁数据结构。<<cas>> 中展示了使用 insn:lr[]/insn:sc[] 实现比较并交换函数的示例。如果内联，比较并交换功能只需四条指令。
+===='''

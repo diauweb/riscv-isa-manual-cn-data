@@ -1,0 +1,13 @@
+unit_id = "bb94fc6a024da05a9711c1d8e489240e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-fsw_op]#insn:c.fsw[] is an RV32FC-only instruction that stores a single-precision
+floating-point value in floating-point register `_rs2′_` to
+memory. It computes an effective address by adding the _zero_-extended
+offset, scaled by 4, to the base address in register
+`_rs1′_`. It expands to
+insn:fsw[rs2′,offset(rs1′)].#'''
+zh = '''
+[#norm:c-fsw_op]#insn:c.fsw[] 是仅限 RV32FC 的指令，将浮点寄存器 `_rs2′_` 中的单精度浮点值存储到内存。它通过将按 4 缩放的__零__扩展偏移量加到寄存器 `_rs1′_` 中的基址上来计算有效地址。它展开为 insn:fsw[rs2′,offset(rs1′)]。#'''

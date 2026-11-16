@@ -1,0 +1,18 @@
+unit_id = "d28ec6b5915fb0e9bae80d10ffa5d977"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Interrupts generally occur asynchronously to the program’s execution
+rather than intentionally as a result of a specific instruction or
+event. Exceptions can be thought of in the same way, even though they
+can be typically linked back to a specific instruction address. The
+decoder generally does not know where an interrupt occurs in the
+instruction sequence, so the trace encoder must report the address where
+normal program flow ceased, as well as give an indication of the
+asynchronous destination which may be as simple as reporting the
+exception type. When an interrupt or exception occurs, or the processor
+is halted, the final instruction retired beforehand must be included in
+the trace.'''
+zh = '''
+中断通常相对于程序执行异步发生，而不是作为特定指令或事件的结果有意发生。异常也可以用同样的方式理解，尽管它们通常可以追溯到某个特定的指令地址。解码器一般不知道中断在指令序列中的发生位置，因此跟踪编码器必须报告正常程序流停止处的地址，并给出异步目的地的指示，这种指示可能简单到只报告异常类型。当发生中断或异常，或处理器被停住时，事先退役的最后一条指令必须包含在跟踪中。'''

@@ -1,0 +1,12 @@
+unit_id = "f8405a105c86e24a5dfaf7097d60b359"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `scause` CSR is an SXLEN-bit read-write register formatted as
+shown in <<scausereg>>. When a trap is taken into
+S-mode, `scause` is written with a code indicating the event that
+caused the trap. Otherwise, `scause` is never written by the
+implementation, though it may be explicitly written by software.'''
+zh = '''
+`scause` CSR 是一个 SXLEN 位读/写寄存器，格式如 <<scausereg>> 所示。当陷入 S 模式时，`scause` 被写入指示引起陷阱的事件的代码。否则，实现永远不会写入 `scause`，尽管软件可以显式写入它。'''

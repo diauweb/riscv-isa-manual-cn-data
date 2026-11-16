@@ -1,0 +1,19 @@
+unit_id = "ea318a3360630b31731c9b5055fd06e8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SUM (permit Supervisor User Memory access) bit modifies the
+privilege with which S-mode loads and stores access virtual memory.
+[#norm:mstatus_sum_op]#When SUM=0, S-mode memory accesses to pages that are accessible by U-mode
+(U=1 in <<sv32pte>>) will fault. When SUM=1, these accesses are permitted.#
+[#norm:mstatus_sum_op_no-vm]#SUM has no effect when page-based virtual memory is not in effect.#
+Note that, [#norm:mstatus_sum_op_mprv_mpp]#while SUM is ordinarily ignored when not
+executing in S-mode, it _is_ in effect when MPRV=1 and MPP=S.#
+[#norm:mstatus_sum_rdonly0]#SUM is read-only 0 if S-mode is not supported or if `satp`.MODE is read-only 0; otherwise, it must be writable.#'''
+zh = '''
+SUM（permit Supervisor User Memory access，允许监管模式访问用户内存）位修改 S 模式加载和存储访问虚拟内存时所具有的特权。
+[#norm:mstatus_sum_op]#当 SUM=0 时，S 模式对 U 模式可访问的页（<<sv32pte>> 中 U=1）的内存访问将出错。当 SUM=1 时，允许这些访问。#
+[#norm:mstatus_sum_op_no-vm]#当基于页的虚拟内存未生效时，SUM 无效果。#
+注意，[#norm:mstatus_sum_op_mprv_mpp]#虽然 SUM 在非 S 模式执行时通常被忽略，但当 MPRV=1 且 MPP=S 时它__确实__生效。#
+[#norm:mstatus_sum_rdonly0]#如果不支持 S 模式，或 `satp`.MODE 为只读 0，则 SUM 为只读 0；否则，它必须可写。#'''

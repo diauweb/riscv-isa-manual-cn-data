@@ -1,0 +1,34 @@
+unit_id = "5fe9c7e98e5ade9d4c2db99df95916d1"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Informally, the CSR space acts as a weakly ordered memory-mapped I/O
+region, as defined in <<sec:memory-ordering-pmas>>.
+As a result, the order of CSR accesses with respect to all
+other accesses is constrained by the same mechanisms that constrain the
+order of memory-mapped I/O accesses to such a region.
+
+These CSR-ordering constraints are imposed to support ordering main
+memory and memory-mapped I/O accesses with respect to CSR accesses that
+are visible to, or affected by, devices or other harts. Examples include
+the `time`, `cycle`, and `mcycle` CSRs, in addition to CSRs that reflect
+pending interrupts, like `mip` and `sip`. Note that implicit reads of
+such CSRs (e.g., taking an interrupt because of a change in `mip`) are
+also ordered as device input.
+
+Most CSRs (including, e.g., the `fcsr`) are not visible to other harts;
+their accesses can be freely reordered in the global memory order with
+respect to FENCE instructions without violating this specification.
+===='''
+zh = '''
+[NOTE]
+====
+非正式地说，CSR 空间的作用类似于 <<sec:memory-ordering-pmas>> 中定义的弱排序内存映射 I/O 区域。因此，CSR 访问相对于所有其他访问的顺序受到与约束对该类区域的内存映射 I/O 访问顺序相同的机制约束。
+
+施加这些 CSR 排序约束是为了支持主存和内存映射 I/O 访问相对于设备或其他硬件线程可见或受其影响的 CSR 访问的排序。示例包括 `time`、`cycle` 和 `mcycle` CSR，以及反映挂起中断的 CSR，如 `mip` 和 `sip`。注意，对此类 CSR 的隐式读取（例如，因 `mip` 变化而接受中断）也按设备输入排序。
+
+大多数 CSR（包括例如 `fcsr`）对其他硬件线程不可见；它们相对于 FENCE 指令的访问可以在全局内存顺序中自由重排序，而不违反本规范。
+===='''

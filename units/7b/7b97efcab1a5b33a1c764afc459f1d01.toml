@@ -1,0 +1,21 @@
+unit_id = "7b97efcab1a5b33a1c764afc459f1d01"
+kind = "code"
+translatable = false
+en = '''
+[source,asm]
+----
+# any or all of these store instructions may execute multiple times,
+# and may be visible to the interrupt handler below the stack pointer
+sw  s5, -4(sp)
+sw  s4, -8(sp)
+sw  s3,-12(sp)
+sw  s2,-16(sp)
+sw  s1,-20(sp)
+sw  s0,-24(sp)
+sw  ra,-28(sp)
+
+# this must only execute once, and will only execute after all stores
+# completed without any precise faults, therefore this update is only
+# visible in the interrupt/exception handler if cm.push has completed
+addi sp, sp, -64
+----'''

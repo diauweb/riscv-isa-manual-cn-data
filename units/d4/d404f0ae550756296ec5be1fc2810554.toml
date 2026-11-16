@@ -1,0 +1,17 @@
+unit_id = "d404f0ae550756296ec5be1fc2810554"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The encoding of the MODE field is shown in
+<<stvec-mode>>. When MODE=Direct, all traps into
+supervisor mode cause the `pc` to be set to the address in the BASE
+field. When MODE=Vectored, all synchronous exceptions into supervisor
+mode cause the `pc` to be set to the address in the BASE field, whereas
+interrupts cause the `pc` to be set to the address in the BASE field
+plus four times the interrupt cause number. For example, a
+supervisor-mode timer interrupt (see <<scauses>>)
+causes the `pc` to be set to BASE+`0x14`. Setting MODE=Vectored may
+impose a stricter alignment constraint on BASE.'''
+zh = '''
+MODE 字段的编码如 <<stvec-mode>> 所示。当 MODE=Direct 时，所有陷入监管模式的陷阱都会使 `pc` 被设为 BASE 字段中的地址。当 MODE=Vectored 时，所有陷入监管模式的同步异常都会使 `pc` 被设为 BASE 字段中的地址，而中断则使 `pc` 被设为 BASE 字段中的地址加上中断原因号的四倍。例如，监管模式定时器中断（见 <<scauses>>）使 `pc` 被设为 BASE+`0x14`。设置 MODE=Vectored 可能对 BASE 施加更严格的对齐约束。'''

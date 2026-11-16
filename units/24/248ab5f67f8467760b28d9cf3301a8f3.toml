@@ -1,0 +1,14 @@
+unit_id = "248ab5f67f8467760b28d9cf3301a8f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SYSTEM major opcode is used to encode all privileged instructions in
+the RISC-V ISA. These can be divided into two main classes: those that
+atomically read-modify-write control and status registers (CSRs), which
+are defined in the ext:zicsr[] extension, and all other privileged
+instructions. The privileged architecture requires the ext:zicsr[] extension;
+which other privileged instructions are required depends on the
+privileged-architecture feature set.'''
+zh = '''
+SYSTEM 主操作码用于编码 RISC-V ISA 中的所有特权指令。这些指令可分为两大类：原子地读-改-写控制与状态寄存器（CSR）的指令（定义于 ext:zicsr[] 扩展中），以及所有其他特权指令。特权架构要求实现 ext:zicsr[] 扩展；还需要哪些其他特权指令取决于特权架构的特性集。'''

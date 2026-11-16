@@ -1,0 +1,36 @@
+unit_id = "ae8f8a8f9f4fb246e2e527a7994baf9f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We provided fetch-and-op style atomic primitives as they scale to highly
+parallel systems better than LR/SC or CAS. A simple microarchitecture
+can implement AMOs using the LR/SC primitives, provided the
+implementation can guarantee the AMO eventually completes. More complex
+implementations might also implement AMOs at memory controllers, and can
+optimize away fetching the original value when the destination is `x0`.
+Implementations that detect silent stores may reduce write traffic for
+AMOs when they do not change the value in memory (see <<silent-stores, silent stores>>).
+
+The set of AMOs was chosen to support the C11/C++11 atomic memory
+operations efficiently, and also to support parallel reductions in
+memory. Another use of AMOs is to provide atomic updates to
+memory-mapped device registers (e.g., setting, clearing, or toggling
+bits) in the I/O space.
+
+The ext:zaamo[] extension enables microcontroller class implementations to utilize
+atomic primitives from the AMO subset of the ext:a[] extension. Typically such
+implementations do not have caches and thus may not be able to naturally support
+the LR/SC instructions provided by the ext:zalrsc[] extension.
+===='''
+zh = '''
+[NOTE]
+====
+我们提供了取并操作（fetch-and-op）风格的原子原语，因为它们比 LR/SC 或 CAS 更能扩展到高度并行的系统。简单的微体系结构可以使用 LR/SC 原语实现 AMO，前提是该实现能够保证 AMO 最终完成。更复杂的实现还可以在内存控制器处实现 AMO，并且当目标为 `x0` 时可以优化掉对原始值的获取。检测静默存储的实现可以在 AMO 不改变内存中的值时减少写流量（参见 <<silent-stores, 静默存储>>）。
+
+AMO 的集合是为了高效支持 C11/C++11 原子内存操作，以及支持内存中的并行归约而选定的。AMO 的另一个用途是对 I/O 空间中的内存映射设备寄存器提供原子更新（例如，置位、清零或翻转位）。
+
+ext:zaamo[] 扩展使微控制器级实现能够利用 ext:a[] 扩展中 AMO 子集的原子原语。通常，此类实现没有缓存，因而可能无法自然支持 ext:zalrsc[] 扩展所提供的 LR/SC 指令。
+===='''

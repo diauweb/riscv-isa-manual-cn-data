@@ -1,0 +1,8 @@
+unit_id = "3852f2aec5284ff4789b4a341803ce6e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pm_no_csr_sw]#No pointer masking operations are applied when software reads/writes to CSRs, including those meant to hold addresses.# If software stores tagged addresses into such CSRs, data load or data store operations based on those addresses are subject to pointer masking only if they are explicit (<<_memory_accesses_subject_to_pointer_masking>>) and pointer masking is enabled for the privilege mode that performs the access. [#norm:pm_warl_unaffected]#The implemented WARL width of CSRs is unaffected by pointer masking# (e.g., if a CSR supports 52 bits of valid addresses and pointer masking is supported with PMLEN=16, the necessary number of WARL bits remains 52 independently of whether pointer masking is enabled or disabled).'''
+zh = '''
+[#norm:pm_no_csr_sw]#当软件读取/写入 CSR（包括用于保存地址的 CSR）时，不应用任何指针掩码操作。# 如果软件将带标签的地址存储到此类 CSR 中，则基于这些地址的数据加载或数据存储操作仅在它们是显式的（<<_memory_accesses_subject_to_pointer_masking>>）并且执行访问的特权模式启用了指针掩码时，才受指针掩码影响。[#norm:pm_warl_unaffected]#CSR 的实现 WARL 宽度不受指针掩码影响#（例如，如果某个 CSR 支持 52 位有效地址，并且支持 PMLEN=16 的指针掩码，则无论指针掩码启用还是禁用，所需的 WARL 位数仍为 52）。'''

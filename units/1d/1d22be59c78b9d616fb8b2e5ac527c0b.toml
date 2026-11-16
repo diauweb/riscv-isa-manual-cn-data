@@ -1,0 +1,41 @@
+unit_id = "1d22be59c78b9d616fb8b2e5ac527c0b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Double-precision loads and stores are a significant fraction of static
+and dynamic instructions, hence the motivation to include them in the
+RV32C and RV64C encoding.
+
+Although single-precision loads and stores are not a significant source
+of static or dynamic compression for benchmarks compiled for the
+currently supported ABIs, for microcontrollers that only provide
+hardware single-precision floating-point units and have an ABI that only
+supports single-precision floating-point numbers, the single-precision
+loads and stores will be used at least as frequently as double-precision
+loads and stores in the measured benchmarks. Hence, the motivation to
+provide compressed support for these in RV32C.
+
+Short-range subroutine calls are more likely in small binaries for
+microcontrollers, hence the motivation to include these in RV32C.
+
+Although reusing opcodes for different purposes for different base ISAs
+adds some complexity to documentation, the impact on implementation
+complexity is small even for designs that support multiple base ISAs.
+The compressed floating-point load and store variants use the same
+instruction format with the same register specifiers as the wider
+integer loads and stores.
+===='''
+zh = '''
+[NOTE]
+====
+双精度加载和存储占静态和动态指令的很大一部分，因此有动机将它们纳入 RV32C 和 RV64C 编码。
+
+尽管对于为当前支持的 ABI 编译的基准测试而言，单精度加载和存储并不是静态或动态压缩的重要来源，但对于仅提供硬件单精度浮点单元且其 ABI 仅支持单精度浮点数的微控制器，在测量的基准测试中，单精度加载和存储的使用频率至少与双精度加载和存储一样高。因此，有动机在 RV32C 中为它们提供压缩支持。
+
+短距离子程序调用更可能出现在微控制器的小型二进制文件中，因此有动机将它们纳入 RV32C。
+
+尽管为不同基础 ISA 复用操作码用于不同目的会增加一些文档复杂性，但即使对于支持多种基础 ISA 的设计，对实现复杂性的影响也很小。压缩浮点加载和存储变体使用与更宽整数加载和存储相同的指令格式和相同的寄存器说明符。
+===='''

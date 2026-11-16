@@ -1,0 +1,146 @@
+unit_id = "984aca6712c47e857731f40d8aae6d1e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[abstractcs-progbufsize]] `((progbufsize))`
+a|Size of the Program Buffer, in 32-bit words. Valid sizes are 0 - 16.
+a|*R*
+a|Preset
+|[[abstractcs-busy]] `((busy))`
+a|
+
+0 (ready): There is no abstract command currently being executed.
+
+
+1 (busy): An abstract command is currently being executed.
+
+This bit is set as soon as {dm-command} is written, and is
+not cleared until that command has completed.
+a|*R*
+a|0
+|[[abstractcs-relaxedpriv]] `((relaxedpriv))`
+a|This optional bit controls whether program buffer and abstract
+memory accesses are performed with the exact and full set of
+permission checks that apply based on the current architectural
+state of the hart performing the access, or with a relaxed set of
+permission checks (e.g. PMP restrictions are ignored).  The
+details of the latter are implementation-specific.
+
+0 (full checks): Full permission checks apply.
+
+
+1 (relaxed checks): Relaxed permission checks apply.
+a|*WARL*
+a|Preset
+|[[abstractcs-cmderr]] `((cmderr))`
+a|Gets set if an abstract command fails. The bits in this field remain set until
+they are cleared by writing 1 to them. No abstract command is
+started until the value is reset to 0.
+
+This field only contains a valid value if {abstractcs-busy} is 0.
+
+0 (none): No error.
+
+
+1 (busy): An abstract command was executing while {dm-command},
+{dm-abstractcs}, or {dm-abstractauto} was written, or when one
+of the `data` or `progbuf` registers was read or written.
+This status is only written if {abstractcs-cmderr} contains 0.
+
+
+2 (not supported): The command in {dm-command} is not supported.  It
+may be supported with different options set, but it will not be
+supported at a later time when the hart or system state are
+different.
+
+
+3 (exception): An exception occurred while executing the command
+(e.g. while executing the Program Buffer).
+
+
+4 (halt/resume): The abstract command couldn't execute because the
+hart wasn't in the required state (running/halted), or unavailable.
+
+
+5 (bus): The abstract command failed due to a bus error (e.g.
+alignment, access size, or timeout).
+
+
+6 (reserved): Reserved for future use.
+
+
+7 (other): The command failed for another reason.
+a|*R/W1C*
+a|0
+|[[abstractcs-datacount]] `((datacount))`
+a|Number of `data` registers that are implemented as part of the
+abstract command interface. Valid sizes are 1 -- 12.
+a|*R*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[abstractcs-progbufsize]] `((progbufsize))`
+a|程序缓冲区的大小，以 32 位字为单位。有效大小为 0 - 16。
+a|*R*
+a|预设
+|[[abstractcs-busy]] `((busy))`
+a|
+
+0（ready）：当前没有正在执行的抽象命令。
+
+
+1（busy）：当前正在执行抽象命令。
+
+此位在写入 {dm-command} 后立即置位，并且直到该命令完成后才清除。
+a|*R*
+a|0
+|[[abstractcs-relaxedpriv]] `((relaxedpriv))`
+a|此可选位控制程序缓冲区和抽象内存访问是使用基于执行访问的硬件线程当前架构状态的精确且完整的权限检查集来执行，还是使用放宽的权限检查集（例如忽略 PMP 限制）来执行。后者的细节是实现特定的。
+
+0（full checks）：适用完整权限检查。
+
+
+1（relaxed checks）：适用放宽权限检查。
+a|*WARL*
+a|预设
+|[[abstractcs-cmderr]] `((cmderr))`
+a|如果抽象命令失败则置位。此字段中的位保持置位，直到通过向它们写 1 清除。在该值复位为 0 之前，不会启动任何抽象命令。
+
+仅当 {abstractcs-busy} 为 0 时，此字段才包含有效值。
+
+0（none）：无错误。
+
+
+1（busy）：在写入 {dm-command}、{dm-abstractcs} 或 {dm-abstractauto} 时，或在读取或写入 `data` 或 `progbuf` 寄存器之一时，有抽象命令正在执行。仅当 {abstractcs-cmderr} 包含 0 时才写入此状态。
+
+
+2（not supported）：不支持 {dm-command} 中的命令。它可能在设置了不同选项时受支持，但以后当硬件线程或系统状态不同时不会受支持。
+
+
+3（exception）：执行命令时（例如执行程序缓冲区时）发生异常。
+
+
+4（halt/resume）：抽象命令无法执行，因为硬件线程不处于所需状态（运行/停止），或不可用。
+
+
+5（bus）：抽象命令因总线错误（例如对齐、访问大小或超时）而失败。
+
+
+6（reserved）：保留供将来使用。
+
+
+7（other）：命令因其他原因失败。
+a|*R/W1C*
+a|0
+|[[abstractcs-datacount]] `((datacount))`
+a|作为抽象命令接口一部分实现的 `data` 寄存器数量。有效大小为 1 -- 12。
+a|*R*
+a|预设
+|==='''

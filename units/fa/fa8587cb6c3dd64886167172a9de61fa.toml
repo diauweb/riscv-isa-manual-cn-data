@@ -1,0 +1,39 @@
+unit_id = "fa8587cb6c3dd64886167172a9de61fa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Shadow stack loads and stores will trigger a store/AMO page-fault if the
+accessed page is read-only, to support copy-on-write (COW) of a shadow stack
+page. If the page has been marked read-only for COW tracking, the page-fault
+handler responds by creating a copy of the page and updates the `pte.xwr` to
+`010b`, thereby designating each copy as a shadow stack page. Conversely, if
+the access targets a genuinely read-only page, the fault being reported as a
+store/AMO page-fault signals to the operating system that the fault is fatal
+and non-recoverable. Reporting the fault as a store/AMO page-fault, even for
+`SSPOPCHK` initiated memory access, aids in the determination of fatality; if
+these were reported as load page-faults, access to a truly read-only page
+might be mistakenly treated as a recoverable fault, leading to the faulting
+instruction being retried indefinitely. The PTE does not provide a read-only
+shadow stack encoding.
+
+Attempts by shadow stack instructions to access pages marked as read-write,
+read-write-execute, read-execute, or execute-only result in a store/AMO
+access-fault exception, similarly indicating a fatal condition.
+
+Shadow stacks should be bounded at each end by guard pages to prevent accidental
+underflows or overflows from one shadow stack into another. Conventionally, a
+guard page for a stack is a page that is not accessible by the process that owns
+the stack.
+===='''
+zh = '''
+[NOTE]
+====
+如果访问的页为只读，影子栈加载和存储将触发存储/AMO 页错误，以支持影子栈页的写时复制 (COW)。如果该页已被标记为只读以进行 COW 跟踪，页错误处理程序通过创建该页的副本并将 `pte.xwr` 更新为 `010b` 来响应，从而将每个副本指定为影子栈页。相反，如果访问目标是真正的只读页，则报告为存储/AMO 页错误可向操作系统表明该错误是致命且不可恢复的。即使是由 `SSPOPCHK` 发起的内存访问，也报告为存储/AMO 页错误，这有助于判定致命性；如果将这些访问报告为加载页错误，则对真正只读页的访问可能被错误地视为可恢复错误，导致出错指令被无限重试。PTE 不提供只读影子栈编码。
+
+影子栈指令尝试访问标记为读-写、读-写-执行、读-执行或仅执行的页时，会导致存储/AMO 访问错误异常，同样表示致命情况。
+
+影子栈应在两端由保护页限定，以防止意外的下溢或上溢从一个影子栈进入另一个影子栈。通常，栈的保护页是拥有该栈的进程不可访问的页。
+===='''

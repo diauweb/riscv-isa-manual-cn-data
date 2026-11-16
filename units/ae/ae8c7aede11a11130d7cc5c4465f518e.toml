@@ -1,0 +1,27 @@
+unit_id = "ae8c7aede11a11130d7cc5c4465f518e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trFunnelControl: Trace Funnel Control Register (trBaseFunnel+0x000)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trFunnelActive |Primary activate/reset bit for trace funnel. When 0, the Trace Funnel may have clocks gated off or be powered
+down, and other register locations may be inaccessible. Hardware may take an arbitrarily long time to process power-up and power-down and will indicate completion when the read value of this bit matches what was written. See <<Reset and Discovery,Reset and Discovery>> chapter for more details.|RW|0
+|1 |trFunnelEnable |*1:* Trace Funnel enabled. Setting `trFunnelEnable` to 0 flushes any queued trace data to output. See <<Enabling and Disabling,Enabling and Disabling>> chapter for more details.|RW|0
+|2 |--|Reserved|--|0
+|3 |trFunnelEmpty |Reads 1 when Trace Funnel internal buffers are empty |RO|1
+|31:4 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trFunnelControl：跟踪漏斗控制寄存器（trBaseFunnel+0x000）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trFunnelActive |跟踪漏斗的主激活/复位位。为 0 时，跟踪漏斗可能被门控时钟或断电，并且其他寄存器位置可能不可访问。硬件处理上电和断电可能花费任意长的时间，并且当该位的读取值与写入值匹配时表示完成。更多细节见 <<Reset and Discovery,Reset and Discovery>> 章。|RW|0
+|1 |trFunnelEnable |*1:* 跟踪漏斗已使能。将 `trFunnelEnable` 设为 0 会将任何已排队的跟踪数据刷新到输出。更多细节见 <<Enabling and Disabling,Enabling and Disabling>> 章。|RW|0
+|2 |--|保留|--|0
+|3 |trFunnelEmpty |当跟踪漏斗内部缓冲区为空时读为 1 |RO|1
+|31:4 |--|保留|--|0
+|==='''

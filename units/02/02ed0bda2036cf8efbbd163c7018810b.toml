@@ -1,0 +1,15 @@
+unit_id = "02ed0bda2036cf8efbbd163c7018810b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+((((compressed. C.NOPINSTR))))
+[#norm:c-nop_op]#insn:c.nop[] is a CI-format instruction that does not change any user-visible
+state, except for advancing the `pc` and incrementing any applicable
+performance counters. insn:c.nop[] expands to insn:nop[].#
+[#norm:c-nop_hint]#The insn:c.nop[] code points
+with _imm_≠0 encode HINTs.#'''
+zh = '''
+((((compressed. C.NOPINSTR))))
+[#norm:c-nop_op]#insn:c.nop[] 是 CI 格式指令，除推进 `pc` 和递增任何适用的性能计数器外，不改变任何用户可见状态。insn:c.nop[] 展开为 insn:nop[]。#
+[#norm:c-nop_hint]#_imm_≠0 的 insn:c.nop[] 代码点编码 HINT。#'''

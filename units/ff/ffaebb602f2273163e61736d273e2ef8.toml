@@ -1,0 +1,60 @@
+unit_id = "ffaebb602f2273163e61736d273e2ef8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trPibControl: PIB Sink Control Register (trBasePib+0x000)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trPibActive |Primary activate/reset bit for PIB Sink component. When 0, the PIB Sink may have clocks gated off or be powered
+down, and other register locations may be inaccessible. Hardware may take an arbitrarily long time to process power-up and power-down and will indicate completion when the read value of this bit matches what was written. See <<Reset and Discovery,Reset and Discovery>> chapter for more details.|RW|0
+|1 |trPibEnable |
+*0:* PIB does not accept input but holds output(s) at idle state defined by pibMode. +
+*1:* Enable PIB to generate output. +
+ See <<Enabling and Disabling,Enabling and Disabling>> chapter for more details.
+|RW|0
+|2 |--|Reserved|--|0
+|3 |trPibEmpty |Reads 1 when PIB internal buffers are empty.|RO|1
+|7:4 |trPibMode |Select mode for output pins. Allowed values are described in the `Allowed PIB Configurations` table below.|WARL|<<Undef,Undef>>
+|8 |trPibClkCenter |In parallel modes, adjust TRC_CLK timing to the center of the bit period. This can be set only if `trPibMode` selects one of the parallel protocols.|WARL|<<Undef,Undef>>
+|9 |trPibCalibrate |Set this to 1 to generate a repeating calibration pattern to help tune a probe's signal delays, bit rate, etc. In this mode input to the sink is not consumed. The calibration pattern is described below.|WARL|<<Undef,Undef>>
+|11:10 |--|Reserved|--|0
+|14:12 |trPibAsyncFreq |
+*0:* Alignment synchronization (Async) packets disabled (may be the only choice for some protocols) +
+*1-7:* Different levels of alignment synchronization (bigger number, bigger distance). +
+Details should be defined in the specification of each trace protocol.
+|WARL|<<Undef,Undef>>
+|15 |--|Reserved|--|0
+|31:16 |trPibDivider |Timebase selection for the PIB module. The input clock is divided by `trPibDivider` + 1. PIB data is sent at either this divided rate or 1/2 of this rate, depending on `trPibMode`. Width is implementation dependent.
+After the PIB reset value of this field should be set to safe (not too fast clock) setting for a particular SoC. Trace tools may set smaller values to utilize higher bandwidth.
+|WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trPibControl：PIB Sink 控制寄存器 (trBasePib+0x000)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trPibActive |PIB Sink 组件的主激活/复位位。当为 0 时，PIB Sink 可能被门控关断时钟或断电，
+并且其他寄存器位置可能不可访问。硬件处理上电和断电可能花费任意长的时间，并在该位的读取值与写入值匹配时指示完成。更多细节见 <<Reset and Discovery,复位与发现>> 章节。|RW|0
+|1 |trPibEnable |
+*0:* PIB 不接受输入，但将输出保持为由 pibMode 定义的空闲状态。 +
+*1:* 使能 PIB 产生输出。 +
+ 更多细节见 <<Enabling and Disabling,使能与禁用>> 章节。
+|RW|0
+|2 |--|保留|--|0
+|3 |trPibEmpty |当 PIB 内部缓冲区为空时读为 1。|RO|1
+|7:4 |trPibMode |选择输出引脚的模式。允许的值在下文的 `Allowed PIB Configurations` 表中描述。|WARL|<<Undef,未定义>>
+|8 |trPibClkCenter |在并行模式下，将 TRC_CLK 时序调整到位周期的中心。仅当 `trPibMode` 选择某种并行协议时才能置位。|WARL|<<Undef,未定义>>
+|9 |trPibCalibrate |将此位置 1 可生成重复的校准模式，以帮助调整探针的信号延迟、位速率等。在此模式下，sink 的输入不会被消费。校准模式如下所述。|WARL|<<Undef,未定义>>
+|11:10 |--|保留|--|0
+|14:12 |trPibAsyncFreq |
+*0:* 禁用对齐同步（Async）包（对某些协议来说可能是唯一选择） +
+*1-7:* 不同级别的对齐同步（数字越大，距离越大）。 +
+细节应由每种跟踪协议的规范定义。
+|WARL|<<Undef,未定义>>
+|15 |--|保留|--|0
+|31:16 |trPibDivider |PIB 模块的时基选择。输入时钟除以 `trPibDivider` + 1。PIB 数据以该分频速率或其 1/2 速率发送，具体取决于 `trPibMode`。宽度取决于实现。
+复位后，该字段的值应设置为适用于特定 SoC 的安全设置（时钟不过快）。跟踪工具可以设置较小的值以利用更高的带宽。
+|WARL|<<Undef,未定义>>
+|==='''

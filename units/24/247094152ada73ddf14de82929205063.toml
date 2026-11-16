@@ -1,0 +1,17 @@
+unit_id = "247094152ada73ddf14de82929205063"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The base RISC-V ISA has fixed-length 32-bit instructions that must be
+naturally aligned on 32-bit boundaries. However, the standard RISC-V
+encoding scheme is designed to support ISA extensions with
+variable-length instructions, where each instruction can be any number
+of 16-bit instruction _parcels_ in length and parcels are naturally
+aligned on 16-bit boundaries. The standard compressed ISA extension
+described in <<compressed>> reduces code size by
+providing compressed 16-bit instructions and relaxes the alignment
+constraints to allow all instructions (16 bit and 32 bit) to be aligned
+on any 16-bit boundary to improve code density.'''
+zh = '''
+基础 RISC-V ISA 具有固定长度的 32 位指令，必须在 32 位边界上自然对齐。然而，标准 RISC-V 编码方案设计为支持具有变长指令的 ISA 扩展，其中每条指令的长度可以是任意数量的 16 位指令__包__，且包在 16 位边界上自然对齐。<<compressed>> 中描述的标准压缩 ISA 扩展通过提供压缩的 16 位指令来减小代码大小，并放宽对齐约束，允许所有指令（16 位和 32 位）在任意 16 位边界上对齐，以提高代码密度。'''

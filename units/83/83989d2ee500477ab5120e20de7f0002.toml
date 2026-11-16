@@ -1,0 +1,16 @@
+unit_id = "83989d2ee500477ab5120e20de7f0002"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+AMOs never raise load page-fault exceptions. Since any unreadable page
+is also unwritable, attempting to perform an AMO on an unreadable page
+always raises a store page-fault exception.
+===='''
+zh = '''
+[NOTE]
+====
+AMO 永远不会引发加载页错误异常。由于任何不可读的页也是不可写的，尝试对不可读的页执行 AMO 总是引发存储页错误异常。
+===='''

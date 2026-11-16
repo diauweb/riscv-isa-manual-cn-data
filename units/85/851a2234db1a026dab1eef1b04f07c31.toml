@@ -1,0 +1,30 @@
+unit_id = "851a2234db1a026dab1eef1b04f07c31"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* (a) executes and enters the first hart's private store buffer
+* (b) executes and forwards its return value 1 from (a) in the
+store buffer
+* (c) executes since all previous loads (i.e., (b)) have
+completed
+* (d) executes and reads the value 0 from memory
+* (e) executes and enters the second hart's private store buffer
+* (f) executes and forwards its return value 1 from (e) in the
+store buffer
+* (g) executes since all previous loads (i.e., (f)) have
+completed
+* (h) executes and reads the value 0 from memory
+* (a) drains from the first hart's store buffer to memory
+* (e) drains from the second hart's store buffer to memory'''
+zh = '''
+* (a) 执行并进入第一个硬件线程的私有存储缓冲区
+* (b) 执行并从存储缓冲区中的 (a) 转发其返回值 1
+* (c) 执行，因为所有先前的加载（即 (b)）都已完成
+* (d) 执行并从内存读取值 0
+* (e) 执行并进入第二个硬件线程的私有存储缓冲区
+* (f) 执行并从存储缓冲区中的 (e) 转发其返回值 1
+* (g) 执行，因为所有先前的加载（即 (f)）都已完成
+* (h) 执行并从内存读取值 0
+* (a) 从第一个硬件线程的存储缓冲区排空到内存
+* (e) 从第二个硬件线程的存储缓冲区排空到内存'''

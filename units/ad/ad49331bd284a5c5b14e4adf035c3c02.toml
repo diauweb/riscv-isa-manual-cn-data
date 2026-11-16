@@ -1,0 +1,20 @@
+unit_id = "ad49331bd284a5c5b14e4adf035c3c02"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Except when specified otherwise, implicit reads that do not raise an
+exception and that have no side effects may occur arbitrarily early and
+speculatively, even before the machine could possibly prove that the
+read will be needed. For instance, a valid implementation could attempt
+to read all of main memory at the earliest opportunity, cache as many
+fetchable (executable) bytes as possible for later instruction fetches,
+and avoid reading main memory for instruction fetches ever again. To
+ensure that certain implicit reads are ordered only after writes to the
+same memory locations, software must execute specific fence or
+cache-control instructions defined for this purpose (such as the
+insnlink:fence.i[] instruction).
+(((memory access, implicit and explicit)))'''
+zh = '''
+除非另有规定，不引发异常且没有副作用的隐式读取可以任意提前并推测性地发生，甚至可以在机器能够证明该读取将被需要之前发生。例如，一种有效的实现可以在最早的机会尝试读取所有主存，尽可能多地缓存可取指（可执行）字节以供后续指令取指使用，并从此不再为指令取指读取主存。为确保某些隐式读取仅在同一内存位置的写入之后排序，软件必须执行为此目的定义的特定 fence 或缓存控制指令（例如 insnlink:fence.i[] 指令）。
+(((memory access, implicit and explicit)))'''

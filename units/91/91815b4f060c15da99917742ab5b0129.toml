@@ -1,0 +1,175 @@
+unit_id = "91815b4f060c15da99917742ab5b0129"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+An _acquire_ operation, as would be used at the start of a critical
+section, requires all memory operations following the acquire in program
+order to also follow the acquire in the global memory order. This
+ensures, for example, that all loads and stores inside the critical
+section are up to date with respect to the synchronization variable
+being used to protect it. Acquire ordering can be enforced in one of two
+ways: with an acquire annotation, which enforces ordering with respect
+to just the synchronization variable itself, or with a FENCE R,RW, which
+enforces ordering with respect to all previous loads.
+
+[[spinlock_atomics]]
+.A spinlock with atomics
+[source%linenums,asm]
+....
+          sd           x1, (a1)     # Arbitrary unrelated store
+          ld           x2, (a2)     # Arbitrary unrelated load
+          li           t0, 1        # Initialize swap value.
+      again:
+          amoswap.w.aq t0, t0, (a0) # Attempt to acquire lock.
+          bnez         t0, again    # Retry if held.
+          # ...
+          # Critical section.
+          # ...
+          amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.
+          sd           x3, (a3)     # Arbitrary unrelated store
+          ld           x4, (a4)     # Arbitrary unrelated load
+....
+
+Consider <<spinlock_atomics, Example 1>>.
+Because this example uses _aq_, the loads and stores in the critical
+section are guaranteed to appear in the global memory order after the
+AMOSWAP used to acquire the lock. However, assuming `a0`, `a1`, and `a2`
+point to different memory locations, the loads and stores in the
+critical section may or may not appear after the "Arbitrary unrelated
+load" at the beginning of the example in the global memory order.
+
+[[spinlock_fences]]
+.A spinlock with fences
+[source%linenums,asm]
+....
+          sd           x1, (a1)     # Arbitrary unrelated store
+          ld           x2, (a2)     # Arbitrary unrelated load
+          li           t0, 1        # Initialize swap value.
+      again:
+          amoswap.w    t0, t0, (a0) # Attempt to acquire lock.
+          fence        r, rw        # Enforce "acquire" memory ordering
+          bnez         t0, again    # Retry if held.
+          # ...
+          # Critical section.
+          # ...
+          fence        rw, w        # Enforce "release" memory ordering
+          amoswap.w    x0, x0, (a0) # Release lock by storing 0.
+          sd           x3, (a3)     # Arbitrary unrelated store
+          ld           x4, (a4)     # Arbitrary unrelated load
+....
+
+Now, consider the alternative in <<spinlock_fences, Example 2>>. In
+this case, even though the AMOSWAP does not enforce ordering with an
+_aq_ bit, the fence nevertheless enforces that the acquire AMOSWAP
+appears earlier in the global memory order than all loads and stores in
+the critical section. Note, however, that in this case, the fence also
+enforces additional orderings: it also requires that the "Arbitrary
+unrelated load" at the start of the program appears earlier in the
+global memory order than the loads and stores of the critical section.
+(This particular fence does not, however, enforce any ordering with
+respect to the "Arbitrary unrelated store" at the start of the
+snippet.) In this way, fence-enforced orderings are slightly coarser
+than orderings enforced by _.aq_.
+
+Release orderings work exactly the same as acquire orderings, just in
+the opposite direction. Release semantics require all loads and stores
+preceding the release operation in program order to also precede the
+release operation in the global memory order. This ensures, for example,
+that memory accesses in a critical section appear before the
+lock-releasing store in the global memory order. Just as for acquire
+semantics, release semantics can be enforced using release annotations
+or with a FENCE RW,W operation. Using the same examples, the ordering
+between the loads and stores in the critical section and the "Arbitrary
+unrelated store" at the end of the code snippet is enforced only by the
+FENCE RW,W in <<spinlock_fences, Example 2>>, not by
+the _rl_ in <<spinlock_atomics, Example 1>>.
+
+With RCpc annotations alone, store-release-to-load-acquire ordering is
+not enforced. This facilitates the porting of code written under the TSO
+and/or RCpc memory models. To enforce store-release-to-load-acquire
+ordering, the code must use store-release-RCsc and load-acquire-RCsc
+operations so that PPO rule 7 applies. RCpc alone is
+sufficient for many use cases in C/C++ but is insufficient for many
+other use cases in C/C++, Java, and Linux, to name just a few examples;
+see <<memory_porting, Memory Porting>> for details.
+
+PPO rule 8 indicates that an SC must appear after
+its paired LR in the global memory order. This will follow naturally
+from the common use of LR/SC to perform an atomic read-modify-write
+operation due to the inherent data dependency. However, PPO
+rule 8 also applies even when the value being stored
+does not syntactically depend on the value returned by the paired LR.
+
+Lastly, we note that, as with fences, ordering annotations are
+not cumulative.
+
+[[sec:memory:dependencies]]
+==== Syntactic Dependencies (<<overlapping-ordering, Rules 9-11>>)
+
+[[ppo-addr]]
+[IMPORTANT]
+===='''
+zh = '''
+====
+
+__获取__操作，如将在临界区开始时使用的那样，要求程序顺序中位于获取之后的所有内存操作在全局内存顺序中也位于该获取之后。例如，这确保临界区内的所有加载和存储相对于用于保护它的同步变量是最新的。获取排序可以通过两种方式之一强制执行：使用获取注释，它仅相对于同步变量本身强制排序；或使用 FENCE R,RW，它相对于所有先前的加载强制排序。
+
+[[spinlock_atomics]]
+.使用原子操作的自旋锁
+[source%linenums,asm]
+....
+          sd           x1, (a1)     # Arbitrary unrelated store
+          ld           x2, (a2)     # Arbitrary unrelated load
+          li           t0, 1        # Initialize swap value.
+      again:
+          amoswap.w.aq t0, t0, (a0) # Attempt to acquire lock.
+          bnez         t0, again    # Retry if held.
+          # ...
+          # Critical section.
+          # ...
+          amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.
+          sd           x3, (a3)     # Arbitrary unrelated store
+          ld           x4, (a4)     # Arbitrary unrelated load
+....
+
+考虑 <<spinlock_atomics, 示例 1>>。由于此示例使用 _aq_，临界区中的加载和存储保证在全局内存顺序中出现在用于获取锁的 AMOSWAP 之后。然而，假设 `a0`、`a1` 和 `a2` 指向不同的内存位置，临界区中的加载和存储在全局内存顺序中可能出现在示例开头的“任意无关加载”之后，也可能不出现。
+
+[[spinlock_fences]]
+.使用栅栏的自旋锁
+[source%linenums,asm]
+....
+          sd           x1, (a1)     # Arbitrary unrelated store
+          ld           x2, (a2)     # Arbitrary unrelated load
+          li           t0, 1        # Initialize swap value.
+      again:
+          amoswap.w    t0, t0, (a0) # Attempt to acquire lock.
+          fence        r, rw        # Enforce "acquire" memory ordering
+          bnez         t0, again    # Retry if held.
+          # ...
+          # Critical section.
+          # ...
+          fence        rw, w        # Enforce "release" memory ordering
+          amoswap.w    x0, x0, (a0) # Release lock by storing 0.
+          sd           x3, (a3)     # Arbitrary unrelated store
+          ld           x4, (a4)     # Arbitrary unrelated load
+....
+
+现在，考虑 <<spinlock_fences, 示例 2>> 中的替代方案。在这种情况下，即使 AMOSWAP 没有通过 _aq_ 位强制排序，栅栏仍然强制获取 AMOSWAP 在全局内存顺序中比临界区中的所有加载和存储更早出现。然而请注意，在这种情况下，栅栏还强制了额外的排序：它还要求程序开头的“任意无关加载”在全局内存顺序中比临界区的加载和存储更早出现。（不过，这个特定栅栏并不强制相对于代码片段开头“任意无关存储”的任何排序。）这样，由栅栏强制的排序比由 _.aq_ 强制的排序略粗略。
+
+释放排序的工作方式与获取排序完全相同，只是方向相反。释放语义要求程序顺序中位于释放操作之前的所有加载和存储在全局内存顺序中也位于释放操作之前。例如，这确保临界区中的内存访问在全局内存顺序中出现在释放锁的存储之前。正如获取语义一样，释放语义可以使用释放注释或 FENCE RW,W 操作来强制。使用相同的示例，临界区中的加载和存储与代码片段末尾“任意无关存储”之间的排序仅由 <<spinlock_fences, 示例 2>> 中的 FENCE RW,W 强制，而不是由 <<spinlock_atomics, 示例 1>> 中的 _rl_ 强制。
+
+仅使用 RCpc 注释时，存储-释放到加载-获取的排序不会被强制。这便于移植在 TSO 和/或 RCpc 内存模型下编写的代码。要强制存储-释放到加载-获取排序，代码必须使用存储-释放-RCsc 和加载-获取-RCsc 操作，以便 PPO 规则 7 适用。仅 RCpc 对 C/C++ 中的许多用例足够，但对 C/C++、Java 和 Linux 中的许多其他用例不够，这里仅举几个例子；详见 <<memory_porting, 内存移植>>。
+
+PPO 规则 8 指出，SC 在全局内存顺序中必须出现在其配对 LR 之后。由于固有的数据依赖，LR/SC 常用于执行原子读-修改-写操作，因此这会自然遵循。然而，即使所存储的值在语法上不依赖于配对 LR 返回的值，PPO 规则 8 也适用。
+
+最后，我们注意到，与栅栏一样，排序注释不是累积的。
+
+[[sec:memory:dependencies]]
+==== 语法依赖（<<overlapping-ordering, 规则 9-11>>）
+
+[[ppo-addr]]
+[IMPORTANT]
+===='''

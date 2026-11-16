@@ -1,0 +1,21 @@
+unit_id = "2656e637797d2968ee0351c9944da468"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* input selected from *iaddress*, *context* and *tval* (and *daddress*
+if data trace is supported);
+* A range of arithmetic options (<, >, =, !=, etc) independently
+selectable for each comparator;
+* Secondary match value may be used as a mask for the primary
+comparator;
+* The two comparators can be combined in several ways: P, P&&S, !(P&&S),
+latch (set on P clear on S);
+* Each comparator can also be used to explcitly report a particular
+instruction address (i.e. generate a watchpoint).'''
+zh = '''
+* 输入选自 *iaddress*、*context* 和 *tval*（如果支持数据跟踪，还包括 *daddress*）；
+* 一系列算术选项（<、>、=、!= 等），可为每个比较器独立选择；
+* 次匹配值可用作主比较器的掩码；
+* 两个比较器可以以多种方式组合：P、P&&S、!(P&&S)、锁存（在 P 上置位，在 S 上清零）；
+* 每个比较器还可用于显式报告某个特定的指令地址（即生成一个观察点）。'''

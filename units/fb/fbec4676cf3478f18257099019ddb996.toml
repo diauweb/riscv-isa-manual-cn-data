@@ -1,0 +1,23 @@
+unit_id = "fbec4676cf3478f18257099019ddb996"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The fused multiply-add (FMA) instructions consume a large part of the
+32-bit instruction encoding space. Some alternatives considered were to
+restrict FMA to only use dynamic rounding modes, but static rounding
+modes are useful in code that exploits the lack of product rounding.
+Another alternative would have been to use rd to provide rs3, but this
+would require additional move instructions in some common sequences. The current design still leaves a large portion of the 32-bit encoding space open while avoiding having FMA be non-orthogonal.
+===='''
+zh = '''
+[NOTE]
+====
+融合乘加（FMA）指令占用了 32 位指令编码空间的很大一部分。
+曾考虑的一些替代方案包括：将 FMA 限制为仅使用动态舍入模式，
+但静态舍入模式在利用无乘积舍入的代码中很有用。
+另一种替代方案是使用 rd 来提供 rs3，但在某些常见序列中这需要额外的 move 指令。
+当前设计仍然留出了 32 位编码空间的很大一部分，同时避免使 FMA 成为非正交的。
+===='''

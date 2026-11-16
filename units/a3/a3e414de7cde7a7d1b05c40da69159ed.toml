@@ -1,0 +1,8 @@
+unit_id = "a3e414de7cde7a7d1b05c40da69159ed"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RISC-V Pointer Masking (PM) is a feature that, when enabled, causes the CPU to ignore the upper bits of the effective address (these terms will be defined more precisely in the Background section). This allows these bits to be used in whichever way the application chooses. The version of the extension being described here specifically targets **tag checks**: When an address is accessed, the tag stored in the masked bits can be compared against a range-based tag. This is used for dynamic safety checkers such as HWASAN cite:[HWASAN]. Such tools can be applied in all privilege modes (U, S, and M).'''
+zh = '''
+RISC-V 指针掩码（PM）是一项特性：启用后，CPU 会忽略有效地址的高位（这些术语将在背景章节中更精确地定义）。这允许应用程序以任意方式使用这些位。此处描述的扩展版本专门针对**标签检查**：当访问某个地址时，可以将存储在掩码位中的标签与基于范围的标签进行比较。这用于 HWASAN cite:[HWASAN] 等动态安全检查器。此类工具可应用于所有特权模式（U、S 和 M）。'''

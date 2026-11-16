@@ -1,0 +1,15 @@
+unit_id = "1320320978fa3cf58cb7aa17c0383a46"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the command takes arguments, the debugger must write them to the
+`data` registers before writing to {dm-command}. If a command returns results, the
+Debug Module must ensure they are placed in the `data` registers before {abstractcs-busy}
+is cleared. Which `data` registers are used for the arguments is
+described in <<tab:datareg>>. In all cases the
+least-significant word is placed in the lowest-numbered `data` register.
+The argument width depends on the command being executed, and is DXLEN
+where not explicitly specified.'''
+zh = '''
+如果命令带参数，调试器必须在写入 {dm-command} 之前将参数写入 `data` 寄存器。如果命令返回结果，调试模块必须确保在 {abstractcs-busy} 被清除之前将结果放入 `data` 寄存器。哪些 `data` 寄存器用于参数在 <<tab:datareg>> 中描述。在所有情况下，最低有效字放在编号最低的 `data` 寄存器中。参数宽度取决于正在执行的命令，在未明确指定时为 DXLEN。'''

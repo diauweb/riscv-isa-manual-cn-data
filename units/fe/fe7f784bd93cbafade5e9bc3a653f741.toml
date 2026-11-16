@@ -1,0 +1,28 @@
+unit_id = "fe7f784bd93cbafade5e9bc3a653f741"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An EEI may not guarantee misaligned loads and stores are handled invisibly. In this case,
+[#norm:MISALIGNED_LDST_FULLY_HW_SUPPORTED_OR_VISIBLE_TRAP]#loads and stores that are not naturally aligned
+may either complete execution successfully or raise an exception.#
+[#norm:ldst_addr_misaligned_or_access_fault_exc]#The exception raised can be either an
+address-misaligned exception or an access-fault exception.
+For a memory access that would otherwise be able
+to complete except for the misalignment, an access-fault exception can
+be raised instead of an address-misaligned exception if the misaligned
+access should not be emulated, e.g., if accesses to the memory region
+have side effects.#
+[#norm:MISALIGNED_LDST_CONTAINED_OR_FATAL_TRAP]#When an EEI does not guarantee misaligned loads and
+stores are handled invisibly, the EEI must define if exceptions caused
+by address misalignment result in a contained trap (allowing software
+running inside the execution environment to handle the trap) or a fatal
+trap (terminating execution).#'''
+zh = '''
+EEI 可以不保证非对齐加载和存储被不可见地处理。在这种情况下，
+[#norm:MISALIGNED_LDST_FULLY_HW_SUPPORTED_OR_VISIBLE_TRAP]#未自然对齐的加载和存储可以成功完成执行，也可以引发异常。#
+[#norm:ldst_addr_misaligned_or_access_fault_exc]#所引发的异常可以是
+地址非对齐异常或访问故障异常。
+对于除非对齐外本可以完成的内存访问，如果非对齐访问不应被模拟（例如，如果对该内存区域的访问具有副作用），则可以引发访问故障异常而不是地址非对齐异常。#
+[#norm:MISALIGNED_LDST_CONTAINED_OR_FATAL_TRAP]#当 EEI 不保证非对齐加载和
+存储被不可见地处理时，EEI 必须定义由地址非对齐引起的异常导致的是被包含的陷阱（允许在执行环境内运行的软件处理该陷阱）还是致命陷阱（终止执行）。#'''

@@ -1,0 +1,32 @@
+unit_id = "a7004661a1bbdac66aeac6f4b47b6434"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Zacas Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination Registers |Accumulating CSRs|
+
+|insn:amocas.w[]† |_rs1_ ^A^, _rs2_ ^D^, _rd_ ^D^ |_rd_ | |
+
+|insn:amocas.d[]†^*^ |_rs1_ ^A^, _rs2_ ^D^, _rd_ ^D^ |_rd_ | |
+
+|insn:amocas.q[]†^*^ |_rs1_ ^A^, _rs2_ ^D^, _rd_ ^D^ |_rd_ | |
+
+5+| ^*^ insn:amocas.d[] uses register-pair operands on RV32, and insn:amocas.q[] (RV64-only) uses register-pair operands on RV64.  For these forms, if _rs2_ is not `x0`, _rs2_+1 is also a data source register, and if _rd_ is not `x0`, _rd_+1 is also a data source and destination register.
+|==='''
+zh = '''
+.Zacas 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目的寄存器 |累积 CSR|
+
+|insn:amocas.w[]† |_rs1_ ^A^、_rs2_ ^D^、_rd_ ^D^ |_rd_ | |
+
+|insn:amocas.d[]†^*^ |_rs1_ ^A^、_rs2_ ^D^、_rd_ ^D^ |_rd_ | |
+
+|insn:amocas.q[]†^*^ |_rs1_ ^A^、_rs2_ ^D^、_rd_ ^D^ |_rd_ | |
+
+5+| ^*^ 在 RV32 上 insn:amocas.d[] 使用寄存器对操作数，而 insn:amocas.q[]（仅限 RV64）在 RV64 上使用寄存器对操作数。对于这些形式，如果 _rs2_ 不是 `x0`，则 _rs2_+1 也是数据源寄存器；如果 _rd_ 不是 `x0`，则 _rd_+1 也是数据源和目的寄存器。
+|==='''

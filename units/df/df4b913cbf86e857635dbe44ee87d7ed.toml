@@ -1,0 +1,17 @@
+unit_id = "df4b913cbf86e857635dbe44ee87d7ed"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* (b) appears before (a) in global memory order (and in the
+coherence order co). However, this violates RVWMO PPO
+rule `ppo:->st`. The co edge from (b) to (a) highlights this
+contradiction.
+* (a) appears before (b) in global memory order (and in the
+coherence order co). However, in this case, the Load Value Axiom would
+be violated, because (a) is not the latest matching store prior to (c)
+in program order. The fr edge from (c) to (b) highlights this
+contradiction.'''
+zh = '''
+* (b) 在全局内存顺序（以及一致性顺序 co）中出现在 (a) 之前。然而，这违反了 RVWMO PPO 规则 `ppo:->st`。从 (b) 到 (a) 的 co 边突出了这一矛盾。
+* (a) 在全局内存顺序（以及一致性顺序 co）中出现在 (b) 之前。然而，在这种情况下，加载值公理将被违反，因为 (a) 不是程序顺序中 (c) 之前最新匹配的存储。从 (c) 到 (b) 的 fr 边突出了这一矛盾。'''

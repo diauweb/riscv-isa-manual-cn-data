@@ -1,0 +1,18 @@
+unit_id = "8d73adde03420dd5b05fb5b023f6cd0b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+The insn:xperm8[] instruction operates on bytes.
+The _rs1_ register contains a vector of XLEN/8 8-bit elements.
+The _rs2_ register contains a vector of XLEN/8 8-bit indexes.
+Each element of the result is formed by using the corresponding index element
+from _rs2_ to select an element from _rs1_, or zero if the index element is out
+of bounds.'''
+zh = '''
+描述::
+insn:xperm8[] 指令按字节操作。
+_rs1_ 寄存器包含一个由 XLEN/8 个 8 位元素组成的向量。
+_rs2_ 寄存器包含一个由 XLEN/8 个 8 位索引组成的向量。
+结果的每个元素通过使用 _rs2_ 中相应的索引元素从 _rs1_ 中选择一个元素来形成，如果索引元素越界则为零。'''

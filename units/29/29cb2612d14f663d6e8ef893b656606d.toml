@@ -1,0 +1,32 @@
+unit_id = "29cb2612d14f663d6e8ef893b656606d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Indirect Branch History with Sync Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=29(0x1D). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|4   |SYNC             |Standard Synchronization Reason (<<field_SYNC,SYNC>>) field.
+|2   |B-TYPE           |Standard Branch Type (<<field_B-TYPE,B-TYPE>>) field.
+|Var |I-CNT            |Standard Instruction Count (<<field_I-CNT,I-CNT>>) field.
+|Var |F-ADDR           |Standard Full Address (<<field_F-ADDR,F-ADDR>>) field.
+|Var |HIST             |Standard Branch History (<<field_HIST,HIST>>) field.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.Indirect Branch History with Sync 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=29(0x1D)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|4   |SYNC             |标准同步原因（<<field_SYNC,SYNC>>）字段。
+|2   |B-TYPE           |标准分支类型（<<field_B-TYPE,B-TYPE>>）字段。
+|Var |I-CNT            |标准指令计数（<<field_I-CNT,I-CNT>>）字段。
+|Var |F-ADDR           |标准完整地址（<<field_F-ADDR,F-ADDR>>）字段。
+|Var |HIST             |标准分支历史（<<field_HIST,HIST>>）字段。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

@@ -1,0 +1,32 @@
+unit_id = "128e0fe488a43b2885818d76bff03aa3"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth.stretch,cols="^,^,<",options="header",]
+|=======================================================================
+|Bits |Name |Description
+
+|`31:30` |`OPST` |Status: `BIST` (00), `WAIT` (01), `ES16` (10), `DEAD`
+(11).
+
+|`29:24` |_reserved_ |For future use by the RISC-V specification.
+
+|`23:16` |_custom_ |Designated for custom and experimental use.
+
+|`15: 0` |`entropy` |16 bits of randomness, only when `OPST=ES16`.
+|======================================================================='''
+zh = '''
+[%autowidth.stretch,cols="^,^,<",options="header",]
+|=======================================================================
+|位 |名称 |描述
+
+|`31:30` |`OPST` |状态：`BIST` (00)、`WAIT` (01)、`ES16` (10)、`DEAD`
+(11)。
+
+|`29:24` |_reserved_ |保留供 RISC-V 规范将来使用。
+
+|`23:16` |_custom_ |指定用于自定义和实验用途。
+
+|`15: 0` |`entropy` |16 位随机性，仅在 `OPST=ES16` 时有效。
+|======================================================================='''

@@ -1,0 +1,17 @@
+unit_id = "13a37413576839f57262ffafaecfe43d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The extlink:zca[] extension forms the core of the compressed extensions;
+it provides compressed forms of integer loads, stores, branches, and
+computational instructions.
+The extlink:zcf[] extension is an XLEN=32-only extension that adds
+single-precision floating-point loads and stores.
+The extlink:zcd[] extension adds double-precision floating-point loads and
+stores.
+The extlink:c[] extension combines ext:zca[], ext:zcf[] if XLEN=32 and the F extension
+is present, and ext:zcd[] if the D extension is present.
+Various additional ext:Zc*[] extensions are also defined.'''
+zh = '''
+extlink:zca[] 扩展构成压缩扩展的核心；它提供整数加载、存储、分支和计算指令的压缩形式。extlink:zcf[] 扩展是仅限 XLEN=32 的扩展，增加单精度浮点加载和存储。extlink:zcd[] 扩展增加双精度浮点加载和存储。extlink:c[] 扩展组合 ext:zca[]、在 XLEN=32 且存在 F 扩展时的 ext:zcf[]，以及存在 D 扩展时的 ext:zcd[]。还定义了各种额外的 ext:Zc*[] 扩展。'''

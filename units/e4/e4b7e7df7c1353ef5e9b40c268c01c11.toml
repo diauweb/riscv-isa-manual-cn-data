@@ -1,0 +1,23 @@
+unit_id = "e4b7e7df7c1353ef5e9b40c268c01c11"
+kind = "diagram"
+translatable = false
+en = '''
+.Multi-cluster trace: two three-hart clusters with top-level Funnel and Sink/Bridge
+["ditaa",shadows=false, separation=false, fontsize: 12]
+....
++-------------------------+
+| 3 Harts with 3 Encoders |
+|   and local Funnel      |---+
+|       (see above)       |   |
++-------------------------+   |
+                              |   +--------+     +-------------+
+                              +-->| Trace  |     | Trace Sink  |
+                                  | Funnel |---->|    or       |
+                              +-->| (top)  |     | ATB Bridge  |
+                              |   +--------+     +-------------+
++-------------------------+   |
+| 3 Harts with 3 Encoders |   |
+|   and local Funnel      |---+
+|       (see above)       |
++-------------------------+
+....'''

@@ -1,0 +1,22 @@
+unit_id = "a3c9bd1950486ac661e3497d658bd923"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We specified multiple virtual memory systems for RV64 to relieve the
+tension between providing a large address space and minimizing
+address-translation cost. For many systems, 39 bits of virtual-address space is
+ample, and so Sv39 suffices. Sv48 increases the virtual address space to
+48 bits, but increases the physical memory capacity dedicated to page tables,
+the latency of page-table traversals, and the size of hardware
+structures that store virtual addresses. Sv57 increases the virtual
+address space, page table capacity requirement, and translation latency
+even further.
+===='''
+zh = '''
+[NOTE]
+====
+我们为 RV64 规定了多种虚拟内存系统，以缓解提供大地址空间与最小化地址转换成本之间的矛盾。对于许多系统，39 位虚拟地址空间已经足够，因此 Sv39 就足够了。Sv48 将虚拟地址空间增加到 48 位，但增加了专用于页表的物理内存容量、页表遍历的延迟以及存储虚拟地址的硬件结构的大小。Sv57 进一步增加了虚拟地址空间、页表容量需求和转换延迟。
+===='''

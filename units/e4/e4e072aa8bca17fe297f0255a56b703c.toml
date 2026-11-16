@@ -1,0 +1,11 @@
+unit_id = "e4e072aa8bca17fe297f0255a56b703c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. All the harts in the halt group that are running will quickly halt. {dcsr-cause} for
+those harts should be set to 6, but may be set to 3. Other harts in the
+halt group that are halted but have started the process of resuming must
+also quickly become halted, even if they do resume briefly.'''
+zh = '''
+. 停止组中所有正在运行的硬件线程将快速停止。这些硬件线程的 {dcsr-cause} 应设置为 6，但也可设置为 3。停止组中其他已停止但已开始恢复过程的硬件线程也必须快速变为停止，即使它们确实短暂恢复过。'''

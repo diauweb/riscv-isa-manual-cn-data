@@ -1,0 +1,12 @@
+unit_id = "2265e63bb3e72f6968731686177c9ff7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtval_varlen_wr]#If `mtval` is written with a nonzero value when an instruction
+access-fault, page-fault, or hardware-error exception occurs on a hart with
+variable-length instructions, then `mtval` will contain the virtual
+address of the portion of the instruction that caused the fault#, while
+[#norm:mepc_varlen_wr]#`mepc` will point to the beginning of the instruction.#'''
+zh = '''
+[#norm:mtval_varlen_wr]#如果具有可变长度指令的硬件线程在发生指令访问错误、页错误或硬件错误异常时 `mtval` 被写入非零值，则 `mtval` 将包含导致错误的该部分指令的虚拟地址#，而 [#norm:mepc_varlen_wr]#`mepc` 将指向该指令的起始位置。#'''

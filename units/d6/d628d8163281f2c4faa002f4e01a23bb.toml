@@ -1,0 +1,8 @@
+unit_id = "d628d8163281f2c4faa002f4e01a23bb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, software is free to write a tagged or untagged address to `stvec`, but on trap delivery (e.g., due to an exception or interrupt), pointer masking **will not be applied** to the address of the trap handler. However, pointer masking **will be applied** by the hardware to any address written into `stval` when delivering an exception.'''
+zh = '''
+例如，软件可以自由地将带标签或不带标签的地址写入 `stvec`，但在陷阱交付时（例如，由于异常或中断），指针掩码**不会应用**于陷阱处理程序的地址。然而，在交付异常时，硬件**会应用**指针掩码于写入 `stval` 的任何地址。'''

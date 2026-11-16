@@ -1,0 +1,14 @@
+unit_id = "96ea491585849cbd9eb4fa8bfa91258d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To provide more efficient support for release consistency cite:[Gharachorloo90memoryconsistency], [#norm:a_aq_rl_bits]#each atomic
+instruction has two bits, _aq_ and _rl_, used to specify additional
+memory ordering constraints as viewed by other RISC-V harts.# [#norm:a_domain_specific_ordering]#The bits
+order accesses to one of the two address domains, memory or I/O,
+depending on which address domain the atomic instruction is accessing.
+No ordering constraint is implied to accesses to the other domain, and a
+FENCE instruction should be used to order across both domains.#'''
+zh = '''
+为了更高效地支持释放一致性 cite:[Gharachorloo90memoryconsistency]，[#norm:a_aq_rl_bits]#每条原子指令都有两个位，_aq_ 和 _rl_，用于指定其他 RISC-V 硬件线程所观察到的额外内存顺序约束。# [#norm:a_domain_specific_ordering]#这些位根据原子指令所访问的是哪个地址域，对内存域或 I/O 域这两个地址域之一的访问进行排序。对另一域的访问不隐含任何顺序约束，并且应使用 FENCE 指令在两个域之间进行排序。#'''

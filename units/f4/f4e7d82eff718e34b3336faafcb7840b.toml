@@ -1,0 +1,14 @@
+unit_id = "f4e7d82eff718e34b3336faafcb7840b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `sip` register is an SXLEN-bit read/write register containing
+information on pending interrupts, while `sie` is the corresponding
+SXLEN-bit read/write register containing interrupt enable bits.
+Interrupt cause number _i_ (as reported in CSR `scause`,
+<<scause>>) corresponds with bit _i_ in both `sip` and
+`sie`. Bits 15:0 are allocated to standard interrupt causes only, while
+bits 16 and above are designated for platform use.'''
+zh = '''
+`sip` 寄存器是一个 SXLEN 位读/写寄存器，包含关于待处理中断的信息，而 `sie` 是相应的 SXLEN 位读/写寄存器，包含中断使能位。中断原因号 _i_（如 CSR `scause` 中所报告，<<scause>>）对应于 `sip` 和 `sie` 中的位 _i_。位 15:0 仅分配给标准中断原因，而位 16 及以上指定用于平台使用。'''

@@ -1,0 +1,13 @@
+unit_id = "824aaaa028885078868ba030d7559a1f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:trap_unexp_hndl_no_rnmi]#When the ext:smrnmi[] extension is not implemented, or if the ext:smrnmi[] extension is
+  implemented and csr:mnstatus[nmie] is 0, the hart enters a critical-error state
+  without updating any architectural state, including the `pc`. This state
+  involves ceasing execution, disabling all interrupts (including NMIs), and
+  asserting a "`critical-error`" signal to the platform.# Whether performance
+  counters and timers are updated in the critical-error state is UNSPECIFIED.'''
+zh = '''
+* [#norm:trap_unexp_hndl_no_rnmi]#当未实现 ext:smrnmi[] 扩展，或者实现了 ext:smrnmi[] 扩展但 csr:mnstatus[nmie] 为 0 时，硬件线程进入严重错误状态，不更新任何架构状态，包括 `pc`。该状态包括停止执行、禁用所有中断（包括 NMI），并向平台断言 “critical-error” 信号。# 在严重错误状态下是否更新性能计数器和定时器是 UNSPECIFIED。'''

@@ -1,0 +1,12 @@
+unit_id = "d018865e1070e1d6ded311bbced4b509"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vsmul_op]#The signed fractional multiply instruction produces a 2*SEW product of
+the two SEW inputs, then shifts the result right by SEW-1 bits,
+rounding these bits according to csr:vxrm[], then saturates the result to
+fit into SEW bits.#  [#norm:vxsat_op_vsmul]#If the result causes saturation, the csr:vxsat[] bit
+is set.#'''
+zh = '''
+[#norm:vsmul_op]#有符号分数乘法指令产生两个 SEW 输入的 2*SEW 乘积，然后将结果右移 SEW-1 位，根据 csr:vxrm[] 对这些位进行舍入，然后将结果饱和以适合 SEW 位。#  [#norm:vxsat_op_vsmul]#如果结果导致饱和，则置位 csr:vxsat[] 位。#'''

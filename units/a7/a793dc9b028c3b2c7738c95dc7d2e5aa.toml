@@ -1,0 +1,22 @@
+unit_id = "a793dc9b028c3b2c7738c95dc7d2e5aa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Note to software developers
+====
+The NIST standard (see <<zvknh>>) requires the final hash to be in big-endian byte ordering
+within SEW-sized words. Since this instruction treats all words as little-endian,
+software needs to perform an endian swap on the final output of this instruction
+after all of the message blocks have been processed.
+===='''
+zh = '''
+[NOTE]
+.给软件开发者的说明
+====
+NIST 标准（参见 <<zvknh>>）要求最终哈希在 SEW 大小的字内按大端字节序
+排列。由于本指令将所有字视为小端，
+软件需要在处理完全部消息块之后，对本指令的最终输出
+执行端序交换。
+===='''

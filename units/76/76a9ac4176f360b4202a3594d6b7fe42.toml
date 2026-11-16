@@ -1,0 +1,22 @@
+unit_id = "76a9ac4176f360b4202a3594d6b7fe42"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+csr:misa[c] must be clear if any of the following holds:
+
+* ext:zca[] is not implemented
+* MXLEN=32, ext:f[] is implemented, and ext:zcf[] is not implemented
+* ext:d[] is implemented, and ext:zcd[] is not implemented
+===='''
+zh = '''
+[NOTE]
+====
+如果以下任一条件成立，则 csr:misa[c] 必须清零：
+
+* 未实现 ext:zca[]
+* MXLEN=32，实现了 ext:f[]，且未实现 ext:zcf[]
+* 实现了 ext:d[]，且未实现 ext:zcd[]
+===='''

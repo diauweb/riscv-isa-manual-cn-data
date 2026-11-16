@@ -1,0 +1,20 @@
+unit_id = "2ec0a7021da9c9cccac65870911b16c9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The Zicfilp must be explicitly enabled for use at each privilege mode.
+
+Programs compiled with the `LPAD` instruction continue to function correctly,
+but without forward-edge CFI protection, when the Zicfilp extension is not
+implemented or is not enabled.
+===='''
+zh = '''
+[NOTE]
+====
+Zicfilp 必须在每个特权模式下显式启用后才能使用。
+
+使用 `LPAD` 指令编译的程序仍能正确运行，但当未实现 Zicfilp 扩展或未启用该扩展时，将不具备前向边 CFI 保护。
+===='''

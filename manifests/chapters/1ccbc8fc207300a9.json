@@ -1,0 +1,2247 @@
+{
+  "chap_hash": "1ccbc8fc207300a9",
+  "id": "vector",
+  "sectname": "chapter",
+  "sectnum": "30",
+  "title_en": "\"V\" Standard Extension for Vector Operations, Version 1.0",
+  "title_unit_id": "bad009f293fe6423e7697fa86ea9bf12",
+  "source_path": "src/v-st-ext.adoc",
+  "sections": [
+    {
+      "id": "vector",
+      "level": 1,
+      "sectnum": "30",
+      "title": "\"V\" Standard Extension for Vector Operations, Version 1.0",
+      "heading_unit_id": "bad009f293fe6423e7697fa86ea9bf12",
+      "heading_anchor_id": "vector",
+      "blocks": [
+        "05cac766439518dd15d19d2d5d7a383d"
+      ]
+    },
+    {
+      "id": "_introduction_2",
+      "level": 2,
+      "sectnum": "30.1",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "blocks": [
+        "e20ab7b41a7d37d51b61c352f83b0f2c"
+      ]
+    },
+    {
+      "id": "_implementation_defined_constant_parameters",
+      "level": 2,
+      "sectnum": "30.2",
+      "title": "Implementation-defined Constant Parameters",
+      "heading_unit_id": "9051554824081410818ac99b3d5868fc",
+      "blocks": [
+        "a833169ac2ee9d126f57afc1e19cad52",
+        "8cd13f9ad7b8e287272386fa2f41fe9b",
+        "bf358a674027d0dc9c4e3aa7c65522bb",
+        "8c5db42d7ba688200777c96e73cf00c7",
+        "c41eb5f9c66266ea169e5366f538c9bb",
+        "b51766988846bc29022f60a8aa8109d3",
+        "afa719675a52f6389bc4aa5af3451cc1",
+        "f9144d523f16c028eca80ed07ba7e192"
+      ]
+    },
+    {
+      "id": "_vector_extension_programmers_model",
+      "level": 2,
+      "sectnum": "30.3",
+      "title": "Vector Extension Programmer's Model",
+      "heading_unit_id": "673c7ee3d93369613eaf99f48d9b1266",
+      "blocks": [
+        "9a52b6fb107ff1b38759ac638a1ac4b7",
+        "b2bc5f7fe0de470e856ca6d7793ddcc3",
+        "b21e95cda5be2201077183e31c352a3a"
+      ]
+    },
+    {
+      "id": "_vector_registers",
+      "level": 3,
+      "sectnum": "30.3.1",
+      "title": "Vector Registers",
+      "heading_unit_id": "e0cd9aca0614d50933f8e5a15959d91f",
+      "blocks": [
+        "891b5a1a28524352d3c160076f433134",
+        "38c498de2fbb4e6343f7df29afe834db"
+      ]
+    },
+    {
+      "id": "_vector_context_status_in_mstatus",
+      "level": 3,
+      "sectnum": "30.3.2",
+      "title": "Vector Context Status in mstatus",
+      "heading_unit_id": "3c585b00c09f618cd2d4727e26c10e1a",
+      "blocks": [
+        "06017ad82ba320bd9595b991061b016d",
+        "8f2016005636f9f869833a2307388811",
+        "962656297a220561310cf92a7861d3dd",
+        "4661c7a50650c02349cab9482c714475",
+        "0437ae0aec11ed0eafb7bacaed6ad07c",
+        "f9707b3a4df0846878fb9443a08055e7",
+        "ec4a010e4e250bfc60baf31bf8287868"
+      ]
+    },
+    {
+      "id": "_vector_context_status_in_vsstatus",
+      "level": 3,
+      "sectnum": "30.3.3",
+      "title": "Vector Context Status in vsstatus",
+      "heading_unit_id": "d4f0078627c8ce7c99c15a51b593d704",
+      "blocks": [
+        "e7e4190e0b12596030d4267975704cd6",
+        "530cc378b6eeb6ddefd8cff2dbd636a4",
+        "1491d3aa78810ac2b5017c2c34635843",
+        "11b1e36111ca119bc00e58dcd96cc1cd",
+        "0437ae0aec11ed0eafb7bacaed6ad07c",
+        "b12266ae2afc3602e13ec1a08e0cd4c4"
+      ]
+    },
+    {
+      "id": "_vector_type_vtype_register",
+      "level": 3,
+      "sectnum": "30.3.4",
+      "title": "Vector Type (vtype) Register",
+      "heading_unit_id": "8d4d28355dd947790a3a1f99177faee2",
+      "blocks": [
+        "4b8f82b0494fe41d305c9ae9affd6d97",
+        "a2e4bc12e8a11fb03a45d5b933f03e0b",
+        "b5ea70337f77d1e0212de7f44f231c15",
+        "788a8831a165baa7920daa81ed43dfd8",
+        "b3fb480b4a4e6f49a8399b103f109be9",
+        "77504b4b3de44075526727e4267324c1",
+        "66ae7c54a25576447ddd3522f85e00e7",
+        "f253060a89b1551ba8327ece43a1aee3",
+        "fb3e8df58f56300679fd48303f284c5b"
+      ]
+    },
+    {
+      "id": "_vector_selected_element_width_vsew20",
+      "level": 4,
+      "sectnum": "30.3.4.1",
+      "title": "Vector Selected Element Width (vsew[2:0])",
+      "heading_unit_id": "ce8b6a5529cb52aa00c635d952aaaf88",
+      "blocks": [
+        "5e8b9a4712b1cc0dc8af1cb0b16ada56",
+        "96318398bb3d54e8d81c448df2dc3220",
+        "01dae7625afaa709c6032366c033a605",
+        "4310c1b526c082433ad3c00c948c2383",
+        "87f6193af6878f1ab006827756989d6f",
+        "6eb82577c3faa742a186dd65fe7d7867"
+      ]
+    },
+    {
+      "id": "vector-register-grouping",
+      "level": 4,
+      "sectnum": "30.3.4.2",
+      "title": "Vector Register Grouping (vlmul[2:0])",
+      "heading_unit_id": "de6772c950fb21d5ee63235065eb8754",
+      "heading_anchor_id": "vector-register-grouping",
+      "blocks": [
+        "44897dbdab658273051d6082f4fdefa9",
+        "7f38d8738499c914db18f2c4cac3876a",
+        "d51ccef191beddffc0187483104159c8",
+        "10bf7804be8e3a776f2a232f1fd2197c",
+        "2069c4cf347c61c53698c46d53d4bf70",
+        "e8e9b44b4171946f924726448be1aba7",
+        "5cf4b4d77c92d54dc6c88def9cae9956",
+        "8cd32beb6c003144f59dd09afd568d5c",
+        "763958156d72d1cf9b4b26cdb72d14fd",
+        "4d774d629ed0ea7d3c7a9f456b4f22b9",
+        "1888cd52264f736439795b0e4d5e4dcf",
+        "3a84b2525e4d45f09daaef3b257f8461",
+        "9546a4703a328d40dc27a300d5271a46",
+        "1985e003f67945a6d64c7d1a9cca1819",
+        "29d0094414dbe3ad149a6789943326e6",
+        "f82e197f003497a27bf5ddebfed64972",
+        "dbdc44b08a787f929addc58ea7bf1028"
+      ]
+    },
+    {
+      "id": "sec-agnostic",
+      "level": 4,
+      "sectnum": "30.3.4.3",
+      "title": "Vector Tail Agnostic and Vector Mask Agnostic vta and vma",
+      "heading_unit_id": "4117e68cd70e15f59103f85877106520",
+      "heading_anchor_id": "sec-agnostic",
+      "blocks": [
+        "4b384b2cace30e15c7f00c0cabf3a662",
+        "833b9462c60c7207c9dc86901c238df6",
+        "fd578c3ded73fa65d8148ce992014ae3",
+        "e5874bff18fabfab9c0e0e01d252be5a",
+        "2684b125cf71c2da5b25859281f02c0c",
+        "a51620bd6481f96f5b45d212ae2d5773",
+        "8bf7c1e5bfa6afa0472f489e80e49d09",
+        "73292f3a6d1e68265e7e1524ae2d13f4",
+        "ebd9e4c1c210588029d02b3faa4eafcb",
+        "36d7d57565ea158219df5bdf537ab52c",
+        "8bc83b8dd5a738a65294539260178fa5",
+        "41fec04ca1bd8b6fd37f740f6f70147b",
+        "e790c4b9f03b396bd809a3fd20a858e4",
+        "674bb0a8881fc002950718b5172186b3",
+        "f313f64bf80397630c2c3bb55ace691a",
+        "1461e051c0719b02b660be3fcd4873ae"
+      ]
+    },
+    {
+      "id": "_vector_type_illegal_vill",
+      "level": 4,
+      "sectnum": "30.3.4.4",
+      "title": "Vector Type Illegal (vill)",
+      "heading_unit_id": "8c3339bfdf865f31e36a7cd0894a2758",
+      "blocks": [
+        "8a822b6d2ece8316b06e5af1a3fddd94",
+        "74712ed31f7d50496605348d3dcb6f78",
+        "371ba493d306b76ddf2659eee8336e84",
+        "3fa97ad24235866639b508bef2c56eba",
+        "c5654c228d01a63d994698d57c5cc65b"
+      ]
+    },
+    {
+      "id": "_vector_length_vl_register",
+      "level": 3,
+      "sectnum": "30.3.5",
+      "title": "Vector Length (vl) Register",
+      "heading_unit_id": "441191525f9ec7880a1fe48d1a1e203e",
+      "blocks": [
+        "4ac55806856d921003247f369967473e",
+        "5cab4eb76dead11a9915e904f9d69320",
+        "a01a28bd21dff6ee20341ba8f137d8b5"
+      ]
+    },
+    {
+      "id": "_vector_byte_length_vlenb_register",
+      "level": 3,
+      "sectnum": "30.3.6",
+      "title": "Vector Byte Length (vlenb) Register",
+      "heading_unit_id": "f07b15efc21850286b83b50dda79c260",
+      "blocks": [
+        "4a20e3c1b2e040b111bf22ad3753be29",
+        "f2f54257d5091ae8d922834c3ca207df",
+        "f17bed794262f062ed1262b1bb168906"
+      ]
+    },
+    {
+      "id": "_vector_start_index_vstart_register",
+      "level": 3,
+      "sectnum": "30.3.7",
+      "title": "Vector Start Index (vstart) Register",
+      "heading_unit_id": "152d44603d0fb83fb6523e59b859e3d4",
+      "blocks": [
+        "1a92bc078a28bfbd7d318b821c5cd90f",
+        "73824379ec1c3b486fd16c8996d0f5cd",
+        "44f9f48d80aa641b4d6d1e3b12fb5fca",
+        "f33a4c749fb38e4eee9eea20f623d333",
+        "21913f0692f9113f4878f279d7ed37af",
+        "10012ad2c4399494be9c8d4c821c77a2",
+        "6690bad2cd133bbcd59c6d78d87f90d6",
+        "dfada0037f150737ac36973e133d8764",
+        "0946a9fcd744ffbb55473c9ccabda3c5",
+        "fd4d5ec788c0aaea51240d92ec37418e",
+        "1022b53be7f7faa5668a3c45e80410f6",
+        "3589bf39ea5fadf1cedfb3352fea1e3a",
+        "686b781b46166ff766b41963e38457e9",
+        "f8dcb3e3fdbfad7395acc254fcf9dcbc"
+      ]
+    },
+    {
+      "id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "level": 3,
+      "sectnum": "30.3.8",
+      "title": "Vector Fixed-Point Rounding Mode (vxrm) Register",
+      "heading_unit_id": "8066c2ce786503957cd53c298e5d93b6",
+      "blocks": [
+        "ae31981836b7d7996c376215e8359fae",
+        "01e46feb03d86e09e60b85590fa1951b",
+        "22b1d9e2c708046e4345bd522f4933ab",
+        "495733cadbdfd7126d0b6d61c13a75c8",
+        "f531ec920ec70227b71d2c783cbb3776",
+        "d466668f7837ce302674951db60ae829",
+        "5411ae9b45a2dee8ae7b464c9127efee",
+        "307d93d7282aa926a82bc1edb688150f"
+      ]
+    },
+    {
+      "id": "_vector_fixed_point_saturation_flag_vxsat",
+      "level": 3,
+      "sectnum": "30.3.9",
+      "title": "Vector Fixed-Point Saturation Flag (vxsat)",
+      "heading_unit_id": "be78b4feb82d4632396bc4696999e7c8",
+      "blocks": [
+        "694f24826e14f6eb385bd1319562417b",
+        "79c3e6fb92da5f784fed24024761f79b"
+      ]
+    },
+    {
+      "id": "_vector_control_and_status_vcsr_register",
+      "level": 3,
+      "sectnum": "30.3.10",
+      "title": "Vector Control and Status (vcsr) Register",
+      "heading_unit_id": "db141a1c19bead33a28c73e074437f3a",
+      "blocks": [
+        "f98d3ab24433d707fc492dc8af0c546c",
+        "915b45d532976a5ac3c304715c769097"
+      ]
+    },
+    {
+      "id": "_state_of_vector_extension_at_reset",
+      "level": 3,
+      "sectnum": "30.3.11",
+      "title": "State of Vector Extension at Reset",
+      "heading_unit_id": "ded746ab92b976429cfa186d7bbfb803",
+      "blocks": [
+        "ca4715a041fe2c3ed919a4be6871b4d3",
+        "c6ffae0923de7768952baa3a95addc1e",
+        "d7da5122e3c69921ccebabb505550cac",
+        "e71891616a042de21ebb4d354b49e75f",
+        "597b44d075ab1ee4645e771c5fd44313"
+      ]
+    },
+    {
+      "id": "_mapping_of_vector_elements_to_vector_register_state",
+      "level": 2,
+      "sectnum": "30.4",
+      "title": "Mapping of Vector Elements to Vector Register State",
+      "heading_unit_id": "c78f817222539e30faaa53fdc880b21c",
+      "blocks": [
+        "8b6c699b609273388c1900d91b13a0ff",
+        "43e27a4fa5b92850bc76a206a8d1ec5d",
+        "480419073b0f4a0f0f17cd5611947ea0"
+      ]
+    },
+    {
+      "id": "_mapping_for_lmul_1",
+      "level": 3,
+      "sectnum": "30.4.1",
+      "title": "Mapping for LMUL = 1",
+      "heading_unit_id": "cc9999ab503b7a901a26b6077739e36c",
+      "blocks": [
+        "c7ecbe072979643c7915348ede8c3a9b",
+        "4a4acef0ce090693c6d5e99d69ef8f06",
+        "fde05131d7fe5a9b3fd4732e733bb098"
+      ]
+    },
+    {
+      "id": "_mapping_for_lmul_1_2",
+      "level": 3,
+      "sectnum": "30.4.2",
+      "title": "Mapping for LMUL < 1",
+      "heading_unit_id": "c3844a3e6e3cf819a06e0bd58d6885d4",
+      "blocks": [
+        "8d5bd22c129f6d09b50ccee5ff650628",
+        "607404aa0a13fe8ca7f38149c825267e"
+      ]
+    },
+    {
+      "id": "_mapping_for_lmul_1_3",
+      "level": 3,
+      "sectnum": "30.4.3",
+      "title": "Mapping for LMUL > 1",
+      "heading_unit_id": "0df02082bea6da477a27a6efa71be01e",
+      "blocks": [
+        "457962f956da150bd1a48b1901d6c763",
+        "b0c38c75f2ca79f3ace2e23d97d5fba7"
+      ]
+    },
+    {
+      "id": "sec-mapping-mixed",
+      "level": 3,
+      "sectnum": "30.4.4",
+      "title": "Mapping across Mixed-Width Operations",
+      "heading_unit_id": "dfe87d7e08a66b438b7946eae089fc2e",
+      "heading_anchor_id": "sec-mapping-mixed",
+      "blocks": [
+        "b568ef524ba27c94b8433e640ccb03ea",
+        "0fcdca434f7fc3d53d1d5a13c8a2be77",
+        "641ddb0a23314119650dbcaa14498e8d",
+        "c95b3ae66bc57db85f7b77387a4134b5",
+        "457454903b2cacaee9e5300526beaacf",
+        "0bb91660fc24fd20843d43f997428c12"
+      ]
+    },
+    {
+      "id": "sec-mask-register-layout",
+      "level": 3,
+      "sectnum": "30.4.5",
+      "title": "Mask Register Layout",
+      "heading_unit_id": "ad8510bfacb1608bb8e4df63fa19eca9",
+      "heading_anchor_id": "sec-mask-register-layout",
+      "blocks": [
+        "3fe7c79346571f1b62b8648cce276e49",
+        "db78fe23dcdfb76ef79bb02b898313ad"
+      ]
+    },
+    {
+      "id": "_vector_instruction_formats",
+      "level": 2,
+      "sectnum": "30.5",
+      "title": "Vector Instruction Formats",
+      "heading_unit_id": "aad9266ea50c9cb22ccd9530391d450d",
+      "blocks": [
+        "24fe2aea3f6ae5519545e0e2d4c4d29e",
+        "bd727e1b9d2a588151225f7cfe828be3",
+        "8294f4d839f0f366c8efef331a53f528",
+        "cffd30ca9d23acd271c1f01356b317c2",
+        "4f05ced39e89562a9bb97ce5f72c4c42",
+        "4d4e3e2d167f0eaf063b6e6dcb89f8e5",
+        "48b9b6a7ae3e47c08f0820c184ed907c",
+        "ecfdd81eb31b67524dc0f7b175115f7a",
+        "07a9f1bd8153a94861cc2afeacf41934",
+        "5672ad582a0bea984c20dbf662aa130c",
+        "1fe3e538e83b0d82cafdff058793582f",
+        "46c4481a790e2b31d7b61d21146472d5",
+        "06e09b78d06dec4d40b0ae4828fb8804",
+        "c6fc107cc402640a1f6dd0eecc6999c1",
+        "7a98b7bb815476a62b7054c2f94de164",
+        "fe2d42d5707858129f9916ca885a9f06",
+        "25465a55a576b38c40a10634151c943e",
+        "cf801e4253879d61f59d54ffab0b572a",
+        "8e221fa9b2bafe97b2f866881ae70c5c",
+        "fc5a9a203d8bc15b3199ea7962678807",
+        "4f5d43ac5fa2fc62216a7291dd34a19b",
+        "b55c1fdd09ffbad20f1c62042809d070",
+        "9bda1feb71ef5e5f47737dcd8f261b9b",
+        "0c3ec3106f745de06882018cbc2e3cc9"
+      ]
+    },
+    {
+      "id": "_scalar_operands",
+      "level": 3,
+      "sectnum": "30.5.1",
+      "title": "Scalar Operands",
+      "heading_unit_id": "5575068fe1d02a7e1302baed4670d0ac",
+      "blocks": [
+        "d39d56e93bda2c74d9f125a13ebccb4f",
+        "7dcd6e65c346825f79e6e0fd7be9920c",
+        "9124ff27f64e02b391cac11bd4c66cdd"
+      ]
+    },
+    {
+      "id": "sec-vec-operands",
+      "level": 3,
+      "sectnum": "30.5.2",
+      "title": "Vector Operands",
+      "heading_unit_id": "b3b7f25b616954971cc89ea978a2d7ca",
+      "heading_anchor_id": "sec-vec-operands",
+      "blocks": [
+        "73abaf1e3617f739a8f41112291fe612",
+        "9fd21e1451340fd5458a64c3b48b2a48",
+        "74cf8504f578f9196f2ccd64469b52fd",
+        "89595290e29b0e39844fda2f14b58dcc",
+        "0503b0082ebd83eb9bdb93c2757338d2",
+        "642d9f59ac7521473157e2cccf74e0db",
+        "e7faf46e6be349a6e911751ab5ccd515",
+        "bf00c31cdd5e052edfda7cb3c6bc077a",
+        "4bc83f0782b44f13ad84797c8dd99f18",
+        "dd9d60827dd181665a618eb9b84045a3",
+        "2b9adfab77357a8e6d9db751ebbf13d5",
+        "1760b8876bd0e6215ac36ab4ac723c7a",
+        "dde381e2f475c3d10f4a26b85f3ab10f"
+      ]
+    },
+    {
+      "id": "_vector_masking",
+      "level": 3,
+      "sectnum": "30.5.3",
+      "title": "Vector Masking",
+      "heading_unit_id": "1ee8a1458170a505f732005b13855250",
+      "blocks": [
+        "a305047fff435025397ac881d137d0fe",
+        "b52102709db2c846e6d292b9b6641b9c",
+        "7c7dbac7e24ba88b2447510e8aa1e195",
+        "f5713427218f19ec477fdb2aa9f63c28",
+        "17e50596e7f274055f438adbb60d16f3",
+        "272bb23013d563b8ea6f31fdfda94ee4",
+        "ae9da1cd66e2a7cccc736e6382e0609f",
+        "688956c952d05ea0afb424c752747951"
+      ]
+    },
+    {
+      "id": "sec-vector-mask-encoding",
+      "level": 4,
+      "sectnum": "30.5.3.1",
+      "title": "Mask Encoding",
+      "heading_unit_id": "7558ae80c915eeb771fb9ff8bbecbf94",
+      "heading_anchor_id": "sec-vector-mask-encoding",
+      "blocks": [
+        "3b81974364186073c45f7053126a80d9",
+        "608faa16c4734a9bc4c8c6169c0a570f",
+        "232755dfb31ae48028def457957270ae",
+        "630f0125eceabe684c900ae186a4257a",
+        "2fa601b05ea02fa3cc98c870d9196eb0",
+        "b3dc525761476cd24d326444a65d2ac5"
+      ]
+    },
+    {
+      "id": "sec-inactive-defs",
+      "level": 3,
+      "sectnum": "30.5.4",
+      "title": "Prestart, Active, Inactive, Body, and Tail Element Definitions",
+      "heading_unit_id": "558c78edc8a79dd6e44f2ea9c2a93550",
+      "heading_anchor_id": "sec-inactive-defs",
+      "blocks": [
+        "3ea5d7d9a23d3aa62e76b4685eee36c4",
+        "e0082e5625fa7e5f9e449292d5901ed2",
+        "f913b3645167dd655476bd9e15e3a8b6",
+        "c495c1d0dd101eef8a53a0551d6bf67d",
+        "addf10383f3ab5d7d351b85d14111f27",
+        "0182ab90c1235a4b35e314fd2e62ab0c",
+        "21accddb5871966df598b1f67dfd83e7"
+      ]
+    },
+    {
+      "id": "sec-vector-config",
+      "level": 2,
+      "sectnum": "30.6",
+      "title": "Configuration-Setting Instructions (vsetvli/vsetivli/vsetvl)",
+      "heading_unit_id": "db24cdca5bda4c45106ce9bdbec4affc",
+      "heading_anchor_id": "sec-vector-config",
+      "blocks": [
+        "53963abe813e388984081ac7db8aff5e",
+        "6efeab18f838735779cee00a637466ec",
+        "3db2d3bd0405ec9fe79a68c8410e79b5",
+        "8e221fa9b2bafe97b2f866881ae70c5c",
+        "fc5a9a203d8bc15b3199ea7962678807",
+        "4f5d43ac5fa2fc62216a7291dd34a19b",
+        "b55c1fdd09ffbad20f1c62042809d070"
+      ]
+    },
+    {
+      "id": "_vtype_encoding",
+      "level": 3,
+      "sectnum": "30.6.1",
+      "title": "vtype encoding",
+      "heading_unit_id": "0fa237611b42fe28b29de519dd4f849c",
+      "blocks": [
+        "e89a091b9a3ead98b3c8e97a62e04c12",
+        "b3fb480b4a4e6f49a8399b103f109be9",
+        "77504b4b3de44075526727e4267324c1",
+        "3cd57a24db45b516fd217f6d90374c8e",
+        "f2c412b0dd5ae5137d9af497b4e06752",
+        "0f3274a243adb12f794c21caaffd5e3e"
+      ]
+    },
+    {
+      "id": "_unsupported_vtype_values",
+      "level": 4,
+      "sectnum": "30.6.1.1",
+      "title": "Unsupported vtype Values",
+      "heading_unit_id": "340c2139cd7a0851853ac4c45f9e16a3",
+      "blocks": [
+        "2e68ff496d8e385e427dd036582ee10b",
+        "9d042fec61cc0f4f76a9dee29d9e4b93",
+        "fb06541e9f74037f9d4084cdd0f03cfa",
+        "5335b2eb7c43b8a8da6790b6a6c12148",
+        "d9d998b0f22df67a072ade9dae820a64"
+      ]
+    },
+    {
+      "id": "_avl_encoding",
+      "level": 3,
+      "sectnum": "30.6.2",
+      "title": "AVL encoding",
+      "heading_unit_id": "e6455838d11a49816182431deb183a4c",
+      "blocks": [
+        "c130f7c2588469fbd3df42d42e0cae07",
+        "93777047a42737d33d7fadc77f15a2c6",
+        "9999400562276a7eb5379f54eabef6a5",
+        "7cc6a468a659cb3c6f5f123c50b31150",
+        "9ae84c4f789a15fb3e8b1cd9e4b5a307",
+        "13cb517fb41e596b6311499c2536c2a0",
+        "6eaf72928eba2f53675e52f94c02619e",
+        "2d22fc3eb5ffaad347654533463eecec",
+        "d894780907682bbff54fa9f5a5d7611a"
+      ]
+    },
+    {
+      "id": "constraints-on-setting-vl",
+      "level": 3,
+      "sectnum": "30.6.3",
+      "title": "Constraints on Setting vl",
+      "heading_unit_id": "b969cb14520db87102917dbf5104ad70",
+      "heading_anchor_id": "constraints-on-setting-vl",
+      "blocks": [
+        "f6e1628d1520c78981ba8b6b7ed786d8",
+        "6875790aa2f2246ee7af4b77db8bab16",
+        "99876597400e6978842b4c6d38c3ba51"
+      ]
+    },
+    {
+      "id": "example-stripmine-sew",
+      "level": 3,
+      "sectnum": "30.6.4",
+      "title": "Example of strip mining and changes to SEW",
+      "heading_unit_id": "028b2324d67c53624afd6b2f9d04291c",
+      "heading_anchor_id": "example-stripmine-sew",
+      "blocks": [
+        "1dbca0372c6761c44ae461acdfed19fa",
+        "0999c99d67cf156904edca00aa44541d"
+      ]
+    },
+    {
+      "id": "sec-vector-memory",
+      "level": 2,
+      "sectnum": "30.7",
+      "title": "Vector Loads and Stores",
+      "heading_unit_id": "b625a091e62fc9a647156c7bc9479125",
+      "heading_anchor_id": "sec-vector-memory",
+      "blocks": [
+        "9ceb2b14c286908ace50f3cbc1352547"
+      ]
+    },
+    {
+      "id": "_vector_loadstore_instruction_encoding",
+      "level": 3,
+      "sectnum": "30.7.1",
+      "title": "Vector Load/Store Instruction Encoding",
+      "heading_unit_id": "f71f79198d47b75c03a7f2204a817084",
+      "blocks": [
+        "bd727e1b9d2a588151225f7cfe828be3",
+        "8294f4d839f0f366c8efef331a53f528",
+        "cffd30ca9d23acd271c1f01356b317c2",
+        "4f05ced39e89562a9bb97ce5f72c4c42",
+        "4d4e3e2d167f0eaf063b6e6dcb89f8e5",
+        "48b9b6a7ae3e47c08f0820c184ed907c",
+        "ecfdd81eb31b67524dc0f7b175115f7a",
+        "07a9f1bd8153a94861cc2afeacf41934",
+        "5672ad582a0bea984c20dbf662aa130c",
+        "bdc9472af2c4b68698bc0591c7f83d18",
+        "7b5b76229548cb29daa37065f678cd3f"
+      ]
+    },
+    {
+      "id": "_vector_loadstore_addressing_modes",
+      "level": 3,
+      "sectnum": "30.7.2",
+      "title": "Vector Load/Store Addressing Modes",
+      "heading_unit_id": "6cd05ff05bf9b70a8acfe830d43b6b61",
+      "blocks": [
+        "28a5084b8cededc8a6f036323d85f181",
+        "9aa5b27870884275c0b9ea075a1893a4",
+        "24ee945e9265f37df6c0feac1e72983e",
+        "73c63738ee448a45369760541987f974",
+        "19b307ba3fdf06c7d1a8ca0181b25015",
+        "64f953de18e0518c00df49568580a7e6",
+        "18e3c1fc759cf95ab73ae78fdd51f4d2",
+        "cd117f8bf97b5c3f7ae669eeb7404056",
+        "cd28eb4eaf349b35cbdc103a47b36f6f",
+        "a46d7824d2e857fd1309d8257cce640c",
+        "68fe7e04a8fc1a095637c3ae60eb1834",
+        "1eb545cba83320666817f17ac4b25e7d",
+        "723e3b150f9c679597f7c7415f927195",
+        "c6c7ee55b48de617d1e23ce620a73513",
+        "2498f57bbfe0e251b28e91fea7ceab43",
+        "26561eea5363e1905555259083e3b602",
+        "4f63a1cc7c11e8eab15ec7fdc94cb586",
+        "25210650d26daed44bb4b26a005f1ccd",
+        "bc3a956a80beb7f58cc3e53139d4299e",
+        "028a30eaf4431c2e39231c5a4a29417a",
+        "72d8d0f1bbb601abeee0fbf0d8132875"
+      ]
+    },
+    {
+      "id": "sec-vector-loadstore-width-encoding",
+      "level": 3,
+      "sectnum": "30.7.3",
+      "title": "Vector Load/Store Width Encoding",
+      "heading_unit_id": "8890b49fbd3612f2a29d5b1d2f157936",
+      "heading_anchor_id": "sec-vector-loadstore-width-encoding",
+      "blocks": [
+        "f2b2cc3fd8fba461d6241982fa93db7e",
+        "980b44badcfc4ad54b48e2daac8f472b",
+        "a769b2c64c8fc82e98f7152fa6cca78e",
+        "858eddfe4064fa59c8b0aeb049275eb2",
+        "613d3165068fdb34485e2af396d5d276",
+        "dab55947f15d240c3fcc6defacbb7d60",
+        "59d6091a01cdd6fa442a87a8e22833c8",
+        "126c0fb038f0b14c4d0288c5646e6e8c",
+        "fbd754632768147b1f87d21d515c6cb1"
+      ]
+    },
+    {
+      "id": "_vector_unit_stride_instructions",
+      "level": 3,
+      "sectnum": "30.7.4",
+      "title": "Vector Unit-Stride Instructions",
+      "heading_unit_id": "e1bb95d48cd8137d52492b14995f754c",
+      "blocks": [
+        "7aa8945c405df0d24e7e2206bb239230",
+        "f0fca7cd34e4e8820be90559c4aff2ce",
+        "021de95adc5767c3e4d50887c2276fb1",
+        "e290ff055f6524b3f0e69c54ae58cb98",
+        "6f0d1823adfebbebc211a0dbd7792eac",
+        "1bdf5b8accfee76afc9f0d80a9e423a3",
+        "e0bf624942cc1c89ff3645e32ca8e1d2"
+      ]
+    },
+    {
+      "id": "_vector_constant_stride_instructions",
+      "level": 3,
+      "sectnum": "30.7.5",
+      "title": "Vector Constant-Stride Instructions",
+      "heading_unit_id": "f4556d38e8649bdc63a6d503b612c030",
+      "blocks": [
+        "12cdb489b9c88846034c6ddb1eeff681",
+        "1df9aad3e229f5e24a49573617e75278",
+        "3517b3d3df087ab200b563226ff8be2e",
+        "20632d05f4dc8f4a389ce67dfd8810a9",
+        "1b7527e57c5a570ede3d105f054562c5",
+        "7b8ccda3925f15e12abe57c8392714d9",
+        "0eb9803f73cdddebd72f892dd73c521b",
+        "cce61bd91a30046278224d76367aaf8c"
+      ]
+    },
+    {
+      "id": "_vector_indexed_instructions",
+      "level": 3,
+      "sectnum": "30.7.6",
+      "title": "Vector Indexed Instructions",
+      "heading_unit_id": "b7417a0e173cef8f8005aa1519f42a58",
+      "blocks": [
+        "5106721887cf3878f376a189aca66e41",
+        "a7470c9e51773097bf4369bbd2588bdc",
+        "8ab41e214c7dcf9621228baeaca635f7"
+      ]
+    },
+    {
+      "id": "_unit_stride_fault_only_first_loads",
+      "level": 3,
+      "sectnum": "30.7.7",
+      "title": "Unit-stride Fault-Only-First Loads",
+      "heading_unit_id": "009cdfc74167b1b289216e82f982d7ad",
+      "blocks": [
+        "b3be2acd59199bed501948325b84589b",
+        "a6678c886f5f670f77d2e39c67d668a9",
+        "78e5b02b69a225e2b79694cc6e443fdd",
+        "cf3ed94c91c14e76e1f6c3baa742ec00",
+        "1be4b502636c727d6eb124e4a0b95f09",
+        "3e97aa2942c0a730bc578e3738894194",
+        "59baa2ad9fc6d44a8a177f658e81ac49",
+        "3c3b66b605f426a92d398fbcaf9b6f5b"
+      ]
+    },
+    {
+      "id": "sec-aos",
+      "level": 3,
+      "sectnum": "30.7.8",
+      "title": "Vector Load/Store Segment Instructions",
+      "heading_unit_id": "6f4bc0f1de506f4a954685d1481a856e",
+      "heading_anchor_id": "sec-aos",
+      "blocks": [
+        "e3552cada69217e8c7286d86c537b6e4",
+        "0051987686e80743b6fffb6857d19603",
+        "ee4a5be7c5887c8ec1367ccc52bf123a",
+        {
+          "unit_id": "c4c19a5effd3bbf3103181b401694b81",
+          "anchor_id": "fig-nf"
+        },
+        "c577729b5fdbe777f1640a88a6ba337d",
+        "653b22341ec3fe29cd8fac932683dda5",
+        "7d797c43e159da3db67fa156578a514c",
+        "41bccbbc574728612827818e172df72c",
+        "c6a603dbd1082ff441fc16d65de74e22",
+        "e2f23e7ae320543729be00b08bc6ac98",
+        "a7c1dfe2e1322c7e92b15ba7e6c89800",
+        "e3a77a56c2d46f59810d5abcd848d748"
+      ]
+    },
+    {
+      "id": "_vector_unit_stride_segment_loads_and_stores",
+      "level": 4,
+      "sectnum": "30.7.8.1",
+      "title": "Vector Unit-Stride Segment Loads and Stores",
+      "heading_unit_id": "156a7df468deaaf0c9a7d1f074c039ec",
+      "blocks": [
+        "5d8399168f387be9d495a97a632c1f28",
+        "960d2ca013b49aaee62abc841b8e266f",
+        "8d4ca379ba42054a825bcd60d08ecbdc",
+        "897015da13dc720be8183703f770b57e",
+        "dbd99efc7f1b684647f35f1c0c506191",
+        "f1ab267f89315089d231d305a41ed6fa",
+        "969b71eb7928f8c8be3ed2918db0197e",
+        "693e1a27170453f670c32b1d2df70bbc",
+        "8690f55c9fc848d30f99f05f0529ce7a",
+        "828be18d6ef1808e50b607af7e5e88d0"
+      ]
+    },
+    {
+      "id": "_vector_constant_stride_segment_loads_and_stores",
+      "level": 4,
+      "sectnum": "30.7.8.2",
+      "title": "Vector Constant-Stride Segment Loads and Stores",
+      "heading_unit_id": "8bb037bb2ee2b535a5a36322819d2dbc",
+      "blocks": [
+        "85d28a289e81bb1c0f57c6207c9f0f3c",
+        "b9d1956e144a7ca84842f97a6c6602b4",
+        "fa54d425a7cff7ec245f0e34f50eb944",
+        "954dfd5184d1e7445da325c918ba441a"
+      ]
+    },
+    {
+      "id": "_vector_indexed_segment_loads_and_stores",
+      "level": 4,
+      "sectnum": "30.7.8.3",
+      "title": "Vector Indexed Segment Loads and Stores",
+      "heading_unit_id": "24b579f7bf682f91a4ae3d2adc87d61b",
+      "blocks": [
+        "72ea8d9489ac5bdafd60a1f2ecf68f7e",
+        "02ebbe3f24e8998d3bb6c15c98e56c01",
+        "83d4f3c0c8b178fc469900df9569689f",
+        "6b5c3e2a42baa7ce63afe305ac719d59",
+        "90e1a7ef34029c8a2c79608f3bcda9ff"
+      ]
+    },
+    {
+      "id": "_vector_loadstore_whole_register_instructions",
+      "level": 3,
+      "sectnum": "30.7.9",
+      "title": "Vector Load/Store Whole Register Instructions",
+      "heading_unit_id": "930ca0d14158e55b83e00159e8441e39",
+      "blocks": [
+        "e02da237d12ea1b664a97bbdb6e5b5a1",
+        "54906832621af01306fb09f13eef53bd",
+        "39c88c23682f08a36c3ce80e84892364",
+        "17a12fc6b1c10bb371a8a8a0868833dd",
+        "97df892fe2db8a48df6a389336c638dd",
+        "8b38c3ec4ffadbc884e41660554c64fb",
+        "214fed3cadc16ec1856d4fbf94fa0a9e",
+        "bd63d2343f920347b6209086d7d80d63",
+        "e51510bac73eaffd58d15108deb80653",
+        "5846d34416ef58445fc127e295efac2c",
+        "7db85119db4a466996227a83130666f2",
+        "b0fd40d423f219553775d227e5223141",
+        "41fdb6d5d0094298086a9e3de0736f85",
+        "b6e2cba47d81f77e4fba1d049f3137e8",
+        "ce077e667c88f2611f78f406b2fed93c",
+        "7c9ca0314be8a7d2195d7b479ebc77da",
+        "2a0410fd8ca2f161ae63aa634f1d4840",
+        "861e1625351a63e250752435f5eae23b"
+      ]
+    },
+    {
+      "id": "_vector_memory_alignment_constraints",
+      "level": 2,
+      "sectnum": "30.8",
+      "title": "Vector Memory Alignment Constraints",
+      "heading_unit_id": "8cc354a0f75454e55ccdb52cffd54a16",
+      "blocks": [
+        "0dcb9b01adde349d259dc8eef9506707",
+        "6ee5b99eb6367338424ec9bfd09c8524",
+        "a336e44d0d7b2ee61a75136e3ec338b0",
+        "ffd6c585a9f33d4be2b057bd4b0205ca"
+      ]
+    },
+    {
+      "id": "_vector_memory_consistency_model",
+      "level": 2,
+      "sectnum": "30.9",
+      "title": "Vector Memory Consistency Model",
+      "heading_unit_id": "ae25352e7ba08560a29d32c1983d6215",
+      "blocks": [
+        "6fa178ec947935a7f5f51d15f2400277",
+        "93e09e24afe18fb45860b9c106c036d2",
+        "6b591fd464e2ed98651ef62473f53b64",
+        "e95bda4e6ab825e126d7c61b59da7283",
+        "fba97021bee61b597e945f0c8506e84d",
+        "7aa7bd56be2dc0ad709dad5fdfc3907b",
+        "660bd9d7c584034f918f3fb05d5c0188",
+        "97d86094eb7fe38c7c04b2cbf5075d3f"
+      ]
+    },
+    {
+      "id": "_vector_arithmetic_instruction_formats",
+      "level": 2,
+      "sectnum": "30.10",
+      "title": "Vector Arithmetic Instruction Formats",
+      "heading_unit_id": "5991b7b88435364846d41f15a7eb970f",
+      "blocks": [
+        "be116533ad5a551b1ea261edbb089c62",
+        "1fe3e538e83b0d82cafdff058793582f",
+        "46c4481a790e2b31d7b61d21146472d5",
+        "06e09b78d06dec4d40b0ae4828fb8804",
+        "c6fc107cc402640a1f6dd0eecc6999c1",
+        "7a98b7bb815476a62b7054c2f94de164",
+        "fe2d42d5707858129f9916ca885a9f06",
+        "25465a55a576b38c40a10634151c943e",
+        "cf801e4253879d61f59d54ffab0b572a"
+      ]
+    },
+    {
+      "id": "sec-arithmetic-encoding",
+      "level": 3,
+      "sectnum": "30.10.1",
+      "title": "Vector Arithmetic Instruction encoding",
+      "heading_unit_id": "c40c520339cfc0130b4c765ea63c831e",
+      "heading_anchor_id": "sec-arithmetic-encoding",
+      "blocks": [
+        "bf235a2f81c007592726aa66faaaf47a",
+        "fa56b10d8eb5bd5566ae5ff8e078d512",
+        "53079503f7acea32eb89f4b5559a85c8",
+        "e7995910620a51550ca8b8575c14257d",
+        "1008c1fb19f80211233638b37c3d5195",
+        "b54b723b593715a523402bfa9646c483",
+        "3ff7f5450504b3f93faf1a50eeca0366",
+        "4cf023ce36ccb5ec1628627712654807",
+        "bc49a8646827e25dbd89eaa626694689",
+        "b4f7d5b0127d173be469dffee9b01a58",
+        "4208e0ec84a03549a738545ae9410357",
+        "6c906d796b66a113ad263047aefcbc79",
+        "4613f5330040af7b90f82504e28c1c7b",
+        "751537a6d03df697e381c068a3952c66",
+        "5d48f634480e6547ad6617a014f0a933",
+        "993903059ba4f872fccbb4241adfa550"
+      ]
+    },
+    {
+      "id": "sec-widening",
+      "level": 3,
+      "sectnum": "30.10.2",
+      "title": "Widening Vector Arithmetic Instructions",
+      "heading_unit_id": "7a28a0dcf27c65419cf9ca4c16f1ca34",
+      "heading_anchor_id": "sec-widening",
+      "blocks": [
+        "74753e85267fbc058e354d41d7a90f62",
+        "5a719134945053180f30cb722c6c3b67",
+        "1a70057525f1fa8928afde7bebdd6144",
+        "f2a05e935e04b61e4e16925990fa96e0",
+        "5f2d78f273a403371255f56691573384",
+        "08e42635626a9ba0d099793d2be54897"
+      ]
+    },
+    {
+      "id": "sec-narrowing",
+      "level": 3,
+      "sectnum": "30.10.3",
+      "title": "Narrowing Vector Arithmetic Instructions",
+      "heading_unit_id": "dc3cd62215ca3e93717a3c6da72c6bf9",
+      "heading_anchor_id": "sec-narrowing",
+      "blocks": [
+        "540da973d16b1d2de8b5a628ecd3036d",
+        "e09ed4eb5b333822e8801a50844e97d7",
+        "55560764a6da501c6c2ad6b6eb9aa4c4",
+        "ec9517851babb0db0d90e820dc22e0f8",
+        "a7a9f622625c63dbf805d273218829a2",
+        "b1c0ac405bedafbe817e6a27bbe9aadb"
+      ]
+    },
+    {
+      "id": "sec-vector-integer",
+      "level": 2,
+      "sectnum": "30.11",
+      "title": "Vector Integer Arithmetic Instructions",
+      "heading_unit_id": "ad04fb3a80d25d64c254cdd3e2e71707",
+      "heading_anchor_id": "sec-vector-integer",
+      "blocks": [
+        "6eaf3674a41013d98bbcf35b0294e981"
+      ]
+    },
+    {
+      "id": "_vector_single_width_integer_add_and_subtract",
+      "level": 3,
+      "sectnum": "30.11.1",
+      "title": "Vector Single-Width Integer Add and Subtract",
+      "heading_unit_id": "b80e1858ff05345ad7bf5abb33afd205",
+      "blocks": [
+        "35bc64883b5b09325bfda0839c156c4b",
+        "a21dfcbc51ef9969be99c889959b2766",
+        "646fcb8dba584d2cb4146befa4e47b8f"
+      ]
+    },
+    {
+      "id": "_vector_widening_integer_addsubtract",
+      "level": 3,
+      "sectnum": "30.11.2",
+      "title": "Vector Widening Integer Add/Subtract",
+      "heading_unit_id": "245e0eaddc7e73f4d41a63423b507afe",
+      "blocks": [
+        "23db1f815ad6b34f9dce1784062c768a",
+        "bad1963e0bb7ae7eef00d008d02e49a6",
+        "c8facf4686a3f3793852f7dcceecb105"
+      ]
+    },
+    {
+      "id": "_vector_integer_extension",
+      "level": 3,
+      "sectnum": "30.11.3",
+      "title": "Vector Integer Extension",
+      "heading_unit_id": "61bf463095a0ee31c23ccea0a537080b",
+      "blocks": [
+        "032495e9080eafce44dfd5ba01169f3b",
+        "d07af539ae27cfd46bb503df05613b9b",
+        "00fcf234c0fc4edea5eaa18754e39563",
+        "9fa2a6b047fe470df07a577765a3f9fd"
+      ]
+    },
+    {
+      "id": "_vector_integer_add_with_carry_subtract_with_borrow_instructions",
+      "level": 3,
+      "sectnum": "30.11.4",
+      "title": "Vector Integer Add-with-Carry / Subtract-with-Borrow Instructions",
+      "heading_unit_id": "c9764f72665aeebfe748aa3abc431b4c",
+      "blocks": [
+        "120d667669ca146840d1083224b8c65a",
+        "e4ea01e331a5eb154c5c4c284c8050b5",
+        "88fd1d9f312bec7e417670d160e6713b",
+        "ede212590fea00c47f9f6ad6ae9b139c",
+        "0ccf46a66efe64a3d95273e23a6a50f3",
+        "7879b9e185da71db309d354dcfa5d4ce",
+        "26d31c20b8060770c9e66a320815ab90",
+        "39ccdf07149e21040729e3c22b6a27ff",
+        "612b63863b09a737e1672abefb4b86b1",
+        "517bf318ae5b02918e6a404463215a01",
+        "80b3ca942fa1381c8a278f32c3c4df5a",
+        "3a7cbcfd468ae41c47fa522d5704a0ac"
+      ]
+    },
+    {
+      "id": "_vector_bitwise_logical_instructions",
+      "level": 3,
+      "sectnum": "30.11.5",
+      "title": "Vector Bitwise Logical Instructions",
+      "heading_unit_id": "38dd768739207388285f248dc3ee6837",
+      "blocks": [
+        "1604f44fb861dd0b577e5caa944d2854",
+        "440ac091155a42a00f1d6868746bac7d"
+      ]
+    },
+    {
+      "id": "_vector_single_width_shift_instructions",
+      "level": 3,
+      "sectnum": "30.11.6",
+      "title": "Vector Single-Width Shift Instructions",
+      "heading_unit_id": "f760d176032ef47185de28751a11c19f",
+      "blocks": [
+        "109413fa73f9a8cd73e3f40cac449415",
+        "9473ae4d3a940a78421dfe5665a992fd"
+      ]
+    },
+    {
+      "id": "_vector_narrowing_integer_right_shift_instructions",
+      "level": 3,
+      "sectnum": "30.11.7",
+      "title": "Vector Narrowing Integer Right Shift Instructions",
+      "heading_unit_id": "593de0f08c3e4d0311e77fa3689b7b89",
+      "blocks": [
+        "37633dae4dbf6c1e1fc2d094463c723d",
+        "c57a1ed83f878243807f1464ba3d1491",
+        "d0cedf0d24f9b99d7ec69572fb45a132",
+        "deafb7fee925711470d7a5a56bac8a0c"
+      ]
+    },
+    {
+      "id": "_vector_integer_compare_instructions",
+      "level": 3,
+      "sectnum": "30.11.8",
+      "title": "Vector Integer Compare Instructions",
+      "heading_unit_id": "b0d4d2cd9555830eb3a9fecfb259e453",
+      "blocks": [
+        "f5d5a2f981c255f215674db015d01c87",
+        "57aaeb6c77f7e84aaf37e08067bcfd76",
+        "f797a3460097771e9c962a54730addc5",
+        "a40ce152e3ad7d60cbf3067b5506f2e2",
+        "7eba6466b45158fcbcc62c13c6fa0347",
+        "e668548944446e564b1ff110968f668f",
+        "5d4d3db4c6d72d97813a066b1754893f",
+        "6a211f308d7162f7a7e7dac7e4e020e9",
+        "cc62467f66913f6d02234e48e340d3a9",
+        "e901a41c88b89287f3c59083e4cf9332",
+        "c87037964cdce5139219814adcaed00c",
+        "d15706be827d0e84e13c09e0559f3f29",
+        "ae9b7e560d279adee33f40f0fa714fc3",
+        "0eeff61dfcb6a971bca15798d3f625b6",
+        "ae06002710b55edfd242b7fff1403ca6",
+        "56311d1eba4de872fea5ab5ff5d1d5b6",
+        "34a8b2a85dcf4dd471d604bd17ec6adf"
+      ]
+    },
+    {
+      "id": "_vector_integer_minmax_instructions",
+      "level": 3,
+      "sectnum": "30.11.9",
+      "title": "Vector Integer Min/Max Instructions",
+      "heading_unit_id": "4deb2102c05a4919efca8e833bc2ee73",
+      "blocks": [
+        "ff75109d715a370e802a0947aa40f951",
+        "40fbf964449b0cd74402cc038c4272eb"
+      ]
+    },
+    {
+      "id": "_vector_single_width_integer_multiply_instructions",
+      "level": 3,
+      "sectnum": "30.11.10",
+      "title": "Vector Single-Width Integer Multiply Instructions",
+      "heading_unit_id": "099570e077be23e1e9c1bba662e40833",
+      "blocks": [
+        "25ef21b13d1cd2ed5896a9cb57f0aba2",
+        "6f4c45a211e3a67ef8490f46ad59d2f9",
+        "1b234afd8138aad3b5046cb82eaa89ca",
+        "7e55c5c4ab02aeb54badf2134df20df5"
+      ]
+    },
+    {
+      "id": "_vector_integer_divide_instructions",
+      "level": 3,
+      "sectnum": "30.11.11",
+      "title": "Vector Integer Divide Instructions",
+      "heading_unit_id": "0c563fa0952a5cf1d053faeae05df4ea",
+      "blocks": [
+        "6b9b255d178246e1ce9078e309451a5c",
+        "4ac7c2e6135dd07bc505b7e8e3554c2d",
+        "61eda8418508176a111674e7f4856b70",
+        "07bd9ccb9fe720ac3cc26a7d64366867"
+      ]
+    },
+    {
+      "id": "_vector_widening_integer_multiply_instructions",
+      "level": 3,
+      "sectnum": "30.11.12",
+      "title": "Vector Widening Integer Multiply Instructions",
+      "heading_unit_id": "6218e3903d95ddad9071ea3a31a5aff4",
+      "blocks": [
+        "d4a5ee7b8a839d2e414729f433c00b0e",
+        "ba06fd5fa84b4edf48538038627444b5"
+      ]
+    },
+    {
+      "id": "_vector_single_width_integer_multiply_add_instructions",
+      "level": 3,
+      "sectnum": "30.11.13",
+      "title": "Vector Single-Width Integer Multiply-Add Instructions",
+      "heading_unit_id": "d9da07d115d54754c38aa36d08d4c924",
+      "blocks": [
+        "e850aa299897565a958d434f0611d09c",
+        "da84a4eb6a6d9013a61414342c22932c",
+        "a0aa10201fbd369019cbbaba3fabe6a2",
+        "60b166be582c3a77e8c1329e28a75da8"
+      ]
+    },
+    {
+      "id": "_vector_widening_integer_multiply_add_instructions",
+      "level": 3,
+      "sectnum": "30.11.14",
+      "title": "Vector Widening Integer Multiply-Add Instructions",
+      "heading_unit_id": "7ec370e5ee4814c47dba998a56ecedfe",
+      "blocks": [
+        "e85256e57fa2c18c4b79414bd3ba0554",
+        "aacfefb3b060ffd66255116fa1c61805"
+      ]
+    },
+    {
+      "id": "_vector_integer_merge_instructions",
+      "level": 3,
+      "sectnum": "30.11.15",
+      "title": "Vector Integer Merge Instructions",
+      "heading_unit_id": "c498429a4d2e154264d6a0a3695108a8",
+      "blocks": [
+        "2f434f1b069b27172612e1a1b1f4532d",
+        "a00ac768910869b9ccde917595c05664",
+        "0285347026342a221711aaa8f08a81c7"
+      ]
+    },
+    {
+      "id": "_vector_integer_move_instructions",
+      "level": 3,
+      "sectnum": "30.11.16",
+      "title": "Vector Integer Move Instructions",
+      "heading_unit_id": "e6b389f875175fd3c8bc2b9397047d1c",
+      "blocks": [
+        "e2b2120a00cf1bb7e928f7c53d2280bb",
+        "26faa53dc755001b3ba730aa8ee8514f",
+        "aad22d05a89c4bf1ec8fb0ab8f3559c0",
+        "ecfa881eef8d89e82608f32c7f1b9b85",
+        "5fa6441635a2e49759968f960396e994",
+        "bd137f326554c816f6bb4ecbdac053ff",
+        "aa9dc6d3f31290f97f83ce67229ec126"
+      ]
+    },
+    {
+      "id": "sec-vector-fixed-point",
+      "level": 2,
+      "sectnum": "30.12",
+      "title": "Vector Fixed-Point Arithmetic Instructions",
+      "heading_unit_id": "12ea1a9fe1f0d1fa3cccbb5cbbdc0811",
+      "heading_anchor_id": "sec-vector-fixed-point",
+      "blocks": [
+        "72a60eaaefc957601cd7f2d5644970eb",
+        "89075c28ccbc9646f67f656af3851c82",
+        "2f554176d3ba5c32c5b6a9acdd6750e2"
+      ]
+    },
+    {
+      "id": "_vector_single_width_saturating_add_and_subtract",
+      "level": 3,
+      "sectnum": "30.12.1",
+      "title": "Vector Single-Width Saturating Add and Subtract",
+      "heading_unit_id": "9763a0742a869aa00fac8b1ce2c23021",
+      "blocks": [
+        "1148dd7e94325fe0cb97e0b845440a3a",
+        "94bbd8aa5836db22f0883e8706a8d58e"
+      ]
+    },
+    {
+      "id": "_vector_single_width_averaging_add_and_subtract",
+      "level": 3,
+      "sectnum": "30.12.2",
+      "title": "Vector Single-Width Averaging Add and Subtract",
+      "heading_unit_id": "32365c9d74450bd1979447d4d7484db7",
+      "blocks": [
+        "15a09111f31e6f7467c537a25d661eac",
+        "7415bdbb05264f1e2060773e9931a614",
+        "c4de1a4ef29513e05beae6a910882e17"
+      ]
+    },
+    {
+      "id": "_vector_single_width_fractional_multiply_with_rounding_and_saturation",
+      "level": 3,
+      "sectnum": "30.12.3",
+      "title": "Vector Single-Width Fractional Multiply with Rounding and Saturation",
+      "heading_unit_id": "eaacf6657f82290b98c0cb11d357aed4",
+      "blocks": [
+        "9d5088ebc2e1c21e3b47be7fe38283a1",
+        "eba5d0561d160163c6bb56fe23e3a9ae",
+        "690bb970d34bccc75abbcb2e5c91af33",
+        "c762676d1a192c23e57be017b1f5a2f5"
+      ]
+    },
+    {
+      "id": "_vector_single_width_scaling_shift_instructions",
+      "level": 3,
+      "sectnum": "30.12.4",
+      "title": "Vector Single-Width Scaling Shift Instructions",
+      "heading_unit_id": "1ff837f83dbad697dac1c7e7708cec20",
+      "blocks": [
+        "80dea954e5ef7e0c677197b87fa7fadb",
+        "34bc894a99603d6e4a410535fae34296"
+      ]
+    },
+    {
+      "id": "_vector_narrowing_fixed_point_clip_instructions",
+      "level": 3,
+      "sectnum": "30.12.5",
+      "title": "Vector Narrowing Fixed-Point Clip Instructions",
+      "heading_unit_id": "71a5affc84f2257aa4875ea04a9599c7",
+      "blocks": [
+        "f1b09eb3b2454d23e6f2608150911704",
+        "56151584539e271059f0f930ee1bd896",
+        "a73a7f805d3dcbff78801870bb6375ba",
+        "8cba6218c672fb73245c641e61cf5892",
+        "4f4fbfc4db22f841a4fb2bec94e792bd",
+        "ead6df9ecd4edb52d285af31c45e322e",
+        "1d88f1c0c68e6870970ee89b4dad9c44"
+      ]
+    },
+    {
+      "id": "sec-vector-float",
+      "level": 2,
+      "sectnum": "30.13",
+      "title": "Vector Floating-Point Instructions",
+      "heading_unit_id": "54a2503e366a401ea657af0d9e19de3d",
+      "heading_anchor_id": "sec-vector-float",
+      "blocks": [
+        "c8f38423a7e7198c24d0fdd249f6e1bb",
+        "c96ffc8cb371a63849fa07cda049cdad",
+        "6ea66888652f40142752da8853b21016",
+        "6829846d3e2607d9d00ee21b42c496ad",
+        "b399bc87e05a09f4d463cff135cb012f",
+        "73219e9b0f20349d6a733194d94e4a7b",
+        "1d5e7a899b95cbfce6e6657110c54aae",
+        "0e20ac1a7a556f1a22a1806ccbe0a27b"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_exception_flags",
+      "level": 3,
+      "sectnum": "30.13.1",
+      "title": "Vector Floating-Point Exception Flags",
+      "heading_unit_id": "fd8aef099a4c8f830cb821ec0df210c2",
+      "blocks": [
+        "5e84b0c01dfefda897e1ba559b4bff64"
+      ]
+    },
+    {
+      "id": "_vector_single_width_floating_point_addsubtract_instructions",
+      "level": 3,
+      "sectnum": "30.13.2",
+      "title": "Vector Single-Width Floating-Point Add/Subtract Instructions",
+      "heading_unit_id": "88d5eb04fa8fe0c0979c9e0b895d0644",
+      "blocks": [
+        "d9bdc482167e9ccd518c72837a133467"
+      ]
+    },
+    {
+      "id": "_vector_widening_floating_point_addsubtract_instructions",
+      "level": 3,
+      "sectnum": "30.13.3",
+      "title": "Vector Widening Floating-Point Add/Subtract Instructions",
+      "heading_unit_id": "11242b3d1d71f78a3259d26082d6e1fe",
+      "blocks": [
+        "cfe4c5549482d3403eda6d8dc8050cb3"
+      ]
+    },
+    {
+      "id": "_vector_single_width_floating_point_multiplydivide_instructions",
+      "level": 3,
+      "sectnum": "30.13.4",
+      "title": "Vector Single-Width Floating-Point Multiply/Divide Instructions",
+      "heading_unit_id": "3f3d3734966cedb40db0a98018fa951e",
+      "blocks": [
+        "c8131cd8f50db6413654195cfb1441f9"
+      ]
+    },
+    {
+      "id": "_vector_widening_floating_point_multiply",
+      "level": 3,
+      "sectnum": "30.13.5",
+      "title": "Vector Widening Floating-Point Multiply",
+      "heading_unit_id": "7588f8dca1a7df6ea735710c8e448cda",
+      "blocks": [
+        "9b075c81f40c0f320ff260f479f2ddac"
+      ]
+    },
+    {
+      "id": "_vector_single_width_floating_point_fused_multiply_add_instructions",
+      "level": 3,
+      "sectnum": "30.13.6",
+      "title": "Vector Single-Width Floating-Point Fused Multiply-Add Instructions",
+      "heading_unit_id": "da8e2a0e07220080a3ca4a2b39590b4a",
+      "blocks": [
+        "e89feb4f036670cd608253e7bac864e6",
+        "9cb8a123869d51ff1017f3100131c47b",
+        "1d73439151d3763f88352b2b43784dc4"
+      ]
+    },
+    {
+      "id": "_vector_widening_floating_point_fused_multiply_add_instructions",
+      "level": 3,
+      "sectnum": "30.13.7",
+      "title": "Vector Widening Floating-Point Fused Multiply-Add Instructions",
+      "heading_unit_id": "9a77dd8ec787966f6c018c73a0c7a4ea",
+      "blocks": [
+        "e3d466414a7fff2f9e879cae064e041d",
+        "9f9efdef63c9a516401ed5dc89a08f0e"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_square_root_instruction",
+      "level": 3,
+      "sectnum": "30.13.8",
+      "title": "Vector Floating-Point Square-Root Instruction",
+      "heading_unit_id": "8cff8a9f8b9573498bafc0633cdefe8b",
+      "blocks": [
+        "a5373b6a235698c33a731a07ad7b5829",
+        "9448c7a87803dab3dd0c267462e276b6"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_reciprocal_square_root_estimate_instruction",
+      "level": 3,
+      "sectnum": "30.13.9",
+      "title": "Vector Floating-Point Reciprocal Square-Root Estimate Instruction",
+      "heading_unit_id": "048f9f2de74809888f97b4ced0f792c7",
+      "blocks": [
+        "d2904eb1f2e6adc2a028315b53685764",
+        "188943c5a92d270d979996ff18c5cbf5",
+        "65142c6ee554da907522aa534bb77ea8",
+        "c40fa8a5ae078fffc14a97ea7c47265d",
+        "950f5a5a29431292f3ffc9f0ceba2bbe",
+        "2749f88994c9078af0d8fadae375f0b6",
+        "b3c69d4421e9be6c13767cc741418159",
+        "4400bcadc4c1b929881e40e946a8b682",
+        "61a6a947d011da3d1fa54f666793f0e6",
+        "d001d71b6821ebf7310dcb0962202263",
+        "949811b2cc64dc92c81991323471bc23",
+        "df61a4b954f9c9f5c74cd1acd8fafed6",
+        "eb035cda857f7a97c3e53485d866a2cf"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_reciprocal_estimate_instruction",
+      "level": 3,
+      "sectnum": "30.13.10",
+      "title": "Vector Floating-Point Reciprocal Estimate Instruction",
+      "heading_unit_id": "b828e10e460973825eb4d3d4e9f646a0",
+      "blocks": [
+        "2764085088389be527ce0738d3f0080b",
+        "a8056f2c8b512cdbf5afb9ddd6313cc2",
+        "4cdb686f97c6b7edd7d5d9fade17d3e5",
+        "81bd900f39e5485ea58fc2449a23b75d",
+        "7785ea4017e0c805a1942fa08dc27f25",
+        "c9485f30462956841933e90ab71f2aef",
+        "f571d33172f9a7d7c434480038ff339d",
+        "b42b4c9980f377d9dec861dca6cde80b",
+        "01189250d4a6ddf5c848a7314baa6802",
+        "1284400b59d58f5a03d251dadcf7aa7c",
+        "1f96c4414d3f98c9191ce5993445cd34",
+        "c85cb2dc51fd787648daf1caa4a2c2b2",
+        "c661e82665abe50311fc16d001190d70",
+        "eb035cda857f7a97c3e53485d866a2cf"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_minmax_instructions",
+      "level": 3,
+      "sectnum": "30.13.11",
+      "title": "Vector Floating-Point MIN/MAX Instructions",
+      "heading_unit_id": "a14736a1595211d99dea3f5745294894",
+      "blocks": [
+        "11fea02941739163889a6003c5c13534",
+        "bfa59c545a66a2f2114000de4dbfd7ad"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_sign_injection_instructions",
+      "level": 3,
+      "sectnum": "30.13.12",
+      "title": "Vector Floating-Point Sign-Injection Instructions",
+      "heading_unit_id": "22dec016b2659ff72ee9c65b863fba1f",
+      "blocks": [
+        "aeb3b1c031d574e24a82bc66417e03f6",
+        "aad24ac06ece4308d6a2250370a4db13",
+        "63e25627899469009e84fff2a0ef7e6f",
+        "01b1b029c9c4dc2b5dd657b00121c01e"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_compare_instructions",
+      "level": 3,
+      "sectnum": "30.13.13",
+      "title": "Vector Floating-Point Compare Instructions",
+      "heading_unit_id": "386e064c5b0e4f1c353c094084281315",
+      "blocks": [
+        "e1ab2898c5bbfd457ee6424849480496",
+        "47e84786d8069cc74138e6a21f4ec838",
+        "0f2364323195a4d09bce6715e798c579",
+        "bf06d88c6fc935c5e9f7f4374403029c",
+        "fe6f16299f647f448dcb6e04fa2f09b4",
+        "6a7c9d19c84a68f5f55e72ca4d7c750c",
+        "e6e8478f6b1e1380a4d52a98ec034a01",
+        "a47363f31dc65132ae0c0111aad81838"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_classify_instruction",
+      "level": 3,
+      "sectnum": "30.13.14",
+      "title": "Vector Floating-Point Classify Instruction",
+      "heading_unit_id": "001d655aee4aa10a191cbc959c67b4af",
+      "blocks": [
+        "ab0836882201a1344a9b3428d3a980e7",
+        "5168fea7a10cf1688c3c1f62320cc358",
+        "df7976fc2eac59a6499bd6d006611747"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_merge_instruction",
+      "level": 3,
+      "sectnum": "30.13.15",
+      "title": "Vector Floating-Point Merge Instruction",
+      "heading_unit_id": "3033c49a2391405e6c81cbe808357991",
+      "blocks": [
+        "7c984a6a8946f3f12701a44662d12ad5",
+        "e8a48eee6838e859cadf9bc37058b884",
+        "5eacc9f7129202f3ab8992b00dc0d4b4"
+      ]
+    },
+    {
+      "id": "_vector_floating_point_move_instruction",
+      "level": 3,
+      "sectnum": "30.13.16",
+      "title": "Vector Floating-Point Move Instruction",
+      "heading_unit_id": "dcde63ec51dd7a877e4633d37aecf22d",
+      "blocks": [
+        "52f4076d12a8ea49b9c54c48fb6969ef",
+        "09af4886cae66d62f240fc6fce3c373e",
+        "3aa555d94ad2288daf3f9a2d70e9ffa6"
+      ]
+    },
+    {
+      "id": "_single_width_floating_pointinteger_type_convert_instructions",
+      "level": 3,
+      "sectnum": "30.13.17",
+      "title": "Single-Width Floating-Point/Integer Type-Convert Instructions",
+      "heading_unit_id": "c89b8171260542b36aa2c79eb59127c0",
+      "blocks": [
+        "eecbca45b3523753203c36a6a0909171",
+        "3a93dfdac1f0c2532a9f118699a2323b",
+        "8f777f2e46375bd97403d0263835dba2",
+        "dc6c47347b50a335029284a836c128c5"
+      ]
+    },
+    {
+      "id": "_widening_floating_pointinteger_type_convert_instructions",
+      "level": 3,
+      "sectnum": "30.13.18",
+      "title": "Widening Floating-Point/Integer Type-Convert Instructions",
+      "heading_unit_id": "1761a1c4aa49669596f6d2c58d107952",
+      "blocks": [
+        "dc8e9672769226a06468a3f0c830731e",
+        "a737eddf59a8c20782bb1f212779e1fc",
+        "bfb7e8939a61e5885cad085dcadc24e7",
+        "4067f172ad22a2b02e99908c26108c31",
+        "979e6c9477fc4f878d72886887f18f87",
+        "99abfeb51fb6510a1b41c21f521efca3"
+      ]
+    },
+    {
+      "id": "_narrowing_floating_pointinteger_type_convert_instructions",
+      "level": 3,
+      "sectnum": "30.13.19",
+      "title": "Narrowing Floating-Point/Integer Type-Convert Instructions",
+      "heading_unit_id": "5fb25346685dd847c8b31f76949b801a",
+      "blocks": [
+        "8eb1e981a2b8100e0a9aaaba54a9ddc3",
+        "314f2f3388b666ab55161ec4c81de850",
+        "f6ae271e6e0121137ade4b3f60a66e13",
+        "926f825f1e94eb2133146b54ad205965",
+        "32783e8aa7994b8bbcf3c3dd337fbb81"
+      ]
+    },
+    {
+      "id": "_vector_reduction_operations",
+      "level": 2,
+      "sectnum": "30.14",
+      "title": "Vector Reduction Operations",
+      "heading_unit_id": "fdf4c7b1af615be009f0bef221c56414",
+      "blocks": [
+        "5a1e892a345df6977236b99646ee7867",
+        "531e07f259cb0965faf5fbb6fee347f8",
+        "eb10aa645a3be9bf176bc43e117d55ea",
+        "29a887b95b8dbcdc468cc1b7f8cdba06",
+        "c2eff1adefc97e5193cb0f9cc5990c2a",
+        "017ec0eee216e5ad73b4ab8c91c93800",
+        "b782892656a98e1fc0879e289c8de758",
+        "0eaf57e45dee1bc71e0ab309246b4c2c",
+        "1d628c68d97f08bad3dd86cd0ddc7a35"
+      ]
+    },
+    {
+      "id": "sec-vector-integer-reduce",
+      "level": 3,
+      "sectnum": "30.14.1",
+      "title": "Vector Single-Width Integer Reduction Instructions",
+      "heading_unit_id": "c696e337e829637a462e1efcdd640a62",
+      "heading_anchor_id": "sec-vector-integer-reduce",
+      "blocks": [
+        "20a3f9028e00eccad1a339d0ea130708",
+        "9c5cf4dbfb1db7813f25f42e0a5445e2"
+      ]
+    },
+    {
+      "id": "sec-vector-integer-reduce-widen",
+      "level": 3,
+      "sectnum": "30.14.2",
+      "title": "Vector Widening Integer Reduction Instructions",
+      "heading_unit_id": "b8a50469330ad2a80e091497b1ff23d8",
+      "heading_anchor_id": "sec-vector-integer-reduce-widen",
+      "blocks": [
+        "265feea40ba97823cb671c9ef6cd43c2",
+        "548bb50c82e92a0047dcedf452098eac",
+        "0d61621918c9edd47a68de3b4f90eeea",
+        "6f7f4b2bc7b64bd000446683cce53f31"
+      ]
+    },
+    {
+      "id": "sec-vector-float-reduce",
+      "level": 3,
+      "sectnum": "30.14.3",
+      "title": "Vector Single-Width Floating-Point Reduction Instructions",
+      "heading_unit_id": "b30009306bb32c086a5f29d96c42e748",
+      "heading_anchor_id": "sec-vector-float-reduce",
+      "blocks": [
+        "14c71d248b5483229b8ef1bdc3582f8c",
+        "a6b7e48eca06ddc857c91852463f9b04"
+      ]
+    },
+    {
+      "id": "_vector_ordered_single_width_floating_point_sum_reduction",
+      "level": 4,
+      "sectnum": "30.14.3.1",
+      "title": "Vector Ordered Single-Width Floating-Point Sum Reduction",
+      "heading_unit_id": "90144fb8d7d6d5302385a66929dc6285",
+      "blocks": [
+        "24826e8d799869c0a97fa272a2c4cd56",
+        "126a0cefce77699c6ff1493c5d72327d",
+        "6b52f63a4de1dffa0de2d71c854ec842",
+        "ed8cc444dd4224103f6c7abbcc372905",
+        "cc9145452738537af52bfe056a5507bc",
+        "9414bba9d7496a804a73554a0b2641a6"
+      ]
+    },
+    {
+      "id": "_vector_unordered_single_width_floating_point_sum_reduction",
+      "level": 4,
+      "sectnum": "30.14.3.2",
+      "title": "Vector Unordered Single-Width Floating-Point Sum Reduction",
+      "heading_unit_id": "193a313d792465d757f12d9a12e0e94f",
+      "blocks": [
+        "fe531baff8e1e0fa5a9d028e867a7a02",
+        "6953d2933810242a7c9437f09e81088f",
+        "420159fbb352013f9ab46bce7628b2a3",
+        "c2223235fc1e2b825b9833a5a96d67cd",
+        "c930c35cf00c6e123ab5a0d1873c4298",
+        "2e46c5a5c31eda11f2b7ec21a93a98ea"
+      ]
+    },
+    {
+      "id": "_vector_single_width_floating_point_max_and_min_reductions",
+      "level": 4,
+      "sectnum": "30.14.3.3",
+      "title": "Vector Single-Width Floating-Point Max and Min Reductions",
+      "heading_unit_id": "5b3d7e71664aecc324e7c2c65b30d42e",
+      "blocks": [
+        "54b8dbb0d11021e7d62c43f51e3d89db",
+        "28b3b6392ec11bd73ace6d5f7b40ea04",
+        "aae669de8bcbf9d0020d38b602c0390a"
+      ]
+    },
+    {
+      "id": "sec-vector-float-reduce-widen",
+      "level": 3,
+      "sectnum": "30.14.4",
+      "title": "Vector Widening Floating-Point Reduction Instructions",
+      "heading_unit_id": "063bc4f2a61aa87e9d0edd4c7409923c",
+      "heading_anchor_id": "sec-vector-float-reduce-widen",
+      "blocks": [
+        "0a69654b0c23d61706c4e4041b6ac1e2",
+        "88ef7a261ec33d2ff3aa182aeff4db50",
+        "952590f2a2b94610be0b5e7686c45fcc",
+        "086f6783b8105404d6afdc9e474cf2a4",
+        "0f8c6f4d8cf102a023ecd7f9c8f1e9f6"
+      ]
+    },
+    {
+      "id": "sec-vector-mask",
+      "level": 2,
+      "sectnum": "30.15",
+      "title": "Vector Mask Instructions",
+      "heading_unit_id": "c6753b03fa9f47b5fc3a77fd90b24a03",
+      "heading_anchor_id": "sec-vector-mask",
+      "blocks": [
+        "2268024947d921a94a4ee7ac0229a0f0"
+      ]
+    },
+    {
+      "id": "sec-mask-register-logical",
+      "level": 3,
+      "sectnum": "30.15.1",
+      "title": "Vector Mask-Register Logical Instructions",
+      "heading_unit_id": "037f86f2d729e7c79faf7149bee88567",
+      "heading_anchor_id": "sec-mask-register-logical",
+      "blocks": [
+        "db4d4f26f77bd6d8da8975b1eff33473",
+        "54d78f2a7b8463120927a35c184b0bcc",
+        "e8954809ae1fef6b386543e8f0be3f37",
+        "499b0b93b1f06a3c3c2344cebeb7cea7",
+        "659fdfefb05baee31d21cc409ce3ea02",
+        "9d86dd22435f4cfc718fd8504ed12848",
+        "5c62c960ce3766f83d1d781ed01c74ce",
+        "40cd43de1edc6b838b7a51dd07a104eb",
+        "bab59baf72cb472a319366d1dc0c724f",
+        "11c10b867122e979a35004ef21f144e2",
+        "772ee9bfbdacf29394865bd537e0df0e"
+      ]
+    },
+    {
+      "id": "_vector_count_population_in_mask_vcpop_m",
+      "level": 3,
+      "sectnum": "30.15.2",
+      "title": "Vector count population in mask vcpop.m",
+      "heading_unit_id": "ed03809ee62560ecacda81bff9d5047b",
+      "blocks": [
+        "4643b4cbf99cedfe9203e7674ad310d0",
+        "ddacafad906f5bd5aac4da30d6d4834f",
+        "d779432a9d49f0240fe2349d1a801b17",
+        "bc6be0c4cdadaa630227c371d100105a",
+        "aedaa7cf5364906947fc3c3ab5e7558c",
+        "1a925ffe113fe0b6359f083cd9cd1180",
+        "38c0299d15fa430d4ebae8e4859962f2",
+        "3ef91010fec364a878baac180e31dabe"
+      ]
+    },
+    {
+      "id": "_vfirst_find_first_set_mask_bit",
+      "level": 3,
+      "sectnum": "30.15.3",
+      "title": "vfirst find-first-set mask bit",
+      "heading_unit_id": "d3c8ad45d0b7ec282b9d900acdb7bb1a",
+      "blocks": [
+        "2f43b259fea0e13e26ce697536868e86",
+        "993e384f9160c556501adbe266b394fa",
+        "6a07f5b4689251701211c6833b28e49d",
+        "d22c738366cf63e6fe64ab5efd1fbebf",
+        "684989b89a427fd8e1da7500af2ae353"
+      ]
+    },
+    {
+      "id": "_vmsbf_m_set_before_first_mask_bit",
+      "level": 3,
+      "sectnum": "30.15.4",
+      "title": "vmsbf.m set-before-first mask bit",
+      "heading_unit_id": "565c221f6e514054368a8b79ef712829",
+      "blocks": [
+        "61b860c4c5d625c5fbc1d7e2eb3b311a",
+        "4dcce5ed4c72283ffaada3450a9f9dfc",
+        "e09084c2725d67ba53287dca5cf91392",
+        "a64ee2446d499bef54e6b9489f234c9e",
+        "b4876beb54200d46335d8fef100085b6"
+      ]
+    },
+    {
+      "id": "_vmsif_m_set_including_first_mask_bit",
+      "level": 3,
+      "sectnum": "30.15.5",
+      "title": "vmsif.m set-including-first mask bit",
+      "heading_unit_id": "5a02ed3316dfaf32a71c4e834b022236",
+      "blocks": [
+        "6a06bdda482600a6389c0f2daf1af628",
+        "3c59a4f4056a932dd02852555010af08",
+        "e09084c2725d67ba53287dca5cf91392",
+        "5da3471f4116ba8db9dfce9c3de809c9",
+        "b4876beb54200d46335d8fef100085b6"
+      ]
+    },
+    {
+      "id": "_vmsof_m_set_only_first_mask_bit",
+      "level": 3,
+      "sectnum": "30.15.6",
+      "title": "vmsof.m set-only-first mask bit",
+      "heading_unit_id": "c71d99a38056ba0ddfe5e3111b8e2891",
+      "blocks": [
+        "e75caf7493c0072d1d384326972fb494",
+        "8bebcc8bff7e29a29834d724208e40e5",
+        "e09084c2725d67ba53287dca5cf91392",
+        "d4755c1051ecb419d7e66c436c5da42e",
+        "b4876beb54200d46335d8fef100085b6"
+      ]
+    },
+    {
+      "id": "_example_using_vector_mask_instructions",
+      "level": 3,
+      "sectnum": "30.15.7",
+      "title": "Example using vector mask instructions",
+      "heading_unit_id": "4a4352332b7a18fa6e92da0b3475af4e",
+      "blocks": [
+        "ca600ec7db8004e6a2f383fbcd40a936",
+        "8d15de7174c966368d15b8ef087ef6c5",
+        "64184f6b46a06678e2636fb646ec5a40"
+      ]
+    },
+    {
+      "id": "_vector_iota_instruction",
+      "level": 3,
+      "sectnum": "30.15.8",
+      "title": "Vector Iota Instruction",
+      "heading_unit_id": "0d7a21d1cce65079d100c4dd77620050",
+      "blocks": [
+        "13d409cf82c2e2689a2e420eaf189542",
+        "1a4b8302b120b245459aa386fffe8602",
+        "eb99ad9d31043185ee598f0b2b8d2bef",
+        "9ecd9c44dca7840082f8d6c07c7e9d20",
+        "eda87ae5ed00856d9bf818a38cda7aaf",
+        "86252cecc68560b49940482137fc2105",
+        "0c1dca7c6288bec6bde5547e12b24734",
+        "079346f722810dafb9b33703bfb8e064"
+      ]
+    },
+    {
+      "id": "_vector_element_index_instruction",
+      "level": 3,
+      "sectnum": "30.15.9",
+      "title": "Vector Element Index Instruction",
+      "heading_unit_id": "db374e249332e7b74f8a54ea52452b21",
+      "blocks": [
+        "7664180003cf573dde03a0ba1cc47397",
+        "c512294e4bf519e8a0ac3ec52b8e4cf6",
+        "47ba8dbbe2b4022d32680602aaef7c75",
+        "0ad472bc8d70d07c882c0991aa1ac7d9",
+        "9ecd9c44dca7840082f8d6c07c7e9d20",
+        "c54f52f35aa0dc75466c8aa06fb395e9"
+      ]
+    },
+    {
+      "id": "sec-vector-permute",
+      "level": 2,
+      "sectnum": "30.16",
+      "title": "Vector Permutation Instructions",
+      "heading_unit_id": "0ca1451d0b360639687c0f3725c3e763",
+      "heading_anchor_id": "sec-vector-permute",
+      "blocks": [
+        "1e8d22dcaf0ac4055a8e442509933926"
+      ]
+    },
+    {
+      "id": "_integer_scalar_move_instructions",
+      "level": 3,
+      "sectnum": "30.16.1",
+      "title": "Integer Scalar Move Instructions",
+      "heading_unit_id": "8e6ec2bc22005ee4f58e90c06b4860e9",
+      "blocks": [
+        "2dea9d43f34db219b2e61465a77705a3",
+        "801b4980b60dee5155d3047a723109ee",
+        "44b87fb54db41c327ac8c32321254e76",
+        "f1fc871f1000d2511de097bebcc5ad1e",
+        "283a170f2205cb28f13f868f5470a1e3",
+        "6c0bec18a978d0f4b5d2529e1d5a0704",
+        "4e8afcc744d6e0af2b29957a34e3b921"
+      ]
+    },
+    {
+      "id": "sec-vector-float-move",
+      "level": 3,
+      "sectnum": "30.16.2",
+      "title": "Floating-Point Scalar Move Instructions",
+      "heading_unit_id": "7f84363e94d6a2bfc705385fb3de8c49",
+      "heading_anchor_id": "sec-vector-float-move",
+      "blocks": [
+        "342f7f8db046e9908d8a5f37cd281919",
+        "4c59268e8a80095e5c68e1f7ae41adca",
+        "2de0963df7e018c1a45d6751d21eac64",
+        "410e884ad815053d77159e39cb5ac0a7",
+        "573f6d2dde844064b72e4640c786960f",
+        "6c0bec18a978d0f4b5d2529e1d5a0704",
+        "2fbcc2fc733c11b1510110df4c17fd7f"
+      ]
+    },
+    {
+      "id": "_vector_slide_instructions",
+      "level": 3,
+      "sectnum": "30.16.3",
+      "title": "Vector Slide Instructions",
+      "heading_unit_id": "2952d20c60b1e8ac29c5611f7eaa8ffc",
+      "blocks": [
+        "f1d7f9d9b1c690c4e81af670ea100105",
+        "411bd841f657704198c980e970e38680",
+        "f4d7ee2cc6fc958c42c9c37ec643b5ce",
+        "6c0bec18a978d0f4b5d2529e1d5a0704",
+        "073dc39fe08f7a9082f1ca7e029b924c",
+        "be39f6999b9dec5673b53a34ce363c5a"
+      ]
+    },
+    {
+      "id": "_vector_slide_up_instructions",
+      "level": 4,
+      "sectnum": "30.16.3.1",
+      "title": "Vector Slide-up Instructions",
+      "heading_unit_id": "fc38dd34acc736f315b78a2f8db71a64",
+      "blocks": [
+        "7f2967ee97742c8f288a4e56c57872b9",
+        "fe6b11eaa3952ef166fb3c2ff7f0ad59",
+        "e242c9069cad737e349f07fe0bf531db",
+        "75fdaf00f51a7509e66aac33f540a7bc",
+        "54a779d69e8ce74fad24913df8a4ef3a"
+      ]
+    },
+    {
+      "id": "_vector_slide_down_instructions",
+      "level": 4,
+      "sectnum": "30.16.3.2",
+      "title": "Vector Slide-down Instructions",
+      "heading_unit_id": "d09f73fec7f62ef070fc6b54bfbac85c",
+      "blocks": [
+        "7820d19d1de8b020ac88583655e105cd",
+        "cd6e9e0075975898517a711840bfab90",
+        "7f3704829ddb0dd57bf96f30a42c37d8",
+        "bbe8da3759cba435b10d2f321dc54c40"
+      ]
+    },
+    {
+      "id": "_vector_slide_1_up",
+      "level": 4,
+      "sectnum": "30.16.3.3",
+      "title": "Vector Slide-1-up",
+      "heading_unit_id": "9620c7e39b9c4be239f5e9e204dcfb73",
+      "blocks": [
+        "f21639dd76d01523e7c147d84f1316d5",
+        "f7ea1f592d4e9888f9a72c68c49bab06",
+        "7fafcc8943dd652b3ee0d25d9a34ada8",
+        "9c4723d72e2014f2ebcd26ae8771dbf0",
+        "87bd225d0818505adcedac456b92a19a",
+        "410271b6400cef8bcf4c9cfbcb5c68f1",
+        "beb077dc74f90e8ae23b611482c4cdf0"
+      ]
+    },
+    {
+      "id": "sec-vfslide1up",
+      "level": 4,
+      "sectnum": "30.16.3.4",
+      "title": "Vector Floating-Point Slide-1-up Instruction",
+      "heading_unit_id": "f9e12691e74d04f6f28e90b204f938ce",
+      "heading_anchor_id": "sec-vfslide1up",
+      "blocks": [
+        "285ccd49c02ca63e688a9a98d6ad3312",
+        "5ce0fd4704285b4be0e41fc043e787a9"
+      ]
+    },
+    {
+      "id": "_vector_slide_1_down_instruction",
+      "level": 4,
+      "sectnum": "30.16.3.5",
+      "title": "Vector Slide-1-down Instruction",
+      "heading_unit_id": "838c00263779ad984b03e1407e5e9ec1",
+      "blocks": [
+        "6c778a40fcebfe5359a8f699dc92d3fb",
+        "28eed0eb230fa9f98c9d45e5fe420f43",
+        "14b624fd87bdbfb0acfdad0f8dfb0eae",
+        "d1df54e3990b7f7aed6862abf4adb8ba",
+        "2fb18e1fe24ef51febb26d0306fffde7",
+        "ea7b122706f30d94817fe0ccb70f9bf8"
+      ]
+    },
+    {
+      "id": "sec-vfslide1down",
+      "level": 4,
+      "sectnum": "30.16.3.6",
+      "title": "Vector Floating-Point Slide-1-down Instruction",
+      "heading_unit_id": "79266e7a9a9faa17c48f4f46e44af70c",
+      "heading_anchor_id": "sec-vfslide1down",
+      "blocks": [
+        "d3c1819d7d48c0fab11a623c038147f8",
+        "ccbe782196303e50585420bb6094bc68"
+      ]
+    },
+    {
+      "id": "_vector_register_gather_instructions",
+      "level": 3,
+      "sectnum": "30.16.4",
+      "title": "Vector Register Gather Instructions",
+      "heading_unit_id": "620aa6d72401ecc9ec12f0e12dca8a59",
+      "blocks": [
+        "d4357563d7047a5f32d3a71692b12817",
+        "630d2e3c5595f3d94930fa0cc6e815f9",
+        "92d93ce3647a5cdc5240aad5f9f768e1",
+        "1c439e9325b1464bbdc34b5eff0f7ef7",
+        "5b19e8913dc04f9ef0df9cf02269d0ca",
+        "ac03989f9ca8b8620f5aebf521999abf",
+        "d5496ee30f8647e5b1c324811204b862",
+        "d053918e99026b80fdfc328492c99c6e",
+        "031a9918a477fe5f84e2fefde6682e93"
+      ]
+    },
+    {
+      "id": "_vector_compress_instruction",
+      "level": 3,
+      "sectnum": "30.16.5",
+      "title": "Vector Compress Instruction",
+      "heading_unit_id": "830d9afe6cc22d190c90615f60dd94a3",
+      "blocks": [
+        "c8d93f0025acf8f2dc42bbc77b8c052d",
+        "a5f4615f45697bf9178a81a4dc568a53",
+        "6d94760965b13ef0ea4347d5b29a3e17",
+        "77188b6a8dffeed9652ceaeae8e56322",
+        "f096a84cf4eb20e0276ac4c141f42b1e",
+        "8183282c5b63812e67f45c224d30d3d5",
+        "a299fe839425c601630cf2673f7cf133",
+        "f78b903f08832be655ab79ec2546d112"
+      ]
+    },
+    {
+      "id": "_synthesizing_vdecompress",
+      "level": 4,
+      "sectnum": "30.16.5.1",
+      "title": "Synthesizing vdecompress",
+      "heading_unit_id": "71962dbbb83e5acbf37b2133aa7506ab",
+      "blocks": [
+        "9c0360e29b689225f1a8cef4bae71af3",
+        "c0c28c0fbfef478d33bf0d76f05c98ed",
+        "74b8958704ef25cd078b3ca50325c41f",
+        "a8e8cf042d4f146c587ba9501edad68a"
+      ]
+    },
+    {
+      "id": "_whole_vector_register_move",
+      "level": 3,
+      "sectnum": "30.16.6",
+      "title": "Whole Vector Register Move",
+      "heading_unit_id": "e64927d7dded7020fad91586a25e640b",
+      "blocks": [
+        "effdb756828caf9d50ead3c53dc8e2d3",
+        "6ff8a732dcaaf5303e4883696c6434fe",
+        "7be42cbedae9f37e86f629314fb28a0d",
+        "fef39b8a687f340b4523dffba84becc0",
+        "20e032c7308adda96110b8fb15f6fe64",
+        "020dc58c8f6b53b3e6d2babe76dcf859",
+        "53068d6820c95d2ae8525558f9cfa9e0",
+        "1f907a63b35fe372b02ecdd4c055114c",
+        "b426a0ece2fae0463875ab07b0d569ab",
+        "3169c5078b1b7b09cb6b0ba534dcea51",
+        "86cda27eb77e90c9f7f57b3f316bf6de"
+      ]
+    },
+    {
+      "id": "_exception_handling",
+      "level": 2,
+      "sectnum": "30.17",
+      "title": "Exception Handling",
+      "heading_unit_id": "66ae4a6426ca01d04c2706a19de79449",
+      "blocks": [
+        "0c9f4911b19c85dc36c4c9d6c8e477bb",
+        "01b3a789a97db5d67822878a91f00281"
+      ]
+    },
+    {
+      "id": "_precise_vector_traps",
+      "level": 3,
+      "sectnum": "30.17.1",
+      "title": "Precise vector traps",
+      "heading_unit_id": "8de96257f612000b90ddf6da913d470d",
+      "blocks": [
+        "dbee13b0f14833f4cae736fe1ebf310d",
+        "707dead619dadefb3d5c54bb81a2025b",
+        "4b4efd4f3d2b89d66516f39f00dc2d48",
+        "e90885ab7e570c95ef61fabf5c48257b",
+        "d9a4f50e32cf7caeb837d10d28eefecc",
+        "4a797506b9f429eef54c502a2d807c5f",
+        "6d19ce5f836f79848d26efc083cd4e5b"
+      ]
+    },
+    {
+      "id": "_imprecise_vector_traps",
+      "level": 3,
+      "sectnum": "30.17.2",
+      "title": "Imprecise vector traps",
+      "heading_unit_id": "5e3b61a5caa5091fbee773131896fa54",
+      "blocks": [
+        "1481ee165bd56f4c2b9d64866e92a20b",
+        "253e1dc5945e49f25d4b850725a00f87",
+        "90c76ece734ad996f5693ff704163dad",
+        "fc7248d5d671c5384b90c3a269f81d47"
+      ]
+    },
+    {
+      "id": "_selectable_preciseimprecise_traps",
+      "level": 3,
+      "sectnum": "30.17.3",
+      "title": "Selectable precise/imprecise traps",
+      "heading_unit_id": "10b239255bf633d23ede6517aa70ac9a",
+      "blocks": [
+        "60729a2110782acea8f57da2e0b8d23a",
+        "56a23629f64f6a922005cfb4e711e8ce"
+      ]
+    },
+    {
+      "id": "_swappable_traps",
+      "level": 3,
+      "sectnum": "30.17.4",
+      "title": "Swappable traps",
+      "heading_unit_id": "2572307541d6ffae443189cca05af486",
+      "blocks": [
+        "09e94b8c961e50b6a7868b20fc8be1ee",
+        "56a23629f64f6a922005cfb4e711e8ce",
+        "48e1bea0186a85804a44647bed9ac64c"
+      ]
+    },
+    {
+      "id": "sec-vector-extensions",
+      "level": 2,
+      "sectnum": "30.18",
+      "title": "Standard Vector Extensions",
+      "heading_unit_id": "98b7dccd680b971eafa0c47bd59e91f2",
+      "heading_anchor_id": "sec-vector-extensions",
+      "blocks": [
+        "62c60bdaa37575901eb483b0d712fc0f",
+        "c277c8531390f3214be1b5a39eb16cd2"
+      ]
+    },
+    {
+      "id": "_zvl_minimum_vector_length_standard_extensions",
+      "level": 3,
+      "sectnum": "30.18.1",
+      "title": "Zvl*: Minimum Vector Length Standard Extensions",
+      "heading_unit_id": "67436c714e761f7f7cbfe427ce2e0e5f",
+      "blocks": [
+        "9f1528add3287656ff4cd8c28b1a1fa7",
+        "51253e57d17c96b85c7d0403e93c9800",
+        "c81a83368d3caa711005189a2bd213a0",
+        "b06737227df53e1210e7d5b3665f7ce8",
+        "2072eb5f9f84c15bad82b006eafac277",
+        "592f7381d0e27225b3e2ef0a18f45ace"
+      ]
+    },
+    {
+      "id": "_zve_vector_extensions_for_embedded_processors",
+      "level": 3,
+      "sectnum": "30.18.2",
+      "title": "Zve*: Vector Extensions for Embedded Processors",
+      "heading_unit_id": "d42ec5e0a8f3b473bc29052eaef752e4",
+      "blocks": [
+        "da37f9931ff9616c29a0f17bde434f7c",
+        "c2936997bea39f1f7aee81c69a0dc1ff",
+        "24ca679af4d0b7bc51b8c6c1eb4b891d",
+        "f1de2d48b86df3657a14b13297640069",
+        "7eede7d27b78aec914ed1b0d48b6aa7d",
+        "cd26811283a8b2ca5c8a9187f25ffa7b",
+        "ddb2c141e4247aedc66d4cae2867aef2",
+        "28f32f206b90409ef47262accbccf8cc",
+        "47ae4fb0de684017e2c87496a8987db0",
+        "f9a3a36ef688bb93fc91d4ff998635f6",
+        "9c3d316a9d52c7d891734be3fcf19134",
+        "6a3ea7402cd5ebd0773d2a01221e664c",
+        "951f9787e8a08a62c1e6684b19fe73c9",
+        "f162ee2cc7c0f8f42efcb8a4c6b9b55a",
+        "5b80eb8e23b18458c918fa3315547dbd",
+        "9eaa7f760f93dd65e5a1af7d6fe48e00",
+        "ccbce1e7ba1da37070bd3fce318a9882"
+      ]
+    },
+    {
+      "id": "_v_vector_extension_for_application_processors",
+      "level": 3,
+      "sectnum": "30.18.3",
+      "title": "V: Vector Extension for Application Processors",
+      "heading_unit_id": "c181de97577bd03eba6a6bf0add82546",
+      "blocks": [
+        "21aff2fcb204921b96f6d4795cf16c77",
+        "c5e96c4ca3ac41ec0e0e8e7da054d0ca",
+        "67c9cb4a5e0488a63dc342ca7e4a897f",
+        "9751985ae248bb43765ac96acf0d892f",
+        "d50a4ffce4fb62a943550df28be49ebf",
+        "5a24f258246e2548eecfc01069175a04",
+        "b72daab11e14173b35d460d24d4607d7",
+        "a5340f0666649f2d42e08849990b5657",
+        "f0663295394e0e8518864601c5a78ef9",
+        "6286ddcfa13981ab23e23ad1c77891b8",
+        "e4fad6a33ba397ba6a7e31fba0376b03",
+        "b77c79cce8d4c4e3038bb41411983fcc",
+        "529be05d2f59573421e841a90840edc9",
+        "60c157c1fc13d2aa811b8725ab75664b",
+        "192d48e36bd73b52f202bbb6d530af88"
+      ]
+    },
+    {
+      "id": "_zvfhmin_vector_extension_for_minimal_half_precision_floating_point",
+      "level": 3,
+      "sectnum": "30.18.4",
+      "title": "Zvfhmin: Vector Extension for Minimal Half-Precision Floating-Point",
+      "heading_unit_id": "5779b72d58d11d56d368ee0da66fbbeb",
+      "blocks": [
+        "a87235183131a7a2370f6723fe73e33e",
+        "bbaf6fcdb802522231f60fbc3f92aff8"
+      ]
+    },
+    {
+      "id": "_zvfh_vector_extension_for_half_precision_floating_point",
+      "level": 3,
+      "sectnum": "30.18.5",
+      "title": "Zvfh: Vector Extension for Half-Precision Floating-Point",
+      "heading_unit_id": "c8f6ac1a79df7a63792e36a0c8a1024f",
+      "blocks": [
+        "90cd37af2448a09c9b3450a0eb7bff87",
+        "dbfff4c480a2f659aba6510ec0686dac",
+        "1e1c1b926f860c3fbdc574e84e3b2b1c",
+        "5f6e4374c21a4bf6921f26bd90ed165a"
+      ]
+    },
+    {
+      "id": "vector-element-groups",
+      "level": 2,
+      "sectnum": "30.19",
+      "title": "Vector Element Groups",
+      "heading_unit_id": "1e2c3b32217f9b8a9bf78b83b073115d",
+      "heading_anchor_id": "vector-element-groups",
+      "blocks": [
+        "67410b12b2cb6fd762ae9e2a93cdf4fe",
+        "1e80db64aea41fe249e1809133f18e60"
+      ]
+    },
+    {
+      "id": "_element_group_size",
+      "level": 3,
+      "sectnum": "30.19.1",
+      "title": "Element Group Size",
+      "heading_unit_id": "83becbbb6c494a0c0c8490e0b2229f8c",
+      "blocks": [
+        "d0d9651df6beaaedbcd55d47e166058c",
+        "f729f15d45b0b5e06861256e914161bc",
+        "5adc9ec7072d541fae652216bf9abcb2",
+        "28932f61f42e1defd27e5929072e2825",
+        "f5cab7fe90ea4311ab2d8f30fbc42c40",
+        "7f548ddb9d0455f74b9f3193d768ba94"
+      ]
+    },
+    {
+      "id": "_setting_vl",
+      "level": 3,
+      "sectnum": "30.19.2",
+      "title": "Setting vl",
+      "heading_unit_id": "bd891b2f76aac5d11786f1903fced62f",
+      "blocks": [
+        "25cf2d173bdf4ff8094b64ee2aee78e0",
+        "cd5d17c29ba3d43b8ae009470331b548",
+        "fcf4e2833f3650195e7da993ece9d289",
+        "1e51f8de3e498baabfc6ccdebdc4df40",
+        "564d841ed4d919893f9998289958ab08",
+        "553bf717051b307e005bfc2a341dad8c",
+        "097eaf9a43d45ace823dcdcd03b664f4"
+      ]
+    },
+    {
+      "id": "_determining_eew",
+      "level": 3,
+      "sectnum": "30.19.3",
+      "title": "Determining EEW",
+      "heading_unit_id": "6bd3a2f70af5e1777a61b2731c8949c7",
+      "blocks": [
+        "b65f09d9d5653e2d3c9d54d473cd8182",
+        "ac9c21c99275b829a83720995feb831e",
+        "70993e733b447930452aaa326dad1f26"
+      ]
+    },
+    {
+      "id": "_determining_emul",
+      "level": 3,
+      "sectnum": "30.19.4",
+      "title": "Determining EMUL",
+      "heading_unit_id": "dc8cadfc26f447a8b8397932e90f61cf",
+      "blocks": [
+        "56c548c4fe7810e1b98ca892c8aa81c3",
+        "8e70fdcb1315aa8c861851ea7c32aa91"
+      ]
+    },
+    {
+      "id": "_element_group_width",
+      "level": 3,
+      "sectnum": "30.19.5",
+      "title": "Element Group Width",
+      "heading_unit_id": "20e44a806b1ea116c8b15cc0840f55df",
+      "blocks": [
+        "c6f70dbf29f8c33f17099ac9209d8e41",
+        "35801832abd8f9400c7eaaaa5989c0a2",
+        "4809ffd42861a728a1f5510701117c17"
+      ]
+    },
+    {
+      "id": "_masking",
+      "level": 3,
+      "sectnum": "30.19.6",
+      "title": "Masking",
+      "heading_unit_id": "a641612f2f6344aa02730a14952c5dda",
+      "blocks": [
+        "5dd0dab7cbf0777eb2118d60660bf644"
+      ]
+    },
+    {
+      "id": "_vector_instruction_listing",
+      "level": 2,
+      "sectnum": "30.20",
+      "title": "Vector Instruction Listing",
+      "heading_unit_id": "e841af20c05c7d0e2eaca32502af9b75",
+      "blocks": [
+        "68e0c19dd3d5b69ec765cef38699412d",
+        "4fac43f6dee7fc51a6c76a75cfb65eda",
+        "372f61cc728dd4c0fa0665d92a485e39",
+        "48a1d4692609127bde4ffea9807d5b16",
+        "a76e2ce2095481fc36a03a8b18e710ad",
+        "9721f1ec31ef1943eb6e9e3934e3d069",
+        "eea90383e24a8e5b8b9fe6ab2b04bddd",
+        "225a0e13724043548eed1715f3bff9f2",
+        "aac242ac9dd63ff176a26552030cce18",
+        "ca6eac744d3eebaa13660718ecdf2ec0",
+        "4d7f0b2d9ef477aad325fba35fdafad2",
+        "6c6b11b9284f92f2e0b23961d13ae887",
+        "bd7310d17b5b5ff0e4cc47ad2a09f539"
+      ]
+    }
+  ]
+}

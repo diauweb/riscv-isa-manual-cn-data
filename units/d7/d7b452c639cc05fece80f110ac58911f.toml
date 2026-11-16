@@ -1,0 +1,8 @@
+unit_id = "d7b452c639cc05fece80f110ac58911f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In SRAM mode, the trace memory is dedicated for trace storage and `trRamStart??` registers should not be settable (usually both not implemented and return 0). `trRamLimitLow` register may be either hardcoded (to reflect physical SRAM size) or writable (allowing trimming RAM size allowing faster wrap-around or sharing the same memory with some other components in the system). The `trRamLimitHigh` register should not be implemented as it is not practical to have more than 4GB of dedicated on-chip RAM storage.'''
+zh = '''
+在 SRAM 模式下，跟踪内存专用于跟踪存储，并且 `trRamStart??` 寄存器不应可设置（通常两者都未实现并返回 0）。`trRamLimitLow` 寄存器可以硬连线（以反映物理 SRAM 大小），也可以可写（允许裁剪 RAM 大小，从而允许更快回绕或与系统中某些其他组件共享同一内存）。`trRamLimitHigh` 寄存器不应实现，因为拥有超过 4GB 的专用片上 RAM 存储不切实际。'''

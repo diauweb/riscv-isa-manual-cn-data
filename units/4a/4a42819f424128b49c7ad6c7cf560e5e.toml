@@ -1,0 +1,32 @@
+unit_id = "4a42819f424128b49c7ad6c7cf560e5e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Misaligned accesses are occasionally required when porting legacy code,
+and help performance on applications when using any form of packed-SIMD
+extension or handling externally packed data structures. Our rationale
+for allowing EEIs to choose to support misaligned accesses via the
+regular load and store instructions is to simplify the addition of
+misaligned hardware support. One option would have been to disallow
+misaligned accesses in the base ISAs and then provide some separate ISA
+support for misaligned accesses, either special instructions to help
+software handle misaligned accesses or a new hardware addressing mode
+for misaligned accesses. Special instructions are difficult to use,
+complicate the ISA, and often add new processor state (e.g., SPARC VIS
+align address offset register) or complicate access to existing
+processor state (e.g., MIPS LWL/LWR partial register writes). In
+addition, for loop-oriented packed-SIMD code, the extra overhead when
+operands are misaligned motivates software to provide multiple forms of
+loop depending on operand alignment, which complicates code generation
+and adds to loop startup overhead. New misaligned hardware addressing
+modes take considerable space in the instruction encoding or require
+very simplified addressing modes (e.g., register indirect only).
+===='''
+zh = '''
+[NOTE]
+====
+在移植遗留代码时偶尔需要非对齐访问，并且在使用任何形式的打包 SIMD 扩展或处理外部打包数据结构时有助于应用性能。我们允许 EEI 选择通过常规加载和存储指令支持非对齐访问的理由是简化非对齐硬件支持的添加。一种选择是在基础 ISA 中禁止非对齐访问，然后为非对齐访问提供某种单独的 ISA 支持，要么是帮助软件处理非对齐访问的特殊指令，要么是用于非对齐访问的新硬件寻址模式。特殊指令难以使用，使 ISA 复杂化，并且通常增加新的处理器状态（例如 SPARC VIS 对齐地址偏移寄存器）或使对现有处理器状态的访问复杂化（例如 MIPS LWL/LWR 部分寄存器写入）。此外，对于面向循环的打包 SIMD 代码，操作数非对齐时的额外开销促使软件根据操作数对齐提供多种形式的循环，这使代码生成复杂化并增加循环启动开销。新的非对齐硬件寻址模式在指令编码中占用相当多的空间，或需要非常简化的寻址模式（例如仅寄存器间接）。
+===='''

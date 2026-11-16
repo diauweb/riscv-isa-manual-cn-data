@@ -1,0 +1,82 @@
+unit_id = "25aa42df02fc16fde760a456e2119dbe"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* *ISA Architectural Tests.* Verify, to the extent possible, that RISC-V ISA
+ requirements in this specification are correctly implemented. This includes
+ the state transitions (<<crypto_scalar_es>> and
+ <<crypto_scalar_es_getnoise>>), access control
+ (<<crypto_scalar_es_access>>), and that csr:seed[] ES16 csr::[entropy] words
+ can only be read destructively.
+ The scope of RISC-V ISA architectural tests are those behaviors that
+ are independent of the physical entropy source details. A smoke test ES
+ module may be helpful in design phase.
+* *Technical justification for entropy.* This may take the form of a
+ stochastic model or a heuristic argument that explains why the noise
+ source output is from a random, rather than pseudorandom (deterministic)
+ process, and is not easily predictable or externally observable.
+ A complete physical model is not necessary; research literature can be
+ cited. For example, one can show that a good ring oscillator noise derives
+ an amount of physical entropy from local, spontaneously occurring
+ Johnson-Nyquist thermal noise cite:[Sa21], and is therefore not merely
+ "`random-looking`".
+* *Entropy Source Design Review.* An entropy source is more than a noise
+ source, and must have features such as health tests
+ (<<crypto_scalar_es_security_controls>>),
+ a conditioner (<<crypto_scalar_appx_es_intro-cond>>), and a security
+ boundary with clearly defined interfaces. One may tabulate the SHALL
+ statements of SP 800-90B cite:[TuBaKe:18], FIPS 140-3 Implementation
+ Guidance cite:[NICC21], AIS-31 cite:[KiSc11] or other standards being
+ used. Official and non-official checklist tables are available:
+ https://github.com/usnistgov/90B-Shall-Statements
+* *Experimental Tests.* The raw noise source is subjected to entropy
+ estimation as defined in NIST 800-90B, Section 3 cite:[TuBaKe:18].
+    The interface described in <<crypto_scalar_es_getnoise>> can used be to
+    record datasets for this purpose. One also needs to show experimentally
+    that the conditioner and health test components work appropriately to
+    meet the ES16 output entropy requirements of <<crypto_scalar_es_req>>.
+ For SP 800-90B, NIST has made a min-entropy estimation
+ package freely available:
+ https://github.com/usnistgov/SP800-90B_EntropyAssessment
+* **Resilience.** Above physical engineering steps should consider the
+ operational environment of the device, which may be unexpected or
+ hostile (actively attempting to exploit vulnerabilities in the design).'''
+zh = '''
+* *ISA 架构测试。* 尽可能验证本规范中的 RISC-V ISA
+ 要求得到正确实现。这包括
+状态转换（<<crypto_scalar_es>> 和
+<<crypto_scalar_es_getnoise>>）、访问控制
+（<<crypto_scalar_es_access>>），以及 csr:seed[] ES16 csr::[entropy] 字
+只能被破坏性读取。
+RISC-V ISA 架构测试的范围是那些
+独立于物理熵源细节的行为。冒烟测试 ES
+模块在设计阶段可能有帮助。
+* *熵的技术论证。* 这可以采取
+随机模型或启发式论证的形式，解释为什么噪声
+源输出来自随机过程，而不是伪随机（确定性）
+过程，并且不容易预测或外部可观察。
+不需要完整的物理模型；可以引用研究文献。
+例如，可以证明良好的环形振荡器噪声从局部、自发产生的
+Johnson-Nyquist 热噪声 cite:[Sa21] 中推导出一定量的物理熵，因此不仅仅是
+“看起来随机”。
+* *熵源设计评审。* 熵源不仅仅是噪声
+源，还必须具有健康测试
+（<<crypto_scalar_es_security_controls>>）、
+条件器（<<crypto_scalar_appx_es_intro-cond>>）以及具有明确定义接口的安全
+边界等特性。可以将 SP 800-90B cite:[TuBaKe:18]、FIPS 140-3 实现
+指南 cite:[NICC21]、AIS-31 cite:[KiSc11] 或所使用的其他标准中的 SHALL
+语句制成表格。官方和非官方检查表可用：
+https://github.com/usnistgov/90B-Shall-Statements
+* *实验测试。* 原始噪声源按照 NIST 800-90B 第 3 节 cite:[TuBaKe:18] 中的定义
+进行熵估计。
+    <<crypto_scalar_es_getnoise>> 中描述的接口可用于
+   为此目的记录数据集。还需要通过实验证明
+   条件器和健康测试组件正常工作，以满足
+   <<crypto_scalar_es_req>> 的 ES16 输出熵要求。
+ 对于 SP 800-90B，NIST 已免费提供最小熵估计
+ 包：
+ https://github.com/usnistgov/SP800-90B_EntropyAssessment
+* **韧性。** 上述物理工程步骤应考虑
+设备的运行环境，该环境可能是意外或
+敌对的（积极尝试利用设计中的漏洞）。'''

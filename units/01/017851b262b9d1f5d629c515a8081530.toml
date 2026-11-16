@@ -1,0 +1,12 @@
+unit_id = "017851b262b9d1f5d629c515a8081530"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Field HU (Hypervisor in U-mode) controls whether the virtual-machine
+load/store instructions, HLV, HLVX, and HSV, can be used also in U-mode.
+When HU=1, these instructions can be executed in U-mode the same as in
+HS-mode. When HU=0, all hypervisor instructions cause an
+illegal-instruction exception in U-mode.'''
+zh = '''
+字段 HU（U-mode 中的虚拟机监控器）控制虚拟机加载/存储指令 HLV、HLVX 和 HSV 是否也可以在 U-mode 中使用。当 HU=1 时，这些指令可以在 U-mode 中执行，与在 HS-mode 中相同。当 HU=0 时，所有虚拟机指令在 U-mode 中都会导致非法指令异常。'''

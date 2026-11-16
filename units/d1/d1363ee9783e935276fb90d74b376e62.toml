@@ -1,0 +1,13 @@
+unit_id = "d1363ee9783e935276fb90d74b376e62"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Regardless of EEI, [#norm:instgrp:load_store:no_exc_aligned]#loads and stores whose effective addresses are
+naturally aligned shall not raise an address-misaligned exception.#
+[#norm:param:misaligned_ldst:eei_dependent_behavior]#Loads and stores whose effective address is not naturally aligned to the
+referenced datatype (i.e., the effective address is not divisible by the
+size of the access in bytes) have behavior dependent on the EEI.#'''
+zh = '''
+无论 EEI 如何，[#norm:instgrp:load_store:no_exc_aligned]#有效地址自然对齐的加载和存储不得引发地址非对齐异常。#
+[#norm:param:misaligned_ldst:eei_dependent_behavior]#有效地址未自然对齐到所引用数据类型（即有效地址不能被访问大小（以字节计）整除）的加载和存储，其行为取决于 EEI。#'''

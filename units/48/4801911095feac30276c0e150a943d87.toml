@@ -1,0 +1,14 @@
+unit_id = "4801911095feac30276c0e150a943d87"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instructions that access a non-existent CSR are reserved.
+Attempts to access a CSR without appropriate privilege level
+raise illegal-instruction exceptions or, as described in
+<<sec:hcauses>>, virtual-instruction exceptions.
+Attempts to write a read-only register raise illegal-instruction exceptions.
+A read/write register might also contain some bits that are
+read-only, in which case writes to the read-only bits are ignored.'''
+zh = '''
+访问不存在的 CSR 的指令是保留的。在没有适当特权级别的情况下尝试访问 CSR 会引发非法指令异常，或者如 <<sec:hcauses>> 所述，引发虚拟指令异常。尝试写入只读寄存器会引发非法指令异常。读写寄存器也可能包含一些只读位，此时对只读位的写入被忽略。'''

@@ -1,0 +1,14 @@
+unit_id = "d7ca3166fa19ccbe6982ddbae1f681e1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The complete definition of preserved program order is as follows (and
+note that AMOs are simultaneously both loads and stores): memory
+operation _a_ precedes memory operation _b_ in
+preserved program order (and hence also in the global memory order) if
+_a_ precedes _b_ in program order,
+_a_ and _b_ both access regular main memory
+(rather than I/O regions), and any of the following hold:'''
+zh = '''
+保持的程序顺序的完整定义如下（注意 AMO 同时既是加载又是存储）：如果内存操作 _a_ 在程序顺序中先于内存操作 _b_，_a_ 和 _b_ 都访问常规主存（而非 I/O 区域），且以下任一条件成立，则 _a_ 在保持的程序顺序中（因而也在全局内存顺序中）先于 _b_：'''

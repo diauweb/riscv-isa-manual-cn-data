@@ -1,0 +1,15 @@
+unit_id = "70259ab5f275973d68c97341cf9b6388"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Attempting to fetch an instruction from a PMP region that does not have
+execute permissions raises an instruction access-fault exception.
+Attempting to execute a load, load-reserved, or cache-block management instruction which accesses
+a physical address within a PMP region without read permissions raises a
+load access-fault exception. Attempting to execute a store,
+store-conditional, AMO, or cache-block zero instruction which accesses a physical address
+within a PMP region without write permissions raises a store
+access-fault exception.'''
+zh = '''
+尝试从不具有执行权限的 PMP 区域取指会引发指令访问故障异常。尝试执行访问 PMP 区域内物理地址但不具有读权限的加载、加载保留或缓存块管理指令会引发加载访问故障异常。尝试执行访问 PMP 区域内物理地址但不具有写权限的存储、存储条件、AMO 或缓存块清零指令会引发存储访问故障异常。'''

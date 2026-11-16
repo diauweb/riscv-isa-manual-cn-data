@@ -1,0 +1,27 @@
+unit_id = "39bb0eadda9caf41c8ba396ea7fa2197"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Note to software developers
+[WARNING,caption="SH"]
+====
+Programming techniques can only mitigate leakage directly caused by
+arithmetic, caches, and branches. Other ISAs have had micro-architectural
+issues such as Spectre, Meltdown, Speculative Store Bypass, Rogue System
+Register Read, Lazy FP State Restore, Bounds Check Bypass Store, TLBleed,
+and L1TF/Foreshadow, etc. See e.g.
+link:https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance[NSA Hardware and Firmware Security Guidance]
+
+It is not within the remit of this proposal to mitigate these
+_micro-architectural_ leakages.
+===='''
+zh = '''
+.致软件开发者
+[WARNING,caption="SH"]
+====
+编程技术只能缓解由算术、缓存和分支直接引起的泄漏。其他 ISA 曾出现过微架构问题，例如 Spectre、Meltdown、推测存储绕过、恶意系统寄存器读取、惰性 FP 状态恢复、边界检查绕过存储、TLBleed 和 L1TF/Foreshadow 等。参见例如
+link:https://github.com/nsacyber/Hardware-and-Firmware-Security-Guidance[NSA 硬件与固件安全指南]
+
+缓解这些 _微架构_ 泄漏不在本提案的职责范围内。
+===='''

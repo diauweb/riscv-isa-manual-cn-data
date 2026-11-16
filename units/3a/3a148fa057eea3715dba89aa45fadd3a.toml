@@ -1,0 +1,22 @@
+unit_id = "3a148fa057eea3715dba89aa45fadd3a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of csr:mtvec[mode] field
+[%autowidth,float="center",align="center",cols=">,^,<",options="header"]
+|===
+|Value |Name |Description
+|0 |Direct |All traps set `pc` to csr::[base].
+|1 |Vectored |Asynchronous interrupts set `pc` to csr::[base]+4{times}cause.
+|{ge}2 |-- |_Reserved_
+|==='''
+zh = '''
+.csr:mtvec[mode] 字段的编码
+[%autowidth,float="center",align="center",cols=">,^,<",options="header"]
+|===
+|值 |名称 |描述
+|0 |Direct |所有陷阱将 `pc` 设置为 csr::[base]。
+|1 |Vectored |异步中断将 `pc` 设置为 csr::[base]+4{times}cause。
+|{ge}2 |-- |_保留_
+|==='''

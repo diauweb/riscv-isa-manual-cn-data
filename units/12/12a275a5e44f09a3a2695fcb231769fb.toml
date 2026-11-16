@@ -1,0 +1,16 @@
+unit_id = "12a275a5e44f09a3a2695fcb231769fb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Svpbmt_noncacheable_aliasing_no_coherence_loss]#Accessing the same location using different attributes that are both
+non-cacheable (e.g., NC and IO)
+does not cause loss of coherence,# but
+[#norm:Svpbmt_noncacheable_aliasing_may_weaken_ordering]#might result in weaker memory ordering than the stricter attribute
+ordinarily guarantees.# Executing a
+[#norm:Svpbmt_noncacheable_aliasing_fence_prevents_ordering_loss]#`fence iorw, iorw` instruction
+between such accesses suffices to prevent loss of memory ordering.#'''
+zh = '''
+[#norm:Svpbmt_noncacheable_aliasing_no_coherence_loss]#使用两种均为非缓存的属性（例如 NC 和 IO）访问同一位置不会导致一致性丢失#，但
+[#norm:Svpbmt_noncacheable_aliasing_may_weaken_ordering]#可能导致比更严格属性通常保证的更弱的内存排序。# 在此类访问之间执行
+[#norm:Svpbmt_noncacheable_aliasing_fence_prevents_ordering_loss]#`fence iorw, iorw` 指令足以防止内存排序丢失。#'''

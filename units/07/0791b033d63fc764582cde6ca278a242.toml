@@ -1,0 +1,13 @@
+unit_id = "0791b033d63fc764582cde6ca278a242"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To guarantee that no sensitive data is read twice and that different
+callers don’t get correlated output, it is required that hardware
+implements _wipe-on-read_ on the randomness pathway during each read
+(successful poll). For the same reasons, only complete and fully
+processed random words shall be made available via csr::[entropy] (ES16 status
+of csr:seed[]).'''
+zh = '''
+为保证敏感数据不会被读取两次，且不同调用者不会获得相关输出，要求硬件在每次读取（成功轮询）期间对随机性路径实现 _读时擦除_。出于同样的原因，只有完整且完全处理的随机字才应通过 csr::[entropy]（csr:seed[] 的 ES16 状态）提供。'''

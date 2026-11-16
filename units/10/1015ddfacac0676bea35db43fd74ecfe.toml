@@ -1,0 +1,17 @@
+unit_id = "1015ddfacac0676bea35db43fd74ecfe"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A higher-privilege mode _y_ could disable all of its interrupts before
+ceding control to a lower-privilege mode but this would be unusual as it
+would leave only a synchronous trap, non-maskable interrupt, or reset as
+means to regain control of the hart.
+===='''
+zh = '''
+[NOTE]
+====
+较高特权模式 _y_ 可以在将控制权让给较低特权模式之前禁用其所有中断，但这并不常见，因为这样将只剩下同步陷阱、不可屏蔽中断或复位作为重新获得硬件线程控制权的手段。
+===='''

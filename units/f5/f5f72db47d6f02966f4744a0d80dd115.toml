@@ -1,0 +1,13 @@
+unit_id = "f5f72db47d6f02966f4744a0d80dd115"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:fcvtmod.w.d[] instruction is defined similarly to the insn:fcvt.w.d[] instruction,
+with the following differences. insn:fcvtmod.w.d[] always rounds
+towards zero. Bits 31:0 are taken from the rounded, unbounded two's
+complement result, then sign-extended to XLEN bits and written to
+integer register _rd_. ±{inf} and NaN are converted to
+zero.'''
+zh = '''
+insn:fcvtmod.w.d[] 指令的定义与 insn:fcvt.w.d[] 指令类似，但有以下不同之处。insn:fcvtmod.w.d[] 总是向零舍入。取整后的无界二进制补码结果的位 31:0，然后符号扩展至 XLEN 位并写入整数寄存器 _rd_。±{inf} 和 NaN 转换为零。'''

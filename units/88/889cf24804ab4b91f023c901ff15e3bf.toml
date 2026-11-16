@@ -1,0 +1,12 @@
+unit_id = "889cf24804ab4b91f023c901ff15e3bf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If an abstract command is started while the selected hart is unavailable
+or if a hart becomes unavailable while executing an abstract command,
+then the Debug Module may terminate the abstract command, setting {abstractcs-busy} low,
+and {abstractcs-cmderr} to 4 (halt/resume). Alternatively, the command could just appear to
+be hung ({abstractcs-busy} never goes low).'''
+zh = '''
+如果选中的硬件线程不可用期间启动抽象命令，或者在执行抽象命令期间硬件线程变为不可用，则调试模块可以终止该抽象命令，将 {abstractcs-busy} 置低，并将 {abstractcs-cmderr} 设置为 4（halt/resume）。或者，该命令可能只是看起来挂起（{abstractcs-busy} 永远不变低）。'''

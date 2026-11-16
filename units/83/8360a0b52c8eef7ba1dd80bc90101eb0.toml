@@ -1,0 +1,32 @@
+unit_id = "8360a0b52c8eef7ba1dd80bc90101eb0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Modified interpretation of FENCE predecessor and successor sets when FIOM=1 and virtualization mode V=1.
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|Instruction bit |Meaning when set
+|PI +
+PO
+|Predecessor device input and memory reads (PR implied) +
+Predecessor device output and memory writes (PW implied)
+|SI +
+SO
+|Successor device input and memory reads (SR implied) +
+Successor device output and memory writes (SW implied)
+|==='''
+zh = '''
+.当 FIOM=1 且虚拟化模式 V=1 时 FENCE 前驱和后继集合的修改后解释。
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|指令位 |置位时的含义
+|PI +
+PO
+|前驱设备输入和内存读（隐含 PR） +
+前驱设备输出和内存写（隐含 PW）
+|SI +
+SO
+|后继设备输入和内存读（隐含 SR） +
+后继设备输出和内存写（隐含 SW）
+|==='''

@@ -1,0 +1,280 @@
+unit_id = "a10583b8bce2b6997a2a8f4387f4ef6a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Machine and supervisor cause register (`mcause` and `scause`) values when the hypervisor extension is implemented.
+[%autowidth,float="center",align="center",cols=">,>,<",options="header"]
+|===
+|Interrupt |Exception Code |Description
+|1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2 +
+3
+|_Reserved_ +
+Supervisor software interrupt +
+Virtual supervisor software interrupt +
+Machine software interrupt
+|1 +
+1 +
+1 +
+1
+|4 +
+5 +
+6 +
+7
+|_Reserved_ +
+Supervisor timer interrupt +
+Virtual supervisor timer interrupt +
+Machine timer interrupt
+|1 +
+1 +
+1 +
+1
+|8 +
+9 +
+10 +
+11
+|_Reserved_ +
+Supervisor external interrupt +
+Virtual supervisor external interrupt +
+Machine external interrupt
+|1 +
+1 +
+1 +
+1
+|12 +
+13 +
+14-15 +
+{ge}16
+|Supervisor guest external interrupt +
+_Reserved for counter-overflow interrupt_ +
+_Reserved_ +
+_Designated for platform use_
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10 +
+11 +
+12 +
+13 +
+14 +
+15 +
+16 +
+17 +
+18 +
+19 +
+20 +
+21 +
+22 +
+23 +
+24-31 +
+32-47 +
+48-63 +
+{ge}64
+|Instruction address misaligned +
+Instruction access fault  +
+Illegal instruction  +
+Breakpoint  +
+Load address misaligned +
+Load access fault +
+Store/AMO address misaligned +
+Store/AMO access fault +
+Environment call from U-mode or VU-mode +
+Environment call from HS-mode +
+Environment call from VS-mode +
+Environment call from M-mode +
+Instruction page fault +
+Load page fault +
+_Reserved_ +
+Store/AMO page fault +
+Double trap +
+_Reserved_  +
+Software check +
+Hardware error +
+Instruction guest-page fault +
+Load guest-page fault +
+Virtual instruction +
+Store/AMO guest-page fault +
+_Designated for custom use_ +
+_Reserved_ +
+_Designated for custom use_ +
+_Reserved_
+|==='''
+zh = '''
+.实现虚拟机扩展时机器和监管原因寄存器（`mcause` 和 `scause`）的值。
+[%autowidth,float="center",align="center",cols=">,>,<",options="header"]
+|===
+|中断 |异常代码 |描述
+|1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2 +
+3
+|_保留_ +
+监管软件中断 +
+虚拟监管软件中断 +
+机器软件中断
+|1 +
+1 +
+1 +
+1
+|4 +
+5 +
+6 +
+7
+|_保留_ +
+监管定时器中断 +
+虚拟监管定时器中断 +
+机器定时器中断
+|1 +
+1 +
+1 +
+1
+|8 +
+9 +
+10 +
+11
+|_保留_ +
+监管外部中断 +
+虚拟监管外部中断 +
+机器外部中断
+|1 +
+1 +
+1 +
+1
+|12 +
+13 +
+14-15 +
+{ge}16
+|监管客户外部中断 +
+_保留用于计数器溢出中断_ +
+_保留_ +
+_指定用于平台使用_
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10 +
+11 +
+12 +
+13 +
+14 +
+15 +
+16 +
+17 +
+18 +
+19 +
+20 +
+21 +
+22 +
+23 +
+24-31 +
+32-47 +
+48-63 +
+{ge}64
+|指令地址未对齐 +
+指令访问故障  +
+非法指令  +
+断点  +
+加载地址未对齐 +
+加载访问故障 +
+存储/AMO 地址未对齐 +
+存储/AMO 访问故障 +
+来自 U-mode 或 VU-mode 的环境调用 +
+来自 HS-mode 的环境调用 +
+来自 VS-mode 的环境调用 +
+来自 M-mode 的环境调用 +
+指令页故障 +
+加载页故障 +
+_保留_ +
+存储/AMO 页故障 +
+双重陷阱 +
+_保留_  +
+软件检查 +
+硬件错误 +
+指令客户页故障 +
+加载客户页故障 +
+虚拟指令 +
+存储/AMO 客户页故障 +
+_指定用于自定义使用_ +
+_保留_ +
+_指定用于自定义使用_ +
+_保留_
+|==='''

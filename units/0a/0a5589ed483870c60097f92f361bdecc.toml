@@ -1,0 +1,20 @@
+unit_id = "0a5589ed483870c60097f92f361bdecc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sv32 implementations support a 32-bit virtual address space, divided
+into pages. An Sv32 virtual address is partitioned into a virtual page
+number (VPN) and page offset, as shown in <<sv32va>>.
+When Sv32 virtual memory mode is selected in the MODE field of the
+`satp` register, supervisor virtual addresses are translated into
+supervisor physical addresses via a two-level page table. The 20-bit VPN
+is translated into a [#norm:satp_ppn_sv32_sz]#22-bit physical page number (PPN)#,
+while the 12-bit page offset is untranslated. The resulting supervisor-level physical
+addresses are then checked using any physical memory protection
+structures (<<pmp>>), before being directly
+converted to machine-level physical addresses. If necessary,
+supervisor-level physical addresses are zero-extended to the number of
+physical address bits found in the implementation.'''
+zh = '''
+Sv32 实现支持 32 位虚拟地址空间，划分为页。Sv32 虚拟地址被划分为虚拟页号（VPN）和页偏移，如 <<sv32va>> 所示。当在 `satp` 寄存器的 MODE 字段中选择 Sv32 虚拟内存模式时，监管虚拟地址通过两级页表转换为监管物理地址。20 位 VPN 被转换为 [#norm:satp_ppn_sv32_sz]#22 位物理页号（PPN）#，而 12 位页偏移不被转换。所得的监管级物理地址随后使用任何物理内存保护结构（<<pmp>>）进行检查，然后才被直接转换为机器级物理地址。如有必要，监管级物理地址被零扩展至实现中所发现的物理地址位数。'''

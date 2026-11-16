@@ -1,0 +1,19 @@
+unit_id = "23d31a688b6cb6b2ace3ee7ee6636bc9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since CSRRS and CSRRC perform a read-modify-write operation, any bits that read as
+a different value to their underlying value may be modified by these
+instructions even if the corresponding bit is not set in _rs1_. For example,
+pmpaddr__n__[G-1] may have an underlying value of 1 but read as 0. Executing
+CSRRC or CSRRS to modify a different bit will cause 0 to be read from
+pmpaddr__n__[G-1] and then written back, updating the underlying value to 0.
+===='''
+zh = '''
+[NOTE]
+====
+由于 CSRRS 和 CSRRC 执行读-修改-写操作，任何读取值与其底层值不同的位都可能被这些指令修改，即使 _rs1_ 中未置位对应位。例如，pmpaddr__n__[G-1] 的底层值可能为 1，但读取为 0。执行 CSRRC 或 CSRRS 来修改其他位将导致从 pmpaddr__n__[G-1] 读取到 0，然后写回，从而将底层值更新为 0。
+===='''

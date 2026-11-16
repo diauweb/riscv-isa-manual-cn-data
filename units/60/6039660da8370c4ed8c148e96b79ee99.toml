@@ -1,0 +1,10 @@
+unit_id = "6039660da8370c4ed8c148e96b79ee99"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+ * the result of insn:orc.b[] on a chunk that does not contain any `NUL` bytes will be all-ones, and
+ * after a bitwise-negation of the result of insn:orc.b[], the number of data bytes before the  first `NUL` byte (if any) can be detected by insn:ctz[]/insn:clz[] (depending on the endianness of data).'''
+zh = '''
+* 对于不包含任何 `NUL` 字节的数据块，insn:orc.b[] 的结果将为全 1，并且
+ * 在对 insn:orc.b[] 的结果进行按位取反后，可以通过 insn:ctz[]/insn:clz[] 检测出第一个 `NUL` 字节（如果有）之前的数据字节数（取决于数据的字节序）。'''

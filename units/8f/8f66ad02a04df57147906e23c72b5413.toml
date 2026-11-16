@@ -1,0 +1,17 @@
+unit_id = "8f66ad02a04df57147906e23c72b5413"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The PTE format for Sv48 is shown in <<sv48pte>>.
+Bits 63-54 and 9-0 have the same meaning as for Sv39.
+[#norm:Sv48_leaf_any_level]#Any level of PTE may be a leaf PTE#, so in
+addition to 4 KiB pages, Sv48 supports
+[#norm:Sv48_page_sizes]#2 MiB megapages, 1 GiB gigapages, and
+512 GiB terapages#, each of which
+[#norm:Sv48_superpage_align]#must be virtually and physically aligned to
+a boundary equal to its size#.
+[#norm:Sv48_superpage_align_fault]#A page-fault exception is raised if
+the physical address is insufficiently aligned#.'''
+zh = '''
+Sv48 的 PTE 格式如 <<sv48pte>> 所示。第 63-54 位和第 9-0 位的含义与 Sv39 相同。[#norm:Sv48_leaf_any_level]#任何级别的 PTE 都可以是叶 PTE#，因此除了 4 KiB 页之外，Sv48 还支持 [#norm:Sv48_page_sizes]#2 MiB 兆页、1 GiB 吉页和 512 GiB 太页#，它们每一个 [#norm:Sv48_superpage_align]#必须在虚拟和物理上都按等于其大小的边界对齐#。[#norm:Sv48_superpage_align_fault]#如果物理地址对齐不足，则引发页错误异常#。'''

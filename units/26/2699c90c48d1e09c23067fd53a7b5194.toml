@@ -1,0 +1,15 @@
+unit_id = "2699c90c48d1e09c23067fd53a7b5194"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The G bit designates a _global_ mapping. Global mappings are those that
+exist in all address spaces. For non-leaf PTEs, the global setting
+implies that all mappings in the subsequent levels of the page table are
+global. Note that failing to mark a global mapping as global merely
+reduces performance, whereas marking a non-global mapping as global is a
+software bug that, after switching to an address space with a different
+non-global mapping for that address range, can unpredictably result in
+either mapping being used.'''
+zh = '''
+G 位指定__全局__映射。全局映射是存在于所有地址空间中的映射。对于非叶 PTE，全局设置意味着页表后续级别中的所有映射都是全局的。注意，未能将全局映射标记为全局仅会降低性能，而将非全局映射标记为全局则是软件缺陷，在切换到对该地址范围具有不同非全局映射的地址空间后，可能不可预测地导致使用任一映射。'''

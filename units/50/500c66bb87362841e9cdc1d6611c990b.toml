@@ -1,0 +1,11 @@
+unit_id = "500c66bb87362841e9cdc1d6611c990b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A insn:prefetch.w[] instruction indicates to hardware that the cache block whose
+effective address is the sum of the base address specified in _rs1_ and the
+sign-extended offset encoded in _imm[11:0]_, where _imm[4:0]_ equals `0b00000`,
+is likely to be accessed by a data write (i.e. store) in the near future.'''
+zh = '''
+一条 insn:prefetch.w[] 指令向硬件指示：有效地址为 _rs1_ 中指定的基地址与 _imm[11:0]_ 中编码的符号扩展偏移量之和（其中 _imm[4:0]_ 等于 `0b00000`）的缓存块，可能在不久的将来被数据写（即存储）访问。'''

@@ -1,0 +1,24 @@
+unit_id = "cdf8f60731e4a6e26b441a7af70411c1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The atomicity axiom forbids stores from other harts from being
+interleaved in global memory order between an LR and the SC paired with
+that LR. The atomicity axiom does not forbid loads from being
+interleaved between the paired operations in program order or in the
+global memory order, nor does it forbid stores from the same hart or
+stores to non-overlapping locations from appearing between the paired
+operations in either program order or in the global memory order. For
+example, the SC instructions in <<litmus_lrsdsc>> may (but are not
+guaranteed to) succeed. None of those successes would violate the
+atomicity axiom, because the intervening non-conditional stores are from
+the same hart as the paired load-reserved and store-conditional
+instructions. This way, a memory system that tracks memory accesses at
+cache line granularity (and which therefore will see the four snippets
+of <<litmus_lrsdsc>> as identical) will not
+be forced to fail a store-conditional instruction that happens to
+(falsely) share another portion of the same cache line as the memory
+location being held by the reservation.'''
+zh = '''
+原子性公理禁止来自其他硬件线程的存储在全局内存顺序中交错在一个 LR 与配对到该 LR 的 SC 之间。原子性公理不禁止加载在程序顺序或全局内存顺序中交错在成对操作之间，也不禁止来自同一硬件线程的存储或对非重叠位置的存储在程序顺序或全局内存顺序中出现在成对操作之间。例如，<<litmus_lrsdsc>> 中的 SC 指令可以（但不保证）成功。这些成功都不会违反原子性公理，因为其间插入的非条件存储与成对的加载保留和存储条件指令来自同一硬件线程。这样，以缓存行粒度跟踪内存访问的内存系统（因而会将 <<litmus_lrsdsc>> 的四个片段视为相同）将不会被迫使一条存储条件指令失败，仅仅因为它恰好（错误地）与保留所持有的内存位置共享同一缓存行的另一部分。'''

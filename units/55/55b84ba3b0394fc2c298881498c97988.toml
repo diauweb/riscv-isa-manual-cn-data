@@ -1,0 +1,20 @@
+unit_id = "55b84ba3b0394fc2c298881498c97988"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The FENCE.I instruction in ext:ziccid[] is specified such that software
+written for non-ext:ziccid[] machines is compatible with ext:ziccid[]
+machines.
+For cacheable and coherent memory regions, the combination of making older
+stores globally visible and flushing the instruction buffer on FENCE.I
+suffices to implement FENCE.I's pre-ext:ziccid[] semantics for those regions.
+===='''
+zh = '''
+[NOTE]
+====
+ext:ziccid[] 中的 FENCE.I 指令的规范设计使针对非 ext:ziccid[] 机器编写的软件与 ext:ziccid[] 机器兼容。
+对于可缓存且一致的内存区域，在 FENCE.I 上同时使较早的存储全局可见并刷新指令缓冲，就足以实现 FENCE.I 在这些区域上的 ext:ziccid[] 之前语义。
+===='''

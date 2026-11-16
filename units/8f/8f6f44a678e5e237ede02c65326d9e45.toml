@@ -1,0 +1,19 @@
+unit_id = "8f6f44a678e5e237ede02c65326d9e45"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This bit indicates the taken/not taken status in the case where the
+reported address points to a branch instruction. Overall efficiency
+would be slightly improved if this bit was removed, and the branch
+status was instead "carried over" and reported in the next _te_inst_
+packet. This was considered, but there are several pathological cases
+where this approach fails. Consider for example the situation where the
+first traced instruction is a branch, and this is then followed
+immediately by an exception. This results in format 3 packets being
+generated on two consecutive instructions. The second packet does not
+contain a branch map, so there is no way to report the branch status of
+the 1st branch, apart from by inserting a format 1 packet in between.
+There are two issues with this:'''
+zh = '''
+此位指示在报告地址指向分支指令的情况下的已采用/未采用状态。如果去掉此位，而是把分支状态"结转"到下一个 _te_inst_ 包中报告，整体效率会略有提高。对此已作考虑，但存在若干该做法失败的病态情形。例如考虑第一个被跟踪的指令是分支，紧接着又发生异常的情形。这会导致在连续两条指令上生成格式 3 包。第二个包不包含分支映射，因此除了在中间插入格式 1 包之外，无法报告第 1 条分支的分支状态。这样做有两个问题：'''

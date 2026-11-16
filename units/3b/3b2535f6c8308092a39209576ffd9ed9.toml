@@ -1,0 +1,11 @@
+unit_id = "3b2535f6c8308092a39209576ffd9ed9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Bit 63 of `menvcfg` (or bit 31 of `menvcfgh`) - named STCE (STimecmp Enable) -
+enables `stimecmp` for S-mode when set to one, and the same bit of henvcfg
+enables `vstimecmp` for VS-mode. These STCE bits are WARL and are hard-wired to 0
+when this extension is not implemented.'''
+zh = '''
+`menvcfg` 的第 63 位（或 `menvcfgh` 的第 31 位）——称为 STCE（STimecmp Enable）——在置 1 时为 S 模式启用 `stimecmp`，而 henvcfg 的相同位为 VS 模式启用 `vstimecmp`。这些 STCE 位是 WARL 的，并且当未实现本扩展时被硬连线为 0。'''

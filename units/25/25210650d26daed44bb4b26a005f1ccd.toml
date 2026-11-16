@@ -1,0 +1,28 @@
+unit_id = "25210650d26daed44bb4b26a005f1ccd"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.lumop
+[cols="1,1,1,1,1,11"]
+|===
+5+| lumop[4:0] | Description
+
+| 0 | 0 | 0 | 0 | 0 | unit-stride load
+| 0 | 1 | 0 | 0 | 0 | unit-stride, whole register load
+| 0 | 1 | 0 | 1 | 1 | unit-stride, mask load, EEW=8
+| 1 | 0 | 0 | 0 | 0 | unit-stride fault-only-first
+| x | x | x | x | x | other encodings reserved
+|==='''
+zh = '''
+.lumop
+[cols="1,1,1,1,1,11"]
+|===
+5+| lumop[4:0] | 描述
+
+| 0 | 0 | 0 | 0 | 0 | 单位步长加载
+| 0 | 1 | 0 | 0 | 0 | 单位步长，整寄存器加载
+| 0 | 1 | 0 | 1 | 1 | 单位步长，掩码加载，EEW=8
+| 1 | 0 | 0 | 0 | 0 | 单位步长仅首错
+| x | x | x | x | x | 其他编码保留
+|==='''

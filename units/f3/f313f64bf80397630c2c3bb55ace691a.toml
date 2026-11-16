@@ -1,0 +1,15 @@
+unit_id = "f313f64bf80397630c2c3bb55ace691a"
+kind = "code"
+translatable = false
+en = '''
+----
+ ta   # Tail agnostic
+ tu   # Tail undisturbed
+ ma   # Mask agnostic
+ mu   # Mask undisturbed
+
+ vsetvli t0, a0, e32, m4, ta, ma   # Tail agnostic, mask agnostic
+ vsetvli t0, a0, e32, m4, tu, ma   # Tail undisturbed, mask agnostic
+ vsetvli t0, a0, e32, m4, ta, mu   # Tail agnostic, mask undisturbed
+ vsetvli t0, a0, e32, m4, tu, mu   # Tail undisturbed, mask undisturbed
+----'''

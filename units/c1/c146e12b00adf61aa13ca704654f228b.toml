@@ -1,0 +1,11 @@
+unit_id = "c146e12b00adf61aa13ca704654f228b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This sequence uses the `ra` register. If the privilege mode at which this
+sequence is executed can be interrupted, then the trap handler should save the
+`ra` on the shadow stack itself. There it is guarded against tampering and
+can be restored prior to returning from the trap.'''
+zh = '''
+此序列使用 `ra` 寄存器。如果执行此序列的特权模式可以被中断，则陷阱处理程序应将 `ra` 保存在影子栈自身上。在那里它可以防止篡改，并可在从陷阱返回之前恢复。'''

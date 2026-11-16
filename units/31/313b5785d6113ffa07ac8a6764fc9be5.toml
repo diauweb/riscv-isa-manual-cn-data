@@ -1,0 +1,72 @@
+unit_id = "313b5785d6113ffa07ac8a6764fc9be5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Handling of 3-bit itype values]
+.Handling of 3-bit itype values
+[cols="5%,20%,75%",options="header"]
+|======================================================================================================
+|#|itype|Encoder Action
+|0|No special type|Only update <<field_I-CNT,I-CNT>> field.
+|1|Exception|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=2 or 1. +
+*IMPORTANT:* An address emitted is known at the next valid ingress port cycle.
+|2|Interrupt|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=3 or 1. +
+*IMPORTANT:* An address emitted is known at the next valid ingress port cycle.
+|3|Trap return|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0. +
+*IMPORTANT:* An address emitted is known at the next valid ingress port cycle.
+|4|Not-taken branch|*For <<mode_BTM,BTM>> mode:* +
+  Only update <<field_I-CNT,I-CNT>> field.
+
+*For <<mode_HTM,HTM>> mode:* +
+  Update <<field_I-CNT,I-CNT>> field. +
+  Add 0 as least significant bit to <<field_HIST,HIST>> field.
+|5|Taken branch|*For <<mode_BTM,BTM>> mode:* +
+  Update <<field_I-CNT,I-CNT>> field. +
+  Generate <<msg_DirectBranch,DirectBranch>> message.
+
+*For <<mode_HTM,HTM>> mode:* +
+Update <<field_I-CNT,I-CNT>> field. +
+Add 1 as least significant bit to <<field_HIST,HIST>> field.
+|6|Indirect jump (with or without linkage)|Update <<field_I-CNT,I-CNT>> field. +
+Emit Indirect Branch message with <<field_B-TYPE,B-TYPE>>=0. +
+*IMPORTANT:* An address emitted is known at the next valid ingress port cycle.
+|7|Reserved|-
+|======================================================================================================'''
+zh = '''
+[#Handling of 3-bit itype values]
+.3 位 itype 值的处理
+[cols="5%,20%,75%",options="header"]
+|======================================================================================================
+|#|itype|编码器动作
+|0|无特殊类型|仅更新 <<field_I-CNT,I-CNT>> 字段。
+|1|异常|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=2 或 1 的 Indirect Branch 消息。 +
+*重要：* 发出的地址在下一个有效入口端口周期才可知。
+|2|中断|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=3 或 1 的 Indirect Branch 消息。 +
+*重要：* 发出的地址在下一个有效入口端口周期才可知。
+|3|陷阱返回|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。 +
+*重要：* 发出的地址在下一个有效入口端口周期才可知。
+|4|未跳转分支|*对于 <<mode_BTM,BTM>> 模式：* +
+  仅更新 <<field_I-CNT,I-CNT>> 字段。
+
+*对于 <<mode_HTM,HTM>> 模式：* +
+  更新 <<field_I-CNT,I-CNT>> 字段。 +
+  将 0 作为最低有效位添加到 <<field_HIST,HIST>> 字段。
+|5|已跳转分支|*对于 <<mode_BTM,BTM>> 模式：* +
+  更新 <<field_I-CNT,I-CNT>> 字段。 +
+  生成 <<msg_DirectBranch,DirectBranch>> 消息。
+
+*对于 <<mode_HTM,HTM>> 模式：* +
+更新 <<field_I-CNT,I-CNT>> 字段。 +
+将 1 作为最低有效位添加到 <<field_HIST,HIST>> 字段。
+|6|间接跳转（带或不带链接）|更新 <<field_I-CNT,I-CNT>> 字段。 +
+发出 <<field_B-TYPE,B-TYPE>>=0 的 Indirect Branch 消息。 +
+*重要：* 发出的地址在下一个有效入口端口周期才可知。
+|7|保留|-
+|======================================================================================================'''

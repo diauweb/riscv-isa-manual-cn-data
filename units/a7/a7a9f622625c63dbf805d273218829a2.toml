@@ -1,0 +1,12 @@
+unit_id = "a7a9f622625c63dbf805d273218829a2"
+kind = "code"
+translatable = false
+en = '''
+----
+Assembly syntax pattern for vector narrowing arithmetic instructions
+
+# Single-width result vd, double-width source vs2, single-width source vs1/rs1
+# SEW = 2*SEW op SEW
+vnop.wv  vd, vs2, vs1, vm  # integer vector-vector      vd[i] = vs2[i] op vs1[i]
+vnop.wx  vd, vs2, rs1, vm  # integer vector-scalar      vd[i] = vs2[i] op x[rs1]
+----'''

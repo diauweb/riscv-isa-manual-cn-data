@@ -1,0 +1,39 @@
+unit_id = "ea7ee0447cb01bf86f54c28ab2002c73"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[[norm:instgrp:load_store:endian_byte_operation]]
+In a system for which endianness is byte-address invariant, the
+following property holds: if a byte is stored to memory at some address
+in some endianness, then a byte-sized load from that address in any
+endianness returns the stored value.
+
+[[norm:instgrp:load_store:little_endian_operation]]
+In a little-endian configuration, multibyte stores write the
+least-significant register byte at the lowest memory byte address,
+followed by the other register bytes in ascending order of their
+significance. Loads similarly transfer the contents of the lesser memory
+byte addresses to the less-significant register bytes.
+
+[[norm:instgrp:load_store:big_endian_operation]]
+In a big-endian configuration, multibyte stores write the
+most-significant register byte at the lowest memory byte address,
+followed by the other register bytes in descending order of their
+significance. Loads similarly transfer the contents of the greater
+memory byte addresses to the less-significant register bytes.
+===='''
+zh = '''
+[NOTE]
+====
+[[norm:instgrp:load_store:endian_byte_operation]]
+在端序为字节地址不变的系统上，以下性质成立：如果某个字节以某种端序存储到内存中的某个地址，那么以任何端序从该地址进行字节大小的加载都会返回所存储的值。
+
+[[norm:instgrp:load_store:little_endian_operation]]
+在小端配置中，多字节存储将最低有效寄存器字节写入最低内存字节地址，然后按重要性升序写入其他寄存器字节。加载类似地将较小内存字节地址的内容传输到较低有效寄存器字节。
+
+[[norm:instgrp:load_store:big_endian_operation]]
+在大端配置中，多字节存储将最高有效寄存器字节写入最低内存字节地址，然后按重要性降序写入其他寄存器字节。加载类似地将较大内存字节地址的内容传输到较低有效寄存器字节。
+===='''

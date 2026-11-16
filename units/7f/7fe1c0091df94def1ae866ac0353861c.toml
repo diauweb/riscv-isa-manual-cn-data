@@ -1,0 +1,36 @@
+unit_id = "7fe1c0091df94def1ae866ac0353861c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|Register
+|Direction
+|EGW
+|EGS
+|EEW
+|Definition
+
+| _vd_   | input  | 256  | 8 | 32 | Current state {H,G.F,E,D,C,B,A}
+| _uimm_ | input  | -    | - | -  | round number
+| _vs2_  | input  | 256  | 8 | 32 | Message words {-,-,w[5],w[4],-,-,w[1],w[0]}
+| _vd_   | output | 256  | 8 | 32 | Next state {H,G.F,E,D,C,B,A}
+|==='''
+zh = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|寄存器
+|方向
+|EGW
+|EGS
+|EEW
+|定义
+
+| _vd_   | 输入  | 256  | 8 | 32 | 当前状态 {H,G.F,E,D,C,B,A}
+| _uimm_ | 输入  | -    | - | -  | 轮编号
+| _vs2_  | 输入  | 256  | 8 | 32 | 消息字 {-,-,w[5],w[4],-,-,w[1],w[0]}
+| _vd_   | 输出 | 256  | 8 | 32 | 下一状态 {H,G.F,E,D,C,B,A}
+|==='''

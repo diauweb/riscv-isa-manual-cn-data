@@ -1,0 +1,16 @@
+unit_id = "0ee77c25fc1bc1c3639276082b5223f5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sstatus_sdt_trap]#When a trap is to be taken into S-mode, if the `SDT` bit is currently 0,
+it is then set to 1, and the trap is delivered as expected.# [#norm:sstatus_sdt_unexpected_trap]#However, if `SDT` is
+already set to 1, then this is an _unexpected trap_.# [#norm:sstatus_sdt_double_trap]#In the event of an
+_unexpected trap_, a double-trap exception trap is delivered into M-mode.# [#norm:sstatus_sdt_double_trap_regs]#To
+deliver this trap, the hart writes registers, except `mcause` and `mtval2`, with
+the same information that the _unexpected trap_ would have written if it was
+taken into M-mode.# [#norm:sstatus_sdt_double_trap_mtval2]#The `mtval2` register is then set to what would be otherwise
+written into the `mcause` register by the _unexpected trap_.# [#norm:sstatus_sdt_double_trap_mcause]#The `mcause`
+register is set to 16, the double-trap exception code.#'''
+zh = '''
+[#norm:sstatus_sdt_trap]#当陷阱将被陷入 S 模式时，如果 `SDT` 位当前为 0，则将其置为 1，并按预期递送陷阱。# [#norm:sstatus_sdt_unexpected_trap]#然而，如果 `SDT` 已置为 1，则这是一个__意外陷阱__。# [#norm:sstatus_sdt_double_trap]#在发生__意外陷阱__时，一个双重陷阱异常陷阱被递送到 M 模式。# [#norm:sstatus_sdt_double_trap_regs]#为递送该陷阱，硬件线程写入寄存器（`mcause` 和 `mtval2` 除外），写入的信息与__意外陷阱__若被陷入 M 模式时本应写入的信息相同。# [#norm:sstatus_sdt_double_trap_mtval2]#随后 `mtval2` 寄存器被置为__意外陷阱__本应写入 `mcause` 寄存器的值。# [#norm:sstatus_sdt_double_trap_mcause]#`mcause` 寄存器被置为 16，即双重陷阱异常代码。#'''

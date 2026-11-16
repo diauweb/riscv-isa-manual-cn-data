@@ -1,0 +1,12 @@
+unit_id = "68ee7f9470b3bf112ca47341ee159c1a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+HFENCE.VVMA is valid only in M-mode or HS-mode. Its effect is much the
+same as temporarily entering VS-mode and executing SFENCE.VMA. Executing
+an HFENCE.VVMA guarantees that any previous stores already visible to
+the current hart are ordered before all implicit reads by that hart done
+for VS-stage address translation for instructions that'''
+zh = '''
+HFENCE.VVMA 仅在 M-mode 或 HS-mode 中有效。其效果与临时进入 VS-mode 并执行 SFENCE.VMA 大致相同。执行 HFENCE.VVMA 保证当前硬件线程已可见的任何先前存储，在该硬件线程为以下指令的 VS 级地址翻译所做的所有隐式读取之前排序：'''

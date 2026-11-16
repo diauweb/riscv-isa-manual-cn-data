@@ -1,0 +1,12 @@
+unit_id = "f8e8e202c6c54191300fd5c0d128d398"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some designs may choose to hardcode hart groups to a group other than
+group 0, meaning it is never possible to halt or resume just a single
+hart. This is explicitly allowed. In that case it must be possible to
+discover the groups by using {dm-dmcs2} even if it's not possible to change the
+configuration.'''
+zh = '''
+某些设计可能选择将硬件线程组硬连线到组 0 以外的组，这意味着永远不可能仅停止或恢复单个硬件线程。这是明确允许的。在这种情况下，即使无法更改配置，也必须能够使用 {dm-dmcs2} 发现组。'''

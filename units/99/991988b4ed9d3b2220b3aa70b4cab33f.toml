@@ -1,0 +1,22 @@
+unit_id = "991988b4ed9d3b2220b3aa70b4cab33f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. `lr` instructions are loads.
+. Successful `sc` instructions are stores.
+. It is UNSPECIFIED whether failing `sc` instructions are stores or not.
+. Each AMO instruction is a load for the read portion of the operation.
+The address is always available to trigger on, although the value loaded
+might not be, depending on the hardware implementation.
+. Each AMO instruction is a store for the write portion of the operation.
+The address is always available to trigger on. Whether data store triggers match on AMOs is UNSPECIFIED.
+. If the destination register of any load or AMO is `zero` then it is UNSPECIFIED whether a
+data load trigger will match.'''
+zh = '''
+. `lr` 指令是加载。
+. 成功的 `sc` 指令是存储。
+. 失败的 `sc` 指令是否为存储是未规定的。
+. 每条 AMO 指令在操作的读部分被视为加载。地址始终可用于触发，尽管加载的值可能不可用，取决于硬件实现。
+. 每条 AMO 指令在操作的写部分被视为存储。地址始终可用于触发。数据存储触发器是否在 AMO 上匹配是未规定的。
+. 如果任何加载或 AMO 的目标寄存器是 `zero`，则数据加载触发器是否匹配是未规定的。'''

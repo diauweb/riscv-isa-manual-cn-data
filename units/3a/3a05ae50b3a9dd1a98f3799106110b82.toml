@@ -1,0 +1,14 @@
+unit_id = "3a05ae50b3a9dd1a98f3799106110b82"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Interrupt bit in the `scause` register is set if the trap was caused
+by an interrupt. The Exception Code field contains a code identifying
+the last exception or interrupt. <<scauses>> lists
+the possible exception codes for the current supervisor ISAs. [#norm:scause_exception_code_acc]#The
+Exception Code is a *WLRL* field.# [#norm:scause-exception_code_sz]#It is required to hold the values 0–31
+(i.e., bits 4–0 must be implemented), but otherwise it is only
+guaranteed to hold supported exception codes.#'''
+zh = '''
+`scause` 寄存器中的中断位在陷阱由中断引起时置位。异常代码字段包含标识最后一个异常或中断的代码。<<scauses>> 列出了当前监管 ISA 的可能异常代码。[#norm:scause_exception_code_acc]#异常代码是一个 *WLRL* 字段。# [#norm:scause-exception_code_sz]#它要求能够保存值 0–31（即必须实现位 4–0），但除此之外仅保证能够保存受支持的异常代码。#'''

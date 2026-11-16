@@ -1,0 +1,13 @@
+unit_id = "fd4d5ec788c0aaea51240d92ec37418e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vstart` CSR is writable by unprivileged code, but non-zero
+`vstart` values may cause vector instructions to run substantially
+slower on some implementations, so `vstart` should not be used by
+application programmers.  A few vector instructions cannot be
+executed with a non-zero `vstart` value and will raise an illegal
+instruction exception as defined below.'''
+zh = '''
+`vstart` CSR 可由非特权代码写入，但非零 `vstart` 值可能导致向量指令在某些实现上运行得慢得多，因此应用程序员不应使用 `vstart`。少数向量指令无法在非零 `vstart` 值下执行，并将如下所定义引发非法指令异常。'''

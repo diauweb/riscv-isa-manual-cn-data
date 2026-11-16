@@ -1,0 +1,35 @@
+unit_id = "2c044aee98aea837495f75804b1b0a51"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The term hart was introduced in the work on Lithe cite:[lithe-pan-hotpar09] and cite:[lithe-pan-pldi10] to provide a term to
+represent an abstract execution resource as opposed to a software thread
+programming abstraction.
+
+The important distinction between a hardware thread (hart) and a
+software thread context is that the software running inside an execution
+environment is not responsible for causing progress of each of its
+harts; that is the responsibility of the outer execution environment. So
+the environment's harts operate like hardware threads from the
+perspective of the software inside the execution environment.
+
+An execution environment implementation might time-multiplex a set of
+guest harts onto fewer host harts provided by its own execution
+environment but must do so in a way that guest harts operate like
+independent hardware threads. In particular, if there are more guest
+harts than host harts then the execution environment must be able to
+preempt the guest harts and must not wait indefinitely for guest
+software on a guest hart to "`yield`" control of the guest hart.
+===='''
+zh = '''
+[NOTE]
+====
+硬件线程（hart）一词是在 Lithe cite:[lithe-pan-hotpar09] 和 cite:[lithe-pan-pldi10] 的工作中引入的，用以提供一个表示抽象执行资源的术语，以区别于软件线程编程抽象。
+
+硬件线程（hart）与软件线程上下文之间的重要区别在于，在执行环境内运行的软件不负责推动其每个硬件线程的进展；这是外部执行环境的责任。因此，从执行环境内软件的角度来看，该环境的硬件线程就像硬件线程一样运行。
+
+执行环境实现可以将一组来宾硬件线程时间多路复用到由其自身执行环境提供的较少数量的宿主硬件线程上，但必须以让来宾硬件线程像独立硬件线程一样运行的方式进行。特别地，如果来宾硬件线程多于宿主硬件线程，则执行环境必须能够抢占来宾硬件线程，并且不得无限期等待来宾硬件线程上的来宾软件“让出”该来宾硬件线程的控制权。
+===='''

@@ -1,0 +1,15 @@
+unit_id = "e901a41c88b89287f3c59083e4cf9332"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The `vmsge{u}.vx` could potentially be encoded in a
+non-orthogonal way under the unused OPIVI variant of `vmslt{u}`.  These
+would be the only instructions in OPIVI that use a scalar `x`register
+however.  Alternatively, a further two funct6 encodings could be used,
+but these would have a different operand format (writes to mask
+register) than others in the same group of 8 funct6 encodings.  The
+current PoR is to omit these instructions and to synthesize where
+needed as described below.'''
+zh = '''
+NOTE: `vmsge{u}.vx` 有可能以非正交方式编码在 `vmslt{u}` 未使用的 OPIVI 变体下。然而，这些将是 OPIVI 中唯一使用标量 `x` 寄存器的指令。或者，可以使用另外两个 funct6 编码，但它们将具有与同一组 8 个 funct6 编码中的其他指令不同的操作数格式（写入掩码寄存器）。当前 PoR 是省略这些指令并在需要时按下文所述进行合成。'''

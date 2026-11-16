@@ -1,0 +1,77 @@
+unit_id = "91b0bb82c83e6aa0075ac6b1eeacffc7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+[[instantiate_store_value]]
+===== Instantiate memory store operation values
+
+An instruction instance latexmath:[$i$] in state
+Plain(Store_memv(_mem_value_, _store_continuation_)) can always
+instantiate the values of the memory store operations
+latexmath:[$i.\textit{mem\_stores}$]. Action:
+
+. split _mem_value_ between the memory store operations
+latexmath:[$i.\textit{mem\_stores}$]; and
+. update the state of latexmath:[$i$] to
+Pending_mem_stores(_store_continuation_).
+
+[[commit_stores]]
+===== Commit store instruction
+
+An uncommitted instruction instance latexmath:[$i$] of a non-`sc` store
+instruction or an `sc` instruction in the context of the <<commit_sc, Commit and propagate store operation of an `sc`>>
+transition, in state Pending_mem_stores(_store_continuation_), can be
+committed (not to be confused with propagated) if:
+
+. latexmath:[$i$] has fully determined data;
+. all program-order-previous conditional branch and indirect jump
+instructions are finished;
+. all program-order-previous `fence` instructions with `.sw` set are
+finished;
+. all program-order-previous `fence.tso` instructions are finished;
+. all program-order-previous load-acquire instructions are finished;
+. all program-order-previous store-acquire-release instructions are
+finished;
+. if latexmath:[$i$] is a store-release, all program-order-previous
+instructions are finished;
+. all program-order-previous memory access instructions have a fully
+determined memory footprint;
+. all program-order-previous store instructions, except for `sc` that failed,
+have initiated and so have non-empty _mem_stores_; and
+. all program-order-previous load instructions have initiated and so have
+non-empty _mem_loads_.
+
+Action: record that _i_ is committed.
+[NOTE]
+===='''
+zh = '''
+====
+[[instantiate_store_value]]
+===== 实例化内存存储操作值
+
+处于状态 Plain(Store_memv(_mem_value_, _store_continuation_)) 的指令实例 latexmath:[$i$] 总是可以实例化内存存储操作 latexmath:[$i.\textit{mem\_stores}$] 的值。动作：
+
+. 在内存存储操作 latexmath:[$i.\textit{mem\_stores}$] 之间拆分 _mem_value_；并且
+. 将 latexmath:[$i$] 的状态更新为 Pending_mem_stores(_store_continuation_)。
+
+[[commit_stores]]
+===== 提交存储指令
+
+非 `sc` 存储指令的未提交指令实例 latexmath:[$i$]，或在 <<commit_sc, 提交和传播 `sc` 的存储操作>> 转换上下文中的 `sc` 指令，处于状态 Pending_mem_stores(_store_continuation_)，如果满足以下条件，则可以提交（不要与传播混淆）：
+
+. latexmath:[$i$] 具有完全确定的数据；
+. 所有程序顺序先前条件分支和间接跳转指令均已完成；
+. 所有设置了 `.sw` 的程序顺序先前 `fence` 指令均已完成；
+. 所有程序顺序先前 `fence.tso` 指令均已完成；
+. 所有程序顺序先前加载-获取指令均已完成；
+. 所有程序顺序先前存储-获取-释放指令均已完成；
+. 如果 latexmath:[$i$] 是存储-释放，则所有程序顺序先前指令均已完成；
+. 所有程序顺序先前内存访问指令具有完全确定的内存足迹；
+. 所有程序顺序先前存储指令（失败的 `sc` 除外）已发起，因而具有非空 _mem_stores_；并且
+. 所有程序顺序先前加载指令已发起，因而具有非空 _mem_loads_。
+
+动作：记录 _i_ 已提交。
+[NOTE]
+===='''

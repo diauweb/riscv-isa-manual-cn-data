@@ -1,0 +1,32 @@
+unit_id = "9fd211d71a8966cc3df94b6e2707c522"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since the `WRS.STO` and `WRS.NTO` instructions can complete execution for
+reasons other than stores to the reservation set, software will likely need
+a means of looping until the required stores have occurred.
+
+The duration of a `WRS.STO` instruction's timeout may vary significantly within
+and among implementations. In typical implementations this duration should be
+roughly in the range of 10 to 100 times an on-chip cache miss latency or a
+cacheless access to main memory.
+
+`WRS.NTO`, unlike `WFI`, is not specified to cause an illegal-instruction
+exception if executed in U-mode when the governing `TW` bit is 0. `WFI` is
+typically not expected to be used in U-mode and on many systems may promptly
+cause an illegal-instruction exception if used at U-mode. Unlike `WFI`,
+`WRS.NTO` is expected to be used by software in U-mode when waiting on
+memory but without a deadline for that wait.
+===='''
+zh = '''
+[NOTE]
+====
+由于 `WRS.STO` 和 `WRS.NTO` 指令可能因并非对预约集的存储的其他原因而完成执行，软件很可能需要一种循环手段，直到所需的存储发生为止。
+
+`WRS.STO` 指令的超时时长在同一实现内部以及不同实现之间都可能存在显著差异。在典型实现中，该时长应大致处于片上缓存缺失延迟或无缓存主存访问的 10 到 100 倍范围内。
+
+与 `WFI` 不同，`WRS.NTO` 并未规定在 U 模式下执行且控制 `TW` 位为 0 时会引发非法指令异常。`WFI` 通常不期望在 U 模式下使用，并且在许多系统上若在 U 模式下使用可能会立即引发非法指令异常。与 `WFI` 不同，`WRS.NTO` 期望被 U 模式下的软件用于等待内存，且该等待没有截止时间。
+===='''

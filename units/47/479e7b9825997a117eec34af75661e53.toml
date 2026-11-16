@@ -1,0 +1,16 @@
+unit_id = "479e7b9825997a117eec34af75661e53"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:xperm8[] instruction operates on bytes.
+`GPR[rs1]` contains a vector of `XLEN/8` 8-bit elements.
+`GPR[rs2]` contains a vector of `XLEN/8` 8-bit indexes.
+The result is each element in `GPR[rs2]` replaced by the indexed element
+in `GPR[rs1]`, or zero if the index into `GPR[rs2]` is out of bounds.'''
+zh = '''
+insn:xperm8[] 指令按字节操作。
+`GPR[rs1]` 包含一个由 `XLEN/8` 个 8 位元素组成的向量。
+`GPR[rs2]` 包含一个由 `XLEN/8` 个 8 位索引组成的向量。
+结果是 `GPR[rs2]` 中的每个元素被 `GPR[rs1]` 中对应索引的元素替换，
+若 `GPR[rs2]` 中的索引越界则为零。'''

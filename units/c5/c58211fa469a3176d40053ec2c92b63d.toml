@@ -1,0 +1,14 @@
+unit_id = "c58211fa469a3176d40053ec2c92b63d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The decoder generally does not know where an interrupt occured in the
+instruction sequence, so the trace must report the address where normal
+program flow ceased, as well as give an indication of the asynchronous
+destination which may be as simple as reporting the exception type. When
+an interrupt or exception occurs, the final instruction retired
+beforehand must be traced. Following this the next valid instruction
+address (the first of the trap handler) must be traced.'''
+zh = '''
+解码器一般不知道中断在指令序列中的发生位置，因此跟踪必须报告正常程序流停止处的地址，并给出异步目的地的指示，这种指示可能简单到只报告异常类型。当发生中断或异常时，必须跟踪事先退役的最后一条指令。在此之后，必须跟踪下一条有效指令地址（陷阱处理程序的第一条指令）。'''

@@ -1,0 +1,14 @@
+unit_id = "163127e62f546e503887e5678d232a2f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The landing pad is designed to provide integrity to control transfers performed
+using indirect calls and jumps, and this is referred to as forward-edge
+protection. When the ext:zicfilp[] is active, the hart tracks an expected landing pad
+(csr::[elp]) state that is updated by an indirect call or indirect jump to
+require a landing pad instruction at the target of the branch. If the
+instruction at the target is not a landing pad, then a software-check exception
+is raised.'''
+zh = '''
+着陆垫旨在为使用间接调用和跳转执行的控制转移提供完整性，这被称为前向边保护。当 ext:zicfilp[] 处于活动状态时，硬件线程跟踪一个期望着陆垫（csr::[elp]）状态，该状态由间接调用或间接跳转更新，以要求分支目标处存在一条着陆垫指令。如果目标处的指令不是着陆垫，则引发软件检查异常。'''

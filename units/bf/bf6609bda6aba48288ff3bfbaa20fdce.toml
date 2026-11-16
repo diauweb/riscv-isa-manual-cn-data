@@ -1,0 +1,18 @@
+unit_id = "bf6609bda6aba48288ff3bfbaa20fdce"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Bit `trRamHasSMEM` must be tied to 1 and `trRamMode` must be tied to 1.
+* Bit `trRamWrap` must be implemented.
+* Register `trRamStart` must be implemented but can be hard coded to value '2^N' (address 0x..00).
+* Register `trRamLimit` must be implemented but can be hard coded to value '2^N + 2^M-4' (address 0x..FC).
+* Registers `trRamWP` must accept any 32-bit aligned value in inclusive range < `trRamStart` .. `trRamLimit` >.
+* All other registers/fields/bits may be tied to 0.'''
+zh = '''
+* 位 `trRamHasSMEM` 必须固定为 1，`trRamMode` 必须固定为 1。
+* 必须实现位 `trRamWrap`。
+* 必须实现寄存器 `trRamStart`，但可以硬连线为值 '2^N'（地址 0x..00）。
+* 必须实现寄存器 `trRamLimit`，但可以硬连线为值 '2^N + 2^M-4'（地址 0x..FC）。
+* 寄存器 `trRamWP` 必须接受包含范围 < `trRamStart` .. `trRamLimit` > 内的任何 32 位对齐值。
+* 所有其他寄存器/字段/位可固定为 0。'''

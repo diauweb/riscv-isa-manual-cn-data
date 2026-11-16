@@ -1,0 +1,8 @@
+unit_id = "3a2d086a85389b796e4e12aaa46ff9a2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The trace clock, TRC_CLK, normally has edges coincident with the TRC_DATA edges. Typically, a trace probe will delay trace data or use a PLL to recover a sampling clock that is twice the frequency of TRC_CLK and shifted 90 degrees so that its rising edges occur near the center of each bit period. If the PIB implementation supports it, the debugger can set `trPibClkCenter` to change the timing of TRC_CLK so that there is a TRC_CLK edge at the center of each bit period on TRC_DATA. Note that this option cuts the data rate in half relative to normal parallel mode and still requires the probe to sample TRC_DATA on both edges of TRC_CLK.'''
+zh = '''
+跟踪时钟 TRC_CLK 通常具有与 TRC_DATA 边沿重合的边沿。通常，跟踪探针会延迟跟踪数据，或使用 PLL 恢复采样时钟，该采样时钟频率为 TRC_CLK 的两倍并偏移 90 度，使其上升沿出现在每个位周期的中心附近。如果 PIB 实现支持，调试器可以设置 `trPibClkCenter` 来改变 TRC_CLK 的时序，使得 TRC_DATA 上每个位周期的中心都有一个 TRC_CLK 边沿。请注意，与正常并行模式相比，此选项将数据速率减半，并且仍然要求探针在 TRC_CLK 的两个边沿上采样 TRC_DATA。'''

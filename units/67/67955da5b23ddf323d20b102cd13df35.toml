@@ -1,0 +1,13 @@
+unit_id = "67955da5b23ddf323d20b102cd13df35"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SM3P1(rs1, rd)) = {
+  let r1     : bits(32) = X(rs1)[31..0];
+  let result : bits(32) =  r1 ^ rol32(r1, 15) ^ rol32(r1, 23);
+  X(rd) = EXTS(result);
+  RETIRE_SUCCESS
+}
+--'''

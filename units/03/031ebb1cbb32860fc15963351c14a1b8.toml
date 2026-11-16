@@ -1,0 +1,11 @@
+unit_id = "031ebb1cbb32860fc15963351c14a1b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If `hgatp`.MODE is changed for a given VMID, an HFENCE.GVMA with
+_rs1_=`x0` (and _rs2_ set to either `x0` or the VMID) must be executed
+to order subsequent guest translations with the MODE change—even if the
+old MODE or new MODE is Bare.'''
+zh = '''
+如果针对给定 VMID 更改了 `hgatp`.MODE，则必须执行 _rs1_=`x0`（且 _rs2_ 设置为 `x0` 或该 VMID）的 HFENCE.GVMA，以使后续客户翻译与 MODE 更改排序——即使旧 MODE 或新 MODE 为 Bare。'''

@@ -1,0 +1,25 @@
+unit_id = "8e0cb1efc3c036550f155a4b6a79c3d3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For most purposes, it is simpler to think of the shared memory as an
+array, i.e., a map from memory locations to memory store operation
+slices, where each memory location is mapped to a one-byte slice of the
+most recent memory store operation to that location. However, this
+abstraction is not detailed enough to properly handle the `sc`
+instruction. The RVWMO allows store operations from the same hart as the
+`sc` to intervene between the store operation of the `sc` and the store
+operations the paired `lr` read from. To allow such store operations to
+intervene, and forbid others, the array abstraction must be extended to
+record more information. Here, we use a list as it is very simple, but a
+more efficient and scalable implementations should probably use
+something better.
+===='''
+zh = '''
+[NOTE]
+====
+对于大多数目的，把共享内存视为数组更简单，即从内存位置到内存存储操作切片的映射，其中每个内存位置映射到对该位置最近内存存储操作的一字节切片。然而，这种抽象不够详细，无法正确处理 `sc` 指令。RVWMO 允许来自与 `sc` 同一硬件线程的存储操作在 `sc` 的存储操作与配对 `lr` 读取自的存储操作之间插入。为允许此类存储操作插入并禁止其他操作插入，必须扩展数组抽象以记录更多信息。这里我们使用列表，因为它非常简单，但更高效和可扩展的实现可能应使用更好的结构。
+===='''

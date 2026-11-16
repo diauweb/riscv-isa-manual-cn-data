@@ -1,0 +1,20 @@
+unit_id = "53cf629845fcddd841d2eb1b10c4d481"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<tsomappings>> provides a mapping from TSO memory
+operations onto RISC-V memory instructions. Normal x86 loads and stores
+are all inherently acquire-RCpc and release-RCpc operations: TSO
+enforces all load-load, load-store, and store-store ordering by default.
+Therefore, under RVWMO, all TSO loads must be mapped onto a load
+followed by FENCE R,RW, and all TSO stores must be mapped onto
+FENCE RW,W followed by a store. TSO atomic read-modify-writes and x86
+instructions using the LOCK prefix are fully ordered and can be
+implemented either via an AMO with both _aq_ and _rl_ set, or via an LR
+with _aq_ set, the arithmetic operation in question, an SC with both
+_aq_ and _rl_ set, and a conditional branch checking the success
+condition. In the latter case, the _rl_ annotation on the LR turns out
+(for non-obvious reasons) to be redundant and can be omitted.'''
+zh = '''
+<<tsomappings>> 提供了从 TSO 内存操作到 RISC-V 内存指令的映射。普通 x86 加载和存储本质上都是获取-RCpc 和释放-RCpc 操作：TSO 默认强制所有加载-加载、加载-存储和存储-存储排序。因此，在 RVWMO 下，所有 TSO 加载必须映射为加载后跟 FENCE R,RW，且所有 TSO 存储必须映射为 FENCE RW,W 后跟存储。TSO 原子读-修改-写和使用 LOCK 前缀的 x86 指令是完全有序的，可以通过同时置位 _aq_ 和 _rl_ 的 AMO 实现，或通过置位 _aq_ 的 LR、所讨论的算术操作、同时置位 _aq_ 和 _rl_ 的 SC 以及检查成功条件的条件分支实现。在后一种情况下，LR 上的 _rl_ 注解结果证明（出于不明显的原因）是冗余的，可以省略。'''

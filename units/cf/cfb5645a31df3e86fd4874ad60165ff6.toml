@@ -1,0 +1,20 @@
+unit_id = "cfb5645a31df3e86fd4874ad60165ff6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Given that *iretire* is non-zero in the same cycle that the data access
+retires, the encoder knows the address of the 1st and last instructions
+in a block, but does not know precisely where in the block the data
+access is. In both cases, the first block matches the filtering criteria
+(it contains the address of instruction 1), and the second block does
+not. But if the encoder traced all the data accesses in the matching
+block, then in case 1 it would trace both instructions 1 and 3, whereas
+in the second case it would trace only instruction 1. The decoder has no
+visibility of the block boundaries so cannot account for this. It is
+expecting only instruction 1 to be traced, and so may misinterpret
+instruction 3. If this code is in a loop for example, it will assume
+that the 2nd traced load is in fact instruction 1 from the next loop
+iteration, rather than instruction 3 from this iteration.'''
+zh = '''
+鉴于 *iretire* 在数据访问退役的同一周期非零，编码器知道块中第 1 条和最后一条指令的地址，但并不知道数据访问在块中的确切位置。在两种情形中，第一个块都匹配过滤条件（它包含指令 1 的地址），而第二个块不匹配。但如果编码器跟踪匹配块中的所有数据访问，那么在情形 1 中它会同时跟踪指令 1 和指令 3，而在情形 2 中它只会跟踪指令 1。解码器无法看到块边界，因此无法对此加以区分。它预期只跟踪到指令 1，因此可能会错误解释指令 3。例如，如果这段代码位于循环中，它将假定第 2 次被跟踪的加载实际上是下一次循环迭代中的指令 1，而不是本次迭代中的指令 3。'''

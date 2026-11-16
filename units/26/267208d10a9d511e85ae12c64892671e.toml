@@ -1,0 +1,14 @@
+unit_id = "267208d10a9d511e85ae12c64892671e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_Because the ROI of CTR is perceived to be low for RV32 implementations, CTR does not fully support RV32.  While control flow transfers in RV32 can be recorded, RV32 cannot access_ `x__ctrctl__` _bits 63:32.  A future extension could add support for RV32 by adding 3 new CSRs (`mctrctlh`, `sctrctlh`, and `vsctrctlh`) to provide this access._
+===='''
+zh = '''
+[NOTE]
+====
+_由于认为 CTR 对 RV32 实现的投资回报率较低，CTR 不完全支持 RV32。虽然 RV32 中的控制流转移可以被记录，但 RV32 无法访问_ `x__ctrctl__` _的位 63:32。未来的扩展可以通过增加 3 个新 CSR（`mctrctlh`、`sctrctlh` 和 `vsctrctlh`）来提供此访问，从而增加对 RV32 的支持。_
+===='''

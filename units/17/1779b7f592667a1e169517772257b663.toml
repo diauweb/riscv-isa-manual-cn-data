@@ -1,0 +1,17 @@
+unit_id = "1779b7f592667a1e169517772257b663"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An instruction that performs multiple architectural state changes (e.g.,
+register updates and/or memory accesses) might cause a trigger to fire
+at an intermediate point in its execution. As a result, architectural
+state changes up to that point might have been performed, while
+subsequent state changes, starting from the event that activated the
+trigger, might not have been. The definition of such an instruction will
+specify the order in which architectural state changes take place.
+Alternatively, it may state that partial execution is not allowed,
+implying that a mid-execution trigger must prevent any architectural
+state changes from occurring.'''
+zh = '''
+执行多个架构状态更改（例如寄存器更新和/或内存访问）的指令可能导致触发器在其执行的中间点触发。结果，直到该点的架构状态更改可能已经执行，而从激活触发器的事件开始的后续状态更改可能尚未执行。此类指令的定义将规定架构状态更改发生的顺序。或者，它可能规定不允许部分执行，这意味着执行中触发必须阻止任何架构状态更改发生。'''

@@ -1,0 +1,11 @@
+unit_id = "83c20763901fc20ea566326c219dc405"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+FLT.S and FLE.S perform what the IEEE 754-2008 standard refers to as
+_signaling_ comparisons: that is, they set the invalid operation
+exception flag if either input is NaN. FEQ.S performs a _quiet_
+comparison: it only sets the invalid operation exception flag if either input is a signaling NaN. For all three instructions, the result is 0 if either operand is NaN.'''
+zh = '''
+FLT.S 和 FLE.S 执行 IEEE 754-2008 标准所称的__信号__比较：即，如果任一输入是 NaN，则设置无效操作异常标志。FEQ.S 执行__静默__比较：仅当任一输入是信号 NaN 时才设置无效操作异常标志。对于所有三条指令，如果任一操作数是 NaN，则结果为 0。'''

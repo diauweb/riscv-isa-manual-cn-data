@@ -1,0 +1,13 @@
+unit_id = "a958cbb9d17a790e304f635774d975c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Accesses by one hart to main memory regions are observable not only by
+other harts but also by other devices with the capability to initiate
+requests in the main memory system (e.g., DMA engines). Coherent main
+memory regions always have either the RVWMO or RVTSO memory model.
+Incoherent main memory regions have an implementation-defined memory
+model.'''
+zh = '''
+一个硬件线程对主存区域的访问，不仅可被其他硬件线程观察到，还可被其他有能力在主存系统中发起请求的设备（例如 DMA 引擎）观察到。一致的主存区域始终具有 RVWMO 或 RVTSO 内存模型。非一致的主存区域具有实现定义的内存模型。'''

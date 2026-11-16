@@ -1,0 +1,11 @@
+unit_id = "c40e7bf07d390abfe338e69637f3300b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:sspopchk[] instruction, and its compressed form insn:c.sspopchk[], can be used to
+pop the shadow return address value from the shadow stack and check that the
+value matches the contents of the link register, and if not cause a
+software-check exception with `__x__tval` set to "`shadow stack fault (code=3)`".'''
+zh = '''
+insn:sspopchk[] 指令及其压缩形式 insn:c.sspopchk[] 可用于从影子栈弹出影子返回地址值，并检查该值是否与链接寄存器的内容匹配；如果不匹配，则引发软件检查异常，并将 `__x__tval` 设置为“shadow stack fault (code=3)”。'''

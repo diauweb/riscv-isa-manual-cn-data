@@ -1,0 +1,11 @@
+unit_id = "1f745b6bb1b1ae9a3b5085b87e5b9062"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_fs_no_change_dirty]#If an instruction explicitly or implicitly writes a floating-point
+register or the csr:fcsr[] but does not alter its contents, and csr::[fs]=Initial
+or csr::[fs]=Clean, it is implementation-defined whether FS transitions to
+Dirty.#'''
+zh = '''
+[#norm:mstatus_fs_no_change_dirty]#如果一条指令显式或隐式地写入浮点寄存器或 csr:fcsr[] 但不改变其内容，且 csr::[fs]=Initial 或 csr::[fs]=Clean，则 FS 是否转换为 Dirty 由实现定义。#'''

@@ -1,0 +1,16 @@
+unit_id = "4747ed97588c19c5fc727cdba1c91e1b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The FCSR bit controls access to `fcsr` for the case when floating-point
+instructions operate on `x` registers instead of `f` registers as specified by
+the Zfinx and related extensions (Zdinx, etc.). Whenever `misa.F` = 1, FCSR bit
+of `mstateen0` is read-only zero (and hence read-only zero in `hstateen0` and
+`sstateen0` too). For convenience, when the `stateen` CSRs are implemented and
+`misa.F` = 0, then if the FCSR bit of a controlling `stateen0` CSR is zero, all
+floating-point instructions cause an illegal-instruction exception (or virtual-instruction
+exception, if relevant), as though they all access `fcsr`, regardless of
+whether they really do.'''
+zh = '''
+FCSR 位控制对 `fcsr` 的访问，适用于浮点指令按 Zfinx 及相关扩展（Zdinx 等）的规定对 `x` 寄存器而非 `f` 寄存器进行操作的情况。只要 `misa.F` = 1，`mstateen0` 的 FCSR 位就是只读零（因而在 `hstateen0` 和 `sstateen0` 中也是只读零）。为方便起见，当实现了 `stateen` CSR 且 `misa.F` = 0 时，如果控制用的 `stateen0` CSR 的 FCSR 位为零，则所有浮点指令都会引发非法指令异常（或虚拟指令异常，如相关），就好像它们都访问 `fcsr` 一样，无论它们实际上是否访问。'''

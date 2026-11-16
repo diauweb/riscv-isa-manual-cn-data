@@ -1,0 +1,19 @@
+unit_id = "bde8eea4aae4c64c5d48930c42605785"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zc (code-size reduction) extension introduced push and pop
+instructions (_cm.push_, _cm.pop_, _cm.popret_ and _cm.popretz_) that
+each result in multiple loads or stores. To allow the resulting loads or
+stores to be associated with the correct instruction, these
+multi-memory-access instructions (and any other future instructions with
+similar characteristics) must be reported on the instruction trace
+interface multiple times (once for each individual load or store) using
+*itype* 0 except for the final load or store, which must retire using
+the natural *itype* for the instruction (for example, a _cm.popret_
+instruction must use *itype* 13 for the final load to signal the
+return). The instruction address reported will be the same for each
+occurrence.'''
+zh = '''
+Zc（代码大小缩减）扩展引入了 push 和 pop 指令（_cm.push_、_cm.pop_、_cm.popret_ 和 _cm.popretz_），每条指令都会产生多次加载或存储。为使产生的加载或存储能够与正确的指令相关联，这些多内存访问指令（以及未来任何具有类似特性的指令）必须在指令跟踪接口上被多次报告（每次单独的加载或存储报告一次），除最后一次加载或存储外，其余均使用 *itype* 0；最后一次加载或存储必须使用该指令自然的 *itype* 退役（例如，_cm.popret_ 指令的最后一次加载必须使用 *itype* 13 以表示返回）。每次出现所报告的指令地址都相同。'''

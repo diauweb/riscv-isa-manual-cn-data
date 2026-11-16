@@ -1,0 +1,22 @@
+unit_id = "d5225e45990eee18cf7308c3c69db753"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+The instruction applies the inverse MixColumns
+transformation to two columns of the state array, packed into a single
+64-bit register.
+It is used to create the inverse cipher KeySchedule, according to
+the equivalent inverse cipher construction in
+cite:[nist:fips:197] (Page 23, Section 5.3.5).
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+描述::
+本指令对打包在单个 64 位寄存器中的状态数组的两列应用逆 MixColumns
+变换。
+它用于按照 cite:[nist:fips:197]（第 23 页，第 5.3.5 节）中的等效逆密码构造，
+创建逆密码密钥编排。
+本指令的实现__必须始终__保证其执行
+延迟不依赖于所操作的数据。'''

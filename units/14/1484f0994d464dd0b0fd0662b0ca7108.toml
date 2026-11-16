@@ -1,0 +1,12 @@
+unit_id = "1484f0994d464dd0b0fd0662b0ca7108"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Unlike some other architectures, the RISC-V jump (JAL with _rd_=`x0`)
+instruction should always be used for unconditional branches instead of
+a conditional branch instruction with an always-true condition. RISC-V
+jumps are also PC-relative and support a much wider offset range than
+branches, and will not pollute conditional-branch prediction tables.'''
+zh = '''
+与其他一些架构不同，RISC-V 跳转（_rd_=`x0` 的 JAL）指令应始终用于无条件分支，而不是使用条件始终为真的条件分支指令。RISC-V 跳转也是 PC 相对的，支持比分支宽得多的偏移范围，并且不会污染条件分支预测表。'''

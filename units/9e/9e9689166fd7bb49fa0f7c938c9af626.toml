@@ -1,0 +1,24 @@
+unit_id = "9e9689166fd7bb49fa0f7c938c9af626"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Abstract Register Numbers
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| Numbers | Group Description
+| 0x0000 -- 0x0fff | CSRs. The ``PC'' can be accessed here through {csr-dpc}.
+| 0x1000 -- 0x101f | GPRs
+| 0x1020 -- 0x103f | Floating point registers
+| 0xc000 -- 0xffff | Reserved for non-standard extensions and internal use.
+|==='''
+zh = '''
+.抽象寄存器编号
+[%autowidth,align="center",float="center",cols="<,<",options="header"]
+|===
+| 编号 | 组描述
+| 0x0000 -- 0x0fff | CSR。可通过 {csr-dpc} 在此访问 ``PC''。
+| 0x1000 -- 0x101f | GPR
+| 0x1020 -- 0x103f | 浮点寄存器
+| 0xc000 -- 0xffff | 保留用于非标准扩展和内部使用。
+|==='''

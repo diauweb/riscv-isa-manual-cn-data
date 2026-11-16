@@ -1,0 +1,48 @@
+unit_id = "e5bcf83fc6f971597093bcc160e370a5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Because of PPO <<overlapping-ordering, rule 12>> and the data dependency from (d) to (e), (d) must also precede (f) in the global memory order (outcome forbidden)
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",]
+!===
+2+!Hart 0 2+! Hart 1
+! !li t1, 1 !(d) !lw a0, 0(s1)
+!(a) !sw t1,0(s0) !(e) !sw a0, 0(s2)
+!(b) !fence w, w !(f) !lw a1, 0(s2)
+!(c) !sw t1,0(s1) ! !xor a2,a1,a1
+! ! ! !add s0,s0,a2
+! ! !(g) !lw a3,0(s0)
+4+!Outcome: `a0=1`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_datarfi.txt[]
+a! image::graphviz/litmus_datarfi.svg[]
+!===
+|==='''
+zh = '''
+.由于 PPO <<overlapping-ordering, 规则 12>> 以及从 (d) 到 (e) 的数据依赖，(d) 也必须在全局内存顺序中先于 (f)（结果禁止）
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",]
+!===
+2+!硬件线程 0 2+! 硬件线程 1
+! !li t1, 1 !(d) !lw a0, 0(s1)
+!(a) !sw t1,0(s0) !(e) !sw a0, 0(s2)
+!(b) !fence w, w !(f) !lw a1, 0(s2)
+!(c) !sw t1,0(s1) ! !xor a2,a1,a1
+! ! ! !add s0,s0,a2
+! ! !(g) !lw a3,0(s0)
+4+!结果：`a0=1`、`a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_datarfi.txt[]
+a! image::graphviz/litmus_datarfi.svg[]
+!===
+|==='''

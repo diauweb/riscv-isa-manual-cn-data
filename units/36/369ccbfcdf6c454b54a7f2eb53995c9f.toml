@@ -1,0 +1,17 @@
+unit_id = "369ccbfcdf6c454b54a7f2eb53995c9f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Each RISC-V hart normally observes its own CSR accesses, including its
+implicit CSR accesses, as performed in program order. [#norm:csr_access_order]#In particular,
+unless specified otherwise, a CSR access is performed after the
+execution of any prior instructions in program order whose behavior
+modifies or is modified by the CSR state and before the execution of any
+subsequent instructions in program order whose behavior modifies or is
+modified by the CSR state.# Furthermore, [#norm:csrr_order]#an explicit CSR read returns the
+CSR state before the execution of the instruction#, while [#norm:csrw_order]#an explicit CSR
+write suppresses and overrides any implicit writes or modifications to
+the same CSR by the same instruction.#'''
+zh = '''
+每个 RISC-V 硬件线程通常按程序顺序观察自身的 CSR 访问（包括其隐式 CSR 访问）。[#norm:csr_access_order]#特别地，除非另有规定，CSR 访问在程序顺序中任何行为会修改 CSR 状态或被 CSR 状态修改的先前指令执行之后执行，并在程序顺序中任何行为会修改 CSR 状态或被 CSR 状态修改的后续指令执行之前执行。# 此外，[#norm:csrr_order]#显式 CSR 读取返回该指令执行之前的 CSR 状态#，而 [#norm:csrw_order]#显式 CSR 写入会抑制并覆盖同一指令对同一 CSR 的任何隐式写入或修改。#'''

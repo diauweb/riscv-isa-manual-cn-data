@@ -1,0 +1,13 @@
+unit_id = "577282566c179b450484c1495035b79f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: For RV64, the `packw` instruction with _rs2_=`x0` is the `zext.h`
+instruction.
+Hence, for RV64, any extension that contains the `packw` instruction also
+contains the `zext.h` instruction (but not necessarily the `c.zext.h`
+instruction, which is only guaranteed to exist if both the Zcb and Zbb
+extensions are implemented).'''
+zh = '''
+注意：对于 RV64，_rs2_=`x0` 的 `packw` 指令即为 `zext.h` 指令。因此，对于 RV64，任何包含 `packw` 指令的扩展也包含 `zext.h` 指令（但不一定包含 `c.zext.h` 指令，后者仅在同时实现 Zcb 和 Zbb 扩展时才保证存在）。'''

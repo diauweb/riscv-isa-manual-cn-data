@@ -1,0 +1,45 @@
+unit_id = "9bbdd1ffd365281714a3438ad49b3aaa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+The progress axiom ensures a minimal forward progress guarantee. It
+ensures that stores from one hart will eventually be made visible to
+other harts in the system in a finite amount of time, and that loads
+from other harts will eventually be able to read those values (or
+successors thereof). Without this rule, it would be legal, for example,
+for a spinlock to spin infinitely on a value, even with a store from
+another hart waiting to unlock the spinlock.
+
+The progress axiom is intended not to impose any other notion of
+fairness, latency, or quality of service onto the harts in a RISC-V
+implementation. Any stronger notions of fairness are up to the rest of
+the ISA and/or up to the platform and/or device to define and implement.
+
+The forward progress axiom will in almost all cases be naturally
+satisfied by any standard cache coherence protocol. Implementations with
+non-coherent caches may have to provide some other mechanism to ensure
+the eventual visibility of all stores (or successors thereof) to all
+harts.
+
+[[mm-overlap]]
+==== Overlapping-Address Orderings (<<overlapping-ordering, Rules 1-3>>)
+
+[NOTE]
+===='''
+zh = '''
+====
+
+进展公理确保最小向前进展保证。它确保来自一个硬件线程的存储最终将在有限时间内对其他硬件线程可见，并且来自其他硬件线程的加载最终能够读取这些值（或其后续值）。没有这条规则，例如，自旋锁就可能在某个值上无限自旋，即使另一个硬件线程的存储正在等待解锁该自旋锁。
+
+进展公理不打算对 RISC-V 实现中的硬件线程施加任何其他公平性、延迟或服务质量概念。任何更强的公平性概念由 ISA 其余部分和/或平台和/或设备来定义和实现。
+
+向前进展公理在几乎所有情况下都会被任何标准缓存一致性协议自然满足。具有非一致性缓存的实现可能必须提供某种其他机制，以确保所有存储（或其后续值）最终对所有硬件线程可见。
+
+[[mm-overlap]]
+==== 重叠地址排序（<<overlapping-ordering, 规则 1-3>>）
+
+[NOTE]
+===='''

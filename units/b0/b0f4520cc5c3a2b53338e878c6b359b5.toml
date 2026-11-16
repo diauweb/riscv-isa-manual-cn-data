@@ -1,0 +1,14 @@
+unit_id = "b0f4520cc5c3a2b53338e878c6b359b5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: These instructions are intended to be used to save and restore
+vector registers when the type or length of the current contents of
+the vector register is not known, or where modifying csr:vl[] and csr:vtype[]
+would be costly. Examples include compiler register spills, vector
+function calls where values are passed in vector registers, interrupt
+handlers, and OS context switches.  Software can determine the number
+of bytes transferred by reading the csr:vlenb[] register.'''
+zh = '''
+NOTE: 这些指令旨在用于在向量寄存器当前内容的类型或长度未知，或者修改 csr:vl[] 和 csr:vtype[] 代价高昂时保存和恢复向量寄存器。示例包括编译器寄存器溢出、在向量寄存器中传递值的向量函数调用、中断处理程序以及操作系统上下文切换。软件可以通过读取 csr:vlenb[] 寄存器来确定传输的字节数。'''

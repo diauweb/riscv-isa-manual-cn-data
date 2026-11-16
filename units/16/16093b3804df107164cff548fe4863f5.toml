@@ -1,0 +1,19 @@
+unit_id = "16093b3804df107164cff548fe4863f5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicntr_rdtime_op]#The insn:rdtime[] pseudoinstruction reads the low XLEN bits of the csr:time[] CSR,
+which counts wall-clock real time that has passed from an arbitrary
+start time in the past.# [#norm:Zicntr_rdtimeh_op]#RDTIMEH is only present when XLEN=32 and reads
+bits 63-32 of the same real-time counter.# The underlying 64-bit counter
+increments by one with each tick of the real-time clock, and, for
+realistic real-time clock frequencies, should never overflow in
+practice. The execution environment should provide a means of
+determining the period of a counter tick (seconds/tick). The period
+should be constant within a small error bound. The environment should
+provide a means to determine the accuracy of the clock (i.e., the
+maximum relative error between the nominal and actual real-time clock
+periods).'''
+zh = '''
+[#norm:Zicntr_rdtime_op]#insn:rdtime[] 伪指令读取 csr:time[] CSR 的低 XLEN 位，该 CSR 计数自过去某个任意起始时间以来所经过的挂钟实时时间。# [#norm:Zicntr_rdtimeh_op]#RDTIMEH 仅在 XLEN=32 时存在，读取同一实时计数器的第 63-32 位。# 底层的 64 位计数器随实时时钟的每个滴答递增一，并且对于现实的实时时钟频率，在实践中绝不应溢出。执行环境应提供一种方法来确定计数器滴答的周期（秒/滴答）。该周期在一个小的误差界限内应保持恒定。环境应提供一种方法来确定时钟的精度（即标称实时时钟周期与实际实时时钟周期之间的最大相对误差）。'''

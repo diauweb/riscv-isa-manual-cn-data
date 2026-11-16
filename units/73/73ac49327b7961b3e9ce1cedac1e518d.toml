@@ -1,0 +1,17 @@
+unit_id = "73ac49327b7961b3e9ce1cedac1e518d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+The xperm8 instruction operates on bytes.
+The _rs1_ register contains a vector of XLEN/8 8-bit elements.
+The _rs2_ register contains a vector of XLEN/8 8-bit indexes.
+The result is each element in _rs2_ replaced by the indexed element in _rs1_,
+or zero if the index into _rs2_ is out of bounds.'''
+zh = '''
+描述::
+xperm8 指令按字节操作。
+_rs1_ 寄存器包含一个由 XLEN/8 个 8 位元素组成的向量。
+_rs2_ 寄存器包含一个由 XLEN/8 个 8 位索引组成的向量。
+结果是 _rs2_ 中的每个元素被 _rs1_ 中对应索引的元素替换，若 _rs2_ 中的索引越界则为零。'''

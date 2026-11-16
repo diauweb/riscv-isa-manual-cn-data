@@ -1,0 +1,18 @@
+unit_id = "6981509885db94e94d2c46d81c32410b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, given the load instruction `lw x1,0(x2)`, an execution will
+typically go as follows. The initial execution state will be computed
+from the pseudocode for the given opcode. This can be expected to be
+Read_reg(`x2`, _read_continuation_). Feeding the most recently written
+value of register `x2` (the instruction semantics will be blocked if
+necessary until the register value is available), say `0x4000`, to
+_read_continuation_ returns Load_mem(`plain_load`, `0x4000`, `4`,
+_load_continuation_). Feeding the 4-byte value loaded from memory
+location `0x4000`, say `0x42`, to _load_continuation_ returns
+Write_reg(`x1`, `0x42`, Done). Many Internal(_next_state_) states may
+appear before and between the states above.'''
+zh = '''
+例如，给定加载指令 `lw x1,0(x2)`，执行通常如下进行。初始执行状态将根据给定操作码的伪代码计算。这可以预期为 Read_reg(`x2`, _read_continuation_)。将寄存器 `x2` 最近写入的值（如有必要，指令语义将阻塞直到寄存器值可用），比如 `0x4000`，馈送给 _read_continuation_ 返回 Load_mem(`plain_load`, `0x4000`, `4`, _load_continuation_)。将从内存位置 `0x4000` 加载的 4 字节值，比如 `0x42`，馈送给 _load_continuation_ 返回 Write_reg(`x1`, `0x42`, Done)。在上述状态之前和之间可能出现许多 Internal(_next_state_) 状态。'''

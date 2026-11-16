@@ -1,0 +1,12 @@
+unit_id = "2e266955b960ee89b02eb963516d0095"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The TSR (Trap SRET) bit is a *WARL* field that supports intercepting the
+supervisor exception return instruction, SRET. When TSR=1, attempts to
+execute SRET while executing in S-mode will raise an illegal-instruction
+exception. When TSR=0, this operation is permitted in S-mode. TSR is
+read-only 0 when S-mode is not supported.'''
+zh = '''
+TSR（Trap SRET，陷阱 SRET）位是一个 *WARL* 字段，支持拦截监管异常返回指令 SRET。当 TSR=1 时，在 S 模式下执行时尝试执行 SRET 将引发非法指令异常。当 TSR=0 时，此操作在 S 模式下被允许。当不支持 S 模式时，TSR 为只读 0。'''

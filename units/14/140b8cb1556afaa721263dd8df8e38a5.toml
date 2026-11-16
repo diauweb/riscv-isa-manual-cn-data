@@ -1,0 +1,51 @@
+unit_id = "140b8cb1556afaa721263dd8df8e38a5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth,float="center",align="center",cols="<,^,^,^,^,^,^,^,^",options="header"]
+.Mapping of insn:ntl[] variants to various memory hierarchies.
+|===
+| Memory hierarchy 4+| Recommended mapping of insn:ntl[] +
+variant to actual cache level 4+| Recommended insn:ntl[] variant for +
+explicit cache management
+|
+|P1 |PALL |S1 |ALL
+|L1 |L2 |L3 |L4/L5
+ 9+^| Common Scenarios
+| No caches 4+|--- 4+|none
+|Private L1 only |L1 |L1 |L1 |L1| ALL |--- |--- |---
+|Private L1; shared L2 |L1  |L1  |L2  |L2 |P1|ALL|---|---
+|Private L1; shared L2/L3 |L1 | L1 | L2 | L3 |P1  |S1   |ALL |---
+|Private L1/L2 |L1  |L2  |L2  |L2 | P1  |ALL  |--- |---
+|Private L1/L2; shared L3 |L1 | L2 | L3 | L3 | P1 | PALL| ALL |---
+|Private L1/L2; shared L3/L4 | L1 | L2|  L3 | L4 | P1 | PALL | S1 | ALL
+ 9+^| Uncommon Scenarios
+|Private L1/L2/L3; shared L4 | L1 | L3 |L4 |L4 |P1 |P1 |PALL |ALL
+|Private L1; shared L2/L3/L4 |L1 | L1 |L2 |L4 |P1 |S1 |ALL |ALL
+|Private L1/L2; shared L3/L4/L5  |L1 | L2 | L3 | L5 |P1 | PALL |S1 |ALL
+|Private L1/L2/L3; shared L4/L5  |L1 |L3 |L4 |L5 |P1 |P1 |PALL |ALL
+|==='''
+zh = '''
+[%autowidth,float="center",align="center",cols="<,^,^,^,^,^,^,^,^",options="header"]
+.insn:ntl[] 变体到各种内存层次结构的映射。
+|===
+| 内存层次结构 4+| 推荐将 insn:ntl[] 变体 +
+映射到实际缓存级别 4+| 用于显式缓存管理的推荐 insn:ntl[] 变体
+|
+|P1 |PALL |S1 |ALL
+|L1 |L2 |L3 |L4/L5
+ 9+^| 常见场景
+| 无缓存 4+|--- 4+|无
+|仅私有 L1 |L1 |L1 |L1 |L1| ALL |--- |--- |---
+|私有 L1；共享 L2 |L1  |L1  |L2  |L2 |P1|ALL|---|---
+|私有 L1；共享 L2/L3 |L1 | L1 | L2 | L3 |P1  |S1   |ALL |---
+|私有 L1/L2 |L1  |L2  |L2  |L2 | P1  |ALL  |--- |---
+|私有 L1/L2；共享 L3 |L1 | L2 | L3 | L3 | P1 | PALL| ALL |---
+|私有 L1/L2；共享 L3/L4 | L1 | L2|  L3 | L4 | P1 | PALL | S1 | ALL
+ 9+^| 不常见场景
+|私有 L1/L2/L3；共享 L4 | L1 | L3 |L4 |L4 |P1 |P1 |PALL |ALL
+|私有 L1；共享 L2/L3/L4 |L1 | L1 |L2 |L4 |P1 |S1 |ALL |ALL
+|私有 L1/L2；共享 L3/L4/L5  |L1 | L2 | L3 | L5 |P1 | PALL |S1 |ALL
+|私有 L1/L2/L3；共享 L4/L5  |L1 |L3 |L4 |L5 |P1 |P1 |PALL |ALL
+|==='''

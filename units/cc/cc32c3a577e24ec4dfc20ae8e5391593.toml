@@ -1,0 +1,56 @@
+unit_id = "cc32c3a577e24ec4dfc20ae8e5391593"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.ext:zca[] HINT instructions.
+[cols="<,<,>,<",options="header",]
+|===
+|Instruction |Constraints |Code Points |Purpose
+
+|C.NOP |_imm_≠0 |63 .6+.^|_Designated for future standard use_
+
+|C.ADDI | _rd_≠`x0`, _imm_=0 |31
+
+|C.LI | _rd_=`x0` |64
+
+|C.LUI | _rd_=`x0`, _imm_≠0 |63
+
+|C.MV | _rd_=`x0`, _rs2_≠`x0` |31
+
+|C.ADD | _rd_=`x0`, _rs2_≠`x0`, _rs2_≠`x2-x5` | 27
+
+|C.ADD | _rd_=`x0`, _rs2_=`x2-x5` |4|(rs2=x2) C.NTL.P1 (rs2=x3) C.NTL.PALL (rs2=x4) C.NTL.S1 (rs2=x5) C.NTL.ALL
+
+|C.SLLI |_rd_=`x0` or _imm_=0 |63 (RV32), 95 (RV64)  .3+.^|_Designated for custom use_
+
+|C.SRLI | _imm_=0 |8
+
+|C.SRAI | _imm_=0 |8
+|==='''
+zh = '''
+.ext:zca[] HINT 指令。
+[cols="<,<,>,<",options="header",]
+|===
+|指令 |约束 |代码点 |用途
+
+|C.NOP |_imm_≠0 |63 .6+.^|_指定用于未来标准用途_
+
+|C.ADDI | _rd_≠`x0`, _imm_=0 |31
+
+|C.LI | _rd_=`x0` |64
+
+|C.LUI | _rd_=`x0`, _imm_≠0 |63
+
+|C.MV | _rd_=`x0`, _rs2_≠`x0` |31
+
+|C.ADD | _rd_=`x0`, _rs2_≠`x0`, _rs2_≠`x2-x5` | 27
+
+|C.ADD | _rd_=`x0`, _rs2_=`x2-x5` |4|(rs2=x2) C.NTL.P1 (rs2=x3) C.NTL.PALL (rs2=x4) C.NTL.S1 (rs2=x5) C.NTL.ALL
+
+|C.SLLI |_rd_=`x0` 或 _imm_=0 |63 (RV32), 95 (RV64)  .3+.^|_指定用于自定义用途_
+
+|C.SRLI | _imm_=0 |8
+
+|C.SRAI | _imm_=0 |8
+|==='''

@@ -1,0 +1,15 @@
+unit_id = "b6e2cba47d81f77e4fba1d049f3137e8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Allowing misaligned exceptions to be raised based on
+non-alignment to the encoded EEW simplifies the implementation of these
+instructions.  Some subset implementations might not support smaller
+SEW widths, so are allowed to report misaligned exceptions for the
+smallest supported SEW even if larger than encoded EEW.  An extreme
+non-standard implementation might have SEW~MIN~>XLEN for example.  Software
+environments can mandate the minimum alignment requirements to support
+an ABI.'''
+zh = '''
+NOTE: 允许基于相对所编码 EEW 未对齐来引发未对齐异常，可以简化这些指令的实现。某些子集实现可能不支持较小的 SEW 宽度，因此即使大于所编码 EEW，也允许针对所支持的最小 SEW 报告未对齐异常。例如，一种极端的非标准实现可能有 SEW~MIN~>XLEN。软件环境可以强制规定最小对齐要求以支持某个 ABI。'''

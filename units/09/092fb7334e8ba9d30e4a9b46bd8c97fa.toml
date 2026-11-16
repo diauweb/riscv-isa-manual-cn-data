@@ -1,0 +1,14 @@
+unit_id = "092fb7334e8ba9d30e4a9b46bd8c97fa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The round number, which ranges from 2 to 14, comes from `uimm[3:0]`;
+`uimm[4]` is ignored.
+The out-of-range `uimm[3:0]` values of 0-1 and 15 are mapped to in-range
+values by inverting `uimm[3]`. Thus, 0-1 maps to 8-9, and 15 maps to 7.'''
+zh = '''
+轮编号范围为 2 到 14，来自 `uimm[3:0]`；
+`uimm[4]` 被忽略。
+超出范围的 `uimm[3:0]` 值 0-1 和 15 通过反转 `uimm[3]` 映射到范围内
+值。因此，0-1 映射到 8-9，15 映射到 7。'''

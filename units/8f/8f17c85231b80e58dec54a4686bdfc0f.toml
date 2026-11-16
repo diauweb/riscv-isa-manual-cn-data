@@ -1,0 +1,16 @@
+unit_id = "8f17c85231b80e58dec54a4686bdfc0f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_stip_mie_stie_op]#If supervisor mode is implemented, its `mip`.STIP and `mie`.STIE are
+the interrupt-pending and interrupt-enable bits for supervisor-level timer interrupts.#
+[#norm:mip_stip_no-stimecmp_acc]#If the stimecmp register is not implemented, STIP is writable in
+mip#, and [#norm:mip_stip_no-stimecmp_op2]#may be written by M-mode software to deliver timer interrupts to
+S-mode.# [#norm:mip_stip_stimecmp_acc]#If the `stimecmp` (supervisor-mode timer compare) register is
+implemented, STIP is read-only in mip# and [#norm:mip_stip_stimecmp_op2]#reflects the supervisor-level timer
+interrupt signal resulting from stimecmp.# [#norm:mip_stip_stimecmp_clr]#This timer interrupt signal is
+cleared by writing `stimecmp` with a value greater than the current time value.#'''
+zh = '''
+[#norm:mip_stip_mie_stie_op]#如果实现了监管模式，则其 `mip`.STIP 和 `mie`.STIE 是监管级定时器中断的中断挂起位和中断使能位。#
+[#norm:mip_stip_no-stimecmp_acc]#如果未实现 stimecmp 寄存器，则 STIP 在 mip 中可写#，并且 [#norm:mip_stip_no-stimecmp_op2]#可以由 M 模式软件写入以向 S 模式递送定时器中断。# [#norm:mip_stip_stimecmp_acc]#如果实现了 `stimecmp`（监管模式定时器比较）寄存器，则 STIP 在 mip 中为只读#，并且 [#norm:mip_stip_stimecmp_op2]#反映由 stimecmp 产生的监管级定时器中断信号。# [#norm:mip_stip_stimecmp_clr]#通过向 `stimecmp` 写入大于当前时间值的值来清除该定时器中断信号。#'''

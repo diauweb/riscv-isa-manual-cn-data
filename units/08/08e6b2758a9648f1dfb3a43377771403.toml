@@ -1,0 +1,19 @@
+unit_id = "08e6b2758a9648f1dfb3a43377771403"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Matching VS CSRs exist only for the supervisor CSRs that must be
+duplicated, which are mainly those that get automatically written by
+traps or that impact instruction execution immediately after trap entry
+and/or right before SRET, when software alone is unable to swap a CSR at
+exactly the right moment. Currently, most supervisor CSRs fall into this
+category, but future ones might not.
+===='''
+zh = '''
+[NOTE]
+====
+匹配的 VS CSR 仅存在于必须复制的监管 CSR，主要是那些在陷阱时被自动写入、或在陷阱进入后立即和/或在 SRET 之前立即影响指令执行的 CSR，此时软件单独无法在恰好正确的时刻交换 CSR。目前，大多数监管 CSR 属于此类，但未来的可能不属于。
+===='''

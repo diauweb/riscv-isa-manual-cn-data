@@ -1,0 +1,36 @@
+unit_id = "8500a512c06071765d8160ddf5408fdd"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|Register
+|Direction
+|EGW
+|EGS
+|EEW
+|Definition
+
+| Vd  | input  | 4*SEW  | 4 | SEW | current state {c, d, g, h}
+| Vs1 | input  | 4*SEW  | 4 | SEW | MessageSched plus constant[3:0]
+| Vs2 | input  | 4*SEW  | 4 | SEW | current state {a, b, e, f}
+| Vd  | output | 4*SEW  | 4 | SEW | next state {a, b, e, f}
+|==='''
+zh = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|寄存器
+|方向
+|EGW
+|EGS
+|EEW
+|定义
+
+| Vd  | 输入  | 4*SEW  | 4 | SEW | 当前状态 {c, d, g, h}
+| Vs1 | 输入  | 4*SEW  | 4 | SEW | MessageSched 加上常量[3:0]
+| Vs2 | 输入  | 4*SEW  | 4 | SEW | 当前状态 {a, b, e, f}
+| Vd  | 输出 | 4*SEW  | 4 | SEW | 下一状态 {a, b, e, f}
+|==='''

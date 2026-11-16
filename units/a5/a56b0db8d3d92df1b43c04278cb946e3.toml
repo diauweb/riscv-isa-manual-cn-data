@@ -1,0 +1,30 @@
+unit_id = "a56b0db8d3d92df1b43c04278cb946e3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Original IEEE-5001 Nexus Standard defines the MSEO protocol as follows:
+
+* Two `1`-s followed by one `0` indicates the start of a message.
+* `0` followed by two or more `1`-s indicates the end of a message.
+* `0` followed by `1` followed by `0` indicates the end of a variable-length field.
+* `0`-s at all other clocks during transmission of a message.
+* `1`-s at all clocks during no message transmission (idle).
+
+Dual MSEO protocol (utilized by this N-Trace specification) is a two-pin mode of this general (single and dual) MSEO protocol definition.
+===='''
+zh = '''
+[NOTE]
+====
+原始 IEEE-5001 Nexus 标准对 MSEO 协议定义如下：
+
+* 两个 `1` 后跟一个 `0` 表示消息开始。
+* 一个 `0` 后跟两个或更多 `1` 表示消息结束。
+* 一个 `0` 后跟一个 `1` 再跟一个 `0` 表示可变长度字段结束。
+* 在消息传输期间的其他所有时钟为 `0`。
+* 在无消息传输（空闲）期间的所有时钟为 `1`。
+
+双 MSEO 协议（本 N-Trace 规范使用）是这一通用（单 MSEO 和双 MSEO）MSEO 协议定义的双引脚模式。
+===='''

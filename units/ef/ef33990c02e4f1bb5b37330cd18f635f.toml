@@ -1,0 +1,12 @@
+unit_id = "ef33990c02e4f1bb5b37330cd18f635f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In spite of the fact that Ztso adds no new instructions to the ISA, code
+written assuming RVTSO will not run correctly on implementations not
+supporting Ztso. Binaries compiled to run only under Ztso should
+indicate as such via a flag in the binary, so that platforms which do
+not implement Ztso can simply refuse to run them.'''
+zh = '''
+尽管 Ztso 并未向指令集架构中添加任何新指令，但假定 RVTSO 编写的代码在不支持 Ztso 的实现上将无法正确运行。仅在 Ztso 下运行的二进制文件应通过二进制文件中的标志表明这一点，以便未实现 Ztso 的平台可以直接拒绝运行它们。'''

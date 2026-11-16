@@ -1,0 +1,11 @@
+unit_id = "651dc1878a25a3099e791502de6a7370"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SPIE bit indicates whether supervisor interrupts were enabled prior
+to trapping into supervisor mode. When a trap is taken into supervisor
+mode, SPIE is set to SIE, and SIE is set to 0. When an SRET instruction
+is executed, SIE is set to SPIE, then SPIE is set to 1.'''
+zh = '''
+SPIE 位指示在陷入监管模式之前监管中断是否被使能。当陷阱被陷入监管模式时，SPIE 置为 SIE，SIE 置为 0。当执行 SRET 指令时，SIE 置为 SPIE，随后 SPIE 置为 1。'''

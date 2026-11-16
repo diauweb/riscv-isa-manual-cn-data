@@ -1,0 +1,27 @@
+unit_id = "693d0fda9083c07f94963ed5bf949c62"
+kind = "block"
+translatable = true
+status = "machine"
+en = """
+[NOTE]
+====
+The machine-level interrupt registers handle a few root interrupt
+sources which are assigned a fixed service priority for simplicity,
+while separate external interrupt controllers can implement a more
+complex prioritization scheme over a much larger set of interrupts that
+are then multiplexed into the machine-level interrupt sources.
+
+'''
+
+The non-maskable interrupt is not made visible via the `mip` register as
+its presence is implicitly known when executing the NMI trap handler.
+===="""
+zh = """
+[NOTE]
+====
+机器级中断寄存器处理少数几个根中断源，为简单起见这些中断源被赋予固定的服务优先级，而独立的外部中断控制器可以在大得多的中断集合上实现更复杂的优先级方案，这些中断随后被多路复用到机器级中断源中。
+
+'''
+
+不可屏蔽中断不通过 `mip` 寄存器可见，因为其存在在执行 NMI 陷阱处理程序时是隐含已知的。
+===="""

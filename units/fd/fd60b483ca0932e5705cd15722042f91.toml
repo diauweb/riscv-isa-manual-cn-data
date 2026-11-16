@@ -1,0 +1,149 @@
+unit_id = "fd60b483ca0932e5705cd15722042f91"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dtmcs-errinfo]] `((errinfo))`
+a|This optional field may provide additional detail about an error
+that occurred when communicating with a DM. It is updated whenever
+{dmi-op} is updated by the hardware or when 1 is written to
+{dtmcs-dmireset}.
+
+0 (not implemented): This field is not implemented.
+
+
+1 (dmi error): There was an error between the DTM and DMI.
+
+
+2 (communication error): There was an error between the DMI and a DMI subordinate.
+
+
+3 (device error): The DMI subordinate reported an error.
+
+
+4 (unknown): There is no error to report, or no further information available
+about the error. This is the reset value if the field is implemented.
+
+Other values are reserved for future use by this specification.
+a|*R*
+a|4
+|[[dtmcs-dtmhardreset]] `((dtmhardreset))`
+a|Writing 1 to this bit does a hard reset of the DTM,
+causing the DTM to forget about any outstanding DMI transactions, and
+returning all registers and internal state to their reset value.
+In general this should only be used when the Debugger has
+reason to expect that the outstanding DMI transaction will never
+complete (e.g. a reset condition caused an inflight DMI transaction to
+be cancelled).
+a|*W1*
+a|-
+|[[dtmcs-dmireset]] `((dmireset))`
+a|Writing 1 to this bit clears the sticky error state and resets
+{dtmcs-errinfo}, but does not affect outstanding DMI transactions.
+a|*W1*
+a|-
+|[[dtmcs-idle]] `((idle))`
+a|This is a hint to the debugger of the minimum number of
+cycles a debugger should spend in
+Run-Test/Idle after every DMI scan to avoid a '`busy`'
+return code ({dtmcs-dmistat} of 3). A debugger must still
+check {dtmcs-dmistat} when necessary.
+
+0: It is not necessary to enter Run-Test/Idle at all.
+
+1: Enter Run-Test/Idle and leave it immediately.
+
+2: Enter Run-Test/Idle and stay there for 1 cycle before leaving.
+
+And so on.
+a|*R*
+a|Preset
+|[[dtmcs-dmistat]] `((dmistat))`
+a|Read-only alias of {dmi-op}.
+a|*R*
+a|0
+|[[dtmcs-abits]] `((abits))`
+a|The size of {dmi-address} in {dtm-dmi}.
+a|*R*
+a|Preset
+|[[dtmcs-version]] `((version))`
+a|
+
+0 (0.11): Version described in spec version 0.11.
+
+
+1 (1.0): Version described in spec versions 0.13 and 1.0.
+
+
+15 (custom): Version not described in any available version of this spec.
+a|*R*
+a|1
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[dtmcs-errinfo]] `((errinfo))`
+a|此可选字段可提供有关与 DM 通信时发生的错误的附加细节。每当硬件更新 {dmi-op} 或向 {dtmcs-dmireset} 写入 1 时，它都会被更新。
+
+0（未实现）：此字段未实现。
+
+
+1（DMI 错误）：DTM 与 DMI 之间发生错误。
+
+
+2（通信错误）：DMI 与 DMI 从设备之间发生错误。
+
+
+3（设备错误）：DMI 从设备报告了错误。
+
+
+4（未知）：没有可报告的错误，或没有关于该错误的进一步信息。如果实现了该字段，则这是复位值。
+
+其他值由本规范保留供将来使用。
+a|*R*
+a|4
+|[[dtmcs-dtmhardreset]] `((dtmhardreset))`
+a|向此位写入 1 会对 DTM 执行硬复位，使 DTM 忘记任何未完成的 DMI 事务，并将所有寄存器和内部状态返回到其复位值。通常，仅当调试器有理由预期未完成的 DMI 事务将永远不会完成（例如，复位条件导致进行中的 DMI 事务被取消）时才应使用此操作。
+a|*W1*
+a|-
+|[[dtmcs-dmireset]] `((dmireset))`
+a|向此位写入 1 会清除粘性错误状态并复位 {dtmcs-errinfo}，但不会影响未完成的 DMI 事务。
+a|*W1*
+a|-
+|[[dtmcs-idle]] `((idle))`
+a|这是向调试器提供的提示，说明在每次 DMI 扫描后调试器应在 Run-Test/Idle 中花费的最少周期数，以避免出现 ‘busy’ 返回码（{dtmcs-dmistat} 为 3）。调试器在必要时仍必须检查 {dtmcs-dmistat}。
+
+0：完全不需要进入 Run-Test/Idle。
+
+1：进入 Run-Test/Idle 并立即离开。
+
+2：进入 Run-Test/Idle 并停留 1 个周期后离开。
+
+依此类推。
+a|*R*
+a|Preset
+|[[dtmcs-dmistat]] `((dmistat))`
+a|{dmi-op} 的只读别名。
+a|*R*
+a|0
+|[[dtmcs-abits]] `((abits))`
+a|{dtm-dmi} 中 {dmi-address} 的大小。
+a|*R*
+a|Preset
+|[[dtmcs-version]] `((version))`
+a|
+
+0（0.11）：规范 0.11 版中描述的版本。
+
+
+1（1.0）：规范 0.13 版和 1.0 版中描述的版本。
+
+
+15（自定义）：本规范的任何可用版本均未描述的版本。
+a|*R*
+a|1
+|==='''

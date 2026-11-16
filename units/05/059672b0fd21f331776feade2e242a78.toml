@@ -1,0 +1,15 @@
+unit_id = "059672b0fd21f331776feade2e242a78"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Data trace packets must be differentiated from instruction trace
+packets, and the means by which this is accomplished is dependent on the
+trace transport infrastructure. Several possibilities exist: One option
+is for instruction and data trace to be issued using different IDs (for
+example, if using ATB transport, different *ATID* values).
+Alternatively, an additional field as part of the packet encapsulation
+can be used (Siemens uses a 2-bit *msg_type* field to differentiate
+different trace types from the same source).'''
+zh = '''
+数据跟踪包必须与指令跟踪包区分开，实现方式取决于跟踪传输基础设施。存在几种可能：一种选择是使用不同的 ID 发出指令和数据跟踪（例如，如果使用 ATB 传输，使用不同的 *ATID* 值）。或者，可以在包封装中使用一个额外字段（Siemens 使用 2 位的 *msg_type* 字段来区分来自同一源的不同跟踪类型）。'''

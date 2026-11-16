@@ -1,0 +1,13 @@
+unit_id = "8822f7d202a2cf88f42468291f749c8b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that the FENCE instruction distinguishes between main memory
+operations and I/O operations in its predecessor and successor sets. To
+enforce ordering between I/O operations and main memory operations, code
+must use a FENCE with PI, PO, SI, and/or SO, plus PR, PW, SR, and/or SW.
+For example, to enforce ordering between a write to main memory and an
+I/O write to a device register, a FENCE W,O or stronger is needed.'''
+zh = '''
+注意，FENCE 指令在其前驱集合和后继集合中区分主内存操作和 I/O 操作。要在 I/O 操作和主内存操作之间强制排序，代码必须使用带有 PI、PO、SI 和/或 SO，以及 PR、PW、SR 和/或 SW 的 FENCE。例如，要在对主内存的写和对设备寄存器的 I/O 写之间强制排序，需要 FENCE W,O 或更强。'''

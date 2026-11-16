@@ -1,0 +1,12 @@
+unit_id = "06768a76a7e32a926ee7a264c4357474"
+kind = "code"
+translatable = false
+en = '''
+.`SSPUSH` and `C.SSPUSH` operation
+[listing]
+----
+if (xSSE == 1)
+    mem[ssp - (XLEN/8)] = X(src)  # Store src value to ssp - XLEN/8
+    ssp = ssp - (XLEN/8)          # decrement ssp by XLEN/8
+endif
+----'''

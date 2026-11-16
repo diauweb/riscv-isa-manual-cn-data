@@ -1,0 +1,13 @@
+unit_id = "e2b38b6026793881503cd007d492db09"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_sd_acc]#The csr::[sd] bit is a read-only bit# that
+[#norm:mstatus_sd_summary_op]#summarizes whether either the csr::[fs], csr::[vs],
+or csr::[xs] fields signal the presence of some dirty state that will require
+saving extended user context to memory.#
+[#norm:mstatus_sd_rdonly0]#If csr::[fs], csr::[vs], and csr::[xs] are all read-only zero, then csr::[sd] is also always zero.#'''
+zh = '''
+[#norm:mstatus_sd_acc]#csr::[sd] 位是一个只读位#，它 [#norm:mstatus_sd_summary_op]#总结 csr::[fs]、csr::[vs] 或 csr::[xs] 字段是否指示存在某种脏状态，从而需要将扩展用户上下文保存到内存。#
+[#norm:mstatus_sd_rdonly0]#如果 csr::[fs]、csr::[vs] 和 csr::[xs] 全部为只读零，则 csr::[sd] 也始终为零。#'''

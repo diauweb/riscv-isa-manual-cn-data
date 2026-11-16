@@ -1,0 +1,16 @@
+unit_id = "5786cc1c41ecf916fe6e7b286fe8a4f6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When two-stage address translation is enabled within the H extension,
+the page-based memory types are also applied in two stages. First, if
+`hgatp`.MODE is not equal to zero, non-zero G-stage PTE PBMT bits
+override the attributes in the PMA to produce an intermediate set of
+attributes. Otherwise, the PMAs serve as the intermediate attributes.
+Second, if `vsatp`.MODE is not equal to zero, non-zero VS-stage PTE PBMT
+bits override the intermediate attributes to produce the final set of
+attributes used by accesses to the page in question. Otherwise, the
+intermediate attributes are used as the final set of attributes.'''
+zh = '''
+当在 H 扩展中启用两阶段地址转换时，基于页的内存类型也分两个阶段应用。首先，如果 `hgatp`.MODE 不等于零，则非零的 G 阶段页表项 PBMT 位覆盖 PMA 中的属性，产生一组中间属性。否则，PMA 作为中间属性。其次，如果 `vsatp`.MODE 不等于零，则非零的 VS 阶段页表项 PBMT 位覆盖中间属性，产生用于访问所涉页面的最终属性集。否则，中间属性即作为最终属性集。'''

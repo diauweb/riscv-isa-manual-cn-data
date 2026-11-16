@@ -1,0 +1,15 @@
+unit_id = "08c3b0763030042b29115b74521a96e1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The current _virtualization mode_, denoted V, indicates whether the hart
+is currently executing in a guest. When V=1, the hart is either in
+virtual S-mode (VS-mode), or in virtual U-mode (VU-mode) atop a guest OS
+running in VS-mode. When V=0, the hart is either in M-mode, in HS-mode,
+or in U-mode atop an OS running in HS-mode. The virtualization mode also
+indicates whether two-stage address translation is active (V=1) or
+inactive (V=0). <<HPrivModes>> lists the
+possible privilege modes of a RISC-V hart with the hypervisor extension.'''
+zh = '''
+当前的__虚拟化模式__，记为 V，指示硬件线程当前是否在客户中执行。当 V=1 时，硬件线程要么处于虚拟 S-mode（VS-mode），要么处于运行在 VS-mode 中的客户 OS 之上的虚拟 U-mode（VU-mode）。当 V=0 时，硬件线程要么处于 M-mode，要么处于 HS-mode，要么处于运行在 HS-mode 中的 OS 之上的 U-mode。虚拟化模式还指示两阶段地址翻译是活动的（V=1）还是不活动的（V=0）。<<HPrivModes>> 列出了具有虚拟机扩展的 RISC-V 硬件线程可能的特权模式。'''

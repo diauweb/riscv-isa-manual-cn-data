@@ -1,0 +1,13 @@
+unit_id = "da00aab46c3844a9322e22ad4caa2aaa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point _n_-bit transfer operations move external
+values held in IEEE standard formats into and out of the `f` registers,
+and comprise floating-point loads and stores (FL__n__/FS__n__) and floating-point move instructions (FMV._n_.X/FMV.X._n_). A narrower _n_-bit transfer, _n_<FLEN, into the `f` registers will create a valid NaN-boxed value. A narrower
+_n_-bit transfer out of the floating-point registers will
+transfer the lower _n_ bits of the register ignoring the
+upper FLEN-_n_ bits.'''
+zh = '''
+浮点 _n_ 位传输操作将 IEEE 标准格式的外部值移入和移出 `f` 寄存器，包括浮点加载和存储（FL__n__/FS__n__）以及浮点移动指令（FMV._n_.X/FMV.X._n_）。将较窄的 _n_ 位（_n_<FLEN）传输到 `f` 寄存器中会创建有效的 NaN 装箱值。从浮点寄存器中传输较窄的 _n_ 位将传输寄存器的低 _n_ 位，而忽略高 FLEN-_n_ 位。'''

@@ -1,0 +1,8 @@
+unit_id = "0be33ae14454b561ea0db429b541dcd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Misaligned accesses are supported, subject to the same limitations as in the absence of pointer masking. The behavior is identical to applying the pointer masking transformation to every constituent aligned memory access. In other words, the accessed bytes should be identical to the bytes that would be accessed if the pointer masking transformation was individually applied to every byte of the access without pointer masking. This ensures that both hardware implementations and emulation of misaligned accesses in M-mode behave the same way, and that the M-mode implementation is identical whether or not pointer masking is enabled (e.g., such an implementation may leverage MPRV to apply the correct privilege mode's pointer masking setting).'''
+zh = '''
+支持非对齐访问，但受与没有指针掩码时相同的限制。其行为与对组成该访问的每个对齐内存访问应用指针掩码变换相同。换句话说，所访问的字节应与在没有指针掩码的情况下对访问的每个字节单独应用指针掩码变换时所访问的字节相同。这确保硬件实现和 M 模式中对非对齐访问的模拟行为一致，并且无论是否启用指针掩码，M 模式实现都相同（例如，此类实现可以利用 MPRV 来应用正确特权模式的指针掩码设置）。'''

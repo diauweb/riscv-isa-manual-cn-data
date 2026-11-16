@@ -1,0 +1,44 @@
+unit_id = "852d92fe17871cc58b382763c1b53e27"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Because of the address dependency from (d) to (e), (d) also precedes (f) (outcome forbidden)
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<"float="center",align="center",options="header"]
+!===
+2+!Hart 0 2+^!Hart 1
+2+! 2+^!li t1, 1
+!(a) !lw a0,0(s0) !(d) !lw a1, 0(s1)
+!(b) !fence rw,rw !(e) !lw a2, 0(a1)
+!(c) !sw s2,0(s1) !(f) !sw t1, 0(s0)
+4+!Outcome: `a0=1`, `a1=t`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_addrpo.txt[]
+a! image:graphviz/litmus_addrpo.svg[]
+!===
+|==='''
+zh = '''
+.由于从 (d) 到 (e) 的地址依赖，(d) 也先于 (f)（结果禁止）
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<"float="center",align="center",options="header"]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+2+! 2+^!li t1, 1
+!(a) !lw a0,0(s0) !(d) !lw a1, 0(s1)
+!(b) !fence rw,rw !(e) !lw a2, 0(a1)
+!(c) !sw s2,0(s1) !(f) !sw t1, 0(s0)
+4+!结果：`a0=1`、`a1=t`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_addrpo.txt[]
+a! image:graphviz/litmus_addrpo.svg[]
+!===
+|==='''

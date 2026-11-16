@@ -1,0 +1,27 @@
+unit_id = "e2b0ef88b47c6cfd66c73838bfc54af2"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Code executes through to the end of the 1st loop iteration, and the
+encoder reports looplabel using format 1/2 following the *_JALR_*, then
+carries on executing the 2nd pass of the loop. In this case *updiscon*
+== *notify*. The next packet will be a format 1/2;
+. Code executes through to the end of the 1st loop iteration and jumps
+back to looplabel, but there is then an exception, privilege change or
+resync in the second iteration at looplabel 4. In this case, the
+encoder reports looplabel using format 1/2 following the *_JALR_*, with
+*updiscon* == !*notify*, and the next packet is a format 3;
+. An exception occurs immediately after the 1st execution of looplabel.
+In this case, the encoder reports looplabel using format 0/1/2 with
+*updiscon* == *notify*, and the next packet is a format 3;
+. The hart requests the encoder to notify retirement of the instruction
+at looplabel. In this case, the encoder reports the 1st execution of
+looplabel with *notify* == !*address[MSB]*, and subsequent executions
+with *notify* == *address[MSB]* (because they would have been reported
+anyway as a result of the *_JALR_*).'''
+zh = '''
+. 代码一直执行到第 1 次循环迭代结束，编码器在 *_JALR_* 之后使用格式 1/2 报告 looplabel，然后继续执行循环的第 2 遍。在这种情况下 *updiscon* == *notify*。下一个包将是格式 1/2；
+. 代码一直执行到第 1 次循环迭代结束并跳回 looplabel，但随后在第 2 次迭代中于 looplabel 4 处发生异常、特权变更或重新同步。在这种情况下，编码器在 *_JALR_* 之后使用格式 1/2 报告 looplabel，且 *updiscon* == !*notify*，下一个包是格式 3；
+. 在 looplabel 第 1 次执行之后立即发生异常。在这种情况下，编码器使用格式 0/1/2 报告 looplabel，*updiscon* == *notify*，下一个包是格式 3；
+. 硬件线程请求编码器通知 looplabel 处指令的退休。在这种情况下，编码器报告 looplabel 的第 1 次执行时 *notify* == !*address[MSB]*，后续执行时 *notify* == *address[MSB]*（因为它们本来就会因 *_JALR_* 而被报告）。'''

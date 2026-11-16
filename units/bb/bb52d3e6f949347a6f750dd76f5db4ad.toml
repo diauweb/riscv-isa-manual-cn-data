@@ -1,0 +1,114 @@
+unit_id = "bb52d3e6f949347a6f750dd76f5db4ad"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeComp__j__Control : Comparator _j_ Control Register (trBaseEncoder+0x600 + 0x20__j__)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|1:0   |trTeCompPInput |
+Determines which input to compare against the primary comparator. +
+*0:* *iaddr* +
+*1:* *context* +
+*2:* *tval* +
+*3:* *daddr*
+|WARL|<<Undef,Undef>>
+|3:2   |trTeCompSInput | Determines which input to compare against the secondary comparator.  Same encoding as `trTeCompPInput`. |WARL|<<Undef,Undef>>
+|6:4   |trTeCompPFunction |
+Selects the primary comparator function.  Primary result is true if input selected via `trTeCompPInput` is: +
+*0:* equal to `trTeCompPMatch` +
+*1:* not equal to `trTeCompPMatch` +
+*2:* less than `trTeCompPMatch` +
+*3:* less than or equal to `trTeCompPMatch` +
+*4:* greater than `trTeCompPMatch` +
+*5:* greater than or equal to `trTeCompPMatch` +
+*6:* Result always false (input ignored).  Prime latch to 1 if `trTeCompMatchMode` is 3 +
+*7:* Result always true (input ignored)
+|WARL|<<Undef,Undef>>
+|7 |--|Reserved|--|0
+|10:8   |trTeCompSFunction |
+Selects the secondary comparator function.  Secondary result is true if input selected via `trTeCompSInput` is: +
+*0:* equal to `trTeCompSMatch` +
+*1:* not equal to `trTeCompSMatch` +
+*2:* less than `trTeCompSMatch` +
+*3:* less than or equal to `trTeCompSMatch` +
+*4:* greater than `trTeCompSMatch` +
+*5:* greater than or equal to `trTeCompSMatch` +
+*6:* Result always true (input ignored).  Use `trTeCompSMatch` as a mask for `trTeCompPMatch` +
+*7:* Result always true (input ignored)
+|WARL|<<Undef,Undef>>
+|11 |--|Reserved|--|0
+|13:12   |trTeCompMatchMode |
+Selects the match condition used to assert the overall comparator output +
+*0:* primary result true +
+*1:* primary and secondary result both true: (P && S) +
+*2:* Either primary or secondary result does not match: !(P && S) +
+*3:* Set when primary result is true and continue to assert until instruction after secondary result is true
+|WARL|<<Undef,Undef>>
+|14   |trTeCompPNotify |
+Generate a trace packet explicitly reporting the address
+of the final instruction in a block that causes a
+primary match. This is also known as a watchpoint.
+Requires `trTeCompPInput` to be 0, and has no effect otherwise.
+|WARL|<<Undef,Undef>>
+|15   |trTeCompSNotify |
+Generate a trace packet explicitly reporting the address
+of the final instruction in a block that causes a
+secondary match. This is also known as a watchpoint.
+Requires `trTeCompSInput` to be 0, and has no effect otherwise.
+|WARL|<<Undef,Undef>>
+|31:16 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trTeComp__j__Control：比较器 _j_ 控制寄存器（trBaseEncoder+0x600 + 0x20__j__）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|1:0   |trTeCompPInput |
+确定要针对主比较器进行比较的输入。 +
+*0:* *iaddr* +
+*1:* *context* +
+*2:* *tval* +
+*3:* *daddr*
+|WARL|<<Undef,Undef>>
+|3:2   |trTeCompSInput | 确定要针对次比较器进行比较的输入。编码与 `trTeCompPInput` 相同。 |WARL|<<Undef,Undef>>
+|6:4   |trTeCompPFunction |
+选择主比较器功能。如果通过 `trTeCompPInput` 选择的输入满足以下条件，则主结果为真： +
+*0:* 等于 `trTeCompPMatch` +
+*1:* 不等于 `trTeCompPMatch` +
+*2:* 小于 `trTeCompPMatch` +
+*3:* 小于或等于 `trTeCompPMatch` +
+*4:* 大于 `trTeCompPMatch` +
+*5:* 大于或等于 `trTeCompPMatch` +
+*6:* 结果始终为假（忽略输入）。如果 `trTeCompMatchMode` 为 3，则主锁存器置 1 +
+*7:* 结果始终为真（忽略输入）
+|WARL|<<Undef,Undef>>
+|7 |--|保留|--|0
+|10:8   |trTeCompSFunction |
+选择次比较器功能。如果通过 `trTeCompSInput` 选择的输入满足以下条件，则次结果为真： +
+*0:* 等于 `trTeCompSMatch` +
+*1:* 不等于 `trTeCompSMatch` +
+*2:* 小于 `trTeCompSMatch` +
+*3:* 小于或等于 `trTeCompSMatch` +
+*4:* 大于 `trTeCompSMatch` +
+*5:* 大于或等于 `trTeCompSMatch` +
+*6:* 结果始终为真（忽略输入）。将 `trTeCompSMatch` 用作 `trTeCompPMatch` 的掩码 +
+*7:* 结果始终为真（忽略输入）
+|WARL|<<Undef,Undef>>
+|11 |--|保留|--|0
+|13:12   |trTeCompMatchMode |
+选择用于置位比较器总输出的匹配条件 +
+*0:* 主结果为真 +
+*1:* 主结果和次结果均为真：(P && S) +
+*2:* 主结果或次结果不匹配：!(P && S) +
+*3:* 当主结果为真时置位，并持续置位直到次结果为真之后的那条指令
+|WARL|<<Undef,Undef>>
+|14   |trTeCompPNotify |
+生成一个跟踪数据包，显式报告导致主匹配的块中最后一条指令的地址。这也称为观察点。要求 `trTeCompPInput` 为 0，否则无效。
+|WARL|<<Undef,Undef>>
+|15   |trTeCompSNotify |
+生成一个跟踪数据包，显式报告导致次匹配的块中最后一条指令的地址。这也称为观察点。要求 `trTeCompSInput` 为 0，否则无效。
+|WARL|<<Undef,Undef>>
+|31:16 |--|保留|--|0
+|==='''

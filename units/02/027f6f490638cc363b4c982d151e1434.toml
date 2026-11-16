@@ -1,0 +1,14 @@
+unit_id = "027f6f490638cc363b4c982d151e1434"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vaesdm_ops]#The InvShiftRows and InvSubBytes steps are applied to each round state element group from `vd`.#
+[#norm:vaesdm_xor_form]#This is then XORed with the round key in either the corresponding element group in `vs2` (vector-vector
+form) or the scalar element group in `vs2` (vector-scalar form).# The result is then applied to the
+[#norm:vaesdm_invmix]#InvMixColumns step.#'''
+zh = '''
+[#norm:vaesdm_ops]#对来自 `vd` 的每个轮状态元素组应用 InvShiftRows 和 InvSubBytes 步骤。#
+[#norm:vaesdm_xor_form]#然后将其与 `vs2` 中对应的元素组（向量-向量
+形式）或 `vs2` 中的标量元素组（向量-标量形式）中的轮密钥进行异或。# 然后将结果应用于
+[#norm:vaesdm_invmix]#InvMixColumns 步骤。#'''

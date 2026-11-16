@@ -1,0 +1,22 @@
+unit_id = "c1404c44060c479c121de2f520d879b5"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Typical Trace RAM Sink Configurations*
+[cols="8%,18%,~,12%,15%,15%",options="header"]
+|===
+|*Mode*      |*trRamStart* |*trRamLimit* |*trRamWP* |*trRamRP* |*trRamData*
+|SRAM        |0 |Hard coded to max size (2^M - A) at reset, but can be possibly trimmed|Required  |Required |Required
+|SMEM Generic |Any (2^N aligned) |Any (`trRamStart` + 2^M - A) - must be set by trace tool |Required  |Not implemented|Not implemented
+|SMEM Fixed   |Fixed (2^N aligned) |Fixed to max size at reset (`trRamStart` + 2^M - A), but can be possibly trimmed |Required  |Not implemented|Not implemented
+|==='''
+zh = '''
+.*典型跟踪 RAM 接收端配置*
+[cols="8%,18%,~,12%,15%,15%",options="header"]
+|===
+|*模式*      |*trRamStart* |*trRamLimit* |*trRamWP* |*trRamRP* |*trRamData*
+|SRAM        |0 |复位时硬连线为最大大小（2^M - A），但可能可以裁剪|必需  |必需 |必需
+|SMEM 通用 |任意（2^N 对齐） |任意（`trRamStart` + 2^M - A） - 必须由跟踪工具设置 |必需  |未实现|未实现
+|SMEM 固定   |固定（2^N 对齐） |复位时固定为最大大小（`trRamStart` + 2^M - A），但可能可以裁剪 |必需  |未实现|未实现
+|==='''

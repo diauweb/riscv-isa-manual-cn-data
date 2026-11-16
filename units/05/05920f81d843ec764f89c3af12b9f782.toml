@@ -1,0 +1,36 @@
+unit_id = "05920f81d843ec764f89c3af12b9f782"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Control Transfer Record Metadata Register Field Definitions
+[%unbreakable]
+[width="100%",cols="15%,75%,10%",options="header",]
+|===
+|Field |Description |Access
+|TYPE[3:0] a|
+[#norm:ctrdata-type]#Identifies the type of the control flow transfer recorded in the entry, using the encodings listed in xref:transfer-type-defs[xrefstyle=short].  Implementations that do not support this field will report 0.#
+|WARL
+
+|CCV |[#norm:ctrdata-ccv]#Cycle Count Valid.# See <<Cycle Counting>>. |WARL
+
+|CC[15:0] |[#norm:ctrdata-cc]#Cycle Count, composed of the Cycle Count Exponent (CCE, in
+CC[15:12]) and Cycle Count Mantissa (CCM, in CC[11:0]).# See
+<<Cycle Counting>>. |WARL
+|==='''
+zh = '''
+.控制转移记录元数据寄存器字段定义
+[%unbreakable]
+[width="100%",cols="15%,75%,10%",options="header",]
+|===
+|字段 |描述 |访问
+|TYPE[3:0] a|
+[#norm:ctrdata-type]#标识条目中记录的控制流转移类型，使用 xref:transfer-type-defs[xrefstyle=short] 中列出的编码。不支持此字段的实现将报告 0。#
+|WARL
+
+|CCV |[#norm:ctrdata-ccv]#周期计数有效。# 参见 <<Cycle Counting>>。 |WARL
+
+|CC[15:0] |[#norm:ctrdata-cc]#周期计数，由周期计数指数（CCE，位于
+CC[15:12]）和周期计数尾数（CCM，位于 CC[11:0]）组成。# 参见
+<<Cycle Counting>>。 |WARL
+|==='''

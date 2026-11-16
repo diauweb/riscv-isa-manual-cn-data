@@ -1,0 +1,220 @@
+unit_id = "a3c0b953efee527ee33c45e34531c150"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV32I Base Integer Instruction Set
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination  Registers|Accumulating CSRs|
+
+|LUI | |_rd_ | |
+
+|AUIPC | |_rd_ ||
+
+|JAL | |_rd_ ||
+
+|JALR† |_rs1_ |_rd_ ||
+
+|BEQ |_rs1_, _rs2_ | ||
+
+|BNE |_rs1_, _rs2_ | ||
+
+|BLT |_rs1_, _rs2_ | ||
+
+|BGE |_rs1_, _rs2_ | ||
+
+|BLTU |_rs1_, _rs2_ | ||
+
+|BGEU |_rs1_, _rs2_ | ||
+
+|LB † | _rs1_  ^A^ | _rd_ ||
+
+|LH † | _rs1_  ^A^ | _rd_ ||
+
+|LW † | _rs1_  ^A^ | _rd_ ||
+
+|LBU † | _rs1_  ^A^ | _rd_ ||
+
+|LHU † | _rs1_  ^A^ | _rd_ ||
+
+|SB |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|SH |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|SW |_rs1_  ^A^, _rs2_ ^D^ | ||
+
+|ADDI |_rs1_ |_rd_ ||
+
+|SLTI |_rs1_ |_rd_ ||
+
+|SLTIU |_rs1_ |_rd_ ||
+
+|XORI |_rs1_ |_rd_ ||
+
+|ORI |_rs1_ |_rd_ ||
+
+|ANDI |_rs1_ |_rd_ ||
+
+|SLLI |_rs1_ |_rd_ ||
+
+|SRLI |_rs1_ |_rd_ ||
+
+|SRAI |_rs1_ |_rd_ ||
+
+|ADD |_rs1_, _rs2_ |_rd_ ||
+
+|SUB |_rs1_, _rs2_ |_rd_ ||
+
+|SLL |_rs1_, _rs2_ |_rd_ ||
+
+|SLT |_rs1_, _rs2_ |_rd_ ||
+
+|SLTU |_rs1_, _rs2_ |_rd_ ||
+
+|XOR |_rs1_, _rs2_ |_rd_ ||
+
+|SRL |_rs1_, _rs2_ |_rd_ ||
+
+|SRA |_rs1_, _rs2_ |_rd_ ||
+
+|OR |_rs1_, _rs2_ |_rd_ ||
+
+|AND |_rs1_, _rs2_ |_rd_ ||
+
+|FENCE | | ||
+
+|FENCE.I | | ||
+
+|ECALL | | ||
+
+|EBREAK | | ||
+
+|CSRRW‡ |_rs1_, _csr_^*^ | _rd_, _csr_ | |^*^unless _rd_=`x0`
+
+5+| ‡ carries a dependency from _rs1_ to _csr_ and from _csr_ to _rd_
+
+|CSRRS‡ |_rs1_, _csr_ |_rd_, _csr_^*^ | |^*^unless _rs1_=`x0`
+
+|CSRRC‡ |_rs1_, _csr_  |_rd_, _csr_^*^ | |^*^unless _rs1_=`x0`
+
+5+| ‡ carries a dependency from _csr_ and _rs1_ to _csr_ and from _csr_ to _rd_
+
+|CSRRWI ‡ |_csr_ ^*^ |_rd_, _csr_  | |^*^unless _rd_=_x0_
+
+5+| ‡ carries a dependency from _csr_ to _rd_
+
+|CSRRSI ‡ |_csr_ |_rd_, _csr_^*^  | |^*^unless uimm[4:0]=0
+
+|CSRRCI ‡ |_csr_ |_rd_, _csr_^*^  | |^*^unless uimm[4:0]=0
+
+5+| ‡ carries a dependency from _csr_ to _rd_ and _csr_
+|==='''
+zh = '''
+.RV32I 基础整数指令集
+[%autowidth,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目的寄存器|累积 CSR|
+
+|LUI | |_rd_ | |
+
+|AUIPC | |_rd_ ||
+
+|JAL | |_rd_ ||
+
+|JALR† |_rs1_ |_rd_ ||
+
+|BEQ |_rs1_、_rs2_ | ||
+
+|BNE |_rs1_、_rs2_ | ||
+
+|BLT |_rs1_、_rs2_ | ||
+
+|BGE |_rs1_、_rs2_ | ||
+
+|BLTU |_rs1_、_rs2_ | ||
+
+|BGEU |_rs1_、_rs2_ | ||
+
+|LB † | _rs1_  ^A^ | _rd_ ||
+
+|LH † | _rs1_  ^A^ | _rd_ ||
+
+|LW † | _rs1_  ^A^ | _rd_ ||
+
+|LBU † | _rs1_  ^A^ | _rd_ ||
+
+|LHU † | _rs1_  ^A^ | _rd_ ||
+
+|SB |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|SH |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|SW |_rs1_  ^A^、_rs2_ ^D^ | ||
+
+|ADDI |_rs1_ |_rd_ ||
+
+|SLTI |_rs1_ |_rd_ ||
+
+|SLTIU |_rs1_ |_rd_ ||
+
+|XORI |_rs1_ |_rd_ ||
+
+|ORI |_rs1_ |_rd_ ||
+
+|ANDI |_rs1_ |_rd_ ||
+
+|SLLI |_rs1_ |_rd_ ||
+
+|SRLI |_rs1_ |_rd_ ||
+
+|SRAI |_rs1_ |_rd_ ||
+
+|ADD |_rs1_、_rs2_ |_rd_ ||
+
+|SUB |_rs1_、_rs2_ |_rd_ ||
+
+|SLL |_rs1_、_rs2_ |_rd_ ||
+
+|SLT |_rs1_、_rs2_ |_rd_ ||
+
+|SLTU |_rs1_、_rs2_ |_rd_ ||
+
+|XOR |_rs1_、_rs2_ |_rd_ ||
+
+|SRL |_rs1_、_rs2_ |_rd_ ||
+
+|SRA |_rs1_、_rs2_ |_rd_ ||
+
+|OR |_rs1_、_rs2_ |_rd_ ||
+
+|AND |_rs1_、_rs2_ |_rd_ ||
+
+|FENCE | | ||
+
+|FENCE.I | | ||
+
+|ECALL | | ||
+
+|EBREAK | | ||
+
+|CSRRW‡ |_rs1_、_csr_^*^ | _rd_、_csr_ | |^*^除非 _rd_=`x0`
+
+5+| ‡ 从 _rs1_ 向 _csr_ 以及从 _csr_ 向 _rd_ 携带依赖
+
+|CSRRS‡ |_rs1_、_csr_ |_rd_、_csr_^*^ | |^*^除非 _rs1_=`x0`
+
+|CSRRC‡ |_rs1_、_csr_  |_rd_、_csr_^*^ | |^*^除非 _rs1_=`x0`
+
+5+| ‡ 从 _csr_ 和 _rs1_ 向 _csr_ 以及从 _csr_ 向 _rd_ 携带依赖
+
+|CSRRWI ‡ |_csr_ ^*^ |_rd_、_csr_  | |^*^除非 _rd_=_x0_
+
+5+| ‡ 从 _csr_ 向 _rd_ 携带依赖
+
+|CSRRSI ‡ |_csr_ |_rd_、_csr_^*^  | |^*^除非 uimm[4:0]=0
+
+|CSRRCI ‡ |_csr_ |_rd_、_csr_^*^  | |^*^除非 uimm[4:0]=0
+
+5+| ‡ 从 _csr_ 向 _rd_ 以及 _csr_ 携带依赖
+|==='''

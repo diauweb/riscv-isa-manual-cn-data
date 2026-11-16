@@ -1,0 +1,12 @@
+unit_id = "de67e7fb3cf5197755b027acbc6357b5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+ECALL and EBREAK cause the receiving privilege mode’s `epc` register to
+be set to the address of the ECALL or EBREAK instruction itself, _not_
+the address of the following instruction. As ECALL and EBREAK cause
+synchronous exceptions, they are not considered to retire, and should
+not increment the `minstret` CSR.'''
+zh = '''
+ECALL 和 EBREAK 使接收特权模式的 `epc` 寄存器被设置为 ECALL 或 EBREAK 指令本身的地址，而__不是__下一条指令的地址。由于 ECALL 和 EBREAK 产生同步异常，它们不被视为退休，并且不应递增 `minstret` CSR。'''

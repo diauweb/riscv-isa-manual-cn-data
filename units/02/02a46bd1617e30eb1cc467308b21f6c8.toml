@@ -1,0 +1,30 @@
+unit_id = "02a46bd1617e30eb1cc467308b21f6c8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This message *is required* as otherwise decoder (even though restart after FIFO overflow is signaled) would not be aware that trace was lost in case of the following sequence of events:
+
+* Trace is turned off by trigger (or from any other reason).
+* Message reporting 'trace off' event is lost (due to lack of space for it).
+** Here Error Message should be generated (as soon as there is a room)
+* Trace is never restarted.
+* Trace is stopped (this will not generate any trace as trace is turned off).
+
+In the above case, Error Message will be the last message in trace stream.
+===='''
+zh = '''
+[NOTE]
+====
+此消息**是必需的**，否则在以下事件序列中，解码器（即使 FIFO 溢出后的重启已被指示）将无法知道跟踪已丢失：
+
+* 跟踪由触发条件（或任何其他原因）关闭。
+* 报告“跟踪关闭”事件的消息丢失（由于没有空间）。
+** 此时应（在有空间时尽快）生成 Error 消息。
+* 跟踪从未重新启动。
+* 跟踪停止（这不会生成任何跟踪，因为跟踪已关闭）。
+
+在上述情况下，Error 消息将成为跟踪流中的最后一条消息。
+===='''

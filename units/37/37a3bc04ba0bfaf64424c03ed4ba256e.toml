@@ -1,0 +1,13 @@
+unit_id = "37a3bc04ba0bfaf64424c03ed4ba256e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:csrrw[] (Atomic Read/Write CSR) instruction atomically swaps values in
+the CSRs and integer registers. insn:csrrw[] reads the old value of the CSR,
+zero-extends the value to XLEN bits, then writes it to integer register
+_rd_. The initial value in _rs1_ is written to the CSR. If _rd_=`x0`,
+then the instruction shall not read the CSR and shall not cause any of
+the side effects that might occur on a CSR read.'''
+zh = '''
+insn:csrrw[]（原子读/写 CSR）指令以原子方式交换 CSR 和整数寄存器中的值。insn:csrrw[] 读取 CSR 的旧值，将该值零扩展至 XLEN 位，然后写入整数寄存器 _rd_。_rs1_ 中的初始值被写入 CSR。如果 _rd_=`x0`，则该指令不得读取 CSR，也不得引起 CSR 读取时可能发生的任何副作用。'''

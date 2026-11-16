@@ -1,0 +1,15 @@
+unit_id = "13e6c6c071d1e62a660d8976b7137c79"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Implement a separate instance of the interface per hart. Each instance
+can be connected to a separate encoder instance, allowing all harts to
+be traced concurrently. Alternatively, external muxing may be used in
+conjunction with a single encoder in order to trace one particular hart
+at a time;
+* Implement a singe interface for the core, with muxing inside the core
+to select which hart to connect to the interface.'''
+zh = '''
+* 为每个硬件线程实现该接口的一个独立实例。每个实例可以连接到单独的编码器实例，从而允许并发跟踪所有硬件线程。或者，可以结合单个编码器使用外部多路复用，以便一次跟踪一个特定的硬件线程；
+* 为核实现单个接口，并在核内部进行多路复用，以选择连接到该接口的硬件线程。'''

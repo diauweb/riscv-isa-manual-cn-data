@@ -1,0 +1,14 @@
+unit_id = "743ff1bfdac0039c71480acc3c5caf41"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Sv39_leaf_any_level]#Any level of PTE may be a leaf PTE#, so in
+addition to 4 KiB pages, Sv39 supports
+[#norm:Sv39_page_sizes]#2 MiB megapages and 1 GiB gigapages#, each of
+which [#norm:Sv39_superpage_align]#must be virtually and physically
+aligned to a boundary equal to its size#.
+[#norm:Sv39_superpage_align_fault]#A page-fault exception is raised if
+the physical address is insufficiently aligned#.'''
+zh = '''
+[#norm:Sv39_leaf_any_level]#任何级别的 PTE 都可以是叶 PTE#，因此除了 4 KiB 页之外，Sv39 还支持 [#norm:Sv39_page_sizes]#2 MiB 兆页和 1 GiB 吉页#，它们各自 [#norm:Sv39_superpage_align]#必须在虚拟和物理上对齐到等于其大小的边界#。[#norm:Sv39_superpage_align_fault]#如果物理地址对齐不足，则引发页错误异常#。'''

@@ -1,0 +1,32 @@
+unit_id = "69469b331259daf68c9982c970d71866"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Svvptc relieves an operating system from executing certain memory-management
+instructions, such as `SFENCE.VMA` or `SINVAL.VMA`, which would normally be used
+to synchronize the hart's address-translation caches when a memory-resident PTE
+is changed from Invalid to Valid. Synchronizing the hart's address-translation
+caches with other forms of updates to a memory-resident PTE, including when a
+PTE is changed from Valid to Invalid, requires the use of suitable
+memory-management instructions. Svvptc guarantees that a change to a PTE from
+Invalid to Valid is made visible within a bounded time, thereby making the
+execution of these memory-management instructions redundant. The performance
+benefit of eliding these instructions outweighs the cost of an occasional
+gratuitous additional page fault that may occur.
+
+Depending on the microarchitecture, some possible ways to facilitate
+implementation of Svvptc include: not having any address-translation caches, not
+storing Invalid PTEs in the address-translation caches, automatically evicting
+Invalid PTEs using a bounded timer, or making address-translation caches
+coherent with store instructions that modify PTEs.
+===='''
+zh = '''
+[NOTE]
+====
+Svvptc 使操作系统无需执行某些内存管理指令，例如 `SFENCE.VMA` 或 `SINVAL.VMA`，这些指令通常用于在内存驻留 PTE 从无效变为有效时同步硬件线程的地址转换缓存。将硬件线程的地址转换缓存与对内存驻留 PTE 的其他形式的更新（包括 PTE 从有效变为无效的情况）进行同步，仍需要使用适当的内存管理指令。Svvptc 保证 PTE 从无效到有效的更改在有界时间内变为可见，从而使这些内存管理指令的执行变得冗余。省略这些指令所带来的性能收益超过了偶尔可能发生的无端额外缺页异常所带来的代价。
+
+取决于微架构，一些有助于实现 Svvptc 的可能方式包括：不设置任何地址转换缓存、不在地址转换缓存中存储无效 PTE、使用有界定时器自动逐出无效 PTE，或使地址转换缓存与修改 PTE 的存储指令保持一致。
+===='''

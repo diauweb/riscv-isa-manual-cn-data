@@ -1,0 +1,16 @@
+unit_id = "43a2cc7f00fdaed97b6288199cc7eec8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The landing pad may be labeled. Zicfilp extension designates the register `x7`
+for use as the landing pad label register. [#norm:zicflip_lpad_label]#To support labeled landing pads, the
+indirect call/jump sites establish an expected landing pad label (e.g., using
+the `LUI` instruction) in the bits 31:12 of the `x7` register.# [#norm:zicflip_lpad_imm_enc]#The `LPAD`
+instruction is encoded with a 20-bit immediate value called the landing-pad-label
+(`LPL`) that is matched to the expected landing pad label. When `LPL` is encoded
+as zero, the `LPAD` instruction does not perform the label check and in programs
+built with this single label mode of operation the indirect call/jump sites do
+not need to establish an expected landing pad label value in `x7`.#'''
+zh = '''
+着陆垫可以被标记。Zicfilp 扩展指定寄存器 `x7` 用作着陆垫标签寄存器。[#norm:zicflip_lpad_label]#为了支持带标签的着陆垫，间接调用/跳转点在 `x7` 寄存器的第 31:12 位建立期望着陆垫标签（例如，使用 `LUI` 指令）。# [#norm:zicflip_lpad_imm_enc]#`LPAD` 指令编码有一个 20 位立即数值，称为着陆垫标签（`LPL`），它与期望着陆垫标签匹配。当 `LPL` 编码为零时，`LPAD` 指令不执行标签检查，并且在使用这种单标签操作模式构建的程序中，间接调用/跳转点不需要在 `x7` 中建立期望着陆垫标签值。#'''

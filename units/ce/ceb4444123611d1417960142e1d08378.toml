@@ -1,0 +1,15 @@
+unit_id = "ceb4444123611d1417960142e1d08378"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In order to achieve best performance, actual packet lengths may be
+adjusted using 'sign based compression'. At the very minimum this should
+be applied to the address field of format 1 and 2 packets, but ideally
+will be applied to the whole packet, regardless of format. This
+technique eliminates identical bits from the most significant end of the
+packet, and adjusts the length of the packet accordingly. A decoder
+receiving this shortened packet can reconstruct the original full-length
+packet by sign-extending from the most significant received bit.'''
+zh = '''
+为获得最佳性能，可以使用"基于符号的压缩"来调整实际包长度。至少应将此应用于格式 1 和格式 2 包的地址字段，但理想情况下应应用于整个包，无论其格式如何。该技术从包的最高有效端消除相同的位，并相应地调整包的长度。接收到这种缩短包的解码器可以从收到的最高有效位进行符号扩展，从而重建原始的完整长度包。'''

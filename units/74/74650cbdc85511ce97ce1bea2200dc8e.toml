@@ -1,0 +1,14 @@
+unit_id = "74650cbdc85511ce97ce1bea2200dc8e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The VSBE bit is a *WARL* field that controls the endianness of explicit memory
+accesses made from VS-mode. If VSBE=0, explicit load and store memory
+accesses made from VS-mode are little-endian, and if VSBE=1, they are
+big-endian. VSBE also controls the endianness of all implicit accesses
+to VS-level memory management data structures, such as page tables. An
+implementation may make VSBE a read-only field that always specifies the
+same endianness as HS-mode.'''
+zh = '''
+VSBE 位是一个 *WARL* 字段，控制从 VS-mode 所做显式内存访问的字节序。如果 VSBE=0，从 VS-mode 所做的显式加载和存储内存访问为小端，如果 VSBE=1，则为大端。VSBE 还控制对 VS 级内存管理数据结构（如页表）的所有隐式访问的字节序。实现可以使 VSBE 成为只读字段，始终指定与 HS-mode 相同的字节序。'''

@@ -1,0 +1,16 @@
+unit_id = "a35ecd3a46f399ed2153837086be83af"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, a coprocessor might require to be configured before use and
+can be "`unconfigured`" after use. The unconfigured state would be
+represented as the Initial state for context save. If the same
+application remains running between the unconfigure and the next
+configure (which would set status to Dirty), there is no need to
+actually reinitialize the state at the unconfigure instruction, as all
+state is local to the user process, i.e., the Initial state may only
+cause the coprocessor state to be initialized to a constant value at
+context restore, not at every unconfigure.'''
+zh = '''
+例如，协处理器可能需要在用前进行配置，并在用后“unconfigured”。取消配置状态可以作为上下文保存的 Initial 状态。若同一应用在取消配置与下一次配置（该配置会将状态置为 Dirty）之间持续运行，则无须在取消配置指令处真正重新初始化状态，因为所有状态都是用户进程本地的，即 Initial 状态只可能使协处理器状态在上下文恢复时（而不是在每次取消配置时）被初始化为常量值。'''

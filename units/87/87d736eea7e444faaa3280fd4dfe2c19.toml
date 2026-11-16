@@ -1,0 +1,24 @@
+unit_id = "87d736eea7e444faaa3280fd4dfe2c19"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _program_loc_, the memory address from which the instruction was
+fetched;
+* _instruction_kind_, identifying whether this is a load, store, AMO,
+fence, branch/jump or a `simple` instruction (this also includes a
+_kind_ similar to the one described for the pseudocode execution
+states);
+* _src_regs_, the set of source _reg_name_s (including system
+registers), as statically determined from the pseudocode of the
+instruction;
+* _dst_regs_, the destination _reg_name_s (including system registers),
+as statically determined from the pseudocode of the instruction;
+* _pseudocode_state_ (or sometimes just `state` for short), one of (this
+is a tagged union; tags in small-caps): +'''
+zh = '''
+* _program_loc_，取指该指令的内存地址；
+* _instruction_kind_，标识这是加载、存储、AMO、fence、分支/跳转还是 `simple` 指令（这还包括类似于伪代码执行状态中描述的 _kind_）；
+* _src_regs_，源 _reg_name_ 的集合（包括系统寄存器），由指令伪代码静态确定；
+* _dst_regs_，目标 _reg_name_ 的集合（包括系统寄存器），由指令伪代码静态确定；
+* _pseudocode_state_（或有时简称为 `state`），以下之一（这是一个带标签的联合；标签用小大写表示）： +'''

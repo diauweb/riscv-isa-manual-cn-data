@@ -1,0 +1,24 @@
+unit_id = "728c889f62d43637a83f457823cab83c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[#norm:misa_c_set_line]#csr:misa[c] must be clear if any of the following holds:#
+
+[[norm:misa_c_set_list]]
+* ext:zca[] is not implemented
+* MXLEN=32, ext:f[] is implemented, and ext:zcf[] is not implemented
+* ext:d[] is implemented, and ext:zcd[] is not implemented
+===='''
+zh = '''
+[NOTE]
+====
+[#norm:misa_c_set_line]#如果以下任一条件成立，则 csr:misa[c] 必须为 0：#
+
+[[norm:misa_c_set_list]]
+* 未实现 ext:zca[]
+* MXLEN=32、实现了 ext:f[]，且未实现 ext:zcf[]
+* 实现了 ext:d[]，且未实现 ext:zcd[]
+===='''

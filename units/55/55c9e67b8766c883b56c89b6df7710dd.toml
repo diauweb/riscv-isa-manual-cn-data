@@ -1,0 +1,79 @@
+unit_id = "55c9e67b8766c883b56c89b6df7710dd"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:H_virtinst_vs_nonhighctr_h0_m1]#in VS-mode, attempts to access a non-high-half counter CSR when the
+corresponding bit in `hcounteren` is 0 and the same bit in `mcounteren`
+is 1;#
+
+* [#norm:H_virtinst_vs32_highctr_h0_m1]#in VS-mode, if XLEN=32, attempts to access a high-half counter CSR
+when the corresponding bit in `hcounteren` is 0 and the same bit in
+`mcounteren` is 1;#
+
+* [#norm:H_virtinst_vu_nonhighctr_h0_s0_m1]#in VU-mode, attempts to access a non-high-half counter CSR when the
+corresponding bit in either `hcounteren` or `scounteren` is 0 and the
+same bit in `mcounteren` is 1;#
+
+* [#norm:H_virtinst_vu32_highctr_h0_s0_m1]#in VU-mode, if XLEN=32, attempts to access a high-half counter CSR
+when the corresponding bit in either `hcounteren` or `scounteren` is 0
+and the same bit in `mcounteren` is 1;#
+
+* [#norm:H_virtinst_vu_vs_hinst]#in VS-mode or VU-mode, attempts to execute a hypervisor instruction
+(HLV, HLVX, HSV, or HFENCE);#
+
+* [#norm:H_virtinst_vu_vs_nonhigh_allowedhs_tvm0]#in VS-mode or VU-mode, attempts to access an implemented non-high-half
+hypervisor CSR or VS CSR when the same access (read/write) would be
+allowed in HS-mode, assuming `mstatus`.TVM=0;#
+
+* [#norm:H_virtinst_vu_vs32_high_allowedhs_tvm0]#in VS-mode or VU-mode, if XLEN=32, attempts to access an implemented
+high-half hypervisor CSR or high-half VS CSR when the same access
+(read/write) to the CSR's low-half partner would be allowed in HS-mode,
+assuming `mstatus`.TVM=0;#
+
+* [#norm:H_virtinst_vu_wfi_tw0]#in VU-mode, attempts to execute WFI when `mstatus`.TW=0#,
+[#norm:H_virtinst_vu_sret_sfence]#or to execute
+a supervisor instruction (SRET or SFENCE);#
+
+* [#norm:H_virtinst_vu_nonhigh_supervisor_allowedhs_tvm0]#in VU-mode, attempts to access an implemented non-high-half supervisor
+CSR when the same access (read/write) would be allowed in HS-mode,
+assuming `mstatus`.TVM=0;#
+
+* [#norm:H_virtinst_vu32_high_supervisor_allowedhs_tvm0]#in VU-mode, if XLEN=32, attempts to access an implemented high-half
+supervisor CSR when the same access to the CSR's low-half partner would
+be allowed in HS-mode, assuming `mstatus`.TVM=0;#
+
+* [#norm:H_virtinst_wfi_vtw1_tw0]#in VS-mode, attempts to execute WFI when `hstatus`.VTW=1 and
+`mstatus`.TW=0, unless the instruction completes within an
+implementation-specific, bounded time;#
+
+* [#norm:H_virtinst_vs_sret_vtsr1]#in VS-mode, attempts to execute SRET when `hstatus`.VTSR=1#; and
+
+* [#norm:H_virtinst_vs_sfence_sinval_satp_vtvm1]#in VS-mode, attempts to execute an SFENCE.VMA or SINVAL.VMA
+instruction or to access `satp`, when `hstatus`.VTVM=1.#'''
+zh = '''
+* [#norm:H_virtinst_vs_nonhighctr_h0_m1]#在 VS-mode 中，当 `hcounteren` 中的相应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问非高半计数器 CSR；#
+
+* [#norm:H_virtinst_vs32_highctr_h0_m1]#在 VS-mode 中，如果 XLEN=32，当 `hcounteren` 中的相应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问高半计数器 CSR；#
+
+* [#norm:H_virtinst_vu_nonhighctr_h0_s0_m1]#在 VU-mode 中，当 `hcounteren` 或 `scounteren` 中的相应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问非高半计数器 CSR；#
+
+* [#norm:H_virtinst_vu32_highctr_h0_s0_m1]#在 VU-mode 中，如果 XLEN=32，当 `hcounteren` 或 `scounteren` 中的相应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问高半计数器 CSR；#
+
+* [#norm:H_virtinst_vu_vs_hinst]#在 VS-mode 或 VU-mode 中，尝试执行虚拟机指令（HLV、HLVX、HSV 或 HFENCE）；#
+
+* [#norm:H_virtinst_vu_vs_nonhigh_allowedhs_tvm0]#在 VS-mode 或 VU-mode 中，假设 `mstatus`.TVM=0，当相同的访问（读/写）在 HS-mode 中会被允许时，尝试访问已实现的非高半虚拟机 CSR 或 VS CSR；#
+
+* [#norm:H_virtinst_vu_vs32_high_allowedhs_tvm0]#在 VS-mode 或 VU-mode 中，如果 XLEN=32，假设 `mstatus`.TVM=0，当对 CSR 低半伙伴的相同访问（读/写）在 HS-mode 中会被允许时，尝试访问已实现的高半虚拟机 CSR 或高半 VS CSR；#
+
+* [#norm:H_virtinst_vu_wfi_tw0]#在 VU-mode 中，当 `mstatus`.TW=0 时尝试执行 WFI#，[#norm:H_virtinst_vu_sret_sfence]#或尝试执行监管指令（SRET 或 SFENCE）；#
+
+* [#norm:H_virtinst_vu_nonhigh_supervisor_allowedhs_tvm0]#在 VU-mode 中，假设 `mstatus`.TVM=0，当相同的访问（读/写）在 HS-mode 中会被允许时，尝试访问已实现的非高半监管 CSR；#
+
+* [#norm:H_virtinst_vu32_high_supervisor_allowedhs_tvm0]#在 VU-mode 中，如果 XLEN=32，假设 `mstatus`.TVM=0，当对 CSR 低半伙伴的相同访问在 HS-mode 中会被允许时，尝试访问已实现的高半监管 CSR；#
+
+* [#norm:H_virtinst_wfi_vtw1_tw0]#在 VS-mode 中，当 `hstatus`.VTW=1 且 `mstatus`.TW=0 时尝试执行 WFI，除非该指令在实现特定的有界时间内完成；#
+
+* [#norm:H_virtinst_vs_sret_vtsr1]#在 VS-mode 中，当 `hstatus`.VTSR=1 时尝试执行 SRET#；以及
+
+* [#norm:H_virtinst_vs_sfence_sinval_satp_vtvm1]#在 VS-mode 中，当 `hstatus`.VTVM=1 时尝试执行 SFENCE.VMA 或 SINVAL.VMA 指令或访问 `satp`。#'''

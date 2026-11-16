@@ -1,0 +1,34 @@
+unit_id = "23dfeb72bc7b088399a3763e176ce67e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+To be forward-compatible with future revisions of this standard,
+software that interprets a nonzero value from `mtinst` or `htinst` must
+fully verify that the value conforms to one of the cases listed above.
+For instance, for RV64, discovering that bits 6:0 of `mtinst` are
+`0000011` and bits 14:12 are `010` is not sufficient to establish that
+the first case applies and the trapping instruction is a standard LW
+instruction; rather, software must also confirm that bits 63:32 of
+`mtinst` are all zeros. A future standard might define new values for
+64-bit `mtinst` that are nonzero in bits 63:32 yet may coincidentally
+have in bits 31:0 the same bit patterns as standard RV64 instructions.
+
+***
+
+Unlike for standard instructions, there is no requirement that the
+instruction encoding of a custom value be of the same ``kind'' as the
+instruction that trapped (or even have any correlation with the trapping
+instruction).
+===='''
+zh = '''
+[NOTE]
+====
+为了与本标准的未来修订版向前兼容，解释来自 `mtinst` 或 `htinst` 的非零值的软件必须完全验证该值符合上述情况之一。例如，对于 RV64，发现 `mtinst` 的位 6:0 为 `0000011` 且位 14:12 为 `010` 不足以确定第一种情况适用且导致陷阱的指令是标准 LW 指令；相反，软件还必须确认 `mtinst` 的位 63:32 全为零。未来的标准可能为 64 位 `mtinst` 定义新值，这些值在位 63:32 中非零，但可能恰好在位 31:0 中具有与标准 RV64 指令相同的位模式。
+
+***
+
+与标准指令不同，不要求自定义值的指令编码与导致陷阱的指令属于相同的“种类”（甚至与导致陷阱的指令有任何关联）。
+===='''

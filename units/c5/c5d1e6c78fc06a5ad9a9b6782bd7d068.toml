@@ -1,0 +1,15 @@
+unit_id = "c5d1e6c78fc06a5ad9a9b6782bd7d068"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When shadow stacks are active for a program, the program needs to additionally
+switch the shadow stack pointer. If the pointer to the top of the deactivated
+shadow stack is held in a context data structure, then it  may be susceptible to
+memory corruption vulnerabilities. To protect the pointer value, the program may
+store it at the top of the deactivated shadow stack itself and thereby create a
+checkpoint. A legal checkpoint is defined as one that holds a value of `X`,
+where `X` is the address at which the checkpoint is positioned on the shadow
+stack.'''
+zh = '''
+当影子栈对程序处于活动状态时，程序需要额外切换影子栈指针。如果停用的影子栈顶部指针保存在上下文数据结构中，那么它可能容易受到内存损坏漏洞的影响。为了保护该指针值，程序可以将其存储在停用的影子栈自身顶部，从而创建一个检查点。合法检查点定义为保存值 `X` 的检查点，其中 `X` 是该检查点在影子栈上所处位置的地址。'''

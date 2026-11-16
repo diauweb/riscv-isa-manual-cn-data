@@ -1,0 +1,14 @@
+unit_id = "72ea8d9489ac5bdafd60a1f2ecf68f7e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Vector indexed segment loads and stores move contiguous segments where
+each segment is located at an address given by adding the scalar base
+address in the `rs1` field to byte offsets in vector register `vs2`.
+Both ordered and unordered forms are provided, where the ordered forms
+access segments in element order.  However, even for the ordered form,
+accesses to the fields within an individual segment are not ordered
+with respect to each other.'''
+zh = '''
+向量索引段加载和存储移动连续段，其中每个段位于通过将 `rs1` 字段中的标量基地址加到向量寄存器 `vs2` 中的字节偏移而给出的地址处。提供了有序和无序两种形式，其中有序形式按元素顺序访问段。然而，即使对于有序形式，对单个段内字段的访问彼此之间也是无序的。'''

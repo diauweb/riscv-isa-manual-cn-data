@@ -1,0 +1,9 @@
+unit_id = "71c330e0c9944307b6d3372ff7d12e08"
+kind = "code"
+translatable = false
+en = '''
+[listing]
+    temp[31:0] = mem[X(rs1)]
+    if ( temp[31:0] == X(rd)[31:0] )
+        mem[X(rs1)] = X(rs2)[31:0]
+    X(rd) = SignExtend(temp[31:0])'''

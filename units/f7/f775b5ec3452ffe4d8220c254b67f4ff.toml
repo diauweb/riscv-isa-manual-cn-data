@@ -1,0 +1,13 @@
+unit_id = "f775b5ec3452ffe4d8220c254b67f4ff"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:intr_mip_mie_bounded_time]#These conditions for an interrupt trap to occur must be evaluated in a
+bounded amount of time from when an interrupt becomes, or ceases to be,
+pending in csr:mip[],# and must also [#norm:intr_mip_mie_xret_csrwr]#be evaluated immediately following the
+execution of an __x__RET instruction or an explicit write to a CSR on
+which these interrupt trap conditions expressly depend (including csr:mip[],
+csr:mie[], csr:mstatus[], and csr:mideleg[]).#'''
+zh = '''
+[#norm:intr_mip_mie_bounded_time]#这些中断陷阱发生的条件必须在 csr:mip[] 中中断变为挂起或不再挂起后的有界时间内进行评估#，并且还必须 [#norm:intr_mip_mie_xret_csrwr]#在执行 __x__RET 指令或对这些中断陷阱条件明确依赖的 CSR（包括 csr:mip[]、csr:mie[]、csr:mstatus[] 和 csr:mideleg[]）进行显式写入之后立即进行评估。#'''

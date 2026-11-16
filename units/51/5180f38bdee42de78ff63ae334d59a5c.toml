@@ -1,0 +1,13 @@
+unit_id = "5180f38bdee42de78ff63ae334d59a5c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The only difference between the S and B formats is that the 12-bit
+immediate field is used to encode branch offsets in multiples of 2 in
+the B format. Instead of shifting all bits in the instruction-encoded
+immediate left by one in hardware as is conventionally done, the middle
+bits (_imm[10:1]_) and sign bit stay in fixed positions, while the lowest
+bit in S format (_inst[7]_) encodes a high-order bit in B format.'''
+zh = '''
+S 格式和 B 格式的唯一区别在于，B 格式中的 12 位立即数字段用于编码以 2 为倍数的分支偏移。与通常做法不同，硬件不会将指令编码立即数中的所有位左移一位，而是中间位（_imm[10:1]_）和符号位保持在固定位置，而 S 格式中的最低位（_inst[7]_）在 B 格式中编码高位。'''

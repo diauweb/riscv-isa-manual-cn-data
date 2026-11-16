@@ -1,0 +1,14 @@
+unit_id = "4df7f1323c25d5caa13aeb2c851dc2c5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:satp_op_sfence_vma]#Note that writing `satp` does not imply any ordering constraints between
+page-table updates and subsequent address translations, nor does it
+imply any invalidation of address-translation caches.# If the new address
+space’s page tables have been modified, or if an ASID is reused, it may
+be necessary to execute an SFENCE.VMA instruction (see
+<<sfence.vma>>) after, or in some cases before, writing
+`satp`.'''
+zh = '''
+[#norm:satp_op_sfence_vma]#注意，写入 `satp` 并不意味着页表更新与后续地址转换之间的任何排序约束，也不意味着地址转换缓存的任何无效化。# 如果新地址空间的页表已被修改，或者如果 ASID 被重用，则可能需要在写入 `satp` 之后（或在某些情况下之前）执行 SFENCE.VMA 指令（见 <<sfence.vma>>）。'''

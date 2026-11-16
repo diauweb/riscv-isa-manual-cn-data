@@ -1,0 +1,20 @@
+unit_id = "c1531daeafc78125707597194cb3b1b6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. construct the appropriate memory store operations latexmath:[$msos$]
+(without the store value):
+* if _address_ is aligned to _size_ then latexmath:[$msos$] is a single
+memory store operation of _size_ bytes to _address_;
+* otherwise, latexmath:[$msos$] is a set of _size_ memory store
+operations, each of one-byte size, to the addresses
+latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$].
+. set latexmath:[$i.\textit{mem\_stores}$] to latexmath:[$msos$]; and
+. update the state of latexmath:[$i$] to Plain(_next_state_).'''
+zh = '''
+. 构造适当的内存存储操作 latexmath:[$msos$]（不含存储值）：
+* 如果 _address_ 按 _size_ 对齐，则 latexmath:[$msos$] 是到 _address_ 的 _size_ 字节的单个内存存储操作；
+* 否则，latexmath:[$msos$] 是一组 _size_ 个内存存储操作，每个一字节大小，到地址 latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$]。
+. 将 latexmath:[$i.\textit{mem\_stores}$] 设置为 latexmath:[$msos$]；并且
+. 将 latexmath:[$i$] 的状态更新为 Plain(_next_state_)。'''

@@ -1,0 +1,12 @@
+unit_id = "5a125ee04017e5d932241e31c2cd4263"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Ssdbltrp extension addresses a double trap (See <<machine-double-trap>>)
+privilege modes lower than M. [#norm:HS_mode_invoke_error]#It enables HS-mode to invoke a critical error
+handler in a virtual machine on a double trap in VS-mode.# [#norm:M_mode_invoke_error]#It also allows M-mode
+to invoke a critical error handler in the OS/Hypervisor on a double trap in
+S/HS-mode.#'''
+zh = '''
+Ssdbltrp 扩展解决了低于 M 的特权模式下发生的双重陷阱（参见 <<machine-double-trap>>）问题。[#norm:HS_mode_invoke_error]#它使 HS 模式能够在 VS 模式发生双重陷阱时，在虚拟机中调用严重错误处理程序。# [#norm:M_mode_invoke_error]#它还允许 M 模式在 S/HS 模式发生双重陷阱时，在操作系统/管理程序中调用严重错误处理程序。#'''

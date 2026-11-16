@@ -1,0 +1,14 @@
+unit_id = "e319f6b32de9395876648c2a4b495488"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: LR/SC instructions are unaffected by this PMA and so always raise an
+exception when misaligned.
+Vector memory accesses are also unaffected, so might execute non-atomically even
+when contained within a misaligned atomicity granule.
+Implicit accesses are similarly unaffected by this PMA.'''
+zh = '''
+NOTE: LR/SC 指令不受此 PMA 影响，因此非对齐时总是引发异常。
+向量内存访问也不受影响，因此即使包含在非对齐原子性粒度内，也可能非原子地执行。
+隐式访问同样不受此 PMA 影响。'''

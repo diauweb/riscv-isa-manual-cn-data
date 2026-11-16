@@ -1,0 +1,13 @@
+unit_id = "ed6f8383f9936956a82b1672c8f96a0d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Idempotency PMAs describe whether reads and writes to an address region
+are idempotent. [#norm:pma_idp_mm]#Main memory regions are assumed to be idempotent.#
+For I/O regions, idempotency on reads and writes can be specified separately
+(e.g., reads are idempotent but writes are not). If accesses are
+non-idempotent, i.e., there is potentially a side effect on any read or
+write access, then speculative or redundant accesses must be avoided.'''
+zh = '''
+幂等性 PMA 描述对某地址区域的读和写是否幂等。[#norm:pma_idp_mm]#主存区域被假定为幂等的。# 对于 I/O 区域，读和写的幂等性可以分别规定（例如，读是幂等的但写不是）。若访问是非幂等的，即任何读或写访问都可能产生副作用，则必须避免推测性或冗余访问。'''

@@ -1,0 +1,27 @@
+unit_id = "1dc7092755e2ae847f5410892934f638"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[#norm:rvwmo_only_mainmem]#This chapter defines the memory model for regular main memory
+operations. The interaction of the memory model with I/O memory,
+instruction fetches (extlink:ziccif[]), insn:fence.i[], page-table walks, and insn:sfence.vma[] is not
+(yet) formalized.# Some or all of the above may be formalized in a future
+revision of this specification.
+
+[#norm:rvwmo_excludes_overlap_widths]#Memory consistency models supporting overlapping
+memory accesses of different widths simultaneously remain an active area of academic
+research and are not yet fully understood. The specifics of how memory
+accesses of different sizes interact under RVWMO are specified to the
+best of our current abilities#, but they are subject to revision should
+new issues be uncovered.
+===='''
+zh = '''
+[NOTE]
+====
+[#norm:rvwmo_only_mainmem]#本章定义了常规主存操作的内存模型。内存模型与 I/O 内存、指令取指（extlink:ziccif[]）、insn:fence.i[]、页表遍历以及 insn:sfence.vma[] 的交互（目前）尚未形式化。# 上述部分或全部内容可能在本规范未来的修订中形式化。
+
+[#norm:rvwmo_excludes_overlap_widths]#支持不同宽度重叠内存访问同时发生的内存一致性模型仍是学术研究中的一个活跃领域，尚未被完全理解。RVWMO 下不同大小内存访问如何交互的具体细节，已按我们当前能力所及加以规定#，但若发现新问题，这些规定可能会被修订。
+===='''

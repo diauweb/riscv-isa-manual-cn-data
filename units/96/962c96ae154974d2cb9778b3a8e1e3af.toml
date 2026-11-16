@@ -1,0 +1,11 @@
+unit_id = "962c96ae154974d2cb9778b3a8e1e3af"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zabha_rd_sign_extension]#Byte and halfword AMOs always sign-extend the value placed in `rd`, and ignore
+the stem:[XLEN-1:2^{(width + 3)}] bits of the original value in `rs2`.# [#norm:Zabha_amocas-BH_ignore_bits]#The
+`AMOCAS.[B|H]` instructions similarly ignore the stem:[XLEN-1:2^{(width + 3)}]
+bits of the original value in `rd`.#'''
+zh = '''
+[#norm:Zabha_rd_sign_extension]#字节和半字 AMO 总是对放入 `rd` 的值进行符号扩展，并忽略 `rs2` 中原值的 stem:[XLEN-1:2^{(width + 3)}] 位。# [#norm:Zabha_amocas-BH_ignore_bits]#`AMOCAS.[B|H]` 指令同样忽略 `rd` 中原值的 stem:[XLEN-1:2^{(width + 3)}] 位。#'''

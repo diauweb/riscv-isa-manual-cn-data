@@ -1,0 +1,16 @@
+unit_id = "3471406e94d0a308de06ac4ea105e229"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mhartid_sz_acc_op]#The `mhartid` CSR is an MXLEN-bit read-only register containing the
+integer ID of the hardware thread running the code.#
+[#norm:mhartid_always_rd]#This register must be readable in any implementation.#
+Hart IDs might not necessarily be
+numbered contiguously in a multiprocessor system, but at least one hart
+must have a hart ID of zero. Hart IDs must be unique within the
+execution environment.'''
+zh = '''
+[#norm:mhartid_sz_acc_op]#`mhartid` CSR 是一个 MXLEN 位只读寄存器，包含正在运行代码的硬件线程的整数 ID。#
+[#norm:mhartid_always_rd]#在任何实现中该寄存器都必须可读。#
+在多处理器系统中，硬件线程 ID 不一定连续编号，但至少有一个硬件线程的硬件线程 ID 必须为零。硬件线程 ID 在执行环境中必须唯一。'''

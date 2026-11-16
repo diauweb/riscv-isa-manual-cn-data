@@ -1,0 +1,16 @@
+unit_id = "f0a9e6895f096de69176b89dc600a675"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Load and store instructions transfer a value between the registers and
+memory. Loads are encoded in the I-type format and stores are S-type.
+[#norm:ldst_ea]#The effective address is obtained by adding register _rs1_ to the
+sign-extended 12-bit offset.#
+[#norm:load_op]#Loads copy a value from memory to register _rd_.#
+[#norm:store_op]#Stores copy the value in register _rs2_ to memory.#'''
+zh = '''
+加载和存储指令在寄存器与内存之间传输值。加载使用 I 型格式编码，存储使用 S 型格式。
+[#norm:ldst_ea]#有效地址通过将寄存器 _rs1_ 加上符号扩展的 12 位偏移量来获得。#
+[#norm:load_op]#加载将值从内存复制到寄存器 _rd_。#
+[#norm:store_op]#存储将寄存器 _rs2_ 中的值复制到内存。#'''

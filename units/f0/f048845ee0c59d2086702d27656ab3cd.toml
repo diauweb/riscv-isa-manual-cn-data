@@ -1,0 +1,20 @@
+unit_id = "f048845ee0c59d2086702d27656ab3cd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zacas_rv32_amocas-d_op]#For RV32, `AMOCAS.D` atomically loads 64-bits of a data value from address in
+`rs1`, compares the loaded value to a 64-bit value held in a register pair
+consisting of `rd` and `rd+1`, and if the comparison is bitwise equal, then
+stores the 64-bit value held in the register pair `rs2` and `rs2+1` to the
+original address in `rs1`. The value loaded from memory is placed into the
+register pair `rd` and `rd+1`.# [#norm:Zacas_rv32_amocas-d_frst_pair_entry_reg_even]#The instruction requires the first register in
+the pair to be even numbered; encodings with odd numbered registers specified
+in `rs2` and `rd` are reserved.# [#norm:Zacas_rv32_amocas-d_rs2_frst_reg_x0]#When the first register of a source register
+pair is `x0`, then both halves of the pair read as zero.# [#norm:Zacas_rv32_amocas-d_rd_frst_reg_x0]#When the first
+register of a destination register pair is `x0`, then the entire register
+result is discarded and neither destination register is written.#
+The operation performed by `AMOCAS.D` for RV32 is as follows:'''
+zh = '''
+[#norm:Zacas_rv32_amocas-d_op]#对于 RV32，`AMOCAS.D` 从 `rs1` 中的地址原子地加载 64 位数据值，将加载的值与由 `rd` 和 `rd+1` 组成的寄存器对中持有的 64 位值进行比较，若按位相等，则将寄存器对 `rs2` 和 `rs2+1` 中持有的 64 位值存储到 `rs1` 中的原地址。从内存加载的值被放入寄存器对 `rd` 和 `rd+1`。# [#norm:Zacas_rv32_amocas-d_frst_pair_entry_reg_even]#该指令要求寄存器对中的第一个寄存器为偶数编号；在 `rs2` 和 `rd` 中指定奇数编号寄存器的编码为保留编码。# [#norm:Zacas_rv32_amocas-d_rs2_frst_reg_x0]#当源寄存器对的第一个寄存器为 `x0` 时，该寄存器对的两半均读为零。# [#norm:Zacas_rv32_amocas-d_rd_frst_reg_x0]#当目标寄存器对的第一个寄存器为 `x0` 时，整个寄存器结果被丢弃，且两个目标寄存器均不被写入。#
+`AMOCAS.D` 在 RV32 上执行的操作如下：'''

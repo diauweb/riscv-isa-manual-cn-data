@@ -1,0 +1,19 @@
+unit_id = "181779e72bc99fa331b77222e118b220"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Multiple vector registers can be grouped together, so that a single
+vector instruction can operate on multiple vector registers.  The term
+_vector register group_ is used herein to refer to one or more
+vector registers used as a single operand to a vector instruction.
+Vector register groups can be used to provide greater execution
+efficiency for longer application vectors, but the main reason for
+their inclusion is to allow double-width or larger elements to be
+operated on with the same vector length as single-width elements.  The
+vector length multiplier, _LMUL_, when greater than 1, represents the
+default number of vector registers that are combined to form a vector
+register group.  [#norm:vtype_lmul_val]#Implementations must support LMUL integer values of
+1, 2, 4, and 8.#'''
+zh = '''
+多个向量寄存器可以分组在一起，使得单条向量指令可以操作多个向量寄存器。本文使用术语__向量寄存器组__来指代用作向量指令单个操作数的一个或多个向量寄存器。向量寄存器组可用于为较长的应用向量提供更高的执行效率，但引入它们的主要原因是为了允许以与单宽度元素相同的向量长度操作双宽度或更大的元素。向量长度乘数 _LMUL_ 当大于 1 时，表示组合形成向量寄存器组的默认向量寄存器数量。[#norm:vtype_lmul_val]#实现必须支持 LMUL 整数值 1、2、4 和 8。#'''

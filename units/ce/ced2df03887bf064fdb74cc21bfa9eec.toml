@@ -1,0 +1,14 @@
+unit_id = "ced2df03887bf064fdb74cc21bfa9eec"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The direct csr:mseccfg[sseed] and mseccfg[useed] options allow one to draw a security boundary
+around a component in relation to Sensitive Security Parameter (SSP) flows,
+even if that component is not in M-mode. This is
+helpful when implementing trusted enclaves. Such modules can enforce the
+entire key lifecycle from birth (in the entropy source) to death
+(zeroization) to occur without the key being passed across the boundary
+to external code.'''
+zh = '''
+直接的 csr:mseccfg[sseed] 和 mseccfg[useed] 选项允许围绕与敏感安全参数（SSP）流相关的组件划定安全边界，即使该组件不在 M 模式下。这在实现可信执行环境时很有帮助。此类模块可以强制执行从密钥诞生（在熵源中）到消亡（清零）的整个密钥生命周期，而无需将密钥跨越边界传递给外部代码。'''

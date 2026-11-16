@@ -1,0 +1,42 @@
+unit_id = "20d7cb31c4056dd7028812a1148de18c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Release all needed components from reset by setting `tr??Active` = 1 as described above.
+* Set desired mode and verify if that mode is set (regardless of discovery results).
+* For RAM Sink:
+** Setup needed addresses (if possible and desired) as these may not reset.
+* For PIB Sink:
+** Calibrate PIB (if possible and desired).
+** Start physical trace capture (trace probe dependent).
+* Configure RAM Sink/PIB Sink/ATB Bridge in appropriate mode.
+** Verify if a particular mode is set.
+* Set main enable for RAM Sink/PIB Sink/ATB Bridge component by setting `tr??Enable` = 1.
+** Read back and wait for confirmation (`tr??Enable` = 1).
+* Enable Trace Funnel[s] in the same way.
+* Configure and Enable Trace Encoder[s] in the same way (last should be writing `trTeEnable` = 1 followed by reading to verify that it is set).
+** The `trTeInstMode` WARL field should be set to 6 - it may revert to different mode.
+* Either manually set `trTeInstTracing=1` and/or `trTeDataTracing=1` bits or set triggers to start the trace.
+* Start hart[s] to be traced (hart could be already running as well - in this case trace will be generated in the moment when `trTeInstTracing` or `trTeDataTracing` bit is set).
+* Periodically read `trTeControl` for status of trace (as it may stop by itself due to triggers).
+** If RAM Sink was configured with `trRamStopOnWrap` = 1, read `trRamEnable` to see if RAM capture was stopped.'''
+zh = '''
+* 如上所述，通过设置 `tr??Active` = 1 将所有需要的组件从复位中释放。
+* 设置所需模式并验证该模式是否被设置（无论发现结果如何）。
+* 对于 RAM Sink：
+** 设置所需的地址（如果可能且需要），因为这些地址可能不会复位。
+* 对于 PIB Sink：
+** 校准 PIB（如果可能且需要）。
+** 开始物理跟踪捕获（取决于跟踪探针）。
+* 以适当的模式配置 RAM Sink/PIB Sink/ATB Bridge。
+** 验证是否设置了特定模式。
+* 通过设置 `tr??Enable` = 1 来设置 RAM Sink/PIB Sink/ATB Bridge 组件的主使能。
+** 回读并等待确认（`tr??Enable` = 1）。
+* 以相同方式使能 Trace Funnel。
+* 以相同方式配置并使能 Trace Encoder（最后应写入 `trTeEnable` = 1，随后读取以验证其已被设置）。
+** `trTeInstMode` WARL 字段应设置为 6——它可能回退为不同的模式。
+* 手动设置 `trTeInstTracing=1` 和/或 `trTeDataTracing=1` 位，或设置触发器以启动跟踪。
+* 启动要跟踪的 hart（hart 也可能已经在运行——在这种情况下，跟踪将在 `trTeInstTracing` 或 `trTeDataTracing` 位置位的时刻生成）。
+* 定期读取 `trTeControl` 以获取跟踪状态（因为它可能因触发器而自行停止）。
+** 如果 RAM Sink 配置为 `trRamStopOnWrap` = 1，则读取 `trRamEnable` 以查看 RAM 捕获是否已停止。'''

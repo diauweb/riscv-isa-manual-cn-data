@@ -1,0 +1,27 @@
+unit_id = "caff300abca81dd5d85a0d989d990dd3"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. In systems with large-scale or Non-Uniform Memory Access (NUMA)
+  configurations, emulation based on insn:lr[]/insn:sc[] introduces issues related to
+  scalability and fairness, particularly under conditions of high contention.
+
+. Emulation of narrower AMOs through wider insn:amo*[] instructions on non-idempotent
+  IO memory regions may result in unintended side effects.
+
+. Utilizing wider insn:amo*[] instructions for emulating narrower AMOs risks activating
+  extraneous breakpoints or watchpoints.
+
+. In the absence of native support for subword atomics, compilers often resort
+  to inlining code sequences to provide the required emulation. This practice
+  contributes to an increase in code size, with consequent impacts on system
+  performance and memory utilization.'''
+zh = '''
+. 在具有大规模或非统一内存访问（NUMA）配置的系统中，基于 insn:lr[]/insn:sc[] 的仿真会引入与可扩展性和公平性相关的问题，特别是在高争用条件下。
+
+. 在非幂等 IO 内存区域上通过更宽的 insn:amo*[] 指令仿真较窄的 AMO，可能会导致非预期的副作用。
+
+. 利用更宽的 insn:amo*[] 指令仿真较窄的 AMO，可能会触发无关的断点或观察点。
+
+. 在缺少对子字原子操作的原生支持时，编译器常常诉诸内联代码序列来提供所需的仿真。这种做法会导致代码大小增加，进而影响系统性能和内存利用率。'''

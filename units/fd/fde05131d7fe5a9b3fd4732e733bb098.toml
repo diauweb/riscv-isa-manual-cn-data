@@ -1,0 +1,46 @@
+unit_id = "fde05131d7fe5a9b3fd4732e733bb098"
+kind = "code"
+translatable = false
+en = '''
+----
+LMUL=1 examples.
+
+The element index is given in hexadecimal and is shown placed at the
+least-significant byte of the stored element.
+
+
+ VLEN=32b
+
+ Byte         3 2 1 0
+
+ SEW=8b       3 2 1 0
+ SEW=16b        1   0
+ SEW=32b            0
+
+ VLEN=64b
+
+ Byte        7 6 5 4 3 2 1 0
+
+ SEW=8b      7 6 5 4 3 2 1 0
+ SEW=16b       3   2   1   0
+ SEW=32b           1       0
+ SEW=64b                   0
+
+ VLEN=128b
+
+ Byte        F E D C B A 9 8 7 6 5 4 3 2 1 0
+
+ SEW=8b      F E D C B A 9 8 7 6 5 4 3 2 1 0
+ SEW=16b       7   6   5   4   3   2   1   0
+ SEW=32b           3       2       1       0
+ SEW=64b                   1               0
+
+ VLEN=256b
+
+ Byte     1F1E1D1C1B1A19181716151413121110 F E D C B A 9 8 7 6 5 4 3 2 1 0
+
+ SEW=8b   1F1E1D1C1B1A19181716151413121110 F E D C B A 9 8 7 6 5 4 3 2 1 0
+ SEW=16b     F   E   D   C   B   A   9   8   7   6   5   4   3   2   1   0
+ SEW=32b         7       6       5       4       3       2       1       0
+ SEW=64b                 3               2               1               0
+----'''

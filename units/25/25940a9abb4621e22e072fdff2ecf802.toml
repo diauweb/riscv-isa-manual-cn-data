@@ -1,0 +1,12 @@
+unit_id = "25940a9abb4621e22e072fdff2ecf802"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Restricted views of the `mip` and `mie` registers appear as the `sip`
+and `sie` registers for supervisor level. If an interrupt is delegated
+to S-mode by setting a bit in the `mideleg` register, it becomes visible
+in the `sip` register and is maskable using the `sie` register.
+Otherwise, the corresponding bits in `sip` and `sie` are read-only zero.'''
+zh = '''
+`mip` 和 `mie` 寄存器的受限视图表现为监管级的 `sip` 和 `sie` 寄存器。若通过置位 `mideleg` 寄存器中的某位将中断委托给 S 模式，则该中断在 `sip` 寄存器中可见，并可使用 `sie` 寄存器屏蔽。否则，`sip` 和 `sie` 中的相应位为只读零。'''

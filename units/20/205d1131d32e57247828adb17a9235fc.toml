@@ -1,0 +1,65 @@
+unit_id = "205d1131d32e57247828adb17a9235fc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+insn:ebreak[] was primarily designed to be used by a debugger to cause
+execution to stop and fall back into the debugger. insn:ebreak[] is also used
+by the standard GCC compiler to mark code paths that should not be
+executed.
+
+Another use of insn:ebreak[] is to support "`semihosting`", where the execution
+environment includes a debugger that can provide services over an
+alternate system call interface built around the insn:ebreak[] instruction.
+Because the RISC-V base ISAs do not provide more than one insn:ebreak[]
+instruction, RISC-V semihosting uses a special sequence of instructions
+to distinguish a semihosting insn:ebreak[] from a debugger inserted insn:ebreak[].
+
+[source,asm]
+....
+    slli x0, x0, 0x1f   # Entry NOP
+    ebreak              # Break to debugger
+    srai x0, x0, 7      # Exit NOP
+....
+
+Note that these three instructions must be 32-bit-wide instructions,
+i.e., they mustn't be among the compressed 16-bit instructions
+in the extlink:zca[] extension.
+
+The shift insn:nop[] instructions are still considered available for use as
+HINTs.
+
+Semihosting is a form of service call and would be more naturally
+encoded as an insn:ecall[] using an existing ABI, but this would require the
+debugger to be able to intercept insn:ecall[]s, which is a newer addition to
+the debug standard. We intend to move over to using insn:ecall[]s with a
+standard ABI, in which case, semihosting can share a service ABI with an
+existing standard.
+
+We note that ARM processors have also moved to using SVC instead of BKPT
+for semihosting calls in newer designs.
+===='''
+zh = '''
+[NOTE]
+====
+insn:ebreak[] 主要设计为由调试器使用，以使执行停止并回退到调试器中。insn:ebreak[] 还被标准 GCC 编译器用于标记不应执行的代码路径。
+
+insn:ebreak[] 的另一个用途是支持“半主机”，其中执行环境包含一个调试器，该调试器可以围绕 insn:ebreak[] 指令构建的替代系统调用接口提供服务。由于 RISC-V 基础 ISA 不提供多于一条 insn:ebreak[] 指令，RISC-V 半主机使用特殊的指令序列来区分半主机的 insn:ebreak[] 与调试器插入的 insn:ebreak[]。
+
+[source,asm]
+....
+    slli x0, x0, 0x1f   # 入口 NOP
+    ebreak              # 断点进入调试器
+    srai x0, x0, 7      # 退出 NOP
+....
+
+注意，这三条指令必须是 32 位宽指令，即它们不能是 extlink:zca[] 扩展中的压缩 16 位指令。
+
+移位 insn:nop[] 指令仍被视为可用作 HINT。
+
+半主机是一种服务调用形式，使用现有 ABI 会更自然地编码为 insn:ecall[]，但这需要调试器能够拦截 insn:ecall[]，而这是调试标准中较新的补充。我们打算转向使用具有标准 ABI 的 insn:ecall[]，在这种情况下，半主机可以与现有标准共享服务 ABI。
+
+我们注意到，ARM 处理器在较新的设计中也已转向使用 SVC 而不是 BKPT 进行半主机调用。
+===='''

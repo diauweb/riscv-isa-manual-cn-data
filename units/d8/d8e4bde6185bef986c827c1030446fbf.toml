@@ -1,0 +1,18 @@
+unit_id = "d8e4bde6185bef986c827c1030446fbf"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. First direct conditional branch at address 0x102 is taken.
+* *I-CNT=4, HIST=0x3* (0b1_1). Most significant bit=1 is stop bit, bit pattern '1' means that first direct conditional branch was taken. Encoder should continue till an address 0x200 (as the first direct conditional branch encountered was reported as taken) as I-CNT=3 describes a <0x100..0x105> range. Remaining I-CNT=1 describes a <0x200..0x201> range.
+. First direct conditional branch at address 0x102 is not taken and second direct conditional branch at address 0x10A is taken.
+* *I-CNT=9, HIST=0x5* (0b1_01). Most significant bit=1 is stop bit, bit pattern '01' means that first direct conditional branch was not taken and second direct conditional branch was taken. Encoder should continue till an address 0x300 (as the second direct conditional branch encountered was reported as taken) as I-CNT=7 describes a <0x100..0x10D> range. Remaining I-CNT=2 describes a <0x300..0x303> range.
+. Both direct conditional branches (at 0x102 and 0x10A) are not taken.
+* *I-CNT=10, HIST-0x4* (0b1_00). Most significant bit=1 is stop bit, bit pattern '00' means that two direct conditional branches were not taken. Encoder should continue till an address 0x114 as I-CNT=10 describes a code in a <0x100..0x113> range.'''
+zh = '''
+. 地址 0x102 的第一条直接条件分支已跳转。
+* *I-CNT=4, HIST=0x3*（0b1_1）。最高有效位=1 为停止位，位模式 '1' 表示第一条直接条件分支已跳转。编码器应继续到地址 0x200（因为遇到的第一条直接条件分支报告为已跳转），因为 I-CNT=3 描述 <0x100..0x105> 范围。剩余 I-CNT=1 描述 <0x200..0x201> 范围。
+. 地址 0x102 的第一条直接条件分支未跳转，地址 0x10A 的第二条直接条件分支已跳转。
+* *I-CNT=9, HIST=0x5*（0b1_01）。最高有效位=1 为停止位，位模式 '01' 表示第一条直接条件分支未跳转，第二条直接条件分支已跳转。编码器应继续到地址 0x300（因为遇到的第二条直接条件分支报告为已跳转），因为 I-CNT=7 描述 <0x100..0x10D> 范围。剩余 I-CNT=2 描述 <0x300..0x303> 范围。
+. 两条直接条件分支（位于 0x102 和 0x10A）都未跳转。
+* *I-CNT=10, HIST-0x4*（0b1_00）。最高有效位=1 为停止位，位模式 '00' 表示两条直接条件分支都未跳转。编码器应继续到地址 0x114，因为 I-CNT=10 描述 <0x100..0x113> 范围内的代码。'''

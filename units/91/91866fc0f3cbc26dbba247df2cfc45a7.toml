@@ -1,0 +1,17 @@
+unit_id = "91866fc0f3cbc26dbba247df2cfc45a7"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+val HighestSetBit : forall ('N : Int), 'N >= 0. bits('N) -> int
+
+function HighestSetBit x = {
+  foreach (i from (xlen - 1) to 0 by 1 in dec)
+    if [x[i]] == 0b1 then return(i) else ();
+  return -1;
+}
+
+let rs = X(rs);
+X[rd] = (xlen - 1) - HighestSetBit(rs);
+--'''

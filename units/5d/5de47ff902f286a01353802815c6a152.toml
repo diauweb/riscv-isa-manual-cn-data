@@ -1,0 +1,13 @@
+unit_id = "5de47ff902f286a01353802815c6a152"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Most integer computational instructions operate on XLEN-bit values.
+Additional instruction variants are provided to manipulate 32-bit values
+in RV64I, indicated by a 'W' suffix to the opcode. These "*W"
+instructions ignore the upper 32 bits of their inputs and always produce
+32-bit signed values, sign-extending them to 64 bits, i.e. bits XLEN-1
+through 31 are equal.'''
+zh = '''
+大多数整数计算指令对 XLEN 位值进行操作。RV64I 提供了额外的指令变体来操作 32 位值，这些变体由操作码的 'W' 后缀表示。这些“*W”指令忽略其输入的高 32 位，并且总是产生 32 位有符号值，将其符号扩展至 64 位，即第 XLEN-1 位至第 31 位相等。'''

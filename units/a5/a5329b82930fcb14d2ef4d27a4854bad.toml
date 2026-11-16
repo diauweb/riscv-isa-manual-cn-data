@@ -1,0 +1,15 @@
+unit_id = "a5329b82930fcb14d2ef4d27a4854bad"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Non-cryptographic PRNGs, such as LFSRs and the linear-congruential
+generators found in many programming libraries, may generate statistically
+satisfactory random numbers but must never be used for cryptographic
+keying. This is because they are not designed to resist
+_cryptanalysis_; it is usually possible to take some output and
+mathematically derive the "`seed`" or the internal state of the PRNG
+from it. This is a security problem since knowledge of the state
+allows the attacker to compute future or past outputs.'''
+zh = '''
+非密码 PRNG，例如许多编程库中的 LFSR 和线性同余生成器，可能生成统计上令人满意的随机数，但绝不能用于密码密钥生成。这是因为它们的设计不是为了抵抗 _密码分析_；通常可以取一些输出并从中数学地推导出 PRNG 的“种子”或内部状态。这是一个安全问题，因为知道状态允许攻击者计算未来或过去的输出。'''

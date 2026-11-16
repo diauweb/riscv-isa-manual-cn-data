@@ -1,0 +1,10 @@
+unit_id = "3f251094a233f417d9602ac994c9cdbc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The instructions all automatically adjust the stack pointer by enough to cover the memory required for the registers being saved or restored.
+Additionally the _spimm_ field in the encoding allows the stack pointer to be adjusted in additional increments of 16-bytes. There is only a small restricted
+range available in the encoding; if the range is insufficient then a separate insn:c.addi16sp[] can be used to increase the range.'''
+zh = '''
+这些指令都会自动调整栈指针，调整量足以覆盖所保存或恢复寄存器所需的内存。此外，编码中的 _spimm_ 字段允许以 16 字节的额外增量调整栈指针。编码中仅提供很小的受限范围；如果范围不足，则可以使用单独的 insn:c.addi16sp[] 来扩大范围。'''

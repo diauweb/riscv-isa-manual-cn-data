@@ -1,0 +1,18 @@
+unit_id = "aac7fc6615c4941719454f335b2e3f1b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_bits_wr_or_rdonly]#The `mip` register must always be implemented,
+but can contain read-only zeros in any position, indicating that interrupt
+can never become pending.
+Each individual bit in register `mip` may be writable or may be read-only.#
+[#norm:mip_bits_wr_op]#When bit _i_ in `mip` is writable, a pending interrupt _i_
+can be cleared by writing 0 to this bit.#
+[#norm:mip_bits_rdonly_op]#If interrupt _i_ can become pending but bit _i_ in `mip` is read-only, the implementation must
+provide some other mechanism for clearing the pending interrupt.#'''
+zh = '''
+[#norm:mip_bits_wr_or_rdonly]#`mip` 寄存器必须始终实现，但可以在任意位置包含只读零，表示该中断永远不会变为挂起。
+寄存器 `mip` 中的每个单独位可以是可写的或只读的。#
+[#norm:mip_bits_wr_op]#当 `mip` 中的位 _i_ 可写时，可以通过向该位写入 0 来清除挂起的中断 _i_。#
+[#norm:mip_bits_rdonly_op]#如果中断 _i_ 可以变为挂起，但 `mip` 中的位 _i_ 为只读，则实现必须提供某种其他机制来清除挂起的中断。#'''

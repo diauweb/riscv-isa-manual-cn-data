@@ -1,0 +1,14 @@
+unit_id = "793b6913df933d476e6cd6419029e7bc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When Sv32 is written to the MODE field in the `satp` register (see
+<<satp>>), the supervisor operates in a 32-bit paged
+virtual-memory system. In this mode, supervisor and user virtual
+addresses are translated into supervisor physical addresses by
+traversing a radix-tree page table. Sv32 is supported when SXLEN=32 and
+is designed to include mechanisms sufficient for supporting modern
+Unix-based operating systems.'''
+zh = '''
+当将 Sv32 写入 `satp` 寄存器中的 MODE 字段时（见 <<satp>>），监管者运行在 32 位分页虚拟内存系统中。在此模式下，监管和用户虚拟地址通过遍历基数树页表被转换为监管物理地址。Sv32 在 SXLEN=32 时受支持，其设计包含足以支持现代基于 Unix 操作系统的机制。'''

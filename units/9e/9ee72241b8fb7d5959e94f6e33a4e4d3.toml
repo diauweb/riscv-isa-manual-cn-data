@@ -1,0 +1,15 @@
+unit_id = "9ee72241b8fb7d5959e94f6e33a4e4d3"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+RV32E:
+switch (rlist){
+  case  4: \{reg_list="ra";         xreg_list="x1";}
+  case  5: \{reg_list="ra, s0";     xreg_list="x1, x8";}
+  case  6: \{reg_list="ra, s0-s1";  xreg_list="x1, x8-x9";}
+  default: reserved();
+}
+stack_adj      = stack_adj_base + spimm * 16;
+----'''

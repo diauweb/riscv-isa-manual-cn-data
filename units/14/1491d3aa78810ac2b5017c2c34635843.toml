@@ -1,0 +1,12 @@
+unit_id = "1491d3aa78810ac2b5017c2c34635843"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When V=1 and neither `vsstatus.VS` nor `mstatus.VS` is set to Off, executing
+any instruction that changes vector state, including the vector CSRs, will
+change both `mstatus.VS` and `vsstatus.VS` to Dirty.
+Implementations may also change `mstatus.VS` or `vsstatus.VS` from Initial or
+Clean to Dirty at any time, even when there is no change in vector state.'''
+zh = '''
+当 V=1 且 `vsstatus.VS` 和 `mstatus.VS` 均未设置为 Off 时，执行任何改变向量状态的指令（包括向量 CSR）会将 `mstatus.VS` 和 `vsstatus.VS` 都改为 Dirty。实现也可以在任何时候将 `mstatus.VS` 或 `vsstatus.VS` 从 Initial 或 Clean 改为 Dirty，即使向量状态没有变化。'''

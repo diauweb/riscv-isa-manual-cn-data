@@ -1,0 +1,20 @@
+unit_id = "f6bdaf26147b6cbffcfda7df50441986"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An implicit read of the memory-management data structures may return any
+translation for an address that was valid at any time since the most
+recent SFENCE.VMA that subsumes that address. The ordering implied by
+SFENCE.VMA does not place implicit reads and writes to the
+memory-management data structures into the global memory order in a way
+that interacts cleanly with the standard RVWMO ordering rules. In
+particular, even though an SFENCE.VMA orders prior explicit accesses
+before subsequent implicit accesses, and those implicit accesses are
+ordered before their associated explicit accesses, SFENCE.VMA does not
+necessarily place prior explicit accesses before subsequent explicit
+accesses in the global memory order. These implicit loads also need not
+otherwise obey normal program order semantics with respect to prior
+loads or stores to the same address.'''
+zh = '''
+对内存管理数据结构的隐式读取可以返回自最近一次涵盖该地址的 SFENCE.VMA 以来任意时刻有效的地址的任意转换。SFENCE.VMA 所蕴含的排序并未以与标准 RVWMO 排序规则干净交互的方式，将对内存管理数据结构的隐式读写放入全局内存顺序中。特别是，尽管 SFENCE.VMA 将先前的显式访问排在后续隐式访问之前，且这些隐式访问又排在其关联的显式访问之前，但 SFENCE.VMA 并不必然将先前的显式访问排在后续显式访问之前置于全局内存顺序中。这些隐式加载也不必在与同一地址的先前加载或存储相关的正常程序顺序语义方面遵守规则。'''

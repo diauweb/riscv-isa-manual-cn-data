@@ -1,0 +1,12 @@
+unit_id = "e81057e0624a0451ce369495579cb47a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a guest-page fault is due to an implicit memory access during
+first-stage (VS-stage) address translation, a guest physical address
+written to `mtval2` is that of the implicit memory access that faulted.
+Additional information is provided in CSR `mtinst` to disambiguate such
+situations.'''
+zh = '''
+若客户页故障是由于第一级（VS 级）地址转换期间的隐式内存访问，则写入 `mtval2` 的客户物理地址就是出错的隐式内存访问的地址。CSR `mtinst` 中提供了额外信息以消除此类情况的歧义。'''

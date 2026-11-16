@@ -1,0 +1,14 @@
+unit_id = "1f70819a3e7057b8356b03da4be91827"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: As a consequence of this definition, implementations need not propagate
+NaN payloads through the reduction tree when no elements are active. In
+particular, if no elements are active and the scalar input is NaN,
+implementations are permitted to canonicalize the NaN and, if the NaN is
+signaling, set the invalid exception flag.  Implementations are alternatively
+permitted to pass through the original NaN and set no exception flags, as with
+insn:vfredosum[].'''
+zh = '''
+NOTE: 作为此定义的结果，当没有活动元素时，实现无需通过归约树传播 NaN 载荷。特别是，如果没有活动元素且标量输入为 NaN，则允许实现规范化 NaN，并且如果 NaN 是信号 NaN，则设置无效异常标志。或者，允许实现传递原始 NaN 并且不设置任何异常标志，与 insn:vfredosum[] 一样。'''

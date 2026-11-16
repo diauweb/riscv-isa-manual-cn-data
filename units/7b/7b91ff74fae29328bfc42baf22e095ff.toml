@@ -1,0 +1,16 @@
+unit_id = "7b91ff74fae29328bfc42baf22e095ff"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A hart normally runs application code in U-mode until some trap (e.g., a
+supervisor call or a timer interrupt) forces a switch to a trap handler,
+which usually runs in a more privileged mode. The hart will then execute
+the trap handler, which will eventually resume execution at or after the
+original trapped instruction in U-mode. Traps that increase privilege
+level are termed _vertical_ traps, while traps that remain at the same
+privilege level are termed _horizontal_ traps. The RISC-V privileged
+architecture provides flexible routing of traps to different privilege
+layers.'''
+zh = '''
+硬件线程通常以 U 模式运行应用程序代码，直到某个陷阱（例如监管调用或定时器中断）强制切换到陷阱处理程序，该处理程序通常在更高特权模式下运行。随后硬件线程将执行陷阱处理程序，最终将在 U 模式下从原本陷入的指令处或其后恢复执行。提高特权级别的陷阱称为__纵向__陷阱，而保持在相同特权级别的陷阱称为__横向__陷阱。RISC-V 特权架构提供将陷阱灵活路由到不同特权层的能力。'''

@@ -1,0 +1,17 @@
+unit_id = "d01614147c995628fe72877da99f0e42"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The explanations in this chapter make use of _litmus tests_, or small
+programs designed to test or highlight one particular aspect of a memory
+model. <<litmus-sample>> shows an example
+of a litmus test with two harts. As a convention for this figure and for
+all figures that follow in this chapter, we assume that `s0-s2` are
+pre-set to the same value in all harts and that `s0` holds the address
+labeled `x`, `s1` holds `y`, and `s2` holds `z`, where `x`, `y`, and `z`
+are disjoint memory locations aligned to 8 byte boundaries. All other registers and all referenced memory locations are presumed to be initialized to zero.  Each figure
+shows the litmus test code on the left, and a visualization of one
+particular valid or invalid execution on the right.'''
+zh = '''
+本章的解释使用了__试金石测试__（litmus tests），即旨在测试或突出内存模型某一特定方面的小程序。<<litmus-sample>> 展示了一个具有两个硬件线程的试金石测试示例。作为本图以及本章后续所有图的约定，我们假定 `s0-s2` 在所有硬件线程中均预置为相同的值，且 `s0` 保存标记为 `x` 的地址，`s1` 保存 `y`，`s2` 保存 `z`，其中 `x`、`y` 和 `z` 是对齐到 8 字节边界的互不重叠的内存位置。所有其他寄存器和所有被引用的内存位置均假定初始化为零。每个图左侧显示试金石测试代码，右侧显示某个特定有效或无效执行的图示。'''

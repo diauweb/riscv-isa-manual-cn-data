@@ -1,0 +1,29 @@
+unit_id = "efe764229912f0c1b8fa6b17a2dd3f67"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[textra64-sbytemask]] `((sbytemask))`
+a|When the least significant bit of this field is 1, it causes bits 7:0
+in the comparison to be ignored, when {textra64-sselect}=1.
+Likewise, the second bit controls the comparison of bits 15:8,
+third bit controls the comparison of bits 23:16,
+and fourth bit controls the comparison of bits 31:24.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[textra64-sbytemask]] `((sbytemask))`
+a|当此字段的最低有效位为 1 时，在 {textra64-sselect}=1 的情况下，它使比较中的位 7:0 被忽略。
+同样，第二位控制位 15:8 的比较，
+第三位控制位 23:16 的比较，
+第四位控制位 31:24 的比较。
+a|*WARL*
+a|0
+|==='''

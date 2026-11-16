@@ -1,0 +1,20 @@
+unit_id = "554c9c19f9dc423b43aa069b21721fdd"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. update _i.mem_loads_ to indicate that
+_mlo_ was satisfied by _msoss_; and
+. restart any speculative instructions which have violated coherence as
+a result of this, i.e., for every non-finished instruction
+_i'_ that is a program-order-successor of _i_,
+and every memory load operation _mlo'_ of _i'_
+that was satisfied from _msoss'_, if there exists a memory
+store operation slice _msos'_ in _msoss'_, and
+an overlapping memory store operation slice from a different memory
+store operation in _msoss_, and _msos'_ is not
+from an instruction that is a program-order-successor of
+_i_, restart _i'_ and its _restart-dependents_.'''
+zh = '''
+. 更新 _i.mem_loads_，以指示 _mlo_ 已由 _msoss_ 满足；并且
+. 重启任何因此违反一致性的推测指令，即，对于每个未结束的、是 _i_ 的程序顺序后继的指令 _i'_，以及 _i'_ 的每个从 _msoss'_ 满足的内存加载操作 _mlo'_，如果存在 _msoss'_ 中的内存存储操作切片 _msos'_，以及来自 _msoss_ 中不同内存存储操作的重叠内存存储操作切片，并且 _msos'_ 不是来自 _i_ 的程序顺序后继的指令，则重启 _i'_ 及其 _重启依赖项_。'''

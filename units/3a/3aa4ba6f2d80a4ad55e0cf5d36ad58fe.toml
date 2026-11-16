@@ -1,0 +1,58 @@
+unit_id = "3aa4ba6f2d80a4ad55e0cf5d36ad58fe"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Details of Common Fields
+[cols="9%,5%,15%,~",options="header"]
+|======================================================================================================
+| Name | Bits | Description | Values/Notes
+4+|*Fields used in many messages*
+|[[field_TCODE]] TCODE      | 6             | Transfer Code | Message header that identifies the number and/or size of fields to be transferred, and how to interpret each of the fields following it.
+|[[field_SRC]] SRC        | *Cfg* | Source of Message Transmission | Width of SRC field is defined by <<trTeSrcBits,trTeSrcBits>> control field and it may be enabled/disabled by <<trTeInhibitSrc,trTeInhibitSrc>> control bit. This optional field is used to identify the source of the message transmission. In configurations that comprise only a single hart, this field need not be transmitted. For devices that comprise multiple harts, this field must be transmitted (if enabled) as part of the message to identify the source of the message transmission. The transmitted SRC field size should be the same for all enabled trace encoders sharing a trace stream.
+|[[field_SYNC]] SYNC       | 4             |Reason for Synchronization| Encodings and details are provided in the <<Synchronizing Messages,Synchronizing Messages>> chapter. +
+*NOTE:* The SYNC field is always sent together with the <<field_F-ADDR,F-ADDR>> field, so decoding may start from a message containing the SYNC field.
+|[[field_B-TYPE]] B-TYPE      | 2             | Branch Type | Reason for indirect flow change: +
+                                *0:* Indirect control flow change (jump, call or return) or in a <<Synchronizing Messages,synchronizing message>> not related to code execution. +
+                                *1:* Exception or interrupt (if the encoder is not capable of reporting 2 and 3). +
+                                *2:* *Extension:* Exception +
+                                *3:* *Extension:* Interrupt +
+*NOTE:* Either 1-only or both 2 and 3 should be implemented and consistently reported. Extended values 2 and 3 allow trace tools to distinguish exceptions and interrupts easily.
+|[[field_I-CNT]] I-CNT       | *Var* | Instruction Count | As RISC-V allows variable-length instructions, this is the number of 16-bit (INST_LEN/2) instruction units executed/retired since the I-CNT counter was transmitted or reset.  See <<I-CNT Details,I-CNT Details>> chapter for more details.
+|[[field_F-ADDR]] F-ADDR      | *Var* | Full Target Address | Full PC without the least significant bit.
+The least significant bit is not reported as it is always 0.
+See <<Address Compression,Address Compression>> chapter for more details. +
+*NOTE:* The F-ADDR field is always sent together with the <<field_SYNC,SYNC>> field.
+|[[field_U-ADDR]] U-ADDR      | *Var* | Unique part of Target Address | Unique part of PC address (XOR with recently reported address).
+See <<Address Compression,Address Compression>> chapter for more details. +
+The U-ADDR field is always sent together with the <<field_B-TYPE,B-TYPE>> field.
+|[[field_HIST]] HIST       | *Var* | Direct Branch History map |  Most significant bit (always 1) serves as a 'stop-bit', the least significant bit denotes the last direct conditional branch. See <<HIST Field Generation,HIST Field Generation>> chapter for more details.
+|[[field_TSTAMP]] TSTAMP     | *Var* | Timestamp (optional) | It must be enabled by <<trTsEnable,trTsEnable>> control bit. See <<Timestamp Reporting,Timestamp Reporting>> chapter for more details.
+|======================================================================================================'''
+zh = '''
+.公共字段详情
+[cols="9%,5%,15%,~",options="header"]
+|======================================================================================================
+| 名称 | 位数 | 描述 | 值/备注
+4+|*用于多种消息的字段*
+|[[field_TCODE]] TCODE      | 6             | 传输码 | 消息头，标识要传输的字段数量和/或大小，以及如何解释其后的每个字段。
+|[[field_SRC]] SRC        | *Cfg* | 消息传输源 | SRC 字段宽度由 <<trTeSrcBits,trTeSrcBits>> 控制字段定义，并可由 <<trTeInhibitSrc,trTeInhibitSrc>> 控制位启用/禁用。此可选字段用于标识消息传输源。在仅包含单个硬件线程的配置中，无需传输此字段。对于包含多个硬件线程的设备，如果启用，则必须将此字段作为消息的一部分传输，以标识消息传输源。对于共享同一跟踪流的所有已启用跟踪编码器，传输的 SRC 字段大小应相同。
+|[[field_SYNC]] SYNC       | 4             |同步原因| 编码和细节在 <<Synchronizing Messages,Synchronizing Messages>> 章节中提供。 +
+*NOTE：* SYNC 字段始终与 <<field_F-ADDR,F-ADDR>> 字段一起发送，因此解码可以从包含 SYNC 字段的消息开始。
+|[[field_B-TYPE]] B-TYPE      | 2             | 分支类型 | 间接流变化的原因： +
+                                *0：* 间接控制流变化（跳转、调用或返回），或在 <<Synchronizing Messages,synchronizing message>> 中与代码执行无关。 +
+                                *1：* 异常或中断（如果编码器不能报告 2 和 3）。 +
+                                *2：* *扩展：* 异常 +
+                                *3：* *扩展：* 中断 +
+*NOTE：* 应实现仅 1，或同时实现 2 和 3，并一致报告。扩展值 2 和 3 使跟踪工具能够轻松区分异常和中断。
+|[[field_I-CNT]] I-CNT       | *Var* | 指令计数 | 由于 RISC-V 允许可变长度指令，这是自 I-CNT 计数器被发送或复位以来已执行/退休的 16 位（INST_LEN/2）指令单元数。更多细节请参见 <<I-CNT Details,I-CNT Details>> 章节。
+|[[field_F-ADDR]] F-ADDR      | *Var* | 完整目标地址 | 不包含最低有效位的完整 PC。
+最低有效位不报告，因为它始终为 0。
+更多细节请参见 <<Address Compression,Address Compression>> 章节。 +
+*NOTE：* F-ADDR 字段始终与 <<field_SYNC,SYNC>> 字段一起发送。
+|[[field_U-ADDR]] U-ADDR      | *Var* | 目标地址的唯一部分 | PC 地址的唯一部分（与最近报告的地址进行 XOR）。
+更多细节请参见 <<Address Compression,Address Compression>> 章节。 +
+U-ADDR 字段始终与 <<field_B-TYPE,B-TYPE>> 字段一起发送。
+|[[field_HIST]] HIST       | *Var* | 直接分支历史映射 | 最高有效位（始终为 1）用作“停止位”，最低有效位表示最后一个直接条件分支。更多细节请参见 <<HIST Field Generation,HIST Field Generation>> 章节。
+|[[field_TSTAMP]] TSTAMP     | *Var* | 时间戳（可选） | 必须由 <<trTsEnable,trTsEnable>> 控制位启用。更多细节请参见 <<Timestamp Reporting,Timestamp Reporting>> 章节。
+|======================================================================================================'''

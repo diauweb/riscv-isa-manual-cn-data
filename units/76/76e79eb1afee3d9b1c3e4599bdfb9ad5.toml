@@ -1,0 +1,12 @@
+unit_id = "76e79eb1afee3d9b1c3e4599bdfb9ad5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap is taken into VS-mode, `vsstatus`.SPP is set according to
+<<h-vspp>>. Register `hstatus` and the HS-level
+`sstatus` are not modified, and the virtualization mode V remains 1. A
+trap into VS-mode also writes fields SPIE and SIE in `vsstatus` and
+writes CSRs `vsepc`, `vscause`, and `vstval`.'''
+zh = '''
+当陷阱进入 VS 模式时，`vsstatus`.SPP 按 <<h-vspp>> 设置。寄存器 `hstatus` 和 HS 级 `sstatus` 不被修改，虚拟化模式 V 保持为 1。进入 VS 模式的陷阱还会写入 `vsstatus` 中的 SPIE 和 SIE 字段，并写入 CSR `vsepc`、`vscause` 和 `vstval`。'''

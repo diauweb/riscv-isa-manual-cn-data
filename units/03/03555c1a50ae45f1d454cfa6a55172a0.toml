@@ -1,0 +1,13 @@
+unit_id = "03555c1a50ae45f1d454cfa6a55172a0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The debug module of the RISC-V hart may have a trigger unit. This
+defines a match control register (*_mcontrol_*) containing a 4-bit
+*action* field, and reserves codes 2 - 5 of this field for trace use.
+These action codes are hereby defined as shown in table
+<<tab:debugModuleTriggerSupport>>. If implemented, each action must generate a pulse on an output from the hart, on the same cycle as the instruction which caused the trigger is
+retired.'''
+zh = '''
+RISC-V 硬件线程的调试模块可能带有一个触发器单元。它定义了一个匹配控制寄存器（*_mcontrol_*），其中包含一个 4 位的 *action* 字段，并为跟踪用途保留了该字段的代码 2 - 5。这些动作代码在此定义，如表 <<tab:debugModuleTriggerSupport>> 所示。如果实现，每个动作都必须在引起该触发器的指令退役的同一周期，在硬件线程的某个输出上产生一个脉冲。'''

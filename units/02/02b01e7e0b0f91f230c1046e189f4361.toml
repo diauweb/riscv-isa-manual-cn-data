@@ -1,0 +1,24 @@
+unit_id = "02b01e7e0b0f91f230c1046e189f4361"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of PROCESS field (in LSB to MSB order)
+[cols="35%,20%,12%,8%,25%",options="header",align=center,width=80%]
+|======================================================================================================
+|Reason|FORMAT[1:0]|PRV[1:0]|V[0]|CONTEXT[x:0]
+| V and/or PRV change |00   |Yes|Yes|--
+| Reserved  |01|--|--|--
+| Sync or *scontext* change |10|Yes|Yes|*scontext* value
+| Sync or *hcontext* change |11|Yes|Yes|*hcontext* value
+|======================================================================================================'''
+zh = '''
+.PROCESS 字段编码（按 LSB 到 MSB 顺序）
+[cols="35%,20%,12%,8%,25%",options="header",align=center,width=80%]
+|======================================================================================================
+|原因|FORMAT[1:0]|PRV[1:0]|V[0]|CONTEXT[x:0]
+| V 和/或 PRV 变化 |00   |是|是|--
+| 保留  |01|--|--|--
+| 同步或 *scontext* 变化 |10|是|是|*scontext* 值
+| 同步或 *hcontext* 变化 |11|是|是|*hcontext* 值
+|======================================================================================================'''

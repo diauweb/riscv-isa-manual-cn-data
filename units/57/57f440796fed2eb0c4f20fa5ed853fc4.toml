@@ -1,0 +1,73 @@
+unit_id = "57f440796fed2eb0c4f20fa5ed853fc4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+=== Explaining the RVWMO Rules
+
+In this section, we provide explanation and examples for all of the
+RVWMO rules and axioms.
+
+==== Preserved Program Order and Global Memory Order
+
+Preserved program order represents the subset of program order that must
+be respected within the global memory order. Conceptually, events from
+the same hart that are ordered by preserved program order must appear in
+that order from the perspective of other harts and/or observers. Events
+from the same hart that are not ordered by preserved program order, on
+the other hand, may appear reordered from the perspective of other harts
+and/or observers.
+
+Informally, the global memory order represents the order in which loads
+and stores perform. The formal memory model literature has moved away
+from specifications built around the concept of performing, but the idea
+is still useful for building up informal intuition. A load is said to
+have performed when its return value is determined. A store is said to
+have performed not when it has executed inside the pipeline, but rather
+only when its value has been propagated to globally visible memory. In
+this sense, the global memory order also represents the contribution of
+the coherence protocol and/or the rest of the memory system to
+interleave the (possibly reordered) memory accesses being issued by each
+hart into a single total order agreed upon by all harts.
+
+The order in which loads perform does not always directly correspond to
+the relative age of the values those two loads return. In particular, a
+load _b_ may perform before another load _a_ to
+the same address (i.e., _b_ may execute before
+_a_, and _b_ may appear before _a_
+in the global memory order), but _a_ may nevertheless return
+an older value than _b_. This discrepancy captures (among
+other things) the reordering effects of buffering placed between the
+core and memory. For example, _b_ may have returned a value
+from a store in the store buffer, while _a_ may have ignored
+that younger store and read an older value from memory instead. To
+account for this, at the time each load performs, the value it returns
+is determined by the load value axiom, not just strictly by determining
+the most recent store to the same address in the global memory order, as
+described below.
+
+[[loadvalueaxiom, Load value axiom]]
+==== Load value axiom
+
+[IMPORTANT]
+===='''
+zh = '''
+====
+=== 解释 RVWMO 规则
+
+在本节中，我们为所有 RVWMO 规则和公理提供解释和示例。
+
+==== 保持的程序顺序与全局内存顺序
+
+保持的程序顺序表示必须在全局内存顺序内被遵守的程序顺序子集。从概念上讲，对于来自同一硬件线程且由保持的程序顺序排序的事件，从其他硬件线程和/或观察者的角度看，必须按该顺序出现。另一方面，来自同一硬件线程但未被保持的程序顺序排序的事件，从其他硬件线程和/或观察者的角度看，可能以重排后的顺序出现。
+
+非正式地说，全局内存顺序表示加载和存储执行的顺序。形式化内存模型文献已经不再使用围绕“执行”概念构建的规范，但这个想法对于建立非正式直觉仍然有用。当加载的返回值被确定时，称该加载已执行。存储不是当它在流水线内部执行时称其已执行，而是只有当它的值被传播到全局可见内存时才称其已执行。在这个意义上，全局内存顺序还表示一致性协议和/或内存系统其余部分将每个硬件线程发出的（可能重排的）内存访问交错成所有硬件线程一致同意的单一全序的贡献。
+
+加载执行的顺序并不总是直接对应于这两个加载返回值的相对年龄。特别地，加载 _b_ 可能在另一个对同一地址的加载 _a_ 之前执行（即 _b_ 可能在 _a_ 之前执行，并且 _b_ 可能在全局内存顺序中出现在 _a_ 之前），但 _a_ 仍可能返回比 _b_ 更旧的值。这种差异（除其他因素外）捕获了置于核心和内存之间的缓冲的重排效应。例如，_b_ 可能已经从存储缓冲区中的某个存储返回了一个值，而 _a_ 可能忽略了那个较年轻的存储，转而从内存读取了一个较旧的值。为了考虑到这一点，在每个加载执行时，其返回值由加载值公理确定，而不仅仅严格通过确定全局内存顺序中同一地址的最新存储来确定，如下所述。
+
+[[loadvalueaxiom, Load value axiom]]
+==== 加载值公理
+
+[IMPORTANT]
+===='''

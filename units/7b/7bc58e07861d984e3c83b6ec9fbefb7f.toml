@@ -1,0 +1,77 @@
+unit_id = "7bc58e07861d984e3c83b6ec9fbefb7f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The four base ISAs in RISC-V are treated as distinct base ISAs. A common
+question is why is there not a single ISA, and in particular, why is
+RV32I not a strict subset of RV64I? Some earlier ISA designs (SPARC,
+MIPS) adopted a strict superset policy when increasing address space
+size to support running existing 32-bit binaries on new 64-bit hardware.
+
+The main advantage of explicitly separating base ISAs is that each base
+ISA can be optimized for its needs without requiring to support all the
+operations needed for other base ISAs. For example, RV64I can omit
+instructions and CSRs that are only needed to cope with the narrower
+registers in RV32I. The RV32I variants can use encoding space otherwise
+reserved for instructions only required by wider address-space variants.
+
+The main disadvantage of not treating the design as a single ISA is that
+it complicates the hardware needed to emulate one base ISA on another
+(e.g., RV32I on RV64I). However, differences in addressing and
+illegal-instruction traps generally mean some mode switch would be required in
+hardware in any case even with full superset instruction encodings, and
+the different RISC-V base ISAs are similar enough that supporting
+multiple versions is relatively low cost. Although some have proposed
+that the strict superset design would allow legacy 32-bit libraries to
+be linked with 64-bit code, this is impractical in practice, even with
+compatible encodings, due to the differences in software calling
+conventions and system-call interfaces.
+
+The RISC-V privileged architecture provides fields in `misa` to control
+the unprivileged ISA at each level to support emulating different base
+ISAs on the same hardware. We note that newer SPARC and MIPS ISA
+revisions have deprecated support for running 32-bit code unchanged on
+64-bit systems.
+
+A related question is why there is a different encoding for 32-bit adds
+in RV32I (insn:add[]) and RV64I (insn:addw[])? The insn:addw[] opcode could be used for
+32-bit adds in RV32I and insn:addd[] for 64-bit adds in RV64I, instead of the
+existing design which uses the same opcode insn:add[] for 32-bit adds in RV32I
+and 64-bit adds in RV64I with a different opcode insn:addw[] for 32-bit adds in
+RV64I. This would also be more consistent with the use of the same insn:lw[]
+opcode for 32-bit load in both RV32I and RV64I. The very first versions
+of RISC-V ISA did have a variant of this alternate design, but the
+RISC-V design was changed to the current choice in January 2011. Our
+focus was on supporting 32-bit integers in the 64-bit ISA, not on
+providing compatibility with the 32-bit ISA, and the motivation was to
+remove the asymmetry that arose from having not all opcodes in RV32I
+have a insn:*w[] suffix (e.g., insn:addw[], but insn:and[] not insn:andw[]). In hindsight, this was
+perhaps not well-justified and a consequence of designing both ISAs at
+the same time as opposed to adding one later to sit on top of another,
+and also from a belief we had to fold platform requirements into the ISA
+spec which would imply that all the RV32I instructions would have been
+required in RV64I. It is too late to change the encoding now, but this
+is also of little practical consequence for the reasons stated above.
+
+It has been noted we could enable the insn:*w[] variants as an extension to
+RV32I systems to provide a common encoding across RV64I and a future
+RV32 variant.
+===='''
+zh = '''
+[NOTE]
+====
+RISC-V 中的四个基础 ISA 被视为不同的基础 ISA。一个常见的问题是，为什么不存在单一的 ISA，特别是为什么 RV32I 不是 RV64I 的严格子集？一些早期的 ISA 设计（SPARC、MIPS）在增大地址空间大小时采用了严格超集策略，以支持在新的 64 位硬件上运行现有的 32 位二进制文件。
+
+显式分离基础 ISA 的主要优点是，每个基础 ISA 都可以针对其需求进行优化，而无需支持其他基础 ISA 所需的所有操作。例如，RV64I 可以省略仅为应对 RV32I 中较窄寄存器而需要的指令和 CSR。RV32I 变体可以使用原本保留给更宽地址空间变体所需指令的编码空间。
+
+不将设计视为单一 ISA 的主要缺点是，它使在一个基础 ISA 上仿真另一个基础 ISA（例如在 RV64I 上仿真 RV32I）所需的硬件复杂化。然而，寻址和非法指令陷阱方面的差异通常意味着，即使采用完全超集的指令编码，硬件在任何情况下也需要某种模式切换，而且不同的 RISC-V 基础 ISA 足够相似，支持多个版本的成本相对较低。尽管有人提出严格超集设计将允许传统 32 位库与 64 位代码链接，但由于软件调用约定和系统调用接口的差异，即使编码兼容，这在实践中也不可行。
+
+RISC-V 特权架构在 `misa` 中提供字段，以控制各层级的非特权 ISA，从而支持在同一硬件上仿真不同的基础 ISA。我们注意到，较新的 SPARC 和 MIPS ISA 修订版已弃用在 64 位系统上原样运行 32 位代码的支持。
+
+一个相关的问题是，为什么 RV32I 中的 32 位加法（insn:add[]）和 RV64I 中的 32 位加法（insn:addw[]）有不同的编码？insn:addw[] 操作码可以用于 RV32I 中的 32 位加法，insn:addd[] 可以用于 RV64I 中的 64 位加法，而不是现有设计：在 RV32I 中 32 位加法和 RV64I 中 64 位加法使用相同的操作码 insn:add[]，而在 RV64I 中 32 位加法使用不同的操作码 insn:addw[]。这也与在 RV32I 和 RV64I 中 32 位加载都使用相同 insn:lw[] 操作码更为一致。RISC-V ISA 的最初版本确实有这种替代设计的变体，但 RISC-V 设计在 2011 年 1 月改为当前选择。我们的重点是在 64 位 ISA 中支持 32 位整数，而不是提供与 32 位 ISA 的兼容性，其动机是消除因 RV32I 中并非所有操作码都有 insn:*w[] 后缀（例如 insn:addw[]，但 insn:and[] 不是 insn:andw[]）而产生的不对称性。事后看来，这也许并不十分合理，这是同时设计两个 ISA 而不是后来添加一个叠加在另一个之上的结果，也源于我们当时认为必须将平台需求纳入 ISA 规范，这将意味着所有 RV32I 指令都必须在 RV64I 中要求。现在改变编码为时已晚，但出于上述原因，这也没有多少实际影响。
+
+有人指出，我们可以将 insn:*w[] 变体作为 RV32I 系统的扩展启用，以在 RV64I 和未来的 RV32 变体之间提供通用编码。
+===='''

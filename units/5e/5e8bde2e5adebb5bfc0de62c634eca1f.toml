@@ -1,0 +1,13 @@
+unit_id = "5e8bde2e5adebb5bfc0de62c634eca1f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:scountovf_smode_read_access_control]#Read access to bit _X_ is subject to the same mcounteren (or mcounteren and
+hcounteren) CSRs that mediate access to the hpmcounter CSRs by S-mode (or
+VS-mode).# [#norm:scountovf_mmode_read_access]#In M-mode, scountovf bit _X_ is always readable.# [#norm:scountovf_smode_read_access]#In S/HS-mode, scountovf bit _X_ is readable when mcounteren bit
+_X_ is set, and otherwise reads as zero.# [#norm:scountovf_vsmode_read_access]#Similarly, in VS mode, scountovf bit
+_X_ is readable when mcounteren bit _X_ and hcounteren bit _X_ are both set,
+and otherwise reads as zero.#'''
+zh = '''
+[#norm:scountovf_smode_read_access_control]#对第 _X_ 位的读访问受与 S 模式（或 VS 模式）访问 hpmcounter CSR 相同的 mcounteren（或 mcounteren 和 hcounteren）CSR 的约束。# [#norm:scountovf_mmode_read_access]#在 M 模式下，scountovf 的第 _X_ 位始终可读。# [#norm:scountovf_smode_read_access]#在 S/HS 模式下，当 mcounteren 的第 _X_ 位置位时，scountovf 的第 _X_ 位可读，否则读为零。# [#norm:scountovf_vsmode_read_access]#类似地，在 VS 模式下，当 mcounteren 的第 _X_ 位和 hcounteren 的第 _X_ 位均置位时，scountovf 的第 _X_ 位可读，否则读为零。#'''

@@ -1,0 +1,30 @@
+unit_id = "df88738f0f5b5f1f476251047e52a5a3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The above language intends to capture the trigger behavior with respect
+to the cache operations to be introduced in a forthcoming I/D
+consistency extension.
+
+For RISC-V Base Cache Management Operation ISA Extensions 1.0.1, this
+means the following:
+
+. `cbo.clean`, `cbo.flush`, and `cbo.inval` match as if they are stores because they affect consistency.
+. `cbo.zero` matches as if it is a store because it performs a block write of
+constant data.
+. The prefetch instructions don't match at all.
+===='''
+zh = '''
+[NOTE]
+====
+上述表述旨在捕获触发器针对即将在未来的 I/D 一致性扩展中引入的缓存操作的行为。
+
+对于 RISC-V Base Cache Management Operation ISA Extensions 1.0.1，这意味着：
+
+. `cbo.clean`、`cbo.flush` 和 `cbo.inval` 作为存储匹配，因为它们影响一致性。
+. `cbo.zero` 作为存储匹配，因为它执行常量数据的块写入。
+. 预取指令完全不匹配。
+===='''

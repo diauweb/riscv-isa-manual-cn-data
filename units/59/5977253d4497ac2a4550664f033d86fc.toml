@@ -1,0 +1,15 @@
+unit_id = "5977253d4497ac2a4550664f033d86fc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When Svpbmt is used with non-zero PBMT encodings, it is possible for
+multiple virtual aliases of the same physical page to exist
+simultaneously with different memory attributes. It is also possible for
+a U-mode or S-mode mapping through a PTE with Svpbmt enabled to observe
+different memory attributes for a given region of physical memory than a
+concurrent access to the same page performed by M-mode or when
+MODE=Bare. In such cases, the behaviors dictated by the attributes
+(including coherence, which is otherwise unaffected) may be violated.'''
+zh = '''
+当 Svpbmt 与非零 PBMT 编码一起使用时，同一物理页的多个虚拟别名可能同时以不同的内存属性存在。此外，通过启用 Svpbmt 的页表项进行的 U 模式或 S 模式映射，可能对给定物理内存区域观察到与 M 模式或 MODE=Bare 时对同一页的并发访问不同的内存属性。在此类情况下，由这些属性所规定的行为（包括一致性，其本身不受影响）可能被违反。'''

@@ -1,0 +1,16 @@
+unit_id = "a0ef8b3e2866e726d67829f2a13aea6a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The atomic-instruction extension, named "A", contains
+instructions that atomically read-modify-write memory to support
+synchronization between multiple RISC-V harts running in the same memory
+space. The two forms of atomic instruction provided are
+load-reserved/store-conditional instructions and atomic fetch-and-op
+memory instructions. Both types of atomic instruction support various
+memory consistency orderings including unordered, acquire, release, and
+sequentially consistent semantics. These instructions allow RISC-V to
+support the RCsc memory consistency model. cite:[Gharachorloo90memoryconsistency]'''
+zh = '''
+名为 "A" 的原子指令扩展包含对内存进行原子读-修改-写操作的指令，用于支持在同一内存空间中运行的多个 RISC-V 硬件线程之间的同步。所提供的两种原子指令形式为加载保留/条件存储指令和原子取-运算（atomic fetch-and-op）内存指令。这两类原子指令均支持多种内存一致性顺序，包括无序、获取（acquire）、释放（release）和顺序一致语义。这些指令使 RISC-V 能够支持 RCsc 内存一致性模型。cite:[Gharachorloo90memoryconsistency]'''

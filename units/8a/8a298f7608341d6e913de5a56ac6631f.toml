@@ -1,0 +1,15 @@
+unit_id = "8a298f7608341d6e913de5a56ac6631f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The A field in a PMP entry's configuration register encodes the
+address-matching mode of the associated PMP address register. The
+encoding of this field is shown in <<pmpcfg-a>>.
+When A=0, this PMP entry is disabled and matches no addresses. Two other
+address-matching modes are supported: naturally aligned power-of-2
+regions (NAPOT), including the special case of naturally aligned
+four-byte regions (NA4); and the top boundary of an arbitrary range
+(TOR). These modes support four-byte granularity.'''
+zh = '''
+PMP 条目配置寄存器中的 A 字段编码关联 PMP 地址寄存器的地址匹配模式。该字段的编码如 <<pmpcfg-a>> 所示。当 A=0 时，该 PMP 条目被禁用且不匹配任何地址。还支持另外两种地址匹配模式：自然对齐的 2 的幂区域（NAPOT），包括自然对齐的四字节区域（NA4）的特殊情况；以及任意范围的顶部边界（TOR）。这些模式支持四字节粒度。'''

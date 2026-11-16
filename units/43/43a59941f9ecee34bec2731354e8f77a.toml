@@ -1,0 +1,36 @@
+unit_id = "43a59941f9ecee34bec2731354e8f77a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Split atomic load data only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+110: Split atomic data other codes other packet formats
+|*lrid* | _lrid_width_p_ | Load request ID
+|*resp* | 2 | 00: Error (no data) +
+01: XOR-compressed data +
+10: full data +
+11: differential data
+|*data_len* | *size* | Number of bytes of operand is _data_len + 1_. Not
+included if resp indicates an error (sign-extend *resp* MSB)
+|*data* | 8 * (*data_len* + 1) | Data. Not included if resp indicates an
+error (sign-extend *resp* MSB)
+|==='''
+zh = '''
+.分离原子加载数据包格式，仅数据
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名* | *位数* | *描述*
+|*format* | 3 | 事务类型 +
+110：分离原子数据 其他代码为其他包格式
+|*lrid* | _lrid_width_p_ | 加载请求 ID
+|*resp* | 2 | 00：错误（无数据） +
+01：XOR 压缩数据 +
+10：完整数据 +
+11：差分数据
+|*data_len* | *size* | 操作数字节数为 _data_len + 1_。如果 resp 指示错误则不包含（符号扩展 *resp* MSB）
+|*data* | 8 * (*data_len* + 1) | 数据。如果 resp 指示错误则不包含（符号扩展 *resp* MSB）
+|==='''

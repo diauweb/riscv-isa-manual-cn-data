@@ -1,0 +1,52 @@
+unit_id = "7d5edbfa035fa764438ddc7c2bae95fe"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth,cols="4,1,1,1,8,4,1,1,8,4,1,1,8"]
+|===
+5+| funct6                  4+| funct6                 4+| funct6
+
+| 010000 |V|X|I| vadc       | 010000 |V| | VWXUNARY0   | 010000 |V| | VWFUNARY0
+|        | | | |            | 010000 | |X| VRXUNARY0   | 010000 | |F| VRFUNARY0
+| 010001 |V|X|I| vmadc      | 010001 | | |             | 010001 | | |
+| 010010 |V|X| | vsbc       | 010010 |V| | VXUNARY0    | 010010 |V| | VFUNARY0
+| 010011 |V|X| | vmsbc      | 010011 | | |             | 010011 |V| | VFUNARY1
+| 010100 |V|X| | *vror*     | 010100 |V| | VMUNARY0    | 010100 | | |
+| 010101 |V|X| | *vrol*     | 010101 | | |             | 010101 | | |
+| 01010x | | |I| *vror*     |        | | |             |        | | |
+| 010110 | | | |            | 010110 | | |             | 010110 | | |
+| 010111 |V|X|I| vmerge/vmv | 010111 |V| | vcompress   | 010111 | |F| vfmerge/vfmv
+| 011000 |V|X|I| vmseq      | 011000 |V| | vmandn      | 011000 |V|F| vmfeq
+| 011001 |V|X|I| vmsne      | 011001 |V| | vmand       | 011001 |V|F| vmfle
+| 011010 |V|X| | vmsltu     | 011010 |V| | vmor        | 011010 | | |
+| 011011 |V|X| | vmslt      | 011011 |V| | vmxor       | 011011 |V|F| vmflt
+| 011100 |V|X|I| vmsleu     | 011100 |V| | vmorn       | 011100 |V|F| vmfne
+| 011101 |V|X|I| vmsle      | 011101 |V| | vmnand      | 011101 | |F| vmfgt
+| 011110 | |X|I| vmsgtu     | 011110 |V| | vmnor       | 011110 | | |
+| 011111 | |X|I| vmsgt      | 011111 |V| | vmxnor      | 011111 | |F| vmfge
+|==='''
+zh = '''
+[%autowidth,cols="4,1,1,1,8,4,1,1,8,4,1,1,8"]
+|===
+5+| funct6                  4+| funct6                 4+| funct6
+
+| 010000 |V|X|I| vadc       | 010000 |V| | VWXUNARY0   | 010000 |V| | VWFUNARY0
+|        | | | |            | 010000 | |X| VRXUNARY0   | 010000 | |F| VRFUNARY0
+| 010001 |V|X|I| vmadc      | 010001 | | |             | 010001 | | |
+| 010010 |V|X| | vsbc       | 010010 |V| | VXUNARY0    | 010010 |V| | VFUNARY0
+| 010011 |V|X| | vmsbc      | 010011 | | |             | 010011 |V| | VFUNARY1
+| 010100 |V|X| | *vror*     | 010100 |V| | VMUNARY0    | 010100 | | |
+| 010101 |V|X| | *vrol*     | 010101 | | |             | 010101 | | |
+| 01010x | | |I| *vror*     |        | | |             |        | | |
+| 010110 | | | |            | 010110 | | |             | 010110 | | |
+| 010111 |V|X|I| vmerge/vmv | 010111 |V| | vcompress   | 010111 | |F| vfmerge/vfmv
+| 011000 |V|X|I| vmseq      | 011000 |V| | vmandn      | 011000 |V|F| vmfeq
+| 011001 |V|X|I| vmsne      | 011001 |V| | vmand       | 011001 |V|F| vmfle
+| 011010 |V|X| | vmsltu     | 011010 |V| | vmor        | 011010 | | |
+| 011011 |V|X| | vmslt      | 011011 |V| | vmxor       | 011011 |V|F| vmflt
+| 011100 |V|X|I| vmsleu     | 011100 |V| | vmorn       | 011100 |V|F| vmfne
+| 011101 |V|X|I| vmsle      | 011101 |V| | vmnand      | 011101 | |F| vmfgt
+| 011110 | |X|I| vmsgtu     | 011110 |V| | vmnor       | 011110 | | |
+| 011111 | |X|I| vmsgt      | 011111 |V| | vmxnor      | 011111 | |F| vmfge
+|==='''

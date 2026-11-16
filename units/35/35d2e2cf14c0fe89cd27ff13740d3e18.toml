@@ -1,0 +1,24 @@
+unit_id = "35d2e2cf14c0fe89cd27ff13740d3e18"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Ownership Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=2(0x2). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|[[field_PROCESS]] Var |PROCESS          |This is a variable-length field, which encodes *V* and *PRV* privilege mode bits as well as *scontext/hcontext* CSR values. Details are provided below.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.Ownership 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=2(0x2)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|[[field_PROCESS]] Var |PROCESS          |这是一个可变长度字段，编码 *V* 和 *PRV* 特权模式位以及 *scontext/hcontext* CSR 值。详情如下。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

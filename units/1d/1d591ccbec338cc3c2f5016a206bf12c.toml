@@ -1,0 +1,28 @@
+unit_id = "1d591ccbec338cc3c2f5016a206bf12c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Micror-38 additional pins]
+.Micror-38 additional pins (comparing to MIPI20 defined above)
+[cols = "6%,20%,~", options = header]
+|=================================================================================
+|Pin# | Pin Name |Explanation (comparing to MIPI20)
+| 7   | TRIGIN     |Same as MIPI20 #18 alternative pin function but not shared with trace.
+| 8   | TRIGOUT     |Same as MIPI20 #20 alternative pin function but not shared with trace.
+| 10  | `*EXTTRIG*` |External trace trigger from target (some trace probes may use it).
+| 21  | nTRST       |Same as MIPI20 #16 alternative pin function but not shared with trace.
+| 36  | `*EXT*` / `*TRC_CTL*` |Not applicable (should be 0). May be also used to denote valid/idle state, but it may not be supported by all trace probes.
+|================================================================================='''
+zh = '''
+[#Micror-38 additional pins]
+.Micror-38 额外引脚（与上述定义的 MIPI20 对比）
+[cols = "6%,20%,~", options = header]
+|=================================================================================
+|引脚号 | 引脚名称 |说明（与 MIPI20 对比）
+| 7   | TRIGIN     |与 MIPI20 #18 的复用引脚功能相同，但不与跟踪共用。
+| 8   | TRIGOUT     |与 MIPI20 #20 的复用引脚功能相同，但不与跟踪共用。
+| 10  | `*EXTTRIG*` |来自目标的外部跟踪触发器（某些跟踪探针可能会使用）。
+| 21  | nTRST       |与 MIPI20 #16 的复用引脚功能相同，但不与跟踪共用。
+| 36  | `*EXT*` / `*TRC_CTL*` |不适用（应为 0）。也可用于表示有效/空闲状态，但可能并非所有跟踪探针都支持。
+|================================================================================='''

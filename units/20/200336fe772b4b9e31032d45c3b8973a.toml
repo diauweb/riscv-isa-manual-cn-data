@@ -1,0 +1,136 @@
+unit_id = "200336fe772b4b9e31032d45c3b8973a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mappings from C/C++ primitives to RISC-V primitives.
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+
+!C/C++ Construct ! RVWMO Mapping
+
+!Non-atomic load ! `l{b|h|w|d}`
+
+!`atomic_load(memory_order_relaxed)` !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_acquire)` !`l{b|h|w|d}; fence r,rw`
+
+!`atomic_load(memory_order_seq_cst)` !`fence rw,rw; l{b|h|w|d}; fence r,rw`
+
+!Non-atomic store !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_relaxed)` !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_release)` !`fence rw,w; s{b|h|w|d}`
+
+!`atomic_store(memory_order_seq_cst)` !`fence rw,w; s{b|h|w|d}`
+
+!`atomic_thread_fence(memory_order_acquire)` !`fence r,rw`
+
+!`atomic_thread_fence(memory_order_release)` !`fence rw,w`
+
+!`atomic_thread_fence(memory_order_acq_rel)` !`fence.tso`
+
+!`atomic_thread_fence(memory_order_seq_cst)` !`fence rw,rw`
+
+!C/C++ Construct !RVWMO AMO Mapping
+
+!`atomic_<op>(memory_order_relaxed)` !`amo<op>.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`amo<op>.{w|d}.aq`
+
+!`atomic_<op>(memory_order_release)` !`amo<op>.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`amo<op>.{w|d}.aqrl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`amo<op>.{w|d}.aqrl`
+
+!C/C++ Construct !RVWMO LR/SC Mapping
+
+!`atomic_<op>(memory_order_relaxed)` !`loop:lr.{w|d}; <op>; sc.{w|d};`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_acquire)` !`loop:lr.{w|d}.aq; <op>; sc.{w|d};`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_release)` !`loop:lr.{w|d}; <op>; sc.{w|d}.rl;`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_acq_rel)` !`loop:lr.{w|d}.aq; <op>; sc.{w|d}.rl;`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_seq_cst)` !`loop:lr.{w|d}.aqrl; <op>;`
+
+! !`sc.{w|d}.rl; bnez loop`
+
+|==='''
+zh = '''
+.从 C/C++ 原语到 RISC-V 原语的映射。
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+
+!C/C++ 构造 ! RVWMO 映射
+
+!非原子加载 ! `l{b|h|w|d}`
+
+!`atomic_load(memory_order_relaxed)` !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_acquire)` !`l{b|h|w|d}; fence r,rw`
+
+!`atomic_load(memory_order_seq_cst)` !`fence rw,rw; l{b|h|w|d}; fence r,rw`
+
+!非原子存储 !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_relaxed)` !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_release)` !`fence rw,w; s{b|h|w|d}`
+
+!`atomic_store(memory_order_seq_cst)` !`fence rw,w; s{b|h|w|d}`
+
+!`atomic_thread_fence(memory_order_acquire)` !`fence r,rw`
+
+!`atomic_thread_fence(memory_order_release)` !`fence rw,w`
+
+!`atomic_thread_fence(memory_order_acq_rel)` !`fence.tso`
+
+!`atomic_thread_fence(memory_order_seq_cst)` !`fence rw,rw`
+
+!C/C++ 构造 !RVWMO AMO 映射
+
+!`atomic_<op>(memory_order_relaxed)` !`amo<op>.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`amo<op>.{w|d}.aq`
+
+!`atomic_<op>(memory_order_release)` !`amo<op>.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`amo<op>.{w|d}.aqrl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`amo<op>.{w|d}.aqrl`
+
+!C/C++ 构造 !RVWMO LR/SC 映射
+
+!`atomic_<op>(memory_order_relaxed)` !`loop:lr.{w|d}; <op>; sc.{w|d};`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_acquire)` !`loop:lr.{w|d}.aq; <op>; sc.{w|d};`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_release)` !`loop:lr.{w|d}; <op>; sc.{w|d}.rl;`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_acq_rel)` !`loop:lr.{w|d}.aq; <op>; sc.{w|d}.rl;`
+
+! !`bnez loop`
+
+!`atomic_<op>(memory_order_seq_cst)` !`loop:lr.{w|d}.aqrl; <op>;`
+
+! !`sc.{w|d}.rl; bnez loop`
+
+|==='''

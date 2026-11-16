@@ -1,0 +1,24 @@
+unit_id = "aa629f841f41fc3dadffb932c3cccd4d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter__i__MatchMaskImpdef : Filter _i_ Impdef Match Mask Register (trBaseEncoder+0x414 + 0x20__i__)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|31:0   |trTeFilterMatchMaskImpdef |
+When `trTeFilterMatchimpdef` field for filter #__i__ is set, match if
+(*impdef* & `trTeFilterMatchMaskImpdef`) ==
+(`trTeFilterMatchValueImpdef` & `trTeFilterMatchMaskImpdef`).
+|WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trTeFilter__i__MatchMaskImpdef：过滤器 _i_ Impdef 匹配掩码寄存器（trBaseEncoder+0x414 + 0x20__i__）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|31:0   |trTeFilterMatchMaskImpdef |
+当过滤器 #__i__ 的 `trTeFilterMatchimpdef` 字段置位时，如果 (*impdef* & `trTeFilterMatchMaskImpdef`) == (`trTeFilterMatchValueImpdef` & `trTeFilterMatchMaskImpdef`)，则匹配。
+|WARL|<<Undef,Undef>>
+|==='''

@@ -1,0 +1,20 @@
+unit_id = "bb3b07feec37ee0c817656bb5a73b2ce"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The insn:fence.tso[] instruction was incorrectly described as optional in 2019.
+However, insn:fence.tso[] is encoded within the standard insn:fence[] encoding such that
+implementations must treat it as a simple global fence if they do not support
+TSO optimizations, as specified in the previous note.
+As software can always assume without any penalty that insn:fence.tso[] is being
+exploited by a hardware implementation, there is no advantage to making the
+instruction an option.
+===='''
+zh = '''
+[NOTE]
+====
+insn:fence.tso[] 指令在 2019 年被错误地描述为可选的。然而，insn:fence.tso[] 编码在标准 insn:fence[] 编码内，因此如果实现不支持 TSO 优化，它们必须将其视为简单的全局 fence，如前一注释所述。由于软件总是可以毫无损失地假定 insn:fence.tso[] 被硬件实现所利用，因此将该指令设为可选项没有任何优势。
+===='''

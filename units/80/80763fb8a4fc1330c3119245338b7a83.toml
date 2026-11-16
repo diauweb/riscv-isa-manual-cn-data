@@ -1,0 +1,21 @@
+unit_id = "80763fb8a4fc1330c3119245338b7a83"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If *updiscon* == !*notify*, this indicates case 2. The decoder must
+continue until it encounters looplabel a 2nd time;
+* If *updiscon* == *notify*, the decoder cannot yet distinguish cases 1
+and 3, and must wait for the next packet.
+** If the next packet is a format 3, this is case 3. The decoder has
+already reached the correct instruction;
+** If the next packet is a format 1/2, this is case 1. The decoder must
+continue until it encounters looplabel a 2nd time.
+* If *notify* == !*address[MSB]*, this indicates case 4, 1st iteration.
+The decoder has reached the correct instruction.'''
+zh = '''
+* 如果 *updiscon* == !*notify*，这表示情形 2。解码器必须继续，直到第 2 次遇到 looplabel；
+* 如果 *updiscon* == *notify*，解码器尚无法区分情形 1 和 3，必须等待下一个包。
+** 如果下一个包是格式 3，这是情形 3。解码器已经到达正确的指令；
+** 如果下一个包是格式 1/2，这是情形 1。解码器必须继续，直到第 2 次遇到 looplabel。
+* 如果 *notify* == !*address[MSB]*，这表示情形 4 的第 1 次迭代。解码器已经到达正确的指令。'''

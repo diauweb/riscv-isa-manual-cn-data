@@ -1,0 +1,16 @@
+unit_id = "46b80f97117efd18cb2b08d14444f966"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The fields within the `fcsr` can also be accessed individually through
+different CSR addresses, and separate assembler pseudoinstructions are defined
+for these accesses. The FRRM instruction reads the Rounding Mode field `frm`
+(`fcsr` bits 7--5) and copies it into the least-significant three bits of
+integer register _rd_, with zero in all other bits. FSRM swaps the value in
+`frm` by copying the original value into integer register _rd_, and then
+writing a new value obtained from the three least-significant bits of integer
+register _rs1_ into `frm`. FRFLAGS and FSFLAGS are defined analogously for the
+Accrued Exception Flags field `fflags` (`fcsr` bits 4--0).'''
+zh = '''
+`fcsr` 中的字段也可以通过不同的 CSR 地址单独访问，并且为这些访问定义了单独的汇编器伪指令。FRRM 指令读取舍入模式字段 `frm`（`fcsr` 的第 7--5 位）并将其复制到整数寄存器 _rd_ 的最低三位，其他位均为零。FSRM 通过将原始值复制到整数寄存器 _rd_，然后将从整数寄存器 _rs1_ 的最低三位获得的新值写入 `frm` 来交换 `frm` 中的值。FRFLAGS 和 FSFLAGS 类似地针对累积异常标志字段 `fflags`（`fcsr` 的第 4--0 位）定义。'''

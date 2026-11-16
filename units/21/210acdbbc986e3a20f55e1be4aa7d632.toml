@@ -1,0 +1,11 @@
+unit_id = "210acdbbc986e3a20f55e1be4aa7d632"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point minimum-number and maximum-number instructions FMIN.S and FMAX.S write, respectively, the smaller or larger of _rs1_ and _rs2_ to _rd_. For the purposes of these instructions only, the value
+−0.0 is considered to be less than the value
++0.0. If both inputs are NaNs, the result is the canonical NaN. If only one operand is a NaN, the result is the non-NaN operand.
+Signaling NaN inputs set the invalid operation exception flag, even when the result is not NaN.'''
+zh = '''
+浮点最小数和最大数指令 FMIN.S 和 FMAX.S 分别将 _rs1_ 和 _rs2_ 中较小或较大的值写入 _rd_。仅就这些指令而言，值 −0.0 被认为小于值 +0.0。如果两个输入都是 NaN，则结果为规范 NaN。如果只有一个操作数是 NaN，则结果为非 NaN 操作数。信号 NaN 输入会设置无效操作异常标志，即使结果不是 NaN。'''

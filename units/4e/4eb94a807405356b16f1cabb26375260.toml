@@ -1,0 +1,136 @@
+unit_id = "4eb94a807405356b16f1cabb26375260"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dmi-address]] `((address))`
+a|Address used for DMI access. In Update-DR this value is used
+to access the DM over the DMI.
+{dmi-op} defines what this register contains after every possible
+operation.
+a|*R/W*
+a|0
+|[[dmi-data]] `((data))`
+a|The data to send to the DM over the DMI during Update-DR, and
+the data returned from the DM as a result of the previous operation.
+a|*R/W*
+a|0
+|[[dmi-op]] `((op))`
+a|When the debugger writes this field, it has the following meaning:
+
+0 (nop): Ignore {dmi-data} and {dmi-address}.
+
+Don't send anything over the DMI during Update-DR.
+This operation should never affect DMI busy or error status.
+The address and data reported in the following Capture-DR
+are undefined.
+
+This operation leaves the values in {dmi-address} and {dmi-data}
+UNSPECIFIED.
+
+
+1 (read): Read from {dmi-address}.
+
+When this operation succeeds, {dmi-address} contains the address
+that was read from, and {dmi-data} contains the value that was
+read.
+
+
+2 (write): Write {dmi-data} to {dmi-address}.
+
+This operation leaves the values in {dmi-address} and {dmi-data}
+UNSPECIFIED.
+
+
+3 (reserved): Reserved.
+
+When the debugger reads this field, it means the following:
+
+0 (success): The previous operation completed successfully.
+
+
+1 (reserved): Reserved.
+
+
+2 (failed): A previous operation failed.  The data scanned into {dtm-dmi} in
+this access will be ignored.  This status is sticky and can be
+cleared by writing {dtmcs-dmireset} in {dtm-dtmcs}.
+
+This indicates that the DM itself or the DMI responded with an error.
+There are no specified cases in which the DM would
+respond with an error, and DMI is not required to support
+returning errors.
+
+If a debugger sees this status, there might be additional
+information in {dtmcs-errinfo}.
+
+
+3 (busy): A DMI operation was attempted while a prior DMI operation was still in
+progress. The data scanned into {dtm-dmi} in this access will be
+ignored. This status is sticky and can be cleared by writing
+{dtmcs-dmireset} in {dtm-dtmcs}. If a debugger sees this status, it
+needs to give the target more TCK edges between Update-DR and
+Capture-DR. The simplest way to do that is to add extra transitions
+in Run-Test/Idle.
+a|*R/W*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dmi-address]] `((address))`
+a|用于 DMI 访问的地址。在 Update-DR 中，此值用于通过 DMI 访问 DM。
+{dmi-op} 定义在每种可能的操作之后此寄存器包含的内容。
+a|*R/W*
+a|0
+|[[dmi-data]] `((data))`
+a|在 Update-DR 期间通过 DMI 发送给 DM 的数据，以及作为前一操作结果从 DM 返回的数据。
+a|*R/W*
+a|0
+|[[dmi-op]] `((op))`
+a|当调试器写入此字段时，它具有以下含义：
+
+0（nop）：忽略 {dmi-data} 和 {dmi-address}。
+
+在 Update-DR 期间不通过 DMI 发送任何内容。
+此操作绝不应影响 DMI 忙或错误状态。
+随后的 Capture-DR 中报告的地址和数据未定义。
+
+此操作会使 {dmi-address} 和 {dmi-data} 中的值保持 UNSPECIFIED。
+
+
+1（读）：从 {dmi-address} 读取。
+
+当此操作成功时，{dmi-address} 包含所读取的地址，{dmi-data} 包含所读取的值。
+
+
+2（写）：将 {dmi-data} 写入 {dmi-address}。
+
+此操作会使 {dmi-address} 和 {dmi-data} 中的值保持 UNSPECIFIED。
+
+
+3（保留）：保留。
+
+当调试器读取此字段时，它具有以下含义：
+
+0（成功）：前一操作成功完成。
+
+
+1（保留）：保留。
+
+
+2（失败）：前一操作失败。本次访问中扫描进 {dtm-dmi} 的数据将被忽略。此状态是粘性的，可通过在 {dtm-dtmcs} 中写入 {dtmcs-dmireset} 来清除。
+
+这表明 DM 本身或 DMI 响应了错误。没有规定 DM 会响应错误的情况，并且不要求 DMI 支持返回错误。
+
+如果调试器看到此状态，{dtmcs-errinfo} 中可能有附加信息。
+
+
+3（忙）：在前一 DMI 操作仍在进行中时尝试了 DMI 操作。本次访问中扫描进 {dtm-dmi} 的数据将被忽略。此状态是粘性的，可通过在 {dtm-dtmcs} 中写入 {dtmcs-dmireset} 来清除。如果调试器看到此状态，则需要在 Update-DR 和 Capture-DR 之间给目标更多的 TCK 边沿。最简单的方法是在 Run-Test/Idle 中添加额外的转换。
+a|*R/W*
+a|0
+|==='''

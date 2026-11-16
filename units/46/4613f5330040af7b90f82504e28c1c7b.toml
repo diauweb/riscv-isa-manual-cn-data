@@ -1,0 +1,15 @@
+unit_id = "4613f5330040af7b90f82504e28c1c7b"
+kind = "code"
+translatable = false
+en = '''
+----
+# Assembly syntax pattern for vector binary arithmetic instructions
+
+# Operations returning vector results, masked by vm (v0.t, <nothing>)
+vop.vv  vd, vs2, vs1, vm  # integer vector-vector      vd[i] = vs2[i] op vs1[i]
+vop.vx  vd, vs2, rs1, vm  # integer vector-scalar      vd[i] = vs2[i] op x[rs1]
+vop.vi  vd, vs2, imm, vm  # integer vector-immediate   vd[i] = vs2[i] op imm
+
+vfop.vv  vd, vs2, vs1, vm # FP vector-vector operation vd[i] = vs2[i] fop vs1[i]
+vfop.vf  vd, vs2, rs1, vm # FP vector-scalar operation vd[i] = vs2[i] fop f[rs1]
+----'''

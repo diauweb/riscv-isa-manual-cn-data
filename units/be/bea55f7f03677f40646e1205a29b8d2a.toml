@@ -1,0 +1,15 @@
+unit_id = "bea55f7f03677f40646e1205a29b8d2a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PMP entries are statically prioritized. The lowest-numbered PMP entry
+that matches any byte of an access determines whether that access
+succeeds or fails. The matching PMP entry must match all bytes of an
+access, or the access fails, irrespective of the L, R, W, and X bits.
+For example, if a PMP entry is configured to match the four-byte range
+`0xC`–`0xF`, then an 8-byte access to the range `0x8`–`0xF` will fail,
+assuming that PMP entry is the highest-priority entry that matches those
+addresses.'''
+zh = '''
+PMP 条目是静态优先的。匹配访问的任何字节的编号最低的 PMP 条目决定该访问成功还是失败。匹配的 PMP 条目必须匹配访问的所有字节，否则访问失败，无论 L、R、W 和 X 位如何。例如，如果某个 PMP 条目被配置为匹配四字节范围 `0xC`–`0xF`，则对范围 `0x8`–`0xF` 的 8 字节访问将失败，假定该 PMP 条目是匹配这些地址的最高优先级条目。'''

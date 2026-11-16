@@ -1,0 +1,20 @@
+unit_id = "c4c7953f24485602884e07b5328dc00c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Software might not know the current type of data stored in a
+floating-point register but has to be able to save and restore the
+register values, hence the result of using wider operations to transfer
+narrower values has to be defined. A common case is for callee-saved
+registers, but a standard convention is also desirable for features
+including variadic functions, user-level threading libraries, virtual machine
+migration, and debugging.
+===='''
+zh = '''
+[NOTE]
+====
+软件可能不知道浮点寄存器中当前存储的数据类型，但必须能够保存和恢复寄存器值，因此必须定义使用更宽操作来传输较窄值的结果。一个常见情形是被调用者保存寄存器，但对于可变参数函数、用户级线程库、虚拟机迁移和调试等特性，标准约定也是可取的。
+===='''

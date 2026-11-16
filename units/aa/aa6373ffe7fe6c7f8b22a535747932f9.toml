@@ -1,0 +1,30 @@
+unit_id = "aa6373ffe7fe6c7f8b22a535747932f9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+[circle]
+* <<reg_write, Register write>>: This is a write of a register value.
+
+* <<reg_read, Register read>>: This is a read of a register value from the most recent
+program-order-predecessor instruction instance that writes to that
+register.
+
+* <<sail_interp, Pseudocode internal step>>: This covers pseudocode internal computation: arithmetic, function
+calls, etc.
+
+* <<finish, Finish instruction>>: At this point the instruction pseudocode is done, the instruction cannot be restarted, memory accesses cannot be discarded, and all memory
+effects have taken place. For conditional branch and indirect jump
+instructions, any program order successors that were fetched from an
+address that is not the one that was written to the _pc_ register are
+discarded, together with the sub-tree of instruction instances below
+them.'''
+zh = '''
+[circle]
+* <<reg_write, 寄存器写>>：这是对寄存器值的写。
+
+* <<reg_read, 寄存器读>>：这是从最近一次（按程序顺序）写该寄存器的前驱指令实例读取寄存器值。
+
+* <<sail_interp, 伪代码内部步骤>>：这涵盖伪代码内部计算：算术、函数调用等。
+
+* <<finish, 结束指令>>：此时指令伪代码已完成，指令不能重启，内存访问不能丢弃，并且所有内存效果都已发生。对于条件分支和间接跳转指令，任何从不是写入 _pc_ 寄存器的地址取指得到的程序顺序后继，连同其下的指令实例子树，都被丢弃。'''

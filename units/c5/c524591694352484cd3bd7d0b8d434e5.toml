@@ -1,0 +1,23 @@
+unit_id = "c524591694352484cd3bd7d0b8d434e5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Some designs may have multiple causes of reset (e.g., power-on reset,
+external hard reset, brownout detected, watchdog timer elapse,
+sleep-mode wake-up), which machine-mode software and debuggers may wish
+to distinguish.
+
+To avoid ambiguity, `mcause` reset values may alias `mcause` values
+following synchronous exceptions. There should be no ambiguity in this overlap, since on reset
+the `pc` is typically set to a different value than on other traps.
+===='''
+zh = '''
+[NOTE]
+====
+某些设计可能有多种复位原因（例如，上电复位、外部硬复位、检测到欠压、看门狗定时器超时、睡眠模式唤醒），机器模式软件和调试器可能希望区分它们。
+
+为避免歧义，`mcause` 复位值可以别名同步异常之后的 `mcause` 值。这种重叠不应产生歧义，因为复位时 `pc` 通常被设置为与其他陷阱不同的值。
+===='''

@@ -1,0 +1,15 @@
+unit_id = "d6e14ecc80a7a8f5898e9c5df48ead99"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zawrs_wrs-nto_stall_exec]#The insn:wrs.nto[] and insn:wrs.sto[] instructions cause the hart to temporarily stall
+execution in a low-power state as long as the reservation set is valid and no
+locally enabled interrupts at any privilege level are pending,
+regardless of the global interrupt enable at each privilege level.#
+[#norm:Zawrs_wrs-sto_stall_duration]#For insn:wrs.sto[] the stall
+duration is bounded by an implementation defined short timeout.# [#norm:Zawrs_all_priv_modes]#These
+instructions are available in all privilege modes.#'''
+zh = '''
+[#norm:Zawrs_wrs-nto_stall_exec]#只要保留集有效，且在任何特权级别上都没有本地使能的中断挂起，insn:wrs.nto[] 和 insn:wrs.sto[] 指令就会使硬件线程暂时以低功耗状态停顿执行，而不论每个特权级别上的全局中断使能如何。#
+[#norm:Zawrs_wrs-sto_stall_duration]#对于 insn:wrs.sto[]，停顿持续时间受实现定义的短超时限制。# [#norm:Zawrs_all_priv_modes]#这些指令在所有特权模式下均可用。#'''

@@ -1,0 +1,9 @@
+unit_id = "f4e5b85dca9b8fb5a3a6c42d7b225149"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the DM is reset while a hart is halted, it is UNSPECIFIED whether that hart
+resumes. Debuggers should use {dmcontrol-resumereq} to explicitly resume harts before clearing {dmcontrol-dmactive} and disconnecting.'''
+zh = '''
+如果在硬件线程停止时复位 DM，则该硬件线程是否恢复是未规定的。调试器应在清除 {dmcontrol-dmactive} 并断开连接之前，使用 {dmcontrol-resumereq} 显式恢复硬件线程。'''

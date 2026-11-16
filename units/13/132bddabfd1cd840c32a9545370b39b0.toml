@@ -1,0 +1,14 @@
+unit_id = "132bddabfd1cd840c32a9545370b39b0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The RISC-V ISA keeps the source (_rs1_ and _rs2_) and destination (_rd_)
+registers at the same position in all formats to simplify decoding.
+In the base ISA, immediates are always sign-extended,
+and are generally packed towards the leftmost available
+bits in the instruction and have been allocated to reduce hardware
+complexity. In particular, the sign bit for all immediates is always in
+bit 31 of the instruction to speed sign-extension circuitry.'''
+zh = '''
+RISC-V ISA 在所有格式中将源寄存器（_rs1_ 和 _rs2_）和目的寄存器（_rd_）保持在相同位置，以简化解码。在基础 ISA 中，立即数总是符号扩展的，并且通常朝指令中最左侧可用的位打包，其分配方式旨在降低硬件复杂性。特别地，所有立即数的符号位总是位于指令的第 31 位，以加速符号扩展电路。'''

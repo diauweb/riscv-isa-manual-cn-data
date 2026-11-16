@@ -1,0 +1,32 @@
+unit_id = "2148e2c78cda8b36bdfba912f7c9b6de"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Normally, only reset sequences will explicitly set the NMIE bit.
+
+***
+
+That the NMIE bit is settable does not suffice to support the nesting of
+RNMIs. To support this feature in a direct manner would have required
+allowing software to clear the NMIE bit—a design choice that would have
+contravened the concept of non-maskability.
+
+Software that wishes to minimize the latency until the next RNMI is
+taken can follow the top-half/bottom-half model, where the RNMI handler
+itself only enqueues a task to a task queue then returns. The bulk of
+the interrupt servicing is performed later, with RNMIs enabled.
+===='''
+zh = '''
+[NOTE]
+====
+通常，只有复位序列会显式设置 NMIE 位。
+
+***
+
+NMIE 位可设置并不足以支持 RNMI 的嵌套。要以直接方式支持此功能，就需要允许软件清除 NMIE 位——这种设计选择会违背不可屏蔽性的概念。
+
+希望最小化直到下一个 RNMI 发生之前的延迟的软件，可以遵循上半部/下半部模型，其中 RNMI 处理程序本身仅将任务加入任务队列然后返回。大部分中断服务稍后在 RNMI 使能的情况下执行。
+===='''

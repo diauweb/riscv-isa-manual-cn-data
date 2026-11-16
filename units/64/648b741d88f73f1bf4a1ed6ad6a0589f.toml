@@ -1,0 +1,43 @@
+unit_id = "648b741d88f73f1bf4a1ed6ad6a0589f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+[[norm:misa_extensions_impl_def]]
+For a given RISC-V execution environment, an instruction, extension, or
+other feature of the RISC-V ISA is ordinarily judged to be _implemented_
+or not by the observable execution behavior in that environment. For
+example, the F extension is said to be implemented for an execution
+environment if and only if the instructions that the RISC-V Unprivileged
+ISA defines for F execute as specified.
+
+[[norm:misa_extensions_disabling_def]]
+With this definition of _implemented_, disabling an extension by
+clearing its bit in `misa` results in the extension being considered
+_not implemented_ in M-mode. For example, setting csr:misa[f]=0 results in
+the ext:f[] extension being not implemented for M-mode, because the
+ext:f[] extension's instructions will not act as the Unprivileged ISA requires
+but may instead raise an illegal-instruction exception.
+
+Defining the term _implemented_ based strictly on the observable
+behavior might conflict with other common understandings of the same
+word. In particular, although common usage may allow for the combination
+"`implemented but disabled,`" in this document it is considered a
+contradiction of terms, because _disabled_ implies execution will not
+behave as required for the feature to be considered _implemented_. In
+the same vein, "`implemented and enabled`" is redundant here;
+"`implemented`" suffices.
+===='''
+zh = '''
+[NOTE]
+====
+[[norm:misa_extensions_impl_def]]
+对于给定的 RISC-V 执行环境，RISC-V ISA 的某条指令、某个扩展或其他特性通常根据该环境中可观察的执行行为来判定其是否__已实现__。例如，当且仅当 RISC-V 非特权 ISA 为 F 定义的指令按规范执行时，才称该执行环境实现了 F 扩展。
+
+[[norm:misa_extensions_disabling_def]]
+根据这一__已实现__的定义，通过清除 `misa` 中的位来禁用某扩展，会导致该扩展在 M 模式下被视为__未实现__。例如，设置 csr:misa[f]=0 会导致 ext:f[] 扩展在 M 模式下未实现，因为 ext:f[] 扩展的指令将不会按非特权 ISA 的要求执行，而可能引发非法指令异常。
+
+严格基于可观察行为来定义__已实现__一词，可能与该词的其他常见理解相冲突。特别地，尽管常见用法可能允许“已实现但已禁用，”这一组合，但在本文档中被视为术语矛盾，因为__已禁用__意味着执行行为不会达到该特性被视为__已实现__所需的要求。同样，“已实现且已使能”在这里是冗余的；“已实现”就已足够。
+===='''

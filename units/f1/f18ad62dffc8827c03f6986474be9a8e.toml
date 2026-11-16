@@ -1,0 +1,22 @@
+unit_id = "f18ad62dffc8827c03f6986474be9a8e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. it has not already been fetched, i.e., none of the immediate
+successors of latexmath:[$i$] in the hart’s _instruction_tree_ are from
+_loc_; and
+. if latexmath:[$i$]’s pseudocode has already written an address to
+_pc_, then _loc_ must be that address, otherwise _loc_ is:
+* for a conditional branch, the successor address or the branch target
+address;
+* for a (direct) jump and link instruction (`jal`), the target address;
+* for an indirect jump instruction (`jalr`), any address; and
+* for any other instruction, latexmath:[$i.\textit{program\_loc}+4$].'''
+zh = '''
+. 它尚未被取指，即，硬件线程 _instruction_tree_ 中 latexmath:[$i$] 的直接后继都不是来自 _loc_；并且
+. 如果 latexmath:[$i$] 的伪代码已经向 _pc_ 写入一个地址，那么 _loc_ 必须是该地址，否则 _loc_ 是：
+* 对于条件分支，后继地址或分支目标地址；
+* 对于（直接）跳转并链接指令（`jal`），目标地址；
+* 对于间接跳转指令（`jalr`），任意地址；以及
+* 对于任何其他指令，latexmath:[$i.\textit{program\_loc}+4$]。'''

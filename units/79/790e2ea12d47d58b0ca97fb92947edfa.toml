@@ -1,0 +1,22 @@
+unit_id = "790e2ea12d47d58b0ca97fb92947edfa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Use of Data Registers
+[%autowidth,float="center",align="center",cols="^,<,<,<",options="header"]
+|===
+| Argument Width | arg0/return value | arg1 | arg2
+| 32 | {dm-data0} | `data1` | `data2`
+| 64 | {dm-data0}, `data1` | `data2`, `data3` | `data4`, `data5`
+|128 | {dm-data0}-`data3` | `data4`-`data7` | `data8`-`data11`
+|==='''
+zh = '''
+.数据寄存器的使用
+[%autowidth,float="center",align="center",cols="^,<,<,<",options="header"]
+|===
+| 参数宽度 | arg0/返回值 | arg1 | arg2
+| 32 | {dm-data0} | `data1` | `data2`
+| 64 | {dm-data0}, `data1` | `data2`, `data3` | `data4`, `data5`
+|128 | {dm-data0}-`data3` | `data4`-`data7` | `data8`-`data11`
+|==='''

@@ -1,0 +1,25 @@
+unit_id = "da97ebf1fc8b6847c924c92475a87375"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The `misa` CSR exposes a rudimentary catalog of CPU features to
+machine-mode code. More extensive information can be obtained in machine
+mode by probing other machine registers, and examining other ROM storage
+in the system as part of the boot process.
+
+We require that lower privilege levels execute environment calls instead
+of reading CPU registers to determine features available at each
+privilege level. This enables virtualization layers to alter the ISA
+observed at any level, and supports a much richer command interface
+without burdening hardware designs.
+===='''
+zh = '''
+[NOTE]
+====
+`misa` CSR 向机器模式代码暴露了一份基本的 CPU 特性目录。在机器模式下，可以通过探测其他机器寄存器以及检查系统中其他 ROM 存储（作为启动过程的一部分）来获得更详尽的信息。
+
+我们要求较低特权级通过执行环境调用来确定各特权级可用特性，而不是通过读取 CPU 寄存器。这使虚拟化层能够改变任一层所观察到的 ISA，并支持远为丰富的命令接口，而不会给硬件设计带来负担。
+===='''

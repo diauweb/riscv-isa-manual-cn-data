@@ -1,0 +1,16 @@
+unit_id = "1e5702f1ddb74cbd9a6faaeeee7da9d9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Let _msoss_ be the set of all unpropagated memory store
+operation slices from non-`sc` store instruction instances that are
+program-order-before _i_ and have already calculated the
+value to be stored, that overlap with the unsatisfied slices of
+_mlo_, and which are not superseded by intervening store
+operations or store operations that are read from by an intervening
+load. The last condition requires, for each memory store operation slice
+_msos_ in _msoss_ from instruction
+_i'_:'''
+zh = '''
+令 _msoss_ 为来自非 `sc` 存储指令实例的所有未传播内存存储操作切片的集合，这些存储指令实例程序顺序在 _i_ 之前且已经计算出要存储的值，这些切片与 _mlo_ 的未满足切片重叠，并且不被介入的存储操作或介入加载所读取的存储操作所取代。最后一个条件要求，对于来自指令 _i'_ 的 _msoss_ 中的每个内存存储操作切片 _msos_：'''

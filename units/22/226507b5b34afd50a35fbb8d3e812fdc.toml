@@ -1,0 +1,14 @@
+unit_id = "226507b5b34afd50a35fbb8d3e812fdc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_Consider an exception that traps from VU-mode to HS-mode, with `vsctrctl`.U=1 and `sctrctl`.S=1.  Because both the source mode and target mode are enabled for recording, whether the trap is recorded then depends on the CTR configuration (e.g., the <<_transfer_type_filtering, transfer type filter>> bits) in `vsctrctl`, not in `sctrctl`._
+===='''
+zh = '''
+[NOTE]
+====
+_考虑一个从 VU 模式陷入 HS 模式的异常，其中 `vsctrctl`.U=1 且 `sctrctl`.S=1。由于源模式和目标模式都已使能用于记录，因此是否记录该陷阱取决于 `vsctrctl` 中的 CTR 配置（例如 <<_transfer_type_filtering, transfer type filter>> 位），而不是 `sctrctl` 中的配置。_
+===='''

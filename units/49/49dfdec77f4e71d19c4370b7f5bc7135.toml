@@ -1,0 +1,14 @@
+unit_id = "49dfdec77f4e71d19c4370b7f5bc7135"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that the widths of `siselect` and `sireg*` are always the
+current XLEN rather than SXLEN. Hence, for example, if MXLEN = 64 and
+SXLEN = 32, then these registers are 64 bits when the current privilege
+mode is M (running RV64 code) but 32 bits when the privilege mode is S
+(RV32 code).'''
+zh = '''
+注意，`siselect` 和 `sireg*` 的宽度始终是当前的 XLEN 而非 SXLEN。因此，
+例如，如果 MXLEN = 64 且 SXLEN = 32，那么当当前特权模式为 M（运行 RV64
+代码）时这些寄存器为 64 位，而当特权模式为 S（RV32 代码）时为 32 位。'''

@@ -1,0 +1,30 @@
+unit_id = "5cb696fabac35e1517f8f5e05b37e602"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For execution environments implemented on RISC-V privileged platforms,
+the privileged architecture manual describes privileged CSRs controlling
+access by lower privileged modes to these counters, and to set the
+events to be counted.
+
+Alternative execution environments (e.g., user-level-only software
+performance models) may provide alternative mechanisms to configure the
+events counted by the performance counters.
+
+It would be useful to eventually standardize event settings to count
+ISA-level metrics, such as the number of floating-point instructions
+executed for example, and possibly a few common microarchitectural
+metrics, such as "`L1 instruction cache misses`".
+===='''
+zh = '''
+[NOTE]
+====
+对于在 RISC-V 特权平台上实现的执行环境，特权架构手册描述了控制较低特权模式访问这些计数器的特权 CSR，以及设置要计数的事件。
+
+替代执行环境（例如仅用户级软件性能模型）可能提供替代机制来配置性能计数器所计数的事件。
+
+最终将事件设置标准化以计数 ISA 级指标（例如执行的浮点指令数）以及可能的一些常见微架构指标（例如“L1 指令缓存缺失”）将是有用的。
+===='''

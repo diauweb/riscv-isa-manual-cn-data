@@ -1,0 +1,19 @@
+unit_id = "99df5900faccf029fe86a333a81b36e6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mncause_op]#The `mncause` CSR holds the reason for the RNMI.#
+[#norm:mncause_interrupt]#If the reason is an interrupt, bit MXLEN-1 is set to 1,# and [#norm:mncause_interrupt_code]#the RNMI
+cause is encoded in the least-significant bits.#
+[#norm:mncause_interrupt_zero]#If the reason is an interrupt and RNMI causes are not supported, bit MXLEN-1 is
+set to 1, and zero is written to the least-significant bits.#
+[#norm:mncause_doubletrap]#If the reason is an exception within M-mode that results in a double trap as
+specified in the Smdbltrp extension, bit MXLEN-1 is set to 0 and the
+least-significant bits are set to the cause code corresponding to the
+exception that precipitated the double trap.#'''
+zh = '''
+[#norm:mncause_op]#`mncause` CSR 保存 RNMI 的原因。#
+[#norm:mncause_interrupt]#如果原因是中断，则位 MXLEN-1 被设置为 1，# 并且 [#norm:mncause_interrupt_code]#RNMI 原因被编码在最低有效位中。#
+[#norm:mncause_interrupt_zero]#如果原因是中断且不支持 RNMI 原因，则位 MXLEN-1 被设置为 1，并且零被写入最低有效位。#
+[#norm:mncause_doubletrap]#如果原因是机器模式内导致 Smdbltrp 扩展所规定的双重陷阱的异常，则位 MXLEN-1 被设置为 0，并且最低有效位被设置为与引发双重陷阱的异常相对应的原因代码。#'''

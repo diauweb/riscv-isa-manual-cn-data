@@ -1,0 +1,13 @@
+unit_id = "6bda06bb53186f34fcb46983e279c9a0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:csrfld:misa:m:set]#When the "M" bit is 1, the implementation supports all multiply and
+division instructions defined by the M extension.# When the "M" bit
+is 0, it indicates that the implementation might not support those
+instructions. However [#norm:ext:Zmmul:misa_m]#if the Zmmul extension is supported then
+the multiply instructions it specifies are supported irrespective
+of the value of the "M" bit.#'''
+zh = '''
+[#norm:csrfld:misa:m:set]#当 "M" 位为 1 时，实现支持 M 扩展定义的所有乘法和除法指令。# 当 "M" 位为 0 时，表示实现可能不支持这些指令。然而 [#norm:ext:Zmmul:misa_m]#如果支持 Zmmul 扩展，则无论 "M" 位的值如何，都支持该扩展所规定的乘法指令。#'''

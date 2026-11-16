@@ -1,0 +1,23 @@
+unit_id = "5188eda955b363911b0ec75ad2480f3b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_tw_warl]#The csr::[tw] (Timeout Wait) bit is a *WARL* field that supports intercepting the
+insn:wfi[] instruction (see <<wfi>>).#
+[#norm:mstatus_tw_op]#When csr::[tw]=0, the insn:wfi[] instruction may execute in modes less privileged than M when not prevented for
+some other reason. When csr::[tw]=1, then if insn:wfi[] is executed in any
+less-privileged mode, and it does not complete within an
+implementation-specific, bounded time limit, the insn:wfi[] instruction causes
+an illegal-instruction exception.#
+[#norm:mstatus_tw_always_illegal]#An implementation may have insn:wfi[] always
+raise an illegal-instruction exception in modes less privileged than M when
+csr::[tw]=1, even if there are pending globally-disabled interrupts when the
+instruction is executed.#
+[#norm:mstatus_tw_acc]#csr::[tw] is read-only 0 when there are no modes less privileged than M;
+otherwise, it must be writable.#'''
+zh = '''
+[#norm:mstatus_tw_warl]#csr::[tw]（Timeout Wait，超时等待）位是一个 *WARL* 字段，支持拦截 insn:wfi[] 指令（见 <<wfi>>）。#
+[#norm:mstatus_tw_op]#当 csr::[tw]=0 时，如果没有因其他原因被阻止，insn:wfi[] 指令可以在特权级低于 M 的模式下执行。当 csr::[tw]=1 时，如果 insn:wfi[] 在任何较低特权模式下执行，且未在实现特定的有界时间限制内完成，则 insn:wfi[] 指令引发非法指令异常。#
+[#norm:mstatus_tw_always_illegal]#当 csr::[tw]=1 时，即使在执行该指令时存在待处理的全局禁用中断，实现也可以让 insn:wfi[] 在特权级低于 M 的模式下始终引发非法指令异常。#
+[#norm:mstatus_tw_acc]#当不存在特权级低于 M 的模式时，csr::[tw] 为只读 0；否则，它必须可写。#'''

@@ -1,0 +1,18 @@
+unit_id = "21e97e1011350e334da71bfa75b27b80"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The AMOs were designed to implement the C11 and C++11 memory models
+efficiently. Although the FENCE R, RW instruction suffices to implement
+the _acquire_ operation and FENCE RW, W suffices to implement _release_,
+both imply additional unnecessary ordering as compared to AMOs with the
+corresponding _aq_ or _rl_ bit set.
+===='''
+zh = '''
+[NOTE]
+====
+AMO 的设计目标是高效实现 C11 和 C++11 内存模型。尽管 FENCE R, RW 指令足以实现__获取__操作，FENCE RW, W 足以实现__释放__，但与设置了相应 _aq_ 或 _rl_ 位的 AMO 相比，两者都隐含了额外不必要的顺序。
+===='''

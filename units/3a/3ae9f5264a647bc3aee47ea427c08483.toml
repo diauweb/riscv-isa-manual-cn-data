@@ -1,0 +1,12 @@
+unit_id = "3ae9f5264a647bc3aee47ea427c08483"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: In the above sequence, it is tempting to mask the second insn:vmfeq[]
+instruction and remove the insn:vmand[] instruction, but this more efficient
+sequence incorrectly fails to raise the invalid exception when an
+element of `va` contains a quiet NaN and the corresponding element in
+`vb` contains a signaling NaN.'''
+zh = '''
+NOTE: 在上述序列中，很容易想到掩码第二条 insn:vmfeq[] 指令并移除 insn:vmand[] 指令，但这个更高效的序列在 `va` 的某个元素包含静默 NaN 且 `vb` 中相应元素包含信号 NaN 时，会错误地未能引发无效异常。'''

@@ -1,0 +1,95 @@
+unit_id = "4053855abf1b8697cdd6c50b383e5ed3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+The RISC-V architecture decouples the notion of atomicity from the
+notion of ordering. Unlike architectures such as TSO, RISC-V atomics
+under RVWMO do not impose any ordering requirements by default. Ordering
+semantics are only guaranteed by the PPO rules that otherwise apply.
+
+RISC-V contains two types of atomics: AMOs and LR/SC pairs. These
+conceptually behave differently, in the following way. LR/SC behave as
+if the old value is brought up to the core, modified, and written back
+to memory, all while a reservation is held on that memory location. AMOs
+on the other hand conceptually behave as if they are performed directly
+in memory. AMOs are therefore inherently atomic, while LR/SC pairs are
+atomic in the slightly different sense that the memory location in
+question will not be modified by another hart during the time the
+original hart holds the reservation.
+
+[frame=none]
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|====
+[[litmus_lrsdsc]]
+<<litmus_lrsdsc, Figure 4>>: In all four (independent) instances, the final  store-conditional instruction is permitted but not guaranteed to succeed.
+
+The atomicity axiom forbids stores from other harts from being
+interleaved in global memory order between an LR and the SC paired with
+that LR. The atomicity axiom does not forbid loads from being
+interleaved between the paired operations in program order or in the
+global memory order, nor does it forbid stores from the same hart or
+stores to non-overlapping locations from appearing between the paired
+operations in either program order or in the global memory order. For
+example, the SC instructions in <<litmus_lrsdsc>> may (but are not
+guaranteed to) succeed. None of those successes would violate the
+atomicity axiom, because the intervening non-conditional stores are from
+the same hart as the paired load-reserved and store-conditional
+instructions. This way, a memory system that tracks memory accesses at
+cache line granularity (and which therefore will see the four snippets
+of <<litmus_lrsdsc>> as identical) will not
+be forced to fail a store-conditional instruction that happens to
+(falsely) share another portion of the same cache line as the memory
+location being held by the reservation.
+
+The atomicity axiom also technically supports cases in which the LR and
+SC touch different addresses and/or use different access sizes; however,
+use cases for such behaviors are expected to be rare in practice.
+Likewise, scenarios in which stores from the same hart between an LR/SC
+pair actually overlap the memory location(s) referenced by the LR or SC
+are expected to be rare compared to scenarios where the intervening
+store may simply fall onto the same cache line.
+
+[[mm-progress]]
+==== Progress axiom
+
+[IMPORTANT]
+===='''
+zh = '''
+====
+
+RISC-V 架构将原子性的概念与顺序性的概念解耦。与 TSO 等架构不同，RVWMO 下的 RISC-V 原子操作默认不施加任何顺序要求。顺序语义仅由其他适用的 PPO 规则保证。
+
+RISC-V 包含两类原子操作：AMO 和 LR/SC 对。它们在概念上表现不同，方式如下。LR/SC 的行为就好像旧值被带到核心、修改并写回内存，同时在该内存位置上持有保留。另一方面，AMO 在概念上表现得好像直接在内存中执行。因此，AMO 本质上是原子的，而 LR/SC 对的原子性含义略有不同：在原始硬件线程持有保留期间，相关内存位置不会被另一个硬件线程修改。
+
+[frame=none]
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|====
+[[litmus_lrsdsc]]
+<<litmus_lrsdsc, 图 4>>：在所有四个（独立）实例中，最后的存储条件指令允许成功但不保证成功。
+
+原子性公理禁止来自其他硬件线程的存储在全局内存顺序中交错在 LR 和与该 LR 配对的 SC 之间。原子性公理不禁止加载在程序顺序或全局内存顺序中交错在成对操作之间，也不禁止来自同一硬件线程的存储或对非重叠位置的存储出现在成对操作之间的程序顺序或全局内存顺序中。例如，<<litmus_lrsdsc>> 中的 SC 指令可能（但不保证）成功。这些成功都不会违反原子性公理，因为介于其间的非条件存储来自与成对加载保留和存储条件指令相同的硬件线程。这样，以缓存行粒度跟踪内存访问（因而会将 <<litmus_lrsdsc>> 的四个片段视为相同）的内存系统，不会被迫使恰好（错误地）与保留所持有内存位置共享同一缓存行另一部分的存储条件指令失败。
+
+原子性公理在技术上也支持 LR 和 SC 触及不同地址和/或使用不同访问大小的情况；然而，此类行为的用例在实际中预计很少见。同样，与介于其间的存储可能只是落在同一缓存行上的场景相比，同一硬件线程在 LR/SC 对之间的存储实际重叠 LR 或 SC 所引用内存位置的场景预计很少见。
+
+[[mm-progress]]
+==== 进展公理
+
+[IMPORTANT]
+===='''

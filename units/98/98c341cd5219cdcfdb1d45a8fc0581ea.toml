@@ -1,0 +1,12 @@
+unit_id = "98c341cd5219cdcfdb1d45a8fc0581ea"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For RV32, `AMOCAS.W` atomically loads a 32-bit data value from address in `rs1`,
+compares the loaded value to the 32-bit value held in `rd`, and if the comparison
+is bitwise equal, then stores the 32-bit value held in `rs2` to the original
+address in `rs1`. The value loaded from memory is placed into register `rd`. The
+operation performed by `AMOCAS.W` for RV32 is as follows:'''
+zh = '''
+对于 RV32，`AMOCAS.W` 从 `rs1` 中的地址原子地加载一个 32 位数据值，将加载的值与 `rd` 中保存的 32 位值进行比较，如果比较结果按位相等，则将 `rs2` 中保存的 32 位值存储到 `rs1` 中的原地址。从内存加载的值被放入寄存器 `rd`。`AMOCAS.W` 在 RV32 上执行的操作如下：'''

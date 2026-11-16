@@ -1,0 +1,14 @@
+unit_id = "d311303953b410e9de6c3d6699ab1619"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An implementation could mask those two bits on the TLB access path, but this can have a significant timing impact. Alternatively, an implementation may choose to "waste" TLB capacity by having up to 4 duplicate entries for each page. In this case, the pointer masking operation can be applied on the TLB refill path, where it is unlikely to affect timing. To support this approach, some TLB entries need to be flushed when PMLEN changes in a way that may affect these duplicate entries.
+===='''
+zh = '''
+[NOTE]
+====
+实现可以在 TLB 访问路径上掩码这两位，但这可能会产生显著的时序影响。或者，实现可以选择通过为每个页面设置最多 4 个重复条目来“浪费”TLB 容量。在这种情况下，可以在 TLB 重填路径上应用指针掩码操作，此时不太可能影响时序。为了支持这种方法，当 PMLEN 以可能影响这些重复条目的方式变化时，需要刷新某些 TLB 条目。
+===='''

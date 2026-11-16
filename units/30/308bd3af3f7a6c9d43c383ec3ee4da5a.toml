@@ -1,0 +1,13 @@
+unit_id = "308bd3af3f7a6c9d43c383ec3ee4da5a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Each individual bit in register `sip` may be writable or may be
+read-only. When bit _i_ in `sip` is writable, a pending interrupt _i_
+can be cleared by writing 0 to this bit. If interrupt _i_ can become
+pending but bit _i_ in `sip` is read-only, the implementation must
+provide some other mechanism for clearing the pending interrupt (which
+may involve a call to the execution environment).'''
+zh = '''
+寄存器 `sip` 中的每个单独位可以是可写的，也可以是只读的。当 `sip` 中的位 _i_ 可写时，可以通过向该位写 0 来清除待处理中断 _i_。如果中断 _i_ 可以变为待处理，但 `sip` 中的位 _i_ 是只读的，则实现必须提供某种其他机制来清除待处理中断（这可能涉及对执行环境的调用）。'''

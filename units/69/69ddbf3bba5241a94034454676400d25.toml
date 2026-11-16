@@ -1,0 +1,15 @@
+unit_id = "69ddbf3bba5241a94034454676400d25"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To put it another way, suppose the definition of preserved program order
+did include the following hypothetical rule: memory access
+_a_ precedes memory access _b_ in preserved
+program order (and hence also in the global memory order) if
+_a_ precedes _b_ in program order and
+_a_ and _b_ are accesses to the same memory
+location, _a_ is a write, and _b_ is a read.
+Call this "`Rule X`". Then we get the following:'''
+zh = '''
+换一种说法，假设保持的程序顺序的定义确实包含以下假设规则：如果 _a_ 在程序顺序中先于 _b_，且 _a_ 和 _b_ 是对同一内存位置的访问，_a_ 是写而 _b_ 是读，则内存访问 _a_ 在保持的程序顺序中先于内存访问 _b（因而也在全局内存顺序中先于）。称此为“规则 X”。那么我们会得到以下结果：'''

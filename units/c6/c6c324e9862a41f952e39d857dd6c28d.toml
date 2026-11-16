@@ -1,0 +1,27 @@
+unit_id = "c6c324e9862a41f952e39d857dd6c28d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There is a known discrepancy between the operational and axiomatic
+specifications within the family of mixed-size RSW variants shown in
+<<rsw1>>-<<rsw3>>.
+To address this, we may choose to add something like the following new
+PPO rule: Memory operation _a_ precedes memory operation
+_b_ in preserved program order (and hence also in the global
+memory order) if _a_ precedes _b_ in program
+order, _a_ and _b_ both access regular main
+memory (rather than I/O regions), _a_ is a load,
+_b_ is a store, there is a load _m_ between
+_a_ and _b_, there is a byte _x_
+that both _a_ and _m_ read, there is no store
+between _a_ and _m_ that writes to
+_x_, and _m_ precedes _b_ in PPO. In
+other words, in herd syntax, we may choose to add
+`(po-loc & rsw);ppo;[W]` to PPO. Many implementations will already
+enforce this ordering naturally. As such, even though this rule is not
+official, we recommend that implementers enforce it nevertheless in
+order to ensure forwards compatibility with the possible future addition
+of this rule to RVWMO.'''
+zh = '''
+在 <<rsw1>>-<<rsw3>> 所示的一类混合大小 RSW 变体中，操作式规范与公理式规范之间存在已知差异。为解决此问题，我们可以选择添加类似以下的新 PPO 规则：如果 _a_ 在程序顺序中先于 _b_，且 _a_ 和 _b_ 都访问常规主内存（而不是 I/O 区域），_a_ 是加载，_b_ 是存储，在 _a_ 和 _b_ 之间存在一个加载 _m_，存在一个 _a_ 和 _m_ 都读取的字节 _x_，在 _a_ 和 _m_ 之间没有对 _x_ 的存储，且 _m_ 在 PPO 中先于 _b_，则内存操作 _a_ 在保留的程序顺序中先于内存操作 _b_（因而也在全局内存顺序中先于 _b_）。换言之，用 herd 语法表示，我们可以选择将 `(po-loc & rsw);ppo;[W]` 添加到 PPO。许多实现已经会自然强制这种排序。因此，即使该规则不是官方规则，我们仍建议实现者强制它，以确保向前兼容未来将该规则添加到 RVWMO 的可能性。'''

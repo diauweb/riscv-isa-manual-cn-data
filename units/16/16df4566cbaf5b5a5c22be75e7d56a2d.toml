@@ -1,0 +1,50 @@
+unit_id = "16df4566cbaf5b5a5c22be75e7d56a2d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Program Trace Correlation Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=33(0x21). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|[[field_EVCODE]] 4   |EVCODE           |Standard Reason to generate Program Correlation: +
+                            *0:* Entry into Debug Mode. Required (do not send 4 instead!). +
+                            *1:* Entry into Low-power Mode. Optional. +
+                            *2..3:* Reserved for data trace. +
+                            *4:* Program Trace Disabled (hart may be still running). Optional. +
+                            *5..7:* Reserved for future extensions of N-Trace specification. +
+                            *8..15:* Designated for vendor specific encodings.
+|[[field_CDF]] 2   |CDF              |Standard number of CDATA fields following it: +
+                            *0:* Only I-CNT field follows and there is no HIST field. +
+                            *1:* I-CNT field and single CDATA (HIST) field (for HTM trace). +
+                            *2..3:* Reserved for future extensions of N-Trace specification. +
+In BTM trace mode CDF must be 0. In HTM trace mode CDF must be 1 (even if HIST field is empty, encoded as 0x1).
+|Var |I-CNT            |Standard Instruction Count (<<field_I-CNT,I-CNT>>) field.
+|Var,Cfg |HIST         |Standard Branch History (<<field_HIST,HIST>>) field. *This field must be present in HTM mode*, so decoder does not need to read CDF to determine its existence.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.Program Trace Correlation 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=33(0x21)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|[[field_EVCODE]] 4   |EVCODE           |生成程序相关性的标准原因： +
+                            *0：* 进入调试模式。必需（不要改为发送 4！）。 +
+                            *1：* 进入低功耗模式。可选。 +
+                            *2..3：* 保留用于数据跟踪。 +
+                            *4：* 程序跟踪禁用（硬件线程可能仍在运行）。可选。 +
+                            *5..7：* 保留供 N-Trace 规范未来扩展使用。 +
+                            *8..15：* 指定用于厂商特定编码。
+|[[field_CDF]] 2   |CDF              |其后跟随的 CDATA 字段的标准数量： +
+                            *0：* 仅跟随 I-CNT 字段，没有 HIST 字段。 +
+                            *1：* I-CNT 字段和单个 CDATA（HIST）字段（用于 HTM 跟踪）。 +
+                            *2..3：* 保留供 N-Trace 规范未来扩展使用。 +
+在 BTM 跟踪模式下，CDF 必须为 0。在 HTM 跟踪模式下，CDF 必须为 1（即使 HIST 字段为空，也编码为 0x1）。
+|Var |I-CNT            |标准指令计数（<<field_I-CNT,I-CNT>>）字段。
+|Var,Cfg |HIST         |标准分支历史（<<field_HIST,HIST>>）字段。*在 HTM 模式下此字段必须存在*，因此解码器无需读取 CDF 来确定其存在性。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

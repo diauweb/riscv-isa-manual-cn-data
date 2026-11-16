@@ -1,0 +1,23 @@
+unit_id = "d3b10d7be369eacc52ad5d0fd47c7033"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A device driver written to rely on I/O strong ordering rules will not
+operate correctly if the address range is mapped with PBMT=NC. As such,
+this configuration is discouraged.
+
+It will often still be useful to map physical I/O regions using PBMT=NC
+so that write combining and speculative accesses can be performed. Such
+optimizations will likely improve performance when applied with adequate
+care.
+===='''
+zh = '''
+[NOTE]
+====
+如果地址范围以 PBMT=NC 映射，则编写为依赖 I/O 强排序规则的设备驱动程序将无法正确运行。因此，不鼓励使用此配置。
+
+使用 PBMT=NC 映射物理 I/O 区域通常仍然有用，以便可以执行写合并和推测访问。若以足够的谨慎应用，此类优化可能会提高性能。
+===='''

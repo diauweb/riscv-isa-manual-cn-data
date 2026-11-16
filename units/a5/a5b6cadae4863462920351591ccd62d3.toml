@@ -1,0 +1,22 @@
+unit_id = "a5b6cadae4863462920351591ccd62d3"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Implement all the required features listed above.
+. Implement at least one of Program Buffer, System Bus Access, or Abstract
+Access Memory command mechanisms.
+. Do at least one of:
+.. Implement the Program Buffer.
+.. Implement abstract access to all registers that are visible to software
+running on the hart including all the registers that are present on the
+hart and listed in xref:tab:regno[].
+.. Implement abstract access to at least all GPRs, {csr-dcsr}, and {csr-dpc}, and advertise the implementation as conforming to the "Minimal RISC-V Debug
+Specification", instead of the "RISC-V Debug Specification".'''
+zh = '''
+. 实现上面列出的所有必需功能。
+. 至少实现程序缓冲区、系统总线访问或抽象访问内存命令机制之一。
+. 至少执行以下之一：
+.. 实现程序缓冲区。
+.. 实现对硬件线程上运行的软件可见的所有寄存器的抽象访问，包括硬件线程上存在并在 xref:tab:regno[] 中列出的所有寄存器。
+.. 至少实现对所有 GPR、{csr-dcsr} 和 {csr-dpc} 的抽象访问，并声明该实现符合“Minimal RISC-V Debug Specification”，而不是“RISC-V Debug Specification”。'''

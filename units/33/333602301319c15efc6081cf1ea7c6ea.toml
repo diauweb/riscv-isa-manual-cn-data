@@ -1,0 +1,17 @@
+unit_id = "333602301319c15efc6081cf1ea7c6ea"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hstatus_hupmm_u_mode]#When Ssnpm extension is implemented, the `HUPMM` field enables or disables
+pointer masking (see <<Zpm>>) for `HLV.\*` and `HSV.*` instructions in U-mode,
+according to the values in <<henvcfg-pmm-values>>, when their explicit memory
+access is performed as though in VU-mode.# [#norm:hstatus_hupmm_vu_mode]#In HS- and M-modes, pointer masking
+for these instructions is enabled or disabled by `senvcfg.PMM`, when their
+explicit memory access is performed as though in VU-mode.# [#norm:hstatus_hupmm_vs_mode]#Setting `henvcfg.PMM`
+enables or disables pointer masking for `HLV.\*` and `HSV.*` when their
+explicit memory access is performed as though in VS-mode.# [#norm:hstatus_hupmm_not_ssnpm_access]#When the Ssnpm
+extension is not implemented, the `HUPMM` field is read-only zero.# [#norm:hstatus_hupmm_rv32_access]#The `HUPMM`
+field is read-only zero for RV32.#'''
+zh = '''
+[#norm:hstatus_hupmm_u_mode]#当实现 Ssnpm 扩展时，`HUPMM` 字段根据 <<henvcfg-pmm-values>> 中的值，为 U-mode 中的 `HLV.\*` 和 `HSV.*` 指令启用或禁用指针掩码（见 <<Zpm>>），前提是它们的显式内存访问如同在 VU-mode 中执行。# [#norm:hstatus_hupmm_vu_mode]#在 HS 和 M 模式下，当这些指令的显式内存访问如同在 VU-mode 中执行时，指针掩码由 `senvcfg.PMM` 启用或禁用。# [#norm:hstatus_hupmm_vs_mode]#设置 `henvcfg.PMM` 可在 `HLV.\*` 和 `HSV.*` 的显式内存访问如同在 VS-mode 中执行时启用或禁用指针掩码。# [#norm:hstatus_hupmm_not_ssnpm_access]#当未实现 Ssnpm 扩展时，`HUPMM` 字段为只读零。# [#norm:hstatus_hupmm_rv32_access]#对于 RV32，`HUPMM` 字段为只读零。#'''

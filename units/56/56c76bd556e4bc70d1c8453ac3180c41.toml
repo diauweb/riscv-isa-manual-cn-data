@@ -1,0 +1,22 @@
+unit_id = "56c76bd556e4bc70d1c8453ac3180c41"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Instruction interface signals - single retirement per block
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*iretire*[0:0] | SR | Number of instructions retired in this block (0 or
+1).
+|*ilastsize*[_ilastsize_width_p-1_:0] | SR | The size of the retired
+instruction is 2^*ilastsize*^ half-words.
+|==='''
+zh = '''
+.指令接口信号 —— 每块单条退役
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *信号* | *组* | *功能*
+|*iretire*[0:0] | SR | 本块中退役的指令数（0 或 1）。
+|*ilastsize*[_ilastsize_width_p-1_:0] | SR | 退役指令的大小为 2^*ilastsize*^ 个半字。
+|==='''

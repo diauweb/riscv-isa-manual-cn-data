@@ -1,0 +1,159 @@
+unit_id = "f0ea82a4d77c338864a44b11d9f1bde9"
+kind = "code"
+translatable = false
+en = '''
+[source,c]
+----
+
+// Use N-Trace TCODE messages
+#define NEXUS_TCODE_Ownership                     2
+#define NEXUS_TCODE_DirectBranch                  3
+#define NEXUS_TCODE_IndirectBranch                4
+#define NEXUS_TCODE_Error                         8
+#define NEXUS_TCODE_ProgTraceSync                 9
+#define NEXUS_TCODE_DirectBranchSync              11
+#define NEXUS_TCODE_IndirectBranchSync            12
+#define NEXUS_TCODE_ResourceFull                  27
+#define NEXUS_TCODE_IndirectBranchHist            28
+#define NEXUS_TCODE_IndirectBranchHistSync        29
+#define NEXUS_TCODE_RepeatBranch                  30
+#define NEXUS_TCODE_ProgTraceCorrelation          33
+
+// Functions/macros which encode bits in 'info' (example...)
+#define INFO_LINEAR   0x1   // Linear (plain instruction or not-taken BRANCH)
+#define INFO_4        0x2   // If not 4, it must be 2 on RISC-V
+#define INFO_INDIRECT 0x8   // Possible for most types above
+#define INFO_BRANCH   0x10  // Always direct on RISC-V (may have LINEAR too)
+
+#define InfoIsBranchTaken(info) (!((info) & INFO_LINEAR))
+#define InfoIsSize32(info)      ((info) & INFO_4)
+#define InfoIsBranch(info)      ((info) & INFO_BRANCH)
+#define InfoIsIndirect(info)    ((info) & INFO_INDIRECT)
+
+// Function which emit N-Trace messages (all are empty here)
+void EmitFix(int nbits, uint32_t value);    // Emit fixed-size field
+void EmitVar(uint64_t value);               // Emit variable size field
+void EmitEnd();                             // Terminate message
+
+// Encoder configuration options
+const bool      enco_opt_branch_history = true;     // Configuration option
+const uint32_t  enco_opt_limICNT    = 0x10000;      // Limit of ICNT (max is 6+6+4 bits)
+const uint32_t  enco_opt_limHIST    = 0x40000000;   // Limit of HIST (max is 5*6 bits)
+
+// Encoder state variables
+static uint32_t encoNextEmit = 0;   // TCODE to be emitted next time
+static uint32_t encoICNT = 0;       // ICNT accumulated
+static uint32_t encoHIST = 1;       // HIST accumulated (most significant bit is guardian bit)
+static uint64_t encoADDR = 0;       // Last emitted address
+
+void NTraceEncoderInit()
+{
+    encoADDR = 0;
+    encoICNT = 0;   // Empty ICNT and HIST
+    encoHIST = 1;
+
+    encoNextEmit = NEXUS_TCODE_ProgTraceSync;
+}
+
+void NTraceEncoderHandleRetired(uint64_t addr, uint32_t info)
+{
+    // Optionally emit what was determined previously
+    if (encoNextEmit != 0)
+    {
+        EmitFix(6, encoNextEmit);   // Emit TCODE (as determined)
+
+        // Emit message fields (accordingly ...)
+        if (encoNextEmit == NEXUS_TCODE_ProgTraceSync)
+        {
+            EmitFix(4, 1);          // Emit SYNC=1  (4-bit)
+            EmitVar(encoICNT);      // Emit ICNT    (variable)
+            EmitVar(addr >> 1);     // Emit FADDR   (variable)
+        }
+        else if (encoNextEmit == NEXUS_TCODE_IndirectBranchHist ||
+                 encoNextEmit == NEXUS_TCODE_IndirectBranch)
+        {
+            EmitFix(2, 0);                      // Emit BTYPE=0 (2-bit)
+            EmitVar(encoICNT);                  // Emit ICNT    (variable)
+            EmitVar((encoADDR ^ addr) >> 1);    // Emit UADDR   (variable)
+
+            if (encoNextEmit == NEXUS_TCODE_IndirectBranchHist)
+            {
+                EmitVar(encoHIST);              // Emit HIST    (variable)
+            }
+        }
+        else if (encoNextEmit == NEXUS_TCODE_DirectBranch)
+        {
+            EmitVar(encoICNT);                  // Emit ICNT    (variable)
+        }
+
+        EmitEnd();  // It will mark last entry with MSEO=11 and flush it
+
+        if (encoNextEmit != NEXUS_TCODE_DirectBranch)
+        {
+            encoADDR = addr;  // This is new address
+        }
+        encoNextEmit = 0;   // Only one time
+
+        encoICNT = 0;       // Start from 'empty' ICNT and HIST
+        encoHIST = 1;
+    }
+
+    // Update ICNT
+    uint32_t prevICNT = encoICNT;   // In case ICNT will overflow now, we need to emit previous value ...
+    if (InfoIsSize32(info)) encoICNT += 2; else encoICNT += 1;
+
+    // Determine type of message (only if this is branch or indirect ...)
+    if (InfoIsBranch(info))
+    {
+        if (enco_opt_branch_history)
+        {
+            // Update branch history buffer (add least significant bit)
+            if (InfoIsBranchTaken(info))
+                encoHIST = (encoHIST << 1) | 1; // Mark branch as taken
+            else
+                encoHIST = (encoHIST << 1) | 0; // Mark branch as not-taken
+        }
+        else
+        {
+            if (InfoIsBranchTaken(info))
+                encoNextEmit = NEXUS_TCODE_DirectBranch;    // Emit destination address (next retired)
+            else
+                ;   // Not-taken branch is considered as linear instruction
+        }
+    }
+    else
+    if (InfoIsIndirect(info))
+    {
+        if (enco_opt_branch_history)
+            encoNextEmit = NEXUS_TCODE_IndirectBranchHist;  // Emit destination address (next retired)
+        else
+            encoNextEmit = NEXUS_TCODE_IndirectBranch;      // Emit destination address (next retired)
+    }
+
+    // Optionally emit ICNT full
+    if (encoICNT > enco_opt_limICNT) // Instruction count overflown?
+    {
+        // Emit ResourceFull with ICNT before this instruction
+        EmitFix(6, NEXUS_TCODE_ResourceFull);
+        EmitFix(4, 0);                          // RCODE=0 (ICNT full)
+        EmitVar(prevICNT);                      // RDATA=ICNT (before overflown)
+        EmitEnd();  // It will mark last entry with MSEO=11 and flush it
+
+        // Set ICNT for this instruction
+        if (InfoIsSize32(info)) encoICNT = 2; else encoICNT = 1;
+    }
+
+    // Optionally emit HIST full
+    if (encoHIST & enco_opt_limHIST) // Is HIST buffer overflown?
+    {
+        // Emit history BEFORE this instruction (remove least significant bit)
+        EmitFix(6, NEXUS_TCODE_ResourceFull);
+        EmitFix(4, 1);                          // RCODE=1 (HIST full)
+        EmitVar(encoHIST >> 1);                 // RDATA=HIST (before overflown)
+        EmitEnd();  // It will mark last entry with MSEO=11 and flush it
+
+        // Keep single HIST for this branch (guardian | single least significant bit from encoHIST)
+        encoHIST = (0x1 << 1) | (encoHIST & 0x1);
+    }
+}
+----'''

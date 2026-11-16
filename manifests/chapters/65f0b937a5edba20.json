@@ -1,0 +1,1330 @@
+{
+  "chap_hash": "65f0b937a5edba20",
+  "id": "hypervisor",
+  "sectname": "chapter",
+  "sectnum": "5",
+  "title_en": "H Extension for Hypervisor Support",
+  "title_unit_id": "ac676a7615bc6b6b39fbaf06eaccddc1",
+  "source_path": "src/priv/hypervisor.adoc",
+  "sections": [
+    {
+      "id": "hypervisor",
+      "level": 1,
+      "sectnum": "5",
+      "title": "H Extension for Hypervisor Support",
+      "heading_unit_id": "ac676a7615bc6b6b39fbaf06eaccddc1",
+      "heading_anchor_id": "hypervisor",
+      "blocks": [
+        "2f2b28ccea1d349e74e8c087c6bcd6c4",
+        "23852e38c89fe55b7bbe138d2dbdc7bb",
+        "54e7fc878d7241fa43623d64d7059fc5",
+        "49671050dafdf769815d6658cd22fa65",
+        "73c806db42b6fc5b364529c55573aed2"
+      ]
+    },
+    {
+      "id": "_privilege_modes",
+      "level": 2,
+      "sectnum": "5.1",
+      "title": "Privilege Modes",
+      "heading_unit_id": "04a324b02575aa3ca33fc949043490e7",
+      "blocks": [
+        "aeb978ee23556317046b3746b1acda2a",
+        {
+          "unit_id": "01c8c66a2972a57a696f7b0fb929c5b1",
+          "anchor_id": "norm:H_priv_modes_enc"
+        },
+        "02a472dc4681dd40e4de43834da544dc",
+        "75eab270389717db6595e71d4bafedea",
+        "4a85fee4bb491dd4c819ad3cb06a7b6c"
+      ]
+    },
+    {
+      "id": "_hypervisor_and_virtual_supervisor_csrs",
+      "level": 2,
+      "sectnum": "5.2",
+      "title": "Hypervisor and Virtual Supervisor CSRs",
+      "heading_unit_id": "b5ebe9a10e02704a944e05ff5ad4a48a",
+      "blocks": [
+        "8fe7dcddaa79fb5a2c1d305321913799",
+        "2c9a377b5c1ec8c069024579c727b28a",
+        "cfaa2b118561a056b164757ade74ab7b",
+        "0bfb592ad3be0ac943cbc630f2d5d6be",
+        "afae075a74c1c67fca3de0e4c25e35c7",
+        "08e6b2758a9648f1dfb3a43377771403",
+        "cec4f9cd0180c89a5a3535df41061426"
+      ]
+    },
+    {
+      "id": "sec:hstatus",
+      "level": 3,
+      "sectnum": "5.2.1",
+      "title": "Hypervisor Status (hstatus) Register",
+      "heading_unit_id": "0dffca4742eabb15c2eceed82deb9a7c",
+      "heading_anchor_id": "sec:hstatus",
+      "blocks": [
+        {
+          "unit_id": "480e396fafde5a9e75b7ffa096b1e5c9",
+          "anchor_id": "norm:hstatus_sz_acc_op"
+        },
+        {
+          "unit_id": "9ca3242903c55b85602d89d9ab3b6dff",
+          "anchor_id": "hstatusreg-rv32"
+        },
+        {
+          "unit_id": "01e3fc2c5e0fb436c60693022291240d",
+          "anchor_id": "hstatusreg"
+        },
+        "594a04ce52573f0082cd1ae731c16fd9",
+        {
+          "unit_id": "a02bb4546d649577bae23c2a7a0ab68a",
+          "anchor_id": "norm:hstatus_vsxl_change"
+        },
+        "c7778e0a0ce5fa9f1d81cc9201d1aa1e",
+        "6614c5f656375f58e8b55cedc4485212",
+        {
+          "unit_id": "017851b262b9d1f5d629c515a8081530",
+          "anchor_id": "norm:hstatus_hu_op"
+        },
+        "3d90cc228cd51dcf64989d443b2d0bb0",
+        "acd980759196ea2b8bdafa014b67ca8e",
+        "a93d5575b9906c9f3f74277c75857574",
+        "46d7ccb20dd274dc1a597b401f249050",
+        "8ed0bffeb4fc5d117342d2f77892e373",
+        "2f00d8b9d4f7ebabc31a88edb89d5e63",
+        {
+          "unit_id": "c038199d0ab32186653c641a7994bf40",
+          "anchor_id": "norm:hstatus_gva_op"
+        },
+        "a6b05c76fbdd947fffa5c8a3d34d7a8b",
+        "963d7dcd8e1de11d306fb3cfeff5fcdf"
+      ]
+    },
+    {
+      "id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "level": 3,
+      "sectnum": "5.2.2",
+      "title": "Hypervisor Trap Delegation (hedeleg and hideleg) Registers",
+      "heading_unit_id": "3729c3047fc04f413a3f2dad36ef7735",
+      "blocks": [
+        "9a81f28c988be3c42a26f6cbc4bc0ffc",
+        {
+          "unit_id": "07310cc48b81fe3af2ca5adb50b0a4f0",
+          "anchor_id": "norm:hedeleg_img"
+        },
+        {
+          "unit_id": "b2a80dcfa30cc86f6b50d38ebc563f91",
+          "anchor_id": "norm:hideleg_img"
+        },
+        "072149285470adf6e2bbd0f1f1a88e2e",
+        "fd0e9378037c03a019159de73f809a9c",
+        {
+          "unit_id": "1584ed4e88d65707cc7cda82c21a44d4",
+          "anchor_id": "norm:hedelegh_sz_acc_op"
+        },
+        "68e65396774dbaaed747e747d755a1b2",
+        "db92b8923b20cadc9a75699f128d2a53",
+        {
+          "unit_id": "f28b41854b2bdcfd5383a535f5e4ae25",
+          "anchor_id": "norm:hedeleg_bits_acc_tbl"
+        }
+      ]
+    },
+    {
+      "id": "hinterruptregs",
+      "level": 3,
+      "sectnum": "5.2.3",
+      "title": "Hypervisor Interrupt (hvip, hip, and hie) Registers",
+      "heading_unit_id": "0fc1bfd22e2cf65db512aa1d7e6a7904",
+      "heading_anchor_id": "hinterruptregs",
+      "blocks": [
+        {
+          "unit_id": "fc68a085d385ad83919f2b739697fe36",
+          "anchor_id": "norm:hvip_sz_op"
+        },
+        {
+          "unit_id": "85e35d6178d0c8405fd648d7fc9f32f6",
+          "anchor_id": "norm:hvip_img"
+        },
+        {
+          "unit_id": "a586f56dfb21447b5c821d377cbec38f",
+          "anchor_id": "norm:hvip_acc"
+        },
+        {
+          "unit_id": "2e3fe606a38d023fb866c4d1f2d5382a",
+          "anchor_id": "hvipreg-standard"
+        },
+        "38420091a7632aaa9a37b51d50000710",
+        {
+          "unit_id": "b2a80dcfa30cc86f6b50d38ebc563f91",
+          "anchor_id": "norm:hip_img"
+        },
+        {
+          "unit_id": "b2a80dcfa30cc86f6b50d38ebc563f91",
+          "anchor_id": "norm:hie_img"
+        },
+        {
+          "unit_id": "bbd051bb70c5bba7896681f415ee76c8",
+          "anchor_id": "norm:sie_hip_hie_mutex"
+        },
+        "e19e42d7cfe99c6c2b500df52f36ad5d",
+        {
+          "unit_id": "10b957b2f1a99c13bfc79fe678792486",
+          "anchor_id": "norm:hideleg_hs"
+        },
+        {
+          "unit_id": "6b33c4c45558eeb3ed508615bf4ea44c",
+          "anchor_id": "norm:hip_acc"
+        },
+        {
+          "unit_id": "d35215d85916b78b262bdba24e36e848",
+          "anchor_id": "norm:hie_acc"
+        },
+        "2969537c090f7966cb6c22b95b0be183",
+        {
+          "unit_id": "d9bbf68ec6bfb7b9ba49a6f035cfdff9",
+          "anchor_id": "hipreg-standard"
+        },
+        {
+          "unit_id": "0805537ce1e0b39d3351d045af31afba",
+          "anchor_id": "hiereg-standard"
+        },
+        {
+          "unit_id": "d5dc58a5616ca3188b713d11dcd09c31",
+          "anchor_id": "norm:hip_sgeip_sgeie_acc_op"
+        },
+        {
+          "unit_id": "93eb02d995d00950f94b892bdb812a84",
+          "anchor_id": "norm:hip_vseip_vseie_op"
+        },
+        "aabeb5cbe5c53cfa59ca4bcc6970f35b",
+        "8e33d8c91787b58388f0e37e5fc2d03a",
+        {
+          "unit_id": "e3f45f9e7ecd24b3d176e60ba521628e",
+          "anchor_id": "norm:hip_vssip_vssie_op"
+        },
+        {
+          "unit_id": "e203f79e09bb6bc05e6f962edf242ff6",
+          "anchor_id": "norm:hsint_priority"
+        }
+      ]
+    },
+    {
+      "id": "hgeinterruptregs",
+      "level": 3,
+      "sectnum": "5.2.4",
+      "title": "Hypervisor Guest External Interrupt Registers (hgeip and hgeie)",
+      "heading_unit_id": "e812760188769b90dc9a72d207535d65",
+      "heading_anchor_id": "hgeinterruptregs",
+      "blocks": [
+        "c677320128bdb0614a8eac52926ce26c",
+        {
+          "unit_id": "4d02500c41092bf1dba819177616564a",
+          "anchor_id": "hgeipreg"
+        },
+        {
+          "unit_id": "1c460426d1e89a7fb8279361c8a3ea51",
+          "anchor_id": "norm:hgeie_img"
+        },
+        "f8bec61fff7cbd76a0ead0fdb5711ce7",
+        "82412bc54625c1d7275ea7384bf73f87",
+        {
+          "unit_id": "2a551aaa3788c021708b9f87e80a37d0",
+          "anchor_id": "norm:geilen"
+        },
+        "588428a5710eddd39d8e77995af0d65e",
+        {
+          "unit_id": "9e61e6698306293a07909d7ebabb781e",
+          "anchor_id": "norm:hgeie_op"
+        }
+      ]
+    },
+    {
+      "id": "sec:henvcfg",
+      "level": 3,
+      "sectnum": "5.2.5",
+      "title": "Hypervisor Environment Configuration Register (henvcfg)",
+      "heading_unit_id": "6d716d5ba22ab78b95e26cdcb17fe031",
+      "heading_anchor_id": "sec:henvcfg",
+      "blocks": [
+        {
+          "unit_id": "fd0792220b67f417c937962eb497ebe5",
+          "anchor_id": "norm:henvcfg_sz_acc_op"
+        },
+        {
+          "unit_id": "adfbb1df277f63db9540fecd2670b60d",
+          "anchor_id": "henvcfg"
+        },
+        {
+          "unit_id": "f6c174ddf3470068171b5a8c766972f6",
+          "anchor_id": "norm:henvcfg_fiom_op"
+        },
+        {
+          "unit_id": "0cdc2af3991ea0b46b057df5d987287f",
+          "anchor_id": "norm:henvcfg_fiom_order"
+        },
+        {
+          "unit_id": "8360a0b52c8eef7ba1dd80bc90101eb0",
+          "anchor_id": "norm:henvcfg_fiom_fence_presuc_op"
+        },
+        {
+          "unit_id": "d9f7e8789435b789fa567d927124e98d",
+          "anchor_id": "norm:henvcfg_pbmte_op"
+        },
+        {
+          "unit_id": "f42105eedad1b91b092b529f29fe5998",
+          "anchor_id": "norm:henvcfg_adue_op"
+        },
+        "be924ba8df441d704da9fcba6eb6ecc7",
+        {
+          "unit_id": "b94a02dc3e9f84ab5615503de5a37261",
+          "anchor_id": "norm:henvcfg_cbze"
+        },
+        {
+          "unit_id": "b809e0feb9a165430a4b073ff1fe21a2",
+          "anchor_id": "norm:henvcfg_cbcfe"
+        },
+        {
+          "unit_id": "6da36967186c16b1308de10ad44660b3",
+          "anchor_id": "norm:henvcfg_cbie"
+        },
+        {
+          "unit_id": "cf3a3f39b47a4b8582acfd56f3d6e3bb",
+          "anchor_id": "norm:cbo-inval_h_mode_veq1_op"
+        },
+        "07900daf329857cd18efb9fe2e6be412",
+        "827f1e03c7e562860d4c6c6c097088cc",
+        {
+          "unit_id": "eebb90e28770103eed9d9ee290f1db79",
+          "anchor_id": "norm:henvcfg_pmm_op"
+        },
+        {
+          "unit_id": "7cb5f021ea1cd9e74a0c897e49e981da",
+          "anchor_id": "norm:henvcfg_pmm_enc"
+        },
+        {
+          "unit_id": "3a5080b33e6aff2bf3fe1fca3b1925d7",
+          "anchor_id": "norm:henvcfg_lpe_op"
+        },
+        "55421aec594276b816137cf2cebdf997",
+        {
+          "unit_id": "3409f516e6944f6780169bbee9d6f2c0",
+          "anchor_id": "norm:henvcfg_sse_op"
+        },
+        "1cc336795bcee065ad694a5223bc2304",
+        {
+          "unit_id": "f9c78016ac707d60e726dd431d59392f",
+          "anchor_id": "norm:henvcfg_dte_op"
+        },
+        {
+          "unit_id": "e9428998fc0e02c57e495b7cc2f3ac6f",
+          "anchor_id": "norm:henvcfgh_sz_acc_op"
+        }
+      ]
+    },
+    {
+      "id": "_hypervisor_counter_enable_hcounteren_register",
+      "level": 3,
+      "sectnum": "5.2.6",
+      "title": "Hypervisor Counter-Enable (hcounteren) Register",
+      "heading_unit_id": "322ef4f1d667d73b0a704d811b9763f1",
+      "blocks": [
+        {
+          "unit_id": "309e7b3459e384146779859e086c9b4c",
+          "anchor_id": "norm:hcounteren_sz"
+        },
+        "cc4387d4dfd6fe58a90ea075362eda9f",
+        "1de6875ae970a8dc4cdf190fdaadb3ad",
+        {
+          "unit_id": "fd736643634852c3b7b92665f446b023",
+          "anchor_id": "norm:hcounteren_acc"
+        },
+        {
+          "unit_id": "162d94297564fc086f035f663ec35d11",
+          "anchor_id": "norm:hcounteren_warl"
+        }
+      ]
+    },
+    {
+      "id": "_hypervisor_time_delta_htimedelta_register",
+      "level": 3,
+      "sectnum": "5.2.7",
+      "title": "Hypervisor Time Delta (htimedelta) Register",
+      "heading_unit_id": "8b7324e086e51c297188a4c186146329",
+      "blocks": [
+        "9b9b84c9c3dc8059035f3171d0531689",
+        "38be52747cea8e848e2097c9f1bdd70e",
+        "7c1296ca4a5f5b6f49f7d1f6366251f4",
+        {
+          "unit_id": "1be18d7ba13857550668d9dcee9b7c6c",
+          "anchor_id": "norm:htimedeltah_sz_acc_op"
+        },
+        {
+          "unit_id": "7e5ec9c92b891c22cdad8c68e65fc50c",
+          "anchor_id": "norm:time_htimedelta_req"
+        }
+      ]
+    },
+    {
+      "id": "_hypervisor_trap_value_htval_register",
+      "level": 3,
+      "sectnum": "5.2.8",
+      "title": "Hypervisor Trap Value (htval) Register",
+      "heading_unit_id": "7bd7a1f1894952557c01d57718dff044",
+      "blocks": [
+        {
+          "unit_id": "ca077609b039e9a02668f8cd31103093",
+          "anchor_id": "norm:htval_sz_acc_op"
+        },
+        {
+          "unit_id": "e853efcc3dbc435021931f74ffcf7fbf",
+          "anchor_id": "htvalreg"
+        },
+        {
+          "unit_id": "6a5b7a4e24ff2ffbd559c0ff9496aa3c",
+          "anchor_id": "norm:htval_trapval"
+        },
+        {
+          "unit_id": "d7ce27128849a94d95bcbeaef4e48822",
+          "anchor_id": "norm:htval_trapval_vstrans"
+        },
+        {
+          "unit_id": "ccd6ff138e168e68bb7e5ff1a7a320d5",
+          "anchor_id": "norm:htval_trapval_other"
+        },
+        "4cfed8b3d00eb3127e4491722e710e42",
+        {
+          "unit_id": "479e073468226eb88b68a5732943987b",
+          "anchor_id": "norm:htval_val"
+        },
+        "f86c9bce8220c14bb1c97c20d0b65d9f"
+      ]
+    },
+    {
+      "id": "_hypervisor_trap_instruction_htinst_register",
+      "level": 3,
+      "sectnum": "5.2.9",
+      "title": "Hypervisor Trap Instruction (htinst) Register",
+      "heading_unit_id": "0118f8261fbcfad980016963dec35072",
+      "blocks": [
+        {
+          "unit_id": "f1b063d042eef6a65abe8a7992187d02",
+          "anchor_id": "norm:htinst_sz_acc_op"
+        },
+        {
+          "unit_id": "e3e477fee362f8cd19bb51bb5dc6503d",
+          "anchor_id": "htinstreg"
+        },
+        {
+          "unit_id": "141dcd54b4f294b5b168d3dde2b56cb8",
+          "anchor_id": "norm:htinst_val"
+        }
+      ]
+    },
+    {
+      "id": "hgatp",
+      "level": 3,
+      "sectnum": "5.2.10",
+      "title": "Hypervisor Guest Address Translation and Protection (hgatp) Register",
+      "heading_unit_id": "599b01f6628424679e0e76e6f512f002",
+      "heading_anchor_id": "hgatp",
+      "blocks": [
+        "b0f4707525703a8582dc34000f656b68",
+        {
+          "unit_id": "7617edc63da7d81231d55d7512c56929",
+          "anchor_id": "rv32hgatp"
+        },
+        {
+          "unit_id": "391a9e0d38e3b215278467826e6ffbf8",
+          "anchor_id": "rv64hgatp"
+        },
+        "a4960e06c99dcfa715cf9ee6c5e6fc17",
+        {
+          "unit_id": "415828832f13024de8e4f2f14845eceb",
+          "anchor_id": "norm:hgatp_mode_Sv"
+        },
+        "c00fa58fce50396e46029b51fae052d8",
+        {
+          "unit_id": "260aec6bd64bb8f359630d08a589ecd0",
+          "anchor_id": "norm:hgatp_mode_enc"
+        },
+        "ce2a218e35ab010c92b064b7a5c8bb39",
+        {
+          "unit_id": "a1f443b5e2651abf160224caaa1d5a39",
+          "anchor_id": "norm:hgatp_mode_warl"
+        },
+        "3cc8ced83fff521574516f9f15efb928",
+        "a88dea7a174ad8c4e8823c8ebf8e0960",
+        "452e22fef66178d38cd846b07cb8cc11",
+        "0d62aad5e85ca30230f3a4f8c0ed4db2",
+        "ff969c209bab1f6b69f62311dee69b56"
+      ]
+    },
+    {
+      "id": "vsstatus",
+      "level": 3,
+      "sectnum": "5.2.11",
+      "title": "Virtual Supervisor Status (vsstatus) Register",
+      "heading_unit_id": "2c894c8cc0bb33eb52664124cdbb181a",
+      "heading_anchor_id": "vsstatus",
+      "blocks": [
+        {
+          "unit_id": "63782b4e1b3ed7e5ac17f7c55e245b09",
+          "anchor_id": "norm:vsstatus_sz_acc_op"
+        },
+        {
+          "unit_id": "74cefe4a0aae03270532f53aebea642e",
+          "anchor_id": "vsstatusreg-rv32"
+        },
+        {
+          "unit_id": "96590e3fff0801a1a402c9ae68f13da1",
+          "anchor_id": "vsstatusreg"
+        },
+        {
+          "unit_id": "09f7b6e2550763a5d6fcd1c404fbb8b4",
+          "anchor_id": "norm:vsstatus_uxl_op"
+        },
+        {
+          "unit_id": "4c68bf9c3cf8a3789c36e07678c3e069",
+          "anchor_id": "norm:vsstatus_uxl_change"
+        },
+        {
+          "unit_id": "3d23c34b2c7cf95c6645ece56793797f",
+          "anchor_id": "norm:vsstatus_fs_op"
+        },
+        "b1007933c491d2de07e9a27f9ffc9dec",
+        {
+          "unit_id": "fb8e6d2a80428eddbdd2b330586e61e9",
+          "anchor_id": "norm:vsstatus_vs_op"
+        },
+        {
+          "unit_id": "02b1284d2a982e619351c20cff3dfc9a",
+          "anchor_id": "norm:vsstatus_sd_xs_op"
+        },
+        {
+          "unit_id": "804a8341985281136ad73f597d373370",
+          "anchor_id": "norm:vsstatus_ube"
+        },
+        {
+          "unit_id": "acec519589c873792659fe0c991a3b86",
+          "anchor_id": "norm:vsstatus_v0"
+        },
+        {
+          "unit_id": "d9e4cdd4c011cd7ba05a3966fecb1f7a",
+          "anchor_id": "norm:vsstatus_spelp_op"
+        },
+        "c55607260d0f67c59e2db81a13a950d2",
+        {
+          "unit_id": "2231b2c57b4e94a9ce0696cf35fb12a2",
+          "anchor_id": "norm:vsstatus_sdt_op"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "level": 3,
+      "sectnum": "5.2.12",
+      "title": "Virtual Supervisor Interrupt (vsip and vsie) Registers",
+      "heading_unit_id": "51beb6a7be3561c3d8e0c2000a3ec2e4",
+      "blocks": [
+        {
+          "unit_id": "195bba1fa71f267d7381ff3aca9fdc24",
+          "anchor_id": "norm:vsip_vsie_sz_acc_op"
+        },
+        {
+          "unit_id": "8e274786cadbd6b167f67ee7f55dec4d",
+          "anchor_id": "norm:vsip_img"
+        },
+        {
+          "unit_id": "8e274786cadbd6b167f67ee7f55dec4d",
+          "anchor_id": "norm:vsie_img"
+        },
+        "6afb4f8eb196ed63cebe0ce301291040",
+        {
+          "unit_id": "2601a88f1e24033f80d13fb1ff3992e6",
+          "anchor_id": "vsipreg-standard"
+        },
+        {
+          "unit_id": "a969f789f6f72ac47e0b14c9c0fd85a3",
+          "anchor_id": "vsiereg-standard"
+        },
+        {
+          "unit_id": "61b69d74cbe78abea8a11987877f12ab",
+          "anchor_id": "norm:vsip_vsie_lcofi"
+        },
+        {
+          "unit_id": "ee9d701c85a110d5212c09b8079fc8fa",
+          "anchor_id": "norm:vsip_vsie_sei"
+        },
+        {
+          "unit_id": "9c3473b6c3244c5543f3da8cd7274ee7",
+          "anchor_id": "norm:vsip_vsie_sti"
+        },
+        {
+          "unit_id": "9414bf5fbeb596fb408d49bf4fbfb633",
+          "anchor_id": "norm:vsip_vsie_ssi"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_trap_vector_base_address_vstvec_register",
+      "level": 3,
+      "sectnum": "5.2.13",
+      "title": "Virtual Supervisor Trap Vector Base Address (vstvec) Register",
+      "heading_unit_id": "b245ac9d7f6110a15a02d3784792dca0",
+      "blocks": [
+        {
+          "unit_id": "e5281c583633ea3fda6a153db3bcce35",
+          "anchor_id": "norm:vstvec_sz_acc_op"
+        },
+        {
+          "unit_id": "0acb1ebd775dea8ae89ad627e2bd149c",
+          "anchor_id": "norm:vstvec_img"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_scratch_vsscratch_register",
+      "level": 3,
+      "sectnum": "5.2.14",
+      "title": "Virtual Supervisor Scratch (vsscratch) Register",
+      "heading_unit_id": "4bed74ba587226821c3e5667715749e8",
+      "blocks": [
+        {
+          "unit_id": "180064892f0945f4175aa1cd4b6fbb1f",
+          "anchor_id": "norm:vsscratch_sz_acc_op"
+        },
+        {
+          "unit_id": "37922879db0afbabffe480176bd534e4",
+          "anchor_id": "vsscratchreg"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_exception_program_counter_vsepc_register",
+      "level": 3,
+      "sectnum": "5.2.15",
+      "title": "Virtual Supervisor Exception Program Counter (vsepc) Register",
+      "heading_unit_id": "d23b9f573a37b15cb1428863aa8ff715",
+      "blocks": [
+        {
+          "unit_id": "7422014206c620a3ec2e94c157b78270",
+          "anchor_id": "norm:vsepc_sz_acc_op"
+        },
+        {
+          "unit_id": "e91d7f218042147ae86ec91971f691fa",
+          "anchor_id": "norm:vsepc_warl"
+        },
+        {
+          "unit_id": "e901fb5b4c591abe040b667c7642449d",
+          "anchor_id": "vsepcreg"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_cause_vscause_register",
+      "level": 3,
+      "sectnum": "5.2.16",
+      "title": "Virtual Supervisor Cause (vscause) Register",
+      "heading_unit_id": "bee332aae62a3f67ccf124604a5307a3",
+      "blocks": [
+        {
+          "unit_id": "fc782498de1aca037f51e1c17831fa98",
+          "anchor_id": "norm:vscause_sz_acc_op"
+        },
+        {
+          "unit_id": "be19ebac1f748d5a36e96ccb035e54c6",
+          "anchor_id": "norm:vscause_wlrl"
+        },
+        {
+          "unit_id": "eb7ca45ae0b0f78444cb3510ec6db7e8",
+          "anchor_id": "vscausereg"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_trap_value_vstval_register",
+      "level": 3,
+      "sectnum": "5.2.17",
+      "title": "Virtual Supervisor Trap Value (vstval) Register",
+      "heading_unit_id": "c24d0e8e320e798e93ca564c269c2812",
+      "blocks": [
+        {
+          "unit_id": "b8b862e772500265b7c193d30fe40ff1",
+          "anchor_id": "norm:vstval_sz_acc_op"
+        },
+        {
+          "unit_id": "37d020e76fb5d758e7e20afb428d6ee2",
+          "anchor_id": "norm:vstval_warl"
+        },
+        {
+          "unit_id": "e6d5b7eeac89fbf41e67fdccb3586ed3",
+          "anchor_id": "vstvalreg"
+        }
+      ]
+    },
+    {
+      "id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "level": 3,
+      "sectnum": "5.2.18",
+      "title": "Virtual Supervisor Address Translation and Protection (vsatp) Register",
+      "heading_unit_id": "a11b17fb8990109acc01adc83b6364f6",
+      "blocks": [
+        {
+          "unit_id": "f5fc7692e1a6bddec3021f18eb3de2ca",
+          "anchor_id": "norm:vsatp_sz_acc_op"
+        },
+        {
+          "unit_id": "e49d8d61c458f52fdb103305082183ce",
+          "anchor_id": "rv32vsatpreg"
+        },
+        {
+          "unit_id": "31ead84ffe44b702168ff5b5f99f7e18",
+          "anchor_id": "rv64vsatpreg"
+        },
+        "49f70cd2d3c4f18b6b9cfcd6284fa4a0",
+        "807a6b19053281a0040c32aa748572fe",
+        "51c4de0127c0dae0a08d8005885fcd65",
+        "4ab3600777ee5483823dadb0e94f7622",
+        {
+          "unit_id": "0512889637db9b8c13213c6b3ec8ff43",
+          "anchor_id": "norm:vsatp_v0"
+        }
+      ]
+    },
+    {
+      "id": "vstimecmp",
+      "level": 3,
+      "sectnum": "5.2.19",
+      "title": "Virtual Supervisor Timer (vstimecmp) Register",
+      "heading_unit_id": "f331ca9ffd33a16062c0595657a2a89b",
+      "heading_anchor_id": "vstimecmp",
+      "blocks": [
+        "b4e4028492deeb19e4a667937da9f782",
+        "36c2126833ed332f8bcbe573b1ad09b1",
+        "387a5d2c27acd3b003f9b5668f079fb9"
+      ]
+    },
+    {
+      "id": "_hypervisor_instructions",
+      "level": 2,
+      "sectnum": "5.3",
+      "title": "Hypervisor Instructions",
+      "heading_unit_id": "083b695ffb172a32675e6b73f8d55aa5",
+      "blocks": [
+        "4826154403467643e718c1b57d38156f"
+      ]
+    },
+    {
+      "id": "_hypervisor_virtual_machine_load_and_store_instructions",
+      "level": 3,
+      "sectnum": "5.3.1",
+      "title": "Hypervisor Virtual-Machine Load and Store Instructions",
+      "heading_unit_id": "d231efa97d0c4cd58781e9f5fde55a3d",
+      "blocks": [
+        "755881e2a13951a40f4e857368bbf5a2",
+        "68fa922dbfd76cd09c4d8d92f65b919b",
+        {
+          "unit_id": "26037c5d896a37806d1d12ccffca597a",
+          "anchor_id": "norm:hlsv_op"
+        },
+        {
+          "unit_id": "340af86dc970bece0f9820288ced3a52",
+          "anchor_id": "norm:hlsv_u_op"
+        },
+        "57bb356c05b59edcdcadabca2dedae95",
+        {
+          "unit_id": "41b26984002e61e2765e26db9b5f61ed",
+          "anchor_id": "norm:hlvx-wu_valid32"
+        },
+        "4932cc161cebf2cfdca46f6c09a59d80",
+        "598d7ef6d5cbc32f23f6c7b6916c13ef",
+        "cb17deccda2cbc61fd9b3c036cb745d5",
+        "3a9a42c3b040342b9cde1d1f4b4018dc"
+      ]
+    },
+    {
+      "id": "hfence.vma",
+      "level": 3,
+      "sectnum": "5.3.2",
+      "title": "Hypervisor Memory-Management Fence Instructions",
+      "heading_unit_id": "aeab04d00f653579975288366299226a",
+      "heading_anchor_id": "hfence.vma",
+      "blocks": [
+        "19e9cf94b971508db900a6d2936d91ac",
+        {
+          "unit_id": "53cf340541f0ee91ab63690bdce37ae8",
+          "anchor_id": "norm:hfence-vvma_hfence-gvma_op"
+        },
+        {
+          "unit_id": "68ee7f9470b3bf112ca47341ee159c1a",
+          "anchor_id": "norm:hfence-vvma_mode"
+        },
+        "709587761c5115a2a84e6f14be838932",
+        {
+          "unit_id": "8af21bd78085d0c2bb32838ecc94a48d",
+          "anchor_id": "norm:hfence-vvma_limits"
+        },
+        "6dcde6bc30876e5e725d918e9293159d",
+        {
+          "unit_id": "a5f77edc9130f48ebddc12db1d9a3893",
+          "anchor_id": "norm:hfence-vvma_asid"
+        },
+        "676fb1682d7db5a1479e368485159394",
+        {
+          "unit_id": "28a63c832f7d17ddc027986fd88aec51",
+          "anchor_id": "norm:hfence-vvma_tvm"
+        },
+        {
+          "unit_id": "11d565032da16bd0186c94ac3042a363",
+          "anchor_id": "norm:hfence-gvma_op"
+        },
+        "fc2ad2fca86959142afee8ab37c07fd0",
+        {
+          "unit_id": "5108ef7f755d186d4a53b57c03a8661f",
+          "anchor_id": "norm:hfence-gvma_vmid"
+        },
+        "bbde65f3c83bf2eb53dca306a1f5d9fd",
+        {
+          "unit_id": "031ebb1cbb32860fc15963351c14a1b8",
+          "anchor_id": "norm:hfence-gvma_mode"
+        },
+        {
+          "unit_id": "3976dee470fbb8f0c1c2cc453231025d",
+          "anchor_id": "norm:hfence-vvma_hfence-gvma_exceptions"
+        }
+      ]
+    },
+    {
+      "id": "_machine_level_csrs_2",
+      "level": 2,
+      "sectnum": "5.4",
+      "title": "Machine-Level CSRs",
+      "heading_unit_id": "e3f5031e2ed1146f8bd3c6284cc67e91",
+      "blocks": [
+        "8242c00d0a8006db0666208c8d1d7c12"
+      ]
+    },
+    {
+      "id": "_machine_status_mstatus_and_mstatush_registers",
+      "level": 3,
+      "sectnum": "5.4.1",
+      "title": "Machine Status (mstatus and mstatush) Registers",
+      "heading_unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "blocks": [
+        "92cc45bfbc4e0d1a2de72ea365fb22dc",
+        {
+          "unit_id": "4aa3a2b95eb0f7dc516e7c9b8ae77e9d",
+          "anchor_id": "hypervisor-mstatus"
+        },
+        {
+          "unit_id": "3c4ad8d1666708589542f6d271c91693",
+          "anchor_id": "hypervisor-mstatush"
+        },
+        {
+          "unit_id": "1c3d457f4f731d3d1cc5bd210b23af4f",
+          "anchor_id": "norm:mstatus_mpv_op"
+        },
+        {
+          "unit_id": "e2a1eb4d67022eb461443f2c9b6b2b36",
+          "anchor_id": "norm:mstatus_gva_op"
+        },
+        {
+          "unit_id": "5a61bca4434340a002e3db7ce85a8bd9",
+          "anchor_id": "norm:mstatus_modes"
+        },
+        {
+          "unit_id": "617a25bc7d47b9674cef5478d4ae3a6a",
+          "anchor_id": "norm:mstatus_tvm_hs"
+        },
+        "f493ef255ac07202f7dcd52b51d431e0",
+        {
+          "unit_id": "eaae819a5d5de41aac621eab93d09249",
+          "anchor_id": "norm:mstatus_mprv_hypervisor"
+        },
+        {
+          "unit_id": "5b5dae94add5a995d7bf772c3982ed2c",
+          "anchor_id": "norm:H_mprv_tbl"
+        },
+        {
+          "unit_id": "65c95ee9990cb05e789ff443df2f301d",
+          "anchor_id": "norm:mstatus_mprv_hlsv"
+        },
+        "b131b6719442bd6e442fdcca17fcc3b7"
+      ]
+    },
+    {
+      "id": "_machine_interrupt_delegation_mideleg_register",
+      "level": 3,
+      "sectnum": "5.4.2",
+      "title": "Machine Interrupt Delegation (mideleg) Register",
+      "heading_unit_id": "94dbb54d283ce21447aba38ff14d598b",
+      "blocks": [
+        {
+          "unit_id": "4ae37554c5b68718985739dfa0caba32",
+          "anchor_id": "norm:mideleg_acc_H"
+        },
+        {
+          "unit_id": "046ddf42a5f258bc5111587c5a13cbd9",
+          "anchor_id": "norm:mideleg_hroz"
+        }
+      ]
+    },
+    {
+      "id": "_machine_interrupt_mip_and_mie_registers",
+      "level": 3,
+      "sectnum": "5.4.3",
+      "title": "Machine Interrupt (mip and mie) Registers",
+      "heading_unit_id": "f1f0b0c7ba66bb90707c49fb5fa9af95",
+      "blocks": [
+        {
+          "unit_id": "27e1018c9d8b0b15fa08433f64f60e56",
+          "anchor_id": "norm:mip_mie_vs"
+        },
+        {
+          "unit_id": "76629f23914be3754bf0fdf6956e694c",
+          "anchor_id": "hypervisor-mipreg-standard"
+        },
+        {
+          "unit_id": "7988b8eedf72d42ea6aa194dcd851ed0",
+          "anchor_id": "hypervisor-miereg-standard"
+        },
+        {
+          "unit_id": "1673963ebcbecda3f0a917c7dae53ef8",
+          "anchor_id": "norm:mip_mie_alias"
+        }
+      ]
+    },
+    {
+      "id": "_machine_second_trap_value_mtval2_register",
+      "level": 3,
+      "sectnum": "5.4.4",
+      "title": "Machine Second Trap Value (mtval2) Register",
+      "heading_unit_id": "72e5607cf93baccc0f65faeca01cf50a",
+      "blocks": [
+        {
+          "unit_id": "46f82d7949fc61c0615ad49d6af90a3a",
+          "anchor_id": "norm:mtval2_sz_acc_op"
+        },
+        {
+          "unit_id": "83d006c3550c1dbe61a92d7038e0303e",
+          "anchor_id": "mtval2reg"
+        },
+        {
+          "unit_id": "d4e582865e80dae966f5da0e553f860e",
+          "anchor_id": "norm:mtval2_trapval"
+        },
+        {
+          "unit_id": "e81057e0624a0451ce369495579cb47a",
+          "anchor_id": "norm:mtval2_trapval_vstrans"
+        },
+        {
+          "unit_id": "294bb0156b59e2dc0d8ebc8efdd9664c",
+          "anchor_id": "norm:mtval2_trapval_other"
+        },
+        {
+          "unit_id": "b6a89b692bceb0b05db8c3e77784fbed",
+          "anchor_id": "norm:mtval2_val"
+        },
+        {
+          "unit_id": "fdaeab246cd86d457d0366fb264a72c0",
+          "anchor_id": "norm:mtval2_Ssdbltrp"
+        }
+      ]
+    },
+    {
+      "id": "_machine_trap_instruction_mtinst_register",
+      "level": 3,
+      "sectnum": "5.4.5",
+      "title": "Machine Trap Instruction (mtinst) Register",
+      "heading_unit_id": "64857d8e52883524900f2ef96a4aee96",
+      "blocks": [
+        {
+          "unit_id": "d959672b790514e827d754545ef5c279",
+          "anchor_id": "norm:mtinst_sz_acc_op"
+        },
+        {
+          "unit_id": "4ee7b51136f1926c5f58af4fe0c7d2f0",
+          "anchor_id": "mtinstreg"
+        },
+        {
+          "unit_id": "4a8330a6ff8bfb32e8a9ef5acc3d5186",
+          "anchor_id": "norm:mtinst_val"
+        }
+      ]
+    },
+    {
+      "id": "two-stage-translation",
+      "level": 2,
+      "sectnum": "5.5",
+      "title": "Two-Stage Address Translation",
+      "heading_unit_id": "fe455857766215a3caa3ca8b67e07ae1",
+      "heading_anchor_id": "two-stage-translation",
+      "blocks": [
+        "442e08606af232e961a4dead780e2680",
+        "e427aadde48106cab7f0a86f72e53bab",
+        {
+          "unit_id": "2c4651eca1f80274947c014c4b09f825",
+          "anchor_id": "norm:H_vm_gstagetrans"
+        },
+        {
+          "unit_id": "54a865931d8adbc28ad684f1c4454290",
+          "anchor_id": "norm:H_pmp"
+        }
+      ]
+    },
+    {
+      "id": "guest-addr-translation",
+      "level": 3,
+      "sectnum": "5.5.1",
+      "title": "Guest Physical Address Translation",
+      "heading_unit_id": "e4404812f805d3b588eaef9affee6c50",
+      "heading_anchor_id": "guest-addr-translation",
+      "blocks": [
+        "6cd2dfd1f46def829914ca1839ecedae",
+        {
+          "unit_id": "ad38ef031f61f79ef9361ed3ab397dc7",
+          "anchor_id": "norm:hgatp_mode_bare_trans"
+        },
+        {
+          "unit_id": "8a60e7d4ebf01b33bfe1175ef702a832",
+          "anchor_id": "norm:hgatp_mode_x4"
+        },
+        {
+          "unit_id": "0427b82ea1d7e9a64261f699622d67a0",
+          "anchor_id": "norm:hgatp_mode_sv32x4"
+        },
+        {
+          "unit_id": "5f58cac6a1ce7686622ece702cb9e3fc",
+          "anchor_id": "sv32x4va"
+        },
+        {
+          "unit_id": "ceec7710fdcfeb36d3bd83d8bb47407f",
+          "anchor_id": "norm:hgatp_mode_sv39x4"
+        },
+        {
+          "unit_id": "b633bec6f3ba45d6289412ff93f5c6c2",
+          "anchor_id": "sv39x4va"
+        },
+        {
+          "unit_id": "37a7fcaa5cc4ad35ce1864e275912ba0",
+          "anchor_id": "norm:hgatp_mode_sv48x4"
+        },
+        {
+          "unit_id": "cb3f49145137c9f182d6ae057428f18d",
+          "anchor_id": "sv48x4va"
+        },
+        {
+          "unit_id": "490016ba1e0708155777a69334008025",
+          "anchor_id": "norm:hgatp_mode_Sv57x4"
+        },
+        {
+          "unit_id": "bdefe991996dfbbefa255d186dc1ae9b",
+          "anchor_id": "sv57x4va"
+        },
+        "d06ac491b7ef98b326a5ba97a34a2e61",
+        {
+          "unit_id": "67ea3f2599155f5394b11cedfb48eac2",
+          "anchor_id": "norm:H_vm_gpatrans"
+        },
+        "a49ffccb69b6f49002320a8b9e41da90",
+        {
+          "unit_id": "1a067be1d004ce078a7582ff27d82463",
+          "anchor_id": "norm:H_vm_gpapriv"
+        },
+        {
+          "unit_id": "207deff306894a13b22c5c86ffbad030",
+          "anchor_id": "norm:H_vm_gpa_g"
+        },
+        "7991615862fea43dee30b647263e0a3b"
+      ]
+    },
+    {
+      "id": "_guest_page_faults",
+      "level": 3,
+      "sectnum": "5.5.2",
+      "title": "Guest-Page Faults",
+      "heading_unit_id": "a841052f07ff68810531cafaa5215a48",
+      "blocks": [
+        {
+          "unit_id": "fd4d86cea490d76bff4bc5666073dc57",
+          "anchor_id": "norm:H_guest_page_fault"
+        },
+        {
+          "unit_id": "940739c626ea64425e9d4a99398639ed",
+          "anchor_id": "norm:H_straddle"
+        },
+        {
+          "unit_id": "aa7b2d128660cd17cefb771fb87c4cec",
+          "anchor_id": "norm:mtval2_htval_virtaddr"
+        }
+      ]
+    },
+    {
+      "id": "hyp-mm-fences",
+      "level": 3,
+      "sectnum": "5.5.3",
+      "title": "Memory-Management Fences",
+      "heading_unit_id": "7da24b7e735a79d316fbe210f55d89c2",
+      "heading_anchor_id": "hyp-mm-fences",
+      "blocks": [
+        {
+          "unit_id": "ba9c0b1d6bbc84b099612c49d91176c5",
+          "anchor_id": "norm:sfence_vma_v0"
+        },
+        {
+          "unit_id": "59a6f9d1c587cd2009e16d72df922d48",
+          "anchor_id": "norm:sfence_vma_v1"
+        },
+        "6fae389fcf92dac5e381b0d891f6eaf5",
+        "86890397c2a6c92c8360f9fc1669891b",
+        "20276ee404312c7a0d3286a057978e2f",
+        "ff65d1f0e6646cbd67027afce04b6ad7",
+        "1f382933a64495fd1a328345fac7b8d6"
+      ]
+    },
+    {
+      "id": "pm-two-stage",
+      "level": 3,
+      "sectnum": "5.5.4",
+      "title": "Interaction with Pointer Masking",
+      "heading_unit_id": "c90abfa07a1a01e0adb0551744d1c670",
+      "heading_anchor_id": "pm-two-stage",
+      "blocks": [
+        "1514ebbabf70e29fd36096d7ca2333a2",
+        "bf18fa67855ad6bd7d1f6599c2ba31ea",
+        "296adc088e34c3d71ee04fbcaa122a81",
+        "9785b9e524e26388699aa9552106c2a3",
+        "b1a103ad83c24c8078e7eaf713dda84d"
+      ]
+    },
+    {
+      "id": "_traps_2",
+      "level": 2,
+      "sectnum": "5.6",
+      "title": "Traps",
+      "heading_unit_id": "5c47820689220d9068f4c983b39a4d3b",
+      "blocks": []
+    },
+    {
+      "id": "sec:hcauses",
+      "level": 3,
+      "sectnum": "5.6.1",
+      "title": "Trap Cause Codes",
+      "heading_unit_id": "a153cb3bbc8af2cb613864e7c45e3173",
+      "heading_anchor_id": "sec:hcauses",
+      "blocks": [
+        {
+          "unit_id": "b747906f74f53a7210b0a5abe1d1324a",
+          "anchor_id": "norm:H_cause"
+        },
+        {
+          "unit_id": "f21e4587c53a2525241236fce9972923",
+          "anchor_id": "norm:H_cause_enc_tbl"
+        },
+        "1dd77e307fc80279e569e21369007700",
+        {
+          "unit_id": "1e7bd5f9d90219b849c9ec872ec191b1",
+          "anchor_id": "norm:H_cause_virtual_instruction"
+        },
+        {
+          "unit_id": "8afe956b38a7ea250488501189849f3a",
+          "anchor_id": "norm:H_cause_virtual_instruction_high"
+        },
+        "55f1e911dbe0a049a12b1fce1488cd57",
+        "c4363eec8f1ee212d9b6ef2ed46bb92f",
+        "55c9e67b8766c883b56c89b6df7710dd",
+        "62aa353ccc1944bed6a18eb07388f214",
+        {
+          "unit_id": "20a81f9b6380b240670b68ee589071e5",
+          "anchor_id": "norm:H_virtinst_xtval"
+        },
+        "9365d68eb53cb5a8a8381b7664bb3f68",
+        {
+          "unit_id": "4afaa0ffe1e04791160cd7bffcaab7d2",
+          "anchor_id": "norm:H_illegalinst_xstatus_fs_vs"
+        },
+        "c23a6e393e766691d46e8693ff10ab1c",
+        {
+          "unit_id": "687c962d1411d91c48b19bdc57b9f045",
+          "anchor_id": "norm:H_exc_priority_tbl"
+        },
+        {
+          "unit_id": "558a3a1553ca0c5f30cec6f3b7ddfad7",
+          "anchor_id": "norm:H_exception_priority"
+        }
+      ]
+    },
+    {
+      "id": "_trap_entry",
+      "level": 3,
+      "sectnum": "5.6.2",
+      "title": "Trap Entry",
+      "heading_unit_id": "c23c51fc1eae7cc28d7c0fce71799916",
+      "blocks": [
+        {
+          "unit_id": "4b8f87f989cc384941bf678242811d5f",
+          "anchor_id": "norm:H_trap_deleg"
+        },
+        {
+          "unit_id": "681dd6b84b79557f350d6e0ace3ee1a3",
+          "anchor_id": "norm:H_trap_m_csrwrites"
+        },
+        {
+          "unit_id": "96acb9fc9484a2f2bc7e70ad2f16aaec",
+          "anchor_id": "norm:H_trap_m_mpv_mpp_tbl"
+        },
+        {
+          "unit_id": "fefae122a6915f0e55c09e41d1c2e74d",
+          "anchor_id": "norm:H_trap_hs_csrwrites"
+        },
+        {
+          "unit_id": "db36b89eccd7fd06c392b7a2767cf77e",
+          "anchor_id": "norm:H_trap_hs_spv_spp_tbl"
+        },
+        {
+          "unit_id": "19bc535de2c2ac5e2b25a0722cce9c82",
+          "anchor_id": "norm:H_trap_vs_csrwrites"
+        },
+        {
+          "unit_id": "727a2a873d8551470f37ca6f59180acb",
+          "anchor_id": "norm:H_trap_vs_spp_tbl"
+        }
+      ]
+    },
+    {
+      "id": "tinst-vals",
+      "level": 3,
+      "sectnum": "5.6.3",
+      "title": "Transformed Instruction or Pseudoinstruction for mtinst or htinst",
+      "heading_unit_id": "b230d82ab194a4ce24943ac81e162012",
+      "heading_anchor_id": "tinst-vals",
+      "blocks": [
+        {
+          "unit_id": "92019e7c8ec517730d0dfce3d9a06398",
+          "anchor_id": "norm:H_trap_xtinst"
+        },
+        "8b7bbad7c71a0e6b8a2a886be9940aad",
+        "103462be4d0b517ebbc2ce554abf7757",
+        "51aaa49f78830036d94755799d63c410",
+        "92b2b77ce6659f9666ea78b317c6ff02",
+        {
+          "unit_id": "4808c4eacc75fa987a6d5dedbd390258",
+          "anchor_id": "norm:H_trap_xtinst_exception_list"
+        },
+        "b8825ef316fcce6ad4441f0e2a47fb9e",
+        "23dfeb72bc7b088399a3763e176ce67e",
+        {
+          "unit_id": "bb923c3e16dfc4c36f2634955cac81c8",
+          "anchor_id": "norm:H_trap_xtinst_val"
+        },
+        {
+          "unit_id": "7d2adeafa4522750037d73b24acc2f81",
+          "anchor_id": "norm:H_trap_xtinst_val_tbl"
+        },
+        "5aee7d8e0f50fc7059044dcc65d5bab9",
+        {
+          "unit_id": "a5447bf34258b9c83c594abbc068de9c",
+          "anchor_id": "norm:H_trans_load"
+        },
+        {
+          "unit_id": "527a37cb6cd0aa7e6e2f48aa61dd9ae0",
+          "anchor_id": "transformedloadinst"
+        },
+        {
+          "unit_id": "7f7e75266c20242c5853d0bcba43ed23",
+          "anchor_id": "norm:H_trans_store"
+        },
+        {
+          "unit_id": "d1e0c8d6603163c1c656cc2b38543e3d",
+          "anchor_id": "transformedstoreinst"
+        },
+        {
+          "unit_id": "590c4c4ede6e79409ac5cc586b7aad44",
+          "anchor_id": "norm:H_trans_atomic"
+        },
+        {
+          "unit_id": "08834c6b7acd6d643ffea9acc66a1195",
+          "anchor_id": "transformedatomicinst"
+        },
+        {
+          "unit_id": "8d31ff98aa4ef7ab13dabab82d703764",
+          "anchor_id": "norm:H_trans_vmaccess"
+        },
+        {
+          "unit_id": "882f7ba71c48e7cbf9f9f9cd16d3184a",
+          "anchor_id": "transformedvmaccessinst"
+        },
+        "ad7a7eee0fab020331d87659412f34ee",
+        {
+          "unit_id": "64a85dbdc9e05a572cb7f37f5208b54b",
+          "anchor_id": "norm:H_trans_cache"
+        },
+        {
+          "unit_id": "125c855c88476de026c20fd8b8d7a2ed",
+          "anchor_id": "transformedcboinst"
+        },
+        {
+          "unit_id": "83ee7a2098f3a1871a947cd64a575754",
+          "anchor_id": "norm:H_trans_compressed_lead_in"
+        },
+        {
+          "unit_id": "fd789a27e04495c1b1600a4f5a8a7f48",
+          "anchor_id": "norm:H_trans_compressed_list"
+        },
+        {
+          "unit_id": "158eaf0414d22cc1411a02a8197efa5b",
+          "anchor_id": "norm:H_trans_bits_1_0"
+        },
+        "f55caac2ab9feba15af81ecfe1111692",
+        {
+          "unit_id": "0371263fba7192c03117572ef290012c",
+          "anchor_id": "norm:H_trap_xtinst_guestpage"
+        },
+        {
+          "unit_id": "c1351b6b5bd8f52c105d0c41eb71f55c",
+          "anchor_id": "norm:H_trap_xtinst_pseudoinst_tbl"
+        },
+        "338f42bd5fc456589df4c7a6243f7e10",
+        {
+          "unit_id": "107bb817b6630037c8470347611da65f",
+          "anchor_id": "pseudoinsts-basis"
+        },
+        {
+          "unit_id": "1c3fc9f876cfa9229fa36cee9122575e",
+          "anchor_id": "norm:H_trap_xtinst_guestpage_rw"
+        },
+        "2a102490839f327ffdf773ea8a0cbc56"
+      ]
+    },
+    {
+      "id": "_trap_return",
+      "level": 3,
+      "sectnum": "5.6.4",
+      "title": "Trap Return",
+      "heading_unit_id": "eeec4740d5c768d9de751aed19e1cfde",
+      "blocks": [
+        {
+          "unit_id": "a3afc1df78894ae527f942696f5da240",
+          "anchor_id": "norm:mret_H"
+        },
+        {
+          "unit_id": "023ff88e85b8584ff676a4df2f9a562e",
+          "anchor_id": "norm:sret_H"
+        },
+        {
+          "unit_id": "d9d637e5f7c1ebeac90698d79e78e61b",
+          "anchor_id": "norm:sret_v0"
+        },
+        {
+          "unit_id": "c220d5d0e7b6f0128bbffaa0f687be0f",
+          "anchor_id": "norm:sret_v1"
+        },
+        {
+          "unit_id": "5bf6144902039c6d9334036398efba7b",
+          "anchor_id": "norm:sret_dt"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+unit_id = "1116e7d93b3958e9f1987301aabed671"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An application that has the ext:zicfiss[] extension active may request the dynamic
+loader at runtime to load a new dynamic shared object (using `dlopen()` for
+example). If the requested object does not have the ext:zicfiss[] attribute then
+the dynamic loader, based on its policy (e.g., established by the operating
+system or the administrator) configuration, could either deny the request or
+deactivate the ext:zicfiss[] extension for the application. It is strongly recommended
+that the policy enforces a strict security posture and denies the request.'''
+zh = '''
+已激活 ext:zicfiss[] 扩展的应用程序可以在运行时请求动态加载器加载新的动态共享对象（例如，使用 `dlopen()`）。如果请求的对象没有 ext:zicfiss[] 属性，则动态加载器根据其策略配置（例如，由操作系统或管理员建立）可以拒绝该请求，或为该应用程序停用 ext:zicfiss[] 扩展。强烈建议该策略强制执行严格的安全态势并拒绝该请求。'''

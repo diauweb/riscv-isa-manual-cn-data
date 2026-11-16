@@ -1,0 +1,13 @@
+unit_id = "217be5dc2abe38896a74e5fa46ebede8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicboz extension adds the `CBZE` (Cache Block Zero instruction enable) field
+to `menvcfg`. When the `CBZE` field is set to 1, it enables execution of the
+cache block zero instruction, `CBO.ZERO`, in modes less privileged than M.
+Otherwise, the instruction raises an illegal-instruction exception in modes less
+privileged than M. When the Zicboz extension is not implemented, `CBZE` is
+read-only zero.'''
+zh = '''
+Zicboz 扩展在 `menvcfg` 中添加了 `CBZE`（Cache Block Zero instruction enable，缓存块清零指令使能）字段。当 `CBZE` 字段被置为 1 时，它允许在特权级低于 M 的模式中执行缓存块清零指令 `CBO.ZERO`。否则，该指令在特权级低于 M 的模式中引发非法指令异常。当未实现 Zicboz 扩展时，`CBZE` 为只读零。'''

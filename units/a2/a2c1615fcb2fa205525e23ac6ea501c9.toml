@@ -1,0 +1,16 @@
+unit_id = "a2c1615fcb2fa205525e23ac6ea501c9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 32-bit insn:j[] calls
+* 32-bit insn:jal[] ra calls
+* 64-bit insn:auipc[]+insn:jr[] calls to fixed locations
+* 64-bit insn:auipc[]+insn:jalr[ra] calls to fixed locations
+** The insn:auipc[]+insn:jr[]/insn:jalr[] sequence is used because the offset from the PC is out of the ±1{nbsp}MB range.'''
+zh = '''
+* 32 位 insn:j[] 调用
+* 32 位 insn:jal[] ra 调用
+* 到固定位置的 64 位 insn:auipc[]+insn:jr[] 调用
+* 到固定位置的 64 位 insn:auipc[]+insn:jalr[ra] 调用
+** 使用 insn:auipc[]+insn:jr[]/insn:jalr[] 序列是因为相对于 PC 的偏移超出 ±1{nbsp}MB 范围。'''

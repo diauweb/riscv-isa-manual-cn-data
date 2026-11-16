@@ -1,0 +1,8 @@
+unit_id = "ec58d961b42c56a2bb283cd149e48010"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Control transfer records are stored in a CTR buffer, such that each buffer entry stores information about a single transfer.  The CTR buffer entries are logically accessed via the indirect register access mechanism defined by the Sscsrind extension. [#norm:siselect_acc_op]#The `siselect` index range 0x200 through 0x2FF is reserved for CTR logical entries 0 through 255. When `siselect` holds a value in this range, `sireg` provides access to `ctrsource`, `sireg2` provides access to `ctrtarget`, and `sireg3` provides access to `ctrdata`.  `sireg4`, `sireg5`, and `sireg6` are read-only 0.#'''
+zh = '''
+控制转移记录存储在 CTR 缓冲区中，使得每个缓冲区条目存储关于单次转移的信息。CTR 缓冲区条目通过 Sscsrind 扩展定义的间接寄存器访问机制进行逻辑访问。[#norm:siselect_acc_op]#`siselect` 索引范围 0x200 到 0x2FF 保留给 CTR 逻辑条目 0 到 255。当 `siselect` 持有此范围内的值时，`sireg` 提供对 `ctrsource` 的访问，`sireg2` 提供对 `ctrtarget` 的访问，`sireg3` 提供对 `ctrdata` 的访问。`sireg4`、`sireg5` 和 `sireg6` 为只读 0。#'''

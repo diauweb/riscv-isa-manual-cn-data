@@ -1,0 +1,11 @@
+unit_id = "ee9a6151b4d011c6453eec9b0cb78662"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the value loaded from the address in csr:ssp[] does not match the value in `rs1`,
+a software-check exception (cause=18) is raised with `__x__tval` set to "`shadow
+stack fault (code=3)`". The software-check exception caused by insn:sspopchk[] or
+insn:c.sspopchk[] is lower in priority than a load/store/AMO access-fault exception.'''
+zh = '''
+如果从 csr:ssp[] 中的地址加载的值与 `rs1` 中的值不匹配，则引发软件检查异常（cause=18），并将 `__x__tval` 设置为“shadow stack fault (code=3)”。由 insn:sspopchk[] 或 insn:c.sspopchk[] 引发的软件检查异常优先级低于加载/存储/AMO 访问错误异常。'''

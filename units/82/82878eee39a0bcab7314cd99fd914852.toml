@@ -1,0 +1,13 @@
+unit_id = "82878eee39a0bcab7314cd99fd914852"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((RV64I, SLLIW))) (((RV64I, SRLIW))) (((RV64I, SRAIW))) (((RV64I, RV64I-only)))
+[#norm:slliw_srliw_sraiw_op]#insn:slliw[], insn:srliw[], and insn:sraiw[] are RV64I-only instructions that are analogously
+defined but operate on 32-bit values and sign-extend their 32-bit
+results to 64 bits.# [#norm:slliw_srliw_sraiw_imm5_rsv]#insn:slliw[], insn:srliw[], and insn:sraiw[] encodings with
+_imm[5]_{ne}0 are reserved.#'''
+zh = '''
+(((RV64I, SLLIW))) (((RV64I, SRLIW))) (((RV64I, SRAIW))) (((RV64I, RV64I-only)))
+[#norm:slliw_srliw_sraiw_op]#insn:slliw[]、insn:srliw[] 和 insn:sraiw[] 是仅限 RV64I 的指令，其定义类似，但操作 32 位值并将其 32 位结果符号扩展到 64 位。# [#norm:slliw_srliw_sraiw_imm5_rsv]#_imm[5]_{ne}0 的 insn:slliw[]、insn:srliw[] 和 insn:sraiw[] 编码是保留的。#'''

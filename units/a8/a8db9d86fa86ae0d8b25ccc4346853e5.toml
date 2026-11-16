@@ -1,0 +1,10 @@
+unit_id = "a8db9d86fa86ae0d8b25ccc4346853e5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The term _return_ is used to refer to a `JALR` instruction with _rd_=`x0` and
+with _rs1_=`x1` or _rs1_=`x5`. A `C.JR` instruction expands to
+`JALR x0, 0(rs1)` and is a _return_ if _rs1_=`x1` or _rs1_=`x5`.'''
+zh = '''
+术语 _返回_ 用于指代 _rd_=`x0` 且 _rs1_=`x1` 或 _rs1_=`x5` 的 `JALR` 指令。`C.JR` 指令展开为 `JALR x0, 0(rs1)`，并且如果 _rs1_=`x1` 或 _rs1_=`x5`，则它是一次 _返回_。'''

@@ -1,0 +1,19 @@
+unit_id = "cd57ce22e011d9f1d12e5403a18fd0a7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The following illustrations show the retirement sequences when a single
+_cm.push_ or _cm.popret_ is used to push or pop 4 registers from the
+stack. They assume a RISC-V to encoder interface that can report a block
+of 1 or more retired instructions and one load or store per cycle. Each
+comprises 4 elements, and shows the instruction information reported for
+each load and store. As detailed in section
+#sec:InstructionTraceInterface[1.2], this takes the form of the address
+of an instruction, the length of the block (1 for a single instruction)
+and the type of the final instruction in the block. In each element,
+’Block’ indicates a block of 1 or more instructions (i.e. could also be
+a single instruction), whereas ’Single’ indicates a single instruction
+(i.e. a block with a length of 1).'''
+zh = '''
+以下图示展示了使用单条 _cm.push_ 或 _cm.popret_ 从栈中压入或弹出 4 个寄存器时的退役序列。它们假定 RISC-V 到编码器接口每周期能够报告一个由 1 条或多条退役指令组成的块以及一次加载或存储。每个序列由 4 个元素组成，并展示为每次加载和存储所报告的指令信息。如 #sec:InstructionTraceInterface[1.2] 节所述，其形式为指令地址、块的长度（单条指令时为 1）以及块中最后一条指令的类型。在每个元素中，'Block' 表示由 1 条或多条指令组成的块（即也可以是单条指令），而 'Single' 表示单条指令（即长度为 1 的块）。'''

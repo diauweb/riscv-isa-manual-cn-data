@@ -1,0 +1,26 @@
+unit_id = "1ccfbca50d6a1939e11b496f0f14fc3f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Virtual address in DPC.
+[%autowidth,align="center",float="center",cols=">,^",options="header"]
+|===
+| Cause  | Virtual Address in DPC
+| `ebreak` | Address of the `ebreak` instruction
+| single step | Address of the instruction that would be executed next if no debugging was going on, i.e., `pc` + 4 for
+32-bit instructions that don't change program flow, the destination PC on taken jumps/branches, etc.
+| trigger module | The address of the next instruction to be executed at the time that debug mode was entered. If the trigger is {csr-mcontrol} and {mcontrol-timing} is 0 or if the trigger is
+{csr-mcontrol6} and `hit1` is 0, this corresponds to the address of the instruction which caused the trigger to fire.
+| halt request | Address of the next instruction to be executed at the time that debug mode was entered.
+|==='''
+zh = '''
+.DPC 中的虚拟地址
+[%autowidth,align="center",float="center",cols=">,^",options="header"]
+|===
+| 原因 | DPC 中的虚拟地址
+| `ebreak` | `ebreak` 指令的地址
+| 单步 | 如果没有调试正在进行，下一条将执行的指令地址，即对于不改变程序流的 32 位指令为 `pc` + 4；对于已执行跳转/分支，为目标 PC 等。
+| 触发模块 | 进入调试模式时下一条要执行指令的地址。如果触发器是 {csr-mcontrol} 且 {mcontrol-timing} 为 0，或者如果触发器是 {csr-mcontrol6} 且 `hit1` 为 0，则这对应于导致触发器触发的指令地址。
+| 停止请求 | 进入调试模式时下一条要执行指令的地址。
+|==='''

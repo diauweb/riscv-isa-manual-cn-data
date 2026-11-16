@@ -1,0 +1,41 @@
+unit_id = "33ab9f40589627cbbf971a1a45c27cce"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- *Ss1p11*  Privileged Architecture version 1.11.
+
+- <<svbare,**Svbare**>> The `satp` mode Bare must be supported.
+
+- <<sv39,**Sv39**>> Page-Based 39-bit Virtual-Memory System.
+
+- <<svade,**Svade**>> Page-fault exceptions are raised when a page is accessed
+  when A bit is clear, or written when D bit is clear.
+
+- <<ssccptr,**Ssccptr**>> Main memory regions with both the cacheability and
+   coherence PMAs must support hardware page-table reads.
+
+- <<sstvecd,**Sstvecd**>> `stvec.MODE` must be capable of holding the value 0
+  (Direct).  When `stvec.MODE=Direct`, `stvec.BASE` must be capable of holding
+  any valid four-byte-aligned address.
+
+- <<sstvala,**Sstvala**>> `stval` must be written with the faulting virtual
+  address for load, store, and instruction page-fault, access-fault, and
+  misaligned exceptions, and for breakpoint exceptions that are defined to write
+  an address to stval, other than those caused by execution of the `EBREAK` or
+  `C.EBREAK` instructions.  For virtual-instruction and illegal-instruction
+  exceptions, `stval` must be written with the faulting instruction.'''
+zh = '''
+- *Ss1p11*  特权架构版本 1.11。
+
+- <<svbare,**Svbare**>> 必须支持 `satp` 的 Bare 模式。
+
+- <<sv39,**Sv39**>> 基于页面的 39 位虚拟内存系统。
+
+- <<svade,**Svade**>> 当访问页面时 A 位为 0，或写入时 D 位为 0，则引发缺页异常。
+
+- <<ssccptr,**Ssccptr**>> 同时具有可缓存性和一致性 PMA 的主内存区域必须支持硬件页表读取。
+
+- <<sstvecd,**Sstvecd**>> `stvec.MODE` 必须能够保存值 0（Direct）。当 `stvec.MODE=Direct` 时，`stvec.BASE` 必须能够保存任何有效的四字节对齐地址。
+
+- <<sstvala,**Sstvala**>> 对于加载、存储和指令缺页、访问故障以及非对齐异常，以及定义为向 stval 写入地址的断点异常（由执行 `EBREAK` 或 `C.EBREAK` 指令引起的除外），`stval` 必须写入出错的虚拟地址。对于虚拟指令和非法指令异常，`stval` 必须写入出错指令。'''

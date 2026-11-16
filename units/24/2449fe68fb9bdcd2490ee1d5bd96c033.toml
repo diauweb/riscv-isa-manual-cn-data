@@ -1,0 +1,70 @@
+unit_id = "2449fe68fb9bdcd2490ee1d5bd96c033"
+kind = "block"
+translatable = true
+status = "machine"
+en = """
+[NOTE]
+====
+An implementation supports only little-endian memory accesses if fields
+MBE, SBE, and UBE are all read-only 0. An implementation supports only
+big-endian memory accesses (aside from instruction fetches) if MBE is
+read-only 1 and SBE and UBE are each read-only 1 when S-mode and U-mode
+are supported.
+
+'''
+
+<<sec:intro-memory>> defines a hart's address space as a circular sequence of
+2^XLEN^ bytes at consecutive addresses. The
+correspondence between addresses and byte locations is fixed and not
+affected by any endianness mode. Rather, the applicable endianness mode
+determines the order of mapping between memory bytes and a multibyte
+quantity (halfword, word, etc.).
+
+---
+
+Standard RISC-V ABIs are expected to be purely little-endian-only or
+big-endian-only, with no accommodation for mixing endianness.
+Nevertheless, endianness control has been defined so as to permit, for
+instance, an OS of one endianness to execute user-mode programs of the
+opposite endianness. Consideration has been given also to the
+possibility of non-standard usages whereby software flips the endianness
+of memory accesses as needed.
+
+***
+
+RISC-V instructions are uniformly little-endian to decouple instruction
+encoding from the current endianness settings, for the benefit of both
+hardware and software. Otherwise, for instance, a RISC-V assembler or
+disassembler would always need to know the intended active endianness,
+despite that the endianness mode might change dynamically during
+execution. In contrast, by giving instructions a fixed endianness, it is
+sometimes possible for carefully written software to be
+endianness-agnostic even in binary form, much like position-independent
+code.
+
+The choice to have instructions be only little-endian does have
+consequences, however, for RISC-V software that encodes or decodes
+machine instructions. In big-endian mode, such software must account for
+the fact that explicit loads and stores have endianness opposite that of
+instructions, for example by swapping byte order after loads and before
+stores.
+===="""
+zh = """
+[NOTE]
+====
+如果 MBE、SBE 和 UBE 字段全部为只读 0，则实现仅支持小端序内存访问。如果 MBE 为只读 1，且当支持 S 模式和 U 模式时 SBE 和 UBE 分别为只读 1，则实现（除指令取指外）仅支持大端序内存访问。
+
+'''
+
+<<sec:intro-memory>> 将硬件线程的地址空间定义为在连续地址上由 2^XLEN^ 个字节组成的循环序列。地址与字节位置之间的对应关系是固定的，不受任何字节序模式影响。相反，适用的字节序模式决定内存字节与多字节量（半字、字等）之间的映射顺序。
+
+---
+
+标准 RISC-V ABI 预期为纯小端序或纯大端序，不提供混合字节序的适配。尽管如此，仍定义了字节序控制，以便例如允许一种字节序的操作系统执行相反字节序的用户模式程序。也已考虑了非标准用法的可能性，即软件根据需要翻转内存访问的字节序。
+
+***
+
+RISC-V 指令统一为小端序，以使指令编码与当前字节序设置解耦，这对硬件和软件都有利。否则，例如 RISC-V 汇编器或反汇编器将始终需要知道预期的活动字节序，尽管字节序模式可能在执行期间动态变化。相比之下，通过为指令赋予固定字节序，经过精心编写的软件有时甚至可以以二进制形式做到字节序无关，就像位置无关代码一样。
+
+然而，将指令设为仅小端序的选择确实会对编码或解码机器指令的 RISC-V 软件产生影响。在大端序模式下，此类软件必须考虑到显式加载和存储的字节序与指令相反这一事实，例如在加载之后和存储之前交换字节顺序。
+===="""

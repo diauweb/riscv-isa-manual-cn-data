@@ -1,0 +1,20 @@
+unit_id = "54a3106ae71e5d4801be83c6f2219a85"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Silent stores (i.e., stores that write the same value that already
+exists at a memory location) behave like any other store from a memory
+model point of view. Likewise, even when an AMO does not change the value
+in memory (e.g., an insn:amomax[] when the current memory value ≥ _rs2_),
+it is still semantically considered a store operation. Microarchitectures
+that attempt to implement silent stores must take care to ensure that the
+memory model is still obeyed, particularly in cases such as RSW <<mm-overlap>>
+which tend to be incompatible with silent stores.
+* Writes may be merged (i.e., two consecutive writes to the same address
+may be merged) or subsumed (i.e., the earlier of two back-to-back writes
+to the same address may be elided) as long as the resulting behavior
+does not otherwise violate the memory model semantics.'''
+zh = '''
+* 静默存储（即写入内存位置中已存在的相同值的存储）从内存模型的角度来看与任何其他存储行为相同。同样，即使 AMO 不改变内存中的值（例如，当当前内存值 ≥ _rs2_ 时的 insn:amomax[]），它在语义上仍被视为存储操作。尝试实现静默存储的微架构必须注意确保仍遵守内存模型，特别是在诸如 RSW <<mm-overlap>> 等往往与静默存储不兼容的情况下。
+* 只要结果行为不违反内存模型语义，写可以被合并（即，对同一地址的两次连续写可以被合并）或被包含（即，对同一地址的两次背靠背写中较早的那次可以被省略）。'''

@@ -1,0 +1,13 @@
+unit_id = "b4e2e5a4805d33017d2a031a88f3b4da"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_m_op]#When the csr::[m] bit is 1, the implementation supports all multiply and
+division instructions defined by the ext:m[] extension.# When the csr::[m] bit
+is 0, it indicates that the implementation might not support those
+instructions. However [#norm:Zmmul_misa_m]#if the ext:zmmul[] extension is supported then
+the multiply instructions it specifies are supported irrespective
+of the value of the csr::[m] bit.#'''
+zh = '''
+[#norm:misa_m_op]#当 csr::[m] 位为 1 时，实现支持 ext:m[] 扩展定义的所有乘法和除法指令。# 当 csr::[m] 位为 0 时，表示实现可能不支持这些指令。然而 [#norm:Zmmul_misa_m]#如果支持 ext:zmmul[] 扩展，则无论 csr::[m] 位的值如何，该扩展规定的乘法指令都得到支持。#'''

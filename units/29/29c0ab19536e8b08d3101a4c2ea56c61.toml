@@ -1,0 +1,20 @@
+unit_id = "29c0ab19536e8b08d3101a4c2ea56c61"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:inst:add:operation]#ADD performs the addition of _rs1_ and _rs2_.#
+[#norm:inst:sub:operation]#SUB performs the subtraction of _rs2_ from _rs1_.#
+[#norm:insts:add_sub:overflow]#Overflows are ignored and the low XLEN bits of results are written to the destination _rd_.#
+[#norm:insts:slt_sltu:operation]#SLT and SLTU perform signed and unsigned compares respectively, writing 1 to _rd_ if
+_rs1_ < _rs2_, 0 otherwise.#
+Note, SLTU _rd_, _x0_, _rs2_ sets _rd_ to 1 if _rs2_ is not equal to zero,
+otherwise sets _rd_ to zero (assembler pseudoinstruction SNEZ _rd, rs_).
+[#norm:insts:and_or_xor:operation]#AND, OR, and XOR perform bitwise logical operations.#'''
+zh = '''
+[#norm:inst:add:operation]#ADD 执行 _rs1_ 和 _rs2_ 的加法。#
+[#norm:inst:sub:operation]#SUB 执行从 _rs1_ 中减去 _rs2_。#
+[#norm:insts:add_sub:overflow]#溢出被忽略，结果的低 XLEN 位写入目的寄存器 _rd_。#
+[#norm:insts:slt_sltu:operation]#SLT 和 SLTU 分别执行有符号和无符号比较，如果 _rs1_ < _rs2_ 则将 1 写入 _rd_，否则写入 0。#
+注意，SLTU _rd_, _x0_, _rs2_ 在 _rs2_ 不等于零时将 _rd_ 置为 1，否则将 _rd_ 置为零（汇编伪指令 SNEZ _rd, rs_）。
+[#norm:insts:and_or_xor:operation]#AND、OR 和 XOR 执行按位逻辑操作。#'''

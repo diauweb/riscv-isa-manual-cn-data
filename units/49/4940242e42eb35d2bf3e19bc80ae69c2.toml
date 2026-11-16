@@ -1,0 +1,28 @@
+unit_id = "4940242e42eb35d2bf3e19bc80ae69c2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-sbcs} | {sbcs-sbaccess}=2, {sbcs-sbreadonaddr}, {sbcs-sbreadondata}, {sbcs-sbautoincrement} | Turn on autoread and autoincrement
+| Write | {dm-sbaddress0} | address | Writing address triggers read and increment
+| Read | {dm-sbdata0} | - | Value read from memory
+| Read | {dm-sbdata0} | - | Next value read from memory
+| ... | ... | ... | ...
+| Write | {dm-sbcs} | 0 | Disable autoread
+| Read | {dm-sbdata0} | - | Get last value read from memory.
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-sbcs} | {sbcs-sbaccess}=2, {sbcs-sbreadonaddr}, {sbcs-sbreadondata}, {sbcs-sbautoincrement} | 开启自动读取和自动递增
+| 写 | {dm-sbaddress0} | 地址 | 写入地址会触发读取和递增
+| 读 | {dm-sbdata0} | - | 从内存读取的值
+| 读 | {dm-sbdata0} | - | 从内存读取的下一个值
+| ... | ... | ... | ...
+| 写 | {dm-sbcs} | 0 | 禁用自动读取
+| 读 | {dm-sbdata0} | - | 获取从内存读取的最后一个值。
+|==='''

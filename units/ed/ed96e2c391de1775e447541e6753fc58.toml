@@ -1,0 +1,12 @@
+unit_id = "ed96e2c391de1775e447541e6753fc58"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The model assumes the instruction memory is fixed; it does not describe
+the behavior of self-modifying code. In particular, the <<fetch, Fetch instruction>> transition does
+not generate memory load operations, and the shared memory is not
+involved in the transition. Instead, the model depends on an external
+oracle that provides an opcode when given a memory location.'''
+zh = '''
+该模型假定指令内存是固定的；它不描述自修改代码的行为。特别地，<<fetch, Fetch instruction>> 转换不生成内存加载操作，共享内存也不参与该转换。相反，该模型依赖一个外部预言机，在给定内存位置时提供操作码。'''

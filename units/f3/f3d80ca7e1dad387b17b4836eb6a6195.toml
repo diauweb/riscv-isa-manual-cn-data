@@ -1,0 +1,16 @@
+unit_id = "f3d80ca7e1dad387b17b4836eb6a6195"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+insn:fence[] instructions are used to order device I/O and memory accesses as
+viewed by other RISC-V harts and external devices or coprocessors. Any
+combination of device input (I), device output (O), memory reads \(R),
+and memory writes (W) may be ordered with respect to any combination of
+the same. Informally, no other RISC-V hart or external device can
+observe any operation in the _successor_ set following a insn:fence[] before
+any operation in the _predecessor_ set preceding the insn:fence[].
+<<memorymodel>> provides a precise description
+of the RISC-V memory consistency model.'''
+zh = '''
+insn:fence[] 指令用于对其他 RISC-V 硬件线程和外部设备或协处理器所观察到的设备 I/O 和内存访问进行排序。设备输入（I）、设备输出（O）、内存读 \(R) 和内存写（W）的任意组合都可以相对于相同组合的任意组合进行排序。非正式地说，其他 RISC-V 硬件线程或外部设备不能观察到 insn:fence[] 之后 _后继_ 集合中的任何操作先于 insn:fence[] 之前 _前驱_ 集合中的任何操作。<<memorymodel>> 提供了 RISC-V 内存一致性模型的精确描述。'''

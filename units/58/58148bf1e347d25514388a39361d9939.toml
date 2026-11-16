@@ -1,0 +1,42 @@
+unit_id = "58148bf1e347d25514388a39361d9939"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#SYNC Field Values]
+.SYNC Field Values
+[cols="6%,15%,10%,~",options="header"]
+|====
+|Value|Name |Required|Description
+|0| External Trace Trigger | No | This message serves as a marker of external trigger. If trace is enabled by an external trigger SYNC=5 should be used.
+|1| Exit from Reset | No | Core was reset without stopping (by watchdog for example). Address should be a reset vector. The HIST and I-CNT may be used to determine the PC of the last instruction retired before reset.
+|2| Periodic Synchronization | Yes | Just periodic instruction trace synchronization (to allow decoding the trace from the middle or when circular RAM buffer was wrapped around overwriting part of earlier trace). The interval for periodic instruction trace synchronization gets configured via <<trTeInstSyncMode,trTeInstSyncMode>> and <<trTeInstSyncMax,trTeInstSyncMax>>.
+|3| Exit from Debug Mode | Yes | Very first synchronizing message after exit from debug mode. If trace is disabled (at exit from debug more) no messages should be generated.
+|4| Sequential Instruction Counter | No | Generated when I-CNT counter is full. See <<I-CNT Details,I-CNT Details>> chapter.
+|5| Trace Enable | No | Generated when trace is re-enabled after a gap caused by trace being disabled (e.g. due to trace filters). This must not be used for exit from debug mode (in which case SYNC=3 must be used).
+|6| Trace Event | No | Serves as a marker when debug watchpoint with action=4 triggered. See *RISC-V Debug Specification* for watchpoint setting details.
+|7| Restart from FIFO overrun | Yes |First synchronization after a gap caused by an internal FIFO overun. Some trace messages before this synchronization message were lost.
+|8| Reserved |-| For future standard use.
+|9| Exit from Power-down | No | When the hart is restarted after powered down. Similar to SYNC=1 (Exit from Reset) described above.
+|10..13| Reserved |-| For future standard use.
+|14..15| Reserved |-| For vendor defined codes.
+|===='''
+zh = '''
+[#SYNC Field Values]
+.SYNC 字段值
+[cols="6%,15%,10%,~",options="header"]
+|====
+|值|名称 |必需|描述
+|0| 外部跟踪触发 | 否 | 此消息用作外部触发的标记。如果跟踪由外部触发启用，应使用 SYNC=5。
+|1| 退出复位 | 否 | 核心未停止即被复位（例如由看门狗复位）。地址应为复位向量。HIST 和 I-CNT 可用于确定复位前最后一条退休指令的 PC。
+|2| 周期性同步 | 是 | 仅周期性指令跟踪同步（允许从中间开始解码跟踪，或当循环 RAM 缓冲区回绕覆盖部分早期跟踪时）。周期性指令跟踪同步的间隔通过 <<trTeInstSyncMode,trTeInstSyncMode>> 和 <<trTeInstSyncMax,trTeInstSyncMax>> 配置。
+|3| 退出调试模式 | 是 | 退出调试模式后的第一条同步消息。如果跟踪被禁用（在退出调试模式时），则不应生成任何消息。
+|4| 顺序指令计数器 | 否 | 当 I-CNT 计数器满时生成。参见 <<I-CNT Details,I-CNT Details>> 章节。
+|5| 跟踪启用 | 否 | 当跟踪因被禁用（例如由于跟踪过滤器）造成间隙后重新启用时生成。不得用于退出调试模式（在这种情况下必须使用 SYNC=3）。
+|6| 跟踪事件 | 否 | 当 action=4 的调试观察点触发时用作标记。有关观察点设置细节，请参见 *RISC-V 调试规范*。
+|7| 从 FIFO 溢出重启 | 是 |由内部 FIFO 溢出造成间隙后的第一次同步。此同步消息之前的一些跟踪消息已丢失。
+|8| 保留 |-| 供未来标准使用。
+|9| 退出掉电 | 否 | 当硬件线程在掉电后重新启动时。类似于上述 SYNC=1（退出复位）。
+|10..13| 保留 |-| 供未来标准使用。
+|14..15| 保留 |-| 用于厂商定义代码。
+|===='''

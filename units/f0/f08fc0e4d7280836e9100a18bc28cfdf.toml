@@ -1,0 +1,14 @@
+unit_id = "f08fc0e4d7280836e9100a18bc28cfdf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For a non-AMO load instruction instance latexmath:[$i$] in state
+Pending_mem_loads(_load_continuation_), and a memory load operation
+latexmath:[$mlo$] in latexmath:[$i.\textit{mem\_loads}$] that has
+unsatisfied slices, the memory load operation can be partially or
+entirely satisfied by forwarding from unpropagated memory store
+operations by store instruction instances that are program-order-before
+latexmath:[$i$] if:'''
+zh = '''
+对于处于 Pending_mem_loads(_load_continuation_) 状态的非 AMO 加载指令实例 latexmath:[$i$]，以及 latexmath:[$i.\textit{mem\_loads}$] 中具有未满足切片的某个内存加载操作 latexmath:[$mlo$]，如果满足以下条件，则该内存加载操作可以通过从程序顺序在 latexmath:[$i$] 之前的存储指令实例的未传播内存存储操作转发来部分或全部满足：'''

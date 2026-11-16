@@ -1,0 +1,19 @@
+unit_id = "bf39bb086206de99a542728034a92358"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The output `entropy` (`seed[15:0]` in ES16 state) is not necessarily
+fully conditioned randomness due to hardware and energy limitations
+of smaller, low-powered implementations. However, minimum requirements are
+defined. The main requirement is that 2-to-1 cryptographic post-processing
+in 256-bit input blocks will yield 128-bit "`full entropy`" output blocks.
+Entropy source users may make this conservative assumption but are not
+prohibited from using more than twice the number of seed bits relative
+to the desired resulting entropy.'''
+zh = '''
+由于较小、低功耗实现的硬件和能量限制，输出 `entropy`（ES16 状态下的 `seed[15:0]`）不一定
+是完全调节后的随机性。但是，定义了最低要求。
+主要要求是：在 256 位输入块上进行 2 比 1 密码学后处理，
+将产生 128 位“完全熵”输出块。
+熵源用户可以做出这一保守假设，但并不禁止使用超过所需结果熵两倍的种子位数。'''

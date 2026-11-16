@@ -1,0 +1,13 @@
+unit_id = "f50ff70ef073dd1cc03310fcb63b851d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vector_ls_eew_emul]#Vector loads and stores have an EEW encoded directly in the
+instruction.  The corresponding EMUL is calculated as EMUL =
+(EEW/SEW)*LMUL.# [#norm:vector_ls_emul_rsv]#If the EMUL would be out of range (EMUL>8 or
+EMUL<1/8), the instruction encoding is reserved.#  [#norm:vector_ls_emul_offgroup_rsv]#The vector register
+groups must have legal register specifiers for the selected EMUL,
+otherwise the instruction encoding is reserved.#'''
+zh = '''
+[#norm:vector_ls_eew_emul]#向量加载和存储在指令中直接编码 EEW。相应的 EMUL 按 EMUL = (EEW/SEW)*LMUL 计算。# [#norm:vector_ls_emul_rsv]#如果 EMUL 会超出范围（EMUL>8 或 EMUL<1/8），则该指令编码是保留的。#  [#norm:vector_ls_emul_offgroup_rsv]#向量寄存器组必须具有针对所选 EMUL 的合法寄存器说明符，否则该指令编码是保留的。#'''

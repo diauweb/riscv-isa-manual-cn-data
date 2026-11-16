@@ -1,0 +1,11 @@
+unit_id = "a263b864b0cb1d94cdba5f6876e98022"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(The reason for not reporting the EPC for all exceptions when *thaddr*
+is 0 is that it may be at either the address of the next instruction or
+current instruction depending on the exception cause, which can be
+inferred by the decoder without adding complexity to the encoder.)'''
+zh = '''
+（当 *thaddr* 为 0 时不对所有异常报告 EPC 的原因是：根据异常原因，EPC 可能位于下一条指令或当前指令的地址，解码器可以推断出来，而无需增加编码器的复杂度。）'''

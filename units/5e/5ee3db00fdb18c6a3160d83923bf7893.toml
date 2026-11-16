@@ -1,0 +1,15 @@
+unit_id = "5ee3db00fdb18c6a3160d83923bf7893"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the Zfh or Zvfh extension is implemented, FLI.H performs the
+analogous operation, but loads a half-precision floating-point value
+into register _rd_. Note that entry 1 (corresponding to the minimum
+positive normal value) has a numerically different value for
+half-precision. Furthermore, since latexmath:[$2^{16}$] is not
+representable in half-precision floating-point, entry 29 in the table
+instead loads positive infinity—i.e., it is redundant with entry 30.
+FLI.H is encoded like FLI.S, but with _fmt_=H.'''
+zh = '''
+如果实现了 Zfh 或 Zvfh 扩展，FLI.H 执行类似的操作，但将半精度浮点值加载到寄存器 _rd_ 中。注意，条目 1（对应于最小正规格化值）在半精度下的数值不同。此外，由于 latexmath:[$2^{16}$] 在半精度浮点中无法表示，表中的条目 29 改为加载正无穷大——即它与条目 30 冗余。FLI.H 的编码与 FLI.S 类似，但 _fmt_=H。'''

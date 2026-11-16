@@ -1,0 +1,14 @@
+unit_id = "fe23bd65793043cc48e490d22bf3df12"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mnret_mode]#MNRET is an M-mode-only instruction# that uses the values in `mnepc` and
+`mnstatus` to return to the program counter, privilege mode, and
+virtualization mode of the interrupted context. [#norm:mnret_restore]#This instruction also
+sets `mnstatus`.NMIE.#  [#norm:mnret_mprv]#If MNRET changes the privilege mode to a mode less privileged than M, it also sets `mstatus`.MPRV to 0.#
+[#norm:mnret_zicfilp]#If the Zicfilp extension is implemented, then if the new privileged mode
+is __y__, MNRET sets `ELP` to the logical AND of __y__LPE (see <<FCFIACT>>) and `mnstatus`.MNPELP.#'''
+zh = '''
+[#norm:mnret_mode]#MNRET 是一条仅限 M 模式的指令#，它使用 `mnepc` 和 `mnstatus` 中的值返回到被中断上下文的程序计数器、特权模式和虚拟化模式。[#norm:mnret_restore]#该指令还会设置 `mnstatus`.NMIE。#  [#norm:mnret_mprv]#如果 MNRET 将特权模式更改为低于 M 的模式，它还会将 `mstatus`.MPRV 设置为 0。#
+[#norm:mnret_zicfilp]#如果实现了 Zicfilp 扩展，那么若新的特权模式为 __y__，MNRET 将 `ELP` 设置为 __y__LPE（见 <<FCFIACT>>）与 `mnstatus`.MNPELP 的逻辑与。#'''

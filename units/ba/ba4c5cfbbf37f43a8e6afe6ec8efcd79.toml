@@ -1,0 +1,14 @@
+unit_id = "ba4c5cfbbf37f43a8e6afe6ec8efcd79"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Another test that highlights the behavior of store buffers is shown in
+<<litmus_ppoca>>. In this example, (d) is
+ordered before (e) because of the control dependency, and (f) is ordered
+before (g) because of the address dependency. However, (e) is _not_
+necessarily ordered before (f), even though (f) returns the value
+written by (e). This could correspond to the following sequence of
+events:'''
+zh = '''
+另一个突出存储缓冲区行为的测试如 <<litmus_ppoca>> 所示。在此示例中，(d) 由于控制依赖而排在 (e) 之前，且 (f) 由于地址依赖而排在 (g) 之前。然而，(e) _不_ 一定排在 (f) 之前，即使 (f) 返回由 (e) 写入的值。这可能对应于以下事件序列：'''

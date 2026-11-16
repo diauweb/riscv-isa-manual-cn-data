@@ -1,0 +1,27 @@
+unit_id = "73c806db42b6fc5b364529c55573aed2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The baseline privileged architecture is designed to simplify the use of
+classic virtualization techniques, where a guest OS is run at
+user-level, as the few privileged instructions can be easily detected
+and trapped. The hypervisor extension improves virtualization
+performance by reducing the frequency of these traps.
+
+The hypervisor extension has been designed to be efficiently emulable on
+platforms that do not implement the extension, by running the hypervisor
+in S-mode and trapping into M-mode for hypervisor CSR accesses and to
+maintain shadow page tables. The majority of CSR accesses for type-2
+hypervisors are valid S-mode accesses so need not be trapped.
+Hypervisors can support nested virtualization analogously.
+===='''
+zh = '''
+[NOTE]
+====
+基线特权架构旨在简化经典虚拟化技术的使用，其中客户 OS 在用户级运行，因为少数特权指令可以很容易地被检测和陷入。虚拟机扩展通过降低这些陷阱的频率来提高虚拟化性能。
+
+虚拟机扩展的设计使其能够在未实现该扩展的平台上高效地仿真，方法是在 S-mode 中运行虚拟机监控器，并陷入 M-mode 以进行虚拟机 CSR 访问和维护影子页表。类型 2 虚拟机监控器的大多数 CSR 访问是有效的 S-mode 访问，因此无需陷入。虚拟机监控器可以类似地支持嵌套虚拟化。
+===='''

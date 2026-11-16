@@ -1,0 +1,51 @@
+unit_id = "f9ed07b9b611cde64cbdcf619c613379"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Under ext:ziccid[], stores _eventually_ become visible to instruction fetches,
+even without executing a FENCE.I instruction.
+As a consequence of this requirement, the consumer thread in the following
+litmus test is guaranteed to terminate:
+
+```
+Producer:                                       Consumer:
+
+la t0, patch_me                               patch_me:
+li t1, 0x4585                                   c.li a1, 0
+sh t1, (t0)   # patch_me := c.li a1, 1          beqz a1, patch_me
+```
+
+As is the case without the ext:ziccid[] extension, software can make a store
+from the current hart visible to the hart's instruction fetches immediately by
+executing a FENCE.I instruction.
+Software can make a store from the current hart visible to another hart's
+instruction fetches by executing a FENCE W,O instruction, then sending an
+interprocessor interrupt to the remote hart, requesting that it execute
+a FENCE.I instruction.
+Alternatively, the current hart can execute a FENCE W,W instruction, then
+write a flag in memory; upon observing the flag write, the remote hart
+executes a FENCE.I instruction.
+In neither case is a data FENCE required on the remote hart.
+===='''
+zh = '''
+[NOTE]
+====
+在 ext:ziccid[] 下，即使不执行 FENCE.I 指令，存储操作也__最终__会对指令取指可见。
+作为该要求的结果，下面 litmus 测试中的消费者线程保证会终止：
+
+```
+Producer:                                       Consumer:
+
+la t0, patch_me                               patch_me:
+li t1, 0x4585                                   c.li a1, 0
+sh t1, (t0)   # patch_me := c.li a1, 1          beqz a1, patch_me
+```
+
+与没有 ext:ziccid[] 扩展时的情况一样，软件可以通过执行 FENCE.I 指令使当前硬件线程的存储立即对其自身的指令取指可见。
+软件可以通过执行 FENCE W,O 指令，然后向远程硬件线程发送处理器间中断、请求其执行 FENCE.I 指令，来使当前硬件线程的存储对另一硬件线程的指令取指可见。
+或者，当前硬件线程可以执行 FENCE W,W 指令，然后在内存中写入一个标志；在观察到该标志写入后，远程硬件线程执行 FENCE.I 指令。
+在这两种情况下，远程硬件线程都不需要数据 FENCE。
+===='''

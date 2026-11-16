@@ -1,0 +1,10 @@
+unit_id = "a777f1e5b08c578de0d1a0cb055271fd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An indirect branch using insn:jalr[], insn:c.jalr[], or insn:c.jr[] with `rs1` as `x7` is
+termed a _software-guarded branch_. Such branches do not need to land on a
+insn:lpad[] instruction and thus do not set csr::[elp] to `LP_EXPECTED`.'''
+zh = '''
+使用 insn:jalr[]、insn:c.jalr[] 或 insn:c.jr[] 且 `rs1` 为 `x7` 的间接分支被称为__软件保护分支__。此类分支不需要落在 insn:lpad[] 指令上，因此不会将 csr::[elp] 设置为 `LP_EXPECTED`。'''

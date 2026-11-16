@@ -1,0 +1,11 @@
+unit_id = "6e02e490be6796d070ca301c9d85d7a5"
+kind = "code"
+translatable = false
+en = '''
+[source,asm.]
+.Sample code for reading the 64-bit cycle counter when XLEN=32.
+    again:
+        rdcycleh     x3
+        rdcycle      x2
+        rdcycleh     x4
+        bne          x3, x4, again'''

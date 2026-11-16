@@ -1,0 +1,15 @@
+unit_id = "8e1fae318dff496ac68bb44e39b11654"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+As generating multiple packets per cycle would significatly complicate
+the encoder, and as situations such as this will only occur
+infrequently, some elastic buffering in the encoder is the preferred
+approach. This will allow subsequent blocks to be queued whilst the
+encoder generates two successive packets from a block. The encoder can
+drain the elastic buffer any time there is a cycle when the hart doesn't
+report anything, or if there is a block with *itype* = 0 (which is
+uninteresting to the encoder).'''
+zh = '''
+由于每周期生成多个包会显著增加编码器的复杂度，而且诸如上述情况只会偶尔发生，因此在编码器中设置一定的弹性缓冲是首选方案。这样，当编码器从某个块连续生成两个包时，后续的块可以排队等待。只要存在硬件线程未报告任何内容的周期，或者存在 *itype* = 0 的块（编码器对其不感兴趣），编码器就可以排空弹性缓冲区。'''

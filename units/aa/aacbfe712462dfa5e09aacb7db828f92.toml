@@ -1,0 +1,15 @@
+unit_id = "aacbfe712462dfa5e09aacb7db828f92"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vnsrl_vnsra_op]#The narrowing right shifts extract a smaller field from a wider
+operand and have both zero-extending (insn:srl[]) and sign-extending
+(insn:sra[]) forms.  The shift amount can come from a vector register
+group, or a scalar `x` register, or a zero-extended 5-bit immediate.#
+[#norm:vnsrl_vnsra_shamt]#The low lg2(2*SEW) bits of the shift-amount value are
+used (e.g., the low 6 bits for a SEW=64-bit to SEW=32-bit narrowing
+operation).#'''
+zh = '''
+[#norm:vnsrl_vnsra_op]#收窄右移从较宽的操作数中提取较小的字段，并具有零扩展（insn:srl[]）和符号扩展（insn:sra[]）两种形式。移位量可以来自向量寄存器组、标量 `x` 寄存器或零扩展的 5 位立即数。#
+[#norm:vnsrl_vnsra_shamt]#使用移位量值的低 lg2(2*SEW) 位（例如，对于 SEW=64 位到 SEW=32 位的收窄操作，使用低 6 位）。#'''

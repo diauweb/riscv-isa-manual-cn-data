@@ -1,0 +1,23 @@
+unit_id = "c0ce1f19adb1a7d842e14cd205a09f9c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_mie_sie_op]#When a hart is executing in privilege mode _x_, interrupts are globally
+enabled when __x__IE=1 and globally disabled when __x__IE=0.#
+[#norm:mstatus_xie_intr_en_dis]#Interrupts for lower-privilege modes, __w__<__x__,
+are always globally disabled regardless of the setting of any global __w__IE bit for the
+lower-privilege mode.  Interrupts for higher-privilege modes, __y__>__x__,
+are always globally enabled regardless of the
+setting of the global __y__IE bit for the higher-privilege mode.#
+Higher-privilege-level code can use separate per-interrupt enable bits
+to disable selected higher-privilege-mode interrupts before ceding
+control to a lower-privilege mode.
+[#norm:mstatus_sie_spie_rdonly0]#csr::[mie] and csr::[mpie] must be writable.
+If supervisor mode is not implemented, then csr::[sie] and csr::[spie] are read-only 0;
+otherwise, they must be writable.#'''
+zh = '''
+[#norm:mstatus_mie_sie_op]#当硬件线程在特权模式 _x_ 下执行时，中断在 __x__IE=1 时全局使能，在 __x__IE=0 时全局禁用。#
+[#norm:mstatus_xie_intr_en_dis]#对于较低特权模式 __w__<__x__ 的中断，无论较低特权模式的任何全局 __w__IE 位如何设置，始终全局禁用。对于较高特权模式 __y__>__x__ 的中断，无论较高特权模式的全局 __y__IE 位如何设置，始终全局使能。#
+较高特权级代码可以使用单独的每中断使能位，在将控制权让给较低特权模式之前禁用选定的较高特权模式中断。
+[#norm:mstatus_sie_spie_rdonly0]#csr::[mie] 和 csr::[mpie] 必须可写。如果未实现监管模式，则 csr::[sie] 和 csr::[spie] 为只读 0；否则，它们必须可写。#'''

@@ -1,0 +1,14 @@
+unit_id = "4f0ef5eea5020bf8ca1274639d6393eb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The atomicity axiom also technically supports cases in which the LR and
+SC touch different addresses and/or use different access sizes; however,
+use cases for such behaviors are expected to be rare in practice.
+Likewise, scenarios in which stores from the same hart between an LR/SC
+pair actually overlap the memory location(s) referenced by the LR or SC
+are expected to be rare compared to scenarios where the intervening
+store may simply fall onto the same cache line.'''
+zh = '''
+原子性公理在技术上也支持 LR 和 SC 触及不同地址和/或使用不同访问大小的情况；然而，此类行为的用例在实践中预计很少见。同样，与介入存储可能仅落在同一缓存行上的情形相比，同一硬件线程在 LR/SC 对之间的存储实际与 LR 或 SC 所引用的内存位置重叠的情形预计很少见。'''

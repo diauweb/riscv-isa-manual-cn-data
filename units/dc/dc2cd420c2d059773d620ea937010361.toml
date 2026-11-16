@@ -1,0 +1,21 @@
+unit_id = "dc2cd420c2d059773d620ea937010361"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This is a behavior that debug users must be aware of. If they have a
+breakpoint set between an `lr` and `sc` pair, or are stepping through
+such code, the `sc` may never succeed. Fortunately in general use there
+will be very few instructions in such a sequence, and anybody debugging
+it will quickly notice that the reservation is not occurring. The
+solution in that case is to set a breakpoint on the first instruction
+after the `sc` and run to it. A higher level debugger may choose to
+automate this.
+===='''
+zh = '''
+[NOTE]
+====
+这是调试用户必须注意的行为。如果他们在 `lr` 和 `sc` 对之间设置了断点，或正在单步执行此类代码，则 `sc` 可能永远不会成功。幸运的是，在一般使用中，此类序列中的指令非常少，调试它的人会很快注意到保留没有发生。在这种情况下，解决方案是在 `sc` 之后的第一个指令上设置断点并运行到那里。更高级的调试器可以选择自动化此操作。
+===='''

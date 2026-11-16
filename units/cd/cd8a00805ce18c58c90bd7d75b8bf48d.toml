@@ -1,0 +1,14 @@
+unit_id = "cd8a00805ce18c58c90bd7d75b8bf48d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Caches introduce the possibility that multiple copies of a given cache block may
+be present in a system at the same time. An _implementation-specific_ mechanism
+keeps these copies coherent with respect to the load and store operations from
+the agents in the set of coherent agents. Additionally, if a coherent agent in
+the set executes a CBO instruction that specifies the cache block, the resulting
+operation shall apply to any and all of the copies in the caches that can be
+accessed by the load and store operations from the coherent agents.'''
+zh = '''
+缓存带来了这样一种可能性：系统中同一时刻可能存在某个缓存块的多个副本。一种__实现相关的__机制保持这些副本相对于一致性代理集合中代理的加载和存储操作的一致性。此外，如果集合中的某个一致性代理执行了指定该缓存块的 CBO 指令，则产生的操作应作用于一致性代理的加载和存储操作所能访问的缓存中的任何及所有副本。'''

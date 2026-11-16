@@ -1,0 +1,14 @@
+unit_id = "219a6149d60d63ae9825cff00ea27e46"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PMP entries are described by an 8-bit configuration register and one
+MXLEN-bit address register. Some PMP settings additionally use the
+address register associated with the preceding PMP entry. Up to 64 PMP
+entries are supported. Implementations may implement zero, 16, or 64 PMP
+entries; the lowest-numbered PMP entries must be implemented first. All
+PMP CSR fields are *WARL* and may be read-only zero. PMP CSRs are only
+accessible to M-mode.'''
+zh = '''
+PMP 条目由一个 8 位配置寄存器和一个 MXLEN 位地址寄存器描述。某些 PMP 设置还使用与前一个 PMP 条目关联的地址寄存器。最多支持 64 个 PMP 条目。实现可以实现零个、16 个或 64 个 PMP 条目；编号最低的 PMP 条目必须首先实现。所有 PMP CSR 字段都是 *WARL*，并且可以是只读零。PMP CSR 仅 M 模式可访问。'''

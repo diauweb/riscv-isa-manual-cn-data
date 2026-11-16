@@ -1,0 +1,17 @@
+unit_id = "bc9fd4a85d3425820541100c02ec9042"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_fs_vs_xs_off_op]#When an extension's status is set to Off, any instruction that attempts
+to read or write the corresponding state will cause an
+illegal-instruction exception.#
+[#norm:mstatus_fs_vs_xs_initial_op]#When the status is Initial, the corresponding
+state should have an initial constant value.#
+[#norm:mstatus_fs_vs_xs_clean_op]#When the status is Clean,
+the corresponding state is potentially different from the initial value,
+but matches the last value stored on a context swap.#
+[#norm:mstatus_fs_vs_xs_dirty_op]#When the status is Dirty,
+the corresponding state has potentially been modified since the last context save.#'''
+zh = '''
+[#norm:mstatus_fs_vs_xs_off_op]#当某扩展的状态被设为 Off 时，任何试图读取或写入相应状态的指令都将引发非法指令异常。# [#norm:mstatus_fs_vs_xs_initial_op]#当状态为 Initial 时，相应状态应具有初始常量值。# [#norm:mstatus_fs_vs_xs_clean_op]#当状态为 Clean 时，相应状态可能与初始值不同，但与上一次上下文交换时存储的值一致。# [#norm:mstatus_fs_vs_xs_dirty_op]#当状态为 Dirty 时，相应状态自上次上下文保存以来可能已被修改。#'''

@@ -1,0 +1,8 @@
+unit_id = "10a1a4a8385c9feb320f7480e7cd63bc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+WARNING: Leaving these pins not connected (NC) as can be seen on some schematics, is not a very good option when trace is used. There is simply not enough GND around TRC_CLK and TRC_DATA[0] signals. Some leave it as NC as they perhaps worry that debug probes may provide voltage there and it will create problems. Debug probes which support TgtPwr function provide GND detection and/or current protection and will disable TgtPwr voltage once detecting that target has these pins shorted to GND.'''
+zh = '''
+WARNING: 如某些原理图所示，将这些引脚保持不连接（NC）在使用跟踪时并非很好的选择。TRC_CLK 和 TRC_DATA[0] 信号周围没有足够的 GND。有些人将其保持为 NC，可能是因为担心调试探针会在那里提供电压从而造成问题。支持 TgtPwr 功能的调试探针提供 GND 检测和/或电流保护，一旦检测到目标将这些引脚短接到 GND，就会禁用 TgtPwr 电压。'''

@@ -1,0 +1,10 @@
+unit_id = "9461ad410449ab36fbeb58db52efce03"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-swsp_op]#C.SWSP stores a 32-bit value in register _rs2_ to memory. It computes an
+effective address by adding the _zero_-extended offset, scaled by 4, to
+the stack pointer, `x2`. It expands to `sw rs2, offset(x2)`.#'''
+zh = '''
+[#norm:c-swsp_op]#C.SWSP 将寄存器 _rs2_ 中的一个 32 位值存储到内存。它通过将 __零__扩展的偏移量（按 4 缩放）加到栈指针 `x2` 上来计算有效地址。它扩展为 `sw rs2, offset(x2)`。#'''

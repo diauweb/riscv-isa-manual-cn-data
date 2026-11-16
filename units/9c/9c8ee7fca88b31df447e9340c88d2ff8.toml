@@ -1,0 +1,15 @@
+unit_id = "9c8ee7fca88b31df447e9340c88d2ff8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For I/O, the load value axiom and atomicity axiom in general do not
+apply, as both reads and writes might have device-specific side effects
+and may return values other than the value "written" by the most
+recent store to the same address. Nevertheless, the following preserved
+program order rules still generally apply for accesses to I/O memory:
+memory access _a_ precedes memory access _b_ in
+global memory order if _a_ precedes _b_ in
+program order and one or more of the following holds:'''
+zh = '''
+对于 I/O，加载值公理和原子性公理通常不适用，因为读和写都可能具有设备特定的副作用，且可能返回不同于对同一地址最近存储“写入”的值。尽管如此，以下保留程序顺序规则通常仍适用于对 I/O 内存的访问：如果 _a_ 在程序顺序中先于 _b_，并且以下一项或多项成立，则内存访问 _a_ 在全局内存顺序中先于内存访问 _b_：'''

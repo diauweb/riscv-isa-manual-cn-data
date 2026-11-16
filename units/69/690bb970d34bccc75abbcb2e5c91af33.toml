@@ -1,0 +1,14 @@
+unit_id = "690bb970d34bccc75abbcb2e5c91af33"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: When multiplying two N-bit signed numbers, the largest magnitude
+is obtained for -2^N-1^ * -2^N-1^ producing a result +2^2N-2^, which
+has a single (zero) sign bit when held in 2N bits.  All other products
+have two sign bits in 2N bits.  To retain greater precision in N
+result bits, the product is shifted right by one bit less than N,
+saturating the largest magnitude result but increasing result
+precision by one bit for all other products.'''
+zh = '''
+NOTE: 当两个 N 位有符号数相乘时，最大幅度由 -2^N-1^ * -2^N-1^ 获得，产生结果 +2^2N-2^，当保存在 2N 位中时具有单个（零）符号位。所有其他乘积在 2N 位中具有两个符号位。为了在 N 个结果位中保持更高的精度，乘积右移比 N 少一位，使最大幅度结果饱和，但将所有其他结果的精度提高一位。'''

@@ -1,0 +1,12 @@
+unit_id = "3ccf6e2eaaa0bd520c83848171b79c7e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Software should not set the _rl_ bit on an LR instruction unless the
+_aq_ bit is also set, nor should software set the _aq_ bit on an SC
+instruction unless the _rl_ bit is also set. LR._rl_ and SC._aq_
+instructions are not guaranteed to provide any stronger ordering than
+those with both bits clear, but may result in lower performance.'''
+zh = '''
+除非同时设置了 _aq_ 位，否则软件不应在 LR 指令上设置 _rl_ 位；除非同时设置了 _rl_ 位，否则软件不应在 SC 指令上设置 _aq_ 位。LR._rl_ 和 SC._aq_ 指令不保证提供比两个位都清零的指令更强的顺序，但可能导致性能降低。'''

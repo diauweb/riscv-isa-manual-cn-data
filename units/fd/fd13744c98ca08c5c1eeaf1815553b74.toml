@@ -1,0 +1,20 @@
+unit_id = "fd13744c98ca08c5c1eeaf1815553b74"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An entropy source, by itself, is not a cryptographically secure Random
+Bit Generator (RBG), but can be used to build standard (and non-standard)
+RBGs of many types with the help of symmetric cryptography. Expected usage
+is to condition (typically with SHA-2/3) the output from an entropy source and
+use it to seed a cryptographically secure Deterministic Random Bit Generator
+(DRBG) such as AES-based `CTR_DRBG` cite:[BaKe15].
+The combination of an Entropy Source, Conditioning, and a DRBG can be used
+to create random bits securely cite:[BaKeMc:25].
+See <<crypto_scalar_appx_es>> for a non-normative description of a
+certification and self-certification procedures, design rationale, and more
+detailed suggestions on how the entropy source output can be used.'''
+zh = '''
+熵源本身并非密码安全的随机位生成器（RBG），但可在对称密码学的帮助下用于构建多种类型（标准和非标准）的 RBG。预期用法是对熵源的输出进行条件化（通常使用 SHA-2/3），并用其为密码安全的确定性随机位生成器（DRBG）（如基于 AES 的 `CTR_DRBG` cite:[BaKe15]）提供种子。
+熵源、条件化和 DRBG 的组合可用于安全地创建随机位 cite:[BaKeMc:25]。
+关于认证与自认证过程的非规范性描述、设计理由以及有关如何使用熵源输出的更详细建议，见 <<crypto_scalar_appx_es>>。'''

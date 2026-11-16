@@ -1,0 +1,13 @@
+unit_id = "0a8d81b952953533ab406388b97276fa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The MXR (Make eXecutable Readable) bit modifies the privilege with which
+loads access virtual memory. When MXR=0, only loads from pages marked
+readable (R=1 in <<sv32pte>>) will succeed. When
+MXR=1, loads from pages marked either readable or executable (R=1 or
+X=1) will succeed. MXR has no effect when page-based virtual memory is
+not in effect. MXR is read-only 0 if S-mode is not supported.'''
+zh = '''
+MXR（Make eXecutable Readable，使可执行可读）位修改加载访问虚拟内存时所具有的特权。当 MXR=0 时，只有从标记为可读的页（<<sv32pte>> 中 R=1）进行的加载才会成功。当 MXR=1 时，从标记为可读或可执行的页（R=1 或 X=1）进行的加载都会成功。当基于页的虚拟内存未生效时，MXR 无效果。如果不支持 S 模式，则 MXR 为只读 0。'''

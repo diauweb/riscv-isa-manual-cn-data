@@ -1,0 +1,24 @@
+unit_id = "4bbd2978fc5a7a233bdf46a3692b7440"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+* Overflown *I-CNT=9* (or *RDATA[0]=9*) field describes <0x100..0x112> range (18 bytes long).
+* The *I-CNT=5* field describes <0x112..0x11C> range (12 bytes long).
+* In both cases total I-CNT is 9+5=14, what describes the entire <0x100..0x11C> range.
+** Debug Mode is entered before C.EBREAK instruction (as it never retires), so C.EBREAK is NOT included in I-CNT.
+* Using *ResourceFull* generates smaller, more compressed trace.
+** In real life examples it will allow generation of repeated history patterns and even better trace compression.
+* Using *SYNC=Sequential Instruction Counter* generates bigger trace (as potentially long F-ADDR field is reported).
+===='''
+zh = '''
+====
+* 溢出的 *I-CNT=9*（或 *RDATA[0]=9*）字段描述 <0x100..0x112> 范围（长 18 字节）。
+* *I-CNT=5* 字段描述 <0x112..0x11C> 范围（长 12 字节）。
+* 在两种情况下，总 I-CNT 为 9+5=14，描述整个 <0x100..0x11C> 范围。
+** 调试模式在 C.EBREAK 指令之前进入（因为它从不退休），因此 C.EBREAK 不包含在 I-CNT 中。
+* 使用 *ResourceFull* 生成更小、更压缩的跟踪。
+** 在现实示例中，它将允许生成重复历史模式，甚至更好的跟踪压缩。
+* 使用 *SYNC=Sequential Instruction Counter* 生成更大的跟踪（因为可能报告较长的 F-ADDR 字段）。
+===='''

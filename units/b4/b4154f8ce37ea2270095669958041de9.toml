@@ -1,0 +1,8 @@
+unit_id = "b4154f8ce37ea2270095669958041de9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vector_ls_strided_eew]#Vector memory unit-stride and constant-stride operations directly encode EEW of the data to be transferred statically in the instruction to reduce the number of `vtype` changes when accessing memory in a mixed-width routine.# [#norm:vector_ls_indexed_eew]#Indexed operations use the explicit EEW encoding in the instruction to set the size of the indices used, and use SEW/LMUL to specify the data width.#'''
+zh = '''
+[#norm:vector_ls_strided_eew]#向量内存单位步长和常量步长操作直接在指令中静态编码要传输数据的 EEW，以减少在混合宽度例程中访问内存时所需的 `vtype` 变更次数。# [#norm:vector_ls_indexed_eew]#索引操作使用指令中的显式 EEW 编码来设置所用索引的大小，并使用 SEW/LMUL 来指定数据宽度。#'''

@@ -1,0 +1,13 @@
+unit_id = "d5f09038ced950b0084a8a9f682111de"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zicntr_rdinstret_op]#The RDINSTRET pseudoinstruction reads the low XLEN bits of the
+`instret` CSR, which counts the number of instructions retired by this
+hart from some arbitrary start point in the past. RDINSTRETH is only
+present when XLEN=32 and reads bits 63-32 of the same instruction
+counter.# The underlying 64-bit counter should never overflow in
+practice.'''
+zh = '''
+[#norm:zicntr_rdinstret_op]#RDINSTRET 伪指令读取 `instret` CSR 的低 XLEN 位，该 CSR 统计该硬件线程自过去某个任意起始点以来退休的指令数。RDINSTRETH 仅在 XLEN=32 时存在，读取同一指令计数器的第 63-32 位。# 底层 64 位计数器在实践中不应溢出。'''

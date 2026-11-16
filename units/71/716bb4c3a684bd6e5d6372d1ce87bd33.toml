@@ -1,0 +1,18 @@
+unit_id = "716bb4c3a684bd6e5d6372d1ce87bd33"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In RV64, insn:mul[] can be used to obtain the upper 32 bits of the 64-bit
+product, but signed arguments must be proper 32-bit signed values,
+whereas unsigned arguments must have their upper 32 bits clear. If the
+arguments are not known to be sign- or zero-extended, an alternative is
+to shift both arguments left by 32 bits, then use insn:mulh[], mulhu[] or mulhsu[].
+===='''
+zh = '''
+[NOTE]
+====
+在 RV64 中，insn:mul[] 可用于获取 64 位乘积的高 32 位，但有符号参数必须是正确的 32 位有符号值，而无符号参数的高 32 位必须为零。如果无法确定参数是符号扩展还是零扩展，另一种方法是将两个参数都左移 32 位，然后使用 insn:mulh[]、mulhu[] 或 mulhsu[]。
+===='''

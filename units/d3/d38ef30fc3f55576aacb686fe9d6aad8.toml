@@ -1,0 +1,34 @@
+unit_id = "d38ef30fc3f55576aacb686fe9d6aad8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of mtvec MODE field.
+[%autowidth,float="center",align="center",cols=">,^,<",options="header"]
+|===
+|Value |Name |Description
+|0 +
+1 +
+{ge}2
+|Direct +
+Vectored +
+---
+|All traps set `pc` to BASE. +
+Asynchronous interrupts set `pc` to BASE+4{times}cause. +
+_Reserved_
+|==='''
+zh = '''
+.mtvec MODE 字段的编码。
+[%autowidth,float="center",align="center",cols=">,^,<",options="header"]
+|===
+|值 |名称 |描述
+|0 +
+1 +
+{ge}2
+|Direct +
+Vectored +
+---
+|所有陷阱都将 `pc` 设为 BASE。 +
+异步中断将 `pc` 设为 BASE+4{times}cause。 +
+_保留_
+|==='''

@@ -1,0 +1,15 @@
+unit_id = "e0bd2a614a15934bc5e5b04f17b2cc05"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Now, an instruction instance _i_ is said to have _fully
+determined data_ if for every register read _r_ from
+_reg_reads_, the register writes that _r_ reads from are
+fully determined. An instruction instance _i_ is said to
+have a _fully determined memory footprint_ if for every register read
+_r_ from _reg_reads_ that feeds into _i_’s
+memory operation address, the register writes that _r_ reads
+from are fully determined.'''
+zh = '''
+现在，如果对于 _reg_reads_ 中的每次寄存器读 _r_，_r_ 读取自的寄存器写都是完全确定的，则称指令实例 _i_ 具有 _完全确定的数据_。如果对于 _reg_reads_ 中馈送到 _i_ 内存操作地址的每次寄存器读 _r_，_r_ 读取自的寄存器写都是完全确定的，则称指令实例 _i_ 具有 _完全确定的内存足迹_。'''

@@ -1,0 +1,9 @@
+unit_id = "0b24e93fb382671e6658613b9ff51837"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To ensure resumable trap handling is possible for the load instructions, the base register must have its original value if a trap is taken. The other register in the pair can have been updated.
+This affects x2 for the stack pointer relative instruction and rs1 otherwise.'''
+zh = '''
+为确保加载指令能够进行可恢复的陷阱处理，若发生陷阱，基址寄存器必须保持其原始值。寄存器对中的另一个寄存器可能已被更新。这影响相对于栈指针指令的 x2，其他情况下影响 rs1。'''

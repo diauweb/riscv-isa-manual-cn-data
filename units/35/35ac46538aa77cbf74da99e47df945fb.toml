@@ -1,0 +1,11 @@
+unit_id = "35ac46538aa77cbf74da99e47df945fb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Decoder assigned to a specific hart should process only those messages tagged with a <<field_SRC,SRC>> value corresponding to that hart. To facilitate this,
+all encoders operating within the same trace stream must configure the `trTeSrcBits` field identically to ensure a consistent source identifier bit width,
+and must each be assigned a unique `trTeSrcID` field value. This arrangement ensures that messages can be accurately attributed to their originating hart,
+allowing for precise and isolated trace analysis per hart.'''
+zh = '''
+分配给特定硬件线程的解码器应只处理那些带有与该硬件线程对应的 <<field_SRC,SRC>> 值标记的消息。为便于实现，同一跟踪流中运行的所有编码器必须将 `trTeSrcBits` 字段配置为相同值，以确保源标识符位宽一致，并且每个编码器必须分配唯一的 `trTeSrcID` 字段值。这种安排确保消息能够准确归属于其来源硬件线程，从而允许对每个硬件线程进行精确且隔离的跟踪分析。'''

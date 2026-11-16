@@ -1,0 +1,20 @@
+unit_id = "e95040c28894289d1e2d0dfdc4550836"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstateen_bit_correspondence]#For every bit with a defined purpose in an `sstateen` CSR, the same bit is
+defined in the matching `mstateen` CSR to control access below machine level to
+the same state.# The upper 32 bits of an `mstateen` CSR (or for RV32, the
+corresponding high-half CSR) control access to state that is inherently
+inaccessible to user level, so no corresponding enable bits in the
+supervisor-level `sstateen` CSR are applicable. The intention is to allocate bits
+for this purpose starting at the most-significant end, bit 63, through to bit
+32, and then on to the next-higher `mstateen` CSR. If the rate that bits are
+being allocated from the least-significant end for `sstateen` CSRs is
+sufficiently low, allocation from the most-significant end of `mstateen` CSRs may
+be allowed to encroach on the lower 32 bits before jumping to the next-higher
+`mstateen` CSR. In that case, the bit positions of "`encroaching`" bits will remain
+forever read-only zeros in the matching `sstateen` CSRs.'''
+zh = '''
+[#norm:mstateen_bit_correspondence]#对于 `sstateen` CSR 中每一个具有已定义用途的位，在匹配的 `mstateen` CSR 中都定义了相同的位，以控制低于机器级对相同状态的访问。# `mstateen` CSR 的高 32 位（或者对于 RV32，相应的高半部分 CSR）控制对用户级本来不可访问的状态的访问，因此监管级 `sstateen` CSR 中没有相应的使能位适用。其意图是从最高有效端（第 63 位）开始，一直到第 32 位，然后再到下一个编号更高的 `mstateen` CSR，来为此分配位。如果从最低有效端为 `sstateen` CSR 分配位的速率足够低，那么可以允许从 `mstateen` CSR 的最高有效端进行的分配在跳到下一个编号更高的 `mstateen` CSR 之前侵占低 32 位。在这种情况下，“侵占”位的位置在匹配的 `sstateen` CSR 中将永远保持为只读零。'''

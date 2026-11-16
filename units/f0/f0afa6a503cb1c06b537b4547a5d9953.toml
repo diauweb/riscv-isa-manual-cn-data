@@ -1,0 +1,20 @@
+unit_id = "f0afa6a503cb1c06b537b4547a5d9953"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The FENCE.TSO instruction was incorrectly described as optional in 2019.
+However, FENCE.TSO is encoded within the standard FENCE encoding such that
+implementations must treat it as a simple global fence if they do not support
+TSO optimizations, as specified in the previous note.
+As software can always assume without any penalty that FENCE.TSO is being
+exploited by a hardware implementation, there is no advantage to making the
+instruction an option.
+===='''
+zh = '''
+[NOTE]
+====
+FENCE.TSO 指令在 2019 年被错误地描述为可选。然而，FENCE.TSO 编码在标准 FENCE 编码之内，因此如果实现不支持 TSO 优化，就必须将其视为简单的全局栅栏，如前面注释所述。由于软件始终可以无任何代价地假定 FENCE.TSO 会被硬件实现所利用，因此将该指令设为选项没有任何好处。
+===='''

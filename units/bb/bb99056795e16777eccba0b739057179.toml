@@ -1,0 +1,16 @@
+unit_id = "bb99056795e16777eccba0b739057179"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[%unbreakable]
+[NOTE]
+====
+Six `\*ireg*` registers are defined in order to ensure that the needs of extensions in development are covered, with some room for growth.  For example, for an `siselect` value associated with counter X, `sireg`/`sireg2` could be used to access `mhpmcounterX`/`mhpmeventX`, while `sireg4`/`sireg5` could access `mhpmcounterXh`/`mhpmeventXh`. Six `\*ireg*` registers allows for accessing up to 3 CSR arrays per index (`*iselect`) with RV32-only CSRs, or up to 6 CSR arrays per index value without RV32-only CSRs.
+===='''
+zh = '''
+[%unbreakable]
+[NOTE]
+====
+定义了六个 `\*ireg*` 寄存器，以确保涵盖开发中的扩展的需求，并留有一些增长空间。例如，对于与计数器 X 关联的 `siselect` 值，`sireg`/`sireg2` 可用于访问 `mhpmcounterX`/`mhpmeventX`，而 `sireg4`/`sireg5` 可访问 `mhpmcounterXh`/`mhpmeventXh`。六个 `\*ireg*` 寄存器允许在具有仅 RV32 CSR 的情况下每个索引（`*iselect`）访问最多 3 个 CSR 数组，或在没有仅 RV32 CSR 的情况下每个索引值访问最多 6 个 CSR 数组。
+===='''

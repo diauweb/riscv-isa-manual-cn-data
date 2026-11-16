@@ -1,0 +1,14 @@
+unit_id = "f103be059954898b853dd5873b7437c7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:menvcfg_mandatory_u_mode]#In harts with U-mode, `menvcfg` must be
+implemented, but all `WARL` fields may be read-only zero.#
+[#norm:menvcfgh_mandatory_s_mode_rv32]#For harts with S-mode and XLEN=32, `menvcfgh` must be similarly implemented.#
+[#norm:menvcfg_menvcfgh_no_u_mode]#If U-mode is not supported, then registers `menvcfg` and `menvcfgh` do
+not exist.#'''
+zh = '''
+[#norm:menvcfg_mandatory_u_mode]#在具有 U 模式的硬件线程中，`menvcfg` 必须实现，但所有 `WARL` 字段都可以为只读零。#
+[#norm:menvcfgh_mandatory_s_mode_rv32]#对于具有 S 模式且 XLEN=32 的硬件线程，`menvcfgh` 必须类似地实现。#
+[#norm:menvcfg_menvcfgh_no_u_mode]#如果不支持 U 模式，则寄存器 `menvcfg` 和 `menvcfgh` 不存在。#'''

@@ -1,0 +1,47 @@
+unit_id = "57aaeb6c77f7e84aaf37e08067bcfd76"
+kind = "code"
+translatable = false
+en = '''
+----
+# Set if equal
+vmseq.vv vd, vs2, vs1, vm  # Vector-vector
+vmseq.vx vd, vs2, rs1, vm  # vector-scalar
+vmseq.vi vd, vs2, imm, vm  # vector-immediate
+
+# Set if not equal
+vmsne.vv vd, vs2, vs1, vm  # Vector-vector
+vmsne.vx vd, vs2, rs1, vm  # vector-scalar
+vmsne.vi vd, vs2, imm, vm  # vector-immediate
+
+# Set if less than, unsigned
+vmsltu.vv vd, vs2, vs1, vm  # Vector-vector
+vmsltu.vx vd, vs2, rs1, vm  # Vector-scalar
+
+# Set if less than, signed
+vmslt.vv vd, vs2, vs1, vm  # Vector-vector
+vmslt.vx vd, vs2, rs1, vm  # vector-scalar
+
+# Set if less than or equal, unsigned
+vmsleu.vv vd, vs2, vs1, vm   # Vector-vector
+vmsleu.vx vd, vs2, rs1, vm   # vector-scalar
+vmsleu.vi vd, vs2, imm, vm   # Vector-immediate
+
+# Set if less than or equal, signed
+vmsle.vv vd, vs2, vs1, vm  # Vector-vector
+vmsle.vx vd, vs2, rs1, vm  # vector-scalar
+vmsle.vi vd, vs2, imm, vm  # vector-immediate
+
+# Set if greater than, unsigned
+vmsgtu.vx vd, vs2, rs1, vm   # Vector-scalar
+vmsgtu.vi vd, vs2, imm, vm   # Vector-immediate
+
+# Set if greater than, signed
+vmsgt.vx vd, vs2, rs1, vm    # Vector-scalar
+vmsgt.vi vd, vs2, imm, vm    # Vector-immediate
+
+# Following two instructions are not provided directly
+# Set if greater than or equal, unsigned
+# vmsgeu.vx vd, vs2, rs1, vm    # Vector-scalar
+# Set if greater than or equal, signed
+# vmsge.vx vd, vs2, rs1, vm    # Vector-scalar
+----'''

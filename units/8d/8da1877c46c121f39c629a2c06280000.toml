@@ -1,0 +1,16 @@
+unit_id = "8da1877c46c121f39c629a2c06280000"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To help implement multiprocessor synchronization, the AMOs optionally
+provide release consistency semantics. If the _aq_ bit is set, then no
+later memory operations in this RISC-V hart can be observed to take
+place before the AMO. Conversely, if the _rl_ bit is set, then other
+RISC-V harts will not observe the AMO before memory accesses preceding
+the AMO in this RISC-V hart. Setting both the _aq_ and the _rl_ bit on
+an AMO makes the sequence sequentially consistent, meaning that it
+cannot be reordered with earlier or later memory operations from the
+same hart.'''
+zh = '''
+为了帮助实现多处理器同步，AMO 可选地提供释放一致性语义。如果设置了 _aq_ 位，则在此 RISC-V 硬件线程中，后续的内存操作不能被观察到在 AMO 之前发生。相反，如果设置了 _rl_ 位，则其他 RISC-V 硬件线程不会观察到 AMO 发生在此 RISC-V 硬件线程中 AMO 之前的内存访问之前。在 AMO 上同时设置 _aq_ 和 _rl_ 位可使该序列具有顺序一致性，这意味着它不能与同一硬件线程中更早或更晚的内存操作重排序。'''

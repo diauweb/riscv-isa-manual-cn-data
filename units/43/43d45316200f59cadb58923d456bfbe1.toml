@@ -1,0 +1,15 @@
+unit_id = "43d45316200f59cadb58923d456bfbe1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There are pathological cases where consecutive blocks could require
+packets to be generated from both first and last instructions, but
+elastic buffering is only required if the blocks are also input on
+consecutive cycles. In practice there are very few cases where this can
+occur. The worst so far identified case is a variation on the example
+above, where the exception is an ecall, and that in turn encounters some
+other form of exception or interrupt in the first few instructions of
+the trap handler:'''
+zh = '''
+存在一些病态情况，连续多个块可能需要从第一条和最后一条指令都生成包，但只有当这些块也在连续周期内输入时才需要弹性缓冲。实践中这种情况极少发生。目前已识别的最坏情况是上述示例的一种变体，其中的异常是 ecall，而该 ecall 又会在陷阱处理程序的最初几条指令中遇到某种其他形式的异常或中断：'''

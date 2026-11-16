@@ -1,0 +1,20 @@
+unit_id = "527efe3e567c225258a842cad6f878ac"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The SFENCE.VMA is used to flush any local hardware caches related to
+address translation. It is specified as a fence rather than a TLB flush
+to provide cleaner semantics with respect to which instructions are
+affected by the flush operation and to support a wider variety of
+dynamic caching structures and memory-management schemes. SFENCE.VMA is
+also used by higher privilege levels to synchronize page table writes
+and the address translation hardware.
+===='''
+zh = '''
+[NOTE]
+====
+SFENCE.VMA 用于刷新与地址转换相关的任何本地硬件缓存。它被指定为栅栏而非 TLB 刷新，以便就刷新操作影响哪些指令提供更清晰的语义，并支持更广泛的动态缓存结构和内存管理方案。更高特权级也使用 SFENCE.VMA 来同步页表写入和地址转换硬件。
+===='''

@@ -1,0 +1,36 @@
+unit_id = "d08b3cf4575c8d4b77c74f5e628e71b7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We consider it a feature that any length of instruction containing all
+zero bits is not legal, as this quickly traps erroneous jumps into
+zeroed memory regions. Similarly, we also reserve the instruction
+encoding containing all ones to be an illegal instruction, to catch the
+other common pattern observed with unprogrammed non-volatile memory
+devices, disconnected memory buses, or broken memory devices.
+
+Software can rely on a naturally aligned 32-bit word containing zero to
+act as an illegal instruction on all RISC-V implementations, to be used
+by software where an illegal instruction is explicitly desired. Defining
+a corresponding known illegal value for all ones is more difficult due
+to the variable-length encoding. Software cannot generally use the
+illegal value of ILEN bits of all 1s, as software might not know ILEN
+for the eventual target machine (e.g., if software is compiled into a
+standard binary library used by many different machines). Defining a
+32-bit word of all ones as illegal was also considered, as all machines
+must support a 32-bit instruction size, but this requires the
+instruction-fetch unit on machines with ILEN >32 report an
+illegal-instruction exception rather than an access-fault exception when
+such an instruction borders a protection boundary, complicating
+variable-instruction-length fetch and decode.
+===='''
+zh = '''
+[NOTE]
+====
+我们认为一个特性是：任何长度的全零位指令都是非法的，因为这可以快速捕获错误跳转到清零内存区域的情况。类似地，我们还将全一的指令编码保留为非法指令，以捕获在未编程的非易失性存储设备、断开的内存总线或损坏的内存设备中观察到的另一种常见模式。
+
+软件可以依赖包含零的自然对齐 32 位字在所有 RISC-V 实现上充当非法指令，以供软件在明确需要非法指令时使用。由于变长编码，为全一定义相应的已知非法值更加困难。软件通常不能使用 ILEN 位全 1 的非法值，因为软件可能不知道最终目标机器的 ILEN（例如，如果软件被编译成供许多不同机器使用的标准二进制库）。也曾考虑将全 1 的 32 位字定义为非法，因为所有机器都必须支持 32 位指令长度；但这要求 ILEN >32 的机器上的指令取指单元在此类指令与保护边界相邻时报告非法指令异常，而不是访问故障异常，从而使变长指令的取指和解码复杂化。
+===='''

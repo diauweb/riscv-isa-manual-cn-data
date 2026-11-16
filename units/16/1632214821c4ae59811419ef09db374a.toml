@@ -1,0 +1,12 @@
+unit_id = "1632214821c4ae59811419ef09db374a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_warl]#Implementations will not raise an exception on writes of unsupported
+values to a *WARL* field.# Implementations can return any legal value on the
+read of a *WARL* field when the last write was of an illegal value, but the
+legal value returned should deterministically depend on the illegal
+written value and the architectural state of the hart.'''
+zh = '''
+[#norm:Zicsr_warl]#实现对 *WARL* 字段写入不受支持的值时不会引发异常。# 当最后一次写入为非法值时，实现可以在读取 *WARL* 字段时返回任何合法值，但返回的合法值应确定性地取决于写入的非法值以及硬件线程的架构状态。'''

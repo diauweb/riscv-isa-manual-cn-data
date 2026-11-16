@@ -1,0 +1,19 @@
+unit_id = "d481102163bb167b3e15a3cc503a34b4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+When {dcsr-mprven}, the external debugger can set MPRV and MPP appropriately to have
+hardware perform memory accesses with the appropriate endianness,
+address translation, permission checks, and PMP/PMA checks (subject to {abstractcs-relaxedpriv}). This is also the only way to access all of physical memory when
+34-bit physical addresses are supported on a Sv32 hart. If hardware ties {dcsr-mprven} to 0 then the external debugger is expected to simulate all the effects
+of MPRV, including any extensions that affect memory accesses. For these
+reasons it is recommended to tie {dcsr-mprven} to 1.
+===='''
+zh = '''
+[NOTE]
+====
+当 {dcsr-mprven} 时，外部调试器可以适当地设置 MPRV 和 MPP，使硬件以适当的字节序、地址转换、权限检查和 PMP/PMA 检查（受 {abstractcs-relaxedpriv} 约束）执行内存访问。当 Sv32 硬件线程支持 34 位物理地址时，这也是访问所有物理内存的唯一方式。如果硬件将 {dcsr-mprven} 硬连线为 0，则外部调试器需要模拟 MPRV 的所有效果，包括任何影响内存访问的扩展。因此，建议将 {dcsr-mprven} 硬连线为 1。
+===='''

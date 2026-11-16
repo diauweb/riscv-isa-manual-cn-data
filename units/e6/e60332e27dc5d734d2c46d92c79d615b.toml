@@ -1,0 +1,55 @@
+unit_id = "e60332e27dc5d734d2c46d92c79d615b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Some algorithms may load the previous data value of a memory location into the
+register used as the compare data value source by a Zacas instruction. When
+using a Zacas instruction that uses a register pair to source the compare value,
+the two registers may be loaded using two individual loads. The two individual
+loads may read an inconsistent pair of values but that is not an issue since the
+`AMOCAS` operation itself uses an atomic load-pair from memory to obtain the
+data value for its comparison.
+
+The following example code sequence illustrates the use of `AMOCAS.D` in a RV32
+implementation to atomically increment a 64-bit counter.
+[listing]
+# a0 - address of the counter.
+increment:
+  lw   a2, (a0)      # Load current counter value using
+  lw   a3, 4(a0)     # two individual loads.
+retry:
+  mv   a6, a2        # Save the low 32 bits of the current value.
+  mv   a7, a3        # Save the high 32 bits of the current value.
+  addi a4, a2, 1     # Increment the low 32 bits.
+  sltu a1, a4, a2    # Determine if there is a carry out.
+  add  a5, a3, a1    # Add the carry if any to high 32 bits.
+  amocas.d.aqrl a2, a4, (a0)
+  bne  a2, a6, retry # If amocas.d failed then retry
+  bne  a3, a7, retry # using current values loaded by amocas.d.
+  ret
+===='''
+zh = '''
+[NOTE]
+====
+某些算法可能会将内存位置的先前数据值加载到用作 Zacas 指令比较数据值来源的寄存器中。当使用以寄存器对作为比较值来源的 Zacas 指令时，这两个寄存器可以通过两条单独的加载指令来加载。这两条单独的加载可能读到不一致的一对值，但这不成问题，因为 `AMOCAS` 操作本身使用从内存进行的原子加载对来获取用于比较的数据值。
+
+以下示例代码序列展示了在 RV32 实现中使用 `AMOCAS.D` 原子地递增一个 64 位计数器。
+[listing]
+# a0 - 计数器的地址。
+increment:
+  lw   a2, (a0)      # 使用两条单独的
+  lw   a3, 4(a0)     # 加载指令加载当前计数器值。
+retry:
+  mv   a6, a2        # 保存当前值的低 32 位。
+  mv   a7, a3        # 保存当前值的高 32 位。
+  addi a4, a2, 1     # 递增低 32 位。
+  sltu a1, a4, a2    # 判断是否产生进位。
+  add  a5, a3, a1    # 若有进位则将其加到高 32 位。
+  amocas.d.aqrl a2, a4, (a0)
+  bne  a2, a6, retry # 若 amocas.d 失败，则使用
+  bne  a3, a7, retry # amocas.d 加载的当前值重试。
+  ret
+===='''

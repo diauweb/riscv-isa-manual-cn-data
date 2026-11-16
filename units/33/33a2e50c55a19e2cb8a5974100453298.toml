@@ -1,0 +1,22 @@
+unit_id = "33a2e50c55a19e2cb8a5974100453298"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_The `hvip` register is defined by the hypervisor (H) extension, while the `mvip`, `mvien` and `hvien` registers are defined by the Smaia/Ssaia extensions._
+
+_By virtue of implementing `hvip`.LCOFI, it is implicit that the LCOFI bit (bit 13) in each of `vsie` and `vsip` is also implemented._
+
+_Requiring support for the LCOFI bits listed above ensures that virtual LCOFIs can be delivered to an OS running in S-mode, and to a guest OS running in VS-mode. It is optional whether the LCOFI bit (bit 13) in each of `mideleg` and `hideleg`, which allows all LCOFIs to be delegated to S-mode and VS-mode, respectively, is implemented and writable._
+===='''
+zh = '''
+[NOTE]
+====
+_`hvip` 寄存器由管理程序（H）扩展定义，而 `mvip`、`mvien` 和 `hvien` 寄存器由 Smaia/Ssaia 扩展定义。_
+
+_由于实现了 `hvip`.LCOFI，因此隐含了 `vsie` 和 `vsip` 中各自的 LCOFI 位（第 13 位）也已实现。_
+
+_要求支持上述列出的 LCOFI 位，可确保虚拟 LCOFI 能够投递给运行于 S 模式的操作系统以及运行于 VS 模式的客户操作系统。至于 `mideleg` 和 `hideleg` 中各自的 LCOFI 位（第 13 位）——分别允许将所有 LCOFI 委托给 S 模式和 VS 模式——是否实现且可写，则是可选的。_
+===='''

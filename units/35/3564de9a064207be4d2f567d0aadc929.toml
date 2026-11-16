@@ -1,0 +1,17 @@
+unit_id = "3564de9a064207be4d2f567d0aadc929"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `nf` field encodes how many vector registers to load and store using the NFIELDS encoding (Figure <<fig-nf>>).
+The encoded number of registers must be a power of 2 and the vector
+register numbers must be aligned as with a vector register group,
+otherwise the instruction encoding is reserved.  [#norm:vector_ls_seg_wholereg_op]#NFIELDS
+indicates the number of vector registers to transfer, numbered
+successively after the base.#  [#norm:vector_ls_seg_wholereg_nf_rsv]#Only NFIELDS values of 1, 2, 4, 8 are
+supported, with other values reserved.#  [#norm:vector_ls_seg_wholereg_op_cont]#When multiple registers are
+transferred, the lowest-numbered vector register is held in the
+lowest-numbered memory addresses and successive vector register
+numbers are placed contiguously in memory.#'''
+zh = '''
+`nf` 字段使用 NFIELDS 编码（图 <<fig-nf>>）编码要加载和存储的向量寄存器数量。编码的寄存器数量必须是 2 的幂，并且向量寄存器编号必须像向量寄存器组一样对齐，否则该指令编码保留。[#norm:vector_ls_seg_wholereg_op]#NFIELDS 表示要传输的向量寄存器数量，在基址之后连续编号。#  [#norm:vector_ls_seg_wholereg_nf_rsv]#仅支持 NFIELDS 值为 1、2、4、8，其他值保留。#  [#norm:vector_ls_seg_wholereg_op_cont]#当传输多个寄存器时，编号最低的向量寄存器保存在编号最低的内存地址中，并且连续的向量寄存器编号连续放置在内存中。#'''

@@ -1,0 +1,8 @@
+unit_id = "b44982397e7079015e2b2d34c8f1917a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+HWASAN leverages tags in the upper bits of the address to identify memory errors such as use-after-free or buffer overflow errors. By storing a *pointer tag* in the upper bits of the address and checking it against a *memory tag* stored in a side table, it can identify whether a pointer is pointing to a valid location. Doing this without hardware support introduces significant overheads since the pointer tag needs to be manually removed for every conventional memory operation. Pointer masking support reduces these overheads.'''
+zh = '''
+HWASAN 利用地址高位的标签来识别内存错误，例如释放后使用或缓冲区溢出错误。通过在地址高位存储 *指针标签* 并将其与存储在旁表中的 *内存标签* 进行核对，它可以识别指针是否指向有效位置。在没有硬件支持的情况下执行此操作会引入显著开销，因为每次常规内存操作都需要手动移除指针标签。指针掩码支持减少了这些开销。'''

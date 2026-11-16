@@ -1,0 +1,31 @@
+unit_id = "375f73efed798ddd3be19c2bc5f1d6aa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We restricted the length of LR/SC loops to fit within 64 contiguous
+instruction bytes in the base ISA to avoid undue restrictions on
+instruction cache and TLB size and associativity. Similarly, we
+disallowed other loads and stores within the loops to avoid restrictions
+on data-cache associativity in simple implementations that track the
+reservation within a private cache. The restrictions on branches and
+jumps limit the time that can be spent in the sequence. Floating-point
+operations and integer multiply/divide were disallowed to simplify the
+operating system's emulation of these instructions on implementations
+lacking appropriate hardware support.
+
+Software is not forbidden from using unconstrained LR/SC sequences, but
+portable software must detect the case that the sequence repeatedly
+fails, then fall back to an alternate code sequence that does not rely
+on an unconstrained LR/SC sequence. Implementations are permitted to
+unconditionally fail any unconstrained LR/SC sequence.
+===='''
+zh = '''
+[NOTE]
+====
+我们将 LR/SC 循环的长度限制在基础 ISA 中 64 个连续指令字节内，以避免对指令缓存和 TLB 的大小及相联度施加不当限制。同样，我们禁止循环内出现其他加载和存储，以避免对在私有缓存内跟踪保留的简单实现的数据缓存相联度施加限制。对分支和跳转的限制限制了在该序列中可花费的时间。禁止浮点操作和整数乘/除法是为了简化操作系统在缺乏适当硬件支持的实现上对这些指令的模拟。
+
+并不禁止软件使用不受约束的 LR/SC 序列，但可移植软件必须检测该序列反复失败的情况，然后回退到不依赖不受约束的 LR/SC 序列的替代代码序列。允许实现无条件地使任何不受约束的 LR/SC 序列失败。
+===='''

@@ -1,0 +1,19 @@
+unit_id = "89d8c56cde390cc28361b0811f87a914"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Operating systems frequently use reserved bits within PTEs to store metadata for
+advanced memory management features. Embedding these metadata bits directly within
+the PTEs allows for fast access with minimal overhead, avoiding costly lookups in
+auxiliary data structures. By default, Sv39 and Sv39x4 require a page fault and
+a guest-page fault exception, respectively, to be raised if bits 60–59 are not
+zero.
+===='''
+zh = '''
+[NOTE]
+====
+操作系统经常使用 PTE 内的保留位来存储用于高级内存管理功能的元数据。将这些元数据位直接嵌入 PTE 中，可以以最小开销实现快速访问，避免在辅助数据结构中进行代价高昂的查找。默认情况下，如果 60–59 位不为零，Sv39 和 Sv39x4 分别要求触发缺页异常和客户机缺页异常。
+===='''

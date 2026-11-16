@@ -1,0 +1,17 @@
+unit_id = "9414fb627292856c0598814adf796b23"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Control-flow Integrity (CFI) capabilities help defend against Return-Oriented
+Programming (ROP) and Call/Jump-Oriented Programming (COP/JOP) style
+control-flow subversion attacks. These attack methodologies use code sequences
+in authorized modules, with at least one instruction in the sequence being a
+control transfer instruction that depends on attacker-controlled data either in
+the return stack or in memory used to obtain the target address for a call or
+jump. Attackers stitch these sequences together by diverting the control flow
+instructions (e.g., `JALR`, `C.JR`, `C.JALR`), from their original target
+address to a new target via modification in the return stack or in the memory
+used to obtain the jump/call target address.'''
+zh = '''
+控制流完整性（CFI）能力有助于防御面向返回编程（ROP）和面向调用/跳转编程（COP/JOP）风格的控制流颠覆攻击。这些攻击方法使用授权模块中的代码序列，序列中至少有一条控制转移指令依赖于攻击者控制的数据，这些数据要么位于返回栈中，要么位于用于获取调用或跳转目标地址的内存中。攻击者通过修改返回栈或用于获取跳转/调用目标地址的内存，将控制流指令（例如 `JALR`、`C.JR`、`C.JALR`）从其原始目标地址转移到新目标，从而将这些序列拼接在一起。'''

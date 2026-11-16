@@ -1,0 +1,15 @@
+unit_id = "55e82f9ad73b73757e4ffd134c444d46"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The number of VMID bits is UNSPECIFIED and may be zero. The number of implemented
+VMID bits, termed _VMIDLEN_, may be determined by writing one to every
+bit position in the VMID field, then reading back the value in `hgatp`
+to see which bit positions in the VMID field hold a one. The
+least-significant bits of VMID are implemented first: that is, if
+VMIDLEN > 0, VMID[VMIDLEN-1:0] is writable. The maximal
+value of VMIDLEN, termed VMIDMAX, is 7 for Sv32x4 or 14 for Sv39x4,
+Sv48x4, and Sv57x4.'''
+zh = '''
+VMID 位数是未指定的，可以为零。已实现的 VMID 位数（称为 _VMIDLEN_）可以通过向 VMID 字段中的每个位位置写入 1，然后读回 `hgatp` 中的值以查看 VMID 字段中哪些位位置保持为 1 来确定。VMID 的最低有效位先实现：也就是说，如果 VMIDLEN > 0，则 VMID[VMIDLEN-1:0] 可写。VMIDLEN 的最大值（称为 VMIDMAX）对于 Sv32x4 为 7，对于 Sv39x4、Sv48x4 和 Sv57x4 为 14。'''

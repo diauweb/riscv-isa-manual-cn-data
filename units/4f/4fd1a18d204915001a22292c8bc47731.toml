@@ -1,0 +1,20 @@
+unit_id = "4fd1a18d204915001a22292c8bc47731"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Requiring intervening modes to be enabled for external traps simplifies software management of CTR.  Consider a scenario where S-mode software is configuring CTR for U-mode contexts A and B, such that external traps (to any mode) are enabled for A but not for B.  When switching between the two contexts, S-mode can simply toggle `sctrctl`.STE, rather than requiring a trap to M-mode to additionally toggle `mctrctl`.MTE._
+
+_This method does not provide the flexibility to record external traps to a more privileged mode but not to all intervening mode(s).  Because it is expected that profiling tools generally wish to observe all external traps or none, this is not considered a meaningful limitation._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_要求中间模式使能才能记录外部陷阱，简化了 CTR 的软件管理。考虑一个场景：S 模式软件为 U 模式上下文 A 和 B 配置 CTR，使得 A 启用了外部陷阱（到任何模式），而 B 未启用。在两个上下文之间切换时，S 模式可以简单地切换 `sctrctl`.STE，而不需要陷入 M 模式来额外切换 `mctrctl`.MTE。_
+
+_此方法不提供将外部陷阱记录到更高特权模式但不记录到所有中间模式的灵活性。由于预期分析工具通常希望观察所有外部陷阱或都不观察，因此这不被视为有意义的限制。_
+===='''

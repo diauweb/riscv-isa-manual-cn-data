@@ -1,0 +1,15 @@
+unit_id = "12ccd7c315194528767c46746b87817e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Dependencies from a load to a later memory operation in the same hart
+are respected by the RVWMO memory model. The Alpha memory model was
+notable for choosing _not_ to enforce the ordering of such dependencies,
+but most modern hardware and software memory models consider allowing
+dependent instructions to be reordered too confusing and
+counterintuitive. Furthermore, modern code sometimes intentionally uses
+such dependencies as a particularly lightweight ordering enforcement
+mechanism.'''
+zh = '''
+RVWMO 内存模型尊重同一硬件线程中从加载到后续内存操作的依赖。Alpha 内存模型以选择__不__强制此类依赖的排序而著称，但大多数现代硬件和软件内存模型认为允许依赖指令重排过于令人困惑和反直觉。此外，现代代码有时有意使用此类依赖作为特别轻量级的排序强制机制。'''

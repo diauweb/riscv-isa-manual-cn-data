@@ -1,0 +1,17 @@
+unit_id = "5417886654190cc16de16ccc89ed7963"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If the implementation does not stall the hart on execution of the
+instruction, then the interrupt will be taken on some instruction in the
+idle loop containing the WFI, and on a simple return from the handler,
+the idle loop will resume execution.
+===='''
+zh = '''
+[NOTE]
+====
+如果实现不在执行该指令时停顿硬件线程，则中断将在包含 WFI 的空闲循环中的某条指令上被接受，并且在从处理程序简单返回后，空闲循环将恢复执行。
+===='''

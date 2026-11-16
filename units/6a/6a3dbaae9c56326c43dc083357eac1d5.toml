@@ -1,0 +1,23 @@
+unit_id = "6a3dbaae9c56326c43dc083357eac1d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Although the PMP mechanism supports regions as small as four bytes,
+platforms may specify coarser PMP regions. In general, the PMP grain is
+2^G+2^ bytes and must be the same across all PMP regions.
+When G {ge} 1, the NA4 mode is not selectable. When
+G {ge} 2 and pmpcfg~i~.A[1] is set,
+i.e. the mode is NAPOT, then bits pmpaddr~i~[G-2:0]
+read as all ones. When G {ge} 1 and
+pmpcfg~i~.A[1] is clear, i.e. the mode is OFF or TOR,
+then bits pmpaddr~i~[G-1:0] read as all zeros. Bits
+pmpaddr~i~[G-1:0] do not affect the TOR address-matching logic.
+Although changing pmpcfg~i~.A[1] affects the value
+read from pmpaddr~i~, it does not affect the
+underlying value stored in that register—in particular,
+pmpaddr~i~[G-1] retains its original value when
+pmpcfg~i~.A is changed from NAPOT to TOR/OFF then
+back to NAPOT.'''
+zh = '''
+尽管 PMP 机制支持小至四字节的区域，但平台可以指定更粗的 PMP 区域。通常，PMP 粒度为 2^G+2^ 字节，并且在所有 PMP 区域中必须相同。当 G {ge} 1 时，NA4 模式不可选择。当 G {ge} 2 且 pmpcfg~i~.A[1] 被置位（即模式为 NAPOT）时，位 pmpaddr~i~[G-2:0] 读取为全 1。当 G {ge} 1 且 pmpcfg~i~.A[1] 被清零（即模式为 OFF 或 TOR）时，位 pmpaddr~i~[G-1:0] 读取为全 0。位 pmpaddr~i~[G-1:0] 不影响 TOR 地址匹配逻辑。尽管更改 pmpcfg~i~.A[1] 会影响从 pmpaddr~i~ 读取的值，但它不影响该寄存器中存储的底层值——特别是，当 pmpcfg~i~.A 从 NAPOT 改为 TOR/OFF 再改回 NAPOT 时，pmpaddr~i~[G-1] 保留其原始值。'''

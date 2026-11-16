@@ -1,0 +1,20 @@
+unit_id = "588e17d4d15888189c79056892579a3a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Note on necessity of instruction
+====
+This instruction is performance-critical to SHA3. Specifically, the Chi step of the FIPS 202 Keccak Permutation.
+Emulating it via 2 instructions is expected to have significant performance impact.
+The `.vv` form of the instruction is what is needed for SHA3; the `.vx` form was added for completeness.
+===='''
+zh = '''
+[NOTE]
+.关于该指令必要性的说明
+====
+该指令对 SHA3 至关重要。具体而言，是 FIPS 202 Keccak 置换中的 Chi 步骤。
+通过 2 条指令来模拟它预计会带来显著的性能影响。
+SHA3 需要的是该指令的 `.vv` 形式；`.vx` 形式是为完整性而添加的。
+===='''

@@ -1,0 +1,15 @@
+unit_id = "1461e051c0719b02b660be3fcd4873ae"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Prior to v0.9, when these flags were not specified on a
+`vsetvli`, they defaulted to mask-undisturbed/tail-undisturbed.  The
+use of `vsetvli` without these flags is deprecated, however, and
+specifying a flag setting is now mandatory.  The default should
+perhaps be tail-agnostic/mask-agnostic, so software has to specify
+when it cares about the non-participating elements, but given the
+historical meaning of the instruction prior to introduction of these
+flags, it was decided to always require them in future assembly code.'''
+zh = '''
+NOTE: 在 v0.9 之前，当这些标志未在 `vsetvli` 上指定时，它们默认为掩码不受干扰/尾部不受干扰。然而，不带这些标志使用 `vsetvli` 已被弃用，现在必须指定标志设置。默认值也许应该是尾部不可知/掩码不可知，这样软件在关心非参与元素时必须指定，但考虑到在引入这些标志之前指令的历史含义，决定在未来的汇编代码中始终要求它们。'''

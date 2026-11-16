@@ -1,0 +1,12 @@
+unit_id = "7a7f5feea39688049e5a1c2e9100f7b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This implementation only implements the Access Register abstract command
+for GPRs on a halted hart, and relies on the Program Buffer for all
+other operations. It uses the hart's existing pipeline and ability to
+execute from arbitrary memory locations to avoid modifications to a
+hart's datapath.'''
+zh = '''
+这种实现仅在已暂停的硬件线程上为 GPR 实现访问寄存器抽象命令，其他所有操作都依赖程序缓冲区（Program Buffer）。它利用硬件线程现有的流水线以及从任意内存位置执行的能力，从而避免修改硬件线程的数据通路。'''

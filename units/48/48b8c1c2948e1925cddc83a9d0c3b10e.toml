@@ -1,0 +1,13 @@
+unit_id = "48b8c1c2948e1925cddc83a9d0c3b10e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_warl_def]#Some read/write CSR fields are only defined for a subset of bit
+encodings, but allow any value to be written while guaranteeing to
+return a legal value whenever read.# Assuming that writing the CSR has no
+other side effects, the range of supported values can be determined by
+attempting to write a desired setting then reading to see if the value
+was retained. These fields are labeled *WARL* in the register descriptions.'''
+zh = '''
+[#norm:Zicsr_warl_def]#某些读写 CSR 字段仅对位编码的子集有定义，但允许写入任意值，同时保证读取时返回合法值。# 假设写入 CSR 没有其他副作用，则可通过尝试写入所需设置然后读取以查看该值是否被保留来确定受支持值的范围。这些字段在寄存器描述中标记为 *WARL*。'''

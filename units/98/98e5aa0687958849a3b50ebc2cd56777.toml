@@ -1,0 +1,176 @@
+unit_id = "98e5aa0687958849a3b50ebc2cd56777"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV64I HINT instructions.
+[float="center",align="center",cols="<,<,^,<", options="header", grid="all"]
+|===
+|Instruction |Constraints |Code Points |Purpose
+|insn:lui[] |_rd_=`x0` |2^20^ .9+.^|_Designated for future standard use_
+
+|insn:auipc[] |_rd_=`x0` |2^20^
+
+|insn:addi[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _imm_{ne}0 |2^17^−1
+
+|insn:andi[] |_rd_=`x0` |2^17^
+
+|insn:ori[] |_rd_=`x0` |2^17^
+
+|insn:xori[] |_rd_=`x0` |2^17^
+
+|insn:addiw[] |_rd_=`x0` |2^17^
+
+|insn:add[] |_rd_=`x0`, _rs1_{ne}``x0`` |2^10^−32
+
+|insn:add[] |_rd_=`x0`, _rs1_=`x0`, _rs2_{ne}``x2``{endash}``x5`` | 28
+
+|insn:add[] |_rd_=`x0`, _rs1_=`x0`, _rs2_=`x2`{endash}``x5`` | 4 | (_rs2_=`x2`) NTL.P1 +
+ (_rs2_=`x3`) NTL.PALL +
+ (_rs2_=`x4`) NTL.S1 +
+ (_rs2_=`x5`) NTL.ALL
+
+|insn:slli[] |_rd_=`x0`, _rs1_=`x0`, _shamt_=31 |1|Semihosting entry marker
+
+|insn:srai[] |_rd_=`x0`, _rs1_=`x0`, _shamt_=7 |1|Semihosting exit marker
+
+|insn:sub[] |_rd_=`x0` |2^10^ .16+.^| _Designated for future standard use_
+
+|insn:and[] |_rd_=`x0` |2^10^
+
+|insn:or[] |_rd_=`x0` |2^10^
+
+|insn:xor[] |_rd_=`x0` |2^10^
+
+|insn:sll[] |_rd_=`x0` |2^10^
+
+|insn:srl[] |_rd_=`x0` |2^10^
+
+|insn:sra[] |_rd_=`x0` |2^10^
+
+|insn:addw[] |_rd_=`x0` |2^10^
+
+|insn:subw[] |_rd_=`x0` |2^10^
+
+|insn:sllw[] |_rd_=`x0` |2^10^
+
+|insn:srlw[] |_rd_=`x0` |2^10^
+
+|insn:sraw[] |_rd_=`x0` |2^10^
+
+|insn:fence[] |_rd_=`x0`, _rs1_{ne}``x0``, _fm_=0, and either _pred_=0 or _succ_=0| 2^10^−63
+
+|insn:fence[] |_rd_{ne}``x0``, _rs1_=`x0`, _fm_=0, and either _pred_=0 or _succ_=0| 2^10^−63
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_=0, _succ_{ne}0 |15
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_{ne}W, _succ_=0 |15
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_=W, _succ_=0 |1 |PAUSE
+
+|insn:slti[] |_rd_=`x0` |2^17^ .10+.^|_Designated for custom use_
+
+|insn:sltiu[] |_rd_=`x0` |2^17^
+
+|insn:slli[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _shamt_{ne}31 |2^11^−1
+
+|insn:srli[] |_rd_=`x0` |2^11^
+
+|insn:srai[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _shamt_{ne}7 |2^11^−1
+
+|insn:slliw[] |_rd_=`x0` |2^10^
+
+|insn:srliw[] |_rd_=`x0` |2^10^
+
+|insn:sraiw[] |_rd_=`x0` |2^10^
+
+|insn:slt[] |_rd_=`x0` |2^10^
+
+|insn:sltu[] |_rd_=`x0` |2^10^
+|==='''
+zh = '''
+.RV64I HINT 指令。
+[float="center",align="center",cols="<,<,^,<", options="header", grid="all"]
+|===
+|指令 |约束 |代码点 |用途
+|insn:lui[] |_rd_=`x0` |2^20^ .9+.^|__指定供未来标准使用__
+
+|insn:auipc[] |_rd_=`x0` |2^20^
+
+|insn:addi[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _imm_{ne}0 |2^17^−1
+
+|insn:andi[] |_rd_=`x0` |2^17^
+
+|insn:ori[] |_rd_=`x0` |2^17^
+
+|insn:xori[] |_rd_=`x0` |2^17^
+
+|insn:addiw[] |_rd_=`x0` |2^17^
+
+|insn:add[] |_rd_=`x0`, _rs1_{ne}``x0`` |2^10^−32
+
+|insn:add[] |_rd_=`x0`, _rs1_=`x0`, _rs2_{ne}``x2``{endash}``x5`` | 28
+
+|insn:add[] |_rd_=`x0`, _rs1_=`x0`, _rs2_=`x2`{endash}``x5`` | 4 | (_rs2_=`x2`) NTL.P1 +
+ (_rs2_=`x3`) NTL.PALL +
+ (_rs2_=`x4`) NTL.S1 +
+ (_rs2_=`x5`) NTL.ALL
+
+|insn:slli[] |_rd_=`x0`, _rs1_=`x0`, _shamt_=31 |1|半主机入口标记
+
+|insn:srai[] |_rd_=`x0`, _rs1_=`x0`, _shamt_=7 |1|半主机退出标记
+
+|insn:sub[] |_rd_=`x0` |2^10^ .16+.^| __指定供未来标准使用__
+
+|insn:and[] |_rd_=`x0` |2^10^
+
+|insn:or[] |_rd_=`x0` |2^10^
+
+|insn:xor[] |_rd_=`x0` |2^10^
+
+|insn:sll[] |_rd_=`x0` |2^10^
+
+|insn:srl[] |_rd_=`x0` |2^10^
+
+|insn:sra[] |_rd_=`x0` |2^10^
+
+|insn:addw[] |_rd_=`x0` |2^10^
+
+|insn:subw[] |_rd_=`x0` |2^10^
+
+|insn:sllw[] |_rd_=`x0` |2^10^
+
+|insn:srlw[] |_rd_=`x0` |2^10^
+
+|insn:sraw[] |_rd_=`x0` |2^10^
+
+|insn:fence[] |_rd_=`x0`, _rs1_{ne}``x0``, _fm_=0, and either _pred_=0 or _succ_=0| 2^10^−63
+
+|insn:fence[] |_rd_{ne}``x0``, _rs1_=`x0`, _fm_=0, and either _pred_=0 or _succ_=0| 2^10^−63
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_=0, _succ_{ne}0 |15
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_{ne}W, _succ_=0 |15
+
+|insn:fence[] |_rd_=_rs1_=`x0`, _fm_=0, _pred_=W, _succ_=0 |1 |PAUSE
+
+|insn:slti[] |_rd_=`x0` |2^17^ .10+.^|__指定供自定义使用__
+
+|insn:sltiu[] |_rd_=`x0` |2^17^
+
+|insn:slli[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _shamt_{ne}31 |2^11^−1
+
+|insn:srli[] |_rd_=`x0` |2^11^
+
+|insn:srai[] |_rd_=`x0`, and either _rs1_{ne}``x0`` or _shamt_{ne}7 |2^11^−1
+
+|insn:slliw[] |_rd_=`x0` |2^10^
+
+|insn:srliw[] |_rd_=`x0` |2^10^
+
+|insn:sraiw[] |_rd_=`x0` |2^10^
+
+|insn:slt[] |_rd_=`x0` |2^10^
+
+|insn:sltu[] |_rd_=`x0` |2^10^
+|==='''

@@ -1,0 +1,14 @@
+unit_id = "4ae37554c5b68718985739dfa0caba32"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the hypervisor extension is implemented, bits 10, 6, and 2 of
+`mideleg` (corresponding to the standard VS-level interrupts) are each
+read-only one. Furthermore, if any guest external interrupts are
+implemented (GEILEN is nonzero), bit 12 of `mideleg` (corresponding to
+supervisor-level guest external interrupts) is also read-only one.
+VS-level interrupts and guest external interrupts are always delegated
+past M-mode to HS-mode.'''
+zh = '''
+当实现虚拟机监控器扩展时，`mideleg` 的位 10、6 和 2（对应标准 VS 级中断）各自为只读 1。此外，若实现了任何客户外部中断（GEILEN 非零），则 `mideleg` 的位 12（对应监管级客户外部中断）也为只读 1。VS 级中断和客户外部中断始终越过 M 模式委托给 HS 模式。'''

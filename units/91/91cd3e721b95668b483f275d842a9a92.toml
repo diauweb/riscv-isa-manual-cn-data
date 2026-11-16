@@ -1,0 +1,32 @@
+unit_id = "91cd3e721b95668b483f275d842a9a92"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In the memory model literature, the term "RCpc" stands for release
+consistency with processor-consistent synchronization operations, and
+the term "RCsc" stands for release consistency with sequentially
+consistent synchronization operations.
+
+While there are many different definitions for acquire and release
+annotations in the literature, in the context of RVWMO these terms are
+concisely and completely defined by <<ppo, Preserved Program Order>> rules 5-7.
+
+"RCpc" annotations are currently only used when implicitly assigned to
+every memory access per the standard extension extlink:ztso[]. Furthermore, although the ISA does not
+currently contain native load-acquire or store-release instructions, nor
+RCpc variants thereof, the RVWMO model itself is designed to be
+forwards-compatible with the potential addition of any or all of the
+above into the ISA in a future extension.
+===='''
+zh = '''
+[NOTE]
+====
+在内存模型文献中，术语 "RCpc" 代表具有处理器一致同步操作的释放一致性（release consistency with processor-consistent synchronization operations），术语 "RCsc" 代表具有顺序一致同步操作的释放一致性（release consistency with sequentially consistent synchronization operations）。
+
+尽管文献中对 acquire 和 release 标注有许多不同的定义，但在 RVWMO 的语境下，这些术语由 <<ppo, 保持的程序顺序>> 规则 5-7 简洁而完整地定义。
+
+"RCpc" 标注目前仅在按照标准扩展 extlink:ztso[] 为每次内存访问隐式分配时使用。此外，尽管 ISA 目前不包含原生的加载-获取（load-acquire）或存储-释放（store-release）指令，也不包含其 RCpc 变体，但 RVWMO 模型本身被设计为向前兼容，以便未来扩展中可能将上述任何或全部内容加入 ISA。
+===='''

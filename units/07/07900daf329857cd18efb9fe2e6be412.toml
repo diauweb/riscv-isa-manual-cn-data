@@ -1,0 +1,11 @@
+unit_id = "07900daf329857cd18efb9fe2e6be412"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:cbo-inval_h_mode_enabled_op]#If `CBO.INVAL` is enabled in HS-mode to perform a flush operation, then when the
+instruction is enabled in VS- or VU-mode it performs a flush operation, even if
+`CBIE` is set to `0b11`. Otherwise, when the instruction is enabled for
+execution, its behavior depends on the `CBIE` encoding, as follows:#'''
+zh = '''
+[#norm:cbo-inval_h_mode_enabled_op]#如果 `CBO.INVAL` 在 HS-mode 中被启用执行刷新操作，则当该指令在 VS- 或 VU-mode 中被启用时，它执行刷新操作，即使 `CBIE` 被设置为 `0b11`。否则，当该指令被允许执行时，其行为取决于 `CBIE` 编码，具体如下：#'''

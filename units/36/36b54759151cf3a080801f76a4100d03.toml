@@ -1,0 +1,30 @@
+unit_id = "36b54759151cf3a080801f76a4100d03"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mixed-size discrepancy (permitted by axiomatic models, forbidden by operational model)
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header"]
+|===
+2+|Hart 0 2+^|Hart 1
+2+|li t1, 1 2+^|li t1, 1
+|(a) |lw a0,0(s0) |(d) |ld a1,0(s1)
+|(b) |fence rw,rw |(e) |lw a2,4(s1)
+|(c) |sw t1,0(s1) | |xor a3,a2,a2
+| | | |add s0,s0,a3
+| | |(f) |sw t1,0(s0)
+4+|Outcome: `a0=1`, `a1=1`, `a2=0`
+|==='''
+zh = '''
+.混合大小差异（公理模型允许，操作模型禁止）
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header"]
+|===
+2+|Hart 0 2+^|Hart 1
+2+|li t1, 1 2+^|li t1, 1
+|(a) |lw a0,0(s0) |(d) |ld a1,0(s1)
+|(b) |fence rw,rw |(e) |lw a2,4(s1)
+|(c) |sw t1,0(s1) | |xor a3,a2,a2
+| | | |add s0,s0,a3
+| | |(f) |sw t1,0(s0)
+4+|结果：`a0=1`、`a1=1`、`a2=0`
+|==='''

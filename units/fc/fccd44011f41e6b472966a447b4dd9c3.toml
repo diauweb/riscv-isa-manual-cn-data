@@ -1,0 +1,13 @@
+unit_id = "fccd44011f41e6b472966a447b4dd9c3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Except where noted above, vector instructions are allowed to overwrite
+their inputs, and so in most cases, the vector instruction restart
+must be from the csr:vstart[] element index. However, there are a number of
+cases where this overwrite is prohibited to enable execution of the
+vector instructions to be idempotent and hence restartable from an
+earlier index location.'''
+zh = '''
+除上文所述外，允许向量指令覆盖其输入，因此在大多数情况下，向量指令重新启动必须从 csr:vstart[] 元素索引开始。然而，在许多情况下禁止这种覆盖，以使向量指令的执行具有幂等性，从而可以从较早的索引位置重新启动。'''

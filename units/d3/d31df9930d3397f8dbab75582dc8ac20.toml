@@ -1,0 +1,38 @@
+unit_id = "d31df9930d3397f8dbab75582dc8ac20"
+kind = "code"
+translatable = false
+en = '''
+[source,c]
+----
+  // Naming:
+  //    NEXM=Nexus Message, BEG/END=Beginning/End of definition.
+  //    SRC=Message source (system-field). Name of an option given.
+  //    FLD/VAR=Fixed/variable size field.
+  //    ADR=Special case of variable field (without least significant bit).
+  //    CFG=Configurable, Name of an option given.
+  NEXM_BEG(IndirectBranchSync, 12)
+    NEXM_SRC(SrcBits)                         // Configurable
+    NEXM_FLD(SYNC, 4)
+    NEXM_FLD(BTYPE, 2)
+    NEXM_VAR(ICNT)
+    NEXM_ADR(FADDR)
+    NEXM_VAR(TSTAMP)
+  NEXM_END()
+
+  NEXM_BEG(ResourceFull, 27)
+    NEXM_SRC(SrcBits)                         // Configurable
+    NEXM_FLD(RCODE, 4)
+    NEXM_VAR(RDATA)
+    NEXM_VAR_CFG(HREPEAT, EnaRepeatedHistory) // Configurable
+    NEXM_VAR(TSTAMP)
+  NEXM_END()
+
+  NEXM_BEG(IndirectBranchHist, 28)
+    NEXM_SRC(SrcBits)                         // Configurable
+    NEXM_FLD(BTYPE, 2)
+    NEXM_VAR(ICNT)
+    NEXM_ADR(UADDR)
+    NEXM_VAR(HIST)
+    NEXM_VAR(TSTAMP)
+  NEXM_END()
+----'''

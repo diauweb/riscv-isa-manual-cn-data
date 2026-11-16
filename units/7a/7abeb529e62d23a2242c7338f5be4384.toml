@@ -1,0 +1,25 @@
+unit_id = "7abeb529e62d23a2242c7338f5be4384"
+kind = "code"
+translatable = false
+en = '''
+----
+ Suggested assembler names used for vsetvli and vsetivli vtypei immediate
+
+ e8    # SEW=8b
+ e16   # SEW=16b
+ e32   # SEW=32b
+ e64   # SEW=64b
+
+ mf8  # LMUL=1/8
+ mf4  # LMUL=1/4
+ mf2  # LMUL=1/2
+ m1   # LMUL=1
+ m2   # LMUL=2
+ m4   # LMUL=4
+ m8   # LMUL=8
+
+Examples:
+    vsetvli t0, a0, e8, m1, ta, ma      # SEW= 8, LMUL=1
+    vsetvli t0, a0, e8, m2, ta, ma      # SEW= 8, LMUL=2
+    vsetvli t0, a0, e32, mf2, ta, ma    # SEW=32, LMUL=1/2
+----'''

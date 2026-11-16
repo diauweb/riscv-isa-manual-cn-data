@@ -1,0 +1,26 @@
+unit_id = "47c1a5ff1632c7431a334ef2ed7aa1b0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} | `sw s1, 0(s0)` |
+| Write | `progbuf1` | `ebreak` |
+| Write | {dm-data0} | address |
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | Write `s0`
+| Write | {dm-data0} | value |
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1009 | Write `s1`, then execute program buffer
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `sw s1, 0(s0)` |
+| 写 | `progbuf1` | `ebreak` |
+| 写 | {dm-data0} | 地址 |
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | 写入 `s0`
+| 写 | {dm-data0} | 值 |
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1009 | 写入 `s1`，然后执行程序缓冲区
+|==='''

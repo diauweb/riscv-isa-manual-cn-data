@@ -1,0 +1,12 @@
+unit_id = "36474dbc54ff50d4119f85c5bf49a30f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To protect shadow stack memory, the memory is associated with a new page type –
+the Shadow Stack (SS) page – in the single-stage and VS-stage page tables. [#norm:ss_page_enc]#The
+encoding `R=0`, `W=1`, and `X=0`, is defined to represent an SS page.# [#norm:ssmp_menvcfg_sse]#When
+csr:menvcfg[sse]=0, this encoding remains reserved.# [#norm:ssmp_henvcfg_sse]#Similarly, when `V=1` and
+csr:henvcfg[sse]=0, this encoding remains reserved at `VS` and `VU` levels.#'''
+zh = '''
+为了保护影子栈内存，在单阶段和 VS 阶段页表中，该内存与一种新的页类型——影子栈（SS）页——相关联。[#norm:ss_page_enc]#编码 `R=0`、`W=1` 和 `X=0` 被定义为表示 SS 页。# [#norm:ssmp_menvcfg_sse]#当 csr:menvcfg[sse]=0 时，该编码保持为保留。# [#norm:ssmp_henvcfg_sse]#类似地，当 `V=1` 且 csr:henvcfg[sse]=0 时，该编码在 `VS` 和 `VU` 级别保持为保留。#'''

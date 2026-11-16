@@ -1,0 +1,49 @@
+unit_id = "faf40f4581bc93d716844e7546231261"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- <<sha,**Sha**>> The augmented hypervisor extension.
+  Sha comprises the following extensions:
+
+** <<hypervisor,**H**>> The hypervisor extension.
+
+** <<smstateen,**Ssstateen**>> Supervisor-mode view of the state-enable extension.  The
+   supervisor-mode (`sstateen0-3`) and hypervisor-mode (`hstateen0-3`)
+   state-enable registers must be provided.
+
+** <<shcounterenw,**Shcounterenw**>> For any `hpmcounter` that is not read-only zero, the corresponding bit in `hcounteren` must be writable.
+
+** <<shvstvala,**Shvstvala**>> `vstval` must be written in all cases described above for `stval`.
+
+** <<shtvala,**Shtvala**>> `htval` must be written with the faulting guest physical
+   address in all circumstances permitted by the ISA.
+
+** <<shvstvecd,**Shvstvecd**>> `vstvec.MODE` must be capable of holding the value 0 (Direct).
+  When `vstvec.MODE`=Direct, `vstvec.BASE` must be capable of holding
+  any valid four-byte-aligned address.
+
+** <<shvsatpa,**Shvsatpa**>> All translation modes supported in `satp` must be supported in `vsatp`.
+
+** <<shgatpa,**Shgatpa**>> For each supported virtual memory scheme SvNN supported in
+  `satp`, the corresponding hgatp SvNNx4 mode must be supported.  The
+  `hgatp` mode Bare must also be supported.'''
+zh = '''
+- <<sha,**Sha**>> 增强型管理程序扩展。
+  Sha 包含以下扩展：
+
+** <<hypervisor,**H**>> 管理程序扩展。
+
+** <<smstateen,**Ssstateen**>> 状态使能扩展的监管模式视图。必须提供监管模式（`sstateen0-3`）和管理程序模式（`hstateen0-3`）的状态使能寄存器。
+
+** <<shcounterenw,**Shcounterenw**>> 对于任何不是只读零的 `hpmcounter`，`hcounteren` 中的对应位必须可写。
+
+** <<shvstvala,**Shvstvala**>> 在上述针对 `stval` 描述的所有情形下，必须写入 `vstval`。
+
+** <<shtvala,**Shtvala**>> 在 ISA 允许的所有情况下，必须将出错的客户机物理地址写入 `htval`。
+
+** <<shvstvecd,**Shvstvecd**>> `vstvec.MODE` 必须能够保存值 0（Direct）。当 `vstvec.MODE`=Direct 时，`vstvec.BASE` 必须能够保存任何有效的 4 字节对齐地址。
+
+** <<shvsatpa,**Shvsatpa**>> `satp` 中支持的所有转换模式必须在 `vsatp` 中受支持。
+
+** <<shgatpa,**Shgatpa**>> 对于 `satp` 中支持的每种虚拟内存方案 SvNN，必须支持对应的 hgatp SvNNx4 模式。还必须支持 `hgatp` 的 Bare 模式。'''

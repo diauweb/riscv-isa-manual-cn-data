@@ -1,0 +1,18 @@
+unit_id = "88920e62dcd1b8db28ebef2c9e425f49"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If physical addresses are less than XLEN bits wide, they are zero-extended.
+If virtual addresses are less than XLEN bits wide, they are sign-extended.
+{csr-tdata2} must be implemented with enough bits of storage to represent
+the full range of supported physical and virtual address values when read by
+software and used by hardware.
+===='''
+zh = '''
+[NOTE]
+====
+如果物理地址宽度小于 XLEN 位，则它们被零扩展。如果虚拟地址宽度小于 XLEN 位，则它们被符号扩展。{csr-tdata2} 必须实现足够的存储位，以在软件读取和硬件使用时表示支持的所有物理和虚拟地址值的完整范围。
+===='''

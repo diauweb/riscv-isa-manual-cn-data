@@ -1,0 +1,12 @@
+unit_id = "5f0ec8c2d38762f8a4b86276009fb650"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+AUIPC (add upper immediate to `pc`) is used to build `pc`-relative
+addresses and uses the U-type format. AUIPC forms a 32-bit offset from
+the U-immediate, filling in the lowest 12 bits with zeros, adds this
+offset to the address of the AUIPC instruction, then places the result
+in register _rd_.'''
+zh = '''
+AUIPC（add upper immediate to `pc`）用于构建 `pc` 相对地址，使用 U 型格式。AUIPC 从 U 立即数形成 32 位偏移，最低 12 位填充为零，将此偏移加到 AUIPC 指令的地址上，然后将结果放入寄存器 _rd_。'''

@@ -1,0 +1,52 @@
+unit_id = "48b264442576103bee46ce4fa68e1388"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Error Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=8(0x8). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|[[field_ETYPE]] 4   |ETYPE            |Standard Error Type (a subset of IEEE-5001 Nexus Standard encoding): +
+*0:* A FIFO overrun has resulted in the loss of one or more messages. +
+*1..7:* Reserved. +
+*8..15:* Designated for Vendor Defined Error(s).
+|[[field_ECODE]] Var     |ECODE        |Standard Error Code (a subset of IEEE-5001 Nexus Standard encoding). A bit mask that when not equal to 0 may have one or more bits set as follows to indicate errors:  +
+ *0:* Exact reason unknown/not provided. +
+ *xxxxxxx1:*   Reserved. +
+ *xxxxxx1x:*   Reserved (for data trace in future). +
+ *xxxxx1xx:*   Program Trace Message(s) lost. +
+ *xxxx1xxx:*   Ownership Trace Message(s) lost. +
+ *xxx1xxxx:*   Reserved. +
+ *xx1xxxxx:*   Reserved (for data trace in future). +
+ *x1xxxxxx:*   Reserved. +
+ *1xxxxxxx:*    Vendor Defined Message(s) lost. +
+*IMPORTANT:* The field must be generated even if the reported value is always 0, to guarantee that the TSTAMP field aligns at the byte boundary.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.Error 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=8(0x8)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|[[field_ETYPE]] 4   |ETYPE            |标准错误类型（IEEE-5001 Nexus 标准编码的子集）： +
+*0：* FIFO 溢出导致一条或多条消息丢失。 +
+*1..7：* 保留。 +
+*8..15：* 指定用于厂商定义的错误。
+|[[field_ECODE]] Var     |ECODE        |标准错误代码（IEEE-5001 Nexus 标准编码的子集）。一个位掩码；当其不等于 0 时，可以设置以下一位或多位来指示错误：  +
+ *0：* 确切原因未知/未提供。 +
+ *xxxxxxx1：* 保留。 +
+ *xxxxxx1x：* 保留（用于未来的数据跟踪）。 +
+ *xxxxx1xx：* 程序跟踪消息丢失。 +
+ *xxxx1xxx：* Ownership 跟踪消息丢失。 +
+ *xxx1xxxx：* 保留。 +
+ *xx1xxxxx：* 保留（用于未来的数据跟踪）。 +
+ *x1xxxxxx：* 保留。 +
+ *1xxxxxxx：* Vendor Defined 消息丢失。 +
+*IMPORTANT：* 即使报告的值始终为 0，也必须生成该字段，以保证 TSTAMP 字段在字节边界对齐。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

@@ -1,0 +1,16 @@
+unit_id = "feb244a0f90db916ffc2beb72babd9e1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The compare instructions follow the semantics of the scalar
+floating-point compare instructions.  [#norm:vmfeq_vmfne_snan_invalid]#insn:vmfeq[] and insn:vmfne[] raise the invalid
+operation exception only on signaling NaN inputs.#  [#norm:vmflt_vmfle_vmfgt_vmfge_sqnan_invalid]#insn:vmflt[], insn:vmfle[], insn:vmfgt[],
+and insn:vmfge[] raise the invalid operation exception on both signaling and
+quiet NaN inputs.#
+[#norm:vmfne_vdval1_nan]#insn:vmfne[] writes 1 to the destination element when either
+operand is NaN,# [#norm:vmfeq_vmflt_vmfle_vmfgt_vmfge_vdval0_nan]#whereas the other compares write 0 when either operand
+is NaN.#'''
+zh = '''
+比较指令遵循标量浮点比较指令的语义。[#norm:vmfeq_vmfne_snan_invalid]#insn:vmfeq[] 和 insn:vmfne[] 仅在信号 NaN 输入上引发无效操作异常。#  [#norm:vmflt_vmfle_vmfgt_vmfge_sqnan_invalid]#insn:vmflt[]、insn:vmfle[]、insn:vmfgt[] 和 insn:vmfge[] 在信号和静默 NaN 输入上都引发无效操作异常。#
+[#norm:vmfne_vdval1_nan]#当任一操作数为 NaN 时，insn:vmfne[] 向目标元素写入 1，# [#norm:vmfeq_vmflt_vmfle_vmfgt_vmfge_vdval0_nan]#而其他比较在任一操作数为 NaN 时写入 0。#'''

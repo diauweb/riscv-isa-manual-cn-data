@@ -1,0 +1,10 @@
+unit_id = "c427eb44e1bfbb1826be1804be5eaf50"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+While an abstract command is executing ({abstractcs-busy} in {dm-abstractcs} is high), a debugger must not change {hartsel}, and must not write 1 to {dmcontrol-haltreq}, {dmcontrol-resumereq}, {dmcontrol-ackhavereset}, {dmcontrol-setresethaltreq}, or {dmcontrol-clrresethaltreq}.
+The hardware should not rely on this debugger behavior, but should enforce it by
+ignoring writes to these bits while {abstractcs-busy} is high.'''
+zh = '''
+当抽象命令正在执行时（{dm-abstractcs} 中的 {abstractcs-busy} 为高），调试器不得更改 {hartsel}，也不得向 {dmcontrol-haltreq}、{dmcontrol-resumereq}、{dmcontrol-ackhavereset}、{dmcontrol-setresethaltreq} 或 {dmcontrol-clrresethaltreq} 写 1。硬件不应依赖此调试器行为，而应在 {abstractcs-busy} 为高时忽略对这些位的写入，以强制执行此要求。'''

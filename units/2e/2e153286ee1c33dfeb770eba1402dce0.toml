@@ -1,0 +1,19 @@
+unit_id = "2e153286ee1c33dfeb770eba1402dce0"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+{abstractcs-cmderr} inhibits starting a new command to accommodate debuggers
+that, for performance reasons, send several commands to be executed
+in a row without checking {abstractcs-cmderr} in between. They can safely do
+so and check {abstractcs-cmderr} at the end without worrying that one command
+failed but then a later command (which might have depended on the
+previous one succeeding) passed.
+===='''
+zh = '''
+[NOTE]
+====
+{abstractcs-cmderr} 阻止启动新命令，以适应那些出于性能原因连续发送多个命令执行而在其间不检查 {abstractcs-cmderr} 的调试器。它们可以安全地这样做，并在最后检查 {abstractcs-cmderr}，而不必担心一个命令失败但后续命令（可能依赖于前一个命令成功）却通过。
+===='''

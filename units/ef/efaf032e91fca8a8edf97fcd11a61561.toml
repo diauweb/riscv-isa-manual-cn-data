@@ -1,0 +1,126 @@
+unit_id = "efaf032e91fca8a8edf97fcd11a61561"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Standard ISA extension names.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|Subset |Name |Implies
+
+3+^|*Base ISA*
+
+|Integer |ext:i[] |
+
+|Reduced Integer |ext:e[] |
+
+3+^|*Standard Unprivileged Extensions*
+
+|Integer Multiplication and Division |ext:m[] |ext:zmmul[]
+
+|Atomics |ext:a[] |
+
+|Single-Precision Floating-Point |ext:f[] |ext:zicsr[]
+
+|Double-Precision Floating-Point |ext:d[] |ext:f[]
+
+|General |ext:g[] |IMAFDZicsr_Zifencei
+
+|Quad-Precision Floating-Point |ext:q[] |ext:d[]
+
+|16-bit Compressed Instructions |ext:c[] |
+
+|Bit Manipulation |ext:b[] |
+
+|Vector |ext:v[] |ext:d[]
+
+|Packed SIMD |ext:p[] |
+
+3+^|*Additional Standard Unprivileged Extensions*
+
+|Unprivileged extension "`abc`" |ext:zabc[] |
+
+3+^|*Standard User-Level Extensions*
+
+|User-level extension "`def`" |ext:sudef[] |
+
+3+^|*Standard Supervisor-Level Extensions*
+
+|Hypervisor |ext:h[] |
+
+|Supervisor-level extension "`ghi`" |ext:ssghi[] |
+|Supervisor-level virtual-memory extension "`jkl`" |ext:svjkl[] |
+
+3+^|*Standard Hypervisor-Level Extensions*
+
+|Hypervisor-level extension "`mno`" |ext:shmno[] |
+
+3+^|*Standard Machine-Level Extensions*
+
+|Machine-level extension "`pqr`" |ext:smpqr[] |
+
+3+^|*Non-Standard Extensions*
+
+|Non-standard extension "`stu`" |ext:xstu[] |
+|==='''
+zh = '''
+.标准 ISA 扩展名称。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header",]
+|===
+|子集 |名称 |隐含
+
+3+^|*基础 ISA*
+
+|整数 |ext:i[] |
+
+|精简整数 |ext:e[] |
+
+3+^|*标准非特权扩展*
+
+|整数乘法与除法 |ext:m[] |ext:zmmul[]
+
+|原子操作 |ext:a[] |
+
+|单精度浮点 |ext:f[] |ext:zicsr[]
+
+|双精度浮点 |ext:d[] |ext:f[]
+
+|通用 |ext:g[] |IMAFDZicsr_Zifencei
+
+|四精度浮点 |ext:q[] |ext:d[]
+
+|16 位压缩指令 |ext:c[] |
+
+|位操作 |ext:b[] |
+
+|向量 |ext:v[] |ext:d[]
+
+|打包 SIMD |ext:p[] |
+
+3+^|*其他标准非特权扩展*
+
+|非特权扩展 “abc” |ext:zabc[] |
+
+3+^|*标准用户级扩展*
+
+|用户级扩展 “def” |ext:sudef[] |
+
+3+^|*标准监管级扩展*
+
+|虚拟化管理 |ext:h[] |
+
+|监管级扩展 “ghi” |ext:ssghi[] |
+|监管级虚拟内存扩展 “jkl” |ext:svjkl[] |
+
+3+^|*标准虚拟化管理级扩展*
+
+|虚拟化管理级扩展 “mno” |ext:shmno[] |
+
+3+^|*标准机器级扩展*
+
+|机器级扩展 “pqr” |ext:smpqr[] |
+
+3+^|*非标准扩展*
+
+|非标准扩展 “stu” |ext:xstu[] |
+|==='''

@@ -1,0 +1,60 @@
+unit_id = "503d035b2892a5212113de4b418d7312"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Moved Machine and Supervisor spec to *Ratified* status.
+* Improvements to the description and commentary.
+* Added a draft proposal for a hypervisor extension.
+* Specified which interrupt sources are reserved for standard use.
+* Allocated some synchronous exception causes for custom use.
+* Specified the priority ordering of synchronous exceptions.
+* Added specification that __x__RET instructions may, but are not required
+to, clear LR reservations if ext:a[] extension present.
+* The virtual-memory system no longer permits supervisor mode to execute
+instructions from user pages, regardless of the csr::[sum] setting.
+* Clarified that ASIDs are private to a hart, and added commentary about
+the possibility of a future global-ASID extension.
+* insn:sfence.vma[] semantics have been clarified.
+* Made the csr:mstatus[mpp] field *WARL*, rather than *WLRL*.
+* Made the unused `__x__ip` fields *WPRI*, rather than *WIRI*.
+* Made the unused csr:misa[] fields *WARL*, rather than *WIRI*.
+* Made the unused csr:pmpaddr[] and csr:pmpcfg[] fields *WARL*, rather than *WIRI*.
+* Required all harts in a system to employ the same PTE-update scheme as
+each other.
+* Rectified an editing error that misdescribed the mechanism by which
+csr:mstatus[].`__x__IE` is written upon an exception.
+* Described scheme for emulating misaligned AMOs.
+* Specified the behavior of the csr:misa[] and `__x__epc` registers in systems
+with variable IALIGN.
+* Specified the behavior of writing self-contradictory values to the
+csr:misa[] register.
+* Defined the csr:mcountinhibit[] CSR, which stops performance counters from
+incrementing to reduce energy consumption.
+* Specified semantics for PMP regions coarser than four bytes.
+* Specified contents of CSRs across XLEN modification.
+* Moved PLIC chapter into its own document.'''
+zh = '''
+* 将 Machine 和 Supervisor 规范移至 *Ratified*（已批准）状态。
+* 改进了描述和评注。
+* 增加了管理程序扩展的草案提案。
+* 规定了哪些中断源保留供标准使用。
+* 为自定义用途分配了一些同步异常原因。
+* 规定了同步异常的优先级顺序。
+* 增加了规范：如果存在 ext:a[] 扩展，__x__RET 指令可以（但非必须）清除 LR 保留。
+* 虚拟内存系统不再允许监管模式执行用户页中的指令，无论 csr::[sum] 设置如何。
+* 澄清了 ASID 对硬件线程是私有的，并增加了关于未来全局 ASID 扩展可能性的评注。
+* 澄清了 insn:sfence.vma[] 的语义。
+* 将 csr:mstatus[mpp] 字段设为 *WARL*，而非 *WLRL*。
+* 将未使用的 `__x__ip` 字段设为 *WPRI*，而非 *WIRI*。
+* 将未使用的 csr:misa[] 字段设为 *WARL*，而非 *WIRI*。
+* 将未使用的 csr:pmpaddr[] 和 csr:pmpcfg[] 字段设为 *WARL*，而非 *WIRI*。
+* 要求系统中的所有硬件线程采用彼此相同的 PTE 更新方案。
+* 纠正了一处编辑错误，该错误错误地描述了异常时写入 csr:mstatus[].`__x__IE` 的机制。
+* 描述了模拟非对齐 AMO 的方案。
+* 规定了在 IALIGN 可变的系统中 csr:misa[] 和 `__x__epc` 寄存器的行为。
+* 规定了向 csr:misa[] 寄存器写入自相矛盾值时的行为。
+* 定义了 csr:mcountinhibit[] CSR，它阻止性能计数器递增以减少能耗。
+* 规定了粗于四字节的 PMP 区域的语义。
+* 规定了 XLEN 修改时 CSR 的内容。
+* 将 PLIC 章节移至单独的文档。'''

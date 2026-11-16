@@ -1,0 +1,15 @@
+unit_id = "f5fc7692e1a6bddec3021f18eb3de2ca"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vsatp` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `satp`, formatted as shown in
+<<rv32vsatpreg>> for VSXLEN=32 and <<rv64vsatpreg>> for VSXLEN=64. When V=1,
+`vsatp` substitutes for the usual `satp`, so instructions that normally
+read or modify `satp` actually access `vsatp` instead. `vsatp` controls
+VS-stage address translation, the first stage of two-stage translation
+for guest virtual addresses (see
+<<two-stage-translation>>).'''
+zh = '''
+`vsatp` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式版本的监管寄存器 `satp`，当 VSXLEN=32 时格式如 <<rv32vsatpreg>> 所示，当 VSXLEN=64 时格式如 <<rv64vsatpreg>> 所示。当 V=1 时，`vsatp` 替代通常的 `satp`，因此通常读取或修改 `satp` 的指令实际访问 `vsatp`。`vsatp` 控制 VS 级地址转换，即客户虚拟地址两阶段转换的第一阶段（见 <<two-stage-translation>>）。'''

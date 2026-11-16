@@ -1,0 +1,476 @@
+unit_id = "3e28fd81b10fa6e9e20ac8b9ad42dba8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+[[zclsd, Zclsd]]
+=== Compressed Load/Store pair instructions (Zclsd)
+
+Zclsd depends on Zilsd and Zca. It has overlapping encodings with Zcf and is thus incompatible with Zcf.
+
+Zclsd adds the following RV32-only instructions:
+
+[%header,cols="^1,^1,4,8"]
+|===
+|RV32
+|RV64
+|Mnemonic
+|Instruction
+
+|yes
+|no
+|c.ldsp rd, offset(sp)
+|<<#insns-cldsp>>
+
+|yes
+|no
+|c.sdsp rs2, offset(sp)
+|<<#insns-csdsp>>
+
+|yes
+|no
+|c.ld rd', offset(rs1')
+|<<#insns-cld>>
+
+|yes
+|no
+|c.sd rs2', offset(rs1')
+|<<#insns-csd>>
+
+|===
+
+=== Use of x0 as operand
+
+LD instructions with destination `x0` are processed as any other load, but the result is discarded entirely and x1 is not written.
+For C.LDSP, usage of `x0` as the destination is reserved.
+
+If using `x0` as `src` of SD or C.SDSP, the entire 64-bit operand is zero — i.e., register `x1` is not accessed.
+
+C.LD and C.SD instructions can only use `x8-15`.
+
+=== Exception Handling
+
+For the purposes of RVWMO and exception handling, LD and SD instructions are
+considered to be misaligned loads and stores, with one additional constraint:
+an LD or SD instruction whose effective address is a multiple of 4 gives rise
+to two 4-byte memory operations.
+
+NOTE: This definition permits LD and SD instructions giving rise to exactly one
+memory access, regardless of alignment.
+If instructions with 4-byte-aligned effective address are decomposed
+into two 32b operations, there is no constraint on the order in which the
+operations are performed and each operation is guaranteed to be atomic.
+These decomposed sequences are interruptible.
+Exceptions might occur on subsequent operations, making the effects of previous
+operations within the same instruction visible.
+
+NOTE: Software should make no assumptions about the number or order of
+accesses these instructions might give rise to, beyond the 4-byte constraint
+mentioned above.
+For example, an interrupted store might overwrite the same bytes upon return
+from the interrupt handler.
+
+<<<
+
+=== Instructions
+[#insns-ld,reftext="Load doubleword to register pair, 32-bit encoding"]
+==== ld
+
+Synopsis::
+Load doubleword to even/odd register pair, 32-bit encoding
+
+Mnemonic::
+ld rd, offset(rs1)
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7,  name: 0x3,    attr: ['LOAD'], type: 8},
+  {bits: 5,  name: 'rd', attr: ['dest, dest[0]=0'], type: 2},
+  {bits: 3,  name: 0x3, attr: ['width=D'], type: 8},
+  {bits: 5,  name: 'rs1', attr: ['base'], type: 4},
+  {bits: 12, name: 'imm[11:0]', attr: ['offset[11:0]'], type: 3},
+]}
+....
+
+Description::
+Loads a 64-bit value into registers `rd` and `rd+1`.
+The effective address is obtained by adding register rs1 to the
+sign-extended 12-bit offset.
+
+Included in: <<zilsd>>
+
+<<<
+
+[#insns-sd,reftext="Store doubleword from register pair, 32-bit encoding"]
+==== sd
+
+Synopsis::
+Store doubleword from even/odd register pair, 32-bit encoding
+
+Mnemonic::
+sd rs2, offset(rs1)
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7,  name: 0x23,   attr: ['STORE'], type: 8},
+  {bits: 5,  name: 'imm[4:0]', attr: ['offset[4:0]'], type: 3},
+  {bits: 3,  name: 0x3, attr: ['width=D'], type: 8},
+  {bits: 5,  name: 'rs1', attr: ['base'], type: 4},
+  {bits: 5,  name: 'rs2', attr: ['src, src[0]=0'], type: 4},
+  {bits: 7,  name: 'imm[11:5]', attr: ['offset[11:5]'], type: 3},
+]}
+....
+
+Description::
+Stores a 64-bit value from registers `rs2` and `rs2+1`.
+The effective address is obtained by adding register rs1 to the
+sign-extended 12-bit offset.
+
+Included in: <<zilsd>>
+
+<<<
+
+[#insns-cldsp,reftext="Stack-pointer based load doubleword to register pair, 16-bit encoding"]
+==== c.ldsp
+
+Synopsis::
+Stack-pointer based load doubleword to even/odd register pair, 16-bit encoding
+
+Mnemonic::
+c.ldsp rd, offset(sp)
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x2,      type: 8, attr: ['C2']},
+  {bits: 5, name: 'imm',    type: 3, attr: ['offset[4:3|8:6]']},
+  {bits: 5, name: 'rd',     type: 2, attr: ['dest≠0, dest[0]=0']},
+  {bits: 1, name: 'imm',    type: 3, attr: ['offset[5]']},
+  {bits: 3, name: 0x3,      type: 8, attr: ['C.LDSP']},
+], config: {bits: 16}}
+....
+
+Description::
+Loads stack-pointer relative 64-bit value into registers `rd'` and `rd'+1`. It computes its effective address by adding the zero-extended offset, scaled by 8, to the stack pointer, `x2`. It expands to `ld rd, offset(x2)`. C.LDSP is only valid when _rd_&#x2260;x0; the code points with _rd_=x0 are reserved.
+
+Included in: <<zclsd>>
+
+<<<
+
+[#insns-csdsp,reftext="Stack-pointer based store doubleword from register pair, 16-bit encoding"]
+==== c.sdsp
+
+Synopsis::
+Stack-pointer based store doubleword from even/odd register pair, 16-bit encoding
+
+Mnemonic::
+c.sdsp rs2, offset(sp)
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x2,      type: 8, attr: ['C2']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['src, src[0]=0']},
+  {bits: 6, name: 'imm',    type: 3, attr: ['offset[5:3|8:6]']},
+  {bits: 3, name: 0x7,      type: 8, attr: ['C.SDSP']},
+], config: {bits: 16}}
+....
+
+Description::
+Stores a stack-pointer relative 64-bit value from registers `rs2'` and `rs2'+1`. It computes an effective address by adding the _zero_-extended offset, scaled by 8, to the stack pointer, `x2`. It expands to `sd rs2, offset(x2)`.
+
+Included in: <<zclsd>>
+
+<<<
+
+[#insns-cld,reftext="Load doubleword to register pair, 16-bit encoding"]
+==== c.ld
+
+Synopsis::
+Load doubleword to even/odd register pair, 16-bit encoding
+
+Mnemonic::
+c.ld rd', offset(rs1')
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x0,       type: 8, attr: ['C0']},
+  {bits: 3, name: 'rd`',     type: 2, attr: ['dest, dest[0]=0']},
+  {bits: 2, name: 'imm',     type: 3, attr: ['offset[7:6]']},
+  {bits: 3, name: 'rs1`',    type: 4, attr: ['base']},
+  {bits: 3, name: 'imm',     type: 3, attr: ['offset[5:3]']},
+  {bits: 3, name: 0x3,       type: 8, attr: ['C.LD']},
+], config: {bits: 16}}
+....
+
+Description::
+Loads a 64-bit value into registers `rd'` and `rd'+1`.
+It computes an effective address by adding the zero-extended offset, scaled by 8, to the base address in register rs1'.
+
+Included in: <<zclsd>>
+
+<<<
+
+[#insns-csd,reftext="Store doubleword from register pair, 16-bit encoding"]
+==== c.sd
+
+Synopsis::
+Store doubleword from even/odd register pair, 16-bit encoding
+
+Mnemonic::
+c.sd rs2', offset(rs1')
+
+Encoding (RV32)::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x0,      type: 8, attr: ['C0']},
+  {bits: 3, name: 'rs2`',   type: 4, attr: ['src, src[0]=0']},
+  {bits: 2, name: 'imm',    type: 3, attr: ['offset[7:6]']},
+  {bits: 3, name: 'rs1`',   type: 4, attr: ['base']},
+  {bits: 3, name: 'imm',    type: 3, attr: ['offset[5:3]']},
+  {bits: 3, name: 0x7,      type: 8, attr: ['C.SD']},
+], config: {bits: 16}}
+....
+
+Description::
+Stores a 64-bit value from registers `rs2'` and `rs2'+1`.
+It computes an effective address by adding the zero-extended offset, scaled by 8, to the base address in register rs1'.
+It expands to `sd rs2', offset(rs1')`.
+
+Included in: <<zclsd>>'''
+zh = '''
+====
+
+[[zclsd, Zclsd]]
+=== 压缩加载/存储对指令（Zclsd）
+
+Zclsd 依赖于 Zilsd 和 Zca。它与 Zcf 存在重叠编码，因此与 Zcf 不兼容。
+
+Zclsd 添加以下仅 RV32 指令：
+
+[%header,cols="^1,^1,4,8"]
+|===
+|RV32
+|RV64
+|助记符
+|指令
+
+|是
+|否
+|c.ldsp rd, offset(sp)
+|<<#insns-cldsp>>
+
+|是
+|否
+|c.sdsp rs2, offset(sp)
+|<<#insns-csdsp>>
+
+|是
+|否
+|c.ld rd', offset(rs1')
+|<<#insns-cld>>
+
+|是
+|否
+|c.sd rs2', offset(rs1')
+|<<#insns-csd>>
+
+|===
+
+=== 将 x0 用作操作数
+
+目标为 `x0` 的 LD 指令像任何其他加载一样处理，但结果完全丢弃，且不写入 x1。对于 C.LDSP，将 `x0` 用作目标是保留的。
+
+如果将 `x0` 用作 SD 或 C.SDSP 的 `src`，则整个 64 位操作数为零——即不访问寄存器 `x1`。
+
+C.LD 和 C.SD 指令只能使用 `x8-15`。
+
+=== 异常处理
+
+就 RVWMO 和异常处理而言，LD 和 SD 指令被视为非对齐加载和存储，但有一个额外约束：有效地址为 4 的倍数的 LD 或 SD 指令会引发两个 4 字节内存操作。
+
+NOTE: 此定义允许 LD 和 SD 指令无论对齐如何都恰好引发一次内存访问。如果有效地址为 4 字节对齐的指令被分解为两个 32 位操作，则这些操作的执行顺序没有约束，并且每个操作保证原子。这些分解序列是可中断的。异常可能发生在后续操作上，使同一指令中先前操作的效果可见。
+
+NOTE: 软件不应假设这些指令可能引发访问的次数或顺序，超出上述 4 字节约束。例如，被中断的存储可能在从中断处理程序返回时覆盖相同的字节。
+
+<<<
+
+=== 指令
+[#insns-ld,reftext="Load doubleword to register pair, 32-bit encoding"]
+==== ld
+
+概要::
+将双字加载到偶数/奇数寄存器对，32 位编码
+
+助记符::
+ld rd, offset(rs1)
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7,  name: 0x3,    attr: ['LOAD'], type: 8},
+  {bits: 5,  name: 'rd', attr: ['dest, dest[0]=0'], type: 2},
+  {bits: 3,  name: 0x3, attr: ['width=D'], type: 8},
+  {bits: 5,  name: 'rs1', attr: ['base'], type: 4},
+  {bits: 12, name: 'imm[11:0]', attr: ['offset[11:0]'], type: 3},
+]}
+....
+
+描述::
+将 64 位值加载到寄存器 `rd` 和 `rd+1`。有效地址通过将寄存器 rs1 与符号扩展的 12 位偏移相加获得。
+
+包含于：<<zilsd>>
+
+<<<
+
+[#insns-sd,reftext="Store doubleword from register pair, 32-bit encoding"]
+==== sd
+
+概要::
+从偶数/奇数寄存器对存储双字，32 位编码
+
+助记符::
+sd rs2, offset(rs1)
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7,  name: 0x23,   attr: ['STORE'], type: 8},
+  {bits: 5,  name: 'imm[4:0]', attr: ['offset[4:0]'], type: 3},
+  {bits: 3,  name: 0x3, attr: ['width=D'], type: 8},
+  {bits: 5,  name: 'rs1', attr: ['base'], type: 4},
+  {bits: 5,  name: 'rs2', attr: ['src, src[0]=0'], type: 4},
+  {bits: 7,  name: 'imm[11:5]', attr: ['offset[11:5]'], type: 3},
+]}
+....
+
+描述::
+从寄存器 `rs2` 和 `rs2+1` 存储 64 位值。有效地址通过将寄存器 rs1 与符号扩展的 12 位偏移相加获得。
+
+包含于：<<zilsd>>
+
+<<<
+
+[#insns-cldsp,reftext="Stack-pointer based load doubleword to register pair, 16-bit encoding"]
+==== c.ldsp
+
+概要::
+基于栈指针将双字加载到偶数/奇数寄存器对，16 位编码
+
+助记符::
+c.ldsp rd, offset(sp)
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x2,      type: 8, attr: ['C2']},
+  {bits: 5, name: 'imm',    type: 3, attr: ['offset[4:3|8:6]']},
+  {bits: 5, name: 'rd',     type: 2, attr: ['dest≠0, dest[0]=0']},
+  {bits: 1, name: 'imm',    type: 3, attr: ['offset[5]']},
+  {bits: 3, name: 0x3,      type: 8, attr: ['C.LDSP']},
+], config: {bits: 16}}
+....
+
+描述::
+将相对于栈指针的 64 位值加载到寄存器 `rd'` 和 `rd'+1`。它通过将零扩展的偏移（按 8 缩放）加到栈指针 `x2` 来计算有效地址。它展开为 `ld rd, offset(x2)`。C.LDSP 仅在 _rd_&#x2260;x0 时有效；_rd_=x0 的编码点是保留的。
+
+包含于：<<zclsd>>
+
+<<<
+
+[#insns-csdsp,reftext="Stack-pointer based store doubleword from register pair, 16-bit encoding"]
+==== c.sdsp
+
+概要::
+基于栈指针从偶数/奇数寄存器对存储双字，16 位编码
+
+助记符::
+c.sdsp rs2, offset(sp)
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x2,      type: 8, attr: ['C2']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['src, src[0]=0']},
+  {bits: 6, name: 'imm',    type: 3, attr: ['offset[5:3|8:6]']},
+  {bits: 3, name: 0x7,      type: 8, attr: ['C.SDSP']},
+], config: {bits: 16}}
+....
+
+描述::
+从寄存器 `rs2'` 和 `rs2'+1` 存储相对于栈指针的 64 位值。它通过将__零__扩展的偏移（按 8 缩放）加到栈指针 `x2` 来计算有效地址。它展开为 `sd rs2, offset(x2)`。
+
+包含于：<<zclsd>>
+
+<<<
+
+[#insns-cld,reftext="Load doubleword to register pair, 16-bit encoding"]
+==== c.ld
+
+概要::
+将双字加载到偶数/奇数寄存器对，16 位编码
+
+助记符::
+c.ld rd', offset(rs1')
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x0,       type: 8, attr: ['C0']},
+  {bits: 3, name: 'rd`',     type: 2, attr: ['dest, dest[0]=0']},
+  {bits: 2, name: 'imm',     type: 3, attr: ['offset[7:6]']},
+  {bits: 3, name: 'rs1`',    type: 4, attr: ['base']},
+  {bits: 3, name: 'imm',     type: 3, attr: ['offset[5:3]']},
+  {bits: 3, name: 0x3,       type: 8, attr: ['C.LD']},
+], config: {bits: 16}}
+....
+
+描述::
+将 64 位值加载到寄存器 `rd'` 和 `rd'+1`。它通过将零扩展的偏移（按 8 缩放）加到寄存器 rs1' 中的基地址来计算有效地址。
+
+包含于：<<zclsd>>
+
+<<<
+
+[#insns-csd,reftext="Store doubleword from register pair, 16-bit encoding"]
+==== c.sd
+
+概要::
+从偶数/奇数寄存器对存储双字，16 位编码
+
+助记符::
+c.sd rs2', offset(rs1')
+
+编码（RV32）::
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 2, name: 0x0,      type: 8, attr: ['C0']},
+  {bits: 3, name: 'rs2`',   type: 4, attr: ['src, src[0]=0']},
+  {bits: 2, name: 'imm',    type: 3, attr: ['offset[7:6]']},
+  {bits: 3, name: 'rs1`',   type: 4, attr: ['base']},
+  {bits: 3, name: 'imm',    type: 3, attr: ['offset[5:3]']},
+  {bits: 3, name: 0x7,      type: 8, attr: ['C.SD']},
+], config: {bits: 16}}
+....
+
+描述::
+从寄存器 `rs2'` 和 `rs2'+1` 存储 64 位值。它通过将零扩展的偏移（按 8 缩放）加到寄存器 rs1' 中的基地址来计算有效地址。它展开为 `sd rs2', offset(rs1')`。
+
+包含于：<<zclsd>>'''

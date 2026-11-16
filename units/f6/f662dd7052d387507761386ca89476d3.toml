@@ -1,0 +1,18 @@
+unit_id = "f662dd7052d387507761386ca89476d3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As allowed by IEEE 754-2008, we do not support traps on floating-point
+exceptions in the ext:f[] extension, but instead require explicit checks of
+the flags in software. We considered adding branches controlled directly
+by the contents of the floating-point accrued exception flags, but
+ultimately chose to omit these instructions to keep the ISA simple.
+===='''
+zh = '''
+[NOTE]
+====
+如 IEEE 754-2008 所允许的，在 ext:f[] 扩展中我们不支持浮点异常陷阱，而是要求在软件中显式检查标志。我们曾考虑添加由浮点累积异常标志内容直接控制的分支，但最终决定省略这些指令以保持 ISA 简单。
+===='''

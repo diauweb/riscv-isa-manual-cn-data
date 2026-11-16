@@ -1,0 +1,13 @@
+unit_id = "7a8c9e85c7a980e670624f16ba48d3d6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a jump target cache is supported and enabled, and the address to
+report following an updiscon is in the cache then the encoder can output
+the cache index using format 0, subformat 1. However, the encoder may
+still choose to output the differential address using format 1 or 2 if
+the resulting packet is shorter. This may occur if the differential
+address is zero, or very small.'''
+zh = '''
+如果支持并启用了跳转目标缓存，并且在不可推断不连续点之后要报告的地址在缓存中，则编码器可以使用格式 0、子格式 1 输出缓存索引。然而，如果结果的包更短，编码器仍可选择使用格式 1 或 2 输出差分地址。如果差分地址为零或非常小，就可能出现这种情况。'''

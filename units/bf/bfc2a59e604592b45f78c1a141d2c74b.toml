@@ -1,0 +1,14 @@
+unit_id = "bfc2a59e604592b45f78c1a141d2c74b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+[#norm:inst:c-sd:operation]#Stores a 64-bit value from registers `rs2'` and `rs2'+1`.
+It computes an effective address by adding the zero-extended offset, scaled by 8, to the base address in register rs1'.
+It expands to `sd rs2', offset(rs1')`.#'''
+zh = '''
+描述::
+[#norm:inst:c-sd:operation]#将 64 位值从寄存器 `rs2'` 和 `rs2'+1` 存储。
+它通过将零扩展的偏移（按 8 缩放）加到寄存器 rs1' 中的基址上来计算有效地址。
+它展开为 `sd rs2', offset(rs1')`。#'''

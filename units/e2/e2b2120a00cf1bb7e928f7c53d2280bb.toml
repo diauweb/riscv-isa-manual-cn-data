@@ -1,0 +1,15 @@
+unit_id = "e2b2120a00cf1bb7e928f7c53d2280bb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The vector integer move instructions copy a source operand to a vector
+register group.
+The `vmv.v.v` variant copies a vector register group, whereas the `vmv.v.x`
+and `vmv.v.i` variants __splat__ a scalar register or immediate to all active
+elements of the destination vector register group.
+These instructions are encoded as unmasked instructions (`vm=1`).
+The first operand specifier (`vs2`) must contain `v0`, and any other vector
+register number in `vs2` is _reserved_.'''
+zh = '''
+向量整数移动指令将源操作数复制到向量寄存器组。`vmv.v.v` 变体复制一个向量寄存器组，而 `vmv.v.x` 和 `vmv.v.i` 变体将标量寄存器或立即数__广播__到目标向量寄存器组的所有活动元素。这些指令编码为无掩码指令（`vm=1`）。第一个操作数说明符（`vs2`）必须包含 `v0`，`vs2` 中的任何其他向量寄存器编号都是__保留的__。'''

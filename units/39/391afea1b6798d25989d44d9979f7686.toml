@@ -1,0 +1,11 @@
+unit_id = "391afea1b6798d25989d44d9979f7686"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_acc]#The `misa` CSR is a *WARL* read-write register# reporting the ISA supported by the hart.
+[#norm:misa_always_rd]#This register must be readable in any implementation#,
+but [#norm:MISA_CSR_IMPLEMENTED]#a value of zero can be returned to indicate the `misa` register has not been implemented#, requiring that CPU capabilities be determined through a separate non-standard mechanism.'''
+zh = '''
+[#norm:misa_acc]#`misa` CSR 是一个 *WARL* 读写寄存器#，报告该硬件线程所支持的 ISA。
+[#norm:misa_always_rd]#在任何实现中该寄存器都必须可读#，但 [#norm:MISA_CSR_IMPLEMENTED]#可以返回零值以指示 `misa` 寄存器尚未实现#，这要求通过单独的非标准机制来确定 CPU 能力。'''

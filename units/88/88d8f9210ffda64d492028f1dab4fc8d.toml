@@ -1,0 +1,34 @@
+unit_id = "88d8f9210ffda64d492028f1dab4fc8d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Trap and Trap Return Recording
+[%unbreakable]
+[width="100%",cols="18%,17%,30%,35%",]
+|===
+.2+|*Transfer Type* .2+| *Source Mode* 2+|*Target Mode*
+|*Enabled* |*Disabled*
+.2+|*Trap* |*Enabled* |Recorded. | External trap.  Not recorded by default, but see <<External Traps>>.
+
+|*Disabled* |Recorded, `ctrsource`.PC is 0. |Not recorded.
+
+.2+|*Trap Return* |*Enabled* |Recorded. |Recorded, `ctrtarget`.PC is 0.
+
+|*Disabled* |Not recorded. |Not recorded.
+|==='''
+zh = '''
+.陷阱和陷阱返回记录
+[%unbreakable]
+[width="100%",cols="18%,17%,30%,35%",]
+|===
+.2+|*转移类型* .2+| *源模式* 2+|*目标模式*
+|*已使能* |*已禁用*
+.2+|*陷阱* |*已使能* |已记录。 | 外部陷阱。默认不记录，但参见 <<External Traps>>。
+
+|*已禁用* |已记录，`ctrsource`.PC 为 0。 |未记录。
+
+.2+|*陷阱返回* |*已使能* |已记录。 |已记录，`ctrtarget`.PC 为 0。
+
+|*已禁用* |未记录。 |未记录。
+|==='''

@@ -1,0 +1,17 @@
+unit_id = "ca470069f5328da415c73cfd97748b12"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Rule <<overlapping-ordering, 13>> makes a similar observation to the
+previous rule: a store cannot be performed at memory until all previous
+loads that might access the same address have themselves been performed.
+Such a load must appear to execute before the store, but it cannot do so
+if the store were to overwrite the value in memory before the load had a
+chance to read the old value. Likewise, a store generally cannot be
+performed until it is known that preceding instructions will not cause
+an exception due to failed address resolution, and in this sense,
+rule 13 can be seen as somewhat of a special case
+of rule <<overlapping-ordering, 11>>.'''
+zh = '''
+规则 <<overlapping-ordering, 13>> 对前一条规则做出了类似的观察：在所有可能访问同一地址的先前加载本身执行之前，存储不能在内存中执行。这样的加载必须看起来在存储之前执行，但如果存储在加载有机会读取旧值之前就覆盖了内存中的值，则无法做到这一点。同样，在已知先前指令不会因地址解析失败而导致异常之前，存储通常不能执行，在这个意义上，规则 13 可以看作规则 <<overlapping-ordering, 11>> 的某种特例。'''

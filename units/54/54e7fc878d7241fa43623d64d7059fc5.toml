@@ -1,0 +1,13 @@
+unit_id = "54e7fc878d7241fa43623d64d7059fc5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:H_requires_i]#The hypervisor extension depends on an ext:i[] base integer ISA with 32
+`x` registers (RV32I or RV64I), not RV32E or RV64E, which have only 16 `x`
+registers.# [#norm:H_mtval_nrz]#CSR `mtval` must not be read-only zero#, and
+[#norm:H_vm_supported]#standard
+page-based address translation must be supported, either Sv32 for RV32,
+or a minimum of Sv39 for RV64#.'''
+zh = '''
+[#norm:H_requires_i]#虚拟机扩展依赖于具有 32 个 `x` 寄存器的 ext:i[] 基本整数 ISA（RV32I 或 RV64I），而不是只有 16 个 `x` 寄存器的 RV32E 或 RV64E。# [#norm:H_mtval_nrz]#CSR `mtval` 不得为只读零#，且[#norm:H_vm_supported]##必须支持标准的基于页的地址翻译，对于 RV32 为 Sv32，对于 RV64 至少为 Sv39##。'''

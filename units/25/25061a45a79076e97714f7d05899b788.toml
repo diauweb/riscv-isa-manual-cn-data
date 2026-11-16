@@ -1,0 +1,32 @@
+unit_id = "25061a45a79076e97714f7d05899b788"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The intent is for the architecture ID to represent the microarchitecture
+associated with the project around which development occurs rather than a
+particular organization. Commercial fabrications of open-source designs
+should (and might be required by the license to) retain the original
+architecture ID. This will aid in reducing fragmentation and tool
+support costs, as well as provide attribution. Open-source architecture
+IDs are administered by RISC-V International and should only be
+allocated to released, functioning open-source projects. Commercial
+architecture IDs can be managed independently by any registered vendor
+but are required to have IDs disjoint from the open-source architecture
+IDs (MSB set) to prevent collisions if a vendor wishes to use both
+closed-source and open-source microarchitectures.
+
+The convention adopted within the following Implementation field can be
+used to segregate branches of the same architecture design, including by
+organization. The csr:misa[] register also helps distinguish different
+variants of a design.
+===='''
+zh = '''
+[NOTE]
+====
+其意图是让架构 ID 表示与开发所围绕的项目相关联的微架构，而不是某个特定组织。开源设计的商业制造应（并且可能被许可证要求）保留原始架构 ID。这将有助于减少碎片化和工具支持成本，并提供归属信息。开源架构 ID 由 RISC-V International 管理，应仅分配给已发布且可正常工作的开源项目。商业架构 ID 可由任何注册厂商独立管理，但要求其 ID 与开源架构 ID 不相交（MSB 置位），以防止厂商希望同时使用闭源和开源微架构时发生冲突。
+
+以下 Implementation 字段中采用的约定可用于区分同一架构设计的不同分支，包括按组织区分。csr:misa[] 寄存器也有助于区分设计的不同变体。
+===='''

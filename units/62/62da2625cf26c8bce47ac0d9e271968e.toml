@@ -1,0 +1,17 @@
+unit_id = "62da2625cf26c8bce47ac0d9e271968e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, the Advanced Interrupt Architecture (AIA) for RISC-V adds
+to a hart as many as ten supervisor-level CSRs (`siselect`, `sireg`, `stopi`,
+`sseteipnum`, `sclreipnum`, `sseteienum`, `sclreienum`, `sclaimei`, `sieh`, and `siph`) and
+provides also the option for hardware to be backward-compatible with older,
+pre-AIA software. Because an older hypervisor that is oblivious to the AIA will
+not know to swap any of the AIA's new CSRs on context switches, the registers may
+then be used as a covert channel between multiple guest OSes that run atop this
+hypervisor. Although traditional practices might consider such a communication
+channel harmless, the intense focus on security today argues that a means be
+offered to plug such channels.'''
+zh = '''
+例如，RISC-V 的高级中断架构（AIA）为一个硬件线程增加了多达十个监管级 CSR（`siselect`、`sireg`、`stopi`、`sseteipnum`、`sclreipnum`、`sseteienum`、`sclreienum`、`sclaimei`、`sieh` 和 `siph`），并且还提供了让硬件向后兼容较旧的、AIA 之前的软件的选项。由于对 AIA 一无所知的旧管理程序不会知道在上下文切换时交换 AIA 的任何新 CSR，这些寄存器就可能被用作运行于该管理程序之上的多个客户机操作系统之间的隐蔽信道。尽管传统做法可能认为这种通信信道无害，但如今对安全性的高度关注表明，应当提供一种手段来堵住此类信道。'''

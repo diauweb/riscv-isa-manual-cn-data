@@ -1,0 +1,21 @@
+unit_id = "f92489d13332a66d9153b8330632014a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The `Zmmul` extension enables low-cost implementations that require
+multiplication operations but not division. For many microcontroller
+applications, division operations are too infrequent to justify the cost
+of divider hardware. By contrast, multiplication operations are more
+frequent, making the cost of multiplier hardware more justifiable.
+Simple FPGA soft cores particularly benefit from eliminating division
+but retaining multiplication, since many FPGAs provide hardwired
+multipliers but require dividers be implemented in soft logic.
+===='''
+zh = '''
+[NOTE]
+====
+`Zmmul` 扩展支持需要乘法操作但不需要除法的低成本实现。对于许多微控制器应用，除法操作过于罕见，不足以证明除法器硬件的成本合理。相比之下，乘法操作更为频繁，使乘法器硬件的成本更具合理性。简单的 FPGA 软核尤其受益于去除除法但保留乘法，因为许多 FPGA 提供硬连线乘法器，但要求除法器用软逻辑实现。
+===='''

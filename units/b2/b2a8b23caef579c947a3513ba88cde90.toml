@@ -1,0 +1,17 @@
+unit_id = "b2a8b23caef579c947a3513ba88cde90"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Systems should implement carefully considered access control policies from
+lower privilege modes to physical entropy sources. The system can trap
+attempted access to csr:seed[] and feed a less privileged client
+_virtual entropy source_ data (<<crypto_scalar_es_req_virt>>) instead of
+invoking an SP 800-90B  (<<crypto_scalar_es_req_90b>>) or PTG.2
+(<<crypto_scalar_es_req_ptg2>>) _physical entropy source_. Emulated csr:seed[]
+data generation is made with an appropriately seeded, secure software DRBG.
+See  <<crypto_scalar_appx_es_access>> for security considerations related
+to direct access to entropy sources.'''
+zh = '''
+系统应实现经过仔细考虑的从较低特权模式到物理熵源的访问控制策略。系统可以捕获对 csr:seed[] 的访问尝试，并向较低特权的客户端提供 _虚拟熵源_ 数据（<<crypto_scalar_es_req_virt>>），而不是调用 SP 800-90B（<<crypto_scalar_es_req_90b>>）或 PTG.2（<<crypto_scalar_es_req_ptg2>>）_物理熵源_。模拟的 csr:seed[] 数据生成使用适当播种的安全软件 DRBG 进行。
+关于直接访问熵源的安全考虑，见 <<crypto_scalar_appx_es_access>>。'''

@@ -1,0 +1,13 @@
+unit_id = "7e55c5c4ab02aeb54badf2134df20df5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The current `vmulh*` opcodes perform simple fractional
+multiplies, but with no option to scale, round, and/or saturate the
+result.  A possible future extension can consider variants of `vmulh`,
+`vmulhu`, `vmulhsu` that use the `vxrm` rounding mode when discarding
+low half of product.  There is no possibility of overflow in these
+cases.'''
+zh = '''
+NOTE: 当前的 `vmulh*` 操作码执行简单的分数乘法，但没有对结果进行缩放、舍入和/或饱和的选项。未来的扩展可以考虑在丢弃乘积低半部分时使用 `vxrm` 舍入模式的 `vmulh`、`vmulhu`、`vmulhsu` 变体。在这些情况下不存在溢出的可能性。'''

@@ -1,0 +1,13 @@
+unit_id = "db7307b2ab28cb867b5cdbc8b94131a8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_rwx_check]#If a PMP entry matches all bytes of a memory operation, then the L, R, W, and X
+bits determine whether the operation succeeds or fails. If the L bit is
+clear and the privilege mode of the access is M, the operation succeeds.
+Otherwise, if the L bit is set or the privilege mode of the access is S
+or U, then the operation succeeds only if the R, W, or X bit corresponding
+to the access type is set.#'''
+zh = '''
+[#norm:pmp_rwx_check]#若某 PMP 条目匹配某内存操作的所有字节，则由 L、R、W 和 X 位决定该操作成功还是失败。若 L 位清除且该访问的特权模式为 M，则该操作成功。否则，若 L 位置位或该访问的特权模式为 S 或 U，则只有当对应于该访问类型的 R、W 或 X 位被置位时，该操作才成功。#'''

@@ -1,0 +1,21 @@
+unit_id = "8cbb9a594f47349a122b778efcbd5ace"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The Abstract Command interface is designed to allow a debugger to write
+commands as fast as possible, and then later check whether they
+completed without error. In the common case the debugger will be much
+slower than the target and commands succeed, which allows for maximum
+throughput. If there is a failure, the interface ensures that no
+commands execute after the failing one. To discover which command
+failed, the debugger has to look at the state of the DM (e.g. contents
+of {dm-data0}) or hart (e.g. contents of a register modified by a Program Buffer program) to determine which one failed.
+===='''
+zh = '''
+[NOTE]
+====
+抽象命令接口旨在允许调试器尽可能快地写入命令，然后稍后检查它们是否完成且没有错误。在常见情况下，调试器会比目标慢得多，并且命令会成功，从而实现最大吞吐量。如果发生失败，接口确保在失败命令之后不执行任何命令。要发现哪个命令失败，调试器必须查看 DM 的状态（例如 {dm-data0} 的内容）或硬件线程的状态（例如由程序缓冲区程序修改的寄存器内容），以确定哪一个失败。
+===='''

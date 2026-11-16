@@ -1,0 +1,16 @@
+unit_id = "67fe74440c3688b81071a0f04dbb0397"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+After the writable bits of the machine-level `mstateen` CSRs are initialized to
+zeros on reset, machine-level software can set bits in these registers to
+enable less-privileged access to the controlled state. This may be either
+because machine-level software knows how to swap the state or, more likely,
+because machine-level software isn't swapping supervisor-level environments.
+(Recall that the main reason the `mstateen` CSRs must exist is so machine level
+can emulate the hypervisor extension. When machine level isn't emulating the
+hypervisor extension, it is likely there will be no need to keep any
+implemented `mstateen` bits zero.)'''
+zh = '''
+在机器级 `mstateen` CSR 的可写位于复位时被初始化为零之后，机器级软件可以在这些寄存器中置位，以允许较低特权级访问受控状态。这可能是因为机器级软件知道如何交换该状态，或者更可能的是，因为机器级软件并不交换监管级环境。（回想一下，`mstateen` CSR 必须存在的主要原因是机器级能够模拟管理程序扩展。当机器级不模拟管理程序扩展时，很可能就不需要将任何已实现的 `mstateen` 位保持为零。）'''

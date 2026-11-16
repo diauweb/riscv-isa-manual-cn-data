@@ -1,0 +1,15 @@
+unit_id = "7c7f0fbc159fb12a0c36c76b7de28272"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If extension Smstateen is implemented together with Ssqosid, then Ssqosid also
+requires the SRMCFG bit in `mstateen0` to be implemented.
+If `mstateen0`.SRMCFG is 0, attempts to access `srmcfg` in privilege modes
+less privileged than M-mode raise an illegal-instruction exception.
+If `mstateen0`.SRMCFG is 1 or if extension Smstateen is not implemented,
+attempts to access `srmcfg` when `V=1` raise a virtual-instruction exception.'''
+zh = '''
+如果 Smstateen 扩展与 Ssqosid 一同实现，那么 Ssqosid 还要求实现 `mstateen0` 中的 SRMCFG 位。
+如果 `mstateen0`.SRMCFG 为 0，则在特权级低于机器模式的模式下访问 `srmcfg` 会引发非法指令异常。
+如果 `mstateen0`.SRMCFG 为 1，或者未实现 Smstateen 扩展，则在 `V=1` 时访问 `srmcfg` 会引发虚拟指令异常。'''

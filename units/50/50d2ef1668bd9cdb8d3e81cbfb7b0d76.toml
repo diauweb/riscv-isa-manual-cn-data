@@ -1,0 +1,8 @@
+unit_id = "50d2ef1668bd9cdb8d3e81cbfb7b0d76"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Having both `trRamStart/Limit??` registers set, the tool should try to set `trRamRP??` to the same value as `trRamLimit??`. If it is settable, it means that the `trRamData` register should be used to read the trace. Otherwise collected trace must be read using normal, physical memory accesses (in range defined by `trRamStart/Limit??` registers).'''
+zh = '''
+在 `trRamStart/Limit??` 寄存器都设置好后，工具应尝试将 `trRamRP??` 设置为与 `trRamLimit??` 相同的值。如果它可设置，则意味着应使用 `trRamData` 寄存器来读取跟踪。否则，必须使用正常的物理内存访问（在 `trRamStart/Limit??` 寄存器定义的范围内）来读取已收集的跟踪。'''

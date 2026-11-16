@@ -1,0 +1,53 @@
+unit_id = "316e6978ef3501bfe500234e77ca5fe4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 3, subformat 3
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 11 (sync): synchronisation
+|*subformat*| 2| 11 (support): Supporting information for the decoder
+|*ienable*| 1| Indicates if the instruction trace encoder is enabled
+|*encoder_mode*| N| Identifies trace algorithm Details and number of
+bits implementation dependent. Currently Branch trace is the only mode
+defined, indicated by the value 0.
+|*qual_status*| 2| Indicates qualification status (no_change): No
+change to filter qualification (ended_rep): Qualification ended,
+preceding *te_inst* sent explicitly to indicate last qualification
+instruction (trace_lost): One or more instruction trace packets lost.
+(ended_ntr): Qualification ended, preceding *te_inst* would have been
+sent anyway due to an updiscon, even if it wasn't the last qualified
+instruction)
+|*ioptions*| N| Values of all instruction trace run-time configuration
+bits Number of bits and definitions implementation dependent. Examples
+might be - 'sequentially inferred jumps' Don't report the targets of
+sequentially inferable jumps - 'implicit return' Don't report function
+return addresses - 'implicit exception' Exclude address from format 3,
+sub-format 1 _te_inst_ packets if trap vector can be determined from
+_ecause_ - 'branch prediction' Branch predictor enabled - 'jump target
+cache' Jump target cache enabled - 'full address' Always output full
+addresses (SW debug option)
+|*denable*| 1| Indicates if the data trace is enabled (if supported)
+|*dloss*| 1| One of more data trace packets lost (if supported)
+|*doptions*| M| Values of all data trace run-time configuration bits
+Number of bits and definitions implementation dependent. Examples might
+be - 'no data' Exclude data (just report addresses) - 'no addr' Exclude
+address (just report data)
+|==='''
+zh = '''
+.包格式 3，子格式 3
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名*| *位数*| *描述*
+|*format*| 2| 11 (sync)：同步
+|*subformat*| 2| 11 (support)：给解码器的支持信息
+|*ienable*| 1| 指示指令跟踪编码器是否启用
+|*encoder_mode*| N| 标识跟踪算法。详细内容和位数取决于实现。目前仅定义了分支跟踪模式，由值 0 表示。
+|*qual_status*| 2| 指示限定状态 (no_change)：过滤器限定无变化 (ended_rep)：限定结束，前一个 *te_inst* 被显式发送以指示限定结束前的最后一条指令 (trace_lost)：一个或多个指令跟踪包丢失 (ended_ntr)：限定结束，前一个 *te_inst* 本来也会因不可推断的 PC 不连续点而发送，即使它不是最后一条被限定的指令
+|*ioptions*| N| 所有指令跟踪运行时配置位的值。位数和定义取决于实现。示例可能是——"顺序推断跳转"不报告顺序可推断跳转的目标——"隐式返回"不报告函数返回地址——"隐式异常"如果陷阱向量可由 _ecause_ 确定，则从格式 3、子格式 1 的 _te_inst_ 包中排除地址——"分支预测"启用分支预测器——"跳转目标缓存"启用跳转目标缓存——"完整地址"始终输出完整地址（软件调试选项）
+|*denable*| 1| 指示数据跟踪是否启用（如果支持）
+|*dloss*| 1| 一个或多个数据跟踪包丢失（如果支持）
+|*doptions*| M| 所有数据跟踪运行时配置位的值。位数和定义取决于实现。示例可能是——"无数据"排除数据（仅报告地址）——"无地址"排除地址（仅报告数据）
+|==='''

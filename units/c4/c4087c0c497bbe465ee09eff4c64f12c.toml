@@ -1,0 +1,16 @@
+unit_id = "c4087c0c497bbe465ee09eff4c64f12c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((keepalive)))
+{keepalive} is an optional internal bit of per-hart state. When it is
+set, it suggests that the hardware should attempt to keep the hart
+available for the debugger, e.g. by keeping it from entering a
+low-power state once powered on. Even if the bit is implemented,
+hardware might not be able to keep a hart available. The bit is
+written through {dmcontrol-setkeepalive} and
+{dmcontrol-clrkeepalive}.'''
+zh = '''
+(((keepalive)))
+{keepalive} 是可选的每硬件线程内部状态位。当它被置位时，建议硬件应尝试为调试器保持硬件线程可用，例如在上电后防止其进入低功耗状态。即使实现了该位，硬件也可能无法保持硬件线程可用。该位通过 {dmcontrol-setkeepalive} 和 {dmcontrol-clrkeepalive} 写入。'''

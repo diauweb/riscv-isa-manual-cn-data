@@ -1,0 +1,8 @@
+unit_id = "12a3b21fbd588a506d89a62b490c29d0"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+IMPORTANT: Decoder does not need to know what actual depth of the call stack is implemented by encoder but for efficiency reasons it should assume max depth. N-Trace implementation should never implement call stack deeper than 32 levels. Such deep calls will be most likely interrupted by other events/messages (like periodic SYNC).'''
+zh = '''
+IMPORTANT: 解码器不需要知道编码器实现的调用栈实际深度，但出于效率原因，应假设最大深度。N-Trace 实现绝不应实现深于 32 级的调用栈。如此深的调用很可能被其他事件/消息（如周期性 SYNC）中断。'''

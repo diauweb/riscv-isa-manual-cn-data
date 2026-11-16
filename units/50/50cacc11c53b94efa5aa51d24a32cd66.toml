@@ -1,0 +1,8 @@
+unit_id = "50cacc11c53b94efa5aa51d24a32cd66"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vsetvl_op_rs1_x0_rd_x0]#When _rs1_=`x0` and _rd_=`x0`, the instructions operate as if the current vector length in csr:vl[] is used as the AVL, and the resulting value is written to csr:vl[], but not to a destination register.  This form can only be used when VLMAX and hence csr:vl[] is not actually changed by the new SEW/LMUL ratio.#  [#norm:vtype_vset_rsv]#Use of the instructions with a new SEW/LMUL ratio that would result in a change of VLMAX is reserved. Use of the instructions is also reserved if csr::[vill] was 1 beforehand.# [#norm:reserved_vill_set]#Implementations may set csr::[vill] in either case.#'''
+zh = '''
+[#norm:vsetvl_op_rs1_x0_rd_x0]#当 _rs1_=`x0` 且 _rd_=`x0` 时，指令的操作如同使用 csr:vl[] 中的当前向量长度作为 AVL，并将结果值写入 csr:vl[]，但不写入目标寄存器。此形式只能在 VLMAX（因而 csr:vl[]）不会因新的 SEW/LMUL 比率而实际改变时使用。#  [#norm:vtype_vset_rsv]#使用会导致 VLMAX 改变的新的 SEW/LMUL 比率的指令是保留的。如果事先 csr::[vill] 为 1，则指令的使用也是保留的。# [#norm:reserved_vill_set]#实现可以在任一情况下设置 csr::[vill]。#'''

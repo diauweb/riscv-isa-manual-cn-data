@@ -1,0 +1,12 @@
+unit_id = "3de22cdd9907ad070a624be75cb15b96"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The term _call_ is used to refer to a `JAL` or `JALR` instruction with a link
+register as destination, i.e., _rd_≠`x0`. Conventionally, the link register is
+`x1` or `x5`. A _call_ using `JAL` or `C.JAL` is termed a direct call. A
+`C.JALR` expands to `JALR x1, 0(rs1)` and is a _call_. A _call_ using `JALR` or
+`C.JALR` is termed an _indirect-call_.'''
+zh = '''
+术语 _call_ 用于指代以链接寄存器为目的寄存器的 `JAL` 或 `JALR` 指令，即 _rd_≠`x0`。按照约定，链接寄存器是 `x1` 或 `x5`。使用 `JAL` 或 `C.JAL` 的 _call_ 称为直接调用。`C.JALR` 展开为 `JALR x1, 0(rs1)`，并且是一个 _call_。使用 `JALR` 或 `C.JALR` 的 _call_ 称为 _indirect-call_。'''

@@ -1,0 +1,12 @@
+unit_id = "74bd8dec426e0f5dc319a2c8a3a33b47"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-sd_op]#C.SD is an RV64C-only instruction that stores a 64-bit value in
+register `_rs2′_` to memory. It computes an effective
+address by adding the _zero_-extended offset, scaled by 8, to the base
+address in register `_rs1′_`. It expands to
+`sd rs2′, offset(rs1′)`.#'''
+zh = '''
+[#norm:c-sd_op]#C.SD 是一条仅限 RV64C 的指令，将寄存器 `_rs2′_` 中的一个 64 位值存储到内存。它通过将 __零__扩展的偏移量（按 8 缩放）加到寄存器 `_rs1′_` 中的基地址上来计算有效地址。它扩展为 `sd rs2′, offset(rs1′)`。#'''

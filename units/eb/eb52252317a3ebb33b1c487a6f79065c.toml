@@ -1,0 +1,19 @@
+unit_id = "eb52252317a3ebb33b1c487a6f79065c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Now, consider the alternative in <<spinlock_fences, Example 2>>. In
+this case, even though the AMOSWAP does not enforce ordering with an
+_aq_ bit, the fence nevertheless enforces that the acquire AMOSWAP
+appears earlier in the global memory order than all loads and stores in
+the critical section. Note, however, that in this case, the fence also
+enforces additional orderings: it also requires that the "Arbitrary
+unrelated load" at the start of the program appears earlier in the
+global memory order than the loads and stores of the critical section.
+(This particular fence does not, however, enforce any ordering with
+respect to the "Arbitrary unrelated store" at the start of the
+snippet.) In this way, fence-enforced orderings are slightly coarser
+than orderings enforced by _.aq_.'''
+zh = '''
+现在考虑 <<spinlock_fences, Example 2>> 中的替代方案。在这种情况下，即使 AMOSWAP 没有通过 _aq_ 位强制排序，fence 仍然强制获取 AMOSWAP 在全局内存顺序中早于临界区中的所有加载和存储出现。但请注意，在这种情况下，fence 还强制了额外的顺序：它还要求程序开头的“任意无关加载”在全局内存顺序中早于临界区的加载和存储出现。（不过，这个特定的 fence 并不相对于片段开头的“任意无关存储”强制任何顺序。）这样，fence 强制的排序比 _.aq_ 强制的排序稍粗。'''

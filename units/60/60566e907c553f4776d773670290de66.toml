@@ -1,0 +1,25 @@
+unit_id = "60566e907c553f4776d773670290de66"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As a special case of this rule, the value written to one CSR may control
+whether a field of a second CSR is writable (with multiple legal values)
+or is read-only. When a write to the controlling CSR causes the second
+CSR's field to change from previously read-only to now writable, that
+field immediately gets an `UNSPECIFIED` but legal value, unless specified otherwise.
+
+***
+Some CSR fields are, when writable, defined as aliases of other CSR
+fields. Let _x_ be such a CSR field, and let _y_ be the CSR field it aliases when writable. If a write to a controlling CSR causes field _x_ to change from previously read-only to now writable, the new value of _x_ is not `UNSPECIFIED` but instead immediately reflects the existing value of its alias _y_, as required.
+===='''
+zh = '''
+[NOTE]
+====
+作为此规则的特例，写入一个 CSR 的值可能控制第二个 CSR 的某个字段是可写的（具有多个合法值）还是只读的。当对控制 CSR 的写入导致第二个 CSR 的字段从先前的只读变为现在可写时，除非另有规定，该字段立即获得一个 `UNSPECIFIED` 但合法的值。
+
+***
+某些 CSR 字段在可写时被定义为其他 CSR 字段的别名。设 _x_ 为这样一个 CSR 字段，设 _y_ 为其可写时所别名的 CSR 字段。如果对控制 CSR 的写入导致字段 _x_ 从先前的只读变为现在可写，则 _x_ 的新值不是 `UNSPECIFIED`，而是按要求立即反映其别名 _y_ 的现有值。
+===='''

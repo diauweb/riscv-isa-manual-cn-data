@@ -1,0 +1,12 @@
+unit_id = "b3d0af044ef2148a00bab3d0852009e2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_FS_off_V_fp_ill]#If the floating-point unit status field csr:mstatus[fs] is `Off` then any
+attempt to execute a vector floating-point instruction will raise an
+illegal-instruction exception.#  [#norm:mstatus_FS_dirty_V_fp]#Any vector floating-point instruction
+that modifies any floating-point extension state (i.e., floating-point
+CSRs or `f` registers) must set csr:mstatus[fs] to `Dirty`.#'''
+zh = '''
+[#norm:mstatus_FS_off_V_fp_ill]#如果浮点单元状态字段 csr:mstatus[fs] 为 `Off`，则任何尝试执行向量浮点指令都会引发非法指令异常。#  [#norm:mstatus_FS_dirty_V_fp]#任何修改任何浮点扩展状态（即浮点 CSR 或 `f` 寄存器）的向量浮点指令必须将 csr:mstatus[fs] 设置为 `Dirty`。#'''

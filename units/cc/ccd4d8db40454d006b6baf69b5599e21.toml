@@ -1,0 +1,10 @@
+unit_id = "ccd4d8db40454d006b6baf69b5599e21"
+kind = "code"
+translatable = false
+en = '''
+.Landing pad expected determination
+[listing]
+----
+  is_lp_expected = ( (JALR || C.JR || C.JALR) &&
+                     (rs1 != x1) && (rs1 != x5) && (rs1 != x7) ) ? 1 : 0;
+----'''

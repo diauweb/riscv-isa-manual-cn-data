@@ -1,0 +1,14 @@
+unit_id = "02a958295d444bff6229f7b6a2b44039"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* *ended_rep* indicates that the preceding packet would not have been
+issued if tracing hadn't ended, which means that tracing stopped after
+executing looplabel in the 1st loop iteration;
+* *ended_ntr* indicates that the preceding packet would have been issued
+anyway because of an uninferable PC discontinuity, which means that
+tracing stopped after executing looplabel in the 2nd loop iteration;'''
+zh = '''
+* *ended_rep* 表示如果跟踪没有结束，前一个包就不会被发出，这意味着跟踪在执行了第 1 次循环迭代中的 looplabel 之后停止；
+* *ended_ntr* 表示由于不可推断的 PC 不连续点，前一个包本来也会被发出，这意味着跟踪在执行了第 2 次循环迭代中的 looplabel 之后停止；'''

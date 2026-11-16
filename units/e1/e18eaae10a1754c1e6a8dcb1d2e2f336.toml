@@ -1,0 +1,14 @@
+unit_id = "e18eaae10a1754c1e6a8dcb1d2e2f336"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `time` CSR is a read-only shadow of the memory-mapped `mtime` register.
+When XLEN=32, the `timeh` CSR is a read-only shadow of the upper 32 bits of the
+memory-mapped `mtime` register, while `time` shadows only the lower 32 bits of
+`mtime`.
+[#norm:time_timeh_visibility_mtime]#When `mtime` changes, it is guaranteed to be reflected in `time`
+and `timeh` eventually, but not necessarily immediately.#'''
+zh = '''
+`time` CSR 是内存映射的 `mtime` 寄存器的只读影子。当 XLEN=32 时，`timeh` CSR 是内存映射的 `mtime` 寄存器高 32 位的只读影子，而 `time` 仅影子 `mtime` 的低 32 位。
+[#norm:time_timeh_visibility_mtime]#当 `mtime` 变化时，保证最终会反映在 `time` 和 `timeh` 中，但不一定立即反映。#'''

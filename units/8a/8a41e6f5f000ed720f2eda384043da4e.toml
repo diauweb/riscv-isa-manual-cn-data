@@ -1,0 +1,20 @@
+unit_id = "8a41e6f5f000ed720f2eda384043da4e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[mprv] (Modify PRiVilege) bit modifies the _effective privilege mode_,
+i.e., the privilege level at which explicit memory accesses execute.
+[#norm:mstatus_mprv_ldst_op]#When csr::[mprv]=0, explicit memory accesses
+behave as normal, using the translation and
+protection mechanisms of the current privilege mode. When csr::[mprv]=1, load
+and store memory addresses are translated and protected, and endianness
+is applied, as though the current privilege mode were set to csr::[mpp].#
+[#norm:mstatus_mprv_inst_xlat_op]#Instruction address-translation and protection are unaffected by the
+setting of csr::[mprv].#
+[#norm:mstatus_mprv_rdonly0_no_umode]#csr::[mprv] is read-only 0 if U-mode is not supported; otherwise, it must be writable.#'''
+zh = '''
+csr::[mprv]（Modify PRiVilege，修改特权级）位修改__有效特权模式__，即显式内存访问执行时所用的特权级。
+[#norm:mstatus_mprv_ldst_op]#当 csr::[mprv]=0 时，显式内存访问使用当前特权模式的转换和保护机制，表现为正常行为。当 csr::[mprv]=1 时，加载和存储内存地址的转换和保护，以及字节序的应用，都如同当前特权模式被设置为 csr::[mpp] 一样。#
+[#norm:mstatus_mprv_inst_xlat_op]#指令地址转换和保护不受 csr::[mprv] 设置的影响。#
+[#norm:mstatus_mprv_rdonly0_no_umode]#如果不支持 U 模式，则 csr::[mprv] 为只读 0；否则，它必须可写。#'''

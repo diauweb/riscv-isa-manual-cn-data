@@ -1,0 +1,13 @@
+unit_id = "e4858575f6357bee9b8a5c7972a4184c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The FCVTMOD.W.D instruction is defined similarly to the FCVT.W.D
+instruction, with the following differences. FCVTMOD.W.D always rounds
+towards zero. Bits 31:0 are taken from the rounded, unbounded two's
+complement result, then sign-extended to XLEN bits and written to
+integer register _rd_. ±{inf} and NaN are converted to
+zero.'''
+zh = '''
+FCVTMOD.W.D 指令的定义与 FCVT.W.D 指令类似，但有以下区别。FCVTMOD.W.D 总是向零舍入。取自已舍入的无界二进制补码结果的位 31:0，然后符号扩展至 XLEN 位并写入整数寄存器 _rd_。±{inf} 和 NaN 转换为零。'''

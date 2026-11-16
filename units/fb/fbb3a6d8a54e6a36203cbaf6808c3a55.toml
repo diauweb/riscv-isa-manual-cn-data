@@ -1,0 +1,25 @@
+unit_id = "fbb3a6d8a54e6a36203cbaf6808c3a55"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:divw_divuw_op]#insn:divw[] and insn:divuw[] are RV64 instructions that divide the lower 32 bits of
+`rs1` by the lower 32 bits of `rs2`, treating them as signed and
+unsigned integers, placing the 32-bit quotient in `rd`,
+sign-extended to 64 bits.# [#norm:remw_remuw_op]#insn:remw[] and insn:remuw[] are RV64 instructions that
+provide the corresponding signed and unsigned remainder
+operations.# [#norm:remw_remuw_result_sign]#Both insn:remw[] and insn:remuw[] always sign-extend the 32-bit result
+to 64 bits, including on a divide by zero.#
+(((MUL, div by zero)))
+The semantics for division by zero and division overflow are summarized
+in <<divby0>>. [#norm:div_by_zero]#The quotient of division by zero has all bits
+set#, and [#norm:rem_by_zero]#the remainder of division by zero equals the dividend.#
+[#norm:signed_div_overflow]#Signed division overflow occurs only when the most-negative integer is divided
+by −1. The quotient of a signed division with overflow is
+equal to the dividend, and the remainder is zero.# Unsigned division
+overflow cannot occur.'''
+zh = '''
+[#norm:divw_divuw_op]#insn:divw[] 和 insn:divuw[] 是 RV64 指令，它们将 `rs1` 的低 32 位除以 `rs2` 的低 32 位，将其视为有符号和无符号整数，并将 32 位商放入 `rd`，符号扩展至 64 位。# [#norm:remw_remuw_op]#insn:remw[] 和 insn:remuw[] 是 RV64 指令，提供相应的有符号和无符号余数操作。# [#norm:remw_remuw_result_sign]#insn:remw[] 和 insn:remuw[] 始终将 32 位结果符号扩展至 64 位，包括除零的情况。#
+(((MUL, div by zero)))
+除零和除法溢出的语义总结于 <<divby0>>。[#norm:div_by_zero]#除零的商为全 1 位#，且 [#norm:rem_by_zero]#除零的余数等于被除数。#
+[#norm:signed_div_overflow]#有符号除法溢出仅在最小负整数除以 −1 时发生。有符号除法溢出的商等于被除数，余数为零。# 无符号除法溢出不可能发生。'''

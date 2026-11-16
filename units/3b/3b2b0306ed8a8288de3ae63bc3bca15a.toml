@@ -1,0 +1,16 @@
+unit_id = "3b2b0306ed8a8288de3ae63bc3bca15a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zicfiss_enc]#The Zicfiss instructions, except `SSAMOSWAP.W/D`, are encoded using a subset of
+May-Be-Operation instructions defined by the Zimop and Zcmop extensions.#
+This subset of instructions revert to their Zimop/Zcmop defined behavior when
+the Zicfiss extension is not implemented or if the extension has not been
+activated. A program that is built with Zicfiss instructions can thus continue
+to operate correctly, but without backward-edge control-flow integrity, on
+processors that do not support the Zicfiss extension or if the Zicfiss extension
+is not active. The Zicfiss extension may be activated for use individually and
+independently for each privilege mode.'''
+zh = '''
+[#norm:zicfiss_enc]#除 `SSAMOSWAP.W/D` 外，Zicfiss 指令使用由 Zimop 和 Zcmop 扩展定义的 May-Be-Operation 指令的子集进行编码。# 当 Zicfiss 扩展未实现或扩展未启用时，该指令子集恢复为其 Zimop/Zcmop 定义的行为。因此，使用 Zicfiss 指令构建的程序可在不支持 Zicfiss 扩展的处理器上，或在 Zicfiss 扩展未启用时继续正确运行，但不具备后向边控制流完整性。Zicfiss 扩展可按每个特权模式单独且独立地启用。'''

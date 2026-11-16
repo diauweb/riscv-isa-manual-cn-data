@@ -1,0 +1,10 @@
+unit_id = "4fd0e8e388992e7b9ab28b3559609878"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sctrstatus-frozen_set]#When `sctrctl`.LCOFIFRZ=1 and a local-counter-overflow interrupt
+(LCOFI) traps (as a result of an HPM counter overflow) to M-mode or to S-mode, `sctrstatus`.FROZEN is set by hardware. This inhibits CTR recording until software clears FROZEN. The LCOFI trap itself is not recorded.#'''
+zh = '''
+[#norm:sctrstatus-frozen_set]#当 `sctrctl`.LCOFIFRZ=1 且本地计数器溢出中断
+(LCOFI)（由于 HPM 计数器溢出）陷入 M 模式或 S 模式时，硬件设置 `sctrstatus`.FROZEN。这会禁止 CTR 记录，直到软件清除 FROZEN。LCOFI 陷阱本身不被记录。#'''

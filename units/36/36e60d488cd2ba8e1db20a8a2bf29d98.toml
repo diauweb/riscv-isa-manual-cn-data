@@ -1,0 +1,22 @@
+unit_id = "36e60d488cd2ba8e1db20a8a2bf29d98"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+When the `mcycle` and `minstret` counters are not needed, it is desirable
+to conditionally inhibit them to reduce energy consumption. Providing a
+single CSR to inhibit all counters also allows the counters to be
+atomically sampled.
+
+Because the `mtime` counter can be shared between multiple cores, it
+cannot be inhibited with the `mcountinhibit` mechanism.
+===='''
+zh = '''
+[NOTE]
+====
+当不需要 `mcycle` 和 `minstret` 计数器时，有条件地抑制它们以降低能耗是可取的。提供单个 CSR 来抑制所有计数器还允许原子地对计数器进行采样。
+
+由于 `mtime` 计数器可以在多个核心之间共享，因此无法使用 `mcountinhibit` 机制抑制它。
+===='''

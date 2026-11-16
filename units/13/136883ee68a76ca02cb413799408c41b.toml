@@ -1,0 +1,8 @@
+unit_id = "136883ee68a76ca02cb413799408c41b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Value `A` means alignment which depends on memory access width. If we have memory access width of 32-bits, A=4 and value of `trRamLimit` register should be 0x...FC. Some implementations may impose bigger alignment of trace data (to allow more efficient transfer rates) for SMEM mode. For SRAM mode `A` must be 4 as access to trace via `trRamData` is always 32-bits wide.'''
+zh = '''
+NOTE: 值 `A` 表示取决于内存访问宽度的对齐。如果内存访问宽度为 32 位，则 A=4，并且 `trRamLimit` 寄存器的值应为 0x...FC。某些实现可能对 SMEM 模式的跟踪数据施加更大的对齐（以允许更高效的传输速率）。对于 SRAM 模式，`A` 必须为 4，因为通过 `trRamData` 访问跟踪始终为 32 位宽。'''

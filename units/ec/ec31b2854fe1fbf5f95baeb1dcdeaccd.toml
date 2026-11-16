@@ -1,0 +1,12 @@
+unit_id = "ec31b2854fe1fbf5f95baeb1dcdeaccd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the halt signal (driven by the hart's halt request bit in the Debug
+Module) or {resethaltreq} are asserted when a hart comes out of reset, the hart must
+enter Debug Mode before executing any instructions, but after performing
+any initialization that would usually happen before the first
+instruction is executed.'''
+zh = '''
+如果硬件线程退出复位时停止信号（由调试模块中硬件线程的停止请求位驱动）或 {resethaltreq} 被置位，则硬件线程必须在执行任何指令之前进入调试模式，但在执行通常在第一条指令执行之前发生的任何初始化之后。'''

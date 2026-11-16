@@ -1,0 +1,132 @@
+unit_id = "3146fc731d6c010b96b338d21c40f303"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Since a CSR for security and / or global PMP behavior settings is not available with the current spec, we needed to define a new one. This new CSR will allow us to add further security configuration options in the future and also allow developers to verify the existence of the new mechanisms defined on this proposal.
+
+. There are use cases where developers want to enforce PMP rules in M-mode during the boot process, that are also able to modify, merge, and / or remove later on. Since a rule that is enforced in M-mode also needs to be locked (or else badly written or malicious M-mode software can remove it at any time), the only way for developers to approach this is to keep adding PMP rules to the chain and rely on rule priority. This is a waste of PMP rules and since it’s only needed during boot, ``mseccfg.RLB`` is a simple workaround that can be used temporarily and then disabled and locked down.
++
+Also when ``mseccfg.MML`` is set, according to 4b it’s not possible to add a _Shared-Region_ rule with executable privileges. So RLB can be set temporarily during the boot process to register such regions. Note that it’s still possible to register executable _Shared-Region_ rules using initial register settings (that may include ``mseccfg.MML`` being set and the rule being set on PMP registers) on *PMP reset*, without using RLB.
++
+[WARNING]
+====
+*Be aware that RLB introduces a security vulnerability if left set after the boot process is over and in general it should be used with caution, even when used temporarily.* Having editable PMP rules in M-mode gives a false sense of security since it only takes a few malicious instructions to lift any PMP restrictions this way. It doesn’t make sense to have a security control in place and leave it unprotected. Rule Locking Bypass is only meant as a way to optimize the allocation of PMP rules, catch errors during debugging, and allow the bootrom/firmware to register executable _Shared-Region_ rules. If developers / vendors have no use for such functionality, they should never set ``mseccfg.RLB`` and if possible hard-wire it to 0. In any case *RLB should be disabled and locked as soon as possible*.
+====
++
+[NOTE]
+====
+If ``mseccfg.RLB`` is not used and left unset, it will be locked as soon as a PMP rule/entry with the ``pmpcfg.L`` bit set is configured.
+====
++
+[IMPORTANT]
+====
+Since PMP rules with a higher priority override rules with a lower priority, locked rules must precede non-locked rules.
+====
+
+. With the current spec M-mode can access any memory region unless restricted by a PMP rule with the ``pmpcfg.L`` bit set. There are cases where this approach is overly permissive, and although it’s possible to restrict M-mode by adding PMP rules during the boot process, this can also be seen as a waste of PMP rules. Having the option to block anything by default, and use PMP as an allowlist for M-mode is considered a safer approach. This functionality may be used during the boot process or upon *PMP reset*, using initial register settings. +
+
+. The current dual meaning of the ``pmpcfg.L`` bit that marks a rule as Locked and *enforced* on all modes is neither flexible nor clean. With the introduction of _Machine Mode Lock-down_ the ``pmpcfg.L`` bit distinguishes between rules that are *enforced* *only* in M-mode (_M-mode-only_) or *only* in S/U-modes (_S/U-mode-only_). The rule locking becomes part of the definition of an _M-mode-only_ rule, since when a rule is added in M mode, if not locked, can be modified or removed in a few instructions. On the other hand, S/U modes can’t modify PMP rules anyway so locking them doesn’t make sense.
+
+.. This separation between _M-mode-only_ and _S/U-mode-only_ rules also allows us to distinguish which regions are to be used by processes in Machine mode (``pmpcfg.L == 1``) and which by Supervisor or User mode processes (``pmpcfg.L == 0``), in the same way the U bit on the Virtual Memory’s PTEs marks which Virtual Memory pages are to be used by User mode applications (U=1) and which by the Supervisor / OS (U=0). With this distinction in place we are able to implement memory access and execution prevention in M-mode for any physical memory region that is not _M-mode-only_.
++
+An attacker that manages to tamper with a memory region used by S/U mode, even after successfully tricking a process running in M-mode to use or execute that region, will fail to perform a successful attack since that region will be _S/U-mode-only_ hence any access when in M-mode will trigger an access exception.
++
+[NOTE]
+====
+In order to support zero-copy transfers between M-mode and S/U-mode we need to either allow shared memory regions, or introduce a mechanism similar to the ``sstatus.SUM`` bit to temporary allow the high-privileged mode (in this case M-mode) to be able to perform loads and stores on the region of a less-privileged process (in this case S/U-mode). In our case after discussion within the group it seemed a better idea to follow the first approach and have this functionality encoded on a per-rule basis to avoid the risk of leaving a temporary, global bypass active when exiting M-mode, hence rendering memory access prevention useless.
+====
++
+
+[NOTE]
+====
+Although it’s possible to use ``mstatus.MPRV`` in M-mode to read/write data on an _S/U-mode-only_ region using general purpose registers for copying, this will happen with S/U-mode permissions, honoring any MMU restrictions put in place by S-mode. Of course it’s still possible for M-mode to tamper with the page tables and / or add _S/U-mode-only_ rules and bypass the protections put in place by S-mode but if an attacker has managed to compromise M-mode to such extent, no security guarantees are possible in any way. *Also note that the threat model we present here assumes buggy software in M-mode, not compromised software*. We considered disabling ``mstatus.MPRV`` but it seemed too much and out of scope.
+====
++
+_Shared-region_ rules can be used both for zero-copy data transfers and for sharing code segments. The latter may be used for example to allow S/U-mode to execute code by the vendor, that makes use of some vendor-specific ISA extension, without having to go through the firmware with an ecall. This is similar to the vDSO approach followed on Linux, that allows user space code to execute kernel code without having to perform a system call.
++
+To make sure that shared data regions can’t be executed and shared code regions can’t be modified, the encoding changes the meaning of the ``pmpcfg.X bit``. In case of shared data regions, with the exception of the ``pmpcfg.LRWX=1111`` encoding, the ``pmpcfg.X`` bit marks the capability of S/U-mode to write to that region, so it’s not possible to encode an executable shared data region. In case of shared code regions, the ``pmpcfg.X`` bit marks the capability of M-mode to read from that region, and since ``pmpcfg.RW=01`` is used for encoding the shared region, it’s not possible to encode a shared writable code region.
++
+[NOTE]
+====
+For adding _Shared-region_ rules with executable privileges to share code segments between M-mode and S/U-mode, ``mseccfg.RLB`` needs to be implemented, or else such rules can only be added together with ``mseccfg.MML`` being set on *PMP Reset*. That's because the reserved encoding ``pmpcfg.RW=01`` being used for _Shared-region_ rules is only defined when ``mseccfg.MML`` is set, and 4b prevents the addition of rules with executable privileges on M-mode after ``mseccfg.MML`` is set unless ``mseccfg.RLB`` is also set.
+====
++
+[NOTE]
+====
+Using the ``pmpcfg.LRWX=1111`` encoding for a locked shared read-only data region was decided later on, its initial meaning was an M-mode-only read/write/execute region. The reason for that change was that the already defined shared data regions were not locked, so r/w access to M-mode couldn’t be restricted. In the same way we have execute-only shared code regions for both modes, it was decided to also be able to allow a least-privileged shared data region for both modes. This approach allows for example to share the .text section of an ELF with a shared code region and the .rodata section with a locked shared data region, without allowing M-mode to modify .rodata. We also decided that having a locked read/write/execute region in M-mode doesn’t make much sense and could be dangerous, since M-mode won’t be able to add further restrictions there (as in the case of S/U-mode where S-mode can further limit access to an ``pmpcfg.LWRX=0111`` region through the MMU), leaving the possibility of modifying an executable region in M-mode open.
+====
++
+[NOTE]
+====
+For encoding Shared-region rules initially we used one of the two reserved bits on pmpcfg (bit 5) but in order to avoid allocating an extra bit, since those bits are a very limited resource, it was decided to use the reserved R=0,W=1 combination.
+====
+.. The idea with this restriction is that after the Firmware or the OS running in M-mode is initialized and ``mseccfg.MML`` is set, no new code regions are expected to be added since nothing else is expected to run in M-mode (everything else will run in S/U mode). Since we want to limit the attack surface of the system as much as possible, it makes sense to disallow any new code regions which may include malicious code, to be added/executed in M-mode.
+
+.. In case ``mseccfg.MMWP`` is not set, M-mode can still access and execute any region not covered by a PMP rule. Since we try to prevent M-mode from executing malicious code and since an attacker may manage to place code on some region not covered by PMP (e.g. a directly-addressable flash memory), we need to ensure that M-mode can only execute the code segments initialized during firmware / OS initialization.
+
+.. We are only using the encoding ``pmpcfg.RW=01`` together with ``mseccfg.MML``, if ``mseccfg.MML`` is not set the encoding remains usable for future use.'''
+zh = '''
+. 由于当前规范没有提供用于安全和/或全局 PMP 行为设置的 CSR，我们需要定义一个新的 CSR。这个新 CSR 将允许我们在未来添加更多安全配置选项，也允许开发者验证本提议所定义的新机制是否存在。
+
+. 存在一些用例，开发者希望在启动过程中在 M 模式强制执行 PMP 规则，并且之后还能够修改、合并和/或移除这些规则。由于在 M 模式强制执行的规则也需要被锁定（否则编写不良或恶意的 M 模式软件可以随时将其移除），开发者唯一能采用的方法就是不断向链中添加 PMP 规则并依赖规则优先级。这会浪费 PMP 规则；而且由于这仅在启动期间需要，``mseccfg.RLB`` 是一个简单的变通方法，可以临时使用，然后禁用并锁定。
++
+此外，当设置了 ``mseccfg.MML`` 时，根据 4b，不可能添加具有可执行特权的 __Shared-Region__ 规则。因此可以在启动过程中临时设置 RLB 来注册此类区域。注意，仍然可以在 **PMP 复位** 时使用初始寄存器设置（其中可能包括设置 ``mseccfg.MML`` 并在 PMP 寄存器上设置该规则）来注册可执行的 __Shared-Region__ 规则，而无需使用 RLB。
++
+[WARNING]
+====
+**请注意，如果启动过程结束后仍保持 RLB 置位，它会引入安全漏洞；一般而言，即使只是临时使用，也应谨慎使用。** 在 M 模式中拥有可编辑的 PMP 规则会带来虚假的安全感，因为只需几条恶意指令就能以这种方式解除任何 PMP 限制。设置安全控制却让它不受保护是不合理的。规则锁定旁路仅用于优化 PMP 规则分配、捕获调试期间的错误，并允许 bootrom/固件注册可执行的 __Shared-Region__ 规则。如果开发者/供应商不需要此类功能，他们就不应设置 ``mseccfg.RLB``，并且如果可能的话应将其硬连线为 0。无论如何，**应尽快禁用并锁定 RLB**。
+====
++
+[NOTE]
+====
+如果未使用 ``mseccfg.RLB`` 并保持其未设置，那么一旦配置了带有 ``pmpcfg.L`` 位的 PMP 规则/条目，它就会被锁定。
+====
++
+[IMPORTANT]
+====
+由于优先级更高的 PMP 规则会覆盖优先级更低的规则，因此锁定规则必须位于非锁定规则之前。
+====
+
+. 在当前规范下，除非受到设置了 ``pmpcfg.L`` 位的 PMP 规则限制，否则 M 模式可以访问任何内存区域。存在一些情况，这种方法过于宽松；尽管可以通过在启动过程中添加 PMP 规则来限制 M 模式，但这也可以被视为浪费 PMP 规则。能够默认阻止任何内容，并将 PMP 用作 M 模式的允许列表，被认为是一种更安全的方法。此功能可以在启动过程中或在 **PMP 复位** 时使用初始寄存器设置来使用。 +
+
+. ``pmpcfg.L`` 位当前的双重含义——将规则标记为锁定并在所有模式下强制执行——既不灵活也不干净。随着 __机器模式锁定__ 的引入，``pmpcfg.L`` 位用于区分仅在 M 模式中**强制执行**的规则（__M-mode-only__）和仅在 S/U 模式中**强制执行**的规则（__S/U-mode-only__）。规则锁定成为 __M-mode-only__ 规则定义的一部分，因为在 M 模式中添加规则时，如果未锁定，只需几条指令就可以修改或移除它。另一方面，S/U 模式无论如何都不能修改 PMP 规则，因此锁定它们没有意义。
+
+.. 这种 __M-mode-only__ 规则与 __S/U-mode-only__ 规则的分离，也允许我们区分哪些区域将由机器模式中的进程使用（``pmpcfg.L == 1``），哪些区域将由监管模式或用户模式进程使用（``pmpcfg.L == 0``），其方式与虚拟内存 PTE 上的 U 位标记哪些虚拟内存页由用户模式应用程序使用（U=1）、哪些由监管模式/OS 使用（U=0）相同。有了这种区分，我们就能够对任何不是 __M-mode-only__ 的物理内存区域，在 M 模式中实现内存访问与执行防护。
++
+攻击者如果设法篡改 S/U 模式使用的内存区域，即使它成功诱使运行在 M 模式的进程使用或执行该区域，也无法成功实施攻击，因为该区域将是 __S/U-mode-only__，因此在 M 模式下任何访问都会触发访问异常。
++
+[NOTE]
+====
+为了支持 M 模式和 S/U 模式之间的零拷贝传输，我们需要要么允许共享内存区域，要么引入一种类似于 ``sstatus.SUM`` 位的机制，以临时允许高特权模式（此处为 M 模式）对低特权进程（此处为 S/U 模式）的区域执行加载和存储。在我们的情况中，经组内讨论后，似乎更好的做法是采用第一种方法，并将此功能编码为基于每条规则，以避免在退出 M 模式时留下一个临时全局旁路，从而使内存访问防护失效。
+====
++
+
+[NOTE]
+====
+尽管可以在 M 模式中使用 ``mstatus.MPRV``，用通用寄存器对 __S/U-mode-only__ 区域进行数据读写以完成复制，但这会以 S/U 模式权限进行，并遵守 S 模式施加的任何 MMU 限制。当然，M 模式仍然可以篡改页表和/或添加 __S/U-mode-only__ 规则，从而绕过 S 模式设置的保护；但如果攻击者已经将 M 模式破坏到这种程度，那么无论如何都不可能提供任何安全保证。**另请注意，我们在此提出的威胁模型假设 M 模式软件存在缺陷，而不是假设其已被攻陷**。我们曾考虑禁用 ``mstatus.MPRV``，但这似乎过度且超出范围。
+====
++
+__Shared-region__ 规则既可用于零拷贝数据传输，也可用于共享代码段。后者例如可用于允许 S/U 模式执行供应商提供的、使用某些供应商特定 ISA 扩展的代码，而无需通过 ecall 进入固件。这类似于 Linux 上采用的 vDSO 方法，它允许用户空间代码执行内核代码而无需执行系统调用。
++
+为了确保共享数据区域不可执行且共享代码区域不可修改，该编码改变了 ``pmpcfg.X bit`` 的含义。在共享数据区域的情况下，除 ``pmpcfg.LRWX=1111`` 编码外，``pmpcfg.X`` 位标记 S/U 模式写入该区域的能力，因此不可能编码一个可执行的共享数据区域。在共享代码区域的情况下，``pmpcfg.X`` 位标记 M 模式读取该区域的能力；并且由于 ``pmpcfg.RW=01`` 用于编码共享区域，因此不可能编码一个共享的可写代码区域。
++
+[NOTE]
+====
+为了添加具有可执行特权、用于在 M 模式和 S/U 模式之间共享代码段的 __Shared-region__ 规则，必须实现 ``mseccfg.RLB``，否则此类规则只能在 **PMP 复位** 时随 ``mseccfg.MML`` 被设置一起添加。这是因为用于 __Shared-region__ 规则的保留编码 ``pmpcfg.RW=01`` 仅在设置了 ``mseccfg.MML`` 时才被定义，而 4b 在设置了 ``mseccfg.MML`` 之后禁止在 M 模式上添加具有可执行特权的规则，除非还设置了 ``mseccfg.RLB``。
+====
++
+[NOTE]
+====
+为锁定共享只读数据区域而使用 ``pmpcfg.LRWX=1111`` 编码是后来决定的；它最初的含义是仅 M 模式可读/写/执行的区域。做出这一更改的原因是，已经定义的共享数据区域没有被锁定，因此无法限制 M 模式的读/写访问。正如我们为两种模式设置了仅可执行的共享代码区域一样，我们决定也能够为两种模式允许一个最小特权的共享数据区域。这种方法例如允许将 ELF 的 .text 段放入共享代码区域，并将 .rodata 段放入锁定的共享数据区域，同时不允许 M 模式修改 .rodata。我们还决定，在 M 模式中拥有一个锁定的读/写/执行区域没有太大意义并且可能很危险，因为 M 模式将无法在那里添加进一步的限制（就像 S/U 模式中 S 模式可以通过 MMU 进一步限制对 ``pmpcfg.LWRX=0111`` 区域的访问那样），从而使 M 模式中可执行区域被修改的可能性仍然存在。
+====
++
+[NOTE]
+====
+最初为编码 Shared-region 规则，我们使用了 pmpcfg 上两个保留位之一（位 5），但为了避免额外分配一个位（因为这些位是非常有限的资源），决定改用保留的 R=0、W=1 组合。
+====
+.. 这种限制背后的想法是：在运行于 M 模式的固件或 OS 初始化完成并且设置了 ``mseccfg.MML`` 之后，预期不会再添加新的代码区域，因为预期 M 模式中不会运行其他内容（其他所有内容都将在 S/U 模式中运行）。由于我们希望尽可能限制系统的攻击面，禁止在 M 模式中添加/执行任何可能包含恶意代码的新代码区域是合理的。
+
+.. 如果未设置 ``mseccfg.MMWP``，M 模式仍然可以访问并执行任何未被 PMP 规则覆盖的区域。由于我们试图防止 M 模式执行恶意代码，并且攻击者可能设法将代码放置在某个未被 PMP 覆盖的区域（例如可直接寻址的闪存），我们需要确保 M 模式只能执行在固件/OS 初始化期间初始化的代码段。
+
+.. 我们仅将编码 ``pmpcfg.RW=01`` 与 ``mseccfg.MML`` 一起使用；如果未设置 ``mseccfg.MML``，该编码仍可供未来使用。'''

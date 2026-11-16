@@ -1,0 +1,46 @@
+unit_id = "a3d0f9670dcdd0a5590482add9669687"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The NTL instructions can be used to avoid cache pollution when streaming
+data or traversing large data structures, or to reduce latency in
+producer-consumer interactions.
+
+A microarchitecture might use the NTL instructions to inform the cache
+replacement policy, or to decide which cache to allocate into, or to
+avoid cache allocation altogether. For example, NTL.P1 might indicate
+that an implementation should not allocate a line in a private L1 cache,
+but should allocate in L2 (whether private or shared). In another
+implementation, NTL.P1 might allocate the line in L1, but in the
+least-recently used state.
+
+NTL.ALL will typically inform implementations not to allocate anywhere
+in the cache hierarchy. Programmers should use NTL.ALL for accesses that
+have no exploitable temporal locality.
+
+Like any HINTs, these instructions may be freely ignored. Hence,
+although they are described in terms of cache-based memory hierarchies,
+they do not mandate the provision of caches.
+
+Some implementations might respect these HINTs for some memory accesses
+but not others: e.g., implementations that implement LR/SC by acquiring
+a cache line in the exclusive state in L1 might ignore NTL instructions
+on LR and SC, but might respect NTL instructions for AMOs and regular
+loads and stores.
+===='''
+zh = '''
+[NOTE]
+====
+NTL 指令可用于在流式传输数据或遍历大型数据结构时避免缓存污染，或用于降低生产者-消费者交互中的延迟。
+
+微架构可利用 NTL 指令来影响缓存替换策略，或决定分配到哪个缓存，或完全避免缓存分配。例如，NTL.P1 可能指示实现不应在私有 L1 缓存中分配缓存行，而应在 L2（无论是私有还是共享）中分配。在另一种实现中，NTL.P1 可能在 L1 中分配该缓存行，但将其置于最近最少使用状态。
+
+NTL.ALL 通常将告知实现不要在缓存层次结构中的任何位置分配。程序员应对无可利用时间局部性的访问使用 NTL.ALL。
+
+与任何提示一样，这些指令可被自由忽略。因此，尽管它们是以基于缓存的存储层次结构来描述的，但它们并不强制要求提供缓存。
+
+某些实现可能对某些内存访问遵循这些提示，而对其他访问不遵循：例如，通过在 L1 中以独占状态获取缓存行来实现 LR/SC 的实现，可能忽略针对 LR 和 SC 的 NTL 指令，但可能遵循针对 AMO 以及常规加载和存储的 NTL 指令。
+===='''

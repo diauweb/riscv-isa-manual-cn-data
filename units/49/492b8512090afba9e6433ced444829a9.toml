@@ -1,0 +1,11 @@
+unit_id = "492b8512090afba9e6433ced444829a9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A hypervisor may need this control over accesses to the `sstateen` CSRs if it
+ever must emulate for a virtual machine an extension that is supposed to be
+affected by a bit in an `sstateen` CSR. Even if such emulation is uncommon,
+it should not be excluded.'''
+zh = '''
+如果管理程序必须为某个虚拟机模拟一个本应受 `sstateen` CSR 中某一位影响的扩展，那么它可能需要这种对 `sstateen` CSR 访问的控制。即使这种模拟并不常见，也不应将其排除在外。'''

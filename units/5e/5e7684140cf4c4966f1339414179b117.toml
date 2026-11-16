@@ -1,0 +1,19 @@
+unit_id = "5e7684140cf4c4966f1339414179b117"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The intent of {icount-pending} is to cleanly handle the case where
+{icount-action} is 0, {icount-m} is 0, {icount-u} is 1,
+{icount-count} is 1, and the U-mode instruction being executed
+causes a trap into M-mode. In that case we want the entire M-mode
+handler to be executed, and the debug trap to be taken before the
+next U-mode instruction.
+===='''
+zh = '''
+[NOTE]
+====
+{icount-pending} 的意图是干净地处理以下情况：{icount-action} 为 0，{icount-m} 为 0，{icount-u} 为 1，{icount-count} 为 1，且正在执行的 U 模式指令导致陷阱进入 M 模式。在这种情况下，我们希望执行整个 M 模式处理程序，并在下一条 U 模式指令之前发生调试陷阱。
+===='''

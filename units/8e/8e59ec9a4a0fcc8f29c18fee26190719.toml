@@ -1,0 +1,19 @@
+unit_id = "8e59ec9a4a0fcc8f29c18fee26190719"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The counter-enable bits support two common use cases with minimal
+hardware. For harts that do not need high-performance timers and
+counters, machine-mode software can trap accesses and implement all
+features in software. For harts that need high-performance timers and
+counters but are not concerned with obfuscating the underlying hardware
+counters, the counters can be directly exposed to lower privilege modes.
+===='''
+zh = '''
+[NOTE]
+====
+计数器使能位以最少的硬件支持两种常见用例。对于不需要高性能定时器和计数器的硬件线程，机器模式软件可以陷入访问并在软件中实现所有特性。对于需要高性能定时器和计数器但不关心混淆底层硬件计数器的硬件线程，计数器可以直接暴露给较低特权模式。
+===='''

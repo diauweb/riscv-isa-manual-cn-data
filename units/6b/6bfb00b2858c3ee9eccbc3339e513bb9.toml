@@ -1,0 +1,10 @@
+unit_id = "6bfb00b2858c3ee9eccbc3339e513bb9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mcountinhibit_cy_shared]#The `mcycle` CSR may be shared between harts on the same core,
+in which case the `mcountinhibit.CY` field is also shared between those harts,
+and so writes to `mcountinhibit.CY` will be visible to those harts.#'''
+zh = '''
+[#norm:mcountinhibit_cy_shared]#`mcycle` CSR 可能在同一核心的硬件线程之间共享，此时 `mcountinhibit.CY` 字段也在这些硬件线程之间共享，因此对 `mcountinhibit.CY` 的写入将对那些硬件线程可见。#'''

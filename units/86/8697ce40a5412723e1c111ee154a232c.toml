@@ -1,0 +1,32 @@
+unit_id = "8697ce40a5412723e1c111ee154a232c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter??: Trace Encoder Filter Registers (trBaseEncoder+0x400..0x5FF)*
+[cols="17%,30%,12%,~",options="header"]
+|===
+|*Address Offset*   |*Register Name*  |*Compliance* |*Description*
+|0x400 + 0x20*__i__ |trTeFilter__i__Control |Optional |Filter _i_ control
+|0x404 + 0x20*__i__ |trTeFilter__i__MatchInst |Optional |Filter _i_ instruction match control
+|0x408 + 0x20*__i__ |trTeFilter__i__MatchEcauseLow |Optional |Filter _i_ Ecause match control (bits 31:0)
+|0x40C + 0x20*__i__ |trTeFilter__i__MatchEcauseHigh |Optional |Filter _i_ Ecause match control (bits 63:32)
+|0x410 + 0x20*__i__ |trTeFilter__i__MatchValueImpdef |Optional |Filter _i_ impdef value
+|0x414 + 0x20*__i__ |trTeFilter__i__MatchMaskImpdef |Optional |Filter _i_ impdef mask
+|0x418 + 0x20*__i__ |trTeFilter__i__MatchData |Optional |Filter _i_ Data trace match control
+|0x41C + 0x20*__i__ |--|Optional |Reserved
+|==='''
+zh = '''
+.*寄存器：trTeFilter??：跟踪编码器过滤器寄存器（trBaseEncoder+0x400..0x5FF）*
+[cols="17%,30%,12%,~",options="header"]
+|===
+|*地址偏移*   |*寄存器名称*  |*合规性* |*描述*
+|0x400 + 0x20*__i__ |trTeFilter__i__Control |可选 |过滤器 _i_ 控制
+|0x404 + 0x20*__i__ |trTeFilter__i__MatchInst |可选 |过滤器 _i_ 指令匹配控制
+|0x408 + 0x20*__i__ |trTeFilter__i__MatchEcauseLow |可选 |过滤器 _i_ Ecause 匹配控制（位 31:0）
+|0x40C + 0x20*__i__ |trTeFilter__i__MatchEcauseHigh |可选 |过滤器 _i_ Ecause 匹配控制（位 63:32）
+|0x410 + 0x20*__i__ |trTeFilter__i__MatchValueImpdef |可选 |过滤器 _i_ impdef 值
+|0x414 + 0x20*__i__ |trTeFilter__i__MatchMaskImpdef |可选 |过滤器 _i_ impdef 掩码
+|0x418 + 0x20*__i__ |trTeFilter__i__MatchData |可选 |过滤器 _i_ 数据跟踪匹配控制
+|0x41C + 0x20*__i__ |--|可选 |保留
+|==='''

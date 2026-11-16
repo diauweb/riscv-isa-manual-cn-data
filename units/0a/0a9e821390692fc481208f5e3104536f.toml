@@ -1,0 +1,15 @@
+unit_id = "0a9e821390692fc481208f5e3104536f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For an instruction instance _i_ of a non-AMO load
+instruction or an AMO instruction in the context of the <<do_amo, Satisfy, commit and propagate operations of an AMO>> transition,
+any memory load operation _mlo_ in
+_i.mem_loads_ that has unsatisfied slices, can be
+satisfied from memory if all the conditions of <sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>> are satisfied. Action:
+let _msoss_ be the memory store operation slices from memory
+covering the unsatisfied slices of _mlo_, and apply the
+action of <<do_amo, Satisfy memory operation by forwarding from unpropagates stores>>.'''
+zh = '''
+对于非 AMO 加载指令的指令实例 _i_，或在 <<do_amo, 满足、提交并传播 AMO 的操作>> 转换上下文中的 AMO 指令，_i.mem_loads_ 中任何具有未满足切片的内存加载操作 _mlo_，如果 <sat_by_forwarding, 通过从未传播存储转发来满足内存加载操作>> 的所有条件都满足，则可以从内存满足。动作：令 _msoss_ 为来自内存的、覆盖 _mlo_ 未满足切片的内存存储操作切片，并应用 <<do_amo, 通过从未传播存储转发来满足内存操作>> 的动作。'''

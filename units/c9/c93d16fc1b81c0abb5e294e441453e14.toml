@@ -1,0 +1,38 @@
+unit_id = "c93d16fc1b81c0abb5e294e441453e14"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Debug Trigger Actions*
+[cols="30%,~",options="header"]
+|===
+|*Trigger Action (from debug spec)* |*Effect*
+|0 |Breakpoint exception (as defined in RISC-V Debug Specification)
+|1 |Debug exception (as defined in RISC-V Debug Specification)
+|2 |*Trace-on action* +
+When `trTeInstTrigEnable` = 1 it will start instruction tracing (`trTeInstTracing` -> 1). +
+When `trTeDataTrigEnable` = 1 it will start data tracing (`trTeDataTracing` -> 1).
+|3 |*Trace-off action* +
+When `trTeInstTrigEnable` = 1 it will stop instruction tracing (`trTeInstTracing` -> 0). +
+When `trTeDataTrigEnable` = 1 it will stop data tracing (`trTeDataTracing` -> 0).
+|4 |*Trace-notify action* +
+If tracing is active (`trTeInstTracing` = 1), then the encoder generates a packet with the current PC and, if enabled, a timestamp.
+|5 |*Vendor-specific trace action* (optional)
+|==='''
+zh = '''
+.*调试触发动作*
+[cols="30%,~",options="header"]
+|===
+|*触发动作（来自调试规范）* |*效果*
+|0 |断点异常（如 RISC-V Debug Specification 中定义）
+|1 |调试异常（如 RISC-V Debug Specification 中定义）
+|2 |*跟踪开启动作* +
+当 `trTeInstTrigEnable` = 1 时，它将启动指令跟踪（`trTeInstTracing` -> 1）。 +
+当 `trTeDataTrigEnable` = 1 时，它将启动数据跟踪（`trTeDataTracing` -> 1）。
+|3 |*跟踪关闭动作* +
+当 `trTeInstTrigEnable` = 1 时，它将停止指令跟踪（`trTeInstTracing` -> 0）。 +
+当 `trTeDataTrigEnable` = 1 时，它将停止数据跟踪（`trTeDataTracing` -> 0）。
+|4 |*跟踪通知动作* +
+如果跟踪处于活动状态（`trTeInstTracing` = 1），则编码器生成一个包含当前 PC 以及（如果使能）时间戳的数据包。
+|5 |*供应商特定跟踪动作*（可选）
+|==='''

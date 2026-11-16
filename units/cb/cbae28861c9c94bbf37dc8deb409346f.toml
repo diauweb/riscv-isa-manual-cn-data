@@ -1,0 +1,15 @@
+unit_id = "cbae28861c9c94bbf37dc8deb409346f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mtvec` register must always be implemented, but can contain a
+read-only value. If `mtvec` is writable, the set of values the register
+may hold can vary by implementation. The value in the BASE field must
+always be aligned on a 4-byte boundary, and the MODE setting may impose
+additional alignment constraints on the value in the BASE field.
+Note that the CSR contains only bits XLEN-1 through 2 of the address BASE.
+When used as an address, the lower two bits are filled with zeroes to obtain
+an XLEN-bit address that is always aligned on a 4-byte boundary.'''
+zh = '''
+`mtvec` 寄存器必须始终实现，但可以包含只读值。如果 `mtvec` 可写，则该寄存器可保存的值集合可能因实现而异。BASE 字段中的值必须始终按 4 字节边界对齐，并且 MODE 设置可能对 BASE 字段中的值施加额外的对齐约束。注意，该 CSR 仅包含地址 BASE 的位 XLEN-1 到 2。当用作地址时，低两位用零填充，以获得始终按 4 字节边界对齐的 XLEN 位地址。'''

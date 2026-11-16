@@ -1,0 +1,22 @@
+unit_id = "726bfa28ad3858cad083f48aa7070950"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:A_no_aq_rl]#If both bits are clear, no additional ordering constraints
+are imposed on the atomic memory operation.#
+[#norm:A_acquire_semantics]#If only the _aq_ bit is set, the atomic
+memory operation is treated as an _acquire_ access, i.e., no following
+memory operations on this RISC-V hart can be observed to take place
+before the acquire memory operation.#
+[#norm:A_release_semantics]#If only the _rl_ bit is set, the
+atomic memory operation is treated as a _release_ access, i.e., the
+release memory operation cannot be observed to take place before any
+earlier memory operations on this RISC-V hart.#
+[#norm:A_seq_cst_semantics]#If both the _aq_ and _rl_
+bits are set, the atomic memory operation is _sequentially consistent_
+and cannot be observed to happen before any earlier memory operations or
+after any later memory operations in the same RISC-V hart and to the
+same address domain.#'''
+zh = '''
+[#norm:A_no_aq_rl]#如果两个位都为 0，则不对原子内存操作施加额外的顺序约束。# [#norm:A_acquire_semantics]#如果仅设置 _aq_ 位，则原子内存操作被视为__获取__访问，即在该获取内存操作之前，不能观察到该 RISC-V 硬件线程上的后续内存操作发生。# [#norm:A_release_semantics]#如果仅设置 _rl_ 位，则原子内存操作被视为__释放__访问，即在该 RISC-V 硬件线程上任何更早的内存操作之前，不能观察到该释放内存操作发生。# [#norm:A_seq_cst_semantics]#如果同时设置 _aq_ 和 _rl_ 位，则原子内存操作是__顺序一致的__，并且在同一 RISC-V 硬件线程及同一地址域中，不能观察到它发生在任何更早的内存操作之前，或任何更晚的内存操作之后。#'''

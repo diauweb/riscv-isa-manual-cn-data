@@ -1,0 +1,14 @@
+unit_id = "4f4fbfc4db22f841a4fb2bec94e792bd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: There is no single instruction that can saturate a signed value
+into an unsigned destination.  A sequence of two vector instructions
+that first removes negative numbers by performing a max against 0
+using `vmax` then clips the resulting unsigned value into the
+destination using `vnclipu` can be used if setting `vxsat` value for
+negative numbers is not required.  A `vsetvli` is required between
+these two instructions to change SEW.'''
+zh = '''
+NOTE: 没有单条指令可以将有符号值饱和到无符号目标中。如果不需要为负数设置 `vxsat` 值，可以使用两条向量指令构成的序列：首先使用 `vmax` 对 0 取最大值以去除负数，然后使用 `vnclipu` 将所得无符号值裁剪到目标中。这两条指令之间需要 `vsetvli` 来改变 SEW。'''

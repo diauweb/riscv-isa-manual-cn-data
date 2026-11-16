@@ -1,0 +1,12 @@
+unit_id = "eda739717cd67df2a03187d933ca31bd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Program Buffer may be implemented as RAM which is accessible to the
+hart. A debugger can determine if this is the case by executing small
+programs that attempt to write and read back relative to `pc` while executing
+from the Program Buffer. If so, the debugger has more flexibility in
+what it can do with the program buffer.'''
+zh = '''
+程序缓冲区可以实现为硬件线程可访问的 RAM。调试器可以通过执行小程序来确定是否如此，这些程序在从程序缓冲区执行时尝试相对于 `pc` 写入并读回。如果是这样，调试器对程序缓冲区可以做什么就有更大的灵活性。'''

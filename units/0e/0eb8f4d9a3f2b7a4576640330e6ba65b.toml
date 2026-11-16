@@ -1,0 +1,26 @@
+unit_id = "0eb8f4d9a3f2b7a4576640330e6ba65b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Some other ISAs added explicit hint bits to their indirect-jump
+instructions to guide return-address stack manipulation. We use implicit
+hinting tied to register numbers and the calling convention to reduce
+the encoding space used for these hints.
+
+When two different link registers (`x1` and `x5`) are given as _rs1_ and
+_rd_, then the RAS is both popped and pushed to support coroutines. If
+_rs1_ and _rd_ are the same link register (either `x1` or `x5`), the RAS
+is only pushed to enable macro-op fusion of the sequences:
+`lui ra, imm20; jalr ra, imm12(ra)_ and _auipc ra, imm20; jalr ra, imm12(ra)`
+===='''
+zh = '''
+[NOTE]
+====
+其他一些 ISA 在其间接跳转指令中添加了显式提示位，以指导返回地址栈操作。我们使用与寄存器号和调用约定绑定的隐式提示，以减少这些提示使用的编码空间。
+
+当两个不同的链接寄存器（`x1` 和 `x5`）分别作为 _rs1_ 和 _rd_ 给出时，RAS 既弹出又压入，以支持协程。如果 _rs1_ 和 _rd_ 是同一个链接寄存器（`x1` 或 `x5`），则只压入 RAS，以支持以下序列的宏操作融合：
+`lui ra, imm20; jalr ra, imm12(ra)_ and _auipc ra, imm20; jalr ra, imm12(ra)`
+===='''

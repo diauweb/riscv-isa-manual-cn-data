@@ -1,0 +1,15 @@
+unit_id = "ad73266280b14114924412936f48040e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sometimes the program waiting on a memory update may also need to carry out a
+task at a future time or otherwise place an upper bound on the wait. To support
+such use cases a second instruction `WRS.STO` (WRS-with-short-timeout) is
+provided that works like `WRS.NTO` but bounds the stall duration to an
+implementation-define short timeout such that the stall is terminated on the
+timeout if no other conditions have occurred to terminate the stall. The
+program using this instruction may then determine if its deadline has been
+reached.'''
+zh = '''
+有时，等待内存更新的程序可能还需要在将来某个时间执行任务，或者需要对等待设置上限。为支持此类用例，提供了第二条指令 `WRS.STO`（WRS-with-short-timeout，短超时 WRS），其工作方式与 `WRS.NTO` 类似，但将停顿持续时间限制为实现定义的短超时，使得如果在超时前没有其他条件终止停顿，则停顿在超时时终止。使用该指令的程序随后可以确定其截止时间是否已到达。'''

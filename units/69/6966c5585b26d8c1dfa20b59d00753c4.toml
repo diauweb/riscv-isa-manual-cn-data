@@ -1,0 +1,20 @@
+unit_id = "6966c5585b26d8c1dfa20b59d00753c4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Experts working in machine learning at Google who continued to work with FP32 values
+noted that the least significant 16 bits of their mantissas were not always needed
+for good results, even in training. They proposed a truncated version of FP32, which was
+the 16 most significant bits of the FP32 encoding. This format was named BFloat16
+(or BF16). The B in BF16, stands for Brain since it was initially introduced
+by the Google Brain team. Not only did they find that the number of
+significant bits in BF16 tended to be sufficient for their work (despite being fewer than
+in FP16), but it was very easy for them to reuse their existing data; FP32 numbers could
+be readily rounded to BF16 with a minimal amount of work. Furthermore, the even smaller
+number of the BF16 significant bits enabled even smaller
+multiplication blocks to be built. Similar
+to FP16, BF16 multiply-accumulate widening and dot-product instructions started to
+proliferate.'''
+zh = '''
+在 Google 从事机器学习工作、继续使用 FP32 值的专家注意到，即使在训练中，其尾数的最低有效 16 位也并不总是获得良好结果所必需的。他们提出了一种截断版 FP32，即 FP32 编码的最高有效 16 位。这种格式被命名为 BFloat16（或 BF16）。BF16 中的 B 代表 Brain，因为它最初由 Google Brain 团队提出。他们不仅发现 BF16 的有效位数（尽管少于 FP16）往往足以满足其工作需求，而且他们很容易复用现有数据；FP32 数只需极少的工作即可舍入为 BF16。此外，BF16 有效位数更少，使得可以构建更小的乘法模块。与 FP16 类似，BF16 的乘累加加宽和点积指令开始大量涌现。'''

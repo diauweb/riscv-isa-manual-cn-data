@@ -1,0 +1,25 @@
+unit_id = "ed5ed5b3d8a93cf143bed077d236e460"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+While [#norm:pma_idp_no_spec]#hardware should always be designed to avoid speculative or
+redundant accesses to memory regions marked as non-idempotent#, it is
+also necessary to ensure software or compiler optimizations do not
+generate spurious accesses to non-idempotent memory regions.
+
+[#norm:pma_idp_misaligned_exc]#Non-idempotent regions might not support misaligned accesses. Misaligned
+accesses to such regions should raise access-fault exceptions rather
+than address-misaligned exceptions#, indicating that software should not
+emulate the misaligned access using multiple smaller accesses, which
+could cause unexpected side effects.
+===='''
+zh = '''
+[NOTE]
+====
+虽然 [#norm:pma_idp_no_spec]#硬件应始终设计为避免对标记为非幂等的内存区域进行推测性或冗余访问#，但也必须确保软件或编译器优化不会对非幂等内存区域产生虚假访问。
+
+[#norm:pma_idp_misaligned_exc]#非幂等区域可能不支持非对齐访问。对此类区域的非对齐访问应引发访问故障异常而不是地址非对齐异常#，指示软件不应使用多次较小的访问来模拟该非对齐访问，因为这可能导致意外的副作用。
+===='''

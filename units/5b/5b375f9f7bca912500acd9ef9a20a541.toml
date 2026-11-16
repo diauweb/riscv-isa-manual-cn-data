@@ -1,0 +1,18 @@
+unit_id = "5b375f9f7bca912500acd9ef9a20a541"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:lr_reservation_set_size]#An implementation can register an arbitrarily large reservation set on
+each insn:lr[], provided the reservation set includes all bytes of the
+addressed data word or doubleword.# [#norm:sc_pairs_latest_lr]#An insn:sc[] can only pair with the most
+recent insn:lr[] in program order.# [#norm:sc_success_conditions]#An insn:sc[] may succeed only if no store from
+another hart to the reservation set can be observed to have occurred
+between the insn:lr[] and the insn:sc[], and if there is no other insn:sc[] between the
+insn:lr[] and itself in program order.# [#norm:sc_device_write_failure]#An insn:sc[] may succeed only if no write from a
+device other than a hart to the bytes accessed by the insn:lr[] instruction can
+be observed to have occurred between the insn:lr[] and insn:sc[].# Note this insn:lr[] might
+have had a different effective address and data size, but reserved the
+insn:sc[]'s address as part of the reservation set.'''
+zh = '''
+[#norm:lr_reservation_set_size]#实现可以在每次 insn:lr[] 时登记任意大的保留集，前提是该保留集包含所寻址数据字或双字的所有字节。# [#norm:sc_pairs_latest_lr]#insn:sc[] 只能与程序顺序中最近的 insn:lr[] 配对。# [#norm:sc_success_conditions]#仅当在 insn:lr[] 和 insn:sc[] 之间观察不到来自另一个硬件线程对保留集的存储发生，并且程序顺序中在 insn:lr[] 与其自身之间没有其他 insn:sc[] 时，insn:sc[] 才可能成功。# [#norm:sc_device_write_failure]#仅当在 insn:lr[] 和 insn:sc[] 之间观察不到来自硬件线程以外设备对 insn:lr[] 指令所访问字节的写入发生时，insn:sc[] 才可能成功。# 注意，该 insn:lr[] 可能具有不同的有效地址和数据大小，但将 insn:sc[] 的地址作为保留集的一部分进行了保留。'''

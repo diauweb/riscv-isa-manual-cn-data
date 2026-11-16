@@ -1,0 +1,26 @@
+unit_id = "bff7bfff9a9d4450eef866aefa5a9fad"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Recommended NTL variant for portable software to employ in various scenarios.
+[%autowidth,float="center",align="center",cols="<,<",options="header",]
+|===
+|Scenario |Recommended NTL variant
+|Access to a working set between and in size |NTL.P1
+|Access to a working set between and in size |NTL.PALL
+|Access to a working set greater than in size |NTL.S1
+|Access with no exploitable temporal locality (e.g., streaming) |NTL.ALL
+|Access to a contended synchronization variable |NTL.PALL
+|==='''
+zh = '''
+.可移植软件在各种场景下应采用的推荐 NTL 变体。
+[%autowidth,float="center",align="center",cols="<,<",options="header",]
+|===
+|场景 |推荐的 NTL 变体
+|访问大小介于 与 之间的工作集 |NTL.P1
+|访问大小介于 与 之间的工作集 |NTL.PALL
+|访问大小大于 的工作集 |NTL.S1
+|无可利用时间局部性的访问（例如流式访问） |NTL.ALL
+|对存在竞争的同步变量的访问 |NTL.PALL
+|==='''

@@ -1,0 +1,13 @@
+unit_id = "ec90b18bd3f3d38e2d2ddc44d924c134"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vstvec` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `stvec`, formatted as shown in
+<<vstvecreg>>. When V=1, `vstvec` substitutes for
+the usual `stvec`, so instructions that normally read or modify `stvec`
+actually access `vstvec` instead. When V=0, `vstvec` does not directly
+affect the behavior of the machine.'''
+zh = '''
+`vstvec` 寄存器是一个 VSXLEN 位读/写寄存器，是监管寄存器 `stvec` 的 VS-mode 版本，格式如 <<vstvecreg>> 所示。当 V=1 时，`vstvec` 替代常规 `stvec`，因此通常读取或修改 `stvec` 的指令实际上改为访问 `vstvec`。当 V=0 时，`vstvec` 不直接影响机器的行为。'''

@@ -1,0 +1,62 @@
+unit_id = "ad9c32421bfeddc87a51c2733b52ab26"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV32A Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination Registers |Accumulating CSRs|
+
+|insn:lr.w[]† | _rs1_  ^A^ | _rd_ | |
+
+|insn:sc.w[]† | _rs1_  ^A^, _rs2_ ^D^ | _rd_ ^*^ | | ^*^ if successful
+
+|insn:amoswap.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amoadd.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amoxor.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amoand.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amoor.w[]† |_rs1_ ^A^, _rs2_^D^ |_rd_ | |
+
+|insn:amomin.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amomax.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amominu.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:amomaxu.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|==='''
+zh = '''
+.RV32A 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目的寄存器 |累积 CSR|
+
+|insn:lr.w[]† | _rs1_  ^A^ | _rd_ | |
+
+|insn:sc.w[]† | _rs1_  ^A^、_rs2_ ^D^ | _rd_ ^*^ | | ^*^ 如果成功
+
+|insn:amoswap.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amoadd.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amoxor.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amoand.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amoor.w[]† |_rs1_ ^A^、_rs2_^D^ |_rd_ | |
+
+|insn:amomin.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amomax.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amominu.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|insn:amomaxu.w[]† |_rs1_ ^A^、_rs2_ ^D^ |_rd_ | |
+
+|==='''

@@ -1,0 +1,8 @@
+unit_id = "8a44529a9d987ba8519c9ea98f63ac82"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To prevent this attack vector, two mechanisms known as Supervisor Memory Access Prevention (SMAP) and Supervisor Memory Execution Prevention (SMEP) were introduced in recent systems. The first one prevents the OS from accessing the memory of an unprivileged process unless a specific code path is followed, and the second one prevents the OS from executing the memory of an unprivileged process at all times. RISC-V already includes support for SMAP, through the ``sstatus.SUM`` bit, and for SMEP by always denying execution of virtual memory pages marked with the U bit, with Supervisor mode (OS) privileges, as mandated on the Privilege Spec.'''
+zh = '''
+为了阻止这一攻击向量，近期系统引入了两种机制：监管模式内存访问防护（SMAP）和监管模式内存执行防护（SMEP）。前者阻止操作系统访问无特权进程的内存，除非走特定的代码路径；后者则始终阻止操作系统执行无特权进程的内存。RISC-V 已经包含对 SMAP 的支持（通过 ``sstatus.SUM`` 位），以及对 SMEP 的支持——按照特权规范的强制要求，以监管模式（OS）特权执行标记了 U 位的虚拟内存页时始终被拒绝。'''

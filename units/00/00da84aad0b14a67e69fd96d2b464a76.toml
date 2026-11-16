@@ -1,0 +1,17 @@
+unit_id = "00da84aad0b14a67e69fd96d2b464a76"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sv57 implementations support a 57-bit virtual address space, divided
+into 4 KiB pages. An Sv57 address is partitioned as shown in
+<<sv57va>>. Instruction fetch addresses and load and
+store effective addresses, which are 64 bits,
+[#norm:Sv57_va_signext]#must have bits 63–57 all equal to bit 56, or else
+a page-fault exception will occur#.
+The [#norm:Sv57_vpn_sz]#45-bit VPN# is translated into a
+[#norm:satp_ppn_Sv57_sz]#44-bit PPN# via a
+[#norm:Sv57_levels]#five-level page table#, while the
+[#norm:Sv57_page_offset_sz]#12-bit page offset is untranslated#.'''
+zh = '''
+Sv57 实现支持 57 位虚拟地址空间，划分为 4 KiB 页。Sv57 地址的划分如 <<sv57va>> 所示。取指地址以及加载和存储有效地址为 64 位，[#norm:Sv57_va_signext]#其位 63–57 必须全部等于位 56，否则将发生页错误异常#。[#norm:Sv57_vpn_sz]#45 位 VPN# 经 [#norm:Sv57_levels]#五级页表# 转换为 [#norm:satp_ppn_Sv57_sz]#44 位 PPN#，而 [#norm:Sv57_page_offset_sz]#12 位页偏移不被转换#。'''

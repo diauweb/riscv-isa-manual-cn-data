@@ -1,0 +1,21 @@
+unit_id = "5b4df2a805eddbf3ed7573ecd8ffaa99"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((endian, little and big)))
+RISC-V base ISAs have either little-endian or big-endian memory systems,
+with the privileged architecture further defining bi-endian operation.
+(((bi-endian)))
+(((endian, bi-)))
+Instructions are stored in memory as a sequence of 16-bit little-endian
+parcels, regardless of memory system endianness. Parcels forming one
+instruction are stored at increasing halfword addresses, with the
+lowest-addressed parcel holding the lowest-numbered bits in the
+instruction specification.'''
+zh = '''
+(((endian, little and big)))
+RISC-V 基础 ISA 具有小端或大端内存系统，特权架构进一步定义了双端操作。
+(((bi-endian)))
+(((endian, bi-)))
+无论内存系统端序如何，指令在内存中都存储为一系列 16 位小端包。构成一条指令的包存储在递增的半字地址处，最低地址的包保存指令规范中编号最低的位。'''

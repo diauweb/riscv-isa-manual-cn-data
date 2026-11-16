@@ -1,0 +1,25 @@
+unit_id = "235e3be3624d6994decb3b95090a0445"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+{mcontrol6-uncertain} and {mcontrol6-uncertainen} exist to
+accommodate systems where not every memory access is fully observed by
+the Trigger Module. Possible examples include data values in far AMOs,
+and the address/data/size of accesses by instructions that perform
+multiple memory accesses, such as vector, push, and pop instructions.
+
+While the uncertain mechanism exists to deal with these situations, it
+can lead to an unusable number of false positives. Users will get a much
+better debug experience if the TM does have perfect visibility into the
+details of every memory access.
+===='''
+zh = '''
+[NOTE]
+====
+{mcontrol6-uncertain} 和 {mcontrol6-uncertainen} 的存在是为了适应并非每次内存访问都被触发模块完全观察到的系统。可能的示例包括远距离 AMO 中的数据值，以及执行多个内存访问的指令（如向量、push 和 pop 指令）的访问地址/数据/大小。
+
+虽然 uncertain 机制存在以处理这些情况，但它可能导致不可用的误报数量。如果 TM 确实能完全洞察每次内存访问的细节，用户将获得更好的调试体验。
+===='''

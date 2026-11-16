@@ -1,0 +1,20 @@
+unit_id = "29fbfe84a3d3e42ab0c7f945f1adaba2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+To simplify the software model, any backward-compatible future
+definition of previously reserved fields within a CSR must cope with the
+possibility that a non-atomic read/modify/write sequence is used to
+update other fields in the CSR. Alternatively, the original CSR
+definition must specify that subfields can only be updated atomically,
+which may require a two-instruction clear bit/set bit sequence in
+general that can be problematic if intermediate values are not legal.
+===='''
+zh = '''
+[NOTE]
+====
+为简化软件模型，对 CSR 内先前保留字段的任何向后兼容的未来定义，都必须应对使用非原子读/修改/写序列来更新 CSR 中其他字段的可能性。或者，原始 CSR 定义必须规定子字段只能原子地更新，这通常可能需要两条指令的清除位/置位位序列，如果中间值不合法则可能有问题。
+===='''

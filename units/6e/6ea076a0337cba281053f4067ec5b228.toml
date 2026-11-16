@@ -1,0 +1,11 @@
+unit_id = "6ea076a0337cba281053f4067ec5b228"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The last instruction within the code block(s), as specified by the I-CNT field, either represents an indirect unconditional control flow
+change (i.e., jump, call, or return) or this packet is generated in response to an exception or interrupt reported on the ingress port.
+The next PC is determined by applying the <<Address Compression,Address Compression>> rules to the U-ADDR field present in this message.'''
+zh = '''
+根据 I-CNT 字段，代码块（或多个块）中的最后一条指令要么表示间接无条件控制流变化（即跳转、调用或返回），要么该数据包是针对入口端口上报告的异常或中断而生成的。
+下一条 PC 通过将 <<Address Compression,Address Compression>> 规则应用于本消息中的 U-ADDR 字段来确定。'''

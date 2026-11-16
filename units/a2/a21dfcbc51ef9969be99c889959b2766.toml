@@ -1,0 +1,18 @@
+unit_id = "a21dfcbc51ef9969be99c889959b2766"
+kind = "code"
+translatable = false
+en = '''
+----
+# Integer adds.
+vadd.vv vd, vs2, vs1, vm   # Vector-vector
+vadd.vx vd, vs2, rs1, vm   # vector-scalar
+vadd.vi vd, vs2, imm, vm   # vector-immediate
+
+# Integer subtract
+vsub.vv vd, vs2, vs1, vm   # Vector-vector
+vsub.vx vd, vs2, rs1, vm   # vector-scalar
+
+# Integer reverse subtract
+vrsub.vx vd, vs2, rs1, vm   # vd[i] = x[rs1] - vs2[i]
+vrsub.vi vd, vs2, imm, vm   # vd[i] = imm - vs2[i]
+----'''

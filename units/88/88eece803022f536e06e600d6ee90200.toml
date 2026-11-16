@@ -1,0 +1,13 @@
+unit_id = "88eece803022f536e06e600d6ee90200"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:menvcfg_fiom_fence_op]#If bit FIOM (Fence of I/O implies Memory) is set to one in `menvcfg`,
+FENCE instructions executed in modes less privileged than M are modified
+so the requirement to order accesses to device I/O implies also the
+requirement to order main memory accesses. <<norm:menvcfg_fiom_fence_presuc_op>>
+details the modified interpretation of FENCE instruction bits PI, PO,
+SI, and SO for modes less privileged than M when FIOM=1.#'''
+zh = '''
+[#norm:menvcfg_fiom_fence_op]#如果 `menvcfg` 中的 FIOM（Fence of I/O implies Memory，I/O 栅栏蕴含内存）位被设置为 1，则在特权级低于 M 的模式下执行的 FENCE 指令被修改，使得对设备 I/O 访问排序的要求也蕴含对主存访问排序的要求。<<norm:menvcfg_fiom_fence_presuc_op>> 详细说明了当 FIOM=1 时，对于特权级低于 M 的模式，FENCE 指令位 PI、PO、SI 和 SO 的修改后解释。#'''

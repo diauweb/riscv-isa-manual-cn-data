@@ -1,0 +1,14 @@
+unit_id = "44cd5c9b96fe280dd040b405bc881135"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Linux places kernel addresses in the upper half of the address space and user addresses in the lower half of the address space. As such, the MSB is often used to identify the type of a particular address. With pointer masking enabled, this role is now played by bit XLEN-PMLEN-1 and code that checks whether a pointer is a kernel or a user address needs to inspect this bit instead. For backward compatibility, it may be desirable that the MSB still indicates whether an address is a user or a kernel address. An operating system's ABI may mandate this, but it does not affect the pointer masking mechanism itself. For example, the Linux ABI may choose to mandate that the MSB is not used for tagging and replicates bit XLEN-PMLEN-1 bit (note that for such a mechanism to be secure, the kernel needs to check the MSB of any user mode-supplied address and ensure that this invariant holds before using it; alternatively, it can apply the transformation from Listing 1 or 2 to ensure that the MSB is set to the correct value).
+===='''
+zh = '''
+[NOTE]
+====
+Linux 将内核地址放在地址空间的上半部分，将用户地址放在地址空间的下半部分。因此，MSB 通常用于标识特定地址的类型。启用指针掩码后，这一角色现在由第 XLEN-PMLEN-1 位扮演，检查指针是内核地址还是用户地址的代码需要改为检查该位。为了向后兼容，可能希望 MSB 仍然指示地址是用户地址还是内核地址。操作系统的 ABI 可以强制要求这一点，但这不影响指针掩码机制本身。例如，Linux ABI 可以选择强制要求 MSB 不用于打标签，并复制第 XLEN-PMLEN-1 位（请注意，要使此类机制安全，内核需要检查任何用户模式提供的地址的 MSB，并在使用前确保该不变量成立；或者，它可以应用清单 1 或 2 中的变换，以确保 MSB 被设置为正确的值）。
+===='''

@@ -1,0 +1,26 @@
+unit_id = "3269b068b57aaf0b0a895f47a573269f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Recommended insn:ntl[] variant for portable software to employ in various scenarios.
+[%autowidth,float="center",align="center",cols="<,<",options="header",]
+|===
+|Scenario |Recommended insn:ntl[] variant
+|Access to a working set between 64 KiB and 256 KiB in size |insn:ntl.p1[]
+|Access to a working set between 256 KiB and 1 MiB in size |insn:ntl.pall[]
+|Access to a working set greater than 1 MiB in size |insn:ntl.s1[]
+|Access with no exploitable temporal locality (e.g., streaming) |insn:ntl.all[]
+|Access to a contended synchronization variable |insn:ntl.pall[]
+|==='''
+zh = '''
+.可移植软件在各种场景下应采用的推荐 insn:ntl[] 变体。
+[%autowidth,float="center",align="center",cols="<,<",options="header",]
+|===
+|场景 |推荐 insn:ntl[] 变体
+|访问大小在 64 KiB 到 256 KiB 之间的工作集 |insn:ntl.p1[]
+|访问大小在 256 KiB 到 1 MiB 之间的工作集 |insn:ntl.pall[]
+|访问大小大于 1 MiB 的工作集 |insn:ntl.s1[]
+|无可利用时间局部性的访问（例如流式传输） |insn:ntl.all[]
+|访问存在争用的同步变量 |insn:ntl.pall[]
+|==='''

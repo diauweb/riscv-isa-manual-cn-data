@@ -1,0 +1,8 @@
+unit_id = "4bf746605c3b81617f3b6f605ea5e8e8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In contrast to software writes, [#norm:pm_csr_hw_apply]#pointer masking, when applicable, **is applied** for hardware writes to a CSR (e.g., when the hardware writes the transformed address to `stval` when taking an exception).# [#norm:pm_debug_trigger]#Pointer masking is also applied, when applicable, to the memory access address when matching address triggers in debug.#'''
+zh = '''
+与软件写入不同，[#norm:pm_csr_hw_apply]#在适用时，**会应用**指针掩码来处理对 CSR 的硬件写入（例如，当硬件在发生异常时将转换后的地址写入 `stval` 时）。# [#norm:pm_debug_trigger]#在调试中匹配地址触发器时，指针掩码在适用时也会应用于内存访问地址。#'''

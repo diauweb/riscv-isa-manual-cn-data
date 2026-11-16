@@ -1,0 +1,19 @@
+unit_id = "dde9bc3f512fe69cf016fa0d1c377b0a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+*Rationale:*
+For many low-power targets constructions the type of hardware AES CBC-MAC
+conditioner used by Intel cite:[Me18] and AMD cite:[AM17] would be too
+complex and energy-hungry to implement solely to serve the csr:seed[] CSR.
+On the other hand, simpler non-cryptographic conditioners may be too
+wasteful on input entropy if high-quality random output is required --
+(ARM TrustZone TRBG cite:[AR17] outputs only 10Kbit/sec at 200 MHz.)
+Hence a resource-saving compromise is made between hardware and software
+generation.'''
+zh = '''
+*理由：*
+对于许多低功耗目标构造，Intel cite:[Me18] 和 AMD cite:[AM17] 使用的硬件 AES CBC-MAC 条件器类型过于复杂且能耗高，无法仅为服务 csr:seed[] CSR 而实现。
+另一方面，如果需要高质量随机输出，较简单的非密码条件器可能在输入熵上过于浪费——（ARM TrustZone TRBG cite:[AR17] 在 200 MHz 下仅输出 10Kbit/sec。）
+因此，在硬件和软件生成之间做出了节省资源的折衷。'''

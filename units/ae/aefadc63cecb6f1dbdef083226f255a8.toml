@@ -1,0 +1,13 @@
+unit_id = "aefadc63cecb6f1dbdef083226f255a8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-fld_op]#insn:c.fld[] is an RV32DC/RV64DC-only instruction that loads a double-precision
+floating-point value from memory into floating-point register
+`_rd′_`. It computes an effective address by adding the
+_zero_-extended offset, scaled by 8, to the base address in register
+`_rs1′_`. It expands to
+insn:fld[rd′,offset(rs1′)].#'''
+zh = '''
+[#norm:c-fld_op]#insn:c.fld[] 是仅限 RV32DC/RV64DC 的指令，从内存加载双精度浮点值到浮点寄存器 `_rd′_`。它通过将按 8 缩放的__零__扩展偏移量加到寄存器 `_rs1′_` 中的基址上来计算有效地址。它展开为 insn:fld[rd′,offset(rs1′)]。#'''

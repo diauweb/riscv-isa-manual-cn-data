@@ -1,0 +1,18 @@
+unit_id = "e2efed130cfb87e6d83ff10dad79f231"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The FENCE.I instruction is used to synchronize the instruction and data
+streams. RISC-V does not guarantee that stores to instruction memory
+will be made visible to instruction fetches on a RISC-V hart until that
+hart executes a FENCE.I instruction. A FENCE.I instruction ensures that
+a subsequent instruction fetch on a RISC-V hart will see any previous
+data stores already visible to the same RISC-V hart. FENCE.I does _not_
+ensure that other RISC-V harts' instruction fetches will observe the
+local hart's stores in a multiprocessor system. To make a store to
+instruction memory visible to all RISC-V harts, the writing hart also
+has to execute a data FENCE before requesting that all remote RISC-V
+harts execute a FENCE.I.'''
+zh = '''
+FENCE.I 指令用于同步指令流和数据流。RISC-V 并不保证对指令内存的存储操作在某个 RISC-V 硬件线程执行 FENCE.I 指令之前对其取指可见。FENCE.I 指令确保 RISC-V 硬件线程随后的取指将看到对该同一 RISC-V 硬件线程已经可见的任何先前数据存储。FENCE.I _并不_ 确保在多处理器系统中其他 RISC-V 硬件线程的取指会观察到本地硬件线程的存储。要使对指令内存的存储对所有 RISC-V 硬件线程可见，执行写入的硬件线程还必须在请求所有远程 RISC-V 硬件线程执行 FENCE.I 之前执行一次数据 FENCE。'''

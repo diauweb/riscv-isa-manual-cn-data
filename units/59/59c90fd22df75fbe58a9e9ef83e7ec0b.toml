@@ -1,0 +1,14 @@
+unit_id = "59c90fd22df75fbe58a9e9ef83e7ec0b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that after taking the transition above the memory store operations
+do not yet have their values. The importance of splitting this
+transition from the transition below is that it allows other
+program-order-successor store instructions to observe the memory
+footprint of this instruction, and if they don’t overlap, propagate out
+of order as early as possible (i.e. before the data register value
+becomes available).'''
+zh = '''
+注意，在采取上述转换之后，内存存储操作尚未具有其值。将此转换与下面的转换分开的重要性在于，它允许其他程序顺序后继存储指令观察此指令的内存足迹，并且如果它们不重叠，则尽可能早地乱序传播（即在数据寄存器值变为可用之前）。'''

@@ -1,0 +1,18 @@
+unit_id = "9ac2de46717a9c03a8f39c7e87f54a63"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When reporting branch information on its own (without an address), the
+choice between format 1 and format 0, subformat 0 depends on the number
+of correctly predicted branches (this will be 0 if the predictor is not
+supported, or is disabled). No packets are generated until there are at
+least 31 branches to report. Format 1 is used if the outcome of at least
+one of those 31 branches was not predicted correctly. If all were
+predicted correctly, nothing is output at this time, and the encoder
+continues to count correctly predicted branch outcomes. As soon as one
+of the branch outcomes is not correctly predicted, the encoder will
+output a format 0, subformat 0 packet. See also
+<<sec:format0>>.'''
+zh = '''
+在单独报告分支信息（不含地址）时，格式 1 与格式 0、子格式 0 之间的选择取决于正确预测的分支数量（如果预测器不受支持或被禁用，该数量为 0）。在至少有 31 个分支需要报告之前，不会生成任何包。如果这 31 个分支中至少有一个的结果未被正确预测，则使用格式 1。如果全部都被正确预测，此时不输出任何内容，编码器继续统计正确预测的分支结果。一旦某个分支结果未被正确预测，编码器将输出一个格式 0、子格式 0 包。另见 <<sec:format0>>。'''

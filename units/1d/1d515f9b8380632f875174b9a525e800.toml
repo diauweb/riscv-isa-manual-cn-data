@@ -1,0 +1,14 @@
+unit_id = "1d515f9b8380632f875174b9a525e800"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Physical Memory Protection mechanism is designed to compose with the
+page-based virtual memory systems described in
+<<supervisor>>. When paging is enabled,
+instructions that access virtual memory may result in multiple
+physical-memory accesses, including implicit references to the page
+tables. The PMP checks apply to all of these accesses. The effective
+privilege mode for implicit page-table accesses is S.'''
+zh = '''
+物理内存保护机制被设计为与 <<supervisor>> 中描述的基于页的虚拟内存系统组合使用。当启用分页时，访问虚拟内存的指令可能导致多次物理内存访问，包括对页表的隐式引用。PMP 检查适用于所有这些访问。隐式页表访问的有效特权模式为 S。'''

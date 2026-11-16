@@ -1,0 +1,32 @@
+unit_id = "774950f8953d652f14a01f7d01c8daed"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. The insn:push[] instruction
+** adjusts the stack pointer to create the stack frame
+** pushes (stores) the registers specified in the register list to the stack frame
+
+. The insn:pop[] instruction
+** pops (loads) the registers in the register list from the stack frame
+** adjusts the stack pointer to destroy the stack frame
+
+. The insn:popret[] instructions
+** pop (load) the registers in the register list from the stack frame
+** insn:cm.popretz[] also moves zero into _a0_ as the return value
+** adjust the stack pointer  to destroy the stack frame
+** execute a _ret_ instruction to return from the function'''
+zh = '''
+. insn:push[] 指令
+** 调整栈指针以创建栈帧
+** 将寄存器列表中指定的寄存器压入（存储）到栈帧
+
+. insn:pop[] 指令
+** 从栈帧中弹出（加载）寄存器列表中的寄存器
+** 调整栈指针以销毁栈帧
+
+. insn:popret[] 指令
+** 从栈帧中弹出（加载）寄存器列表中的寄存器
+** insn:cm.popretz[] 还会将零移入 _a0_ 作为返回值
+** 调整栈指针以销毁栈帧
+** 执行 _ret_ 指令以从函数返回'''

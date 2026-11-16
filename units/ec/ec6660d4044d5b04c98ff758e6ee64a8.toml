@@ -1,0 +1,18 @@
+unit_id = "ec6660d4044d5b04c98ff758e6ee64a8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The csr:instret[] definition above is intended to ensure that the counter increments in a predictable fashion.  For example, consider a scenario where csr:minstretcfg[] is configured such that all modes other than U-mode are inhibited.  A user mode load should increment only once, even if it takes a page fault or other exception.  With this definition, the faulting execution of the load will not increment (it does not retire), the handler instructions will not increment (they execute in an inhibited mode), including the xRET (it arguably retires in a non-inhibited mode, but it originates in an inhibited mode).  Only once the load is re-executed and retires will it increment csr:instret[].
+
+In cases where an instruction is emulated by software running in a privilege mode that is inhibited in csr:minstretcfg[], the emulation routine must emulate the csr:instret[] increment.
+===='''
+zh = '''
+[NOTE]
+====
+上述 csr:instret[] 定义旨在确保计数器以可预测的方式递增。例如，考虑 csr:minstretcfg[] 被配置为除 U 模式外的所有模式均被禁止的场景。用户模式加载应只递增一次，即使它发生缺页异常或其他异常。根据此定义，加载的出错执行不会递增（它不退休），处理程序指令不会递增（它们在禁止模式下执行），包括 xRET（它可以说是在未被禁止的模式下退休，但它发起于被禁止的模式）。只有当加载被重新执行并退休时，它才会递增 csr:instret[]。
+
+在指令由运行于 csr:minstretcfg[] 中被禁止的特权模式的软件模拟的情况下，模拟例程必须模拟 csr:instret[] 的递增。
+===='''

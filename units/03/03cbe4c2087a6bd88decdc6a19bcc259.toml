@@ -1,0 +1,21 @@
+unit_id = "03cbe4c2087a6bd88decdc6a19bcc259"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+# any or all of these load instructions may execute multiple times
+# therefore these updates may be visible in the interrupt/exception handler
+lw   s3, 28(sp)
+lw   s2, 24(sp)
+lw   s1, 20(sp)
+lw   s0, 16(sp)
+lw   ra, 12(sp)
+
+# these must only execute once, will only execute after all loads
+# complete successfully all instructions must execute atomically
+# therefore these updates are not visible in the interrupt/exception handler
+li a0, 0
+addi sp, sp, 32
+ret
+----'''

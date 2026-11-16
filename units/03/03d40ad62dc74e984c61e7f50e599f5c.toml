@@ -1,0 +1,19 @@
+unit_id = "03d40ad62dc74e984c61e7f50e599f5c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For lower privilege modes, any trap (synchronous or asynchronous) is
+usually taken at a higher privilege mode with interrupts disabled upon
+entry. The higher-level trap handler will either service the trap and
+return using the stacked information, or, if not returning immediately
+to the interrupted context, will save the privilege stack before
+re-enabling interrupts, so only one entry per stack is required.
+===='''
+zh = '''
+[NOTE]
+====
+对于较低特权模式，任何陷阱（同步或异步）通常在进入时以较高特权模式、中断禁用的状态被捕获。较高级别的陷阱处理程序要么处理该陷阱并使用栈中信息返回，要么在不能立即返回到被中断的上下文时，在重新使能中断之前保存特权栈，因此每个栈只需要一个条目。
+===='''

@@ -1,0 +1,14 @@
+unit_id = "b9752456d2f1794cbef73cde2c063881"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_wlrl_exception]#Implementations are permitted but not required to raise an
+illegal-instruction exception if an instruction attempts to write a
+non-supported value to a *WLRL* field.#
+Implementations can return arbitrary
+bit patterns on the read of a *WLRL* field when the last write was of an
+illegal value, but the value returned should deterministically depend on
+the illegal written value and the value of the field prior to the write.'''
+zh = '''
+[#norm:Zicsr_wlrl_exception]#如果指令尝试向 *WLRL* 字段写入不受支持的值，实现被允许但不要求引发非法指令异常。# 当最后一次写入为非法值时，实现可以在读取 *WLRL* 字段时返回任意位模式，但返回的值应确定性地取决于写入的非法值以及写入前该字段的值。'''

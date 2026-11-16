@@ -1,0 +1,90 @@
+unit_id = "d5b96883be6da065886816342a7c73a8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The following instructions are not affected by Zvkt:
+
+- *All storage operations*
+- *All floating-point operations*
+- add/sub saturate
+* vsadd[u].v[ivx]
+* vssub[u].v[vx]
+- clip
+* vnclip[u].w[ivx]
+- compress
+* vcompress.vm
+- divide
+* vdiv[u].v[vx]
+* vrem[u].v[vx]
+- average
+* vaadd[u].v[vx]
+* vasub[u].v[vx]
+- mask Op
+* vcpop.m
+* vfirst.m
+* vid.v
+* viota.m
+* vms[bio]f.m
+- min/max
+* vmax[u].v[vx]
+* vmin[u].v[vx]
+- Multiply-saturate
+* vsmul.v[vx]
+- reduce
+* vredsum.vs
+* vwredsum[u].vs
+* vred[and|or|xor].vs
+* vred[min|max][u].vs
+- shift round
+* vssra.v[ivx]
+* vssrl.v[ivx]
+- vset
+* vsetivli
+* vsetvl[i]
+===='''
+zh = '''
+[NOTE]
+====
+以下指令不受 Zvkt 影响：
+
+- *所有存储操作*
+- *所有浮点操作*
+- 加/减饱和
+* vsadd[u].v[ivx]
+* vssub[u].v[vx]
+- 裁剪
+* vnclip[u].w[ivx]
+- 压缩
+* vcompress.vm
+- 除法
+* vdiv[u].v[vx]
+* vrem[u].v[vx]
+- 平均
+* vaadd[u].v[vx]
+* vasub[u].v[vx]
+- 掩码操作
+* vcpop.m
+* vfirst.m
+* vid.v
+* viota.m
+* vms[bio]f.m
+- 最小/最大
+* vmax[u].v[vx]
+* vmin[u].v[vx]
+- 乘法饱和
+* vsmul.v[vx]
+- 归约
+* vredsum.vs
+* vwredsum[u].vs
+* vred[and|or|xor].vs
+* vred[min|max][u].vs
+- 舍入移位
+* vssra.v[ivx]
+* vssrl.v[ivx]
+- vset
+* vsetivli
+* vsetvl[i]
+===='''

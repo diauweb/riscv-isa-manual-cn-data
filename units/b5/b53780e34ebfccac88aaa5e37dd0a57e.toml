@@ -1,0 +1,63 @@
+unit_id = "b53780e34ebfccac88aaa5e37dd0a57e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Register save/restore code at function entry/exit represents a
+significant portion of static code size. The stack-pointer-based
+compressed loads and stores in RVC are effective at reducing the
+save/restore static code size by a factor of 2 while improving
+performance by reducing dynamic instruction bandwidth.
+
+A common mechanism used in other ISAs to further reduce save/restore
+code size is load-multiple and store-multiple instructions. We
+considered adopting these for RISC-V but noted the following drawbacks
+to these instructions:
+
+* These instructions complicate processor implementations.
+* For virtual memory systems, some data accesses could be resident in
+physical memory and some could not, which requires a new restart
+mechanism for partially executed instructions.
+* Unlike the rest of the RVC instructions, there is no IFD equivalent to
+Load Multiple and Store Multiple.
+* Unlike the rest of the RVC instructions, the compiler would have to be aware
+of these load-multiple and store-multiple instructions to both allocate
+registers in the expected order and also to schedule the loads and
+stores contiguously and in the proper order, to maximize the chances of them
+being detected and replaced by an assembler or linker with the equivalent
+load-multiple or store-multiple compressed instruction.
+* Simple microarchitectural implementations will constrain how other
+instructions can be scheduled around the load and store multiple
+instructions, leading to a potential performance loss.
+* The desire for sequential register allocation might conflict with the
+featured registers selected for the CIW, CL, CS, CA, and CB formats.
+
+Furthermore, much of the gains can be realized in software by replacing
+prologue and epilogue code with subroutine calls to common prologue and
+epilogue code, a technique described in Section 5.6 of cite:[waterman-phd].
+
+While reasonable architects might come to different conclusions, we
+decided to omit load and store multiple and instead use the
+software-only approach of calling save/restore millicode routines to
+attain the greatest code size reduction.
+===='''
+zh = '''
+[NOTE]
+====
+函数入口/出口处的寄存器保存/恢复代码占静态代码大小的很大一部分。RVC 中基于栈指针的压缩加载和存储可以有效地将保存/恢复静态代码大小减少 2 倍，同时通过减少动态指令带宽来提高性能。
+
+其他 ISA 中用于进一步减少保存/恢复代码大小的一种常见机制是加载多个和存储多个指令。我们考虑过为 RISC-V 采用这些指令，但注意到这些指令的以下缺点：
+
+* 这些指令使处理器实现复杂化。
+* 对于虚拟内存系统，某些数据访问可能驻留在物理内存中，而另一些则不能，这需要为部分执行的指令提供新的重启机制。
+* 与 RVC 指令的其余部分不同，没有与加载多个和存储多个等效的 IFD 指令。
+* 与 RVC 指令的其余部分不同，编译器必须了解这些加载多个和存储多个指令，以便按预期顺序分配寄存器，并按正确顺序连续调度加载和存储，从而最大限度地提高它们被汇编器或链接器检测并替换为等效的加载多个或存储多个压缩指令的机会。
+* 简单的微架构实现将限制其他指令如何围绕加载多个和存储多个指令进行调度，从而导致潜在的性能损失。
+* 顺序寄存器分配的愿望可能与为 CIW、CL、CS、CA 和 CB 格式选择的特色寄存器冲突。
+
+此外，大部分收益可以在软件中通过用对公共序言和尾声代码的子程序调用来替换序言和尾声代码来实现，该技术描述于 cite:[waterman-phd] 的第 5.6 节。
+
+虽然合理的架构师可能会得出不同的结论，但我们决定省略加载多个和存储多个，而是使用仅软件的方法调用保存/恢复微码例程，以获得最大的代码大小缩减。
+===='''

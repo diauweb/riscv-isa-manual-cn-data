@@ -1,0 +1,17 @@
+unit_id = "93204ff121722fe0a5fb3cebe1e31b95"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `satp` CSR is an SXLEN-bit read/write register, formatted as
+shown in <<rv32satp>> for SXLEN=32 and
+<<rv64satp>> for SXLEN=64, which controls
+supervisor-mode address translation and protection. This register holds
+the physical page number (PPN) of the root page table, i.e., its
+supervisor physical address divided by 4 KiB; an address space identifier
+(ASID), which facilitates address-translation fences on a
+per-address-space basis; and the MODE field, which selects the current
+address-translation scheme. Further details on the access to this
+register are described in <<virt-control>>.'''
+zh = '''
+`satp` CSR 是一个 SXLEN 位读/写寄存器，当 SXLEN=32 时格式如 <<rv32satp>> 所示，当 SXLEN=64 时格式如 <<rv64satp>> 所示，它控制监管模式地址转换和保护。该寄存器保存根页表的物理页号（PPN），即其监管物理地址除以 4 KiB；地址空间标识符（ASID），它便于按地址空间进行地址转换栅栏；以及 MODE 字段，它选择当前的地址转换方案。关于对该寄存器访问的更多细节在 <<virt-control>> 中描述。'''

@@ -1,0 +1,15 @@
+unit_id = "2c1ff9c6f0ca0be0d3d3efb5c8f28940"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:fround-s_op]#The insn:fround.s[] instruction rounds the single-precision floating-point
+number in floating-point register _rs1_ to an integer, according to the
+rounding mode specified in the instruction's _rm_ field. It then writes
+that integer, represented as a single-precision floating-point number,
+to floating-point register _rd_#. [#norm:fround-s_zero_inf]#Zero and infinite inputs are copied to
+_rd_ unmodified#. [#norm:fround-s_nan_nv]#Signaling NaN inputs cause the invalid operation
+exception flag to be set; no other exception flags are set#. insn:fround.s[] is
+encoded like insn:fcvt.s.d[], but with _rs2_=4.'''
+zh = '''
+[#norm:fround-s_op]#insn:fround.s[] 指令根据指令 _rm_ 字段中指定的舍入模式，将浮点寄存器 _rs1_ 中的单精度浮点数舍入为整数。然后，它将该整数（表示为单精度浮点数）写入浮点寄存器 _rd_#。[#norm:fround-s_zero_inf]#零和无穷大输入被原样复制到 _rd_#。[#norm:fround-s_nan_nv]#信号 NaN 输入会导致置位无效运算异常标志；不设置其他异常标志#。insn:fround.s[] 的编码与 insn:fcvt.s.d[] 类似，但 _rs2_=4。'''

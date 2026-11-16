@@ -1,0 +1,40 @@
+unit_id = "dd28e9774727638aaba66d25ed48a4a1"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In particular, when {mcontrol-action}=0:
+
+. mcontrol and mcontrol6 triggers with {mcontrol-m}=1 can cause a breakpoint exception
+that is taken from M-mode to M-mode (regardless of delegation).
+. mcontrol and mcontrol6 triggers with {mcontrol-s}=1 can cause a breakpoint exception
+that is taken from S-mode to S-mode if `medeleg` [3]=1.
+. mcontrol6 triggers with {mcontrol6-vs}=1 can cause a breakpoint exception that is taken from VS-mode to VS-mode if `medeleg` [3]=1 and `hedeleg` [3]=1.
+. icount triggers with {icount-m}=1 can cause a breakpoint exception that is taken from M-mode to M-mode (regardless of delegation).
+. icount triggers with {icount-s}=1 can cause a breakpoint exception that is taken from S-mode to S-mode if `medeleg` [3]=1.
+. icount triggers with {icount-vs}=1 can cause a breakpoint exception that is taken from VS-mode to VS-mode if `medeleg` [3]=1 and `hedeleg` [3]=1.
+. etrigger and itrigger triggers will always be taken from a trap handler
+before the first instruction of the handler. If etrigger/itrigger is set
+to trigger on exception/interrupt X and if X is delegated to mode Y then
+the trigger will cause a breakpoint exception that is taken from mode Y
+to mode Y unless breakpoint exceptions are delegated to a more
+privileged mode than Y.
+. tmexttrigger triggers are asynchronous and may occur in any mode and at
+any time.
+===='''
+zh = '''
+[NOTE]
+====
+特别是，当 {mcontrol-action}=0 时：
+
+. 具有 {mcontrol-m}=1 的 mcontrol 和 mcontrol6 触发器可以导致从 M 模式到 M 模式接受的断点异常（无论委托如何）。
+. 具有 {mcontrol-s}=1 的 mcontrol 和 mcontrol6 触发器可以在 `medeleg` [3]=1 时导致从 S 模式到 S 模式接受的断点异常。
+. 具有 {mcontrol6-vs}=1 的 mcontrol6 触发器可以在 `medeleg` [3]=1 且 `hedeleg` [3]=1 时导致从 VS 模式到 VS 模式接受的断点异常。
+. 具有 {icount-m}=1 的 icount 触发器可以导致从 M 模式到 M 模式接受的断点异常（无论委托如何）。
+. 具有 {icount-s}=1 的 icount 触发器可以在 `medeleg` [3]=1 时导致从 S 模式到 S 模式接受的断点异常。
+. 具有 {icount-vs}=1 的 icount 触发器可以在 `medeleg` [3]=1 且 `hedeleg` [3]=1 时导致从 VS 模式到 VS 模式接受的断点异常。
+. etrigger 和 itrigger 触发器将总是在处理程序的第一条指令之前从陷阱处理程序接受。如果 etrigger/itrigger 设置为在异常/中断 X 上触发，并且 X 被委托给模式 Y，则触发器将导致从模式 Y 到模式 Y 接受的断点异常，除非断点异常被委托给比 Y 更高特权的模式。
+. tmexttrigger 触发器是异步的，可以在任何模式、任何时间发生。
+===='''

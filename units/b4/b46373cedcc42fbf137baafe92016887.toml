@@ -1,0 +1,23 @@
+unit_id = "b46373cedcc42fbf137baafe92016887"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We require that operations always fill the entire underlying hardware
+registers with defined values to avoid implementation-defined behavior.
+
+To reduce hardware complexity, the architecture imposes no checks that
+lower-privilege modes have XLEN settings less than or equal to the
+next-higher privilege mode. In practice, such settings would almost
+always be a software bug, but machine operation is well-defined even in
+this case.
+===='''
+zh = '''
+[NOTE]
+====
+我们要求操作始终用已定义的值填满整个底层硬件寄存器，以避免实现定义的行为。
+
+为降低硬件复杂度，本架构不检查较低特权模式的 XLEN 设置是否小于或等于上一级特权模式的 XLEN。在实践中，这样的设置几乎总是软件缺陷，但即使在这种情况下，机器操作也是明确定义的。
+===='''

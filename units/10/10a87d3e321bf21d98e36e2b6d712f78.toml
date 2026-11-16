@@ -1,0 +1,19 @@
+unit_id = "10a87d3e321bf21d98e36e2b6d712f78"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:lw_op]#The LW instruction loads a 32-bit value from memory into _rd_.#
+[#norm:lh_op]#LH loads a 16-bit value from memory, then sign-extends to 32-bits before storing
+in _rd_.#
+[#norm:lhu_op]#LHU loads a 16-bit value from memory but then zero extends to
+32-bits before storing in _rd_.#
+[#norm:lb_lbu_op]#LB and LBU are defined analogously for 8-bit values.#
+[#norm:sw_sh_sb_op]#The SW, SH, and SB instructions store 32-bit, 16-bit, and
+8-bit values from the low bits of register _rs2_ to memory.#'''
+zh = '''
+[#norm:lw_op]#LW 指令从内存加载 32 位值到 _rd_。#
+[#norm:lh_op]#LH 从内存加载 16 位值，然后符号扩展到 32 位后存入 _rd_。#
+[#norm:lhu_op]#LHU 从内存加载 16 位值，但随后零扩展到 32 位后存入 _rd_。#
+[#norm:lb_lbu_op]#LB 和 LBU 对 8 位值类似定义。#
+[#norm:sw_sh_sb_op]#SW、SH 和 SB 指令将寄存器 _rs2_ 低位的 32 位、16 位和 8 位值存储到内存。#'''

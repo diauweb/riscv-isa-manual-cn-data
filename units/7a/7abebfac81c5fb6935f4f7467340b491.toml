@@ -1,0 +1,52 @@
+unit_id = "7abebfac81c5fb6935f4f7467340b491"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- <<svbare,**Svbare**>> The `satp` mode Bare must be supported.
+
+- <<sv39,**Sv39**>> Page-based 39-bit virtual-Memory system.
+
+- <<svade,**Svade**>> Page-fault exceptions are raised when a page is accessed
+  when A bit is clear, or written when D bit is clear.
+
+- <<ssccptr,**Ssccptr**>> Main memory regions with both the cacheability and
+  coherence PMAs must support hardware page-table reads.
+
+- <<sstvecd,**Sstvecd**>> `stvec.MODE` must be capable of holding the value 0
+  (Direct).  When `stvec.MODE=Direct`, `stvec.BASE` must be capable of holding
+  any valid four-byte-aligned address.
+
+- <<sstvala,**Sstvala**>> `stval` must be written with the faulting virtual
+  address for load, store, and instruction page-fault, access-fault, and
+  misaligned exceptions, and for breakpoint exceptions that are defined to write
+  an address to stval, other than those caused by execution of the `EBREAK` or
+  `C.EBREAK` instructions.
+  For virtual-instruction and illegal-instruction exceptions, `stval` must be
+  written with the faulting instruction.
+
+- <<sscounterenw,**Sscounterenw**>> For any `hpmcounter` that is not read-only
+  zero, the corresponding bit in `scounteren` must be writable.
+
+- <<svpbmt,**Svpbmt**>> Page-based memory types
+
+- <<svinval,**Svinval**>> Fine-grained address-translation cache invalidation.'''
+zh = '''
+- <<svbare,**Svbare**>> 必须支持 `satp` 的 Bare 模式。
+
+- <<sv39,**Sv39**>> 基于页面的 39 位虚拟内存系统。
+
+- <<svade,**Svade**>> 当 A 位为 0 时访问页面，或当 D 位为 0 时写入页面，会引发页错误异常。
+
+- <<ssccptr,**Ssccptr**>> 同时具有可缓存性和一致性 PMA 的主内存区域必须支持硬件页表读取。
+
+- <<sstvecd,**Sstvecd**>> `stvec.MODE` 必须能够保存值 0（Direct）。当 `stvec.MODE=Direct` 时，`stvec.BASE` 必须能够保存任何有效的四字节对齐地址。
+
+- <<sstvala,**Sstvala**>> 对于加载、存储和指令页错误、访问错误和非对齐异常，以及对于定义为向 `stval` 写入地址的断点异常，`stval` 必须写入引发故障的虚拟地址；但由执行 `EBREAK` 或 `C.EBREAK` 指令引起的异常除外。
+  对于虚拟指令和非法指令异常，`stval` 必须写入引发故障的指令。
+
+- <<sscounterenw,**Sscounterenw**>> 对于任何不是只读零的 `hpmcounter`，`scounteren` 中的对应位必须可写。
+
+- <<svpbmt,**Svpbmt**>> 基于页面的内存类型
+
+- <<svinval,**Svinval**>> 细粒度地址转换缓存无效化。'''

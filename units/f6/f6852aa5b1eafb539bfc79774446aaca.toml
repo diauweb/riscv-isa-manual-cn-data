@@ -1,0 +1,28 @@
+unit_id = "f6852aa5b1eafb539bfc79774446aaca"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[frame=none]
+.In all four (independent) instances, the final  store-conditional instruction is permitted but not guaranteed to succeed.
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|===='''
+zh = '''
+[frame=none]
+在所有四个（独立的）实例中，最后一条存储条件指令允许成功，但不保证成功。
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|===='''

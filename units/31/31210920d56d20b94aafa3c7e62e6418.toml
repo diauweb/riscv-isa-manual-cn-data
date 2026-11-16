@@ -1,0 +1,76 @@
+unit_id = "31210920d56d20b94aafa3c7e62e6418"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Suggested standard RISC-V instruction encoding space sizes.
+[%autowidth,float="center",align="center",cols="^,<,>,>,>,>", options="header"]
+|===
+|Size |Usage
+4+^| # Available in standard instruction length
+| | |16-bit |32-bit |48-bit |64-bit
+
+6+|
+|14-bit |Quadrant of compressed 16-bit encoding |3 | | |
+
+6+|
+|22-bit |Minor opcode in base 32-bit encoding | |latexmath:[$2^{8}$]
+|latexmath:[$2^{20}$] |latexmath:[$2^{35}$]
+
+|25-bit |Major opcode in base 32-bit encoding | |32
+|latexmath:[$2^{17}$] |latexmath:[$2^{32}$]
+
+|30-bit |Quadrant of base 32-bit encoding | |1 |latexmath:[$2^{12}$]
+|latexmath:[$2^{27}$]
+
+6+|
+|32-bit |Minor opcode in 48-bit encoding | | |latexmath:[$2^{10}$]
+|latexmath:[$2^{25}$]
+
+|37-bit |Major opcode in 48-bit encoding | | |32 |latexmath:[$2^{20}$]
+
+|40-bit |Quadrant of 48-bit encoding | | |4 |latexmath:[$2^{17}$]
+
+6+|
+|45-bit |Sub-minor opcode in 64-bit encoding | | | |latexmath:[$2^{12}$]
+
+|48-bit |Minor opcode in 64-bit encoding | | | |latexmath:[$2^{9}$]
+
+|52-bit |Major opcode in 64-bit encoding | | | |32
+|==='''
+zh = '''
+.建议的标准 RISC-V 指令编码空间大小。
+[%autowidth,float="center",align="center",cols="^,<,>,>,>,>", options="header"]
+|===
+|大小 |用途
+4+^| # 标准指令长度中可用
+| | |16 位 |32 位 |48 位 |64 位
+
+6+|
+|14 位 |压缩 16 位编码的象限 |3 | | |
+
+6+|
+|22 位 |基础 32 位编码中的次操作码 | |latexmath:[$2^{8}$]
+|latexmath:[$2^{20}$] |latexmath:[$2^{35}$]
+
+|25 位 |基础 32 位编码中的主操作码 | |32
+|latexmath:[$2^{17}$] |latexmath:[$2^{32}$]
+
+|30 位 |基础 32 位编码的象限 | |1 |latexmath:[$2^{12}$]
+|latexmath:[$2^{27}$]
+
+6+|
+|32 位 |48 位编码中的次操作码 | | |latexmath:[$2^{10}$]
+|latexmath:[$2^{25}$]
+
+|37 位 |48 位编码中的主操作码 | | |32 |latexmath:[$2^{20}$]
+
+|40 位 |48 位编码的象限 | | |4 |latexmath:[$2^{17}$]
+
+6+|
+|45 位 |64 位编码中的次子操作码 | | | |latexmath:[$2^{12}$]
+
+|48 位 |64 位编码中的次操作码 | | | |latexmath:[$2^{9}$]
+
+|52 位 |64 位编码中的主操作码 | | | |32
+|==='''

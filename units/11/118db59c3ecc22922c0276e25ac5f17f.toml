@@ -1,0 +1,11 @@
+unit_id = "118db59c3ecc22922c0276e25ac5f17f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-j_op]#insn:c.j[] performs an unconditional control transfer. The offset is
+sign-extended and added to the `pc` to form the jump target address. insn:c.j[] can
+therefore target a {pm}2 KiB range. It expands to
+insn:jal[x0,offset].#'''
+zh = '''
+[#norm:c-j_op]#insn:c.j[] 执行无条件控制转移。偏移量进行符号扩展并加到 `pc` 上以形成跳转目标地址。因此 insn:c.j[] 可以以 {pm}2 KiB 范围为目标。它展开为 insn:jal[x0,offset]。#'''

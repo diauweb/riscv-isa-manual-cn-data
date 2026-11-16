@@ -1,0 +1,18 @@
+unit_id = "1a067be1d004ce078a7582ff27d82463"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For G-stage address translation, all memory accesses (including those
+made to access data structures for VS-stage address translation) are
+considered to be user-level accesses, as though executed in U-mode.
+Access type permissions—readable, writable, or executable—are checked
+during G-stage translation the same as for VS-stage translation. For a
+memory access made to support VS-stage address translation (such as to
+read/write a VS-level page table), permissions and the need to set A
+and/or D bits at the G-stage level are checked as though for an implicit
+load or store, not for the original access type. However, any exception
+is always reported for the original access type (instruction, load, or
+store/AMO).'''
+zh = '''
+对于 G 级地址翻译，所有内存访问（包括为访问 VS 级地址翻译的数据结构而进行的访问）都被视为用户级访问，如同在 U-mode 中执行。访问类型权限——可读、可写或可执行——在 G 级翻译期间检查，与 VS 级翻译相同。对于为支持 VS 级地址翻译而进行的内存访问（例如读取/写入 VS 级页表），权限以及在 G 级设置 A 和/或 D 位的需求如同隐式加载或存储那样检查，而非针对原始访问类型。然而，任何异常始终针对原始访问类型（指令、加载或存储/AMO）报告。'''

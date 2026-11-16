@@ -1,0 +1,34 @@
+unit_id = "fe96b2a37fff02107290114f40b6c906"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A software-check exception is a synchronous exception that is triggered when
+there are violations of checks and assertions defined by ISA extensions that
+aim to safeguard the integrity of software assets, including e.g. control-flow
+and memory-access constraints. When this exception is raised, the `__x__tval`
+register is set either to 0 or to an informative value defined by the extension
+that stipulated the exception be raised.  The priority of this exception,
+relative to other synchronous exceptions, depends on the cause of this exception
+and is defined by the extension that stipulated the exception be raised.
+
+A hardware-error exception is a synchronous exception triggered when corrupted or
+uncorrectable data is accessed explicitly or implicitly by an instruction.  In
+this context, "data" encompasses all types of information used within a RISC-V
+hart. Upon a hardware-error exception, the `__x__epc` register is set to the
+address of the instruction that attempted to access corrupted data, while the
+`__x__tval` register is set either to 0 or to the virtual address of an
+instruction fetch, load, or store that attempted to access corrupted data. The
+priority of hardware-error exception is implementation-defined, but any given
+occurrence is generally expected to be recognized at the point in the overall
+priority order at which the hardware error is discovered.
+===='''
+zh = '''
+[NOTE]
+====
+软件检查异常是一种同步异常，当 ISA 扩展所定义的旨在保障软件资产完整性（例如控制流和内存访问约束）的检查和断言被违反时触发。当引发此异常时，`__x__tval` 寄存器被设为 0 或设为规定应引发该异常的扩展所定义的信息性值。此异常相对于其他同步异常的优先级取决于该异常的原因，并由规定应引发该异常的扩展定义。
+
+硬件错误异常是一种同步异常，当指令显式或隐式访问损坏或不可纠正的数据时触发。在此语境中，"数据" 涵盖 RISC-V 硬件线程内使用的所有类型的信息。发生硬件错误异常时，`__x__epc` 寄存器被设为试图访问损坏数据的指令地址，而 `__x__tval` 寄存器被设为 0 或设为试图访问损坏数据的指令取指、加载或存储的虚拟地址。硬件错误异常的优先级是实现定义的，但任何给定事件通常预期在总体优先级顺序中硬件错误被发现的位置被识别。
+===='''

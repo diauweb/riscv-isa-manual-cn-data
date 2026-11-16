@@ -1,0 +1,36 @@
+unit_id = "bd5d8926645933f68046d5b46075a531"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[abstractauto-autoexecprogbuf]] `((autoexecprogbuf))`
+a|When a bit in this field is 1, read or write accesses to the
+corresponding `progbuf` word cause the DM to act as if the
+current value in {dm-command} was written there again after the
+access to `progbuf` completes.
+a|*WARL*
+a|0
+|[[abstractauto-autoexecdata]] `((autoexecdata))`
+a|When a bit in this field is 1, read or write accesses to the
+corresponding `data` word cause the DM to act as if the current
+value in {dm-command} was written there again after the
+access to `data` completes.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[abstractauto-autoexecprogbuf]] `((autoexecprogbuf))`
+a|当此字段中的某一位为 1 时，对相应 `progbuf` 字的读或写访问会导致 DM 在对 `progbuf` 的访问完成后，就像再次将 {dm-command} 中的当前值写入那里一样行动。
+a|*WARL*
+a|0
+|[[abstractauto-autoexecdata]] `((autoexecdata))`
+a|当此字段中的某一位为 1 时，对相应 `data` 字的读或写访问会导致 DM 在对 `data` 的访问完成后，就像再次将 {dm-command} 中的当前值写入那里一样行动。
+a|*WARL*
+a|0
+|==='''

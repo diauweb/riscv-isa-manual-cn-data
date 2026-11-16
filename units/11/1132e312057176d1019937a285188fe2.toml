@@ -1,0 +1,11 @@
+unit_id = "1132e312057176d1019937a285188fe2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For cache-block management instructions, the resulting invalidate, clean, and
+flush operations behave as stores in the PPO rules subject to one additional
+overlapping address rule. Specifically, if _a_ precedes _b_ in program order,
+then _a_ will precede _b_ in the global memory order if:'''
+zh = '''
+对于缓存块管理指令，所产生的无效化、清理和刷新操作在 PPO 规则中表现得像存储操作，但需遵守一条额外的重叠地址规则。具体而言，如果 _a_ 在程序顺序中先于 _b_，则如果满足以下条件，_a_ 将在全局内存顺序中先于 _b_：'''

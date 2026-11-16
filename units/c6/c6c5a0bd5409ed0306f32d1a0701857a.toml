@@ -1,0 +1,26 @@
+unit_id = "c6c5a0bd5409ed0306f32d1a0701857a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The F extension uses separate `f` registers for floating-point
+computation, to reduce register pressure and simplify the provision of
+register-file ports for wide superscalars. However, the additional
+architectural state increases the minimal implementation cost. By
+eliminating the `f` registers, the Zfinx extension substantially reduces
+the cost of simple RISC-V implementations with floating-point
+instruction-set support. Zfinx also reduces context-switch cost.
+
+In general, software that assumes the presence of the F extension is
+incompatible with software that assumes the presence of the Zfinx
+extension, and vice versa.
+===='''
+zh = '''
+[NOTE]
+====
+F 扩展使用单独的 `f` 寄存器进行浮点计算，以降低寄存器压力，并简化宽超标量的寄存器堆端口提供。然而，额外的架构状态增加了最小实现成本。通过消除 `f` 寄存器，Zfinx 扩展大幅降低了支持浮点指令集的简单 RISC-V 实现成本。Zfinx 还降低了上下文切换成本。
+
+一般而言，假设存在 F 扩展的软件与假设存在 Zfinx 扩展的软件不兼容，反之亦然。
+===='''

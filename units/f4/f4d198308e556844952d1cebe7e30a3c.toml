@@ -1,0 +1,70 @@
+unit_id = "f4d198308e556844952d1cebe7e30a3c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. {dcsr-stopcount} only applies to hart-local counters.
+https://github.com/riscv/riscv-debug-spec/pull/405[#405]
+. {dmstatus-version} may be invalid when {dmcontrol-dmactive}=0.
+https://github.com/riscv/riscv-debug-spec/pull/414[#414]
+. Address triggers ({csr-mcontrol}) may fire on any accessed address.
+https://github.com/riscv/riscv-debug-spec/pull/421[#421]
+. All Trigger Module registers (<<tab:trigger>>) are optional. https://github.com/riscv/riscv-debug-spec/pull/431[#431]
+. When extending IR, {dtm-bypass} still is all ones.
+https://github.com/riscv/riscv-debug-spec/pull/437[#437]
+. {dcsr-ebreaks} and {dcsr-ebreaku} are WARL. https://github.com/riscv/riscv-debug-spec/pull/458[#458]
+. NMIs are disabled by {dcsr-stepie}.
+https://github.com/riscv/riscv-debug-spec/pull/465[#465]
+. R/W1C fields should be cleared by writing every bit high.
+https://github.com/riscv/riscv-debug-spec/pull/472[#472]
+. Specify trigger priorities in <<tab:priority>> relative to exceptions.
+https://github.com/riscv/riscv-debug-spec/pull/478[#478]
+. Time may pass before {dmcontrol-dmactive} becomes high.
+https://github.com/riscv/riscv-debug-spec/pull/500[#500]
+. Clear MPRV when resuming into lower privilege mode.
+https://github.com/riscv/riscv-debug-spec/pull/503[#503]
+. Halt state may not be preserved across reset.
+https://github.com/riscv/riscv-debug-spec/pull/504[#504]
+. Hardware should clear trigger action when {tdata1-dmode} is cleared and action is 1.
+https://github.com/riscv/riscv-debug-spec/pull/501[#501]
+. Change quick access exceptions to halt the target in <<ac-quickaccess>>.
+https://github.com/riscv/riscv-debug-spec/pull/585[#585]
+. Writing 0 to {csr-tdata1} forces a state where {csr-tdata2} and {csr-tdata3} are writable.
+https://github.com/riscv/riscv-debug-spec/pull/598[#598]
+. Solutions to deal with reentrancy in <<nativetrigger>> prevent triggers from
+_matching_, not merely _firing_. This primarily affects {csr-icount} behavior.
+https://github.com/riscv/riscv-debug-spec/pull/722[#722]
+. Attempts to access an unimplemented CSR raise an illegal instruction
+exception. https://github.com/riscv/riscv-debug-spec/pull/791[#791]'''
+zh = '''
+. {dcsr-stopcount} 仅适用于硬件线程本地计数器。
+https://github.com/riscv/riscv-debug-spec/pull/405[#405]
+. 当 {dmcontrol-dmactive}=0 时，{dmstatus-version} 可能无效。
+https://github.com/riscv/riscv-debug-spec/pull/414[#414]
+. 地址触发器（{csr-mcontrol}）可在任何被访问地址上触发。
+https://github.com/riscv/riscv-debug-spec/pull/421[#421]
+. 所有触发模块寄存器（<<tab:trigger>>）都是可选的。https://github.com/riscv/riscv-debug-spec/pull/431[#431]
+. 扩展 IR 时，{dtm-bypass} 仍为全 1。
+https://github.com/riscv/riscv-debug-spec/pull/437[#437]
+. {dcsr-ebreaks} 和 {dcsr-ebreaku} 是 WARL。https://github.com/riscv/riscv-debug-spec/pull/458[#458]
+. {dcsr-stepie} 会禁用 NMI。
+https://github.com/riscv/riscv-debug-spec/pull/465[#465]
+. R/W1C 字段应通过向每一位写 1 来清除。
+https://github.com/riscv/riscv-debug-spec/pull/472[#472]
+. 在 <<tab:priority>> 中指定触发器相对于异常的优先级。
+https://github.com/riscv/riscv-debug-spec/pull/478[#478]
+. 在 {dmcontrol-dmactive} 变高之前可能经过一段时间。
+https://github.com/riscv/riscv-debug-spec/pull/500[#500]
+. 恢复到较低特权模式时清除 MPRV。
+https://github.com/riscv/riscv-debug-spec/pull/503[#503]
+. 停止状态可能无法跨复位保持。
+https://github.com/riscv/riscv-debug-spec/pull/504[#504]
+. 当 {tdata1-dmode} 被清除且 action 为 1 时，硬件应清除触发器动作。
+https://github.com/riscv/riscv-debug-spec/pull/501[#501]
+. 在 <<ac-quickaccess>> 中，将快速访问异常改为使目标停止。
+https://github.com/riscv/riscv-debug-spec/pull/585[#585]
+. 向 {csr-tdata1} 写 0 会强制进入 {csr-tdata2} 和 {csr-tdata3} 可写的状态。
+https://github.com/riscv/riscv-debug-spec/pull/598[#598]
+. <<nativetrigger>> 中处理重入的解决方案会阻止触发器 _匹配_，而不仅仅是 _触发_。这主要影响 {csr-icount} 行为。
+https://github.com/riscv/riscv-debug-spec/pull/722[#722]
+. 访问未实现的 CSR 会引发非法指令异常。https://github.com/riscv/riscv-debug-spec/pull/791[#791]'''

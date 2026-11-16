@@ -1,0 +1,13 @@
+unit_id = "220c7685d866edb434a6fd36c7303be2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The code in the Debug Module causes the hart to execute a "park loop."
+In the park loop the hart writes its `mhartid` to a memory location within the
+Debug Module to indicate that it is halted. To allow the DM to
+individually control one out of several halted harts, each hart polls
+for flags in a DM-controlled memory location to determine whether the
+debugger wants it to execute the Program Buffer or perform a resume.'''
+zh = '''
+调试模块中的代码使硬件线程执行一个“驻留循环”（park loop）。在该驻留循环中，硬件线程将其 `mhartid` 写入调试模块内的一个内存位置，以表明其已暂停。为使 DM 能够单独控制若干已暂停硬件线程中的一个，每个硬件线程都会轮询 DM 控制的内存位置中的标志，以确定调试器是希望它执行程序缓冲区还是执行恢复。'''

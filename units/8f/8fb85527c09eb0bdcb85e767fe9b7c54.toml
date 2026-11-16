@@ -1,0 +1,13 @@
+unit_id = "8fb85527c09eb0bdcb85e767fe9b7c54"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If bit FIOM (Fence of I/O implies Memory) is set to one in `senvcfg`,
+FENCE instructions executed in U-mode are modified so the requirement to
+order accesses to device I/O implies also the requirement to order main
+memory accesses. <<senvcfg_FIOM>> details the modified
+interpretation of FENCE instruction bits PI, PO, SI, and SO in U-mode
+when FIOM=1.'''
+zh = '''
+如果 `senvcfg` 中的 FIOM（Fence of I/O implies Memory，I/O 栅栏蕴含内存）位被置为 1，则在 U 模式下执行的 FENCE 指令被修改，使得对设备 I/O 访问排序的要求也蕴含对主存访问排序的要求。<<senvcfg_FIOM>> 详细说明了当 FIOM=1 时 U 模式下 FENCE 指令位 PI、PO、SI 和 SO 的修改后解释。'''

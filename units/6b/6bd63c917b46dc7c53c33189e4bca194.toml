@@ -1,0 +1,17 @@
+unit_id = "6bd63c917b46dc7c53c33189e4bca194"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Note that <<do_amo, Satisfy memory operation by forwarding from unpropagates stores>> might leave some slices of the memory load operation
+unsatisfied, those will have to be satisfied by taking the transition
+again, or taking <<sat_from_mem, Satisfy memory load operation from memory>>. <<sat_from_mem, Satisfy memory load operation from memory>>, on the other hand, will always satisfy all the
+unsatisfied slices of the memory load operation.
+===='''
+zh = '''
+[NOTE]
+====
+注意，<<do_amo, 通过从未传播存储转发来满足内存操作>> 可能使内存加载操作的某些切片仍未满足，这些切片将必须通过再次执行该转换，或执行 <<sat_from_mem, 从内存满足内存加载操作>> 来满足。另一方面，<<sat_from_mem, 从内存满足内存加载操作>> 将总是满足内存加载操作的所有未满足切片。
+===='''

@@ -1,0 +1,15 @@
+unit_id = "6b33c4c45558eeb3ed508615bf4ea44c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If bit _i_ of `sie` is read-only zero, the same bit in register `hip`
+may be writable or may be read-only. When bit _i_ in `hip` is writable,
+a pending interrupt _i_ can be cleared by writing 0 to this bit. If
+interrupt _i_ can become pending in `hip` but bit _i_ in `hip` is
+read-only, then either the interrupt can be cleared by clearing bit _i_
+of `hvip`, or the implementation must provide some other mechanism for
+clearing the pending interrupt (which may involve a call to the
+execution environment).'''
+zh = '''
+如果 `sie` 的位 _i_ 为只读零，则寄存器 `hip` 中的同一位可以可写或只读。当 `hip` 中的位 _i_ 可写时，可以通过向该位写 0 来清除待处理中断 _i_。如果中断 _i_ 可以在 `hip` 中变为待处理，但 `hip` 中的位 _i_ 为只读，则要么可以通过清除 `hvip` 的位 _i_ 来清除该中断，要么实现必须提供某种其他机制来清除待处理中断（这可能涉及对执行环境的调用）。'''

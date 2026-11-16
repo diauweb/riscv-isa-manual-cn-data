@@ -1,0 +1,39 @@
+unit_id = "0b2920149eb9f96bb35a14670b71f308"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Transliterated the document from LaTeX into AsciiDoc.
+* Included all ratified extensions through March 2024.
+* Clarified that "`platform- or custom-use`" interrupts are actually
+"`platform-use interrupts`", where the platform can choose to make some custom.
+* Clarified semantics of explicit accesses to CSRs wider than XLEN bits.
+* Clarified that MXLEN{ge}SXLEN.
+* Clarified that WFI is not a HINT instruction.
+* Clarified that VS-stage page-table accesses set G-stage A/D bits.
+* Clarified ordering rules when PBMT=IO is used on main-memory regions.
+* Clarified ordering rules for hardware A/D bit updates.
+* Clarified that, for a given exception cause, `__x__tval` might sometimes
+be set to a nonzero value but sometimes not.
+* Clarified exception behavior of unimplemented or inaccessible CSRs.
+* Clarified that Svpbmt allows implementations to override additional PMAs.
+* Replaced the concept of vacant memory regions with inaccessible memory or I/O regions.
+* Clarified that timer and count-overflow interrupts' arrival in
+  interrupt-pending registers is not immediate.
+* Clarified that MXR affects only explicit memory accesses.'''
+zh = '''
+* 将文档从 LaTeX 转写为 AsciiDoc。
+* 收录了截至 2024 年 3 月的所有已批准扩展。
+* 澄清了“平台或自定义用途”中断实际上是“平台用途中断”，平台可以选择将其中一些设为自定义用途。
+* 澄清了对宽度超过 XLEN 位的 CSR 进行显式访问的语义。
+* 澄清了 MXLEN{ge}SXLEN。
+* 澄清了 WFI 不是 HINT 指令。
+* 澄清了 VS 阶段页表访问会设置 G 阶段的 A/D 位。
+* 澄清了在主内存区域使用 PBMT=IO 时的排序规则。
+* 澄清了硬件 A/D 位更新的排序规则。
+* 澄清了对于给定的异常原因，`__x__tval` 有时可能被设置为非零值，而有时则不会。
+* 澄清了未实现或不可访问的 CSR 的异常行为。
+* 澄清了 Svpbmt 允许实现覆盖额外的 PMA。
+* 用不可访问内存或 I/O 区域的概念取代了空缺内存区域的概念。
+* 澄清了定时器中断和计数溢出中断到达中断挂起寄存器并非立即发生。
+* 澄清了 MXR 仅影响显式内存访问。'''

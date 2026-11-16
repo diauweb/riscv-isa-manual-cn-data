@@ -1,0 +1,9 @@
+unit_id = "96d5e66182ec93c8903a15eafcc9009e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: A small implementation supporting ELEN=32 requires only seven bits of state in csr:vtype[]: two bits for csr::[vma] and csr::[vta], two bits for csr::[vsew] and three bits for csr::[vlmul].  The illegal value represented by csr::[vill] can be internally encoded using the illegal 64-bit combination in csr::[vsew] without requiring an additional storage
+bit to hold csr::[vill].'''
+zh = '''
+NOTE: 支持 ELEN=32 的小型实现只需要 csr:vtype[] 中的七位状态：两位用于 csr::[vma] 和 csr::[vta]，两位用于 csr::[vsew]，三位用于 csr::[vlmul]。由 csr::[vill] 表示的非法值可以在内部使用 csr::[vsew] 中的非法 64 位组合进行编码，而无需额外的存储位来保存 csr::[vill]。'''

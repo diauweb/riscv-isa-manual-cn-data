@@ -1,0 +1,54 @@
+unit_id = "133b4f1e8ec4074a994cb21c2b5ff76d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Activating ext:zicfiss[] in U-mode must be done explicitly per process. Not activating
+ext:zicfiss[] at U-mode for a process when that application is not compiled with
+ext:zicfiss[] allows it to invoke shared libraries that may contain
+ext:zicfiss[] instructions. The ext:zicfiss[] instructions in the shared library revert to their
+ext:zimop[]- or ext:zcmop[]-defined behavior in this case.
+
+When ext:zicfiss[] is enabled in S-mode it is benign to use an operating system that is
+not compiled with ext:zicfiss[] instructions. Such an operating system that does
+not use backward-edge CFI for S-mode execution may still activate ext:zicfiss[] for
+U-mode applications.
+
+When programs that use ext:zicfiss[] instructions are installed on a processor that
+supports the ext:zicfiss[] extension but the extension is not enabled at the privilege
+mode where the program executes, the program continues to function correctly but
+without backward-edge CFI protection as the ext:zicfiss[] instructions will revert to
+their ext:zimop[]- or ext:zcmop[]-defined behavior.
+
+When programs that use ext:zicfiss[] instructions are installed on a processor that
+does not support the ext:zicfiss[] extension but supports the ext:zimop[] and
+ext:zcmop[] extensions, the programs continues to function correctly but without
+backward-edge CFI protection as the ext:zicfiss[] instructions will revert to their
+ext:zimop[]- or ext:zcmop[]-defined behavior.
+
+On processors that do not support ext:zimop[]/ext:zcmop[] extensions, all ext:zimop[] or ext:zcmop[] code
+points including those used for ext:zicfiss[] instructions may cause an
+illegal-instruction exception. Execution of programs that use these instructions
+on such machines is not supported.
+
+Activating ext:zicfiss[] in M-mode is currently not supported. Additionally, when
+S-mode is not implemented, activation is not supported in any privilege mode. These
+functionalities may be introduced in a future standard extension.
+===='''
+zh = '''
+[NOTE]
+====
+在 U 模式中激活 ext:zicfiss[] 必须按进程显式进行。当某个应用未使用 ext:zicfiss[] 编译时，为该应用的 U 模式不激活 ext:zicfiss[]，可使其能够调用可能包含 ext:zicfiss[] 指令的共享库。在这种情况下，共享库中的 ext:zicfiss[] 指令将恢复为其 ext:zimop[] 或 ext:zcmop[] 定义的行为。
+
+当在 S 模式中启用 ext:zicfiss[] 时，使用未使用 ext:zicfiss[] 指令编译的操作系统是良性的。这样的操作系统虽然不对 S 模式执行使用后向边 CFI，仍可为 U 模式应用激活 ext:zicfiss[]。
+
+当使用 ext:zicfiss[] 指令的程序被安装到支持 ext:zicfiss[] 扩展但该扩展在程序执行所在的特权模式未启用的处理器上时，程序仍能正确运行，但由于 ext:zicfiss[] 指令将恢复为其 ext:zimop[] 或 ext:zcmop[] 定义的行为，将不具备后向边 CFI 保护。
+
+当使用 ext:zicfiss[] 指令的程序被安装到不支持 ext:zicfiss[] 扩展但支持 ext:zimop[] 和 ext:zcmop[] 扩展的处理器上时，程序仍能正确运行，但由于 ext:zicfiss[] 指令将恢复为其 ext:zimop[] 或 ext:zcmop[] 定义的行为，将不具备后向边 CFI 保护。
+
+在不支持 ext:zimop[]/ext:zcmop[] 扩展的处理器上，所有 ext:zimop[] 或 ext:zcmop[] 代码点（包括用于 ext:zicfiss[] 指令的那些）都可能引发非法指令异常。不支持在此类机器上执行使用这些指令的程序。
+
+目前在 M 模式中激活 ext:zicfiss[] 尚不受支持。此外，当未实现 S 模式时，任何特权模式下都不支持激活。这些功能可能在未来的标准扩展中引入。
+===='''

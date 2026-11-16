@@ -1,0 +1,48 @@
+unit_id = "d452e2a2442888356882ccda1a4400f9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* A timestamp is (up to) a 64-bit time value.
+* Configurable options for generating timestamp values such as a hart's
+'time' values or 'cycle' values.
+* Options could may also include things like taking 'time' values with
+the low 4 or 8 bits dropped off which would create a coarser granularity
+time values
+* Timestamp generation may be enabled or disabled. If enabled, a
+timestamp packet would be generated periodically which may be based on
+configurable interval or rate, e.g. once every 2^n^ items where 'n' and
+'items' are configurable among some limited set of choices. The choices
+could be:
+** Time
+** Time scaled down. An implementation specific scaled or divided down
+derivative of time. This may be useful in providing a smaller coarser
+graularity values
+** Time Interpolated up. An implementation specific interpolated up
+derivative of time. This may be useful in providing higher resolution
+time values
+** Cycle
+** Implementation specific
+* A timestamp packet may also be generated in conjunction with a sync
+packet
+* Timestamp packets are highly compressible and variable in size
+depending on the number of low bits of the current value that have
+changed wrt the last emitted timestamp value. If timestamp packets are
+emitted rarely (but not as rare as sync packets), then they will tend to
+be, say, 2-4 bytes in size (still much less than the full up to 64-bit
+size). If timestamp packets are emitted somewhat frequently, then they
+will tend to be 1-2 bytes in size. If timestamp packets are emitted very
+frequently, then they will tend to be <1 byte in size. Timestamp values
+associated with sync packets would always be the full implemented size.'''
+zh = '''
+* 时间戳为（最多）64 位的时间值。
+* 用于生成时间戳值的可配置选项，例如硬件线程的 'time' 值或 'cycle' 值。
+* 选项还可能包括诸如取 'time' 值并丢弃低 4 位或低 8 位之类的做法，这会生成粒度更粗的时间值。
+* 时间戳生成可以启用或禁用。如果启用，则会定期生成时间戳包，可基于可配置的间隔或速率，例如每 2^n^ 项一次，其中 'n' 和 '项' 可在某个有限的选择集中配置。可选值可以是：
+** 时间
+** 按比例缩减的时间。时间的一种实现相关的缩放或分频导数。这可能有助于提供更小、更粗的粒度值。
+** 插值放大的时间。时间的一种实现相关的插值导数。这可能有助于提供更高分辨率的时间值。
+** 周期
+** 实现相关的值
+* 时间戳包也可以与同步包一起生成。
+* 时间戳包具有很高的可压缩性，其大小可变，取决于当前值与上次发出的时间戳值相比有多少低位发生了变化。如果时间戳包很少发出（但不像同步包那样稀少），则其大小往往为 2-4 字节（仍远小于最多 64 位的完整大小）。如果时间戳包较为频繁地发出，则其大小往往为 1-2 字节。如果时间戳包非常频繁地发出，则其大小往往小于 1 字节。与同步包相关联的时间戳值始终为所实现的完整大小。'''

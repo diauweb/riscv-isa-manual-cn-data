@@ -1,0 +1,24 @@
+unit_id = "5d2296a786c0d9d291a96e473a16db95"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This is a loop with an indirect jump back to the next iteration. This is
+an uninferable discontinuity, and will be reported via a format 1 or 2
+packet. Note however that the initial entry into the loop is
+fall-through from the instruction at looplabel - 4, and will not be
+reported explicitly. This means that when reconstructing the execution
+path of the program, the looplabel address is encountered twice. On
+first glance, it appears that the decoder can determine when it reaches
+the loop label for the 1st time that this is not the end of execution,
+because the preceding instruction was not one that can cause an
+uninferable discontinuity. It can therefore continue reconstructing the
+execution path until it reaches the *_JALR_*, from where it can deduce
+that *_opcode B_* at looplabel is the final retired instruction.
+However, there are circumstances where this approach does not work. For
+example, consider the case where there is an exception at looplabel 4.
+In this case, the decoder cannot tell whether this occurred during the
+1st or 2nd loop iterations, without additional information from the
+encoder. This is the purpose of the *updiscon* field. In more detail:'''
+zh = '''
+这是一个带间接跳转回下一次迭代的循环。这是一个不可推断的不连续点，将通过格式 1 或 2 包报告。但请注意，进入循环的初始入口是从 looplabel - 4 处的指令顺序落入的，不会显式报告。这意味着在重建程序执行路径时，looplabel 地址会被遇到两次。初看之下，解码器在第一次到达循环标签时可以判断这不是执行的结束，因为前一条指令不是能导致不可推断不连续点的指令。因此它可以继续重建执行路径，直到到达 *_JALR_*，由此可以推断 looplabel 处的 *_opcode B_* 是最后退休的指令。然而，在某些情况下这种方法不奏效。例如，考虑 looplabel 4 处发生异常的情形。在这种情况下，如果没有编码器的额外信息，解码器无法判断这发生在第 1 次还是第 2 次循环迭代。这正是 *updiscon* 字段的用途。更详细地说：'''

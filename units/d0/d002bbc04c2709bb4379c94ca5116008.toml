@@ -1,0 +1,18 @@
+unit_id = "d002bbc04c2709bb4379c94ca5116008"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Linux mappings for release operations may seem stronger than
+necessary, but these mappings are needed to cover some cases in which
+Linux requires stronger orderings than the more intuitive mappings would
+provide. In particular, as of the time this text is being written, Linux
+is actively debating whether to require load-load, load-store, and
+store-store orderings between accesses in one critical section and
+accesses in a subsequent critical section in the same hart and protected
+by the same synchronization object. Not all combinations of
+FENCE RW,W/FENCE R,RW mappings with _aq_/_rl_ mappings combine to
+provide such orderings. There are a few ways around this problem,
+including:'''
+zh = '''
+释放操作的 Linux 映射可能看起来比必要的更强，但这些映射是必需的，以覆盖 Linux 要求比更直观的映射所提供排序更强的一些情况。特别地，在撰写本文时，Linux 正在积极讨论是否要求同一硬件线程中一个临界区内的访问与由同一同步对象保护的后续临界区内的访问之间具有加载-加载、加载-存储和存储-存储排序。并非所有 FENCE RW,W/FENCE R,RW 映射与 _aq_/_rl_ 映射的组合都能结合起来提供此类排序。有几种方法可以解决此问题，包括：'''

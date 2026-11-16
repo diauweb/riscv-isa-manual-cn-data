@@ -1,0 +1,11 @@
+unit_id = "d8a9e4b5276c44482d693dbee932a45d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.ADD adds the values in registers _rd_ and _rs2_ and writes the result
+to register _rd_. C.ADD expands into `add rd, rd, rs2`. C.ADD is only
+valid when _rs2_≠`x0`; the code points with _rs2_=`x0` correspond to the C.JALR
+and C.EBREAK instructions. The code points with _rs2_≠`x0` and _rd_=`x0` are HINTs.'''
+zh = '''
+C.ADD 将寄存器 _rd_ 和 _rs2_ 中的值相加，并将结果写入寄存器 _rd_。C.ADD 展开为 `add rd, rd, rs2`。C.ADD 仅在 _rs2_≠`x0` 时有效；_rs2_=`x0` 的代码点对应于 C.JALR 和 C.EBREAK 指令。_rs2_≠`x0` 且 _rd_=`x0` 的代码点是 HINT。'''

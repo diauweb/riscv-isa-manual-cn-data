@@ -1,0 +1,15 @@
+unit_id = "b9fb649b90d3cdc392be192dc131197d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+With RCpc annotations alone, store-release-to-load-acquire ordering is
+not enforced. This facilitates the porting of code written under the TSO
+and/or RCpc memory models. To enforce store-release-to-load-acquire
+ordering, the code must use store-release-RCsc and load-acquire-RCsc
+operations so that PPO rule 7 applies. RCpc alone is
+sufficient for many use cases in C/C\++ but is insufficient for many
+other use cases in C/C++, Java, and Linux, to name just a few examples;
+see <<memory_porting, Memory Porting>> for details.'''
+zh = '''
+仅使用 RCpc 注解时，不强制存储-释放到加载-获取的顺序。这便于移植在 TSO 和/或 RCpc 内存模型下编写的代码。要强制存储-释放到加载-获取的顺序，代码必须使用存储-释放-RCsc 和加载-获取-RCsc 操作，以便 PPO 规则 7 适用。仅 RCpc 对 C/C\++ 中的许多用例足够，但对 C/C++、Java 和 Linux 中的许多其他用例不足，仅举几例；详见 <<memory_porting, Memory Porting>>。'''

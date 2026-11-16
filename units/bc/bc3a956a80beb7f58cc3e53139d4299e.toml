@@ -1,0 +1,26 @@
+unit_id = "bc3a956a80beb7f58cc3e53139d4299e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.sumop
+[cols="1,1,1,1,1,11"]
+|===
+5+| sumop[4:0] | Description
+
+| 0 | 0 | 0 | 0 | 0 | unit-stride store
+| 0 | 1 | 0 | 0 | 0 | unit-stride, whole register store
+| 0 | 1 | 0 | 1 | 1 | unit-stride, mask store, EEW=8
+| x | x | x | x | x | other encodings reserved
+|==='''
+zh = '''
+.sumop
+[cols="1,1,1,1,1,11"]
+|===
+5+| sumop[4:0] | 描述
+
+| 0 | 0 | 0 | 0 | 0 | 单位步长存储
+| 0 | 1 | 0 | 0 | 0 | 单位步长，整寄存器存储
+| 0 | 1 | 0 | 1 | 1 | 单位步长，掩码存储，EEW=8
+| x | x | x | x | x | 其他编码保留
+|==='''

@@ -1,0 +1,16 @@
+unit_id = "b4c933a51c44a4183618c624a38ef273"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The VGEIN (Virtual Guest External Interrupt Number) field selects a
+guest external interrupt source for VS-level external interrupts. VGEIN
+is a *WLRL* field that must be able to hold values between zero and the
+maximum guest external interrupt number (known as GEILEN), inclusive.
+When VGEIN=0, no guest external interrupt source is selected for
+VS-level external interrupts. GEILEN may be zero, in which case VGEIN
+may be read-only zero. Guest external interrupts are explained in
+<<hgeinterruptregs>>, and the use of VGEIN is covered
+further in <<hinterruptregs>>.'''
+zh = '''
+VGEIN（虚拟客户外部中断号）字段为 VS 级外部中断选择客户外部中断源。VGEIN 是一个 *WLRL* 字段，必须能够保存从零到最大客户外部中断号（称为 GEILEN）之间的值（含端点）。当 VGEIN=0 时，不为 VS 级外部中断选择客户外部中断源。GEILEN 可为零，此时 VGEIN 可为只读零。客户外部中断在 <<hgeinterruptregs>> 中说明，VGEIN 的使用在 <<hinterruptregs>> 中进一步介绍。'''

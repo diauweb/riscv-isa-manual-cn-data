@@ -1,0 +1,13 @@
+unit_id = "cafd4ed7899f266cf3a4ebcd2da381f0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If machine level sets any writable `mstateen` bits to nonzero, it must initialize
+the matching `hstateen` CSRs, if they exist, by writing zeros to them. And if any
+`mstateen` bits that are set to one have matching bits in the `sstateen` CSRs,
+machine-level software must also initialize those `sstateen` CSRs by writing
+zeros to them. Ordinarily, machine-level software will want to set bit 63 of
+all `mstateen` CSRs, necessitating that it write zero to all `hstateen` CSRs.'''
+zh = '''
+如果机器级将任何可写的 `mstateen` 位设置为非零，则它必须通过向相应的 `hstateen` CSR（如果存在）写入零来初始化它们。并且，如果任何被置为一的 `mstateen` 位在 `sstateen` CSR 中有对应的位，那么机器级软件还必须通过向那些 `sstateen` CSR 写入零来初始化它们。通常，机器级软件会希望设置所有 `mstateen` CSR 的第 63 位，这就要求它向所有 `hstateen` CSR 写入零。'''

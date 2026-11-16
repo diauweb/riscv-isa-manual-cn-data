@@ -1,0 +1,13 @@
+unit_id = "aeea299a9f5571f78596a63cd5e88ad7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If Sdtrig is implemented, the Trigger Module must support at least one
+trigger. Accessing trigger CSRs that are not used by any of the
+implemented triggers must result in an illegal instruction exception.
+M-Mode and Debug Mode accesses to trigger CSRs that are used by any of
+the implemented triggers must succeed, regardless of the current type of
+the currently selected trigger.'''
+zh = '''
+如果实现了 Sdtrig，则触发模块必须支持至少一个触发器。访问未被任何已实现触发器使用的触发 CSR 必须导致非法指令异常。对任何已实现触发器使用的触发 CSR 的 M 模式和调试模式访问必须成功，无论当前选中触发器的当前类型如何。'''

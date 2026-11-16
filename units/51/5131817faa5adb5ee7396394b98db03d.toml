@@ -1,0 +1,22 @@
+unit_id = "5131817faa5adb5ee7396394b98db03d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _s_ is the same as _r_, and no instruction
+program-ordered between _i_ and _j_ has
+_r_ as a destination register
+* There is an instruction _m_ program-ordered between
+_i_ and _j_ such that all of the following hold:
+. _j_ has a syntactic dependency on _m_ via
+destination register _q_ and source register _r_
+. _m_ has a syntactic dependency on _i_ via
+destination register _s_ and source register _p_
+. _m_ carries a dependency from _p_ to
+_q_'''
+zh = '''
+* _s_ 与 _r_ 相同，且在 _i_ 与 _j_ 之间按程序顺序排列的指令中没有以 _r_ 为目的寄存器的指令
+* 存在一条在 _i_ 与 _j_ 之间按程序顺序排列的指令 _m_，使得以下条件全部成立：
+. _j_ 通过目的寄存器 _q_ 和源寄存器 _r_ 对 _m_ 具有语法依赖
+. _m_ 通过目的寄存器 _s_ 和源寄存器 _p_ 对 _i_ 具有语法依赖
+. _m_ 从 _p_ 向 _q_ 携带依赖'''

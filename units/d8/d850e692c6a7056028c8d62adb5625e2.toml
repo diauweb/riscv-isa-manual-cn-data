@@ -1,0 +1,11 @@
+unit_id = "d850e692c6a7056028c8d62adb5625e2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Svvptc_explicit_stores_update_valid_bit]#When the Svvptc extension is implemented, explicit stores by a hart that update
+the Valid bit of leaf and/or non-leaf PTEs from 0 to 1 and are visible to a hart
+will eventually become visible within a bounded timeframe to subsequent implicit
+accesses by that hart to such PTEs.#'''
+zh = '''
+[#norm:Svvptc_explicit_stores_update_valid_bit]#当实现了 Svvptc 扩展时，硬件线程对叶级和/或非叶级 PTE 的 Valid 位执行从 0 到 1 的显式存储，且该存储对该硬件线程可见，则最终会在一个有界的时间范围内对该硬件线程随后对此类 PTE 的隐式访问可见。#'''

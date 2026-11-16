@@ -1,0 +1,28 @@
+unit_id = "beca61d0101b15f4b1d30e0f1646834d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+While conversion instructions tend to include all supported formats, in these extensions we
+only support conversion between BF16 and FP32 as we are targeting a special use case.
+These extensions are intended to support the case where BF16 values are used as reduced
+precision versions of FP32 values, where use of BF16 provides a two-fold advantage for
+storage, bandwidth, and computation. In this use case, the BF16 values are typically
+multiplied by each other and accumulated into FP32 sums.
+These sums are typically converted to BF16
+and then used as subsequent inputs. The operations on the BF16 values can be performed
+on the CPU or a loosely coupled coprocessor.
+
+Subsequent extensions might provide support for native BF16 arithmetic. Such extensions
+could add additional conversion
+instructions to allow all supported formats to be converted to and from BF16.
+===='''
+zh = '''
+[NOTE]
+====
+虽然转换指令往往包含所有支持的格式，但在这些扩展中，我们仅支持 BF16 与 FP32 之间的转换，因为我们的目标是特定的用例。这些扩展旨在支持将 BF16 值用作 FP32 值的降低精度版本的情况，其中使用 BF16 可在存储、带宽和计算方面带来双重优势。在此用例中，BF16 值通常相互相乘并累加到 FP32 和中。这些和通常被转换为 BF16，然后用作后续输入。对 BF16 值的操作可以在 CPU 或松散耦合的协处理器上执行。
+
+后续扩展可能会提供对原生 BF16 算术的支持。此类扩展可以增加额外的转换指令，以允许所有支持的格式与 BF16 之间进行转换。
+===='''

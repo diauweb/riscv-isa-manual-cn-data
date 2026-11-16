@@ -1,0 +1,18 @@
+unit_id = "e19fd148d8f74ec052444bb2a350ba3a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In the case of the `.vs` instructions defined in this specification, `vs2` holds a 128-bit scalar element group.
+For implementations with `VLEN` ≥ 128, `vs2` refers to a single register. Thus, the `vd` register group must not
+overlap the `vs2` register.
+However, in implementations where `VLEN` < 128, `vs2` refers to a register group comprised of the number
+of registers needed to hold the 128-bit scalar element group. In this case, the `vd` register group must not
+overlap this `vs2` register group.'''
+zh = '''
+对于本规范中定义的 `.vs` 指令，`vs2` 保存一个 128 位标量元素组。
+对于 `VLEN` ≥ 128 的实现，`vs2` 指单个寄存器。因此，`vd` 寄存器组不得
+与 `vs2` 寄存器重叠。
+然而，在 `VLEN` < 128 的实现中，`vs2` 指的是由保存 128 位标量元素组所需数量的
+寄存器组成的寄存器组。在这种情况下，`vd` 寄存器组不得
+与该 `vs2` 寄存器组重叠。'''

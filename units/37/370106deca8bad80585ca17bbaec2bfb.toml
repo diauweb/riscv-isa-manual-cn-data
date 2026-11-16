@@ -1,0 +1,38 @@
+unit_id = "370106deca8bad80585ca17bbaec2bfb"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#MIPI20 Connector Layout]
+.MIPI20 Connector Layout
+[cols = "~,8%,8%,~", options = header, align=center, width=80%]
+|=========================================================
+|Signal         |Odd Pin#|Even Pin#|Signal
+|VREF           |1 |2 |TMS / TMSC
+|GND         |3 |4 |TCK / TCKC
+|GND         |5 |6 |TDO / `*SerialTrace*` (primary)
+|GND or KEY     |7 |8 |TDI
+|GNDDetect     |9 |10 |nRESET
+|GND / TgtPwr+Cap |11 |12 |`*TRC_CLK*`
+|GND / TgtPwr+Cap |13 |14 |`*TRC_DATA[0]*` / `*SerialTrace*` (secondary)
+|GND         |15 |16 |`*TRC_DATA[1]*` / nTRST
+|GND         |17 |18 |`*TRC_DATA[2]*` / TRIGIN
+|GND         |19 |20 |`*TRC_DATA[3]*` / TRIGOUT
+|========================================================='''
+zh = '''
+[#MIPI20 Connector Layout]
+.MIPI20 连接器布局
+[cols = "~,8%,8%,~", options = header, align=center, width=80%]
+|=========================================================
+|信号         |奇数引脚号|偶数引脚号|信号
+|VREF           |1 |2 |TMS / TMSC
+|GND         |3 |4 |TCK / TCKC
+|GND         |5 |6 |TDO / `*SerialTrace*`（主要）
+|GND or KEY     |7 |8 |TDI
+|GNDDetect     |9 |10 |nRESET
+|GND / TgtPwr+Cap |11 |12 |`*TRC_CLK*`
+|GND / TgtPwr+Cap |13 |14 |`*TRC_DATA[0]*` / `*SerialTrace*`（次要）
+|GND         |15 |16 |`*TRC_DATA[1]*` / nTRST
+|GND         |17 |18 |`*TRC_DATA[2]*` / TRIGIN
+|GND         |19 |20 |`*TRC_DATA[3]*` / TRIGOUT
+|========================================================='''

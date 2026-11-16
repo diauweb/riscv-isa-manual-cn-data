@@ -1,0 +1,40 @@
+unit_id = "74da44dcaef137b70a8e0f7bba6c1182"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#MDO_MSEO Examples]
+.MDO and MSEO Encoding Example
+[cols="6%,10%,10%,18%,~",options="header"]
+|====
+|Byte|MDO [5:0]|MSEO [1:0]|Decoded (by reference tool)|Explanation
+|0xFF| 111111|11 | Idle | Most likely idle but can also be the last byte of the previous message.
+|0x70| 011100|00 | TCODE[6] = 28 - IndirectBranchHist| First byte, all 6 MDO bits have TCODE.
+5+|Here we could have an SRC field (it would shift the start of B-TYPE).
+|0xD0| 110100|00 | B-TYPE[2] = 0x0| This is a 2-bit (fixed-length) field. As B-TYPE is a fixed-length field, four most significant bits are part of the next field (I-CNT).
+|0x1D| 000111|01 | I-CNT[10] = 0x7D| This is a second byte of the 10-bit (value 0x7D) variable-length I-CNT field. Four least significant bits (0b1101=0xD) are defined in previous MDO. Three most significant bits are all 0-s as variable-length field uses all 6 MDO bits.
+|0x1D| 000111|01 | U-ADDR[6] = 0x7| This is a single byte variable-length U-ADDR field (with three most significant 0-s).
+|0xF8| 111110|00 || Normal transfer of new field (6 least significant bits).
+|0xFF| 111111|11 | HIST[12] = 0xFFE| Last byte of message. It implies the end of the 12-bit HIST field. In this field we do not have any extra most significant 0-s.
+5+|Here optional TSTAMP field could be sent +
+(Previous MSEO should became 01 encoding end of HIST field, but not end of the message).
+|0xFF| 111111|11 | Idle|This is idle as this is the second byte with MSEO=11 (NOTE: Last byte of message is also 0xFF).
+|===='''
+zh = '''
+[#MDO_MSEO Examples]
+.MDO 和 MSEO 编码示例
+[cols="6%,10%,10%,18%,~",options="header"]
+|====
+|字节|MDO [5:0]|MSEO [1:0]|解码结果（由参考工具）|说明
+|0xFF| 111111|11 | 空闲 | 最可能是空闲，但也可能是前一条消息的最后一个字节。
+|0x70| 011100|00 | TCODE[6] = 28 - IndirectBranchHist| 第一个字节，全部 6 个 MDO 位都包含 TCODE。
+5+|这里可以有一个 SRC 字段（它会移动 B-TYPE 的起始位置）。
+|0xD0| 110100|00 | B-TYPE[2] = 0x0| 这是一个 2 位（固定长度）字段。由于 B-TYPE 是固定长度字段，四个最高有效位属于下一个字段（I-CNT）。
+|0x1D| 000111|01 | I-CNT[10] = 0x7D| 这是 10 位（值 0x7D）可变长度 I-CNT 字段的第二个字节。四个最低有效位（0b1101=0xD）在前一个 MDO 中定义。三个最高有效位全为 0，因为可变长度字段使用全部 6 个 MDO 位。
+|0x1D| 000111|01 | U-ADDR[6] = 0x7| 这是单字节可变长度 U-ADDR 字段（带有三个最高有效 0）。
+|0xF8| 111110|00 || 新字段的正常传输（6 个最低有效位）。
+|0xFF| 111111|11 | HIST[12] = 0xFFE| 消息的最后一个字节。它意味着 12 位 HIST 字段结束。在此字段中没有任何额外的最高有效 0。
+5+|这里可以发送可选的 TSTAMP 字段 +
+（前一个 MSEO 应变为 01，编码 HIST 字段结束，但不是消息结束）。
+|0xFF| 111111|11 | 空闲| 这是空闲，因为这是第二个 MSEO=11 的字节（NOTE：消息的最后一个字节也是 0xFF）。
+|===='''

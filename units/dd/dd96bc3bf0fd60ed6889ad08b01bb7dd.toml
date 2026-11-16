@@ -1,0 +1,23 @@
+unit_id = "dd96bc3bf0fd60ed6889ad08b01bb7dd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The 64-bit carry-less multiply instructions can be used for implementing GCM in the absence of the ext:zvkg[] extension.
+We do not make these instructions exclusive as the 64-bit carry-less multiply is readily derived from the
+instructions in the ext:zvkg[] extension and can have utility in other areas.
+Likewise, we treat other SEW values as reserved so as not to preclude
+future extensions from using this opcode with different element widths.
+For example, a future extension might define an SEW=32 version of this instruction to enable ext:zve32*[] implementations to have
+vector carry-less multiplication instructions.
+===='''
+zh = '''
+[NOTE]
+====
+在缺少 ext:zvkg[] 扩展时，64 位无进位乘法指令可用于实现 GCM。
+我们并未将这些指令设为独占，因为 64 位无进位乘法可以很容易地从 ext:zvkg[] 扩展中的指令推导出来，并且在其他领域也有用途。
+同样，我们将其他 SEW 值视为保留，以免妨碍未来扩展使用不同的元素宽度来使用此操作码。
+例如，未来的扩展可能会定义该指令的 SEW=32 版本，以使 ext:zve32*[] 实现能够拥有向量无进位乘法指令。
+===='''

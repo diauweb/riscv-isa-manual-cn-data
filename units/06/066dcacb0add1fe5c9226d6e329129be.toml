@@ -1,0 +1,15 @@
+unit_id = "066dcacb0add1fe5c9226d6e329129be"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Guest-page-fault traps may be delegated from M-mode to HS-mode under the
+control of CSR `medeleg`, but cannot be delegated to other privilege
+modes. On a guest-page fault, CSR `mtval` or `stval` is written with the
+faulting guest virtual address as usual, and `mtval2` or `htval` is
+written either with zero or with the faulting guest physical address,
+shifted right by 2 bits. CSR `mtinst` or `htinst` may also be written
+with information about the faulting instruction or other reason for the
+access, as explained in <<tinst-vals>>.'''
+zh = '''
+客户页故障陷阱可以在 CSR `medeleg` 的控制下从 M-mode 委托给 HS-mode，但不能委托给其他特权模式。在客户页故障时，CSR `mtval` 或 `stval` 照常被写入故障客户虚拟地址，而 `mtval2` 或 `htval` 被写入零或故障客户物理地址右移 2 位。CSR `mtinst` 或 `htinst` 也可能被写入有关故障指令或访问其他原因的信息，如 <<tinst-vals>> 中所解释。'''

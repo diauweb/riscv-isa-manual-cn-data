@@ -1,0 +1,11 @@
+unit_id = "4910a27b3e48ed4324cc465b1a293e48"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The encoder maintains a stack of expected return addresses (created when call is encountered), and only treat a
+return as inferable if the actual return address matches the value on the stack. This is fully robust for all
+programs but is more expensive to implement. In this case, if a return address does not match the
+prediction, it must be reported explicitly via a message. This ensures that the decoder can determine which return is being reported. This method may use shadow stack if implemented by the core.'''
+zh = '''
+编码器维护一个预期返回地址栈（在遇到调用时创建），并且只有当实际返回地址与栈上的值匹配时，才将返回视为可推断。这对所有程序都完全稳健，但实现成本更高。在这种情况下，如果返回地址与预测不匹配，则必须通过消息显式报告。这确保解码器能够确定正在报告的是哪个返回。如果核心实现了影子栈，此方法可以使用影子栈。'''

@@ -1,0 +1,17 @@
+unit_id = "2069c4cf347c61c53698c46d53d4bf70"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations must provide fractional LMUL settings that allow the
+narrowest supported type to occupy a fraction of a vector register
+corresponding to the ratio of the narrowest supported type's width to
+that of the largest supported type's width.  In general, the
+requirement is to support LMUL {ge} SEW~MIN~/ELEN, where SEW~MIN~ is
+the narrowest supported SEW value and ELEN is the widest supported SEW
+value.  In the standard extensions, SEW~MIN~=8.  For
+standard vector extensions with ELEN=32, fractional LMULs of 1/2 and
+1/4 must be supported.  For standard vector extensions with ELEN=64,
+fractional LMULs of 1/2, 1/4, and 1/8 must be supported.'''
+zh = '''
+实现必须提供分数 LMUL 设置，使最窄的支持类型占用向量寄存器的一部分，其比例对应于最窄支持类型宽度与最大支持类型宽度之比。一般而言，要求支持 LMUL {ge} SEW~MIN~/ELEN，其中 SEW~MIN~ 是最窄支持的 SEW 值，ELEN 是最宽支持的 SEW 值。在标准扩展中，SEW~MIN~=8。对于 ELEN=32 的标准向量扩展，必须支持 1/2 和 1/4 的分数 LMUL。对于 ELEN=64 的标准向量扩展，必须支持 1/2、1/4 和 1/8 的分数 LMUL。'''

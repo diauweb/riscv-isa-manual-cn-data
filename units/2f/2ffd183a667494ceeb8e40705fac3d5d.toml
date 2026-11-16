@@ -1,0 +1,14 @@
+unit_id = "2ffd183a667494ceeb8e40705fac3d5d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Consider <<spinlock_atomics, Example 1>>.
+Because this example uses _aq_, the loads and stores in the critical
+section are guaranteed to appear in the global memory order after the
+AMOSWAP used to acquire the lock. However, assuming `a0`, `a1`, and `a2`
+point to different memory locations, the loads and stores in the
+critical section may or may not appear after the "Arbitrary unrelated
+load" at the beginning of the example in the global memory order.'''
+zh = '''
+考虑 <<spinlock_atomics, 示例 1>>。由于此示例使用了 _aq_，临界区中的加载和存储保证在全局内存顺序中出现在用于获取锁的 AMOSWAP 之后。然而，假定 `a0`、`a1` 和 `a2` 指向不同的内存位置，临界区中的加载和存储在全局内存顺序中可能出现在示例开头的“任意无关加载”之后，也可能不出现。'''

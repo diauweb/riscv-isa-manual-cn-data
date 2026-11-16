@@ -1,0 +1,13 @@
+unit_id = "6b57921ba74202a545d440d532ca4b46"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:intr_mip_mie_op]#An interrupt _i_ will trap to M-mode (causing the privilege mode to
+change to M-mode) if all of the following are true: (a) either the
+current privilege mode is M and the csr::[mie] bit in the csr:mstatus[] register is
+set, or the current privilege mode has less privilege than M-mode;
+(b) bit _i_ is set in both csr:mip[] and csr:mie[]; and (c) if register
+csr:mideleg[] exists, bit _i_ is not set in csr:mideleg[].#'''
+zh = '''
+[#norm:intr_mip_mie_op]#如果以下所有条件都成立，则中断 _i_ 将陷入 M 模式（导致特权模式变为 M 模式）：(a) 当前特权模式为 M 且 csr:mstatus[] 寄存器中的 csr::[mie] 位被置位，或者当前特权模式的特权级低于 M 模式；(b) 位 _i_ 在 csr:mip[] 和 csr:mie[] 中都被置位；以及 (c) 如果寄存器 csr:mideleg[] 存在，则位 _i_ 在 csr:mideleg[] 中未被置位。#'''

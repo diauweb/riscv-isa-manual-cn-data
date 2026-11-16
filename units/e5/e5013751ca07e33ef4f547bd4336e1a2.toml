@@ -1,0 +1,36 @@
+unit_id = "e5013751ca07e33ef4f547bd4336e1a2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeTrigExtOutControl: External Trigger Output Control Register (trBaseEncoder+0x058)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trTeTrigExtOutEvent0 a|
+Bitmap to select which event(s) cause external trigger #0 output to fire. If external trigger output #0 does not exist, then all bits are fixed at 0. Bits 2 and 3 may be fixed at 0 if the corresponding feature is not implemented. +
+*Bit 0:* +
+Start trace transition (`trTeInstTracing` 0 -> 1) will fire the trigger. +
+*Bit 1:* +
+Stop trace transition (`trTeInstTracing` 1 -> 0) will fire the trigger. +
+*Bit 2-3:* +
+Vendor-specific event (optional)
+|WARL|<<Undef,Undef>>
+|31:4 |trTeTrigExtOutEvent**N** |Select events for external trigger output #**N** (1..7). If an external trigger output does not exist, then its event bits are fixed at 0 |WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trTeTrigExtOutControl：外部触发输出控制寄存器（trBaseEncoder+0x058）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trTeTrigExtOutEvent0 a|
+位图，用于选择哪些事件导致外部触发 #0 输出触发。如果外部触发输出 #0 不存在，则所有位固定为 0。如果未实现相应特性，位 2 和 3 可固定为 0。 +
+*位 0：* +
+启动跟踪转换（`trTeInstTracing` 0 -> 1）将触发该触发。 +
+*位 1：* +
+停止跟踪转换（`trTeInstTracing` 1 -> 0）将触发该触发。 +
+*位 2-3：* +
+供应商特定事件（可选）
+|WARL|<<Undef,Undef>>
+|31:4 |trTeTrigExtOutEvent**N** |为外部触发输出 #**N**（1..7）选择事件。如果外部触发输出不存在，则其事件位固定为 0 |WARL|<<Undef,Undef>>
+|==='''

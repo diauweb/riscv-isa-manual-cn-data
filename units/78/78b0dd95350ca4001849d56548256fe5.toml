@@ -1,0 +1,25 @@
+unit_id = "78b0dd95350ca4001849d56548256fe5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point-to-integer and integer-to-floating-point conversion
+instructions are encoded in the OP-FP major opcode space. [#norm:fcvt-l-s_fcvt-w-s_op]#insn:fcvt.w.s[] or
+insn:fcvt.l.s[] converts a floating-point number in floating-point register
+_rs1_ to a signed 32-bit or 64-bit integer, respectively, in integer
+register _rd_#. [#norm:fcvt-s-w_fcvt-s-l_op]#insn:fcvt.s.w[] or insn:fcvt.s.l[] converts a 32-bit or 64-bit signed
+integer, respectively, in integer register _rs1_ into a floating-point
+number in floating-point register _rd_#. [#norm:fcvt-wu-s_fcvt-lu-s_fcvt-s-wu_fcvt-s-lu_op]#insn:fcvt.wu.s[], insn:fcvt.lu.s[], insn:fcvt.s.wu[],
+and insn:fcvt.s.lu[] variants convert to or from unsigned integer values. For
+XLEN>32, insn:fcvt.w.s[] and insn:fcvt.wu.s[] sign-extend the 32-bit result to the destination register width#.
+[#norm:fcvt_long_float_rv64_only]#insn:fcvt.l.s[], insn:fcvt.lu.s[], insn:fcvt.s.l[] and insn:fcvt.s.lu[] are RV64-only instructions#.
+[#norm:fcvt_unrepresentable_nv]#If the rounded result is not representable in the
+destination format, it is clipped to the nearest value and the invalid
+flag is set#.
+[#norm:fcvt_int_float_valid_input]#<<int_conv>> gives the range of valid inputs
+for insn:fcvt.w.s[], insn:fcvt.wu.s[], insn:fcvt.l.s[] and insn:fcvt.lu.s[] and
+the behavior of these instructions for invalid inputs#.
+(((floating-point, conversion)))'''
+zh = '''
+浮点到整数以及整数到浮点的转换指令编码在 OP-FP 主操作码空间中。[#norm:fcvt-l-s_fcvt-w-s_op]#insn:fcvt.w.s[] 或 insn:fcvt.l.s[] 将浮点寄存器 _rs1_ 中的浮点数分别转换为整数寄存器 _rd_ 中的有符号 32 位或 64 位整数#。[#norm:fcvt-s-w_fcvt-s-l_op]#insn:fcvt.s.w[] 或 insn:fcvt.s.l[] 将整数寄存器 _rs1_ 中的 32 位或 64 位有符号整数分别转换为浮点寄存器 _rd_ 中的浮点数#。[#norm:fcvt-wu-s_fcvt-lu-s_fcvt-s-wu_fcvt-s-lu_op]#insn:fcvt.wu.s[]、insn:fcvt.lu.s[]、insn:fcvt.s.wu[] 和 insn:fcvt.s.lu[] 变体用于转换为无符号整数值或从无符号整数值转换。对于 XLEN>32，insn:fcvt.w.s[] 和 insn:fcvt.wu.s[] 将 32 位结果符号扩展至目标寄存器宽度#。[#norm:fcvt_long_float_rv64_only]#insn:fcvt.l.s[]、insn:fcvt.lu.s[]、insn:fcvt.s.l[] 和 insn:fcvt.s.lu[] 是仅限 RV64 的指令#。[#norm:fcvt_unrepresentable_nv]#如果舍入结果无法在目标格式中表示，则将其裁剪到最近的值并置位无效标志#。[#norm:fcvt_int_float_valid_input]#<<int_conv>> 给出了 insn:fcvt.w.s[]、insn:fcvt.wu.s[]、insn:fcvt.l.s[] 和 insn:fcvt.lu.s[] 的有效输入范围以及这些指令对无效输入的行为#。
+(((floating-point, conversion)))'''

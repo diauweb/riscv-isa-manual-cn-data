@@ -1,0 +1,25 @@
+unit_id = "63a3b352e72791d249816219b198027e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Following this model, in systems with memory translation, an SC is
+allowed to succeed if the earlier LR reserved the same location using an
+alias with a different virtual address, but is also allowed to fail if
+the virtual address is different.
+
+To accommodate legacy devices and buses, writes from devices other than
+RISC-V harts are only required to invalidate reservations when they
+overlap the bytes accessed by the LR. These writes are not required to
+invalidate the reservation when they access other bytes in the
+reservation set.
+===='''
+zh = '''
+[NOTE]
+====
+按照此模型，在具有内存转换的系统中，如果较早的 LR 使用不同虚拟地址的别名保留了同一位置，则允许 SC 成功，但如果虚拟地址不同，也允许其失败。
+
+为了兼容传统设备和总线，来自 RISC-V 硬件线程以外设备的写入仅在它们与 LR 所访问的字节重叠时才需要使保留无效。当这些写入访问保留集中的其他字节时，不要求它们使保留无效。
+===='''

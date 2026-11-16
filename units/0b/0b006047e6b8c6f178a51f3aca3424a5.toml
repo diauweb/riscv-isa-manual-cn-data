@@ -1,0 +1,59 @@
+unit_id = "0b006047e6b8c6f178a51f3aca3424a5"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Timing attacks are much more powerful than was realised before the 2010s,
+which has led to a significant mitigation effort in current cryptographic
+code-bases.
+* Cryptography developers use static and dynamic security testing tools
+to trace the handling of secret information and detect occasions where it
+influences a branch or is used for a table lookup.
+* Architectural testing for Zkt can be pragmatic and semi-formal;
+_security by design_ against basic timing attacks can usually be achieved via
+conscious implementation (of relevant iterative multi-cycle instructions or
+instructions composed of micro-ops) in way that avoids data-dependent latency.
+* Laboratory testing may utilize statistical timing attack leakage analysis
+techniques such as those described in ISO/IEC 17825 cite:[IS16].
+* Binary executables should not contain secrets in the instruction encodings
+(Kerckhoffs's principle), so instruction timing may leak information about
+immediates, ordering of input registers, etc. There may be an exception to this
+in systems where a binary loader modifies the executable for purposes of
+relocation -- and it is desirable to keep the execution location (PC) secret.
+This is why instructions such as LUI, AUIPC, and ADDI are on the list.
+* The rules used by audit tools are relatively simple to understand.
+Very briefly; we call the plaintext, secret keys, expanded keys, nonces,
+and other such variables "`secrets`". A secret variable (arithmetically)
+modifying any other variable/register turns that into a secret too.
+If a secret ends up in address calculation affecting a load or store, that
+is a violation. If a secret affects a branch's condition, that is also a
+violation. A secret variable location or register becomes a non-secret via
+specific zeroization/sanitisation or by being declared ciphertext
+(or otherwise no-longer-secret information). In essence, secrets can only
+"`touch`" instructions on the Zkt list while they are secrets.'''
+zh = '''
+* 时序攻击比 2010 年代之前所认识到的要强大得多，
+这导致当前密码学代码库中进行了大量缓解工作。
+* 密码学开发者使用静态和动态安全测试工具
+来追踪秘密信息的处理，并检测其
+影响分支或被用于表查找的场合。
+* 针对 Zkt 的架构测试可以是务实且半形式化的；
+针对基本时序攻击的__设计安全性__通常可以通过有意识的实现（对相关的迭代多周期指令或
+由微操作组成的指令）来实现，从而避免数据相关延迟。
+* 实验室测试可以利用统计时序攻击泄漏分析
+技术，例如 ISO/IEC 17825 cite:[IS16] 中描述的技术。
+* 二进制可执行文件不应在指令编码中包含秘密
+（Kerckhoffs 原则），因此指令时序可能泄漏有关
+立即数、输入寄存器顺序等信息。在二进制加载器为
+重定位目的修改可执行文件的系统中，可能存在例外——并且希望
+保持执行位置（PC）秘密。
+这就是 LUI、AUIPC 和 ADDI 等指令出现在列表中的原因。
+* 审计工具使用的规则相对容易理解。
+简而言之；我们将明文、秘密密钥、扩展密钥、nonce
+以及其他此类变量称为“秘密”。一个秘密变量（在算术上）
+修改任何其他变量/寄存器，也会使其成为秘密。
+如果秘密进入影响加载或存储的地址计算，
+那就是违规。如果秘密影响分支的条件，那也
+是违规。秘密变量位置或寄存器通过
+特定的清零/净化，或被声明为密文（或不再是秘密的信息），而变为非秘密。
+本质上，秘密只有在它们仍是秘密时，才能“接触” Zkt 列表上的指令。'''

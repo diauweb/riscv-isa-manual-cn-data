@@ -1,0 +1,16 @@
+unit_id = "b747906f74f53a7210b0a5abe1d1324a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor extension augments the trap cause encoding.
+<<norm:H_cause_enc_tbl>> lists the possible M-mode and HS-mode
+trap cause codes when the hypervisor extension is implemented. Codes are
+added for VS-level interrupts (interrupts 2, 6, 10), for
+supervisor-level guest external interrupts (interrupt 12), for
+virtual-instruction exceptions (exception 22), and for guest-page faults
+(exceptions 20, 21, 23). Furthermore, environment calls from VS-mode are
+assigned cause 10, whereas those from HS-mode or S-mode use cause 9 as
+usual.'''
+zh = '''
+虚拟机扩展扩充了陷阱原因编码。<<norm:H_cause_enc_tbl>> 列出了实现虚拟机扩展时可能的 M-mode 和 HS-mode 陷阱原因代码。为 VS 级中断（中断 2、6、10）、监管级客户外部中断（中断 12）、虚拟指令异常（异常 22）和客户页故障（异常 20、21、23）增加了代码。此外，来自 VS-mode 的环境调用被分配原因 10，而来自 HS-mode 或 S-mode 的环境调用照常使用原因 9。'''

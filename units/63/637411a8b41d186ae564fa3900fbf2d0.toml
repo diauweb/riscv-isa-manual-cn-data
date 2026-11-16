@@ -1,0 +1,14 @@
+unit_id = "637411a8b41d186ae564fa3900fbf2d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+While these programs are executed, the hart does not leave Debug Mode
+(see <<debugmode>>). If an exception is
+encountered during execution of the Program Buffer, no more instructions
+are executed, the hart remains in Debug Mode, and {abstractcs-cmderr} is set to 3
+(`exception error`). If the debugger executes a program that doesn’t
+terminate with an `ebreak` instruction, the hart will remain in Debug
+Mode and the debugger will lose control of the hart.'''
+zh = '''
+当这些程序被执行时，硬件线程不会离开调试模式（参见 <<debugmode>>）。如果在程序缓冲区执行期间遇到异常，则不再执行更多指令，硬件线程保持在调试模式，并将 {abstractcs-cmderr} 设置为 3（`exception error`）。如果调试器执行的程序没有以 `ebreak` 指令终止，则硬件线程将保持在调试模式，调试器将失去对硬件线程的控制。'''

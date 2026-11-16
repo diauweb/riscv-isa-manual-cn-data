@@ -1,0 +1,49 @@
+unit_id = "1c68ea53bd9f04db965c836aec471f64"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The use of the compressed instruction insn:c.sspush[x1] to push on the shadow stack
+is most efficient when the ABI uses `x1` as the link register, as the link
+register may then be pushed without needing a register-to-register move in the
+function prologue. To use the compressed instruction insn:c.sspopchk[x5], the
+function should pop the return address from regular stack into the alternate
+link register `x5` and use the insn:c.sspopchk[x5] to compare the return address to
+the shadow copy stored on the shadow stack. The function then uses insn:c.jr[x5] to
+jump to the return address.
+
+[listing]
+----
+    function_entry:
+        c.addi sp,sp,-8  # push link register x1
+        c.sd x1,(sp)     # on regular stack
+        c.sspush x1      # push link register x1 on shadow stack
+         :
+        c.ld x5,(sp)     # pop link register x5 from regular stack
+        c.addi sp,sp,8
+        c.sspopchk x5    # fault if x5 not equal to shadow return address
+        c.jr x5
+----
+
+===='''
+zh = '''
+[NOTE]
+====
+当 ABI 使用 `x1` 作为链接寄存器时，使用压缩指令 insn:c.sspush[x1] 压入影子栈最高效，因为此时可以在函数序言中压入链接寄存器而无需寄存器到寄存器的移动。要使用压缩指令 insn:c.sspopchk[x5]，函数应从常规栈将返回地址弹出到备用链接寄存器 `x5`，并使用 insn:c.sspopchk[x5] 将返回地址与存储在影子栈上的影子副本进行比较。然后函数使用 insn:c.jr[x5] 跳转到返回地址。
+
+[listing]
+----
+    function_entry:
+        c.addi sp,sp,-8  # push link register x1
+        c.sd x1,(sp)     # on regular stack
+        c.sspush x1      # push link register x1 on shadow stack
+         :
+        c.ld x5,(sp)     # pop link register x5 from regular stack
+        c.addi sp,sp,8
+        c.sspopchk x5    # fault if x5 not equal to shadow return address
+        c.jr x5
+----
+
+===='''

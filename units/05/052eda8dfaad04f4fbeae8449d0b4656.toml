@@ -1,0 +1,12 @@
+unit_id = "052eda8dfaad04f4fbeae8449d0b4656"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the Sstvala extension is implemented, then `stval` must be written with the
+faulting virtual address for load, store, and instruction page-fault,
+access-fault, and misaligned exceptions, and for breakpoint exceptions that
+are defined to write an address to stval, other than those caused by execution
+of the `EBREAK` or `C.EBREAK` instructions.'''
+zh = '''
+如果实现了 Sstvala 扩展，那么对于加载、存储和指令的页错误、访问错误和未对齐异常，以及被定义为向 stval 写入地址的断点异常（由执行 `EBREAK` 或 `C.EBREAK` 指令引起的除外），`stval` 必须写入出错的虚拟地址。'''

@@ -1,0 +1,13 @@
+unit_id = "3ed533c4d42f53f1f1a52e436940ba29"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In addition to side effects that occur as a consequence of reading or
+writing a CSR, individual fields within a CSR might have side effects
+when written.  insn:csrrw[] and insn:csrrwi[] action side effects for all
+such fields within the written CSR.  [#norm:csr_rs1_uimm_side_effect]#insn:csrrs[], insn:csrrsi[], insn:csrrc[], and insn:csrrci[]
+only action side effects for fields for which the _rs1_ or _uimm_ argument
+has at least one bit set corresponding to that field.#'''
+zh = '''
+除了因读取或写入 CSR 而产生的副作用之外，CSR 内的各个字段在被写入时也可能具有副作用。insn:csrrw[] 和 insn:csrrwi[] 会触发被写入 CSR 内所有此类字段的副作用。[#norm:csr_rs1_uimm_side_effect]#而 insn:csrrs[]、insn:csrrsi[]、insn:csrrc[] 和 insn:csrrci[] 仅对 _rs1_ 或 _uimm_ 参数中至少有一位被置位所对应的字段触发副作用。#'''

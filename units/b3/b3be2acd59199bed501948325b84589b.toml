@@ -1,0 +1,15 @@
+unit_id = "b3be2acd59199bed501948325b84589b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The unit-stride fault-only-first load instructions are used to
+vectorize loops with data-dependent exit conditions ("while" loops).
+These instructions execute as a regular load except that they will
+only take a trap caused by a synchronous exception on element 0.  If
+element 0 raises an exception, `vl` is not modified, and the trap is
+taken.  If an element > 0 raises an exception, the corresponding trap
+is not taken, and the vector length `vl` is reduced to the index of
+the element that would have raised an exception.'''
+zh = '''
+单位步长仅首错加载指令用于向量化具有数据相关退出条件的循环（"while" 循环）。这些指令作为常规加载执行，不同之处在于它们仅在元素 0 上发生同步异常时才会陷入。如果元素 0 引发异常，则 `vl` 不被修改，并陷入。如果元素 > 0 引发异常，则不陷入相应的陷阱，并且向量长度 `vl` 被缩减为将引发异常的元素的索引。'''

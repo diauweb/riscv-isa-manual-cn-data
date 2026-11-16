@@ -1,0 +1,29 @@
+unit_id = "99876597400e6978842b4c6d38c3ba51"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+--
+The `vl` setting rules are designed to be sufficiently strict to
+preserve `vl` behavior across register spills and context swaps for
+`AVL {le} VLMAX`, yet flexible enough to enable implementations to improve
+vector lane utilization for `AVL > VLMAX`.
+
+For example, this permits an implementation to set `vl = ceil(AVL / 2)`
+for `VLMAX < AVL < 2*VLMAX` in order to evenly distribute work over the
+last two iterations of a strip-mine loop.
+Requirement 2 ensures that the first strip-mine iteration of reduction
+loops uses the largest vector length of all iterations, even in the case
+of `AVL < 2*VLMAX`.
+This allows software to avoid needing to explicitly calculate a running
+maximum of vector lengths observed during a strip-mined loop.
+Requirement 2 also allows an implementation to set vl to VLMAX for `VLMAX < AVL < 2*VLMAX`
+--'''
+zh = '''
+[NOTE]
+--
+`vl` 设置规则设计得足够严格，以在 `AVL {le} VLMAX` 时保持跨寄存器溢出和上下文交换的 `vl` 行为，同时又足够灵活，使实现能够为 `AVL > VLMAX` 改善向量通道利用率。
+
+例如，这允许实现在 `VLMAX < AVL < 2*VLMAX` 时设置 `vl = ceil(AVL / 2)`，以便在条带挖掘循环的最后两次迭代中均匀分配工作。要求 2 确保归约循环的第一次条带挖掘迭代使用所有迭代中最大的向量长度，即使在 `AVL < 2*VLMAX` 的情况下也是如此。这允许软件避免需要显式计算在条带挖掘循环期间观察到的向量长度的运行最大值。要求 2 还允许实现在 `VLMAX < AVL < 2*VLMAX` 时将 vl 设置为 VLMAX
+--'''

@@ -1,0 +1,11 @@
+unit_id = "36cda643c7140009d022abad3906be12"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the A extension is supported, the __x__RET instruction is allowed to
+clear any outstanding LR address reservation but is not required to.
+Trap handlers should explicitly clear the reservation if required (e.g.,
+by using a dummy SC) before executing the __x__RET.'''
+zh = '''
+如果支持 A 扩展，则允许 __x__RET 指令清除任何未完成的 LR 地址保留，但不要求这样做。陷阱处理程序应在执行 __x__RET 之前根据需要显式清除保留（例如，通过使用一个哑 SC）。'''

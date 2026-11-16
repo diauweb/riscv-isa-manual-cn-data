@@ -1,0 +1,1158 @@
+{
+  "sha": "e00b732ddff14ece5dbf08dbba0a763daf8c616f",
+  "parent_sha": "4e540263db8ae3a27d132a1752cc0fad222facd8",
+  "is_baseline": false,
+  "date": "2025-11-21T16:23:53-08:00",
+  "title": "Replaced all latexmath calls with built-in AsciiDoc substitutes. Done to make normative rule extraction provide better results (i.e., rules without images, just normal characters). (#2411)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-e00b732-2025-11-22"
+  ],
+  "diff": {
+    "added": 1,
+    "modified": 101,
+    "moved": 0,
+    "deleted": 1,
+    "touched_chapters": [
+      "priv/hypervisor",
+      "priv/machine",
+      "priv/supervisor",
+      "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "unpriv/_formal_memory_model_specifications_version_0_1",
+      "unpriv/_introduction",
+      "unpriv/_preface",
+      "unpriv/bf16",
+      "unpriv/chap:zfh",
+      "unpriv/csrinsts",
+      "unpriv/mstandard",
+      "unpriv/rv32",
+      "unpriv/rv64",
+      "unpriv/sec:zfinx",
+      "unpriv/single-float",
+      "unpriv/zfa"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 31,
+      "unit_id": "36edf2f532a5d4f1f51baebf425b480e",
+      "status": "modified",
+      "prev_unit_id": "a3f9277670eb9485c246e471ccd9aa9f"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 34,
+      "unit_id": "8b72109e47604118e2e75c9374cdcb22",
+      "status": "modified",
+      "prev_unit_id": "03fc1ef1c7c60ef2a239f6a3534ffb34"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 37,
+      "unit_id": "5fdf3335b8ceff6de19f0dcbc850ceab",
+      "status": "modified",
+      "prev_unit_id": "0e4fac659d0d1a174a17fc122141210c"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "_memory",
+      "slot": 0,
+      "unit_id": "55ea0770457d5911b789e523c499dd33",
+      "status": "modified",
+      "prev_unit_id": "e052964157f79e5dfb704d7ec40cb235"
+    },
+    {
+      "chapter_key": "unpriv/rv32",
+      "section_id": "_hint_instructions",
+      "slot": 5,
+      "unit_id": "6b5e9265e01b3edf71bcaa85141744a5",
+      "status": "modified",
+      "prev_unit_id": "fcc7dee80c19803448798bc56e347d2c"
+    },
+    {
+      "chapter_key": "unpriv/rv64",
+      "section_id": "_integer_register_immediate_instructions_2",
+      "slot": 5,
+      "unit_id": "60d9a8faefe44443b282cbb8059dae70",
+      "status": "modified",
+      "prev_unit_id": "c114789b86cff0e8e7cf278cc684a624"
+    },
+    {
+      "chapter_key": "unpriv/rv64",
+      "section_id": "_integer_register_immediate_instructions_2",
+      "slot": 6,
+      "unit_id": "a8d645ef7ee8f64c7a6e0e0abcb4de3f",
+      "status": "modified",
+      "prev_unit_id": "209d1638610c897f99494f837db820a0"
+    },
+    {
+      "chapter_key": "unpriv/rv64",
+      "section_id": "_integer_register_immediate_instructions_2",
+      "slot": 10,
+      "unit_id": "4a5c8190803e0740c0284bbd4bbdca8c",
+      "status": "modified",
+      "prev_unit_id": "f5d8520ff7bd2db15170c231e9bc9d2b"
+    },
+    {
+      "chapter_key": "unpriv/rv64",
+      "section_id": "rv64i-hints",
+      "slot": 2,
+      "unit_id": "dd8d60d05b93d26db5162a8e973d6958",
+      "status": "modified",
+      "prev_unit_id": "1660e1b87a582d3d38fb3681a304acda"
+    },
+    {
+      "chapter_key": "unpriv/csrinsts",
+      "section_id": "_csr_instructions",
+      "slot": 8,
+      "unit_id": "d3a79b1839dd9adb0620c5c32205700f",
+      "status": "modified",
+      "prev_unit_id": "60ffaae919c93d48c3e57bfffc0fd6cb"
+    },
+    {
+      "chapter_key": "unpriv/mstandard",
+      "section_id": "_division_operations",
+      "slot": 3,
+      "unit_id": "d8dee1e484d7ea06ec9dc1718dc6c98e",
+      "status": "modified",
+      "prev_unit_id": "21bb21798d8735a6c4d90e6c06e6a4d8"
+    },
+    {
+      "chapter_key": "unpriv/mstandard",
+      "section_id": "_division_operations",
+      "slot": 6,
+      "unit_id": "3d3a6d43e3e95deb50d144ef1c393b64",
+      "status": "modified",
+      "prev_unit_id": "911a0763efda6759d034a3fced64f7aa"
+    },
+    {
+      "chapter_key": "unpriv/mstandard",
+      "section_id": "_division_operations",
+      "slot": 7,
+      "unit_id": "a03541bab68e8c188da13d1c21a6ccc9",
+      "status": "modified",
+      "prev_unit_id": "ee81a70c52bb2ebb0645fe8f58a860f2"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_floating_point_control_and_status_register",
+      "slot": 6,
+      "unit_id": "bbf161474f4a74d3d9c1ec9d3f435ff0",
+      "status": "modified",
+      "prev_unit_id": "24a779f7e180955470aac85d31d3b75a"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 4,
+      "unit_id": "210acdbbc986e3a20f55e1be4aa7d632",
+      "status": "modified",
+      "prev_unit_id": "44817f74b182864bae98a24a43ca1b72"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 9,
+      "unit_id": "79a5eeb0a33c6e380fb9e42fc6af11cf",
+      "status": "modified",
+      "prev_unit_id": "45d65e0dca898d97fb436016b348a72e"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 10,
+      "unit_id": "38067cce31146046e1cabb35d1990d5b",
+      "status": "modified",
+      "prev_unit_id": "b4682a39d840a1a5c1be55f8d5617393"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 11,
+      "unit_id": "8df0a68a5be5e54cc171d7acfcf0c6fd",
+      "status": "modified",
+      "prev_unit_id": "047967f4d04fb45b2306f04c8eaad54e"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 12,
+      "unit_id": "448f61810dc9752bcc8c67435ceb636d",
+      "status": "modified",
+      "prev_unit_id": "787345f430949842b7a03ee197ba60f0"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 16,
+      "unit_id": "a89018ffb297a91e0cb55d5a85116e50",
+      "status": "modified",
+      "prev_unit_id": "308a818bd724a7295e2d6e5ad022c72d"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "single-float-compute",
+      "slot": 17,
+      "unit_id": "cfae5372861c53334522860d672b5860",
+      "status": "modified",
+      "prev_unit_id": "fa381fec22c5b70f276257431f9500b7"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_single_precision_floating_point_conversion_and_move_instructions",
+      "slot": 0,
+      "unit_id": "aa984da31a75c930dd759c24c24394b1",
+      "status": "modified",
+      "prev_unit_id": "efcf33311369ce01494a29df08452392"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_single_precision_floating_point_conversion_and_move_instructions",
+      "slot": 2,
+      "unit_id": "44ccd5f7bc41d8ab803fea32a19e24fd",
+      "status": "modified",
+      "prev_unit_id": "d72e83a12362508e6fdd84b0e2260ee0"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_single_precision_floating_point_compare_instructions",
+      "slot": 0,
+      "unit_id": "0cfa8292a1ec4b9a76bc2e46b0e8dcdd",
+      "status": "modified",
+      "prev_unit_id": "b6390d45ac5a47f4234355ad953c5070"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_single_precision_floating_point_compare_instructions",
+      "slot": 3,
+      "unit_id": "aebd082cd4b75f0a26ed5a10bc5c2c89",
+      "status": "modified",
+      "prev_unit_id": "c5e71cf5d9e6f336e7753fbdaa31bfb9"
+    },
+    {
+      "chapter_key": "unpriv/single-float",
+      "section_id": "_single_precision_floating_point_classify_instruction",
+      "slot": 2,
+      "unit_id": "3d6b98aaad1f44b2addde9804aa7aeab",
+      "status": "modified",
+      "prev_unit_id": "5ae850da69431abe44431101f755cf2e"
+    },
+    {
+      "chapter_key": "unpriv/chap:zfh",
+      "section_id": "chap:zfh",
+      "slot": 1,
+      "unit_id": "b910d2656f26f7d6faf46e27e2278d9e",
+      "status": "modified",
+      "prev_unit_id": "ac3da3f83182fb4e5854e04bcc61f735"
+    },
+    {
+      "chapter_key": "unpriv/bf16",
+      "section_id": "_rounding_modes",
+      "slot": 1,
+      "unit_id": "66cb81495436cd72eb63a9e1c2d70932",
+      "status": "modified",
+      "prev_unit_id": "1963e4f72f9a52e90c3ff652cc722640"
+    },
+    {
+      "chapter_key": "unpriv/zfa",
+      "section_id": "_load_immediate_instructions",
+      "slot": 1,
+      "unit_id": "57826b8e003d70175a6ac55202328fa8",
+      "status": "modified",
+      "prev_unit_id": "ce114661fd278e0e02671c7dc558003a"
+    },
+    {
+      "chapter_key": "unpriv/zfa",
+      "section_id": "_load_immediate_instructions",
+      "slot": 6,
+      "unit_id": "da932f48129df793082d10815ee629b9",
+      "status": "modified",
+      "prev_unit_id": "5ee3db00fdb18c6a3160d83923bf7893"
+    },
+    {
+      "chapter_key": "unpriv/zfa",
+      "section_id": "_load_immediate_instructions",
+      "slot": 7,
+      "unit_id": "181c4e4cbf1c9882d28b7af247b04aea",
+      "status": "modified",
+      "prev_unit_id": "12b1d6e7dd34b17319c6d1e7096b3cbd"
+    },
+    {
+      "chapter_key": "unpriv/zfa",
+      "section_id": "_modular_convert_to_integer_instruction",
+      "slot": 0,
+      "unit_id": "e4858575f6357bee9b8a5c7972a4184c",
+      "status": "modified",
+      "prev_unit_id": "353557e23f2144045f57f9c9028e2c08"
+    },
+    {
+      "chapter_key": "unpriv/zfa",
+      "section_id": "_modular_convert_to_integer_instruction",
+      "slot": 3,
+      "unit_id": "738754a218fcc636f5c10e3e804b202a",
+      "status": "modified",
+      "prev_unit_id": "19fb12f16e345ce445ff8e3b8978fb88"
+    },
+    {
+      "chapter_key": "unpriv/sec:zfinx",
+      "section_id": "_processing_of_narrower_values",
+      "slot": 0,
+      "unit_id": "f52fb12785a440fd0bb1e1d186a062aa",
+      "status": "modified",
+      "prev_unit_id": "07f7ec9b58a289e8cc636eb1e115c66f"
+    },
+    {
+      "chapter_key": "unpriv/sec:zfinx",
+      "section_id": "_processing_of_narrower_values",
+      "slot": 1,
+      "unit_id": "c252394490589b2572c9a3004e7015d6",
+      "status": "modified",
+      "prev_unit_id": "5ea4310e9c646eb725a5b346841847d0"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "section_id": "crypto-vector-instruction-constraints",
+      "slot": 10,
+      "unit_id": "5a383891e4d96d02ee331a5c28c61c4c",
+      "status": "modified",
+      "prev_unit_id": "e19fd148d8f74ec052444bb2a350ba3a"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "section_id": "crypto-vector-software-portability",
+      "slot": 1,
+      "unit_id": "863a76ba4628ef9e966d5730e9102995",
+      "status": "modified",
+      "prev_unit_id": "ffb3813180c96e5f5392a1ffc3b71be1"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "section_id": "crypto-vector-software-portability",
+      "slot": 3,
+      "unit_id": "dbadc3967420244727fc5807d43e7ed9",
+      "status": "modified",
+      "prev_unit_id": "0942264810f781d9bb8289f4e4dd0d89"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "section_id": "crypto-vector-software-portability",
+      "slot": 4,
+      "unit_id": "3328f9ab6483dd05cd6d5826c90122b8",
+      "status": "modified",
+      "prev_unit_id": "433f098cedeb2255ea041301c907c001"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "operational",
+      "slot": 34,
+      "unit_id": "e82aebaddd1adb23a261e5e4bdce39bb",
+      "status": "modified",
+      "prev_unit_id": "67602faa09a852b34c7ad3203f7d6c01"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "inst_state",
+      "slot": 6,
+      "unit_id": "b062333644fd3d2a2a5e81d675ecd1c1",
+      "status": "modified",
+      "prev_unit_id": "d3415d1dc27c0894fe0a06fa5879ecbb"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "inst_state",
+      "slot": 7,
+      "unit_id": "d689809f3eff4e1dc52a33ef72a908ea",
+      "status": "modified",
+      "prev_unit_id": "3fa03ec9a09acc8e5f293c9971eda045"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "inst_state",
+      "slot": 8,
+      "unit_id": "e0bd2a614a15934bc5e5b04f17b2cc05",
+      "status": "modified",
+      "prev_unit_id": "ca5b4ba439317a6905745f5c231490cd"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "fetch",
+      "slot": 0,
+      "unit_id": "78f742d3ac2a4b786bf4f9c9913197db",
+      "status": "modified",
+      "prev_unit_id": "b95c0c09be258ec491e2a31d79dd6b0a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "fetch",
+      "slot": 1,
+      "unit_id": "b49a1fe2357a50f09255314bb603256e",
+      "status": "modified",
+      "prev_unit_id": "f18ad62dffc8827c03f6986474be9a8e"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "fetch",
+      "slot": 2,
+      "unit_id": "1124dab6a98b3a4662467081ec87a1f3",
+      "status": "modified",
+      "prev_unit_id": "7d59f2de68ba6831fb87434fbf048fe7"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "fetch",
+      "slot": 3,
+      "unit_id": "d782f41d8de6b572c4382b4942a05a52",
+      "status": "modified",
+      "prev_unit_id": "2ee031b2b96c0c156a1636fc8769aa8b"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "initiate_load",
+      "slot": 0,
+      "unit_id": "f604955959c7864289af730b75b6cfc3",
+      "status": "modified",
+      "prev_unit_id": "9af2dbb014c6b86163a6014ca3eb503e"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "initiate_load",
+      "slot": 1,
+      "unit_id": "db8177a399b77e689c07228d0835c850",
+      "status": "modified",
+      "prev_unit_id": "5b7018291bc6f60aad5b00d776a6175a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 0,
+      "unit_id": "f272cc7b2b6c661276470c4cf080ffbb",
+      "status": "modified",
+      "prev_unit_id": "f08fc0e4d7280836e9100a18bc28cfdf"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 1,
+      "unit_id": "7ad1a0c133b53b7b67d806fb2c4fb2ec",
+      "status": "modified",
+      "prev_unit_id": "387462f25edc4e46d5d98427eabc9d48"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 2,
+      "unit_id": "1e5702f1ddb74cbd9a6faaeeee7da9d9",
+      "status": "modified",
+      "prev_unit_id": "de953157d603151b66d0e83c40c6b362"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 3,
+      "unit_id": "69e44c16c2d7b69f3872a66a28b3614d",
+      "status": "modified",
+      "prev_unit_id": "e04e74e9342121b6c6932afcbc52d341"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 5,
+      "unit_id": "554c9c19f9dc423b43aa069b21721fdd",
+      "status": "modified",
+      "prev_unit_id": "12577fc10387f670a6b5a377dbac55fe"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 6,
+      "unit_id": "cc8200059f35dbc2cee7b5ae926491ba",
+      "status": "modified",
+      "prev_unit_id": "c4589cc4d8c96b0202b7342047c19056"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 7,
+      "unit_id": "43aa3c85ed175ac07cfae65a2924bea7",
+      "status": "modified",
+      "prev_unit_id": "d372bc0e9fdc3ebc9745e3770ef994d0"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_by_forwarding",
+      "slot": 8,
+      "unit_id": "20135c74cdbd69002f057ef6b8a23278",
+      "status": "modified",
+      "prev_unit_id": "82250d4a0bcf4c0062a156f7da6daf4f"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sat_from_mem",
+      "slot": 0,
+      "unit_id": "0a9e821390692fc481208f5e3104536f",
+      "status": "modified",
+      "prev_unit_id": "62f10742c68440eb9077e22c2ac0c634"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "complete_loads",
+      "slot": 0,
+      "unit_id": "f65de3672bf7318dcd4489a7ad23a06a",
+      "status": "modified",
+      "prev_unit_id": "276bf78b7f472e4687bea73b4c95aab8"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "early_sc_fail",
+      "slot": 0,
+      "unit_id": "232ef7ef38da5b72f374333857007da8",
+      "status": "modified",
+      "prev_unit_id": "f3af76212e5ad097a6761cfa55b1259a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "paired_sc",
+      "slot": 0,
+      "unit_id": "0e9a87ed820016b06b2e207b0a80b812",
+      "status": "modified",
+      "prev_unit_id": "2912a273c027756fffe6fe4a292b0a1f"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "initiate_store_footprint",
+      "slot": 0,
+      "unit_id": "ca88d0e5c64281bcd5e3b6b454e940bc",
+      "status": "modified",
+      "prev_unit_id": "d1be68c71cab88bdf5becfc457c8528a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "initiate_store_footprint",
+      "slot": 1,
+      "unit_id": "e29f15110b8b71611b7c5ef0518fecf0",
+      "status": "modified",
+      "prev_unit_id": "c1531daeafc78125707597194cb3b1b6"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "instantiate_store_value",
+      "slot": 0,
+      "unit_id": "fedbfb00a0a47c832b25c1308be506c2",
+      "status": "modified",
+      "prev_unit_id": "cab28821a45c4aef86f9f70b28281eb6"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "instantiate_store_value",
+      "slot": 1,
+      "unit_id": "1d7b2be363daf0707dc3767dd1f5f37f",
+      "status": "modified",
+      "prev_unit_id": "cfb3b5bd06153e5eaa94f30563230fe7"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_stores",
+      "slot": 0,
+      "unit_id": "7201e47d7b482342f77df24c246d3c47",
+      "status": "modified",
+      "prev_unit_id": "1b46fd184bef824e8811acf4514b5172"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_stores",
+      "slot": 1,
+      "unit_id": "39bc0af645c4dcf1ee878f114ebd1052",
+      "status": "modified",
+      "prev_unit_id": "d2163d6cc2a79d8e5a3c334bb1797659"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "prop_store",
+      "slot": 0,
+      "unit_id": "26bd73284f13f514ce7e901db4fc347a",
+      "status": "modified",
+      "prev_unit_id": "f57d09fa8af1ad4e83044f29d4707549"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "prop_store",
+      "slot": 1,
+      "unit_id": "7afcfa0393a0daa2187fe27b827aa250",
+      "status": "modified",
+      "prev_unit_id": "83e35b9090303548dd8fb6d3a71e0283"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "prop_store",
+      "slot": 2,
+      "unit_id": "0d71ba005906db7124ab084ba8524e37",
+      "status": "modified",
+      "prev_unit_id": "c8cf9b3c9850479992e81cdcca6f95f3"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "prop_store",
+      "slot": 3,
+      "unit_id": "a7750bf9e0efa10118a1dced5ec4630f",
+      "status": "modified",
+      "prev_unit_id": "369c9de3730b816192239d401f840325"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "prop_store",
+      "slot": 5,
+      "unit_id": "325eb8d14cecf37ee105d579b98d2f44",
+      "status": "modified",
+      "prev_unit_id": "a7b44391b506d1ab67447500917cd32a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_sc",
+      "slot": 0,
+      "unit_id": "4526928036d386a05d0202d23ff912c7",
+      "status": "modified",
+      "prev_unit_id": "579c602afcccb943da98a43051dcb35a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_sc",
+      "slot": 1,
+      "unit_id": "1f137732874773e9e5d1222210c5f2fd",
+      "status": "modified",
+      "prev_unit_id": "546e92f13e109833e459663f43afea8a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "late_sc_fail",
+      "slot": 0,
+      "unit_id": "4141da315a0e071075b56b3ce386ba15",
+      "status": "modified",
+      "prev_unit_id": "2f5d22fd846363ca3f324bf8d8c692ed"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "late_sc_fail",
+      "slot": 1,
+      "unit_id": "7d9dc0b5d1a1530f7dff52f3b9390ea9",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "complete_stores",
+      "slot": 0,
+      "unit_id": "58b7fcc0c1ea99bc441cdad3c57d316a",
+      "status": "modified",
+      "prev_unit_id": "93c4e467a378be18163a9ae129d2a372"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "do_amo",
+      "slot": 0,
+      "unit_id": "0969fd06260ea5340f914679004336cb",
+      "status": "modified",
+      "prev_unit_id": "33a0f2df8d7373a4dc75a3051779c74d"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "do_amo",
+      "slot": 2,
+      "unit_id": "48f0a091ae3a407f4e1024ce205dffc9",
+      "status": "modified",
+      "prev_unit_id": "78b4e8e0ae554c59f59c07e1a40a06f1"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_fence",
+      "slot": 0,
+      "unit_id": "ac37407364d4e9ccfead9eff921685b6",
+      "status": "modified",
+      "prev_unit_id": "968afbd5886202baf99ae9d37e4c6139"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_fence",
+      "slot": 1,
+      "unit_id": "fd5b251d3ada10d32cc74073521120c8",
+      "status": "modified",
+      "prev_unit_id": "001d38dc43fe5b5fb432cf6a235b089a"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "commit_fence",
+      "slot": 3,
+      "unit_id": "6ba9bfffa9c5ddafb37bf58eb7368750",
+      "status": "modified",
+      "prev_unit_id": "85a355f6f671184275e3e4ba3a929d84"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "reg_read",
+      "slot": 0,
+      "unit_id": "c7b13ff611d1275d4dbd64fb647abfb6",
+      "status": "modified",
+      "prev_unit_id": "26d074da26e128a40f0e026665baca10"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "reg_read",
+      "slot": 2,
+      "unit_id": "e09f1022ce881512dd6e96e2a1476bdd",
+      "status": "modified",
+      "prev_unit_id": "1e2ad13a5e5fe3f3f8601041dae866fb"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "reg_write",
+      "slot": 0,
+      "unit_id": "f9b020327b20462b6eb6628e67684cfd",
+      "status": "modified",
+      "prev_unit_id": "5325feafc90f81bf6633b1a9124e477b"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "reg_write",
+      "slot": 1,
+      "unit_id": "bb7f4d7ad950f38d9ac41c0d315a325b",
+      "status": "modified",
+      "prev_unit_id": "413e96b9a80a6e1e3c120d4f03460ab5"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "reg_write",
+      "slot": 2,
+      "unit_id": "a928753abc02df1dca1ac7426fd73f51",
+      "status": "modified",
+      "prev_unit_id": "21a4c23adb05fdf49e05339e5dfb98e4"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "sail_interp",
+      "slot": 0,
+      "unit_id": "135ad1cb46d88cf77c2e81e50867328f",
+      "status": "modified",
+      "prev_unit_id": "0ab19a9b71b77269753bbe614feda2e3"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "finish",
+      "slot": 0,
+      "unit_id": "b134cfdabda104561e27862c8828955c",
+      "status": "modified",
+      "prev_unit_id": "6304f1681a85d5c86d99f9c6cee5ff71"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "finish",
+      "slot": 1,
+      "unit_id": "f5a804321f92409642bc54f1fb6a0abc",
+      "status": "modified",
+      "prev_unit_id": "f25c4f48dc89168932185ddd2049c37e"
+    },
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "finish",
+      "slot": 3,
+      "unit_id": "0b61b60899e62f2008ce37b775ce7c76",
+      "status": "modified",
+      "prev_unit_id": "b1677b5941fa20a84288f3db3aae401f"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "privstack",
+      "slot": 6,
+      "unit_id": "92fef546dc278278a26736338d81d7da",
+      "status": "modified",
+      "prev_unit_id": "0de7fcb1a50a18217653282e1d689d03"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 2,
+      "unit_id": "2fbacb24495f345873027af778965d9c",
+      "status": "modified",
+      "prev_unit_id": "a057fe005f24eaa8c57b0f7f75c4997f"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 2,
+      "unit_id": "ce806338b21b6cb35831afd80ee50783",
+      "status": "modified",
+      "prev_unit_id": "6ac85343bbcfb4fdd0cc783c35f4b856"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_address_matching",
+      "slot": 6,
+      "unit_id": "6a3dbaae9c56326c43dc083357eac1d5",
+      "status": "modified",
+      "prev_unit_id": "54dc5f4d19456597e76f0ee0f7da0077"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_base_isa_control_in_sstatus_register",
+      "slot": 3,
+      "unit_id": "103c8df704c6af8660db5e692714f5cc",
+      "status": "modified",
+      "prev_unit_id": "02de85fb25b04e6beb0b523cc72d1052"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_value_stval_register",
+      "slot": 12,
+      "unit_id": "0a664d6aa7a793e2b841cc9b8bd39dc7",
+      "status": "modified",
+      "prev_unit_id": "6279517799bf329cc89de40483f1a141"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "satp",
+      "slot": 11,
+      "unit_id": "817e8355f49f0561d808884597494f72",
+      "status": "modified",
+      "prev_unit_id": "fd33ef389baa2e2f59b38495bc2eb5e6"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sfence.vma",
+      "slot": 6,
+      "unit_id": "a3fc476d2d6385ccc1669734c3a36ca6",
+      "status": "modified",
+      "prev_unit_id": "957a7dae68582cca41f330b93de26de9"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sfence.vma",
+      "slot": 9,
+      "unit_id": "45370226a4099c204aa09a3f086f9706",
+      "status": "modified",
+      "prev_unit_id": "bd50713cc404fa5d3acd56fc7751ce89"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "translation",
+      "slot": 13,
+      "unit_id": "421cc602ba0561bbae2093d0205a84ab",
+      "status": "modified",
+      "prev_unit_id": "226d0d2f94a88a3922a26f5b2dcf38bb"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": 2,
+      "unit_id": "93026d8c4764e6ce192a1d2323e2d8e2",
+      "status": "modified",
+      "prev_unit_id": "ce5b275a20d868890b882c1cbafa2411"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "unpriv/_formal_memory_model_specifications_version_0_1",
+      "section_id": "late_sc_fail",
+      "after_unit_id": "2f5d22fd846363ca3f324bf8d8c692ed",
+      "unit_id": "98b97d410f127a71175996e9e0a458a0"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/riscv-unprivileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "db21ebe84178c720"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "afc3d16e0a620362"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "8f2f6eef7530fe6b"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "e11d8ab2b2cbf98d"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "d101a39ad9100196"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "5a820d0e5855ac96"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "5c63d82deb204b85"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "2603819532637bac"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "cc198d28e3e42947"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "62fa4a0d9a6ece0d"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "b4f2e500df6e3463"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "01dd93cc8def556e"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "0cf5982cf390254d"
+        },
+        {
+          "id": "atomics",
+          "chap_hash": "65eeaff64b2e7b69"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "bedfd21d3de4d560"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "f1c20b8e76d629fe"
+        },
+        {
+          "id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0",
+          "chap_hash": "8fae35c65f0b3b6b"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "0e484440cf53078b"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "c6ecbccd1d9387e1"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "28e7094b1c3b53fa"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "32b667ead6d4ab60"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "45371404a6392fc1"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "0840e92d57492375"
+        },
+        {
+          "id": "chap:zfh",
+          "chap_hash": "29f580bc5804ea2a"
+        },
+        {
+          "id": "bf16",
+          "chap_hash": "20e3b733e24b3e62"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "bcc5d3b3f9b56f51"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "5512021ff9f9e876"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "a4be1ca074dc1e5d"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "a5f810934891f686"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "b2b373a093c5f639"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "a62fed50aba3c0be"
+        },
+        {
+          "id": "crypto_scalar_instructions",
+          "chap_hash": "4ac86548dbb786b0"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0",
+          "chap_hash": "39ab58d0d6ce7f51"
+        },
+        {
+          "id": "_control_flow_integrity_cfi",
+          "chap_hash": "c0f308daa81a03c0"
+        },
+        {
+          "id": "sec:zilsd",
+          "chap_hash": "aa0c77847c1b6007"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "93e0fce0ee3a1420"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "d82a9ae12d35b1a9"
+        },
+        {
+          "id": "_rvwmo_explanatory_material_version_0_1",
+          "chap_hash": "5f193254b7ceb20a"
+        },
+        {
+          "id": "_formal_memory_model_specifications_version_0_1",
+          "chap_hash": "05bcee12fe406fd1"
+        },
+        {
+          "id": "_vector_assembly_code_examples",
+          "chap_hash": "107b1b1a806321c4"
+        },
+        {
+          "id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+          "chap_hash": "153b2bded267d7e2"
+        },
+        {
+          "id": "_historical_rationale_for_extensions",
+          "chap_hash": "356b1ff96b0516fa"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/riscv-privileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "ba903a98039c2773"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "086df16de687b6a4"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "485e47bdf39a1c9d"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "a67ba3c7031d7fe5"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "8f89284188bbe36f"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "1921a02513d7d35c"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "ab18553fd7642792"
+        },
+        {
+          "id": "_smcntrpmf_cycle_and_instret_privilege_mode_filtering_version_1_0",
+          "chap_hash": "0adc6f5d6cbb644d"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "ded828193bec3ca4"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "31610ff22926b4ca"
+        },
+        {
+          "id": "smdbltrp",
+          "chap_hash": "454c9d32c286f3c7"
+        },
+        {
+          "id": "smctr",
+          "chap_hash": "a07809e0f800acc1"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "a3058c57e3595c3e"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "6eeb05b09cc3e074"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "d11493876f352bc5"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "2881bbd06613dcee"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "543453e360f67049"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "badf560b2b7fd950"
+        },
+        {
+          "id": "sec:svrsw60t59b",
+          "chap_hash": "f09f28d12c0e414f"
+        },
+        {
+          "id": "ssqosid",
+          "chap_hash": "d6e7acece77c7b3e"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "350f32425727a2af"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "a181f5e3221ceaea"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "3f2498d1aa0fc637"
+        },
+        {
+          "id": "priv-cfi",
+          "chap_hash": "afcb0fecf944e868"
+        },
+        {
+          "id": "ssdbltrp",
+          "chap_hash": "b7822d4b03acbb3e"
+        },
+        {
+          "id": "Zpm",
+          "chap_hash": "d30ce1829ce6fbaa"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "41caaca1ed941007"
+        },
+        {
+          "id": "_history",
+          "chap_hash": "543b02c2d64d979f"
+        }
+      ]
+    }
+  ]
+}

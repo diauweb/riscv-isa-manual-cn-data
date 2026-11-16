@@ -1,0 +1,280 @@
+unit_id = "91ef38fdf02c101603f1f5c4bfd5d871"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[.monocell]
+.Currently allocated RISC-V machine-level CSR addresses
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Machine Information Registers
+
+|`0xF11` |MRO |csr:mvendorid[]  |Vendor ID
+|`0xF12` |MRO |csr:marchid[]    |Architecture ID
+|`0xF13` |MRO |csr:mimpid[]     |Implementation ID
+|`0xF14` |MRO |csr:mhartid[]    |Hardware thread ID
+|`0xF15` |MRO |csr:mconfigptr[] |Pointer to configuration data structure
+
+4+^|Machine Trap Setup
+
+|`0x300` |MRW |csr:mstatus[]    |Machine status register
+|`0x301` |MRW |csr:misa[]       |ISA and extensions
+|`0x302` |MRW |csr:medeleg[]    |Machine exception delegation register
+|`0x303` |MRW |csr:mideleg[]    |Machine interrupt delegation register
+|`0x304` |MRW |csr:mie[]        |Machine interrupt-enable register
+|`0x305` |MRW |csr:mtvec[]      |Machine trap-handler base address
+|`0x306` |MRW |csr:mcounteren[] |Machine counter enable
+|`0x310` |MRW |csr:mstatush[]   |Additional machine status register, RV32 only
+|`0x312` |MRW |csr:medelegh[]   |Upper qty:32[bits] of csr:medeleg[], RV32 only
+
+4+^|Machine Trap Handling
+
+|`0x340` |MRW |csr:mscratch[] |Machine scratch register
+|`0x341` |MRW |csr:mepc[]     |Machine exception program counter
+|`0x342` |MRW |csr:mcause[]   |Machine trap cause
+|`0x343` |MRW |csr:mtval[]    |Machine trap value
+|`0x344` |MRW |csr:mip[]      |Machine interrupt pending
+|`0x34A` |MRW |csr:mtinst[]   |Machine trap instruction (transformed)
+|`0x34B` |MRW |csr:mtval2[]   |Machine second trap value
+
+4+^|Machine Indirect
+
+|`0x350` |MRW |csr:miselect[] |Machine indirect register select
+|`0x351` |MRW |csr:mireg[]    |Machine indirect register alias
+|`0x352` |MRW |csr:mireg2[]   |Machine indirect register alias 2
+|`0x353` |MRW |csr:mireg3[]   |Machine indirect register alias 3
+|`0x355` |MRW |csr:mireg4[]   |Machine indirect register alias 4
+|`0x356` |MRW |csr:mireg5[]   |Machine indirect register alias 5
+|`0x357` |MRW |csr:mireg6[]   |Machine indirect register alias 6
+
+4+^|Machine Configuration
+
+|`0x30A` |MRW |csr:menvcfg[]  |Machine environment configuration register
+|`0x31A` |MRW |csr:menvcfgh[] |Upper qty:32[bits] of csr:menvcfg[], RV32 only
+|`0x747` |MRW |csr:mseccfg[]  |Machine security configuration register
+|`0x757` |MRW |csr:mseccfgh[] |Upper qty:32[bits] of csr:mseccfg[], RV32 only
+
+4+^|Machine Memory Protection
+
+|`0x3A0` |MRW |csr:pmpcfg0[]       |Physical memory protection configuration
+|`0x3A1` |MRW |csr:pmpcfg1[]       |Physical memory protection configuration, RV32 only
+|`0x3A2` |MRW |csr:pmpcfg2[]       |Physical memory protection configuration
+|`0x3A3` |MRW |csr:pmpcfg3[]       |Physical memory protection configuration, RV32 only
+|        |    |{vertical-ellipsis} |
+|`0x3AE` |MRW |csr:pmpcfg14[]      |Physical memory protection configuration
+|`0x3AF` |MRW |csr:pmpcfg15[]      |Physical memory protection configuration, RV32 only
+|`0x3B0` |MRW |csr:pmpaddr0[]      |Physical memory protection address register
+|`0x3B1` |MRW |csr:pmpaddr1[]      |Physical memory protection address register
+|        |    |{vertical-ellipsis} |
+|`0x3EF` |MRW |csr:pmpaddr63[]     |Physical memory protection address register
+
+4+^|Machine State Enable Registers
+
+|`0x30C` |MRW |csr:mstateen0[]  |Machine State Enable 0 Register
+|`0x30D` |MRW |csr:mstateen1[]  |Machine State Enable 1 Register
+|`0x30E` |MRW |csr:mstateen2[]  |Machine State Enable 2 Register
+|`0x30F` |MRW |csr:mstateen3[]  |Machine State Enable 3 Register
+|`0x31C` |MRW |csr:mstateen0h[] |Upper qty:32[bits] of Machine State Enable 0 Register, RV32 only
+|`0x31D` |MRW |csr:mstateen1h[] |Upper qty:32[bits] of Machine State Enable 1 Register, RV32 only
+|`0x31E` |MRW |csr:mstateen2h[] |Upper qty:32[bits] of Machine State Enable 2 Register, RV32 only
+|`0x31F` |MRW |csr:mstateen3h[] |Upper qty:32[bits] of Machine State Enable 3 Register, RV32 only
+
+4+^|Machine Non-Maskable Interrupt Handling
+
+|`0x740` |MRW |csr:mnscratch[] |Resumable NMI scratch register
+|`0x741` |MRW |csr:mnepc[]     |Resumable NMI program counter
+|`0x742` |MRW |csr:mncause[]   |Resumable NMI cause
+|`0x744` |MRW |csr:mnstatus[]  |Resumable NMI status
+
+4+^|Machine Counter/Timers
+
+|`0xB00` |MRW |csr:mcycle[]         |Machine cycle counter
+|`0xB02` |MRW |csr:minstret[]       |Machine instructions-retired counter
+|`0xB03` |MRW |csr:mhpmcounter3[]   |Machine performance-monitoring counter
+|`0xB04` |MRW |csr:mhpmcounter4[]   |Machine performance-monitoring counter
+|        |    |{vertical-ellipsis}  |
+|`0xB1F` |MRW |csr:mhpmcounter31[]  |Machine performance-monitoring counter
+|`0xB80` |MRW |csr:mcycleh[]        |Upper qty:32[bits] of csr:mcycle[], RV32 only
+|`0xB82` |MRW |csr:minstreth[]      |Upper qty:32[bits] of csr:minstret[], RV32 only
+|`0xB83` |MRW |csr:mhpmcounter3h[]  |Upper qty:32[bits] of csr:mhpmcounter3[], RV32 only
+|`0xB84` |MRW |csr:mhpmcounter4h[]  |Upper qty:32[bits] of csr:mhpmcounter4[], RV32 only
+|        |    |{vertical-ellipsis}  |
+|`0xB9F` |MRW |csr:mhpmcounter31h[] |Upper qty:32[bits] of csr:mhpmcounter31[], RV32 only
+
+4+^|Machine Counter Setup
+
+|`0x320` |MRW |csr:mcountinhibit[] |Machine counter-inhibit register
+|`0x321` |MRW |csr:mcyclecfg[]     |Machine cycle counter configuration register
+|`0x322` |MRW |csr:minstretcfg[]   |Machine instret counter configuration register
+|`0x323` |MRW |csr:mhpmevent3[]    |Machine performance-monitoring event selector
+|`0x324` |MRW |csr:mhpmevent4[]    |Machine performance-monitoring event selector
+|        |    |{vertical-ellipsis} |
+|`0x33F` |MRW |csr:mhpmevent31[]   |Machine performance-monitoring event selector
+|`0x721` |MRW |csr:mcyclecfgh[]    |Upper qty:32[bits] of csr:mcyclecfg[], RV32 only
+|`0x722` |MRW |csr:minstretcfgh[]  |Upper qty:32[bits] of csr:minstretcfg[], RV32 only
+|`0x723` |MRW |csr:mhpmevent3h[]   |Upper qty:32[bits] of csr:mhpmevent3[], RV32 only
+|`0x724` |MRW |csr:mhpmevent4h[]   |Upper qty:32[bits] of csr:mhpmevent4[], RV32 only
+|        |    |{vertical-ellipsis} |
+|`0x73F` |MRW |csr:mhpmevent31h[]  |Upper qty:32[bits] of csr:mhpmevent31[], RV32 only
+
+4+^|Machine Control Transfer Records Configuration
+
+|`0x34E` |MRW |csr:mctrctl[] |Machine Control Transfer Records Control Register
+
+4+^|Debug/Trace Registers (shared with Debug Mode)
+
+|`0x7A0` |MRW |csr:tselect[]  |Debug/Trace trigger register select
+|`0x7A1` |MRW |csr:tdata1[]   |First Debug/Trace trigger data register
+|`0x7A2` |MRW |csr:tdata2[]   |Second Debug/Trace trigger data register
+|`0x7A3` |MRW |csr:tdata3[]   |Third Debug/Trace trigger data register
+|`0x7A4` |MRW |csr:tinfo[]    |Trigger info register
+|`0x7A5` |MRW |csr:tcontrol[] |Trigger control register
+|`0x7A8` |MRW |csr:mcontext[] |Machine-mode context register
+
+4+^|Debug Mode Registers
+
+|`0x7B0` |DRW |csr:dcsr[]      |Debug control and status register
+|`0x7B1` |DRW |csr:dpc[]       |Debug program counter
+|`0x7B2` |DRW |csr:dscratch0[] |Debug scratch register 0
+|`0x7B3` |DRW |csr:dscratch1[] |Debug scratch register 1
+
+|==='''
+zh = '''
+[.monocell]
+.目前已分配的 RISC-V 机器级 CSR 地址
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |特权 |名称 |描述
+4+^|机器信息寄存器
+
+|`0xF11` |MRO |csr:mvendorid[]  |厂商 ID
+|`0xF12` |MRO |csr:marchid[]    |架构 ID
+|`0xF13` |MRO |csr:mimpid[]     |实现 ID
+|`0xF14` |MRO |csr:mhartid[]    |硬件线程 ID
+|`0xF15` |MRO |csr:mconfigptr[] |配置数据结构指针
+
+4+^|机器陷阱设置
+
+|`0x300` |MRW |csr:mstatus[]    |机器状态寄存器
+|`0x301` |MRW |csr:misa[]       |ISA 与扩展
+|`0x302` |MRW |csr:medeleg[]    |机器异常委托寄存器
+|`0x303` |MRW |csr:mideleg[]    |机器中断委托寄存器
+|`0x304` |MRW |csr:mie[]        |机器中断使能寄存器
+|`0x305` |MRW |csr:mtvec[]      |机器陷阱处理程序基地址
+|`0x306` |MRW |csr:mcounteren[] |机器计数器使能
+|`0x310` |MRW |csr:mstatush[]   |附加机器状态寄存器，仅 RV32
+|`0x312` |MRW |csr:medelegh[]   |csr:medeleg[] 的高 qty:32[位]，仅 RV32
+
+4+^|机器陷阱处理
+
+|`0x340` |MRW |csr:mscratch[] |机器暂存寄存器
+|`0x341` |MRW |csr:mepc[]     |机器异常程序计数器
+|`0x342` |MRW |csr:mcause[]   |机器陷阱原因
+|`0x343` |MRW |csr:mtval[]    |机器陷阱值
+|`0x344` |MRW |csr:mip[]      |机器中断挂起
+|`0x34A` |MRW |csr:mtinst[]   |机器陷阱指令（已变换）
+|`0x34B` |MRW |csr:mtval2[]   |机器第二陷阱值
+
+4+^|机器间接
+
+|`0x350` |MRW |csr:miselect[] |机器间接寄存器选择
+|`0x351` |MRW |csr:mireg[]    |机器间接寄存器别名
+|`0x352` |MRW |csr:mireg2[]   |机器间接寄存器别名 2
+|`0x353` |MRW |csr:mireg3[]   |机器间接寄存器别名 3
+|`0x355` |MRW |csr:mireg4[]   |机器间接寄存器别名 4
+|`0x356` |MRW |csr:mireg5[]   |机器间接寄存器别名 5
+|`0x357` |MRW |csr:mireg6[]   |机器间接寄存器别名 6
+
+4+^|机器配置
+
+|`0x30A` |MRW |csr:menvcfg[]  |机器环境配置寄存器
+|`0x31A` |MRW |csr:menvcfgh[] |csr:menvcfg[] 的高 qty:32[位]，仅 RV32
+|`0x747` |MRW |csr:mseccfg[]  |机器安全配置寄存器
+|`0x757` |MRW |csr:mseccfgh[] |csr:mseccfg[] 的高 qty:32[位]，仅 RV32
+
+4+^|机器内存保护
+
+|`0x3A0` |MRW |csr:pmpcfg0[]       |物理内存保护配置
+|`0x3A1` |MRW |csr:pmpcfg1[]       |物理内存保护配置，仅 RV32
+|`0x3A2` |MRW |csr:pmpcfg2[]       |物理内存保护配置
+|`0x3A3` |MRW |csr:pmpcfg3[]       |物理内存保护配置，仅 RV32
+|        |    |{vertical-ellipsis} |
+|`0x3AE` |MRW |csr:pmpcfg14[]      |物理内存保护配置
+|`0x3AF` |MRW |csr:pmpcfg15[]      |物理内存保护配置，仅 RV32
+|`0x3B0` |MRW |csr:pmpaddr0[]      |物理内存保护地址寄存器
+|`0x3B1` |MRW |csr:pmpaddr1[]      |物理内存保护地址寄存器
+|        |    |{vertical-ellipsis} |
+|`0x3EF` |MRW |csr:pmpaddr63[]     |物理内存保护地址寄存器
+
+4+^|机器状态使能寄存器
+
+|`0x30C` |MRW |csr:mstateen0[]  |机器状态使能 0 寄存器
+|`0x30D` |MRW |csr:mstateen1[]  |机器状态使能 1 寄存器
+|`0x30E` |MRW |csr:mstateen2[]  |机器状态使能 2 寄存器
+|`0x30F` |MRW |csr:mstateen3[]  |机器状态使能 3 寄存器
+|`0x31C` |MRW |csr:mstateen0h[] |机器状态使能 0 寄存器的高 qty:32[位]，仅 RV32
+|`0x31D` |MRW |csr:mstateen1h[] |机器状态使能 1 寄存器的高 qty:32[位]，仅 RV32
+|`0x31E` |MRW |csr:mstateen2h[] |机器状态使能 2 寄存器的高 qty:32[位]，仅 RV32
+|`0x31F` |MRW |csr:mstateen3h[] |机器状态使能 3 寄存器的高 qty:32[位]，仅 RV32
+
+4+^|机器不可屏蔽中断处理
+
+|`0x740` |MRW |csr:mnscratch[] |可恢复 NMI 暂存寄存器
+|`0x741` |MRW |csr:mnepc[]     |可恢复 NMI 程序计数器
+|`0x742` |MRW |csr:mncause[]   |可恢复 NMI 原因
+|`0x744` |MRW |csr:mnstatus[]  |可恢复 NMI 状态
+
+4+^|机器计数器/定时器
+
+|`0xB00` |MRW |csr:mcycle[]         |机器周期计数器
+|`0xB02` |MRW |csr:minstret[]       |机器退役指令计数器
+|`0xB03` |MRW |csr:mhpmcounter3[]   |机器性能监控计数器
+|`0xB04` |MRW |csr:mhpmcounter4[]   |机器性能监控计数器
+|        |    |{vertical-ellipsis}  |
+|`0xB1F` |MRW |csr:mhpmcounter31[]  |机器性能监控计数器
+|`0xB80` |MRW |csr:mcycleh[]        |csr:mcycle[] 的高 qty:32[位]，仅 RV32
+|`0xB82` |MRW |csr:minstreth[]      |csr:minstret[] 的高 qty:32[位]，仅 RV32
+|`0xB83` |MRW |csr:mhpmcounter3h[]  |csr:mhpmcounter3[] 的高 qty:32[位]，仅 RV32
+|`0xB84` |MRW |csr:mhpmcounter4h[]  |csr:mhpmcounter4[] 的高 qty:32[位]，仅 RV32
+|        |    |{vertical-ellipsis}  |
+|`0xB9F` |MRW |csr:mhpmcounter31h[] |csr:mhpmcounter31[] 的高 qty:32[位]，仅 RV32
+
+4+^|机器计数器设置
+
+|`0x320` |MRW |csr:mcountinhibit[] |机器计数器禁止寄存器
+|`0x321` |MRW |csr:mcyclecfg[]     |机器周期计数器配置寄存器
+|`0x322` |MRW |csr:minstretcfg[]   |机器 instret 计数器配置寄存器
+|`0x323` |MRW |csr:mhpmevent3[]    |机器性能监控事件选择器
+|`0x324` |MRW |csr:mhpmevent4[]    |机器性能监控事件选择器
+|        |    |{vertical-ellipsis} |
+|`0x33F` |MRW |csr:mhpmevent31[]   |机器性能监控事件选择器
+|`0x721` |MRW |csr:mcyclecfgh[]    |csr:mcyclecfg[] 的高 qty:32[位]，仅 RV32
+|`0x722` |MRW |csr:minstretcfgh[]  |csr:minstretcfg[] 的高 qty:32[位]，仅 RV32
+|`0x723` |MRW |csr:mhpmevent3h[]   |csr:mhpmevent3[] 的高 qty:32[位]，仅 RV32
+|`0x724` |MRW |csr:mhpmevent4h[]   |csr:mhpmevent4[] 的高 qty:32[位]，仅 RV32
+|        |    |{vertical-ellipsis} |
+|`0x73F` |MRW |csr:mhpmevent31h[]  |csr:mhpmevent31[] 的高 qty:32[位]，仅 RV32
+
+4+^|机器控制转移记录配置
+
+|`0x34E` |MRW |csr:mctrctl[] |机器控制转移记录控制寄存器
+
+4+^|调试/跟踪寄存器（与调试模式共享）
+
+|`0x7A0` |MRW |csr:tselect[]  |调试/跟踪触发器寄存器选择
+|`0x7A1` |MRW |csr:tdata1[]   |第一个调试/跟踪触发器数据寄存器
+|`0x7A2` |MRW |csr:tdata2[]   |第二个调试/跟踪触发器数据寄存器
+|`0x7A3` |MRW |csr:tdata3[]   |第三个调试/跟踪触发器数据寄存器
+|`0x7A4` |MRW |csr:tinfo[]    |触发器信息寄存器
+|`0x7A5` |MRW |csr:tcontrol[] |触发器控制寄存器
+|`0x7A8` |MRW |csr:mcontext[] |机器模式上下文寄存器
+
+4+^|调试模式寄存器
+
+|`0x7B0` |DRW |csr:dcsr[]      |调试控制与状态寄存器
+|`0x7B1` |DRW |csr:dpc[]       |调试程序计数器
+|`0x7B2` |DRW |csr:dscratch0[] |调试暂存寄存器 0
+|`0x7B3` |DRW |csr:dscratch1[] |调试暂存寄存器 1
+
+|==='''

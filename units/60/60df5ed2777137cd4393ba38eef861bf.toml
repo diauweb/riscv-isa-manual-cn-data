@@ -1,0 +1,116 @@
+unit_id = "60df5ed2777137cd4393ba38eef861bf"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Hypothetical mappings from C/C++ primitives to RISC-V primitives, if native load-acquire and store-release opcodes are introduced.
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!C/C++ Construct !RVWMO Mapping
+
+!Non-atomic load !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_relaxed)` !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_acquire)` !`l{b|h|w|d}.aq`
+
+!`atomic_load(memory_order_seq_cst)` !`l{b|h|w|d}.aq`
+
+!Non-atomic store !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_relaxed)` !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_release)` !`s{b|h|w|d}.rl`
+
+!`atomic_store(memory_order_seq_cst)` !`s{b|h|w|d}.rl`
+
+!`atomic_thread_fence(memory_order_acquire)` !`fence r,rw`
+
+!`atomic_thread_fence(memory_order_release)` !`fence rw,w`
+
+!`atomic_thread_fence(memory_order_acq_rel)` !`fence.tso`
+
+!`atomic_thread_fence(memory_order_seq_cst)` !`fence rw,rw`
+
+!C/C++ Construct !RVWMO AMO Mapping
+
+!`atomic_<op>(memory_order_relaxed)` !`amo<op>.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`amo<op>.{w|d}.aq`
+
+!`atomic_<op>(memory_order_release)` !`amo<op>.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`amo<op>.{w|d}.aqrl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`amo<op>.{w|d}.aqrl`
+
+!C/C++ Construct !RVWMO LR/SC Mapping
+
+!`atomic_<op>(memory_order_relaxed)` !`lr.{w|d}; <op>; sc.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`lr.{w|d}.aq; <op>; sc.{w|d}`
+
+!`atomic_<op>(memory_order_release)` !`lr.{w|d}; <op>; sc.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`lr.{w|d}.aq; <op>; sc.{w|d}.rl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`lr.{w|d}.aq^*^ <op>; sc.{w|d}.rl`
+
+2+!^*^ must be `lr.{w|d}.aqrl` in order to interoperate with code mapped per <<c11mappings>>
+|==='''
+zh = '''
+.如果引入原生加载-获取和存储-释放操作码，从 C/C++ 原语到 RISC-V 原语的假设映射。
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!C/C++ 构造 !RVWMO 映射
+
+!非原子加载 !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_relaxed)` !`l{b|h|w|d}`
+
+!`atomic_load(memory_order_acquire)` !`l{b|h|w|d}.aq`
+
+!`atomic_load(memory_order_seq_cst)` !`l{b|h|w|d}.aq`
+
+!非原子存储 !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_relaxed)` !`s{b|h|w|d}`
+
+!`atomic_store(memory_order_release)` !`s{b|h|w|d}.rl`
+
+!`atomic_store(memory_order_seq_cst)` !`s{b|h|w|d}.rl`
+
+!`atomic_thread_fence(memory_order_acquire)` !`fence r,rw`
+
+!`atomic_thread_fence(memory_order_release)` !`fence rw,w`
+
+!`atomic_thread_fence(memory_order_acq_rel)` !`fence.tso`
+
+!`atomic_thread_fence(memory_order_seq_cst)` !`fence rw,rw`
+
+!C/C++ 构造 !RVWMO AMO 映射
+
+!`atomic_<op>(memory_order_relaxed)` !`amo<op>.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`amo<op>.{w|d}.aq`
+
+!`atomic_<op>(memory_order_release)` !`amo<op>.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`amo<op>.{w|d}.aqrl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`amo<op>.{w|d}.aqrl`
+
+!C/C++ 构造 !RVWMO LR/SC 映射
+
+!`atomic_<op>(memory_order_relaxed)` !`lr.{w|d}; <op>; sc.{w|d}`
+
+!`atomic_<op>(memory_order_acquire)` !`lr.{w|d}.aq; <op>; sc.{w|d}`
+
+!`atomic_<op>(memory_order_release)` !`lr.{w|d}; <op>; sc.{w|d}.rl`
+
+!`atomic_<op>(memory_order_acq_rel)` !`lr.{w|d}.aq; <op>; sc.{w|d}.rl`
+
+!`atomic_<op>(memory_order_seq_cst)` !`lr.{w|d}.aq^*^ <op>; sc.{w|d}.rl`
+
+2+!^*^ 必须为 `lr.{w|d}.aqrl`，以便与按 <<c11mappings>> 映射的代码互操作
+|==='''

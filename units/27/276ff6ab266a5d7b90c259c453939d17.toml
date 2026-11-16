@@ -1,0 +1,18 @@
+unit_id = "276ff6ab266a5d7b90c259c453939d17"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Because FENCE.I only orders stores with a hart's own instruction
+fetches, application code should only rely upon FENCE.I if the
+application thread will not be migrated to a different hart. The EEI can
+provide mechanisms for efficient multiprocessor instruction-stream
+synchronization.
+===='''
+zh = '''
+[NOTE]
+====
+由于 FENCE.I 仅对硬件线程自身的指令取指进行存储排序，因此只有当应用程序线程不会被迁移到其他硬件线程时，应用代码才应依赖 FENCE.I。EEI 可以提供高效的多处理器指令流同步机制。
+===='''

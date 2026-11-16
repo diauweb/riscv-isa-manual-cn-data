@@ -1,0 +1,32 @@
+unit_id = "1bc044afe0e4d4bac543094581a95540"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since the insn:wrs.sto[] and insn:wrs.nto[] instructions can complete execution for
+reasons other than stores to the reservation set, software will likely need
+a means of looping until the required stores have occurred.
+
+The duration of a insn:wrs.sto[] instruction's timeout may vary significantly within
+and among implementations. In typical implementations this duration should be
+roughly in the range of 10 to 100 times an on-chip cache miss latency or a
+cacheless access to main memory.
+
+insn:wrs.nto[], unlike insn:wfi[], is not specified to cause an illegal-instruction
+exception if executed in U-mode when the governing csr::[tw] bit is 0. insn:wfi[] is
+typically not expected to be used in U-mode and on many systems may promptly
+cause an illegal-instruction exception if used at U-mode. Unlike insn:wfi[],
+insn:wrs.nto[] is expected to be used by software in U-mode when waiting on
+memory but without a deadline for that wait.
+===='''
+zh = '''
+[NOTE]
+====
+由于 insn:wrs.sto[] 和 insn:wrs.nto[] 指令可能因对保留集的存储之外的原因完成执行，软件很可能需要一种循环手段，直到所需的存储发生为止。
+
+insn:wrs.sto[] 指令的超时持续时间在同一实现内部以及不同实现之间可能有显著差异。在典型实现中，该持续时间应大致在片上缓存未命中延迟或无缓存主存访问的 10 到 100 倍范围内。
+
+与 insn:wfi[] 不同，insn:wrs.nto[] 未规定在 U 模式下执行且控制 csr::[tw] 位为 0 时会导致非法指令异常。insn:wfi[] 通常不期望在 U 模式下使用，并且在许多系统上如果在 U 模式下使用可能会立即导致非法指令异常。与 insn:wfi[] 不同，insn:wrs.nto[] 预期由 U 模式下的软件在等待内存但该等待没有截止时间时使用。
+===='''

@@ -1,0 +1,11 @@
+unit_id = "103c8df704c6af8660db5e692714f5cc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If UXLEN < SXLEN, user-mode instruction-fetch addresses
+and load and store effective addresses are taken modulo
+2^UXLEN^. For example, when UXLEN=32 and SXLEN=64,
+user-mode memory accesses reference the lowest 4 GiB of the address space.'''
+zh = '''
+如果 UXLEN < SXLEN，则用户模式的取指地址以及加载和存储有效地址按 2^UXLEN^ 取模。例如，当 UXLEN=32 且 SXLEN=64 时，用户模式的内存访问引用地址空间的最低 4 GiB。'''

@@ -1,0 +1,15 @@
+unit_id = "c57a1ed83f878243807f1464ba3d1491"
+kind = "code"
+translatable = false
+en = '''
+----
+ # Narrowing shift right logical, SEW = (2*SEW) >> SEW
+ vnsrl.wv vd, vs2, vs1, vm   # vector-vector
+ vnsrl.wx vd, vs2, rs1, vm   # vector-scalar
+ vnsrl.wi vd, vs2, uimm, vm   # vector-immediate
+
+ # Narrowing shift right arithmetic, SEW = (2*SEW) >> SEW
+ vnsra.wv vd, vs2, vs1, vm   # vector-vector
+ vnsra.wx vd, vs2, rs1, vm   # vector-scalar
+ vnsra.wi vd, vs2, uimm, vm   # vector-immediate
+----'''

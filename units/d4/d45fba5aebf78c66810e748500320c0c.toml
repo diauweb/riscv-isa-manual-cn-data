@@ -1,0 +1,22 @@
+unit_id = "d45fba5aebf78c66810e748500320c0c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The _rl_ bit is mandatory because the two encodings that would be produced are not seen as useful at this time.
+The version with neither the _aq_ nor the _rl_ bit set would correspond to a store with no ordering annotations that was guaranteed to be performed atomically.
+This can be achieved with ordinary store instructions by suitably aligned pointers.
+The version with only the _aq_ bit would correspond to store-acquire.
+Store-acquire has theoretical applications in seqlocks, but is not supported in language-level memory models and so is not included.
+===='''
+zh = '''
+[NOTE]
+====
+_rl_ 位是必需的，因为由此产生的另外两种编码目前不被认为有用。
+既未设置 _aq_ 位也未设置 _rl_ 位的版本对应于没有顺序标注、但保证以原子方式执行的存储。
+这可以通过适当地对齐指针，使用普通存储指令来实现。
+仅设置 _aq_ 位的版本对应于存储-获取。
+存储-获取（store-acquire）在顺序锁中有理论上的应用，但语言级内存模型不支持它，因此未予纳入。
+===='''

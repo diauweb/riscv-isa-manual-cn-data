@@ -1,0 +1,44 @@
+unit_id = "46f2ed56e5e94383d582beb467f80a89"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Contained Trap:::
+  The trap is visible to, and handled by, software running inside the
+  execution environment. For example, in an EEI providing both
+  supervisor and user mode on harts, an insn:ecall[] by a user-mode hart will
+  generally result in a transfer of control to a supervisor-mode handler
+  running on the same hart. Similarly, in the same environment, when a
+  hart is interrupted, an interrupt handler will be run in supervisor
+  mode on the hart.
+Requested Trap:::
+  The trap is a synchronous exception that is an explicit call to the
+  execution environment requesting an action on behalf of software
+  inside the execution environment. An example is a system call. In this
+  case, execution may or may not resume on the hart after the requested
+  action is taken by the execution environment. For example, a system
+  call could remove the hart or cause an orderly termination of the
+  entire execution environment.
+Invisible Trap:::
+  The trap is handled transparently by the execution environment and
+  execution resumes normally after the trap is handled. Examples include
+  emulating missing instructions, handling non-resident page faults in a
+  demand-paged virtual-memory system, or handling device interrupts for
+  a different job in a multiprogrammed machine. In these cases, the
+  software running inside the execution environment is not aware of the
+  trap (we ignore timing effects in these definitions).
+Fatal Trap:::
+  The trap represents a fatal failure and causes the execution
+  environment to terminate execution. Examples include failing a
+  virtual-memory page-protection check or allowing a watchdog timer to
+  expire. Each EEI should define how execution is terminated and
+  reported to an external environment.'''
+zh = '''
+包含陷阱（Contained Trap）:::
+  该陷阱对执行环境内运行的软件可见，并由其处理。例如，在同时为硬件线程提供监管模式和用户模式的 EEI 中，用户模式硬件线程的 insn:ecall[] 通常会导致控制转移到在同一硬件线程上运行的监管模式处理程序。类似地，在同一环境中，当硬件线程被中断时，中断处理程序将在该硬件线程上以监管模式运行。
+请求陷阱（Requested Trap）:::
+  该陷阱是一种同步异常，是对执行环境的显式调用，代表执行环境内的软件请求执行某个动作。一个例子是系统调用。在这种情况下，在执行环境采取所请求的动作之后，执行可能在硬件线程上恢复，也可能不恢复。例如，系统调用可以移除该硬件线程，或导致整个执行环境有序终止。
+不可见陷阱（Invisible Trap）:::
+  该陷阱由执行环境透明地处理，陷阱处理完毕后执行正常恢复。示例包括仿真缺失的指令、在按需分页虚拟内存系统中处理非常驻页面错误，或在多道程序机器中为不同作业处理设备中断。在这些情况下，执行环境内运行的软件不知道发生了陷阱（在这些定义中我们忽略时序影响）。
+致命陷阱（Fatal Trap）:::
+  该陷阱表示致命故障，并导致执行环境终止执行。示例包括未通过虚拟内存页保护检查或允许看门狗定时器到期。每个 EEI 应定义执行如何终止以及如何向外部环境报告。'''

@@ -1,0 +1,11 @@
+unit_id = "993f5452b1b6afbaf31ed0c5ad3a4020"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By contrast, if the PBMTE bit in `henvcfg` is changed, executing an
+HFENCE.VVMA with _rs1_=`x0` and _rs2_=`x0` suffices to synchronize with
+respect to the altered interpretation of VS-stage PTEs' PBMT fields for the
+currently active VMID.'''
+zh = '''
+相反，如果 `henvcfg` 中的 PBMTE 位被更改，执行 _rs1_=`x0` 且 _rs2_=`x0` 的 HFENCE.VVMA 足以就当前活动 VMID 的 VS 级 PTE 的 PBMT 字段解释的改变进行同步。'''

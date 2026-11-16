@@ -1,0 +1,16 @@
+unit_id = "245ee6e36c68697ff8eeb3304ad15545"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<linuxmappings>> provides a mapping of Linux memory
+ordering macros onto RISC-V memory instructions. The Linux fences
+`dma_rmb()` and `dma_wmb()` map onto FENCE R,R and FENCE W,W,
+respectively, since the RISC-V Unix Platform requires coherent DMA, but
+would be mapped onto FENCE RI,RI and FENCE WO,WO, respectively, on a
+platform with non-coherent DMA. Platforms with non-coherent DMA may also
+require a mechanism by which cache lines can be flushed and/or
+invalidated. Such mechanisms will be device-specific and/or standardized
+in a future extension to the ISA.'''
+zh = '''
+<<linuxmappings>> 提供了从 Linux 内存排序宏到 RISC-V 内存指令的映射。Linux fence `dma_rmb()` 和 `dma_wmb()` 分别映射为 FENCE R,R 和 FENCE W,W，因为 RISC-V Unix 平台要求一致 DMA；但在具有非一致 DMA 的平台上，它们将分别映射为 FENCE RI,RI 和 FENCE WO,WO。具有非一致 DMA 的平台还可能要求一种可以刷新和/或失效缓存行的机制。此类机制将是设备特定的和/或将在未来的 ISA 扩展中标准化。'''

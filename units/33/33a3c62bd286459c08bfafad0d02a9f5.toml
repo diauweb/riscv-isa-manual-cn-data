@@ -1,0 +1,41 @@
+unit_id = "33a3c62bd286459c08bfafad0d02a9f5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+SFENCE.W.INVAL and SFENCE.INVAL.IR instructions do not need to be
+trapped when `mstatus`.TVM=1 or when `hstatus`.VTVM=1, as they only have
+ordering effects but no visible side effects. Trapping of the SINVAL.VMA
+instruction is sufficient to enable emulation of the intended overall
+TLB maintenance functionality.
+
+In typical usage, software will invalidate a range of virtual addresses
+in the address-translation caches by executing an SFENCE.W.INVAL
+instruction, executing a series of SINVAL.VMA, HINVAL.VVMA, or
+HINVAL.GVMA instructions to the addresses (and optionally ASIDs or
+VMIDs) in question, and then executing an SFENCE.INVAL.IR instruction.
+
+High-performance implementations will be able to pipeline the
+address-translation cache invalidation operations, and will defer any
+pipeline stalls or other memory ordering enforcement until an
+SFENCE.W.INVAL, SFENCE.INVAL.IR, SFENCE.VMA, HFENCE.GVMA, or HFENCE.VVMA
+instruction is executed.
+
+Simpler implementations may implement SINVAL.VMA, HINVAL.VVMA, and
+HINVAL.GVMA identically to SFENCE.VMA, HFENCE.VVMA, and HFENCE.GVMA,
+respectively, while implementing SFENCE.W.INVAL and SFENCE.INVAL.IR
+instructions as no-ops.
+===='''
+zh = '''
+[NOTE]
+====
+当 `mstatus`.TVM=1 或 `hstatus`.VTVM=1 时，SFENCE.W.INVAL 和 SFENCE.INVAL.IR 指令不需要被陷入，因为它们只具有排序效果，而没有可见的副作用。对 SINVAL.VMA 指令的陷入足以支持对预期整体 TLB 维护功能的模拟。
+
+在典型用法中，软件将按如下方式使地址转换缓存中一定范围的虚拟地址无效：执行一条 SFENCE.W.INVAL 指令，针对相关地址（以及可选的 ASID 或 VMID）执行一系列 SINVAL.VMA、HINVAL.VVMA 或 HINVAL.GVMA 指令，然后执行一条 SFENCE.INVAL.IR 指令。
+
+高性能实现将能够对地址转换缓存无效化操作进行流水化，并将任何流水线停顿或其他内存排序强制推迟到执行 SFENCE.W.INVAL、SFENCE.INVAL.IR、SFENCE.VMA、HFENCE.GVMA 或 HFENCE.VVMA 指令时。
+
+较简单的实现可以将 SINVAL.VMA、HINVAL.VVMA 和 HINVAL.GVMA 分别实现为与 SFENCE.VMA、HFENCE.VVMA 和 HFENCE.GVMA 完全相同，同时将 SFENCE.W.INVAL 和 SFENCE.INVAL.IR 指令实现为空操作。
+===='''

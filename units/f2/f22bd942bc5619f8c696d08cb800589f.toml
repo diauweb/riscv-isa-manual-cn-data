@@ -1,0 +1,21 @@
+unit_id = "f22bd942bc5619f8c696d08cb800589f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((operations, memory)))
+Memory-accessing instructions give rise to _memory operations_. A memory
+operation can be either a _load operation_, a _store operation_, or both
+simultaneously.
+[#norm:rvwmo_single_copy_atomic]#All memory operations are single-copy atomic:
+they can never be observed in a partially complete state.#
+[#norm:rvwmo_aligned_memop]#Each aligned memory instruction that accesses XLEN or
+fewer bits gives rise to exactly one memory operation, unless specified otherwise.#
+[#norm:rvwmo_aligned_amo_memop]#An aligned AMO gives rise to a single memory operation that
+is both a load operation and a store operation simultaneously.#'''
+zh = '''
+(((operations, memory)))
+访问内存的指令会产生__内存操作__。一个内存操作可以是__加载操作__、_存储操作_，或同时两者。
+[#norm:rvwmo_single_copy_atomic]#所有内存操作都是单副本原子的：它们永远不会被观察到处于部分完成的状态。#
+[#norm:rvwmo_aligned_memop]#除非另有规定，每条访问 XLEN 或更少位数的对齐内存指令恰好产生一个内存操作。#
+[#norm:rvwmo_aligned_amo_memop]#一条对齐的 AMO 产生单个内存操作，该操作同时既是加载操作又是存储操作。#'''

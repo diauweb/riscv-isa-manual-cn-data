@@ -1,0 +1,15 @@
+unit_id = "a88dea7a174ad8c4e8823c8ebf8e0960"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hgatp_vmid]#The number of VMID bits is UNSPECIFIED and may be zero.# The number of implemented
+VMID bits, termed _VMIDLEN_, may be determined by writing one to every
+bit position in the VMID field, then reading back the value in `hgatp`
+to see which bit positions in the VMID field hold a one. [#norm:hgatp_vmid_lsbs]#The
+least-significant bits of VMID are implemented first: that is, if
+VMIDLEN > 0, VMID[VMIDLEN-1:0] is writable. The maximal
+value of VMIDLEN, termed VMIDMAX, is 7 for Sv32x4 or 14 for Sv39x4,
+Sv48x4, and Sv57x4.#'''
+zh = '''
+[#norm:hgatp_vmid]#VMID 位数是未指定的，且可为零。# 已实现的 VMID 位数称为 _VMIDLEN_，可通过向 VMID 字段的每个位位置写 1，然后读回 `hgatp` 中的值以查看 VMID 字段中哪些位位置持有 1 来确定。[#norm:hgatp_vmid_lsbs]#VMID 的最低有效位最先实现：也就是说，若 VMIDLEN > 0，则 VMID[VMIDLEN-1:0] 可写。VMIDLEN 的最大值称为 VMIDMAX，对于 Sv32x4 为 7，对于 Sv39x4、Sv48x4 和 Sv57x4 为 14。#'''

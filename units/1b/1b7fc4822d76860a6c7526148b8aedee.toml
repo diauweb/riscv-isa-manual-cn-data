@@ -1,0 +1,12 @@
+unit_id = "1b7fc4822d76860a6c7526148b8aedee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zacas_rv64_amocas-d_op]#For RV64, `AMOCAS.D` atomically loads 64-bits of a data value from address in
+`rs1`, compares the loaded value to a 64-bit value held in `rd`, and if the
+comparison is bitwise equal, then stores the 64-bit value held in `rs2` to the
+original address in `rs1`. The value loaded from memory is placed into register
+`rd`.# The operation performed by `AMOCAS.D` for RV64 is as follows:'''
+zh = '''
+[#norm:Zacas_rv64_amocas-d_op]#对于 RV64，`AMOCAS.D` 从 `rs1` 中的地址原子地加载 64 位数据值，将加载的值与 `rd` 中保存的 64 位值进行比较，如果比较结果按位相等，则将 `rs2` 中保存的 64 位值存储到 `rs1` 中的原地址。从内存加载的值被放入寄存器 `rd`。# `AMOCAS.D` 在 RV64 上执行的操作如下：'''

@@ -1,0 +1,13 @@
+unit_id = "7db626cd69797a1a332536ac4ba2d772"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When `ELP` is set to `LP_EXPECTED`, if the next instruction in the instruction
+stream is not 4-byte aligned, or is not `LPAD`, or if the landing pad label
+encoded in `LPAD` is not zero and does not match the expected landing pad label
+in bits 31:12 of the `x7` register, then a software-check exception (cause=18)
+with `__x__tval` set to "landing pad fault (code=2)" is raised else the `ELP` is
+updated to `NO_LP_EXPECTED`.'''
+zh = '''
+当 `ELP` 设置为 `LP_EXPECTED` 时，如果指令流中的下一条指令不是 4 字节对齐，或者不是 `LPAD`，或者 `LPAD` 中编码的着陆垫标签不为零且与 `x7` 寄存器第 31:12 位中的期望着陆垫标签不匹配，则引发软件检查异常（cause=18），并将 `__x__tval` 设置为 "landing pad fault (code=2)"；否则将 `ELP` 更新为 `NO_LP_EXPECTED`。'''

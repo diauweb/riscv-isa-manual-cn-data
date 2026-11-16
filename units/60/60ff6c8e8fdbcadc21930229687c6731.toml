@@ -1,0 +1,8 @@
+unit_id = "60ff6c8e8fdbcadc21930229687c6731"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hstateen_ctr]#If the H extension is implemented and `mstateen0`.CTR=1, the `hstateen0`.CTR bit controls access to supervisor CTR state when V=1.  This state includes `sctrctl` (really `vsctrctl`), `sctrstatus`, and `sireg*` (really `vsireg*`) when `siselect` (really `vsiselect`) is in 0x200..0x2FF.  `hstateen0`.CTR is read-only 0 when `mstateen0`.CTR=0.#'''
+zh = '''
+[#norm:hstateen_ctr]#如果实现了 H 扩展且 `mstateen0`.CTR=1，则 `hstateen0`.CTR 位控制 V=1 时对监管 CTR 状态的访问。这些状态包括 `sctrctl`（实际为 `vsctrctl`）、`sctrstatus`，以及当 `siselect`（实际为 `vsiselect`）位于 0x200..0x2FF 时的 `sireg*`（实际为 `vsireg*`）。当 `mstateen0`.CTR=0 时，`hstateen0`.CTR 为只读 0。'''

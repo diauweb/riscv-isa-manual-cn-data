@@ -1,0 +1,48 @@
+unit_id = "55bd21dd955192715d1dd0491e47d97d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+==== Hart State
+
+The model state of a single hart comprises:
+
+* _hart_id_, a unique identifier of the hart;
+* _initial_register_state_, the initial register value for each
+register;
+* _initial_fetch_address_, the initial instruction fetch address;
+* _instruction_tree_, a tree of the instruction instances that have been
+fetched (and not discarded), in program order.
+
+==== Shared Memory State
+
+The model state of the shared memory comprises a list of memory store
+operations, in the order they propagated to the shared memory.
+
+When a store operation is propagated to the shared memory it is simply
+added to the end of the list. When a load operation is satisfied from
+memory, for each byte of the load operation, the most recent
+corresponding store slice is returned.
+[NOTE]
+===='''
+zh = '''
+====
+
+==== 硬件线程状态
+
+单个硬件线程的模型状态包括：
+
+* _hart_id_，硬件线程的唯一标识符；
+* _initial_register_state_，每个寄存器的初始寄存器值；
+* _initial_fetch_address_，初始指令取指地址；
+* _instruction_tree_，已取指（且未丢弃）的指令实例树，按程序顺序排列。
+
+==== 共享内存状态
+
+共享内存的模型状态包括内存存储操作列表，按它们传播到共享内存的顺序排列。
+
+当存储操作传播到共享内存时，它只是被添加到列表末尾。当加载操作从内存满足时，对于加载操作的每个字节，返回最近对应的存储切片。
+[NOTE]
+===='''

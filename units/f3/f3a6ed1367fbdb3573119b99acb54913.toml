@@ -1,0 +1,11 @@
+unit_id = "f3a6ed1367fbdb3573119b99acb54913"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-jal_op]#insn:c.jal[] is an XLEN=32-only instruction that performs the same operation as
+insn:c.j[], but additionally writes the address of the instruction following
+the jump (`pc+2`) to the link register, `x1`. It expands to
+insn:jal[x1,offset].# (See <<c-jal-rv32-rationale, XLEN=32-only rationale>>.)'''
+zh = '''
+[#norm:c-jal_op]#insn:c.jal[] 是仅适用于 XLEN=32 的指令，执行与 insn:c.j[] 相同的操作，但另外将跳转后指令的地址（`pc+2`）写入链接寄存器 `x1`。它展开为 insn:jal[x1,offset]。#（参见 <<c-jal-rv32-rationale, 仅 XLEN=32 的理由>>。）'''

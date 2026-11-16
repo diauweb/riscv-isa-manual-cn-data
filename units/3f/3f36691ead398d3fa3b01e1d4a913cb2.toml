@@ -1,0 +1,24 @@
+unit_id = "3f36691ead398d3fa3b01e1d4a913cb2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[hawindowsel-hawindowsel]] `((hawindowsel))`
+a|The high bits of this field may be tied to 0, depending on how large
+the array mask register is.  E.g. on a hardware platform with 48 harts only bit 0
+of this field may actually be writable.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[hawindowsel-hawindowsel]] `((hawindowsel))`
+a|此字段的高位可以硬连线为 0，取决于数组掩码寄存器有多大。例如，在具有 48 个硬件线程的硬件平台上，此字段可能实际上只有第 0 位可写。
+a|*WARL*
+a|0
+|==='''

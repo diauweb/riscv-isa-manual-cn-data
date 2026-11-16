@@ -1,0 +1,13 @@
+unit_id = "a26b71f6660ed71032796d8790d152f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The global memory order must be a total order and cannot be cyclic,
+because a cycle would imply that every event in the cycle happens before
+itself, which is impossible. Therefore, the execution proposed above
+would be forbidden, and hence the addition of rule X would forbid
+implementations with store buffer forwarding, which would clearly be
+undesirable.'''
+zh = '''
+全局内存顺序必须是全序且不能成环，因为环将意味着环中的每个事件都先于自身发生，这是不可能的。因此，上述提出的执行将被禁止，从而添加规则 X 将禁止具有存储缓冲区转发的实现，而这显然是不可取的。'''

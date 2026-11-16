@@ -1,0 +1,61 @@
+unit_id = "6ff6407b25e2583caa016ebda5c72d78"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Notes to software developers
+[NOTE,caption="SH"]
+====
+The instruction can be used to implement arbitrary bit
+permutations.
+For cryptography, they can accelerate bit-sliced implementations,
+permutation layers of block ciphers, masking based countermeasures
+and SBox operations.
+
+Lightweight block ciphers using 4-bit SBoxes include:
+PRESENT cite:[block:present],
+Rectangle cite:[block:rectangle],
+GIFT cite:[block:gift],
+Twine cite:[block:twine],
+Skinny, MANTIS cite:[block:skinny],
+Midori cite:[block:midori].
+
+National ciphers using 8-bit SBoxes include:
+Camellia cite:[block:camellia] (Japan),
+Aria cite:[block:aria] (Korea),
+AES cite:[nist:fips:197] (USA, Belgium),
+SM4 cite:[gbt:sm4] (China)
+Kuznyechik (Russia).
+
+All of these SBoxes can be implemented efficiently, in constant
+time, using the `xperm8` instruction
+footnote:l[link:http://svn.clairexen.net/handicraft/2020/lut4perm/demo02.cc[]].
+Note that this technique is also suitable for masking based
+side-channel countermeasures.
+===='''
+zh = '''
+.致软件开发者
+[NOTE,caption="SH"]
+====
+该指令可用于实现任意位置换。
+对于密码学，它们可以加速位切片实现、分组密码的置换层、基于掩码的对策以及 SBox 操作。
+
+使用 4 位 SBox 的轻量级分组密码包括：
+PRESENT cite:[block:present]、
+Rectangle cite:[block:rectangle]、
+GIFT cite:[block:gift]、
+Twine cite:[block:twine]、
+Skinny、MANTIS cite:[block:skinny]、
+Midori cite:[block:midori]。
+
+使用 8 位 SBox 的国家密码包括：
+Camellia cite:[block:camellia]（日本）、
+Aria cite:[block:aria]（韩国）、
+AES cite:[nist:fips:197]（美国、比利时）、
+SM4 cite:[gbt:sm4]（中国）
+Kuznyechik（俄罗斯）。
+
+所有这些 SBox 都可以使用 `xperm8` 指令以常数时间高效实现
+footnote:l[link:http://svn.clairexen.net/handicraft/2020/lut4perm/demo02.cc[]]。
+注意，该技术也适用于基于掩码的侧信道对策。
+===='''

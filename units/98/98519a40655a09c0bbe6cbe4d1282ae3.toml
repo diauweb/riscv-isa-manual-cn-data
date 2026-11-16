@@ -1,0 +1,26 @@
+unit_id = "98519a40655a09c0bbe6cbe4d1282ae3"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trFunnelImpl: Trace Funnel Implementation Register (trBaseFunnel+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trFunnelVerMajor |Trace Funnel Component Major Version. Value 1 means the component is compliant with this document. |RO|1
+|7:4 |trFunnelVerMinor |Trace Funnel Component Minor Version. Value 0 means the component is compliant with this document. |RO|0
+|11:8 |trFunnelCompType |Trace Funnel Component Type (Trace Funnel) |RO|0x8
+|23:12 |--|Reserved for future versions of this standard|--|0
+|31:24 |--|Reserved for vendor specific implementation details|--|<<SD,SD>>
+|==='''
+zh = '''
+.*寄存器：trFunnelImpl：跟踪漏斗实现寄存器（trBaseFunnel+0x004）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trFunnelVerMajor |跟踪漏斗组件主版本。值 1 表示该组件符合本文档。 |RO|1
+|7:4 |trFunnelVerMinor |跟踪漏斗组件次版本。值 0 表示该组件符合本文档。 |RO|0
+|11:8 |trFunnelCompType |跟踪漏斗组件类型（跟踪漏斗） |RO|0x8
+|23:12 |--|保留用于本标准的未来版本|--|0
+|31:24 |--|保留用于供应商特定实现细节|--|<<SD,SD>>
+|==='''

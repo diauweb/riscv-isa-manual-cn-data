@@ -1,0 +1,29 @@
+unit_id = "bc076f94c090556c95154ac0b5163baa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Indirect HPM State Mappings
+[width="100%",cols="21%,20%,21%,18%,20%",options="header",]
+|===
+|*`siselect` value* |*`sireg*` |*`sireg4`* |*`sireg2`* |*`sireg5`*
+|0x40 |`cycle`^1^ |`cycleh`^1^ |`cyclecfg`^14^ |`cyclecfgh`^14^
+|0x41 4+^|_See below_
+|0x42 |`instret`^1^ |`instreth`^1^ |`instretcfg`^14^ |`instretcfgh`^14^
+|0x43 |`hpmcounter3`^2^ |`hpmcounter3h`^2^ |`hpmevent3`^2^ |`hpmevent3h`^23^
+|… |… |… |… |…
+|0x5F |`hpmcounter31`^2^ |`hpmcounter31h`^2^ |`hpmevent31`^2^ |`hpmevent31h`^23^
+|==='''
+zh = '''
+.间接 HPM 状态映射
+[[indirect-hpm-state-mappings]]
+[width="100%",cols="21%,20%,21%,18%,20%",options="header",]
+|===
+|*`siselect` 值* |*`sireg*` |*`sireg4`* |*`sireg2`* |*`sireg5`*
+|0x40 |`cycle`^1^ |`cycleh`^1^ |`cyclecfg`^14^ |`cyclecfgh`^14^
+|0x41 4+^|_见下文_
+|0x42 |`instret`^1^ |`instreth`^1^ |`instretcfg`^14^ |`instretcfgh`^14^
+|0x43 |`hpmcounter3`^2^ |`hpmcounter3h`^2^ |`hpmevent3`^2^ |`hpmevent3h`^23^
+|… |… |… |… |…
+|0x5F |`hpmcounter31`^2^ |`hpmcounter31h`^2^ |`hpmevent31`^2^ |`hpmevent31h`^23^
+|==='''

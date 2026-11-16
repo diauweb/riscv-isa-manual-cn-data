@@ -1,0 +1,32 @@
+unit_id = "2ad3a82f2f06aab7876935d9f5a40fcb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Push to the shadow stack (See <<SS_PUSH>>)
+** [#norm:zicfiss_sspush_enc]#insn:sspush[x1] and insn:sspush[x5] - encoded using insn:mop.rr.7[]#
+** [#norm:zicfiss_c-sspush_enc]#insn:c.sspush[x1] - encoded using insn:c.mop.1[]#
+
+* Pop from the shadow stack (See <<SS_POP>>)
+** [#norm:zicfiss_sspopchk_enc]#insn:sspopchk[x1] and insn:sspopchk[x5] - encoded using insn:mop.r.28[]#
+** [#norm:zicfiss_c-sspopchk_enc]#insn:c.sspopchk[x5] - encoded using insn:c.mop.5[]#
+
+* Read the value of csr:ssp[] into a register (See <<SSP_READ>>)
+** [#norm:zicfiss_ssrdp_enc]#insn:ssrdp[] - encoded using insn:mop.r.28[]#
+
+* Perform an atomic swap from a shadow stack location (See <<SSAMOSWAP>>)
+** insn:ssamoswap.w[] and insn:ssamoswap.d[]'''
+zh = '''
+* 压入影子栈（见 <<SS_PUSH>>）
+** [#norm:zicfiss_sspush_enc]#insn:sspush[x1] 和 insn:sspush[x5] —— 使用 insn:mop.rr.7[] 编码#
+** [#norm:zicfiss_c-sspush_enc]#insn:c.sspush[x1] —— 使用 insn:c.mop.1[] 编码#
+
+* 从影子栈弹出（见 <<SS_POP>>）
+** [#norm:zicfiss_sspopchk_enc]#insn:sspopchk[x1] 和 insn:sspopchk[x5] —— 使用 insn:mop.r.28[] 编码#
+** [#norm:zicfiss_c-sspopchk_enc]#insn:c.sspopchk[x5] —— 使用 insn:c.mop.5[] 编码#
+
+* 将 csr:ssp[] 的值读入寄存器（见 <<SSP_READ>>）
+** [#norm:zicfiss_ssrdp_enc]#insn:ssrdp[] —— 使用 insn:mop.r.28[] 编码#
+
+* 从影子栈位置执行原子交换（见 <<SSAMOSWAP>>）
+** insn:ssamoswap.w[] 和 insn:ssamoswap.d[]'''

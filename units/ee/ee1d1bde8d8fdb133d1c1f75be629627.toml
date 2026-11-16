@@ -1,0 +1,94 @@
+unit_id = "ee1d1bde8d8fdb133d1c1f75be629627"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Machine Control Transfer Records Control Register Field Definitions
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|Field |Description
+|M, S, U |Enable transfer recording in the selected privileged mode(s).
+
+|RASEMU |Enables RAS (Return Address Stack) Emulation Mode.  See <<RAS (Return Address Stack) Emulation Mode>>.
+
+|MTE |Enables recording of traps to M-mode when M=0.  See <<External Traps>>.
+
+|STE |Enables recording of traps to S-mode when S=0.  See <<External Traps>>.
+
+|BPFRZ |Set `sctrstatus`.FROZEN on a breakpoint exception that traps to M-mode or S-mode. See <<Freeze>>.
+
+|LCOFIFRZ |Set `sctrstatus`.FROZEN on local-counter-overflow interrupt (LCOFI) that traps to M-mode or S-mode. See <<Freeze>>.
+
+|EXCINH |Inhibit recording of exceptions.  See <<Transfer Type Filtering>>.
+
+|INTRINH |Inhibit recording of interrupts.  See <<Transfer Type Filtering>>.
+
+|TRETINH |Inhibit recording of trap returns.  See <<Transfer Type Filtering>>.
+
+|NTBREN |Enable recording of not-taken branches.  See <<Transfer Type Filtering>>.
+
+|TKBRINH |Inhibit recording of taken branches.  See <<Transfer Type Filtering>>.
+
+|INDCALLINH |Inhibit recording of indirect calls.  See <<Transfer Type Filtering>>.
+
+|DIRCALLINH |Inhibit recording of direct calls.  See <<Transfer Type Filtering>>.
+
+|INDJMPINH |Inhibit recording of indirect jumps (without linkage).  See <<Transfer Type Filtering>>.
+
+|DIRJMPINH |Inhibit recording of direct jumps (without linkage).  See <<Transfer Type Filtering>>.
+
+|CORSWAPINH |Inhibit recording of co-routine swaps.  See <<Transfer Type Filtering>>.
+
+|RETINH |Inhibit recording of function returns.  See <<Transfer Type Filtering>>.
+
+|INDLJMPINH |Inhibit recording of other indirect jumps (with linkage).  See <<Transfer Type Filtering>>.
+
+|DIRLJMPINH |Inhibit recording of other direct jumps (with linkage).  See <<Transfer Type Filtering>>.
+|Custom[3:0] | WARL bits designated for custom use.  The value 0 must correspond to standard behavior.  See <<Custom Extensions>>.
+|==='''
+zh = '''
+.机器控制转移记录控制寄存器字段定义
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|字段 |描述
+|M, S, U |在选定的特权模式中启用转移记录。
+
+|RASEMU |启用 RAS（返回地址栈）仿真模式。参见 <<RAS (Return Address Stack) Emulation Mode>>。
+
+|MTE |当 M=0 时，启用记录陷入 M 模式的陷阱。参见 <<External Traps>>。
+
+|STE |当 S=0 时，启用记录陷入 S 模式的陷阱。参见 <<External Traps>>。
+
+|BPFRZ |在陷入 M 模式或 S 模式的断点异常上设置 `sctrstatus`.FROZEN。参见 <<Freeze>>。
+
+|LCOFIFRZ |在陷入 M 模式或 S 模式的本地计数器溢出中断（LCOFI）上设置 `sctrstatus`.FROZEN。参见 <<Freeze>>。
+
+|EXCINH |禁止记录异常。参见 <<Transfer Type Filtering>>。
+
+|INTRINH |禁止记录中断。参见 <<Transfer Type Filtering>>。
+
+|TRETINH |禁止记录陷阱返回。参见 <<Transfer Type Filtering>>。
+
+|NTBREN |启用记录未采用分支。参见 <<Transfer Type Filtering>>。
+
+|TKBRINH |禁止记录已采用分支。参见 <<Transfer Type Filtering>>。
+
+|INDCALLINH |禁止记录间接调用。参见 <<Transfer Type Filtering>>。
+
+|DIRCALLINH |禁止记录直接调用。参见 <<Transfer Type Filtering>>。
+
+|INDJMPINH |禁止记录间接跳转（无链接）。参见 <<Transfer Type Filtering>>。
+
+|DIRJMPINH |禁止记录直接跳转（无链接）。参见 <<Transfer Type Filtering>>。
+
+|CORSWAPINH |禁止记录协程交换。参见 <<Transfer Type Filtering>>。
+
+|RETINH |禁止记录函数返回。参见 <<Transfer Type Filtering>>。
+
+|INDLJMPINH |禁止记录其他间接跳转（带链接）。参见 <<Transfer Type Filtering>>。
+
+|DIRLJMPINH |禁止记录其他直接跳转（带链接）。参见 <<Transfer Type Filtering>>。
+|Custom[3:0] | 指定用于自定义用途的 WARL 位。值 0 必须对应标准行为。参见 <<Custom Extensions>>。
+|==='''

@@ -1,0 +1,21 @@
+unit_id = "7e1ef2c855aa1f5c3fd6f96c0316e1ff"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. "Return" the data.
+. Set {sbcs-sbbusy}.
+. If {sbcs-sbreadondata} is set:
+// TODO: This doesn't work right, but it does work in asciidoclive
+.. Perform a system bus read from the address contained in
+`sbaddress`, placing the result in `sbdata`.
+.. If {sbcs-sbautoincrement} is set and the read was
+successful, increment `sbaddress`.
+. Clear {sbcs-sbbusy}.'''
+zh = '''
+. “返回”数据。
+. 设置 {sbcs-sbbusy}。
+. 如果 {sbcs-sbreadondata} 置位：
+.. 从 `sbaddress` 中包含的地址执行系统总线读取，将结果放入 `sbdata`。
+.. 如果 {sbcs-sbautoincrement} 置位且读取成功，则递增 `sbaddress`。
+. 清除 {sbcs-sbbusy}。'''

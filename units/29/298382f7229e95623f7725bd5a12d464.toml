@@ -1,0 +1,44 @@
+unit_id = "298382f7229e95623f7725bd5a12d464"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The property of insn:zimop[] writing 0 to the `rd` when the extension using insn:zimop[] is
+not implemented or not active may be used by to determine if insn:zicfiss[] extension
+is active. For example, functions that unwind shadow stacks may skip over the
+unwind actions by dynamically detecting if the insn:zicfiss[] extension is active.
+
+An example sequence such as the following may be used:
+
+[listing]
+    ssrdp t0                      # mv ssp to t0
+    beqz t0, zicfiss_not_active   # zero is not a valid shadow stack
+                                  # pointer by convention
+    # Zicfiss is active
+    :
+    :
+zicfiss_not_active:
+
+To assist with the use of such code sequences, operating systems and runtimes
+must not locate shadow stacks at address 0.
+===='''
+zh = '''
+[NOTE]
+====
+当使用 insn:zimop[] 的扩展未实现或未激活时，insn:zimop[] 会向 `rd` 写入 0，这一特性可用于确定 insn:zicfiss[] 扩展是否处于活动状态。例如，展开影子栈的函数可以通过动态检测 insn:zicfiss[] 扩展是否处于活动状态来跳过展开动作。
+
+可以使用如下示例序列：
+
+[listing]
+    ssrdp t0                      # mv ssp to t0
+    beqz t0, zicfiss_not_active   # zero is not a valid shadow stack
+                                  # pointer by convention
+    # Zicfiss is active
+    :
+    :
+zicfiss_not_active:
+
+为了协助使用此类代码序列，操作系统和运行时不得将影子栈定位在地址 0。
+===='''

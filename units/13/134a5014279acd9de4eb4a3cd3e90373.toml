@@ -1,0 +1,14 @@
+unit_id = "134a5014279acd9de4eb4a3cd3e90373"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Executing tight loops of code containing no uninferable jumps. Each
+iteration of the loop will add a bit to the branch map;
+* Sitting in an idle loop waiting for an interrupt. This produces large
+amounts of trace when nothing of any interest is actually happening!
+* Breakpoints, which in some implementations also spin in an idle loop.'''
+zh = '''
+* 执行不包含不可推断跳转的紧凑循环代码。循环的每次迭代都会向分支映射添加一位；
+* 停留在空闲循环中等待中断。当实际上没有发生任何值得关注的事情时，这会产生大量跟踪数据！
+* 断点，在某些实现中也会在空闲循环中空转。'''

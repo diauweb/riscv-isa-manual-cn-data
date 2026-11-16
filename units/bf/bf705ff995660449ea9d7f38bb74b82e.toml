@@ -1,0 +1,8 @@
+unit_id = "bf705ff995660449ea9d7f38bb74b82e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Loads stack-pointer relative 64-bit value into registers `rd'` and `rd'+1`. It computes its effective address by adding the zero-extended offset, scaled by 8, to the stack pointer, `x2`. It expands to insn:ld[rd,offset(x2)]. insn:c.ldsp[] is only valid when _rd_{ne}x0; the code points with _rd_=x0 are reserved.'''
+zh = '''
+将相对于栈指针的 64 位值加载到寄存器 `rd'` 和 `rd'+1`。它通过将零扩展的偏移（按 8 缩放）加到栈指针 `x2` 上来计算有效地址。它展开为 insn:ld[rd,offset(x2)]。insn:c.ldsp[] 仅在 _rd_{ne}x0 时有效；_rd_=x0 的代码点保留。'''

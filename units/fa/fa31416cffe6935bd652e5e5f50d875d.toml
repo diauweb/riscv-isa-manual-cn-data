@@ -1,0 +1,19 @@
+unit_id = "fa31416cffe6935bd652e5e5f50d875d"
+kind = "code"
+translatable = false
+en = '''
+[listing]
+----
+# a0 hold pointer to top of new shadow stack to switch to
+stack_switch:
+   ssrdp ra
+   beqz ra, 2f                    # skip if Zicfiss not active
+   ssamoswap.d ra, x0,  (a0)      # ra=*[a0] and *[a0]=0
+   beq         ra, a0,  1f        # [a0] must be == [ra]
+   unimp                          # else crash
+1: addi        ra, ra,  XLEN/8    # pop the checkpoint
+   csrrw       ra, ssp, ra        # swap ssp: ra=ssp, ssp=ra
+   addi        ra, ra,  -(XLEN/8) # checkpoint = "old ssp - XLEN/8"
+   ssamoswap.d x0, ra,  (ra)      # Save checkpoint at "old ssp - XLEN/8"
+2:
+----'''

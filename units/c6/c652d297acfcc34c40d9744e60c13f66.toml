@@ -1,0 +1,60 @@
+unit_id = "c652d297acfcc34c40d9744e60c13f66"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Where there is a choice between:
+  1) supporting diverse implementation strategies for an algorithm
+  or
+  2) supporting a single implementation style which is more performant /
+     less expensive;
+  the vector crypto extensions will pick the more constrained but performant
+  option.
+  This fits a common pattern in other parts of the RISC-V specifications,
+  where recommended (but not required) instruction sequences for performing
+  particular tasks are given as an example, such that both hardware and
+  software implementers can optimize for only a single use-case.
+
+* The extensions will be designed to support _existing_ standardized
+  cryptographic constructs well.
+  It will not try to support proposed standards, or cryptographic
+  constructs which exist only in academia.
+  Cryptographic standards which are settled upon concurrently with or after
+  the RISC-V vector cryptographic extensions standardization will be dealt with
+  by future RISC-V vector cryptographic
+  standard extensions.
+
+* Historically, there has been some discussion
+  cite:[LSYRR:04]
+  on how newly supported operations in general-purpose computing might
+  enable new bases for cryptographic algorithms.
+  The standard will not try to anticipate new useful low-level
+  operations which _may_ be useful as building blocks for
+  future cryptographic constructs.
+
+* Regarding side-channel countermeasures:
+  Where relevant, proposed instructions must aim to remove the
+  possibility of any timing side-channels. All instructions
+  shall be implemented with data-independent timing. That is, the latency of
+  the execution of these instructions shall not vary with different input values.'''
+zh = '''
+* 在以下两者之间做选择时：
+  1) 支持针对某算法的多种实现策略
+  或
+  2) 支持一种性能更高 / 成本更低的单一实现风格；
+  向量密码学扩展将选择约束更多但性能更优的选项。
+  这符合 RISC-V 规范其他部分中的一种常见模式，即为执行特定任务给出推荐（但非必需）的指令序列作为示例，使硬件和软件实现者都能针对单一用例进行优化。
+
+* 这些扩展的设计目标是很好地支持 _现有的_ 标准化密码学构造。
+  它不会尝试支持提议中的标准，或仅存在于学术界的密码学构造。
+  与 RISC-V 向量密码学扩展标准化同时或之后确定的密码学标准，将由未来的 RISC-V 向量密码学标准扩展来处理。
+
+* 历史上曾有过一些讨论
+  cite:[LSYRR:04]
+  关于通用计算中新支持的操作如何可能为密码学算法带来新的基础。
+  本标准不会尝试预见那些 _可能_ 可作为未来密码学构造构建模块的新有用低级操作。
+
+* 关于侧信道对策：
+  在相关情况下，所提议的指令必须致力于消除任何时序侧信道的可能性。所有指令
+  都应以数据无关的时序实现。也就是说，这些指令的执行延迟
+  不得随不同输入值而变化。'''

@@ -1,0 +1,26 @@
+unit_id = "5532b36e773252f15525e43b4cf2836b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. _a_ precedes _b_ in preserved program order as
+defined in <<memorymodel>>, with the exception
+that acquire and release ordering annotations apply only from one memory
+operation to another memory operation and from one I/O operation to
+another I/O operation, but not from a memory operation to an I/O nor
+vice versa
+. _a_ and _b_ are accesses to overlapping
+addresses in an I/O region
+. _a_ and _b_ are accesses to the same strongly
+ordered I/O region
+. _a_ and _b_ are accesses to I/O regions, and
+the channel associated with the I/O region accessed by either
+_a_ or _b_ is channel 1
+. _a_ and _b_ are accesses to I/O regions
+associated with the same channel (except for channel 0)'''
+zh = '''
+. _a_ 在 <<memorymodel>> 中所定义的保持的程序顺序中先于 _b_，但获取和释放排序注解仅适用于从一个内存操作到另一个内存操作以及从一个 I/O 操作到另一个 I/O 操作，而不适用于从内存操作到 I/O 操作，反之亦然
+. _a_ 和 _b_ 是对 I/O 区域中重叠地址的访问
+. _a_ 和 _b_ 是对同一强序 I/O 区域的访问
+. _a_ 和 _b_ 是对 I/O 区域的访问，且与 _a_ 或 _b_ 所访问的 I/O 区域相关联的通道为通道 1
+. _a_ 和 _b_ 是对与同一通道相关联的 I/O 区域的访问（通道 0 除外）'''

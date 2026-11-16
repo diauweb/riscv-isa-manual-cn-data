@@ -1,0 +1,15 @@
+unit_id = "3fa03ec9a09acc8e5f293c9971eda045"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. latexmath:[$i$] is finished; or
+. the value written by latexmath:[$w$] is not affected by a memory
+operation that latexmath:[$i$] has made (i.e. a value loaded from memory
+or the result of `sc`), and, for every register read that
+latexmath:[$i$] has made, that affects latexmath:[$w$], the register
+write from which latexmath:[$i$] read is fully determined (or
+latexmath:[$i$] read from the initial register state).'''
+zh = '''
+. latexmath:[$i$] 已结束；或
+. 由 latexmath:[$w$] 写入的值不受 latexmath:[$i$] 已执行的内存操作（即从内存加载的值或 `sc` 的结果）影响，并且，对于 latexmath:[$i$] 已执行的、影响 latexmath:[$w$] 的每次寄存器读，latexmath:[$i$] 读取自的寄存器写是完全确定的（或者 latexmath:[$i$] 读取自初始寄存器状态）。'''

@@ -1,0 +1,14 @@
+unit_id = "e668548944446e564b1ff110968f668f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Because the 5-bit vector immediates are always sign-extended,
+when the high bit of the `simm5` immediate is set, `vmsleu.vi` also
+supports unsigned immediate values in the range `2^SEW^-16` to
+`2^SEW^-1`, allowing corresponding `vmsltu.vi` compares against
+unsigned immediates in the range `2^SEW^-15` to `2^SEW^`.  Note that
+`vmsltu.vi` with immediate `2^SEW^` is not useful as it is always
+true.'''
+zh = '''
+NOTE: 由于 5 位向量立即数始终符号扩展，当 `simm5` 立即数的高位置位时，`vmsleu.vi` 还支持范围在 `2^SEW^-16` 到 `2^SEW^-1` 的无符号立即数值，从而允许相应的 `vmsltu.vi` 与范围在 `2^SEW^-15` 到 `2^SEW^` 的无符号立即数进行比较。注意，立即数为 `2^SEW^` 的 `vmsltu.vi` 没有用处，因为它始终为真。'''

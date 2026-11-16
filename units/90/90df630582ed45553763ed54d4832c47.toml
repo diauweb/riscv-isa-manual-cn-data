@@ -1,0 +1,30 @@
+unit_id = "90df630582ed45553763ed54d4832c47"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[N-Trace subset]
+.N-Trace subset
+[cols="25%,20%,~",options="header"]
+|====
+|Protocol Feature|Nexus Standard|N-Trace (strict subset of Nexus)
+|Number of *MSEO* bits|1 or 2|2
+|Number of *MDO* bits|At least 1|6
+|Total (*MDO*+*MSEO*) bits|At least 2|8 (one byte)
+|Order (transmitted or stored)|Vendor defined|*MSEO* before *MDO*,  least significant bit for each field first
+|Max field size|Not specified|64 bits (some 32 bits or less)
+|Max standard message size|Not specified|38 bytes (maximum sum of all fields)
+|===='''
+zh = '''
+[N-Trace 子集]
+.N-Trace 子集
+[cols="25%,20%,~",options="header"]
+|====
+|协议特性|Nexus 标准|N-Trace（Nexus 的严格子集）
+|*MSEO* 位数|1 或 2|2
+|*MDO* 位数|至少 1|6
+|总 (*MDO*+*MSEO*) 位数|至少 2|8（一个字节）
+|顺序（传输或存储）|厂商定义|*MSEO* 在 *MDO* 之前，每个字段最低有效位在前
+|最大字段大小|未指定|64 位（某些为 32 位或更少）
+|最大标准消息大小|未指定|38 字节（所有字段之和的最大值）
+|===='''

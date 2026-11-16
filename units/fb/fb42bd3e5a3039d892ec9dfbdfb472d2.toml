@@ -1,0 +1,38 @@
+unit_id = "fb42bd3e5a3039d892ec9dfbdfb472d2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The first option has the limitation that interrupts might be disabled at
+times when a user still might want triggers to fire. It has the benefit
+that breakpoints are not required to be handled in M-mode.
+
+The second option has the benefit that it only disables triggers during
+the trap handler, though it requires specific software support for this
+debug feature in the M-mode trap handlers. It can only work if
+breakpoints are not delegated to less privileged modes and therefore
+targets primarily implementations without S-mode.
+
+Because {csr-tcontrol} is not accessible to S-mode, the second option can not be
+extended to accommodate delegation without adding additional S-mode and
+VS-mode CSRs.
+
+Both options prevent etrigger and itrigger from having any effect on
+exceptions and interrupts that are handled in M-mode. They also prevent
+triggering during some initial portion of each handler. Debuggers should
+use other mechanisms to debug these cases, such as patching the handler
+or setting a breakpoint on the instruction after `MIE` is cleared.
+===='''
+zh = '''
+[NOTE]
+====
+第一种选项的限制是，在用户仍可能希望触发器触发时，中断可能被禁用。它的好处是断点不需要在 M 模式中处理。
+
+第二种选项的好处是它只在陷阱处理程序期间禁用触发器，不过它需要 M 模式陷阱处理程序中对此调试功能的特定软件支持。它只能在不将断点委托给较低特权模式时工作，因此主要面向没有 S 模式的实现。
+
+由于 S 模式无法访问 {csr-tcontrol}，第二种选项无法扩展以支持委托，除非增加额外的 S 模式和 VS 模式 CSR。
+
+两种选项都阻止 etrigger 和 itrigger 对在 M 模式中处理的异常和中断产生任何影响。它们还阻止在每个处理程序的某些初始部分触发。调试器应使用其他机制来调试这些情况，例如修补处理程序或在清除 `MIE` 之后的指令上设置断点。
+===='''

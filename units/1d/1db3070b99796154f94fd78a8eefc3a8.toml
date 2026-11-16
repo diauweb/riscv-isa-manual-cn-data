@@ -1,0 +1,21 @@
+unit_id = "1db3070b99796154f94fd78a8eefc3a8"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If the number of correctly predicted branches is 31 or more, then
+format 0, subformat 0 is always used;
+* Else, if the jump target cache is supported and enabled, and the
+address being reported is in the cache, then normally format 0,
+subformat 1 will be used, reporting the cache index associated with the
+address. This will include branch information if there are any branches
+to report. However, the encoder may chose to output the equivalent
+format 1 or 2 packet (containing the differential address, with or
+without branch information) if that will result in a shorter packet (see
+<<sec:format0>>);
+* Else, if there are branches to report, format 1 is used, otherwise
+format 2.'''
+zh = '''
+* 如果正确预测的分支数量为 31 或更多，则始终使用格式 0、子格式 0；
+* 否则，如果跳转目标缓存受支持且已启用，并且要报告的地址在该缓存中，则通常使用格式 0、子格式 1，报告与该地址关联的缓存索引。如果有任何分支需要报告，其中将包含分支信息。不过，如果输出等价的格式 1 或 2 包（包含差分地址，可含或不含分支信息）能得到更短的包，编码器也可以选择这样做（见 <<sec:format0>>）；
+* 否则，如果有分支需要报告，则使用格式 1，否则使用格式 2。'''

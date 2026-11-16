@@ -1,0 +1,21 @@
+unit_id = "4840681c76b41094ec8428c43104fc74"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[IMPORTANT]
+====
+<<overlapping-ordering, Rule 12>>: b is a load, and there exists some store m between a and b in
+program order such that m has an address or data dependency on a,
+and b returns a value written by m
+
+<<overlapping-ordering, Rule 13>>: b is a store, and there exists some instruction m between a and
+b in program order such that m has an address dependency on a
+===='''
+zh = '''
+[IMPORTANT]
+====
+<<overlapping-ordering, 规则 12>>：b 是加载，且在程序顺序中 a 和 b 之间存在某个存储 m，使得 m 对 a 具有地址或数据依赖，且 b 返回由 m 写入的值
+
+<<overlapping-ordering, 规则 13>>：b 是存储，且在程序顺序中 a 和 b 之间存在某条指令 m，使得 m 对 a 具有地址依赖
+===='''

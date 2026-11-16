@@ -1,0 +1,22 @@
+unit_id = "3978c7ce53d3907f3e553c5c5b4a0b33"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point-to-integer and integer-to-floating-point conversion
+instructions are encoded in the OP-FP major opcode space. [#norm:fcvt-w-d_fcvt-l-d_op]#FCVT.W.D or
+FCVT.L.D converts a double-precision floating-point number in
+floating-point register _rs1_ to a signed 32-bit or 64-bit integer,
+respectively, in integer register _rd_#. [#norm:fcvt-d-w_fcvt-d-l_op]#FCVT.D.W or FCVT.D.L converts a
+32-bit or 64-bit signed integer, respectively, in integer register _rs1_
+into a double-precision floating-point number in floating-point register
+_rd_#. [#norm:fcvt-wu-d_fcvt-lu-d_fcvt-d-wu_fcvt-d-lu_op]#FCVT.WU.D, FCVT.LU.D, FCVT.D.WU, and FCVT.D.LU variants convert to
+or from unsigned integer values#. [#norm:fcvt-w-d_fcvt-wu-d_sign_ext]#For RV64, FCVT.W[U].D sign-extends the
+32-bit result#. [#norm:fcvt_long_double_rv64_only]#FCVT.L[U].D and FCVT.D.L[U] are RV64-only instructions.#
+[#norm:fcvt_int_double_valid_input]#The range of valid inputs for FCVT._int_.D and the behavior for invalid
+inputs are the same as for FCVT._int_.S#.
+(((floating point, convert and move)))'''
+zh = '''
+浮点到整数以及整数到浮点的转换指令编码在 OP-FP 主操作码空间中。[#norm:fcvt-w-d_fcvt-l-d_op]#FCVT.W.D 或 FCVT.L.D 将浮点寄存器 _rs1_ 中的双精度浮点数分别转换为整数寄存器 _rd_ 中的有符号 32 位或 64 位整数#。[#norm:fcvt-d-w_fcvt-d-l_op]#FCVT.D.W 或 FCVT.D.L 将整数寄存器 _rs1_ 中的 32 位或 64 位有符号整数分别转换为浮点寄存器 _rd_ 中的双精度浮点数#。[#norm:fcvt-wu-d_fcvt-lu-d_fcvt-d-wu_fcvt-d-lu_op]#FCVT.WU.D、FCVT.LU.D、FCVT.D.WU 和 FCVT.D.LU 变体用于转换为无符号整数值或从无符号整数值转换#。[#norm:fcvt-w-d_fcvt-wu-d_sign_ext]#对于 RV64，FCVT.W[U].D 对 32 位结果进行符号扩展#。[#norm:fcvt_long_double_rv64_only]#FCVT.L[U].D 和 FCVT.D.L[U] 是仅限 RV64 的指令。#
+[#norm:fcvt_int_double_valid_input]#FCVT._int_.D 的有效输入范围以及无效输入的行为与 FCVT._int_.S 相同#。
+(((floating point, convert and move)))'''

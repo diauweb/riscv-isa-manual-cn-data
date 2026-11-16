@@ -1,0 +1,20 @@
+unit_id = "61dd5aa1b1eeff9c8eb272498e13d521"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trRamLimitLow: Trace RAM Sink Limit Register (trBaseRamSink+0x018)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|1:0 |--|Always 0 (two LSB of 32-bit address)|RO|0
+|31:2 |trRamLimitLow |Highest absolute 32-bit part of address of trace circular buffer. The `trRamWP` register is reset to `trRamStart` after a trace word has been written to this address. |WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trRamLimitLow：跟踪 RAM 接收端限制寄存器（trBaseRamSink+0x018）*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|1:0 |--|始终为 0（32 位地址的两个 LSB）|RO|0
+|31:2 |trRamLimitLow |跟踪环形缓冲区地址的最高绝对 32 位部分。在向此地址写入一个跟踪字后，`trRamWP` 寄存器复位为 `trRamStart`。 |WARL|<<Undef,Undef>>
+|==='''

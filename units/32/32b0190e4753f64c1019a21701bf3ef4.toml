@@ -1,0 +1,8 @@
+unit_id = "32b0190e4753f64c1019a21701bf3ef4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Before enabling RAM Trace Sink (by setting `trRamEnable` = 1) the trace tool should set `trRamWP??` registers (usually to the same values as in `trRamStart??` register). Enabling trace must NOT change any of `trRamStart/Size/WP/RP??` registers. Just after the trace is enabled `trRamWP??` may change because of trace being added to trace memory.'''
+zh = '''
+在使能 RAM 跟踪接收端（通过设置 `trRamEnable` = 1）之前，跟踪工具应设置 `trRamWP??` 寄存器（通常设置为与 `trRamStart??` 寄存器相同的值）。使能跟踪不得改变任何 `trRamStart/Size/WP/RP??` 寄存器。刚使能跟踪后，`trRamWP??` 可能因跟踪被添加到跟踪内存而改变。'''

@@ -1,0 +1,16 @@
+unit_id = "165ef7c9577981e277eab4d130b00d4e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+As enumerated in the table, a synchronous exception may write to the
+trap instruction register a standard transformation of the trapping
+instruction only for exceptions that arise from explicit memory accesses
+(from loads, stores, and AMO instructions). Accordingly, standard
+transformations are currently defined only for these memory-access
+instructions. If a synchronous trap occurs for a standard instruction
+for which no transformation has been defined, the trap instruction
+register shall be written with zero (or, under certain circumstances,
+with a special pseudoinstruction value).'''
+zh = '''
+如表中列举，同步异常仅对于由显式内存访问（来自加载、存储和 AMO 指令）引起的异常，才可以将导致陷阱指令的标准变换写入陷阱指令寄存器。因此，目前仅为这些内存访问指令定义了标准变换。如果对于未定义变换的标准指令发生同步陷阱，则陷阱指令寄存器应写入零（或在某些情况下写入特殊伪指令值）。'''

@@ -1,0 +1,29 @@
+unit_id = "cb831a284a18e432b397a1d5869eca9b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The loop comprises only an LR/SC sequence and code to retry the
+sequence in the case of failure, and must comprise at most 16
+instructions placed sequentially in memory.
+* An LR/SC sequence begins with an LR instruction and ends with an SC
+instruction. The dynamic code executed between the LR and SC
+instructions can only contain instructions from the base ''I''
+instruction set, excluding loads, stores, backward jumps, taken backward
+branches, JALR, FENCE, and SYSTEM instructions.
+Compressed forms of the aforementioned ''I'' instructions in the Zca and Zcb
+extensions are also permitted.
+* The code to retry a failing LR/SC sequence can contain backwards jumps
+and/or branches to repeat the LR/SC sequence, but otherwise has the same
+constraint as the code between the LR and SC.
+* The LR and SC addresses must lie within a memory region with the
+_LR/SC eventuality_ property. The execution environment is responsible
+for communicating which regions have this property.
+* The SC must be to the same effective address and of the same data size
+as the latest LR executed by the same hart.'''
+zh = '''
+* 该循环仅包含一个 LR/SC 序列以及在失败情况下重试该序列的代码，并且必须在内存中顺序放置最多 16 条指令。
+* LR/SC 序列以 LR 指令开始，以 SC 指令结束。在 LR 和 SC 指令之间执行的动态代码只能包含基础 "I" 指令集中的指令，不包括加载、存储、向后跳转、采用的后向分支、JALR、FENCE 和 SYSTEM 指令。Zca 和 Zcb 扩展中上述 "I" 指令的压缩形式也是允许的。
+* 重试失败的 LR/SC 序列的代码可以包含向后跳转和/或分支以重复该 LR/SC 序列，但除此之外与 LR 和 SC 之间的代码具有相同的约束。
+* LR 和 SC 地址必须位于具有 _LR/SC 最终成功_（eventuality）属性的内存区域内。执行环境负责告知哪些区域具有该属性。
+* SC 必须与同一硬件线程执行的最新 LR 具有相同的有效地址和数据大小。'''

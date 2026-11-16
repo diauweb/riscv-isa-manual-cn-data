@@ -1,0 +1,13 @@
+unit_id = "807d88b982685cd8d021122aa2e17b63"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:trap_del_intr_priv_lvl]#Delegated interrupts result in the interrupt being masked at the
+delegator privilege level. For example, if the supervisor timer
+interrupt (STI) is delegated to S-mode by setting csr:mideleg[][5], STIs
+will not be taken when executing in M-mode. By contrast, if csr:mideleg[][5]
+is clear, STIs can be taken in any mode and regardless of current mode
+will transfer control to M-mode.#'''
+zh = '''
+[#norm:trap_del_intr_priv_lvl]#被委托的中断会在委托方特权级被屏蔽。例如，如果通过设置 csr:mideleg[][5] 将监管定时器中断（STI）委托给 S 模式，则在 M 模式下执行时不会捕获 STI。相比之下，如果 csr:mideleg[][5] 为 0，则 STI 可以在任何模式下被捕获，并且无论当前模式如何，都会将控制权转移到 M 模式。#'''

@@ -1,0 +1,49 @@
+unit_id = "ef51b3d832cd32389cff1f9888198ee1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 3, subformat 1
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 11 (sync): synchronisation
+|*subformat*| 2| 01 (trap): Exception or interrupt cause and trap
+handler address.
+|*branch*| 1| Set to 0 if the address points to a branch instruction,
+and the branch was taken. Set to 1 if the instruction is not a branch or
+if the branch is not taken.
+|*privilege*| _privilege_width_p_| The privilege level of the reported
+instruction.
+|*time*| _time_width_p_ or 0 if _notime_p_ is 1| The time value.
+|*context*| _context_width_p_, or 0 if _nocontext_p_ is 1| The
+instruction context
+|*ecause*| _ecause_width_p_| Exception or interrupt cause.
+|*interrupt*| 1| Interrupt.
+|*thaddr*| 1| When set to 1, *address* points to the trap handler
+address. When set to 0, *address* points to the EPC for an exception at
+the target of an updiscon, and is undefined for other exceptions and
+interrupts.
+|*address*| _iaddress_width_p - iaddress_lsb_p_| Full instruction
+address. Address alignment is determined by _iaddress_lsb_p_ Address
+must be left shifted in order to recreate original byte address.
+|*tval*| _iaddress_width_p_| Value from appropriate
+*utval/stval/vstval/mtval* CSR. Field omitted for interrupts
+|==='''
+zh = '''
+.包格式 3，子格式 1
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段名*| *位数*| *描述*
+|*format*| 2| 11 (sync)：同步
+|*subformat*| 2| 01 (trap)：异常或中断原因及陷阱处理程序地址。
+|*branch*| 1| 如果地址指向分支指令且该分支被采用，则设为 0。如果该指令不是分支或分支未被采用，则设为 1。
+|*privilege*| _privilege_width_p_| 所报告指令的特权级别。
+|*time*| _time_width_p_，若 _notime_p_ 为 1 则为 0| 时间值。
+|*context*| _context_width_p_，若 _nocontext_p_ 为 1 则为 0| 指令上下文
+|*ecause*| _ecause_width_p_| 异常或中断原因。
+|*interrupt*| 1| 中断。
+|*thaddr*| 1| 设为 1 时，*address* 指向陷阱处理程序地址。设为 0 时，对于不可推断的 PC 不连续点目标处的异常，*address* 指向 EPC；对于其他异常和中断则未定义。
+|*address*| _iaddress_width_p - iaddress_lsb_p_| 完整指令地址。地址对齐由 _iaddress_lsb_p_ 决定。地址必须左移才能恢复原始字节地址。
+|*tval*| _iaddress_width_p_| 来自相应 *utval/stval/vstval/mtval* CSR 的值。中断时省略该字段
+|==='''

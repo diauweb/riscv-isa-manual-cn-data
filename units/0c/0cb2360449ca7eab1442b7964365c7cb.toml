@@ -1,0 +1,121 @@
+unit_id = "0cb2360449ca7eab1442b7964365c7cb"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dmcs2-grouptype]] `((grouptype))`
+a|
+
+0 (halt): The remaining fields in this register configure halt groups.
+
+
+1 (resume): The remaining fields in this register configure resume groups.
+a|*WARL*
+a|0
+|[[dmcs2-dmexttrigger]] `((dmexttrigger))`
+a|This field contains the currently selected DM external trigger.
+
+If a non-existent trigger value is written here, the hardware will
+change it to a valid one or 0 if no DM external triggers exist.
+a|*WARL*
+a|0
+|[[dmcs2-group]] `((group))`
+a|When {dmcs2-hgselect} is 0, contains the group of the hart
+specified by {hartsel}.
+
+When {dmcs2-hgselect} is 1, contains the group of the DM external
+trigger selected by {dmcs2-dmexttrigger}.
+
+The value written to this field is ignored unless {dmcs2-hgwrite}
+is also written 1.
+
+Group numbers are contiguous starting at 0, with the highest number
+being implementation-dependent, and possibly different between
+different group types. Debuggers should read back this field after
+writing to confirm they are using a hart group that is supported.
+
+If groups aren't implemented, then this entire field is 0.
+a|*WARL*
+a|Preset
+|[[dmcs2-hgwrite]] `((hgwrite))`
+a|When 1 is written and {dmcs2-hgselect} is 0, for every selected
+hart the DM will change its group to the value written to {dmcs2-group},
+if the hardware supports that group for that hart.
+Implementations may also change the group of a minimal set of
+unselected harts in the same way, if that is necessary due to
+a hardware limitation.
+
+When 1 is written and {dmcs2-hgselect} is 1, the DM will change
+the group of the DM external trigger selected by {dmcs2-dmexttrigger}
+to the value written to {dmcs2-group}, if the hardware supports
+that group for that trigger.
+
+Writing 0 has no effect.
+a|*W1*
+a|-
+|[[dmcs2-hgselect]] `((hgselect))`
+a|
+
+0 (harts): Operate on harts.
+
+
+1 (triggers): Operate on DM external triggers.
+
+If there are no DM external triggers, this field must be tied to 0.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |描述 |访问 |复位
+|[[dmcs2-grouptype]] `((grouptype))`
+a|
+
+0（halt）：此寄存器中其余字段配置停止组。
+
+
+1（resume）：此寄存器中其余字段配置恢复组。
+a|*WARL*
+a|0
+|[[dmcs2-dmexttrigger]] `((dmexttrigger))`
+a|此字段包含当前选中的 DM 外部触发器。
+
+如果在此写入不存在的触发器值，硬件会将其更改为有效值；如果不存在 DM 外部触发器，则改为 0。
+a|*WARL*
+a|0
+|[[dmcs2-group]] `((group))`
+a|当 {dmcs2-hgselect} 为 0 时，包含由 {hartsel} 指定的硬件线程的组。
+
+当 {dmcs2-hgselect} 为 1 时，包含由 {dmcs2-dmexttrigger} 选中的 DM 外部触发器的组。
+
+除非同时向 {dmcs2-hgwrite} 写 1，否则写入此字段的值被忽略。
+
+组编号从 0 开始连续，最高编号取决于实现，并且在不同组类型之间可能不同。调试器在写入后应读回此字段，以确认它们使用的是受支持的硬件线程组。
+
+如果未实现组，则整个字段为 0。
+a|*WARL*
+a|预设
+|[[dmcs2-hgwrite]] `((hgwrite))`
+a|当写入 1 且 {dmcs2-hgselect} 为 0 时，对于每个选中的硬件线程，如果硬件支持该硬件线程使用写入 {dmcs2-group} 的组，则 DM 会将其组更改为该值。如果由于硬件限制而必要，实现还可以以相同方式更改最小一组未选中硬件线程的组。
+
+当写入 1 且 {dmcs2-hgselect} 为 1 时，如果硬件支持该触发器使用写入 {dmcs2-group} 的组，则 DM 会将由 {dmcs2-dmexttrigger} 选中的 DM 外部触发器的组更改为该值。
+
+写入 0 无效果。
+a|*W1*
+a|-
+|[[dmcs2-hgselect]] `((hgselect))`
+a|
+
+0（harts）：对硬件线程操作。
+
+
+1（triggers）：对 DM 外部触发器操作。
+
+如果不存在 DM 外部触发器，则此字段必须硬连线为 0。
+a|*WARL*
+a|0
+|==='''

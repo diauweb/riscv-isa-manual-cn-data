@@ -1,0 +1,18 @@
+unit_id = "8bc83b8dd5a738a65294539260178fa5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The definition of agnostic result policy is left loose to
+accommodate migrating application threads between harts on a small
+in-order core (which probably leaves agnostic regions undisturbed) and
+harts on a larger out-of-order core with register renaming (which
+probably overwrites agnostic elements with 1s).  As it might be
+necessary to restart in the middle, we allow arbitrary mixing of
+agnostic policies within a single vector instruction.  This allowed
+mixing of policies also enables implementations that might change
+policies for different granules of a vector register, for example,
+using undisturbed within a granule that is actively operated on but
+renaming to all 1s for granules in the tail.'''
+zh = '''
+NOTE: 不可知结果策略的定义保持宽松，以适应在小顺序核心（可能使不可知区域不受干扰）和具有寄存器重命名的大型乱序核心（可能用 1 覆盖不可知元素）上的硬件线程之间迁移应用线程。由于可能需要在中间重新启动，我们允许在单条向量指令内任意混合不可知策略。这种允许的策略混合还使实现能够针对向量寄存器的不同粒度改变策略，例如，在主动操作的粒度内使用不受干扰，但对尾部粒度重命名为全 1。'''

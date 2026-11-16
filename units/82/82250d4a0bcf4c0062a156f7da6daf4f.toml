@@ -1,0 +1,33 @@
+unit_id = "82250d4a0bcf4c0062a156f7da6daf4f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Forwarding memory store operations to a memory load might satisfy only
+some slices of the load, leaving other slices unsatisfied.
+
+A program-order-previous store operation that was not available when
+taking the transition above might make latexmath:[$msoss$] provisionally
+unsound (violating coherence) when it becomes available. That store will
+prevent the load from being finished (see <<finish, Finish instruction>>), and will cause it to
+restart when that store operation is propagated (see <<prop_store, Propagate store operation>>).
+
+A consequence of the transition condition above is that
+store-release-RCsc memory store operations cannot be forwarded to
+load-acquire-RCsc instructions: latexmath:[$msoss$] does not include
+memory store operations from finished stores (as those must be
+propagated memory store operations), and the condition above requires
+all program-order-previous store-releases-RCsc to be finished when the
+load is acquire-RCsc.
+===='''
+zh = '''
+[NOTE]
+====
+将内存存储操作转发到内存加载可能只满足加载的某些切片，而其他切片仍未满足。
+
+在执行上述转换时不可用的程序顺序前驱存储操作，在它变为可用时，可能使 latexmath:[$msoss$] 暂时不可靠（违反一致性）。该存储将阻止加载结束（见 <<finish, 结束指令>>），并且当该存储操作被传播时，将导致加载重启（见 <<prop_store, 传播存储操作>>）。
+
+上述转换条件的一个推论是：store-release-RCsc 内存存储操作不能转发到 load-acquire-RCsc 指令：latexmath:[$msoss$] 不包括来自已结束存储的内存存储操作（因为那些必须是已传播的内存存储操作），并且上述条件要求当加载是 acquire-RCsc 时，所有程序顺序前驱的 store-releases-RCsc 都已结束。
+===='''

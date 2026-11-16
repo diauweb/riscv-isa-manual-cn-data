@@ -1,0 +1,14 @@
+unit_id = "af47f6df414faff25681b1d49578cfd4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The insn:fmv.w.x[] and insn:fmv.x.w[] instructions were previously called insn:fmv.s.x[] and insn:fmv.x.s[]. The use of W is more consistent with their semantics as an instruction that moves 32 bits without interpreting them. This became clearer after defining NaN-boxing. To avoid disturbing existing code, both the W and S versions will be supported by tools.
+===='''
+zh = '''
+[NOTE]
+====
+insn:fmv.w.x[] 和 insn:fmv.x.w[] 指令以前称为 insn:fmv.s.x[] 和 insn:fmv.x.s[]。使用 W 更符合它们作为移动 32 位而不解释这些位的指令的语义。在定义 NaN 装箱之后，这一点变得更加清晰。为了避免干扰现有代码，工具将同时支持 W 和 S 版本。
+===='''

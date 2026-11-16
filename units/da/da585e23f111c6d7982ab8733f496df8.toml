@@ -1,0 +1,11 @@
+unit_id = "da585e23f111c6d7982ab8733f496df8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Just as for AMOs in the ext:zaamo[] extension, insn:ssamoswap.w[] or insn:ssamoswap.d[] optionally provides release
+consistency semantics, using the `aq` and `rl` bits, to help implement
+multiprocessor synchronization. An insn:ssamoswap.w[] or insn:ssamoswap.d[] operation has acquire
+semantics if `aq=1` and release semantics if `rl=1`.'''
+zh = '''
+与 ext:zaamo[] 扩展中的 AMO 一样，insn:ssamoswap.w[] 或 insn:ssamoswap.d[] 可选地使用 `aq` 和 `rl` 位提供释放一致性语义，以帮助实现多处理器同步。当 `aq=1` 时，insn:ssamoswap.w[] 或 insn:ssamoswap.d[] 操作具有获取语义；当 `rl=1` 时，具有释放语义。'''

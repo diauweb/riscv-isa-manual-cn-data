@@ -1,0 +1,11 @@
+unit_id = "4684614e261920f0f1ff437af18aab15"
+kind = "code"
+translatable = false
+en = '''
+    0x100:  add ...         ; 32-bit instruction
+    0x104:  XYZ             ; 32-bit instruction (custom conditional branch to 0x200 - it does not matter if direct or indirect ...)
+    0x108:  c.add ...       ; 16-bit instruction
+    0x10A:  c.ebreak        ; 16-bit breakpoint (to stop the code)
+    ...
+    0x200:  c.add ...       ; 16-bit instruction
+    0x202:  c.ebreak        ; 16-bit breakpoint (to stop the code)'''

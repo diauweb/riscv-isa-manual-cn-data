@@ -1,0 +1,18 @@
+unit_id = "2977ebc4c3e06fee263e02408c959edc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Software can distinguish newly overflowed counters (yet to be serviced by an
+overflow interrupt handler) from overflowed counters that have already been
+serviced or that are configured to not generate an interrupt on overflow, by
+maintaining a bit mask reflecting which counters are active and due to
+eventually overflow.
+===='''
+zh = '''
+[NOTE]
+====
+软件可以通过维护一个反映哪些计数器处于活动状态并最终会溢出的位掩码，来区分新近溢出的计数器（尚待溢出中断处理程序服务）与已经服务过的或配置为在溢出时不产生中断的溢出计数器。
+===='''

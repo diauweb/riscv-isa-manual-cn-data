@@ -1,0 +1,8 @@
+unit_id = "260a0083586f9ea13f99b18805a68350"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+IMPORTANT: Decoder must analyze every instruction in each code block being processed to know its size. It cannot skip to the end of the block by calculating *PC+I-CNT*2* as it is UNKNOWN what is the size of the last instruction retired in that block. It may be (compressed) 16-bit or 32-bit (not-compressed) direct conditional branch. Without knowing an instruction size, the offset encoded in that direct conditional branch cannot be determined and the next PC (after a branch) cannot be calculated.'''
+zh = '''
+IMPORTANT: 解码器必须分析所处理每个代码块中的每条指令以了解其大小。它不能通过计算 *PC+I-CNT*2* 跳到块末尾，因为不知道该块中最后一条退休指令的大小。它可能是（压缩的）16 位或 32 位（非压缩）直接条件分支。如果不知道指令大小，就无法确定该直接条件分支中编码的偏移量，也无法计算（分支后的）下一条 PC。'''

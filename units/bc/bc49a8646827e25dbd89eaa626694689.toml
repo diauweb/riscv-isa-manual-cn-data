@@ -1,0 +1,28 @@
+unit_id = "bc49a8646827e25dbd89eaa626694689"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. For integer operations, the scalar can be a 5-bit immediate, `imm[4:0]`, encoded
+in the `rs1` field.  The value is sign-extended to SEW bits, unless
+otherwise specified.
+
+. For integer operations, the scalar can be taken from the scalar `x`
+register specified by `rs1`.  If XLEN>SEW, the least-significant SEW
+bits of the `x` register are used, unless otherwise specified.  If
+XLEN<SEW, the value from the `x` register is sign-extended to SEW
+bits.
+
+. For floating-point operations, the scalar can be taken from a scalar
+`f` register.  If FLEN > SEW, the value in the `f` registers is
+checked for a valid NaN-boxed value, in which case the
+least-significant SEW bits of the `f` register are used, else the
+canonical NaN value is used.  Vector instructions where any
+floating-point vector operand's EEW is not a supported floating-point
+type width (which includes when FLEN < SEW) are reserved.'''
+zh = '''
+. 对于整数操作，标量可以是编码在 `rs1` 字段中的 5 位立即数 `imm[4:0]`。除非另有说明，该值符号扩展至 SEW 位。
+
+. 对于整数操作，标量可以取自 `rs1` 指定的标量 `x` 寄存器。如果 XLEN>SEW，除非另有说明，使用 `x` 寄存器的最低 SEW 位。如果 XLEN<SEW，则来自 `x` 寄存器的值符号扩展至 SEW 位。
+
+. 对于浮点操作，标量可以取自标量 `f` 寄存器。如果 FLEN > SEW，则检查 `f` 寄存器中的值是否为有效的 NaN-boxed 值，在这种情况下使用 `f` 寄存器的最低 SEW 位，否则使用规范 NaN 值。任何浮点向量操作数的 EEW 不是受支持的浮点类型宽度的向量指令（包括 FLEN < SEW 的情况）都是保留的。'''

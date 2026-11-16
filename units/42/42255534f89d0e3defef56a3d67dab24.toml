@@ -1,0 +1,94 @@
+unit_id = "42255534f89d0e3defef56a3d67dab24"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A common operation performed on stacks is to unwind them to support constructs
+like `setjmp`/`longjmp`, C++ exception handling, etc. A program that uses shadow
+stacks must unwind the shadow stack in addition to the stack used to store data.
+The unwind function must verify that it does not accidentally unwind past the
+bounds of the shadow stack. Shadow stacks are expected to be bounded on each end
+using guard pages. A guard page for a stack is a page that is not accessible by
+the process that owns the stack. To detect if the unwind occurs past the bounds
+of the shadow stack, the unwind may be done in maximal increments of 4 KiB,
+testing whether the csr:ssp[] is still pointing to a shadow stack page or has
+unwound into the guard page. The following examples illustrate the use of shadow
+stack instructions to unwind a shadow stack. This example assumes that the
+`setjmp` function itself does not push on to the shadow stack (being a leaf
+function, it is not required to).
+
+[source,c]
+----
+setjmp() {
+    :
+    :
+    // read and save the shadow stack pointer to jmp_buf
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    jmp_buf->saved_ssp = cur_ssp;
+    :
+    :
+}
+longjmp() {
+    :
+    // Read current shadow stack pointer and
+    // compute number of call frames to unwind
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    // Skip the unwind if backward-edge CFI not active
+    asm("beqz %0, back_cfi_not_active" : "=r"(cur_ssp):);
+    // Unwind the frames in a loop
+    while ( jmp_buf->saved_ssp > cur_ssp ) {
+        // advance by a maximum of 4K at a time to avoid
+        // unwinding past bounds of the shadow stack
+        cur_ssp = ( (jmp_buf->saved_ssp - cur_ssp) >= 4096 ) ?
+                  (cur_ssp + 4096) : jmp_buf->saved_ssp;
+        asm("csrw ssp, %0" : :  "r" (cur_ssp));
+        // Test if unwound past the shadow stack bounds
+        asm("sspush x5");
+        asm("sspopchk x5");
+    }
+back_cfi_not_active:
+    :
+}
+----
+===='''
+zh = '''
+[NOTE]
+====
+对栈执行的常见操作之一是展开栈，以支持 `setjmp`/`longjmp`、C++ 异常处理等构造。使用影子栈的程序除了展开用于存储数据的栈之外，还必须展开影子栈。展开函数必须验证它不会意外展开越过影子栈的边界。影子栈预期在两端使用保护页加以界定。栈的保护页是该栈所有者进程无法访问的页。为了检测展开是否越过影子栈的边界，可以以最大 4 KiB 的增量执行展开，测试 csr:ssp[] 是否仍指向影子栈页，或者已展开进入保护页。以下示例说明如何使用影子栈指令展开影子栈。此示例假设 `setjmp` 函数本身不压入影子栈（作为叶子函数，它不需要这样做）。
+
+[source,c]
+----
+setjmp() {
+    :
+    :
+    // read and save the shadow stack pointer to jmp_buf
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    jmp_buf->saved_ssp = cur_ssp;
+    :
+    :
+}
+longjmp() {
+    :
+    // Read current shadow stack pointer and
+    // compute number of call frames to unwind
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    // Skip the unwind if backward-edge CFI not active
+    asm("beqz %0, back_cfi_not_active" : "=r"(cur_ssp):);
+    // Unwind the frames in a loop
+    while ( jmp_buf->saved_ssp > cur_ssp ) {
+        // advance by a maximum of 4K at a time to avoid
+        // unwinding past bounds of the shadow stack
+        cur_ssp = ( (jmp_buf->saved_ssp - cur_ssp) >= 4096 ) ?
+                  (cur_ssp + 4096) : jmp_buf->saved_ssp;
+        asm("csrw ssp, %0" : :  "r" (cur_ssp));
+        // Test if unwound past the shadow stack bounds
+        asm("sspush x5");
+        asm("sspopchk x5");
+    }
+back_cfi_not_active:
+    :
+}
+----
+===='''

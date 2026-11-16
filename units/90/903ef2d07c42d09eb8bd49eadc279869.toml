@@ -1,0 +1,15 @@
+unit_id = "903ef2d07c42d09eb8bd49eadc279869"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: We considered but did not pursue overlaying the `f` registers on
+`v` registers.  The adopted approach reduces vector register pressure,
+avoids interactions with the standard calling convention, simplifies
+high-performance scalar floating-point design, and provides
+compatibility with the ext:zfinx[] ISA option.  Overlaying `f` with `v`
+would provide the advantage of lowering the number of state bits in
+some implementations, but complicates high-performance designs and
+would prevent compatibility with the ext:zfinx[] ISA option.'''
+zh = '''
+NOTE: 我们考虑过但未采用将 `f` 寄存器叠加到 `v` 寄存器上的方案。所采用的方法减少了向量寄存器压力，避免了与标准调用约定的交互，简化了高性能标量浮点设计，并提供了与 ext:zfinx[] ISA 选项的兼容性。将 `f` 与 `v` 叠加将提供降低某些实现中状态位数的优势，但会使高性能设计复杂化，并会阻止与 ext:zfinx[] ISA 选项的兼容性。'''

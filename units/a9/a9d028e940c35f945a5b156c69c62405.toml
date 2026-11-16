@@ -1,0 +1,14 @@
+unit_id = "a9d028e940c35f945a5b156c69c62405"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This chapter describes the Zfh standard extension for _half-precision_
+floating-point, which adds computational instructions compliant with the IEEE
+754-2008 arithmetic standard's binary16 format and operations. The Zfh extension
+depends on the F extension. The NaN-boxing scheme described in <<nanboxing>> is
+extended to allow a half-precision value to be NaN-boxed inside a
+single-precision value (which may be recursively NaN-boxed inside a double- or
+quad-precision value when the D or Q extension is present).'''
+zh = '''
+本章描述用于__半精度__浮点的 Zfh 标准扩展，它添加了符合 IEEE 754-2008 算术标准 binary16 格式和操作的计算指令。Zfh 扩展依赖于 F 扩展。<<nanboxing>> 中描述的 NaN 装箱方案得到扩展，以允许半精度值 NaN 装箱在单精度值内（当存在 D 或 Q 扩展时，该单精度值可递归地 NaN 装箱在双精度或四精度值内）。'''

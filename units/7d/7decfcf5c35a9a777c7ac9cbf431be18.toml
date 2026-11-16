@@ -1,0 +1,14 @@
+unit_id = "7decfcf5c35a9a777c7ac9cbf431be18"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For the common case that the translation data structures have only been
+modified for a single address mapping (i.e., one page or superpage),
+_rs1_ can specify a virtual address within that mapping to effect a
+translation fence for that mapping only. Furthermore, for the common
+case that the translation data structures have only been modified for a
+single address-space identifier, _rs2_ can specify the address space.
+The behavior of SFENCE.VMA depends on _rs1_ and _rs2_ as follows:'''
+zh = '''
+对于转换数据结构仅针对单个地址映射（即一个页或超级页）被修改的常见情况，_rs1_ 可以指定该映射内的一个虚拟地址，以仅对该映射实施转换栅栏。此外，对于转换数据结构仅针对单个地址空间标识符被修改的常见情况，_rs2_ 可以指定该地址空间。SFENCE.VMA 的行为取决于 _rs1_ 和 _rs2_，如下所示：'''

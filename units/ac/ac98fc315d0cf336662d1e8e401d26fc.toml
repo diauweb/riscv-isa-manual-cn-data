@@ -1,0 +1,17 @@
+unit_id = "ac98fc315d0cf336662d1e8e401d26fc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:fence.i[] instruction is used to synchronize the instruction and data
+streams. RISC-V does not guarantee that stores to instruction memory will be
+made visible to instruction fetches on a RISC-V hart until that hart executes a
+insn:fence.i[] instruction. A insn:fence.i[] instruction ensures that a
+subsequent instruction fetch on a RISC-V hart will see any previous data stores
+already visible to the same RISC-V hart. insn:fence.i[] does _not_ ensure that
+other RISC-V harts' instruction fetches will observe the local hart's stores in
+a multiprocessor system. To make a store to instruction memory visible to all
+RISC-V harts, the writing hart also has to execute a data insnlink:fence[]
+before requesting that all remote RISC-V harts execute a insn:fence.i[].'''
+zh = '''
+insn:fence.i[] 指令用于同步指令流和数据流。RISC-V 不保证对指令存储器的存储操作在该硬件线程执行 insn:fence.i[] 指令之前对其指令取指可见。insn:fence.i[] 指令确保 RISC-V 硬件线程上后续的指令取指将看到对同一 RISC-V 硬件线程已经可见的任何先前数据存储。insn:fence.i[] _不_ 确保在多处理器系统中其他 RISC-V 硬件线程的指令取指会观察到本地硬件线程的存储。要使对指令存储器的存储对所有 RISC-V 硬件线程可见，执行写入的硬件线程还必须在请求所有远程 RISC-V 硬件线程执行 insn:fence.i[] 之前执行一次数据 insnlink:fence[]。'''

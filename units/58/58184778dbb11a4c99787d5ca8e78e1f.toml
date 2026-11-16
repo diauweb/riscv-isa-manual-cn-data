@@ -1,0 +1,13 @@
+unit_id = "58184778dbb11a4c99787d5ca8e78e1f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:csrrc[] (Atomic Read and Clear Bits in CSR) instruction reads the
+value of the CSR, zero-extends the value to XLEN bits, and writes it to
+integer register _rd_. The initial value in integer register _rs1_ is
+treated as a bit mask that specifies bit positions to be cleared in the
+CSR. Any bit that is high in _rs1_ will cause the corresponding bit to
+be cleared in the CSR, if that CSR bit is writable.'''
+zh = '''
+insn:csrrc[]（原子读取并清除 CSR 中的位）指令读取 CSR 的值，将该值零扩展至 XLEN 位，并写入整数寄存器 _rd_。整数寄存器 _rs1_ 中的初始值被视为位掩码，用于指定要在 CSR 中清除的位位置。如果 _rs1_ 中某位为高，则只要该 CSR 位可写，就会使 CSR 中对应的位清除。'''

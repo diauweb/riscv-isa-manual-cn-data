@@ -1,0 +1,20 @@
+unit_id = "ee5751c68637ca2d85589cc63d504354"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_When CCE>1, the granularity of the reported cycle count is reduced. For example, when CCE=3, the bottom 2 bits of the cycle counter are not reported, and thus the reported value increments only every 4 cycles.  As a result, the reported value represents an undercount of elapsed cycles for most cases (when the unreported bits are non-zero).  On average, the undercount will be (2^CCE-1^-1)/2.  Software can reduce the average undercount to 0 by adding (2^CCE-1^-1)/2 to each computed cycle count value when CCE>1._
+
+_Though this compressed method of representation results in some imprecision for larger cycle count values, it produces meaningful area savings, reducing storage per entry from 27 bits to 16._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_当 CCE>1 时，所报告周期计数的粒度降低。例如，当 CCE=3 时，周期计数器的低 2 位不被报告，因此所报告的值仅每 4 个周期递增一次。因此，在大多数情况下（当未报告的位非零时），所报告的值表示对经过周期数的低估。平均而言，低估量为 (2^CCE-1^-1)/2。软件可以在 CCE>1 时对每个计算出的周期计数值加上 (2^CCE-1^-1)/2，从而将平均低估量降至 0。_
+
+_尽管这种压缩表示方法在较大的周期计数值下会导致一些不精确，但它带来了可观的面积节省，将每个条目的存储从 27 位减少到 16 位。_
+===='''

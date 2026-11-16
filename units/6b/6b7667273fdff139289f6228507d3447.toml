@@ -1,0 +1,14 @@
+unit_id = "6b7667273fdff139289f6228507d3447"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The implementation of optional RISC-V extensions has the potential to open
+covert channels between separate user threads, or between separate guest OSes
+running under a hypervisor. The problem occurs when an extension adds processor
+state -- usually explicit registers, but possibly other forms of state -- that
+the main OS or hypervisor is unaware of (and hence won't context-switch) but
+that can be modified/written by one user thread or guest OS and
+perceived/examined/read by another.'''
+zh = '''
+可选 RISC-V 扩展的实现有可能在不同的用户线程之间，或在管理程序下运行的各个客户机操作系统之间，打开隐蔽信道。当某个扩展增加了主操作系统或管理程序并不知悉（因而不会进行上下文切换）的处理器状态——通常是显式寄存器，但也可能是其他形式的状态——而该状态可被一个用户线程或客户机操作系统修改/写入、并可被另一个用户线程或客户机操作系统感知/检查/读取时，问题就出现了。'''

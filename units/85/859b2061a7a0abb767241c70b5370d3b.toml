@@ -1,0 +1,18 @@
+unit_id = "859b2061a7a0abb767241c70b5370d3b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<ntl>> lists several sample memory hierarchies and
+recommends how each insn:ntl[] variant maps onto each cache level. The table
+also recommends which insn:ntl[] variant that implementation-tuned software
+should use to avoid allocating in a particular cache level. For example,
+for a system with a private L1 and a shared L2, it is recommended that
+insn:ntl.p1[] and insn:ntl.pall[] indicate that temporal locality cannot be exploited
+by the L1, and that insn:ntl.s1[] and insn:ntl.all[] indicate that temporal locality
+cannot be exploited by the L2. Furthermore, software tuned for such a
+system should use insn:ntl.p1[] to indicate a lack of temporal locality
+exploitable by the L1, or should use insn:ntl.all[] indicate a lack of temporal
+locality exploitable by the L2.'''
+zh = '''
+<<ntl>> 列出了若干示例内存层次结构，并推荐了每种 insn:ntl[] 变体如何映射到每个缓存级别。该表还推荐了针对特定实现调优的软件应使用哪种 insn:ntl[] 变体来避免在特定缓存级别中分配。例如，对于具有私有 L1 和共享 L2 的系统，建议 insn:ntl.p1[] 和 insn:ntl.pall[] 指示 L1 无法利用时间局部性，而 insn:ntl.s1[] 和 insn:ntl.all[] 指示 L2 无法利用时间局部性。此外，针对此类系统调优的软件应使用 insn:ntl.p1[] 来指示 L1 无法利用的时间局部性缺失，或应使用 insn:ntl.all[] 指示 L2 无法利用的时间局部性缺失。'''

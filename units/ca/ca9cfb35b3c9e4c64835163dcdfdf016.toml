@@ -1,0 +1,22 @@
+unit_id = "ca9cfb35b3c9e4c64835163dcdfdf016"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} | `csrw s0, MSTATUS` |
+| Write | `progbuf1` | `ebreak` |
+| Write | {dm-data0} | new value |
+| Write | {dm-command} | {accessregister-aarsize}=2, {accessregister-postexec}, {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | Write `s0`, then execute program buffer
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `csrw s0, MSTATUS` |
+| 写 | `progbuf1` | `ebreak` |
+| 写 | {dm-data0} | 新值 |
+| 写 | {dm-command} | {accessregister-aarsize}=2, {accessregister-postexec}, {accessregister-transfer}, {accessregister-write}, {accessregister-regno} = 0x1008 | 写入 `s0`，然后执行程序缓冲区
+|==='''

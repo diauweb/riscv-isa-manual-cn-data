@@ -1,0 +1,13 @@
+unit_id = "12b0e0078a022dbe6eb1c56cf60b1b6a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The information presented in a block represents a contiguous block of
+instructions starting at *iaddr*, all of which retired in the same
+cycle. Note if *itype* is 1 or 2 (indicating an exception or an
+interrupt), the number of instructions retired may be zero. *cause* and
+*tval* are only defined if *itype* is 1 or 2. If **iretire**=0 and
+**itype**=0, the values of all other signals are undefined.'''
+zh = '''
+块中呈现的信息表示从 *iaddr* 开始的一段连续指令块，其中所有指令都在同一周期退役。注意，如果 *itype* 为 1 或 2（表示异常或中断），则退役的指令数可以为零。*cause* 和 *tval* 仅在 *itype* 为 1 或 2 时才有定义。如果 **iretire**=0 且 **itype**=0，则所有其他信号的值均未定义。'''

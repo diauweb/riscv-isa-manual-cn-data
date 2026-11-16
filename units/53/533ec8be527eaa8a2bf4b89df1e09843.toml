@@ -1,0 +1,14 @@
+unit_id = "533ec8be527eaa8a2bf4b89df1e09843"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_l_bit_function]#The L bit indicates that the PMP entry is locked, i.e., writes to the
+configuration register and associated address registers are ignored.#
+[#norm:pmp_locked_until_reset]#Locked PMP entries remain locked until the hart is reset.# [#norm:pmp_l_bit_write_protection]#If PMP entry
+_i_ is locked, writes to ``pmp``__i__``cfg`` and ``pmpaddr``__i__ are ignored. Additionally, if PMP
+entry _i_ is locked and ``pmp``__i__``cfg.A`` is set
+to TOR, writes to ``pmpaddr``__i__-1 are ignored.#'''
+zh = '''
+[#norm:pmp_l_bit_function]#L 位指示 PMP 条目已锁定，即对配置寄存器和关联地址寄存器的写入被忽略。#
+[#norm:pmp_locked_until_reset]#已锁定的 PMP 条目保持锁定，直到硬件线程复位。# [#norm:pmp_l_bit_write_protection]#如果 PMP 条目 _i_ 已锁定，则对 ``pmp``__i__``cfg`` 和 ``pmpaddr``__i__ 的写入被忽略。此外，如果 PMP 条目 _i_ 已锁定且 ``pmp``__i__``cfg.A`` 被设置为 TOR，则对 ``pmpaddr``__i__-1 的写入被忽略。#'''

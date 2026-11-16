@@ -1,0 +1,15 @@
+unit_id = "e8cd371127b14ac758dfa2c37d4abce7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The encoding of the MODE field is shown in <<norm:mtvec_mode_enc>>.
+[#norm:mtvec_mode_direct_op]#When MODE=Direct, all traps into
+machine mode cause the `pc` to be set to the address in the BASE field.#
+[#norm:mtvec_mode_vectored_op]#When MODE=Vectored, all synchronous exceptions into machine mode cause
+the `pc` to be set to the address in the BASE field, whereas interrupts
+cause the `pc` to be set to the address in the BASE field plus four
+times the interrupt cause number.#
+For example, a machine-mode timer interrupt (see <<norm:mcause_exccode_enc_img>>) causes the `pc` to be set to BASE+`0x1c`.'''
+zh = '''
+MODE 字段的编码如 <<norm:mtvec_mode_enc>> 所示。[#norm:mtvec_mode_direct_op]#当 MODE=Direct 时，陷入机器模式的所有陷阱都使 `pc` 被设为 BASE 字段中的地址。# [#norm:mtvec_mode_vectored_op]#当 MODE=Vectored 时，陷入机器模式的所有同步异常使 `pc` 被设为 BASE 字段中的地址，而中断则使 `pc` 被设为 BASE 字段中的地址加上中断原因编号的四倍。# 例如，机器模式定时器中断（见 <<norm:mcause_exccode_enc_img>>）使 `pc` 被设为 BASE+`0x1c`。'''

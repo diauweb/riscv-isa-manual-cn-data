@@ -1,0 +1,16 @@
+unit_id = "9f74f905d68f4042871489918e31946a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vfrsqrt7_op_precise]#More precisely, the result is computed as follows.
+Let the normalized input exponent be equal to the input exponent if the input
+is normal, or 0 minus the number of leading zeros in the significand
+otherwise.
+If the input is subnormal, the normalized input significand is given by
+shifting the input significand left by 1 minus the normalized input exponent,
+discarding the leading 1 bit.
+The output exponent equals floor((3*B - 1 - the normalized input exponent) / 2),
+where B is the exponent bias. The output sign equals the input sign.#'''
+zh = '''
+[#norm:vfrsqrt7_op_precise]#更精确地说，结果按如下方式计算。如果输入是正规数，则规格化输入指数等于输入指数；否则等于 0 减去有效数中前导零的个数。如果输入是次正规数，则规格化输入有效数由将输入有效数左移（1 减去规格化输入指数）位并丢弃前导 1 位得到。输出指数等于 floor((3*B - 1 - 规格化输入指数) / 2)，其中 B 是指数偏置。输出符号等于输入符号。#'''

@@ -1,0 +1,77 @@
+unit_id = "0e4fac659d0d1a174a17fc122141210c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The ISA has been divided into an integer base with several standard
+extensions.
+* The instruction formats have been rearranged to make immediate
+encoding more efficient.
+* The base ISA has been defined to have a little-endian memory system,
+with big-endian or bi-endian as non-standard variants.
+* Load-Reserved/Store-Conditional (`LR/SC`) instructions have been added
+in the atomic instruction extension.
+* `AMOs` and `LR/SC` can support the release consistency model.
+* The `FENCE` instruction provides finer-grain memory and I/O orderings.
+* An `AMO` for fetch-and-`XOR` (`AMOXOR`) has been added, and the encoding for
+`AMOSWAP` has been changed to make room.
+* The `AUIPC` instruction, which adds a 20-bit upper immediate to the `PC`,
+replaces the `RDNPC` instruction, which only read the current `PC` value.
+This results in significant savings for position-independent code.
+* The `JAL` instruction has now moved to the `U-Type` format with an
+explicit destination register, and the `J` instruction has been dropped
+being replaced by `JAL` with _rd_=`x0`. This removes the only instruction
+with an implicit destination register and removes the `J-Type` instruction
+format from the base ISA. There is an accompanying reduction in `JAL`
+reach, but a significant reduction in base ISA complexity.
+* The static hints on the `JALR` instruction have been dropped. The hints
+are redundant with the _rd_ and _rs1_ register specifiers for code
+compliant with the standard calling convention.
+* The `JALR` instruction now clears the lowest bit of the calculated
+target address, to simplify hardware and to allow auxiliary information
+to be stored in function pointers.
+* The `MFTX.S` and `MFTX.D` instructions have been renamed to `FMV.X.S` and
+`FMV.X.D`, respectively. Similarly, `MXTF.S` and `MXTF.D` instructions have
+been renamed to `FMV.S.X` and `FMV.D.X`, respectively.
+* The `MFFSR` and `MTFSR` instructions have been renamed to `FRCSR` and `FSCSR`,
+respectively. `FRRM`, `FSRM`, `FRFLAGS`, and `FSFLAGS` instructions have been
+added to individually access the rounding mode and exception flags
+subfields of the `fcsr`.
+* The `FMV.X.S` and `FMV.X.D` instructions now source their operands from
+_rs1_, instead of _rs2_. This change simplifies datapath design.
+* `FCLASS.S` and `FCLASS.D` floating-point classify instructions have been
+added.
+* A simpler NaN generation and propagation scheme has been adopted.
+* For `RV32I`, the system performance counters have been extended to
+64-bits wide, with separate read access to the upper and lower 32 bits.
+* Canonical `NOP` and `MV` encodings have been defined.
+* Standard instruction-length encodings have been defined for 48-bit,
+64-bit, and latexmath:[$>$]64-bit instructions.
+* Description of a 128-bit address space variant, `RV128`, has been added.
+* Major opcodes in the 32-bit base instruction format have been
+allocated for user-defined custom extensions.
+* A typographical error that suggested that stores source their data
+from _rd_ has been corrected to refer to _rs2_.'''
+zh = '''
+* ISA 已划分为整数基础部分和若干标准扩展。
+* 重新排列了指令格式，使立即数编码更高效。
+* 基础 ISA 已定义为具有小端内存系统，大端或双端作为非标准变体。
+* 在原子指令扩展中添加了加载保留/存储条件（`LR/SC`）指令。
+* `AMOs` 和 `LR/SC` 可以支持释放一致性模型。
+* `FENCE` 指令提供更细粒度的内存和 I/O 排序。
+* 添加了用于取指并 `XOR` 的 `AMO`（`AMOXOR`），并更改了 `AMOSWAP` 的编码以腾出空间。
+* `AUIPC` 指令将 20 位高位立即数加到 `PC` 上，取代了仅读取当前 `PC` 值的 `RDNPC` 指令。这为位置无关代码带来了显著节省。
+* `JAL` 指令现在移至 `U-Type` 格式，并带有显式目标寄存器，`J` 指令已被删除，由 _rd_=`x0` 的 `JAL` 取代。这移除了唯一具有隐式目标寄存器的指令，并从基础 ISA 中移除了 `J-Type` 指令格式。随之而来的是 `JAL` 可达范围的减小，但基础 ISA 复杂性显著降低。
+* 删除了 `JALR` 指令上的静态提示。对于符合标准调用约定的代码，这些提示与 _rd_ 和 _rs1_ 寄存器说明符冗余。
+* `JALR` 指令现在清除计算出的目标地址的最低位，以简化硬件并允许在函数指针中存储辅助信息。
+* `MFTX.S` 和 `MFTX.D` 指令分别重命名为 `FMV.X.S` 和 `FMV.X.D`。类似地，`MXTF.S` 和 `MXTF.D` 指令分别重命名为 `FMV.S.X` 和 `FMV.D.X`。
+* `MFFSR` 和 `MTFSR` 指令分别重命名为 `FRCSR` 和 `FSCSR`。添加了 `FRRM`、`FSRM`、`FRFLAGS` 和 `FSFLAGS` 指令，以分别访问 `fcsr` 的舍入模式和异常标志子字段。
+* `FMV.X.S` 和 `FMV.X.D` 指令现在从 _rs1_ 而不是 _rs2_ 获取操作数。此更改简化了数据通路设计。
+* 添加了 `FCLASS.S` 和 `FCLASS.D` 浮点分类指令。
+* 采用了更简单的 NaN 生成和传播方案。
+* 对于 `RV32I`，系统性能计数器已扩展到 64 位宽，并分别读取高 32 位和低 32 位。
+* 定义了规范的 `NOP` 和 `MV` 编码。
+* 为 48 位、64 位和 latexmath:[$>$]64 位指令定义了标准指令长度编码。
+* 添加了 128 位地址空间变体 `RV128` 的描述。
+* 32 位基础指令格式中的主操作码已分配给用户定义的自定义扩展。
+* 更正了一个排版错误，该错误暗示存储从 _rd_ 获取数据，现已改为引用 _rs2_。'''

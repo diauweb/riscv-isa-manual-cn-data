@@ -1,0 +1,13 @@
+unit_id = "f1c47d86e386884c09ed971d047fd4cc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+*iretire* contains the number of (16-bit) half-words represented by
+instructions retired in this block, and *ilastsize* the size of the last
+instruction. Half-words rather than instruction count enables the
+encoder to easily compute the address of the last instruction in the
+block without having access to the size of every instruction in the
+block.'''
+zh = '''
+*iretire* 包含本块中退役指令所代表的（16 位）半字数，*ilastsize* 为最后一条指令的大小。使用半字数而非指令条数，使编码器无需访问块中每条指令的大小，即可轻松计算块中最后一条指令的地址。'''
