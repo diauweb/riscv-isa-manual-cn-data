@@ -1,7 +1,7 @@
 {
   "upstream_repo": "https://github.com/riscv/riscv-isa-manual.git",
   "baseline_cutoff": "2025-05-08",
-  "last_synced_sha": "2713ba1fc5f2ccb1d5ebcb5e77f1b32e6f58bc5b",
+  "last_synced_sha": "5f1104a0613af80219232b1e4bc108f9ec2bd6b2",
   "known_tags": {
     "20240411": "6ee57d8997021aaa8025e208164763fe12e03c19",
     "20250508": "584390d9d872835b1bc45ab9ea946b56db3ad485",
@@ -13189,6 +13189,86 @@
         "deleted": 0,
         "touched_chapters": [
           "priv/sm"
+        ]
+      }
+    },
+    {
+      "sha": "299a89b5cecdf0cc63e8822ffee447e24b76957e",
+      "parent_sha": "2713ba1fc5f2ccb1d5ebcb5e77f1b32e6f58bc5b",
+      "is_baseline": false,
+      "date": "2026-11-13T14:25:41-08:00",
+      "title": "Add note about hedeleg[19:18] writability in priv <= 1.12 (#3541)",
+      "ratified_tag": null,
+      "draft_tags": [],
+      "diff": {
+        "added": 1,
+        "modified": 0,
+        "moved": 0,
+        "deleted": 0,
+        "touched_chapters": [
+          "priv/hypervisor"
+        ]
+      }
+    },
+    {
+      "sha": "c773465804d31197220a387391c76df10ca84520",
+      "parent_sha": "299a89b5cecdf0cc63e8822ffee447e24b76957e",
+      "is_baseline": false,
+      "date": "2026-11-13T14:37:12-08:00",
+      "title": "Narrow four Zicsr norm tags (#3528)",
+      "ratified_tag": null,
+      "draft_tags": [
+        "riscv-isa-release-299a89b-2026-11-13",
+        "riscv-isa-release-c773465-2026-11-13"
+      ],
+      "diff": {
+        "added": 0,
+        "modified": 3,
+        "moved": 0,
+        "deleted": 0,
+        "touched_chapters": [
+          "priv/priv-csrs"
+        ]
+      }
+    },
+    {
+      "sha": "21ee747cb7c0815a5f60daee3d13b83c9a468517",
+      "parent_sha": "c773465804d31197220a387391c76df10ca84520",
+      "is_baseline": false,
+      "date": "2026-11-13T16:48:38-08:00",
+      "title": "Zama16b applies only to cacheable and coherent main memory (#3542)",
+      "ratified_tag": null,
+      "draft_tags": [
+        "riscv-isa-release-21ee747-2026-11-14"
+      ],
+      "diff": {
+        "added": 1,
+        "modified": 3,
+        "moved": 0,
+        "deleted": 1,
+        "touched_chapters": [
+          "priv/machine"
+        ]
+      }
+    },
+    {
+      "sha": "5f1104a0613af80219232b1e4bc108f9ec2bd6b2",
+      "parent_sha": "21ee747cb7c0815a5f60daee3d13b83c9a468517",
+      "is_baseline": false,
+      "date": "2026-11-13T17:31:40-08:00",
+      "title": "Reserved rs2 bits of fences must be ignored (#3543)",
+      "ratified_tag": null,
+      "draft_tags": [
+        "riscv-isa-release-5f1104a-2026-11-14"
+      ],
+      "diff": {
+        "added": 0,
+        "modified": 3,
+        "moved": 0,
+        "deleted": 0,
+        "touched_chapters": [
+          "priv/hypervisor",
+          "priv/supervisor"
         ]
       }
     }
