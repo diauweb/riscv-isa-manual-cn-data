@@ -1,7 +1,7 @@
 {
   "upstream_repo": "https://github.com/riscv/riscv-isa-manual.git",
   "baseline_cutoff": "2025-05-08",
-  "last_synced_sha": "5f1104a0613af80219232b1e4bc108f9ec2bd6b2",
+  "last_synced_sha": "c05f1725f25526dd8463bac6ca75cfcfbee17d05",
   "known_tags": {
     "20240411": "6ee57d8997021aaa8025e208164763fe12e03c19",
     "20250508": "584390d9d872835b1bc45ab9ea946b56db3ad485",
@@ -582,6 +582,7 @@
     "riscv-isa-release-b7390b1-2026-05-06": "b7390b1f7d61589d4bbb6438d678d272622aaf17",
     "riscv-isa-release-b796659-2024-11-14": "b796659593eb77519d6a55a52a7c9576adf3611d",
     "riscv-isa-release-b7a445a-2024-07-02": "b7a445ae6f68bf44ab52d11d326a7d44626ce034",
+    "riscv-isa-release-b818fc5-2026-11-19": "b818fc57467b3d50e06c495dca7babba9092cc68",
     "riscv-isa-release-b824d33-2024-03-20": "b824d33cb64b1a6b5f7ded702d8ac4f93dbc3e05",
     "riscv-isa-release-b844908-2026-09-21": "b844908d37610ed73c008ec931eeabf0964e1171",
     "riscv-isa-release-b844908-2026-09-22": "b844908d37610ed73c008ec931eeabf0964e1171",
@@ -613,6 +614,7 @@
     "riscv-isa-release-c001fa2-2025-08-30": "c001fa237cdd8b6079384044462a89eb0e3fd9cf",
     "riscv-isa-release-c021163-2026-04-07": "c0211635f0d7b34ea1af3306e5d9157a98e7c8b0",
     "riscv-isa-release-c0442bf-2026-11-05": "c0442bfab5e51e0b20cdecccb5eed9b056d79c24",
+    "riscv-isa-release-c05f172-2026-11-20": "c05f1725f25526dd8463bac6ca75cfcfbee17d05",
     "riscv-isa-release-c164f05-2025-02-06": "c164f059166da2c71e8971d69e8ea5a26c96ceb6",
     "riscv-isa-release-c1662f6-2025-05-21": "c1662f6aec4a17fff97abe45336c531c478c7761",
     "riscv-isa-release-c1e1e1e-2026-07-15": "c1e1e1eceed9ccdddaf2a7611ac20e1e4230c77b",
@@ -13271,6 +13273,44 @@
         "touched_chapters": [
           "priv/hypervisor",
           "priv/supervisor"
+        ]
+      }
+    },
+    {
+      "sha": "b818fc57467b3d50e06c495dca7babba9092cc68",
+      "parent_sha": "5f1104a0613af80219232b1e4bc108f9ec2bd6b2",
+      "is_baseline": false,
+      "date": "2026-11-19T15:11:02-08:00",
+      "title": "[RVBNA] Correcting RVBNA pseudo-code (#3244)",
+      "ratified_tag": null,
+      "draft_tags": [
+        "riscv-isa-release-b818fc5-2026-11-19"
+      ],
+      "diff": {
+        "added": 0,
+        "modified": 0,
+        "moved": 0,
+        "deleted": 0,
+        "touched_chapters": []
+      }
+    },
+    {
+      "sha": "c05f1725f25526dd8463bac6ca75cfcfbee17d05",
+      "parent_sha": "b818fc57467b3d50e06c495dca7babba9092cc68",
+      "is_baseline": false,
+      "date": "2026-11-19T15:50:10-08:00",
+      "title": "Clarify that instructions are always a multiple of IALIGN bits long (#3549)",
+      "ratified_tag": null,
+      "draft_tags": [
+        "riscv-isa-release-c05f172-2026-11-20"
+      ],
+      "diff": {
+        "added": 0,
+        "modified": 1,
+        "moved": 0,
+        "deleted": 0,
+        "touched_chapters": [
+          "unpriv/_introduction"
         ]
       }
     }
