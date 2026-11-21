@@ -1,0 +1,25 @@
+unit_id = "2d8c95d0fd2b292b0e13397ac1297101"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To return after handling a trap, there are separate trap return
+instructions per privilege level, MRET and SRET.
+[#norm:mret_presence]#MRET is always provided.#
+[#norm:sret_presence]#SRET must be provided if supervisor mode is supported, and
+should raise an illegal-instruction exception otherwise.#
+SRET must also raise an illegal-instruction exception when executed in S-mode while TSR=1
+in `mstatus`, as described in <<virt-control>>.
+[#norm:xret_in_higher_mode]#An __x__RET instruction can be executed in privilege mode _x_ or higher,
+where executing a lower-privilege __x__RET instruction will pop the relevant lower-privilege
+interrupt enable and privilege mode stack.#
+[#norm:xret_in_lower_mode]#Attempting to execute an __x__RET
+instruction in a mode less privileged than _x_ will raise an
+illegal-instruction exception.#'''
+zh = '''
+为了在处理陷阱后返回，每个特权级都有单独的陷阱返回指令：MRET 和 SRET。
+[#norm:mret_presence]#MRET 总是提供。#
+[#norm:sret_presence]#如果支持监管模式，则必须提供 SRET，否则应引发非法指令异常。#
+当在 S 模式下执行且 `mstatus` 中 TSR=1 时，SRET 也必须引发非法指令异常，如 <<virt-control>> 所述。
+[#norm:xret_in_higher_mode]#__x__RET 指令可以在特权模式 _x_ 或更高模式下执行，执行较低特权的 __x__RET 指令将弹出相关的较低特权中断使能和特权模式栈。#
+[#norm:xret_in_lower_mode]#尝试在低于 _x_ 的模式下执行 __x__RET 指令将引发非法指令异常。#'''
