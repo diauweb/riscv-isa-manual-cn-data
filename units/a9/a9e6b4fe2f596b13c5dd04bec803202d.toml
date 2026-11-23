@@ -1,0 +1,54 @@
+unit_id = "a9e6b4fe2f596b13c5dd04bec803202d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* in VS-mode, attempts to access a non-high-half counter CSR when the
+corresponding bit in `hcounteren` is 0 and the same bit in `mcounteren`
+is 1;
+* in VS-mode, if XLEN=32, attempts to access a high-half counter CSR
+when the corresponding bit in `hcounteren` is 0 and the same bit in
+`mcounteren` is 1;
+* in VU-mode, attempts to access a non-high-half counter CSR when the
+corresponding bit in either `hcounteren` or `scounteren` is 0 and the
+same bit in `mcounteren` is 1;
+* in VU-mode, if XLEN=32, attempts to access a high-half counter CSR
+when the corresponding bit in either `hcounteren` or `scounteren` is 0
+and the same bit in `mcounteren` is 1;
+* in VS-mode or VU-mode, attempts to execute a hypervisor instruction
+(HLV, HLVX, HSV, or HFENCE);
+* in VS-mode or VU-mode, attempts to access an implemented non-high-half
+hypervisor CSR or VS CSR when the same access (read/write) would be
+allowed in HS-mode, assuming `mstatus`.TVM=0;
+* in VS-mode or VU-mode, if XLEN=32, attempts to access an implemented
+high-half hypervisor CSR or high-half VS CSR when the same access
+(read/write) to the CSR"s low-half partner would be allowed in HS-mode,
+assuming `mstatus`.TVM=0;
+* in VU-mode, attempts to execute WFI when `mstatus`.TW=0, or to execute
+a supervisor instruction (SRET or SFENCE);
+* in VU-mode, attempts to access an implemented non-high-half supervisor
+CSR when the same access (read/write) would be allowed in HS-mode,
+assuming `mstatus`.TVM=0;
+* in VU-mode, if XLEN=32, attempts to access an implemented high-half
+supervisor CSR when the same access to the CSR's low-half partner would
+be allowed in HS-mode, assuming `mstatus`.TVM=0;
+* in VS-mode, attempts to execute WFI when `hstatus`.VTW=1 and
+`mstatus`.TW=0, unless the instruction completes within an
+implementation-specific, bounded time;
+* in VS-mode, attempts to execute SRET when `hstatus`.VTSR=1; and
+* in VS-mode, attempts to execute an SFENCE.VMA or SINVAL.VMA
+instruction or to access `satp`, when `hstatus`.VTVM=1.'''
+zh = '''
+* 在 VS 模式，当 `hcounteren` 中的对应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问非高半部分计数器 CSR；
+* 在 VS 模式，若 XLEN=32，当 `hcounteren` 中的对应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问高半部分计数器 CSR；
+* 在 VU 模式，当 `hcounteren` 或 `scounteren` 中的对应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问非高半部分计数器 CSR；
+* 在 VU 模式，若 XLEN=32，当 `hcounteren` 或 `scounteren` 中的对应位为 0 且 `mcounteren` 中的同一位为 1 时，尝试访问高半部分计数器 CSR；
+* 在 VS 模式或 VU 模式，尝试执行虚拟机监控器指令（HLV、HLVX、HSV 或 HFENCE）；
+* 在 VS 模式或 VU 模式，假定 `mstatus`.TVM=0，当对某个已实现的非高半部分虚拟机监控器 CSR 或 VS CSR 的同一访问（读/写）在 HS 模式中会被允许时，尝试进行该访问；
+* 在 VS 模式或 VU 模式，若 XLEN=32，假定 `mstatus`.TVM=0，当对该 CSR 低半部分对应部件的同一访问（读/写）在 HS 模式中会被允许时，尝试访问已实现的高半部分虚拟机监控器 CSR 或高半部分 VS CSR；
+* 在 VU 模式，当 `mstatus`.TW=0 时尝试执行 WFI，或尝试执行监管模式指令（SRET 或 SFENCE）；
+* 在 VU 模式，假定 `mstatus`.TVM=0，当对某个已实现的非高半部分监管模式 CSR 的同一访问（读/写）在 HS 模式中会被允许时，尝试进行该访问；
+* 在 VU 模式，若 XLEN=32，假定 `mstatus`.TVM=0，当对该 CSR 低半部分对应部件的同一访问在 HS 模式中会被允许时，尝试访问已实现的高半部分监管模式 CSR；
+* 在 VS 模式，当 `hstatus`.VTW=1 且 `mstatus`.TW=0 时尝试执行 WFI，除非该指令在实现相关的有限时间内完成；
+* 在 VS 模式，当 `hstatus`.VTSR=1 时尝试执行 SRET；以及
+* 在 VS 模式，当 `hstatus`.VTVM=1 时尝试执行 SFENCE.VMA 或 SINVAL.VMA 指令，或访问 `satp`。'''

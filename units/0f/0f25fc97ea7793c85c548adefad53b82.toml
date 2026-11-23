@@ -1,0 +1,12 @@
+unit_id = "0f25fc97ea7793c85c548adefad53b82"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An implementation shall not have any bits of `medeleg` be read-only one,
+i.e., any synchronous trap that can be delegated must support not being
+delegated. Similarly, an implementation shall not fix as read-only one
+any bits of `mideleg` corresponding to machine-level interrupts (but may
+do so for lower-level interrupts).'''
+zh = '''
+实现不应将 `medeleg` 的任何位设为只读 1，即任何可被委托的同步陷阱都应支持不被委托。类似地，实现不应将与机器级中断对应的 `mideleg` 的任何位固定为只读 1（但可对较低级中断如此）。'''

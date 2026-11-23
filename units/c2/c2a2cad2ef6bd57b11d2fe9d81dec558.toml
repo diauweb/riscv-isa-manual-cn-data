@@ -1,0 +1,12 @@
+unit_id = "c2a2cad2ef6bd57b11d2fe9d81dec558"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `ctrtarget` register contains the target (destination) program counter
+of the recorded transfer. For a not-taken branch, `ctrtarget` holds the PC of the next sequential instruction following the branch. The optional MISP bit is set by the hardware
+when the recorded transfer is an instruction whose target or
+taken/not-taken direction was mispredicted by the branch predictor. MISP
+is read-only 0 when not implemented.'''
+zh = '''
+`ctrtarget` 寄存器包含所记录转移的目标（目的地）程序计数器。对于未采用分支，`ctrtarget` 保存该分支之后的下一条顺序指令的 PC。当所记录的转移是其目标或采用/未采用方向被分支预测器错误预测的指令时，硬件设置可选的 MISP 位。未实现时 MISP 为只读 0。'''

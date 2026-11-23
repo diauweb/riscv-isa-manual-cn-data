@@ -1,0 +1,27 @@
+unit_id = "50b5c925d67c08334a53ac3db805dd25"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Note to software developers
+====
+The entire Sum1 transform for SHA2-512 may be computed on RV32
+using the following instruction sequence:
+
+ sha512sum1r    t0, a0, a1
+ sha512sum1r    t1, a1, a0
+
+Note the reversed source register ordering.
+===='''
+zh = '''
+[NOTE]
+.致软件开发者的说明
+====
+在 RV32 上，可使用以下指令序列计算 SHA2-512 的完整 Sum1 变换：
+
+ sha512sum1r    t0, a0, a1
+ sha512sum1r    t1, a1, a0
+
+请注意源寄存器顺序是相反的。
+===='''

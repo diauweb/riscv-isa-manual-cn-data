@@ -1,0 +1,31 @@
+unit_id = "b4cc686e03dfe29965f10d5541ce0976"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* interpret all fences as if they were FENCE RW,RW (or FENCE IORW,IORW,
+if I/O is involved), regardless of the bits actually set
+* implement all fences with PW and SR as if they were FENCE RW,RW (or
+FENCE IORW,IORW, if I/O is involved), as PW with SR is the most
+expensive of the four possible main memory ordering components anyway
+* emulate _aq_ and _rl_ as described in <<memory_porting>>
+* enforcing all same-address load-load ordering, even in the presence of
+patterns such as `fri-rfi` and `RSW`
+* forbid any forwarding of a value from a store in the store buffer to a
+subsequent AMO or LR to the same address
+* forbid any forwarding of a value from an AMO or SC in the store buffer
+to a subsequent load to the same address
+* implement TSO on all memory accesses, and ignore any main memory
+fences that do not include PW and SR ordering (e.g., as Ztso
+implementations will do)
+* implement all atomics to be RCsc or even fully ordered, regardless of
+annotation'''
+zh = '''
+* 将所有 fence 解释为 FENCE RW,RW（若涉及 I/O，则为 FENCE IORW,IORW），而不管实际设置的位
+* 将设置了 PW 和 SR 的所有 fence 实现为 FENCE RW,RW（若涉及 I/O，则为 FENCE IORW,IORW），因为 PW 与 SR 一起是四种可能的主内存排序分量中最昂贵的
+* 如 <<memory_porting>> 所述模拟 _aq_ 和 _rl_
+* 强制执行所有同地址加载-加载排序，即使存在 `fri-rfi` 和 `RSW` 等模式
+* 禁止将存储缓冲器中存储的值转发给对同一地址的后续 AMO 或 LR
+* 禁止将存储缓冲器中 AMO 或 SC 的值转发给对同一地址的后续加载
+* 对所有内存访问实现 TSO，并忽略任何不包含 PW 和 SR 排序的主内存 fence（例如，Ztso 实现将这样做）
+* 将所有原子操作实现为 RCsc 甚至完全有序，而不管注解'''

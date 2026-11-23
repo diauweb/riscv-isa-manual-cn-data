@@ -1,0 +1,13 @@
+unit_id = "eaae819a5d5de41aac621eab93d09249"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor extension changes the behavior of the Modify Privilege
+field, MPRV, of `mstatus`. When MPRV=0, translation and protection
+behave as normal. When MPRV=1, explicit memory accesses are translated
+and protected, and endianness is applied, as though the current
+virtualization mode were set to MPV and the current nominal privilege
+mode were set to MPP. <<norm:H_mprv_tbl>> enumerates the cases.'''
+zh = '''
+虚拟机监控器扩展改变 `mstatus` 的修改特权字段 MPRV 的行为。当 MPRV=0 时，转换和保护按常规行为。当 MPRV=1 时，显式内存访问按当前虚拟化模式被设为 MPV 且当前名义特权模式被设为 MPP 来进行转换和保护，并应用字节序。<<norm:H_mprv_tbl>> 枚举了这些情况。'''

@@ -1,0 +1,35 @@
+unit_id = "01e5af402749f536b85677513be352f9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[TIP]
+====
+The primary reason to extend integer register width is to support larger
+address spaces. It is not clear when a flat address space larger than 64
+bits will be required. At the time of writing, the fastest supercomputer
+in the world as measured by the Top500 benchmark had over 1PB of DRAM, and
+would require over 50 bits of address space if all the DRAM resided in a
+single address space. Some warehouse-scale computers already contain
+even larger quantities of DRAM, and new dense solid-state non-volatile
+memories and fast interconnect technologies might drive a demand for
+even larger memory spaces. Exascale systems research is targeting 100PB memory
+systems, which occupy 57 bits of address space. At historic rates of
+growth, it is possible that greater than 64 bits of address space might
+be required before 2030.
+History suggests that whenever it becomes clear that more than 64 bits
+of address space is needed, architects will repeat intensive debates
+about alternatives to extending the address space, including
+segmentation, 96-bit address spaces, and software workarounds, until,
+finally, flat 128-bit address spaces will be adopted as the simplest and
+best solution.
+We have not frozen the RV128 spec at this time, as there might be need
+to evolve the design based on actual usage of 128-bit address spaces.
+===='''
+zh = '''
+[TIP]
+====
+扩展整数寄存器宽度的主要原因是支持更大的地址空间。目前尚不清楚何时会需要大于 64 位的平坦地址空间。在撰写本文时，按 Top500 基准测量，世界上最快的超级计算机拥有超过 1PB 的 DRAM，如果所有 DRAM 都驻留在单个地址空间中，则将需要大于 50 位的地址空间。一些仓库级计算机已经包含更大量级的 DRAM，而新的高密度固态非易失性存储器和快速互连技术可能推动对更大内存空间的需求。百亿亿级系统研究正以 100PB 内存系统为目标，这类系统占用 57 位地址空间。按历史增长速度，可能到 2030 年之前就需要大于 64 位的地址空间。
+历史表明，每当清楚地认识到需要大于 64 位的地址空间时，架构师们都会围绕扩展地址空间的替代方案反复展开激烈争论，包括分段、96 位地址空间和软件变通方法，直到最终将平坦的 128 位地址空间作为最简单且最佳的解决方案予以采用。
+目前尚未冻结 RV128 规范，因为可能需要根据 128 位地址空间的实际使用情况来演进设计。
+===='''

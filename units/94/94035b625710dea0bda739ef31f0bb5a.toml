@@ -1,0 +1,22 @@
+unit_id = "94035b625710dea0bda739ef31f0bb5a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+for load/store, _kind_ identifies whether it is `lr/sc`,
+acquire-RCpc/release-RCpc, acquire-RCsc/release-RCsc,
+acquire-release-RCsc;
+* for fence, _kind_ identifies whether it is a normal or TSO, and (for
+normal fences) the predecessor and successor ordering bits;
+* _reg_name_ identifies a register and a slice thereof (start and end bit
+indices); and the continuations describe how the instruction instance will continue
+for each value that might be provided by the surrounding memory model
+(the _load_continuation_ and _read_continuation_ take the value loaded
+from memory and read from the previous register write, the
+_store_continuation_ takes _false_ for an `sc` that failed and _true_ in
+all other cases, and _res_continuation_ takes _false_ if the `sc` fails
+and _true_ otherwise).'''
+zh = '''
+对于加载/存储，_kind_ 标识其是 `lr/sc`、acquire-RCpc/release-RCpc、acquire-RCsc/release-RCsc、acquire-release-RCsc；
+* 对于 fence，_kind_ 标识其是普通 fence 还是 TSO，并且（对于普通 fence）标识前驱和后继排序位；
+* _reg_name_ 标识一个寄存器及其一个分片（起始和结束位索引）；各续延描述指令实例对于周围内存模型可能提供的每个值将如何继续（_load_continuation_ 和 _read_continuation_ 接收从内存加载的值以及从前一寄存器写读取的值，_store_continuation_ 对于失败的 `sc` 取 _false_，在所有其他情况下取 _true_，而 _res_continuation_ 若 `sc` 失败则取 _false_，否则取 _true_）。'''

@@ -1,0 +1,17 @@
+unit_id = "4d8f3ad9f0a1ea34f0b7b76c2d023ace"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Within AMOs, there are four levels of support: _AMONone_, _AMOSwap_,
+_AMOLogical_, and _AMOArithmetic_. AMONone indicates that no AMO
+operations are supported. AMOSwap indicates that only `amoswap`
+instructions are supported in this address range. AMOLogical indicates
+that swap instructions plus all the logical AMOs (`amoand`, `amoor`,
+`amoxor`) are supported. AMOArithmetic indicates that all RISC-V AMOs defined by
+the A extension are supported. For each level of support, naturally aligned AMOs of a
+given width are supported if the underlying memory region supports reads
+and writes of that width. Main memory and I/O regions may only support a
+subset or none of the processor-supported atomic operations.'''
+zh = '''
+在 AMO 中，支持分为四个级别：_AMONone_、_AMOSwap_、_AMOLogical_ 和 _AMOArithmetic_。AMONone 指示不支持任何 AMO 操作。AMOSwap 指示此地址范围内仅支持 `amoswap` 指令。AMOLogical 指示支持交换指令以及所有逻辑 AMO（`amoand`、`amoor`、`amoxor`）。AMOArithmetic 指示支持 A 扩展定义的所有 RISC-V AMO。对于每个支持级别，若底层内存区域支持给定宽度的读和写，则支持该宽度的自然对齐 AMO。主存和 I/O 区域可能仅支持处理器所支持原子操作的子集或不支持。'''

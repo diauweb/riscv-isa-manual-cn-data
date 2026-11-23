@@ -1,0 +1,10 @@
+unit_id = "8eac6fe77ab13ae1517d427e50ed2501"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+Stores a stack-pointer relative 64-bit value from registers `rs2'` and `rs2'+1`. It computes an effective address by adding the _zero_-extended offset, scaled by 8, to the stack pointer, `x2`. It expands to `sd rs2, offset(x2)`.'''
+zh = '''
+描述::
+从寄存器 `rs2'` 和 `rs2'+1` 存储相对于栈指针的 64 位值。它通过将按 8 缩放的__零__扩展偏移与栈指针 `x2` 相加来计算有效地址。它展开为 `sd rs2, offset(x2)`。'''

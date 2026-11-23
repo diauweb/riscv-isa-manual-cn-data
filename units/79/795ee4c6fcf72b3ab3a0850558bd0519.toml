@@ -1,0 +1,56 @@
+unit_id = "795ee4c6fcf72b3ab3a0850558bd0519"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Key for test that highlights the behavior of store buffers
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+.The "PPOCA" store buffer forwarding litmus test (outcome permitted)
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+^!Hart 0 2+^!Hart 1
+! !li t1, 1 !!li t1, 1
+!(a) !sw t1,0(s0) !!LOOP:
+!(b) !fence w,w !(d) !lw a0,0(s1)
+!(c) !sw t1,0(s1) !!beqz a0, LOOP
+2+! !(e) !sw t1,0(s2)
+2+! !(f) !lw a1,0(s2)
+2+! ! !xor a2,a1,a1
+2+! ! !add s0,s0,a2
+2+! !(g) !lw a2,0(s0)
+4+!Outcome: `a0=1`, `a1=1`, `a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_ppoca.txt[]
+a! image::graphviz/litmus_ppoca.png[]
+!===
+|==='''
+zh = '''
+.突出存储缓冲器行为的测试图例
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+.“PPOCA”存储缓冲器转发 litmus 测试（结果允许）
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+^!硬件线程 0 2+^!硬件线程 1
+! !li t1, 1 !!li t1, 1
+!(a) !sw t1,0(s0) !!LOOP:
+!(b) !fence w,w !(d) !lw a0,0(s1)
+!(c) !sw t1,0(s1) !!beqz a0, LOOP
+2+! !(e) !sw t1,0(s2)
+2+! !(f) !lw a1,0(s2)
+2+! ! !xor a2,a1,a1
+2+! ! !add s0,s0,a2
+2+! !(g) !lw a2,0(s0)
+4+!结果：`a0=1`, `a1=1`, `a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_ppoca.txt[]
+a! image::graphviz/litmus_ppoca.png[]
+!===
+|==='''

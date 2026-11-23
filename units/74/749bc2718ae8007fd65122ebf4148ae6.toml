@@ -1,0 +1,18 @@
+unit_id = "749bc2718ae8007fd65122ebf4148ae6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This chapter describes the Q standard extension for 128-bit
+quad-precision binary floating-point instructions compliant with the
+IEEE 754-2008 arithmetic standard. The quad-precision binary
+floating-point instruction-set extension is named "Q"; it depends on
+the double-precision floating-point extension D. The floating-point
+registers are now extended to hold either a single, double, or
+quad-precision floating-point value (FLEN=128). The NaN-boxing scheme
+described in <<nanboxing>> is now extended
+recursively to allow a single-precision value to be NaN-boxed inside a
+double-precision value which is itself NaN-boxed inside a quad-precision
+value.'''
+zh = '''
+本章描述符合 IEEE 754-2008 算术标准的 128 位四精度二进制浮点指令的 Q 标准扩展。四精度二进制浮点指令集扩展名为“Q”；它依赖于双精度浮点扩展 D。浮点寄存器现已扩展为可保存单精度、双精度或四精度浮点值（FLEN=128）。<<nanboxing>> 中描述的 NaN 装箱方案现已递归扩展，允许单精度值以 NaN 装箱形式置于双精度值内，而该双精度值本身又以 NaN 装箱形式置于四精度值内。'''

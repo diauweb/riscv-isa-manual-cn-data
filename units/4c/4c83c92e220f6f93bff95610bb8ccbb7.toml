@@ -1,0 +1,23 @@
+unit_id = "4c83c92e220f6f93bff95610bb8ccbb7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[IMPORTANT]
+====
+<<ax-load>>: Each byte of each load _i_ returns the value written
+to that byte by the store that is the latest in global memory order among
+the following stores:
+
+. Stores that write that byte and that precede i in the global memory
+order
+. Stores that write that byte and that precede i in program order
+===='''
+zh = '''
+[IMPORTANT]
+====
+<<ax-load>>：每个加载 _i_ 的每个字节返回由以下存储中在全局内存顺序中最新的存储写入该字节的值：
+
+. 写该字节且在全局内存顺序中先于 _i_ 的存储
+. 写该字节且在程序顺序中先于 _i_ 的存储
+===='''

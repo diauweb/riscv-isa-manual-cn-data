@@ -1,0 +1,20 @@
+unit_id = "783d03466940daf1351f649d07acd353"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[IMPORTANT]
+====
+Trace requires different types of synchronization on different abstraction levels. Two major categories of synchronization are:
+
+* *Instruction trace synchronization*: allows the trace decoder to synchronize onto an ongoing instruction trace stream. This is done via synchronizing messages, which are described in this chapter in more detail.
+* *Message alignment synchronization*: allows the trace decoder to detect the trace message boundaries (i.e. start and end of a trace message) within a trace stream. This kind of synchronization is not described in this chapter. It can be done via idle cycles, and is described in the <<PIB Idle Cycles Explained,PIB Idle Cycles Explained>> chapter in more detail.
+===='''
+zh = '''
+[IMPORTANT]
+====
+跟踪在不同抽象级别需要不同类型的同步。两大类同步是：
+
+* **指令跟踪同步**：允许跟踪解码器同步到正在进行的指令跟踪流。这通过同步消息完成，本章将更详细描述。
+* **消息对齐同步**：允许跟踪解码器检测跟踪流内的跟踪消息边界（即跟踪消息的开始和结束）。本章不描述这种同步。它可通过空闲周期完成，并在 <<PIB Idle Cycles Explained,PIB Idle Cycles Explained>> 章中更详细描述。
+===='''

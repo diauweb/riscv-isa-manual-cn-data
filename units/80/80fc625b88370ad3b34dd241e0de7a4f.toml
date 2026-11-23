@@ -1,0 +1,12 @@
+unit_id = "80fc625b88370ad3b34dd241e0de7a4f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Ignore all fences that do not have both PW and SR (unless the fence
+also orders I/O)
+* Ignore all PPO rules except for rules <<overlapping-ordering, 4>> through <<overlapping-ordering, 7>>, since the rest
+are redundant with other PPO rules under RVTSO assumptions'''
+zh = '''
+* 忽略所有不同时具有 PW 和 SR 的 fence（除非该 fence 也对 I/O 排序）
+* 除规则 <<overlapping-ordering, 4>> 至 <<overlapping-ordering, 7>> 外，忽略所有 PPO 规则，因为在 RVTSO 假设下其余规则与其他 PPO 规则冗余'''

@@ -1,0 +1,765 @@
+unit_id = "5b50fe8f99fef3e12fc07627204eb2b8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+Similarly, when V=1, both `vsstatus`.VS and the HS-level `sstatus`.VS
+are in effect. Attempts to execute a vector instruction when either
+field is 0 (Off) raise an illegal-instruction exception. Modifying the
+vector state when V=1 causes both fields to be set to 3 (Dirty).
+
+Read-only fields SD and XS summarize the extension context status as it
+is visible to VS-mode only. For example, the value of the HS-level
+`sstatus`.FS does not affect `vsstatus`.SD.
+
+An implementation may make field UBE be a read-only copy of
+`hstatus`.VSBE.
+
+When V=0, `vsstatus` does not directly affect the behavior of the
+machine, unless a virtual-machine load/store (HLV, HLVX, or HSV) or the
+MPRV feature in the `mstatus` register is used to execute a load or
+store _as though_ V=1.
+
+==== Virtual Supervisor Interrupt Registers (`vsip` and `vsie`)
+
+The `vsip` and `vsie` registers are VSXLEN-bit read/write registers that
+are VS-mode’s versions of supervisor CSRs `sip` and `sie`, formatted as
+shown in <<vsipreg>> and <<vsiereg>>
+respectively. When V=1, `vsip` and `vsie` substitute for the usual `sip`
+and `sie`, so instructions that normally read or modify `sip`/`sie`
+actually access `vsip`/`vsie` instead. However, interrupts directed to
+HS-level continue to be indicated in the HS-level `sip` register, not in
+`vsip`, when V=1.
+
+[[vsipreg]]
+.Virtual supervisor interrupt-pending register (`vsip`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+
+(draw-box "Interrupts" {:span 16 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 16 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+[[vsiereg]]
+.Virtual supervisor interrupt-enable register (`vsie`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+
+(draw-box "Interrupts" {:span 16 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 16 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+The standard portions (bits 15:0) of registers `vsip` and `vsie` are
+formatted as shown in <<vsipreg-standard>>
+and <<vsiereg-standard>> respectively.
+
+[[vsipreg-standard]]
+.Standard portion (bits 15:0) of `vsip`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 4 :borders {}})
+(draw-box "10" {:borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "6" {:borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "0" {:span 6})
+(draw-box "SEIP" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "STIP" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "SSIP" {:span 2})
+(draw-box "0")
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "6" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+----
+
+[[vsiereg-standard]]
+.Standard portion (bits 15:0) of `vsie`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 4 :borders {}})
+(draw-box "10" {:borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "6" {:borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "0" {:span 6})
+(draw-box "SEIE" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "STIE" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "SSIE" {:span 2})
+(draw-box "0")
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "6" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+----
+
+When bit 10 of `hideleg` is zero, `vsip`.SEIP and `vsie`.SEIE are
+read-only zeros. Else, `vsip`.SEIP and `vsie`.SEIE are aliases of
+`hip`.VSEIP and `hie`.VSEIE.
+
+When bit 6 of `hideleg` is zero, `vsip`.STIP and `vsie`.STIE are
+read-only zeros. Else, `vsip`.STIP and `vsie`.STIE are aliases of
+`hip`.VSTIP and `hie`.VSTIE.
+
+When bit 2 of `hideleg` is zero, `vsip`.SSIP and `vsie`.SSIE are
+read-only zeros. Else, `vsip`.SSIP and `vsie`.SSIE are aliases of
+`hip`.VSSIP and `hie`.VSSIE.
+
+==== Virtual Supervisor Trap Vector Base Address Register (`vstvec`)
+
+The `vstvec` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `stvec`, formatted as shown in
+<<vstvecreg>>. When V=1, `vstvec` substitutes for
+the usual `stvec`, so instructions that normally read or modify `stvec`
+actually access `vstvec` instead. When V=0, `vstvec` does not directly
+affect the behavior of the machine.
+
+[[vstvecreg]]
+.Virtual supervisor trap vector base address register `vstvec`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 10 :text-anchor "start" :borders {}})
+(draw-box "2" {:span 10 :text-anchor "end" :borders {}})
+(draw-box "1" {:span 6 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 6 :text-anchor "end" :borders {}})
+
+(draw-box "BASE[VSXLEN-1:2]" {:span 10 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 10 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "MODE" {:span 6 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 6 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "VSXLEN-2" {:span 20 :borders {}})
+(draw-box "2" {:span 12 :borders {}})
+----
+
+==== Virtual Supervisor Scratch Register (`vsscratch`)
+
+The `vsscratch` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sscratch`, formatted as shown
+in <<vsscratchreg>>. When V=1, `vsscratch`
+substitutes for the usual `sscratch`, so instructions that normally read
+or modify `sscratch` actually access `vsscratch` instead. The contents
+of `vsscratch` never directly affect the behavior of the machine.
+
+[[vsscratchreg]]
+.Virtual supervisor scratch register `vsscratch`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vsscratch" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== Virtual Supervisor Exception Program Counter (`vsepc`)
+
+The `vsepc` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sepc`, formatted as shown in
+<<vsepcreg>>. When V=1, `vsepc` substitutes for the
+usual `sepc`, so instructions that normally read or modify `sepc`
+actually access `vsepc` instead. When V=0, `vsepc` does not directly
+affect the behavior of the machine.
+
+`vsepc` is a *WARL* register that must be able to hold the same set of values
+that `sepc` can hold.
+
+[[vsepcreg]]
+.Virtual supervisor exception program counter (`vsepc`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vsepc" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== Virtual Supervisor Cause Register (`vscause`)
+
+The `vscause` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `scause`, formatted as shown in
+<<vscausereg>>. When V=1, `vscause` substitutes
+for the usual `scause`, so instructions that normally read or modify
+`scause` actually access `vscause` instead. When V=0, `vscause` does not
+directly affect the behavior of the machine.
+
+`vscause` is a *WLRL* register that must be able to hold the same set of
+values that `scause` can hold.
+
+[[vscausereg]]
+.Virtual supervisor cause register (`vscause`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 4 :borders {}})
+(draw-box "VSXLEN-2" {:span 14 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 14 :text-anchor "end" :borders {}})
+(draw-box "Interrupt" {:span 4})
+(draw-box "Exception Code" {:span 14 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WLRL)" {:font-weight "bold" :font-size 24}) {:span 14 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "1" {:span 4 :borders {}})
+(draw-box "VSXLEN-1" {:span 28 :borders {}})
+----
+
+==== Virtual Supervisor Trap Value Register (`vstval`)
+
+The `vstval` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `stval`, formatted as shown in
+<<vstvalreg>>. When V=1, `vstval` substitutes for
+the usual `stval`, so instructions that normally read or modify `stval`
+actually access `vstval` instead. When V=0, `vstval` does not directly
+affect the behavior of the machine.
+
+`vstval` is a *WARL* register that must be able to hold the same set of values
+that `stval` can hold.
+
+[[vstvalreg]]
+.Virtual supervisor trap value register (`vstval`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vstval" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== Virtual Supervisor Address Translation and Protection Register (`vsatp`)
+
+The `vsatp` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `satp`, formatted as shown in
+<<rv32vsatpreg>> for VSXLEN=32 and <<rv64vsatpreg>> for VSXLEN=64. When V=1,
+`vsatp` substitutes for the usual `satp`, so instructions that normally
+read or modify `satp` actually access `vsatp` instead. `vsatp` controls
+VS-stage address translation, the first stage of two-stage translation
+for guest virtual addresses (see
+<<two-stage-translation>>).
+
+[[rv32vsatpreg]]
+.Virtual supervisor address translation and protection register `vsatp` when VSXLEN=32.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 8 :borders {}})
+(draw-box "30" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "Mode" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "ASID" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "PPN" {:span 8 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "1" {:span 8 :borders {}})
+(draw-box "9" {:span 8 :borders {}})
+(draw-box "22" {:span 16 :borders {}})
+----
+
+[[rv64vsatpreg]]
+.Virtual supervisor address translation and protection register `vsatp` when VSXLEN=64.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "60" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "59" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "44" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "43" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "Mode" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "ASID" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "PPN" {:span 8 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "4" {:span 8 :borders {}})
+(draw-box "16" {:span 8 :borders {}})
+(draw-box "44" {:span 16 :borders {}})
+----
+
+The `vsatp` register is considered _active_ for the purposes of the
+address-translation algorithm _unless_ the effective privilege mode is U
+and `hstatus`.HU=0. However, even when `vsatp` is active, VS-stage
+page-table entries’ A bits must not be set as a result of speculative
+execution, unless the effective privilege mode is VS or VU.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+类似地，当 V=1 时，`vsstatus`.VS 和 HS 级 `sstatus`.VS 均生效。当任一字段为 0（关）时尝试执行向量指令将引发非法指令异常。当 V=1 时修改向量状态会使两个字段均置为 3（脏）。
+
+只读字段 SD 和 XS 汇总对 VS 模式仅可见的扩展上下文状态。例如，HS 级 `sstatus`.FS 的值不影响 `vsstatus`.SD。
+
+实现可使字段 UBE 成为 `hstatus`.VSBE 的只读副本。
+
+当 V=0 时，`vsstatus` 不直接影响机器行为，除非使用虚拟机加载/存储（HLV、HLVX 或 HSV）或 `mstatus` 寄存器中的 MPRV 特性来_如同_V=1 一样执行加载或存储。
+
+==== 虚拟监管者中断寄存器（`vsip` 和 `vsie`）
+
+`vsip` 和 `vsie` 寄存器是 VSXLEN 位读/写寄存器，是 VS 模式下对监管者 CSR `sip` 和 `sie` 的版本，分别格式如 <<vsipreg>> 和 <<vsiereg>> 所示。当 V=1 时，`vsip` 和 `vsie` 替代通常的 `sip` 和 `sie`，因此通常读取或修改 `sip`/`sie` 的指令实际上改为访问 `vsip`/`vsie`。然而，当 V=1 时，发给 HS 级的中断继续在 HS 级 `sip` 寄存器中指示，而非在 `vsip` 中。
+
+[[vsipreg]]
+.虚拟监管者中断挂起寄存器（`vsip`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+
+(draw-box "Interrupts" {:span 16 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 16 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+[[vsiereg]]
+.虚拟监管者中断使能寄存器（`vsie`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+
+(draw-box "Interrupts" {:span 16 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 16 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+寄存器 `vsip` 和 `vsie` 的标准部分（第 15:0 位）分别格式如 <<vsipreg-standard>> 和 <<vsiereg-standard>> 所示。
+
+[[vsipreg-standard]]
+.`vsip` 的标准部分（第 15:0 位）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 4 :borders {}})
+(draw-box "10" {:borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "6" {:borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "0" {:span 6})
+(draw-box "SEIP" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "STIP" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "SSIP" {:span 2})
+(draw-box "0")
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "6" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+----
+
+[[vsiereg-standard]]
+.`vsie` 的标准部分（第 15:0 位）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 4 :borders {}})
+(draw-box "10" {:borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "6" {:borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "0" {:span 6})
+(draw-box "SEIE" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "STIE" {:span 2})
+(draw-box "0" {:span 3})
+(draw-box "SSIE" {:span 2})
+(draw-box "0")
+(draw-box nil {:span 7 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "6" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box nil {:span 7 :borders {}})
+----
+
+当 `hideleg` 的位 10 为 0 时，`vsip`.SEIP 和 `vsie`.SEIE 为只读 0。否则，`vsip`.SEIP 和 `vsie`.SEIE 是 `hip`.VSEIP 和 `hie`.VSEIE 的别名。
+
+当 `hideleg` 的位 6 为 0 时，`vsip`.STIP 和 `vsie`.STIE 为只读 0。否则，`vsip`.STIP 和 `vsie`.STIE 是 `hip`.VSTIP 和 `hie`.VSTIE 的别名。
+
+当 `hideleg` 的位 2 为 0 时，`vsip`.SSIP 和 `vsie`.SSIE 为只读 0。否则，`vsip`.SSIP 和 `vsie`.SSIE 是 `hip`.VSSIP 和 `hie`.VSSIE 的别名。
+
+==== 虚拟监管者陷阱向量基地址寄存器（`vstvec`）
+
+`vstvec` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `stvec` 的版本，格式如 <<vstvecreg>> 所示。当 V=1 时，`vstvec` 替代通常的 `stvec`，因此通常读取或修改 `stvec` 的指令实际上改为访问 `vstvec`。当 V=0 时，`vstvec` 不直接影响机器行为。
+
+[[vstvecreg]]
+.虚拟监管者陷阱向量基地址寄存器 `vstvec`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 10 :text-anchor "start" :borders {}})
+(draw-box "2" {:span 10 :text-anchor "end" :borders {}})
+(draw-box "1" {:span 6 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 6 :text-anchor "end" :borders {}})
+
+(draw-box "BASE[VSXLEN-1:2]" {:span 10 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 10 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "MODE" {:span 6 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 6 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "VSXLEN-2" {:span 20 :borders {}})
+(draw-box "2" {:span 12 :borders {}})
+----
+
+==== 虚拟监管者暂存寄存器（`vsscratch`）
+
+`vsscratch` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `sscratch` 的版本，格式如 <<vsscratchreg>> 所示。当 V=1 时，`vsscratch` 替代通常的 `sscratch`，因此通常读取或修改 `sscratch` 的指令实际上改为访问 `vsscratch`。`vsscratch` 的内容从不直接影响机器行为。
+
+[[vsscratchreg]]
+.虚拟监管者暂存寄存器 `vsscratch`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vsscratch" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== 虚拟监管者异常程序计数器（`vsepc`）
+
+`vsepc` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `sepc` 的版本，格式如 <<vsepcreg>> 所示。当 V=1 时，`vsepc` 替代通常的 `sepc`，因此通常读取或修改 `sepc` 的指令实际上改为访问 `vsepc`。当 V=0 时，`vsepc` 不直接影响机器行为。
+
+`vsepc` 是一个 *WARL* 寄存器，必须能够保存 `sepc` 所能保存的相同值集合。
+
+[[vsepcreg]]
+.虚拟监管者异常程序计数器（`vsepc`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vsepc" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== 虚拟监管者原因寄存器（`vscause`）
+
+`vscause` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `scause` 的版本，格式如 <<vscausereg>> 所示。当 V=1 时，`vscause` 替代通常的 `scause`，因此通常读取或修改 `scause` 的指令实际上改为访问 `vscause`。当 V=0 时，`vscause` 不直接影响机器行为。
+
+`vscause` 是一个 *WLRL* 寄存器，必须能够保存 `scause` 所能保存的相同值集合。
+
+[[vscausereg]]
+.虚拟监管者原因寄存器（`vscause`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 4 :borders {}})
+(draw-box "VSXLEN-2" {:span 14 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 14 :text-anchor "end" :borders {}})
+(draw-box "Interrupt" {:span 4})
+(draw-box "Exception Code" {:span 14 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WLRL)" {:font-weight "bold" :font-size 24}) {:span 14 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "1" {:span 4 :borders {}})
+(draw-box "VSXLEN-1" {:span 28 :borders {}})
+----
+
+==== 虚拟监管者陷阱值寄存器（`vstval`）
+
+`vstval` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `stval` 的版本，格式如 <<vstvalreg>> 所示。当 V=1 时，`vstval` 替代通常的 `stval`，因此通常读取或修改 `stval` 的指令实际上改为访问 `vstval`。当 V=0 时，`vstval` 不直接影响机器行为。
+
+`vstval` 是一个 *WARL* 寄存器，必须能够保存 `stval` 所能保存的相同值集合。
+
+[[vstvalreg]]
+.虚拟监管者陷阱值寄存器（`vstval`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "VSXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "vstval" {:span 32})
+(draw-box "VSXLEN" {:span 32 :borders {}})
+----
+
+==== 虚拟监管者地址转换和保护寄存器（`vsatp`）
+
+`vsatp` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `satp` 的版本，当 VSXLEN=32 时格式如 <<rv32vsatpreg>> 所示，当 VSXLEN=64 时格式如 <<rv64vsatpreg>> 所示。当 V=1 时，`vsatp` 替代通常的 `satp`，因此通常读取或修改 `satp` 的指令实际上改为访问 `vsatp`。`vsatp` 控制 VS 阶段地址转换，即客户机虚拟地址两阶段转换的第一阶段（见 <<two-stage-translation>>）。
+
+[[rv32vsatpreg]]
+.当 VSXLEN=32 时的虚拟监管者地址转换和保护寄存器 `vsatp`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 8 :borders {}})
+(draw-box "30" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "Mode" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "ASID" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "PPN" {:span 8 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "1" {:span 8 :borders {}})
+(draw-box "9" {:span 8 :borders {}})
+(draw-box "22" {:span 16 :borders {}})
+----
+
+[[rv64vsatpreg]]
+.当 VSXLEN=64 时的虚拟监管者地址转换和保护寄存器 `vsatp`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "60" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "59" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "44" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "43" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "Mode" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "ASID" {:span 4 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+(draw-box "PPN" {:span 8 :text-anchor "end" :borders {:top :border-unrelated :bottom :border-unrelated :left :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:top :border-unrelated :bottom :border-unrelated :right :border-unrelated}})
+
+(draw-box "4" {:span 8 :borders {}})
+(draw-box "16" {:span 8 :borders {}})
+(draw-box "44" {:span 16 :borders {}})
+----
+
+就地址转换算法而言，`vsatp` 寄存器被视为_活动_，_除非_有效特权模式为 U 且 `hstatus`.HU=0。然而，即使 `vsatp` 活动，VS 阶段页表项的 A 位也不得因推测执行而被置位，除非有效特权模式为 VS 或 VU。
+
+[NOTE]
+===='''

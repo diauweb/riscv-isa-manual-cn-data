@@ -1,0 +1,12 @@
+unit_id = "2e2a3c68b00cf8b2e6511a2ecb34d939"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SHA512SUM1R(rs2, rs1, rd)) = {
+  X(rd) = EXTS((X(rs1) << 23) ^ (X(rs1) >> 14) ^ (X(rs1) >> 18) ^
+               (X(rs2) >>  9) ^ (X(rs2) << 18) ^ (X(rs2) << 14) );
+  RETIRE_SUCCESS
+}
+--'''

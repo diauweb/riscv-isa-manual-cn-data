@@ -1,0 +1,13 @@
+unit_id = "cea2329b4f788f799dd15264186745db"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the least-significant two bits of a faulting guest physical address
+are needed, these bits are ordinarily the same as the least-significant
+two bits of the faulting virtual address in `stval`. For faults due to
+implicit memory accesses for VS-stage address translation, the
+least-significant two bits are instead zeros. These cases can be
+distinguished using the value provided in register `htinst`.'''
+zh = '''
+若需要发生错误的客户机物理地址的最低两位，则这些位通常与 `stval` 中发生错误的虚拟地址的最低两位相同。对于因 VS 阶段地址转换的隐式内存访问而发生的错误，最低两位则为零。这些情况可使用寄存器 `htinst` 中提供的值来区分。'''

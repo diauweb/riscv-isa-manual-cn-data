@@ -1,0 +1,18 @@
+unit_id = "72b1876ca05e92f0df0fdfafed3d169a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We store the ASID and the page table base address in the same CSR to
+allow the pair to be changed atomically on a context switch. Swapping
+them non-atomically could pollute the old virtual address space with new
+translations, or vice-versa. This approach also slightly reduces the
+cost of a context switch.
+===='''
+zh = '''
+[NOTE]
+====
+我们将 ASID 和页表基址存储在同一 CSR 中，以便在上下文切换时原子地更改该对值。非原子地交换它们可能会用新转换污染旧虚拟地址空间，或反之。这种方法还略微降低了上下文切换的开销。
+===='''

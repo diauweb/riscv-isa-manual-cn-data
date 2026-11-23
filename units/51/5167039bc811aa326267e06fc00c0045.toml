@@ -1,0 +1,15 @@
+unit_id = "5167039bc811aa326267e06fc00c0045"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Such use cases involve polling on memory locations, and such busy loops can be a
+wasteful expenditure of energy. To mitigate the wasteful looping in such usages,
+a insn:wrs.nto[] (WRS-with-no-timeout) instruction is provided. Instead of polling
+for a store to a specific memory location, software registers a reservation set
+that includes all the bytes of the memory location using the insn:lr[] instruction.
+[#norm:Zawrs_wrs-nto_stall_exec]#Then a subsequent insn:wrs.nto[] instruction would cause the hart to temporarily
+stall execution in a low-power state until a store occurs to the reservation set
+or an interrupt is observed.#'''
+zh = '''
+此类用例涉及对内存位置进行轮询，此类忙循环可能造成能源浪费。为减轻此类用法中的浪费性循环，提供了 insn:wrs.nto[]（无超时的 WRS）指令。软件不再轮询对特定内存位置的存储，而是使用 insn:lr[] 指令登记一个包含该内存位置所有字节的保留集。[#norm:Zawrs_wrs-nto_stall_exec]##随后，后续的 insn:wrs.nto[] 指令会使硬件线程暂时以低功耗状态停顿执行，直到对保留集发生存储或观察到中断。##'''

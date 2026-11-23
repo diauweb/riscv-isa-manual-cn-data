@@ -1,0 +1,21 @@
+unit_id = "9ca5d77247ef5e3fe46a9b23d3665090"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point-to-integer and integer-to-floating-point conversion
+instructions are encoded in the OP-FP major opcode space. FCVT.W.D or
+FCVT.L.D converts a double-precision floating-point number in
+floating-point register _rs1_ to a signed 32-bit or 64-bit integer,
+respectively, in integer register _rd_. FCVT.D.W or FCVT.D.L converts a
+32-bit or 64-bit signed integer, respectively, in integer register _rs1_
+into a double-precision floating-point number in floating-point register
+_rd_. FCVT.WU.D, FCVT.LU.D, FCVT.D.WU, and FCVT.D.LU variants convert to
+or from unsigned integer values. For RV64, FCVT.W[U].D sign-extends the
+32-bit result. FCVT.L[U].D and FCVT.D.L[U] are RV64-only instructions.
+The range of valid inputs for FCVT._int_.D and the behavior for invalid
+inputs are the same as for FCVT._int_.S.
+(((floating point, convert and move)))'''
+zh = '''
+浮点到整数和整数到浮点的转换指令编码在 OP-FP 主操作码空间中。FCVT.W.D 或 FCVT.L.D 分别将浮点寄存器 _rs1_ 中的双精度浮点数转换为整数寄存器 _rd_ 中的有符号 32 位或 64 位整数。FCVT.D.W 或 FCVT.D.L 分别将整数寄存器 _rs1_ 中的 32 位或 64 位有符号整数转换为浮点寄存器 _rd_ 中的双精度浮点数。FCVT.WU.D、FCVT.LU.D、FCVT.D.WU 和 FCVT.D.LU 变体转换为无符号整数值或从无符号整数值转换。对于 RV64，FCVT.W[U].D 对 32 位结果进行符号扩展。FCVT.L[U].D 和 FCVT.D.L[U] 是仅限 RV64 的指令。FCVT._int_.D 的有效输入范围以及无效输入时的行为与 FCVT._int_.S 相同。
+(((浮点, 转换与移动)))'''

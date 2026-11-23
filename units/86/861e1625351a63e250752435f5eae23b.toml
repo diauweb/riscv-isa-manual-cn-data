@@ -1,0 +1,10 @@
+unit_id = "861e1625351a63e250752435f5eae23b"
+kind = "code"
+translatable = false
+en = '''
+----
+csrr t0, vl                        # Save current vl (potentially not needed)
+vsetvli t1, x0, e8, m8, ta, ma     # Maximum VLMAX
+vlm.v v0, (a0)                     # Load mask register
+vsetvli x0, t0, <new type>         # Restore vl (potentially already present)
+----'''

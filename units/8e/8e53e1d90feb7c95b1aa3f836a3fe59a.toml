@@ -1,0 +1,13 @@
+unit_id = "8e53e1d90feb7c95b1aa3f836a3fe59a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a write to one CSR changes the set of legal values allowed for a
+field of a second CSR, then unless specified otherwise, the second CSR's
+field immediately gets an `UNSPECIFIED` value from among its new legal values. This
+is true even if the field's value before the write remains legal after
+the write; the value of the field may be changed in consequence of the
+write to the controlling CSR.'''
+zh = '''
+若对某个 CSR 的写入改变第二个 CSR 的某个字段所允许的合法值集合，则除非另有规定，该第二个 CSR 的字段立即从其新的合法值中取得一个 `UNSPECIFIED` 值。即使该字段在写入前的值在写入后仍然合法，也是如此；该字段的值可能因对控制 CSR 的写入而改变。'''

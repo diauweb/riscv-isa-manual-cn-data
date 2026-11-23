@@ -1,0 +1,12 @@
+unit_id = "c4d0c6ff4599467b12830940f2d27a72"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In idempotent memory regions, vector store instructions may have
+updated elements in memory past the element causing a synchronous
+trap.  [#norm:vec_store_nonidempotent_no_update]#Non-idempotent memory regions must not have been updated for
+indices equal to or greater than the element that caused a synchronous
+trap during a vector store instruction.#'''
+zh = '''
+在幂等内存区域中，向量存储指令可能已更新内存中超过导致同步陷阱的元素的元素。[#norm:vec_store_nonidempotent_no_update]#对于向量存储指令期间导致同步陷阱的元素，索引等于或大于该元素的非幂等内存区域必须未被更新。#'''

@@ -1,0 +1,13 @@
+unit_id = "c41eb5f9c66266ea169e5366f538c9bb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The upper limit on VLEN allows software to know that indices
+will fit into 16 bits (largest VLMAX of 65,536 occurs for LMUL=8 and
+SEW=8 with VLEN=65,536).  Any future extension beyond 64Kib per vector
+register will require new configuration instructions such that
+software using the old configuration instructions does not see greater
+vector lengths.'''
+zh = '''
+NOTE: VLEN 的上限使软件能够知道索引将适合 16 位（最大的 VLMAX 为 65,536，出现在 LMUL=8 和 SEW=8 且 VLEN=65,536 时）。未来任何超过每个向量寄存器 64Kib 的扩展都需要新的配置指令，以便使用旧配置指令的软件不会看到更大的向量长度。'''

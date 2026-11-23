@@ -1,0 +1,25 @@
+unit_id = "5978960bc4c5d67ca85a63221a203335"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VAESZ(vs2, vd) = {
+  if(((vstart%EGS)<>0) | (LMUL*VLEN < EGW))  then {
+    handle_illegal();  // illegal instruction exception
+    RETIRE_FAIL
+  } else {
+
+  eg_len = (vl/EGS)
+  eg_start = (vstart/EGS)
+
+  foreach (i from eg_start to eg_len-1) {
+    let state : bits(128) = get_velem(vd, EGW=128, i);
+    let rkey  : bits(128) = get_velem(vs2, EGW=128, 0);
+    let ark   : bits(128) = state ^ rkey;
+    set_velem(vd, EGW=128, i, ark);
+  }
+  RETIRE_SUCCESS
+  }
+}
+--'''

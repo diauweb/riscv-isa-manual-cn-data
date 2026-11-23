@@ -1,0 +1,13 @@
+unit_id = "f0d697efc1ff5138dea73ca0319cb528"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The MRET instruction is used to return from a trap taken into M-mode.
+MRET first determines what the new privilege mode will be according to
+the values of MPP and MPV in `mstatus` or `mstatush`, as encoded in
+<<h-mpp>>. MRET then in `mstatus`/`mstatush` sets
+MPV=0, MPP=0, MIE=MPIE, and MPIE=1. Lastly, MRET sets the privilege mode
+as previously determined, and sets `pc`=`mepc`.'''
+zh = '''
+MRET 指令用于从进入 M 模式的陷阱返回。MRET 首先根据 `mstatus` 或 `mstatush` 中 MPP 和 MPV 的值，按 <<h-mpp>> 中的编码确定新的特权模式。随后 MRET 在 `mstatus`/`mstatush` 中置 MPV=0、MPP=0、MIE=MPIE 且 MPIE=1。最后，MRET 将特权模式置为先前确定的值，并置 `pc`=`mepc`。'''

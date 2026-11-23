@@ -1,0 +1,17 @@
+unit_id = "ae4db7fa42538e44d828611b4e63a72d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. That hart halts normally, with {dcsr-cause} reflecting the original cause of the
+halt.
+. All the other harts in the halt group that are running will quickly
+halt. {dcsr-cause} for those harts should be set to 6, but may be set to 3. Other
+harts in the halt group that are halted but have started the process of
+resuming must also quickly become halted, even if they do resume
+briefly.
+. Any external triggers in that group are notified.'''
+zh = '''
+. 该硬件线程正常停机，{dcsr-cause} 反映停机的原始原因。
+. 该停机组中所有其他正在运行的硬件线程将迅速停机。对于这些硬件线程，{dcsr-cause} 宜设为 6，但也可设为 3。该停机组中已停机但已开始恢复过程的硬件线程也必须迅速转为停机，即使它们确实曾短暂恢复。
+. 该组中的任何外部触发器都会被通知。'''

@@ -1,0 +1,16 @@
+unit_id = "f846a8287d54891fab00246b8b5413af"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_When a guest uses the SBI Supervisor Software Events (SSE) extension, the LCOFI will trap to HS-mode, which will then invoke a registered VS-mode LCOFI handler routine.  If `vsctrctl`.LCOFIFRZ=1, the HS-mode handler will need to emulate the freeze by setting `sctrstatus`.FROZEN=1 before invoking the registered handler routine._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_当客户机使用 SBI 监管软件事件（SSE）扩展时，LCOFI 将陷入 HS 模式，随后调用已注册的 VS 模式 LCOFI 处理程序例程。若 `vsctrctl`.LCOFIFRZ=1，则 HS 模式处理程序需要在调用已注册处理程序例程前通过设置 `sctrstatus`.FROZEN=1 来仿真冻结。_
+===='''

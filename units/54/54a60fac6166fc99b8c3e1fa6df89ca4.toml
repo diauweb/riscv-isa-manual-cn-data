@@ -1,0 +1,18 @@
+unit_id = "54a60fac6166fc99b8c3e1fa6df89ca4"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Value 0 as `tr??VerMajor` is NOT allowed (due to compatibility reasons).
+* Different components may report different versions (as some components may be updated more often than others).
+* The major version `tr??VerMajor` field is incremented when the modification breaks backward compatibility.
+* The minor version `tr??VerMinor` field  is incremented when the modification maintains backward compatibility (for example adding a new field) - for that reason software should always write 0 to reserved bits in registers.
+* Version 15.x is reserved for non-compatible version encoding.
+* Version n.15 should be used as experimental (in development) implementation.'''
+zh = '''
+* 不允许 `tr??VerMajor` 为值 0（出于兼容性原因）。
+* 不同组件可报告不同版本（因为某些组件可能比其他组件更新得更频繁）。
+* 当修改破坏向后兼容性时，主版本 `tr??VerMajor` 字段递增。
+* 当修改保持向后兼容性时（例如添加新字段），次版本 `tr??VerMinor` 字段递增——因此，软件宜始终向寄存器中的保留位写 0。
+* 版本 15.x 保留用于非兼容版本编码。
+* 版本 n.15 宜用作实验性（开发中）实现。'''

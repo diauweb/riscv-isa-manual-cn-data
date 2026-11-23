@@ -1,0 +1,59 @@
+unit_id = "b973e33620402fcc80636d58f782db75"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Conditions determining whether a CSR instruction reads or writes the specified CSR.
+[%autowidth,float="center",align="center",cols="<,^,^,^,^",options="header",]
+|===
+5+^|*Register operand*
+|Instruction |_rd_ is `x0` |_rs1_ is `x0` |Reads CSR |Writes CSR
+
+|insn:csrrw[] |Yes |- |No |Yes
+
+|insn:csrrw[] |No |- |Yes |Yes
+
+|insn:csrrs[]/insn:csrrc[] |- |Yes |Yes |No
+
+|insn:csrrs[]/insn:csrrc[] |- |No |Yes |Yes
+
+5+^|*Immediate operand*
+
+|Instruction |_rd_ is `x0` |_uimm_=0 |Reads CSR |Writes
+CSR
+
+|insn:csrrwi[] |Yes |- |No |Yes
+
+|insn:csrrwi[] |No |- |Yes |Yes
+
+|insn:csrrsi[]/insn:csrrci[] |- |Yes |Yes |No
+
+|insn:csrrsi[]/insn:csrrci[] |- |No |Yes |Yes
+|==='''
+zh = '''
+.确定 CSR 指令是否读取或写入指定 CSR 的条件
+[%autowidth,float="center",align="center",cols="<,^,^,^,^",options="header",]
+|===
+5+^|**寄存器操作数**
+|指令 |__rd__ 为 `x0` |__rs1__ 为 `x0` |读取 CSR |写入 CSR
+
+|insn:csrrw[] |是 |- |否 |是
+
+|insn:csrrw[] |否 |- |是 |是
+
+|insn:csrrs[]/insn:csrrc[] |- |是 |是 |否
+
+|insn:csrrs[]/insn:csrrc[] |- |否 |是 |是
+
+5+^|**立即数操作数**
+
+|指令 |__rd__ 为 `x0` |__uimm__=0 |读取 CSR |写入 CSR
+
+|insn:csrrwi[] |是 |- |否 |是
+
+|insn:csrrwi[] |否 |- |是 |是
+
+|insn:csrrsi[]/insn:csrrci[] |- |是 |是 |否
+
+|insn:csrrsi[]/insn:csrrci[] |- |否 |是 |是
+|==='''

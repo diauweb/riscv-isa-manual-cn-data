@@ -1,0 +1,184 @@
+{
+  "chap_hash": "78b0f3626328fae3",
+  "id": "memorymodel",
+  "sectname": "chapter",
+  "sectnum": "17",
+  "title_en": "RVWMO Memory Consistency Model, Version 2.0",
+  "title_unit_id": "6e9eba70e7015043c8ac425db29e9226",
+  "source_path": "src/rvwmo.adoc",
+  "sections": [
+    {
+      "id": "memorymodel",
+      "level": 1,
+      "sectnum": "17",
+      "title": "RVWMO Memory Consistency Model, Version 2.0",
+      "heading_unit_id": "6e9eba70e7015043c8ac425db29e9226",
+      "heading_anchor_id": "memorymodel",
+      "blocks": [
+        "0b647f96b744b939557440628dab4349",
+        "cc755d4970654b56d3a5656bf4b07a0f",
+        "3b11f5f78f86a904d25a7c230bd85667",
+        "4b5eb88ab9580cb6d7cba8e0c4ceb000",
+        "a5ccb8222c41368854f342a5f07c97c0"
+      ]
+    },
+    {
+      "id": "rvwmo",
+      "level": 2,
+      "sectnum": "17.1",
+      "title": "Definition of the RVWMO Memory Model",
+      "heading_unit_id": "7af3ebaeda444c9b6347660e327b63ac",
+      "heading_anchor_id": "rvwmo",
+      "blocks": [
+        "08abeb0dc31690ec7945c413c7524d87",
+        "91cd2afc07f1d5e018b7519a76ab37d0"
+      ]
+    },
+    {
+      "id": "rvwmo-primitives",
+      "level": 3,
+      "sectnum": "17.1.1",
+      "title": "Memory Model Primitives",
+      "heading_unit_id": "fd4c19110b40f541db89e11122eee4e1",
+      "heading_anchor_id": "rvwmo-primitives",
+      "blocks": [
+        "e2db559b1d3189b09bab7fda1b327940",
+        "fe2478e3f23b2e36ed2b0fdb50c1534f",
+        "ea7f8a0410c3d3c8edd433cd2b6e2758",
+        "6ae80f271d9ae85cb17f98f2288877b9",
+        "400cc3a2692e7a1386379bb11644a6de",
+        "2971d5f8c764a3252ec08d6f404e9a69",
+        "025a2ca00378ac68a24c6423bad10394",
+        "ca70c8e7045d9c6ad8e3ed1677bb27ef",
+        "0871997d4a0d10ddb2bbb61a7139a129",
+        "7619c9156fc7a179ba274215e4cdb41a"
+      ]
+    },
+    {
+      "id": "mem-dependencies",
+      "level": 3,
+      "sectnum": "17.1.2",
+      "title": "Syntactic Dependencies",
+      "heading_unit_id": "661f96a813c4e83caad5cd33cb646da2",
+      "heading_anchor_id": "mem-dependencies",
+      "blocks": [
+        "4657538281a613caa4c43162a7c38b05",
+        "b1b2fb88aedc2be54a53a3817c07d6a9",
+        "5d948a067e0397836dd5d26a6c03d7c6",
+        "04a9f962c180a54bf33b29933105f8af",
+        "b276f0958977dda9a59367aeda3e68ac",
+        "e9408ea4266d29c1d8d8153c1e8000b2",
+        "233eef85951a06751f7013e5303583d5",
+        "13895b9962dbab4dfbad700f5ac28f10",
+        "d76e3cc6215313c65a392aaa1630048e",
+        "584a3c2de06fa9f59e5afcb6577189b2",
+        "5131817faa5adb5ee7396394b98db03d",
+        "af4fdb1ea62ccc6636cc04445b399acd",
+        "5f8926c8919b0f3d33867e11e3109a54",
+        "12931b5f1260778a5c50c88a68fd0607",
+        "c025d95958bf1bab1564729b97833d70",
+        "69423233a91d04e73e7342377b567537"
+      ]
+    },
+    {
+      "id": "_preserved_program_order",
+      "level": 3,
+      "sectnum": "17.1.3",
+      "title": "Preserved Program Order",
+      "heading_unit_id": "3e0d288e614a295db38a6f2528a267f5",
+      "blocks": [
+        {
+          "unit_id": "38f77b3dfddfcd693c7107401db6fdbe",
+          "anchor_id": "ppo"
+        },
+        "d7ca3166fa19ccbe6982ddbae1f681e1",
+        {
+          "unit_id": "46c8bfc6d3fb674c0466c00b7101f3b6",
+          "anchor_id": "overlapping-ordering"
+        }
+      ]
+    },
+    {
+      "id": "_memory_model_axioms",
+      "level": 3,
+      "sectnum": "17.1.4",
+      "title": "Memory Model Axioms",
+      "heading_unit_id": "279159f090c9f5e78959dfb03850036c",
+      "blocks": [
+        "e12f96c1aacd0da8455d99248032567f"
+      ]
+    },
+    {
+      "id": "ax-load",
+      "level": 4,
+      "sectnum": "17.1.4.1",
+      "title": "Load Value Axiom",
+      "heading_unit_id": "00bf6d65c632c0e36281a6d58efd2a7b",
+      "heading_anchor_id": "ax-load",
+      "blocks": [
+        "fe861c4c16c935d5863a3127ed33dede",
+        "183c7564ecc7e8f170fe57180f300959"
+      ]
+    },
+    {
+      "id": "ax-atom",
+      "level": 4,
+      "sectnum": "17.1.4.2",
+      "title": "Atomicity Axiom",
+      "heading_unit_id": "5e1d6598582ede14b3d2e921e73a3fae",
+      "heading_anchor_id": "ax-atom",
+      "blocks": [
+        "1bc8ceaf05e4efd6397811262b06d7c1",
+        "c2ae507ddc7cf98c8c4d6c14c7fd5db7"
+      ]
+    },
+    {
+      "id": "ax-prog",
+      "level": 4,
+      "sectnum": "17.1.4.3",
+      "title": "Progress Axiom",
+      "heading_unit_id": "b335d5ec6027116425869cc27d2a6001",
+      "heading_anchor_id": "ax-prog",
+      "blocks": [
+        "436d69cccf5688ab7a5ff80c06d750ce"
+      ]
+    },
+    {
+      "id": "csr-granularity",
+      "level": 2,
+      "sectnum": "17.2",
+      "title": "CSR Dependency Tracking Granularity",
+      "heading_unit_id": "8cbc9e4e53b61f7253d0811ce39c88d2",
+      "heading_anchor_id": "csr-granularity",
+      "blocks": [
+        "95e6231a3344f799f3e6780c3474e405",
+        "48541929d79a8b2df13a686363ebbb20"
+      ]
+    },
+    {
+      "id": "source-dest-regs",
+      "level": 2,
+      "sectnum": "17.3",
+      "title": "Source and Destination Register Listings",
+      "heading_unit_id": "80efab9d6878143a0a288828a2c46654",
+      "heading_anchor_id": "source-dest-regs",
+      "blocks": [
+        "7d753a47fc5acad2e360ebd1b461e4df",
+        "4ed196a071c4a274dba05920c7d2e512",
+        "5e6340535fe9dbb2b2ec058b13d94d7d",
+        "5f0ae5bf5e3c6ea79d01f0e116284fcb",
+        "fceb84aa74615707d33ea79d76d8ea45",
+        "0fb1cc5da08e68dd02c055d54e3efe66",
+        "3ee21ba4b76769eb38441994f90563bf",
+        "301574e89aa775448f9c572a803fe580",
+        "d794b940476d3606388df56348c36eca",
+        "ed7607fa23a9cd127343fc19ca5ae317",
+        "6a0ae747140fad11390a2b9b54ebc497",
+        "c4871cb8362de3081110db1a296640d9",
+        "39689d57462a76f4d869c5f48b0e2471",
+        "b02f531d4552bc9f386e0a221cb5f3e7",
+        "f8d8336e024e14bb25f2c68631fb3191"
+      ]
+    }
+  ]
+}

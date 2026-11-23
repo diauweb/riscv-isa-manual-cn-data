@@ -1,0 +1,21 @@
+unit_id = "6dc105c9d0a8741cefc5410ef9279205"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For example, if `M`=8, `N`=0, and the PMP granularity is 4 bytes, then
+it is valid to fetch a 4-byte instruction at `pc`, even if fetching from
+`pc` + 4 would have been disallowed by PMP.
+
+For simplicity, implementations are likely to choose a PMP granularity no
+smaller than `M`.
+===='''
+zh = '''
+[NOTE]
+====
+例如，如果 `M`=8、`N`=0 且 PMP 粒度为 4 字节，则在 `pc` 处取 4 字节指令是合法的，即使从 `pc` + 4 处取指会被 PMP 禁止。
+
+为简单起见，实现可能选择不小于 `M` 的 PMP 粒度。
+===='''

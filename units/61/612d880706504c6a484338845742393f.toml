@@ -1,0 +1,14 @@
+unit_id = "612d880706504c6a484338845742393f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A consequence of the transition condition above is that
+store-release-RCsc memory store operations cannot be forwarded to
+load-acquire-RCsc instructions: latexmath:[$msoss$] does not include
+memory store operations from finished stores (as those must be
+propagated memory store operations), and the condition above requires
+all program-order-previous store-releases-RCsc to be finished when the
+load is acquire-RCsc.'''
+zh = '''
+上述转移条件的一个推论是，存储-释放-RCsc 内存存储操作不能前递给加载-获取-RCsc 指令：latexmath:[$msoss$] 不包含来自已完成存储的内存存储操作（因为那些必须是已传播的内存存储操作），且上述条件要求当加载是获取-RCsc 时，所有程序顺序在先的存储-释放-RCsc 均已完成。'''

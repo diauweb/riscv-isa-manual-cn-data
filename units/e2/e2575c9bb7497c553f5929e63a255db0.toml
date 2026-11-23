@@ -1,0 +1,26 @@
+unit_id = "e2575c9bb7497c553f5929e63a255db0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-sbcs} | {sbcs-sbaccess}=2, {sbcs-sbautoincrement} | Turn on autoincrement
+| Write | {dm-sbaddress0} | address |
+| Write | {dm-sbdata0} | value0 |
+| Write | {dm-sbdata0} | value1 |
+| ... | ... | ... | ...
+| Write | {dm-sbdata0} | valueN |
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-sbcs} | {sbcs-sbaccess}=2, {sbcs-sbautoincrement} | 开启自动递增
+| 写 | {dm-sbaddress0} | 地址 |
+| 写 | {dm-sbdata0} | 值0 |
+| 写 | {dm-sbdata0} | 值1 |
+| ... | ... | ... | ...
+| 写 | {dm-sbdata0} | 值N |
+|==='''

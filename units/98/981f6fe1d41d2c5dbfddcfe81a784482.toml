@@ -1,0 +1,26 @@
+unit_id = "981f6fe1d41d2c5dbfddcfe81a784482"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trPibImpl: Trace PIB Implementation Register (trBasePib+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trPibVerMajor |Trace PIB Sink Component Major Version. Value 1 means the component is compliant with this document. |RO|1
+|7:4 |trPibVerMinor |Trace PIB Sink Component Minor Version. Value 0 means the component is compliant with this document. |RO|0
+|11:8 |trPibCompType |Trace PIB Sink Component Type (PIB Sink) |RO|0xA
+|23:12 |--|Reserved for future versions of this standard|--|0
+|31:24 |--|Reserved for vendor specific implementation details|--|<<SD,SD>>
+|==='''
+zh = '''
+.*寄存器：trPibImpl：跟踪 PIB 实现寄存器 (trBasePib+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trPibVerMajor |跟踪 PIB 接收器组件主版本。值 1 表示该组件符合本文档。|RO|1
+|7:4 |trPibVerMinor |跟踪 PIB 接收器组件次版本。值 0 表示该组件符合本文档。|RO|0
+|11:8 |trPibCompType |跟踪 PIB 接收器组件类型（PIB 接收器）|RO|0xA
+|23:12 |--|保留供本标准未来版本使用|--|0
+|31:24 |--|保留供供应商特定实现细节使用|--|<<SD,SD>>
+|==='''

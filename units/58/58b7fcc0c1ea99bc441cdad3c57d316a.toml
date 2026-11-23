@@ -1,0 +1,13 @@
+unit_id = "58b7fcc0c1ea99bc441cdad3c57d316a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A store instruction instance _i_ in state
+Pending_mem_stores(_store_continuation_), for which all the memory store
+operations in _i.mem_stores_ have been propagated,
+can always be completed (not to be confused with finished). Action:
+update the state of _i_ to
+Plain(_store_continuation(true)_).'''
+zh = '''
+处于 Pending_mem_stores(_store_continuation_) 状态、且 _i.mem_stores_ 中的所有内存存储操作均已传播的存储指令实例 _i_ 始终可被完成（注意不要与“完成（finished）”混淆）。动作：将 _i_ 的状态更新为 Plain(_store_continuation(true)_)。'''

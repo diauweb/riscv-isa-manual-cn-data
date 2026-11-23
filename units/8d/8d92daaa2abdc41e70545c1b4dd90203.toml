@@ -1,0 +1,13 @@
+unit_id = "8d92daaa2abdc41e70545c1b4dd90203"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-lwsp_op]#C.LWSP loads a 32-bit value from memory into register _rd_. It computes
+an effective address by adding the _zero_-extended offset, scaled by 4,
+to the stack pointer, `x2`. It expands to `lw rd, offset(x2)`.#
+[#norm:c-lwsp_rsv]#C.LWSP is
+valid only when _rd_≠`x0`; the code points with _rd_=`x0` are reserved.#'''
+zh = '''
+[#norm:c-lwsp_op]##C.LWSP 从内存加载 32 位值到寄存器 _rd_。它通过将按 4 缩放的__零__扩展偏移加到栈指针 `x2` 上来计算有效地址。它展开为 `lw rd, offset(x2)`。##
+[#norm:c-lwsp_rsv]##C.LWSP 仅在 _rd_≠`x0` 时有效；_rd_=`x0` 的编码点保留。##'''

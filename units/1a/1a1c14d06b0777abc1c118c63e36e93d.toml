@@ -1,0 +1,11 @@
+unit_id = "1a1c14d06b0777abc1c118c63e36e93d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zawrs_priv_illegal_instr_excp]#When the csr::[tw] (timeout wait) bit in csr:mstatus[] is set and insn:wrs.nto[] is executed
+in any privilege mode other than M-mode, and it does not complete within an
+implementation-specific bounded time limit, the insn:wrs.nto[] instruction will cause
+an illegal-instruction exception.#'''
+zh = '''
+[#norm:Zawrs_priv_illegal_instr_excp]##当 csr:mstatus[] 中的 csr::[tw]（超时等待）位置位，且在任何非 M 模式的特权模式下执行 insn:wrs.nto[]，并且它未在实现特定的有界时间限制内完成时，insn:wrs.nto[] 指令将导致非法指令异常。##'''

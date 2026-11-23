@@ -1,0 +1,22 @@
+unit_id = "e92633df2fc48e7dfb87e665e27cde49"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* <<msg2_ProgTraceSync,ProgTraceSync>> (start of trace)
+** SYNC=3 (Exit from Debug Mode), I-CNT=0 (nothing executed as we are starting)
+** F-ADDR=0x80 (encoding starting address 0x100)
+* <<msg2_ResourceFull,ResourceFull>> (I-CNT overflown to 9 at an address 0x112)
+** RCODE=0 (I-CNT counter is full), *RDATA[0]=9* (I-CNT value overflown value)
+* <<msg2_ProgTraceCorrelation,ProgTraceCorrelation>> (describes entire <0x100..0x11C> range)
+** EVCODE=0 (Entry into Debug Mode), CDF=1 (I-CNT and HIST fields follow)
+** *I-CNT=5* (see note below), HIST=0x2 (one not-taken direct conditional branch)'''
+zh = '''
+* <<msg2_ProgTraceSync,ProgTraceSync>>（跟踪开始）
+** SYNC=3（退出调试模式），I-CNT=0（由于我们刚开始，未执行任何内容）
+** F-ADDR=0x80（编码起始地址 0x100）
+* <<msg2_ResourceFull,ResourceFull>>（I-CNT 在地址 0x112 处溢出到 9）
+** RCODE=0（I-CNT 计数器满），*RDATA[0]=9*（I-CNT 值溢出值）
+* <<msg2_ProgTraceCorrelation,ProgTraceCorrelation>>（描述整个 <0x100..0x11C> 范围）
+** EVCODE=0（进入调试模式），CDF=1（随后是 I-CNT 和 HIST 字段）
+** *I-CNT=5*（见下面注释），HIST=0x2（一条未发生跳转的直接条件分支）'''

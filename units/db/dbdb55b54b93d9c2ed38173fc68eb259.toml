@@ -1,0 +1,13 @@
+unit_id = "dbdb55b54b93d9c2ed38173fc68eb259"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mcause_intr_op]#The Interrupt bit in the `mcause` register is set if the trap was
+caused by an interrupt.#
+[#norm:mcause_exccode_op]#The Exception Code field contains a code identifying
+the last exception or interrupt.#
+<<norm:mcause_exccode_enc_img>> lists the possible machine-level exception codes.#
+[#norm:mcause_exccode_wlrl]#The Exception Code is a *WLRL* field, so is only guaranteed to hold supported exception codes.#'''
+zh = '''
+[#norm:mcause_intr_op]##若陷阱由中断引起，则 `mcause` 寄存器中的 Interrupt 位被置位。##[#norm:mcause_exccode_op]##Exception Code 字段包含标识最后异常或中断的代码。##<<norm:mcause_exccode_enc_img>> 列出了可能的机器级异常代码。[#norm:mcause_exccode_wlrl]##Exception Code 是 *WLRL* 字段，因此仅保证能保存支持的异常代码。##'''

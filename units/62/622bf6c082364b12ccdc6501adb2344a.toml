@@ -1,0 +1,11 @@
+unit_id = "622bf6c082364b12ccdc6501adb2344a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+insn:vlm.v[] and insn:vsm.v[] are encoded with the same `width[2:0]`=0 encoding as
+insn:vle8.v[] and insn:vse8.v[], but are distinguished by different
+`lumop` and `sumop` encodings.  Since insn:vlm.v[] and insn:vsm.v[] operate as byte loads and stores,
+csr:vstart[] is in units of bytes for these instructions.'''
+zh = '''
+insn:vlm.v[] 和 insn:vsm.v[] 使用与 insn:vle8.v[] 和 insn:vse8.v[] 相同的 `width[2:0]`=0 编码，但通过不同的 `lumop` 和 `sumop` 编码加以区分。由于 insn:vlm.v[] 和 insn:vsm.v[] 按字节加载和存储操作，因此对于这些指令，csr:vstart[] 以字节为单位。'''

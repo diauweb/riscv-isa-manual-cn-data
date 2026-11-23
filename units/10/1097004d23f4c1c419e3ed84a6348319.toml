@@ -1,0 +1,31 @@
+unit_id = "1097004d23f4c1c419e3ed84a6348319"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+insn:nop[]s can be used to align code segments to microarchitecturally
+significant address boundaries, or to leave space for inline code
+modifications. Although there are many possible ways to encode a insn:nop[], we
+define a canonical insn:nop[] encoding to allow microarchitectural
+optimizations as well as for more readable disassembly output. The other
+insn:nop[] encodings are made available for <<rv32i-hints>>.
+
+insn:addi[] was chosen for the insn:nop[] encoding as this is most likely to take
+fewest resources to execute across a range of systems (if not optimized
+away in decode). In particular, the instruction only reads one register.
+Also, an insn:addi[] functional unit is more likely to be available in a
+superscalar design as adds are the most common operation. In particular,
+address-generation functional units can execute insn:addi[] using the same
+hardware needed for base+offset address calculations, while
+register-register insn:add[] or logical/shift operations require additional
+hardware.
+===='''
+zh = '''
+[NOTE]
+====
+insn:nop[] 可用于将代码段对齐到微架构上重要的地址边界，或为内联代码修改留出空间。尽管存在许多可能的 insn:nop[] 编码方式，我们定义了一种规范 insn:nop[] 编码，以便进行微架构优化并输出更可读的反汇编结果。其他 insn:nop[] 编码在 <<rv32i-hints>> 中提供。
+
+选择 insn:addi[] 作为 insn:nop[] 编码，是因为在一系列系统上它最有可能以最少资源执行（如果在译码中未被优化掉）。特别地，该指令只读取一个寄存器。此外，在超标量设计中，insn:addi[] 功能单元更可能可用，因为加法是最常见的操作。特别地，地址生成功能单元可使用与基址+偏移地址计算相同的硬件来执行 insn:addi[]，而寄存器-寄存器 insn:add[] 或逻辑/移位操作则需要额外硬件。
+===='''

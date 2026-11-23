@@ -1,0 +1,17 @@
+unit_id = "36c2126833ed332f8bcbe573b1ad09b1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hip_vstip_op]#A virtual supervisor timer interrupt becomes pending, as reflected in the
+csr::[vstip] bit in the csr:hip[] register, whenever (csr:time[] + csr:htimedelta[]), truncated
+to qty:64[bits], contains a value greater than or equal to csr:vstimecmp[], treating
+the values as unsigned integers.#
+[#norm:hip_vstip_clear]#If the result of this comparison changes, it is guaranteed to be reflected in
+csr::[vstip] eventually, but not necessarily immediately.
+The interrupt remains posted until csr:vstimecmp[] becomes greater than (csr:time[] + csr:htimedelta[]),
+typically as a result of writing csr:vstimecmp[].#
+[#norm:hip_vstip_enable]#The interrupt will be taken based on the standard interrupt enable and
+delegation rules while V=1.#'''
+zh = '''
+[#norm:hip_vstip_op]##当 (csr:time[] + csr:htimedelta[])（截断到 qty:64[bits]）包含大于或等于 csr:vstimecmp[] 的值时，虚拟监管定时器中断变为挂起，如 csr:hip[] 寄存器中的 csr::[vstip] 位所反映，将这些值视为无符号整数。## [#norm:hip_vstip_clear]##若此比较结果改变，保证最终反映在 csr::[vstip] 中，但不一定立即反映。该中断保持挂起，直到 csr:vstimecmp[] 变得大于 (csr:time[] + csr:htimedelta[])，通常通过写入 csr:vstimecmp[] 实现。## [#norm:hip_vstip_enable]##当 V=1 时，将依据标准中断使能和委托规则接受该中断。##'''

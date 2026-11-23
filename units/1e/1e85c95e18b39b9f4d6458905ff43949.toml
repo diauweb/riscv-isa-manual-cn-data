@@ -1,0 +1,23 @@
+unit_id = "1e85c95e18b39b9f4d6458905ff43949"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- The destination EEW equals the source EEW.
+- The destination EEW is smaller than the source EEW, and the lowest-numbered
+  register in the destination vector register group is the same as the
+  lowest-numbered register in the source vector register group.
+  (For example, when LMUL=1,
+  `vnsrl.wi v0, v0, 3` is legal, but a destination of `v1` is not).
+- The destination EEW is greater than the source EEW, the source EMUL is
+  at least 1, and the highest-numbered register in the destination
+  vector register group is the same as the highest-numbered register in
+  the source vector register group.
+  (For example, when LMUL=8, `vzext.vf4 v0, v6` is legal,
+  but a source of `v0`, `v2`, or `v4` is not).'''
+zh = '''
+- 目标 EEW 等于源 EEW。
+- 目标 EEW 小于源 EEW，且目标向量寄存器组中编号最低的寄存器与源向量寄存器组中编号最低的寄存器相同。
+  （例如，当 LMUL=1 时，`vnsrl.wi v0, v0, 3` 合法，但目标为 `v1` 不合法）。
+- 目标 EEW 大于源 EEW，源 EMUL 至少为 1，且目标向量寄存器组中编号最高的寄存器与源向量寄存器组中编号最高的寄存器相同。
+  （例如，当 LMUL=8 时，`vzext.vf4 v0, v6` 合法，但源为 `v0`、`v2` 或 `v4` 不合法）。'''

@@ -1,0 +1,13 @@
+unit_id = "595a9bbf0fae6d3fbe65275119df5905"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For a hart that can retire multiple instructions per cycle, but no more
+than one branch, the preferred solution is to use one instance of
+signals from groups BR, MR and OR. However, if the hart can retire N
+branches in a cycle, N instances of signals from groups MR, OR and
+either SR or BR must be used (each instance can be either a single
+instruction or a block).'''
+zh = '''
+对于每周期可退休多条指令但最多一条分支的硬件线程，首选方案是使用来自组 BR、MR 和 OR 的信号的一个实例。然而，若硬件线程在一个周期内可退休 N 条分支，则必须使用来自组 MR、OR 以及 SR 或 BR 的信号的 N 个实例（每个实例可以是单条指令或一个块）。'''

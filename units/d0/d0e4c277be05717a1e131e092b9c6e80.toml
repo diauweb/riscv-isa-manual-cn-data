@@ -1,0 +1,420 @@
+unit_id = "d0e4c277be05717a1e131e092b9c6e80"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+Note that writing `hgatp` does not imply any ordering constraints
+between page-table updates and subsequent G-stage address translations.
+If the new virtual machine’s guest physical page tables have been
+modified, or if a VMID is reused, it may be necessary to execute an
+HFENCE.GVMA instruction (see <<hfence.vma>>) before or
+after writing `hgatp`.
+
+==== Virtual Supervisor Status Register (`vsstatus`)
+
+The `vsstatus` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sstatus`, formatted as shown
+in <<vsstatusreg-rv32>> when VSXLEN=32 and
+<<vsstatusreg>> when VSXLEN=64. When V=1,
+`vsstatus` substitutes for the usual `sstatus`, so instructions that
+normally read or modify `sstatus` actually access `vsstatus` instead.
+
+[[vsstatusreg-rv32]]
+.Virtual supervisor status register (`vstatus`) when VSXLEN=32.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "31" {:borders {}})
+(draw-box "30" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "19" {:span 2 :borders {}})
+(draw-box "18" {:span 2 :borders {}})
+(draw-box "17" {:span 3 :borders {}})
+(draw-box nil {:span 10 :borders {}})
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "SD")
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 4})
+(draw-box "MXR" {:span 2})
+(draw-box "SUM" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box nil {:span 9 :borders {}})
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box nil {:borders {}})
+(draw-box nil {:span 9 :borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:span 5 :borders {}})
+(draw-box "16" {:span 2:borders {} :text-anchor "start"})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {} :text-anchor "start"})
+(draw-box "2" {:borders {} :text-anchor "end"})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "SIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box nil {:span 5 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 2 :borders {}})
+----
+
+[[vsstatusreg]]
+.Virtual supervisor status register (`vsstatus`) when VSXLEN=64.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 3 :borders {}})
+(draw-box "62" {:span 5 :text-anchor "start" :borders {}})
+(draw-box "34" {:span 5 :text-anchor "end" :borders {}})
+(draw-box "33" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "32" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "31" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "20" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "19" {:span 2 :borders {}})
+(draw-box "18" {:span 2 :borders {}})
+(draw-box "17" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box "SD" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 10})
+(draw-box "UXL[1:0]" {:span 4})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 6})
+(draw-box "MXR" {:span 2})
+(draw-box "SUM" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "29" {:span 10 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box "12" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "16" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 3 :borders {}})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "SIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+----
+
+The UXL field controls the effective XLEN for VU-mode, which may differ
+from the XLEN for VS-mode (VSXLEN). When VSXLEN=32, the UXL field does
+not exist, and VU-mode XLEN=32. When VSXLEN=64, UXL is a *WARL* field that is
+encoded the same as the MXL field of `misa`, shown in <<misabase>>. In particular, an implementation may make UXL be a read-only copy of field VSXL of `hstatus`, forcing VU-mode XLEN=VSXLEN.
+
+If VSXLEN is changed from 32 to a wider width, and if field UXL is not
+restricted to a single value, it gets the value corresponding to the
+widest supported width not wider than the new VSXLEN.
+
+When V=1, both `vsstatus`.FS and the HS-level `sstatus`.FS are in
+effect. Attempts to execute a floating-point instruction when either
+field is 0 (Off) raise an illegal-instruction exception. Modifying the
+floating-point state when V=1 causes both fields to be set to 3 (Dirty).
+
+[NOTE]
+===='''
+zh = '''
+====
+
+注意，写入 `hgatp` 不意味着页表更新与随后的 G 阶段地址转换之间存在任何排序约束。若新虚拟机的客户机物理页表已被修改，或若某个 VMID 被重用，则可能需要在写入 `hgatp` 之前或之后执行 HFENCE.GVMA 指令（见 <<hfence.vma>>）。
+
+==== 虚拟监管者状态寄存器（`vsstatus`）
+
+`vsstatus` 寄存器是一个 VSXLEN 位读/写寄存器，是 VS 模式下对监管者寄存器 `sstatus` 的版本，当 VSXLEN=32 时格式如 <<vsstatusreg-rv32>> 所示，当 VSXLEN=64 时格式如 <<vsstatusreg>> 所示。当 V=1 时，`vsstatus` 替代通常的 `sstatus`，因此通常读取或修改 `sstatus` 的指令实际上改为访问 `vsstatus`。
+
+[[vsstatusreg-rv32]]
+.当 VSXLEN=32 时的虚拟监管者状态寄存器（`vstatus`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "31" {:borders {}})
+(draw-box "30" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "19" {:span 2 :borders {}})
+(draw-box "18" {:span 2 :borders {}})
+(draw-box "17" {:span 3 :borders {}})
+(draw-box nil {:span 10 :borders {}})
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "SD")
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 4})
+(draw-box "MXR" {:span 2})
+(draw-box "SUM" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box nil {:span 9 :borders {}})
+
+(draw-box nil {:span 10 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box nil {:borders {}})
+(draw-box nil {:span 9 :borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:span 5 :borders {}})
+(draw-box "16" {:span 2:borders {} :text-anchor "start"})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {} :text-anchor "start"})
+(draw-box "2" {:borders {} :text-anchor "end"})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "SIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box nil {:span 5 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 2 :borders {}})
+----
+
+[[vsstatusreg]]
+.当 VSXLEN=64 时的虚拟监管者状态寄存器（`vsstatus`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 3 :borders {}})
+(draw-box "62" {:span 5 :text-anchor "start" :borders {}})
+(draw-box "34" {:span 5 :text-anchor "end" :borders {}})
+(draw-box "33" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "32" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "31" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "20" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "19" {:span 2 :borders {}})
+(draw-box "18" {:span 2 :borders {}})
+(draw-box "17" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box "SD" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 10})
+(draw-box "UXL[1:0]" {:span 4})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 6})
+(draw-box "MXR" {:span 2})
+(draw-box "SUM" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box nil {:span 2 :borders {}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "29" {:span 10 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box "12" {:span 6 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "16" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:span 2 :borders {} :text-anchor "start"})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 3 :borders {}})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box "SIE" {:span 2})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 2})
+(draw-box nil {:span 3 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box nil {:span 3 :borders {}})
+----
+
+UXL 字段控制 VU 模式的有效 XLEN，它可能与 VS 模式的 XLEN（VSXLEN）不同。当 VSXLEN=32 时，UXL 字段不存在，且 VU 模式 XLEN=32。当 VSXLEN=64 时，UXL 是一个 *WARL* 字段，其编码与 `misa` 的 MXL 字段相同，如 <<misabase>> 所示。特别地，实现可使 UXL 成为 `hstatus` 字段 VSXL 的只读副本，强制 VU 模式 XLEN=VSXLEN。
+
+若将 VSXLEN 从 32 改为更宽的宽度，且字段 UXL 未被限制为单个值，则其取值对应于不超过新 VSXLEN 的最宽受支持宽度。
+
+当 V=1 时，`vsstatus`.FS 和 HS 级 `sstatus`.FS 均生效。当任一字段为 0（关）时尝试执行浮点指令将引发非法指令异常。当 V=1 时修改浮点状态会使两个字段均置为 3（脏）。
+
+[NOTE]
+===='''

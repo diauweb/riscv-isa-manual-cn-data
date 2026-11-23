@@ -1,0 +1,15 @@
+unit_id = "669b8b33c5b01e854e7621bc74b5d0c8"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+//This is not SAIL, it's pseudo-code. The SAIL hasn't been written yet.
+if (RV32E && (r1sc>1 || r2sc>1)) {
+  reserved();
+}
+xreg1 = {r1sc[2:1]>0,r1sc[2:1]==0,r1sc[2:0]};
+xreg2 = {r2sc[2:1]>0,r2sc[2:1]==0,r2sc[2:0]};
+X[xreg1] = X[10];
+X[xreg2] = X[11];
+----'''

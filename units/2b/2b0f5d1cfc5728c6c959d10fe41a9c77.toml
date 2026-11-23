@@ -1,0 +1,17 @@
+unit_id = "2b0f5d1cfc5728c6c959d10fe41a9c77"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:menvcfg_cbie_warl_op]#The Zicbom extension adds the `CBIE` (Cache Block Invalidate instruction Enable)
+WARL field to `menvcfg` to control execution of the cache block invalidate
+instruction (`CBO.INVAL`) in modes less privileged than M. When `CBIE` is set to
+`00b`, the instruction raises an illegal-instruction exception in modes less
+privileged than M.#
+[#norm:menvcfg_cbie_rdonly0]#When the Zicbom extension is not implemented, `CBIE` is read-only zero.#
+The encoding `10b` is reserved.
+[#norm:menvcfg_cbie_cbo-inval_op_lead-in]#When `CBIE` is set to `01b`
+or `11b`, and when enabled for execution in modes less privileged than M, it
+behaves as follows:#'''
+zh = '''
+[#norm:menvcfg_cbie_warl_op]##Zicbom 扩展向 `menvcfg` 添加 `CBIE`（Cache Block Invalidate instruction Enable）WARL 字段，以控制缓存块使无效指令（`CBO.INVAL`）在低于 M 的模式下的执行。当 `CBIE` 设置为 `00b` 时，该指令在低于 M 的模式下引发非法指令异常。##[#norm:menvcfg_cbie_rdonly0]##当未实现 Zicbom 扩展时，`CBIE` 为只读零。##编码 `10b` 为保留。[#norm:menvcfg_cbie_cbo-inval_op_lead-in]##当 `CBIE` 设置为 `01b` 或 `11b`，且在低于 M 的模式下使能执行时，其行为如下：##'''

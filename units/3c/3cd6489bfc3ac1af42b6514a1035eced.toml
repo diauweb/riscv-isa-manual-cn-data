@@ -1,0 +1,97 @@
+unit_id = "3cd6489bfc3ac1af42b6514a1035eced"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter__i__Control : Filter _i_ Control Register (trBaseEncoder+0x400 + 0x20__i__)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0     |trTeFilterEnable | Overall filter enable for filter #__i__|WARL|<<Undef,Undef>>
+|1     |trTeFilterMatchPrivilege |
+When set, match privilege levels specified by `trTeFilterMatchChoicePrivilege` field for filter #__i__.
+|WARL|<<Undef,Undef>>
+|2     |trTeFilterMatchEcause |
+When set, start matching from exception cause codes specified by `trTeFilterMatchChoiceEcause` field for filter #__i__, and
+stop matching upon return from the 1st matching exception.
+|WARL|<<Undef,Undef>>
+|3     |trTeFilterMatchInterrupt |
+When set, start matching from either an interrupt or exception as specified by
+`trTeFilterMatchValueInterrupt` field for filter #__i__, and stop matching upon return from the 1st matching trap.
+|WARL|<<Undef,Undef>>
+|4     |trTeFilterMatchComp1 |
+When set, the output of the comparator selected by `trTeFilterComp1` must be true for the filter to match.
+|WARL|<<Undef,Undef>>
+|7:5   |trTeFilterComp1 |
+Specifies the comparator unit to use for the 1st comparison.
+|WARL|<<Undef,Undef>>
+|8     |trTeFilterMatchComp2 |
+When set, the output of the comparator selected by `trTeFilterComp2` must be true for the filter to match.
+|WARL|<<Undef,Undef>>
+|11:9  |trTeFilterComp2 |
+Specifies the comparator unit to use for the 2nd comparison.
+|WARL|<<Undef,Undef>>
+|12    |trTeFilterMatchComp3 |
+When set, the output of the comparator selected by `trTeFilterComp3` must be true for the filter to match.
+|WARL|<<Undef,Undef>>
+|15:13 |trTeFilterComp3 |
+Specifies the comparator unit to use for the 3rd comparison.
+|WARL|<<Undef,Undef>>
+|16    |trTeFilterMatchImpdef |
+When set, match *impdef* values as specified by `trTeFilterMatchValueImpdef` and
+`trTeFilterMatchMaskImpdef` fields for filter #__i__.
+|WARL|<<Undef,Undef>>
+|23:17 |--|Reserved|--|0
+|24    |trTeFilterMatchDtype |
+When set, match *dtype* values as specified by `trTeFilterMatchChoiceDtype` field for filter #__i__.
+|WARL|<<Undef,Undef>>
+|25    |trTeFilterMatchDsize |
+When set, match *dsize* values as specified by `trTeFilterMatchChoiceDsize` field for filter #__i__.
+|WARL|<<Undef,Undef>>
+|31:26 |--|Reserved|--|0
+|==='''
+zh = '''
+.**寄存器：trTeFilter__i__Control：过滤器 _i_ 控制寄存器（trBaseEncoder+0x400 + 0x20__i__）**
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0     |trTeFilterEnable | 过滤器 #__i__ 的总启用|WARL|<<Undef,Undef>>
+|1     |trTeFilterMatchPrivilege |
+置位时，匹配由过滤器 #__i__ 的 `trTeFilterMatchChoicePrivilege` 字段指定的特权级。
+|WARL|<<Undef,Undef>>
+|2     |trTeFilterMatchEcause |
+置位时，从过滤器 #__i__ 的 `trTeFilterMatchChoiceEcause` 字段指定的异常原因码开始匹配，并在从第 1 个匹配异常返回时停止匹配。
+|WARL|<<Undef,Undef>>
+|3     |trTeFilterMatchInterrupt |
+置位时，按过滤器 #__i__ 的 `trTeFilterMatchValueInterrupt` 字段规定从中断或异常开始匹配，并在从第 1 个匹配陷阱返回时停止匹配。
+|WARL|<<Undef,Undef>>
+|4     |trTeFilterMatchComp1 |
+置位时，由 `trTeFilterComp1` 选择的比较器输出为真时，过滤器才匹配。
+|WARL|<<Undef,Undef>>
+|7:5   |trTeFilterComp1 |
+指定用于第 1 次比较的比较器单元。
+|WARL|<<Undef,Undef>>
+|8     |trTeFilterMatchComp2 |
+置位时，由 `trTeFilterComp2` 选择的比较器输出为真时，过滤器才匹配。
+|WARL|<<Undef,Undef>>
+|11:9  |trTeFilterComp2 |
+指定用于第 2 次比较的比较器单元。
+|WARL|<<Undef,Undef>>
+|12    |trTeFilterMatchComp3 |
+置位时，由 `trTeFilterComp3` 选择的比较器输出为真时，过滤器才匹配。
+|WARL|<<Undef,Undef>>
+|15:13 |trTeFilterComp3 |
+指定用于第 3 次比较的比较器单元。
+|WARL|<<Undef,Undef>>
+|16    |trTeFilterMatchImpdef |
+置位时，按过滤器 #__i__ 的 `trTeFilterMatchValueImpdef` 和 `trTeFilterMatchMaskImpdef` 字段规定匹配 *impdef* 值。
+|WARL|<<Undef,Undef>>
+|23:17 |--|保留|--|0
+|24    |trTeFilterMatchDtype |
+置位时，按过滤器 #__i__ 的 `trTeFilterMatchChoiceDtype` 字段规定匹配 *dtype* 值。
+|WARL|<<Undef,Undef>>
+|25    |trTeFilterMatchDsize |
+置位时，按过滤器 #__i__ 的 `trTeFilterMatchChoiceDsize` 字段规定匹配 *dsize* 值。
+|WARL|<<Undef,Undef>>
+|31:26 |--|保留|--|0
+|==='''

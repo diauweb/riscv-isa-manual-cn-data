@@ -1,0 +1,64 @@
+unit_id = "7c09a804197fa3c401b5883cff5b024a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Synchronous exception priority in decreasing priority order.
+[%autowidth,float="center",align="center",cols="<,>,<",options="header",]
+|===
+|Priority |Exc.Code |Description
+|_Highest_ |3 |Instruction address breakpoint
+| .>|12, 1 .<|During instruction address translation: +
+First encountered page fault or access fault
+| .>|1 .<|With physical address for instruction: +
+Instruction access fault
+
+| .>|2 +
+0 +
+8,9,11 +
+3 +
+3 .<|Illegal instruction +
+Instruction address misaligned +
+Environment call +
+Environment break +
+Load/store/AMO address breakpoint
+
+| .>|4,6 .<|Optionally: +
+Load/store/AMO address misaligned
+| .>|13, 15, 5, 7 .<|During address translation for an explicit memory access: +
+First encountered page fault or access fault
+| .>|5,7 .<|With physical address for an explicit memory access: +
+Load/store/AMO access fault
+.>|_Lowest_ .>|4,6 .<|If not higher priority: +
+Load/store/AMO address misaligned
+|==='''
+zh = '''
+.同步异常的递减优先级顺序
+[%autowidth,float="center",align="center",cols="<,>,<",options="header",]
+|===
+|优先级 |异常代码 |描述
+|_最高_ |3 |指令地址断点
+| .>|12, 1 .<|在指令地址转换期间： +
+首先遇到的页错误或访问错误
+| .>|1 .<|在具有指令物理地址的情况下： +
+指令访问错误
+
+| .>|2 +
+0 +
+8,9,11 +
+3 +
+3 .<|非法指令 +
+指令地址非对齐 +
+环境调用 +
+环境断点 +
+加载/存储/AMO 地址断点
+
+| .>|4,6 .<|可选地： +
+加载/存储/AMO 地址非对齐
+| .>|13, 15, 5, 7 .<|在显式内存访问的地址转换期间： +
+首先遇到的页错误或访问错误
+| .>|5,7 .<|在具有显式内存访问物理地址的情况下： +
+加载/存储/AMO 访问错误
+.>|_最低_ .>|4,6 .<|若非更高优先级： +
+加载/存储/AMO 地址非对齐
+|==='''

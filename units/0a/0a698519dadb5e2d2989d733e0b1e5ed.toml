@@ -1,0 +1,162 @@
+unit_id = "0a698519dadb5e2d2989d733e0b1e5ed"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Debug Module Debug Bus Registers
+[cols="1,6,2",options="header"]
+|===
+|Address |Name |Section
+|0x04 |Abstract Data 0 ({dm-data0})| xref:dm-data0[]
+|0x05 |Abstract Data 1 ({dm-data1})|
+|0x06 |Abstract Data 2 ({dm-data2})|
+|0x07 |Abstract Data 3 ({dm-data3})|
+|0x08 |Abstract Data 4 ({dm-data4})|
+|0x09 |Abstract Data 5 ({dm-data5})|
+|0x0a |Abstract Data 6 ({dm-data6})|
+|0x0b |Abstract Data 7 ({dm-data7})|
+|0x0c |Abstract Data 8 ({dm-data8})|
+|0x0d |Abstract Data 9 ({dm-data9})|
+|0x0e |Abstract Data 10 ({dm-data10})|
+|0x0f |Abstract Data 11 ({dm-data11})|
+|0x10 |Debug Module Control ({dm-dmcontrol})| xref:dm-dmcontrol[]
+|0x11 |Debug Module Status ({dm-dmstatus})| xref:dm-dmstatus[]
+|0x12 |Hart Info ({dm-hartinfo})| xref:dm-hartinfo[]
+|0x13 |Halt Summary 1 ({dm-haltsum1})| xref:dm-haltsum1[]
+|0x14 |Hart Array Window Select ({dm-hawindowsel})| xref:dm-hawindowsel[]
+|0x15 |Hart Array Window  ({dm-hawindow})| xref:dm-hawindow[]
+|0x16 |Abstract Control and Status ({dm-abstractcs})| xref:dm-abstractcs[]
+|0x17 |Abstract Command ({dm-command})| xref:dm-command[]
+|0x18 |Abstract Command Autoexec ({dm-abstractauto})| xref:dm-abstractauto[]
+|0x19 |Configuration Structure Pointer 0 ({dm-confstrptr0})| xref:dm-confstrptr0[]
+|0x1a |Configuration Structure Pointer 1 ({dm-confstrptr1})| xref:dm-confstrptr1[]
+|0x1b |Configuration Structure Pointer 2 ({dm-confstrptr2})| xref:dm-confstrptr2[]
+|0x1c |Configuration Structure Pointer 3 ({dm-confstrptr3})| xref:dm-confstrptr3[]
+|0x1d |Next Debug Module ({dm-nextdm})| xref:dm-nextdm[]
+|0x1f |Custom Features ({dm-custom})| xref:dm-custom[]
+|0x20 |Program Buffer 0 ({dm-progbuf0})| xref:dm-progbuf0[]
+|0x21 |Program Buffer 1 ({dm-progbuf1})|
+|0x22 |Program Buffer 2 ({dm-progbuf2})|
+|0x23 |Program Buffer 3 ({dm-progbuf3})|
+|0x24 |Program Buffer 4 ({dm-progbuf4})|
+|0x25 |Program Buffer 5 ({dm-progbuf5})|
+|0x26 |Program Buffer 6 ({dm-progbuf6})|
+|0x27 |Program Buffer 7 ({dm-progbuf7})|
+|0x28 |Program Buffer 8 ({dm-progbuf8})|
+|0x29 |Program Buffer 9 ({dm-progbuf9})|
+|0x2a |Program Buffer 10 ({dm-progbuf10})|
+|0x2b |Program Buffer 11 ({dm-progbuf11})|
+|0x2c |Program Buffer 12 ({dm-progbuf12})|
+|0x2d |Program Buffer 13 ({dm-progbuf13})|
+|0x2e |Program Buffer 14 ({dm-progbuf14})|
+|0x2f |Program Buffer 15 ({dm-progbuf15})|
+|0x30 |Authentication Data ({dm-authdata})| xref:dm-authdata[]
+|0x32 |Debug Module Control and Status 2 ({dm-dmcs2})| xref:dm-dmcs2[]
+|0x34 |Halt Summary 2 ({dm-haltsum2})| xref:dm-haltsum2[]
+|0x35 |Halt Summary 3 ({dm-haltsum3})| xref:dm-haltsum3[]
+|0x37 |System Bus Address 127:96 ({dm-sbaddress3})| xref:dm-sbaddress3[]
+|0x38 |System Bus Access Control and Status ({dm-sbcs})| xref:dm-sbcs[]
+|0x39 |System Bus Address 31:0 ({dm-sbaddress0})| xref:dm-sbaddress0[]
+|0x3a |System Bus Address 63:32 ({dm-sbaddress1})| xref:dm-sbaddress1[]
+|0x3b |System Bus Address 95:64 ({dm-sbaddress2})| xref:dm-sbaddress2[]
+|0x3c |System Bus Data 31:0 ({dm-sbdata0})| xref:dm-sbdata0[]
+|0x3d |System Bus Data 63:32 ({dm-sbdata1})| xref:dm-sbdata1[]
+|0x3e |System Bus Data 95:64 ({dm-sbdata2})| xref:dm-sbdata2[]
+|0x3f |System Bus Data 127:96 ({dm-sbdata3})| xref:dm-sbdata3[]
+|0x40 |Halt Summary 0 ({dm-haltsum0})| xref:dm-haltsum0[]
+|0x70 |Custom Features 0 ({dm-custom0})| xref:dm-custom0[]
+|0x71 |Custom Features 1 ({dm-custom1})|
+|0x72 |Custom Features 2 ({dm-custom2})|
+|0x73 |Custom Features 3 ({dm-custom3})|
+|0x74 |Custom Features 4 ({dm-custom4})|
+|0x75 |Custom Features 5 ({dm-custom5})|
+|0x76 |Custom Features 6 ({dm-custom6})|
+|0x77 |Custom Features 7 ({dm-custom7})|
+|0x78 |Custom Features 8 ({dm-custom8})|
+|0x79 |Custom Features 9 ({dm-custom9})|
+|0x7a |Custom Features 10 ({dm-custom10})|
+|0x7b |Custom Features 11 ({dm-custom11})|
+|0x7c |Custom Features 12 ({dm-custom12})|
+|0x7d |Custom Features 13 ({dm-custom13})|
+|0x7e |Custom Features 14 ({dm-custom14})|
+|0x7f |Custom Features 15 ({dm-custom15})|
+|==='''
+zh = '''
+.调试模块调试总线寄存器
+[cols="1,6,2",options="header"]
+|===
+|地址 |名称 |章节
+|0x04 |抽象数据 0（{dm-data0}）| xref:dm-data0[]
+|0x05 |抽象数据 1（{dm-data1}）|
+|0x06 |抽象数据 2（{dm-data2}）|
+|0x07 |抽象数据 3（{dm-data3}）|
+|0x08 |抽象数据 4（{dm-data4}）|
+|0x09 |抽象数据 5（{dm-data5}）|
+|0x0a |抽象数据 6（{dm-data6}）|
+|0x0b |抽象数据 7（{dm-data7}）|
+|0x0c |抽象数据 8（{dm-data8}）|
+|0x0d |抽象数据 9（{dm-data9}）|
+|0x0e |抽象数据 10（{dm-data10}）|
+|0x0f |抽象数据 11（{dm-data11}）|
+|0x10 |调试模块控制（{dm-dmcontrol}）| xref:dm-dmcontrol[]
+|0x11 |调试模块状态（{dm-dmstatus}）| xref:dm-dmstatus[]
+|0x12 |硬件线程信息（{dm-hartinfo}）| xref:dm-hartinfo[]
+|0x13 |停机摘要 1（{dm-haltsum1}）| xref:dm-haltsum1[]
+|0x14 |硬件线程阵列窗口选择（{dm-hawindowsel}）| xref:dm-hawindowsel[]
+|0x15 |硬件线程阵列窗口（{dm-hawindow}）| xref:dm-hawindow[]
+|0x16 |抽象控制与状态（{dm-abstractcs}）| xref:dm-abstractcs[]
+|0x17 |抽象命令（{dm-command}）| xref:dm-command[]
+|0x18 |抽象命令自动执行（{dm-abstractauto}）| xref:dm-abstractauto[]
+|0x19 |配置结构指针 0（{dm-confstrptr0}）| xref:dm-confstrptr0[]
+|0x1a |配置结构指针 1（{dm-confstrptr1}）| xref:dm-confstrptr1[]
+|0x1b |配置结构指针 2（{dm-confstrptr2}）| xref:dm-confstrptr2[]
+|0x1c |配置结构指针 3（{dm-confstrptr3}）| xref:dm-confstrptr3[]
+|0x1d |下一调试模块（{dm-nextdm}）| xref:dm-nextdm[]
+|0x1f |自定义特性（{dm-custom}）| xref:dm-custom[]
+|0x20 |程序缓冲区 0（{dm-progbuf0}）| xref:dm-progbuf0[]
+|0x21 |程序缓冲区 1（{dm-progbuf1}）|
+|0x22 |程序缓冲区 2（{dm-progbuf2}）|
+|0x23 |程序缓冲区 3（{dm-progbuf3}）|
+|0x24 |程序缓冲区 4（{dm-progbuf4}）|
+|0x25 |程序缓冲区 5（{dm-progbuf5}）|
+|0x26 |程序缓冲区 6（{dm-progbuf6}）|
+|0x27 |程序缓冲区 7（{dm-progbuf7}）|
+|0x28 |程序缓冲区 8（{dm-progbuf8}）|
+|0x29 |程序缓冲区 9（{dm-progbuf9}）|
+|0x2a |程序缓冲区 10（{dm-progbuf10}）|
+|0x2b |程序缓冲区 11（{dm-progbuf11}）|
+|0x2c |程序缓冲区 12（{dm-progbuf12}）|
+|0x2d |程序缓冲区 13（{dm-progbuf13}）|
+|0x2e |程序缓冲区 14（{dm-progbuf14}）|
+|0x2f |程序缓冲区 15（{dm-progbuf15}）|
+|0x30 |认证数据（{dm-authdata}）| xref:dm-authdata[]
+|0x32 |调试模块控制与状态 2（{dm-dmcs2}）| xref:dm-dmcs2[]
+|0x34 |停机摘要 2（{dm-haltsum2}）| xref:dm-haltsum2[]
+|0x35 |停机摘要 3（{dm-haltsum3}）| xref:dm-haltsum3[]
+|0x37 |系统总线地址 127:96（{dm-sbaddress3}）| xref:dm-sbaddress3[]
+|0x38 |系统总线访问控制与状态（{dm-sbcs}）| xref:dm-sbcs[]
+|0x39 |系统总线地址 31:0（{dm-sbaddress0}）| xref:dm-sbaddress0[]
+|0x3a |系统总线地址 63:32（{dm-sbaddress1}）| xref:dm-sbaddress1[]
+|0x3b |系统总线地址 95:64（{dm-sbaddress2}）| xref:dm-sbaddress2[]
+|0x3c |系统总线数据 31:0（{dm-sbdata0}）| xref:dm-sbdata0[]
+|0x3d |系统总线数据 63:32（{dm-sbdata1}）| xref:dm-sbdata1[]
+|0x3e |系统总线数据 95:64（{dm-sbdata2}）| xref:dm-sbdata2[]
+|0x3f |系统总线数据 127:96（{dm-sbdata3}）| xref:dm-sbdata3[]
+|0x40 |停机摘要 0（{dm-haltsum0}）| xref:dm-haltsum0[]
+|0x70 |自定义特性 0（{dm-custom0}）| xref:dm-custom0[]
+|0x71 |自定义特性 1（{dm-custom1}）|
+|0x72 |自定义特性 2（{dm-custom2}）|
+|0x73 |自定义特性 3（{dm-custom3}）|
+|0x74 |自定义特性 4（{dm-custom4}）|
+|0x75 |自定义特性 5（{dm-custom5}）|
+|0x76 |自定义特性 6（{dm-custom6}）|
+|0x77 |自定义特性 7（{dm-custom7}）|
+|0x78 |自定义特性 8（{dm-custom8}）|
+|0x79 |自定义特性 9（{dm-custom9}）|
+|0x7a |自定义特性 10（{dm-custom10}）|
+|0x7b |自定义特性 11（{dm-custom11}）|
+|0x7c |自定义特性 12（{dm-custom12}）|
+|0x7d |自定义特性 13（{dm-custom13}）|
+|0x7e |自定义特性 14（{dm-custom14}）|
+|0x7f |自定义特性 15（{dm-custom15}）|
+|==='''

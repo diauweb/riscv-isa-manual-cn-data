@@ -1,0 +1,260 @@
+unit_id = "eb1c05ff2548f277e4ab75cb4f8d0db2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V unprivileged CSR addresses.
+[float="center",align="center",cols="<10%,<10%,<20%,<60%",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Unprivileged Floating-Point CSRs
+
+|`0x001` +
+`0x002` +
+`0x003`
+|URW +
+URW +
+URW
+|`fflags` +
+`frm` +
+`fcsr`
+|Floating-Point Accrued Exceptions. +
+Floating-Point Dynamic Rounding Mode. +
+Floating-Point Control and Status Register (`frm` +`fflags`).
+
+4+^|Unprivileged Vector CSRs
+
+|`0x008` +
+`0x009` +
+`0x00A` +
+`0x00F` +
+`0xC20` +
+`0xC21` +
+`0xC22`
+|URW +
+URW +
+URW +
+URW +
+URO +
+URO +
+URO
+|`vstart` +
+`vxsat` +
+`vxrm` +
+`vcsr` +
+`vl` +
+`vtype` +
+`vlenb`
+|Vector start position. +
+Fixed-point accrued saturation flag. +
+Fixed-point rounding mode. +
+Vector control and status register. +
+Vector length. +
+Vector data type register. +
+Vector register length in bytes.
+
+4+^|Unprivileged Zicfiss extension CSR
+|`0x011` +
+|URW +
+|`ssp` +
+|Shadow Stack Pointer. +
+
+4+^|Unprivileged Entropy Source Extension CSR
+|`0x015` +
+|URW +
+|`seed` +
+|Seed for cryptographic random bit generators. +
+
+4+^|Unprivileged Zcmt Extension CSR
+|`0x017` +
+|URW +
+|`jvt` +
+|Table jump base vector and control register. +
+
+4+^|Unprivileged Counter/Timers
+
+|`0xC00` +
+`0xC01` +
+`0xC02` +
+`0xC03` +
+`0xC04` +
+ &#160; +
+`0xC1F` +
+`0xC80` +
+`0xC81` +
+`0xC82` +
+`0xC83` +
+`0xC84` +
+&#160; +
+`0xC9F`
+|URO +
+URO +
+URO +
+URO +
+URO +
+&#160; +
+URO +
+URO +
+URO +
+URO +
+URO +
+URO +
+&#160; +
+URO
+|`cycle` +
+`time` +
+`instret` +
+`hpmcounter3` +
+`hpmcounter4` +
+&#8942; +
+`hpmcounter31` +
+`cycleh` +
+`timeh` +
+`instreth` +
+`hpmcounter3h` +
+`hpmcounter4h` +
+&#8942; +
+`hpmcounter31h`
+|Cycle counter for RDCYCLE instruction. +
+Timer for RDTIME instruction. +
+Instructions-retired counter for RDINSTRET instruction. +
+Performance-monitoring counter. +
+Performance-monitoring counter. +
+&#160; +
+Performance-monitoring counter. +
+Upper 32 bits of `cycle`, RV32 only. +
+Upper 32 bits of `time`, RV32 only. +
+Upper 32 bits of `instret`, RV32 only. +
+Upper 32 bits of `hpmcounter3`, RV32 only. +
+Upper 32 bits of `hpmcounter4`, RV32 only. +
+&#160; +
+Upper 32 bits of `hpmcounter31`, RV32 only.
+|==='''
+zh = '''
+.当前已分配的 RISC-V 非特权 CSR 地址
+[float="center",align="center",cols="<10%,<10%,<20%,<60%",options="header"]
+|===
+|编号 |权限 |名称 |描述
+4+^|非特权浮点 CSR
+
+|`0x001` +
+`0x002` +
+`0x003`
+|URW +
+URW +
+URW
+|`fflags` +
+`frm` +
+`fcsr`
+|浮点已产生的异常。 +
+浮点动态舍入模式。 +
+浮点控制与状态寄存器（`frm` +`fflags`）。
+
+4+^|非特权向量 CSR
+
+|`0x008` +
+`0x009` +
+`0x00A` +
+`0x00F` +
+`0xC20` +
+`0xC21` +
+`0xC22`
+|URW +
+URW +
+URW +
+URW +
+URO +
+URO +
+URO
+|`vstart` +
+`vxsat` +
+`vxrm` +
+`vcsr` +
+`vl` +
+`vtype` +
+`vlenb`
+|向量起始位置。 +
+定点已产生的饱和标志。 +
+定点舍入模式。 +
+向量控制与状态寄存器。 +
+向量长度。 +
+向量数据类型寄存器。 +
+向量寄存器长度（以字节计）。
+
+4+^|非特权 Zicfiss 扩展 CSR
+|`0x011` +
+|URW +
+|`ssp` +
+|影子栈指针。 +
+
+4+^|非特权熵源扩展 CSR
+|`0x015` +
+|URW +
+|`seed` +
+|密码随机位生成器的种子。 +
+
+4+^|非特权 Zcmt 扩展 CSR
+|`0x017` +
+|URW +
+|`jvt` +
+|表跳转基址向量与控制寄存器。 +
+
+4+^|非特权计数器/定时器
+
+|`0xC00` +
+`0xC01` +
+`0xC02` +
+`0xC03` +
+`0xC04` +
+ &#160; +
+`0xC1F` +
+`0xC80` +
+`0xC81` +
+`0xC82` +
+`0xC83` +
+`0xC84` +
+&#160; +
+`0xC9F`
+|URO +
+URO +
+URO +
+URO +
+URO +
+&#160; +
+URO +
+URO +
+URO +
+URO +
+URO +
+URO +
+&#160; +
+URO
+|`cycle` +
+`time` +
+`instret` +
+`hpmcounter3` +
+`hpmcounter4` +
+&#8942; +
+`hpmcounter31` +
+`cycleh` +
+`timeh` +
+`instreth` +
+`hpmcounter3h` +
+`hpmcounter4h` +
+&#8942; +
+`hpmcounter31h`
+|RDCYCLE 指令的周期计数器。 +
+RDTIME 指令的定时器。 +
+RDINSTRET 指令的已退休指令计数器。 +
+性能监控计数器。 +
+性能监控计数器。 +
+&#160; +
+性能监控计数器。 +
+`cycle` 的高 32 位，仅 RV32。 +
+`time` 的高 32 位，仅 RV32。 +
+`instret` 的高 32 位，仅 RV32。 +
+`hpmcounter3` 的高 32 位，仅 RV32。 +
+`hpmcounter4` 的高 32 位，仅 RV32。 +
+&#160; +
+`hpmcounter31` 的高 32 位，仅 RV32。
+|==='''

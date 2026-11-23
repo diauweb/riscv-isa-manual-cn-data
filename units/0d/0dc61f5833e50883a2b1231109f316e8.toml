@@ -1,0 +1,22 @@
+unit_id = "0dc61f5833e50883a2b1231109f316e8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The order in which loads perform does not always directly correspond to
+the relative age of the values those two loads return. In particular, a
+load _b_ may perform before another load _a_ to
+the same address (i.e., _b_ may execute before
+_a_, and _b_ may appear before _a_
+in the global memory order), but _a_ may nevertheless return
+an older value than _b_. This discrepancy captures (among
+other things) the reordering effects of buffering placed between the
+core and memory. For example, _b_ may have returned a value
+from a store in the store buffer, while _a_ may have ignored
+that younger store and read an older value from memory instead. To
+account for this, at the time each load performs, the value it returns
+is determined by the load value axiom, not just strictly by determining
+the most recent store to the same address in the global memory order, as
+described below.'''
+zh = '''
+加载执行的顺序并不总是直接对应于这两个加载所返回值的相对新旧。特别是，加载 _b_ 可能先于对同一地址的另一加载 _a_ 执行（即 _b_ 可能在 _a_ 之前执行，且 _b_ 可能在全局内存顺序中出现在 _a_ 之前），但 _a_ 仍可能返回比 _b_ 更旧的值。这种差异（除其他因素外）反映了核与内存之间缓冲的重排序效应。例如，_b_ 可能已从存储缓冲器中的某个存储返回了值，而 _a_ 可能忽略了那个较新的存储，转而从内存读取了较旧的值。为考虑这一点，在每个加载执行时，其返回值由加载值公理确定，而不仅仅严格通过确定全局内存顺序中对同一地址的最近存储来确定，如下文所述。'''

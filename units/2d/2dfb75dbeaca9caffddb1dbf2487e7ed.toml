@@ -1,0 +1,16 @@
+unit_id = "2dfb75dbeaca9caffddb1dbf2487e7ed"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Implementations that support Smctr/Ssctr but not Smstateen/Ssstateen may observe reduced performance.  Because Smctr/Ssctr introduces a significant number of new CSRs, it is desirable to avoid save/restore of CTR state when possible.  A hypervisor is likely to leverage State Enable to trap on the initial guest access to CTR state, delegating CTR and enabling save/restore of guest CTR state only once the guest has begun to use it.  Without Smstateen/Ssstateen, a hypervisor is required to save/restore guest CTR state on every context switch._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_支持 Smctr/Ssctr 但不支持 Smstateen/Ssstateen 的实现可能观察到性能下降。由于 Smctr/Ssctr 引入大量新 CSR，宜尽可能避免保存/恢复 CTR 状态。虚拟机监控器可能利用状态使能在客户机首次访问 CTR 状态时陷入，仅在客户机开始使用 CTR 后才委托 CTR 并使能客户机 CTR 状态的保存/恢复。没有 Smstateen/Ssstateen 时，虚拟机监控器需要在每次上下文切换时保存/恢复客户机 CTR 状态。_
+===='''

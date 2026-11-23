@@ -1,0 +1,13 @@
+unit_id = "0bfb592ad3be0ac943cbc630f2d5d6be"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:H_vscsrs_v1]#While V=1, the normal HS-level supervisor CSRs that are replaced by VS
+CSRs retain their values but do not affect the behavior of the machine
+unless specifically documented to do so.#
+Conversely, [#norm:H_vscsrs_v0]#when V=0, the VS
+CSRs do not ordinarily affect the behavior of the machine other than
+being readable and writable by CSR instructions.#'''
+zh = '''
+[#norm:H_vscsrs_v1]##当 V=1 时，被 VS CSR 替代的常规 HS 级监管 CSR 保留其值，但不影响机器行为，除非有专门说明。##相反，[#norm:H_vscsrs_v0]##当 V=0 时，VS CSR 通常不影响机器行为，只是可由 CSR 指令读写。##'''

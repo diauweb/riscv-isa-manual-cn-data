@@ -1,0 +1,18 @@
+unit_id = "5654c2237e3bcb2f62f2496088040bf1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sc_addr_not_in_reservation_fail]#The SC must fail if the address is not within the reservation set of the
+most recent LR in program order.# [#norm:sc_other_hart_store_fail]#The SC must fail if a store to the
+reservation set from another hart can be observed to occur between the
+LR and SC.# [#norm:sc_other_device_write_fail]#The SC must fail if a write from some other device to the
+bytes accessed by the LR can be observed to occur between the LR and SC.#
+(If such a device writes the reservation set but does not write the
+bytes accessed by the LR, the SC may or may not fail.) [#norm:sc_intervening_sc_fail]#An SC must fail
+if there is another SC (to any address) between the LR and the SC in
+program order.# [#norm:lr_sc_atomicity_axiom]#The precise statement of the atomicity requirements for
+successful LR/SC sequences is defined by the Atomicity Axiom in
+<<rvwmo>>.#'''
+zh = '''
+[#norm:sc_addr_not_in_reservation_fail]##若地址不在程序顺序上最近的 LR 的保留集内，则 SC 应失败。## [#norm:sc_other_hart_store_fail]##若在 LR 与 SC 之间观察到来其他硬件线程对保留集的存储发生，则 SC 应失败。## [#norm:sc_other_device_write_fail]##若在 LR 与 SC 之间观察到来自某个其他设备对 LR 所访问字节的写发生，则 SC 应失败。##（若此类设备写入保留集但不写入 LR 所访问的字节，则 SC 可能失败，也可能不失败。）[#norm:sc_intervening_sc_fail]##若在程序顺序上 LR 与 SC 之间存在另一个 SC（发往任意地址），则 SC 应失败。## [#norm:lr_sc_atomicity_axiom]##成功的 LR/SC 序列的原子性要求的精确表述由 <<rvwmo>> 中的原子性公理定义。##'''

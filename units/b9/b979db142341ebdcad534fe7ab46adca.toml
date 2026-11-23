@@ -1,0 +1,23 @@
+unit_id = "b979db142341ebdcad534fe7ab46adca"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The `SSPOPCHK` instruction performs a load followed by a check of the loaded
+data value with the link register as source. If the check against the link
+register faults, and the instruction is restarted by the trap handler, then the
+instruction will perform a load again. If the memory from which the load is
+performed is non-idempotent, then the second load may cause unexpected side
+effects. Shadow stack instructions that access the shadow stack require the
+memory referenced by `ssp` to be idempotent to avoid such concerns. Locating
+shadow stacks in non-idempotent memory, such as non-idempotent device memory,
+is not an expected usage, and requiring memory referenced to be idempotent
+does not pose a significant restriction.
+===='''
+zh = '''
+[NOTE]
+====
+`SSPOPCHK` 指令执行一次加载，然后将加载的数据值与作为源的链接寄存器进行比较。若与链接寄存器的比较失败，且陷阱处理程序重启该指令，则该指令将再次执行加载。若执行加载的内存是非幂等的，则第二次加载可能导致意外副作用。访问影子栈的影子栈指令要求 `ssp` 引用的内存是幂等的，以避免此类问题。将影子栈放在非幂等内存（如非幂等设备内存）中不是预期用法，要求所引用内存是幂等并不会构成显著限制。
+===='''

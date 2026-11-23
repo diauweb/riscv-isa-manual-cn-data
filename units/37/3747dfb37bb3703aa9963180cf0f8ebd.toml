@@ -1,0 +1,16 @@
+unit_id = "3747dfb37bb3703aa9963180cf0f8ebd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:wfi_op]#The Wait for Interrupt instruction (WFI) informs the
+implementation that the current hart can be stalled until an interrupt
+might need servicing. Execution of the WFI instruction can also be used
+to inform the hardware platform that suitable interrupts should
+preferentially be routed to this hart.#
+[#norm:wfi_all_privileged_modes]#WFI is available in all privileged modes#, and
+[#norm:wfi_opt_U-mode]#optionally available to U-mode.#
+[#norm:wfi_ill_exc]#This instruction may raise an illegal-instruction exception when TW=1 in `mstatus`, as
+described in <<virt-control>>.#'''
+zh = '''
+[#norm:wfi_op]##等待中断指令（WFI）通知实现当前硬件线程可停顿，直到可能有中断需要服务。执行 WFI 指令还可用于通知硬件平台，宜将合适的中断优先路由到该硬件线程。##[#norm:wfi_all_privileged_modes]##WFI 在所有特权模式下可用##，且[#norm:wfi_opt_U-mode]##可选地可用于 U 模式。##[#norm:wfi_ill_exc]##当 `mstatus` 中 TW=1 时，该指令可能引发非法指令异常，如 <<virt-control>> 所述。##'''

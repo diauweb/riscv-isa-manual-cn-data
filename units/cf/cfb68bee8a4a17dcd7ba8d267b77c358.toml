@@ -1,0 +1,27 @@
+unit_id = "cfb68bee8a4a17dcd7ba8d267b77c358"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:Svnapot_valid_encoding_ppn_subst]#If the encoding in _pte_ is
+valid according to <<ptenapot>>, then
+instead of returning the original value of _pte_,
+implicit reads of a NAPOT PTE
+return a copy of _pte_ in which __pte__.__ppn__[__i__][__pte__.__napot_bits__-1:0]
+is replaced by __vpn__[__i__][__pte__.__napot_bits__-1:0].#
+If the encoding in _pte_ is
+[#norm:Svnapot_reserved_encoding_fault]#reserved according to
+<<ptenapot>>, then a page-fault exception must be raised#.
+
+* [#norm:Svnapot_cache_entries]#Implicit reads of NAPOT page table entries
+may create address-translation cache entries mapping
+_a_ + _j_×PTESIZE to a copy of _pte_ in which
+_pte_._ppn_[_i_][_pte_.__napot_bits__-1:0] is replaced by
+_vpn[i][pte.napot_bits_-1:0], for any or all _j_ such that
+__j__ >> __napot_bits__ = __vpn__[__i__] >> __napot_bits__, all for the
+address space identified in _satp_ as loaded by step 1#.'''
+zh = '''
+* [#norm:Svnapot_valid_encoding_ppn_subst]##若 _pte_ 中的编码按 <<ptenapot>> 有效，则隐式读取 NAPOT PTE 时，不返回 _pte_ 的原始值，而是返回 _pte_ 的一个副本，其中 __pte__.__ppn__[__i__][__pte__.__napot_bits__-1:0] 由 __vpn__[__i__][__pte__.__napot_bits__-1:0] 替换。##
+若 _pte_ 中的编码按 <<ptenapot>> 为[#norm:Svnapot_reserved_encoding_fault]##保留，则应触发页错误异常##。
+
+* [#norm:Svnapot_cache_entries]##隐式读取 NAPOT 页表项可创建地址转换缓存项，将 _a_ + _j_×PTESIZE 映射到 _pte_ 的副本，其中 _pte_._ppn_[_i_][_pte_.__napot_bits__-1:0] 由 _vpn[i][pte.napot_bits_-1:0] 替换，对于满足 __j__ >> __napot_bits__ = __vpn__[__i__] >> __napot_bits__ 的任意或所有 _j_，所有这些均针对第 1 步载入的 _satp_ 所标识的地址空间。##'''

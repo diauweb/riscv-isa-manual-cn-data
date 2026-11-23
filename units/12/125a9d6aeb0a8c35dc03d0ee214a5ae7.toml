@@ -1,0 +1,16 @@
+unit_id = "125a9d6aeb0a8c35dc03d0ee214a5ae7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Read {dm-dmcontrol}.
+. If {dmcontrol-dmactive} is 0 or {dmcontrol-ndmreset} is 1:
+.. Write {dm-dmcontrol}, preserving {dmcontrol-hartreset}, {dmcontrol-hasel}, {dmcontrol-hartsello}, and {dmcontrol-hartselhi} from the value that was read, setting {dmcontrol-dmactive}, and clearing all the other bits.
+.. Read {dm-dmcontrol} until {dmcontrol-dmactive} is high.
+. Read {dm-dmstatus}, which contains {dmstatus-version}.'''
+zh = '''
+. 读取 {dm-dmcontrol}。
+. 若 {dmcontrol-dmactive} 为 0 或 {dmcontrol-ndmreset} 为 1：
+.. 写入 {dm-dmcontrol}，保留所读取的值中的 {dmcontrol-hartreset}、{dmcontrol-hasel}、{dmcontrol-hartsello} 和 {dmcontrol-hartselhi}，置位 {dmcontrol-dmactive}，并清零所有其他位。
+.. 读取 {dm-dmcontrol} 直到 {dmcontrol-dmactive} 为高。
+. 读取 {dm-dmstatus}，它包含 {dmstatus-version}。'''

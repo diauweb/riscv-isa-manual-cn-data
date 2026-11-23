@@ -1,0 +1,23 @@
+unit_id = "322aa56a49e64e8016965e9e52e5145e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Left shifts are usually more frequent than right shifts, as left shifts
+are frequently used to scale address values. Right shifts have therefore
+been granted less encoding space and are placed in an encoding quadrant
+where all other immediates are sign-extended. For RV128, the decision
+was made to have the 6-bit shift-amount immediate also be sign-extended.
+Apart from reducing the decode complexity, we believe right-shift
+amounts of 96-127 will be more useful than 64-95, to allow extraction of
+tags located in the high portions of 128-bit address pointers. We note
+that RV128C will not be frozen at the same point as RV32C and RV64C, to
+allow evaluation of typical usage of 128-bit address-space codes.
+===='''
+zh = '''
+[NOTE]
+====
+左移通常比右移更频繁，因为左移常用于缩放地址值。因此，右移被授予较少的编码空间，并被放置在所有其他立即数都进行符号扩展的编码象限中。对于 RV128，决定让 6 位移位量立即数也进行符号扩展。除了减少译码复杂度外，我们认为 96-127 的右移量将比 64-95 更有用，以便提取位于 128 位地址指针高部的标签。我们注意到 RV128C 不会在 RV32C 和 RV64C 相同的点上冻结，以便评估 128 位地址空间代码的典型用法。
+===='''

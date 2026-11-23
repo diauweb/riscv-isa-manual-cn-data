@@ -1,0 +1,20 @@
+unit_id = "77b22495cb827903c3ecdcbdf75dc2f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To perform either of these resets, the debugger first asserts the bit,
+and then clears it. The actual reset may start as soon as the bit is
+asserted, but may start an arbitrarily long time after the bit is
+deasserted. The reset itself may also take an arbitrarily long time.
+While the reset is on-going, harts are either in the running state,
+indicating it's possible to perform some abstract commands during this
+time, or in the unavailable state, indicating it's not possible to
+perform any abstract commands during this time. Once a hart's reset is
+complete, `havereset` becomes set. When a hart comes out of reset and {dmcontrol-haltreq} or `resethaltreq`
+are set, the hart will immediately enter Debug Mode (halted state).
+Otherwise, if the hart was initially running it will execute normally
+(running state) and if the hart was initially halted it should now be
+running but may be halted.'''
+zh = '''
+要执行这两种复位中的任意一种，调试器首先置位该位，然后将其清零。实际复位可能在该位置位时即开始，但可能在该位清零后任意长的时间内才开始。复位本身也可能持续任意长的时间。在复位进行期间，硬件线程要么处于运行状态（表示在此期间可能执行某些抽象命令），要么处于不可用状态（表示在此期间不能执行任何抽象命令）。一旦某硬件线程复位完成，`havereset` 变为置位。当硬件线程退出复位且 {dmcontrol-haltreq} 或 `resethaltreq` 置位时，该硬件线程将立即进入调试模式（停机状态）。否则，若该硬件线程初始为运行状态，它将正常执行（运行状态）；若其初始为停机状态，则现在应处于运行状态，但可能处于停机状态。'''

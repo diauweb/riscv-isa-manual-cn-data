@@ -1,0 +1,13 @@
+unit_id = "a5f77edc9130f48ebddc12db1d9a3893"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When __rs2__≠`x0`, bits XLEN-1:ASIDMAX of the value held
+in _rs2_ are reserved for future standard use. Until their use is
+defined by a standard extension, they should be zeroed by software and
+ignored by current implementations. Furthermore, if
+ASIDLEN < ASIDMAX, the implementation shall ignore bits
+ASIDMAX-1:ASIDLEN of the value held in _rs2_.'''
+zh = '''
+当 __rs2__≠`x0` 时，_rs2_ 中值的位 XLEN-1:ASIDMAX 保留供未来标准使用。在其使用由标准扩展定义之前，软件宜将其清零，当前实现忽略它们。此外，若 ASIDLEN < ASIDMAX，实现应忽略 _rs2_ 中值的位 ASIDMAX-1:ASIDLEN。'''

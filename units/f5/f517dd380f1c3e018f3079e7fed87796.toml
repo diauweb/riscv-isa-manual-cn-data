@@ -1,0 +1,8 @@
+unit_id = "f517dd380f1c3e018f3079e7fed87796"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Loops with many iterations such as those in functions like memcpy/strcpy have identical flow in each iteraction. Instead of sending the same history bits many times, repeated patterns can be detected and counted. This is a big saving! As an example, a memcpy of 4MB buffer using 32-bit transfers will execute at least 1M of direct conditional branches and 1M of history bits must be included in trace (it is a lot of trace).'''
+zh = '''
+具有许多迭代的循环（例如 memcpy/strcpy 等函数中的循环）在每次迭代中具有相同流。与其多次发送相同历史位，不如检测并计数重复模式。这可以大大节省！例如，使用 32 位传输对 4MB 缓冲区进行 memcpy 将执行至少 1M 条直接条件分支，并且跟踪中必须包含 1M 个历史位（这是大量跟踪）。'''

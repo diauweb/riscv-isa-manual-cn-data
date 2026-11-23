@@ -1,0 +1,15 @@
+unit_id = "de7c84b62d50c258c27510ba7530e5ae"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The set of guest external interrupts received and handled at one
+physical hart may differ from those received at other harts. Guest
+external interrupt number _i_ at one physical hart is typically expected
+not to be the same as guest external interrupt _i_ at any other hart.
+For any one physical hart, the maximum number of virtual harts that may
+directly receive guest external interrupts is limited by GEILEN. The
+maximum this number can be for any implementation is 31 for RV32 and 63
+for RV64, per physical hart.'''
+zh = '''
+在一个物理硬件线程上接收和处理的客户机外部中断集合可能不同于在其他硬件线程上接收的集合。一个物理硬件线程上的客户机外部中断号 _i_ 通常预期不与任何其他硬件线程上的客户机外部中断 _i_ 相同。对于任一物理硬件线程，可直接接收客户机外部中断的虚拟硬件线程的最大数目受 GEILEN 限制。对于任何实现，每个物理硬件线程此最大数目在 RV32 上为 31，在 RV64 上为 63。'''

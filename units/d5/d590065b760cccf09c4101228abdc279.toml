@@ -1,0 +1,15 @@
+unit_id = "d590065b760cccf09c4101228abdc279"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Because the ecall is known to the hart's fetch unit and can be
+predicted, it may be possible for block 2 to occur the cycle after block
+1. However, it is reasonable to assume that the other exception or
+interrupt will not be predictable, and as a result there will be several
+cycles between blocks 2 and 3, which will allow the encoder to 'catch
+up'. It is recommended that encoders implement sufficient elastic
+buffering to handle this case, and if for some reason the elastic buffer
+overflows, it should issue a support packet indicating trace lost.'''
+zh = '''
+因为取指单元知道 ecall 且可预测它，所以块 2 可能在块 1 之后的周期发生。然而，可以合理假定其他异常或中断不可预测，因此块 2 与块 3 之间会有若干周期，使编码器能够“赶上”。宜编码器实现足够的弹性缓冲以处理该情况；如果由于某种原因弹性缓冲区上溢，则宜发出指示跟踪丢失的 _support_ 包。'''

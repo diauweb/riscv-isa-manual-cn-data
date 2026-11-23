@@ -1,0 +1,257 @@
+unit_id = "846023494e1be715f0ba00c69360137c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+<<<
+
+[[HSyncExcPrio]]
+.Synchronous exception priority when the hypervisor extension is implemented.
+[%autowidth,float="center",align="center",cols="<,>,<",options="header"]
+|===
+|Priority |Exc.Code |Description
+|_Highest_ |3 |Instruction address breakpoint
+
+| .>|12, 20, 1 |During instruction address translation: +
+&#160;&#160;&#160;First encountered page fault, guest-page fault, or access
+fault
+
+| .>|1 |With physical address for instruction: +
+&#160;&#160;&#160;Instruction access fault
+
+| |2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3|Illegal instruction +
+Virtual instruction +
+Instruction address misaligned +
+Environment call +
+Environment break +
+&#160;&#160;&#160;Load/store/AMO address breakpoint
+
+| .>|4,6 |Optionally: +
+&#160;&#160;&#160;Load/store/AMO address misaligned
+
+| .>|13, 15, 21, 23, 5, 7 |During address translation for an explicit memory access: +
+&#160;&#160;&#160;First encountered page fault, guest-page fault,
+or access fault
+
+| .>|5, 7 |With physical address for an explicit memory access: +
+&#160;&#160;&#160;Load/store/AMO access fault
+
+.>|_Lowest_ .>|4, 6 |If not higher priority: +
+&#160;&#160;&#160;Load/store/AMO address misaligned
+|===
+
+If an instruction may raise multiple synchronous exceptions, the
+decreasing priority order of <<HSyncExcPrio>>
+indicates which exception is taken and reported in `mcause` or `scause`.
+
+==== Trap Entry
+
+When a trap occurs in HS-mode or U-mode, it goes to M-mode, unless
+delegated by `medeleg` or `mideleg`, in which case it goes to HS-mode.
+When a trap occurs in VS-mode or VU-mode, it goes to M-mode, unless
+delegated by `medeleg` or `mideleg`, in which case it goes to HS-mode,
+unless further delegated by `hedeleg` or `hideleg`, in which case it
+goes to VS-mode.
+
+When a trap is taken into M-mode, virtualization mode V gets set to 0,
+and fields MPV and MPP in `mstatus` (or `mstatush`) are set according to
+<<h-mpp>>. A trap into M-mode also writes fields GVA,
+MPIE, and MIE in `mstatus`/`mstatush` and writes CSRs `mepc`, `mcause`,
+`mtval`, `mtval2`, and `mtinst`.
+
+[[h-mpp]]
+.Value of `mstatus`/`mstatush` fields MPV and MPP after a trap into M-mode.  Upon trap return, MPV is ignored when MPP=3.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|Previous Mode |MPV |MPP
+|U-mode +
+HS-mode +
+M-mode|0 +
+0 +
+0|0 +
+1 +
+3
+|VU-mode +
+VS-mode|1 +
+1|0 +
+1
+|===
+
+When a trap is taken into HS-mode, virtualization mode V is set to 0,
+and `hstatus`.SPV and `sstatus`.SPP are set according to
+<<h-spp>>. If V was 1 before the trap, field SPVP in
+`hstatus` is set the same as `sstatus`.SPP; otherwise, SPVP is left
+unchanged. A trap into HS-mode also writes field GVA in `hstatus`,
+fields SPIE and SIE in `sstatus`, and CSRs `sepc`, `scause`, `stval`,
+`htval`, and `htinst`.
+
+[[h-spp]]
+.Value of `hstatus` field SPV and `sstatus` field SPP after a trap into HS-mode.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|Previous Mode |SPV |SPP
+|U-mode +
+HS-mode + |0 +
+0 |0 +
+1
+|VU-mode +
+VS-mode|1 +
+1 |0 +
+1
+|===
+
+When a trap is taken into VS-mode, `vsstatus`.SPP is set according to
+<<h-vspp>>. Register `hstatus` and the HS-level
+`sstatus` are not modified, and the virtualization mode V remains 1. A
+trap into VS-mode also writes fields SPIE and SIE in `vsstatus` and
+writes CSRs `vsepc`, `vscause`, and `vstval`.
+
+[[h-vspp]]
+.Value of `vsstatus` field SPP after a trap into VS-mode.
+[%autowidth,float="center",align="center",cols="<,^",options="header"]
+|===
+|Previous Mode |SPP
+|VU-mode +
+VS-mode |0 +
+1
+|===
+
+[[tinst-vals]]
+==== Transformed Instruction or Pseudoinstruction for `mtinst` or `htinst`
+
+On any trap into M-mode or HS-mode, one of these values is written
+automatically into the appropriate trap instruction CSR, `mtinst` or
+`htinst`:
+
+* zero;
+* a transformation of the trapping instruction;
+* a custom value (allowed only if the trapping instruction is
+non-standard); or
+* a special pseudoinstruction.
+
+Except when a pseudoinstruction value is required (described later), the
+value written to `mtinst` or `htinst` may always be zero, indicating
+that the hardware is providing no information in the register for this
+particular trap.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+<<<
+
+[[HSyncExcPrio]]
+.实现虚拟机监控器扩展时的同步异常优先级。
+[%autowidth,float="center",align="center",cols="<,>,<",options="header"]
+|===
+|优先级 |异常代码 |描述
+|_最高_ |3 |指令地址断点
+
+| .>|12, 20, 1 |在指令地址转换期间： +
+&#160;&#160;&#160;首次遇到的页错误、客户机页错误或访问错误
+
+| .>|1 |使用指令的物理地址时： +
+&#160;&#160;&#160;指令访问错误
+
+| |2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3|非法指令 +
+虚拟指令 +
+指令地址非对齐 +
+环境调用 +
+环境断点 +
+&#160;&#160;&#160;加载/存储/AMO 地址断点
+
+| .>|4,6 |可选： +
+&#160;&#160;&#160;加载/存储/AMO 地址非对齐
+
+| .>|13, 15, 21, 23, 5, 7 |在显式内存访问的地址转换期间： +
+&#160;&#160;&#160;首次遇到的页错误、客户机页错误或访问错误
+
+| .>|5, 7 |使用显式内存访问的物理地址时： +
+&#160;&#160;&#160;加载/存储/AMO 访问错误
+
+.>|_最低_ .>|4, 6 |若非更高优先级： +
+&#160;&#160;&#160;加载/存储/AMO 地址非对齐
+|===
+
+若一条指令可能引发多个同步异常，<<HSyncExcPrio>> 的递减优先级顺序指示接收并在 `mcause` 或 `scause` 中报告哪个异常。
+
+==== 陷阱进入
+
+当陷阱在 HS 模式或 U 模式中发生时，它前往 M 模式，除非由 `medeleg` 或 `mideleg` 委托，此时它前往 HS 模式。当陷阱在 VS 模式或 VU 模式中发生时，它前往 M 模式，除非由 `medeleg` 或 `mideleg` 委托，此时它前往 HS 模式，除非由 `hedeleg` 或 `hideleg` 进一步委托，此时它前往 VS 模式。
+
+当陷阱陷入 M 模式时，虚拟化模式 V 被置为 0，`mstatus`（或 `mstatush`）中的字段 MPV 和 MPP 按 <<h-mpp>> 设置。陷入 M 模式还会写入 `mstatus`/`mstatush` 中的字段 GVA、MPIE 和 MIE，并写入 CSR `mepc`、`mcause`、`mtval`、`mtval2` 和 `mtinst`。
+
+[[h-mpp]]
+.陷入 M 模式后 `mstatus`/`mstatush` 字段 MPV 和 MPP 的值。陷阱返回时，当 MPP=3 时忽略 MPV。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|先前模式 |MPV |MPP
+|U 模式 +
+HS 模式 +
+M 模式|0 +
+0 +
+0|0 +
+1 +
+3
+|VU 模式 +
+VS 模式|1 +
+1|0 +
+1
+|===
+
+当陷阱陷入 HS 模式时，虚拟化模式 V 被置为 0，`hstatus`.SPV 和 `sstatus`.SPP 按 <<h-spp>> 设置。若陷阱之前 V 为 1，则 `hstatus` 中的字段 SPVP 与 `sstatus`.SPP 设置相同；否则 SPVP 保持不变。陷入 HS 模式还会写入 `hstatus` 中的字段 GVA、`sstatus` 中的字段 SPIE 和 SIE，以及 CSR `sepc`、`scause`、`stval`、`htval` 和 `htinst`。
+
+[[h-spp]]
+.陷入 HS 模式后 `hstatus` 字段 SPV 和 `sstatus` 字段 SPP 的值。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|先前模式 |SPV |SPP
+|U 模式 +
+HS 模式 + |0 +
+0 |0 +
+1
+|VU 模式 +
+VS 模式|1 +
+1 |0 +
+1
+|===
+
+当陷阱陷入 VS 模式时，`vsstatus`.SPP 按 <<h-vspp>> 设置。寄存器 `hstatus` 和 HS 级 `sstatus` 不被修改，且虚拟化模式 V 保持为 1。陷入 VS 模式还会写入 `vsstatus` 中的字段 SPIE 和 SIE，并写入 CSR `vsepc`、`vscause` 和 `vstval`。
+
+[[h-vspp]]
+.陷入 VS 模式后 `vsstatus` 字段 SPP 的值。
+[%autowidth,float="center",align="center",cols="<,^",options="header"]
+|===
+|先前模式 |SPP
+|VU 模式 +
+VS 模式 |0 +
+1
+|===
+
+[[tinst-vals]]
+==== `mtinst` 或 `htinst` 的变换后指令或伪指令
+
+在任何陷入 M 模式或 HS 模式时，以下值之一被自动写入相应的陷阱指令 CSR `mtinst` 或 `htinst`：
+
+* 零；
+* 引发陷阱指令的变换；
+* 定制值（仅当引发陷阱的指令为非标准时允许）；或
+* 特殊伪指令。
+
+除需要伪指令值（后述）时外，写入 `mtinst` 或 `htinst` 的值可始终为零，表示硬件未在该寄存器中为此特定陷阱提供信息。
+
+[NOTE]
+===='''

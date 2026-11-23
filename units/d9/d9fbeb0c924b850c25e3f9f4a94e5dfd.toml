@@ -1,0 +1,22 @@
+unit_id = "d9fbeb0c924b850c25e3f9f4a94e5dfd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For harts that can retire a maximum of N non-zero *itype* values per
+clock cycle, the signal groups MR, OR and either BR or SR must be
+replicated N times. Typically N is determined by the maximum number of
+branches that can be retired per clock cycle. Signal group 0 represents
+information about the oldest instruction block, and group N-1 represents
+the newest instruction block. The interface supports no more than one
+privilege change, context change, exception or interrupt per cycle and
+so signals in groups M and O are not replicated. Furthermore, *itype*
+can only take the value 1 or 2 in one of the signal groups, and this
+must be the newest valid group (i.e. *iretire* and *itype* must be zero
+for higher numbered groups). If fewer than N groups are required in a
+cycle, then lower numbered groups must be used first. For example, if
+there is one branch, use only group 0, if there are two branches,
+instructions up to the 1st branch must be reported in group 0 and
+instructions up to the 2nd branch must be reported in group 1 and so on.'''
+zh = '''
+对于每个时钟周期最多可退休 N 个非零 *itype* 值的硬件线程，信号组 MR、OR 以及 BR 或 SR 必须复制 N 次。通常，N 由每个时钟周期最多可退休的分支数确定。信号组 0 表示最旧指令块的信息，组 N-1 表示最新指令块的信息。该接口每周期支持不超过一次特权级改变、上下文改变、异常或中断，因此组 M 和 O 中的信号不复制。此外，*itype* 只能在一个信号组中取值 1 或 2，并且该组必须是最新的有效组（即对于编号更高的组，*iretire* 和 *itype* 必须为零）。若一个周期内需要的组少于 N 个，则必须首先使用编号较低的组。例如，若有一个分支，则仅使用组 0；若有两个分支，则直到第 1 个分支的指令必须在组 0 中报告，直到第 2 个分支的指令必须在组 1 中报告，依此类推。'''

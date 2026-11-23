@@ -1,0 +1,15 @@
+unit_id = "63d65efa8c5231415992c883f8e70413"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zbkx_lookup_table_model]#These instructions implement a "`lookup table`" for 4- and 8-bit elements
+inside the general purpose registers.#
+_rs1_ is used as a vector of N-bit words, and _rs2_ as a vector of N-bit
+indices into _rs1_.
+[#norm:zbkx_indexing_behavior]#Elements in _rs1_ are replaced by the indexed element in _rs2_, or zero
+if the index into _rs2_ is out of bounds.#'''
+zh = '''
+[#norm:zbkx_lookup_table_model]##这些指令在通用寄存器内为 4 位和 8 位元素实现“查找表”。##
+_rs1_ 用作 N 位字的向量，_rs2_ 用作指向 _rs1_ 的 N 位索引向量。
+[#norm:zbkx_indexing_behavior]##将 _rs1_ 中的元素替换为 _rs2_ 中经索引的元素；若指向 _rs2_ 的索引越界，则为零。##'''

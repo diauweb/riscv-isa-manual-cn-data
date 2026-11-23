@@ -1,0 +1,16 @@
+unit_id = "ec77348b0617fd8233c82d4eafb3d400"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 32-bit Zicfiss instructions will revert to their behavior as defined by Zimop.
+* 16-bit Zicfiss instructions will revert to their behavior as defined by Zcmop.
+* The `pte.xwr=010b` encoding in VS/S-stage page tables becomes reserved.
+* The `henvcfg.SSE` and `senvcfg.SSE` fields will read as zero and are read-only.
+* `SSAMOSWAP.W/D` raises an illegal-instruction exception.'''
+zh = '''
+* 32 位 Zicfiss 指令将恢复为 Zimop 定义的行为。
+* 16 位 Zicfiss 指令将恢复为 Zcmop 定义的行为。
+* VS/S 级页表中的 `pte.xwr=010b` 编码变为保留。
+* `henvcfg.SSE` 和 `senvcfg.SSE` 字段将读取为零且为只读。
+* `SSAMOSWAP.W/D` 引发非法指令异常。'''

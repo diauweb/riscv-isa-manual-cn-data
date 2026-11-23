@@ -1,0 +1,86 @@
+unit_id = "9232d4e6fe01fedd64e317ab2b14ea71"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Zc* extension overview
+[width="100%",options=header,cols="3,1,1,1,1,1,1"]
+|====================================================================================
+|Instruction    |Zca     |Zcf     |Zcd     |Zcb     |Zcmp    |Zcmt
+7+|*The Zca extension is added as way to refer to instructions in the C extension that do not include the floating-point loads and stores*
+|C excl. c.f*   |yes     |        |        |        |        |
+7+|*The Zcf extension is added as a way to refer to compressed single-precision floating-point load/stores*
+|c.flw          |        |rv32    |        |        |        |
+|c.flwsp        |        |rv32    |        |        |        |
+|c.fsw          |        |rv32    |        |        |        |
+|c.fswsp        |        |rv32    |        |        |        |
+7+|*The Zcd extension is added as a way to refer to compressed double-precision floating-point load/stores*
+|c.fld          |        |        |yes     |        |        |
+|c.fldsp        |        |        |yes     |        |        |
+|c.fsd          |        |        |yes     |        |        |
+|c.fsdsp        |        |        |yes     |        |        |
+7+|*Simple operations for use on all architectures*
+|c.lbu          |        |        |        |yes     |        |
+|c.lh           |        |        |        |yes     |        |
+|c.lhu          |        |        |        |yes     |        |
+|c.sb           |        |        |        |yes     |        |
+|c.sh           |        |        |        |yes     |        |
+|c.zext.b       |        |        |        |yes     |        |
+|c.sext.b       |        |        |        |yes     |        |
+|c.zext.h       |        |        |        |yes     |        |
+|c.sext.h       |        |        |        |yes     |        |
+|c.zext.w       |        |        |        |yes     |        |
+|c.mul          |        |        |        |yes     |        |
+|c.not          |        |        |        |yes     |        |
+7+|*PUSH/POP and double move which overlap with _c.fsdsp_. Complex operations intended for embedded CPUs*
+|cm.push        |        |        |        |        |yes     |
+|cm.pop         |        |        |        |        |yes     |
+|cm.popret      |        |        |        |        |yes     |
+|cm.popretz     |        |        |        |        |yes     |
+|cm.mva01s      |        |        |        |        |yes     |
+|cm.mvsa01      |        |        |        |        |yes     |
+7+|*Table jump which overlaps with _c.fsdsp_. Complex operations intended for embedded CPUs*
+|cm.jt          |        |        |        |        |        |yes
+|cm.jalt        |        |        |        |        |        |yes
+|===================================================================================='''
+zh = '''
+.Zc* 扩展概览
+[width="100%",options=header,cols="3,1,1,1,1,1,1"]
+|====================================================================================
+|指令    |Zca     |Zcf     |Zcd     |Zcb     |Zcmp    |Zcmt
+7+|**将 Zca 扩展加入是为了指代 C 扩展中不包含浮点加载和存储的指令**
+|除 c.f* 外的 C   |yes     |        |        |        |        |
+7+|**将 Zcf 扩展加入是为了指代压缩单精度浮点加载/存储指令**
+|c.flw          |        |rv32    |        |        |        |
+|c.flwsp        |        |rv32    |        |        |        |
+|c.fsw          |        |rv32    |        |        |        |
+|c.fswsp        |        |rv32    |        |        |        |
+7+|**将 Zcd 扩展加入是为了指代压缩双精度浮点加载/存储指令**
+|c.fld          |        |        |yes     |        |        |
+|c.fldsp        |        |        |yes     |        |        |
+|c.fsd          |        |        |yes     |        |        |
+|c.fsdsp        |        |        |yes     |        |        |
+7+|**适用于所有架构的简单操作**
+|c.lbu          |        |        |        |yes     |        |
+|c.lh           |        |        |        |yes     |        |
+|c.lhu          |        |        |        |yes     |        |
+|c.sb           |        |        |        |yes     |        |
+|c.sh           |        |        |        |yes     |        |
+|c.zext.b       |        |        |        |yes     |        |
+|c.sext.b       |        |        |        |yes     |        |
+|c.zext.h       |        |        |        |yes     |        |
+|c.sext.h       |        |        |        |yes     |        |
+|c.zext.w       |        |        |        |yes     |        |
+|c.mul          |        |        |        |yes     |        |
+|c.not          |        |        |        |yes     |        |
+7+|**与 _c.fsdsp_ 重叠的 PUSH/POP 和双移动。面向嵌入式 CPU 的复杂操作**
+|cm.push        |        |        |        |        |yes     |
+|cm.pop         |        |        |        |        |yes     |
+|cm.popret      |        |        |        |        |yes     |
+|cm.popretz     |        |        |        |        |yes     |
+|cm.mva01s      |        |        |        |        |yes     |
+|cm.mvsa01      |        |        |        |        |yes     |
+7+|**与 _c.fsdsp_ 重叠的表跳转。面向嵌入式 CPU 的复杂操作**
+|cm.jt          |        |        |        |        |        |yes
+|cm.jalt        |        |        |        |        |        |yes
+|===================================================================================='''

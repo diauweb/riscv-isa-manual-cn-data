@@ -1,0 +1,126 @@
+unit_id = "4e5e9459ed301fe6f9e53e8b400b0113"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV32D Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |Source Registers|Destination Registers |Accumulating CSRs |
+
+
+|insn:fld[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:fsd[] |_rs1_ ^A^, _rs2_^D^ | | |
+
+|insn:fmadd.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fmsub.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fnmsub.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fnmadd.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fadd.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^if rm=111
+
+|insn:fsub.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^if rm=111
+
+|insn:fmul.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fdiv.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, DZ, OF, UF, NX |^*^if rm=111
+
+|insn:fsqrt.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|insn:fsgnj.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fsgnjn.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fsgnjx.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fmin.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fmax.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fcvt.s.d[] |_rs1_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|insn:fcvt.d.s[] |_rs1_ |_rd_ |NV |
+
+|insn:feq.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:flt.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fle.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fclass.d[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.w.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|insn:fcvt.wu.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|insn:fcvt.d.w[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.d.wu[] |_rs1_ |_rd_ | |
+
+|==='''
+zh = '''
+.RV32D 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |源寄存器|目标寄存器 |累积 CSR |
+
+
+|insn:fld[]† |_rs1_ ^A^ |_rd_ | |
+
+|insn:fsd[] |_rs1_ ^A^, _rs2_^D^ | | |
+
+|insn:fmadd.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fmsub.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fnmsub.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fnmadd.d[] |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fadd.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^如果 rm=111
+
+|insn:fsub.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^如果 rm=111
+
+|insn:fmul.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fdiv.d[] |_rs1_, _rs2_, frm^*^ |_rd_ |NV, DZ, OF, UF, NX |^*^如果 rm=111
+
+|insn:fsqrt.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|insn:fsgnj.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fsgnjn.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fsgnjx.d[] |_rs1_, _rs2_ |_rd_ | |
+
+|insn:fmin.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fmax.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fcvt.s.d[] |_rs1_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|insn:fcvt.d.s[] |_rs1_ |_rd_ |NV |
+
+|insn:feq.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:flt.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fle.d[] |_rs1_, _rs2_ |_rd_ |NV |
+
+|insn:fclass.d[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.w.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|insn:fcvt.wu.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|insn:fcvt.d.w[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.d.wu[] |_rs1_ |_rd_ | |
+
+|==='''

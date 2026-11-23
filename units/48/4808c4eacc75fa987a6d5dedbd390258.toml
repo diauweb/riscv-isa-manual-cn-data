@@ -1,0 +1,31 @@
+unit_id = "4808c4eacc75fa987a6d5dedbd390258"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Bit 0 is `1`, and replacing bit 1 with `1` makes the value into a
+valid encoding of a standard instruction.
++
+In this case, the instruction that trapped is the same kind as indicated
+by the register value, and the register value is the transformation of
+the trapping instruction, as defined later. For example, if bits 1:0 are
+binary `11` and the register value is the encoding of a standard LW
+(load word) instruction, then the trapping instruction is LW, and the
+register value is the transformation of the trapping LW instruction.
+* Bit 0 is `1`, and replacing bit 1 with `1` makes the value into an
+instruction encoding that is explicitly designated for a custom
+instruction (_not_ an unused reserved encoding).
++
+This is a _custom value_. The instruction that trapped is a non-standard
+instruction. The interpretation of a custom value is not otherwise
+specified by this standard.
+* The value is one of the special pseudoinstructions defined later, all
+of which have bits 1:0 equal to `00`.'''
+zh = '''
+* 位 0 为 `1`，且将位 1 替换为 `1` 后该值成为标准指令的有效编码。
++
+在此情形下，引发陷阱的指令与寄存器值所指示的指令种类相同，且寄存器值是该引发陷阱指令的变换形式（定义见后文）。例如，若位 1:0 为二进制 `11` 且寄存器值是标准 LW（加载字）指令的编码，则引发陷阱的指令为 LW，且寄存器值是引发陷阱的 LW 指令的变换形式。
+* 位 0 为 `1`，且将位 1 替换为 `1` 后该值成为明确指定为自定义指令的指令编码（__并非__未使用的保留编码）。
++
+这是一个__自定义值__。引发陷阱的指令是非标准指令。本标准未对自定义值的解释作其他规定。
+* 该值为后文定义的特殊伪指令之一，所有这些值的位 1:0 均为 `00`。'''

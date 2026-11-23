@@ -1,0 +1,14 @@
+unit_id = "c8cf2ff9457469c2b4c05cb14dc3e471"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In VM environments, hypervisors usually manage resource allocations, keeping
+the Guest OS out of QoS flows. If needed, the hypervisor can virtualize
+`srmcfg` CSR for a VM using the virtual-instruction exceptions triggered upon
+Guest access. If the direct selection of `RCID` and `MCID` by the VM becomes
+common and emulation overhead is an issue, future extensions may allow VS-mode
+to use a selector for a hypervisor-configured set of CSRs holding `RCID` and
+`MCID` values designated for that Guest OS use.'''
+zh = '''
+在 VM 环境中，虚拟机监控器通常管理资源分配，使客户机 OS 置身于 QoS 流程之外。若需要，虚拟机监控器可利用在客户机访问时触发的虚拟指令异常，为某个 VM 虚拟化 `srmcfg` CSR。若由 VM 直接选择 `RCID` 和 `MCID` 变得普遍，且模拟开销成为问题，则未来的扩展可允许 VS 模式使用一个选择器，指向由虚拟机监控器配置的一组 CSR，其中保存为该客户机 OS 使用而指定的 `RCID` 和 `MCID` 值。'''

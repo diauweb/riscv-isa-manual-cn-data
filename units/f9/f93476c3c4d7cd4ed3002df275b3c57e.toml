@@ -1,0 +1,19 @@
+unit_id = "f93476c3c4d7cd4ed3002df275b3c57e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Although multi-copy atomicity does impose some restrictions on the
+microarchitecture, it is one of the key properties keeping the memory
+model from becoming extremely complicated. For example, a hart may not
+legally forward a value from a neighbor hart's private store buffer
+(unless of course it is done in such a way that no new illegal behaviors
+become architecturally visible). Nor may a cache coherence protocol
+forward a value from one hart to another until the coherence protocol
+has invalidated all older copies from other caches. Of course,
+microarchitectures may (and high-performance implementations likely
+will) violate these rules under the covers through speculation or other
+optimizations, as long as any non-compliant behaviors are not exposed to
+the programmer.'''
+zh = '''
+尽管多副本原子性确实对微体系结构施加了一些限制，但它是防止内存模型变得极其复杂的关键特性之一。例如，硬件线程不得合法地从相邻硬件线程的私有存储缓冲器转发值（当然，除非以不使任何新的非法行为在架构上可见的方式完成）。缓存一致性协议也不得在使其他缓存中的所有较旧副本无效之前，将值从一个硬件线程转发到另一个硬件线程。当然，微体系结构可以（且高性能实现很可能将）通过推测或其他优化在底层违反这些规则，只要任何不合规行为不暴露给程序员。'''

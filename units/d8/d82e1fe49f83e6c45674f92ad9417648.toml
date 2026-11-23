@@ -1,0 +1,15 @@
+unit_id = "d82e1fe49f83e6c45674f92ad9417648"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Standard instruction-set extensions encoded with more than 32 bits have
+additional low-order bits set to `1`, with the conventions for 48-bit
+and 64-bit lengths shown in
+<<instlengthcode>>. Instruction lengths
+between 80 bits and 176 bits are encoded using a 3-bit field in bits
+[14:12] giving the number of 16-bit words in addition to the first
+5latexmath:[$\times$]16-bit words. The encoding with bits [14:12] set to
+"111" is reserved for future longer instruction encodings.'''
+zh = '''
+以超过 32 位编码的标准指令集扩展将额外低位设置为 `1`，48 位和 64 位长度的约定如 <<instlengthcode>> 所示。80 位至 176 位之间的指令长度使用位 [14:12] 中的 3 位字段编码，该字段给出除前 5latexmath:[$\times$]16 位字之外的 16 位字数。位 [14:12] 设置为“111”的编码保留用于未来更长的指令编码。'''

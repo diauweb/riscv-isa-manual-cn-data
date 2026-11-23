@@ -1,0 +1,10 @@
+unit_id = "8fdb9f857595e19e05f0f4d778d3f8c9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+Loads stack-pointer relative 64-bit value into registers `rd'` and `rd'+1`. It computes its effective address by adding the zero-extended offset, scaled by 8, to the stack pointer, `x2`. It expands to `ld rd, offset(x2)`. C.LDSP is only valid when _rd_&#x2260;x0; the code points with _rd_=x0 are reserved.'''
+zh = '''
+描述::
+将相对于栈指针的 64 位值加载到寄存器 `rd'` 和 `rd'+1` 中。它通过将零扩展的偏移（按 8 缩放）与栈指针 `x2` 相加来计算有效地址。它展开为 `ld rd, offset(x2)`。C.LDSP 仅在 _rd_&#x2260;x0 时有效；_rd_=x0 的代码点是保留的。'''

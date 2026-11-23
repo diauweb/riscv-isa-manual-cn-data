@@ -1,0 +1,15 @@
+unit_id = "ab8920da1fa414dbb06aed2ea896e501"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The RISC-V ISA keeps the source (_rs1_ and _rs2_) and destination (_rd_)
+registers at the same position in all formats to simplify decoding.
+Except for the 5-bit immediates used in CSR instructions
+(<<csrinsts>>), immediates are always
+sign-extended, and are generally packed towards the leftmost available
+bits in the instruction and have been allocated to reduce hardware
+complexity. In particular, the sign bit for all immediates is always in
+bit 31 of the instruction to speed sign-extension circuitry.'''
+zh = '''
+RISC-V ISA 在所有格式中将源寄存器（_rs1_ 和 _rs2_）与目标寄存器（_rd_）保持在相同位置，以简化译码。除 CSR 指令（<<csrinsts>>）中使用的 5 位立即数外，立即数始终进行符号扩展，并且通常向指令中最左侧可用位打包，其分配方式旨在降低硬件复杂度。特别地，所有立即数的符号位始终位于指令的第 31 位，以加速符号扩展电路。'''

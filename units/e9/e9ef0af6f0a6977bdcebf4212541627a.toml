@@ -1,0 +1,17 @@
+unit_id = "e9ef0af6f0a6977bdcebf4212541627a"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let input = X(rs);
+let output : xlenbits = 0;
+let j = xlen - 1;
+
+foreach (i from 0 to (xlen - 8) by 8) {
+   output[i..(i + 7)] = input[(j - 7)..j];
+   j = j - 8;
+}
+
+X[rd] = output
+--'''

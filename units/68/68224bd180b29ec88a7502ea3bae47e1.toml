@@ -1,0 +1,38 @@
+unit_id = "68224bd180b29ec88a7502ea3bae47e1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.`action` encoding
+[align="center",float="center",cols=">1,<10",options="header"]
+|===
+^| Value | Description
+|0 | Raise a breakpoint exception. (Used when software wants to use the trigger module without an external debugger attached.) `xepc` must contain the virtual address of the next instruction that must be executed to preserve the program flow.
+|1 | Enter Debug Mode. {csr-dpc} must contain the virtual address of the next instruction that must be executed to preserve the program flow. +
+This action is only legal when the trigger's {mcontrol-dmode} is 1.  Since
+{csr-tdata1} is WARL, hardware must prevent it from containing {tdata1-dmode}=0
+and action=1. +
+This action can only be supported if `Sdext` is implemented on the hart.
+| 2 | Trace on, described in the trace specification.
+| 3 | Trace off, described in the trace specification.
+| 4 | Trace notify, described in the trace specification.
+| 5 | Reserved for use by the trace specification.
+| 8 - 9 | Send a signal to TM external trigger output 0 or 1 (respectively).
+| other | Reserved for future use.
+|==='''
+zh = '''
+.`action` 编码
+[align="center",float="center",cols=">1,<10",options="header"]
+|===
+^| 值 | 说明
+|0 | 引发断点异常。（当软件希望在没有连接外部调试器的情况下使用触发器模块时使用。）`xepc` 必须包含为保持程序流而必须执行的下一条指令的虚拟地址。
+|1 | 进入调试模式。{csr-dpc} 必须包含为保持程序流而必须执行的下一条指令的虚拟地址。+
+仅当触发器的 {mcontrol-dmode} 为 1 时此动作才合法。由于 {csr-tdata1} 为 WARL，硬件必须防止其包含 {tdata1-dmode}=0 且 action=1 的情况。+
+仅当在硬件线程上实现了 `Sdext` 时才能支持此动作。
+| 2 | 跟踪开启，如跟踪规范所述。
+| 3 | 跟踪关闭，如跟踪规范所述。
+| 4 | 跟踪通知，如跟踪规范所述。
+| 5 | 保留供跟踪规范使用。
+| 8 - 9 | 向 TM 外部触发器输出 0 或 1（分别）发送信号。
+| 其他 | 保留供未来使用。
+|==='''

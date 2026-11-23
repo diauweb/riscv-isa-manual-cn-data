@@ -1,0 +1,8 @@
+unit_id = "0d7f43d0c534d35e693ee49329e278d8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Setting `trRamRP` and reading `trRamData` may be attempted while trace is active, but support for reading SRAM trace while trace is active may not always be implemented. In such a case write to `trRamRP` must be ignored and `trRamData` read must not advance `trRamRP`. Reading the trace in the SMEM mode via normal memory reads is always allowed.'''
+zh = '''
+在跟踪处于活动状态时，可以尝试设置 `trRamRP` 并读取 `trRamData`，但对活动跟踪期间读取 SRAM 跟踪的支持可能并不总是实现。在这种情况下，必须忽略对 `trRamRP` 的写入，并且读取 `trRamData` 不得使 `trRamRP` 前进。在 SMEM 模式下通过普通内存读取跟踪始终允许。'''

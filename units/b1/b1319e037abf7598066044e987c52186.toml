@@ -1,0 +1,13 @@
+unit_id = "b1319e037abf7598066044e987c52186"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An example code sequence for a critical section guarded by a
+test-and-test-and-set spinlock is shown in
+Example <<critical>>. Note the first AMO is marked _aq_ to
+order the lock acquisition before the critical section, and the second
+AMO is marked _rl_ to order the critical section before the lock
+relinquishment.'''
+zh = '''
+由测试并测试并设置（test-and-test-and-set）自旋锁保护的临界区的示例代码序列见示例 <<critical>>。请注意，第一个 AMO 标记为 _aq_，以将锁获取排序在临界区之前；第二个 AMO 标记为 _rl_，以将临界区排序在锁释放之前。'''

@@ -1,0 +1,13 @@
+unit_id = "428dc51d7ab861a52e3633a37be6ac0e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the Sscofpmf extension is implemented, bits mip.LCOFIP and mie.LCOFIE are
+the interrupt-pending and interrupt-enable bits for local count overflow
+interrupts. LCOFIP is read-write in mip and reflects the occurrence of a local
+count overflow interrupt request resulting from any of the mhpmevent__n__.OF
+bits being set. If the Sscofpmf extension is not implemented, these LCOFIP and
+LCOFIE bits are hardwired to zeros.'''
+zh = '''
+若实现了 Sscofpmf 扩展，则 mip.LCOFIP 和 mie.LCOFIE 位是本地计数溢出中断的中断挂起位和中断使能位。LCOFIP 在 mip 中可读写，并反映因任一 mhpmevent__n__.OF 位置位而产生的本地计数溢出中断请求。若未实现 Sscofpmf 扩展，则这些 LCOFIP 和 LCOFIE 位硬连线为零。'''

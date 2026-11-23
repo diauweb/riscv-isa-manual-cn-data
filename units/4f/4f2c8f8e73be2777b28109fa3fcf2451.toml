@@ -1,0 +1,15 @@
+unit_id = "4f2c8f8e73be2777b28109fa3fcf2451"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:amo_alignment]#For AMOs, the ext:zaamo[] extension requires that the address held in _rs1_ be
+naturally aligned to the size of the operand (i.e., eight-byte aligned
+for _doublewords_ and four-byte aligned for _words_).# If the address
+is not naturally aligned, an address-misaligned exception or an
+access-fault exception will be generated. The access-fault exception can
+be generated for a memory access that would otherwise be able to
+complete except for the misalignment, if the misaligned access should
+not be emulated.'''
+zh = '''
+[#norm:amo_alignment]##对于 AMO，ext:zaamo[] 扩展要求 _rs1_ 中持有的地址按操作数大小自然对齐（即，__双字__为八字节对齐，__字__为四字节对齐）。## 若地址不是自然对齐，将产生地址非对齐异常或访问错误异常。对于本可完成（除非对齐外）的内存访问，若非对齐访问不应被仿真，则可产生访问错误异常。'''

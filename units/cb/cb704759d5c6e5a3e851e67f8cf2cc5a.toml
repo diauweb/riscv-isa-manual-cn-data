@@ -1,0 +1,14 @@
+unit_id = "cb704759d5c6e5a3e851e67f8cf2cc5a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Just as for AMOs in the ext:zaamo[] extension, the insn:amocas.w/d/q[] optionally provide
+release consistency semantics, using the `aq` and `rl` bits, to help implement
+multiprocessor synchronization. [#norm:Zacas_amocas_mem_op_success_aq_rl]#The memory operation performed by an
+insn:amocas.w/d/q[], when successful, has acquire semantics if `aq` bit is 1 and has
+release semantics if `rl` bit is 1.# [#norm:Zacas_amocas_mem_op_fail_aq_rl]#The memory operation performed by an
+insn:amocas.w/d/q[], when not successful, has acquire semantics if `aq` bit is 1 but
+does not have release semantics, regardless of `rl`.#'''
+zh = '''
+正如 ext:zaamo[] 扩展中的 AMO 一样，insn:amocas.w/d/q[] 使用 `aq` 和 `rl` 位可选地提供释放一致性语义，以帮助实现多处理器同步。[#norm:Zacas_amocas_mem_op_success_aq_rl]##insn:amocas.w/d/q[] 所执行的内存操作在成功时，若 `aq` 位为 1 则具有获取语义，若 `rl` 位为 1 则具有释放语义。## [#norm:Zacas_amocas_mem_op_fail_aq_rl]##insn:amocas.w/d/q[] 所执行的内存操作在不成功时，若 `aq` 位为 1 则具有获取语义，但不具有释放语义，而无论 `rl` 如何。##'''

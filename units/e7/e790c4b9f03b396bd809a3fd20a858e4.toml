@@ -1,0 +1,15 @@
+unit_id = "e790c4b9f03b396bd809a3fd20a858e4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Mask tails are always treated as agnostic to reduce complexity
+of managing mask data, which can be written at bit granularity.  There
+appears to be little software need to support tail-undisturbed for
+mask register values.  Allowing mask-generating instructions to write
+back the result of the instruction avoids the need for logic to mask
+out the tail, except mask loads cannot write memory values to
+destination mask tails as this would imply accessing memory past
+software intent.'''
+zh = '''
+NOTE: 掩码尾部始终被视为不可知，以降低管理可按位粒度写入的掩码数据的复杂度。软件似乎很少需要支持掩码寄存器值的尾部未扰动。允许掩码生成指令写回指令结果避免了对尾部进行掩码的逻辑，但掩码加载不能将内存值写入目标掩码尾部，因为这意味着访问超出软件意图的内存。'''

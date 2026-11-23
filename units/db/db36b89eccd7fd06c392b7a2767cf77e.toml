@@ -1,0 +1,32 @@
+unit_id = "db36b89eccd7fd06c392b7a2767cf77e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Value of `hstatus` field SPV and `sstatus` field SPP after a trap into HS-mode.
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|Previous Mode |SPV |SPP
+|U-mode +
+HS-mode + |0 +
+0 |0 +
+1
+|VU-mode +
+VS-mode|1 +
+1 |0 +
+1
+|==='''
+zh = '''
+.陷阱进入 HS 模式后 `hstatus` 字段 SPV 和 `sstatus` 字段 SPP 的值。
+[%autowidth,float="center",align="center",cols="<,^,^",options="header"]
+|===
+|先前模式 |SPV |SPP
+|U 模式 +
+HS 模式 + |0 +
+0 |0 +
+1
+|VU 模式 +
+VS 模式|1 +
+1 |0 +
+1
+|==='''

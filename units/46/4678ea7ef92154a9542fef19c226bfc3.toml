@@ -1,0 +1,13 @@
+unit_id = "4678ea7ef92154a9542fef19c226bfc3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The current insn:vmulh*[] opcodes perform simple fractional
+multiplies, but with no option to scale, round, and/or saturate the
+result.  A possible future extension can consider variants of insn:vmulh[],
+insn:vmulhu[], insn:vmulhsu[] that use the csr:vxrm[] rounding mode when discarding
+low half of product.  There is no possibility of overflow in these
+cases.'''
+zh = '''
+NOTE: 当前 insn:vmulh*[] 操作码执行简单的分数乘法，但没有对结果进行缩放、舍入和/或饱和的选项。可能的未来扩展可考虑 insn:vmulh[]、insn:vmulhu[]、insn:vmulhsu[] 的变体，在丢弃乘积低半部分时使用 csr:vxrm[] 舍入模式。在这些情况下不存在上溢可能性。'''

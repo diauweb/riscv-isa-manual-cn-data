@@ -1,0 +1,25 @@
+unit_id = "6102d817c8ac7d346acea5d30a126f8d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. *A Noise Source* generates private, unpredictable signals
+  from stable and well-understood physical random events.
+. *Sampling* digitizes the noise signal into a raw stream of
+  bits. This raw data also needs to be protected by the design.
+. *Continuous health tests* ensure that the noise source
+  and its environment meet their operational parameters.
+. *Non-cryptographic conditioners* remove much of the bias
+  and correlation in input noise.
+. *Cryptographic conditioners* produce full entropy
+  output, completely indistinguishable from ideal random.
+. *DRBG* takes in `>=256` bits of seed entropy as keying
+  material and uses a "`one way`" cryptographic process to rapidly
+  generate bits on demand (without revealing the seed/state).'''
+zh = '''
+. *噪声源* 从稳定且充分理解的物理随机事件生成私有、不可预测的信号。
+. *采样* 将噪声信号数字化为原始比特流。这些原始数据也需要受到设计保护。
+. *连续健康测试* 确保噪声源及其环境满足其运行参数。
+. *非密码学调节器* 去除输入噪声中的大部分偏置和相关性。
+. *密码学调节器* 产生完全熵输出，与理想随机完全不可区分。
+. *DRBG* 接收 `>=256` 位种子熵作为密钥材料，并使用“单向”密码学过程按需快速生成比特（不泄露种子/状态）。'''

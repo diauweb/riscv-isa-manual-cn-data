@@ -1,0 +1,39 @@
+unit_id = "3ee02c495cdc397026aa3a6125ffa9a7"
+kind = "code"
+translatable = false
+en = '''
+----
+   # Format of whole register load and store instructions.
+   vl1r.v v3, (a0)       # Pseudoinstruction equal to vl1re8.v
+
+   vl1re8.v    v3, (a0)  # Load v3 with VLEN/8 bytes held at address in a0
+   vl1re16.v   v3, (a0)  # Load v3 with VLEN/16 halfwords held at address in a0
+   vl1re32.v   v3, (a0)  # Load v3 with VLEN/32 words held at address in a0
+   vl1re64.v   v3, (a0)  # Load v3 with VLEN/64 doublewords held at address in a0
+
+   vl2r.v v2, (a0)       # Pseudoinstruction equal to vl2re8.v
+
+   vl2re8.v    v2, (a0)  # Load v2-v3 with 2*VLEN/8 bytes from address in a0
+   vl2re16.v   v2, (a0)  # Load v2-v3 with 2*VLEN/16 halfwords held at address in a0
+   vl2re32.v   v2, (a0)  # Load v2-v3 with 2*VLEN/32 words held at address in a0
+   vl2re64.v   v2, (a0)  # Load v2-v3 with 2*VLEN/64 doublewords held at address in a0
+
+   vl4r.v v4, (a0)       # Pseudoinstruction equal to vl4re8.v
+
+   vl4re8.v    v4, (a0)  # Load v4-v7 with 4*VLEN/8 bytes from address in a0
+   vl4re16.v   v4, (a0)
+   vl4re32.v   v4, (a0)
+   vl4re64.v   v4, (a0)
+
+   vl8r.v v8, (a0)       # Pseudoinstruction equal to vl8re8.v
+
+   vl8re8.v    v8, (a0)  # Load v8-v15 with 8*VLEN/8 bytes from address in a0
+   vl8re16.v   v8, (a0)
+   vl8re32.v   v8, (a0)
+   vl8re64.v   v8, (a0)
+
+   vs1r.v v3, (a1)      # Store v3 to address in a1
+   vs2r.v v2, (a1)      # Store v2-v3 to address in a1
+   vs4r.v v4, (a1)      # Store v4-v7 to address in a1
+   vs8r.v v8, (a1)      # Store v8-v15 to address in a1
+----'''

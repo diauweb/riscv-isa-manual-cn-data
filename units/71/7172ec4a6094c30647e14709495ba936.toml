@@ -1,0 +1,13 @@
+unit_id = "7172ec4a6094c30647e14709495ba936"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This example uses an exception at looplabel 4, but anything that could
+cause a format 3 for looplabel 4 would result in the same behavior: a
+privilege change, or the expiry of the resync timer. It could also occur
+if looplabel was the last traced instruction (because tracing was
+disabled for some reason). See <<sec:qual-status>> for
+further discussion of this point.'''
+zh = '''
+此示例使用 looplabel 4 处的异常，但任何可能导致针对 looplabel 4 生成格式 3 包的事件都会导致相同行为：特权级变化，或重同步定时器到期。若 looplabel 是最后被跟踪的指令（因为跟踪因某种原因被禁用），也可能发生这种情况。关于这一点的进一步讨论见 <<sec:qual-status>>。'''

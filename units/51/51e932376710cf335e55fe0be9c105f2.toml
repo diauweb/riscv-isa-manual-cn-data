@@ -1,0 +1,8 @@
+unit_id = "51e932376710cf335e55fe0be9c105f2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In case several connectors must be used, the highest performance connector should be placed as the closest one to trace MCU pins. For example, if you want to have Mictor for high-speed trace and MIPI10 for casual-debug (and/or slow serial trace), Mictor should have all JTAG and trace signals connected. All JTAG signals should go 'through' that Mictor connector and go to the MIPI10 connector. All high-speed trace signals should not go any further than to Mictor connector pins.'''
+zh = '''
+若必须使用多个连接器，性能最高的连接器宜放置得最靠近跟踪 MCU 引脚。例如，若希望用 Mictor 进行高速跟踪、用 MIPI10 进行临时调试（以及慢速串行跟踪或二者之一），则 Mictor 宜连接所有 JTAG 和跟踪信号。所有 JTAG 信号宜“穿过”该 Mictor 连接器再连到 MIPI10 连接器。所有高速跟踪信号宜止于 Mictor 连接器引脚，不再延伸。'''

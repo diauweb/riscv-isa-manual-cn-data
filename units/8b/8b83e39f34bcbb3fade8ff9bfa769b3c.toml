@@ -1,0 +1,16 @@
+unit_id = "8b83e39f34bcbb3fade8ff9bfa769b3c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((hart, execution environment)))
+From the perspective of software running in a given execution
+environment, a hart is a resource that autonomously fetches and executes
+RISC-V instructions within that execution environment. In this respect,
+a hart behaves like a hardware thread resource even if time-multiplexed
+onto real hardware by the execution environment. Some EEIs support the
+creation and destruction of additional harts, for example, via
+environment calls to fork new harts.'''
+zh = '''
+(((hart, execution environment)))
+从运行于给定执行环境中的软件角度看，hart 是一种在该执行环境内自主取指并执行 RISC-V 指令的资源。就此而言，即使执行环境将 hart 时分复用到真实硬件上，hart 的行为仍像硬件线程资源。某些 EEI 支持创建和销毁额外的 hart，例如通过环境调用派生新的 hart。'''

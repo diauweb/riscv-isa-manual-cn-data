@@ -1,0 +1,13 @@
+unit_id = "b0e5890d42bb53718de5e5722bd0d84c"
+kind = "code"
+translatable = false
+en = '''
+----
+vslideup behavior for destination elements (vstart < vl)
+
+OFFSET is amount to slideup, either from x register or a 5-bit immediate
+
+                  0 <= i < min(vl, max(vstart, OFFSET))  Unchanged
+max(vstart, OFFSET) <= i < vl                            vd[i] = vs2[i-OFFSET] if v0.mask[i] enabled
+                 vl <= i < VLMAX                         Follow tail policy
+----'''

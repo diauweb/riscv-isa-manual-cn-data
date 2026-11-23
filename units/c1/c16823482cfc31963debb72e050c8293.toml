@@ -1,0 +1,11 @@
+unit_id = "c16823482cfc31963debb72e050c8293"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `rnmi` interrupt signals are inputs to the hart. These interrupts
+have higher priority than any other interrupt or exception on the hart
+and cannot be disabled by software. Specifically, they are not disabled
+by clearing the `mstatus`.MIE register.'''
+zh = '''
+`rnmi` 中断信号是硬件线程的输入。这些中断的优先级高于该硬件线程上的任何其他中断或异常，并且不能由软件禁用。具体而言，它们不会因清除 `mstatus`.MIE 寄存器而被禁用。'''

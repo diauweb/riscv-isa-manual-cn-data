@@ -1,0 +1,15 @@
+unit_id = "276bf78b7f472e4687bea73b4c95aab8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A load instruction instance latexmath:[$i$] in state
+Pending_mem_loads(_load_continuation_) can be completed (not to be
+confused with finished) if all the memory load operations
+latexmath:[$i.\textit{mem\_loads}$] are entirely satisfied (i.e. there
+are no unsatisfied slices). Action: update the state of latexmath:[$i$]
+to Plain(_load_continuation(mem_value)_), where _mem_value_ is assembled
+from all the memory store operation slices that satisfied
+latexmath:[$i.\textit{mem\_loads}$].'''
+zh = '''
+若 latexmath:[$i.\textit{mem\_loads}$] 中的所有内存加载操作均已完全满足（即不存在未满足的分片），则处于 Pending_mem_loads(_load_continuation_) 状态的加载指令实例 latexmath:[$i$] 可被完成（注意不要与“完成（finished）”混淆）。动作：将 latexmath:[$i$] 的状态更新为 Plain(_load_continuation(mem_value)_)，其中 _mem_value_ 由满足 latexmath:[$i.\textit{mem\_loads}$] 的所有内存存储操作分片组装而成。'''

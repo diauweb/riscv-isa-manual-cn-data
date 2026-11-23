@@ -1,0 +1,92 @@
+unit_id = "f3357ebadf38780e48813890ac23d7a8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+HLVX.WU is valid for RV32, even though LWU and HLV.WU are not. (For
+RV32, HLVX.WU can be considered a variant of HLV.W, as sign extension is
+irrelevant for 32-bit values.)
+
+Attempts to execute a virtual-machine load/store instruction (HLV, HLVX,
+or HSV) when V=1 cause a virtual-instruction exception. Attempts to execute
+one of these same instructions from U-mode when `hstatus`.HU=0 cause an
+illegal-instruction exception.
+
+[[hfence.vma]]
+==== Hypervisor Memory-Management Fence Instructions
+
+//hypv-mm-fence.edn
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode',    type: 3, attr: ['7', 'SYSTEM', 'SYSTEM']},
+  {bits: 5, name: 'rd',  type: 5, attr: ['5','0', '0']},
+  {bits: 3, name: 'funct3',    type: 5, attr: ['3','PRIV', 'PRIV']},
+  {bits: 5, name: 'rs1',    type: 4, attr: ['5','vaddr', 'gaddr']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['5','asid', 'vmid']},
+  {bits: 7, name: 'funct7',        type: 5, attr: ['7','HFENCE.VVMA', 'HFENCE.GVMA']},
+], config: {bits: 32}}
+....
+
+The hypervisor memory-management fence instructions, HFENCE.VVMA and
+HFENCE.GVMA, perform a function similar to SFENCE.VMA
+(<<sfence.vma>>), except applying to the
+VS-level memory-management data structures controlled by CSR `vsatp`
+(HFENCE.VVMA) or the guest-physical memory-management data structures
+controlled by CSR `hgatp` (HFENCE.GVMA). Instruction SFENCE.VMA applies
+only to the memory-management data structures controlled by the current
+`satp` (either the HS-level `satp` when V=0 or `vsatp` when V=1).
+
+HFENCE.VVMA is valid only in M-mode or HS-mode. Its effect is much the
+same as temporarily entering VS-mode and executing SFENCE.VMA. Executing
+an HFENCE.VVMA guarantees that any previous stores already visible to
+the current hart are ordered before all implicit reads by that hart done
+for VS-stage address translation for instructions that
+
+* are subsequent to the HFENCE.VVMA, and
+* execute when `hgatp`.VMID has the same setting as it did when
+HFENCE.VVMA executed.
+
+Implicit reads need not be ordered when `hgatp`.VMID is different than
+at the time HFENCE.VVMA executed. If operand __rs1__≠`x0`, it specifies a single guest virtual address, and if operand __rs2__≠`x0`, it specifies a single guest address-space identifier (ASID).
+
+[NOTE]
+===='''
+zh = '''
+====
+
+HLVX.WU 对 RV32 有效，尽管 LWU 和 HLV.WU 无效。（对于 RV32，HLVX.WU 可视为 HLV.W 的变体，因为符号扩展对 32 位值无关。）
+
+当 V=1 时尝试执行虚拟机加载/存储指令（HLV、HLVX 或 HSV）将导致虚拟指令异常。当 `hstatus`.HU=0 时从 U 模式尝试执行这些相同指令之一将导致非法指令异常。
+
+[[hfence.vma]]
+==== 虚拟机监控器内存管理屏障指令
+
+//hypv-mm-fence.edn
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode',    type: 3, attr: ['7', 'SYSTEM', 'SYSTEM']},
+  {bits: 5, name: 'rd',  type: 5, attr: ['5','0', '0']},
+  {bits: 3, name: 'funct3',    type: 5, attr: ['3','PRIV', 'PRIV']},
+  {bits: 5, name: 'rs1',    type: 4, attr: ['5','vaddr', 'gaddr']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['5','asid', 'vmid']},
+  {bits: 7, name: 'funct7',        type: 5, attr: ['7','HFENCE.VVMA', 'HFENCE.GVMA']},
+], config: {bits: 32}}
+....
+
+虚拟机监控器内存管理屏障指令 HFENCE.VVMA 和 HFENCE.GVMA 执行与 SFENCE.VMA（<<sfence.vma>>）类似的功能，区别在于作用于由 CSR `vsatp` 控制的 VS 级内存管理数据结构（HFENCE.VVMA），或作用于由 CSR `hgatp` 控制的客户机物理内存管理数据结构（HFENCE.GVMA）。指令 SFENCE.VMA 仅作用于由当前 `satp` 控制的内存管理数据结构（当 V=0 时为 HS 级 `satp`，当 V=1 时为 `vsatp`）。
+
+HFENCE.VVMA 仅在 M 模式或 HS 模式下有效。其效果与临时进入 VS 模式并执行 SFENCE.VMA 大致相同。执行 HFENCE.VVMA 保证，对于满足以下条件的指令，当前硬件线程已可见的任何先前存储，均排在该硬件线程为 VS 阶段地址转换所做的所有隐式读之前：
+
+* 在 HFENCE.VVMA 之后；且
+* 在 `hgatp`.VMID 的设置与执行 HFENCE.VVMA 时相同时执行。
+
+当 `hgatp`.VMID 与执行 HFENCE.VVMA 时不同时，隐式读不必排序。若操作数 __rs1__≠`x0`，则它指定单个客户机虚拟地址；若操作数 __rs2__≠`x0`，则它指定单个客户机地址空间标识符（ASID）。
+
+[NOTE]
+===='''

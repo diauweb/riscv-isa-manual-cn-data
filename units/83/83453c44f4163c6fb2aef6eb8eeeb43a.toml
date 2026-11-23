@@ -1,0 +1,15 @@
+unit_id = "83453c44f4163c6fb2aef6eb8eeeb43a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The unused fields in the FENCE.I instruction, _imm[11:0]_, _rs1_, and
+_rd_, are reserved for finer-grain fences in future extensions. For
+forward compatibility, base implementations shall ignore these fields,
+and standard software shall zero these fields.
+(((FENCE.I, finer-grained)))
+(((FENCE.I, forward compatibility)))'''
+zh = '''
+FENCE.I 指令中的未使用字段 __imm[11:0]__、__rs1__ 和 __rd__ 为未来扩展中的更细粒度屏障保留。为向前兼容，基础实现应忽略这些字段，标准软件应将这些字段置零。
+(((FENCE.I, finer-grained)))
+(((FENCE.I, forward compatibility)))'''

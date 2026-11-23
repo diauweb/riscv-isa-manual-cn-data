@@ -1,0 +1,13 @@
+unit_id = "3af474786116ccc7593cff1888dc27ce"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The A-extension offers atomic memory operation (AMO) instructions for _words_,
+_doublewords_, and _quadwords_ (only for insn:amocas[]). The absence of atomic
+operations for subword data types necessitates emulation strategies. For bitwise
+operations, this emulation can be performed via word-sized bitwise insn:amo*[]
+instructions. For non-bitwise operations, emulation is achievable using
+word-sized insn:lr[]/insn:sc[] instructions.'''
+zh = '''
+A 扩展为__字__、__双字__和__四字__（仅限 insn:amocas[]）提供原子内存操作（AMO）指令。缺少针对子字数据类型的原子操作，就必须采用仿真策略。对于按位操作，可以通过字大小的按位 insn:amo*[] 指令进行仿真。对于非按位操作，可使用字大小的 insn:lr[]/insn:sc[] 指令实现仿真。'''

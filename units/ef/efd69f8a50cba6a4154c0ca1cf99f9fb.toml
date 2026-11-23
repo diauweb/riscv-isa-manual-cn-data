@@ -1,0 +1,23 @@
+unit_id = "efd69f8a50cba6a4154c0ca1cf99f9fb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The alignment constraint for base ISA instructions is relaxed to a
+two-byte boundary when instruction extensions with 16-bit lengths or
+other odd multiples of 16-bit lengths are added (i.e., IALIGN=16).
+
+Instruction-address-misaligned exceptions are reported on the branch or
+jump that would cause instruction misalignment to help debugging, and to
+simplify hardware design for systems with IALIGN=32, where these are the
+only places where misalignment can occur.
+===='''
+zh = '''
+[NOTE]
+====
+当添加长度为 16 位或 16 位其他奇数倍长度的指令扩展（即 IALIGN=16）时，基础 ISA 指令的对齐约束放宽到两字节边界。
+
+指令地址非对齐异常在可能导致指令非对齐的分支或跳转上报告，以帮助调试，并简化 IALIGN=32 系统的硬件设计；在 IALIGN=32 系统中，这些是唯一可能发生非对齐的位置。
+===='''

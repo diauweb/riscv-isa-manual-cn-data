@@ -1,0 +1,18 @@
+unit_id = "25c9e1d5f8397c784199a00fc83773ec"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Block 1: *itype* = 1 (ecall), *iretires* > 1. Generate packet from
+first instruction (first traced), and last instruction (last before
+ecall);
+* Block 2: *itype* = 1 or 2 (some other exception or interrupt),
+*iretires* > 0. Generate packet from first instruction (ecall trap
+handler), and last instruction (last before other exception or
+interrupt);
+* Block 3: Generate packet from first instruction (other exception or
+interrupt trap handler)'''
+zh = '''
+* 块 1：*itype* = 1（ecall），*iretires* > 1。从第一条指令（第一条被跟踪的指令）和最后一条指令（ecall 之前的最后一条指令）生成包；
+* 块 2：*itype* = 1 或 2（其他某种异常或中断），*iretires* > 0。从第一条指令（ecall 陷阱处理程序）和最后一条指令（其他异常或中断之前的最后一条指令）生成包；
+* 块 3：从第一条指令（其他异常或中断的陷阱处理程序）生成包。'''

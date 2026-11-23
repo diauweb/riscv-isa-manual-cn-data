@@ -1,0 +1,14 @@
+unit_id = "73219e9b0f20349d6a733194d94e4a7b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the hypervisor extension is implemented and V=1, the `vsstatus.FS` field is
+additionally in effect for vector floating-point instructions.  If
+`vsstatus.FS` or `mstatus.FS` is `Off` then any
+attempt to execute a vector floating-point instruction will raise an
+illegal-instruction exception.  Any vector floating-point instruction
+that modifies any floating-point extension state (i.e., floating-point
+CSRs or `f` registers) must set both `mstatus.FS` and `vsstatus.FS` to `Dirty`.'''
+zh = '''
+如果实现了虚拟机监控器扩展且 V=1，则 `vsstatus.FS` 字段对向量浮点指令也额外生效。如果 `vsstatus.FS` 或 `mstatus.FS` 为 `Off`，则任何执行向量浮点指令的尝试都会引发非法指令异常。任何修改浮点扩展状态（即浮点 CSR 或 `f` 寄存器）的向量浮点指令应将 `mstatus.FS` 和 `vsstatus.FS` 都设置为 `Dirty`。'''

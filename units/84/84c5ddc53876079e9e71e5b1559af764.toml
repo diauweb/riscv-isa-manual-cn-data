@@ -1,0 +1,25 @@
+unit_id = "84c5ddc53876079e9e71e5b1559af764"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When tracing ends, the encoder reports the address of the last traced
+instruction, and follows this with a format 3, subformat 3 (supporting
+information) packet. Two codes are provided for indicating that tracing
+has ended: *ended_rep* and *ended_ntr*. This relates to exactly the same
+ambiguous case described in detail in <<sec:updiscon>>, and
+in principle, the mechanism described in that section can be used to
+disambiguate when the last traced instruction is at looplabel. However,
+that mechanism relies on knowing when creating the format 1/2 packet,
+that a format 3 packet will be generated from the next instruction. This
+is possible because the encoding algorithm uses a 3-stage pipe with
+access to the previous, current and next instructions. However, decoding
+that the next instruction is a privilege change or exception is
+straightforward, but determining whether the next instruction meets the
+filtering criteria is much more involved, and this information won't
+typically be available, at least not without adding an additional
+pipeline stage, which is expensive. This means a different mechanism is
+required, and that is provided by having two codes to indicate that
+tracing has ended:'''
+zh = '''
+当跟踪结束时，编码器报告最后一条被跟踪指令的地址，并在其后跟随一个格式 3、子格式 3（支持信息）包。提供了两个代码来指示跟踪已结束：*ended_rep* 和 *ended_ntr*。这与 <<sec:updiscon>> 中详细描述的完全相同的歧义情形有关，原则上，该节中描述的机制可用于在最后一条被跟踪指令位于 looplabel 时消除歧义。然而，该机制依赖于在创建格式 1/2 包时知道将由下一条指令生成一个格式 3 包。这是可能的，因为编码算法使用具有对前一条、当前和下一条指令访问权限的 3 级流水线。然而，解码出下一条指令是特权级变化或异常很直接，但确定下一条指令是否满足过滤条件则复杂得多，而且该信息通常不可用，至少在不增加额外流水线级的情况下不可用，而这是昂贵的。这意味着需要一种不同的机制，而这是通过用两个代码指示跟踪已结束来提供的：'''

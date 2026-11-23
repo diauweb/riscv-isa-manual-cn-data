@@ -1,0 +1,32 @@
+unit_id = "be8f028ef0b20419d91139c07f4b8eaa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter__i__MatchInst : Filter _i_ Instruction Match Control Register (trBaseEncoder+0x404 + 0x20__i__)*
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|7:0   |trTeFilterMatchChoicePrivilege |
+When `trTeFilterMatchPrivilege` field for filter #__i__ is set, match all privilege
+levels for which the corresponding bit is set. For example, if bit N is 1, then match if the *priv* value at ingress port is N. Setting several bits allow matching several privileges.
+|WARL|<<Undef,Undef>>
+|8     |trTeFilterMatchValueInterrupt |
+When `trTeFilterMatchInterrupt` field for filter #__i__ is set, match *itype* of 2 or 1 depending on whether this bit is 1 or 0
+respectively.
+|WARL|<<Undef,Undef>>
+|31:9 |--|Reserved|--|0
+|==='''
+zh = '''
+.**寄存器：trTeFilter__i__MatchInst：过滤器 _i_ 指令匹配控制寄存器（trBaseEncoder+0x404 + 0x20__i__）**
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|7:0   |trTeFilterMatchChoicePrivilege |
+当过滤器 #__i__ 的 `trTeFilterMatchPrivilege` 字段置位时，匹配对应位置位的所有特权级。例如，如果位 N 为 1，则当入口端口处的 *priv* 值为 N 时匹配。设置多个位允许匹配多个特权级。
+|WARL|<<Undef,Undef>>
+|8     |trTeFilterMatchValueInterrupt |
+当过滤器 #__i__ 的 `trTeFilterMatchInterrupt` 字段置位时，根据该位为 1 或 0 分别匹配 *itype* 为 2 或 1。
+|WARL|<<Undef,Undef>>
+|31:9 |--|保留|--|0
+|==='''

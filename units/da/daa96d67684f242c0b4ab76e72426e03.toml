@@ -1,0 +1,14 @@
+unit_id = "daa96d67684f242c0b4ab76e72426e03"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Normally (without the above bit enabled or implemented), addresses with many
+most significant bits set to 1 will be sent as long messages (as variable size
+fields skip only the most significant 0-s). An address,
+*0xFFFF_FFFF_8000_31F4*, a real address from the Linux kernel, will be encoded
+as F-ADDR = *0x7FFF_FFFF_C000_18FA* (with the least significant 0-bit skipped).
+Such a 63-bit variable field value will require 11 bytes to be sent (as we
+have 6 MDO bits in each byte).'''
+zh = '''
+NOTE: 通常（未使能或未实现上述位时），具有许多最高有效位设置为 1 的地址将作为长消息发送（因为可变大小字段仅跳过最高有效 0 位）。地址 *0xFFFF_FFFF_8000_31F4*（来自 Linux 内核的真实地址）将编码为 F-ADDR = *0x7FFF_FFFF_C000_18FA*（跳过最低有效 0 位）。这样一个 63 位变长字段值将需要发送 11 字节（因为每个字节有 6 个 MDO 位）。'''

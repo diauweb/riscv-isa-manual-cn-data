@@ -1,0 +1,12 @@
+unit_id = "736c4ce474cd08cff9fe4f7da4819fd2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If an implementation allows IALIGN to be either 16 or 32 (by changing
+CSR `misa`, for example), then, whenever IALIGN=32, bit `sepc[1]` is
+masked on reads so that it appears to be 0. This masking occurs also for
+the implicit read by the SRET instruction. Though masked, `sepc[1]`
+remains writable when IALIGN=32.'''
+zh = '''
+若实现允许 IALIGN 为 16 或 32（例如通过更改 CSR `misa`），则每当 IALIGN=32 时，位 `sepc[1]` 在读取时被掩码，使其表现为 0。SRET 指令的隐式读取也会进行该掩码。尽管被掩码，当 IALIGN=32 时 `sepc[1]` 仍可写。'''

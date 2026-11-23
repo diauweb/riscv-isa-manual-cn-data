@@ -1,0 +1,12 @@
+unit_id = "f47b165d0d0ee5771843aee84f62af65"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmv-nr-r_op]#The insn:vmv&#60;nr&#62;r.v[] instructions copy whole vector registers (i.e., all
+VLEN bits) and can copy whole vector register groups.  The `nr` value
+in the opcode is the number of individual vector registers, NREG, to
+copy.  The instructions operate as if EMUL = NREG, EEW = min(VLEN*EMUL, SEW), and effective
+length `evl` = EMUL * VLEN/EEW.#'''
+zh = '''
+[#norm:vmv-nr-r_op]#insn:vmv&#60;nr&#62;r.v[] 指令复制整个向量寄存器（即所有 VLEN 位），并可复制整个向量寄存器组。操作码中的 `nr` 值是要复制的单个向量寄存器数量 NREG。这些指令的操作如同 EMUL = NREG、EEW = min(VLEN*EMUL, SEW)，且有效长度 `evl` = EMUL * VLEN/EEW。#'''

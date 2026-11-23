@@ -1,0 +1,14 @@
+unit_id = "4ad5fa4e653768c4d3acbb9c9170d985"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<tab:hwbp_timing>> suggests timings for the best user experience.
+The underlying principle is that firing just before the instruction
+gives a user more insight, so is preferable. However, depending on the
+instruction and conditions, it might not be possible to evaluate the
+trigger until the instruction has partially executed. In that case it is
+better to let the instruction retire before the trigger fires, to avoid
+extra memory accesses which might affect the state of the system.'''
+zh = '''
+<<tab:hwbp_timing>> 建议了提供最佳用户体验的时序。基本原则是，紧在指令之前触发能给用户更多洞察，因此更可取。然而，取决于指令和条件，可能直到指令部分执行后才可能评估触发器。在此情况下，宜让指令先完成然后触发器再触发，以避免可能影响系统状态的额外内存访问。'''

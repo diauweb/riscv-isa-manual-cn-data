@@ -1,0 +1,65 @@
+unit_id = "bcd818e3f09e5542a8112b95ca9fcd7a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+EBREAK was primarily designed to be used by a debugger to cause
+execution to stop and fall back into the debugger. EBREAK is also used
+by the standard gcc compiler to mark code paths that should not be
+executed.
+
+Another use of EBREAK is to support "semihosting", where the execution
+environment includes a debugger that can provide services over an
+alternate system call interface built around the EBREAK instruction.
+Because the RISC-V base ISAs do not provide more than one EBREAK
+instruction, RISC-V semihosting uses a special sequence of instructions
+to distinguish a semihosting EBREAK from a debugger inserted EBREAK.
+
+[source,asm]
+....
+    slli x0, x0, 0x1f   # Entry NOP
+    ebreak              # Break to debugger
+    srai x0, x0, 7      # NOP encoding the semihosting call number 7
+....
+
+Note that these three instructions must be 32-bit-wide instructions,
+i.e., they mustn't be among the compressed 16-bit instructions described
+in <<compressed>>.
+
+The shift NOP instructions are still considered available for use as
+HINTs.
+
+Semihosting is a form of service call and would be more naturally
+encoded as an ECALL using an existing ABI, but this would require the
+debugger to be able to intercept ECALLs, which is a newer addition to
+the debug standard. We intend to move over to using ECALLs with a
+standard ABI, in which case, semihosting can share a service ABI with an
+existing standard.
+
+We note that ARM processors have also moved to using SVC instead of BKPT
+for semihosting calls in newer designs.
+===='''
+zh = '''
+[NOTE]
+====
+EBREAK 主要设计为由调试器使用，以使执行停止并回退到调试器。标准 gcc 编译器也使用 EBREAK 标记不应执行的代码路径。
+
+EBREAK 的另一种用途是支持“半主机”，其中执行环境包含一个调试器，该调试器可通过围绕 EBREAK 指令构建的替代系统调用接口提供服务。由于 RISC-V 基础 ISA 不提供多于一条 EBREAK 指令，RISC-V 半主机使用特殊的指令序列来区分半主机 EBREAK 与调试器插入的 EBREAK。
+
+[source,asm]
+....
+    slli x0, x0, 0x1f   # Entry NOP
+    ebreak              # Break to debugger
+    srai x0, x0, 7      # NOP encoding the semihosting call number 7
+....
+
+注意，这三条指令必须是 32 位宽指令，即它们不能属于 <<compressed>> 中描述的压缩 16 位指令。
+
+移位 NOP 指令仍被视为可供 HINT 使用。
+
+半主机是一种服务调用形式，使用现有 ABI 将其编码为 ECALL 会更自然，但这要求调试器能够拦截 ECALL，而这是调试标准中较新的补充。我们打算转向使用带标准 ABI 的 ECALL，在这种情况下，半主机可与现有标准共享服务 ABI。
+
+我们注意到，ARM 处理器在较新设计中也已改用 SVC 而不是 BKPT 进行半主机调用。
+===='''

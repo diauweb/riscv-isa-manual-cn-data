@@ -1,0 +1,27 @@
+unit_id = "cba5abd282530e8af68aded6ec1a8094"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The format and schema of the configuration data structure have yet to be
+standardized.
+
+***
+
+While the `mconfigptr` register will simply be hardwired in some implementations,
+other implementations may provide a means to configure the value
+returned on CSR reads. For example, `mconfigptr` might present the value
+of a memory-mapped register that is programmed by the platform or by
+M-mode software towards the beginning of the boot process.
+===='''
+zh = '''
+[NOTE]
+====
+配置数据结构的格式和模式尚未标准化。
+
+***
+
+尽管在某些实现中 `mconfigptr` 寄存器将直接硬连线，但其他实现可提供配置 CSR 读取所返回值的手段。例如，`mconfigptr` 可呈现由平台或 M 模式软件在启动过程早期编程的内存映射寄存器的值。
+===='''

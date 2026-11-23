@@ -1,0 +1,11 @@
+unit_id = "0b164cd79a4df05959ee1947df8f9bac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:NTL_trap_behavior]#In the event that a trap is taken on the target instruction,
+implementations are discouraged from applying the insn:ntl[] to the first
+instruction in the trap handler. Instead, implementations are
+recommended to ignore the HINT in this case.#'''
+zh = '''
+[#norm:NTL_trap_behavior]##若在目标指令上发生了陷阱，不鼓励实现将 insn:ntl[] 应用于陷阱处理程序中的第一条指令。反之，建议实现在此情况下忽略该 HINT。##'''

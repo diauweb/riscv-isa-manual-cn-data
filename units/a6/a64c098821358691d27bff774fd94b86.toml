@@ -1,0 +1,18 @@
+unit_id = "a64c098821358691d27bff774fd94b86"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The consequence of this specification is that on occurrence of double trap the
+RNMI handler is not provided with information that a trap would report in the
+`mtval` and the `mtval2` registers. This information, if needed, may be obtained
+by the RNMI handler by decoding the instruction at the address in `mnepc` and
+examining its source register contents.
+===='''
+zh = '''
+[NOTE]
+====
+本规范的结果是，发生双陷阱时，RNMI 处理程序不会获得陷阱本应在 `mtval` 和 `mtval2` 寄存器中报告的信息。如有需要，RNMI 处理程序可通过译码 `mnepc` 中地址处的指令并检查其源寄存器内容来获取这些信息。
+===='''

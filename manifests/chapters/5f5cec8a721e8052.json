@@ -1,0 +1,1128 @@
+{
+  "chap_hash": "5f5cec8a721e8052",
+  "id": "bits",
+  "sectname": "chapter",
+  "sectnum": "30",
+  "title_en": "\"B\" Extension for Bit Manipulation, Version 1.0.0",
+  "title_unit_id": "02522bc9b44c3aff27fb33e87382b3dc",
+  "source_path": "src/b-st-ext.adoc",
+  "sections": [
+    {
+      "id": "bits",
+      "level": 1,
+      "sectnum": "30",
+      "title": "\"B\" Extension for Bit Manipulation, Version 1.0.0",
+      "heading_unit_id": "02522bc9b44c3aff27fb33e87382b3dc",
+      "heading_anchor_id": "bits",
+      "blocks": [
+        "f7198ae9fce4a3f63f5fee23c391640e"
+      ]
+    },
+    {
+      "id": "preface",
+      "level": 2,
+      "sectnum": "30.1",
+      "title": "Zb* Overview",
+      "heading_unit_id": "3afb93a02897e1e7aa107dfd3d1b7a82",
+      "heading_anchor_id": "preface",
+      "blocks": [
+        "e0d923f6c9c4a78361cd0fb10f847f8e",
+        "98072d4fe3c5361ec7a71dc317fca7a6",
+        "27d73e9cdadf67440d417feed3fc426c"
+      ]
+    },
+    {
+      "id": "_word_instructions",
+      "level": 2,
+      "sectnum": "30.2",
+      "title": "Word Instructions",
+      "heading_unit_id": "ff700d208131d7d92b9203d9ba8805b1",
+      "blocks": [
+        "fbcd7fa680bae8e9ba37e762cf01fb56",
+        "cf927c8ab88a31f628b270bf256c465e",
+        "19776bb3921d126be548b5331d9dd84f"
+      ]
+    },
+    {
+      "id": "_pseudocode_for_instruction_semantics_2",
+      "level": 2,
+      "sectnum": "30.3",
+      "title": "Pseudocode for instruction semantics",
+      "heading_unit_id": "8e94066a625c1a0836b0bca2f1eb1abf",
+      "blocks": [
+        "35e3e24a132c38ffb34254c7c31c5cfc"
+      ]
+    },
+    {
+      "id": "_extensions",
+      "level": 2,
+      "sectnum": "30.4",
+      "title": "Extensions",
+      "heading_unit_id": "0ce0781a8c4275be9e39490bd00ca058",
+      "blocks": [
+        "b029216d319d83c33077013e1b40e3ba",
+        "2e2b490d07e8b62e8541d87413c2ecd1",
+        "bccce973b62d2a09cdeb7be73b9cb21f",
+        "fa77bd09fbd22025a25b721dbc5cb0cd"
+      ]
+    },
+    {
+      "id": "zba",
+      "level": 3,
+      "sectnum": "30.4.1",
+      "title": "Zba: Address generation",
+      "heading_unit_id": "c57a04dc6b9e7afab0945c7d73dc70cb",
+      "heading_anchor_id": "zba",
+      "blocks": [
+        "ef730f830ddda922a0dd7aaaa8e988b3",
+        "7f1200634e78ae1387423279fd811b14",
+        "54f70d74df95faf42cfff3230eeee455",
+        "c7c76befad0f9bb69da260e42fe1e219",
+        "15e1ea0fdff751a0ad924037c244f5bb"
+      ]
+    },
+    {
+      "id": "zbb",
+      "level": 3,
+      "sectnum": "30.4.2",
+      "title": "Zbb: Basic bit-manipulation",
+      "heading_unit_id": "3d4b5f6d50c8771e964bd516e3010191",
+      "heading_anchor_id": "zbb",
+      "blocks": []
+    },
+    {
+      "id": "_logical_with_negate",
+      "level": 4,
+      "sectnum": "30.4.2.1",
+      "title": "Logical with negate",
+      "heading_unit_id": "88606c5e147e85eda213b5304696f36e",
+      "blocks": [
+        "b2d01253f7addaa18954fdea39d3a17d",
+        "9b50703911df3be4c0f7c0af81b2e007"
+      ]
+    },
+    {
+      "id": "_count_leadingtrailing_zero_bits",
+      "level": 4,
+      "sectnum": "30.4.2.2",
+      "title": "Count leading/trailing zero bits",
+      "heading_unit_id": "91eb2c39ab2765f4d7d45c634b8d1039",
+      "blocks": [
+        "7b5fd79fa85bbb845701ad1672e5ed3a"
+      ]
+    },
+    {
+      "id": "_count_population",
+      "level": 4,
+      "sectnum": "30.4.2.3",
+      "title": "Count population",
+      "heading_unit_id": "c4112d935cafac5fb6270ca8e3365696",
+      "blocks": [
+        "99fac42d44501e7d0a9075d2003bfe0a",
+        "6588b1dcecaae77494d06a0e5bd85889"
+      ]
+    },
+    {
+      "id": "_integer_minimummaximum",
+      "level": 4,
+      "sectnum": "30.4.2.4",
+      "title": "Integer minimum/maximum",
+      "heading_unit_id": "689a03ee69191ca917c9dcccb8d16b93",
+      "blocks": [
+        "d83e87ed205f9457824da35fd64990d0",
+        "c5c6362a8669e6f47bcb92383be2e20c"
+      ]
+    },
+    {
+      "id": "_sign_extension_and_zero_extension",
+      "level": 4,
+      "sectnum": "30.4.2.5",
+      "title": "Sign extension and zero extension",
+      "heading_unit_id": "b599ac05e802e215e2e5dcc5dd6358c1",
+      "blocks": [
+        "050fb05494a1d2010162f190b55a5736",
+        "96d1bf1fc01886c75e5a00caa596c160",
+        "28d3fa477da8ac8c260afac4675452fe"
+      ]
+    },
+    {
+      "id": "_bitwise_rotation",
+      "level": 4,
+      "sectnum": "30.4.2.6",
+      "title": "Bitwise rotation",
+      "heading_unit_id": "dcb4f275dd5b8f8ea0d3c116e962baa4",
+      "blocks": [
+        "3bba1d89a8fe48ea09bfff189d78e0eb",
+        "57686001d46176b1faf821eabf0b5b17",
+        "2898f39c24ebfb2e2c5c3afe57c8397b"
+      ]
+    },
+    {
+      "id": "_or_combine",
+      "level": 4,
+      "sectnum": "30.4.2.7",
+      "title": "OR Combine",
+      "heading_unit_id": "eca375db04c58a0e621effd8f9eaa752",
+      "blocks": [
+        "7170132e2c323ebc2ed2beb1416bc85c",
+        "f6fae1c0534c67e63f7f7ba8fb67eb67",
+        "9194156cab04dfd2f538c8d78c5ae7df"
+      ]
+    },
+    {
+      "id": "_byte_reverse",
+      "level": 4,
+      "sectnum": "30.4.2.8",
+      "title": "Byte-reverse",
+      "heading_unit_id": "6c58b10fd4d71d97fc8b0f2998c36215",
+      "blocks": [
+        "5872b366609165f0495e37fad09e3f2a",
+        "5f60281117c8eb1d982fa4a606b186e6"
+      ]
+    },
+    {
+      "id": "zbc",
+      "level": 3,
+      "sectnum": "30.4.3",
+      "title": "Zbc: Carry-less multiplication",
+      "heading_unit_id": "65abd5f44379900e6e227caddb562ecd",
+      "heading_anchor_id": "zbc",
+      "blocks": [
+        "6495b68a493a23f352ac917c2bb43379",
+        "eaff773a9e2ac4bd229a18ef256d0143",
+        "8949e47848e3760f2bfebe8b38ed5bf9",
+        "e161e541986c7dba02f2922a3b064a17"
+      ]
+    },
+    {
+      "id": "zbs",
+      "level": 3,
+      "sectnum": "30.4.4",
+      "title": "Zbs: Single-bit instructions",
+      "heading_unit_id": "c6c652361b50b68538ad9f87c576deda",
+      "heading_anchor_id": "zbs",
+      "blocks": [
+        "f1d66547cf6a986f5d91c74ee0e7854f",
+        "e228850aade0b98f6b31ecd7eb60da0a"
+      ]
+    },
+    {
+      "id": "zbkb",
+      "level": 3,
+      "sectnum": "30.4.5",
+      "title": "Zbkb: Bit-manipulation for Cryptography",
+      "heading_unit_id": "699d7570306b0ab0128f7aaaa171ea57",
+      "heading_anchor_id": "zbkb",
+      "blocks": [
+        "6cfc7da00f42b1d4ff52844296e3aa9d",
+        "ee3fa040bce0c7d1290135868bd41568"
+      ]
+    },
+    {
+      "id": "zbkc",
+      "level": 3,
+      "sectnum": "30.4.6",
+      "title": "Zbkc: Carry-less multiplication for Cryptography",
+      "heading_unit_id": "7255898a7cc25e607f6afef9103a82c1",
+      "heading_anchor_id": "zbkc",
+      "blocks": [
+        "a5ccb4c8c1de1d6c5e08fb2a2c42175a",
+        "74e5746351ebb343a2500450330973fe"
+      ]
+    },
+    {
+      "id": "zbkx",
+      "level": 3,
+      "sectnum": "30.4.7",
+      "title": "Zbkx: Crossbar permutations",
+      "heading_unit_id": "fb11359f4820c43e3b01995df1e4f8e4",
+      "heading_anchor_id": "zbkx",
+      "blocks": [
+        "874fae1343c4b1bcee9643f68bf74b73",
+        "df1c184afbc4002cd381ba317db92657",
+        "800368ee2d133ae617204e682775ff3e"
+      ]
+    },
+    {
+      "id": "insns-b",
+      "level": 2,
+      "sectnum": "30.5",
+      "title": "Instructions (in alphabetical order)",
+      "heading_unit_id": "69f708a923cf578f03af619f86f81f47",
+      "heading_anchor_id": "insns-b",
+      "blocks": []
+    },
+    {
+      "id": "insns-add_uw",
+      "level": 3,
+      "sectnum": "30.5.1",
+      "title": "add.uw",
+      "heading_unit_id": "422ad01dcc691ab87075814f14fced5f",
+      "heading_anchor_id": "insns-add_uw",
+      "blocks": [
+        "141f1cd3c65f33fab37c7082741c2544",
+        "72703c5caf7344ad268b8c2b8bff3353",
+        "881a8985c23f68737b037aa134b50d22",
+        "6683391aa375b72b09d87819fefecb72",
+        "119430234bdad7c11e549f6fb9676dca",
+        "ab7f2f48146b2bbd9e6c891e53ff044b"
+      ]
+    },
+    {
+      "id": "insns-andn",
+      "level": 3,
+      "sectnum": "30.5.2",
+      "title": "andn",
+      "heading_unit_id": "aa90e28221f4a2d59a05c7c3d1e65281",
+      "heading_anchor_id": "insns-andn",
+      "blocks": [
+        "34848e9399b8d85f3615b3646412473f",
+        "7900275cc2fb482feea94b8b9f0e1d07",
+        "1bcdde913be295aa76691793eff9eb08",
+        "860180a04e265631271e6fc35d2a1221",
+        "119430234bdad7c11e549f6fb9676dca",
+        "40bad86a488cd0d4f764c875afee20f5"
+      ]
+    },
+    {
+      "id": "insns-bclr",
+      "level": 3,
+      "sectnum": "30.5.3",
+      "title": "bclr",
+      "heading_unit_id": "db007d4529813712f75fb57e579cbc46",
+      "heading_anchor_id": "insns-bclr",
+      "blocks": [
+        "487b25a2cf9a23787ad9578bfb10a459",
+        "9e6818f9e9e90d8646dfd2a13706bb0d",
+        "80249c5b10bd22c29eba07b42d0340f1",
+        "c21f504cfdcd31a618a16ec0e19d7c0d",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-bclri",
+      "level": 3,
+      "sectnum": "30.5.4",
+      "title": "bclri",
+      "heading_unit_id": "ec9071b6de26660f640029684ba482dc",
+      "heading_anchor_id": "insns-bclri",
+      "blocks": [
+        "f8e4038a65cd4ed0572c5a8b206d0176",
+        "95227bea62dc24a3c566834bc7f53803",
+        "af58876bf852c3c44ff4b7c369628405",
+        "9da0e75c289cfb2aeb5f8ef46eab17dd",
+        "172ba31931cb4db30dcafe9b1b951e71",
+        "65ef9967d5200108c6d994d54aa25f17",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-bext",
+      "level": 3,
+      "sectnum": "30.5.5",
+      "title": "bext",
+      "heading_unit_id": "b522c3abff68540c3468331edd0b9f87",
+      "heading_anchor_id": "insns-bext",
+      "blocks": [
+        "e756fbf8091bdcad8d10588008833602",
+        "77268eb58de2a232187e503eab6bde20",
+        "f6769fc298a35e2b7723fbc803c1dd1c",
+        "a8d0ed60accedf13028d27f79e25dad7",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-bexti",
+      "level": 3,
+      "sectnum": "30.5.6",
+      "title": "bexti",
+      "heading_unit_id": "ea7453d4003614dd9c46b25690f37369",
+      "heading_anchor_id": "insns-bexti",
+      "blocks": [
+        "b82e98451af94bcc5583ec825c3be178",
+        "7bed1db4798b06b26922546c686358fd",
+        "af58876bf852c3c44ff4b7c369628405",
+        "960bfc7a0840db6533dbed3b03a69fa2",
+        "2656b0dde72359f74d261bfd01f55300",
+        "728a0e92bef92ae1b7a29b25774c40d3",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-binv",
+      "level": 3,
+      "sectnum": "30.5.7",
+      "title": "binv",
+      "heading_unit_id": "28d3a6535331bcfa3490f0c623a70b1a",
+      "heading_anchor_id": "insns-binv",
+      "blocks": [
+        "88b4d5bcfe319d42b5a3afe1e3e12ba2",
+        "8fc8e6fcb609789ed2efd270e5fa808a",
+        "40895bbbe490508de1c2d19127f23154",
+        "2b66695e876e016e3ef86f0fdfff5e9d",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-binvi",
+      "level": 3,
+      "sectnum": "30.5.8",
+      "title": "binvi",
+      "heading_unit_id": "46cbde05faab18ed478bcbe9cb3ac92e",
+      "heading_anchor_id": "insns-binvi",
+      "blocks": [
+        "83d7790d8b0ee744d92f5ed9e265c099",
+        "2185d71dc1682bf12c668c96a6ef51d1",
+        "af58876bf852c3c44ff4b7c369628405",
+        "bff19268254e255f13019daa2c4e2d34",
+        "6ff0d773557649f623031178b7ad0633",
+        "200395904cadfef0d8cdc09b4ff3291e",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-bset",
+      "level": 3,
+      "sectnum": "30.5.9",
+      "title": "bset",
+      "heading_unit_id": "759e295639d09a79c7b9305dd9d9f80d",
+      "heading_anchor_id": "insns-bset",
+      "blocks": [
+        "9fe9c822a3e8621b40c4cd3d34095cdf",
+        "8874eaabcb5c64029d5c3faea059708b",
+        "9463aa58f1c09eeba215e2313f841186",
+        "dc5c6cb11c82ac3b918b47a5d2472c49",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-bseti",
+      "level": 3,
+      "sectnum": "30.5.10",
+      "title": "bseti",
+      "heading_unit_id": "ada3488feb73eaca5efc5b0301e4d4a1",
+      "heading_anchor_id": "insns-bseti",
+      "blocks": [
+        "93c9920806c888ab35875598178a45ac",
+        "8b901d4ef63cbb806d0337db5919347b",
+        "af58876bf852c3c44ff4b7c369628405",
+        "d6bee28daac319ef6f7fec63c7474260",
+        "a0de17755ba7ce2f96d2d883598ef764",
+        "d5d8fb79a4158c5bab923d48430ee720",
+        "119430234bdad7c11e549f6fb9676dca",
+        "17a8edee7f96d65b5181cb9a3081b5ae"
+      ]
+    },
+    {
+      "id": "insns-clmul",
+      "level": 3,
+      "sectnum": "30.5.11",
+      "title": "clmul",
+      "heading_unit_id": "c57c986c49a5e8dbcab65f0c5c45c919",
+      "heading_anchor_id": "insns-clmul",
+      "blocks": [
+        "7ca25b9d1852814c067cb6d598879c61",
+        "8dc4f24774936bc63cc38a57c67e275d",
+        "90fc40089a5e7968a4f45f3dd42a8412",
+        "a98f6ab2ea2acf5b4a9cea5b52c19e0e",
+        "119430234bdad7c11e549f6fb9676dca",
+        "6ea15329c243c1df7aaf9a9d7462cedb"
+      ]
+    },
+    {
+      "id": "insns-clmulh",
+      "level": 3,
+      "sectnum": "30.5.12",
+      "title": "clmulh",
+      "heading_unit_id": "22ba2623cc94b435b452b4017ac3c003",
+      "heading_anchor_id": "insns-clmulh",
+      "blocks": [
+        "64addd9c1b852f3c6b6edc25eeedb8a1",
+        "154f3aa3885afaa73bf5290911f6f1c0",
+        "ecc3731e87d6cda5f2bfcf8646eb0cfd",
+        "8312f90a3f78c2a2a4d40effdb8a501c",
+        "119430234bdad7c11e549f6fb9676dca",
+        "6ea15329c243c1df7aaf9a9d7462cedb"
+      ]
+    },
+    {
+      "id": "insns-clmulr",
+      "level": 3,
+      "sectnum": "30.5.13",
+      "title": "clmulr",
+      "heading_unit_id": "89f8f253bfb5d8fef42abd4b2bf6e6e6",
+      "heading_anchor_id": "insns-clmulr",
+      "blocks": [
+        "de32207b5532a59b172946242bbe350c",
+        "2a36b12a0c8bc8e04c858344b5e763c4",
+        "1a2648564418b672cea27bc085e3ed3e",
+        "fa06ffc7e23b9cc763e855b5905a8fc5",
+        "69b39380663eff4f3d02d797c72aca17",
+        "119430234bdad7c11e549f6fb9676dca",
+        "f14721dcb9c1d8c1bcaaaadefaf18a0d"
+      ]
+    },
+    {
+      "id": "insns-clz",
+      "level": 3,
+      "sectnum": "30.5.14",
+      "title": "clz",
+      "heading_unit_id": "8184f9219976be5cf2b77dcde629efa1",
+      "heading_anchor_id": "insns-clz",
+      "blocks": [
+        "bd4e6e9b3bb30334d4b747c075753707",
+        "613816cb34bedc96c8e112185bd4c1ee",
+        "d88db5b044102e2e6393597d2c7fca78",
+        "91866fc0f3cbc26dbba247df2cfc45a7",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-clzw",
+      "level": 3,
+      "sectnum": "30.5.15",
+      "title": "clzw",
+      "heading_unit_id": "150a679187d2a82cac7c8a9b74b2b623",
+      "heading_anchor_id": "insns-clzw",
+      "blocks": [
+        "76a9e037158557e48bec65666ce865c7",
+        "4694fbc8eac6609976e21adf135f9531",
+        "8b191a7cf253dcfdff662ee34ed4e0f4",
+        "907d2437582c7e684e4cd0216c8c1cc3",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-cpop",
+      "level": 3,
+      "sectnum": "30.5.16",
+      "title": "cpop",
+      "heading_unit_id": "06541e792d9cfbdce57e73183007745b",
+      "heading_anchor_id": "insns-cpop",
+      "blocks": [
+        "e21044b56ef24d3bdce3b4c469d369b7",
+        "6f01147164c9c8a0c20fd7fd93d72926",
+        "d639f4e5f463f67bb935a11fec874162",
+        "7112fba8f2b6000a38c67d8bfd427973",
+        "4b596206eb205fa950680df6f78c1232",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-cpopw",
+      "level": 3,
+      "sectnum": "30.5.17",
+      "title": "cpopw",
+      "heading_unit_id": "7e410f15e4091b5357651ed97e6c0fd2",
+      "heading_anchor_id": "insns-cpopw",
+      "blocks": [
+        "cbc7b16a762c8914fab644992e2f10ca",
+        "c72f138b9bfd3db3e333efb8e13d4a0f",
+        "a15eb46b410fe1151ff4393e95255421",
+        "2bb2a88e3d1dfe416f43bee726c9b017",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-ctz",
+      "level": 3,
+      "sectnum": "30.5.18",
+      "title": "ctz",
+      "heading_unit_id": "c56395e1f5039ed281ce0c1f95bd562b",
+      "heading_anchor_id": "insns-ctz",
+      "blocks": [
+        "07894b3b30e3cc6c3b681ed498496f82",
+        "12b807345cb516b3eb4ae4d17546e944",
+        "a14fb889e20c087cd295055b379fda61",
+        "5770247f345fa456f5978ac142e028cc",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-ctzw",
+      "level": 3,
+      "sectnum": "30.5.19",
+      "title": "ctzw",
+      "heading_unit_id": "1178363d9504e549b86c394b82afe0fd",
+      "heading_anchor_id": "insns-ctzw",
+      "blocks": [
+        "7abe06f09a2930503e5c76bb5be7e30a",
+        "bfd3257666879b483683f46299551268",
+        "d94f21df6e27ac6fb80aaf8ac23ecb4c",
+        "3c742d06f7057bc89f8d82ab1cf312be",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-max",
+      "level": 3,
+      "sectnum": "30.5.20",
+      "title": "max",
+      "heading_unit_id": "70a3fd88eaa7e7d3be60bec6592721b5",
+      "heading_anchor_id": "insns-max",
+      "blocks": [
+        "42622fc475c287f0237a75bf0d705c58",
+        "16c396dde7dd7f17a475865dc385e44d",
+        "313fb8dce306d917da587a7b9ae098e9",
+        "2992d245ab26a0a52074c686bd88527f",
+        "31d2765ce9c211777f247775b1a369c4",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-maxu",
+      "level": 3,
+      "sectnum": "30.5.21",
+      "title": "maxu",
+      "heading_unit_id": "5a4c3b2f222572364f8a4e145e2bdc47",
+      "heading_anchor_id": "insns-maxu",
+      "blocks": [
+        "0883a57432fe7de4cf045098f10d5607",
+        "5a7abfde75f4658929fa6448807b5922",
+        "19832401f295e4903416e7724963489b",
+        "97dea571d8997963766d3e2311a81a4e",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-min",
+      "level": 3,
+      "sectnum": "30.5.22",
+      "title": "min",
+      "heading_unit_id": "bef9a306891bfa55b683b5026aff213e",
+      "heading_anchor_id": "insns-min",
+      "blocks": [
+        "47e44fa9162667bd01fd0278c454a3db",
+        "e7f89761f3e5c8cd917669b2d0b58022",
+        "6d264fcee6605d91e7b61c66f902383f",
+        "5c53dcbf10fc27388c5544fc45fdcd12",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-minu",
+      "level": 3,
+      "sectnum": "30.5.23",
+      "title": "minu",
+      "heading_unit_id": "7792861637d314f25db3dbc3abadb370",
+      "heading_anchor_id": "insns-minu",
+      "blocks": [
+        "592bf569ab8c6c2e06b58f94aed625bd",
+        "5226217b45efc088a616dd6bd16886bf",
+        "4584a7344f2badc1f788cdb41ed1bda2",
+        "2ad71f4937d4eedbd9d983323330f0eb",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-orc_b",
+      "level": 3,
+      "sectnum": "30.5.24",
+      "title": "orc.b",
+      "heading_unit_id": "51bedbf8e0d0239c529906cf6fe6c811",
+      "heading_anchor_id": "insns-orc_b",
+      "blocks": [
+        "564cddbd9e74a6390e4f3a50999430a5",
+        "8e1286159f495daa9e530de894d26831",
+        "b0f4f6e6fea673a7c139a128767c9e84",
+        "e3020cf6c8eca238c23c05ad50a33d6c",
+        "119430234bdad7c11e549f6fb9676dca",
+        "e38f336d513927d5309ee39838aa1c4e"
+      ]
+    },
+    {
+      "id": "insns-orn",
+      "level": 3,
+      "sectnum": "30.5.25",
+      "title": "orn",
+      "heading_unit_id": "7547c293960834b6e3ccc99e7d23e90d",
+      "heading_anchor_id": "insns-orn",
+      "blocks": [
+        "65004a458bf08a84a44d141fe0dd7f6a",
+        "252f3eef9f88ae06ed903ea69f967b62",
+        "6d41aa5a3b2cccf8d09e2db112a8a8f1",
+        "27e30a2bc38ea1b1d9ef5a297c53e5ce",
+        "119430234bdad7c11e549f6fb9676dca",
+        "40bad86a488cd0d4f764c875afee20f5"
+      ]
+    },
+    {
+      "id": "insns-pack",
+      "level": 3,
+      "sectnum": "30.5.26",
+      "title": "pack",
+      "heading_unit_id": "093770773c0732cf1a23146765207f71",
+      "heading_anchor_id": "insns-pack",
+      "blocks": [
+        "918e3763dc4bb1728e032a85d6a6c7de",
+        "c7872efe4be752304c66b79f84c1656f",
+        "924f03f05013d8932c7a9a71b5181718",
+        "6d0e49161cc96a131f2421ec09b8cb93",
+        "119430234bdad7c11e549f6fb9676dca",
+        "b7768866ae9b80d12667499595a7c262",
+        "f4a376d979edabc1cad17474224dd550"
+      ]
+    },
+    {
+      "id": "insns-packh",
+      "level": 3,
+      "sectnum": "30.5.27",
+      "title": "packh",
+      "heading_unit_id": "21c2b96f081812b4251b59ce4d42d234",
+      "heading_anchor_id": "insns-packh",
+      "blocks": [
+        "045ff823065b60bfaecbf677784173cb",
+        "1c3a36d545eae26e3784c0719332da9a",
+        "52fc7c1b7f77e011ceea1c21febceee1",
+        "f4d9027daddc3f80982f61f994a53216",
+        "119430234bdad7c11e549f6fb9676dca",
+        "b7768866ae9b80d12667499595a7c262"
+      ]
+    },
+    {
+      "id": "insns-packw",
+      "level": 3,
+      "sectnum": "30.5.28",
+      "title": "packw",
+      "heading_unit_id": "15496c0f6bd9242681a4de8f22c0e8a0",
+      "heading_anchor_id": "insns-packw",
+      "blocks": [
+        "0af792bc2c049292f72a29aeab83e2f1",
+        "a47fa241ac5e6f1e59a0da5c62b149e7",
+        "d238bca23f9b78a3a272e8c67de3226b",
+        "ff604621477bbf2be749cbf8766f637e",
+        "119430234bdad7c11e549f6fb9676dca",
+        "b7768866ae9b80d12667499595a7c262",
+        "577282566c179b450484c1495035b79f"
+      ]
+    },
+    {
+      "id": "insns-rev8",
+      "level": 3,
+      "sectnum": "30.5.29",
+      "title": "rev8",
+      "heading_unit_id": "66dfd516304313a344e8c2c9a251aedf",
+      "heading_anchor_id": "insns-rev8",
+      "blocks": [
+        "92252f65566e14b205d798e8a225d4ce",
+        "d5c8ebe7ca3f06b6c4e21cfb7ff68d34",
+        "af58876bf852c3c44ff4b7c369628405",
+        "202c5b87968159c7787610cccae769e0",
+        "ae56f4c7295bb18fe589e5108ae7e18a",
+        "e9ef0af6f0a6977bdcebf4212541627a",
+        "4dda6e99bb99753d675cc7bbbdba162b",
+        "fb706db959fd95ea284b37db4b8f540b",
+        "119430234bdad7c11e549f6fb9676dca",
+        "40bad86a488cd0d4f764c875afee20f5"
+      ]
+    },
+    {
+      "id": "insns-brev8",
+      "level": 3,
+      "sectnum": "30.5.30",
+      "title": "brev8",
+      "heading_unit_id": "d8c939db99d8141769c2ed559a8600de",
+      "heading_anchor_id": "insns-brev8",
+      "blocks": [
+        "c15c338012a012580ee1ec6d13422246",
+        "56d474eceebdc1036931c0dcb8c34e31",
+        "3a91934e3a89fcce7ccdd42c83e0642b",
+        "1b74ce236fe4a712923aa3d3a7bc49ad",
+        "119430234bdad7c11e549f6fb9676dca",
+        "b7768866ae9b80d12667499595a7c262"
+      ]
+    },
+    {
+      "id": "insns-rol",
+      "level": 3,
+      "sectnum": "30.5.31",
+      "title": "rol",
+      "heading_unit_id": "6c8d3496652cb237e1f46437ebd7b7f4",
+      "heading_anchor_id": "insns-rol",
+      "blocks": [
+        "6fcf965f20cb0d62d4f7c1bacc6c8ccb",
+        "d627ccc30e69a9e72f93c65bc7db64d9",
+        "2d7dd6cf366d2e63ff2b4e31d7fb5902",
+        "86f5158d5ae8b19e7224d12edf06b49e",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-rolw",
+      "level": 3,
+      "sectnum": "30.5.32",
+      "title": "rolw",
+      "heading_unit_id": "9be9dab43e64e4ef01dbe5a983400383",
+      "heading_anchor_id": "insns-rolw",
+      "blocks": [
+        "47893ce0af69f05adeecf3d2437dc9ca",
+        "f1b51d5b9ba13b75f2f5ef3c88ed7cf8",
+        "f032ff10c2c01a263ad23cdb24f5de6d",
+        "90d6a8572597c6047023667bb4ace037",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-ror",
+      "level": 3,
+      "sectnum": "30.5.33",
+      "title": "ror",
+      "heading_unit_id": "2e9d25ccacac60cafcd981f02914b846",
+      "heading_anchor_id": "insns-ror",
+      "blocks": [
+        "b05cffbdd0a7e746bac3910223b7491f",
+        "61f6f7fe9f028bfc6236fe848009c9ca",
+        "9fd2b622acfcdb87ec3bc2d0b77975f5",
+        "1d29934b33b15dafb968b55230c7b80c",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-rori",
+      "level": 3,
+      "sectnum": "30.5.34",
+      "title": "rori",
+      "heading_unit_id": "0701574ee0f7d727791669695aa616e6",
+      "heading_anchor_id": "insns-rori",
+      "blocks": [
+        "af480b31df2f52e8219389e7cab9b6b2",
+        "243a68c988cc40d7a0a46ff9e09ae9bf",
+        "af58876bf852c3c44ff4b7c369628405",
+        "f295201aace19921177165f695501d77",
+        "88a8923e397e7df4f4a4aeee353a6798",
+        "0191529cc92afb30ff45c1f56a3161e4",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-roriw",
+      "level": 3,
+      "sectnum": "30.5.35",
+      "title": "roriw",
+      "heading_unit_id": "3c2c3d6dabb2121ff05107cc82f971da",
+      "heading_anchor_id": "insns-roriw",
+      "blocks": [
+        "66f71ea7ac3228bea4ee24a96890f4a4",
+        "06bfabd5179a0386028d7a08ed7a32a3",
+        "4724e02bf5339265b80b3d026c6b1a2a",
+        "035412eed005b2d4a1a8862a54d35aa1",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-rorw",
+      "level": 3,
+      "sectnum": "30.5.36",
+      "title": "rorw",
+      "heading_unit_id": "6183dabbe9c1368348c3b56c15d5d8ce",
+      "heading_anchor_id": "insns-rorw",
+      "blocks": [
+        "a5bcfd59add3f0fabc404b27e654fa00",
+        "711a9fda831712c7ca206b55d388a027",
+        "d091f35b1da742df11a4d449428cdcfc",
+        "f907ee71a248120fe8154add86d3df4f",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-sext_b",
+      "level": 3,
+      "sectnum": "30.5.37",
+      "title": "sext.b",
+      "heading_unit_id": "9deddc776c8c9aa2c8a9f483d72ab703",
+      "heading_anchor_id": "insns-sext_b",
+      "blocks": [
+        "c23d617b3b072d988557609d4f72e37e",
+        "50f9c1894a805c1610f445b0d846f620",
+        "48893908e9d892cd019474dbf2314907",
+        "a5cd2a0bf944e2d9b8f70fa91675aeb8",
+        "119430234bdad7c11e549f6fb9676dca",
+        "aec0f9f3789894c6b7dbd3b1fefd3379"
+      ]
+    },
+    {
+      "id": "insns-sext_h",
+      "level": 3,
+      "sectnum": "30.5.38",
+      "title": "sext.h",
+      "heading_unit_id": "d5554441d1d1b221c9663fdd7d22a67f",
+      "heading_anchor_id": "insns-sext_h",
+      "blocks": [
+        "3ade6353a63205a241c68c85c640aace",
+        "998155ed893d1c7a02a2a310a74e83a5",
+        "55cede8dfbdd5c88e90291f7fccb15f1",
+        "19aec18abe54c6610fbf1e19a897ea18",
+        "119430234bdad7c11e549f6fb9676dca",
+        "aec0f9f3789894c6b7dbd3b1fefd3379"
+      ]
+    },
+    {
+      "id": "insns-sh1add",
+      "level": 3,
+      "sectnum": "30.5.39",
+      "title": "sh1add",
+      "heading_unit_id": "ca5f46b1a7ca4029e510f2db4e27ede2",
+      "heading_anchor_id": "insns-sh1add",
+      "blocks": [
+        "5b2b12c2720bdeaa6815c2412b5945ae",
+        "c92772077a4b1afb929e461bbcc0aab6",
+        "9cf82f144fa5e64fdf1fedd52d663d1a",
+        "9ac6f2aa8118902823d42d22f63eb488",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-sh1add_uw",
+      "level": 3,
+      "sectnum": "30.5.40",
+      "title": "sh1add.uw",
+      "heading_unit_id": "1d0b908473d186dd8b508278e9cee9a8",
+      "heading_anchor_id": "insns-sh1add_uw",
+      "blocks": [
+        "67c11fce683e057fba68f06f6b92a078",
+        "170047227c0da6bb6a2af64d1367cb79",
+        "3b5067bda44bc8cc88a698ee29929eb9",
+        "5384ab497c4586d86fb5c91dd66a26cd",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-sh2add",
+      "level": 3,
+      "sectnum": "30.5.41",
+      "title": "sh2add",
+      "heading_unit_id": "e0e90bc27da404bec208f14a24ecaac8",
+      "heading_anchor_id": "insns-sh2add",
+      "blocks": [
+        "6ed873999534fbc7aa002d607a58a1d0",
+        "3f780c1853b37b8f8295c7cb64f74509",
+        "28927b8cde962e59b4698b108b7dc43d",
+        "336269a30f4d0a90cee112a7a23923a6",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-sh2add_uw",
+      "level": 3,
+      "sectnum": "30.5.42",
+      "title": "sh2add.uw",
+      "heading_unit_id": "c4167dc8417e5accf87ab029bf358ce1",
+      "heading_anchor_id": "insns-sh2add_uw",
+      "blocks": [
+        "947319b4680e775db5091f5f531287da",
+        "218b285cfcf90b5aac6cec1a1d978c1c",
+        "f499bfb60bbdfcb22b296cf70ef54112",
+        "4432c31af1c32301ca90c347ce02bf70",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-sh3add",
+      "level": 3,
+      "sectnum": "30.5.43",
+      "title": "sh3add",
+      "heading_unit_id": "fe7cd8782f8305ca1d7a96a6490ba4a5",
+      "heading_anchor_id": "insns-sh3add",
+      "blocks": [
+        "5059efef1bb7d1e6376f86ea493b6d3a",
+        "edf7ed91fb5fa43d775b02c98df379d7",
+        "85d2d1efc1dfc2eca9224a054432ddf7",
+        "ed93a28be8587509554924206f974b81",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-sh3add_uw",
+      "level": 3,
+      "sectnum": "30.5.44",
+      "title": "sh3add.uw",
+      "heading_unit_id": "c31f1b1e5c3227d2db3bc7dcb5397fac",
+      "heading_anchor_id": "insns-sh3add_uw",
+      "blocks": [
+        "0c1bcda0f51b2e1ac70c645a118653b9",
+        "6c90e4881a746235478e1891a448ae5c",
+        "5c6ab5d06b5e19bf3f6dd2ecc9786a65",
+        "59240a4168aed372f168fa6f69a49f2f",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe"
+      ]
+    },
+    {
+      "id": "insns-slli_uw",
+      "level": 3,
+      "sectnum": "30.5.45",
+      "title": "slli.uw",
+      "heading_unit_id": "df22f5180e446b308953465c25bda518",
+      "heading_anchor_id": "insns-slli_uw",
+      "blocks": [
+        "d4156d15f2c067f1fe18138f7fff1735",
+        "2452a072ec5143d80c0fed9f3d2d91b5",
+        "9bfa82448c96067685063ec1167ef85f",
+        "8e8f023e80e3bb8f8a25fb253f6d52ad",
+        "119430234bdad7c11e549f6fb9676dca",
+        "bc00457f2e5711af2c14266592029cbe",
+        "e49dd46f04de98bb1eeb761173cd10bd"
+      ]
+    },
+    {
+      "id": "insns-unzip",
+      "level": 3,
+      "sectnum": "30.5.46",
+      "title": "unzip",
+      "heading_unit_id": "2fb12d94ecd002fea84799d40b4dac9e",
+      "heading_anchor_id": "insns-unzip",
+      "blocks": [
+        "1a3a71bf69344e123dfdda3a5f1efe87",
+        "7390a3ee6f4ec1e52607b7296667e4e5",
+        "539813a91fe7270be969f06f06ddfa83",
+        "6214c45457553dd9045b3397e65bfd36",
+        "155287542ebfafa5f7775bfdec851fd8",
+        "119430234bdad7c11e549f6fb9676dca",
+        "1189d82fd2307140da25a6d76d17f18a"
+      ]
+    },
+    {
+      "id": "insns-xnor",
+      "level": 3,
+      "sectnum": "30.5.47",
+      "title": "xnor",
+      "heading_unit_id": "3f4a454fb5702ac383a95eeac960083b",
+      "heading_anchor_id": "insns-xnor",
+      "blocks": [
+        "a4ca6994efc90475f9c2367cd03222c2",
+        "486f387b22a2328484f5edb70b506ad3",
+        "97c28718992ec4bb5abceb875bc5e748",
+        "1b22582c44368e3c070cdd1a6ee22a8a",
+        "119430234bdad7c11e549f6fb9676dca",
+        "d108be647178173716edf8103f13d9eb"
+      ]
+    },
+    {
+      "id": "insns-xperm8",
+      "level": 3,
+      "sectnum": "30.5.48",
+      "title": "xperm8",
+      "heading_unit_id": "fe23e8c74aba092b6d900cdbc086deae",
+      "heading_anchor_id": "insns-xperm8",
+      "blocks": [
+        "a83bd220ac6d8ba1b89991e2270fa0e8",
+        "a6eb63f4cefdffa21b0f4d83e9f842ee",
+        "73ac49327b7961b3e9ce1cedac1e518d",
+        "1b999d055380eb0be28ff1b5bf98f775",
+        "119430234bdad7c11e549f6fb9676dca",
+        "a11f48112fbe87e520147f9baada1e5f"
+      ]
+    },
+    {
+      "id": "insns-xperm4",
+      "level": 3,
+      "sectnum": "30.5.49",
+      "title": "xperm4",
+      "heading_unit_id": "11783ddc289e102d5ef289601c3bc53a",
+      "heading_anchor_id": "insns-xperm4",
+      "blocks": [
+        "a9bc3d30c25ff0d8982c2ff38242d824",
+        "05a328bd6585da82468805a1b503bfe1",
+        "532c14d9d6d0ade3c369d400c51d2c08",
+        "a29bfd1b00ecfdba0c08e254f5b57230",
+        "119430234bdad7c11e549f6fb9676dca",
+        "a11f48112fbe87e520147f9baada1e5f"
+      ]
+    },
+    {
+      "id": "insns-zext_h",
+      "level": 3,
+      "sectnum": "30.5.50",
+      "title": "zext.h",
+      "heading_unit_id": "732a4b1fb04e58f91bf15d49de1b079e",
+      "heading_anchor_id": "insns-zext_h",
+      "blocks": [
+        "42ac494a68268367356eac21b3b6fa4d",
+        "34f293f3f8355ab8b83ec77c70831b6a",
+        "af58876bf852c3c44ff4b7c369628405",
+        "30529ffe8b9c1f29593da41b70b68770",
+        "2edc053bb4e53756dfd403bb00a8ff7d",
+        "9d6ef6d332be64e50a0487cafd8a44af",
+        "83be6c65f68475acf7ba7b6c24415656",
+        "119430234bdad7c11e549f6fb9676dca",
+        "aec0f9f3789894c6b7dbd3b1fefd3379"
+      ]
+    },
+    {
+      "id": "insns-zip",
+      "level": 3,
+      "sectnum": "30.5.51",
+      "title": "zip",
+      "heading_unit_id": "5dadae2f79f730b92ac39e155c36ce96",
+      "heading_anchor_id": "insns-zip",
+      "blocks": [
+        "1b60ddf53e4b5efed246062cc8057aa1",
+        "13b86767865cbf1b492827e9e70bd539",
+        "a7444d88f0e7e8dc9ebbec958012391c",
+        "cabe104fcdc873aa6b07b6ccd580c775",
+        "155287542ebfafa5f7775bfdec851fd8",
+        "119430234bdad7c11e549f6fb9676dca",
+        "1189d82fd2307140da25a6d76d17f18a"
+      ]
+    },
+    {
+      "id": "_software_optimization_guide",
+      "level": 2,
+      "sectnum": "30.6",
+      "title": "Software optimization guide",
+      "heading_unit_id": "6349c3f6d7cd4ed30441b410c97da2a9",
+      "blocks": []
+    },
+    {
+      "id": "_strlen",
+      "level": 3,
+      "sectnum": "30.6.1",
+      "title": "strlen",
+      "heading_unit_id": "08fc45f77d21da397a894bf651ce0112",
+      "blocks": [
+        "420ca3d6dae94ff297d6ebd84f079451",
+        "d8d1ed12d9827275b6271ed0fe255e6b",
+        "42926c222906aefe148f9103584518e3",
+        "06a3e8e091e1b46e06f2eecef0ad6442"
+      ]
+    },
+    {
+      "id": "_strcmp",
+      "level": 3,
+      "sectnum": "30.6.2",
+      "title": "strcmp",
+      "heading_unit_id": "3e85b614f834d3be563d678d023e2d65",
+      "blocks": [
+        "fb624b0c3b35b37130fa7440edbcd46c"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+unit_id = "3328f9ab6483dd05cd6d5826c90122b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+While the doubling of `LMUL` for these instructions is _safe_ for implementations with `VLEN` {ge} 256, it may be less
+optimal as it will result in unnecessary register pressure and might exact a performance penalty in
+some microarchitectures. Therefore, we suggest that in addition to providing portable code for SHA-512 and SM3,
+libraries should also include more optimal code for these instructions when `VLEN` {ge} 256.'''
+zh = '''
+虽然对这些指令加倍 `LMUL` 对 `VLEN` {ge} 256 的实现是__安全的__，但它可能不太优化，因为它会导致不必要的寄存器压力，并可能在某些微架构中带来性能损失。因此，我们建议除了为 SHA-512 和 SM3 提供可移植代码外，库还应在 `VLEN` {ge} 256 时为这些指令包含更优化的代码。'''

@@ -1,0 +1,16 @@
+unit_id = "f4f3dc61babb3d8d8d8c051ffce43068"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+We considered a unified register file for both integer and floating-point values
+as this simplifies software register allocation and calling conventions, and
+reduces total user state. However, a split organization increases the total
+number of registers accessible with a given instruction width, simplifies
+provision of enough register file ports for wide superscalar issue, supports
+decoupled floating-point-unit architectures, and simplifies use of internal
+floating-point encoding techniques. Compiler support and calling conventions for
+split register file architectures are well understood, and using dirty bits on
+floating-point register file state can reduce context-switch overhead.'''
+zh = '''
+我们曾考虑为整数值和浮点值采用统一的寄存器堆，因为这样可以简化软件寄存器分配和调用约定，并减少总的用户状态。然而，分离的组织方式增加了在给定指令宽度下可访问的寄存器总数，简化了为宽超标量发射提供足够寄存器堆端口的工作，支持解耦的浮点单元架构，并简化了内部浮点编码技术的使用。对于分离寄存器堆架构，编译器支持和调用约定已广为人知，并且在浮点寄存器堆状态上使用脏位可以减少上下文切换开销。'''

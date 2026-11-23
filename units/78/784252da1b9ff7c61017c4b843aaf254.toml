@@ -1,0 +1,8 @@
+unit_id = "784252da1b9ff7c61017c4b843aaf254"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ctr_custom_bits]#Any custom CTR extension must be associated with a non-zero value within the designated custom bits in `__x__ctrctl`.  When the custom bits hold a non-zero value that enables a custom extension, the extension may alter standard CTR behavior, and may define new custom status fields within `sctrstatus` or the CTR <<_entry_registers, Entry Registers>>.  All custom status fields, and standard status fields whose behavior is altered by the custom extension, must revert to standard behavior when the custom bits hold zero.  This includes read-only 0 behavior for any bits undefined by any implemented standard extensions.#'''
+zh = '''
+[#norm:ctr_custom_bits]##任何自定义 CTR 扩展必须在 `__x__ctrctl` 的指定自定义位内关联非零值。当自定义位持有使能自定义扩展的非零值时，该扩展可改变标准 CTR 行为，并可在 `sctrstatus` 或 CTR <<_entry_registers, 表项寄存器>> 中定义新的自定义状态字段。当自定义位为零时，所有自定义状态字段以及行为被自定义扩展改变的标准状态字段必须恢复为标准行为。这包括任何已实现标准扩展未定义的所有位恢复为只读 0 行为。##'''

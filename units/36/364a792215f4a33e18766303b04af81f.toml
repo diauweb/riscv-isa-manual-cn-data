@@ -1,0 +1,14 @@
+unit_id = "364a792215f4a33e18766303b04af81f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A user will want to know as quickly as possible when a hart is halted
+(e.g. due to a breakpoint). To efficiently determine which harts are
+halted when there are many harts, the debugger uses the `haltsum`
+registers. Assuming the maximum number of harts exist, first it checks {dm-haltsum3}.
+For each bit set there, it writes <<dm-dmcontrol, hartsel>>, and checks {dm-haltsum2}. This process repeats
+through {dm-haltsum1} and {dm-haltsum0}. Depending on how many harts exist, the process should
+start at one of the lower `haltsum` registers.'''
+zh = '''
+用户会希望尽快知道硬件线程何时停机（例如由于断点）。当存在许多硬件线程时，为高效确定哪些硬件线程已停机，调试器使用 `haltsum` 寄存器。假设存在最大数量的硬件线程，首先检查 {dm-haltsum3}。对于其中置位的每一位，写入 <<dm-dmcontrol, hartsel>>，并检查 {dm-haltsum2}。此过程依次经过 {dm-haltsum1} 和 {dm-haltsum0} 重复。取决于存在的硬件线程数量，该过程宜从较低的某个 `haltsum` 寄存器开始。'''

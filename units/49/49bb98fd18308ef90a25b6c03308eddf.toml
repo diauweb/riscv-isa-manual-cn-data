@@ -1,0 +1,42 @@
+unit_id = "49bb98fd18308ef90a25b6c03308eddf"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Trace RAM Sink Registers (trRam??)*
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*Address Offset* |*Register Name* |*Compliance* |*Description*
+|0x000 |trRamControl |Required |RAM Sink control register
+|0x004 |trRamImpl |Required |RAM Sink Implementation information
+|0x008 - 0x00F |--|Reserved |Reserved for more control registers
+|0x010 |trRamStartLow |Required |Lower 32 bits of start address of circular trace buffer
+|0x014 |trRamStartHigh |Optional |Upper bits of start address of circular trace buffer
+|0x018 |trRamLimitLow |Required |Lower 32 bits of end address of circular trace buffer
+|0x01C |trRamLimitHigh |Optional |Upper bits of end address of circular trace buffer
+|0x020 |trRamWPLow |Required |Lower 32 bits of current write location for trace data in circular buffer
+|0x024 |trRamWPHigh |Optional |Upper  bits of current write location for trace data in circular buffer
+|0x028 |trRamRPLow |Optional |Lower 32 bits of access pointer for trace readback
+|0x02C |trRamRPHigh |Optional |Upper bits of access pointer for trace readback
+|0x030 - 0x03F |--|Reserved |Reserved for more control registers
+|0x040 |trRamData |Optional |Read/write access to SRAM trace memory (32-bit data)
+|==='''
+zh = '''
+.**跟踪 RAM 接收器寄存器（trRam??）**
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*地址偏移* |*寄存器名称* |*合规性* |*描述*
+|0x000 |trRamControl |必需 |RAM 接收器控制寄存器
+|0x004 |trRamImpl |必需 |RAM 接收器实现信息
+|0x008 - 0x00F |--|保留 |保留用于更多控制寄存器
+|0x010 |trRamStartLow |必需 |循环跟踪缓冲区起始地址的低 32 位
+|0x014 |trRamStartHigh |可选 |循环跟踪缓冲区起始地址的高位
+|0x018 |trRamLimitLow |必需 |循环跟踪缓冲区结束地址的低 32 位
+|0x01C |trRamLimitHigh |可选 |循环跟踪缓冲区结束地址的高位
+|0x020 |trRamWPLow |必需 |循环缓冲区中跟踪数据当前写入位置的低 32 位
+|0x024 |trRamWPHigh |可选 |循环缓冲区中跟踪数据当前写入位置的高位
+|0x028 |trRamRPLow |可选 |用于跟踪回读的访问指针低 32 位
+|0x02C |trRamRPHigh |可选 |用于跟踪回读的访问指针高位
+|0x030 - 0x03F |--|保留 |保留用于更多控制寄存器
+|0x040 |trRamData |可选 |对 SRAM 跟踪存储器的读写访问（32 位数据）
+|==='''

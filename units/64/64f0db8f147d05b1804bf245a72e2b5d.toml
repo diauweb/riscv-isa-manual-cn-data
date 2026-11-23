@@ -1,0 +1,14 @@
+unit_id = "64f0db8f147d05b1804bf245a72e2b5d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There is no harm here in ignoring the atomicity requirement for page
+table updates, because a hypervisor is not expected in these
+circumstances to emulate an implicit memory access that fails. Rather,
+the hypervisor is given enough information about the faulting access to
+be able to make the memory accessible (e.g. by restoring a missing page
+of virtual memory) before resuming execution by retrying the faulting
+instruction.'''
+zh = '''
+忽略页表更新的原子性要求在此没有危害，因为在上述情况下，虚拟机监控器预期不会模拟失败的隐式内存访问。相反，虚拟机监控器被给予关于发生错误的访问的足够信息，以便能够在通过重试引发陷阱的指令恢复执行之前使内存可访问（例如，通过恢复虚拟内存的缺失页）。'''

@@ -1,0 +1,13 @@
+unit_id = "0b61b60899e62f2008ce37b775ce7c76"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. if _i_ is a conditional branch or indirect jump
+instruction, discard any untaken paths of execution, i.e., remove all
+instruction instances that are not reachable by the branch/jump taken in
+_instruction_tree_; and
+. record the instruction as finished, i.e., set _finished_ to _true_.'''
+zh = '''
+. 若 _i_ 是条件分支或间接跳转指令，则丢弃任何未被采用的执行路径，即移除 _instruction_tree_ 中通过所采用的分支/跳转不可达的所有指令实例；且
+. 将该指令记录为已完成，即将 _finished_ 置为 _true_。'''

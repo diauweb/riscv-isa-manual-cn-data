@@ -1,0 +1,88 @@
+unit_id = "2846f5662737af912aca6d387b432aae"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Generating itype for different instructions]
+.Generating itype for different instructions
+[cols="18%,~,35%",options="header"]
+|======================================================================================================
+|Instruction|Condition/Notes|itype Value/Name
+|Exception in instruction|An exception trap that occurred following the final retired instruction in the block.|1 = Exception
+|EBREAK, ECALL, C.EBREAK|An exception trap that occurred following the final retired instruction in the block due to these instructions. These instructions do not retire.
+|1 = Exception
+|Interrupted instruction|An interrupt trap occurred following the final retired instruction in the block.|2 = Interrupt
+|MRET, SRET| Return from an exception or interrupt handler. |3 = Trap return
+|<<itype_branch,Conditional branch>>|Not-taken direct, conditional branch.|4 = Not-taken branch
+|<<itype_branch,Conditional branch>>|Taken direct, conditional branch.|5 = Taken branch
+|Any other instruction|All other instructions that are not directly listed in this table.
+|0 = No special type
+3+|*Values of itype (<<itype_3_4,3-bit>>) (without <<Implicit Return Optimization,Implicit Return Optimization>>*)
+|JAL rd         |Any direct jump/call.                      |0 = No special type
+|JALR rd, rs    |Any indirect jump/call.                    |6 = Indirect jump (with or without linkage)
+|C.J or C.JAL   |C extension has direct jump/calls only.    |0 = No special type
+|CM.JT          |Defined by <<zcmt,Zcmt>> extension.        |0 = No special type
+|CM.JALT        |Defined by <<zcmt,Zcmt>> extension.        |0 = No special type
+|CM.POPRET*     |Defined by **Zcmp** extension.             |6 = Indirect jump (with or without linkage)
+3+|*Values of itype (<<itype_3_4,4-bit>>) (needed for <<Implicit Return Optimization,Implicit Return Optimization>>*). <<link,link>> means *x1* or *x5*.
+|JAL rd         |rd = `link`                                |9 = Direct call
+|               |rd = *x0*                                  |11 = Direct jump (without linkage)
+|               |rd != `link` and rd != *x0*                |15 = Other direct jump (with linkage)
+|JALR rd, rs    |rd = `link` and rs != `link`               |8 = Indirect call
+|               |rd = `link` and rs = `link` and rd = rs    |8 = Indirect call
+|               |rd = `link` and rs = `link` and rd != rs   |12 = Co-routine swap
+|               |rd != `link` and rs = `link`               |13 = Function return
+|               |rd = *x0* and rs != `link`                 |10 = Indirect jump (without linkage)
+|               |rd != `link` and rd != *x0* and rs != `link` |14 = Other indirect jump (with linkage)
+|C.JAL          |Expands to `JAL x1, offset`                |9 = Direct call
+|C.JALR rs      |rs = *x5*                                  |12 = Co-routine swap
+|               |rs != *x5*                                 |8 = Indirect call
+|C.JR rs        |rs = `link`                                |13 = Function return
+|               |rs != `link`                               |10 = Indirect jump (without linkage)
+|C.J            |Expands to `JAL x0, offset`                |11 = Direct jump (without linkage)
+|CM.JT          |Defined by <<zcmt,Zcmt>> extension.        |11 = Direct jump (without linkage)
+|CM.JALT        |Defined by <<zcmt,Zcmt>> extension.        |9 = Direct call
+|CM.POPRET*     |Defined by **Zcmp** extension.             |13 = Function return
+|======================================================================================================'''
+zh = '''
+[#Generating itype for different instructions]
+.为不同指令生成 itype
+[cols="18%,~,35%",options="header"]
+|======================================================================================================
+|指令|条件/说明|itype 值/名称
+|指令中发生异常|该块中最后一条已退休指令之后发生的异常陷阱。|1 = 异常
+|EBREAK、ECALL、C.EBREAK|由于这些指令而在该块中最后一条已退休指令之后发生的异常陷阱。这些指令不会退休。
+|1 = 异常
+|指令被中断|在该块中最后一条已退休指令之后发生的中断陷阱。|2 = 中断
+|MRET、SRET| 从异常或中断处理程序返回。 |3 = 陷阱返回
+|<<itype_branch,Conditional branch>>|未采取的直接条件分支。|4 = 未采取分支
+|<<itype_branch,Conditional branch>>|采取的直接条件分支。|5 = 采取分支
+|任何其他指令|未直接列于本表中的所有其他指令。
+|0 = 无特殊类型
+3+|**itype 的值（<<itype_3_4,3 位>>）（不含 <<Implicit Return Optimization,Implicit Return Optimization>>）**
+|JAL rd         |任意直接跳转/调用。                      |0 = 无特殊类型
+|JALR rd, rs    |任意间接跳转/调用。                    |6 = 间接跳转（带或不带链接）
+|C.J 或 C.JAL   |C 扩展仅有直接跳转/调用。    |0 = 无特殊类型
+|CM.JT          |由 <<zcmt,Zcmt>> 扩展定义。        |0 = 无特殊类型
+|CM.JALT        |由 <<zcmt,Zcmt>> 扩展定义。        |0 = 无特殊类型
+|CM.POPRET*     |由 **Zcmp** 扩展定义。             |6 = 间接跳转（带或不带链接）
+3+|**itype 的值（<<itype_3_4,4 位>>）（<<Implicit Return Optimization,Implicit Return Optimization>> 所需）**。<<link,link>> 表示 *x1* 或 *x5*。
+|JAL rd         |rd = `link`                                |9 = 直接调用
+|               |rd = *x0*                                  |11 = 直接跳转（不带链接）
+|               |rd != `link` 且 rd != *x0*                |15 = 其他直接跳转（带链接）
+|JALR rd, rs    |rd = `link` 且 rs != `link`               |8 = 间接调用
+|               |rd = `link` 且 rs = `link` 且 rd = rs    |8 = 间接调用
+|               |rd = `link` 且 rs = `link` 且 rd != rs   |12 = 协程交换
+|               |rd != `link` 且 rs = `link`               |13 = 函数返回
+|               |rd = *x0* 且 rs != `link`                 |10 = 间接跳转（不带链接）
+|               |rd != `link` 且 rd != *x0* 且 rs != `link` |14 = 其他间接跳转（带链接）
+|C.JAL          |展开为 `JAL x1, offset`                |9 = 直接调用
+|C.JALR rs      |rs = *x5*                                  |12 = 协程交换
+|               |rs != *x5*                                 |8 = 间接调用
+|C.JR rs        |rs = `link`                                |13 = 函数返回
+|               |rs != `link`                               |10 = 间接跳转（不带链接）
+|C.J            |展开为 `JAL x0, offset`                |11 = 直接跳转（不带链接）
+|CM.JT          |由 <<zcmt,Zcmt>> 扩展定义。        |11 = 直接跳转（不带链接）
+|CM.JALT        |由 <<zcmt,Zcmt>> 扩展定义。        |9 = 直接调用
+|CM.POPRET*     |由 **Zcmp** 扩展定义。             |13 = 函数返回
+|======================================================================================================'''

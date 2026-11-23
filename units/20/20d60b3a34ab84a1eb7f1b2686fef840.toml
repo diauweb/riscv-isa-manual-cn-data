@@ -1,0 +1,15 @@
+unit_id = "20d60b3a34ab84a1eb7f1b2686fef840"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:fetch_page_fault_no_x]#Attempting to fetch an instruction from a page that does not have
+execute permissions raises a fetch page-fault exception.#
+[#norm:load_page_fault_no_r]#Attempting to execute a load, load-reserved, or cache-block management
+instruction whose effective address lies
+within a page without read permissions raises a load page-fault exception.#
+[#norm:store_page_fault_no_w]#Attempting to execute a store, store-conditional, AMO, or cache-block zero instruction
+instruction whose effective address lies within a page without write
+permissions raises a store page-fault exception.#'''
+zh = '''
+[#norm:fetch_page_fault_no_x]##尝试从没有执行权限的页取指令会引发取指页错误异常。## [#norm:load_page_fault_no_r]##尝试执行有效地址位于没有读权限的页内的加载、加载保留或缓存块管理指令会引发加载页错误异常。## [#norm:store_page_fault_no_w]##尝试执行有效地址位于没有写权限的页内的存储、存储条件、AMO 或缓存块清零指令会引发存储页错误异常。##'''

@@ -1,0 +1,13 @@
+unit_id = "bbe37156567b077c26b389d80c3f8dd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:medeleg_no_rd1]#An implementation shall not have any bits of csr:medeleg[] be read-only one#,
+i.e., any synchronous trap that can be delegated must support not being delegated.
+Similarly,
+[#norm:mideleg_no_rd1]#an implementation shall not fix as read-only one
+any bits of csr:mideleg[] corresponding to machine-level interrupts#
+(but [#norm:mideleg_rd1_lower_level]#may do so for lower-level interrupts#).'''
+zh = '''
+[#norm:medeleg_no_rd1]##实现不应将 csr:medeleg[] 的任何位设为只读 1##，即任何可被委托的同步陷阱都必须支持不被委托。类似地，[#norm:mideleg_no_rd1]##实现不应将与机器级中断对应的 csr:mideleg[] 的任何位固定为只读 1##（但[#norm:mideleg_rd1_lower_level]##可对较低级中断如此##）。'''

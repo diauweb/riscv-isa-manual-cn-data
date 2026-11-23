@@ -1,0 +1,11 @@
+unit_id = "40e24ff8f8f78297e24abc9785e9dc4e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To enumerate all the harts, a debugger must first determine `HARTSELLEN`
+by writing all ones to {hartsel} (assuming the maximum size) and reading back the
+value to see which bits were actually set. Then it selects each hart
+starting from 0 until either {dmstatus-anynonexistent} in {dm-dmstatus} is 1, or the highest index (depending on `HARTSELLEN`) is reached.'''
+zh = '''
+要枚举所有硬件线程，调试器必须首先通过向 {hartsel} 写全 1（假定为最大尺寸）并读回该值以查看实际置位了哪些位，来确定 `HARTSELLEN`。然后它从 0 开始依次选择每个硬件线程，直到 {dm-dmstatus} 中的 {dmstatus-anynonexistent} 为 1，或达到最高索引（取决于 `HARTSELLEN`）为止。'''

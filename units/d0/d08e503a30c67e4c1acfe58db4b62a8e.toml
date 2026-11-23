@@ -1,0 +1,20 @@
+unit_id = "d08e503a30c67e4c1acfe58db4b62a8e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeFilter__i__MatchEcauseHigh : Filter _i_ Ecause Match Control (high) Register (trBaseEncoder+0x40C + 0x20__i__)*
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|31:0   |trTeFilterMatchChoiceEcauseHigh | Stores bits 63:32 to allow matching of higher *ecause* codes. If bit N is 1, then match if the *ecause* is N+32.
+|WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trTeFilter__i__MatchEcauseHigh：过滤器 _i_ Ecause 匹配控制（高）寄存器 (trBaseEncoder+0x40C + 0x20__i__)*
+[cols="6%,30%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|31:0   |trTeFilterMatchChoiceEcauseHigh | 存储位 63:32，以允许匹配更高的 *ecause* 代码。若位 N 为 1，则当 *ecause* 为 N+32 时匹配。
+|WARL|<<Undef,Undef>>
+|==='''

@@ -1,0 +1,13 @@
+unit_id = "fddce4b96dac53639a594e12189a80ea"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For harts that replicate the block signals to allow multiple blocks to
+retire per cycle it is also necessary to indicate which block each data
+access is associated with, so the encoder knows which block address to
+combine with the LSBs in order to construct the actual data access
+instruction address. 1 bit for 2 blocks per cycle, 2 bits for 4, and so
+on.'''
+zh = '''
+对于复制块信号以允许多个块每周期退休的 hart，还必须指示每次数据访问与哪个块关联，以便编码器知道应将哪个块地址与低位组合，从而构造实际的数据访问指令地址。每周期 2 个块用 1 位，4 个块用 2 位，依此类推。'''

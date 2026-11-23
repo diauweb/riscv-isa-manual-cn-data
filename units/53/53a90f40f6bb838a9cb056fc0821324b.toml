@@ -1,0 +1,12 @@
+unit_id = "53a90f40f6bb838a9cb056fc0821324b"
+kind = "code"
+translatable = false
+en = '''
+.A syntactic control dependency
+[.text-center, source%linenums, asm]
+----
+lw x1,0(x2)
+bne x1,x0,next
+sw x3,0(x4)
+next: sw x5,0(x6)
+----'''

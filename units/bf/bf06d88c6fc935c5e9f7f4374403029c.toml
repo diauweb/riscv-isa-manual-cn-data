@@ -1,0 +1,20 @@
+unit_id = "bf06d88c6fc935c5e9f7f4374403029c"
+kind = "code"
+translatable = false
+en = '''
+----
+Comparison      Assembler Mapping             Assembler pseudoinstruction
+
+va < vb         vmflt.vv vd, va, vb, vm
+va <= vb        vmfle.vv vd, va, vb, vm
+va > vb         vmflt.vv vd, vb, va, vm    vmfgt.vv vd, va, vb, vm
+va >= vb        vmfle.vv vd, vb, va, vm    vmfge.vv vd, va, vb, vm
+
+va < f          vmflt.vf vd, va, f, vm
+va <= f         vmfle.vf vd, va, f, vm
+va > f          vmfgt.vf vd, va, f, vm
+va >= f         vmfge.vf vd, va, f, vm
+
+va, vb vector register groups
+f      scalar floating-point register
+----'''

@@ -1,0 +1,316 @@
+unit_id = "56ccf788fae63818431b9213218d0e90"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dmcontrol-haltreq]] `((haltreq))`
+a|Writing 0 clears the halt request bit for all currently selected
+harts. This may cancel outstanding halt requests for those harts.
+
+Writing 1 sets the halt request bit for all currently selected
+harts. Running harts will halt whenever their halt request bit is
+set.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+
+Writes to this bit should be ignored while an abstract command is
+executing.
+a|*WARZ*
+a|-
+|[[dmcontrol-resumereq]] `((resumereq))`
+a|Writing 1 causes the currently selected harts to resume once, if
+they are halted when the write occurs. It also clears the resume
+ack bit for those harts.
+
+{dmcontrol-resumereq} is ignored if {dmcontrol-haltreq} is set.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+
+Writes to this bit should be ignored while an abstract command is
+executing.
+a|*W1*
+a|-
+|[[dmcontrol-hartreset]] `((hartreset))`
+a|This optional field writes the reset bit for all the currently
+selected harts.  To perform a reset the debugger writes 1, and then
+writes 0 to deassert the reset signal.
+
+While this bit is 1, the debugger must not change which harts are
+selected.
+
+If this feature is not implemented, the bit always stays 0, so
+after writing 1 the debugger can read the register back to see if
+the feature is supported.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+a|*WARL*
+a|0
+|[[dmcontrol-ackhavereset]] `((ackhavereset))`
+a|
+
+0 (nop): No effect.
+
+
+1 (ack): Clears `havereset` for any selected harts.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+
+Writes to this bit should be ignored while an abstract command is
+executing.
+a|*W1*
+a|-
+|[[dmcontrol-ackunavail]] `((ackunavail))`
+a|
+
+0 (nop): No effect.
+
+
+1 (ack): Clears `unavail` for any selected harts that are currently available.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+a|*W1*
+a|-
+|[[dmcontrol-hasel]] `((hasel))`
+a|Selects the definition of currently selected harts.
+
+0 (single): There is a single currently selected hart, that is selected by {hartsel}.
+
+
+1 (multiple): There may be multiple currently selected harts -- the hart
+selected by {hartsel}, plus those selected by the hart array mask
+register.
+
+An implementation which does not implement the hart array mask register
+must tie this field to 0. A debugger which wishes to use the hart array
+mask register feature should set this bit and read back to see if the functionality
+is supported.
+a|*WARL*
+a|0
+|[[dmcontrol-hartsello]] `((hartsello))`
+a|The low 10 bits of {hartsel}: the DM-specific index of the hart to
+select. This hart is always part of the currently selected harts.
+a|*WARL*
+a|0
+|[[dmcontrol-hartselhi]] `((hartselhi))`
+a|The high 10 bits of {hartsel}: the DM-specific index of the hart to
+select. This hart is always part of the currently selected harts.
+a|*WARL*
+a|0
+|[[dmcontrol-setkeepalive]] `((setkeepalive))`
+a|This optional field sets {keepalive} for all currently selected
+harts, unless {dmcontrol-clrkeepalive} is simultaneously set to
+1.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+a|*W1*
+a|-
+|[[dmcontrol-clrkeepalive]] `((clrkeepalive))`
+a|This optional field clears {keepalive} for all currently selected
+harts.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+a|*W1*
+a|-
+|[[dmcontrol-setresethaltreq]] `((setresethaltreq))`
+a|This optional field writes the halt-on-reset request bit for all
+currently selected harts, unless {dmcontrol-clrresethaltreq} is
+simultaneously set to 1.
+When set to 1, each selected hart will halt upon the next deassertion
+of its reset. The halt-on-reset request bit is not automatically
+cleared. The debugger must write to {dmcontrol-clrresethaltreq} to clear it.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+
+If {dmstatus-hasresethaltreq} is 0, this field is not implemented.
+
+Writes to this bit should be ignored while an abstract command is
+executing.
+a|*W1*
+a|-
+|[[dmcontrol-clrresethaltreq]] `((clrresethaltreq))`
+a|This optional field clears the halt-on-reset request bit for all
+currently selected harts.
+
+Writes apply to the new value of {hartsel} and {dmcontrol-hasel}.
+
+Writes to this bit should be ignored while an abstract command is
+executing.
+a|*W1*
+a|-
+|[[dmcontrol-ndmreset]] `((ndmreset))`
+a|This bit controls the reset signal from the DM to the rest of the
+hardware platform. The signal should reset every part of the hardware platform, including
+every hart, except for the DM and any logic required to access the
+DM.
+To perform a hardware platform reset the debugger writes 1,
+and then writes 0
+to deassert the reset.
+a|*R/W*
+a|0
+|[[dmcontrol-dmactive]] `((dmactive))`
+a|This bit serves as a reset signal for the Debug Module itself.
+After changing the value of this bit, the debugger must poll
+{dm-dmcontrol} until {dmcontrol-dmactive} has taken the requested value
+before performing any action that assumes the requested {dmcontrol-dmactive}
+state change has completed.  Hardware may
+take an arbitrarily long time to complete activation or deactivation and will
+indicate completion by setting {dmcontrol-dmactive} to the requested value.
+During this time, the DM may ignore any register writes.
+
+0 (inactive): The module's state, including authentication mechanism,
+takes its reset values (the {dmcontrol-dmactive} bit is the only bit which can
+be written to something other than its reset value). Any accesses
+to the module may fail. Specifically, {dmstatus-version} might not return
+correct data.
+
+When this value is written, the DM may ignore any other bits written
+to {dmcontrol} in the same write.
+
+
+1 (active): The module functions normally.
+
+No other mechanism should exist that may result in resetting the
+Debug Module after power up.
+
+To place the Debug Module into a known state, a debugger should write 0 to {dmcontrol-dmactive},
+poll until {dmcontrol-dmactive} is observed 0, write 1 to {dmcontrol-dmactive}, and
+poll until {dmcontrol-dmactive} is observed 1.
+
+Implementations may pay attention to this bit to further aid
+debugging, for example by preventing the Debug Module from being
+power gated while debugging is active.
+a|*R/W*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[dmcontrol-haltreq]] `((haltreq))`
+a|写 0 会清零所有当前所选硬件线程的停机请求位。这可能取消这些硬件线程未完成的停机请求。
+
+写 1 会置位所有当前所选硬件线程的停机请求位。正在运行的硬件线程在其停机请求位置位时将停机。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+
+此位的写入宜在抽象命令执行期间被忽略。
+a|*WARZ*
+a|-
+|[[dmcontrol-resumereq]] `((resumereq))`
+a|写 1 使当前所选硬件线程在写入发生时若已停机则恢复一次。它还会清零这些硬件线程的恢复应答位。
+
+若 {dmcontrol-haltreq} 置位，则 {dmcontrol-resumereq} 被忽略。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+
+此位的写入宜在抽象命令执行期间被忽略。
+a|*W1*
+a|-
+|[[dmcontrol-hartreset]] `((hartreset))`
+a|此可选字段写入所有当前所选硬件线程的复位位。要执行复位，调试器写入 1，然后写入 0 以清零复位信号。
+
+当此位为 1 时，调试器不得更改所选硬件线程。
+
+若此特性未实现，则该位始终为 0，因此写 1 后调试器可回读寄存器以查看是否支持该特性。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+a|*WARL*
+a|0
+|[[dmcontrol-ackhavereset]] `((ackhavereset))`
+a|
+
+0（空操作）：无效果。
+
+
+1（确认）：清除任何所选硬件线程的 `havereset`。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+
+此位的写入宜在抽象命令执行期间被忽略。
+a|*W1*
+a|-
+|[[dmcontrol-ackunavail]] `((ackunavail))`
+a|
+
+0（空操作）：无效果。
+
+
+1（确认）：清除任何当前可用的所选硬件线程的 `unavail`。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+a|*W1*
+a|-
+|[[dmcontrol-hasel]] `((hasel))`
+a|选择当前所选硬件线程的定义。
+
+0（单个）：只有一个当前所选硬件线程，由 {hartsel} 选择。
+
+
+1（多个）：可能有多个当前所选硬件线程——由 {hartsel} 选择的硬件线程，加上由硬件线程阵列掩码寄存器选择的硬件线程。
+
+未实现硬件线程阵列掩码寄存器的实现必须将此字段固定为 0。希望使用硬件线程阵列掩码寄存器特性的调试器宜设置此位并回读以查看是否支持该功能。
+a|*WARL*
+a|0
+|[[dmcontrol-hartsello]] `((hartsello))`
+a|{hartsel} 的低 10 位：要选择的硬件线程的 DM 特定索引。该硬件线程始终是当前所选硬件线程的一部分。
+a|*WARL*
+a|0
+|[[dmcontrol-hartselhi]] `((hartselhi))`
+a|{hartsel} 的高 10 位：要选择的硬件线程的 DM 特定索引。该硬件线程始终是当前所选硬件线程的一部分。
+a|*WARL*
+a|0
+|[[dmcontrol-setkeepalive]] `((setkeepalive))`
+a|此可选字段为所有当前所选硬件线程设置 {keepalive}，除非同时将 {dmcontrol-clrkeepalive} 置为 1。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+a|*W1*
+a|-
+|[[dmcontrol-clrkeepalive]] `((clrkeepalive))`
+a|此可选字段清除所有当前所选硬件线程的 {keepalive}。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+a|*W1*
+a|-
+|[[dmcontrol-setresethaltreq]] `((setresethaltreq))`
+a|此可选字段为所有当前所选硬件线程写入复位时停机请求位，除非同时将 {dmcontrol-clrresethaltreq} 置为 1。当置为 1 时，每个所选硬件线程将在其复位下一次清零时停机。复位时停机请求位不会自动清零。调试器必须写入 {dmcontrol-clrresethaltreq} 才能将其清零。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+
+若 {dmstatus-hasresethaltreq} 为 0，则此字段未实现。
+
+此位的写入宜在抽象命令执行期间被忽略。
+a|*W1*
+a|-
+|[[dmcontrol-clrresethaltreq]] `((clrresethaltreq))`
+a|此可选字段清除所有当前所选硬件线程的复位时停机请求位。
+
+写操作适用于 {hartsel} 和 {dmcontrol-hasel} 的新值。
+
+此位的写入宜在抽象命令执行期间被忽略。
+a|*W1*
+a|-
+|[[dmcontrol-ndmreset]] `((ndmreset))`
+a|此位控制从 DM 到硬件平台其余部分的复位信号。该信号宜复位硬件平台的每个部分，包括每个硬件线程，但 DM 以及访问 DM 所需的任何逻辑除外。要执行硬件平台复位，调试器写入 1，然后写入 0 以清零复位。
+a|*R/W*
+a|0
+|[[dmcontrol-dmactive]] `((dmactive))`
+a|此位充当调试模块自身的复位信号。在更改此位的值后，调试器必须轮询 {dm-dmcontrol}，直到 {dmcontrol-dmactive} 达到所请求的值，然后才能执行任何假定所请求的 {dmcontrol-dmactive} 状态变化已完成的动作。硬件完成激活或去激活可能需任意长的时间，并将通过将 {dmcontrol-dmactive} 设为所请求的值来指示完成。在此期间，DM 可忽略任何寄存器写入。
+
+0（非活动）：模块的状态（包括认证机制）采用其复位值（{dmcontrol-dmactive} 位是唯一可写入除其复位值之外值的位）。对模块的任何访问都可能失败。具体而言，{dmstatus-version} 可能不返回正确数据。
+
+写入此值时，DM 可忽略同一次写入中写入 {dmcontrol} 的任何其他位。
+
+
+1（活动）：模块正常运行。
+
+在通电后，不应存在任何其他可能导致复位调试模块的机制。
+
+要使调试模块进入已知状态，调试器宜向 {dmcontrol-dmactive} 写 0，轮询直到观察到 {dmcontrol-dmactive} 为 0，向 {dmcontrol-dmactive} 写 1，并轮询直到观察到 {dmcontrol-dmactive} 为 1。
+
+实现可关注此位以进一步帮助调试，例如通过防止调试模块在调试活动期间被电源门控。
+a|*R/W*
+a|0
+|==='''

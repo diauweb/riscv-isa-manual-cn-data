@@ -1,0 +1,33 @@
+unit_id = "20135c74cdbd69002f057ef6b8a23278"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Forwarding memory store operations to a memory load might satisfy only
+some slices of the load, leaving other slices unsatisfied.
+
+A program-order-previous store operation that was not available when
+taking the transition above might make _msoss_ provisionally
+unsound (violating coherence) when it becomes available. That store will
+prevent the load from being finished (see <<finish, Finish instruction>>), and will cause it to
+restart when that store operation is propagated (see <<prop_store, Propagate store operation>>).
+
+A consequence of the transition condition above is that
+store-release-RCsc memory store operations cannot be forwarded to
+load-acquire-RCsc instructions: _msoss_ does not include
+memory store operations from finished stores (as those must be
+propagated memory store operations), and the condition above requires
+all program-order-previous store-releases-RCsc to be finished when the
+load is acquire-RCsc.
+===='''
+zh = '''
+[NOTE]
+====
+将内存存储操作转发给某个内存加载，可能只满足该加载的部分分片，而其余分片仍未满足。
+
+在采用上述迁移时不可用的某个程序顺序在前的存储操作，在变得可用时可能使 _msoss_ 暂时不健全（违反一致性）。该存储将阻止该加载完成（见 <<finish, 完成指令>>），并在该存储操作被传播时导致其重启（见 <<prop_store, 传播存储操作>>）。
+
+上述迁移条件的一个结果是，store-release-RCsc 内存存储操作不能转发给 load-acquire-RCsc 指令：_msoss_ 不包含来自已完成存储的内存存储操作（因为那些必须是已传播的内存存储操作），而上述条件要求当该加载为 acquire-RCsc 时，所有程序顺序在前的 store-release-RCsc 均已完成。
+===='''

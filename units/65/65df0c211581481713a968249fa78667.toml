@@ -1,0 +1,15 @@
+unit_id = "65df0c211581481713a968249fa78667"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If an error is detected in continuous tests or
+environmental sensors, the entropy source will enter a no-output state.
+We define that a non-critical alarm is signaled if the entropy source
+returns to `BIST` state from live (`WAIT` or `ES16`) states. Critical
+failures will result in `DEAD` state immediately. A hardware-based
+continuous testing mechanism must not make statistical information
+externally available, and it must be zeroized periodically or upon
+demand via reset, power-up, or similar signal.'''
+zh = '''
+如果在连续测试或环境传感器中检测到错误，熵源将进入无输出状态。我们定义：如果熵源从活动状态（`WAIT` 或 `ES16`）返回 `BIST` 状态，则发出非致命警报。关键故障将立即导致 `DEAD` 状态。基于硬件的连续测试机制不应使统计信息对外可用，并且应通过复位、上电或类似信号定期或按需清零。'''

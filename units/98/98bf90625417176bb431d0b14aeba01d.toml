@@ -1,0 +1,13 @@
+unit_id = "98bf90625417176bb431d0b14aeba01d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some whole read/write fields are reserved for future use. Software
+should ignore the values read from these fields, and should preserve the
+values held in these fields when writing values to other fields of the
+same register. For forward compatibility, implementations that do not
+furnish these fields must make them read-only zero. These fields are
+labeled *WPRI* in the register descriptions.'''
+zh = '''
+某些完整的读写字段保留供将来使用。软件宜忽略从这些字段读取的值，并在向同一寄存器的其他字段写入值时宜保留这些字段所保持的值。为向前兼容，不提供这些字段的实现必须将它们设为只读零。这些字段在寄存器描述中标记为 *WPRI*。'''

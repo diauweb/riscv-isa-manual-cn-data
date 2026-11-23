@@ -1,0 +1,1153 @@
+{
+  "sha": "1524be189233987341a9aca0d5bb3648b5478a5e",
+  "parent_sha": "57ec29a1e9380ec4993f5e3d9f4a12b4ba5cb9fc",
+  "is_baseline": false,
+  "date": "2024-05-14T13:06:51-07:00",
+  "title": "Fixing instances of \"frozen\". (#1405)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-1524be1-2024-05-14"
+  ],
+  "diff": {
+    "added": 0,
+    "modified": 100,
+    "moved": 0,
+    "deleted": 7,
+    "touched_chapters": [
+      "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "unpriv/bits"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-add_uw",
+      "slot": 5,
+      "unit_id": "ab7f2f48146b2bbd9e6c891e53ff044b",
+      "status": "modified",
+      "prev_unit_id": "fa28fa67f7fbe6b37809698932205e2b"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-andn",
+      "slot": 5,
+      "unit_id": "40bad86a488cd0d4f764c875afee20f5",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bclr",
+      "slot": 5,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bclri",
+      "slot": 7,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bext",
+      "slot": 5,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bexti",
+      "slot": 7,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-binv",
+      "slot": 5,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-binvi",
+      "slot": 7,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bset",
+      "slot": 5,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-bseti",
+      "slot": 7,
+      "unit_id": "17a8edee7f96d65b5181cb9a3081b5ae",
+      "status": "modified",
+      "prev_unit_id": "89ec828f30d10ef647b88f204daab646"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-clmul",
+      "slot": 5,
+      "unit_id": "6ea15329c243c1df7aaf9a9d7462cedb",
+      "status": "modified",
+      "prev_unit_id": "f19043bda5b09c7b6ff5053ea3699b91"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-clmulh",
+      "slot": 5,
+      "unit_id": "6ea15329c243c1df7aaf9a9d7462cedb",
+      "status": "modified",
+      "prev_unit_id": "f19043bda5b09c7b6ff5053ea3699b91"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-clmulr",
+      "slot": 6,
+      "unit_id": "f14721dcb9c1d8c1bcaaaadefaf18a0d",
+      "status": "modified",
+      "prev_unit_id": "2da4d2565151a04c3a93dfe1998c79db"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-clz",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-clzw",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-cpop",
+      "slot": 6,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-cpopw",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-ctz",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-ctzw",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-max",
+      "slot": 6,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-maxu",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-min",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-minu",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-orc_b",
+      "slot": 5,
+      "unit_id": "e38f336d513927d5309ee39838aa1c4e",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-orn",
+      "slot": 5,
+      "unit_id": "40bad86a488cd0d4f764c875afee20f5",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-pack",
+      "slot": 5,
+      "unit_id": "b7768866ae9b80d12667499595a7c262",
+      "status": "modified",
+      "prev_unit_id": "c219d29964c2df664e86724a178be591"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-packh",
+      "slot": 5,
+      "unit_id": "b7768866ae9b80d12667499595a7c262",
+      "status": "modified",
+      "prev_unit_id": "c219d29964c2df664e86724a178be591"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-packw",
+      "slot": 5,
+      "unit_id": "b7768866ae9b80d12667499595a7c262",
+      "status": "modified",
+      "prev_unit_id": "c219d29964c2df664e86724a178be591"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-rev8",
+      "slot": 9,
+      "unit_id": "40bad86a488cd0d4f764c875afee20f5",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-revb",
+      "slot": 5,
+      "unit_id": "b7768866ae9b80d12667499595a7c262",
+      "status": "modified",
+      "prev_unit_id": "c219d29964c2df664e86724a178be591"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-rol",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-rolw",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-ror",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-rori",
+      "slot": 7,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-roriw",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-rorw",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sext_b",
+      "slot": 5,
+      "unit_id": "aec0f9f3789894c6b7dbd3b1fefd3379",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sext_h",
+      "slot": 5,
+      "unit_id": "aec0f9f3789894c6b7dbd3b1fefd3379",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh1add",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh1add_uw",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh2add",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh2add_uw",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh3add",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-sh3add_uw",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-slli_uw",
+      "slot": 5,
+      "unit_id": "bc00457f2e5711af2c14266592029cbe",
+      "status": "modified",
+      "prev_unit_id": "9658f5933f03242971d2aafe19e90cbf"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-unzip",
+      "slot": 6,
+      "unit_id": "1189d82fd2307140da25a6d76d17f18a",
+      "status": "modified",
+      "prev_unit_id": "be97a155faf666c4d62f64d60b8985ed"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-xnor",
+      "slot": 5,
+      "unit_id": "d108be647178173716edf8103f13d9eb",
+      "status": "modified",
+      "prev_unit_id": "b876fff8a5deacc14c1474d45b557448"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-xpermb",
+      "slot": 5,
+      "unit_id": "a11f48112fbe87e520147f9baada1e5f",
+      "status": "modified",
+      "prev_unit_id": "3ffc641556d5da0bad17af38875d5c61"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-xpermn",
+      "slot": 5,
+      "unit_id": "a11f48112fbe87e520147f9baada1e5f",
+      "status": "modified",
+      "prev_unit_id": "3ffc641556d5da0bad17af38875d5c61"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-zext_h",
+      "slot": 8,
+      "unit_id": "aec0f9f3789894c6b7dbd3b1fefd3379",
+      "status": "modified",
+      "prev_unit_id": "e124e1ab401c6af58422d7a8acb4aa3e"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "insns-zip",
+      "slot": 6,
+      "unit_id": "1189d82fd2307140da25a6d76d17f18a",
+      "status": "modified",
+      "prev_unit_id": "be97a155faf666c4d62f64d60b8985ed"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes32dsi",
+      "slot": 5,
+      "unit_id": "d162204c28303089067420173abdb643",
+      "status": "modified",
+      "prev_unit_id": "c29626cf15b87ea66bd708aa862444c3"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes32dsmi",
+      "slot": 5,
+      "unit_id": "d162204c28303089067420173abdb643",
+      "status": "modified",
+      "prev_unit_id": "c29626cf15b87ea66bd708aa862444c3"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes32esi",
+      "slot": 5,
+      "unit_id": "9bb465167bc46d5e758a922a6785a086",
+      "status": "modified",
+      "prev_unit_id": "48ddd531cb3edefec93a8dadb2e1f2cb"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes32esmi",
+      "slot": 5,
+      "unit_id": "9bb465167bc46d5e758a922a6785a086",
+      "status": "modified",
+      "prev_unit_id": "48ddd531cb3edefec93a8dadb2e1f2cb"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64ds",
+      "slot": 7,
+      "unit_id": "99471ddcf6e9ce75cd1ae5d3c54558d1",
+      "status": "modified",
+      "prev_unit_id": "8885066e7b7a53a31132f2ddd89f49df"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64dsm",
+      "slot": 7,
+      "unit_id": "99471ddcf6e9ce75cd1ae5d3c54558d1",
+      "status": "modified",
+      "prev_unit_id": "8885066e7b7a53a31132f2ddd89f49df"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64es",
+      "slot": 7,
+      "unit_id": "8187300fc09e2bdf30dba388e2f7fc74",
+      "status": "modified",
+      "prev_unit_id": "8a5ae0c903d4a8df6eb30652438fd3be"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64esm",
+      "slot": 7,
+      "unit_id": "8187300fc09e2bdf30dba388e2f7fc74",
+      "status": "modified",
+      "prev_unit_id": "8a5ae0c903d4a8df6eb30652438fd3be"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64im",
+      "slot": 5,
+      "unit_id": "99471ddcf6e9ce75cd1ae5d3c54558d1",
+      "status": "modified",
+      "prev_unit_id": "8885066e7b7a53a31132f2ddd89f49df"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64ks1i",
+      "slot": 5,
+      "unit_id": "517ea765f1c05146d995c7ddd7a296e2",
+      "status": "modified",
+      "prev_unit_id": "ac3187850e6498601f594620e22c7ab2"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-aes64ks2",
+      "slot": 5,
+      "unit_id": "517ea765f1c05146d995c7ddd7a296e2",
+      "status": "modified",
+      "prev_unit_id": "ac3187850e6498601f594620e22c7ab2"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-andn",
+      "slot": 5,
+      "unit_id": "fb400b00c00cf6b8c9812f1eb639412d",
+      "status": "modified",
+      "prev_unit_id": "49b9cb0dc851be8f37df9362eb38b70e"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-brev8",
+      "slot": 7,
+      "unit_id": "9ea2c1ba3db72d3353cdfc1ec9b8c0e7",
+      "status": "modified",
+      "prev_unit_id": "ff79d6b3371e6f5f9da4776a84399b8b"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-clmul",
+      "slot": 5,
+      "unit_id": "20416b38892a17c380332ae8461335a4",
+      "status": "modified",
+      "prev_unit_id": "7a10dd2c7a101df7cc3c814842009452"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-clmulh",
+      "slot": 5,
+      "unit_id": "20416b38892a17c380332ae8461335a4",
+      "status": "modified",
+      "prev_unit_id": "7a10dd2c7a101df7cc3c814842009452"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-orn",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-pack",
+      "slot": 5,
+      "unit_id": "9ea2c1ba3db72d3353cdfc1ec9b8c0e7",
+      "status": "modified",
+      "prev_unit_id": "ff79d6b3371e6f5f9da4776a84399b8b"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-packh",
+      "slot": 5,
+      "unit_id": "9ea2c1ba3db72d3353cdfc1ec9b8c0e7",
+      "status": "modified",
+      "prev_unit_id": "ff79d6b3371e6f5f9da4776a84399b8b"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-packw",
+      "slot": 5,
+      "unit_id": "9ea2c1ba3db72d3353cdfc1ec9b8c0e7",
+      "status": "modified",
+      "prev_unit_id": "ff79d6b3371e6f5f9da4776a84399b8b"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-rev8",
+      "slot": 9,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-rol",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-rolw",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-ror",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-rori",
+      "slot": 7,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-roriw",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-rorw",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha256sig0",
+      "slot": 5,
+      "unit_id": "701d1b76ef4cd83aa2d51446664c42d3",
+      "status": "modified",
+      "prev_unit_id": "892f66d2e26d0d4f0bb59639abc5a83d"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha256sig1",
+      "slot": 5,
+      "unit_id": "701d1b76ef4cd83aa2d51446664c42d3",
+      "status": "modified",
+      "prev_unit_id": "892f66d2e26d0d4f0bb59639abc5a83d"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha256sum0",
+      "slot": 5,
+      "unit_id": "701d1b76ef4cd83aa2d51446664c42d3",
+      "status": "modified",
+      "prev_unit_id": "892f66d2e26d0d4f0bb59639abc5a83d"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha256sum1",
+      "slot": 5,
+      "unit_id": "701d1b76ef4cd83aa2d51446664c42d3",
+      "status": "modified",
+      "prev_unit_id": "892f66d2e26d0d4f0bb59639abc5a83d"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig0h",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig0l",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig1h",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig1l",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sum0r",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sum1r",
+      "slot": 7,
+      "unit_id": "a69c4a75ee3cb34c87b459b36013b11d",
+      "status": "modified",
+      "prev_unit_id": "47537ae819565f43b2dbf7bd8cf1e836"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig0",
+      "slot": 5,
+      "unit_id": "b372fc89663fb72daaf11b1f98bfc064",
+      "status": "modified",
+      "prev_unit_id": "93af8f4b0c6474787e8152d269c4272f"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sig1",
+      "slot": 5,
+      "unit_id": "b372fc89663fb72daaf11b1f98bfc064",
+      "status": "modified",
+      "prev_unit_id": "93af8f4b0c6474787e8152d269c4272f"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sum0",
+      "slot": 5,
+      "unit_id": "b372fc89663fb72daaf11b1f98bfc064",
+      "status": "modified",
+      "prev_unit_id": "93af8f4b0c6474787e8152d269c4272f"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sha512sum1",
+      "slot": 5,
+      "unit_id": "b372fc89663fb72daaf11b1f98bfc064",
+      "status": "modified",
+      "prev_unit_id": "93af8f4b0c6474787e8152d269c4272f"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sm3p0",
+      "slot": 7,
+      "unit_id": "41257820d0410c5ce329d21408472a67",
+      "status": "modified",
+      "prev_unit_id": "c7c4dc6a1df663fdc51b6ed8ab3a61a0"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sm3p1",
+      "slot": 7,
+      "unit_id": "41257820d0410c5ce329d21408472a67",
+      "status": "modified",
+      "prev_unit_id": "c7c4dc6a1df663fdc51b6ed8ab3a61a0"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sm4ed",
+      "slot": 5,
+      "unit_id": "f6a7de306b14c112af19bf6ad56f54a3",
+      "status": "modified",
+      "prev_unit_id": "bf1a6cff7d729718bdf9880ff18d72b7"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-sm4ks",
+      "slot": 5,
+      "unit_id": "f6a7de306b14c112af19bf6ad56f54a3",
+      "status": "modified",
+      "prev_unit_id": "bf1a6cff7d729718bdf9880ff18d72b7"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-unzip",
+      "slot": 6,
+      "unit_id": "ecb73dfb6a6f6b086fe5beee32be07b3",
+      "status": "modified",
+      "prev_unit_id": "bb3cee0101ff593aae149202dfd27eac"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-xnor",
+      "slot": 5,
+      "unit_id": "f35a111d73c85dbf39ca6ac0d15d1891",
+      "status": "modified",
+      "prev_unit_id": "10a741691e287994056ca7c277ea4899"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-xperm8",
+      "slot": 5,
+      "unit_id": "cfe6572919e26364d5b810f42d1e22dd",
+      "status": "modified",
+      "prev_unit_id": "e444bd85a2cca772af1d384d12fbd3bb"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-xperm4",
+      "slot": 5,
+      "unit_id": "cfe6572919e26364d5b810f42d1e22dd",
+      "status": "modified",
+      "prev_unit_id": "e444bd85a2cca772af1d384d12fbd3bb"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+      "section_id": "insns-zip",
+      "slot": 6,
+      "unit_id": "ecb73dfb6a6f6b086fe5beee32be07b3",
+      "status": "modified",
+      "prev_unit_id": "bb3cee0101ff593aae149202dfd27eac"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zba",
+      "after_unit_id": "c57a04dc6b9e7afab0945c7d73dc70cb",
+      "unit_id": "f426ce87ffb0c08c5ac63e01f41b1dbd"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbb",
+      "after_unit_id": "3d4b5f6d50c8771e964bd516e3010191",
+      "unit_id": "ceca20cff6ef40680348ae1e4bd3f567"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbc",
+      "after_unit_id": "65abd5f44379900e6e227caddb562ecd",
+      "unit_id": "90cb2c12d5b1ba6398ea6c91ab1bd508"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbs",
+      "after_unit_id": "c6c652361b50b68538ad9f87c576deda",
+      "unit_id": "60c78bf21daba024337fc1fd6d1d456a"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbkb",
+      "after_unit_id": "699d7570306b0ab0128f7aaaa171ea57",
+      "unit_id": "0f98900e53bfd9d4e8be4f51e5ebdfa7"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbkc",
+      "after_unit_id": "7255898a7cc25e607f6afef9103a82c1",
+      "unit_id": "12c23233a98717e95f7f6bfe7260e08f"
+    },
+    {
+      "chapter_key": "unpriv/bits",
+      "section_id": "zbkx",
+      "after_unit_id": "fb11359f4820c43e3b01995df1e4f8e4",
+      "unit_id": "6a488e795f375c4565b2bb614d021d82"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual Volume I: Unprivileged Architecture",
+      "title_unit_id": "bac0390e54af28bd7b1c4e819530b6a8",
+      "entry_file": "src/riscv-unprivileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "69af8248c320b174"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "8dde8fda2d9df256"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "707ee4e7b87ffc5d"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "c9b0e8f0cde4002c"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "f51cda5ce185fc09"
+        },
+        {
+          "id": "rv128",
+          "chap_hash": "cd6144583c2edbfd"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "6d6a7db1224116fa"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "be4109e7a479efe5"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "2bcb5ed9ff43bb5c"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "1be26bc845a44419"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "c939e0d365c3cbcf"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "9232c0a02c239aef"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "09883c0098719c47"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "dbe68b2fb1dc0c01"
+        },
+        {
+          "id": "atomics",
+          "chap_hash": "c870acc9db32f3ee"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "9f90b0a2573c4c3f"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "9cd8f3ed046f14fc"
+        },
+        {
+          "id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_0",
+          "chap_hash": "d6e6cd288b4a5b9b"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "a09faaccb017e078"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "79ccccad876b2dd5"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "a2249f432e4887b3"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "54fbb49b16080034"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "aa693e24c7d17a69"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "4cf217579db88b5e"
+        },
+        {
+          "id": "quad-float-clssfy",
+          "chap_hash": "243df4fde0603dab"
+        },
+        {
+          "id": "bf16",
+          "chap_hash": "ed8072d0f271588e"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "3d4be3dfccf3de2b"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "9cb3297a24d0ed88"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "04ff0b574a5e64ce"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "f6e564890e1fe714"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "835d7b6877e2006c"
+        },
+        {
+          "id": "j-extendj",
+          "chap_hash": "433ba3608a67239f"
+        },
+        {
+          "id": "packedsimd",
+          "chap_hash": "a1ab319d821dd6f2"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "efed505b96eeac0c"
+        },
+        {
+          "id": "_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+          "chap_hash": "d19e2cbddb07d7c8"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0",
+          "chap_hash": "8647489007212330"
+        },
+        {
+          "id": "_control_flow_integrity_cfi",
+          "chap_hash": "4efffce4e9c00eca"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "3143fc7f9f624c06"
+        },
+        {
+          "id": "extending",
+          "chap_hash": "d8dccc06327e99e5"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "b7bbcb202ad7a9ad"
+        },
+        {
+          "id": "history",
+          "chap_hash": "657a16293c770930"
+        },
+        {
+          "id": "_rvwmo_explanatory_material_version_0_1",
+          "chap_hash": "5dbb7dd2296f2f94"
+        },
+        {
+          "id": "_formal_memory_model_specifications_version_0_1",
+          "chap_hash": "d709c02e3d5ac377"
+        },
+        {
+          "id": "_vector_assembly_code_examples",
+          "chap_hash": "067aab6e3f966dda"
+        },
+        {
+          "id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+          "chap_hash": "153b2bded267d7e2"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual: Volume II: Privileged Architecture",
+      "title_unit_id": "a8216e121762a37b2ef41c6d4b20f6f4",
+      "entry_file": "src/riscv-privileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "98efaba0fa3806aa"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "29d7f4bfed3d7762"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "37b56d301210a80f"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "4454d375796880f5"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "b402cb134664e9d9"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "125814e834785263"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "6a443d2b8bab5be4"
+        },
+        {
+          "id": "smcntrpmf",
+          "chap_hash": "d6f73d030c340175"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "fec822e00c009929"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "d8da777713c1d07a"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "0e10f13f98b38962"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "a782760aac4e0e15"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "1781affe5cff500d"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "bde1746de439d6b6"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "d1c1af7752f7a515"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "f8ed76647e68ce43"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "b2368bbe6c9dc40e"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "76e1a4055cf99c9a"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "0745e2fd7c843f4b"
+        },
+        {
+          "id": "priv-cfi",
+          "chap_hash": "44788285b70d4205"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "4af03b9676539a6c"
+        },
+        {
+          "id": "_history",
+          "chap_hash": "1b2ed3496b10e620"
+        }
+      ]
+    }
+  ]
+}

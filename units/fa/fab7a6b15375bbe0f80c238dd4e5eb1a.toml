@@ -1,0 +1,17 @@
+unit_id = "fab7a6b15375bbe0f80c238dd4e5eb1a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When ext:zicfiss[] is enabled, each function that needs to spill the link register,
+typically non-leaf functions, store the link register value to the regular stack
+and a shadow copy of the link register value to the shadow stack when the
+function is entered (the prologue). When such a function returns (the
+epilogue), the function loads the link register from the regular stack and
+the shadow copy of the link register from the shadow stack. Then, the link
+register value from the regular stack and the shadow link register value from
+the shadow stack are compared. A mismatch of the two values is indicative of a
+subversion of the return address control variable and causes a software-check
+exception.'''
+zh = '''
+当 ext:zicfiss[] 启用时，每个需要溢出链接寄存器的函数（通常为非叶子函数）在函数进入时（序言）将链接寄存器值存储到常规栈，并将链接寄存器值的影子副本存储到影子栈。当此类函数返回时（尾声），函数从常规栈加载链接寄存器，并从影子栈加载链接寄存器的影子副本。然后，将从常规栈加载的链接寄存器值与从影子栈加载的影子链接寄存器值进行比较。两个值不匹配表示返回地址控制变量遭到颠覆，会引起软件检查异常。'''

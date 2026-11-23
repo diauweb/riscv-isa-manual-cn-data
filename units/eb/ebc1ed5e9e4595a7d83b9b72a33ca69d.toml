@@ -1,0 +1,36 @@
+unit_id = "ebc1ed5e9e4595a7d83b9b72a33ca69d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Format of result of insn:fclass[] instruction.
+[%autowidth,float="center",align="center",cols="^,<",options="header",]
+|===
+|_rd_ bit |Meaning
+|0 |_rs1_ is −{inf}.
+|1 |_rs1_ is a negative normal number.
+|2 |_rs1_ is a negative subnormal number.
+|3 |_rs1_ is −0.
+|4 |_rs1_ is +0.
+|5 |_rs1_ is a positive subnormal number.
+|6 |_rs1_ is a positive normal number.
+|7 |_rs1_ is +{inf}.
+|8 |_rs1_ is a signaling NaN.
+|9 |_rs1_ is a quiet NaN.
+|==='''
+zh = '''
+.insn:fclass[] 指令结果格式
+[%autowidth,float="center",align="center",cols="^,<",options="header",]
+|===
+|_rd_ 位 |含义
+|0 |_rs1_ 为 −{inf}。
+|1 |_rs1_ 为负规格化数。
+|2 |_rs1_ 为负非规格化数。
+|3 |_rs1_ 为 −0。
+|4 |_rs1_ 为 +0。
+|5 |_rs1_ 为正非规格化数。
+|6 |_rs1_ 为正规格化数。
+|7 |_rs1_ 为 +{inf}。
+|8 |_rs1_ 为信号 NaN。
+|9 |_rs1_ 为静默 NaN。
+|==='''

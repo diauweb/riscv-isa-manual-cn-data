@@ -1,0 +1,91 @@
+unit_id = "a989774e66b94011cab0feaaf79c52bf"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Moved description to *Ratified* for the ISA modules ratified by the
+board in early 2019.
+* Removed the ext:a[] extension from ratification.
+* Changed document version scheme to avoid confusion with versions of
+the ISA modules.
+* Incremented the version numbers of the base integer ISA to 2.1,
+reflecting the presence of the ratified RVWMO memory model and exclusion
+of insn:fence.i[], counters, and CSR instructions that were in previous base
+ISA.
+* Incremented the version numbers of the ext:f[] and ext:d[] extensions to 2.2,
+reflecting that version 2.1 changed the canonical NaN, and version 2.2
+defined the NaN-boxing scheme and changed the definition of the insn:fmin[] and
+insn:fmax[] instructions.
+* Changed name of document to refer to "`unprivileged`" instructions as
+part of move to separate ISA specifications from platform profile
+mandates.
+* Added clearer and more precise definitions of execution environments,
+harts, traps, and memory accesses.
+* Defined instruction-set categories: _standard_, _reserved_, _custom_,
+_non-standard_, and _non-conforming_.
+* Removed text implying operation under alternate endianness, as
+alternate-endianness operation has not yet been defined for RISC-V.
+* Changed description of misaligned load and store behavior. The
+specification now allows visible misaligned address traps in execution
+environment interfaces, rather than just mandating invisible handling of
+misaligned loads and stores in user mode. Also, now allows access-fault
+exceptions to be reported for misaligned accesses (including atomics)
+that should not be emulated.
+* Moved insn:fence.i[] out of the mandatory base and into a separate extension,
+with ext:zifencei[] ISA name. insn:fence.i[] was removed from the Linux user ABI and
+is problematic in implementations with large incoherent instruction and
+data caches. However, it remains the only standard instruction-fetch
+coherence mechanism.
+* Removed prohibitions on using RV32E with other extensions.
+* Removed platform-specific mandates that certain encodings produce
+illegal-instruction exceptions in RV32E and RV64I chapters.
+* Counter/timer instructions are now not considered part of the
+mandatory base ISA, and so CSR instructions were moved into separate
+chapter and marked as version 2.0, with the unprivileged counters moved
+into another separate chapter. The counters are not ready for
+ratification as there are outstanding issues, including counter
+inaccuracies.
+* A CSR-access ordering model has been added.
+* Explicitly defined the 16-bit half-precision floating-point format for
+floating-point instructions in the 2-bit _fmt_ field.
+* Defined the signed-zero behavior of insn:fmin[] and insn:fmax[], and
+changed their behavior on signaling-NaN inputs to conform to the
+`minimumNumber` and `maximumNumber` operations in the <<ieee754-2019, IEEE
+754-2019 arithmetic standard>>.
+* The memory consistency model, RVWMO, has been defined.
+* The ext:zam[] extension, which permits misaligned AMOs and specifies
+their semantics, has been defined.
+* The ext:ztso[] extension, which enforces a stricter memory consistency
+model than RVWMO, has been defined.
+* Improvements to the description and commentary.
+* Defined the term IALIGN as shorthand to describe the
+instruction-address alignment constraint.
+* Removed text of ext:p[] extension chapter as now superseded by active task
+group documents.
+* Removed text of ext:v[] extension chapter as now superseded by separate
+vector extension draft document.'''
+zh = '''
+* 对于董事会在 2019 年初批准的 ISA 模块，将其描述移至 *已批准*。
+* 不再将 ext:a[] 扩展列入批准范围。
+* 更改文档版本方案，以避免与 ISA 模块的版本混淆。
+* 将基础整数 ISA 的版本号增至 2.1，以反映已纳入已批准的 RVWMO 内存模型，并排除先前基础 ISA 中的 insn:fence.i[]、计数器及 CSR 指令。
+* 将 ext:f[] 和 ext:d[] 扩展的版本号增至 2.2，以反映版本 2.1 更改了规范 NaN，且版本 2.2 定义了 NaN 装箱方案并更改了 insn:fmin[] 和 insn:fmax[] 指令的定义。
+* 更改文档名称，以指代“非特权”指令，这是将 ISA 规范与平台配置集强制要求分离的一部分。
+* 增加了对执行环境、硬件线程、陷阱和内存访问更清晰、更精确的定义。
+* 定义了指令集类别：_标准_、_保留_、_自定义_、_非标准_ 和 _不符合_。
+* 移除了暗示在替代字节序下运行的文本，因为 RISC-V 尚未定义替代字节序运行。
+* 更改了非对齐加载和存储行为的描述。规范现在允许在执行环境接口中产生可见的非对齐地址陷阱，而不再仅仅强制要求在用户模式下对非对齐加载和存储进行不可见处理。此外，现在允许对不应被仿真的非对齐访问（包括原子操作）报告访问故障异常。
+* 将 insn:fence.i[] 移出强制基础部分，放入单独的扩展，ISA 名称为 ext:zifencei[]。insn:fence.i[] 已从 Linux 用户 ABI 中移除，并且在具有大型非一致指令和数据缓存的实现中存在问题。然而，它仍然是唯一的标准取指一致性机制。
+* 移除了禁止 RV32E 与其他扩展一起使用的规定。
+* 移除了 RV32E 和 RV64I 章节中关于某些编码产生非法指令异常的平台特定强制要求。
+* 计数/定时器指令现在不再被视为强制基础 ISA 的一部分，因此 CSR 指令被移至单独章节并标记为版本 2.0，非特权计数器则移至另一个单独章节。由于存在未决问题（包括计数器不准确），计数器尚未准备好批准。
+* 增加了 CSR 访问排序模型。
+* 明确定义了 2 位 _fmt_ 字段中浮点指令的 16 位半精度浮点格式。
+* 定义了 insn:fmin[] 和 insn:fmax[] 的带符号零行为，并更改了它们在信号 NaN 输入上的行为，以符合 <<ieee754-2019, IEEE 754-2019 算术标准>> 中的 `minimumNumber` 和 `maximumNumber` 操作。
+* 已定义内存一致性模型 RVWMO。
+* 已定义 ext:zam[] 扩展，该扩展允许非对齐 AMO 并规定其语义。
+* 已定义 ext:ztso[] 扩展，该扩展实施比 RVWMO 更严格的内存一致性模型。
+* 对描述和评注的改进。
+* 定义了术语 IALIGN，作为描述指令地址对齐约束的简写。
+* 移除了 ext:p[] 扩展章节的文本，因为其现已由活跃任务组的文档取代。
+* 移除了 ext:v[] 扩展章节的文本，因为其现已由单独的向量扩展草案文档取代。'''

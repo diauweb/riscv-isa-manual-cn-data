@@ -1,0 +1,14 @@
+unit_id = "d71b2dc009ce19223c14c786f65af34f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Two mechanisms combine to prevent this attack vector.
+The first one prevents the OS from accessing the memory of an unprivileged
+process unless a specific code path is followed, and the second one prevents
+the OS from executing the memory of an unprivileged process at all times.
+RISC-V already includes support for the former through the ``sstatus.SUM`` bit,
+and for the latter by always denying supervisor execution of virtual memory
+pages marked with the U bit.'''
+zh = '''
+两种机制结合起来防止这种攻击途径。第一种机制阻止操作系统访问无特权进程的内存，除非遵循特定代码路径；第二种机制始终阻止操作系统执行无特权进程的内存。RISC-V 已通过 ``sstatus.SUM`` 位支持前者，并通过始终拒绝对标记了 U 位的虚拟内存页进行监管执行来支持后者。'''

@@ -1,0 +1,38 @@
+unit_id = "85fa0f5dfcb16972c569cd1c40bbc4ef"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The instructions in the ext:a[] extension can be used to provide sequentially
+consistent loads and stores, but this constrains hardware reordering of memory
+accesses more than necessary.
+
+A {cpp} sequentially consistent load can be implemented as an insn:lr[] with
+_aq_ set. However, the insn:lr[]/insn:sc[] eventual success guarantee may slow
+down concurrent loads from the same effective address.
+
+A sequentially consistent store can be implemented as an insn:amoswap[] that
+writes the old value to `x0` and has _rl_ set. However the superfluous load may
+impose ordering constraints that are unnecessary for this use case.
+
+Specific compilation conventions may require both the _aq_ and _rl_ bits to be
+set in either or both the insn:lr[] and insn:amoswap[] instructions.
+
+The extlink:zalasr[] extension provides load-acquire and store-release
+instructions without the aforementioned drawbacks.
+===='''
+zh = '''
+[NOTE]
+====
+ext:a[] 扩展中的指令可用于提供顺序一致的加载和存储，但这会对内存访问的硬件重排序施加超出必要的约束。
+
+{cpp} 的顺序一致加载可实现为置位 _aq_ 的 insn:lr[]。然而，insn:lr[]/insn:sc[] 的最终成功保证可能会减慢来自同一有效地址的并发加载。
+
+顺序一致的存储可实现为将旧值写入 `x0` 且置位 _rl_ 的 insn:amoswap[]。然而多余的加载可能施加对此用例而言不必要的排序约束。
+
+特定的编译约定可能要求在 insn:lr[] 和 insn:amoswap[] 之一或二者中同时置位 _aq_ 和 _rl_ 位。
+
+extlink:zalasr[] 扩展提供没有上述缺点的加载-获取和存储-释放指令。
+===='''

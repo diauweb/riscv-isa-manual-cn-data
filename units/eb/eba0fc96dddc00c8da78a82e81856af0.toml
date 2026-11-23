@@ -1,0 +1,13 @@
+unit_id = "eba0fc96dddc00c8da78a82e81856af0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a new shadow stack is created by the supervisor, it needs to store a
+checkpoint at the highest address on that stack. This enables the shadow stack
+pointer to be switched using the process outlined in this note. The
+`SSAMOSWAP.W/D` instruction can be used to store this checkpoint. When the old
+value at the memory location operated on by `SSAMOSWAP.W/D` is not required,
+`rd` can be set to `x0`.'''
+zh = '''
+当管理程序创建新的影子栈时，需要在该栈的最高地址处存储一个检查点。这使影子栈指针能够使用本注中概述的过程进行切换。可使用 `SSAMOSWAP.W/D` 指令存储该检查点。当不需要 `SSAMOSWAP.W/D` 所操作内存位置处的旧值时，可将 `rd` 置为 `x0`。'''

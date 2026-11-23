@@ -1,0 +1,12 @@
+unit_id = "bb1b718bde403edc89fb91356d64d7de"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There are not separate overflow status and overflow interrupt enable bits. In
+practice, enabling overflow interrupt generation (by clearing the OF bit) is
+done in conjunction with initializing the counter to a starting value. Once a
+counter has overflowed, it and the OF bit must be reinitialized before another
+overflow interrupt can be generated.'''
+zh = '''
+不存在单独的上溢状态位与上溢中断使能位。在实践中，使能上溢中断产生（通过清零 OF 位）是与将计数器初始化为某个起始值一起进行的。一旦某个计数器发生了上溢，则应重新初始化该计数器及 OF 位，之后才能再次产生上溢中断。'''

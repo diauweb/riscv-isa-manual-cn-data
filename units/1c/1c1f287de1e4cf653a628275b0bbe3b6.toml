@@ -1,0 +1,48 @@
+unit_id = "1c1f287de1e4cf653a628275b0bbe3b6"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Unified CSR, with address and read-only data (as determined by addr[11:10] = 11)
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+101: CSR +
+ other codes other packet formats
+|*subtype* | 2 | CSR sub-type +
+00: RW +
+01: RS +
+10: RC +
+11: reserved
+|*diff* | 1 or 2 | 00: Full data (sync) +
+01: Compressed data (XOR if 2 bits) +
+10: reserved +
+11 : Differential data
+|*data_len* | 2 or 3 | Number of bytes of data is *data_len* + 1
+|*data* | 8 * (*data_len* + 1) | Data
+|*addr_msbs* | 6 | Address[11:6]
+|*addr_lsbs* | 6 | Address[5:0]
+|==='''
+zh = '''
+.统一式 CSR 的包格式，含地址和只读数据（由 addr[11:10] = 11 确定）
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | 事务类型 +
+101：CSR +
+其他编码为其他包格式
+|*subtype* | 2 | CSR 子类型 +
+00：RW +
+01：RS +
+10：RC +
+11：保留
+|*diff* | 1 或 2 | 00：完整数据（同步） +
+01：压缩数据（若为 2 位则为异或） +
+10：保留 +
+11：差分数据
+|*data_len* | 2 或 3 | 数据字节数为 *data_len* + 1
+|*data* | 8 * (*data_len* + 1) | 数据
+|*addr_msbs* | 6 | Address[11:6]
+|*addr_lsbs* | 6 | Address[5:0]
+|==='''

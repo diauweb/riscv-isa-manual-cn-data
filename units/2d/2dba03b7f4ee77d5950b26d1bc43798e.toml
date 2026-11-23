@@ -1,0 +1,16 @@
+unit_id = "2dba03b7f4ee77d5950b26d1bc43798e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Smctr/Ssctr depends upon implementation of S-mode because much of CTR state is accessible only through S-mode CSRs.  If, in the future, it becomes desirable to remove this dependency, an extension could add `mctrdepth` and `mctrstatus` CSRs that reflect the same state as `sctrdepth` and `sctrstatus`, respectively.  Further, such an extension should make CTR entries accessible via `miselect`/`mireg*`.  See <<Entry Registers>>._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_Smctr/Ssctr 依赖于 S 模式的实现，因为许多 CTR 状态只能通过 S 模式 CSR 访问。若未来需要移除该依赖，扩展可增加 `mctrdepth` 和 `mctrstatus` CSR，以分别反映与 `sctrdepth` 和 `sctrstatus` 相同的状态。此外，此类扩展宜使 CTR 表项可通过 `miselect`/`mireg*` 访问。见 <<Entry Registers>>。_
+===='''

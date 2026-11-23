@@ -1,0 +1,12 @@
+unit_id = "c1bd378cb02a7a5f47816b8ff711d454"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If both the quotient and remainder are required from the same division,
+the recommended code sequence is: DIV[U] _rdq, rs1, rs2_; REM[U] _rdr,
+rs1, rs2_ (_rdq_ cannot be the same as _rs1_ or _rs2_).
+Microarchitectures can then fuse these into a single divide operation
+instead of performing two separate divides.'''
+zh = '''
+如果同一除法同时需要商和余数，推荐的代码序列为：DIV[U] _rdq, rs1, rs2_; REM[U] _rdr, rs1, rs2_（_rdq_ 不能与 _rs1_ 或 _rs2_ 相同）。微架构随后可将这些融合为单个除法操作，而不是执行两次独立的除法。'''

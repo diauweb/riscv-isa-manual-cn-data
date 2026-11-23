@@ -1,0 +1,17 @@
+unit_id = "bef6407a70de9a85320776d665bd3555"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Each bit of a `stateen` CSR controls less-privileged access to an extension's
+state, for an extension that was not deemed "`worthy`" of a full XS field in
+`sstatus` like the FS and VS fields for the F and V extensions. The number of
+registers provided at each level is four because it is believed that 4 * 64 =
+256 bits for machine and hypervisor levels, and 4 * 32 = 128 bits for
+supervisor level, will be adequate for many years to come, perhaps for as long
+as the RISC-V ISA is in use. The exact number four is an attempted compromise
+between providing too few bits on the one hand and going overboard with CSRs
+that will never be used on the other. A possible future doubling of the number
+of `stateen` CSRs is covered later.'''
+zh = '''
+`stateen` CSR 的每一位控制对某扩展状态的较低特权级访问，这些扩展被认为不值得像 F 和 V 扩展的 FS 与 VS 字段那样在 `sstatus` 中分配完整 XS 字段。每个级别提供 4 个寄存器，因为认为机器级和虚拟机监控器级的 4 * 64 = 256 位、监管级的 4 * 32 = 128 位，在未来许多年内都足够，也许在 RISC-V ISA 的整个使用期内都足够。确切数目 4 是在一方面提供过少位、另一方面加入永远不会使用的 CSR 之间作出的折中尝试。未来可能将 `stateen` CSR 数目加倍的情况将在后文说明。'''

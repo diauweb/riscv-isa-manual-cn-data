@@ -1,0 +1,15 @@
+unit_id = "22541679ebe171940fdbaa8ea73cdce9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SFENCE.W.INVAL instruction guarantees that any previous stores
+already visible to the current RISC-V hart are ordered before subsequent
+SINVAL.VMA instructions executed by the same hart.
+[#norm:Svinval_sfence_w_inval_orders_before_sinval_vma]#The SFENCE.INVAL.IR
+instruction guarantees that any previous SINVAL.VMA instructions executed
+by the current hart are ordered before subsequent implicit references by
+that hart to the memory-management data structures.#'''
+zh = '''
+SFENCE.W.INVAL 指令保证：已对当前 RISC-V 硬件线程可见的任何先前存储，均排在由同一硬件线程执行的后续 SINVAL.VMA 指令之前。
+[#norm:Svinval_sfence_w_inval_orders_before_sinval_vma]##SFENCE.INVAL.IR 指令保证：由当前硬件线程执行的任何先前 SINVAL.VMA 指令，均排在该硬件线程随后对内存管理数据结构的隐式引用之前。##'''

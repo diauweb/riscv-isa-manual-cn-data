@@ -1,0 +1,16 @@
+unit_id = "a3340ea62cc8a7955ada0b0760194f81"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This last form of the instructions allows the csr:vtype[] register to
+be changed while maintaining the current csr:vl[], provided VLMAX is not
+reduced.  This design was chosen to ensure csr:vl[] would always hold a
+legal value for current csr:vtype[] setting.  The current csr:vl[] value can
+be read from the csr:vl[] CSR.  The csr:vl[] value could be reduced by these
+instructions if the new SEW/LMUL ratio causes VLMAX to shrink, and so
+this case has been reserved as it is not clear this is a generally
+useful operation, and implementations can otherwise assume csr:vl[] is not
+changed by these instructions to optimize their microarchitecture.'''
+zh = '''
+NOTE: 指令的最后一种形式允许在保持当前 csr:vl[] 的同时改变 csr:vtype[] 寄存器，前提是 VLMAX 不减小。此设计旨在确保 csr:vl[] 始终保存对当前 csr:vtype[] 设置合法的值。当前 csr:vl[] 值可从 csr:vl[] CSR 读取。如果新的 SEW/LMUL 比率导致 VLMAX 缩小，则这些指令可能减小 csr:vl[] 值，因此此情况被保留，因为尚不清楚这是否是普遍有用的操作；实现可以假定这些指令不会改变 csr:vl[] 以优化其微架构。'''

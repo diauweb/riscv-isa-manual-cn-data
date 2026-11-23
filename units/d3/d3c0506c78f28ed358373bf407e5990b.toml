@@ -1,0 +1,26 @@
+unit_id = "d3c0506c78f28ed358373bf407e5990b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* One may take a set of bits from a noise source and XOR them
+  together to produce a less biased (and more independent) bit.
+  However, such an XOR may introduce "pseudorandomness" and
+  make the output difficult to analyze.
+* The von Neumann extractor cite:[Ne51] looks at consecutive
+  pairs of bits, rejects 00 and 11, and outputs 0 or 1 for
+  01 and 10, respectively. It will reduce the number of bits to
+  less than 25% of the original, but the output is provably unbiased
+  (assuming independence).
+* Blum's extractor cite:[Bl86] can be used on sources
+  whose behavior resembles N-state Markov chains. If its
+  assumptions hold, it also removes dependencies, creating an
+  independent and identically distributed (IID) source.
+* Other linear and non-linear correctors such as those
+  discussed by Dichtl and Lacharme cite:[La08].'''
+zh = '''
+* 可以从噪声源中取一组比特并将它们 XOR 在一起，以产生偏置更小（且更独立）的比特。
+  然而，这种 XOR 可能引入“伪随机性”，并使输出难以分析。
+* 冯·诺依曼提取器 cite:[Ne51] 查看连续比特对，拒绝 00 和 11，并分别对 01 和 10 输出 0 或 1。它会将比特数减少到原始数量的不到 25%，但输出可证明是无偏的（假设独立）。
+* Blum 提取器 cite:[Bl86] 可用于行为类似 N 状态马尔可夫链的源。如果其假设成立，它还能消除依赖关系，创建独立同分布（IID）源。
+* 其他线性和非线性校正器，例如 Dichtl 和 Lacharme 讨论的那些 cite:[La08]。'''

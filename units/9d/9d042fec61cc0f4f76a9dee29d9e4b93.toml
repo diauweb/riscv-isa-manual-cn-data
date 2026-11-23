@@ -1,0 +1,15 @@
+unit_id = "9d042fec61cc0f4f76a9dee29d9e4b93"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Earlier drafts required a trap when setting `vtype` to an
+illegal value.  However, this would have added the first
+data-dependent trap on a CSR write to the ISA.  Implementations could
+choose to trap when illegal values are written to `vtype` instead of
+setting `vill`, to allow emulation to support new configurations for
+forward-compatibility.  The current scheme supports light-weight
+runtime interrogation of the supported vector unit configurations by
+checking if `vill` is clear for a given setting.'''
+zh = '''
+NOTE: 较早的草案要求在将 `vtype` 设置为非法值时陷入。然而，这会在 ISA 中增加第一个对 CSR 写入的数据相关陷阱。实现可以选择在向 `vtype` 写入非法值时陷入，而不是设置 `vill`，以允许仿真支持新配置从而实现向前兼容。当前方案通过检查给定设置下 `vill` 是否清零，支持对支持的向量单元配置进行轻量级运行时查询。'''

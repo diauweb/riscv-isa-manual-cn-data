@@ -1,0 +1,18 @@
+unit_id = "4d341eef08985bf46e6d33d04432d519"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<opcodemap>> shows a map of the major opcodes for
+RVG. Major opcodes with 3 or more lower bits set are reserved for
+instruction lengths greater than 32 bits. Opcodes marked as _reserved_
+should be avoided for custom instruction-set extensions as they might be
+used by future standard extensions. Major opcodes marked as _custom-0_
+and _custom-1_ will be avoided by future standard extensions and are
+recommended for use by custom instruction-set extensions within the base
+32-bit instruction format. The opcodes marked _custom-2/rv128_ and
+_custom-3/rv128_ are reserved for future use by RV128, but will
+otherwise be avoided for standard extensions and so can also be used for
+custom instruction-set extensions in RV32 and RV64.'''
+zh = '''
+<<opcodemap>> 给出 RVG 的主要操作码映射。低 3 位或更多位被置位的主要操作码保留用于大于 32 位的指令长度。标记为 __保留__ 的操作码宜在自定义指令集扩展中避免使用，因为未来的标准扩展可能使用它们。标记为 _custom-0_ 和 _custom-1_ 的主要操作码将由未来的标准扩展避开，推荐供基础 32 位指令格式内的自定义指令集扩展使用。标记为 _custom-2/rv128_ 和 _custom-3/rv128_ 的操作码保留供 RV128 未来使用，但在其他情况下将由标准扩展避开，因此也可用于 RV32 和 RV64 中的自定义指令集扩展。'''

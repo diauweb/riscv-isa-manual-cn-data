@@ -1,0 +1,23 @@
+unit_id = "d7acb89cde33c3f0670199a46eb7269e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Upon reset, a hart’s privilege mode is set to M. The `mstatus` fields
+MIE and MPRV are reset to 0. If little-endian memory accesses are
+supported, the `mstatus`/`mstatush` field MBE is reset to 0. The `misa`
+register is reset to enable the maximal set of supported extensions,
+as described in <<misa>>.  For
+implementations with the "A" standard extension, there is no valid
+load reservation. The `pc` is set to an implementation-defined reset
+vector. The `mcause` register is set to a value indicating the cause of
+the reset. Writable PMP registers’ A and L fields are set to 0, unless
+the platform mandates a different reset value for some PMP registers’ A
+and L fields. If the hypervisor extension is implemented, the
+`hgatp`.MODE and `vsatp`.MODE fields are reset to 0. If the Smrnmi
+extension is implemented, the `mnstatus`.NMIE field is reset to 0. No
+ *WARL* field contains an illegal value. If the Zicfilp extension is
+implemented, the `mseccfg`.MLPE field is reset to 0. All other hart
+state is UNSPECIFIED.'''
+zh = '''
+复位后，硬件线程的特权模式被设置为 M。`mstatus` 字段 MIE 和 MPRV 被复位为 0。若支持小端序内存访问，则 `mstatus`/`mstatush` 字段 MBE 被复位为 0。`misa` 寄存器被复位为使能所支持扩展的最大集合，如 <<misa>> 所述。对于具有“A”标准扩展的实现，不存在有效的加载保留。`pc` 被设置为实现定义的复位向量。`mcause` 寄存器被设置为指示复位原因的值。可写 PMP 寄存器的 A 和 L 字段被设置为 0，除非平台要求某些 PMP 寄存器的 A 和 L 字段具有不同的复位值。若实现了虚拟机监控器扩展，则 `hgatp`.MODE 和 `vsatp`.MODE 字段被复位为 0。若实现了 Smrnmi 扩展，则 `mnstatus`.NMIE 字段被复位为 0。没有 *WARL* 字段包含非法值。若实现了 Zicfilp 扩展，则 `mseccfg`.MLPE 字段被复位为 0。所有其他硬件线程状态为 UNSPECIFIED。'''

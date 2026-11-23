@@ -1,0 +1,46 @@
+unit_id = "620a220bddeaf3961934f6008f666260"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Trace Components Reset*
+[cols="20%,20%,10%,~",options="header"]
+|===
+|*Component*|*Register*|*Write*|*Notes*
+|Trace Encoder      |trTeControl            |0x1|Release from reset and set all defaults.
+|                   |trTeInstFeatures       |0x0|Force minimal sub-set of features.
+|                   |trTeInstFilters        |0x0|Disable all filters.
+|                   |trTeDataControl        |0x0|Disable data trace.
+|                   |trTeDataFilters        |0x0|Disable filters for data trace.
+|                   |trTeTrigDbgControl     |0x0|Disable all triggers from Debug module.
+|                   |trTeTrigExtInControl   |0x0|Disable all external trigger inputs.
+|                   |trTeTrigExtOutControl  |0x0|Do not general any external trigger outputs.
+|                   |trTsControl            |0x0|Keep timestamp unit in reset.
+|Trace Funnel       |trFunnelControl        |0x1|Release from reset and set all defaults.
+|                   |trFunnelDisInput       |0x0|Make sure all inputs are enabled.
+|                   |trTsControl            |0x0|Keep timestamp unit in reset.
+|Trace RAM Sink     |trRamControl           |0x1|Release from reset and set all defaults.
+|Trace PIB Sink     |trPibControl           |0x1|Release from reset and set all defaults.
+|Trace ATB Bridge   |trAtbBridgeControl     |0x1|Release from reset and set all defaults.
+|==='''
+zh = '''
+.*跟踪组件复位*
+[cols="20%,20%,10%,~",options="header"]
+|===
+|*组件*|*寄存器*|*写入*|*备注*
+|Trace Encoder      |trTeControl            |0x1|退出复位并设置所有默认值。
+|                   |trTeInstFeatures       |0x0|强制使用最小特性子集。
+|                   |trTeInstFilters        |0x0|禁用所有过滤器。
+|                   |trTeDataControl        |0x0|禁用数据跟踪。
+|                   |trTeDataFilters        |0x0|禁用数据跟踪的过滤器。
+|                   |trTeTrigDbgControl     |0x0|禁用来自调试模块的所有触发。
+|                   |trTeTrigExtInControl   |0x0|禁用所有外部触发输入。
+|                   |trTeTrigExtOutControl  |0x0|不生成任何外部触发输出。
+|                   |trTsControl            |0x0|保持时间戳单元处于复位。
+|Trace Funnel       |trFunnelControl        |0x1|退出复位并设置所有默认值。
+|                   |trFunnelDisInput       |0x0|确保所有输入使能。
+|                   |trTsControl            |0x0|保持时间戳单元处于复位。
+|Trace RAM Sink     |trRamControl           |0x1|退出复位并设置所有默认值。
+|Trace PIB Sink     |trPibControl           |0x1|退出复位并设置所有默认值。
+|Trace ATB Bridge   |trAtbBridgeControl     |0x1|退出复位并设置所有默认值。
+|==='''

@@ -1,0 +1,19 @@
+unit_id = "c909ecb262993a536321a4226c3d5e8c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* An _invalidate operation_ deallocates the copy of the cache block
+
+* A _clean operation_ performs a write transfer to another cache or to memory if
+  the data in the copy of the cache block have been modified by a store
+  operation
+
+* A _flush operation_ atomically performs a clean operation followed by an
+  invalidate operation'''
+zh = '''
+* __使无效操作__解除分配该缓存块的副本
+
+* __清洁操作__：如果缓存块副本中的数据已被存储操作修改，则执行到另一高速缓存或内存的写传输
+
+* __冲刷操作__以原子方式执行清洁操作，随后执行使无效操作'''

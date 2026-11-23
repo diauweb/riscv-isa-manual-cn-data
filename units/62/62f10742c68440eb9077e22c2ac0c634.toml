@@ -1,0 +1,15 @@
+unit_id = "62f10742c68440eb9077e22c2ac0c634"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For an instruction instance latexmath:[$i$] of a non-AMO load
+instruction or an AMO instruction in the context of the <<do_amo, Satisfy, commit and propagate operations of an AMO>> transition,
+any memory load operation latexmath:[$mlo$] in
+latexmath:[$i.\textit{mem\_loads}$] that has unsatisfied slices, can be
+satisfied from memory if all the conditions of <sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>> are satisfied. Action:
+let latexmath:[$msoss$] be the memory store operation slices from memory
+covering the unsatisfied slices of latexmath:[$mlo$], and apply the
+action of <<do_amo, Satisfy memory operation by forwarding from unpropagates stores>>.'''
+zh = '''
+对于非 AMO 加载指令的指令实例 latexmath:[$i$]，或在 <<do_amo, 满足、提交并传播 AMO 的操作>> 迁移语境下的 AMO 指令的指令实例 latexmath:[$i$]，若 <sat_by_forwarding, 通过从尚未传播的存储转发来满足内存加载操作>> 的所有条件均满足，则 latexmath:[$i.\textit{mem\_loads}$] 中任何具有未满足分片的内存加载操作 latexmath:[$mlo$] 都可从内存得到满足。动作：令 latexmath:[$msoss$] 为来自内存的、覆盖 latexmath:[$mlo$] 未满足分片的内存存储操作分片，并应用 <<do_amo, 通过从未传播的存储转发来满足内存操作>> 的动作。'''

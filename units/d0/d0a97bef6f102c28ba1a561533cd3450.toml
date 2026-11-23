@@ -1,0 +1,8 @@
+unit_id = "d0a97bef6f102c28ba1a561533cd3450"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To reconstruct the full timestamp, software begins at a <<Synchronizing Messages,synchronizing message>> and stores the TSTAMP value found there, zero-extended to the full timestamp width. Shortly after starting a trace session, even a 64-bit timestamp will typically require far less than 64 bits to transmit. Software extracts the compressed TSTAMP from each message thereafter and adds it with the previous decompressed timestamp to obtain the full timestamp value associated with this message.'''
+zh = '''
+为重建完整时间戳，软件从 <<Synchronizing Messages,synchronizing message>> 开始，存储其中找到的 TSTAMP 值，并将其零扩展到完整时间戳宽度。在启动跟踪会话后不久，即使 64 位时间戳通常也只需远少于 64 位进行传输。此后，软件从每条消息提取压缩的 TSTAMP，并将其与先前解压的时间戳相加，以获得与此消息关联的完整时间戳值。'''

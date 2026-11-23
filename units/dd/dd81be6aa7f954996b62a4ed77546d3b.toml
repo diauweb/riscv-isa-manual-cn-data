@@ -1,0 +1,44 @@
+unit_id = "dd81be6aa7f954996b62a4ed77546d3b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The relative priority of load/store/AMO address-misaligned and
+page-fault exceptions is implementation-defined to flexibly cater to two
+design points. Implementations that never support misaligned accesses
+can unconditionally raise the misaligned-address exception without
+performing address translation or protection checks. Implementations
+that support misaligned accesses only to some physical addresses must
+translate and check the address before determining whether the
+misaligned access may proceed, in which case raising the page-fault
+exception or access is more appropriate.
+
+***
+
+Instruction address breakpoints have the same cause value as, but
+different priority than, data address breakpoints (a.k.a. watchpoints)
+and environment break exceptions (which are raised by the EBREAK
+instruction).
+
+***
+
+Instruction address-misaligned exceptions are raised by control-flow
+instructions with misaligned targets, rather than by the act of fetching
+an instruction. Therefore, these exceptions have lower priority than
+other instruction address exceptions.
+===='''
+zh = '''
+[NOTE]
+====
+加载/存储/AMO 地址非对齐异常和页错误异常的相对优先级由实现定义，以灵活适应两种设计点。从不支持非对齐访问的实现可无条件引发地址非对齐异常，而无需执行地址转换或保护检查。仅对某些物理地址支持非对齐访问的实现，应在确定非对齐访问是否可继续之前转换并检查地址，此时引发页错误异常或访问错误更为合适。
+
+***
+
+指令地址断点与数据地址断点（又称观察点）以及环境断点异常（由 EBREAK 指令引发）具有相同的 cause 值，但优先级不同。
+
+***
+
+指令地址非对齐异常由目标非对齐的控制流指令引发，而不是由取指行为引发。因此，这些异常的优先级低于其他指令地址异常。
+===='''

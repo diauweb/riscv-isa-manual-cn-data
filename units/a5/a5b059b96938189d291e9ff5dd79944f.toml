@@ -1,0 +1,64 @@
+unit_id = "a5b059b96938189d291e9ff5dd79944f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V indirect CSR (ext:smcsrind[]/ext:sscsrind[]) mappings - S-mode
+[float="center",align="center",options="header"]
+|===
+| csr:siselect[]  | csr:sireg[]  | csr:sireg2[]  | csr:sireg3[]  | csr:sireg4[]  | csr:sireg5[]  | csr:sireg6[]
+| 0x30 | csr:iprio0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x3F | csr:iprio15[] | none | none | none | none | none
+| 0x40 | csr:cycle[] | csr:cyclecfg[] | none | csr:cycleh[] | csr:cyclecfgh[] | none
+| 0x41 | none | none | none | none | none | none
+| 0x42 | csr:instret[] | csr:instretcfg[] | none | csr:instreth[] | csr:instretcfgh[] | none
+| 0x43 | csr:hpmcounter3[] | csr:hpmevent3[] | none | csr:hpmcounter3h[] | csr:hpmevent3h[] | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x5F | csr:hpmcounter31[] | csr:hpmevent31[] | none | csr:hpmcounter31h[] | csr:hpmevent31h[] | none
+| 0x70 | csr:eidelivery[] | none | none | none | none | none
+| 0x71 | 0 | none | none | none | none | none
+| 0x72 | csr:eithreshold[] | none | none | none | none | none
+| 0x73 | 0 | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x7F | 0 | none | none | none | none | none
+| 0x80 | csr:eip0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0xBF | csr:eip63[] | none | none | none | none | none
+| 0xC0 | csr:eie0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0xFF | csr:eie63[] | none | none | none | none | none
+| 0x200 | csr:ctrsource0[] | csr:ctrtarget0[] | csr:ctrdata0[] | 0 | 0 | 0
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x2FF | csr:ctrsource255[] | csr:ctrtarget255[] | csr:ctrdata255[] | 0 | 0 | 0
+|==='''
+zh = '''
+.当前已分配的 RISC-V 间接 CSR（ext:smcsrind[]/ext:sscsrind[]）映射 - S 模式
+[float="center",align="center",options="header"]
+|===
+| csr:siselect[]  | csr:sireg[]  | csr:sireg2[]  | csr:sireg3[]  | csr:sireg4[]  | csr:sireg5[]  | csr:sireg6[]
+| 0x30 | csr:iprio0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x3F | csr:iprio15[] | none | none | none | none | none
+| 0x40 | csr:cycle[] | csr:cyclecfg[] | none | csr:cycleh[] | csr:cyclecfgh[] | none
+| 0x41 | none | none | none | none | none | none
+| 0x42 | csr:instret[] | csr:instretcfg[] | none | csr:instreth[] | csr:instretcfgh[] | none
+| 0x43 | csr:hpmcounter3[] | csr:hpmevent3[] | none | csr:hpmcounter3h[] | csr:hpmevent3h[] | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x5F | csr:hpmcounter31[] | csr:hpmevent31[] | none | csr:hpmcounter31h[] | csr:hpmevent31h[] | none
+| 0x70 | csr:eidelivery[] | none | none | none | none | none
+| 0x71 | 0 | none | none | none | none | none
+| 0x72 | csr:eithreshold[] | none | none | none | none | none
+| 0x73 | 0 | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x7F | 0 | none | none | none | none | none
+| 0x80 | csr:eip0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0xBF | csr:eip63[] | none | none | none | none | none
+| 0xC0 | csr:eie0[] | none | none | none | none | none
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0xFF | csr:eie63[] | none | none | none | none | none
+| 0x200 | csr:ctrsource0[] | csr:ctrtarget0[] | csr:ctrdata0[] | 0 | 0 | 0
+| {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis} | {vertical-ellipsis}
+| 0x2FF | csr:ctrsource255[] | csr:ctrtarget255[] | csr:ctrdata255[] | 0 | 0 | 0
+|==='''

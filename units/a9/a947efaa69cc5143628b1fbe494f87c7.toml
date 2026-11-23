@@ -1,0 +1,8 @@
+unit_id = "a947efaa69cc5143628b1fbe494f87c7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:trap_enabled]#Traps between enabled privilege modes are recorded as normal.#  [#norm:trap_disabled_src]#Traps from a disabled privilege mode to an enabled privilege mode are partially recorded, such that the `ctrsource`.PC is 0.# [#norm:trap_disabled_tgt]#Traps from an enabled mode to a disabled mode, known as external traps, are not recorded by default.#  See <<External Traps>> for how they can be recorded.'''
+zh = '''
+[#norm:trap_enabled]##使能特权模式之间的陷阱按正常方式记录。##  [#norm:trap_disabled_src]##从禁用特权模式到使能特权模式的陷阱被部分记录，使得 `ctrsource`.PC 为 0。## [#norm:trap_disabled_tgt]##从使能模式到禁用模式的陷阱（称为外部陷阱）默认不记录。##  有关如何记录这些陷阱，见 <<External Traps>>。'''

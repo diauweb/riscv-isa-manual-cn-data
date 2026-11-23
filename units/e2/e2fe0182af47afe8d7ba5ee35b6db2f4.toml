@@ -1,0 +1,13 @@
+unit_id = "e2fe0182af47afe8d7ba5ee35b6db2f4"
+kind = "code"
+translatable = false
+en = '''
+.Sample code for setting the 64-bit time comparand in RV32 assuming a little-endian memory system and that the registers live in a strongly ordered I/O region.  Storing -1 to the low-order bits of `mtimecmp` prevents `mtimecmp` from temporarily becoming smaller than the lesser of the old and new values.
+....
+            # New comparand is in a1:a0.
+            li t0, -1
+            la t1, mtimecmp
+            sw t0, 0(t1)     # No smaller than old value.
+            sw a1, 4(t1)     # No smaller than new value.
+            sw a0, 0(t1)     # New value.
+....'''

@@ -1,0 +1,16 @@
+unit_id = "841be1580baa53666d8e6e5d5d2fdb50"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There are two methods that allow a debugger to reset harts. {dmcontrol-ndmreset} resets all
+the harts in the hardware platform, as well as all other parts of the
+hardware platform except for the Debug Modules, Debug Transport Modules,
+and Debug Module Interface. Exactly what is affected by this reset is
+implementation dependent, but it must be possible to debug programs from
+the first instruction executed. {dmcontrol-hartreset} resets all the currently selected harts.
+In this case an implementation may reset more harts than just the ones
+that are selected. The debugger can discover which other harts are reset
+(if any) by selecting them and checking {dmstatus-anyhavereset} and {dmstatus-allhavereset}.'''
+zh = '''
+有两种方法允许调试器复位硬件线程。{dmcontrol-ndmreset} 复位硬件平台中的所有硬件线程，以及硬件平台中除调试模块、调试传输模块和调试模块接口之外的所有其他部分。该复位究竟影响哪些部分取决于实现，但必须能够从所执行的第一条指令开始调试程序。{dmcontrol-hartreset} 复位所有当前选定的硬件线程。在此情况下，实现可复位多于仅所选的硬件线程。调试器可通过选择其他硬件线程并检查 {dmstatus-anyhavereset} 和 {dmstatus-allhavereset} 来发现哪些其他硬件线程被复位（若有）。'''

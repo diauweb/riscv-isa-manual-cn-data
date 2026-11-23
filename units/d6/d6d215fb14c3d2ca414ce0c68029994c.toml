@@ -1,0 +1,11 @@
+unit_id = "d6d215fb14c3d2ca414ce0c68029994c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:xret_clr_lr_resv]#If the Zalrsc extension is supported, the __x__RET instruction is allowed to
+clear any outstanding LR address reservation but is not required to.#
+Trap handlers should explicitly clear the reservation if required (e.g.,
+by using a dummy SC) before executing the __x__RET.'''
+zh = '''
+[#norm:xret_clr_lr_resv]##若支持 Zalrsc 扩展，则允许 __x__RET 指令清除任何未完成的 LR 地址保留，但不要求这样做。##陷阱处理程序宜在执行 __x__RET 之前显式清除保留（例如通过使用哑 SC）。'''

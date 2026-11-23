@@ -1,0 +1,15 @@
+unit_id = "4f2e49adaba5eef1a88d368cde831702"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Store operations from all agents in the set appear to be serialized with
+  respect to each other
+* Store operations from all agents in the set eventually appear to all other
+  agents in the set
+* A load operation from an agent in the set returns data from a store operation
+  from an agent in the set (or from the initial data in memory)'''
+zh = '''
+* 集合中所有代理的存储操作相对于彼此表现为串行化
+* 集合中所有代理的存储操作最终对集合中的其他所有代理可见
+* 集合中某代理的加载操作返回来自集合中某代理的存储操作的数据（或来自内存中的初始数据）'''

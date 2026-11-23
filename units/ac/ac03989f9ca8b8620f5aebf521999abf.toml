@@ -1,0 +1,14 @@
+unit_id = "ac03989f9ca8b8620f5aebf521999abf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Vector-scalar and vector-immediate forms of the register gather are
+also provided.  These read one element from the source vector at the
+given index, and write this value to the active elements
+of the destination vector register. The index value in the scalar
+register and the immediate, zero-extended to XLEN bits, are treated as
+unsigned integers.  If XLEN > SEW, the index value is _not_ truncated
+to SEW bits.'''
+zh = '''
+[#norm:vrgather-vx_vrgather-vi_op]##还提供寄存器收集的向量-标量和向量-立即数形式。这些形式从源向量中按给定索引读取一个元素，并将此值写入目标向量寄存器的活跃元素。标量寄存器中的索引值和零扩展到 XLEN 位的立即数被视为无符号整数。如果 XLEN > SEW，则索引值 _不_ 截断到 SEW 位。##'''

@@ -1,0 +1,17 @@
+unit_id = "13a4bfbe11dc2bd8b796b346448d17ef"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Executing each RISC-V machine instruction entails one or more memory
+accesses, subdivided into _implicit_ and _explicit_ accesses. For each
+instruction executed, an _implicit_ memory read (instruction fetch) is
+done to obtain the encoded instruction to execute. Many RISC-V
+instructions perform no further memory accesses beyond instruction
+fetch. Specific load and store instructions perform an _explicit_ read
+or write of memory at an address determined by the instruction. The
+execution environment may dictate that instruction execution performs
+other _implicit_ memory accesses (such as to implement address
+translation) beyond those documented for the unprivileged ISA.'''
+zh = '''
+执行每条 RISC-V 机器指令都涉及一次或多次内存访问，分为__隐式__访问和__显式__访问。对于执行的每条指令，都会进行__隐式__内存读取（取指），以获取要执行的编码指令。许多 RISC-V 指令在取指之外不进行进一步的内存访问。特定的加载和存储指令在由该指令确定的地址处执行__显式__内存读取或写入。执行环境可规定指令执行进行非特权 ISA 所记载范围之外的额外__隐式__内存访问（例如实现地址转换）。'''

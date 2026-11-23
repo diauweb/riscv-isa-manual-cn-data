@@ -1,0 +1,15 @@
+unit_id = "ce5b275a20d868890b882c1cbafa2411"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the CY, TM, IR, or HPM_n_ bit in the `hcounteren` register is
+clear, attempts to read the `cycle`, `time`, `instret`, or
+`hpmcounter` _n_ register while V=1 will cause a virtual-instruction
+exception if the same bit in `mcounteren` is 1. When one of these bits
+is set, access to the corresponding register is permitted when V=1,
+unless prevented for some other reason. In VU-mode, a counter is not
+readable unless the applicable bits are set in both `hcounteren` and
+`scounteren`.'''
+zh = '''
+当 `hcounteren` 寄存器中的 CY、TM、IR 或 HPM_n_ 位清零时，在 V=1 时尝试读取 `cycle`、`time`、`instret` 或 `hpmcounter` _n_ 寄存器，若 `mcounteren` 中的同一位为 1，则引发虚拟指令异常。当这些位之一置位时，在 V=1 时允许访问对应寄存器，除非因其他原因被阻止。在 VU 模式中，除非 `hcounteren` 和 `scounteren` 中的适用位均置位，否则计数器不可读。'''

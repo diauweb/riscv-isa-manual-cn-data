@@ -1,0 +1,350 @@
+{
+  "sha": "7b6911f56fa600358a1202f9d6c1d43f7a45c299",
+  "parent_sha": "a7713b9f1e8b9773dd8a78e1f993284f24e3061c",
+  "is_baseline": false,
+  "date": "2025-04-25T15:58:54-07:00",
+  "title": "Add note about tvec/jvt register layout/alignment (#1988)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-7b6911f-2025-04-25",
+    "riscv-isa-release-7b6911f-2025-04-30"
+  ],
+  "diff": {
+    "added": 1,
+    "modified": 2,
+    "moved": 0,
+    "deleted": 1,
+    "touched_chapters": [
+      "priv/machine",
+      "priv/supervisor",
+      "unpriv/Zc"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/Zc",
+      "section_id": "csrs-jvt",
+      "slot": 12,
+      "unit_id": "7ae60e0bcfaffe8a284f5e5f9e8daa04",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 2,
+      "unit_id": "cbae28861c9c94bbf37dc8deb409346f",
+      "status": "modified",
+      "prev_unit_id": "321c1095ce2dbac6b0fc9f2db7860a13"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 2,
+      "unit_id": "7007e7e81a3fd001cbb6d87b9eb813c6",
+      "status": "modified",
+      "prev_unit_id": "6b8aeb29ec879b24bbccd4ebe3406ff3"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "unpriv/Zc",
+      "section_id": "csrs-jvt",
+      "after_unit_id": "4cdb7f8edb34a2447afdfb9ffb39c333",
+      "unit_id": "b3872d4d31eccd50cdb020ec7c47960d"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual Volume I: Unprivileged Architecture",
+      "title_unit_id": "bac0390e54af28bd7b1c4e819530b6a8",
+      "entry_file": "src/riscv-unprivileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "3451ce553e6269a3"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "9727a3c7f5629245"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "d9cd967a01de5fca"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "6bf6c4d11b3c3b63"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "41baeba6bb7c49fe"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "7a7b65c79dda6bb2"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "785fc10b338b9ef6"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "2603819532637bac"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "23cb9d3129f37839"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "d3762107ad332f68"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "b4f2e500df6e3463"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "048c33316868bcaa"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "74f67b41ff5fc681"
+        },
+        {
+          "id": "atomics",
+          "chap_hash": "83976356cc9e8719"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "6306a04011b4acd7"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "9e55400de58818df"
+        },
+        {
+          "id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0",
+          "chap_hash": "8fae35c65f0b3b6b"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "42463dd3dcccb75e"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "c6ecbccd1d9387e1"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "0d983a879147211d"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "3658b6d3d387112c"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "5352fde4f1886825"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "0840e92d57492375"
+        },
+        {
+          "id": "quad-float-clssfy",
+          "chap_hash": "3611d80edbed7a9a"
+        },
+        {
+          "id": "bf16",
+          "chap_hash": "d40d1b15bed1fa80"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "ae425285d5412f5f"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "ea446e2d357bdef3"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "a3f45cf0fa2593fd"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "673bc1c082e0e948"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "2e808e2f0485a2ab"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "71f9f0b5329f7af9"
+        },
+        {
+          "id": "crypto_scalar_instructions",
+          "chap_hash": "880ed39bb69f3179"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0",
+          "chap_hash": "99b3a3b8652d75c3"
+        },
+        {
+          "id": "_control_flow_integrity_cfi",
+          "chap_hash": "5c9d499089d5b7ce"
+        },
+        {
+          "id": "sec:zilsd",
+          "chap_hash": "2994c00423f455fa"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "56d15d4a66b127b5"
+        },
+        {
+          "id": "extending",
+          "chap_hash": "f79841453e7403d3"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "385102444e1e56c6"
+        },
+        {
+          "id": "history",
+          "chap_hash": "ad4e09b23090e3a1"
+        },
+        {
+          "id": "_rvwmo_explanatory_material_version_0_1",
+          "chap_hash": "6e5d66abe8c291aa"
+        },
+        {
+          "id": "_formal_memory_model_specifications_version_0_1",
+          "chap_hash": "3ba994c83625a910"
+        },
+        {
+          "id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+          "chap_hash": "63ca6fab5a8f7b87"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual: Volume II: Privileged Architecture",
+      "title_unit_id": "a8216e121762a37b2ef41c6d4b20f6f4",
+      "entry_file": "src/riscv-privileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "363623f20a99d718"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "29d7f4bfed3d7762"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "df07436038678d2c"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "e0e2e4d87f1708d0"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "512ef32437a80454"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "b432aad111fa9bcc"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "c1a33b1a1b0cd169"
+        },
+        {
+          "id": "_smcntrpmf_cycle_and_instret_privilege_mode_filtering_version_1_0",
+          "chap_hash": "af81a4e5f6832bd7"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "28d8c0ca3dc2c05c"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "2ae2cd8e1e40c45e"
+        },
+        {
+          "id": "smdbltrp",
+          "chap_hash": "454c9d32c286f3c7"
+        },
+        {
+          "id": "smctr",
+          "chap_hash": "d8cbd59040a382fd"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "78c6132bd2976245"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "6eeb05b09cc3e074"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "d11493876f352bc5"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "9a3e52c05b80f2cb"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "543453e360f67049"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "badf560b2b7fd950"
+        },
+        {
+          "id": "ssqosid",
+          "chap_hash": "87e048ef44983c95"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "3700d8796d407558"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "6619af42d630281e"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "38b48b93bc211c82"
+        },
+        {
+          "id": "priv-cfi",
+          "chap_hash": "d7b9ac7af6b85903"
+        },
+        {
+          "id": "ssdbltrp",
+          "chap_hash": "f10c8c3ccd54798e"
+        },
+        {
+          "id": "Zpm",
+          "chap_hash": "8ba209fd06cc6de5"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "d529a022046c1c42"
+        },
+        {
+          "id": "_history",
+          "chap_hash": "d1d3ef61b795f78f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+unit_id = "e2d4da9fcaa9abda2475f13b89c1f3b7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Sign-extension is one of the most critical operations on immediates
+(particularly for XLEN>32), and in RISC-V the sign bit for
+all immediates is always held in bit 31 of the instruction to allow
+sign-extension to proceed in parallel with instruction decoding.
+
+Although more complex implementations might have separate adders for
+branch and jump calculations and so would not benefit from keeping the
+location of immediate bits constant across types of instruction, we
+wanted to reduce the hardware cost of the simplest implementations. By
+rotating bits in the instruction encoding of B and J immediates instead
+of using dynamic hardware muxes to multiply the immediate by 2, we
+reduce instruction signal fanout and immediate mux costs by around a
+factor of 2. The scrambled immediate encoding will add negligible time
+to static or ahead-of-time compilation. For dynamic generation of
+instructions, there is some small additional overhead, but the most
+common short forward branches have straightforward immediate encodings.
+===='''
+zh = '''
+[NOTE]
+====
+符号扩展是对立即数最关键的操作之一（特别是对于 XLEN>32），而在 RISC-V 中，所有立即数的符号位始终位于指令的第 31 位，以使符号扩展能与指令译码并行进行。
+
+尽管更复杂的实现可能为分支和跳转计算设置单独的加法器，因而不会从保持立即数位位置跨指令类型不变中获益，但我们希望降低最简单实现的硬件成本。通过在 B 和 J 立即数的指令编码中旋转位，而不是使用动态硬件多路复用器将立即数乘以 2，我们将指令信号扇出和立即数多路复用器成本降低约 2 倍。打乱的立即数编码给静态编译或提前编译增加的时间可忽略不计。对于动态生成指令，会有少量额外开销，但最常见的短前向分支具有直接的立即数编码。
+===='''

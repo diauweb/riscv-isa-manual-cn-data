@@ -1,0 +1,18 @@
+unit_id = "f876f8fa38c9ecb486601c7c4f6a0bc5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The model defines, for any model state, the set of allowed transitions,
+each of which is a single atomic step to a new abstract machine state.
+Execution of a single instruction will typically involve many
+transitions, and they may be interleaved in operational-model execution
+with transitions arising from other instructions. Each transition arises
+from a single instruction instance; it will change the state of that
+instance, and it may depend on or change the rest of its hart state and
+the shared memory state, but it does not depend on other hart states,
+and it will not change them. The transitions are introduced below and
+defined in <<transitions>>, with a precondition and
+a construction of the post-transition model state for each.'''
+zh = '''
+模型为任何模型状态定义允许的迁移集合，每个迁移都是到新抽象机器状态的单个原子步骤。单条指令的执行通常涉及许多迁移，并且在操作模型执行中，它们可与其他指令产生的迁移交错。每个迁移源自单个指令实例；它将改变该实例的状态，并且可能依赖或改变其硬件线程状态的其余部分和共享内存状态，但它不依赖其他硬件线程状态，也不会改变它们。迁移在下面介绍，并在 <<transitions>> 中定义，每个迁移都有前置条件和迁移后模型状态的构造。'''

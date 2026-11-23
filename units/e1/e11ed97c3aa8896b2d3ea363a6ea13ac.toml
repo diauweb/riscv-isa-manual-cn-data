@@ -1,0 +1,17 @@
+unit_id = "e11ed97c3aa8896b2d3ea363a6ea13ac"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The <<ax-atom, Atomicity Axiom>> theoretically supports insn:lr[]/insn:sc[] pairs of different widths and to
+mismatched addresses, since implementations are permitted to allow insn:sc[]
+operations to succeed in such cases. However, in practice, we expect
+such patterns to be rare, and their use is discouraged.
+===='''
+zh = '''
+[NOTE]
+====
+<<ax-atom, 原子性公理>> 理论上支持不同宽度以及地址不匹配的 insn:lr[]/insn:sc[] 对，因为允许实现在此类情况下使 insn:sc[] 操作成功。然而，在实践中，我们预计此类模式很少见，不鼓励使用它们。
+===='''

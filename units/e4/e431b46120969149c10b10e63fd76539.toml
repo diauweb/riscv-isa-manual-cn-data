@@ -1,0 +1,22 @@
+unit_id = "e431b46120969149c10b10e63fd76539"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Correct decoder behavior could have been achieved by
+implementing the *notify* bit only, setting it to the inverse of
+*address[MSB]* whenever an address is reported and it is not the
+instruction following an uninferable discontinuity. However, this would
+have been much less efficient, as this would have required *notify* to
+be different from *address[MSB]* the majority of the time when
+outputting a format 1/2 before an exception, interrupt or resync (as the
+probability of this instruction being the target of an uninferable jump
+is low). Using 2 separate bits results in superior compression.
+===='''
+zh = '''
+[NOTE]
+====
+正确解码器行为本可通过仅实现 *notify* 位来实现：当报告地址且该指令不是不可推断不连续点之后的指令时，将其置为 *address[MSB]* 的反值。然而，这会低效得多，因为在异常、中断或重同步之前输出格式 1/2 时，大多数情况下会要求 *notify* 不同于 *address[MSB]*（因为该指令是不可推断跳转目标的概率很低）。使用 2 个单独的位可获得更优的压缩。
+===='''

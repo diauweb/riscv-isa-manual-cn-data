@@ -1,0 +1,17 @@
+unit_id = "369c9de3730b816192239d401f840325"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. there does not exist a store instruction latexmath:[$s$] and an
+unpropagated memory store operation latexmath:[$mso$] of latexmath:[$s$]
+such that applying the action of the <<prop_store, Propagate store operation>> transition to
+latexmath:[$mso$] will result in the restart of latexmath:[$j$]; and
+. there does not exist a non-finished load instruction latexmath:[$l$]
+and a memory load operation latexmath:[$mlo$] of latexmath:[$l$] such
+that applying the action of the <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>/<<sat_from_mem, Satisfy memory load operation from memory>> transition (even if
+latexmath:[$mlo$] is already satisfied) to latexmath:[$mlo$] will result
+in the restart of latexmath:[$j$].'''
+zh = '''
+. 不存在存储指令 latexmath:[$s$] 以及 latexmath:[$s$] 的尚未传播的内存存储操作 latexmath:[$mso$]，使得将 <<prop_store, 传播存储操作>> 迁移的动作施加到 latexmath:[$mso$] 会导致 latexmath:[$j$] 重启；且
+. 不存在未完成的加载指令 latexmath:[$l$] 以及 latexmath:[$l$] 的内存加载操作 latexmath:[$mlo$]，使得将 <<sat_by_forwarding, 通过从尚未传播的存储转发来满足内存加载操作>>/<<sat_from_mem, 从内存满足内存加载操作>> 迁移的动作（即使 latexmath:[$mlo$] 已经满足）施加到 latexmath:[$mlo$] 会导致 latexmath:[$j$] 重启。'''

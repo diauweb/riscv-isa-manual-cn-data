@@ -1,0 +1,13 @@
+unit_id = "e0bf624942cc1c89ff3645e32ca8e1d2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The primary motivation to provide mask load and store is to
+support machines that internally rearrange data to reduce
+cross-datapath wiring.  However, these instructions also provide a convenient
+mechanism to use packed bit vectors in memory as mask values,
+and also reduce the cost of mask spill/fill by reducing need to change
+`vl`.'''
+zh = '''
+NOTE: 提供掩码加载和存储的主要动机是支持在内部重排数据以减少跨数据通路布线的机器。然而，这些指令还提供了一种便捷机制，将内存中的打包位向量用作掩码值，并通过减少改变 `vl` 的需要来降低掩码溢出/填充的成本。'''

@@ -1,0 +1,17 @@
+unit_id = "f4f2cc3a0b8e906cba7b6f13544ef8ba"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-addi16sp_op]#insn:c.addi16sp[] (add immediate to stack pointer)
+shares the opcode with insn:c.lui[], but has a destination field of
+`x2`. insn:c.addi16sp[] adds the non-zero sign-extended 6-bit immediate to the
+value in the stack pointer (`sp=x2`), where the immediate is scaled to
+represent multiples of 16 in the range [-512, 496]. insn:c.addi16sp[] is used to
+adjust the stack pointer in procedure prologues and epilogues. It
+expands into insn:addi[x2,x2,nzimm[9:4]].#
+[#norm:c-addi16sp_rsv]#insn:c.addi16sp[] is valid only when
+_nzimm_≠0; the code point with _nzimm_=0 is reserved.#'''
+zh = '''
+[#norm:c-addi16sp_op]##insn:c.addi16sp[]（加立即数到栈指针）与 insn:c.lui[] 共享操作码，但目标字段为 `x2`。insn:c.addi16sp[] 将非零符号扩展的 6 位立即数加到栈指针（`sp=x2`）中的值上，其中立即数经过缩放以表示范围 [-512, 496] 内 16 的倍数。insn:c.addi16sp[] 用于在过程序言和尾声中调整栈指针。它展开为 insn:addi[x2,x2,nzimm[9:4]]。##
+[#norm:c-addi16sp_rsv]##insn:c.addi16sp[] 仅在 _nzimm_≠0 时有效；_nzimm_=0 的编码点保留。##'''

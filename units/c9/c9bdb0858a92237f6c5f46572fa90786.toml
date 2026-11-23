@@ -1,0 +1,330 @@
+unit_id = "c9bdb0858a92237f6c5f46572fa90786"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V machine-level CSR addresses.
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Machine Non-Maskable Interrupt Handling
+
+|`0x740` +
+`0x741` +
+`0x742` +
+`0x744`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mnscratch` +
+`mnepc` +
+`mncause` +
+`mnstatus`
+|Resumable NMI scratch register. +
+Resumable NMI program counter. +
+Resumable NMI cause. +
+Resumable NMI status.
+
+4+^|Machine Counter/Timers
+
+|`0xB00` +
+`0xB02` +
+`0xB03` +
+`0xB04` +
+&#160; +
+`0xB1F` +
+`0xB80` +
+`0xB82` +
+`0xB83` +
+`0xB84` +
+&#160; +
+`0xB9F`
+|MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+|`mcycle` +
+`minstret` +
+`mhpmcounter3` +
+`mhpmcounter4` +
+&#8942; +
+`mhpmcounter31` +
+`mcycleh` +
+`minstreth` +
+`mhpmcounter3h` +
+`mhpmcounter4h` +
+&#8942;
+`mhpmcounter31h`
+|Machine cycle counter. +
+Machine instructions-retired counter. +
+Machine performance-monitoring counter. +
+Machine performance-monitoring counter. +
+&#160; +
+Machine performance-monitoring counter. +
+Upper 32 bits of `mcycle`, RV32 only. +
+Upper 32 bits of `minstret`, RV32 only. +
+Upper 32 bits of `mhpmcounter3`, RV32 only. +
+Upper 32 bits of `mhpmcounter4`, RV32 only. +
+&#160; +
+Upper 32 bits of `mhpmcounter31`, RV32 only.
+
+4+^|Machine Counter Setup
+
+|`0x320` +
+`0x323` +
+`0x324` +
+&#160; +
+`0x33F` +
+`0x723` +
+`0x724` +
+&#160; +
+`0x73F`
+|MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW
+|`mcountinhibit` +
+`mhpmevent3` +
+`mhpmevent4` +
+&#8942; +
+`mhpmevent31` +
+`mhpmevent3h` +
+`mhpmevent4h` +
+&#8942; +
+`mhpmevent31h`
+|Machine counter-inhibit register. +
+Machine performance-monitoring event selector. +
+Machine performance-monitoring event selector. +
+&#160; +
+Machine performance-monitoring event selector. +
+Upper 32 bits of `mhpmevent3`, RV32 only. +
+Upper 32 bits of `mhpmevent4`, RV32 only. +
+&#160; +
+Upper 32 bits of `mhpmevent31`, RV32 only.
+
+4+^|Machine Control Transfer Records Configuration
+|`0x34E`
+|MRW
+|`mctrctl`
+|Machine Control Transfer Records Control Register.
+
+4+^|Debug/Trace Registers (shared with Debug Mode)
+
+|`0x7A0` +
+`0x7A1`  +
+`0x7A2`  +
+`0x7A3` +
+`0x7A8`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`tselect` +
+`tdata1` +
+`tdata2` +
+`tdata3` +
+`mcontext`
+
+|Debug/Trace trigger register select. +
+First Debug/Trace trigger data register. +
+Second Debug/Trace trigger data register. +
+Third Debug/Trace trigger data register. +
+Machine-mode context register.
+
+4+^|Debug Mode Registers
+
+|`0x7B0` +
+`0x7B1` +
+`0x7B2` +
+`0x7B3`
+|DRW +
+DRW +
+DRW +
+DRW +
+|`dcsr` +
+`dpc` +
+`dscratch0` +
+`dscratch1`
+|Debug control and status register. +
+Debug program counter. +
+Debug scratch register 0. +
+Debug scratch register 1.
+|==='''
+zh = '''
+.当前已分配的 RISC-V 机器级 CSR 地址
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |权限 |名称 |描述
+4+^|机器不可屏蔽中断处理
+
+|`0x740` +
+`0x741` +
+`0x742` +
+`0x744`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mnscratch` +
+`mnepc` +
+`mncause` +
+`mnstatus`
+|可恢复 NMI 暂存寄存器。 +
+可恢复 NMI 程序计数器。 +
+可恢复 NMI 原因。 +
+可恢复 NMI 状态。
+
+4+^|机器计数器/定时器
+
+|`0xB00` +
+`0xB02` +
+`0xB03` +
+`0xB04` +
+&#160; +
+`0xB1F` +
+`0xB80` +
+`0xB82` +
+`0xB83` +
+`0xB84` +
+&#160; +
+`0xB9F`
+|MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+|`mcycle` +
+`minstret` +
+`mhpmcounter3` +
+`mhpmcounter4` +
+&#8942; +
+`mhpmcounter31` +
+`mcycleh` +
+`minstreth` +
+`mhpmcounter3h` +
+`mhpmcounter4h` +
+&#8942;
+`mhpmcounter31h`
+|机器周期计数器。 +
+机器已退休指令计数器。 +
+机器性能监控计数器。 +
+机器性能监控计数器。 +
+&#160; +
+机器性能监控计数器。 +
+`mcycle` 的高 32 位，仅 RV32。 +
+`minstret` 的高 32 位，仅 RV32。 +
+`mhpmcounter3` 的高 32 位，仅 RV32。 +
+`mhpmcounter4` 的高 32 位，仅 RV32。 +
+&#160; +
+`mhpmcounter31` 的高 32 位，仅 RV32。
+
+4+^|机器计数器设置
+
+|`0x320` +
+`0x323` +
+`0x324` +
+&#160; +
+`0x33F` +
+`0x723` +
+`0x724` +
+&#160; +
+`0x73F`
+|MRW +
+MRW +
+MRW +
+&#160; +
+MRW +
+MRW +
+MRW +
+&#160; +
+MRW
+|`mcountinhibit` +
+`mhpmevent3` +
+`mhpmevent4` +
+&#8942; +
+`mhpmevent31` +
+`mhpmevent3h` +
+`mhpmevent4h` +
+&#8942; +
+`mhpmevent31h`
+|机器计数器抑制寄存器。 +
+机器性能监控事件选择器。 +
+机器性能监控事件选择器。 +
+&#160; +
+机器性能监控事件选择器。 +
+`mhpmevent3` 的高 32 位，仅 RV32。 +
+`mhpmevent4` 的高 32 位，仅 RV32。 +
+&#160; +
+`mhpmevent31` 的高 32 位，仅 RV32。
+
+4+^|机器控制转移记录配置
+|`0x34E`
+|MRW
+|`mctrctl`
+|机器控制转移记录控制寄存器。
+
+4+^|调试/跟踪寄存器（与调试模式共享）
+
+|`0x7A0` +
+`0x7A1`  +
+`0x7A2`  +
+`0x7A3` +
+`0x7A8`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`tselect` +
+`tdata1` +
+`tdata2` +
+`tdata3` +
+`mcontext`
+
+|调试/跟踪触发器寄存器选择。 +
+第一调试/跟踪触发器数据寄存器。 +
+第二调试/跟踪触发器数据寄存器。 +
+第三调试/跟踪触发器数据寄存器。 +
+机器模式上下文寄存器。
+
+4+^|调试模式寄存器
+
+|`0x7B0` +
+`0x7B1` +
+`0x7B2` +
+`0x7B3`
+|DRW +
+DRW +
+DRW +
+DRW +
+|`dcsr` +
+`dpc` +
+`dscratch0` +
+`dscratch1`
+|调试控制与状态寄存器。 +
+调试程序计数器。 +
+调试暂存寄存器 0。 +
+调试暂存寄存器 1。
+|==='''

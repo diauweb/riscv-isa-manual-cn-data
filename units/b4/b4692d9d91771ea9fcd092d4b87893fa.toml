@@ -1,0 +1,16 @@
+unit_id = "b4692d9d91771ea9fcd092d4b87893fa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Bits `mip`.MSIP and `mie`.MSIE are the interrupt-pending and
+interrupt-enable bits for machine-level software interrupts. MSIP is
+read-only in `mip`, and is written by accesses to memory-mapped control
+registers, which are used by remote harts to provide machine-level
+interprocessor interrupts. A hart can write its own MSIP bit using the
+same memory-mapped control register. If a system has only one hart, or
+if a platform standard supports the delivery of machine-level
+interprocessor interrupts through external interrupts (MEI) instead,
+then `mip`.MSIP and `mie`.MSIE may both be read-only zeros.'''
+zh = '''
+`mip`.MSIP 和 `mie`.MSIE 位是机器级软件中断的中断挂起位和中断使能位。MSIP 在 `mip` 中为只读，通过对内存映射控制寄存器的访问来写入，远程硬件线程使用这些访问来提供机器级处理器间中断。硬件线程可使用同一内存映射控制寄存器写入自己的 MSIP 位。若系统只有一个硬件线程，或平台标准支持通过外部中断（MEI）递送机器级处理器间中断，则 `mip`.MSIP 和 `mie`.MSIE 可均为只读零。'''

@@ -1,0 +1,17 @@
+unit_id = "ae5598f1ec556dc80aad53ca0a610b07"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To facilitate the porting of code from other architectures, some
+hardware implementations may choose to implement the Ztso extension,
+which provides stricter RVTSO ordering semantics by default. Code
+written for RVWMO is automatically and inherently compatible with RVTSO,
+but code written assuming RVTSO is not guaranteed to run correctly on
+RVWMO implementations. In fact, most RVWMO implementations will (and
+should) simply refuse to run RVTSO-only binaries. Each implementation
+must therefore choose whether to prioritize compatibility with RVTSO
+code (e.g., to facilitate porting from x86) or whether to instead
+prioritize compatibility with other RISC-V cores implementing RVWMO.'''
+zh = '''
+为便于从其他架构移植代码，一些硬件实现可选择实现 Ztso 扩展，该扩展默认提供更严格的 RVTSO 排序语义。为 RVWMO 编写的代码自动且内在地与 RVTSO 兼容，但假定 RVTSO 的代码不保证能在 RVWMO 实现上正确运行。事实上，大多数 RVWMO 实现将（且宜）直接拒绝运行仅面向 RVTSO 的二进制文件。因此，每个实现必须选择是优先兼容 RVTSO 代码（例如，便于从 x86 移植），还是优先兼容其他实现 RVWMO 的 RISC-V 核。'''

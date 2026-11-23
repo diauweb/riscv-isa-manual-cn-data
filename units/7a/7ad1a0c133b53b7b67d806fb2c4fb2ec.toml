@@ -1,0 +1,30 @@
+unit_id = "7ad1a0c133b53b7b67d806fb2c4fb2ec"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. all program-order-previous `fence` instructions with `.sr` and `.pw`
+set are finished;
+. for every program-order-previous `fence` instruction, _f_,
+with `.sr` and `.pr` set, and `.pw` not set, if _f_ is not
+finished then all load instructions that are program-order-before
+_f_ are entirely satisfied;
+. for every program-order-previous `fence.tso` instruction,
+_f_, that is not finished, all load instructions that are
+program-order-before _f_ are entirely satisfied;
+. if _i_ is a load-acquire-RCsc, all program-order-previous
+store-releases-RCsc are finished;
+. if _i_ is a load-acquire-release, all
+program-order-previous instructions are finished;
+. all non-finished program-order-previous load-acquire instructions are
+entirely satisfied; and
+. all program-order-previous store-acquire-release instructions are
+finished;'''
+zh = '''
+. 所有设置了 `.sr` 和 `.pw` 的程序顺序在前的 `fence` 指令均已完成；
+. 对于每一条设置了 `.sr` 和 `.pr`、且未设置 `.pw` 的程序顺序在前的 `fence` 指令 _f_，若 _f_ 未完成，则程序顺序在 _f_ 之前的所有加载指令均已完全满足；
+. 对于每一条未完成的程序顺序在前的 `fence.tso` 指令 _f_，程序顺序在 _f_ 之前的所有加载指令均已完全满足；
+. 若 _i_ 是 load-acquire-RCsc，则所有程序顺序在前的 store-release-RCsc 均已完成；
+. 若 _i_ 是 load-acquire-release，则所有程序顺序在前的指令均已完成；
+. 所有未完成的程序顺序在前的 load-acquire 指令均已完全满足；且
+. 所有程序顺序在前的 store-acquire-release 指令均已完成；'''

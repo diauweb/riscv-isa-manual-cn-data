@@ -1,0 +1,24 @@
+unit_id = "e6d84556fbce91bc7e2fb5819601b1f0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%header, cols="25%,75%", options="header"]
+.Possible values of `PMM` WARL field.
+|===
+|Value|Description
+|00|Pointer masking is disabled (PMLEN=0)
+|01|Reserved
+|10|Pointer masking is enabled with PMLEN=XLEN-57 (PMLEN=7 on RV64)
+|11|Pointer masking is enabled with PMLEN=XLEN-48 (PMLEN=16 on RV64)
+|==='''
+zh = '''
+[%header, cols="25%,75%", options="header"]
+.`PMM` WARL 字段的可能取值。
+|===
+|值|描述
+|00|指针掩码禁用（PMLEN=0）
+|01|保留
+|10|指针掩码使能，PMLEN=XLEN-57（RV64 上 PMLEN=7）
+|11|指针掩码使能，PMLEN=XLEN-48（RV64 上 PMLEN=16）
+|==='''

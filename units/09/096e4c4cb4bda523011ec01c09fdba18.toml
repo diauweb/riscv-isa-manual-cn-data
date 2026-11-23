@@ -1,0 +1,14 @@
+unit_id = "096e4c4cb4bda523011ec01c09fdba18"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Set {sbcs-sbbusy}.
+. Perform a bus read from the new value of `sbaddress`.
+. If the read succeeded and {sbcs-sbautoincrement} is set, increment `sbaddress`.
+. Clear {sbcs-sbbusy}.'''
+zh = '''
+. 置位 {sbcs-sbbusy}。
+. 从 `sbaddress` 的新值执行一次总线读。
+. 若读成功且 {sbcs-sbautoincrement} 置位，则递增 `sbaddress`。
+. 清零 {sbcs-sbbusy}。'''

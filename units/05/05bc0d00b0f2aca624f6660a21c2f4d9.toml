@@ -1,0 +1,18 @@
+unit_id = "05bc0d00b0f2aca624f6660a21c2f4d9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_check_priv_modes]#PMP checks are applied to all accesses whose effective privilege mode is
+S or U, including instruction fetches and data accesses in S and U mode,
+and data accesses in M-mode when the MPRV bit in `mstatus` is set and
+the MPP field in `mstatus` contains S or U.# [#norm:pmp_check_pagetable_access]#PMP checks are also applied
+to page-table accesses for virtual-address translation, for which the
+effective privilege mode is S.# [#norm:pmp_mmode_locking]#Optionally, PMP checks may additionally
+apply to M-mode accesses, in which case the PMP registers themselves are
+locked, so that even M-mode software cannot change them until the hart
+is reset.# In effect, PMP can _grant_ permissions to S and U modes, which
+by default have none, and can _revoke_ permissions from M-mode, which by
+default has full permissions.'''
+zh = '''
+[#norm:pmp_check_priv_modes]##PMP 检查应用于有效特权模式为 S 或 U 的所有访问，包括 S 和 U 模式下的取指和数据访问，以及当 `mstatus` 中的 MPRV 位被置位且 `mstatus` 中的 MPP 字段包含 S 或 U 时的 M 模式数据访问。## [#norm:pmp_check_pagetable_access]##PMP 检查还应用于虚拟地址转换的页表访问，其有效特权模式为 S。## [#norm:pmp_mmode_locking]##可选地，PMP 检查还可应用于 M 模式访问，此时 PMP 寄存器本身被锁定，使得即使 M 模式软件也无法更改它们，直到硬件线程复位。##实际上，PMP 可 _授予_ S 和 U 模式权限（默认没有权限），并可 _撤销_ M 模式权限（默认具有完全权限）。'''

@@ -1,0 +1,24 @@
+unit_id = "f0fa0c6916bcbc045c2bd85a48e9873f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In the description, we try to separate the privilege level for which
+code is written, from the privilege mode in which it runs, although the
+two are often tied. For example, a supervisor-level operating system can
+run in supervisor-mode on a system with three privilege modes, but can
+also run in user-mode under a classic virtual machine monitor on systems
+with two or more privilege modes. In both cases, the same
+supervisor-level operating system binary code can be used, coded to a
+supervisor-level SBI and hence expecting to be able to use
+supervisor-level privileged instructions and CSRs. When running a guest
+OS in user mode, all supervisor-level actions will be trapped and
+emulated by the SEE running in the higher-privilege level.
+===='''
+zh = '''
+[NOTE]
+====
+在描述中，我们尝试将代码编写所针对的特权级与代码运行所在的特权模式区分开，尽管两者常常关联。例如，监管级操作系统可在具有三个特权模式的系统上以监管模式运行，但也可在具有两个或更多特权模式的系统上，在经典虚拟机监控器下以用户模式运行。在两种情况下，都可以使用同一监管级操作系统二进制代码；该代码按照监管级 SBI 编写，因而预期能够使用监管级特权指令和 CSR。当在用户模式下运行客户机 OS 时，所有监管级操作都将由运行在更高特权级的 SEE 陷入并仿真。
+===='''

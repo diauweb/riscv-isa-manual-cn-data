@@ -1,0 +1,14 @@
+unit_id = "991ec364d620583676da4eea332148c5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note: not all exceptions and interrupts cause traps (see
+<<sec:terminology>> for definitions). Most
+notably, floating point exceptions and disabled interrupts do not trap.
+If an exception or interrupt doesn't trap, the program counter does not
+change. So, there is no need to trace all exceptions/interrupts, just
+traps. For the purposes of trace, interrupts and exceptions are only
+traced when they cause traps to be taken.'''
+zh = '''
+注：并非所有异常和中断都会导致陷阱（定义见 <<sec:terminology>>）。最值得注意的是，浮点异常和被禁用的中断不会陷入。若异常或中断不导致陷阱，则 PC 不变。因此，不必跟踪所有异常/中断，只需跟踪陷阱。就跟踪而言，仅当异常和中断导致陷阱发生时才对其进行跟踪。'''

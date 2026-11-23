@@ -1,0 +1,20 @@
+unit_id = "692cfb9e907d0a7de03a272efb2ede84"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Consequently, other harts must be notified separately when the
+memory-management data structures have been modified. One approach is to
+use 1) a local data fence to ensure local writes are visible globally,
+then 2) an interprocessor interrupt to the other thread, then 3) a local
+SFENCE.VMA in the interrupt handler of the remote thread, and finally 4)
+signal back to originating thread that operation is complete. This is,
+of course, the RISC-V analog to a TLB shootdown.
+===='''
+zh = '''
+[NOTE]
+====
+因此，当内存管理数据结构已被修改时，应单独通知其他硬件线程。一种方法是：1）使用本地数据栅栏确保本地写入全局可见，然后 2）向其他线程发送处理器间中断，然后 3）在远程线程的中断处理程序中执行本地 SFENCE.VMA，最后 4）向发起线程发信号表明操作完成。当然，这是 RISC-V 中与 TLB 击落相对应的做法。
+===='''

@@ -1,0 +1,14 @@
+unit_id = "c7527ad07fd0751bedb0ae8e751bf068"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some instructions lead a hart to perform multiple memory accesses. This
+includes vector loads and stores, as well as `cm.push` and `cm.pop`
+instructions. The Trigger Module should match such accesses as if they
+all happened individually. E.g. a vector load should be treated as if it
+performed multiple loads of size SEW (selected element width), and
+`cm.push` should be treated as if it performed multiple stores of size
+XLEN.'''
+zh = '''
+某些指令会导致硬件线程执行多次内存访问。这包括向量加载/存储以及 `cm.push` 和 `cm.pop` 指令。触发器模块宜如同这些访问全部单独发生那样进行匹配。例如，向量加载宜被当作执行了多次尺寸为 SEW（所选元素宽度）的加载，且 `cm.push` 宜被当作执行了多次尺寸为 XLEN 的存储。'''

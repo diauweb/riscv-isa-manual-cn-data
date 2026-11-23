@@ -1,0 +1,42 @@
+unit_id = "4e72ae8243d87598bd1dca482359f994"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Context or Time information:
+** The context and/or hart ID and/or time;
+** The type of action to take when context or time data changes.
+* The _instruction_type_ of instructions for:
+** Calls with a target that _cannot_ be inferred from the source code;
+** Calls with a target that _can_ be inferred from the source code;
+** Jumps with a target that _cannot_ be inferred from the source code;
+** Jumps with a target that _can_ be inferred from the source code;
+** Returns with a target that _cannot_ be inferred from the source code;
+** Returns with a target that _can_ be inferred from the source code;
+** Co-routine swap;
+** Other jumps which don't fit any of the above classifications with a
+target that _cannot_ be inferred from the source code;
+** Other jumps which don't fit any of the above classifications with a
+target that _can_ be inferred from the source code.
+* If context or time is supported then the _instruction_address_ for:
+** The last instruction retired before a context or a time change;
+** The first instruction retired following a context or time change.
+* Whether jump targets are sequentially inferable or not.'''
+zh = '''
+* 上下文或时间信息：
+** 上下文和/或硬件线程 ID 和/或时间；
+** 当上下文或时间数据改变时要采取的操作类型。
+* 对于以下指令，其 _instruction_type_：
+** 目标 _不能_ 从源代码推断的调用；
+** 目标 _能_ 从源代码推断的调用；
+** 目标 _不能_ 从源代码推断的跳转；
+** 目标 _能_ 从源代码推断的跳转；
+** 目标 _不能_ 从源代码推断的返回；
+** 目标 _能_ 从源代码推断的返回；
+** 协程交换；
+** 目标 _不能_ 从源代码推断且不属于上述任何分类的其他跳转；
+** 目标 _能_ 从源代码推断且不属于上述任何分类的其他跳转。
+* 若支持上下文或时间，则以下情况的 _instruction_address_：
+** 上下文或时间改变之前最后退休的指令；
+** 上下文或时间改变之后最先退休的指令。
+* 跳转目标是否为顺序可推断的。'''

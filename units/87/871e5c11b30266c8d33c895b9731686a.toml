@@ -1,0 +1,12 @@
+unit_id = "871e5c11b30266c8d33c895b9731686a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mepc_bit1_dyn_ialign_op]#If an implementation allows IALIGN to be either 16 or 32 (by changing
+CSR `misa`, for example), then, whenever IALIGN=32, bit `mepc[1]` is
+masked on reads so that it appears to be 0. This masking occurs also for
+the implicit read by the MRET instruction. Though masked, `mepc[1]`
+remains writable when IALIGN=32.#'''
+zh = '''
+[#norm:mepc_bit1_dyn_ialign_op]##若实现允许 IALIGN 为 16 或 32（例如通过更改 CSR `misa`），则每当 IALIGN=32 时，位 `mepc[1]` 在读取时被掩蔽，使其表现为 0。该掩蔽也适用于 MRET 指令的隐式读取。尽管被掩蔽，`mepc[1]` 在 IALIGN=32 时仍可写。##'''

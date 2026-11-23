@@ -1,0 +1,16 @@
+unit_id = "9401f361a7ee99ae82e30dddb46b1264"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+HFENCE.GVMA is valid only in HS-mode when `mstatus`.TVM=0, or in M-mode
+(irrespective of `mstatus`.TVM). Executing an HFENCE.GVMA instruction
+guarantees that any previous stores already visible to the current hart
+are ordered before all implicit reads by that hart done for G-stage
+address translation for instructions that follow the HFENCE.GVMA. If
+operand __rs1__≠`x0`, it specifies a single guest
+physical address, shifted right by 2 bits, and if operand
+__rs2__≠`x0`, it specifies a single virtual machine
+identifier (VMID).'''
+zh = '''
+HFENCE.GVMA 仅在 HS 模式中当 `mstatus`.TVM=0 时有效，或在 M 模式中有效（无论 `mstatus`.TVM 如何）。执行 HFENCE.GVMA 指令保证：当前硬件线程已可见的任何先前存储，在该硬件线程为后续指令的 G 阶段地址转换所做的所有隐式读取之前排序，这些指令遵循 HFENCE.GVMA。若操作数 __rs1__≠`x0`，它指定单个客户机物理地址，右移 2 位；若操作数 __rs2__≠`x0`，它指定单个虚拟机标识符（VMID）。'''

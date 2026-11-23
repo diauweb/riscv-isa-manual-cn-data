@@ -1,0 +1,13 @@
+unit_id = "8b4580914aec5346d522f6f30e8bb9d3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zve64_eew64_nsupport_vmulh]#ext:zve64x[] supports all vector integer instructions
+(<<sec-vector-integer>>), except that
+the insn:vmulh[] integer multiply
+variants that return the high half of the product (insn:vmulh.vv[],
+insn:vmulh.vx[], insn:vmulhu.vv[], insn:vmulhu.vx[], insn:vmulhsu.vv[],
+insn:vmulhsu.vx[]) are not included for EEW=64.#'''
+zh = '''
+[#norm:Zve64_eew64_nsupport_vmulh]#ext:zve64x[] 支持所有向量整数指令（<<sec-vector-integer>>），但 EEW=64 时不包含返回乘积高半部分的 insn:vmulh[] 整数乘法变体（insn:vmulh.vv[]、insn:vmulh.vx[]、insn:vmulhu.vv[]、insn:vmulhu.vx[]、insn:vmulhsu.vv[]、insn:vmulhsu.vx[]）。#'''

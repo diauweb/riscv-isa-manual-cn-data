@@ -1,0 +1,24 @@
+unit_id = "fb0aa46c999dba86d9b408a7a77ebe9a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.AVL used in insn:vsetvli[] and insn:vsetvl[] instructions
+[cols="2,2,10,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|  _rd_  | _rs1_  | AVL value         | Effect on csr:vl[]
+|  -     | !x0    | Value in `x[rs1]` | Normal strip mining
+| !x0    |  x0    | ~0                | Set csr:vl[] to VLMAX
+|  x0    |  x0    | Value in csr:vl[] register | Keep existing csr:vl[] (of course, csr:vtype[] may change)
+|==='''
+zh = '''
+insn:vsetvli[] 和 insn:vsetvl[] 指令中使用的 AVL
+[cols="2,2,10,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|  _rd_  | _rs1_  | AVL 值         | 对 csr:vl[] 的影响
+|  -     | !x0    | `x[rs1]` 中的值 | 常规条带挖掘
+| !x0    |  x0    | ~0                | 将 csr:vl[] 设置为 VLMAX
+|  x0    |  x0    | csr:vl[] 寄存器中的值 | 保持现有 csr:vl[]（当然，csr:vtype[] 可能改变）
+|==='''

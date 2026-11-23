@@ -1,0 +1,29 @@
+unit_id = "0f15ecd97131afd25b92bc5c6eb87dae"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VAESDM(vs2, vd, suffix)) = {
+  if(LMUL*VLEN < EGW)  then {
+    handle_illegal();  // illegal-instruction exception
+    RETIRE_FAIL
+  } else {
+
+  eg_len = (vl/EGS)
+  eg_start = (vstart/EGS)
+
+  foreach (i from eg_start to eg_len-1) {
+    let keyelem = if suffix == "vv" then i else 0;
+    let state : bits(128) = get_velem(vd, EGW=128, i);
+    let rkey  : bits(128) = get_velem(vs2, EGW=128, keyelem);
+    let sr    : bits(128) = aes_shift_rows_inv(state);
+    let sb    : bits(128) = aes_subbytes_inv(sr);
+    let ark   : bits(128) = sb ^ rkey;
+    let mix   : bits(128) = aes_mixcolumns_inv(ark);
+    set_velem(vd, EGW=128, i, mix);
+  }
+  RETIRE_SUCCESS
+  }
+}
+--'''

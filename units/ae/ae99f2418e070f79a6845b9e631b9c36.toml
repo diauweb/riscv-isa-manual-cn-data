@@ -1,0 +1,62 @@
+unit_id = "ae99f2418e070f79a6845b9e631b9c36"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+=== Hypervisor and Virtual Supervisor CSRs
+
+An OS or hypervisor running in HS-mode uses the supervisor CSRs to
+interact with the exception, interrupt, and address-translation
+subsystems. Additional CSRs are provided to HS-mode, but not to VS-mode,
+to manage two-stage address translation and to control the behavior of a
+VS-mode guest: `hstatus`, `hedeleg`, `hideleg`, `hvip`, `hip`, `hie`,
+`hgeip`, `hgeie`, `henvcfg`, `henvcfgh`, `hcounteren`, `htimedelta`,
+`htimedeltah`, `htval`, `htinst`, and `hgatp`.
+
+Furthermore, several _virtual supervisor_ CSRs (VS CSRs) are replicas of
+the normal supervisor CSRs. For example, `vsstatus` is the VS CSR that
+duplicates the usual `sstatus` CSR.
+
+When V=1, the VS CSRs substitute for the corresponding supervisor CSRs,
+taking over all functions of the usual supervisor CSRs except as
+specified otherwise. Instructions that normally read or modify a
+supervisor CSR shall instead access the corresponding VS CSR. When V=1,
+an attempt to read or write a VS CSR directly by its own separate CSR
+address causes a virtual-instruction exception. (Attempts from U-mode
+cause an illegal-instruction exception as usual.) The VS CSRs can be
+accessed as themselves only from M-mode or HS-mode.
+
+While V=1, the normal HS-level supervisor CSRs that are replaced by VS
+CSRs retain their values but do not affect the behavior of the machine
+unless specifically documented to do so. Conversely, when V=0, the VS
+CSRs do not ordinarily affect the behavior of the machine other than
+being readable and writable by CSR instructions.
+
+Some standard supervisor CSRs (`senvcfg`, `scounteren`, and `scontext`,
+possibly others) have no matching VS CSR. These supervisor CSRs continue
+to have their usual function and accessibility even when V=1, except
+with VS-mode and VU-mode substituting for HS-mode and U-mode. Hypervisor
+software is expected to manually swap the contents of these registers as
+needed.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+=== 虚拟机监控器与虚拟监管者 CSR
+
+运行在 HS 模式下的 OS 或虚拟机监控器使用监管者 CSR 来与异常、中断和地址转换子系统交互。为 HS 模式（而非 VS 模式）提供了额外的 CSR，以管理两阶段地址转换并控制 VS 模式客户机的行为：`hstatus`、`hedeleg`、`hideleg`、`hvip`、`hip`、`hie`、`hgeip`、`hgeie`、`henvcfg`、`henvcfgh`、`hcounteren`、`htimedelta`、`htimedeltah`、`htval`、`htinst` 和 `hgatp`。
+
+此外，若干__虚拟监管者__ CSR（VS CSR）是普通监管者 CSR 的副本。例如，`vsstatus` 是复制通常 `sstatus` CSR 的 VS CSR。
+
+当 V=1 时，VS CSR 替代相应的监管者 CSR，接管通常监管者 CSR 的所有功能，除非另有规定。通常读取或修改监管者 CSR 的指令应改为访问相应的 VS CSR。当 V=1 时，尝试通过其自身的单独 CSR 地址直接读取或写入 VS CSR 将导致虚拟指令异常。（来自 U 模式的尝试照常导致非法指令异常。）VS CSR 只能从 M 模式或 HS 模式作为其自身访问。
+
+当 V=1 时，被 VS CSR 替代的正常 HS 级监管者 CSR 保留其值，但不影响机器行为，除非特别记载为如此。反之，当 V=0 时，VS CSR 除了可由 CSR 指令读写外，通常不影响机器行为。
+
+某些标准监管者 CSR（`senvcfg`、`scounteren` 和 `scontext`，可能还有其他）没有匹配的 VS CSR。这些监管者 CSR 即使在 V=1 时也继续具有其通常的功能和可访问性，只是由 VS 模式和 VU 模式替代 HS 模式和 U 模式。虚拟机监控器软件需按需手动交换这些寄存器的内容。
+
+[NOTE]
+===='''

@@ -1,0 +1,13 @@
+unit_id = "730160998de41ef993f509546ce46c9f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Machine and Supervisor modes share a single copy of the csr::[fs], csr::[vs], and csr::[xs]
+bits. Supervisor-level software normally uses the csr::[fs], csr::[vs], and csr::[xs] bits
+directly to record the status with respect to the supervisor-level saved
+context. Machine-level software must be more conservative in saving and
+restoring the extension state in their corresponding version of the
+context.'''
+zh = '''
+机器模式和监管模式共享 csr::[fs]、csr::[vs] 和 csr::[xs] 位的单一副本。监管级软件通常直接使用 csr::[fs]、csr::[vs] 和 csr::[xs] 位来记录相对于监管级保存上下文的状态。机器级软件在其相应版本的上下文中保存和恢复扩展状态时必须更加保守。'''

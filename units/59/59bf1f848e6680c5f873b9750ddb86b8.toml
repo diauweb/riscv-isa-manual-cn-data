@@ -1,0 +1,16 @@
+unit_id = "59bf1f848e6680c5f873b9750ddb86b8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Instructions that cause synchronous exceptions, including insn:ecall[] and
+insn:ebreak[], are not considered to retire and hence do not increment the
+csr:instret[] CSR.
+===='''
+zh = '''
+[NOTE]
+====
+引起同步异常的指令（包括 insn:ecall[] 和 insn:ebreak[]）不被视为退休，因此不会递增 csr:instret[] CSR。
+===='''

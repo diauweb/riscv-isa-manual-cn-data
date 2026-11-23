@@ -1,0 +1,22 @@
+unit_id = "e66a532c4ecef854e3cb279bbbe55f20"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Instruction interface signals - multiple retirement per block
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*iretire*[_iretire_width_p_-1:0] | BR | Number of halfwords represented
+by instructions retired in this block.
+|*ilastsize*[_ilastsize_width_p_-1:0] | BR | The size of the last retired
+instruction is 2^*ilastsize*^ half-words.
+|==='''
+zh = '''
+.指令接口信号——每块多条退休
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *信号* | *组* | *功能*
+|*iretire*[_iretire_width_p_-1:0] | BR | 本块中退休指令所表示的半字数。
+|*ilastsize*[_ilastsize_width_p_-1:0] | BR | 最后退休指令的大小为 2^*ilastsize*^ 个半字。
+|==='''

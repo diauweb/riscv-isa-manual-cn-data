@@ -1,0 +1,18 @@
+unit_id = "c08c8fd88485455b397cc26d5b6783df"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The instret definition above is intended to ensure that the counter increments in a predictable fashion.  For example, consider a scenario where minstretcfg is configured such that all modes other than U-mode are inhibited.  A user mode load should increment only once, even if it takes a page fault or other exception.  With this definition, the faulting execution of the load will not increment (it does not retire), the handler instructions will not increment (they execute in an inhibited mode), including the xRET (it arguably retires in a non-inhibited mode, but it originates in an inhibited mode).  Only once the load is re-executed and retires will it increment instret.
+
+In cases where an instruction is emulated by software running in a privilege mode that is inhibited in minstretcfg, the emulation routine must emulate the instret increment.
+===='''
+zh = '''
+[NOTE]
+====
+上述 instret 定义旨在确保计数器以可预测方式递增。例如，考虑一种场景：minstretcfg 配置为除 U 模式外所有模式均受抑制。用户模式加载宜只递增一次，即使它发生页错误或其他异常。按此定义，加载的故障执行不会递增（它不退休），处理程序指令不会递增（它们在受抑制模式下执行），包括 xRET（它可以说在非受抑制模式下退休，但源于受抑制模式）。只有当该加载重新执行并退休时，才使 instret 递增。
+
+当指令由运行在 minstretcfg 中受抑制的特权模式下的软件仿真时，仿真例程应仿真 instret 的递增。
+===='''

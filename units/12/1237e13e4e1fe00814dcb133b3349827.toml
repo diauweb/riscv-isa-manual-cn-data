@@ -1,0 +1,16 @@
+unit_id = "1237e13e4e1fe00814dcb133b3349827"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There rarely is anything that can or should be done about a non-fatal
+alarm condition in an operator-free, autonomous system. However,
+AIS 31 allows the DRBG component to keep running despite a failure in
+its Entropy Source, so we suggest re-entering a temporary `BIST`
+state (<<crypto_scalar_es_security_controls>>) to signal a non-fatal
+statistical error if such (non-actionable) signaling is necessary.
+Drivers and applications can react to this appropriately (or simply
+log it), but it will not directly affect the availability of the TRNG.
+A permanent error condition should result in `DEAD` state.'''
+zh = '''
+对于无操作员的自主系统，对于非致命警报条件，很少有什么可以或应该做的事情。然而，AIS 31 允许 DRBG 组件在其熵源发生故障时继续运行，因此如果需要进行此类（不可操作的）信号通知，我们建议重新进入临时 `BIST` 状态（<<crypto_scalar_es_security_controls>>）以发出非致命统计错误信号。驱动和应用可以适当地对此作出反应（或仅记录日志），但这不会直接影响 TRNG 的可用性。永久错误条件应导致 `DEAD` 状态。'''

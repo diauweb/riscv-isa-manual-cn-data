@@ -1,0 +1,12 @@
+unit_id = "bc4ddd3cce09a77f369e036185da97ea"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mepc_warl]#`mepc` is a *WARL* register# that must be implemented and
+must be able to hold all valid virtual
+addresses. It need not be capable of holding all possible invalid addresses.
+[#norm:mepc_inv_addr_conv]#Prior to writing `mepc`, implementations may convert an
+invalid address into some other invalid address that `mepc` is capable of holding.#'''
+zh = '''
+[#norm:mepc_warl]##`mepc` 是一个 *WARL* 寄存器##，应实现且应能够保存所有有效虚拟地址。它不必能够保存所有可能的无效地址。[#norm:mepc_inv_addr_conv]##在写入 `mepc` 之前，实现可将无效地址转换为 `mepc` 能够保存的其他无效地址。##'''

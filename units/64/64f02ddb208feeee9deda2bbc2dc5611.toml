@@ -1,0 +1,16 @@
+unit_id = "64f02ddb208feeee9deda2bbc2dc5611"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap is to be taken into S-mode, if the `SDT` bit is currently 0,
+it is then set to 1, and the trap is delivered as expected. However, if `SDT` is
+already set to 1, then this is an _unexpected trap_. In the event of an
+_unexpected trap_, a double-trap exception trap is delivered into M-mode. To
+deliver this trap, the hart writes registers, except `mcause` and `mtval2`, with
+the same information that the _unexpected trap_ would have written if it was
+taken into M-mode. The `mtval2` register is then set to what would be otherwise
+written into the `mcause` register by the _unexpected trap_. The `mcause`
+register is set to 16, the double-trap exception code.'''
+zh = '''
+当要将陷阱陷入 S 模式时，若 `SDT` 位当前为 0，则将其置为 1，并按预期递送该陷阱。然而，若 `SDT` 已为 1，则这是一次__意外陷阱__。发生__意外陷阱__时，将向 M 模式递送一个双重陷阱异常陷阱。为递送该陷阱，硬件线程写入各寄存器（`mcause` 和 `mtval2` 除外），所写信息与该__意外陷阱__被陷入 M 模式时本应写入的信息相同。随后将 `mtval2` 寄存器设置为原本会由该__意外陷阱__写入 `mcause` 寄存器的值。`mcause` 寄存器被设置为 16，即双重陷阱异常编码。'''

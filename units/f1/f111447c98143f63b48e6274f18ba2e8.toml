@@ -1,0 +1,15 @@
+unit_id = "f111447c98143f63b48e6274f18ba2e8"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. {dmcontrol-haltreq} is cleared, potentially preventing a halt request made by a previous debugger from taking effect.
+. {dmcontrol-resumereq} is cleared, potentially preventing a resume request made by a previous debugger from taking effect.
+. {dmcontrol-ndmreset} is deasserted, releasing the hardware platform from reset if a previous debugger had set it.
+. {dmcontrol-dmactive} is asserted, releasing the DM from reset. This in itself is not
+observable by any harts.'''
+zh = '''
+. {dmcontrol-haltreq} 被清零，可能阻止由先前调试器发出的停机请求生效。
+. {dmcontrol-resumereq} 被清零，可能阻止由先前调试器发出的恢复请求生效。
+. {dmcontrol-ndmreset} 被清零，若先前调试器曾置位它，则使硬件平台退出复位。
+. {dmcontrol-dmactive} 被置位，使 DM 退出复位。这本身对任何硬件线程都不可观察。'''

@@ -1,0 +1,19 @@
+unit_id = "b62554e4b504fadd7afd960438b71a34"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor virtual-machine load and store instructions are valid
+only in M-mode or HS-mode, or in U-mode when `hstatus`.HU=1. Each
+instruction performs an explicit memory access as though V=1; i.e., with
+the address translation and protection, and the endianness, that apply
+to memory accesses in either VS-mode or VU-mode. Field SPVP of `hstatus`
+controls the privilege level of the access. The explicit memory access
+is done as though in VU-mode when SPVP=0, and as though in VS-mode when
+SPVP=1. As usual when V=1, two-stage address translation is applied, and
+the HS-level `sstatus`.SUM is ignored. HS-level `sstatus`.MXR makes
+execute-only pages readable for both stages of address translation
+(VS-stage and G-stage), whereas `vsstatus`.MXR affects only the first
+translation stage (VS-stage).'''
+zh = '''
+虚拟机监控器虚拟机加载和存储指令仅在 M 模式或 HS 模式中有效，或在 U 模式中当 `hstatus`.HU=1 时有效。每条指令执行显式内存访问时如同 V=1；即采用适用于 VS 模式或 VU 模式中内存访问的地址转换与保护以及字节序。`hstatus` 的字段 SPVP 控制访问的特权级。当 SPVP=0 时，显式内存访问如同在 VU 模式中完成；当 SPVP=1 时，如同在 VS 模式中完成。当 V=1 时，按常规应用两阶段地址转换，并忽略 HS 级 `sstatus`.SUM。HS 级 `sstatus`.MXR 使仅执行页在两个地址转换阶段（VS 阶段和 G 阶段）均可读，而 `vsstatus`.MXR 仅影响第一转换阶段（VS 阶段）。'''

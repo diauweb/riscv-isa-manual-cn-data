@@ -1,0 +1,21 @@
+unit_id = "c4d965ef904b08668eca8609f41d7d69"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_seip_mie_seie_op]#If supervisor mode is implemented, bits `mip`.SEIP and `mie`.SEIE are
+the interrupt-pending and interrupt-enable bits for supervisor-level external interrupts.#
+[#norm:mip_seip_acc]#SEIP is writable in `mip`#, and may be written by
+M-mode software to indicate to S-mode that an external interrupt is
+pending. Additionally, the platform-level interrupt controller may
+generate supervisor-level external interrupts.
+[#norm:intr_sei_op]#Supervisor-level external interrupts are made pending based on the logical-OR of the
+software-writable SEIP bit and the signal from the external interrupt controller.#
+[#norm:mip_seip_rdcsr]#When `mip` is read with a CSR instruction, the value of the
+SEIP bit returned in the `rd` destination register is the logical-OR of
+the software-writable bit and the interrupt signal from the interrupt
+controller#, but [#norm:mip_seip_wrcsr]#the signal from the interrupt controller is not used to
+calculate the value written to SEIP. Only the software-writable SEIP bit
+participates in the read-modify-write sequence of a CSRRS or CSRRC instruction.#'''
+zh = '''
+[#norm:mip_seip_mie_seie_op]##若实现了监管模式，则 `mip`.SEIP 和 `mie`.SEIE 位是监管级外部中断的中断挂起位和中断使能位。##[#norm:mip_seip_acc]##SEIP 在 `mip` 中可写##，且可由 M 模式软件写入，以向 S 模式指示外部中断挂起。此外，平台级中断控制器可生成监管级外部中断。[#norm:intr_sei_op]##监管级外部中断根据软件可写的 SEIP 位与来自外部中断控制器的信号的逻辑或而成为挂起。##[#norm:mip_seip_rdcsr]##当使用 CSR 指令读取 `mip` 时，`rd` 目标寄存器中返回的 SEIP 位值是软件可写位与来自中断控制器的中断信号的逻辑或##，但[#norm:mip_seip_wrcsr]##来自中断控制器的信号不用于计算写入 SEIP 的值。只有软件可写的 SEIP 位参与 CSRRS 或 CSRRC 指令的读-改-写序列。##'''

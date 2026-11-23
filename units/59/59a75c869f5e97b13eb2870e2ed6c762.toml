@@ -1,0 +1,59 @@
+unit_id = "59a75c869f5e97b13eb2870e2ed6c762"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Note that these definitions permit an implementation to fail an SC
+instruction occasionally for any reason, provided the aforementioned
+guarantee is not violated.
+
+As a consequence of the eventuality guarantee, if some harts in an
+execution environment are executing constrained LR/SC loops, and no
+other harts or devices in the execution environment execute an
+unconditional store or AMO to that reservation set, then at least one
+hart will eventually exit its constrained LR/SC loop. By contrast, if
+other harts or devices continue to write to that reservation set, it is
+not guaranteed that any hart will exit its LR/SC loop.
+
+Loads and load-reserved instructions do not by themselves impede the
+progress of other harts' LR/SC sequences. We note this constraint
+implies, among other things, that loads and load-reserved instructions
+executed by other harts (possibly within the same core) cannot impede
+LR/SC progress indefinitely. For example, cache evictions caused by
+another hart sharing the cache cannot impede LR/SC progress
+indefinitely. Typically, this implies reservations are tracked
+independently of evictions from any shared cache. Similarly, cache
+misses caused by speculative execution within a hart cannot impede LR/SC
+progress indefinitely.
+
+These definitions admit the possibility that SC instructions may
+spuriously fail for implementation reasons, provided progress is
+eventually made.
+
+One advantage of CAS is that it guarantees that some hart eventually
+makes progress, whereas an LR/SC atomic sequence could livelock
+indefinitely on some systems. To avoid this concern, we added an
+architectural guarantee of livelock freedom for certain LR/SC sequences.
+
+Earlier versions of this specification imposed a stronger
+starvation-freedom guarantee. However, the weaker livelock-freedom
+guarantee is sufficient to implement the C11 and C++11 languages, and is
+substantially easier to provide in some microarchitectural styles.
+===='''
+zh = '''
+[NOTE]
+====
+请注意，这些定义允许实现出于任何原因偶尔使 SC 指令失败，只要不违反上述保证。
+
+作为最终性保证的结果，若执行环境中的某些硬件线程正在执行受约束的 LR/SC 循环，并且执行环境中没有其他硬件线程或设备对该保留集执行无条件存储或 AMO，那么至少有一个硬件线程最终会退出其受约束的 LR/SC 循环。相比之下，若其他硬件线程或设备继续写入该保留集，则不保证任何硬件线程会退出其 LR/SC 循环。
+
+加载和加载保留指令本身不会妨碍其他硬件线程的 LR/SC 序列的推进。我们注意到这一约束意味着，除其他事项外，其他硬件线程（可能在同一核内）执行的加载和加载保留指令不能无限期地妨碍 LR/SC 的推进。例如，由共享该高速缓存的另一硬件线程引起的缓存驱逐不能无限期地妨碍 LR/SC 的推进。通常，这意味着保留的跟踪独立于任何共享高速缓存的驱逐。类似地，硬件线程内推测执行引起的缓存缺失不能无限期地妨碍 LR/SC 的推进。
+
+这些定义允许 SC 指令因实现原因而虚假失败，只要最终取得推进。
+
+CAS 的一个优点是可以保证某个硬件线程最终取得推进，而 LR/SC 原子序列在某些系统上可能无限期地活锁。为避免这一担忧，我们为某些 LR/SC 序列增加了无活锁的体系结构保证。
+
+本规范的早期版本施加了更强的无饥饿保证。然而，较弱的无活锁保证足以实现 C11 和 C++11 语言，并且在某些微体系结构风格中提供起来要容易得多。
+===='''

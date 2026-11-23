@@ -1,0 +1,19 @@
+unit_id = "67296504b297a4aaf2b0472a053278f0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Branch instructions compare two registers.
+[#norm:insts:beq_bne:operation]#BEQ and BNE take the branch if registers _rs1_ and _rs2_ are equal or unequal respectively.#
+[#norm:insts:blt_bltu:operation]#BLT and BLTU take the branch if _rs1_ is less than _rs2_, using signed and
+unsigned comparison respectively.#
+[#norm:insts:bge_bgeu:operation]#BGE and BGEU take the branch if _rs1_ is greater than or equal to _rs2_,
+using signed and unsigned comparison respectively.#
+Note, BGT, BGTU, BLE, and BLEU can be synthesized by
+reversing the operands to BLT, BLTU, BGE, and BGEU, respectively.'''
+zh = '''
+分支指令比较两个寄存器。
+[#norm:insts:beq_bne:operation]##若寄存器 _rs1_ 与 _rs2_ 分别相等或不相等，则 BEQ 和 BNE 执行分支。##
+[#norm:insts:blt_bltu:operation]##若 _rs1_ 小于 _rs2_，则 BLT 和 BLTU 分别使用有符号比较和无符号比较执行分支。##
+[#norm:insts:bge_bgeu:operation]##若 _rs1_ 大于或等于 _rs2_，则 BGE 和 BGEU 分别使用有符号比较和无符号比较执行分支。##
+注意，可通过分别反转 BLT、BLTU、BGE 和 BGEU 的操作数来合成 BGT、BGTU、BLE 和 BLEU。'''

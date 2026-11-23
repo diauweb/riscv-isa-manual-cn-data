@@ -1,0 +1,28 @@
+unit_id = "3c69cfd8f7719ebd85e7ea24dd6f3402"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Implementation Hint
+
+The round constants (CK) can be generated on the fly fairly cheaply.
+If the bytes of the constants are assigned an incrementing index from 0 to 127, the value of each byte is equal to its index multiplied by 7 modulo 256.
+Since the results are all limited to 8 bits, the modulo operation occurs for free:
+
+ B[n] = n + 2n + 4n;
+       = 8n + ~n + 1;
+===='''
+zh = '''
+[NOTE]
+====
+实现提示
+
+轮常量（CK）可以相当廉价地动态生成。
+如果将常量的字节分配从 0 到 127 递增的索引，则每个字节的值等于其索引乘以 7 对 256 取模。
+由于结果均限制为 8 位，取模运算自然发生：
+
+ B[n] = n + 2n + 4n;
+       = 8n + ~n + 1;
+===='''

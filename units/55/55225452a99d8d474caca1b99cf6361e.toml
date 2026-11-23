@@ -1,0 +1,66 @@
+unit_id = "55225452a99d8d474caca1b99cf6361e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Basic Control
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field* | *Applicability* | *E-Trace Specific Details*
+|*trTeActive* | M |
+|*trTeEnable* | M |
+|*trTeInstTracing* | M |
+|*trTeDataTracing* | MD |
+|*trTeInstTrigEnable* | O |
+|*trTeDataTrigEnable* | OD |
+|*trTeInstStallOrOverflow* | O |
+|*trTeDataStallOrOverflow* | OD |
+|*trTeInstStallEn* | O |
+|*trTeDataStallEn* | OD |
+|*trTeEmpty* | O | Recommended if the trace datapath requires manual
+flushing when trace is disabled.
+|*trTeDataDrop* | OD |
+|*trTeDataDropEn* | OD |
+|*trTeInhibitSrc* | O |
+|*trTeInstSyncMode* | M | If hardcoded, must be to a non-zero value.
+|*trTeInstSyncMax* | M | May be hardcoded.
+|*trTeFormat* | M | Must be set to 0 (denoting E-Trace format).
+|*trTeVerMajor* | M |
+|*trTeVerMinor* | M |
+|*trTeCompType* | M |
+|*trTeProtocolMajor* | M | Must be 0 to indicate this version (2.0.x) of
+the E-Trace protocol.
+|*trTeProtocolMinor* | M | Must be 0.
+|*trTeSrcID* | O |
+|*trTeSrcBits* | O |
+|==='''
+zh = '''
+.基本控制
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *字段* | *适用性* | *E-Trace 特定细节*
+|*trTeActive* | M |
+|*trTeEnable* | M |
+|*trTeInstTracing* | M |
+|*trTeDataTracing* | MD |
+|*trTeInstTrigEnable* | O |
+|*trTeDataTrigEnable* | OD |
+|*trTeInstStallOrOverflow* | O |
+|*trTeDataStallOrOverflow* | OD |
+|*trTeInstStallEn* | O |
+|*trTeDataStallEn* | OD |
+|*trTeEmpty* | O | 若跟踪数据通路在跟踪禁用时需要手动冲刷，则推荐。
+|*trTeDataDrop* | OD |
+|*trTeDataDropEn* | OD |
+|*trTeInhibitSrc* | O |
+|*trTeInstSyncMode* | M | 若硬连线，应设为非零值。
+|*trTeInstSyncMax* | M | 可硬连线。
+|*trTeFormat* | M | 应设置为 0（表示 E-Trace 格式）。
+|*trTeVerMajor* | M |
+|*trTeVerMinor* | M |
+|*trTeCompType* | M |
+|*trTeProtocolMajor* | M | 应为 0，以表示 E-Trace 协议的此版本（2.0.x）。
+|*trTeProtocolMinor* | M | 应为 0。
+|*trTeSrcID* | O |
+|*trTeSrcBits* | O |
+|==='''

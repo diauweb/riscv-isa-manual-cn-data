@@ -1,0 +1,13 @@
+unit_id = "cb18c145d91a9e13ea39a0765ba6e252"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+((((compressed. C.BREAKPOINTINSTR))))
+[#norm:c-ebreak_op]#Debuggers can use the insn:c.ebreak[] instruction, which expands to insn:ebreak[],
+to cause control to be transferred back to the debugging environment.
+insn:c.ebreak[] shares the opcode with the insn:c.add[] instruction, but with _rd_ and
+_rs2_ both zero, thus can also use the `CR` format.#'''
+zh = '''
+((((compressed. C.BREAKPOINTINSTR))))
+[#norm:c-ebreak_op]##调试器可以使用 insn:c.ebreak[] 指令（它展开为 insn:ebreak[]）使控制权转移回调试环境。insn:c.ebreak[] 与 insn:c.add[] 指令共享操作码，但 _rd_ 和 _rs2_ 均为零，因此也可以使用 `CR` 格式。##'''

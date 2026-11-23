@@ -1,0 +1,12 @@
+unit_id = "3523a1be3b1d15d59d4951ad2cab180e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An interrupt that has been delegated to HS-mode (using `mideleg`) is
+further delegated to VS-mode if the corresponding `hideleg` bit is set.
+Among bits 15:0 of `hideleg`, bits 10, 6, and 2 (corresponding to the
+standard VS-level interrupts) are writable, and bits 12, 9, 5, and 1
+(corresponding to the standard S-level interrupts) are read-only zeros.'''
+zh = '''
+已委托给 HS 模式的中断（使用 `mideleg`）在对应 `hideleg` 位置位时，进一步委托给 VS 模式。在 `hideleg` 的位 15:0 中，位 10、6 和 2（对应标准 VS 级中断）可写，位 12、9、5 和 1（对应标准 S 级中断）为只读零。'''

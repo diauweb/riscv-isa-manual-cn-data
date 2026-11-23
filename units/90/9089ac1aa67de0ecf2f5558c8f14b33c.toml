@@ -1,0 +1,11 @@
+unit_id = "9089ac1aa67de0ecf2f5558c8f14b33c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SD bit is read-only and is set when either the FS, VS, or XS bits
+encode a Dirty state (i.e., `SD=(FS==0b11 OR XS==0b11 OR VS==0b11)`). This
+allows privileged code to quickly determine when no additional context
+save is required beyond the integer register set and `pc`.'''
+zh = '''
+SD 位为只读，当 FS、VS 或 XS 位编码 Dirty 状态时被置位（即 `SD=(FS==0b11 OR XS==0b11 OR VS==0b11)`）。这使特权代码能快速确定何时除整数寄存器组和 `pc` 之外不需要额外的上下文保存。'''

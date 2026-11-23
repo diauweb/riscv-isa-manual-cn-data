@@ -1,0 +1,13 @@
+unit_id = "926f825f1e94eb2133146b54ad205965"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: A full set of floating-point narrowing conversions is not
+supported as single instructions. Conversions can be implemented in
+a sequence of halving steps.  Results are equivalently rounded and
+the same exception flags are raised if all but the last halving step
+use round-towards-odd (`vfncvt.rod.f.f.w`).  Only the final step
+should use the desired rounding mode.'''
+zh = '''
+NOTE: 不支持以单条指令实现完整的一组浮点窄化转换。转换可通过一系列减半步骤实现。如果除最后一步外的所有减半步骤都使用向奇数舍入（`vfncvt.rod.f.f.w`），则结果等效舍入并产生相同异常标志。仅最后一步宜使用所需舍入模式。'''

@@ -1,0 +1,14 @@
+unit_id = "2dcdbe0ee9c84af676608127c462edd9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mcycle_minstret_rst]#The counter registers have an arbitrary value after the hart is reset,
+and can be written with a given value.#
+[#norm:mcycle_minstret_wr]#Any CSR write takes effect after the writing instruction has otherwise completed.#
+[#norm:mcycle_shared]#The `mcycle` CSR may be
+shared between harts on the same core, in which case writes to `mcycle`
+will be visible to those harts.# The platform should provide a mechanism
+to indicate which harts share an `mcycle` CSR.'''
+zh = '''
+[#norm:mcycle_minstret_rst]##计数器寄存器在硬件线程复位后为任意值，且可写入给定值。##[#norm:mcycle_minstret_wr]##任何 CSR 写入在写入指令其他方面完成之后生效。##[#norm:mcycle_shared]##`mcycle` CSR 可在同一核心的硬件线程之间共享，此时对 `mcycle` 的写入将对那些硬件线程可见。##平台宜提供机制指示哪些硬件线程共享一个 `mcycle` CSR。'''

@@ -1,0 +1,14 @@
+unit_id = "62111613a535fbe3d7bc95c2e8888445"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The progress axiom ensures a minimal forward progress guarantee. It
+ensures that stores from one hart will eventually be made visible to
+other harts in the system in a finite amount of time, and that loads
+from other harts will eventually be able to read those values (or
+successors thereof). Without this rule, it would be legal, for example,
+for a spinlock to spin infinitely on a value, even with a store from
+another hart waiting to unlock the spinlock.'''
+zh = '''
+进展公理确保最小的向前进展保证。它确保来自一个硬件线程的存储最终将在有限时间内对系统中的其他硬件线程可见，并且来自其他硬件线程的加载最终能够读取那些值（或其后继值）。没有该规则，例如，即使另一个硬件线程的存储等待解锁自旋锁，自旋锁也可能合法地在某个值上无限自旋。'''

@@ -1,0 +1,12 @@
+unit_id = "ef4808ffe7baaaaa0679e71618c289cf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vsatp` register is considered _active_ for the purposes of the
+address-translation algorithm _unless_ the effective privilege mode is U
+and `hstatus`.HU=0. However, even when `vsatp` is active, VS-stage
+page-table entries’ A bits must not be set as a result of speculative
+execution, unless the effective privilege mode is VS or VU.'''
+zh = '''
+就地址转换算法而言，`vsatp` 寄存器被视为__活动__，除非有效特权模式为 U 且 `hstatus`.HU=0。然而，即使 `vsatp` 活动，VS 阶段页表项的 A 位也不得因推测执行而置位，除非有效特权模式为 VS 或 VU。'''

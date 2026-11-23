@@ -1,0 +1,36 @@
+unit_id = "013e2f2a661e804cae5fc507b2a2952e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trAtbBridgeImpl: ATB Bridge Implementation Register (trAtbBridgeBase+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trAtbBridgeVerMajor |ATB Bridge Component Major Version. Value 1 means the component is compliant with this document. |RO|1
+|7:4 |trAtbBridgeVerMinor |ATB Bridge Component Minor Version. Value 0 means the component is compliant with this document. |RO|0
+|11:8 |trAtbBridgeCompType |ATB Bridge Component Type (ATB Bridge) |RO|0xE
+|14:12 |trAtbBridgeAsyncFreq |
+*0:* Alignment synchronization (Async) packets disabled (may be the only choice for some protocols) +
+*1-7:* Different levels of alignment synchronization (bigger number, bigger distance). +
+Details should be defined the specification of each trace protocol.
+|WARL|<<Undef,Undef>>
+|23:15 |--|Reserved for future versions of this standard|--|0
+|31:24 |--|Reserved for vendor specific implementation details|--|<<SD,SD>>
+|==='''
+zh = '''
+.*寄存器：trAtbBridgeImpl：ATB 桥实现寄存器 (trAtbBridgeBase+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trAtbBridgeVerMajor |ATB 桥组件主版本。值 1 表示该组件符合本文档。|RO|1
+|7:4 |trAtbBridgeVerMinor |ATB 桥组件次版本。值 0 表示该组件符合本文档。|RO|0
+|11:8 |trAtbBridgeCompType |ATB 桥组件类型（ATB 桥）|RO|0xE
+|14:12 |trAtbBridgeAsyncFreq |
+*0:* 禁用对齐同步（Async）数据包（对某些协议可能是唯一选择） +
+*1-7:* 不同级别的对齐同步（数值越大，距离越大）。 +
+细节宜在每种跟踪协议的规范中定义。
+|WARL|<<Undef,Undef>>
+|23:15 |--|保留供本标准未来版本使用|--|0
+|31:24 |--|保留供供应商特定实现细节使用|--|<<SD,SD>>
+|==='''

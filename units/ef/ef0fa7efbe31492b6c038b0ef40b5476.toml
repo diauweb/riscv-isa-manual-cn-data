@@ -1,0 +1,15 @@
+unit_id = "ef0fa7efbe31492b6c038b0ef40b5476"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The instructions operate with an effective vector length,
+`evl`=NFIELDS*VLEN/EEW, regardless of current settings in csr:vtype[] and
+csr:vl[].  The usual property that no elements are written if csr:vstart[]
+{ge} csr:vl[] does not apply to these instructions.
+Similarly, the property that the instructions are reserved if csr:vstart[]
+exceeds the largest element index for the current csr:vtype[] setting
+does not apply.
+Instead, the instructions are reserved if csr:vstart[] {ge} `evl`.'''
+zh = '''
+无论 csr:vtype[] 和 csr:vl[] 中的当前设置如何，这些指令以有效向量长度 `evl`=NFIELDS*VLEN/EEW 操作。通常的性质——若 csr:vstart[] {ge} csr:vl[] 则不写入任何元素——不适用于这些指令。类似地，若 csr:vstart[] 超过当前 csr:vtype[] 设置的最大元素索引则指令保留的性质也不适用。相反，如果 csr:vstart[] {ge} `evl`，则这些指令为保留。'''

@@ -1,0 +1,56 @@
+unit_id = "8565abc32acca2a38e5b93f0a8b5aca0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- extlink:m[] Integer multiplication and division.
+- extlink:a[] Atomic instructions.
+- extlink:f[] Single-precision floating-point instructions.
+- extlink:d[] Double-precision floating-point instructions.
+- extlink:c[] Compressed instructions.
+- <<bits,**B**>> Bit-manipulation instructions.
+- extlink:zicsr[]  CSR instructions.  These are implied by presence of F.
+- extlink:zicntr[] Base counters and timers.
+- extlink:zihpm[] Hardware performance counters.
+- extlink:ziccif[] Main memory regions with both the coherence and
+  cacheability PMAs must support instruction fetch, and any instruction
+  fetches of naturally aligned power-of-2 sizes up to min(ILEN,XLEN)
+  (i.e., 32 bits for RVA23) are atomic.
+- extlink:ziccrse[] Main memory regions with both the coherence and cacheability
+  PMAs must support RsrvEventual.
+- extlink:ziccamoa[] Main memory regions with both the coherence and
+  cacheability PMAs must support AMOArithmetic.
+- extlink:zicclsm[] Misaligned loads and stores to main memory regions with both
+  the coherence and cacheability PMAs must be supported.
+- extlink:za64rs[] Reservation sets must be contiguous, naturally aligned, and a
+  maximum of 64 bytes.
+- extlink:zihintpause[] Pause hint.
+- extlink:zic64b[] Cache blocks must be 64 bytes in size, naturally aligned
+  in the address space.
+- extlink:zicbom[] Cache-Block Management Operations.
+- extlink:zicbop[] Cache-Block Prefetch Operations.
+- extlink:zicboz[] Cache-Block Zero Operations.
+- extlink:zfhmin[] Scalar half-precision floating-point transfer and convert.
+- <<zkt,**Zkt**>> Data-independent execution latency.'''
+zh = '''
+- extlink:m[] 整数乘法和除法。
+- extlink:a[] 原子指令。
+- extlink:f[] 单精度浮点指令。
+- extlink:d[] 双精度浮点指令。
+- extlink:c[] 压缩指令。
+- <<bits,**B**>> 位操作指令。
+- extlink:zicsr[]  CSR 指令。这些由 F 的存在隐含。
+- extlink:zicntr[] 基础计数器和定时器。
+- extlink:zihpm[] 硬件性能计数器。
+- extlink:ziccif[] 同时具有一致性和可缓存性 PMA 的主内存区域应支持取指，并且对自然对齐的、大小至多 min(ILEN,XLEN)（即对于 RVA23 为 32 位）的 2 的幂大小的任何取指都是原子的。
+- extlink:ziccrse[] 同时具有一致性和可缓存性 PMA 的主内存区域应支持 RsrvEventual。
+- extlink:ziccamoa[] 同时具有一致性和可缓存性 PMA 的主内存区域应支持 AMOArithmetic。
+- extlink:zicclsm[] 应支持对同时具有一致性和可缓存性 PMA 的主内存区域的非对齐加载和存储。
+- extlink:za64rs[] 保留集应连续、自然对齐，且最大为 64 字节。
+- extlink:zihintpause[] 暂停提示。
+- extlink:zic64b[] 缓存块的大小应为 64 字节，并在地址空间中自然对齐。
+- extlink:zicbom[] 缓存块管理操作。
+- extlink:zicbop[] 缓存块预取操作。
+- extlink:zicboz[] 缓存块清零操作。
+- extlink:zfhmin[] 标量半精度浮点传送和转换。
+- <<zkt,**Zkt**>> 数据无关执行时延。'''

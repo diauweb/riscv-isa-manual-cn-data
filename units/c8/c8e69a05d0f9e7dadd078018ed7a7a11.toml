@@ -1,0 +1,14 @@
+unit_id = "c8e69a05d0f9e7dadd078018ed7a7a11"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vslideup_op]#For `vslideup`, the value in `vl` specifies the maximum number of destination
+elements that are written.  The start index (_OFFSET_) for the
+destination can be either specified using an unsigned integer in the
+`x` register specified by `rs1`, or a 5-bit immediate, zero-extended to XLEN bits.
+If XLEN > SEW, _OFFSET_ is _not_ truncated to SEW bits.
+Destination elements _OFFSET_ through `vl`-1 are written if unmasked and
+if _OFFSET_ < `vl`.#'''
+zh = '''
+[#norm:vslideup_op]##对于 `vslideup`，`vl` 中的值指定要写入的目标元素最大数量。目标的起始索引（_OFFSET_）可使用 `rs1` 指定的 `x` 寄存器中的无符号整数指定，或使用零扩展到 XLEN 位的 5 位立即数指定。如果 XLEN > SEW，则 _OFFSET_ _不_ 截断到 SEW 位。如果未掩码且 _OFFSET_ < `vl`，则写入目标元素 _OFFSET_ 到 `vl`-1。##'''

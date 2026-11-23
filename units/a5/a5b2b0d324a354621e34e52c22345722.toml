@@ -1,0 +1,12 @@
+unit_id = "a5b2b0d324a354621e34e52c22345722"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ssp_op]#The csr:ssp[] CSR is an unprivileged read-write (URW) CSR that reads and writes
+`XLEN` low order bits of the shadow stack pointer.# [#norm:ssp_addr]#The CSR address is
+0x011.# [#norm:ssp_sz]#There is no high CSR defined as the csr:ssp[] is always as wide as the `XLEN`
+of the current privilege mode.# [#norm:ssp_field_1_0]#The bits 1:0 of csr:ssp[] are read-only zero. If the
+UXLEN or SXLEN may never be 32, then the bit 2 is also read-only zero.#'''
+zh = '''
+[#norm:ssp_op]##csr:ssp[] CSR 是一个非特权读写（URW）CSR，读写影子栈指针的 `XLEN` 个低位。## [#norm:ssp_addr]##该 CSR 地址为 0x011。## [#norm:ssp_sz]##由于 csr:ssp[] 始终与当前特权模式的 `XLEN` 一样宽，因此没有定义高位 CSR。## [#norm:ssp_field_1_0]##csr:ssp[] 的位 1:0 为只读零。如果 UXLEN 或 SXLEN 可能永远不为 32，则位 2 也为只读零。##'''

@@ -1,0 +1,18 @@
+unit_id = "d1fa271681c29198b9773c66a80a1560"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An unsuccessful insn:amocas.w/d/q[] may either not perform a memory write or may
+write back the old value loaded from memory. The memory write, if produced, does
+not have release semantics, regardless of `rl`.
+Irrespective of whether a write is actually performed, the instruction is
+treated as an AMO for the purposes of the RVWMO PPO rules.
+===='''
+zh = '''
+[NOTE]
+====
+不成功的 insn:amocas.w/d/q[] 可能不执行内存写，也可能写回从内存加载的旧值。若产生内存写，则该写不具有释放语义，而无论 `rl` 如何。无论是否实际执行写，就 RVWMO 的 PPO 规则而言，该指令都被视为 AMO。
+===='''

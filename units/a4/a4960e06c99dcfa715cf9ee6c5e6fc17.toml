@@ -1,0 +1,16 @@
+unit_id = "a4960e06c99dcfa715cf9ee6c5e6fc17"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hgatp_mode_bare]#<<norm:hgatp_mode_enc>> shows the encodings of the MODE field when
+HSXLEN=32 and HSXLEN=64. When MODE=Bare, guest physical addresses are
+equal to supervisor physical addresses, and there is no further memory
+protection for a guest virtual machine beyond the physical memory
+protection scheme described in <<pmp>>. In this
+case, software must write zero to the remaining fields in `hgatp`.#
+Attempting to select MODE=Bare with a nonzero pattern in the remaining fields
+has an UNSPECIFIED effect on the value that the remaining fields assume and an
+UNSPECIFIED effect on G-stage address translation and protection behavior.'''
+zh = '''
+[#norm:hgatp_mode_bare]##<<norm:hgatp_mode_enc>> 示出 HSXLEN=32 和 HSXLEN=64 时 MODE 字段的编码。##当 MODE=Bare 时，客户机物理地址等于监管物理地址，除 <<pmp>> 中描述的物理内存保护方案外，对客户机虚拟机没有进一步内存保护。在这种情况下，软件应向 `hgatp` 中其余字段写零。##尝试在其余字段为非零模式时选择 MODE=Bare，对剩余字段所采用的值产生未规定影响，并对 G 阶段地址转换与保护行为产生未规定影响。'''

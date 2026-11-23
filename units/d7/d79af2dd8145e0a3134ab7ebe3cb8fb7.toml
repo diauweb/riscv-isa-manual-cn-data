@@ -1,0 +1,18 @@
+unit_id = "d79af2dd8145e0a3134ab7ebe3cb8fb7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This is a new extension name for this feature. While the general
+RISC-V specifications are agnostic to cache block size, selecting a
+common cache block size simplifies the specification and use of the
+following cache-block extensions within the application processor
+profile. Software does not have to query a discovery mechanism and/or
+provide dynamic dispatch to the appropriate code. We choose 64 bytes
+at it is effectively an industry standard. Implementations may use
+longer cache blocks to reduce tag cost provided they use 64-byte
+sub-blocks to remain compatible. Implementations may use shorter cache
+blocks provided they sequence cache operations across the multiple
+cache blocks comprising a 64-byte block to remain compatible.'''
+zh = '''
+NOTE: 这是该特性的新扩展名称。尽管通用 RISC-V 规范不限定缓存块大小，但选择一种通用缓存块大小可简化应用处理器配置集中以下缓存块扩展的规定和使用。软件无须查询发现机制、向相应代码提供动态分派，或二者兼有。选择 64 字节是因为它实际上已成为行业标准。实现可使用更长的缓存块以降低标记开销，前提是使用 64 字节子块以保持兼容。实现可使用更短的缓存块，前提是对构成 64 字节块的多个缓存块中的缓存操作进行排序，以保持兼容。'''

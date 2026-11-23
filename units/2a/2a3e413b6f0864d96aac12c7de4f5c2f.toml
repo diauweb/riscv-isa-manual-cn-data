@@ -1,0 +1,11 @@
+unit_id = "2a3e413b6f0864d96aac12c7de4f5c2f"
+kind = "code"
+translatable = false
+en = '''
+....
+    li    t0, count=4, action=0, m=1
+    csrw  tdata1, t0    /* Write the trigger. */
+    lw    t0, 8(sp)     /* Restore t0, count decrements to 3 */
+    lw    sp, 0(sp)     /* Restore sp, count decrements to 2 */
+    mret                /* Return to program being debugged. count decrements to 1 */
+....'''

@@ -1,0 +1,130 @@
+unit_id = "71b328c19e83be73b8a1c64972218635"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V supervisor-level CSR addresses.
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Supervisor Trap Setup
+
+|`0x100` +
+`0x104` +
+`0x105` +
+`0x106`
+|SRW +
+SRW +
+SRW +
+SRW
+|`sstatus` +
+`sie` +
+`stvec` +
+`scounteren`
+|Supervisor status register. +
+Supervisor interrupt-enable register. +
+Supervisor trap handler base address. +
+Supervisor counter enable.
+
+4+^|Supervisor Configuration
+
+|`0x10A` |SRW |`senvcfg` |Supervisor environment configuration register.
+
+4+^|Supervisor Counter Setup
+
+|`0x120` |SRW |`scountinhibit` |Supervisor counter-inhibit register.
+
+4+^|Supervisor Trap Handling
+
+|`0x140` +
+`0x141` +
+`0x142` +
+`0x143` +
+`0x144`
+|SRW +
+SRW +
+SRW +
+SRW +
+SRW
+|`sscratch` +
+`sepc` +
+`scause` +
+`stval` +
+`sip`
+|Scratch register for supervisor trap handlers. +
+Supervisor exception program counter. +
+Supervisor trap cause. +
+Supervisor bad address or instruction. +
+Supervisor interrupt pending.
+
+4+^|Supervisor Protection and Translation
+
+|`0x180` |SRW |`satp` |Supervisor address translation and protection.
+
+4+^|Debug/Trace Registers
+
+|`0x5A8` |SRW |`scontext` |Supervisor-mode context register.
+|==='''
+zh = '''
+.当前已分配的 RISC-V 监管级 CSR 地址
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |权限 |名称 |描述
+4+^|监管级陷阱设置
+
+|`0x100` +
+`0x104` +
+`0x105` +
+`0x106`
+|SRW +
+SRW +
+SRW +
+SRW
+|`sstatus` +
+`sie` +
+`stvec` +
+`scounteren`
+|监管级状态寄存器。 +
+监管级中断使能寄存器。 +
+监管级陷阱处理程序基址。 +
+监管级计数器使能。
+
+4+^|监管级配置
+
+|`0x10A` |SRW |`senvcfg` |监管级环境配置寄存器。
+
+4+^|监管级计数器设置
+
+|`0x120` |SRW |`scountinhibit` |监管级计数器抑制寄存器。
+
+4+^|监管级陷阱处理
+
+|`0x140` +
+`0x141` +
+`0x142` +
+`0x143` +
+`0x144`
+|SRW +
+SRW +
+SRW +
+SRW +
+SRW
+|`sscratch` +
+`sepc` +
+`scause` +
+`stval` +
+`sip`
+|监管级陷阱处理程序的暂存寄存器。 +
+监管级异常程序计数器。 +
+监管级陷阱原因。 +
+监管级错误地址或指令。 +
+监管级中断挂起。
+
+4+^|监管级保护与转换
+
+|`0x180` |SRW |`satp` |监管级地址转换与保护。
+
+4+^|调试/跟踪寄存器
+
+|`0x5A8` |SRW |`scontext` |监管模式上下文寄存器。
+|==='''

@@ -1,0 +1,18 @@
+unit_id = "7bee1cf200d74bba63e449c60d85005a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-command} | {accessregister-aarsize}=2, {accessregister-transfer}, {accessregister-regno} = 0x1008 | Read `s0`
+| Read | {dm-data0} | - | Returns value that was in `s0`
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-command} | {accessregister-aarsize}=2, {accessregister-transfer}, {accessregister-regno} = 0x1008 | 读 `s0`
+| 读 | {dm-data0} | - | 返回原先在 `s0` 中的值。
+|==='''

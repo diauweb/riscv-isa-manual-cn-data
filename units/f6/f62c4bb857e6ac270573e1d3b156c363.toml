@@ -1,0 +1,12 @@
+unit_id = "f62c4bb857e6ac270573e1d3b156c363"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_e_acc]#The csr::[e] bit is read-only.#
+[#norm:misa_e_not_i]#Unless csr:misa[] is all read-only zero, the
+csr::[e] bit always reads as the complement of the csr::[i] bit.#
+If an execution environment supports both RV32E and RV32I, software can select
+RV32E by clearing the csr::[i] bit.'''
+zh = '''
+[#norm:misa_e_acc]##csr::[e] 位为只读。##[#norm:misa_e_not_i]##除非 csr:misa[] 全为只读零，否则 csr::[e] 位始终读取为 csr::[i] 位的补码。##若执行环境同时支持 RV32E 和 RV32I，软件可通过清除 csr::[i] 位来选择 RV32E。'''

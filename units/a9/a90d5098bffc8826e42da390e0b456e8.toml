@@ -1,0 +1,11 @@
+unit_id = "a90d5098bffc8826e42da390e0b456e8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This message is produced at the start or restart of trace. In such instances, the I-CNT field is required to be set to 0. However, under certain conditions
+associated with the SYNC parameter (e.g., `External Trace Trigger`), the I-CNT field may not be zero.
+Instead, it serves to pinpoint the precise Program Counter (PC) location at which the specified trigger or event occurred.
+Additionally, the F-ADDR field provides the complete PC address at the moment the trigger was activated.'''
+zh = '''
+此消息在跟踪开始或重启时产生。在此类情况下，I-CNT 字段应设置为 0。然而，在与 SYNC 参数相关的某些条件下（例如 `External Trace Trigger`），I-CNT 字段可能不为零。相反，它用于精确定位指定触发器或事件发生的精确程序计数器（PC）位置。此外，F-ADDR 字段提供触发器激活时刻的完整 PC 地址。'''

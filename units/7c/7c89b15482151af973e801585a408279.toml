@@ -1,0 +1,13 @@
+unit_id = "7c89b15482151af973e801585a408279"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The CSRRS (Atomic Read and Set Bits in CSR) instruction reads the value
+of the CSR, zero-extends the value to XLEN bits, and writes it to
+integer register _rd_. The initial value in integer register _rs1_ is
+treated as a bit mask that specifies bit positions to be set in the CSR.
+Any bit that is high in _rs1_ will cause the corresponding bit to be set
+in the CSR, if that CSR bit is writable.'''
+zh = '''
+CSRRS（原子读取并置位 CSR 中的位）指令读取 CSR 的值，将该值零扩展到 XLEN 位，并写入整数寄存器 __rd__。整数寄存器 __rs1__ 中的初始值被视为位掩码，指定要在 CSR 中置位的位位置。如果该 CSR 位可写，则 __rs1__ 中为高的任何位都将使 CSR 中的对应位置位。'''

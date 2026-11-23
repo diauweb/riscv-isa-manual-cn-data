@@ -1,0 +1,13 @@
+unit_id = "a7a9a3cd7c91158126bde74ee7cf33e0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.LQSP is an RV128C-only instruction that loads a 128-bit value from
+memory into register _rd_. It computes its effective address by adding
+the zero-extended offset, scaled by 16, to the stack pointer, `x2`. It
+expands to `lq rd, offset(x2)`. C.LQSP is only valid when
+_rd_&#x2260;x0 the code points with
+_rd_=x0 are reserved.'''
+zh = '''
+C.LQSP 是仅用于 RV128C 的指令，它从内存加载 128 位值到寄存器 _rd_。它通过将按 16 缩放的零扩展偏移加到栈指针 `x2` 上来计算有效地址。它展开为 `lq rd, offset(x2)`。C.LQSP 仅在 _rd_&#x2260;x0 时有效；_rd_=x0 的编码点保留。'''

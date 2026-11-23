@@ -1,0 +1,12 @@
+unit_id = "5eca85414fbe9f806861771e874f4a33"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_a_field_tor]#If TOR is selected, the associated address register forms the top of the
+address range, and the preceding PMP address register forms the bottom
+of the address range. If PMP entry __i__'s A field is set to
+TOR, the entry matches any address _y_ such that `pmpaddr~i-1~`{le}__y__<``pmpaddr~i~`` (irrespective of the value of `pmpcfg~i-1~`). If PMP entry 0's A field is set to TOR, zero is used for the lower bound, and so it matches
+any address `y<pmpaddr~0~`.#'''
+zh = '''
+[#norm:pmp_a_field_tor]##若选择 TOR，则关联地址寄存器构成地址范围的顶部，而前一个 PMP 地址寄存器构成地址范围的底部。若 PMP 条目 __i__ 的 A 字段设置为 TOR，则该条目匹配任何满足 `pmpaddr~i-1~`{le}__y__<``pmpaddr~i~`` 的地址 _y_（无论 `pmpcfg~i-1~` 的值如何）。若 PMP 条目 0 的 A 字段设置为 TOR，则下界使用零，因此它匹配任何地址 `y<pmpaddr~0~`。##'''

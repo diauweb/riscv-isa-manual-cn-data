@@ -1,0 +1,17 @@
+unit_id = "7aab09e312173d6ed2b10462a93dcfb2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If an implementation performs a doubleword load access atomically and the register file implements writeback for even/odd register pairs,
+the mentioned atomicity requirements are inherently fulfilled.
+Otherwise, an implementation either needs to delay the writeback until the write can be performed atomically,
+or order sequential writes to the registers to ensure the requirement above is satisfied.
+===='''
+zh = '''
+[NOTE]
+====
+如果实现以原子方式执行双字加载访问，且寄存器堆对偶数/奇数寄存器对实现写回，则上述原子性要求自然得到满足。否则，实现需要将写回延迟到能够以原子方式执行写入时，或者对寄存器的顺序写入进行排序，以确保满足上述要求。
+===='''

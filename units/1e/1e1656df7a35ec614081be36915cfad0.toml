@@ -1,0 +1,16 @@
+unit_id = "1e1656df7a35ec614081be36915cfad0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If only instruction trace is supported, the minimum width is 0 (i.e. the field is omitted)
+* If both instruction and data trace are supported, the minimum width is 1, encoded as
+- 0: Instruction trace packet
+- 1: Data trace packet
+* A width of 2 or more is permited for applications where packet types other than instruction and data trace are required.  Encoding for this case is application specific and not mandated by this standard.'''
+zh = '''
+* 如果仅支持指令跟踪，则最小宽度为 0（即省略该字段）
+* 如果同时支持指令跟踪和数据跟踪，则最小宽度为 1，编码如下
+- 0：指令跟踪数据包
+- 1：数据跟踪数据包
+* 对于需要指令跟踪和数据跟踪以外的数据包类型的应用，允许宽度为 2 或更大。此情况下的编码由应用定义，本标准不作强制规定。'''

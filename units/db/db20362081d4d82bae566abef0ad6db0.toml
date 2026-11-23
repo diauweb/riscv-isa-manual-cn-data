@@ -1,0 +1,14 @@
+unit_id = "db20362081d4d82bae566abef0ad6db0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This approach has the advantage of retaining the base ISA encoding for
+instructions holding a single operation, but has the disadvantage of
+requiring a new 28-bit or 42-bit encoding for operations within the VLIW
+instructions, and misaligned instruction fetch for larger groups. One
+simplification is to not allow VLIW instructions to straddle certain
+microarchitecturally significant boundaries (e.g., cache lines or
+virtual memory pages).'''
+zh = '''
+这种方法的优点是，对于仅包含单个操作的指令可保留基础 ISA 编码；缺点是，对于 VLIW 指令内的操作需要新的 28 位或 42 位编码，并且对于较大的组需要非对齐取指。一种简化方式是不允许 VLIW 指令跨越某些在微架构上具有重要意义的边界（如缓存行或虚拟内存页）。'''

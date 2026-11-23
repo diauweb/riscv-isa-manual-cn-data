@@ -1,0 +1,8 @@
+unit_id = "65fb5401f893d7e0ee8dbdbeed95ca0c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Since all fields defined in ``mseccfg`` as part of this extension are locked when set (``MMWP``/``MML``) or locked when cleared (``RLB``), software can't poll them for determining the presence of Smepmp. It is expected that BootROM will set ``mseccfg.MMWP`` and/or ``mseccfg.MML`` during early boot, before jumping to the firmware, so that the firmware will be able to determine the presence of Smepmp by reading ``mseccfg`` and checking the state of ``mseccfg.MMWP`` and ``mseccfg.MML``.'''
+zh = '''
+由于本扩展在 ``mseccfg`` 中定义的所有字段在置位时锁定（``MMWP``/``MML``）或在清零时锁定（``RLB``），软件无法通过轮询这些字段来确定 Smepmp 是否存在。预期 BootROM 将在早期启动期间、跳转到固件之前设置 ``mseccfg.MMWP`` 和/或 ``mseccfg.MML``，以便固件能够通过读取 ``mseccfg`` 并检查 ``mseccfg.MMWP`` 和 ``mseccfg.MML`` 的状态来确定 Smepmp 是否存在。'''

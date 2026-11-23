@@ -1,0 +1,14 @@
+unit_id = "74c6dd9149bc9fddef034b81073767ee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SPP bit indicates the privilege level at which a hart was executing
+before entering supervisor mode. When a trap is taken, SPP is set to 0
+if the trap originated from user mode, or 1 otherwise. When an SRET
+instruction (see <<otherpriv>>) is executed to
+return from the trap handler, the privilege level is set to user mode if
+the SPP bit is 0, or supervisor mode if the SPP bit is 1; SPP is then
+set to 0.'''
+zh = '''
+SPP 位指示硬件线程在进入监管模式之前执行时所处的特权级。当陷阱被接受时，若陷阱源自用户模式，则 SPP 置为 0，否则置为 1。当执行 SRET 指令（见 <<otherpriv>>）以从陷阱处理程序返回时，若 SPP 位为 0，则特权级设置为用户模式；若 SPP 位为 1，则设置为监管模式；随后 SPP 置为 0。'''

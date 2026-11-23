@@ -1,0 +1,30 @@
+unit_id = "f9b53cac0659be0f9c589509e544e299"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Note To Software Developers
+[NOTE,caption="SH"]
+====
+The following code snippet shows one middle round of the AES block decryption.
+`t0` and `t1` hold the current round state.
+`t2` and `t3` hold the next round state.
+
+  aes64dsm t2, t0, t1
+  aes64dsm t3, t1, t0
+
+Note the reversed register order of the second instruction.
+===='''
+zh = '''
+.致软件开发者的说明
+[NOTE,caption="SH"]
+====
+以下代码片段展示了 AES 分组解密的某一中间轮。
+`t0` 和 `t1` 保存当前轮状态。
+`t2` 和 `t3` 保存下一轮状态。
+
+  aes64dsm t2, t0, t1
+  aes64dsm t3, t1, t0
+
+请注意第二条指令的寄存器顺序是相反的。
+===='''

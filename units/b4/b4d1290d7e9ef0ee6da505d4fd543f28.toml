@@ -1,0 +1,33 @@
+unit_id = "b4d1290d7e9ef0ee6da505d4fd543f28"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The tracking of `ELP` and the requirement for a landing pad instruction
+at the target of indirect call and jump enables a processor implementation to
+significantly reduce or to prevent speculation to non-landing-pad instructions.
+Constraining speculation using this technique, greatly reduces the gadget space
+and increases the difficulty of using techniques such as branch-target-injection,
+also known as Spectre variant 2, which use speculative execution to leak data
+through side channels.
+
+The `LPAD` requires a 4-byte alignment to address the concatenation of two
+instructions `A` and `B` accidentally forming an unintended landing pad in the
+program. For example, consider a 32-bit instruction where the bytes 3 and 2 have
+a pattern of `?017h` (for example, the immediate fields of a `LUI`, `AUIPC`, or
+a `JAL` instruction), followed by a 16-bit or a 32-bit instruction. When
+patterns that can accidentally form a valid landing pad are detected, the
+assembler or linker can force instruction `A` to be aligned to a 4-byte
+boundary to force the unintended `LPAD` pattern to become misaligned, and thus
+not a valid landing pad, or may use an alternate register allocation to prevent
+the accidental landing pad.
+===='''
+zh = '''
+[NOTE]
+====
+对 `ELP` 的跟踪以及在间接调用和跳转目标处要求着陆垫指令，使处理器实现能够显著减少或阻止对非着陆垫指令的推测。使用该技术约束推测可极大减少 gadget 空间，并增加使用诸如分支目标注入（也称为 Spectre 变体 2）之类技术的难度，此类技术利用推测执行通过侧信道泄露数据。
+
+`LPAD` 要求 4 字节对齐，以应对指令 `A` 和 `B` 拼接意外在程序中形成非预期着陆垫的情况。例如，考虑一条 32 位指令，其字节 3 和字节 2 具有 `?017h` 的模式（例如 `LUI`、`AUIPC` 或 `JAL` 指令的立即数字段），后跟一条 16 位或 32 位指令。当检测到可能意外形成有效着陆垫的模式时，汇编器或链接器可强制指令 `A` 对齐到 4 字节边界，以强制非预期的 `LPAD` 模式变为非对齐，从而不是有效着陆垫，或者可使用替代的寄存器分配来防止意外着陆垫。
+===='''

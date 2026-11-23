@@ -1,0 +1,15 @@
+unit_id = "0a664d6aa7a793e2b841cc9b8bd39dc7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+`stval` is a *WARL* register that must be able to hold all valid virtual
+addresses and the value 0. It need not be capable of holding all
+possible invalid addresses. Prior to writing `stval`, implementations
+may convert an invalid address into some other invalid address that
+`stval` is capable of holding. If the feature to return the faulting
+instruction bits is implemented, `stval` must also be able to hold all
+values less than 2^_N_^, where _N_ is the smaller
+of SXLEN and ILEN.'''
+zh = '''
+`stval` 是一个 *WARL* 寄存器，应能保存所有有效的虚拟地址以及值 0。它不必能保存所有可能的无效地址。在写入 `stval` 之前，实现可将无效地址转换为 `stval` 能够保存的某个其他无效地址。若实现了返回出错指令位的功能，则 `stval` 还应能保存小于 2^_N_^ 的所有值，其中 _N_ 为 SXLEN 与 ILEN 中的较小者。'''

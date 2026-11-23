@@ -1,0 +1,14 @@
+unit_id = "24766af19b9bdafab80e318f771c29b5"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Decoder (in most cases) must have access to code which is running on device either by reading it from device or from a file containing the code (binary/hex/srec/ELF).
+* The trace collected by trace probes can be read and decoded while a trace is being captured (this is called trace streaming mode).
+** There is no guarantee that the last trace packet is completed until the trace is properly flushed and disabled.
+* Decoding of the trace should never affect code being traced.'''
+zh = '''
+* 解码器（在大多数情况下）必须能访问设备上运行的代码，方式可以是从设备读取代码，或从包含代码的文件（binary/hex/srec/ELF）读取。
+* 跟踪探针收集的跟踪可在捕获跟踪时读取并解码（称为跟踪流模式）。
+** 在跟踪被正确冲刷并禁用之前，不保证最后一个跟踪数据包已完成。
+* 解码跟踪绝不应影响被跟踪的代码。'''

@@ -1,0 +1,14 @@
+unit_id = "8b38c3ec4ffadbc884e41660554c64fb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: These instructions are intended to be used to save and restore
+vector registers when the type or length of the current contents of
+the vector register is not known, or where modifying `vl` and `vtype`
+would be costly. Examples include compiler register spills, vector
+function calls where values are passed in vector registers, interrupt
+handlers, and OS context switches.  Software can determine the number
+of bytes transferred by reading the `vlenb` register.'''
+zh = '''
+NOTE: 这些指令旨在用于在当前向量寄存器内容的类型或长度未知，或修改 `vl` 和 `vtype` 成本较高时保存和恢复向量寄存器。示例包括编译器寄存器溢出、在向量寄存器中传递值的向量函数调用、中断处理程序以及 OS 上下文切换。软件可通过读取 `vlenb` 寄存器确定传输的字节数。'''

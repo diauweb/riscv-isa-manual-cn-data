@@ -1,0 +1,17 @@
+unit_id = "b4325dd203cdaf6b413c3012dd72e478"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+New floating-point-to-integer and integer-to-floating-point conversion
+instructions are added. These instructions are defined analogously to
+the single-precision-to-integer and integer-to-single-precision
+conversion instructions. [#norm:fcvt-w-h_fcvt-l-h_op]#FCVT.W.H or FCVT.L.H converts a half-precision
+floating-point number to a signed 32-bit or 64-bit integer,
+respectively#. [#norm:fcvt-h-w_fcvt-h-l_op]#FCVT.H.W or FCVT.H.L converts a 32-bit or 64-bit signed
+integer, respectively, into a half-precision floating-point number#.
+[#norm:fcvt-wu-h_fcvt-lu-h_fcvt-h-wu_fcvt-h-lu_op]#FCVT.WU.H, FCVT.LU.H, FCVT.H.WU, and FCVT.H.LU variants convert to or
+from unsigned integer values#. [#norm:fcvt_long_half_rv64_only]#FCVT.L[U].H and FCVT.H.L[U] are RV64-only
+instructions.#'''
+zh = '''
+新增浮点到整数和整数到浮点的转换指令。这些指令的定义与单精度到整数和整数到单精度的转换指令类似。[#norm:fcvt-w-h_fcvt-l-h_op]##FCVT.W.H 或 FCVT.L.H 分别将半精度浮点数转换为有符号 32 位或 64 位整数##。[#norm:fcvt-h-w_fcvt-h-l_op]##FCVT.H.W 或 FCVT.H.L 分别将 32 位或 64 位有符号整数转换为半精度浮点数##。[#norm:fcvt-wu-h_fcvt-lu-h_fcvt-h-wu_fcvt-h-lu_op]##FCVT.WU.H、FCVT.LU.H、FCVT.H.WU 和 FCVT.H.LU 变体转换为无符号整数值或从无符号整数值转换##。[#norm:fcvt_long_half_rv64_only]##FCVT.L[U].H 和 FCVT.H.L[U] 是仅 RV64 指令##。'''

@@ -1,0 +1,41 @@
+unit_id = "477dde3fa4db944b97d15fdee07eb1fd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The platform should provide a means to determine the size and shape of
+the reservation set.
+
+A platform specification may constrain the size and shape of the
+reservation set.
+
+A store-conditional instruction to a scratch word of memory should be
+used to forcibly invalidate any existing load reservation:
+
+* during a preemptive context switch, and
+* if necessary when changing virtual to physical address mappings, such
+as when migrating pages that might contain an active reservation.
+
+The invalidation of a hart's reservation when it executes an LR or SC
+imply that a hart can only hold one reservation at a time, and that an
+SC can only pair with the most recent LR, and LR with the next following
+SC, in program order. This is a restriction to the Atomicity Axiom in
+<<rvwmo>> that ensures software runs correctly on
+expected common implementations that operate in this manner.
+===='''
+zh = '''
+[NOTE]
+====
+平台宜提供一种确定保留集大小和形状的方法。
+
+平台规范可约束保留集的大小和形状。
+
+宜使用对内存中暂存字的条件存储指令来强制使任何现有加载保留无效：
+
+* 在抢占式上下文切换期间，以及
+* 在更改虚拟到物理地址映射时（如有必要），例如在迁移可能包含活动保留的页时。
+
+硬件线程在执行 LR 或 SC 时使其保留无效，这意味着一个硬件线程一次只能持有一个保留，并且在程序顺序上 SC 只能与最近的 LR 配对，而 LR 只能与紧接着的下一个 SC 配对。这是对 <<rvwmo>> 中原子性公理的一项限制，可确保软件在按此方式运行的预期常见实现上正确运行。
+===='''

@@ -1,0 +1,12 @@
+unit_id = "320bbd2b172e74b07e5ccddccda0de67"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-ld_op]#insn:c.ld[] is an XLEN=64-only instruction that loads a 64-bit value from
+memory into register `_rd′_`. It computes an effective
+address by adding the _zero_-extended offset, scaled by 8, to the base
+address in register `_rs1′_`. It expands to
+insn:ld[rd′,offset(rs1′)].#'''
+zh = '''
+[#norm:c-ld_op]##insn:c.ld[] 是仅用于 XLEN=64 的指令，它从内存加载 64 位值到寄存器 `_rd′_`。它通过将按 8 缩放的__零__扩展偏移加到寄存器 `_rs1′_` 中的基址上来计算有效地址。它展开为 insn:ld[rd′,offset(rs1′)]。##'''

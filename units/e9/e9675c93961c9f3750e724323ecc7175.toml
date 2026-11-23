@@ -1,0 +1,17 @@
+unit_id = "e9675c93961c9f3750e724323ecc7175"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This section defines the "Zcmop" extension, which defines eight 16-bit MOP
+instructions named C.MOP.__n__, where __n__ is an odd integer between 1 and
+15, inclusive.  C.MOP.__n__ is encoded in the reserved encoding space
+corresponding to C.LUI x__n__, 0, as shown in <<tab:c-mop>>.
+Unlike the MOPs defined in the Zimop extension, the C.MOP.__n__ instructions
+are defined to _not_ write any register.
+Their encoding allows future extensions to define them to read register
+`x[__n__]`.'''
+zh = '''
+本节定义“Zcmop”扩展，它定义了八条 16 位 MOP 指令，名为 C.MOP.__n__，其中 __n__ 为 1 至 15（含）之间的奇数。C.MOP.__n__ 编码在对应 C.LUI x__n__, 0 的保留编码空间中，如 <<tab:c-mop>> 所示。
+与 Zimop 扩展中定义的 MOP 不同，C.MOP.__n__ 指令定义为**不**写入任何寄存器。
+其编码允许未来扩展将这些指令定义为读取寄存器 `x[__n__]`。'''

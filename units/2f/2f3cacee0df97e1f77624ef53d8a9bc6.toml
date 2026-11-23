@@ -1,0 +1,12 @@
+unit_id = "2f3cacee0df97e1f77624ef53d8a9bc6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When csr::[noise_test]=1 in csr:mnoise[], the csr:seed[] CSR must not return
+anything via `ES16`; it should be in `BIST` state unless the source
+is `DEAD`. When csr::[noise_test] is again disabled, the entropy source
+shall return from `BIST` via an appropriate zeroization and self-test
+mechanism.'''
+zh = '''
+当 csr:mnoise[] 中的 csr::[noise_test]=1 时，csr:seed[] CSR 不应通过 `ES16` 返回任何内容；除非源为 `DEAD`，否则它应处于 `BIST` 状态。当再次禁用 csr::[noise_test] 时，熵源应通过适当的清零和自检机制从 `BIST` 返回。'''

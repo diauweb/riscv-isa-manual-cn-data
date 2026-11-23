@@ -1,0 +1,172 @@
+unit_id = "144ed99bfb9c09b1bacd96bbe9fe588c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Values that may be automatically written to the trap instruction (`mtinst` or `htinst`) register on an exception trap.
+[float="center",align="center",cols="2,^,^,^,^",options="header"]
+|===
+<.>|Exception
+^.>|Zero
+|Transformed +
+Standard +
+Instruction
+^.>|Custom Value
+^.>|Pseudo-instruction Value
+|Instruction address misaligned |Yes |No |Yes |No
+|Instruction access fault +
+Illegal instruction +
+Breakpoint +
+Virtual instruction
+|Yes +
+Yes +
+Yes +
+Yes
+|No +
+No +
+No +
+No +
+|No +
+No +
+Yes +
+Yes
+|No +
+No +
+No +
+No
+|Load address misaligned +
+Load access fault +
+Store/AMO address misaligned +
+Store/AMO access fault
+|Yes +
+Yes +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes +
+Yes
+|No +
+No +
+No +
+No
+|Environment call |Yes |No |Yes |No
+|Instruction page fault +
+Load page fault +
+Store/AMO page fault
+|Yes +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+No +
+No
+|Instruction guest-page fault +
+Load guest-page fault +
+Store/AMO guest-page fault
+|Yes +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes
+|==='''
+zh = '''
+.在异常陷阱时可自动写入陷阱指令（`mtinst` 或 `htinst`）寄存器的值
+[float="center",align="center",cols="2,^,^,^,^",options="header"]
+|===
+<.>|异常
+^.>|零
+|变换后的 +
+标准 +
+指令
+^.>|自定义值
+^.>|伪指令值
+|指令地址非对齐 |是 |否 |是 |否
+|指令访问故障 +
+非法指令 +
+断点 +
+虚拟指令
+|是 +
+是 +
+是 +
+是
+|否 +
+否 +
+否 +
+否 +
+|否 +
+否 +
+是 +
+是
+|否 +
+否 +
+否 +
+否
+|加载地址非对齐 +
+加载访问故障 +
+存储/AMO 地址非对齐 +
+存储/AMO 访问故障
+|是 +
+是 +
+是 +
+是
+|是 +
+是 +
+是 +
+是
+|是 +
+是 +
+是 +
+是
+|否 +
+否 +
+否 +
+否
+|环境调用 |是 |否 |是 |否
+|指令页错误 +
+加载页错误 +
+存储/AMO 页错误
+|是 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+否 +
+否
+|指令客户机页错误 +
+加载客户机页错误 +
+存储/AMO 客户机页错误
+|是 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+是 +
+是
+|是 +
+是 +
+是
+|==='''

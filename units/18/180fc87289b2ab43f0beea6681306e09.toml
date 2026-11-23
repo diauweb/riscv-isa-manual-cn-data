@@ -1,0 +1,20 @@
+unit_id = "180fc87289b2ab43f0beea6681306e09"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The above algorithm reads back {csr-tselect} so that implementations which have
+2^n^ triggers only need to implement _n_ bits
+of {csr-tselect}.
+
+The algorithm checks {csr-tinfo} and {tdata1-type} in case the implementation has _m_ bits of {csr-tselect} but fewer than 2^m^ triggers.
+===='''
+zh = '''
+[NOTE]
+====
+上述算法回读 {csr-tselect}，以便具有 2^n^ 个触发器的实现只需实现 {csr-tselect} 的 _n_ 位。
+
+该算法检查 {csr-tinfo} 和 {tdata1-type}，以防实现具有 _m_ 位 {csr-tselect} 但触发器少于 2^m^ 个。
+===='''

@@ -1,0 +1,28 @@
+unit_id = "fd2ab39845323899761c36bf64e41487"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For many applications, the choice of page size has a substantial
+performance impact. A large page size increases TLB reach and loosens
+the associativity constraints on virtually indexed, physically tagged
+caches. At the same time, large pages exacerbate internal fragmentation,
+wasting physical memory and possibly cache capacity.
+
+After much deliberation, we have settled on a conventional page size of
+4 KiB for both RV32 and RV64. We expect this decision to ease the
+porting of low-level runtime software and device drivers. The TLB reach
+problem is ameliorated by transparent superpage support in modern
+operating systems. cite:[transparent-superpages] Additionally, multi-level TLB hierarchies are quite
+inexpensive relative to the multi-level cache hierarchies whose address
+space they map.
+===='''
+zh = '''
+[NOTE]
+====
+对于许多应用而言，页大小的选择会对性能产生重大影响。较大的页大小可增大 TLB 覆盖范围，并放宽对虚拟索引、物理标记的高速缓存的相联度约束。同时，大页会加剧内部碎片，浪费物理内存，并可能浪费缓存容量。
+
+经过深思熟虑，我们为 RV32 和 RV64 都选定了 4 KiB 的常规页大小。预期这一决定将便于移植低级运行时软件和设备驱动程序。现代操作系统中的透明超级页支持可缓解 TLB 覆盖范围问题。cite:[transparent-superpages] 此外，相对于其映射地址空间的多级缓存层次结构，多级 TLB 层次结构的成本相当低。
+===='''

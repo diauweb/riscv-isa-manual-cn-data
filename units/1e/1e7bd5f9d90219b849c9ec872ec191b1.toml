@@ -1,0 +1,15 @@
+unit_id = "1e7bd5f9d90219b849c9ec872ec191b1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When V=1, a virtual-instruction exception (code 22) is normally raised
+instead of an illegal-instruction exception if the attempted instruction
+is _HS-qualified_ but is prevented from executing when V=1 either due to
+insufficient privilege or because the instruction is expressly disabled
+by a supervisor or hypervisor CSR such as `scounteren` or `hcounteren`.
+An instruction is _HS-qualified_ if it would be valid to execute in
+HS-mode (for some values of the instruction's register operands),
+assuming fields TSR and TVM of CSR `mstatus` are both zero.'''
+zh = '''
+当 V=1 时，若所尝试的指令属于__HS 限定__但在 V=1 时因特权不足，或因该指令被 `scounteren` 或 `hcounteren` 等监管模式或虚拟机监控器 CSR 明确禁用而被阻止执行，则通常会引发虚拟指令异常（代码 22），而非非法指令异常。若一条指令在 HS 模式中执行是有效的（对于该指令寄存器操作数的某些取值），并假定 CSR `mstatus` 的 TSR 和 TVM 字段均为零，则该指令属于__HS 限定__。'''

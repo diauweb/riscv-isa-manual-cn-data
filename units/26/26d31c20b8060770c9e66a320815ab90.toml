@@ -1,0 +1,10 @@
+unit_id = "26d31c20b8060770c9e66a320815ab90"
+kind = "code"
+translatable = false
+en = '''
+----
+# Example multi-word arithmetic sequence, accumulating into v4
+vmadc.vvm v1, v4, v8, v0  # Get carry into temp register v1
+vadc.vvm v4, v4, v8, v0   # Calc new sum
+vmmv.m v0, v1             # Move temp carry into v0 for next word
+----'''

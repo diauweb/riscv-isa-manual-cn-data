@@ -1,0 +1,15 @@
+unit_id = "30b8696233df05fb42ae53566f66be8c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This chapter describes the machine-level operations available in
+[#norm:M_highest_priv_mode]#machine-mode (M-mode), which is the highest privilege mode in a RISC-V
+hart.# [#norm:M-mode_at_rst1]#M-mode is used for low-level access to a hardware platform and
+is the first mode entered at reset.# M-mode can also be used to implement
+features that are too difficult or expensive to implement in hardware
+directly. The RISC-V machine-level ISA contains a common core that is
+extended depending on which other privilege levels are supported and
+other details of the hardware implementation.'''
+zh = '''
+本章介绍机器模式（M 模式）中可用的机器级操作，M 模式是 RISC-V 硬件线程中特权级最高的模式。[#norm:M-mode_at_rst1]##M 模式用于对硬件平台进行低层访问，且是复位后进入的第一个模式。##M 模式还可用于实现那些直接在硬件中实现过于困难或成本过高的特性。RISC-V 机器级 ISA 包含一个公共核心，该核心会根据所支持的其他特权级以及硬件实现的其他细节进行扩展。'''

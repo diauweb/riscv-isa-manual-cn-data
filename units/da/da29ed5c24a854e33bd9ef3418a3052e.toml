@@ -1,0 +1,16 @@
+unit_id = "da29ed5c24a854e33bd9ef3418a3052e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.LUI loads the non-zero 6-bit immediate field into bits 17–12 of the
+destination register, clears the bottom 12 bits, and sign-extends bit 17
+into all higher bits of the destination. C.LUI expands into
+`lui rd, imm`. C.LUI is valid only when
+_rd_≠{`x0`,`x2`},
+and when the immediate is not equal to zero. The code points with
+_imm_=0 are reserved; the remaining code points with _rd_=`x0` are
+HINTs; and the remaining code points with _rd_=`x2` correspond to the
+C.ADDI16SP instruction.'''
+zh = '''
+C.LUI 将非零的 6 位立即数字段加载到目标寄存器的位 17–12 中，清零低 12 位，并将位 17 符号扩展到目标的所有更高位。C.LUI 展开为 `lui rd, imm`。C.LUI 仅在 _rd_≠{`x0`,`x2`} 且立即数不等于零时有效。_imm_=0 的编码点保留；_rd_=`x0` 的其余编码点为 HINT；_rd_=`x2` 的其余编码点对应于 C.ADDI16SP 指令。'''

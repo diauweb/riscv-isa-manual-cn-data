@@ -1,0 +1,243 @@
+unit_id = "28a54fbb3e06d0a2c443ebadf5c22a24"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A common operation performed on stacks is to unwind them to support constructs
+like `setjmp`/`longjmp`, C++ exception handling, etc. A program that uses shadow
+stacks must unwind the shadow stack in addition to the stack used to store data.
+The unwind function must verify that it does not accidentally unwind past the
+bounds of the shadow stack. Shadow stacks are expected to be bounded on each end
+using guard pages. A guard page for a stack is a page that is not accessible by
+the process that owns the stack. To detect if the unwind occurs past the bounds
+of the shadow stack, the unwind may be done in maximal increments of 4 KiB,
+testing whether the `ssp` is still pointing to a shadow stack page or has
+unwound into the guard page. The following examples illustrate the use of shadow
+stack instructions to unwind a shadow stack. This example assumes that the
+`setjmp` function itself does not push on to the shadow stack (being a leaf
+function, it is not required to).
+
+[source,c]
+----
+setjmp() {
+    :
+    :
+    // read and save the shadow stack pointer to jmp_buf
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    jmp_buf->saved_ssp = cur_ssp;
+    :
+    :
+}
+longjmp() {
+    :
+    // Read current shadow stack pointer and
+    // compute number of call frames to unwind
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    // Skip the unwind if backward-edge CFI not active
+    asm("beqz %0, back_cfi_not_active" : "=r"(cur_ssp):);
+    // Unwind the frames in a loop
+    while ( jmp_buf->saved_ssp > cur_ssp ) {
+        // advance by a maximum of 4K at a time to avoid
+        // unwinding past bounds of the shadow stack
+        cur_ssp = ( (jmp_buf->saved_ssp - cur_ssp) >= 4096 ) ?
+                  (cur_ssp + 4096) : jmp_buf->saved_ssp;
+        asm("csrw ssp, %0" : :  "r" (cur_ssp));
+        // Test if unwound past the shadow stack bounds
+        asm("sspush x5");
+        asm("sspopchk x5");
+    }
+back_cfi_not_active:
+    :
+}
+----
+
+<<<
+
+[[SSAMOSWAP]]
+==== Atomic Swap from a Shadow Stack Location
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits:  7, name: 'opcode', attr:'AMO'},
+  {bits:  5, name: 'rd', attr:'dest'},
+  {bits:  3, name: 'funct3', attr:['010', '011']},
+  {bits:  5, name: 'rs1', attr:'addr'},
+  {bits:  5, name: 'rs2', attr:'src'},
+  {bits:  1, name: 'rl'},
+  {bits:  1, name: 'aq'},
+  {bits:  5, name: '01001', attr:['SSAMOSWAP.W', 'SSAMOSWAP.D']},
+], config:{lanes: 1, hspace:1024}}
+....
+
+For RV32, `SSAMOSWAP.W` atomically loads a 32-bit data value from address of a
+shadow stack location in `rs1`, puts the loaded value into register `rd`, and
+stores the 32-bit value held in `rs2` to the original address in `rs1`.
+`SSAMOSWAP.D` (RV64 only) is similar to `SSAMOSWAP.W` but operates on 64-bit
+data values.
+
+.`SSAMOSWAP.W` for RV32 and `SSAMOSWAP.D` (RV64 only) operation
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      X(rd) = mem[X(rs1)]
+      mem[X(rs1)] = X(rs2)
+  endif
+----
+
+For RV64, `SSAMOSWAP.W` atomically loads a 32-bit data value from address of a
+shadow stack location in `rs1`, sign-extends the loaded value and puts it in
+`rd`, and stores the lower 32 bits of the value held in `rs2` to the original
+address in `rs1`.
+
+.`SSAMOSWAP.W` for RV64
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      temp[31:0] = mem[X(rs1)]
+      X(rd) = SignExtend(temp[31:0])
+      mem[X(rs1)] = X(rs2)[31:0]
+  endif
+----
+
+Just as for AMOs in the A extension, `SSAMOSWAP.W/D` requires that the address
+held in `rs1` be naturally aligned to the size of the operand (i.e., eight-byte
+aligned for __doublewords__, and four-byte aligned for __words__). The same
+exception options apply if the address is not naturally aligned.
+
+Just as for AMOs in the A extension, `SSAMOSWAP.W/D` optionally provides release
+consistency semantics, using the `aq` and `rl` bits, to help implement
+multiprocessor synchronization. An `SSAMOSWAP.W/D` operation has acquire
+semantics if `aq=1` and release semantics if `rl=1`.
+
+[NOTE]
+===='''
+zh = '''
+[NOTE]
+====
+栈上执行的一项常见操作是展开栈，以支持 `setjmp`/`longjmp`、C++ 异常处理等构造。使用影子栈的程序除展开用于存储数据的栈之外，还必须展开影子栈。展开函数必须验证它不会意外展开越过影子栈的边界。影子栈的每一端预期由保护页定界。栈的保护页是该栈所属进程不可访问的页。为检测展开是否越过影子栈边界，展开可按最大 4 KiB 的增量进行，测试 `ssp` 是否仍指向影子栈页、或已展开进入保护页。以下示例说明使用影子栈指令展开影子栈。本示例假定 `setjmp` 函数自身不压入影子栈（作为叶子函数，不要求压入）。
+
+[source,c]
+----
+setjmp() {
+    :
+    :
+    // read and save the shadow stack pointer to jmp_buf
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    jmp_buf->saved_ssp = cur_ssp;
+    :
+    :
+}
+longjmp() {
+    :
+    // Read current shadow stack pointer and
+    // compute number of call frames to unwind
+    asm("ssrdp %0" : "=r"(cur_ssp):);
+    // Skip the unwind if backward-edge CFI not active
+    asm("beqz %0, back_cfi_not_active" : "=r"(cur_ssp):);
+    // Unwind the frames in a loop
+    while ( jmp_buf->saved_ssp > cur_ssp ) {
+        // advance by a maximum of 4K at a time to avoid
+        // unwinding past bounds of the shadow stack
+        cur_ssp = ( (jmp_buf->saved_ssp - cur_ssp) >= 4096 ) ?
+                  (cur_ssp + 4096) : jmp_buf->saved_ssp;
+        asm("csrw ssp, %0" : :  "r" (cur_ssp));
+        // Test if unwound past the shadow stack bounds
+        asm("sspush x5");
+        asm("sspopchk x5");
+    }
+back_cfi_not_active:
+    :
+}
+----
+
+<<<
+
+[[SSAMOSWAP]]
+==== 从影子栈位置原子交换
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits:  7, name: 'opcode', attr:'AMO'},
+  {bits:  5, name: 'rd', attr:'dest'},
+  {bits:  3, name: 'funct3', attr:['010', '011']},
+  {bits:  5, name: 'rs1', attr:'addr'},
+  {bits:  5, name: 'rs2', attr:'src'},
+  {bits:  1, name: 'rl'},
+  {bits:  1, name: 'aq'},
+  {bits:  5, name: '01001', attr:['SSAMOSWAP.W', 'SSAMOSWAP.D']},
+], config:{lanes: 1, hspace:1024}}
+....
+
+对于 RV32，`SSAMOSWAP.W` 从 `rs1` 中的影子栈位置的地址原子地加载一个 32 位数据值，将加载的值放入寄存器 `rd`，并将 `rs2` 中持有的 32 位值存储到 `rs1` 中的原地址。`SSAMOSWAP.D`（仅 RV64）与 `SSAMOSWAP.W` 类似，但操作 64 位数据值。
+
+.`SSAMOSWAP.W`（RV32）与 `SSAMOSWAP.D`（仅 RV64）的操作
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      X(rd) = mem[X(rs1)]
+      mem[X(rs1)] = X(rs2)
+  endif
+----
+
+对于 RV64，`SSAMOSWAP.W` 从 `rs1` 中的影子栈位置的地址原子地加载一个 32 位数据值，对加载的值进行符号扩展并放入 `rd`，并将 `rs2` 中持有值的低 32 位存储到 `rs1` 中的原地址。
+
+.RV64 的 `SSAMOSWAP.W`
+[listing]
+----
+  if privilege_mode != M && menvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if S-mode not implemented
+      raise illegal-instruction exception
+  else if privilege_mode == U && senvcfg.SSE == 0
+      raise illegal-instruction exception
+  else if privilege_mode == VS && henvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else if privilege_mode == VU && senvcfg.SSE == 0
+      raise virtual-instruction  exception
+  else
+      temp[31:0] = mem[X(rs1)]
+      X(rd) = SignExtend(temp[31:0])
+      mem[X(rs1)] = X(rs2)[31:0]
+  endif
+----
+
+正如 A 扩展中的 AMO 一样，`SSAMOSWAP.W/D` 要求 `rs1` 中持有的地址自然地按操作数大小对齐（即，__双字__为 8 字节对齐，__字__为 4 字节对齐）。若地址未自然对齐，则适用相同的异常选项。
+
+正如 A 扩展中的 AMO 一样，`SSAMOSWAP.W/D` 可选地使用 `aq` 和 `rl` 位提供释放一致性语义，以帮助实现多处理器同步。若 `aq=1`，`SSAMOSWAP.W/D` 操作具有获取语义；若 `rl=1`，则具有释放语义。
+
+[NOTE]
+===='''

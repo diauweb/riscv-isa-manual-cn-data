@@ -1,0 +1,19 @@
+unit_id = "afdd5888365bbf876e22b850ad6d33e3"
+kind = "code"
+translatable = false
+en = '''
+----
+    # Vector unit-stride loads and stores
+
+    # vd destination, rs1 base address, vm is mask encoding (v0.t or <missing>)
+    vle8.v    vd, (rs1), vm  #    8-bit unit-stride load
+    vle16.v   vd, (rs1), vm  #   16-bit unit-stride load
+    vle32.v   vd, (rs1), vm  #   32-bit unit-stride load
+    vle64.v   vd, (rs1), vm  #   64-bit unit-stride load
+
+    # vs3 store data, rs1 base address, vm is mask encoding (v0.t or <missing>)
+    vse8.v    vs3, (rs1), vm  #    8-bit unit-stride store
+    vse16.v   vs3, (rs1), vm  #   16-bit unit-stride store
+    vse32.v   vs3, (rs1), vm  #   32-bit unit-stride store
+    vse64.v   vs3, (rs1), vm  #   64-bit unit-stride store
+----'''

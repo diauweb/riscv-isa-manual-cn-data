@@ -1,0 +1,14 @@
+unit_id = "a96da926777f31c7db63266bf4b5566d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that 128 bits of estimated input min-entropy does not yield 128 bits of
+conditioned, full entropy in SP 800-90B/C evaluation. Instead, the
+implication is that every 256-bit sequence should have min-entropy of at
+least 128+64 = 192 bits, as discussed in SP 800-90C cite:[BaKeRo:21];
+the likelihood of successfully "guessing" an individual 256-bit output
+sequence should not be higher than 2^-192^ even with (almost)
+unconstrained amount of entropy source data and computational power.'''
+zh = '''
+请注意，在 SP 800-90B/C 评估中，128 位估计输入最小熵并不会产生 128 位调节后的完全熵。相反，其含义是每个 256 位序列的最小熵宜至少为 128+64 = 192 位，如 SP 800-90C cite:[BaKeRo:21] 所述；即使拥有（几乎）不受限的熵源数据和计算能力，成功“猜出”某个 256 位输出序列的可能性也不宜高于 2^-192^。'''

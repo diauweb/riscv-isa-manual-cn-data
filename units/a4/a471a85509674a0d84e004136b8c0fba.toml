@@ -1,0 +1,20 @@
+unit_id = "a471a85509674a0d84e004136b8c0fba"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The ext:zicfilp[] must be explicitly enabled for use at each privilege mode.
+
+Programs compiled with the insn:lpad[] instruction continue to function correctly,
+but without forward-edge CFI protection, when the ext:zicfilp[] extension is not
+implemented or is not enabled.
+===='''
+zh = '''
+[NOTE]
+====
+必须在每个特权模式显式使能 ext:zicfilp[] 才能使用。
+
+当未实现 ext:zicfilp[] 扩展或未使能该扩展时，使用 insn:lpad[] 指令编译的程序仍能正确运行，但没有前向边 CFI 保护。
+===='''

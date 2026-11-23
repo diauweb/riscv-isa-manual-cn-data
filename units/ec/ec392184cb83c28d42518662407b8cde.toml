@@ -1,0 +1,102 @@
+unit_id = "ec392184cb83c28d42518662407b8cde"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_For the ext:zicbom[], ext:zicboz[], and ext:zicbop[] extensions, this specification recommends
+the following common trigger module behaviors:_
+
+* Type 6 address match triggers, i.e. csr:tdata1[type]=6 and csr:mcontrol6[select]=0,
+  should be supported
+
+* Type 2 address/data match triggers, i.e. csr:tdata1[type]=2, should be
+  unsupported
+
+* The size of a memory access equals the size of the cache block accessed, and
+  the compare values follow from the addresses of the NAPOT memory region
+  corresponding to the cache block containing the effective address
+
+* Unless an encoding for a cache block is added to the csr:mcontrol6[size] field,
+  an address trigger should only match a memory access from a CBO instruction if
+  csr:mcontrol6[size]=0
+
+_If the ext:zicbom[] extension is implemented, this specification recommends the
+following additional trigger module behaviors:_
+
+* Implementing address match triggers should be optional
+
+* Type 6 data match triggers, i.e. csr:tdata1[type]=6 and csr:mcontrol6[select]=1,
+  should be unsupported
+
+* Memory accesses are considered to be stores, i.e. an address trigger matches
+  only if csr:mcontrol6[store]=1
+
+_If the ext:zicboz extension is implemented, this specification recommends the
+following additional trigger module behaviors:_
+
+* Implementing address match triggers should be mandatory
+
+* Type 6 data match triggers, i.e. csr:tdata1[type]=6 and csr:mcontrol6[select]=1,
+  should be supported, and implementing these triggers should be optional
+
+* Memory accesses are considered to be stores, i.e. an address trigger matches
+  only if csr:mcontrol6[store]=1
+
+_If the ext:zicbop[] extension is implemented, this specification recommends the
+following additional trigger module behaviors:_
+
+* Implementing address match triggers should be optional
+
+* Type 6 data match triggers, i.e. csr:tdata1[type]=6 and csr:mcontrol6[select]=1,
+  should be unsupported
+
+* Memory accesses may be considered to be loads or stores depending on the
+  implementation, i.e. whether an address trigger matches on these instructions
+  when csr:mcontrol6[load]=1 or csr:mcontrol6[store]=1 is _implementation-specific_
+
+_This specification also recommends that the behavior of trigger modules with
+respect to the ext:zicboz[] extension should be defined in version 1.0 of the debug
+architecture specification. The behavior of trigger modules with respect to the
+ext:zicbom[] and ext:zicbop[] extensions is expected to be defined in future extensions._
+===='''
+zh = '''
+[NOTE]
+====
+__对于 ext:zicbom[]、ext:zicboz[] 和 ext:zicbop[] 扩展，本规范建议以下常见触发器模块行为：__
+
+* 宜支持类型 6 地址匹配触发器，即 csr:tdata1[type]=6 且 csr:mcontrol6[select]=0
+
+* 不宜支持类型 2 地址/数据匹配触发器，即 csr:tdata1[type]=2
+
+* 内存访问大小等于所访问缓存块的大小，比较值由与包含有效地址的缓存块对应的 NAPOT 内存区域地址得出
+
+* 除非向 csr:mcontrol6[size] 字段添加了缓存块编码，否则地址触发器宜仅在 csr:mcontrol6[size]=0 时匹配来自 CBO 指令的内存访问
+
+__如果实现了 ext:zicbom[] 扩展，本规范建议以下额外的触发器模块行为：__
+
+* 实现地址匹配触发器宜为可选的
+
+* 不宜支持类型 6 数据匹配触发器，即 csr:tdata1[type]=6 且 csr:mcontrol6[select]=1
+
+* 内存访问被视为存储，即地址触发器仅在 csr:mcontrol6[store]=1 时匹配
+
+__如果实现了 ext:zicboz 扩展，本规范建议以下额外的触发器模块行为：__
+
+* 实现地址匹配触发器宜为强制性的
+
+* 宜支持类型 6 数据匹配触发器，即 csr:tdata1[type]=6 且 csr:mcontrol6[select]=1，且实现这些触发器宜为可选的
+
+* 内存访问被视为存储，即地址触发器仅在 csr:mcontrol6[store]=1 时匹配
+
+__如果实现了 ext:zicbop[] 扩展，本规范建议以下额外的触发器模块行为：__
+
+* 实现地址匹配触发器宜为可选的
+
+* 不宜支持类型 6 数据匹配触发器，即 csr:tdata1[type]=6 且 csr:mcontrol6[select]=1
+
+* 内存访问可被视为加载或存储，取决于实现，即地址触发器在 csr:mcontrol6[load]=1 或 csr:mcontrol6[store]=1 时是否匹配这些指令是__实现特定的__
+
+__本规范还建议，触发器模块相对 ext:zicboz[] 扩展的行为宜在调试架构规范 1.0 版中定义。触发器模块相对 ext:zicbom[] 和 ext:zicbop[] 扩展的行为预期将在未来扩展中定义。__
+===='''

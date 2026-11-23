@@ -1,0 +1,25 @@
+unit_id = "2263fe54f7d0b8dfd39f26249baa4737"
+kind = "diagram"
+translatable = false
+en = '''
+.Multi-hart trace: Three harts, three Encoders, single Funnel and single Sink/Bridge
+["ditaa",shadows=false, separation=false, fontsize: 12]
+....
++-----------+   +---------+
+| Hart with |   |  Trace  |
+| Ingress   |==>| Encoder |---+
+|  Port     |   |         |   |
++-----------+   +---------+   |
+                              |
++-----------+   +---------+   |   +--------+     +-------------+
+| Hart with |   |  Trace  |   +-->| Trace  |     | Trace Sink  |
+| Ingress   |==>| Encoder |------>| Funnel |---->|    or       |
+|  Port     |   |         |   +-->|        |     | ATB Bridge  |
++-----------+   +---------+   |   +--------+     +-------------+
+                              |
++-----------+   +---------+   |
+| Hart with |   |  Trace  |   |
+| Ingress   |==>| Encoder |---+
+|  Port     |   |         |
++-----------+   +---------+
+....'''

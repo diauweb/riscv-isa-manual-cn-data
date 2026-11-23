@@ -1,0 +1,24 @@
+unit_id = "064e848feae3a8a68908b04788587eae"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_As described in <<Cycle Counting>>,
+when CCV=1, the CC field provides the elapsed cycles since the prior CTR
+entry was recorded. This introduces implementation challenges when
+RASEMU=1 because, for each recorded call, there may have been several
+recorded calls (and returns which “popped” them) since the prior
+remaining call entry was recorded (see <<RAS (Return Address Stack) Emulation Mode>>). The implication is that returns that
+pop a call entry not only do not reset the cycle counter, but instead
+add the CC field from the popped entry to the counter. For simplicity,
+an implementation may opt to record CCV=0 for all calls, or those whose parent call was popped, when RASEMU=1._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_如 <<Cycle Counting>> 所述，当 CCV=1 时，CC 字段提供自上一 CTR 表项被记录以来经过的周期。当 RASEMU=1 时，这会引入实现挑战，因为对于每个记录的调用，自上一剩余调用表项被记录以来可能已有多个记录的调用（以及将其“弹出”的返回）（见 <<RAS (Return Address Stack) Emulation Mode>>）。其含义是，弹出调用表项的返回不仅不重置周期计数器，反而将被弹出表项中的 CC 字段加到计数器上。为简单起见，当 RASEMU=1 时，实现可选择为所有调用或父调用已被弹出的那些调用记录 CCV=0。_
+===='''

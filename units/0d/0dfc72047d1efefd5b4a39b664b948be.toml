@@ -1,0 +1,19 @@
+unit_id = "0dfc72047d1efefd5b4a39b664b948be"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The primary reason to not require an ext:zca[] HINT to expand to an RVI HINT
+is that HINTs are unlikely to be compressible in the same manner as the
+underlying computational instruction. Also, decoupling the ext:zca[] and RVI
+HINT mappings allows the scarce ext:zca[] HINT space to be allocated to the
+most popular HINTs, and in particular, to HINTs that are amenable to
+macro-op fusion.
+===='''
+zh = '''
+[NOTE]
+====
+不要求 ext:zca[] HINT 展开为 RVI HINT 的主要原因是，HINT 不太可能像底层计算指令那样可压缩。此外，将 ext:zca[] 与 RVI 的 HINT 映射解耦，允许将稀缺的 ext:zca[] HINT 空间分配给最流行的 HINT，特别是分配给适合宏操作融合的 HINT。
+===='''

@@ -1,0 +1,18 @@
+unit_id = "fc71f2791fb6eee3d510c1c90e504aab"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The two mandatory tests can be built with minimal circuitry.
+Full histograms are not required, only simple counter registers:
+repetition count, window count, and sample count.
+Repetition count is reset every time the output sample value
+changes; if the count reaches a certain cutoff limit, a noise alarm
+(`BIST`) or failure (`DEAD`) is signaled. The window counter is
+used to save every W'th output (typically `W` in { 512, 1024 }).
+The frequency of this reference sample in the following window is
+counted; cutoff values are defined in the standard. We see that the
+structure of the mandatory tests is such that, if well implemented,
+no information is carried beyond a limit of `W` samples.'''
+zh = '''
+两项强制测试可以用最少电路构建。不需要完整直方图，只需要简单的计数器寄存器：重复计数、窗口计数和样本计数。每次输出样本值变化时重复计数复位；如果计数达到某个截止限值，则发出噪声警报（`BIST`）或故障（`DEAD`）。窗口计数器用于保存每第 W 个输出（通常 `W` 为 { 512, 1024 }）。在随后窗口中计数该参考样本的频率；截止值在标准中定义。我们看到，强制测试的结构使得如果实现得当，超过 `W` 个样本的限制后不会携带信息。'''

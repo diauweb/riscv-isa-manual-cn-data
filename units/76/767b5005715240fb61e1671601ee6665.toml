@@ -1,0 +1,36 @@
+unit_id = "767b5005715240fb61e1671601ee6665"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Semantics for division by zero and division overflow. L is the width of the operation in bits: XLEN for insn:div[], insn:divu[], insn:rem[] and insn:remu[], or 32 for insn:divw[], insn:divuw[], insn:remw[] and insn:remuw[].
+[cols="<2,^,^,^,^,^,^",options="header",]
+|===
+|Condition |Dividend |Divisor |insn:divu[]/insn:divuw[] |insn:remu[]/insn:remuw[] |insn:div[]/insn:divw[] |insn:rem[]/insn:remw[]
+
+|Division by zero +
+Overflow (signed only) |_x_ +
+-2^L-1^ |0 +
+−1 |2^L^-1 +
+ - |_x_ +
+ - |−1 +
+ -2^L-1^ +
+  |_x_ +
+  0
+|==='''
+zh = '''
+.除零和除法上溢的语义。L 为操作的位宽：对于 insn:div[]、insn:divu[]、insn:rem[] 和 insn:remu[] 为 XLEN，对于 insn:divw[]、insn:divuw[]、insn:remw[] 和 insn:remuw[] 为 32
+[cols="<2,^,^,^,^,^,^",options="header",]
+|===
+|条件 |被除数 |除数 |insn:divu[]/insn:divuw[] |insn:remu[]/insn:remuw[] |insn:div[]/insn:divw[] |insn:rem[]/insn:remw[]
+
+|除零 +
+上溢（仅有符号） |_x_ +
+-2^L-1^ |0 +
+−1 |2^L^-1 +
+ - |_x_ +
+ - |−1 +
+ -2^L-1^ +
+  |_x_ +
+  0
+|==='''

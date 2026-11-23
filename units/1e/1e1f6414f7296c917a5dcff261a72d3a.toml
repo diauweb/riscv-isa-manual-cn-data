@@ -1,0 +1,18 @@
+unit_id = "1e1f6414f7296c917a5dcff261a72d3a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:fsgnj-s_fsgnjn-s_fsgnjx-s_op]#Floating-point to floating-point sign-injection instructions, insn:fsgnj.s[],
+insn:fsgnjn.s[] and insn:fsgnjx.s[], produce a result that takes all bits except the
+sign bit from _rs1_. For insn:fsgnj[], the result's sign bit is _rs2_'s sign
+bit; for insn:fsgnjn[], the result's sign bit is the opposite of _rs2_'s sign
+bit; and for insn:fsgnjx[], the sign bit is the XOR of the sign bits of _rs1_
+and _rs2_. Sign-injection instructions do not set floating-point
+exception flags, nor do they canonicalize NaNs#.
+Note, insn:fsgnj.s[rx,ry,ry] moves _ry_ to _rx_ (assembler pseudoinstruction insn:fmv.s[rx,ry]);
+insn:fsgnjn.s[rx,ry,ry] moves the negation of _ry_ to _rx_ (assembler pseudoinstruction insn:fneg.s[rx,ry]);
+and insn:fsgnjx.s[rx,ry,ry] moves the absolute value of _ry_ to _rx_ (assembler pseudoinstruction insn:fabs.s[rx,ry]).'''
+zh = '''
+[#norm:fsgnj-s_fsgnjn-s_fsgnjx-s_op]##浮点到浮点符号注入指令 insn:fsgnj.s[]、insn:fsgnjn.s[] 和 insn:fsgnjx.s[] 产生的结果除符号位外所有位均取自 _rs1_。对于 insn:fsgnj[]，结果的符号位为 _rs2_ 的符号位；对于 insn:fsgnjn[]，结果的符号位为 _rs2_ 符号位的相反值；对于 insn:fsgnjx[]，符号位为 _rs1_ 和 _rs2_ 符号位的异或。符号注入指令不置位浮点异常标志，也不对 NaN 进行规范化。##
+注意，insn:fsgnj.s[rx,ry,ry] 将 _ry_ 移动到 _rx_（汇编器伪指令 insn:fmv.s[rx,ry]）；insn:fsgnjn.s[rx,ry,ry] 将 _ry_ 的相反值移动到 _rx_（汇编器伪指令 insn:fneg.s[rx,ry]）；insn:fsgnjx.s[rx,ry,ry] 将 _ry_ 的绝对值移动到 _rx_（汇编器伪指令 insn:fabs.s[rx,ry]）。'''

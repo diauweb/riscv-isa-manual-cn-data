@@ -1,0 +1,15 @@
+unit_id = "42682070f9c2a96b667dffc3c5f4f624"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `cycle`, `instret`, and `hpmcountern` CSRs are read-only shadows of
+`mcycle`, `minstret`, and `mhpmcounter n`, respectively. The `time` CSR
+is a read-only shadow of the memory-mapped `mtime` register.
+Analogously, on RV32I the `cycleh`, `instreth` and `hpmcounternh` CSRs
+are read-only shadows of `mcycleh`, `minstreth` and `mhpmcounternh`,
+respectively. On RV32I the `timeh` CSR is a read-only shadow of the
+upper 32 bits of the memory-mapped `mtime` register, while `time`
+shadows only the lower 32 bits of `mtime`.'''
+zh = '''
+`cycle`、`instret` 和 `hpmcountern` CSR 分别是 `mcycle`、`minstret` 和 `mhpmcounter n` 的只读影子。`time` CSR 是内存映射 `mtime` 寄存器的只读影子。类似地，在 RV32I 上，`cycleh`、`instreth` 和 `hpmcounternh` CSR 分别是 `mcycleh`、`minstreth` 和 `mhpmcounternh` 的只读影子。在 RV32I 上，`timeh` CSR 是内存映射 `mtime` 寄存器高 32 位的只读影子，而 `time` 仅影子 `mtime` 的低 32 位。'''

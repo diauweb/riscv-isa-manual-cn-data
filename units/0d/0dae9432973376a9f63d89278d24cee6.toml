@@ -1,0 +1,12 @@
+unit_id = "0dae9432973376a9f63d89278d24cee6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a HIST register is full and its value is the same as that of the HIST
+field transmitted in previous <<msg2_ResourceFull,ResourceFull>> message, then the encoder may
+increment an internal *HREPEAT* counter (history repeat counter) instead of
+generating a ResourceFull message if the Repeated History Optimization is
+enabled. See <<Repeated History Optimization,Repeated History Optimization>> chapter for further details.'''
+zh = '''
+当 HIST 寄存器已满且其值与上一条 <<msg2_ResourceFull,ResourceFull>> 消息中发送的 HIST 字段值相同时，如果启用了重复历史优化，编码器可递增内部 *HREPEAT* 计数器（历史重复计数器），而不是生成 ResourceFull 消息。更多详情见 <<Repeated History Optimization,Repeated History Optimization>> 章。'''

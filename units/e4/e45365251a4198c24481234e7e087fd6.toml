@@ -1,0 +1,25 @@
+unit_id = "e45365251a4198c24481234e7e087fd6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The model covers user-level RV64I and RV64A. In particular, it does
+not support the misaligned atomicity granule PMA or the total store
+ordering extension "Ztso". It should be trivial to adapt the model to
+RV32I/A and to the G, Q and C extensions, but we have never tried it.
+This will involve, mostly, writing Sail code for the instructions, with
+minimal, if any, changes to the concurrency model.
+* The model covers only normal memory accesses (it does not handle I/O
+accesses).
+* The model does not cover TLB-related effects.
+* The model assumes the instruction memory is fixed. In particular, the
+<<fetch, Fetch instruction>> transition does not generate memory load operations, and the shared
+memory is not involved in the transition. Instead, the model depends on
+an external oracle that provides an opcode when given a memory location.
+* The model does not cover exceptions, traps and interrupts.'''
+zh = '''
+* 模型涵盖用户级 RV64I 和 RV64A。特别是，它不支持非对齐原子性粒度 PMA 或全存储排序扩展“Ztso”。将模型适配到 RV32I/A 以及 G、Q 和 C 扩展应当很简单，但我们从未尝试过。这主要涉及为指令编写 Sail 代码，对并发模型仅作最小改动（若有）。
+* 模型仅涵盖正常内存访问（不处理 I/O 访问）。
+* 模型不涵盖 TLB 相关效应。
+* 模型假定指令内存是固定的。特别是，<<fetch, 取指指令>> 迁移不生成内存加载操作，共享内存也不参与该迁移。相反，模型依赖一个外部 oracle，在给定内存位置时提供操作码。
+* 模型不涵盖异常、陷阱和中断。'''

@@ -1,0 +1,61 @@
+unit_id = "81eeed8498c6364200aa583bae1072c9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[TIP]
+====
+The FENCE.I instruction was designed to support a wide variety of
+implementations. A simple implementation can flush the local instruction
+cache and the instruction pipeline when the FENCE.I is executed. A more
+complex implementation might snoop the instruction (data) cache on every
+data (instruction) cache miss, or use an inclusive unified private L2
+cache to invalidate lines from the primary instruction cache when they
+are being written by a local store instruction. If instruction and data
+caches are kept coherent in this way, or if the memory system consists
+of only uncached RAMs, then just the fetch pipeline needs to be flushed
+at a FENCE.I.
+
+The FENCE.I instruction was previously part of the base I instruction
+set. Two main issues are driving moving this out of the mandatory base,
+although at time of writing it is still the only standard method for
+maintaining instruction-fetch coherence.
+
+First, it has been recognized that on some systems, FENCE.I will be
+expensive to implement and alternate mechanisms are being discussed in
+the memory model task group. In particular, for designs that have an
+incoherent instruction cache and an incoherent data cache, or where the
+instruction cache refill does not snoop a coherent data cache, both
+caches must be completely flushed when a FENCE.I instruction is
+encountered. This problem is exacerbated when there are multiple levels
+of I and D cache in front of a unified cache or outer memory system.
+
+Second, the instruction is not powerful enough to make available at user
+level in a Unix-like operating system environment. The FENCE.I only
+synchronizes the local hart, and the OS can reschedule the user hart to
+a different physical hart after the FENCE.I. This would require the OS
+to execute an additional FENCE.I as part of every context migration. For
+this reason, the standard Linux ABI has removed FENCE.I from user-level
+and now requires a system call to maintain instruction-fetch coherence,
+which allows the OS to minimize the number of FENCE.I executions
+required on current systems and provides forward-compatibility with
+future improved instruction-fetch coherence mechanisms.
+
+Future approaches to instruction-fetch coherence under discussion
+include providing more restricted versions of FENCE.I that only target a
+given address specified in _rs1_, and/or allowing software to use an ABI
+that relies on machine-mode cache-maintenance operations.
+===='''
+zh = '''
+[TIP]
+====
+FENCE.I 指令的设计旨在支持多种多样的实现。简单实现可在执行 FENCE.I 时冲刷本地指令高速缓存和指令流水线。更复杂的实现可在每次数据（指令）高速缓存缺失时窥探指令（数据）高速缓存，或使用包含式的统一私有 L2 高速缓存，在本地存储指令写入这些行时使主指令高速缓存中的行无效。如果指令高速缓存与数据高速缓存以这种方式保持一致，或者内存系统仅由未缓存的 RAM 组成，则在 FENCE.I 处只需冲刷取指流水线。
+
+FENCE.I 指令先前是基础 I 指令集的一部分。尽管在撰写本文时它仍是维护取指一致性的唯一标准方法，但有两个主要问题推动将其移出强制基础部分。
+
+第一，人们已经认识到，在某些系统上 FENCE.I 的实现代价很高，内存模型任务组正在讨论替代机制。特别是，对于具有非一致的指令高速缓存和非一致的数据高速缓存的设计，或者指令高速缓存填充不窥探一致数据高速缓存的设计，在遇到 FENCE.I 指令时，两个高速缓存都必须完全冲刷。当统一高速缓存或外部内存系统之前存在多级 I 高速缓存和 D 高速缓存时，该问题会进一步加剧。
+
+第二，该指令的功能不足以在类 Unix 操作系统环境的用户级中提供使用。FENCE.I 仅同步本地硬件线程，而操作系统在 FENCE.I 之后可能将用户硬件线程重新调度到不同的物理硬件线程。这将要求操作系统在每次上下文迁移时都执行额外的 FENCE.I。因此，标准 Linux ABI 已将 FENCE.I 从用户级移除，现在要求通过系统调用来维护取指一致性，这使操作系统能尽量减少当前系统上所需的 FENCE.I 执行次数，并与未来改进的取指一致性机制保持向前兼容。
+
+正在讨论的取指一致性未来方案包括：提供仅针对 __rs1__ 中指定地址的、约束更强的 FENCE.I 版本，和/或允许软件使用依赖于机器模式高速缓存维护操作的 ABI。
+===='''

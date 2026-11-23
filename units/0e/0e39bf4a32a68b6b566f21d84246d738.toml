@@ -1,0 +1,9 @@
+unit_id = "0e39bf4a32a68b6b566f21d84246d738"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:rnmi_exception_nmie0]#When the Smdbltrp extension is not implemented, if the hart encounters an exception while executing in M-mode with the `mnstatus`.NMIE bit clear, the actions taken are the same as if the exception had occurred while `mnstatus`.NMIE were set, except that the program counter is set to the RNMI exception trap handler address.#
+The behavior when the Smdbltrp extension is implemented is described in <<machine-double-trap>>.'''
+zh = '''
+[#norm:rnmi_exception_nmie0]##当未实现 Smdbltrp 扩展时，若硬件线程在 `mnstatus`.NMIE 位清零的 M 模式下执行时遇到异常，则采取的操作与在 `mnstatus`.NMIE 置位时发生异常相同，但程序计数器设置为 RNMI 异常陷阱处理程序地址。## 实现 Smdbltrp 扩展时的行为在 <<machine-double-trap>> 中描述。'''

@@ -1,0 +1,17 @@
+unit_id = "14b66dd340b0aa8c5377f0efa86f49b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The MPRV (Modify PRiVilege) bit modifies the _effective privilege mode_,
+i.e., the privilege level at which explicit memory accesses execute.
+[#norm:mstatus_mprv_ldst_op]#When MPRV=0, explicit memory accesses
+behave as normal, using the translation and
+protection mechanisms of the current privilege mode. When MPRV=1, load
+and store memory addresses are translated and protected, and endianness
+is applied, as though the current privilege mode were set to MPP.#
+[#norm:mstatus_mprv_inst_xlat_op]#Instruction address-translation and protection are unaffected by the
+setting of MPRV.#
+[#norm:mstatus_mprv_rdonly0_no_umode]#MPRV is read-only 0 if U-mode is not supported.#'''
+zh = '''
+MPRV（Modify PRiVilege）位修改 _有效特权模式_，即显式内存访问执行时所用的特权级。[#norm:mstatus_mprv_ldst_op]##当 MPRV=0 时，显式内存访问按正常方式行为，使用当前特权模式的转换和保护机制。当 MPRV=1 时，加载和存储内存地址的转换与保护，以及字节序的应用，都如同当前特权模式被设置为 MPP 一样。##[#norm:mstatus_mprv_inst_xlat_op]##指令地址转换和保护不受 MPRV 设置的影响。##[#norm:mstatus_mprv_rdonly0_no_umode]##若不支持 U 模式，则 MPRV 为只读 0。##'''

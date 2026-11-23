@@ -1,0 +1,12 @@
+unit_id = "b5782502037140bb7b3fe94d2494f345"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap is to be taken into M-mode, if the `MDT` bit is currently 0, it is
+then set to 1, and the trap is delivered as expected. However, if `MDT` is
+already set to 1, then this is an _unexpected trap_. Additionally, when the
+Smrnmi extension is implemented, a trap that occurs when executing in M-mode
+with the `mnstatus.NMIE` set to 0 is an _unexpected trap_.'''
+zh = '''
+当陷阱将被进入 M 模式时，若 `MDT` 位当前为 0，则将其设置为 1，并按预期递送陷阱。然而，若 `MDT` 已设置为 1，则这是一个 _意外陷阱_。此外，当实现了 Smrnmi 扩展时，在 M 模式下执行且 `mnstatus.NMIE` 设置为 0 时发生的陷阱是一个 _意外陷阱_。'''

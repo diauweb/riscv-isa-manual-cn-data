@@ -1,0 +1,35 @@
+unit_id = "081dde69eca8b9d8f93eb6dbca5ea305"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Reset the component by setting `tr??Active` = 0.
+** This should be done by writing a value 0x0 to `tr??Control` register.
+* Read-back and wait until `tr??Active` = 0 is read, which means that a component reached a reset state.
+* Release a component from reset by setting `tr??Active` = 1.
+** This should be done by writing a value 0x1 to `tr??Control` register. This write will reset most of other enable/mode bits in this register and all WARL and read-only fields will be set to defaults.
+* Read-back and wait until `tr??Active` = 1 is read, which means that a component was released from reset.
+** In this moment `tr??Enable` is set to 0 and the component is not yet enabled.
+** Component clock should be enabled to allow programming of other registers.
+
+* Optionally save `tr??Control` register as it holds all reset values of all fields. It may be cached/shadowed, and trace tool may execute faster write-only (instead a read-modify-write) operations.
+* Handle `tr??VerMinor/Major` as described in 'Versioning of Components' chapter.
+** If `tr??VerMajor` is 0 (for Trace Encoder component) either handle it as pre-ratified/initial version 0 or generate fatal error with an appropriate error message.
+* Read `tr??Impl` and compare `tr??ComType` field with expected value.
+* Set some WARL fields and read back to discover supported component configuration - make sure the component is NOT enabled (by setting `tr??Enable` to 1) by mistake.
+* Configure some initial values in all needed registers/fields. Optionally Read-back to assure these are set properly.'''
+zh = '''
+* 通过设置 `tr??Active` = 0 复位组件。
+** 这应通过向 `tr??Control` 寄存器写入值 0x0 来完成。
+* 读回并等待直到读到 `tr??Active` = 0，这表示组件已达到复位状态。
+* 通过设置 `tr??Active` = 1 将组件退出复位。
+** 这应通过向 `tr??Control` 寄存器写入值 0x1 来完成。此写入将复位该寄存器中大多数其他使能/模式位，所有 WARL 和只读字段将被设置为默认值。
+* 读回并等待直到读到 `tr??Active` = 1，这表示组件已退出复位。
+** 此时 `tr??Enable` 被设置为 0，组件尚未使能。
+** 应使能组件时钟以允许编程其他寄存器。
+* 可选地保存 `tr??Control` 寄存器，因为它保存所有字段的所有复位值。它可被缓存/影子化，跟踪工具可更快地执行仅写（而不是读-改-写）操作。
+* 按“组件版本管理”一章所述处理 `tr??VerMinor/Major`。
+** 如果 `tr??VerMajor` 为 0（对于跟踪编码器组件），则要么将其作为预批准/初始版本 0 处理，要么生成带有适当错误消息的致命错误。
+* 读取 `tr??Impl`，并将 `tr??ComType` 字段与预期值比较。
+* 设置一些 WARL 字段并读回以发现支持的组件配置——确保组件不会因误操作而使能（通过将 `tr??Enable` 置为 1）。
+* 在所有需要的寄存器/字段中配置一些初始值。可选地读回以确保这些值设置正确。'''

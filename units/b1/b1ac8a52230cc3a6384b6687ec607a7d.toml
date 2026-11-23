@@ -1,0 +1,15 @@
+unit_id = "b1ac8a52230cc3a6384b6687ec607a7d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hardware performance monitor includes 29 additional 64-bit event
+counters, `mhpmcounter3`-`mhpmcounter31`. The event selector CSRs,
+`mhpmevent3`-`mhpmevent31`, are 64-bit *WARL* registers that control which
+event causes the corresponding counter to increment. The meaning of
+these events is defined by the platform, but event 0 is defined to mean
+"no event." All counters should be implemented, but a legal
+implementation is to make both the counter and its corresponding event
+selector be read-only 0.'''
+zh = '''
+硬件性能监测器包含 29 个额外的 64 位事件计数器，`mhpmcounter3`-`mhpmcounter31`。事件选择器 CSR `mhpmevent3`-`mhpmevent31` 是 64 位 *WARL* 寄存器，控制哪个事件使相应计数器递增。这些事件的含义由平台定义，但事件 0 定义为“无事件”。所有计数器宜实现，但一种合法的实现是将计数器及其相应的事件选择器均设为只读 0。'''

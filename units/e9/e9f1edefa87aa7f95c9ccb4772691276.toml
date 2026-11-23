@@ -1,0 +1,24 @@
+unit_id = "e9f1edefa87aa7f95c9ccb4772691276"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* _reg_reads_, the register reads the instance has performed, including,
+for each one, the register write slices it read from;
+* _reg_writes_, the register writes the instance has performed;
+* _mem_loads_, a set of memory load operations, and for each one the
+as-yet-unsatisfied slices (the byte indices that have not been satisfied
+yet), and, for the satisfied slices, the store slices (each consisting
+of a memory store operation and subset of its byte indices) that
+satisfied it.
+* _mem_stores_, a set of memory store operations, and for each one a
+flag that indicates whether it has been propagated (passed to the shared
+memory) or not.
+* information recording whether the instance is committed, finished,
+etc.'''
+zh = '''
+* _reg_reads_，该实例已执行的寄存器读，并且对于每一次读，包括它所读取的寄存器写分片；
+* _reg_writes_，该实例已执行的寄存器写；
+* _mem_loads_，一组内存加载操作，并且对于每个操作，包括尚未满足的分片（尚未满足的字节索引），以及对于已满足的分片，包括满足它的存储分片（每个存储分片由一个内存存储操作及其字节索引的子集组成）。
+* _mem_stores_，一组内存存储操作，并且对于每个操作，包括一个标志，指示其是否已传播（传递给共享内存）。
+* 记录该实例是否已提交、已完成等的信息。'''

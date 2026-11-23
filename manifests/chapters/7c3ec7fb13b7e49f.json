@@ -1,0 +1,1164 @@
+{
+  "chap_hash": "7c3ec7fb13b7e49f",
+  "id": "chap:trace",
+  "sectname": "chapter",
+  "sectnum": "2",
+  "title_en": "Trace",
+  "title_unit_id": "a21cad03c96ca7ddf273feee8d2557d8",
+  "source_path": "src/debug-trace/trace.adoc",
+  "sections": [
+    {
+      "id": "chap:trace",
+      "level": 1,
+      "sectnum": "2",
+      "title": "Trace",
+      "heading_unit_id": "a21cad03c96ca7ddf273feee8d2557d8",
+      "heading_anchor_id": "chap:trace",
+      "blocks": []
+    },
+    {
+      "id": "trace-preface",
+      "level": 2,
+      "sectnum": "2.1",
+      "title": "Preface",
+      "heading_unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "heading_anchor_id": "trace-preface",
+      "blocks": [
+        "071d284c3592f237b444c3d62eeb0c15",
+        "f9797a97aa232bc8b606c8da0cb3a7c1",
+        "bd6b6e0cfe640e55c2bd1f1e5b5a63c0"
+      ]
+    },
+    {
+      "id": "sec:intro",
+      "level": 2,
+      "sectnum": "2.2",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "heading_anchor_id": "sec:intro",
+      "blocks": [
+        "693e73fcf192b839042c057aa42abf58",
+        "32c94368c9149024f66d2e415291a2e9",
+        "1d230d47ab087035a218df1667c0284d",
+        "ddd60769c042d4ff244d63d4169edc29",
+        "b3d7a59bdf904e56f4d18804ee6301bd",
+        "748474b065bc5e4bbf26798a9ccdc51b",
+        "5c9624edd1b7053d1cee35eb91e959cf",
+        "d28ec6b5915fb0e9bae80d10ffa5d977",
+        "f114640611f7c95cfe5c5320372470b5"
+      ]
+    },
+    {
+      "id": "sec:terminology",
+      "level": 3,
+      "sectnum": "2.2.1",
+      "title": "Terminology",
+      "heading_unit_id": "8ad0c2e0575cdbfa6c8dc381da368b57",
+      "heading_anchor_id": "sec:terminology",
+      "blocks": [
+        "48d6928b8081dba4e2da6277d4906160",
+        "aa29307fda83392082d2e0bdaa489c02"
+      ]
+    },
+    {
+      "id": "_nomenclature",
+      "level": 3,
+      "sectnum": "2.2.2",
+      "title": "Nomenclature",
+      "heading_unit_id": "be965f1f77a92377e92a1549b7eaf3c7",
+      "blocks": [
+        "887013c505fa82920d8460e72c75edf7",
+        "c6936751d858659ffb980175133e1a7b",
+        "9360b2b9be2b13c59a20ac9f28797dff"
+      ]
+    },
+    {
+      "id": "encoderControl",
+      "level": 2,
+      "sectnum": "2.3",
+      "title": "Encoder Control",
+      "heading_unit_id": "666b4fbec0b30ee38a65afb684b4111c",
+      "heading_anchor_id": "encoderControl",
+      "blocks": [
+        "cd867b1879744da958fa8c010f96071c",
+        "58b5252f9c1e7ccebf9427920c6cdc07",
+        "ffd2bfe2195b4e8f7a7d427207937845",
+        "66c0d89987f84b4f3f074c6f4acc29ea",
+        "5114d3a46d214dbe38f4fe451b994a3c"
+      ]
+    },
+    {
+      "id": "sec:ctl-basic",
+      "level": 3,
+      "sectnum": "2.3.1",
+      "title": "Basic Control",
+      "heading_unit_id": "4f3423e4ff4c105dec08159ab0dc25ad",
+      "heading_anchor_id": "sec:ctl-basic",
+      "blocks": [
+        "b98e705986ba48afec320919b5985cbb",
+        {
+          "unit_id": "55225452a99d8d474caca1b99cf6361e",
+          "anchor_id": "basic-control"
+        }
+      ]
+    },
+    {
+      "id": "sec:ctl-modes",
+      "level": 3,
+      "sectnum": "2.3.2",
+      "title": "Optional Modes",
+      "heading_unit_id": "347946d9fe27ce6447c2e2d0f93a9cfb",
+      "heading_anchor_id": "sec:ctl-modes",
+      "blocks": [
+        "1d1c40d0174125e56e533b0c05eb19ee",
+        {
+          "unit_id": "593647e3825549f1c0a7685b70a4000d",
+          "anchor_id": "optional-modes"
+        }
+      ]
+    },
+    {
+      "id": "sec:ctl-filter",
+      "level": 3,
+      "sectnum": "2.3.3",
+      "title": "Filtering",
+      "heading_unit_id": "7921b3d8c32d50cef04daf42a3a41c0f",
+      "heading_anchor_id": "sec:ctl-filter",
+      "blocks": [
+        "f20e1cbb4873921bc0f008e647c36c0f",
+        {
+          "unit_id": "4be2ec6e15b482bba2d6530d72508ff5",
+          "anchor_id": "trace-filtering"
+        }
+      ]
+    },
+    {
+      "id": "BranchTrace",
+      "level": 2,
+      "sectnum": "2.4",
+      "title": "Branch Trace",
+      "heading_unit_id": "bf5f0a392c9b513108fe1707bef4c146",
+      "heading_anchor_id": "BranchTrace",
+      "blocks": [
+        "cb6d91a18a96572528d7f3783458d6b8",
+        "5b6372f4d309af4f9ab2634178466596",
+        "eef5e86711f2a07bf518c47754b17b85",
+        "8646bd380b6aac6b6bfe1198db39434e",
+        "462bf0ee6b88d818f6930ada4b4417db"
+      ]
+    },
+    {
+      "id": "TraceConcepts",
+      "level": 3,
+      "sectnum": "2.4.1",
+      "title": "Instruction delta trace concepts",
+      "heading_unit_id": "f2eb6d38fc2090cc99aeada5ea26466a",
+      "heading_anchor_id": "TraceConcepts",
+      "blocks": []
+    },
+    {
+      "id": "SequentialInstructions",
+      "level": 4,
+      "sectnum": "2.4.1.1",
+      "title": "Sequential instructions",
+      "heading_unit_id": "8a8987a61ce09c55145535aa5fbab228",
+      "heading_anchor_id": "SequentialInstructions",
+      "blocks": [
+        "6a76fa8a9ee6fe49ecb3cd3c24d4e5ea"
+      ]
+    },
+    {
+      "id": "uninfpc",
+      "level": 4,
+      "sectnum": "2.4.1.2",
+      "title": "Uninferable PC discontinuities",
+      "heading_unit_id": "e6c1a386a26de7aff7dc593e87d0b30e",
+      "heading_anchor_id": "uninfpc",
+      "blocks": [
+        "1e312c1a57a80d59b343db6bf7833889",
+        "8ba9071704859954e0e74677024de440",
+        "38d56a56325d67d8c0faf6b56de2f4cc"
+      ]
+    },
+    {
+      "id": "_branches",
+      "level": 4,
+      "sectnum": "2.4.1.3",
+      "title": "Branches",
+      "heading_unit_id": "848e045d5f5b5be6ff046a9254e3c2c8",
+      "blocks": [
+        "b67e1c50cce7cf27a8b9e142e182c07c",
+        "6826780f07d0f6afdb570359aee5f8fe"
+      ]
+    },
+    {
+      "id": "interruptsexceptions",
+      "level": 4,
+      "sectnum": "2.4.1.4",
+      "title": "Interrupts and exceptions",
+      "heading_unit_id": "a3a036dea8520be4a089017a635ea920",
+      "heading_anchor_id": "interruptsexceptions",
+      "blocks": [
+        "00ab68894c34d7981feebc84f7ccb08b",
+        "c58211fa469a3176d40053ec2c92b63d",
+        "991ec364d620583676da4eea332148c5"
+      ]
+    },
+    {
+      "id": "sec:synchronization",
+      "level": 4,
+      "sectnum": "2.4.1.5",
+      "title": "Synchronization",
+      "heading_unit_id": "e8999c53101f15e50b621881a0d55b52",
+      "heading_anchor_id": "sec:synchronization",
+      "blocks": [
+        "8f689ea84ffb82e1d87f34ea4213cc07",
+        "37d258f5048dd3385e9d917c322428d8",
+        "74095613d637ec2efc4447e026f30261"
+      ]
+    },
+    {
+      "id": "sec:endoftrace",
+      "level": 4,
+      "sectnum": "2.4.1.6",
+      "title": "End of trace",
+      "heading_unit_id": "05ac921f180395424a0d0667ce9efd97",
+      "heading_anchor_id": "sec:endoftrace",
+      "blocks": [
+        "0f5aeecf127eabf7aae51f3b066164eb",
+        "4436300210681f920822af5eb319ae7f",
+        "a380101ab57abaccae9d963af4bf846d"
+      ]
+    },
+    {
+      "id": "optional",
+      "level": 3,
+      "sectnum": "2.4.2",
+      "title": "Optional and run-time configurable modes",
+      "heading_unit_id": "56eb211bd9a8f66daaa40bd6e161b2c2",
+      "heading_anchor_id": "optional",
+      "blocks": [
+        "f4b7724dff518c39b2f6fd99729a3f7b",
+        "56f56ef6a3882aff3cc6573f2312029d",
+        "0684e739ac1849bf91db87c875d3b7f7",
+        "ce8ab56cd59c81874262048f99cf0ffc",
+        "9d12f1bc87b94fd9cab10b852abcc4e0"
+      ]
+    },
+    {
+      "id": "sec:delta-address",
+      "level": 4,
+      "sectnum": "2.4.2.1",
+      "title": "Delta address mode",
+      "heading_unit_id": "c92fdaa6caaf38055ec625952df33871",
+      "heading_anchor_id": "sec:delta-address",
+      "blocks": [
+        "d6a251f144e37607ff2d2038b9ff07fc",
+        "19c7584fb808fb055f14f29014d14dc4"
+      ]
+    },
+    {
+      "id": "sec:full-address",
+      "level": 4,
+      "sectnum": "2.4.2.2",
+      "title": "Full address mode",
+      "heading_unit_id": "0838ab5b207c9e0cd8709b10f2d78c1d",
+      "heading_anchor_id": "sec:full-address",
+      "blocks": [
+        "d6a251f144e37607ff2d2038b9ff07fc",
+        "15f277e74387a751a2eabb146c9d8325"
+      ]
+    },
+    {
+      "id": "sec:implicit-exception",
+      "level": 4,
+      "sectnum": "2.4.2.3",
+      "title": "Implicit exception mode",
+      "heading_unit_id": "b84dc9a8cb775b7b7e1507bb03c1ba62",
+      "heading_anchor_id": "sec:implicit-exception",
+      "blocks": [
+        "d6a251f144e37607ff2d2038b9ff07fc",
+        "c22dfb19a3d7ac0ba24c28f32b441fc0",
+        "a640f021d3e7ca55af8ff82b10791ce0",
+        "5e25196303a21d9473cb4b033b3b4c69",
+        "2cdd5df5b2b491ff134d56c6e0509616"
+      ]
+    },
+    {
+      "id": "sec:si-jump",
+      "level": 4,
+      "sectnum": "2.4.2.4",
+      "title": "Sequentially inferable jump mode",
+      "heading_unit_id": "acb367f5a76518ceb641f09b31e9c8bd",
+      "heading_anchor_id": "sec:si-jump",
+      "blocks": [
+        "19204359a892819a7a0b1bc1fa379db0",
+        "de0fae8f44eb721277e911abad6e03ba"
+      ]
+    },
+    {
+      "id": "sec:implicit-return",
+      "level": 4,
+      "sectnum": "2.4.2.5",
+      "title": "Implicit return mode",
+      "heading_unit_id": "1a9ca6544f0bab4ac9784662b8e21f15",
+      "heading_anchor_id": "sec:implicit-return",
+      "blocks": [
+        "0e259ffc63cb9bad4cc2dc6a84af5c46",
+        "02e2a23f87301f9437977558d5d0993a",
+        "fce3de4121b854f2d0357c56101c741f",
+        "ed60c2731b41d02fb3c7f48f59225dfc",
+        "6ff4c7a4b3d71a080579d2e42e6b5dd2"
+      ]
+    },
+    {
+      "id": "sec:branch-prediction",
+      "level": 4,
+      "sectnum": "2.4.2.6",
+      "title": "Branch prediction mode",
+      "heading_unit_id": "766a2aa1ebf46d6fcad674b8b332fa29",
+      "heading_anchor_id": "sec:branch-prediction",
+      "blocks": [
+        "0db3b73b62aea4be8719fb114cd1fdd6",
+        "f386871ddfa0dcb931d55fd3f7bcaaf2",
+        "446645f192ded5d5fe74b7abc77d66bb",
+        "134a5014279acd9de4eb4a3cd3e90373",
+        "e731174a16402c5a85fc7110e6fc1cca",
+        "143be2d26bef5f78d37b10d9f9a71532",
+        "86056f68f1779b35ecc60156cc62effe",
+        "6168027ee090781cdbc29f152cc89157",
+        "0718cf518601cca0a1b172168d3bd7de",
+        "b3a84b605f371a7279d719b35b6af1db"
+      ]
+    },
+    {
+      "id": "sec:jump-cache",
+      "level": 4,
+      "sectnum": "2.4.2.7",
+      "title": "Jump target cache mode",
+      "heading_unit_id": "41fea6adddcab477f363d050993e9899",
+      "heading_anchor_id": "sec:jump-cache",
+      "blocks": [
+        "3ba8c6fb4ec29ca856802e7e2f8ebb63",
+        "6086278b1ce1d2c0afa14035379e348e",
+        "87e39f14745f834bc6b754383ff88352",
+        "a065809815c110fe999d90117ac20c4c",
+        "1734bab6ad7df5a5f9a4368a812dd563",
+        "390435b2d25fa850f5fd134013e1481b"
+      ]
+    },
+    {
+      "id": "Interface",
+      "level": 2,
+      "sectnum": "2.5",
+      "title": "Hart to encoder interface",
+      "heading_unit_id": "f9fa2be2bbaba116767e76a8c245159e",
+      "heading_anchor_id": "Interface",
+      "blocks": []
+    },
+    {
+      "id": "sec:InstructionInterfaceRequirements",
+      "level": 3,
+      "sectnum": "2.5.1",
+      "title": "Instruction Trace Interface requirements",
+      "heading_unit_id": "bed653837936aa92b2fac1264545c69a",
+      "heading_anchor_id": "sec:InstructionInterfaceRequirements",
+      "blocks": [
+        "f3bd14bd20dff6f0c8d45658ca452986",
+        "99aa8b09df91bab1b0d6b849afd148f2",
+        "6294d613504e9e46582b7e1b1cbddadd",
+        "4c2d139c8214a6620f07fd51311f300c",
+        "4e72ae8243d87598bd1dca482359f994",
+        "9898c905c3c0efd00be3b282a60f9e91",
+        "65f941cf5c8a2b8b9dd62dc802b7a1a7"
+      ]
+    },
+    {
+      "id": "JumpClasses",
+      "level": 4,
+      "sectnum": "2.5.1.1",
+      "title": "Jump classification and target inference",
+      "heading_unit_id": "657e237bcba589d669ecf2f8386e9775",
+      "heading_anchor_id": "JumpClasses",
+      "blocks": [
+        "fa5b488cd0c2e5d7f15cf532a1b80baa",
+        "1e0a71f7cb61923b685f10765f53e8f6",
+        "0cc2128673e8e02667285f2b522b362f",
+        "c424c175abeafa2383629704a4956c00",
+        "b6c681057f7a0f0beeaf37f7782ef312",
+        "75996a473f3ec8feec6c34b9ad8cd0f8",
+        "ef24874be46e109f719ca28fa50dffa6"
+      ]
+    },
+    {
+      "id": "sec:relationship",
+      "level": 4,
+      "sectnum": "2.5.1.2",
+      "title": "Relationship between RISC-V core and the encoder",
+      "heading_unit_id": "42c8df42de87cf5a50f3c1bba647fc6c",
+      "heading_anchor_id": "sec:relationship",
+      "blocks": [
+        "2c0ede28e28dd65eb6890f628b6d0dcc",
+        "8f93d665ac113d3a99c1fd72c1dc6520",
+        "13e6c6c071d1e62a660d8976b7137c79",
+        "4eb8485c9e33adf59a102dbb36bf5e66"
+      ]
+    },
+    {
+      "id": "sec:InstructionTraceInterface",
+      "level": 3,
+      "sectnum": "2.5.2",
+      "title": "Instruction Trace Interface",
+      "heading_unit_id": "a0f31fe30472504df0069d9a46b6514f",
+      "heading_anchor_id": "sec:InstructionTraceInterface",
+      "blocks": [
+        "c508264e8472a494e75569658d9494ca",
+        "9e2af70d4c15dd451bdf56cdc64112d6",
+        "1774997fefff0b4294ceb7241b212c26",
+        {
+          "unit_id": "e7ae53bca8550336762418a7f6682a83",
+          "anchor_id": "tab:common-ingress"
+        },
+        "f2b7b6d2e8e1b1246640335252e9c5c0",
+        {
+          "unit_id": "e66a532c4ecef854e3cb279bbbe55f20",
+          "anchor_id": "tab:multi-ingress"
+        },
+        {
+          "unit_id": "56c76bd556e4bc70d1c8453ac3180c41",
+          "anchor_id": "tab:single-ingress"
+        },
+        {
+          "unit_id": "b7cd6e764435f884579b3df2bcdbddc8",
+          "anchor_id": "tab:itype"
+        },
+        {
+          "unit_id": "1b15f314bed1567084867236546d06ea",
+          "anchor_id": "tab:priv"
+        },
+        "12b0e0078a022dbe6eb1c56cf60b1b6a",
+        "f1c47d86e386884c09ed971d047fd4cc",
+        "b1d91cff5b7aad3ca0ce8afbe2e8ec5e",
+        "30977023e96f1dd0b3431d312b707165",
+        "d9fbeb0c924b850c25e3f9f4a94e5dfd",
+        "6a95d6e6e72124c8e18339ec610e0dde",
+        "4a75e2c6ee891774c20a629f52437e48",
+        "072d2ba426c10983715d4054995c7fdb",
+        "ae61bfc179a9f6af11e50def5ca1506c",
+        {
+          "unit_id": "3c06e8d06320ff51afc1f226d48c9a1e",
+          "anchor_id": "tab:context-type"
+        }
+      ]
+    },
+    {
+      "id": "sec:single-retire",
+      "level": 4,
+      "sectnum": "2.5.2.1",
+      "title": "Simplifications for single-retirement",
+      "heading_unit_id": "28310aff99f755dd0fcb055af2ab2246",
+      "heading_anchor_id": "sec:single-retire",
+      "blocks": [
+        "2d239a5a3fa75c96286d5d90c68551e8",
+        "40de27597f9f5aeb31d83dfaa0f2773f",
+        "ec38e977a7b6c7be3edbdf03bd72d03e",
+        "4fa1cf1c4ae0356affc9d5032522849d"
+      ]
+    },
+    {
+      "id": "sec:alt-multi",
+      "level": 4,
+      "sectnum": "2.5.2.2",
+      "title": "Alternative multiple-retirement interface configurations",
+      "heading_unit_id": "13b68b9dd71cf88876453ece8f9aa468",
+      "heading_anchor_id": "sec:alt-multi",
+      "blocks": [
+        "595a9bbf0fae6d3fbe65275119df5905",
+        "c910bed556575399378da79d46148f11"
+      ]
+    },
+    {
+      "id": "_optional_sideband_signals",
+      "level": 4,
+      "sectnum": "2.5.2.3",
+      "title": "Optional sideband signals",
+      "heading_unit_id": "343d6211abe14818956f3d3e7b1db80f",
+      "blocks": [
+        "1561de42cceccc9c9bff564372d0252b",
+        "25893ca1fe8dea200eb1718fffc8a93c",
+        {
+          "unit_id": "d54378ec5db71792c47925cd73e7619f",
+          "anchor_id": "tab:ingress-side-band"
+        },
+        {
+          "unit_id": "4a16373d53107b2441f430a598170366",
+          "anchor_id": "tab:egress-side-band"
+        }
+      ]
+    },
+    {
+      "id": "sec:trigger",
+      "level": 4,
+      "sectnum": "2.5.2.4",
+      "title": "Using trigger outputs from the Debug Module",
+      "heading_unit_id": "1fcd67d995d7392cd784a196c7720f6e",
+      "heading_anchor_id": "sec:trigger",
+      "blocks": [
+        "03555c1a50ae45f1d454cfa6a55172a0",
+        {
+          "unit_id": "171afd0165e4336515079c2260c2e5e3",
+          "anchor_id": "tab:debugModuleTriggerSupport"
+        },
+        "a49fdfad1a9a5f8cfa101cd78fab224f",
+        "0436002d76c4f567540afe16e37983ea"
+      ]
+    },
+    {
+      "id": "_example_retirement_sequences",
+      "level": 4,
+      "sectnum": "2.5.2.5",
+      "title": "Example retirement sequences",
+      "heading_unit_id": "f6927ffcf275f71bfa4722ff23ccd194",
+      "blocks": [
+        "cf86b8115322d5a893c87b2350f690d9"
+      ]
+    },
+    {
+      "id": "sec:DataInterfaceRequirements",
+      "level": 3,
+      "sectnum": "2.5.3",
+      "title": "Data Trace Interface requirements",
+      "heading_unit_id": "cd66aaa13ea36711e3057342b151b886",
+      "heading_anchor_id": "sec:DataInterfaceRequirements",
+      "blocks": [
+        "8e743e87949415c64c9b1bda81f9a634",
+        "1f51fccb290a58f811e5b677b0edacbd",
+        "ec5d598c3f3096077183d4ba058daf0d",
+        "b4acf3033af070400055e59d57747993",
+        "418664eb330494ee14a190165082b846",
+        "18380f7503eb94182eac8626c6976a2a",
+        "4ef90e8111c693c22053e7d4e599d379",
+        "b53fd0dc5449c0f01afbf0c2edc68259",
+        "bde8eea4aae4c64c5d48930c42605785",
+        "cd57ce22e011d9f1d12e5403a18fd0a7",
+        "4e9aafd9d500aef24807c18204ed89c1",
+        "453913b171796885dc00701bfd76bbde",
+        "7e800b089f1a9d99ccac8efffc515308",
+        "0b1e4a159ad258021adda1a5696b7a26",
+        "71841edb1a295ce1b1e2c9b3d54e32ce",
+        "d830a2040719552bbd3d1197f3edbc73"
+      ]
+    },
+    {
+      "id": "sec:DataTraceInterface",
+      "level": 3,
+      "sectnum": "2.5.4",
+      "title": "Data Trace Interface",
+      "heading_unit_id": "93000ff0649b8bcd0218be5090cb9815",
+      "heading_anchor_id": "sec:DataTraceInterface",
+      "blocks": [
+        "4aa972208ec5b4f41f698a463a5ee58d",
+        "d183278754917c0ebe489abcb31ffab4",
+        "9ebe3d9fb1ae2e9f2e60ca49950c51c8",
+        "be24dc62aaafd2b307242141a91f7a2e",
+        {
+          "unit_id": "3760b5de65fedf4b1f3522e4ba434fcf",
+          "anchor_id": "tab:data-ingress"
+        },
+        {
+          "unit_id": "bbf844ab604c69fd357965c05e5d75e9",
+          "anchor_id": "tab:dtype"
+        },
+        "099cdb91c607329a4059147a46d85a21",
+        "204d40ffa448d93d2ceb9a6e3b57f087",
+        "f03e0e4278dbae40badcfcae19e4bed5",
+        "38cb71c90f4f6656c886f7e110ad2e3c",
+        "6847ef5a849436c4fd1a1620f96b5b9c",
+        "84bed32f97bc613c05347e44a67f24c6",
+        "8a20da93e5f55047dcd769972758112c",
+        "d301c00cb254b35d4c2c005661d880e6",
+        "cfb5645a31df3e86fd4874ad60165ff6",
+        "0b82e65b3827e07fc8006a0ce5a25c3a",
+        "fddce4b96dac53639a594e12189a80ea"
+      ]
+    },
+    {
+      "id": "ch:filtering",
+      "level": 2,
+      "sectnum": "2.6",
+      "title": "Filtering",
+      "heading_unit_id": "7921b3d8c32d50cef04daf42a3a41c0f",
+      "heading_anchor_id": "ch:filtering",
+      "blocks": [
+        "b3027e04f113b6b497643475020505fc",
+        "8823c210563cfad763b98e74d32ba496",
+        "2d4f88cd3d723e3ea9ccef40932cd6f9",
+        "8c498af41e5d430e80ecedf1c30bf2b9",
+        "204e0a939a3107984a84807c11b24fc0",
+        "ebc7b35163960f71732ac5b87eee63b9",
+        "2656e637797d2968ee0351c9944da468",
+        "5922c75efc982aab04cc619f8eab17a0",
+        "54280ebd0b332e15da40fdd6ccb6929c",
+        "b62330bebd2c5c9f6ce069142c6d8ade",
+        "b3d4ede7160ced62532aedca1d445732"
+      ]
+    },
+    {
+      "id": "ch:timestamping",
+      "level": 2,
+      "sectnum": "2.7",
+      "title": "Timestamping",
+      "heading_unit_id": "0115b63ab06a147b840d3bf3d0e6560c",
+      "heading_anchor_id": "ch:timestamping",
+      "blocks": [
+        "9be6acbd828fdb61270a598cad387e3b",
+        "fc86367dbe5d3595a4cf9ab98d71c010",
+        "35e7427255930fe16ad3773ccb16ffd4",
+        "92c83ed3ca407cd1655adabd494e79ca",
+        "d452e2a2442888356882ccda1a4400f9"
+      ]
+    },
+    {
+      "id": "packets",
+      "level": 2,
+      "sectnum": "2.8",
+      "title": "Instruction Trace Encoder Output Packets",
+      "heading_unit_id": "343b450149b2d3108463121ba8cbbb72",
+      "heading_anchor_id": "packets",
+      "blocks": [
+        "462ea1d1e7dd6f56c7980cdc75117dff",
+        "b86a11c0cc82f596b25f909799b2e0e9",
+        "2c782ffb5ff7331a12646da6a7499777",
+        "fe2d6bc13588742505466f2094203e92",
+        {
+          "unit_id": "19f9a057bf5236f44daf4acc7084093f",
+          "anchor_id": "fig:packet-format"
+        },
+        "5ff607536cdcc96810d80655e0a908c3",
+        "ece3ac645cbfb4ed6b9b742a670a5ac1",
+        "8b6685d2a0dd377d41d512dbc8bafd7b",
+        "d0985b89b614b12abf82c05b6f498668",
+        "fd3dea6b53c67b92b3eb30cad2e2240c",
+        "ceb4444123611d1417960142e1d08378",
+        "49b45a5c779095328d169decf068e249",
+        "7f93f2749b1ca79c6c497f54935107e5",
+        "ccf787e1e2bdaa01bc7ebe103e301786"
+      ]
+    },
+    {
+      "id": "sec:format3",
+      "level": 3,
+      "sectnum": "2.8.1",
+      "title": "Format 3 packets",
+      "heading_unit_id": "9e22b2254570b4c2bcf16a7e701d11d5",
+      "heading_anchor_id": "sec:format3",
+      "blocks": [
+        "1514437666dee8af5d29b7373c7721f9",
+        "3258801e506024ed0315ea5566eaaec5"
+      ]
+    },
+    {
+      "id": "sec:format30",
+      "level": 3,
+      "sectnum": "2.8.2",
+      "title": "Format 3 subformat 0 - Synchronisation",
+      "heading_unit_id": "5296ec67c950f9080e7073ab72725ce0",
+      "heading_anchor_id": "sec:format30",
+      "blocks": [
+        "bf61a2a4834628feaea6f0b2733b4ee0",
+        "7be94e2c74f070fd03e8b7c883dea623"
+      ]
+    },
+    {
+      "id": "_format_3_branch_field",
+      "level": 4,
+      "sectnum": "2.8.2.1",
+      "title": "Format 3 *branch* field",
+      "heading_unit_id": "ce0021e63a7fcdcff3dd2b7ddde5e2eb",
+      "blocks": [
+        "8f6f44a678e5e237ede02c65326d9e45",
+        "c7851a7123b87ce4265b8e9ecbf7888a"
+      ]
+    },
+    {
+      "id": "sec:format31",
+      "level": 3,
+      "sectnum": "2.8.3",
+      "title": "Format 3 subformat 1 - Trap",
+      "heading_unit_id": "475087bbbd0906ceaff38705cefda319",
+      "heading_anchor_id": "sec:format31",
+      "blocks": [
+        "ec20e68b1df0c48282e51e5083961538",
+        "ba064804695117a8d25876f755cf0df0",
+        "ef51b3d832cd32389cff1f9888198ee1"
+      ]
+    },
+    {
+      "id": "sec:thaddr",
+      "level": 4,
+      "sectnum": "2.8.3.1",
+      "title": "Format 3 *thaddr* and *address* fields",
+      "heading_unit_id": "628322be9fb3177773f62ef65a317a8d",
+      "heading_anchor_id": "sec:thaddr",
+      "blocks": [
+        "365b28fe1a25a86cc6121ed6ccd8d993",
+        "04054445d4e69a5c18d32ffdaba81bd7",
+        "a263b864b0cb1d94cdba5f6876e98022"
+      ]
+    },
+    {
+      "id": "_format_3_tval_field",
+      "level": 4,
+      "sectnum": "2.8.3.2",
+      "title": "Format 3 *tval* field",
+      "heading_unit_id": "bd2ede4f6c772e3744f68a6efe6c49ad",
+      "blocks": [
+        "df65b144ec59147e560bb18e1acb0c6f"
+      ]
+    },
+    {
+      "id": "sec:format32",
+      "level": 3,
+      "sectnum": "2.8.4",
+      "title": "Format 3 subformat 2 - Context",
+      "heading_unit_id": "3ec56090590d0b5236d9090da4d1ebe2",
+      "heading_anchor_id": "sec:format32",
+      "blocks": [
+        "fa9d6e521c31ad2f6681198a3b7f3c8c",
+        "e1faf8012b563862697b3c1b3f320267"
+      ]
+    },
+    {
+      "id": "sec:format33",
+      "level": 3,
+      "sectnum": "2.8.5",
+      "title": "Format 3 subformat 3 - Support",
+      "heading_unit_id": "d109a95bed3be1a8e22099914f175f2f",
+      "heading_anchor_id": "sec:format33",
+      "blocks": [
+        "3a534186519504f0e7dce1fdfe25088b",
+        "b8b0d44d5fae934703d4c65ccfc82922",
+        "0a821b8088c07ad7e8d7023df9e71473",
+        "316e6978ef3501bfe500234e77ca5fe4"
+      ]
+    },
+    {
+      "id": "sec:qual-status",
+      "level": 4,
+      "sectnum": "2.8.5.1",
+      "title": "Format 3 subformat 3 *qual_status* field",
+      "heading_unit_id": "40aa5659909b60caaa1c341ef884a4f6",
+      "heading_anchor_id": "sec:qual-status",
+      "blocks": [
+        "84c5ddc53876079e9e71e5b1559af764",
+        "02a958295d444bff6229f7b6a2b44039",
+        "887dafc224a1687cde4a9bfbe4fcdba6"
+      ]
+    },
+    {
+      "id": "sec:format2",
+      "level": 3,
+      "sectnum": "2.8.6",
+      "title": "Format 2 packets",
+      "heading_unit_id": "7196386556f9fe44a6b08e10ba83e665",
+      "heading_anchor_id": "sec:format2",
+      "blocks": [
+        "d743d0347348af9403687bd5d3dade14",
+        "d831bc49346bc16882c3edcc8bd36683"
+      ]
+    },
+    {
+      "id": "sec:notify",
+      "level": 4,
+      "sectnum": "2.8.6.1",
+      "title": "Format 2 *notify* field",
+      "heading_unit_id": "6a98983fea5bd1cb160d237ea80d1d93",
+      "heading_anchor_id": "sec:notify",
+      "blocks": [
+        "ef5242c6e164d4aca9a426f7f2b1af20"
+      ]
+    },
+    {
+      "id": "sec:updiscon",
+      "level": 4,
+      "sectnum": "2.8.6.2",
+      "title": "Format 2 *notify* and *updiscon* fields",
+      "heading_unit_id": "d47b60c1bf9770253f47720a360dc640",
+      "heading_anchor_id": "sec:updiscon",
+      "blocks": [
+        "f63a6bab7264c2b75e037f4778f0710d",
+        "316ba1dbd48bc266a55eeab3ada05fef",
+        "5d2296a786c0d9d291a96e473a16db95",
+        "598f5f2d346f16a35e7ab41cb5d3df84",
+        "e2b0ef88b47c6cfd66c73838bfc54af2",
+        "2f1a0c1ca319b907c4622cfb1eb86f72",
+        "80763fb8a4fc1330c3119245338b7a83",
+        "7172ec4a6094c30647e14709495ba936",
+        "e431b46120969149c10b10e63fd76539"
+      ]
+    },
+    {
+      "id": "sec:irxx",
+      "level": 4,
+      "sectnum": "2.8.6.3",
+      "title": "Format 2 *irreport* and *irdepth*",
+      "heading_unit_id": "68566055271e01999104e6d730a25135",
+      "heading_anchor_id": "sec:irxx",
+      "blocks": [
+        "b3475c42582c354e43129be88495cc45",
+        "80caaa59687094202a9ff5f57c226627",
+        "e6cc59deffc21bfd3b363bace2c52336",
+        "7109d6245b11a24dd5137e3c33688345"
+      ]
+    },
+    {
+      "id": "sec:format1",
+      "level": 3,
+      "sectnum": "2.8.7",
+      "title": "Format 1 packets",
+      "heading_unit_id": "9cd8b78c1823b1e945b2284ed78d4a43",
+      "heading_anchor_id": "sec:format1",
+      "blocks": [
+        "855a43c783e369640e1d56e26547d6ca",
+        "20e9ab6097d8efad7fb362400785fac0",
+        "44c06c9c5d6235908937368590f8d5b9"
+      ]
+    },
+    {
+      "id": "_format_1_updiscon_field",
+      "level": 4,
+      "sectnum": "2.8.7.1",
+      "title": "Format 1 *updiscon* field",
+      "heading_unit_id": "8a4c491d18f707402de22f749114eba1",
+      "blocks": [
+        "6fa0829dd5f5b6a14adc713100abec1a"
+      ]
+    },
+    {
+      "id": "_format_1_branch_map_field",
+      "level": 4,
+      "sectnum": "2.8.7.2",
+      "title": "Format 1 *branch_map* field",
+      "heading_unit_id": "71a78b451dfc7f4d9ce3e90a3417060a",
+      "blocks": [
+        "a26c8f003233c888005eeab8153a0b1c",
+        "767c8f422c2f0da7e57c54f3f1b1eb9d"
+      ]
+    },
+    {
+      "id": "_format_1_irreport_and_irdepth_fields",
+      "level": 4,
+      "sectnum": "2.8.7.3",
+      "title": "Format 1 *irreport* and *irdepth* fields",
+      "heading_unit_id": "205ada78665b971b7d8ef67084e2af71",
+      "blocks": [
+        "fd71962fcfb408edbf987880f6705d9e"
+      ]
+    },
+    {
+      "id": "sec:format0",
+      "level": 3,
+      "sectnum": "2.8.8",
+      "title": "Format 0 packets",
+      "heading_unit_id": "086c4891230d2a5f252b5759f5d2c2f6",
+      "heading_anchor_id": "sec:format0",
+      "blocks": [
+        "0eea93c5eba1a8b96f0c3204140007b4",
+        "313ccd54bce3161ce94ebaf71a524906",
+        "971a3ea5e1ec52c1761eca03989ad10b",
+        "7a8c9e85c7a980e670624f16ba48d3d6",
+        "c7be2bd07aa2a077e4dc808bf33afd5d",
+        "fc5cbb8774887230ae8e34f753aa57b4",
+        "a3da4313952f245430328be8b27d0343",
+        "26c52f47bfcda27a9ff7cfd73e147a89"
+      ]
+    },
+    {
+      "id": "sec:f0s",
+      "level": 4,
+      "sectnum": "2.8.8.1",
+      "title": "Format 0 subformat field",
+      "heading_unit_id": "c7d437ff3969a6fc1c9bb31466e9a482",
+      "heading_anchor_id": "sec:f0s",
+      "blocks": [
+        "c9893b4c4ce39b8f3ddc3f581bcbac02"
+      ]
+    },
+    {
+      "id": "_format_0_branch_fmt_field",
+      "level": 4,
+      "sectnum": "2.8.8.2",
+      "title": "Format 0 *branch_fmt* field",
+      "heading_unit_id": "1a487fef61d7cefaae741d3987a7918b",
+      "blocks": [
+        "5ceb7fa03843be43c87cf0443316b327",
+        "90626346c278f8ca6a6c60bdd933fb66"
+      ]
+    },
+    {
+      "id": "_format_0_irreport_and_irdepth_fields",
+      "level": 4,
+      "sectnum": "2.8.8.3",
+      "title": "Format 0 *irreport* and *irdepth* fields",
+      "heading_unit_id": "882252d0ef2f83d2001e033077128876",
+      "blocks": [
+        "c4c2730368f1834d59cc2f6df302a4f7",
+        "15c25d5e5e7daab2335faa94a744b7b9"
+      ]
+    },
+    {
+      "id": "dataTracePackets",
+      "level": 2,
+      "sectnum": "2.9",
+      "title": "Data Trace Encoder Output Packets",
+      "heading_unit_id": "2260a0c2eb130c69c0d686bede72233d",
+      "heading_anchor_id": "dataTracePackets",
+      "blocks": [
+        "059672b0fd21f331776feade2e242a78",
+        "8707b2924bce6193312d6362550d9d4e",
+        "d5745ceb0b0e8dda3fe53e5e76b50e0d",
+        "b4305aa19b9da032b8018f6b795d5213"
+      ]
+    },
+    {
+      "id": "sec:data-loadstore",
+      "level": 3,
+      "sectnum": "2.9.1",
+      "title": "Load and Store",
+      "heading_unit_id": "6b0b41e24103523dbb7d22b799f5ea5c",
+      "heading_anchor_id": "sec:data-loadstore",
+      "blocks": []
+    },
+    {
+      "id": "sec:loadstore-format",
+      "level": 4,
+      "sectnum": "2.9.1.1",
+      "title": "format field",
+      "heading_unit_id": "310be560d5becaf1396b798a94d635c6",
+      "heading_anchor_id": "sec:loadstore-format",
+      "blocks": [
+        "c2d48688ac377d3a77c4b8d6180370d6",
+        "3993531bd36f552dbcf36ef2ff1aa958",
+        "ede50a66a7db0555590c0fd46330f0f6",
+        "9c7e16ecd1ff92e878af1f357bed3dc5",
+        "b8738c9a919da620de6a7c4429b4b444",
+        {
+          "unit_id": "0c263f7b85e80bea5ede7fc158d3cd2d",
+          "anchor_id": "tab:te_datadx0y2"
+        },
+        "c04616264447c7994b01547cf22a6941",
+        "312a54c929705ff31bbc7e50d5da25d4"
+      ]
+    },
+    {
+      "id": "sec:loadstore-size",
+      "level": 4,
+      "sectnum": "2.9.1.2",
+      "title": "size field",
+      "heading_unit_id": "45e09be93c6d376a411d5096b4a74f29",
+      "heading_anchor_id": "sec:loadstore-size",
+      "blocks": [
+        "c87d19ffe3aedaba7f81b190fa112def"
+      ]
+    },
+    {
+      "id": "sec:loadstore-diff",
+      "level": 4,
+      "sectnum": "2.9.1.3",
+      "title": "diff field",
+      "heading_unit_id": "fb41c54a8b4bf65ccf289b87f501b1b7",
+      "heading_anchor_id": "sec:loadstore-diff",
+      "blocks": [
+        "04fad62505dcb44027b341ad6cc1c28d",
+        "db007423fedd1be71f0032c62fc06a3f",
+        "74099cb760f57c31f785fe3122c2dcf8"
+      ]
+    },
+    {
+      "id": "sec:loadstore-datalen",
+      "level": 4,
+      "sectnum": "2.9.1.4",
+      "title": "data_len field",
+      "heading_unit_id": "7eac33223b7e028f97eb4d7c96e75021",
+      "heading_anchor_id": "sec:loadstore-datalen",
+      "blocks": [
+        "603d99dfed02c283486b8d6976797d32"
+      ]
+    },
+    {
+      "id": "sec:data-atomic",
+      "level": 3,
+      "sectnum": "2.9.2",
+      "title": "Atomic",
+      "heading_unit_id": "077a3748b963773725a636d86fb58f1a",
+      "heading_anchor_id": "sec:data-atomic",
+      "blocks": []
+    },
+    {
+      "id": "sec:atomic-size",
+      "level": 4,
+      "sectnum": "2.9.2.1",
+      "title": "size field",
+      "heading_unit_id": "45e09be93c6d376a411d5096b4a74f29",
+      "heading_anchor_id": "sec:atomic-size",
+      "blocks": [
+        "ce683cc765f335bfb6881441d01a013d",
+        "91f4d469ed3385a4de33990ca0864891",
+        "8384b3e3ce1dc939e0fcce5c80afc199",
+        "51796bffe646ab217b7c7f117f32df7e"
+      ]
+    },
+    {
+      "id": "sec:atomic-diff",
+      "level": 4,
+      "sectnum": "2.9.2.2",
+      "title": "diff field",
+      "heading_unit_id": "fb41c54a8b4bf65ccf289b87f501b1b7",
+      "heading_anchor_id": "sec:atomic-diff",
+      "blocks": [
+        "115aa0f8b68c179c8a66ce78cde94f0d"
+      ]
+    },
+    {
+      "id": "sec:atomic-operand",
+      "level": 4,
+      "sectnum": "2.9.2.3",
+      "title": "operand field",
+      "heading_unit_id": "ab2b10082f932aacd11e5e589db25af3",
+      "heading_anchor_id": "sec:atomic-operand",
+      "blocks": [
+        "b321a4f94040aa06d7cb2f504de472ac"
+      ]
+    },
+    {
+      "id": "sec:atomic-datalen",
+      "level": 4,
+      "sectnum": "2.9.2.4",
+      "title": "data_len and op_len fields",
+      "heading_unit_id": "7361c7ce4fb2cc98f44f240969261e99",
+      "heading_anchor_id": "sec:atomic-datalen",
+      "blocks": [
+        "4620d6858a4ec378aad545c94d6da704",
+        "99041c15b323f6bb050e331059ebc975",
+        "43a59941f9ecee34bec2731354e8f77a"
+      ]
+    },
+    {
+      "id": "sec:data-csr",
+      "level": 3,
+      "sectnum": "2.9.3",
+      "title": "CSR",
+      "heading_unit_id": "428808e71f60b918f97f9cc03263e288",
+      "heading_anchor_id": "sec:data-csr",
+      "blocks": [
+        "db0e2d50ecb040a84da7d5ed03c7bebb"
+      ]
+    },
+    {
+      "id": "sec:csr-diff",
+      "level": 4,
+      "sectnum": "2.9.3.1",
+      "title": "diff field",
+      "heading_unit_id": "fb41c54a8b4bf65ccf289b87f501b1b7",
+      "heading_anchor_id": "sec:csr-diff",
+      "blocks": [
+        "115aa0f8b68c179c8a66ce78cde94f0d"
+      ]
+    },
+    {
+      "id": "sec:csr-operand",
+      "level": 4,
+      "sectnum": "2.9.3.2",
+      "title": "operand field",
+      "heading_unit_id": "ab2b10082f932aacd11e5e589db25af3",
+      "heading_anchor_id": "sec:csr-operand",
+      "blocks": [
+        "1288339886d412f85e24372edf192b76"
+      ]
+    },
+    {
+      "id": "sec:csr-datalen",
+      "level": 4,
+      "sectnum": "2.9.3.3",
+      "title": "data_len and op_len fields",
+      "heading_unit_id": "7361c7ce4fb2cc98f44f240969261e99",
+      "heading_anchor_id": "sec:csr-datalen",
+      "blocks": [
+        "834b97eb98eda85dfa50f3e0918e25b3"
+      ]
+    },
+    {
+      "id": "sec:csr-addr",
+      "level": 4,
+      "sectnum": "2.9.3.4",
+      "title": "addr fields",
+      "heading_unit_id": "c6b05fcc487425d6d2f74ad614a95bb2",
+      "heading_anchor_id": "sec:csr-addr",
+      "blocks": [
+        "58c9a6cb76259a5549469f52767a2023",
+        "1c1f287de1e4cf653a628275b0bbe3b6",
+        "ae339b208e43bf2d7c833ac08f704979"
+      ]
+    },
+    {
+      "id": "_parameters_and_discovery",
+      "level": 2,
+      "sectnum": "2.10",
+      "title": "Parameters and Discovery",
+      "heading_unit_id": "6eae091ab59cada966837d36f392634d",
+      "blocks": [
+        "919fe0696b2daf8afd0373671fdd2c41",
+        "6e2736af7586ba4fbff116efb10e929c",
+        {
+          "unit_id": "eda21944ae836ac49962a6bd554b88b0",
+          "anchor_id": "tab:iparameters"
+        },
+        {
+          "unit_id": "1125336527bd9ff9cc635730466d7047",
+          "anchor_id": "tab:dparameters"
+        }
+      ]
+    },
+    {
+      "id": "sec:disco",
+      "level": 3,
+      "sectnum": "2.10.1",
+      "title": "Discovery of encoder parameters",
+      "heading_unit_id": "7824c7ff319e80eccce2f6d7dc7386ee",
+      "heading_anchor_id": "sec:disco",
+      "blocks": [
+        "72a81f9add2c9dc4338b82032f1147f3",
+        "8ffa4f4f758841ec972acf4e7050df1a",
+        {
+          "unit_id": "864a394fb3abd5de56aa2c0236bcde56",
+          "anchor_id": "tab:requiredAttributes"
+        },
+        "1705dfec9f3d1acefb2fd80ae921c1c8",
+        {
+          "unit_id": "0b2901f72edc9eaaeaea1d95c8f66bf9",
+          "anchor_id": "tab:optionalAttributes"
+        },
+        {
+          "unit_id": "906cb20536e90f9caf4259f06e823a4f",
+          "anchor_id": "tab:otherAttributes"
+        },
+        {
+          "unit_id": "b00a8caed923e41a7fbdbc4bf75bca97",
+          "anchor_id": "tab:dataAttributes"
+        }
+      ]
+    },
+    {
+      "id": "sec:ipxact",
+      "level": 3,
+      "sectnum": "2.10.2",
+      "title": "Example ipxact description",
+      "heading_unit_id": "80757f96535b5352e639aa0d46a0f27d",
+      "heading_anchor_id": "sec:ipxact",
+      "blocks": [
+        "20879773b635fc3571331d1984987e48",
+        "414646c5a263a2ee6fc4467b4e366937"
+      ]
+    }
+  ]
+}

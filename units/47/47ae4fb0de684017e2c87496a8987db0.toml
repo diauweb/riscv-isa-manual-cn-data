@@ -1,0 +1,12 @@
+unit_id = "47ae4fb0de684017e2c87496a8987db0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+All Zve* extensions support all vector integer instructions
+(<<sec-vector-integer>>), except that the `vmulh` integer multiply
+variants that return the high word of the product (`vmulh.vv`,
+`vmulh.vx`, `vmulhu.vv`, `vmulhu.vx`, `vmulhsu.vv`, `vmulhsu.vx`) are
+not included for EEW=64 in Zve64*.'''
+zh = '''
+[#norm:Zve64_eew64_nsupport_vmulh]##所有 Zve* 扩展支持所有向量整数指令（<<sec-vector-integer>>），但 Zve64* 中 EEW=64 时不包含返回乘积高字的 `vmulh` 整数乘法变体（`vmulh.vv`、`vmulh.vx`、`vmulhu.vv`、`vmulhu.vx`、`vmulhsu.vv`、`vmulhsu.vx`）。##'''

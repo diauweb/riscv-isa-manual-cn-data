@@ -1,0 +1,11 @@
+unit_id = "9c4cac1ce1cc47f65cd2504eb9bceb8c"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SHA512SIG0(rs1, rd)) = {
+  X(rd) = ror64(X(rs1),  1) ^ ror64(X(rs1),  8) ^ (X(rs1) >> 7);
+  RETIRE_SUCCESS
+}
+--'''

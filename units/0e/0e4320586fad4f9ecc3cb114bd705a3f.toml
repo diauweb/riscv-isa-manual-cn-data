@@ -1,0 +1,16 @@
+unit_id = "0e4320586fad4f9ecc3cb114bd705a3f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A insn:fence.tso[] instruction is encoded as a insn:fence[] instruction
+with _fm_=`1000`, _predecessor_=`RW`, and _successor_=`RW`.
+[#norm:fence-tso_op]#insn:fence.tso[] orders
+all load operations in its predecessor set before all memory operations
+in its successor set, and all store operations in its predecessor set
+before all store operations in its successor set. This leaves _non-AMO_
+store operations in the _insn:fence.tso[]'s_ predecessor set unordered with
+_non-AMO_ loads in its successor set.#'''
+zh = '''
+insn:fence.tso[] 指令编码为 _fm_=`1000`、_predecessor_=`RW` 且 _successor_=`RW` 的 insn:fence[] 指令。
+[#norm:fence-tso_op]##insn:fence.tso[] 将其前驱集合中的所有加载操作排序在其后继集合中的所有内存操作之前，并将其前驱集合中的所有存储操作排序在其后继集合中的所有存储操作之前。这使得 insn:fence.tso[] 的前驱集合中的 __non-AMO__ 存储操作与其后继集合中的 __non-AMO__ 加载操作之间不排序。##'''

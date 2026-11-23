@@ -1,0 +1,15 @@
+unit_id = "c8e9c060b7a47d0e7c35005e4c82fe28"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instructions are provided to move bit patterns between the
+floating-point and integer registers. [#norm:fmv-x-w_op]#insn:fmv.x.w[] moves
+the single-precision value in floating-point register _rs1_ represented
+in the IEEE 754-2008 encoding to the lower 32 bits of integer register
+_rd_. The bits are not modified in the transfer, and in particular, the
+payloads of non-canonical NaNs are preserved. For RV64, the higher 32
+bits of the destination register are filled with copies of the
+floating-point number's sign bit#.'''
+zh = '''
+提供在浮点寄存器与整数寄存器之间移动位模式的指令。[#norm:fmv-x-w_op]##insn:fmv.x.w[] 将浮点寄存器 _rs1_ 中以 IEEE 754-2008 编码表示的单精度值移动到整数寄存器 _rd_ 的低 32 位。传送过程中不修改这些位，特别地，非规范 NaN 的有效载荷得以保留。对于 RV64，目标寄存器的高 32 位用该浮点数符号位的副本填充。##'''

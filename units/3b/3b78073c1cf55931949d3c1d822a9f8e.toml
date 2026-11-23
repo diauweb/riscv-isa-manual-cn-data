@@ -1,0 +1,14 @@
+unit_id = "3b78073c1cf55931949d3c1d822a9f8e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The direct `mseccfg.[s,u]seed` option allows one to draw a security boundary
+around a component in relation to Sensitive Security Parameter (SSP) flows,
+even if that component is not in M mode. This is
+helpful when implementing trusted enclaves. Such modules can enforce the
+entire key lifecycle from birth (in the entropy source) to death
+(zeroization) to occur without the key being passed across the boundary
+to external code.'''
+zh = '''
+直接的 `mseccfg.[s,u]seed` 选项允许围绕组件相对于敏感安全参数（SSP）流绘制安全边界，即使该组件不在 M 模式。这在实现可信飞地时很有帮助。此类模块可以强制整个密钥生命周期从诞生（在熵源中）到消亡（清零）都在不将密钥跨边界传递给外部代码的情况下发生。'''

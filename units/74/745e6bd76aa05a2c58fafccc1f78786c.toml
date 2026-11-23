@@ -1,0 +1,17 @@
+unit_id = "745e6bd76aa05a2c58fafccc1f78786c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In the base RV32I ISA, there are four core instruction formats
+(R/I/S/U), as shown in <<base_instr>>. All are a fixed 32 bits in length.
+The base ISA has `IALIGN=32`, meaning that instructions must be aligned on a four-byte boundary in memory.
+[#norm:taken_cti_misaligned_exc]#An instruction-address-misaligned exception is generated on a taken branch
+or unconditional jump if the target address is not `IALIGN-bit` aligned.
+This exception is reported on the branch or jump instruction, not on the target instruction.#
+[#norm:cond_br_no_ia_misaligned_exc_not_taken]#No instruction-address-misaligned exception is generated
+for a conditional branch that is not taken.#'''
+zh = '''
+在基础 RV32I ISA 中，有四种核心指令格式（R/I/S/U），如 <<base_instr>> 所示。它们均为固定 32 位长度。基础 ISA 具有 `IALIGN=32`，这意味着指令必须在内存中按 4 字节边界对齐。
+[#norm:taken_cti_misaligned_exc]##若目标地址未按 `IALIGN-bit` 对齐，则对于发生跳转的分支或无条件跳转会产生指令地址非对齐异常。该异常在分支或跳转指令上报告，而不是在目标指令上报告。##
+[#norm:cond_br_no_ia_misaligned_exc_not_taken]##对于未执行的条件分支，不产生指令地址非对齐异常。##'''

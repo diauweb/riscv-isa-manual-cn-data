@@ -1,0 +1,81 @@
+unit_id = "82e567657eb47cdde8c0dfaa16077d59"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[hartinfo-nscratch]] `((nscratch))`
+a|Number of `dscratch` registers available for the debugger
+to use during program buffer execution, starting from {csr-dscratch0}.
+The debugger can make no assumptions about the contents of these
+registers between commands.
+a|*R*
+a|Preset
+|[[hartinfo-dataaccess]] `((dataaccess))`
+a|
+
+0 (csr): The `data` registers are shadowed in the hart by CSRs.
+Each CSR is DXLEN bits in size, and corresponds
+to a single argument, per <<tab:datareg>>.
+
+
+1 (memory): The `data` registers are shadowed in the hart's memory map.
+Each register takes up 4 bytes in the memory map.
+a|*R*
+a|Preset
+|[[hartinfo-datasize]] `((datasize))`
+a|If {hartinfo-dataaccess} is 0: Number of CSRs dedicated to
+shadowing the `data` registers.
+
+If {hartinfo-dataaccess} is 1: Number of 32-bit words in the memory map
+dedicated to shadowing the `data` registers.
+
+Since there are at most 12 `data` registers, the value in this
+register must be 12 or smaller.
+a|*R*
+a|Preset
+|[[hartinfo-dataaddr]] `((dataaddr))`
+a|If {hartinfo-dataaccess} is 0: The number of the first CSR dedicated to
+shadowing the `data` registers.
+
+If {hartinfo-dataaccess} is 1: Address of RAM where the data
+registers are shadowed. This address is sign extended giving a
+range of -2048 to 2047, easily addressed with a load or store using
+`x0` as the address register.
+a|*R*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[hartinfo-nscratch]] `((nscratch))`
+a|可供调试器在程序缓冲区执行期间使用的 `dscratch` 寄存器数量，从 {csr-dscratch0} 开始。调试器不能对这些寄存器在命令之间的内容作任何假设。
+a|*R*
+a|预设
+|[[hartinfo-dataaccess]] `((dataaccess))`
+a|
+
+0（csr）：`data` 寄存器在硬件线程中由 CSR 影子化。每个 CSR 为 DXLEN 位，按照 <<tab:datareg>> 对应单个参数。
+
+
+1（memory）：`data` 寄存器在硬件线程的内存映射中影子化。每个寄存器在内存映射中占 4 字节。
+a|*R*
+a|预设
+|[[hartinfo-datasize]] `((datasize))`
+a|若 {hartinfo-dataaccess} 为 0：专用于影子化 `data` 寄存器的 CSR 数量。
+
+若 {hartinfo-dataaccess} 为 1：专用于影子化 `data` 寄存器的内存映射中的 32 位字数。
+
+由于 `data` 寄存器最多有 12 个，此寄存器中的值必须为 12 或更小。
+a|*R*
+a|预设
+|[[hartinfo-dataaddr]] `((dataaddr))`
+a|若 {hartinfo-dataaccess} 为 0：专用于影子化 `data` 寄存器的第一个 CSR 编号。
+
+若 {hartinfo-dataaccess} 为 1：影子化数据寄存器的 RAM 地址。此地址经符号扩展，给出 -2048 到 2047 的范围，很容易使用 `x0` 作为地址寄存器通过加载或存储来寻址。
+a|*R*
+a|预设
+|==='''

@@ -1,0 +1,21 @@
+unit_id = "ff7e1a605d03912db60936a2af191573"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The behavior of a RISC-V program depends on the execution environment in
+which it runs. A RISC-V execution environment interface (EEI) defines
+the initial state of the program, the number and type of harts in the
+environment including the privilege modes supported by the harts, the
+accessibility and attributes of memory and I/O regions, the behavior of
+all legal instructions executed on each hart (i.e., the ISA is one
+component of the EEI), and the handling of any interrupts or exceptions
+raised during execution including environment calls. Examples of EEIs
+include the Linux application binary interface (ABI), or the RISC-V
+supervisor binary interface (SBI). [#norm:ee_impl_flex]#The implementation of a RISC-V
+execution environment can be pure hardware, pure software, or a
+combination of hardware and software. For example, opcode traps and
+software emulation can be used to implement functionality not provided
+in hardware.# Examples of execution environment implementations include:'''
+zh = '''
+RISC-V 程序的行为取决于其运行所在的执行环境。RISC-V 执行环境接口（EEI）定义程序的初始状态、环境中 hart 的数量和类型（包括 hart 支持的特权模式）、内存与 I/O 区域的可访问性及属性、每个 hart 上执行的所有合法指令的行为（即 ISA 是 EEI 的一个组成部分），以及执行期间引发的任何中断或异常（包括环境调用）的处理方式。EEI 的示例包括 Linux 应用程序二进制接口（ABI），或 RISC-V 监管模式二进制接口（SBI）。[#norm:ee_impl_flex]##RISC-V 执行环境的实现可以是纯硬件、纯软件，或硬件与软件的组合。例如，可使用操作码陷阱和软件仿真来实现硬件未提供的功能。## 执行环境实现的示例包括：'''

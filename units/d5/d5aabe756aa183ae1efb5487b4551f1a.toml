@@ -1,0 +1,15 @@
+unit_id = "d5aabe756aa183ae1efb5487b4551f1a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+It is important to note that the detection of tininess after rounding requires its own rounding
+that is different from the final result rounding.  This tininess detection requires rounding as if the
+exponent were unbounded.
+This means that the input to the rounder is always a normal number.
+This is different from the final result rounding where the input to the rounder is a subnormal number when
+the value is too small to be represented as a normal number in the target format.
+The two different roundings can result in underflow being signalled for results that are rounded
+back to the normal range.'''
+zh = '''
+需要注意的是，舍入后检测微小性需要其自身不同于最终结果舍入的舍入。这种微小性检测要求按阶码无界的方式进行舍入。这意味着舍入器的输入始终是规格化数。这与最终结果舍入不同，在最终结果舍入中，当值太小而无法在目标格式中表示为规格化数时，舍入器的输入是非规格化数。这两种不同的舍入可能导致对舍入回规格化范围的结果发出下溢信号。'''

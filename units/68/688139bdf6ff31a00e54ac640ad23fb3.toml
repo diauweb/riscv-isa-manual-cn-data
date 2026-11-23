@@ -1,0 +1,17 @@
+unit_id = "688139bdf6ff31a00e54ac640ad23fb3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Both RVWMO and RVTSO are multi-copy atomic (or
+_other-multi-copy-atomic_): any store value that is visible to a hart
+other than the one that originally issued it must also be conceptually
+visible to all other harts in the system. In other words, harts may
+forward from their own previous stores before those stores have become
+globally visible to all harts, but no early inter-hart forwarding is
+permitted. Multi-copy atomicity may be enforced in a number of ways. It
+might hold inherently due to the physical design of the caches and store
+buffers, it may be enforced via a single-writer/multiple-reader cache
+coherence protocol, or it might hold due to some other mechanism.'''
+zh = '''
+RVWMO 和 RVTSO 都是多副本原子的（或多副本原子，_other-multi-copy-atomic_）：任何对原始发出该存储的硬件线程之外的硬件线程可见的存储值，也必须概念上对系统中所有其他硬件线程可见。换句话说，硬件线程可在自己的先前存储对所有硬件线程全局可见之前从这些存储转发，但不允许硬件线程之间提前转发。多副本原子性可通过多种方式强制。它可能由于缓存和存储缓冲器的物理设计而固有成立，可能通过单写者/多读者缓存一致性协议强制，也可能由于某种其他机制而成立。'''

@@ -1,0 +1,12 @@
+unit_id = "dca892035c5d57ccf3eac6c7b7bf77a9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This can be accomplished by utilizing a
+counter to keep track of the number of nested calls being traced. The counter increments on calls
+and decrements on returns. The counter will not over or underflow, and is reset to 0 whenever a synchronizing message is sent. Returns will be
+treated as inferable and will not generate a trace message if the count is non-zero (i.e. the associated
+call was already reported in an earlier message). Such a scheme is low cost, and will work as long as programs are "well behaved". The encoder will not be able to check that the return address is that of the instruction following the associated call. As such, any program that modifies return addresses cannot be traced using this mode with this minimal implementation. Due to these limitations *this is NOT recommended implementation*.'''
+zh = '''
+这可通过使用计数器跟踪正在跟踪的嵌套调用数量来完成。计数器在调用时递增，在返回时递减。计数器不会上溢或下溢，并在发送同步消息时复位为 0。如果计数非零（即相关调用已在较早消息中报告），则返回将被视为可推断，并且不会生成跟踪消息。此类方案成本低，只要程序“行为良好”就能工作。编码器无法检查返回地址是否是与相关调用之后的指令地址。因此，任何修改返回地址的程序都不能使用此最小实现以该模式跟踪。由于这些限制，**不推荐此实现**。'''

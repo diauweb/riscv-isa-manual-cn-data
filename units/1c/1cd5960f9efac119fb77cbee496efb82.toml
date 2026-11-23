@@ -1,0 +1,12 @@
+unit_id = "1cd5960f9efac119fb77cbee496efb82"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In harts with S-mode, the `medeleg` and `mideleg` registers must
+exist, and setting a bit in `medeleg` or `mideleg` will delegate the
+corresponding trap, when occurring in S-mode or U-mode, to the S-mode
+trap handler. In harts without S-mode, the `medeleg` and `mideleg`
+registers should not exist.'''
+zh = '''
+在具有 S 模式的硬件线程中，`medeleg` 和 `mideleg` 寄存器必须存在，且在 `medeleg` 或 `mideleg` 中设置某一位，将在 S 模式或 U 模式下发生的相应陷阱委托给 S 模式陷阱处理程序。在没有 S 模式的硬件线程中，`medeleg` 和 `mideleg` 寄存器不宜存在。'''

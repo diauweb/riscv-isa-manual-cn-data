@@ -1,0 +1,20 @@
+unit_id = "67b8baf6a31deae2ab83e865a7a9e740"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PMAs are inherent properties of the underlying hardware and rarely
+change during system operation. Unlike physical memory protection values
+described in <<pmp>>, PMAs do not vary by execution
+context. The PMAs of some memory regions are fixed at chip design
+time—for example, for an on-chip ROM. Others are fixed at board design
+time, depending, for example, on which other chips are connected to
+off-chip buses. Off-chip buses might also support devices that could be
+changed on every power cycle (cold pluggable) or dynamically while the
+system is running (hot pluggable). Some devices might be configurable at
+run time to support different uses that imply different PMAs—for
+example, an on-chip scratchpad RAM might be cached privately by one core
+in one end-application, or accessed as a shared non-cached memory in
+another end-application.'''
+zh = '''
+PMA 是底层硬件的固有属性，在系统运行期间很少改变。与 <<pmp>> 中描述的物理内存保护值不同，PMA 不随执行上下文而变化。某些内存区域的 PMA 在芯片设计时固定——例如，对于片上 ROM。其他则在板级设计时固定，例如取决于哪些其他芯片连接到片外总线。片外总线还可能支持可在每次上电循环时更换（冷插拔）或在系统运行时动态更换（热插拔）的设备。某些设备可在运行时配置以支持隐含不同 PMA 的不同用途——例如，片上暂存 RAM 可能在一个终端应用中被一个核心私有缓存，而在另一个终端应用中作为共享的非缓存内存访问。'''

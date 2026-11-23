@@ -1,0 +1,24 @@
+unit_id = "33a5f49de106e17913418b251879f901"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* HINT instruction forms (typically encodings with `rd=x0`) are excluded from
+the data-independent time requirement.
+* Floating point (F, D, Q, L extensions) are currently excluded from the
+constant-time requirement as they have very few applications in standardised
+cryptography. We may consider adding floating point add, sub, multiply as a
+constant time requirement for some floating point extension in case a specific
+algorithm (such as the PQC Signature algorithm Falcon) becomes critical.
+*  Cryptographers typically assume division to be variable-time (while
+multiplication is constant time) and implement their Montgomery reduction
+routines with that assumption.
+* Zicsr, Zifencei are excluded.
+* Some instructions are on the list simply because we see no harm in
+including them in testing scope.'''
+zh = '''
+* HINT 指令形式（通常为 `rd=x0` 的编码）不受数据无关时间要求约束。
+* 浮点（F、D、Q、L 扩展）目前不受常量时间要求约束，因为它们在标准化密码学中应用很少。如果特定算法（如 PQC 签名算法 Falcon）变得关键，我们可能考虑将浮点加、减、乘作为某些浮点扩展的常量时间要求。
+*  密码学家通常假定除法是可变时间的（而乘法是常量时间），并基于此假设实现其 Montgomery 约简例程。
+* Zicsr、Zifencei 被排除。
+* 有些指令在列表中仅仅是因为我们认为将其纳入测试范围没有坏处。'''

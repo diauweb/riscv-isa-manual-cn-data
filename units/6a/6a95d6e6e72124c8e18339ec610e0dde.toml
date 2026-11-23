@@ -1,0 +1,15 @@
+unit_id = "6a95d6e6e72124c8e18339ec610e0dde"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+*sijump* is optional and may be omitted if the hart does not implement
+the logic to detect sequentially inferable jumps. If the encoder offers
+an *sijump* input it must also provide a parameter to indicate whether
+the input is connected to a hart that implements this capability, or
+tied off. This is to ensure the decoder can be made aware of the hart’s
+capability. Enabling sequentially inferable jump mode in the encoder and
+decoder when the hart does not support it will prevent correct
+reconstruction by the decoder.'''
+zh = '''
+*sijump* 是可选的；若硬件线程未实现检测顺序可推断跳转的逻辑，则可省略。若编码器提供 *sijump* 输入，则还必须提供一个参数，以指示该输入是连接到实现此能力的硬件线程，还是被固定连接。这是为了确保能让解码器知晓硬件线程的能力。当硬件线程不支持顺序可推断跳转时，在编码器和解码器中启用该模式将妨碍解码器正确重建。'''

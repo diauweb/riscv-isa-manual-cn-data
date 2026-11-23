@@ -1,0 +1,26 @@
+unit_id = "ceedeccfe42b19919fe38d3c767aaaf4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Register Access Abbreviations
+[width=75%,align="center",float="center",cols="<,^"]
+|===
+|R | Read-only.
+|R/W | Read/Write.
+|R/W1C | Read/Write Ones to Clear. Writing 0 to every bit has no effect. Writing 1 to every bit clears the field. The result of other writes is        undefined.
+|WARZ | Write any, read zero. A debugger may write any value. When read this field returns 0.
+|W1 | Write-only. Only writing 1 has an effect. When read the returned value should be 0.
+|WARL | Write any, read legal. A debugger may write any value. If a value is unsupported, the implementation converts the value to one that is supported.
+|==='''
+zh = '''
+.寄存器访问缩写
+[width=75%,align="center",float="center",cols="<,^"]
+|===
+|R | 只读。
+|R/W | 可读写。
+|R/W1C | 读/写 1 清零。向每一位写 0 无效果。向每一位写 1 会清零该字段。其他写操作的结果未定义。
+|WARZ | 可写任意值，读出为零。调试器可写入任何值。读取时该字段返回 0。
+|W1 | 只写。仅写 1 有效。读取时返回的值宜为 0。
+|WARL | 可写任意值，读出合法值。调试器可写入任何值。若某值不受支持，实现会将该值转换为受支持的值。
+|==='''

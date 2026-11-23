@@ -1,0 +1,15 @@
+unit_id = "52629c1d4af429decdc7653aa4a5f8e4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+It is not unusual that hypervisors must emulate the instructions that
+raise virtual-instruction exceptions, to support nested hypervisors or
+for other reasons. Machine level is expected ordinarily to delegate
+virtual-instruction traps directly to HS-level, whereas
+illegal-instruction traps are likely to be processed first in M-mode before
+being conditionally delegated (by software) to HS-level. Consequently,
+virtual-instruction traps are expected typically to be handled faster
+than illegal-instruction traps.'''
+zh = '''
+虚拟机监控器必须模拟引发虚拟指令异常的指令（以支持嵌套虚拟机监控器或出于其他原因）并不罕见。机器级通常预期将虚拟指令陷阱直接委托给 HS 级，而非法指令陷阱则很可能先在 M 模式中处理，然后（由软件）有条件地委托给 HS 级。因此，虚拟指令陷阱预期通常比非法指令陷阱处理得更快。'''

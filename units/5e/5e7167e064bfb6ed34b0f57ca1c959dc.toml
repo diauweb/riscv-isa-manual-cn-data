@@ -1,0 +1,12 @@
+unit_id = "5e7167e064bfb6ed34b0f57ca1c959dc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor extension depends on an "I" base integer ISA with 32
+`x` registers (RV32I or RV64I), not RV32E or RV64E, which have only 16 `x`
+registers. CSR `mtval` must not be read-only zero, and standard
+page-based address translation must be supported, either Sv32 for RV32,
+or a minimum of Sv39 for RV64.'''
+zh = '''
+虚拟机监控器扩展依赖于具有 32 个 `x` 寄存器的 "I" 基础整数 ISA（RV32I 或 RV64I），而不是只有 16 个 `x` 寄存器的 RV32E 或 RV64E。CSR `mtval` 不应为只读零，并且应支持标准基于页的地址转换：RV32 使用 Sv32，RV64 至少使用 Sv39。'''

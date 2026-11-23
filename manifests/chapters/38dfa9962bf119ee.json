@@ -1,0 +1,921 @@
+{
+  "chap_hash": "38dfa9962bf119ee",
+  "id": "app:mm",
+  "sectname": "appendix",
+  "sectnum": "B",
+  "title_en": "Memory Model Supplemental Material",
+  "title_unit_id": "35b6e11e10d7af9afa5cb4739d9e1a34",
+  "source_path": "src/unpriv/mm-appendix.adoc",
+  "sections": [
+    {
+      "id": "app:mm",
+      "level": 1,
+      "sectnum": "B",
+      "title": "Memory Model Supplemental Material",
+      "heading_unit_id": "35b6e11e10d7af9afa5cb4739d9e1a34",
+      "heading_anchor_id": "app:mm",
+      "blocks": [
+        "c0f81c355cbfa7ebf6f81d5bd2523648"
+      ]
+    },
+    {
+      "id": "app:mm-explanatory",
+      "level": 2,
+      "sectnum": "B.1",
+      "title": "RVWMO Explanatory Material",
+      "heading_unit_id": "9d71e94fcf75762ae24a424389528469",
+      "heading_anchor_id": "app:mm-explanatory",
+      "blocks": [
+        "ee978fa7014d7fa23ffff50cf31c0a05"
+      ]
+    },
+    {
+      "id": "whyrvwmo",
+      "level": 3,
+      "sectnum": "B.1.1",
+      "title": "Why RVWMO?",
+      "heading_unit_id": "0abdbdceb776a273d1dd217a847a13cd",
+      "heading_anchor_id": "whyrvwmo",
+      "blocks": [
+        "f70612c626c1c9b9b074069758143560",
+        "9501159e9d37752fda221e0617094ab5",
+        "ae5598f1ec556dc80aad53ca0a610b07",
+        "45d2ea4268b51880361ac2bd5842767b"
+      ]
+    },
+    {
+      "id": "litmustests",
+      "level": 3,
+      "sectnum": "B.1.2",
+      "title": "Litmus Tests",
+      "heading_unit_id": "0b58aeb80b750ebbd902746ecc9ae8d1",
+      "heading_anchor_id": "litmustests",
+      "blocks": [
+        "d01614147c995628fe72877da99f0e42",
+        {
+          "unit_id": "dc4562b9e63a1ec750a4b950ae27fed1",
+          "anchor_id": "litmus-sample"
+        },
+        "7724edd5bda93e9d229959550f35e76a",
+        {
+          "unit_id": "c967e83811f01d9b12f06fdea8eca6af",
+          "anchor_id": "litmus-key"
+        },
+        "f8a75eec6be2f5a01691a4e6d13e9dbb",
+        "0e64e4e6995d73849838aa03e7ea0518",
+        "df4b913cbf86e857635dbe44ee87d7ed",
+        "432c7b83cd83571ee556c1bf652371fb",
+        "74e22d6ec0b35ae912af4786c9521945",
+        "2af295d4ba65cba2873b9376efcce6bb"
+      ]
+    },
+    {
+      "id": "_explaining_the_rvwmo_rules",
+      "level": 3,
+      "sectnum": "B.1.3",
+      "title": "Explaining the RVWMO Rules",
+      "heading_unit_id": "9ccf5af4bf6ce6bffb82ed67c4d6075b",
+      "blocks": [
+        "6425277370ee2c6c32dd72317912bbfb"
+      ]
+    },
+    {
+      "id": "_preserved_program_order_and_global_memory_order",
+      "level": 4,
+      "sectnum": "B.1.3.1",
+      "title": "Preserved Program Order and Global Memory Order",
+      "heading_unit_id": "568f4a1d1268ca7c644451b8f9957f88",
+      "blocks": [
+        "dc8e7d4ee0e362a46a38d5238ce08e91",
+        "e0d1fff309f5716b77765920bef13ba9",
+        "0dc61f5833e50883a2b1231109f316e8"
+      ]
+    },
+    {
+      "id": "loadvalueaxiom",
+      "level": 4,
+      "sectnum": "B.1.3.2",
+      "title": "Load value axiom",
+      "heading_unit_id": "8fd516eb0933fe4abab1dea01f96d9c1",
+      "heading_anchor_id": "loadvalueaxiom",
+      "blocks": [
+        "4c83c92e220f6f93bff95610bb8ccbb7",
+        "da21b39f26155561a15ebb6cbb108fa9",
+        "c96995dbdb1481a3d370fd79a9b8de82",
+        {
+          "unit_id": "13edba9f2454d502f17c43c4d043dba6",
+          "anchor_id": "litms_sb_forward"
+        },
+        "851a2234db1a026dab1eef1b04f07c31",
+        "c71940d2fa967d356cc11854a5bdae73",
+        "69ddbf3bba5241a94034454676400d25",
+        "b6a9af6e4a70a960e1655fa8f1171874",
+        "a26b71f6660ed71032796d8790d152f3",
+        "7b04daec14919d8a5d8060ce5bc3d0c4",
+        {
+          "unit_id": "9eee1a80be68efcf9ecf1d9799b19483",
+          "anchor_id": "litmus_ppoca"
+        },
+        "ba4c5cfbbf37f43a8e6afe6ec8efcd79",
+        "fe37ea72be83d8ede5eab1998693a513"
+      ]
+    },
+    {
+      "id": "atomicityaxiom",
+      "level": 4,
+      "sectnum": "B.1.3.3",
+      "title": "Atomicity axiom",
+      "heading_unit_id": "ad336ffd3a2a7f8bd066e0374890e70e",
+      "heading_anchor_id": "atomicityaxiom",
+      "blocks": [
+        "6b63a665e21e13e4ef5e4eeb6c5226a3",
+        "c7d062bc2082d4356704068146f667b4",
+        "d87507f3c9ed97fa3e2fcf1034050e5a",
+        {
+          "unit_id": "f6852aa5b1eafb539bfc79774446aaca",
+          "anchor_id": "litmus_lrsdsc"
+        },
+        "cdf8f60731e4a6e26b441a7af70411c1",
+        "4f0ef5eea5020bf8ca1274639d6393eb"
+      ]
+    },
+    {
+      "id": "mm-progress",
+      "level": 4,
+      "sectnum": "B.1.3.4",
+      "title": "Progress axiom",
+      "heading_unit_id": "84842d5c2c30b2757564e16711f8fb83",
+      "heading_anchor_id": "mm-progress",
+      "blocks": [
+        "44abf123927088d3eaa56d85f552c1ba",
+        "821818331df86ad8472194f4f83d6a5a",
+        "45bd696849f615606041f75081ffc7d8",
+        "82f000e924dbd0f3978ef3c67beb98c7"
+      ]
+    },
+    {
+      "id": "mm-overlap",
+      "level": 4,
+      "sectnum": "B.1.3.5",
+      "title": "Overlapping-Address Orderings (<<overlapping-ordering, Rules 1-3>>)",
+      "heading_unit_id": "853ca0fec99fa2a2ff8c59f04e9aaff1",
+      "heading_anchor_id": "mm-overlap",
+      "blocks": [
+        "25497851367dcd3cf0a11da06e76ac43",
+        "31b6d2bf4442ee54db3c50a4825c151a",
+        "3408540a083ca2e6a4e3eb42cb240f28",
+        {
+          "unit_id": "97116f54fe5fb5623ee49af338a78309",
+          "anchor_id": "frirfi"
+        },
+        "8783aad1627e75802daf1046fcb57459",
+        "2147ab5c181b2a45052f39147b56c684",
+        "d06b2a3352055c48b9f63688e5a1bc91",
+        "b7fc71590d9c0c004c2eae9a6872a6bc",
+        "2a615c5f26273b0b4a4e1902fb8a54e9",
+        {
+          "unit_id": "9ee2eb11860e5a4249e79778add6d9df",
+          "anchor_id": "litmus-rsw"
+        },
+        "9a4260b553b38bf4e11f3129a6b01560",
+        "6e8e241f2dfa51ea0e11095f56d54bb0",
+        "a650c4576d5502df5e78a5b9b7f5bd26",
+        "f022b7fc688fc6d8494dd71086eb8987"
+      ]
+    },
+    {
+      "id": "mm-fence",
+      "level": 4,
+      "sectnum": "B.1.3.6",
+      "title": "Fences (<<overlapping-ordering, Rule 4>>)",
+      "heading_unit_id": "5fe219c041b879be4d7e5b5032a74501",
+      "heading_anchor_id": "mm-fence",
+      "blocks": [
+        "d97ca70bb42008567a814f68801837e9",
+        "65e2442c7e1178320d2254d90061b3ff",
+        "1d77ada08f96a4de2de9b84701b8b00e",
+        "009751c9d8391f109cbba475ce05a94c",
+        "6c162d1a9631710d35661004588e4766",
+        "dc0c1bac76dd8057bd69a5864909ce70"
+      ]
+    },
+    {
+      "id": "sec:memory:acqrel",
+      "level": 4,
+      "sectnum": "B.1.3.7",
+      "title": "Explicit Synchronization (<<overlapping-ordering, Rules 5-8>>)",
+      "heading_unit_id": "bdb3270609c4111a6f50a6dee795dadf",
+      "heading_anchor_id": "sec:memory:acqrel",
+      "blocks": [
+        "f37e8f40a5ed65df912196a12aeeb81f",
+        "1279845754249c72d04bfa6892b444d6",
+        {
+          "unit_id": "4df7d22aa7d5f68b984b360a70d88331",
+          "anchor_id": "spinlock_atomics"
+        },
+        "5a573e893f6e1bb3f8438ad230652d92",
+        {
+          "unit_id": "714dca610c2e4aec870b09a848fba8a6",
+          "anchor_id": "spinlock_fences"
+        },
+        "3935f8f236099b3b9e6332e8dc791ed8",
+        "6c1d79a8a924c477996b25983335e9dd",
+        "b9fb649b90d3cdc392be192dc131197d",
+        "68462ea62d78d978dece10c6661404be",
+        "47ab24a5f631e77a210b541d4f50e2e5"
+      ]
+    },
+    {
+      "id": "sec:memory:dependencies",
+      "level": 4,
+      "sectnum": "B.1.3.8",
+      "title": "Syntactic Dependencies (<<overlapping-ordering, Rules 9-11>>)",
+      "heading_unit_id": "c3eb488c4ed5f23116709fd5dc6c4144",
+      "heading_anchor_id": "sec:memory:dependencies",
+      "blocks": [
+        {
+          "unit_id": "e3cb398995f02c6a4a9ddfaf3bfbb14d",
+          "anchor_id": "ppo-addr"
+        },
+        "12ccd7c315194528767c46746b87817e",
+        "795798dd7096a916d269140ab564912a",
+        {
+          "unit_id": "9f0a931d76dbdf036d45e62b9c40f3ee",
+          "anchor_id": "fflags"
+        },
+        "487d3d6e201a78518e558139b69e68d5",
+        "bb8a77de42ba40ecef7f34f40780c972",
+        {
+          "unit_id": "428868acb5cfe963ad3c9a1d81fc390c",
+          "anchor_id": "address"
+        },
+        "ef0f8dd2b0dad4d49ba07711b442a3d2",
+        "53188bd4f275b0a70b4b779396bd0d8d",
+        {
+          "unit_id": "53a90f40f6bb838a9cb056fc0821324b",
+          "anchor_id": "control1"
+        },
+        "a68e7bdc7662950ac9d907903f8d7629",
+        {
+          "unit_id": "36fdf18b178ec22ceff0da5b2af0c21e",
+          "anchor_id": "control2"
+        },
+        "d37429064429f37f020b8fd8b1b8845e",
+        "d72810c70831c7fe5090eceb0e8a1339",
+        {
+          "unit_id": "c67742183d90baf48cc838788a93b487",
+          "anchor_id": "litmus_lb_lrsc"
+        },
+        "4625000384338b1de0f3d90f949bb823",
+        "8b8fb7fda92fa0c27dc91f2c6f1393b2"
+      ]
+    },
+    {
+      "id": "memory-ppopipeline",
+      "level": 4,
+      "sectnum": "B.1.3.9",
+      "title": "Pipeline Dependencies (<<overlapping-ordering, Rules 12-13>>)",
+      "heading_unit_id": "2d2b9390bdab50cfc73e91d2232adb96",
+      "heading_anchor_id": "memory-ppopipeline",
+      "blocks": [
+        {
+          "unit_id": "4840681c76b41094ec8428c43104fc74",
+          "anchor_id": "addrdatarfi"
+        },
+        {
+          "unit_id": "fff92f2ed7ed6a702b5097354668cf3c",
+          "anchor_id": "litmus_datarfi"
+        },
+        "e01d13c4275cfee827095ab0c45b7d05",
+        "7da097e3685e648099789b308a7a660b",
+        "ef91a774a5e1ac08cd3e96c098143e4a",
+        "ca470069f5328da415c73cfd97748b12",
+        {
+          "unit_id": "a08d179234a322fea52fd3e0cb4962dd",
+          "anchor_id": "litmus:addrdatarfi_no"
+        },
+        "ed03c4d69d1b38269af3c4a33f624b28"
+      ]
+    },
+    {
+      "id": "_beyond_main_memory",
+      "level": 3,
+      "sectnum": "B.1.4",
+      "title": "Beyond Main Memory",
+      "heading_unit_id": "e730f41b22f5945bf3548508c102f947",
+      "blocks": [
+        "4bc52c7518074091fbc0ee9a5b1509aa"
+      ]
+    },
+    {
+      "id": "_coherence_and_cacheability",
+      "level": 4,
+      "sectnum": "B.1.4.1",
+      "title": "Coherence and Cacheability",
+      "heading_unit_id": "29e9e86564d35de94381767766be7f28",
+      "blocks": [
+        "b8db329e6facef11672f9c63367a862d",
+        "ada3cb40a621c1465c5c6feddea271bb"
+      ]
+    },
+    {
+      "id": "_io_ordering",
+      "level": 4,
+      "sectnum": "B.1.4.2",
+      "title": "I/O Ordering",
+      "heading_unit_id": "01416b49faea716aa6caa1a28bee6594",
+      "blocks": [
+        "363ed681773f412cce388935b192d6f5",
+        "5532b36e773252f15525e43b4cf2836b",
+        "8822f7d202a2cf88f42468291f749c8b",
+        {
+          "unit_id": "c7cf9953cbe19fb8b2e0f791e7e4d04d",
+          "anchor_id": "wo"
+        },
+        "05d27aee5f088c043f055ead6da1bdb3",
+        "884b2af71689388c7ceffe99f036dc06",
+        "123bc4d0644d8d0118b9a5349ed77bd4",
+        "ed34268233423c5295a98dacb66df065",
+        "851fb8c445f8985198b7ddf99e96a3cb"
+      ]
+    },
+    {
+      "id": "memory_porting",
+      "level": 3,
+      "sectnum": "B.1.5",
+      "title": "Code Porting and Mapping Guidelines",
+      "heading_unit_id": "1a5356df8dba05b1bf3ecdeba1fe1c23",
+      "heading_anchor_id": "memory_porting",
+      "blocks": [
+        {
+          "unit_id": "d2773a232b9e295d4907871e9e54eea1",
+          "anchor_id": "tsomappings"
+        },
+        "53cf629845fcddd841d2eb1b10c4d481",
+        "0b8ead1a06c3b751373bfedfe1b13a3f",
+        {
+          "unit_id": "6f368d312c3ca6c772edcf0a54f1ccc9",
+          "anchor_id": "powermappings"
+        },
+        "623baa5e036d5fb783e24920f4d37dac",
+        {
+          "unit_id": "51dfa76864fa896350957ae0a098dc5e",
+          "anchor_id": "armmappings"
+        },
+        "f7307246ee5ee39d8af9032754c41eae",
+        {
+          "unit_id": "6f5f2db6374dcc12f214647fdab9c47c",
+          "anchor_id": "linuxmappings"
+        },
+        "77f498dad45664f4ac91968c0c91125f",
+        "245ee6e36c68697ff8eeb3304ad15545",
+        "d002bbc04c2709bb4379c94ca5116008",
+        "30a4291491beab6e461f9c73e3ab3668",
+        "04a322f58aa9470c48da3bf218171029",
+        "b75c634a4ab827297ce89792c663cf77",
+        {
+          "unit_id": "db2d23d89eb31e6c5d76c162cbb810e5",
+          "anchor_id": "lkmm_ll"
+        },
+        "03152537e4ae842c5f6666e30e368ad0",
+        {
+          "unit_id": "200336fe772b4b9e31032d45c3b8973a",
+          "anchor_id": "c11mappings"
+        },
+        {
+          "unit_id": "60df5ed2777137cd4393ba38eef861bf",
+          "anchor_id": "c11mappings_hypothetical"
+        },
+        "40109e49999481f4694671bf7ce40cd4",
+        "19d0d9950ad19d4131b923cd4bd101ee",
+        "5e804f3290bde9670adeb50ad7375817",
+        "6dc71362aa966d8ad9cf6e507bc485c1"
+      ]
+    },
+    {
+      "id": "_implementation_guidelines",
+      "level": 3,
+      "sectnum": "B.1.6",
+      "title": "Implementation Guidelines",
+      "heading_unit_id": "7fbbec30254b34e014c3bc522cf3f652",
+      "blocks": [
+        "c381f9ea9d199d4ea4a1299c552104ed",
+        "688139bdf6ff31a00e54ac640ad23fb3",
+        "f93476c3c4d7cd4ed3002df275b3c57e",
+        "19ee4b3d24ecffa11faa34f1cd7f4ad4",
+        "cf9314131d220a7fc76808c9c1e66866",
+        "d82a87346249176c72b947f37b0903e9",
+        "121e8e26c4fc338037a5d44643fc4d5e",
+        "211e2c34d2154f58bb716e3e6e606c9d",
+        "b4cc686e03dfe29965f10d5541ce0976",
+        "49bf10937ecd966ec5ec0799db89a7d9",
+        "80fc625b88370ad3b34dd241e0de7a4f",
+        "dcc6c40fdbba919c725ec24ec690991e",
+        {
+          "unit_id": "e7ee2d03cc00852f799437c34e649ed7",
+          "anchor_id": "silent-stores"
+        },
+        "d6654a343a5247aa34e6a4656578c810",
+        "1c28551ba071c9e6a8bb16120f598c65",
+        "a2d84b55eb27cc3b7e0fd61f590be337",
+        "b394d730c671f4deaacabd709f23136a",
+        "9890126bffa26b56c25aedea3db54e2d",
+        "7e1fc6dc65a3dd7ecddfdf8f6c4d627c"
+      ]
+    },
+    {
+      "id": "_possible_future_extensions",
+      "level": 4,
+      "sectnum": "B.1.6.1",
+      "title": "Possible Future Extensions",
+      "heading_unit_id": "e3e8b12a5de3d2b1350f09ea99c5b8d1",
+      "blocks": [
+        "ec65553936d198018744a2868ce8fb66",
+        "7d4225f591975a2abd4b9ab359824829"
+      ]
+    },
+    {
+      "id": "discrepancies",
+      "level": 3,
+      "sectnum": "B.1.7",
+      "title": "Known Issues",
+      "heading_unit_id": "4e7bbaace13caede23aa0670c9448f28",
+      "heading_anchor_id": "discrepancies",
+      "blocks": []
+    },
+    {
+      "id": "mixedrsw",
+      "level": 4,
+      "sectnum": "B.1.7.1",
+      "title": "Mixed-size RSW",
+      "heading_unit_id": "d27215199d7822ed3bd3113a75c255e0",
+      "heading_anchor_id": "mixedrsw",
+      "blocks": [
+        {
+          "unit_id": "b43a55cfa10d4294672039721ee31608",
+          "anchor_id": "rsw1"
+        },
+        {
+          "unit_id": "36b54759151cf3a080801f76a4100d03",
+          "anchor_id": "rsw2"
+        },
+        {
+          "unit_id": "f80cdc6566199fa9cfe6ff4f5eb7a40e",
+          "anchor_id": "rsw3"
+        },
+        "c6c324e9862a41f952e39d857dd6c28d"
+      ]
+    },
+    {
+      "id": "app:mm-formal",
+      "level": 2,
+      "sectnum": "B.2",
+      "title": "Formal Memory Model Specifications, Version 0.1",
+      "heading_unit_id": "bcbea19d0b36f207e4c8c3e7e7e0eb8f",
+      "heading_anchor_id": "app:mm-formal",
+      "blocks": [
+        "95d16a78831c9a8445629316876c3488",
+        "bb98a2650dad21675fd0cbc57b289e11"
+      ]
+    },
+    {
+      "id": "alloy",
+      "level": 3,
+      "sectnum": "B.2.1",
+      "title": "Formal Axiomatic Specification in Alloy",
+      "heading_unit_id": "6029602a0652b25229be0de10f9a6d48",
+      "heading_anchor_id": "alloy",
+      "blocks": [
+        "a7662a6219168f55c121e3ca9ca0505b",
+        "332bcb56cfe1dfe01c95199a797ee11f",
+        "30bb31887c6835ddb9aec6c2c7b79fe0",
+        "2ecfdd461865587083601c6075782f7c",
+        "80e4df8c5d4fe97ccb7e491602771c73",
+        "23660d67519e1d99158ad243093dbb7d",
+        "79626b0ac13b121f079fc461ea1d8f4c"
+      ]
+    },
+    {
+      "id": "sec:herd",
+      "level": 3,
+      "sectnum": "B.2.2",
+      "title": "Formal Axiomatic Specification in Herd",
+      "heading_unit_id": "42f0cb15fa8354f2e16f47b58c8a0e66",
+      "heading_anchor_id": "sec:herd",
+      "blocks": [
+        "9490e8471f2de62906d3e1e5b3689de5",
+        "89592e7acadce694176a65b5c6422bc1",
+        {
+          "unit_id": "f9a35664ce60f49165e0a75a28022066",
+          "anchor_id": "herd1"
+        },
+        {
+          "unit_id": "e6d1f6cfe687090ec49eddcdb8c67d77",
+          "anchor_id": "herd2"
+        },
+        {
+          "unit_id": "c0215af608835f7d5678309901adc80c",
+          "anchor_id": "herd3"
+        }
+      ]
+    },
+    {
+      "id": "operational",
+      "level": 3,
+      "sectnum": "B.2.3",
+      "title": "An Operational Memory Model",
+      "heading_unit_id": "7451967eb979a4e32db1481c4e8ca897",
+      "heading_anchor_id": "operational",
+      "blocks": [
+        "6fc51878bf700c302fb28929a60e3250",
+        "57d5f4c5f69ad6c9c851d550061b04d9",
+        "739ce455ca525cca1e6d6de08f07dddd",
+        "a4c5e9393a4cd71cef976610e5ac38a4",
+        "2e1cd2e6378952b8a9c728169df23661",
+        "01bf62a228b1bd7abcd7815076e0f802",
+        "a6ae7ff49d8075c9c0297b610c58b438",
+        "44d7f03c080730d79db704f07e502869",
+        "f60022d7229882203d66eefb74769093",
+        "656d3d83646812a4caa20e5cfb6fe8a1",
+        "5fcc5aa1104e6fec5738798fcd306349",
+        "4db3d31a4c6192fbc2f89166244c69dc",
+        "deb0ff424c0f1df27b6ea6d735499271",
+        "270149da10087cda2eb83504f490f6ba",
+        "27710fbc9f0cb235e5a8e0d38478c7bd",
+        "f876f8fa38c9ecb486601c7c4f6a0bc5",
+        "860cb5723425eba5ec80eac77d0dd715",
+        "6cbaaa2f5c02789047f5e869997189ee",
+        "ed96e2c391de1775e447541e6753fc58",
+        "aa6373ffe7fe6c7f8b22a535747932f9",
+        "db2ad72093c70a5d1481aab6dc3ff00d",
+        "2b88e75f96c47ee68d0801c02e4d776f",
+        "5f3391bbebf9eccc0e0f65355422a156",
+        "ed34d0e395c5d639a4e383a8e519e817",
+        "0e9d9868dd84a48fc2232db89103c3b9",
+        "b32fa889b082e0ae7f737587dfdd5a84",
+        "a165ac029e057b05b996ba683b7c1dc0",
+        "911032cdfa71de003c22ae2e9d68ea98",
+        "7daed3eca0b25670ae89f41df0f7a41e",
+        "34f57c3acd9a883f849721bb2e2274f0",
+        "56407d8cf9665f3847f30a576a79d0a4",
+        "e284e13758f26ff033f0bbcde3f0e6d7",
+        "8f3de104a5a3a4b8a5e3b0180a89fd1f",
+        "4cef6efb0d13ba2752eced4e6475cba8",
+        "e82aebaddd1adb23a261e5e4bdce39bb",
+        "9cdb1cd890ed7f060b44821b4750ad39",
+        "4448a3939b008fe9b0737966e95a9974",
+        "f1a3a37fce5846ec1f8bc8f04172cb87",
+        "98b86d1de4c79deb321579db0f6891ab"
+      ]
+    },
+    {
+      "id": "pseudocode_exec",
+      "level": 4,
+      "sectnum": "B.2.3.1",
+      "title": "Intra-instruction Pseudocode Execution",
+      "heading_unit_id": "226f323f981a9dc1b1e65925b00475d8",
+      "heading_anchor_id": "pseudocode_exec",
+      "blocks": [
+        "382e4a0232864b5f521ca60223ad8a1a",
+        "af5c4a0a4b6d650ed90b074000a8af6c",
+        "f3988a91796c30f904b3f7dee2f1807e",
+        "8b90d641efe53627ec9f985ea3c805a4",
+        "94035b625710dea0bda739ef31f0bb5a",
+        "ba4ffb20a4bf787583ab8c807c8d0db0",
+        "6f1fb6ed5f3322bd02c98749e201fe6c",
+        "7be99f3a35a0c95af975ee865f6587ae",
+        "98dd414a69158d168071a48b1db296dd",
+        "b136db49d6f0c33cae6ce07f268fb760",
+        "33301490e29909b49ff0ba787f76c1df"
+      ]
+    },
+    {
+      "id": "inst_state",
+      "level": 4,
+      "sectnum": "B.2.3.2",
+      "title": "Instruction Instance State",
+      "heading_unit_id": "057d9861a438ecf0eb6b868fe65f430e",
+      "heading_anchor_id": "inst_state",
+      "blocks": [
+        "7cc31fb7cf3527a3e845819f571d30b7",
+        "87d736eea7e444faaa3280fd4dfe2c19",
+        "ff96fce67c810fb0d346cdc117bccabe",
+        "e9f1edefa87aa7f95c9ccb4772691276",
+        "6d8707612c85b1f191ace78bf92ae9c8",
+        "4ba56c353b3aba01d67481873c80859f",
+        "b062333644fd3d2a2a5e81d675ecd1c1",
+        "d689809f3eff4e1dc52a33ef72a908ea",
+        "e0bd2a614a15934bc5e5b04f17b2cc05",
+        "0b82e979f7ede5613f070a0513456dd8"
+      ]
+    },
+    {
+      "id": "_hart_state",
+      "level": 4,
+      "sectnum": "B.2.3.3",
+      "title": "Hart State",
+      "heading_unit_id": "9a736207287418e1fe71867f40e68f03",
+      "blocks": [
+        "6571378edcc42501e008221e120ec470",
+        "5756a2ea384785757742eacc4d6c5845"
+      ]
+    },
+    {
+      "id": "_shared_memory_state",
+      "level": 4,
+      "sectnum": "B.2.3.4",
+      "title": "Shared Memory State",
+      "heading_unit_id": "c12a623dfbb7d3e726553ae4f9247822",
+      "blocks": [
+        "ffe30e226c88ef7c80a7ea35b6a9182d",
+        "65695018d5ce6e1a58e341a808c88570",
+        "8e0cb1efc3c036550f155a4b6a79c3d3"
+      ]
+    },
+    {
+      "id": "transitions",
+      "level": 4,
+      "sectnum": "B.2.3.5",
+      "title": "Transitions",
+      "heading_unit_id": "ca69388b4c34e3cf2e1201b0b6f62710",
+      "heading_anchor_id": "transitions",
+      "blocks": [
+        "c9522a19a0e284d15c643f14cb82c80d"
+      ]
+    },
+    {
+      "id": "fetch",
+      "level": 5,
+      "sectnum": null,
+      "title": "Fetch instruction",
+      "heading_unit_id": "26993e614f612d533a77a72adb491fbf",
+      "heading_anchor_id": "fetch",
+      "blocks": [
+        "78f742d3ac2a4b786bf4f9c9913197db",
+        "b49a1fe2357a50f09255314bb603256e",
+        "1124dab6a98b3a4662467081ec87a1f3",
+        "d782f41d8de6b572c4382b4942a05a52"
+      ]
+    },
+    {
+      "id": "initiate_load",
+      "level": 5,
+      "sectnum": null,
+      "title": "Initiate memory load operations",
+      "heading_unit_id": "298f79a532656ca1c1d02de8b1155754",
+      "heading_anchor_id": "initiate_load",
+      "blocks": [
+        "f604955959c7864289af730b75b6cfc3",
+        "db8177a399b77e689c07228d0835c850",
+        "786f7b2ccdaca18fa45b18c3f489b86b"
+      ]
+    },
+    {
+      "id": "sat_by_forwarding",
+      "level": 5,
+      "sectnum": null,
+      "title": "Satisfy memory load operation by forwarding from unpropagated stores",
+      "heading_unit_id": "a7db8dfac85f1917b30d43b382af3d48",
+      "heading_anchor_id": "sat_by_forwarding",
+      "blocks": [
+        "f272cc7b2b6c661276470c4cf080ffbb",
+        "7ad1a0c133b53b7b67d806fb2c4fb2ec",
+        "1e5702f1ddb74cbd9a6faaeeee7da9d9",
+        "69e44c16c2d7b69f3872a66a28b3614d",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "554c9c19f9dc423b43aa069b21721fdd",
+        "cc8200059f35dbc2cee7b5ae926491ba",
+        "43aa3c85ed175ac07cfae65a2924bea7",
+        "20135c74cdbd69002f057ef6b8a23278"
+      ]
+    },
+    {
+      "id": "sat_from_mem",
+      "level": 5,
+      "sectnum": null,
+      "title": "Satisfy memory load operation from memory",
+      "heading_unit_id": "6d70952561f2f5b738c017d72f8ebd9d",
+      "heading_anchor_id": "sat_from_mem",
+      "blocks": [
+        "0a9e821390692fc481208f5e3104536f",
+        "6bd63c917b46dc7c53c33189e4bca194"
+      ]
+    },
+    {
+      "id": "complete_loads",
+      "level": 5,
+      "sectnum": null,
+      "title": "Complete load operations",
+      "heading_unit_id": "0209fff41e948a78740015a6dca44340",
+      "heading_anchor_id": "complete_loads",
+      "blocks": [
+        "f65de3672bf7318dcd4489a7ad23a06a"
+      ]
+    },
+    {
+      "id": "early_sc_fail",
+      "level": 5,
+      "sectnum": null,
+      "title": "Early sc fail",
+      "heading_unit_id": "aaffe975885d93867a3cdf6cb8f2c070",
+      "heading_anchor_id": "early_sc_fail",
+      "blocks": [
+        "232ef7ef38da5b72f374333857007da8"
+      ]
+    },
+    {
+      "id": "paired_sc",
+      "level": 5,
+      "sectnum": null,
+      "title": "Paired sc",
+      "heading_unit_id": "e05b43e5ea654f9a0fe1ff240dc47b73",
+      "heading_anchor_id": "paired_sc",
+      "blocks": [
+        "0e9a87ed820016b06b2e207b0a80b812"
+      ]
+    },
+    {
+      "id": "initiate_store_footprint",
+      "level": 5,
+      "sectnum": null,
+      "title": "Initiate memory store operation footprints",
+      "heading_unit_id": "e4072e83f5bad4f1abf8dd6f3eed910e",
+      "heading_anchor_id": "initiate_store_footprint",
+      "blocks": [
+        "ca88d0e5c64281bcd5e3b6b454e940bc",
+        "e29f15110b8b71611b7c5ef0518fecf0",
+        "7d53a0eda173c903e55b3e67fa51c24d"
+      ]
+    },
+    {
+      "id": "instantiate_store_value",
+      "level": 5,
+      "sectnum": null,
+      "title": "Instantiate memory store operation values",
+      "heading_unit_id": "16b5d5ff36b01c1cbbe3da2bc92823cb",
+      "heading_anchor_id": "instantiate_store_value",
+      "blocks": [
+        "fedbfb00a0a47c832b25c1308be506c2",
+        "1d7b2be363daf0707dc3767dd1f5f37f"
+      ]
+    },
+    {
+      "id": "commit_stores",
+      "level": 5,
+      "sectnum": null,
+      "title": "Commit store instruction",
+      "heading_unit_id": "1ef56a72b315829a2e77f6cfd424fd77",
+      "heading_anchor_id": "commit_stores",
+      "blocks": [
+        "7201e47d7b482342f77df24c246d3c47",
+        "39bc0af645c4dcf1ee878f114ebd1052",
+        "bbdec33e7c7193174fe627306a6e79c8",
+        "6f64ac91e51fc9d4223461a22224a5cc"
+      ]
+    },
+    {
+      "id": "prop_store",
+      "level": 5,
+      "sectnum": null,
+      "title": "Propagate store operation",
+      "heading_unit_id": "744bd2a389b117e9a7f614ee03ca4fcf",
+      "heading_anchor_id": "prop_store",
+      "blocks": [
+        "26bd73284f13f514ce7e901db4fc347a",
+        "7afcfa0393a0daa2187fe27b827aa250",
+        "0d71ba005906db7124ab084ba8524e37",
+        "a7750bf9e0efa10118a1dced5ec4630f",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "325eb8d14cecf37ee105d579b98d2f44"
+      ]
+    },
+    {
+      "id": "commit_sc",
+      "level": 5,
+      "sectnum": null,
+      "title": "Commit and propagate store operation of an sc",
+      "heading_unit_id": "a45ae3f1dd3fa582ba4c7ca6e0f688ad",
+      "heading_anchor_id": "commit_sc",
+      "blocks": [
+        "4526928036d386a05d0202d23ff912c7",
+        "1f137732874773e9e5d1222210c5f2fd",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "187cb0d3c663d7b6a60795aecf4dae43"
+      ]
+    },
+    {
+      "id": "late_sc_fail",
+      "level": 5,
+      "sectnum": null,
+      "title": "Late sc fail",
+      "heading_unit_id": "55665347892d0a27955e760edf80d57a",
+      "heading_anchor_id": "late_sc_fail",
+      "blocks": [
+        "4141da315a0e071075b56b3ce386ba15",
+        "7d9dc0b5d1a1530f7dff52f3b9390ea9",
+        "db9b6b12fff110859ae1fe8d8ccf3748"
+      ]
+    },
+    {
+      "id": "complete_stores",
+      "level": 5,
+      "sectnum": null,
+      "title": "Complete store operations",
+      "heading_unit_id": "a6bbe42356a15ad9f22feb520596d874",
+      "heading_anchor_id": "complete_stores",
+      "blocks": [
+        "58b7fcc0c1ea99bc441cdad3c57d316a"
+      ]
+    },
+    {
+      "id": "do_amo",
+      "level": 5,
+      "sectnum": null,
+      "title": "Satisfy, commit and propagate operations of an AMO",
+      "heading_unit_id": "beaa11c6f57a4e9e181e995ed0bcb3f1",
+      "heading_anchor_id": "do_amo",
+      "blocks": [
+        "0969fd06260ea5340f914679004336cb",
+        "2660a3a5536dcf49a7173f3c7cdbdd5a",
+        "48f0a091ae3a407f4e1024ce205dffc9",
+        "0c9ee5808a288a87af5692e96798e0a0"
+      ]
+    },
+    {
+      "id": "commit_fence",
+      "level": 5,
+      "sectnum": null,
+      "title": "Commit fence",
+      "heading_unit_id": "ffd9e7feba137db31f9aa5a572bd8ecb",
+      "heading_anchor_id": "commit_fence",
+      "blocks": [
+        "ac37407364d4e9ccfead9eff921685b6",
+        "fd5b251d3ada10d32cc74073521120c8",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "6ba9bfffa9c5ddafb37bf58eb7368750"
+      ]
+    },
+    {
+      "id": "reg_read",
+      "level": 5,
+      "sectnum": null,
+      "title": "Register read",
+      "heading_unit_id": "4ee7a297e6b915ae9be26758b3320c6a",
+      "heading_anchor_id": "reg_read",
+      "blocks": [
+        "c7b13ff611d1275d4dbd64fb647abfb6",
+        "ce6304c3ee1006b40f82ec28c63b645c",
+        "e09f1022ce881512dd6e96e2a1476bdd"
+      ]
+    },
+    {
+      "id": "reg_write",
+      "level": 5,
+      "sectnum": null,
+      "title": "Register write",
+      "heading_unit_id": "42fa1280b267443c1f27a625cb90634e",
+      "heading_anchor_id": "reg_write",
+      "blocks": [
+        "f9b020327b20462b6eb6628e67684cfd",
+        "260ca96ffb731b67558d3a33cb7d4df2",
+        "3954d5150b42d94d77fdc4cf4198c9f1"
+      ]
+    },
+    {
+      "id": "sail_interp",
+      "level": 5,
+      "sectnum": null,
+      "title": "Pseudocode internal step",
+      "heading_unit_id": "b4d13b149112182e7eac3b70366b085a",
+      "heading_anchor_id": "sail_interp",
+      "blocks": [
+        "135ad1cb46d88cf77c2e81e50867328f"
+      ]
+    },
+    {
+      "id": "finish",
+      "level": 5,
+      "sectnum": null,
+      "title": "Finish instruction",
+      "heading_unit_id": "dfbb98b731466d68a03293980592c77c",
+      "heading_anchor_id": "finish",
+      "blocks": [
+        "b134cfdabda104561e27862c8828955c",
+        "f5a804321f92409642bc54f1fb6a0abc",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "0b61b60899e62f2008ce37b775ce7c76"
+      ]
+    },
+    {
+      "id": "limitations",
+      "level": 4,
+      "sectnum": "B.2.3.6",
+      "title": "Limitations",
+      "heading_unit_id": "4e91ffbebd56af760220352c0b5a7112",
+      "heading_anchor_id": "limitations",
+      "blocks": [
+        "b9e95c4d853b64c1ba80a71339e80b6d"
+      ]
+    }
+  ]
+}

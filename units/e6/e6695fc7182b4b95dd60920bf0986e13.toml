@@ -1,0 +1,14 @@
+unit_id = "e6695fc7182b4b95dd60920bf0986e13"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[WARNING]
+====
+Pointer masking does not change the underlying address generation logic or permission checks. Under a fixed address translation mode, it is semantically equivalent to replacing a subset of instructions (e.g., loads and stores) with an instruction sequence that applies the ignore operation to the target address of this instruction and then applies the instruction to the transformed address. References to address translation and other implementation details in the text are primarily to explain design decisions and common implementation patterns.
+===='''
+zh = '''
+[WARNING]
+====
+指针掩码不改变底层地址生成逻辑或权限检查。在固定地址转换模式下，它在语义上等同于将一部分指令（例如加载和存储）替换为这样的指令序列：对该指令的目标地址应用忽略操作，然后将该指令应用于变换后的地址。文中对地址转换和其他实现细节的引用主要用于解释设计决策和常见实现模式。
+===='''

@@ -1,0 +1,20 @@
+unit_id = "7d53a0eda173c903e55b3e67fa51c24d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Note that after taking the transition above the memory store operations
+do not yet have their values. The importance of splitting this
+transition from the transition below is that it allows other
+program-order-successor store instructions to observe the memory
+footprint of this instruction, and if they don’t overlap, propagate out
+of order as early as possible (i.e. before the data register value
+becomes available).
+===='''
+zh = '''
+[NOTE]
+====
+注意，在采用上述迁移之后，内存存储操作尚未具有其值。将该迁移与下面的迁移拆分的重要性在于，它允许其他程序顺序后继存储指令观察到本指令的内存足迹，并且若它们不重叠，则尽可能早地乱序传播（即在数据寄存器值变为可用之前）。
+===='''

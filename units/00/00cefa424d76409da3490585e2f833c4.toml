@@ -1,0 +1,13 @@
+unit_id = "00cefa424d76409da3490585e2f833c4"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SHA256SUM0(rs1,rd)) = {
+  let inb    : bits(32) = X(rs1)[31..0];
+  let result : bits(32) = ror32(inb,  2) ^ ror32(inb, 13) ^ ror32(inb, 22);
+  X(rd)      = EXTS(result);
+  RETIRE_SUCCESS
+}
+--'''

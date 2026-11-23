@@ -1,0 +1,13 @@
+unit_id = "c7559a36340ffc8a52456eb2a424cb19"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the ext:smdbltrp[] extension is implemented, executing an insn:mret[] instruction, or executing
+an insn:sret[] instruction while the current privilege mode is M, has the following additional
+effects.
+[#norm:mstatus_mdt_clr_mret_sret]#The csr::[mdt] bit is set to 0.#
+[#norm:sstatus_sdt_clr_mret_sret]#If the Ssdbltrp extension is also implemented, and the new privilege mode is U, VS, or VU, then csr:sstatus[sdt] is also set to 0.#
+[#norm:vsstatus_sdt_clr_mret_sret]#Additionally, if it is VU, then csr:vsstatus[sdt] is also set to 0.#'''
+zh = '''
+当实现了 ext:smdbltrp[] 扩展时，执行 insn:mret[] 指令，或在当前特权模式为 M 时执行 insn:sret[] 指令，具有以下额外效果。[#norm:mstatus_mdt_clr_mret_sret]##csr::[mdt] 位被设置为 0。##[#norm:sstatus_sdt_clr_mret_sret]##若还实现了 Ssdbltrp 扩展，且新的特权模式为 U、VS 或 VU，则 csr:sstatus[sdt] 也被设置为 0。##[#norm:vsstatus_sdt_clr_mret_sret]##此外，若为 VU，则 csr:vsstatus[sdt] 也被设置为 0。##'''

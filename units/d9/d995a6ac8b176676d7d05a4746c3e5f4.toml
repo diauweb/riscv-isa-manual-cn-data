@@ -1,0 +1,31 @@
+unit_id = "d995a6ac8b176676d7d05a4746c3e5f4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Complex atomic memory operations on a single memory word or doubleword
+are performed with the load-reserved (insn:lr[]) and store-conditional (insn:sc[])
+instructions. [#norm:lr_w_op]#insn:lr.w[] loads a word from the address in _rs1_, places the
+sign-extended value in _rd_, and registers a _reservation set:_ a set of
+bytes that subsumes the bytes in the addressed word.# [#norm:sc_w_success]#insn:sc.w[] conditionally
+writes a word in _rs2_ to the address in _rs1_: the insn:sc.w[] succeeds only
+if the reservation is still valid and the reservation set contains the
+bytes being written. If the insn:sc.w[] succeeds, the instruction writes the
+word in _rs2_ to memory, and it writes zero to _rd_.# [#norm:sc_w_failure]#If the insn:sc.w[] fails,
+the instruction does not write to memory, and it writes a nonzero value
+to _rd_.#
+[#norm:sc_retire_permission]#No insn:sc.w[] instruction shall retire unless it passes memory permission checks,#
+[#norm:sc_failed_side_effects]#but it is UNSPECIFIED whether any side effects of implicit address translation
+and protection memory accesses (such as setting a page-table entry D bit)
+occur on a failed insn:sc.w[].#
+[#norm:sc_failed_as_store]#For the purposes of memory protection, a failed insn:sc.w[] may be
+treated like a store.#
+[#norm:sc_reservation_invalidate]#Regardless of success or failure, executing an
+insn:sc.w[] instruction invalidates any reservation held by this hart.# [#norm:lr_sc_rv64]#insn:lr.d[] and
+insn:sc.d[] act analogously on doublewords and are only available on RV64. For
+RV64, insn:lr.w[] and insn:sc.w[] sign-extend the value placed in _rd_.#'''
+zh = '''
+对单个内存__字__或__双字__的复杂原子内存操作通过加载保留（insn:lr[]）和条件存储（insn:sc[]）指令执行。[#norm:lr_w_op]##insn:lr.w[] 从 _rs1_ 中的地址加载一个字，将符号扩展后的值放入 _rd_，并登记一个__保留集__：一个包含所寻址字中各字节的字节集合。##[#norm:sc_w_success]##insn:sc.w[] 有条件地将 _rs2_ 中的一个字写入 _rs1_ 中的地址：仅当保留仍然有效且保留集包含正在写入的字节时，insn:sc.w[] 才成功。若 insn:sc.w[] 成功，该指令将该字写入内存，并向 _rd_ 写入零。##[#norm:sc_w_failure]##若 insn:sc.w[] 失败，该指令不写入内存，并向 _rd_ 写入非零值。##
+[#norm:sc_retire_permission]##任何 insn:sc.w[] 指令不应退休，除非其通过内存权限检查，##[#norm:sc_failed_side_effects]##但对于失败的 insn:sc.w[]，隐式地址转换和保护内存访问的任何副作用（例如设置页表项的 D 位）是否发生是 UNSPECIFIED 的。##
+[#norm:sc_failed_as_store]##出于内存保护的目的，失败的 insn:sc.w[] 可被当作存储处理。##
+[#norm:sc_reservation_invalidate]##无论成功还是失败，执行 insn:sc.w[] 指令都会使该硬件线程持有的任何保留无效。## [#norm:lr_sc_rv64]##insn:lr.d[] 和 insn:sc.d[] 对双字起类似作用，且仅在 RV64 上可用。对于 RV64，insn:lr.w[] 和 insn:sc.w[] 对放入 _rd_ 的值进行符号扩展。##'''

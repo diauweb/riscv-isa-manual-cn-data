@@ -1,0 +1,16 @@
+unit_id = "ded345d24876b926a2b65be3698575ba"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, a coprocessor might require to be configured before use and
+can be "unconfigured" after use. The unconfigured state would be
+represented as the Initial state for context save. If the same
+application remains running between the unconfigure and the next
+configure (which would set status to Dirty), there is no need to
+actually reinitialize the state at the unconfigure instruction, as all
+state is local to the user process, i.e., the Initial state may only
+cause the coprocessor state to be initialized to a constant value at
+context restore, not at every unconfigure.'''
+zh = '''
+用户模式 ISA 的扩展通常包含额外的用户模式状态，且该状态可能远大于基础整数寄存器。这些扩展可能仅用于某些应用，或仅在单个应用内的短阶段中需要。为提高性能，用户模式扩展可定义额外指令，允许用户模式软件将单元恢复到初始状态，甚至关闭该单元。'''

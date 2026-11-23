@@ -1,0 +1,86 @@
+unit_id = "71c4733580a6a1dfa7f439eda12d3bdc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The following example code sequence illustrates the use of insn:amocas.q[] to
+implement the _enqueue_ operation for a non-blocking concurrent queue using the
+algorithm outlined in cite:[queue]. The algorithm atomically operates on a
+pointer and its associated modification counter using the insn:amocas.q[] instruction
+to avoid the ABA problem.
+
+[listing]
+# Enqueue operation of a non-blocking concurrent queue.
+# Data structures used by the queue:
+#   structure pointer_t {ptr:   node_t *, count: uint64_t}
+#   structure node_t    {next: pointer_t, value: data type}
+#   structure queue_t   {Head: pointer_t, Tail:  pointer_t}
+# Inputs to the procedure:
+#   a0 - address of Tail variable
+#   a4 - address of a new node to insert at tail
+enqueue:
+  ld   a6, (a0)          # a6 = Tail.ptr
+  ld   a7, 8(a0)         # a7 = Tail.count
+  ld   a2, (a6)          # a2 = Tail.ptr->next.ptr
+  ld   a3, 8(a6)         # a3 = Tail.ptr->next.count
+  ld   t1, (a0)
+  ld   t2, 8(a0)
+  bne  a6, t1, enqueue   # Retry if Tail & next are not consistent
+  bne  a7, t2, enqueue   # Retry if Tail & next are not consistent
+  bne  a2, x0, move_tail # Was tail pointing to the last node?
+  mv   t1, a2            # Save Tail.ptr->next.ptr
+  mv   t2, a3            # Save Tail.ptr->next.count
+  addi a5, a3, 1         # Link the node at the end of the list
+  amocas.q.aqrl a2, a4, (a6)
+  bne  a2, t1, enqueue   # Retry if CAS failed
+  bne  a3, t2, enqueue   # Retry if CAS failed
+  addi a5, a7, 1         # Update Tail to the inserted node
+  amocas.q.aqrl a6, a4, (a0)
+  ret                    # Enqueue done
+move_tail:               # Tail was not pointing to the last node
+  addi a3, a7, 1         # Try to swing Tail to the next node
+  amocas.q.aqrl a6, a2, (a0)
+  j    enqueue           # Retry
+
+===='''
+zh = '''
+[NOTE]
+====
+以下示例代码序列展示了使用 insn:amocas.q[] 为基于 cite:[queue] 中概述的算法的非阻塞并发队列实现 __入队__ 操作。该算法使用 insn:amocas.q[] 指令对指针及其关联的修改计数器进行原子操作，以避免 ABA 问题。
+
+[listing]
+# 非阻塞并发队列的入队操作。
+# 队列使用的数据结构：
+#   structure pointer_t {ptr:   node_t *, count: uint64_t}
+#   structure node_t    {next: pointer_t, value: data type}
+#   structure queue_t   {Head: pointer_t, Tail:  pointer_t}
+# 过程的输入：
+#   a0 - Tail 变量的地址
+#   a4 - 要插入到尾部的 new node 的地址
+enqueue:
+  ld   a6, (a0)          # a6 = Tail.ptr
+  ld   a7, 8(a0)         # a7 = Tail.count
+  ld   a2, (a6)          # a2 = Tail.ptr->next.ptr
+  ld   a3, 8(a6)         # a3 = Tail.ptr->next.count
+  ld   t1, (a0)
+  ld   t2, 8(a0)
+  bne  a6, t1, enqueue   # 若 Tail 与 next 不一致，则重试
+  bne  a7, t2, enqueue   # 若 Tail 与 next 不一致，则重试
+  bne  a2, x0, move_tail # 尾指针是否指向最后一个节点？
+  mv   t1, a2            # 保存 Tail.ptr->next.ptr
+  mv   t2, a3            # 保存 Tail.ptr->next.count
+  addi a5, a3, 1         # 将节点链接到列表末尾
+  amocas.q.aqrl a2, a4, (a6)
+  bne  a2, t1, enqueue   # 若 CAS 失败，则重试
+  bne  a3, t2, enqueue   # 若 CAS 失败，则重试
+  addi a5, a7, 1         # 将 Tail 更新为插入的节点
+  amocas.q.aqrl a6, a4, (a0)
+  ret                    # 入队完成
+move_tail:               # 尾指针未指向最后一个节点
+  addi a3, a7, 1         # 尝试将 Tail 摆到下一个节点
+  amocas.q.aqrl a6, a2, (a0)
+  j    enqueue           # 重试
+
+===='''

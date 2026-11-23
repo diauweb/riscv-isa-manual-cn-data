@@ -1,0 +1,26 @@
+unit_id = "8c772131248ed26204072fbdd4c2978a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} |  `transfer arg0, s0` | Save `s0`
+| Write | `progbuf1` | `li s0, (1 << 6)` | Form the mask for {mcontrol-m} bit
+| Write | `progbuf2` | `csrrs x0, {csr-tdata1}, s0` | Apply the mask to {csr-mcontrol}
+| Write | `progbuf3` | `transfer s0, arg2` | Restore `s0`
+| Write | `progbuf4` | `ebreak` |
+| Write | {dm-command} | 0x10000000 | Perform quick access
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `transfer arg0, s0` | 保存 `s0`
+| 写 | `progbuf1` | `li s0, (1 << 6)` | 形成 {mcontrol-m} 位的掩码
+| 写 | `progbuf2` | `csrrs x0, {csr-tdata1}, s0` | 将掩码应用到 {csr-mcontrol}
+| 写 | `progbuf3` | `transfer s0, arg2` | 恢复 `s0`
+| 写 | `progbuf4` | `ebreak` |
+| 写 | {dm-command} | 0x10000000 | 执行快速访问
+|==='''

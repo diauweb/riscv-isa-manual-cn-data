@@ -1,0 +1,23 @@
+unit_id = "fbabb20d303b181f514bcf0bec1e8512"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+When __rs2__≠`x0`, bits XLEN-1:ASIDMAX of the value held
+in _rs2_ are reserved for future standard use. Until their use is
+defined by a standard extension, they should be zeroed by software and
+ignored by current implementations. Furthermore, if
+ASIDLEN < ASIDMAX, the implementation shall ignore bits
+ASIDMAX-1:ASIDLEN of the value held in _rs2_.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+当 __rs2__≠`x0` 时，_rs2_ 所持值的第 XLEN-1:ASIDMAX 位保留供未来标准使用。在标准扩展定义其用途之前，软件宜将其置零，当前实现应忽略它们。此外，若 ASIDLEN < ASIDMAX，则实现应忽略 _rs2_ 所持值的第 ASIDMAX-1:ASIDLEN 位。
+
+[NOTE]
+===='''

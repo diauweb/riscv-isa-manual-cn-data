@@ -1,0 +1,56 @@
+unit_id = "f957ae9cd004f1c3fb5272b3d9c38e93"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeDataControl: Data Trace Control Register (trBaseEncoder+0x010)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trTeDataImplemented|Read as 1 if data trace is implemented.|RO|<<SD,SD>>
+|1 |trTeDataTracing |*1:* Data trace is being generated. Written from a trace tool or controlled by triggers. When `trTeDataTracing`=1, data trace  may be subject to additional filtering in some implementations.|WARL|<<Undef,Undef>>
+|2 |trTeDataTrigEnable|Global enable/disable for data trace triggers|WARL|<<Undef,Undef>>
+|3 |trTeDataStallOrOverflow |Set to 1 by hardware when data trace causes trace buffer overflow, or when the TE requests a hart stall due to data trace. Clears to 0 at TE reset or when the trace is enabled (`trTeEnable` set to 1). Write 1 to clear. |RW1C|<<Undef,Undef>>
+|4 |trTeDataStallEna |
+*0:* If TE cannot send data trace messages, an overflow message is generated when the trace is restarted. +
+*1:* If TE cannot send data trace messages, the hart is stalled until it can.
+|WARL|<<Undef,Undef>>
+|5 |trTeDataDrop|Written to 1 by hardware when the data trace packet was dropped (if enabled). Clears to 0 at TE reset or when the trace is enabled (`trTeEnable` set to 1). Write 1 to clear.|RW1C|<<Undef,Undef>>
+|6 |trTeDataDropEna|*1:* Allow temporary suppression of data trace (at some watermark level) to prevent trace overflow or stall. This way instruction trace will have higher priority.|WARL|<<Undef,Undef>>
+|15:7 |--|Reserved for additional data trace control/status bits.|--|0
+|16 |trTeDataNoValue|When set, omit data values from data trace packets.|WARL|<<Undef,Undef>>
+|17 |trTeDataNoAddr|When set, omit data address from data trace packets.|WARL|<<Undef,Undef>>
+|19:18 |trTeDataAddrCompress|Data trace address compression selection: +
+*0:* Only send full (unmodified) addresses +
+*1:* Use XOR compression +
+*2:* Use differential compression +
+*3:* Protocol defined address compression
+|WARL|<<Undef,Undef>>
+|31:20 |--|Reserved|--|0
+|==='''
+zh = '''
+.**寄存器：trTeDataControl：数据跟踪控制寄存器（trBaseEncoder+0x010）**
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trTeDataImplemented|如果实现了数据跟踪，则读为 1。|RO|<<SD,SD>>
+|1 |trTeDataTracing |*1:* 正在生成数据跟踪。由跟踪工具写入或由触发器控制。当 `trTeDataTracing`=1 时，在某些实现中，数据跟踪可能受到附加过滤。|WARL|<<Undef,Undef>>
+|2 |trTeDataTrigEnable|数据跟踪触发器的全局启用/禁用|WARL|<<Undef,Undef>>
+|3 |trTeDataStallOrOverflow |当数据跟踪导致跟踪缓冲区上溢，或当 TE 因数据跟踪请求硬件线程停顿时，由硬件置为 1。在 TE 复位或启用跟踪（`trTeEnable` 置为 1）时清零为 0。写 1 清零。 |RW1C|<<Undef,Undef>>
+|4 |trTeDataStallEna |
+*0:* 如果 TE 无法发送数据跟踪消息，则在跟踪重新启动时生成上溢消息。 +
+*1:* 如果 TE 无法发送数据跟踪消息，则停顿硬件线程直到能够发送。
+|WARL|<<Undef,Undef>>
+|5 |trTeDataDrop|当数据跟踪数据包被丢弃（如果启用）时，由硬件写为 1。在 TE 复位或启用跟踪（`trTeEnable` 置为 1）时清零为 0。写 1 清零。|RW1C|<<Undef,Undef>>
+|6 |trTeDataDropEna|*1:* 允许（在某个水位）临时抑制数据跟踪，以防止跟踪上溢或停顿。这样指令跟踪将具有更高优先级。|WARL|<<Undef,Undef>>
+|15:7 |--|保留用于附加数据跟踪控制/状态位。|--|0
+|16 |trTeDataNoValue|置位时，从数据跟踪数据包中省略数据值。|WARL|<<Undef,Undef>>
+|17 |trTeDataNoAddr|置位时，从数据跟踪数据包中省略数据地址。|WARL|<<Undef,Undef>>
+|19:18 |trTeDataAddrCompress|数据跟踪地址压缩选择： +
+*0:* 仅发送完整（未修改）地址 +
+*1:* 使用 XOR 压缩 +
+*2:* 使用差分压缩 +
+*3:* 协议定义的地址压缩
+|WARL|<<Undef,Undef>>
+|31:20 |--|保留|--|0
+|==='''

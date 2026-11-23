@@ -1,0 +1,13 @@
+unit_id = "d666861148f3bfd275a6bdfb2f12d7a1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the vector offset elements are narrower than XLEN, they are
+zero-extended to XLEN before adding to the base effective address.  If
+the vector offset elements are wider than XLEN, the least-significant
+XLEN bits are used in the address calculation.  An implementation must
+raise an illegal instruction exception if the EEW is not supported for
+offset elements.'''
+zh = '''
+如果向量偏移元素窄于 XLEN，则在加到基有效地址之前将其零扩展到 XLEN。如果向量偏移元素宽于 XLEN，则地址计算中使用最低 XLEN 位。如果偏移元素不支持该 EEW，实现应产生非法指令异常。'''

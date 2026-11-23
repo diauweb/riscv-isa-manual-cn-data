@@ -1,0 +1,14 @@
+unit_id = "df45db61c1c2fed507f37aa36b2aff0d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If an implementation allows interrupts during the sequence, and the interrupt handler uses _sp_ to allocate stack memory, then any stores which were executed before the interrupt may be overwritten by the handler. This is safe because the memory is idempotent and the stores will be re-executed when execution resumes.
+===='''
+zh = '''
+[NOTE]
+====
+若实现允许在该序列期间接受中断，且中断处理程序使用 _sp_ 分配栈内存，则中断前已执行的存储可能被处理程序覆盖。这是安全的，因为该内存是幂等的，且执行恢复时这些存储会被重新执行。
+===='''

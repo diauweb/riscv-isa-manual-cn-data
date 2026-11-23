@@ -1,0 +1,11 @@
+unit_id = "e097211517939101269532b93cf3fb06"
+kind = "code"
+translatable = false
+en = '''
+----
+    # Unsigned sum reduction into double-width accumulator
+    vwredsumu.vs vd, vs2, vs1, vm   # 2*SEW = 2*SEW + sum(zero-extend(SEW))
+
+    # Signed sum reduction into double-width accumulator
+    vwredsum.vs  vd, vs2, vs1, vm   # 2*SEW = 2*SEW + sum(sign-extend(SEW))
+----'''

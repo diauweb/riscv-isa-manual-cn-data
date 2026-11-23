@@ -1,0 +1,21 @@
+unit_id = "86890397c2a6c92c8360f9fc1669891b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<pmp-vmem>> discusses the intersection between
+physical memory protection (PMP) and page-based address translation. It
+is noted there that, when PMP settings are modified in a manner that
+affects either the physical memory that holds page tables or the
+physical memory to which page tables point, M-mode software must
+synchronize the PMP settings with the virtual memory system. For
+HS-level address translation, this is accomplished by executing in
+M-mode an SFENCE.VMA instruction with _rs1_=`x0` and _rs2_=`x0`, after
+the PMP CSRs are written. Synchronization with G-stage and VS-stage data
+structures is also needed. Executing an HFENCE.GVMA instruction with
+_rs1_=`x0` and _rs2_=`x0` suffices to flush all G-stage or VS-stage
+address-translation cache entries that have cached PMP settings
+corresponding to the final translated supervisor physical address. An
+HFENCE.VVMA instruction is not required.'''
+zh = '''
+<<pmp-vmem>> 讨论物理内存保护（PMP）与基于页地址转换的交集。其中指出，当 PMP 设置以影响保存页表的物理内存或页表所指向物理内存的方式修改时，M 模式软件应将 PMP 设置与虚拟内存系统同步。对于 HS 级地址转换，这是在写入 PMP CSR 之后，在 M 模式执行 _rs1_=`x0` 且 _rs2_=`x0` 的 SFENCE.VMA 指令来完成。还需要与 G 阶段和 VS 阶段数据结构同步。执行 _rs1_=`x0` 且 _rs2_=`x0` 的 HFENCE.GVMA 指令足以冲刷所有缓存了与最终转换监管物理地址对应 PMP 设置的 G 阶段或 VS 阶段地址转换缓存项。不需要 HFENCE.VVMA 指令。'''

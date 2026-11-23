@@ -1,0 +1,8 @@
+unit_id = "d8d2d93a1df93dd2e2eebf834a02955f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+However, there are no such mechanisms available on Machine mode in the current (v1.11) Privileged Spec. It is not possible for a PMP rule to be *enforced* only on non-Machine modes and *denied* on Machine mode, to only allow access to a memory region by less-privileged modes. it is only possible to have a *locked* rule that will be *enforced* on all modes, or a rule that will be *enforced* on non-Machine modes and be *ignored* by Machine mode. So for any physical memory region which is not protected with a Locked rule, Machine mode has unlimited access, including the ability to execute it.'''
+zh = '''
+然而，在当前（v1.11）《特权级规范》中，机器模式没有此类机制可用。PMP 规则不可能仅对非机器模式 *强制执行* 而对机器模式 *拒绝*，从而仅允许较低特权模式访问某内存区域。只可能有一条在所有模式下 *强制执行* 的 *锁定* 规则，或一条对非机器模式 *强制执行* 而机器模式 *忽略* 的规则。因此，对于任何未受锁定规则保护的物理内存区域，机器模式具有不受限制的访问权，包括执行它的能力。'''

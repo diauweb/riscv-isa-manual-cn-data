@@ -1,0 +1,42 @@
+unit_id = "57dc4697c694580beea752a1b79ac012"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- <<mstandard,**M**>> Integer multiplication and division.
+- <<chap:a,**A**>> Atomic instructions.
+- <<single-float,**F**>> Single-precision floating-point instructions.
+- <<chap:d,**D**>> Double-precision floating-point instructions.
+- <<compressed,**C**>> Compressed Instructions.
+- <<csrinsts,**Zicsr**>>  CSR instructions.  These are implied by presence of F.
+- <<zicntr,**Zicntr**>> Base counters and timers.
+
+- <<ziccif,**Ziccif**>> Main memory regions with both the cacheability and
+  coherence PMAs must support instruction fetch, and any instruction fetches of
+  naturally aligned power-of-2 sizes up to min(ILEN,XLEN) (i.e., 32 bits for
+  RVA22) are atomic.
+
+- <<ziccrse,**Ziccrse**>> Main memory regions with both the cacheability and
+  coherence PMAs must support RsrvEventual.
+
+- <<ziccamoa,**Ziccamoa**>> Main memory regions with both the cacheability and
+  coherence PMAs must support AMOArithmetic.
+
+- <<zicclsm,**Zicclsm**>> Misaligned loads and stores to main memory regions
+  with both the cacheability and coherence PMAs must be supported.'''
+zh = '''
+- <<mstandard,**M**>> 整数乘法和除法。
+- <<chap:a,**A**>> 原子指令。
+- <<single-float,**F**>> 单精度浮点指令。
+- <<chap:d,**D**>> 双精度浮点指令。
+- <<compressed,**C**>> 压缩指令。
+- <<csrinsts,**Zicsr**>>  CSR 指令。这些指令因 F 的存在而隐含。
+- <<zicntr,**Zicntr**>> 基础计数器和定时器。
+
+- <<ziccif,**Ziccif**>> 同时具有可缓存性和一致性 PMA 的主存区域应支持取指，并且对自然对齐的、大小为 2 的幂且不超过 min(ILEN,XLEN)（即对于 RVA22 为 32 位）的任何取指都是原子的。
+
+- <<ziccrse,**Ziccrse**>> 同时具有可缓存性和一致性 PMA 的主存区域应支持 RsrvEventual。
+
+- <<ziccamoa,**Ziccamoa**>> 同时具有可缓存性和一致性 PMA 的主存区域应支持 AMOArithmetic。
+
+- <<zicclsm,**Zicclsm**>> 应支持对同时具有可缓存性和一致性 PMA 的主存区域进行非对齐加载和存储。'''

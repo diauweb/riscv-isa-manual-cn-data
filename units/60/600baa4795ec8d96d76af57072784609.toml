@@ -1,0 +1,22 @@
+unit_id = "600baa4795ec8d96d76af57072784609"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+Field GVA (Guest Virtual Address) is written by the implementation
+whenever a trap is taken into HS-mode. For any trap (breakpoint, address
+misaligned, access fault, page fault, or guest-page fault) that writes a
+guest virtual address to `stval`, GVA is set to 1. For any other trap
+into HS-mode, GVA is set to 0.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+字段 GVA（客户机虚拟地址）在陷入 HS 模式时由实现写入。对于任何将客户机虚拟地址写入 `stval` 的陷阱（断点、地址非对齐、访问错误、页错误或客户机页错误），GVA 被置为 1。对于任何其他陷入 HS 模式的陷阱，GVA 被置为 0。
+
+[NOTE]
+===='''

@@ -1,0 +1,40 @@
+unit_id = "7caa7e0dcbd373755580edeaad12078c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Domains of float-to-integer conversions and behavior for invalid inputs
+[%autowidth,float="center",align="center",cols="<,>,>,>,>",options="header",]
+|===
+| |insn:fcvt.w.s[] |insn:fcvt.wu.s[] |insn:fcvt.l.s[] |insn:fcvt.lu.s[]
+
+|Minimum valid input (after rounding) |−2^31^ |0 |−2^63^ |0
+
+|Maximum valid input (after rounding) |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+
+|Output for out-of-range negative input |−2^31^ |0 |−2^63^ |0
+
+|Output for -{inf} |−2^31^ |0 |−2^63^ |0
+
+|Output for out-of-range positive input |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+
+|Output for +{inf} or NaN |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+|==='''
+zh = '''
+.浮点到整数转换的定义域及无效输入行为
+[%autowidth,float="center",align="center",cols="<,>,>,>,>",options="header",]
+|===
+| |insn:fcvt.w.s[] |insn:fcvt.wu.s[] |insn:fcvt.l.s[] |insn:fcvt.lu.s[]
+
+|最小有效输入（舍入后） |−2^31^ |0 |−2^63^ |0
+
+|最大有效输入（舍入后） |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+
+|超出范围的负输入时的输出 |−2^31^ |0 |−2^63^ |0
+
+|−{inf} 时的输出 |−2^31^ |0 |−2^63^ |0
+
+|超出范围的正输入时的输出 |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+
+|+{inf} 或 NaN 时的输出 |2^31^−1 |2^32^−1 |2^63^−1 |2^64^−1
+|==='''

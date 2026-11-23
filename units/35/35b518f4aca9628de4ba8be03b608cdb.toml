@@ -1,0 +1,18 @@
+unit_id = "35b518f4aca9628de4ba8be03b608cdb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((hartsel)))
+Throughout this document we refer to {hartsel}, which is {dmcontrol-hartselhi}
+combined with {dmcontrol-hartsello}. While the spec allows for 20 {hartsel} bits,
+an implementation may choose to implement fewer than that. The actual
+width of {hartsel} is called `HARTSELLEN`. It must be at least 0
+and at most 20. A debugger should discover `HARTSELLEN` by writing
+all ones to {hartsel} (assuming the maximum size) and reading back the
+value to see which bits were actually set. Debuggers must not change
+{hartsel} while an abstract command is executing. Hardware should enforce
+this by ignoring changes to {hartsel} while {abstractcs-busy} is set.'''
+zh = '''
+(((hartsel)))
+在本文档中，我们称 {hartsel}，它是 {dmcontrol-hartselhi} 与 {dmcontrol-hartsello} 的组合。虽然规范允许 20 个 {hartsel} 位，但实现可选择实现少于该数目。{hartsel} 的实际宽度称为 `HARTSELLEN`。它必须至少为 0 且至多为 20。调试器宜通过向 {hartsel} 写全 1（假定为最大尺寸）并读回该值以查看实际置位了哪些位，来发现 `HARTSELLEN`。调试器不应在抽象命令执行期间更改 {hartsel}。硬件宜通过在 {abstractcs-busy} 置位时忽略对 {hartsel} 的更改来强制执行。'''

@@ -1,0 +1,20 @@
+unit_id = "24fb00477b3d93f505d49d02634d1597"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trRamRPLow: Trace RAM Sink Read Pointer Register (trBaseRamSink+0x028)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|1:0 |--|Always 0 (two LSB of 32-bit address)|RO|0
+|31:2 |trRamRPLow |Absolute 32-bit part of address in trace circular memory buffer visible through `trRamData`. `trRamRP` auto-increments following an access to `trRamData`. After a trace word read occurs while `trRamRP` = `trRamLimit`, `trRamRP` is set to `trRamStart`. Required for SRAM mode and optional for SMEM mode. |WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trRamRPLow：跟踪 RAM 接收器读指针寄存器 (trBaseRamSink+0x028)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|1:0 |--|始终为 0（32 位地址的两个 LSB）|RO|0
+|31:2 |trRamRPLow |可通过 `trRamData` 访问的跟踪循环内存缓冲区中地址的绝对 32 位部分。访问 `trRamData` 后，`trRamRP` 自动递增。当 `trRamRP` = `trRamLimit` 时发生跟踪字读取后，`trRamRP` 被设置为 `trRamStart`。SRAM 模式必需，SMEM 模式可选。|WARL|<<Undef,Undef>>
+|==='''

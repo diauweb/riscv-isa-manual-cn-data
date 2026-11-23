@@ -1,0 +1,17 @@
+unit_id = "6eb82577c3faa742a186dd65fe7d7867"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The current set of standard vector extensions do not vary
+supported element width with LMUL.  Some future extensions may support
+larger SEWs only when bits from multiple vector registers are combined
+using LMUL.  In this case, software that relies on large SEW should
+attempt to use the largest LMUL, and hence the fewest vector register
+groups, to increase the number of implementations on which the code
+will run. The `vill` bit in `vtype` should be checked after setting
+`vtype` to see if the configuration is supported, and an alternate
+code path should be provided if it is not. Alternatively, a profile
+can mandate the minimum SEW at each LMUL setting.'''
+zh = '''
+NOTE: 当前标准向量扩展集不随 LMUL 改变所支持的元素宽度。某些未来扩展可能仅在使用 LMUL 合并多个向量寄存器的位时才支持更大的 SEW。在这种情况下，依赖大 SEW 的软件宜尝试使用最大的 LMUL，从而使用最少的向量寄存器组，以增加代码可运行的实现数量。在设置 `vtype` 后宜检查 `vtype` 中的 `vill` 位，以确定该配置是否受支持；若不支持，则宜提供备用代码路径。或者，架构配置集可规定每个 LMUL 设置下的最小 SEW。'''

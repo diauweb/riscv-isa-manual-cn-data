@@ -1,0 +1,69 @@
+unit_id = "f9a35664ce60f49165e0a75a28022066"
+kind = "code"
+translatable = false
+en = '''
+.riscv-defs.cat, a herd definition of preserved program order (1/3)
+[source,asm]
+....
+(*************)
+(* Utilities *)
+(*************)
+
+(* All fence relations *)
+let fence.r.r = [R];fencerel(Fence.r.r);[R]
+let fence.r.w = [R];fencerel(Fence.r.w);[W]
+let fence.r.rw = [R];fencerel(Fence.r.rw);[M]
+let fence.w.r = [W];fencerel(Fence.w.r);[R]
+let fence.w.w = [W];fencerel(Fence.w.w);[W]
+let fence.w.rw = [W];fencerel(Fence.w.rw);[M]
+let fence.rw.r = [M];fencerel(Fence.rw.r);[R]
+let fence.rw.w = [M];fencerel(Fence.rw.w);[W]
+let fence.rw.rw = [M];fencerel(Fence.rw.rw);[M]
+let fence.tso =
+  let f = fencerel(Fence.tso) in
+  ([W];f;[W]) | ([R];f;[M])
+
+let fence =
+  fence.r.r | fence.r.w | fence.r.rw |
+  fence.w.r | fence.w.w | fence.w.rw |
+  fence.rw.r | fence.rw.w | fence.rw.rw |
+  fence.tso
+
+(* Same address, no W to the same address in-between *)
+let po-loc-no-w = po-loc \ (po-loc?;[W];po-loc)
+(* Read same write *)
+let rsw = rf^-1;rf
+(* Acquire, or stronger  *)
+let AQ = Acq|AcqRel
+(* Release or stronger *)
+and RL = RelAcqRel
+(* All RCsc *)
+let RCsc = Acq|Rel|AcqRel
+(* Amo events are both R and W, relation rmw relates paired lr/sc *)
+let AMO = R & W
+let StCond = range(rmw)
+
+(*************)
+(* ppo rules *)
+(*************)
+
+(* Overlapping-Address Orderings *)
+let r1 = [M];po-loc;[W]
+and r2 = ([R];po-loc-no-w;[R]) \ rsw
+and r3 = [AMO|StCond];rfi;[R]
+(* Explicit Synchronization *)
+and r4 = fence
+and r5 = [AQ];po;[M]
+and r6 = [M];po;[RL]
+and r7 = [RCsc];po;[RCsc]
+and r8 = rmw
+(* Syntactic Dependencies *)
+and r9 = [M];addr;[M]
+and r10 = [M];data;[W]
+and r11 = [M];ctrl;[W]
+(* Pipeline Dependencies *)
+and r12 = [R];(addr|data);[W];rfi;[R]
+and r13 = [R];addr;[M];po;[W]
+
+let ppo = r1 | r2 | r3 | r4 | r5 | r6 | r7 | r8 | r9 | r10 | r11 | r12 | r13
+....'''

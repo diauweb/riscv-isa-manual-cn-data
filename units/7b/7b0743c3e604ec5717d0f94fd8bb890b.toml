@@ -1,0 +1,31 @@
+unit_id = "7b0743c3e604ec5717d0f94fd8bb890b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The insn:lr[]/insn:sc[] sequence can be given acquire semantics by setting the
+_aq_ bit on the insn:lr[] instruction. The insn:lr[]/insn:sc[] sequence can be
+given release semantics by by setting the _rl_ bit on the insn:sc[] instruction.
+Assuming suitable mappings for other atomic operations, setting the _aq_ bit on
+the insn:lr[] instruction, and setting the _rl_ bit on the insn:sc[] instruction
+makes the insn:lr[]/insn:sc[] sequence sequentially consistent in the {cpp}
+`memory_order_seq_cst` sense. Such a sequence does not act as a fence for
+ordering ordinary load and store instructions before and after the sequence.
+Specific instruction mappings for other {cpp} atomic operations,
+or stronger notions of sequential consistency, may require both
+bits to be set on either or both of the insn:lr[] or insn:sc[] instruction.
+
+If neither bit is set on either insn:lr[] or insn:sc[], the insn:lr[]/insn:sc[] sequence can be
+observed to occur before or after surrounding memory operations from the
+same RISC-V hart. This can be appropriate when the insn:lr[]/insn:sc[] sequence is
+used to implement a parallel reduction operation.
+===='''
+zh = '''
+[NOTE]
+====
+通过在 insn:lr[] 指令上置位 _aq_ 位，可赋予 insn:lr[]/insn:sc[] 序列获取语义。通过在 insn:sc[] 指令上置位 _rl_ 位，可赋予 insn:lr[]/insn:sc[] 序列释放语义。假定对其他原子操作有适当的映射，则在 insn:lr[] 指令上置位 _aq_ 位、在 insn:sc[] 指令上置位 _rl_ 位，可使 insn:lr[]/insn:sc[] 序列在 {cpp} `memory_order_seq_cst` 意义上顺序一致。这样的序列并不充当对序列前后普通加载和存储指令进行排序的栅栏。对其他 {cpp} 原子操作的特定指令映射，或更强的顺序一致概念，可能要求在 insn:lr[] 或 insn:sc[] 之一或二者上同时置位两位。
+
+若 insn:lr[] 或 insn:sc[] 上的两位均未置位，则可观察到 insn:lr[]/insn:sc[] 序列发生在来自同一 RISC-V 硬件线程的周围内存操作之前或之后。当 insn:lr[]/insn:sc[] 序列用于实现并行归约操作时，这可能是合适的。
+===='''

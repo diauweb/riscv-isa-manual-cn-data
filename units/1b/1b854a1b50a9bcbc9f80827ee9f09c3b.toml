@@ -1,0 +1,14 @@
+unit_id = "1b854a1b50a9bcbc9f80827ee9f09c3b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This definition is consistent with the way that RISC-V already handles physical and virtual addresses differently. While the unused upper bits of virtual addresses are the sign-extension of the used bits (see the definition of "`address validity`" in <<_definitions>>), the equivalent bits in physical addresses are zero-extended. This is necessary due to their interactions with other mechanisms such as Physical Memory Protection (PMP).
+===='''
+zh = '''
+[NOTE]
+====
+该定义与 RISC-V 已对物理地址和虚拟地址作不同处理的方式一致。虚拟地址的未使用高位是已使用位的符号扩展（见 <<_definitions>> 中“地址有效性”的定义），而物理地址中的对应位是零扩展。这是必要的，因为它们与物理内存保护（PMP）等其他机制交互。
+===='''

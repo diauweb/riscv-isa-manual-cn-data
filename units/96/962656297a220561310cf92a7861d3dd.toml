@@ -1,0 +1,13 @@
+unit_id = "962656297a220561310cf92a7861d3dd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When `mstatus.VS` is set to Initial or Clean, executing any
+instruction that changes vector state, including the vector CSRs, will
+change `mstatus.VS` to Dirty.
+Implementations may also change `mstatus.VS` from Initial or Clean to Dirty
+at any time, even when there is no change in vector state.'''
+zh = '''
+当 `mstatus.VS` 设置为 Initial 或 Clean 时，执行任何改变向量状态的指令（包括向量 CSR）都会将 `mstatus.VS` 改为 Dirty。
+实现也可随时将 `mstatus.VS` 从 Initial 或 Clean 改为 Dirty，即使向量状态没有变化。'''

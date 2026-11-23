@@ -1,0 +1,14 @@
+unit_id = "112aeabe3899466bc4fd1bad66e21944"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vtype_sz_acc_op]#The read-only XLEN-wide _vector_ _type_ CSR, `vtype` provides the
+default type used to interpret the contents of the vector register
+file, and can only be updated by `vset{i}vl{i}` instructions.# The
+vector type determines the organization of elements in each
+vector register, and how multiple vector registers are grouped. The
+`vtype` register also indicates how masked-off elements and elements
+past the current vector length in a vector result are handled.'''
+zh = '''
+[#norm:vtype_sz_acc_op]##只读的 XLEN 宽 _向量类型_ CSR `vtype` 提供用于解释向量寄存器堆内容的默认类型，并且只能由 `vset{i}vl{i}` 指令更新。## 向量类型确定每个向量寄存器中元素的组织方式，以及多个向量寄存器如何分组。`vtype` 寄存器还指示如何处理向量结果中被掩码关闭的元素以及超过当前向量长度的元素。'''

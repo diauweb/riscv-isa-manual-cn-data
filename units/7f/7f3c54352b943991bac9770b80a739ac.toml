@@ -1,0 +1,12 @@
+unit_id = "7f3c54352b943991bac9770b80a739ac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mie_mandatory]#The csr:mie[] register must always be implemented.#
+[#norm:mie_bits_wr]#A bit in csr:mie[] must be writable if the corresponding interrupt can ever become pending.#
+[#norm:mie_bits_rdonly0]#Bits of csr:mie[] that are not writable must be read-only zero.#'''
+zh = '''
+[#norm:mie_mandatory]##csr:mie[] 寄存器应始终实现。##
+[#norm:mie_bits_wr]##若相应中断可能成为挂起，则 csr:mie[] 中的某一位应可写。##
+[#norm:mie_bits_rdonly0]##csr:mie[] 中不可写的位应为只读零。##'''

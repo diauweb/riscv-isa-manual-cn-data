@@ -1,0 +1,13 @@
+unit_id = "4c7adef3075effbe1fb3cd77e0a4184b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instructions are provided to move bit patterns between the
+floating-point and integer registers. [#norm:fmv-x-h_op]#insn:fmv.x.h[] moves
+the half-precision value in floating-point register _rs1_ to a
+representation in the IEEE 754-2008 encoding in integer register _rd_,
+filling the upper XLEN-16 bits with copies of the floating-point
+number's sign bit#.'''
+zh = '''
+提供在浮点寄存器与整数寄存器之间移动位模式的指令。[#norm:fmv-x-h_op]##insn:fmv.x.h[] 将浮点寄存器 _rs1_ 中的半精度值移动到整数寄存器 _rd_ 中以 IEEE 754-2008 编码表示的值，并用该浮点数符号位的副本填充高 XLEN-16 位。##'''

@@ -1,0 +1,80 @@
+unit_id = "291d4601bc7d021a4dae58d7977ee629"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. *Machine Security Configuration (mseccfg)* is a new RW Machine mode CSR, used for configuring various security mechanisms present on the hart, and only accessible to Machine mode. It is 64 bits wide, and is at address *0x747 on RV64* and *0x747 (low 32bits), 0x757 (high 32bits) on RV32*. All mseccfg fields defined on this proposal are WARL, and the remaining bits are reserved for future standard use and should always read zero. The reset value of mseccfg is implementation-specific, otherwise if backwards compatibility is a requirement it should reset to zero on hard reset.
+
+. On ``mseccfg`` we introduce a field on bit 2 called *Rule Locking Bypass (mseccfg.RLB)* with the following functionality:
++
+.. When ``mseccfg.RLB`` is 1 *locked* PMP rules may be removed/modified and *locked* PMP entries may be edited.
+
+.. When ``mseccfg.RLB`` is 0 and ``pmpcfg.L`` is 1 in any rule or entry (including disabled entries), then ``mseccfg.RLB`` remains 0 and any further modifications to ``mseccfg.RLB`` are ignored until a *PMP reset*.
++
+[CAUTION]
+====
+Note that this feature is intended to be used as a debug mechanism, or as a temporary workaround during the boot process for simplifying software, and optimizing the allocation of memory and PMP rules. Using this functionality under normal operation, after the boot process is completed, should be avoided since it weakens the protection of _M-mode-only_ rules. Vendors who don’t need this functionality may hardwire this field to 0.
+====
+
+. On ``mseccfg`` we introduce a field in bit 1 called *Machine-Mode Allowlist Policy (mseccfg.MMWP)*. This is a sticky bit, meaning that once set it cannot be unset until a *PMP reset*. When set it changes the default PMP policy for M-mode when accessing memory regions that don’t have a matching PMP rule, to *denied* instead of *ignored*.
+
+. On ``mseccfg`` we introduce a field in bit 0 called *Machine Mode Lockdown (mseccfg.MML)*. This is a sticky bit, meaning that once set it cannot be unset until a *PMP reset*. When ``mseccfg.MML`` is set the system's behavior changes in the following way:
+
+.. The meaning of ``pmpcfg.L`` changes: Instead of marking a rule as *locked* and *enforced* in all modes, it now marks a rule as *M-mode-only* when set and *S/U-mode-only* when unset. The formerly reserved encoding of ``pmpcfg.RW=01``, and the encoding ``pmpcfg.LRWX=1111``, now encode a *Shared-Region*.
++
+An _M-mode-only_ rule is *enforced* on Machine mode and *denied* in Supervisor or User mode. It also remains *locked* so that any further modifications to its associated configuration or address registers are ignored until a *PMP reset*, unless ``mseccfg.RLB`` is set.
++
+An _S/U-mode-only_ rule is *enforced* on Supervisor and User modes and *denied* on Machine mode.
++
+A _Shared-Region_ rule is *enforced* on all modes, with restrictions depending on the ``pmpcfg.L`` and ``pmpcfg.X`` bits:
++
+* A _Shared-Region_ rule where ``pmpcfg.L`` is not set can be used for sharing data between M-mode and S/U-mode, so is not executable. M-mode has read/write access to that region, and S/U-mode has read access if ``pmpcfg.X`` is not set, or read/write access if ``pmpcfg.X`` is set.
++
+* A _Shared-Region_ rule where ``pmpcfg.L`` is set can be used for sharing code between M-mode and S/U-mode, so is not writable. Both M-mode and S/U-mode have execute access on the region, and M-mode also has read access if ``pmpcfg.X`` is set. The rule remains *locked* so that any further modifications to its associated configuration or address registers are ignored until a *PMP reset*, unless ``mseccfg.RLB`` is set.
++
+* The encoding ``pmpcfg.LRWX=1111`` can be used for sharing data between M-mode and S/U mode, where both modes only have read-only access to the region. The rule remains *locked* so that any further modifications to its associated configuration or address registers are ignored until a *PMP reset*, unless ``mseccfg.RLB`` is set.
+
+
+.. Adding a rule with executable privileges that either is *M-mode-only* or a *locked* *Shared-Region* is not possible and such ``pmpcfg`` writes are ignored, leaving ``pmpcfg`` unchanged. This restriction can be temporarily lifted by setting ``mseccfg.RLB`` e.g. during the boot process.
+
+.. Executing code with Machine mode privileges is only possible from memory regions with a matching *M-mode-only* rule or a *locked* *Shared-Region* rule with executable privileges. Executing code from a region without a matching rule or with a matching _S/U-mode-only_ rule is *denied*.
+
+.. If ``mseccfg.MML`` is not set, the combination of ``pmpcfg.RW=01`` remains reserved for future standard use.'''
+zh = '''
+. **机器安全配置（mseccfg）** 是一个新的机器模式可读写 CSR，用于配置硬件线程上存在的各种安全机制，且仅机器模式可访问。其宽度为 64 位，在 **RV64 上地址为 0x747**，在 **RV32 上地址为 0x747（低 32 位）、0x757（高 32 位）**。本提案中定义的所有 mseccfg 字段均为 WARL，其余位保留供未来标准使用，且宜始终读为零。mseccfg 的复位值由实现定义；否则，若要求向后兼容，则宜在硬复位时复位为零。
+
+. 在 ``mseccfg`` 上，我们在位 2 引入一个字段，称为 **规则锁定旁路（mseccfg.RLB）**，其功能如下：
++
+.. 当 ``mseccfg.RLB`` 为 1 时，可移除/修改 *锁定* 的 PMP 规则，并可编辑 *锁定* 的 PMP 表项。
+
+.. 当 ``mseccfg.RLB`` 为 0 且任一规则或表项（包括禁用表项）中的 ``pmpcfg.L`` 为 1 时，``mseccfg.RLB`` 保持为 0，并且在 *PMP 复位* 之前，对 ``mseccfg.RLB`` 的任何进一步修改均被忽略。
++
+[CAUTION]
+====
+请注意，此功能旨在用作调试机制，或在启动过程中用作临时变通方法，以简化软件并优化内存和 PMP 规则的分配。在启动过程完成后的正常运行期间，宜避免使用此功能，因为它会削弱 __仅 M 模式__ 规则的保护。不需要此功能的厂商可将该字段硬连线为 0。
+====
+
+. 在 ``mseccfg`` 上，我们在位 1 引入一个字段，称为 **机器模式允许列表策略（mseccfg.MMWP）**。这是一个粘性位，意味着一旦置位，在 *PMP 复位* 之前就不能清零。置位后，当 M 模式访问没有匹配 PMP 规则的内存区域时，它将默认 PMP 策略改为 *拒绝* 而非 *忽略*。
+
+. 在 ``mseccfg`` 上，我们在位 0 引入一个字段，称为 **机器模式锁定（mseccfg.MML）**。这是一个粘性位，意味着一旦置位，在 *PMP 复位* 之前就不能清零。当 ``mseccfg.MML`` 置位时，系统行为按以下方式改变：
+
+.. ``pmpcfg.L`` 的含义发生变化：它不再将规则标记为在所有模式下 *锁定* 且 *强制执行*，而是当置位时将规则标记为 *仅 M 模式*，当清零时标记为 *仅 S/U 模式*。原先保留的编码 ``pmpcfg.RW=01`` 以及编码 ``pmpcfg.LRWX=1111``，现在编码一个 *共享区域*。
++
+__仅 M 模式__ 规则在机器模式下 *强制执行*，在监管模式或用户模式下 *拒绝*。它还会保持 *锁定*，因此在 *PMP 复位* 之前，对其关联配置寄存器或地址寄存器的任何进一步修改均被忽略，除非设置了 ``mseccfg.RLB``。
++
+__仅 S/U 模式__ 规则在监管模式和用户模式下 *强制执行*，在机器模式下 *拒绝*。
++
+__共享区域__ 规则在所有模式下 *强制执行*，具体限制取决于 ``pmpcfg.L`` 和 ``pmpcfg.X`` 位：
++
+* 未置位 ``pmpcfg.L`` 的 __共享区域__ 规则可用于在 M 模式与 S/U 模式之间共享数据，因此不可执行。M 模式对该区域具有读/写访问权；若 ``pmpcfg.X`` 未置位，则 S/U 模式具有读访问权，若 ``pmpcfg.X`` 置位，则具有读/写访问权。
++
+* 置位 ``pmpcfg.L`` 的 __共享区域__ 规则可用于在 M 模式与 S/U 模式之间共享代码，因此不可写。M 模式和 S/U 模式均对该区域具有执行访问权；若 ``pmpcfg.X`` 置位，则 M 模式还具有读访问权。该规则保持 *锁定*，因此在 *PMP 复位* 之前，对其关联配置寄存器或地址寄存器的任何进一步修改均被忽略，除非设置了 ``mseccfg.RLB``。
++
+* 编码 ``pmpcfg.LRWX=1111`` 可用于在 M 模式与 S/U 模式之间共享数据，其中两种模式对该区域均仅具有只读访问权。该规则保持 *锁定*，因此在 *PMP 复位* 之前，对其关联配置寄存器或地址寄存器的任何进一步修改均被忽略，除非设置了 ``mseccfg.RLB``。
+
+
+.. 无法添加具有执行权限且为 *仅 M 模式* 或 *锁定的* *共享区域* 的规则，此类 ``pmpcfg`` 写入将被忽略，``pmpcfg`` 保持不变。可通过设置 ``mseccfg.RLB``（例如在启动过程中）临时解除此限制。
+
+.. 只有在具有匹配的 *仅 M 模式* 规则或具有执行权限的 *锁定的* *共享区域* 规则的内存区域中，才能以机器模式特权执行代码。从没有匹配规则的区域或具有匹配的 __仅 S/U 模式__ 规则的区域执行代码会被 *拒绝*。
+
+.. 若未置位 ``mseccfg.MML``，则 ``pmpcfg.RW=01`` 组合仍保留供未来标准使用。'''

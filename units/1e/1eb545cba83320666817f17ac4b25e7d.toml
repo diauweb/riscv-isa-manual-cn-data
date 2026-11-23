@@ -1,0 +1,26 @@
+unit_id = "1eb545cba83320666817f17ac4b25e7d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.encoding for stores
+[cols="1,1,7,6"]
+|===
+2+| mop [1:0] | Description | Opcodes
+
+| 0 | 0 | unit-stride       | VSE<EEW>
+| 0 | 1 | indexed-unordered | VSUXEI<EEW>
+| 1 | 0 | constant-stride   | VSSE<EEW>
+| 1 | 1 | indexed-ordered   | VSOXEI<EEW>
+|==='''
+zh = '''
+存储编码
+[cols="1,1,7,6"]
+|===
+2+| mop [1:0] | 描述 | 操作码
+
+| 0 | 0 | 单位步长       | VSE<EEW>
+| 0 | 1 | 索引-无序 | VSUXEI<EEW>
+| 1 | 0 | 恒定步长   | VSSE<EEW>
+| 1 | 1 | 索引-有序   | VSOXEI<EEW>
+|==='''

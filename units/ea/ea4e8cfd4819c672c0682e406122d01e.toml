@@ -1,0 +1,12 @@
+unit_id = "ea4e8cfd4819c672c0682e406122d01e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the instruction that is executed causes the PC to change to an
+address where an instruction fetch causes an exception, that exception
+does not occur until the next time the hart is resumed. Similarly, a
+trigger at the new address does not fire until the hart actually
+attempts to execute that instruction.'''
+zh = '''
+若所执行的指令导致 PC 变为取指会引发异常的地址，则该异常在硬件线程下次恢复之前不会发生。类似地，新地址处的触发器直到硬件线程实际尝试执行该指令时才会触发。'''

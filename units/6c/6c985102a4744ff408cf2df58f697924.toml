@@ -1,0 +1,19 @@
+unit_id = "6c985102a4744ff408cf2df58f697924"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. If the hart is halted, the command  sets {abstractcs-cmderr} to ``halt/resume'' and does not continue.
+. Halt the hart. If the hart halts for some other reason (e.g. breakpoint), the command
+sets {abstractcs-cmderr} to ``halt/resume'' and does not continue.
+. Execute the Program Buffer.
+If an exception occurs, {abstractcs-cmderr} is set to
+``exception,'' the Program Buffer execution ends, and the hart is
+halted with {dcsr-cause} set to 3.
+. If the Program Buffer executed without an exception, then
+resume the hart.'''
+zh = '''
+. 若硬件线程已停机，则该命令将 {abstractcs-cmderr} 设为 ``halt/resume''（停机/恢复）并停止继续执行。
+. 使硬件线程停机。若硬件线程因其他原因（例如断点）停机，则该命令将 {abstractcs-cmderr} 设为 ``halt/resume''（停机/恢复）并停止继续执行。
+. 执行程序缓冲区。若发生异常，则将 {abstractcs-cmderr} 设为 ``exception''（异常），结束程序缓冲区执行，硬件线程停机且 {dcsr-cause} 设为 3。
+. 若程序缓冲区无异常地执行完毕，则恢复硬件线程。'''

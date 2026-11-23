@@ -1,0 +1,13 @@
+unit_id = "ce9538c2ef0e52ef90e60e43a0030a93"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Read access to bit _X_ is subject to the same mcounteren (or mcounteren and
+hcounteren) CSRs that mediate access to the hpmcounter CSRs by S-mode (or
+VS-mode). In M and S modes, scountovf bit _X_ is readable when mcounteren bit
+_X_ is set, and otherwise reads as zero. Similarly, in VS mode, scountovf bit
+_X_ is readable when mcounteren bit _X_ and hcounteren bit _X_ are both set,
+and otherwise reads as zero.'''
+zh = '''
+对位 _X_ 的读访问，受用于调解 S 模式（或 VS 模式）对 hpmcounter CSR 访问的同一 mcounteren（或 mcounteren 和 hcounteren）CSR 约束。在 M 模式和 S 模式中，当 mcounteren 位 _X_ 置位时，scountovf 位 _X_ 可读，否则读为零。类似地，在 VS 模式中，当 mcounteren 位 _X_ 和 hcounteren 位 _X_ 均置位时，scountovf 位 _X_ 可读，否则读为零。'''

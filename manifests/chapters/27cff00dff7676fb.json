@@ -1,0 +1,344 @@
+{
+  "chap_hash": "27cff00dff7676fb",
+  "id": "bf16",
+  "sectname": "chapter",
+  "sectnum": "25",
+  "title_en": "\"BF16\" Extensions for for BFloat16-precision Floating-Point, Version 1.0",
+  "title_unit_id": "b31a9741acc7ed19e79481220b9587e1",
+  "source_path": "src/bfloat16.adoc",
+  "sections": [
+    {
+      "id": "bf16",
+      "level": 1,
+      "sectnum": "25",
+      "title": "\"BF16\" Extensions for for BFloat16-precision Floating-Point, Version 1.0",
+      "heading_unit_id": "b31a9741acc7ed19e79481220b9587e1",
+      "heading_anchor_id": "bf16",
+      "blocks": []
+    },
+    {
+      "id": "BF16_introduction",
+      "level": 2,
+      "sectnum": "25.1",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "heading_anchor_id": "BF16_introduction",
+      "blocks": [
+        "2a2c0b8e7f6527151cabbee3f17d1dae",
+        "caea20f035332b5874f24adafdb5ec6f",
+        "6a10d3a4bc76bd5969a304ecbfb7088f",
+        "0926b818614194fa334fe586aad320bd",
+        "6966c5585b26d8c1dfa20b59d00753c4"
+      ]
+    },
+    {
+      "id": "BF16_audience",
+      "level": 2,
+      "sectnum": "25.2",
+      "title": "Intended Audience",
+      "heading_unit_id": "96e3bc589a3e4ea5ac9533c65d20d123",
+      "heading_anchor_id": "BF16_audience",
+      "blocks": [
+        "6c1a14b1da7b5a1540be07ccf0dfdf7d",
+        "d6ec6aa293d1e594b64c29a34049679c",
+        "1a36c3eb0ef4baf65b69816367f85d51",
+        "05acbbab2ced447da6cf129d1aaa3eb8"
+      ]
+    },
+    {
+      "id": "BF16_format",
+      "level": 2,
+      "sectnum": "25.3",
+      "title": "Number Format",
+      "heading_unit_id": "adbdff6aa86b4fdc8f5c22c055d58a48",
+      "heading_anchor_id": "BF16_format",
+      "blocks": []
+    },
+    {
+      "id": "_bf16_operand_format",
+      "level": 3,
+      "sectnum": "25.3.1",
+      "title": "BF16 Operand Format",
+      "heading_unit_id": "5949f6d904862e4f1e6572f2f66e234f",
+      "blocks": [
+        "b1f3aa7e6a9ce79f22ef8a6b2974de38",
+        "519f37bd6fd88892ca66ca2b5af28e72",
+        "4575998bd754b0e479f025142d85cee6",
+        "a226b7e89648c9d86d483cf88c7f9810",
+        "73e78efb025d1acab13b0373e48210cc"
+      ]
+    },
+    {
+      "id": "_bf16_behavior",
+      "level": 3,
+      "sectnum": "25.3.2",
+      "title": "BF16 Behavior",
+      "heading_unit_id": "93b8261901c592f4147a15f5adc9d963",
+      "blocks": [
+        "a83e9b3c50900887d2d4506555e1a037"
+      ]
+    },
+    {
+      "id": "_subnormal_numbers",
+      "level": 4,
+      "sectnum": "25.3.2.1",
+      "title": "Subnormal Numbers:",
+      "heading_unit_id": "fa7e61d93098a4106f71345b6d7798bc",
+      "blocks": [
+        "a6ada5da4a7b5d848aeb2d6f6a0b6d89",
+        "19ea430e9634f4c372ddade0bb075f0f",
+        "94d039e8af5c59663b2e219cac2f9190"
+      ]
+    },
+    {
+      "id": "_infinities",
+      "level": 4,
+      "sectnum": "25.3.2.2",
+      "title": "Infinities:",
+      "heading_unit_id": "b6f33196040dc13c0614676d953b1413",
+      "blocks": [
+        "f05b421217fb7f3f0eb5ae57c765502b",
+        "e09c9224b90f9832eddb67a7691a150c"
+      ]
+    },
+    {
+      "id": "_nans",
+      "level": 4,
+      "sectnum": "25.3.2.3",
+      "title": "NaNs",
+      "heading_unit_id": "f35af14ce135a44874e554dfd130683c",
+      "blocks": [
+        "f1c1d5f0917fab4592dea0f1144bbad3",
+        "114d4aed0ad800690d040305d242e066",
+        "5ca61156e0b62d3c596bf46a11de39b1",
+        "c40f3d31258b51c57968f1e485254fd3",
+        "f1ee86b6bf6f9f0ba6c11f7df8bc8375",
+        "e5452f795141a0e05f9c6d1a495eb296"
+      ]
+    },
+    {
+      "id": "_scalar_nan_boxing",
+      "level": 4,
+      "sectnum": "25.3.2.4",
+      "title": "Scalar NaN Boxing",
+      "heading_unit_id": "af9218e52da03146bfa8d5c1845a15ba",
+      "blocks": [
+        "2e58821014e8cd8f23db960180706e0a",
+        "d5589bd2895956e8170e36ea1a7990ce",
+        "39d822d6211f48bc1d80a496550e312f"
+      ]
+    },
+    {
+      "id": "_rounding_modes",
+      "level": 4,
+      "sectnum": "25.3.2.5",
+      "title": "Rounding Modes:",
+      "heading_unit_id": "d5a0490eb1ce125fa379d614663b276b",
+      "blocks": [
+        "419ff3ff5b613a83505afbfeca853709",
+        "1963e4f72f9a52e90c3ff652cc722640",
+        "09ff7911fd9dd9a6ae4b1152f5afd8d1",
+        "e0663c9234d40c39df64319a5951de00",
+        "ea4d4df44007624265163c422dedd22f"
+      ]
+    },
+    {
+      "id": "_handling_exceptions",
+      "level": 4,
+      "sectnum": "25.3.2.6",
+      "title": "Handling exceptions",
+      "heading_unit_id": "08426563c08c018eef5b113225531860",
+      "blocks": [
+        "442d1593fb57e81b4b6875bfe0efad7c",
+        "aeee84dcd8530684098091305baee47c"
+      ]
+    },
+    {
+      "id": "_underflow",
+      "level": 5,
+      "sectnum": "25.3.2.6.1",
+      "title": "Underflow",
+      "heading_unit_id": "0a0ce6470a182168fa7701e18c82a193",
+      "blocks": [
+        "90d8def3f3f190260b1d3796c3449d19",
+        "d5aabe756aa183ae1efb5487b4551f1a",
+        "9df906580c3e73034c518600cc1a4a6d"
+      ]
+    },
+    {
+      "id": "BF16_extensions",
+      "level": 2,
+      "sectnum": "25.4",
+      "title": "Extensions",
+      "heading_unit_id": "0ce0781a8c4275be9e39490bd00ca058",
+      "heading_anchor_id": "BF16_extensions",
+      "blocks": [
+        "748dbe7dab8c0bc5648dfd3a337dd19e",
+        "8aa37b15a8397809f16e5d85f79285b4",
+        "c64c89d3e3c9cdc89a548fb29a68602f",
+        "1e01b4e2ca7a6fb79f24a037ad58fd4d",
+        "b96d5de54ff5309103237ffac5d5ac40",
+        "614c1c259383536a51f5f71c68a09e3b"
+      ]
+    },
+    {
+      "id": "zfbfmin",
+      "level": 3,
+      "sectnum": "25.4.1",
+      "title": "Zfbfmin - Scalar BF16 Converts",
+      "heading_unit_id": "bff449c8a1797100b01255e193bfc876",
+      "heading_anchor_id": "zfbfmin",
+      "blocks": [
+        "cf58fa34935e1282da31fe4575cb114f",
+        "c424426f8782bc28ea5b3b117660b3d3",
+        "beca61d0101b15f4b1d30e0f1646834d",
+        "a25fde7200f0181da035da1f09f23a62",
+        "be5b09ed3610ee1c296a7efa634e903a"
+      ]
+    },
+    {
+      "id": "zvfbfmin",
+      "level": 3,
+      "sectnum": "25.4.2",
+      "title": "Zvfbfmin - Vector BF16 Converts",
+      "heading_unit_id": "6d0e26309ec3c50a8ab605f184fd3df9",
+      "heading_anchor_id": "zvfbfmin",
+      "blocks": [
+        "35e3fc5ae44342e5d7540b858d5b8d41",
+        "b88452dcc13a0c0ae91be8bb582714f2",
+        "beca61d0101b15f4b1d30e0f1646834d",
+        "add040f7ac47fbed78da90071e875729",
+        "dc8993e3fdc2ec77120176d56676f410"
+      ]
+    },
+    {
+      "id": "zvfbfwma",
+      "level": 3,
+      "sectnum": "25.4.3",
+      "title": "Zvfbfwma - Vector BF16 widening mul-add",
+      "heading_unit_id": "72db65e52fea7b6f689264ce9729a7e1",
+      "heading_anchor_id": "zvfbfwma",
+      "blocks": [
+        "77a594b9ae41bbbc9db88513ec7bf600",
+        "8fa6aa805209d9bcee5cfb5653c68509",
+        "9818dec9734e9978310c741f5178b446"
+      ]
+    },
+    {
+      "id": "BF16_insns",
+      "level": 2,
+      "sectnum": "25.5",
+      "title": "Instructions",
+      "heading_unit_id": "1ddd76143eb213c420f1510467b3edd3",
+      "heading_anchor_id": "BF16_insns",
+      "blocks": []
+    },
+    {
+      "id": "insns-fcvt.bf16.s",
+      "level": 3,
+      "sectnum": "25.5.1",
+      "title": "fcvt.bf16.s",
+      "heading_unit_id": "f1425c603502e55551bf4938faa03baa",
+      "heading_anchor_id": "insns-fcvt.bf16.s",
+      "blocks": [
+        "7e3af6630265558b95fb5192107547fc",
+        "93ff0ff301aebed332ad71dd5830484a",
+        "f84627d26a085e5fa2e26cb573dbf841",
+        "6b273d342efdf793c3eec1e277e47367",
+        "a76dc4c4e7c49d98c0b0a88eb66517bf",
+        "18414fa11effe2c2d319b0d198daf4bf",
+        "09b8fb191a5d47a506767a2704be0efe"
+      ]
+    },
+    {
+      "id": "insns-fcvt.s.bf16",
+      "level": 3,
+      "sectnum": "25.5.2",
+      "title": "fcvt.s.bf16",
+      "heading_unit_id": "1f9cbb7d3886e52d4ae9f3cf9def077b",
+      "heading_anchor_id": "insns-fcvt.s.bf16",
+      "blocks": [
+        "0830b7d79ca95dc931a8f9a4f7ff876b",
+        "aa2ac206e439ce3426dc14a514a79778",
+        "c0929d16585faf7a906dad2d3fff6495",
+        "9282b4148d3809536c3149d7c033f4d6",
+        "54107c926c32897129527a04bc8b7973",
+        "d85a65244adae89f4b32c2e880834a05",
+        "86e18f4b252e6d5b18a9ef3a91e998ad",
+        "09b8fb191a5d47a506767a2704be0efe"
+      ]
+    },
+    {
+      "id": "insns-vfncvtbf16.f.f.w",
+      "level": 3,
+      "sectnum": "25.5.3",
+      "title": "vfncvtbf16.f.f.w",
+      "heading_unit_id": "82f7f41a4cf1799de7b346b405cd026e",
+      "heading_anchor_id": "insns-vfncvtbf16.f.f.w",
+      "blocks": [
+        "7026efa3653dd88c5da4fe28deab0ba8",
+        "93b10e73426be92fb6fde8832115a829",
+        "d94b0e94ca8cd1b47c7b4493af7758f8",
+        "7291ceb59932b366c7a12fe1ada7406b",
+        "8274fcbf5e1d8bee69393416570960cf",
+        "2d42c316084bec460712c08e90761ed5",
+        "18414fa11effe2c2d319b0d198daf4bf",
+        "67e7713ea8fcee79053d3758e5477457"
+      ]
+    },
+    {
+      "id": "insns-vfwcvtbf16.f.f.v",
+      "level": 3,
+      "sectnum": "25.5.4",
+      "title": "vfwcvtbf16.f.f.v",
+      "heading_unit_id": "71e7a65692e7c44a3383ae35a5043940",
+      "heading_anchor_id": "insns-vfwcvtbf16.f.f.v",
+      "blocks": [
+        "0ecf7a0e4d96c8efa9892641419d9492",
+        "8466da3a391829d281848b9e51368eda",
+        "d94b0e94ca8cd1b47c7b4493af7758f8",
+        "f3f980825c8879aa4667a6610d46de5d",
+        "419c0b3f6e7ad4968eabaac2f476aca3",
+        "0cb5ec2e0394372e4642fc0a9032bbe6",
+        "c9287edae4f1cc041d7d9a2e40764888",
+        "86e18f4b252e6d5b18a9ef3a91e998ad",
+        "67e7713ea8fcee79053d3758e5477457"
+      ]
+    },
+    {
+      "id": "insns-vfwmaccbf16",
+      "level": 3,
+      "sectnum": "25.5.5",
+      "title": "vfwmaccbf16",
+      "heading_unit_id": "7badf47ef37cb4a857b92dafb371a254",
+      "heading_anchor_id": "insns-vfwmaccbf16",
+      "blocks": [
+        "6ec0f62d7b451ba421ddb194e354256a",
+        "1881293c2d9c64b292b594a6f8d26d73",
+        "1740637f95dfc3c0c1bd399d9f96fb23",
+        "74516ca419983d144c06129bf2fd1611",
+        "d94b0e94ca8cd1b47c7b4493af7758f8",
+        "5ee8cbcc69a43b809f858c27ef92b6a0",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "5054ab11161660b02b0e562a4c271852",
+        "f2c1cee51f0e219d38d34c5cf2da9289",
+        "e02be6c5f58cb3b621723f643c831cf6",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5e5c11fe475e4036f99f6773ac9ad190",
+        "7c0e4afbcb493667ae71c596921d1d69",
+        "e32251f2108e71e27ec3af1f99f43de1",
+        "4faa188c27829c80517abbb100f25eb8"
+      ]
+    },
+    {
+      "id": "_bibliography",
+      "level": 2,
+      "sectnum": null,
+      "title": "Bibliography",
+      "heading_unit_id": "99ad1edaf4840c56f68a2fd679365a4c",
+      "blocks": [
+        "819c50ea7da3befd8cda75b4562bc52c"
+      ]
+    }
+  ]
+}

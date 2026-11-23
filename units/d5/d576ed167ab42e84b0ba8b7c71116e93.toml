@@ -1,0 +1,34 @@
+unit_id = "d576ed167ab42e84b0ba8b7c71116e93"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We considered raising exceptions on integer divide by zero, with these
+exceptions causing a trap in most execution environments. However, this
+would be the only arithmetic trap in the standard ISA (floating-point
+exceptions set flags and write default values, but do not cause traps)
+and would require language implementors to interact with the execution
+environment's trap handlers for this case. Further, where language
+standards mandate that a divide-by-zero exception must cause an
+immediate control flow change, only a single branch instruction needs to
+be added to each divide operation, and this branch instruction can be
+inserted after the divide and should normally be very predictably not
+taken, adding little runtime overhead.
+
+The value of all bits set is returned for both unsigned and signed
+divide by zero to simplify the divider circuitry. The value of all 1s is
+both the natural value to return for unsigned divide, representing the
+largest unsigned number, and also the natural result for simple unsigned
+divider implementations. Signed division is often implemented using an
+unsigned division circuit and specifying the same overflow result
+simplifies the hardware.
+===='''
+zh = '''
+[NOTE]
+====
+我们曾考虑对整数除零触发异常，这些异常在大多数执行环境中会导致陷阱。然而，这将是标准 ISA 中唯一的算术陷阱（浮点异常置标志并写入默认值，但不引起陷阱），并且将要求语言实现者在此情形下与执行环境的陷阱处理程序交互。此外，在语言标准强制要求除零异常必须引起立即控制流变化的情况下，只需在每次除法操作后添加一条分支指令即可，该分支指令可插入在除法之后，且通常应非常可预测地不被跳转，几乎不增加运行时开销。
+
+无论无符号还是有符号除零都返回所有位均置位的值，以简化除法器电路。全 1 值既是无符号除法自然应返回的值（表示最大的无符号数），也是简单无符号除法器实现的自然结果。有符号除法通常使用无符号除法电路实现，规定相同的上溢结果可简化硬件。
+===='''

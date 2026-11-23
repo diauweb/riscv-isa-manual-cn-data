@@ -1,0 +1,13 @@
+unit_id = "7c28f436f187b87efdb3ba0f0e42d738"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- <<sstvala,**Sstvala**>> `stval` must be written with the faulting virtual address for load,
+  store, and instruction page-fault, access-fault, and misaligned
+  exceptions, and for breakpoint exceptions that are defined to write an address to stval,
+  other than those caused by execution of the `EBREAK` or `C.EBREAK` instructions.  For
+  virtual-instruction and illegal-instruction exceptions, `stval` must be written with the
+  faulting instruction.'''
+zh = '''
+- <<sstvala,**Sstvala**>> 对于加载、存储和取指页错误、访问错误及非对齐异常，以及对于已定义会将地址写入 stval 的断点异常（由执行 `EBREAK` 或 `C.EBREAK` 指令引起的异常除外），`stval` 应写入出错虚拟地址。对于虚拟指令异常和非法指令异常，`stval` 应写入出错指令。'''

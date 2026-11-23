@@ -1,0 +1,11 @@
+unit_id = "8a18aaad0a4f96c0af2bfb785afb577e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The combination of these rules means that a debugger cannot simply set a
+trigger by writing {csr-tdata1}, then {csr-tdata2}, etc. The current value of {csr-tdata2} might not be legal
+with the new value of {csr-tdata1}. To help with this situation, it is guaranteed
+that writing 0 to {csr-tdata1} disables the trigger, and leaves it in a state where {csr-tdata2} and {csr-tdata3} can be written with any value that makes sense for any trigger type supported by this trigger.'''
+zh = '''
+这些规则组合起来意味着，调试器不能简单地通过先写 {csr-tdata1}、再写 {csr-tdata2} 等来设置触发器。{csr-tdata2} 的当前值可能与 {csr-tdata1} 的新值不合法。为帮助处理此情况，保证向 {csr-tdata1} 写 0 会禁用触发器，并使其处于可向 {csr-tdata2} 和 {csr-tdata3} 写入对此触发器所支持任何触发器类型均有意义的任何值的状态。'''

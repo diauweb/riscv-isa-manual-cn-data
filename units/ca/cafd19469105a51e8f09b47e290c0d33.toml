@@ -1,0 +1,14 @@
+unit_id = "cafd19469105a51e8f09b47e290c0d33"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. All the other harts in that group that are halted will quickly resume as
+soon as any currently executing abstract commands have completed. Each
+hart in the group sets its resume ack bit as soon as it has resumed.
+Harts that are in the process of halting should complete that process
+and stay halted.
+. Any external triggers in that group are notified.'''
+zh = '''
+. 该组中所有其他已停机的硬件线程将在当前正在执行的抽象命令完成后尽快恢复。组中每个硬件线程一恢复即置位其恢复应答位。正在停机过程中的硬件线程应完成该过程并保持停机。
+. 该组中的任何外部触发器都会被通知。'''

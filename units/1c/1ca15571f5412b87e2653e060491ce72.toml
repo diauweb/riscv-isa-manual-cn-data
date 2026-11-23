@@ -1,0 +1,102 @@
+unit_id = "1ca15571f5412b87e2653e060491ce72"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Mappings from Linux memory primitives to RISC-V primitives.
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!Linux Operation !RVWMO Mapping
+
+!`smp_mb()` !`fence rw,rw`
+
+!`smp_rmb()` !`fence r,r`
+
+!`smp_wmb()` !`fence w,w`
+
+!`dma_rmb()` !`fence r,r`
+
+!`dma_wmb()` !`fence w,w`
+
+!`mb()` !`fence iorw,iorw`
+
+!`rmb()` !`fence ri,ri`
+
+!`wmb()` !`fence wo,wo`
+
+!`smp_load_acquire()` !`l{b|h|w|d}; fence r,rw`
+
+!`smp_store_release()` !`fence.tso; s{b|h|w|d}`
+
+!Linux Construct !RVWMO AMO Mapping
+
+!`atomic &#60;op&#62; relaxed` !`amo &#60;op&#62;.{w|d}`
+
+!`atomic &#60;op&#62; acquire` !`amo &#60;op&#62;.{w|d}.aq`
+
+!`atomic &#60;op&#62; release` !`amo &#60;op&#62;.{w|d}.rl`
+
+!`atomic &#60;op&#62;` !`amo &#60;op&#62;.{w|d}.aqrl`
+
+!Linux Construct !RVWMO LR/SC Mapping
+
+!`atomic &#60;op&#62; relaxed` !`loop:lr.{w|d}; &#60;op&#62;; sc.{w|d}; bnez loop`
+
+!`atomic &#60;op&#62; acquire` !`loop:lr.{w|d}.aq; &#60;op&#62;; sc.{w|d}; bnez loop`
+
+!`atomic &#60;op&#62; release` !`loop:lr.{w|d}; &#60;op&#62;; sc.{w|d}.aqrl^&#42;; bnez loop OR`
+
+! !`fence.tso; loop:lr.{w|d}; &#60;op &#62;; sc.{w|d}^&#42;; bnez loop`
+
+!`atomic &#60;op&#62;` !`loop:lr.{w|d}.aq;` `&#60;op&#62;; sc.{w|d}.aqrl; bnez loop`
+
+|==='''
+zh = '''
+.从 Linux 内存原语到 RISC-V 原语的映射。
+[%autowidth,float="center",align="center",cols="<,<",options="header",separator=!]
+|===
+!Linux 操作 !RVWMO 映射
+
+!`smp_mb()` !`fence rw,rw`
+
+!`smp_rmb()` !`fence r,r`
+
+!`smp_wmb()` !`fence w,w`
+
+!`dma_rmb()` !`fence r,r`
+
+!`dma_wmb()` !`fence w,w`
+
+!`mb()` !`fence iorw,iorw`
+
+!`rmb()` !`fence ri,ri`
+
+!`wmb()` !`fence wo,wo`
+
+!`smp_load_acquire()` !`l{b|h|w|d}; fence r,rw`
+
+!`smp_store_release()` !`fence.tso; s{b|h|w|d}`
+
+!Linux 构造 !RVWMO AMO 映射
+
+!`atomic &#60;op&#62; relaxed` !`amo &#60;op&#62;.{w|d}`
+
+!`atomic &#60;op&#62; acquire` !`amo &#60;op&#62;.{w|d}.aq`
+
+!`atomic &#60;op&#62; release` !`amo &#60;op&#62;.{w|d}.rl`
+
+!`atomic &#60;op&#62;` !`amo &#60;op&#62;.{w|d}.aqrl`
+
+!Linux 构造 !RVWMO LR/SC 映射
+
+!`atomic &#60;op&#62; relaxed` !`loop:lr.{w|d}; &#60;op&#62;; sc.{w|d}; bnez loop`
+
+!`atomic &#60;op&#62; acquire` !`loop:lr.{w|d}.aq; &#60;op&#62;; sc.{w|d}; bnez loop`
+
+!`atomic &#60;op&#62; release` !`loop:lr.{w|d}; &#60;op&#62;; sc.{w|d}.aqrl^&#42;; bnez loop OR`
+
+! !`fence.tso; loop:lr.{w|d}; &#60;op &#62;; sc.{w|d}^&#42;; bnez loop`
+
+!`atomic &#60;op&#62;` !`loop:lr.{w|d}.aq;` `&#60;op&#62;; sc.{w|d}.aqrl; bnez loop`
+
+|==='''

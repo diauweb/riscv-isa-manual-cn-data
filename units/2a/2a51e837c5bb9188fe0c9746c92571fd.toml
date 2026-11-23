@@ -1,0 +1,10 @@
+unit_id = "2a51e837c5bb9188fe0c9746c92571fd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The term _return_ is used to refer to a insn:jalr[] instruction with _rd_=`x0` and
+with _rs1_=`x1` or _rs1_=`x5`. A insn:c.jr[] instruction expands to
+insn:jalr[x0,0(rs1)] and is a return if _rs1_=`x1` or _rs1_=`x5`.'''
+zh = '''
+术语_返回_用于指代 _rd_=`x0` 且 _rs1_=`x1` 或 _rs1_=`x5` 的 insn:jalr[] 指令。insn:c.jr[] 指令展开为 insn:jalr[x0,0(rs1)]，若 _rs1_=`x1` 或 _rs1_=`x5` 则为返回。'''

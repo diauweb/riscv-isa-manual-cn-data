@@ -1,0 +1,18 @@
+unit_id = "e2aebc0703fb69b6aee615611142c642"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pma_mag_insts]#The misaligned atomicity granule PMA applies only to
+AMOs defined in the ext:zaamo[], ext:zabha[], and ext:zacas[] extensions;
+loads and stores
+defined in the base ISAs; loads and stores of no more than XLEN bits
+defined in the ext:f[], ext:d[], and ext:q[] extensions; the load-acquire and
+store-release instructions defined in the ext:zalasr[] extension; and compressed
+encodings of the foregoing loads and stores.#
+For an instruction in that set, [#norm:pma_mag_op_within]#if all accessed bytes lie within the same
+misaligned atomicity granule, the instruction will not raise an exception for
+reasons of address alignment, and the instruction will give rise to only one
+memory operation for the purposes of RVWMO--i.e., it will execute atomically.#'''
+zh = '''
+[#norm:pma_mag_insts]##非对齐原子性粒度 PMA 仅适用于 ext:zaamo[]、ext:zabha[] 和 ext:zacas[] 扩展中定义的 AMO；基础 ISA 中定义的加载和存储；ext:f[]、ext:d[] 和 ext:q[] 扩展中定义的至多 XLEN 位的加载和存储；ext:zalasr[] 扩展中定义的加载-获取和存储-释放指令；以及上述加载和存储的压缩编码。##对于该集合中的指令，[#norm:pma_mag_op_within]##若所有访问的字节均位于同一非对齐原子性粒度内，则该指令不会因地址对齐原因引发异常，且就 RVWMO 而言，该指令将仅产生一个内存操作——即，它将原子地执行。##'''

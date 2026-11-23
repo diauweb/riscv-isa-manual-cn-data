@@ -1,0 +1,13 @@
+unit_id = "5d9bb725dcf862447f9a4640bb8a3262"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: When LMUL < SEW~MIN~/min(ELEN, VLEN), there is no guarantee
+an implementation would have enough bits in the fractional vector
+register to store at least one element, as VLEN=ELEN is a
+valid implementation choice. For example, with VLEN=ELEN=32,
+and SEW~MIN~=8, an LMUL of 1/8 would only provide four bits of
+storage in a vector register.'''
+zh = '''
+NOTE: 当 LMUL < SEW~MIN~/min(ELEN, VLEN) 时，不能保证实现在分数向量寄存器中有足够位来存储至少一个元素，因为 VLEN=ELEN 是有效的实现选择。例如，当 VLEN=ELEN=32 且 SEW~MIN~=8 时，LMUL 为 1/8 仅在向量寄存器中提供四位存储。'''

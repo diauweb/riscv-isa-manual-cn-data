@@ -1,0 +1,8 @@
+unit_id = "6c830c12a562eef33253525e70e71630"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For unframed data streams such as PIB, a _null.alignment_ packet must be transmitted as the final _null_ before a _normal_ packet.  Strictly speaking this is necessary only if the data stream is sent via an interface less than 8 bits wide, but for simplicity this is mandatory for any width.  The single 1 at the end of this sequence uniquely identifies the byte boundary, and what follows as the start of a packet. For example, for two _normal_ packets with M _nulls_ between them, this would comprise M-1 _null.idles_ and 1 _null.alignment_ (M > 0).'''
+zh = '''
+对于诸如 PIB 之类的无帧数据流，在 __正常__ 数据包之前，应作为最后一个 __空__ 数据包发送一个 _null.alignment_ 数据包。严格来说，仅当数据流通过宽度小于 8 位的接口发送时，这才是必要的，但为简单起见，对任何宽度都强制要求这样做。该序列末尾的单个 1 唯一标识字节边界，并标识后续内容为数据包的起始。例如，对于两个 __正常__ 数据包且它们之间有 M 个 __空__ 数据包的情况，这应由 M-1 个 _null.idle_ 和 1 个 _null.alignment_ 组成（M > 0）。'''

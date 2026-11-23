@@ -1,0 +1,13 @@
+unit_id = "6fee93e57c9355fe1a0a62cc37d3b52f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmsbf_op]#The insn:vmsbf.m[] instruction takes a mask register as input and writes
+results to a mask register.  The instruction writes a 1 to all active
+mask elements before the first active source element that is a 1, then
+writes a 0 to that element and all following active elements.  If
+there is no set bit in the active elements of the source vector, then
+all active elements in the destination are written with a 1.#'''
+zh = '''
+[#norm:vmsbf_op]#insn:vmsbf.m[] 指令接受掩码寄存器作为输入，并将结果写入掩码寄存器。该指令在第一个为 1 的活跃源元素之前的所有活跃掩码元素写入 1，然后对该元素及所有后续活跃元素写入 0。如果源向量的活跃元素中没有置位位，则目标中所有活跃元素写入 1。#'''

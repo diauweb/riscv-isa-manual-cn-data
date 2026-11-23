@@ -1,0 +1,46 @@
+unit_id = "6294d613504e9e46582b7e1b1cbddadd"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The number of instructions that are being retired;
+* Whether there has been an exception or interrupt, and if so the cause
+(from the *_ucause/scause/vscause/mcause_* CSR) and trap value (from the
+*_utval/stval/vstval/mtval_* CSR).
++
+The register set to output should be the set that is updated as a result
+of the exception (i.e. the set associated with the privilege level
+immediately following the exception);
+* The current privilege level of the RISC-V hart;
+* The _instruction_type_ of retired instructions for:
+** Jumps with a target that cannot be inferred from the source code;
+** Taken and nontaken branches;
+** Return from exception or interrupt (*_*ret_* instructions).
+* The _instruction_address_ for:
+** Jumps with a target that _cannot_ be inferred from the source code;
+** The instruction retired immediately after a jump with a target that
+_cannot_ be inferred from the source code (also referred to as the
+target or destination of the jump);
+** Taken and nontaken branches;
+** The last instruction retired before an exception or interrupt;
+** The first instruction retired following an exception or interrupt;
+** The last instruction retired before a privilege change;
+** The first instruction retired following a privilege change.'''
+zh = '''
+* 正在退休的指令数量；
+* 是否发生了异常或中断；若发生，则包括原因（来自 *_ucause/scause/vscause/mcause_* CSR）和陷阱值（来自 *_utval/stval/vstval/mtval_* CSR）。
++
+宜输出的寄存器组应是因异常而更新的寄存器组（即与异常之后紧随的特权级相关联的寄存器组）；
+* RISC-V 硬件线程的当前特权级；
+* 对于以下已退休指令，其 _instruction_type_：
+** 目标无法从源代码推断的跳转；
+** 发生转移和未发生转移的分支；
+** 从异常或中断返回（*_*ret_* 指令）。
+* 对于以下情况，其 _instruction_address_：
+** 目标 _不能_ 从源代码推断的跳转；
+** 在目标 _不能_ 从源代码推断的跳转之后立即退休的指令（也称为该跳转的目标或目的）；
+** 发生转移和未发生转移的分支；
+** 异常或中断之前最后退休的指令；
+** 异常或中断之后最先退休的指令；
+** 特权级改变之前最后退休的指令；
+** 特权级改变之后最先退休的指令。'''

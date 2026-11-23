@@ -1,0 +1,20 @@
+unit_id = "8eedd7ff178646cb656c3201f158a178"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The Sv32 page-based virtual-memory scheme described in
+<<sv32>> supports 34-bit physical addresses for
+RV32, so the PMP scheme must support addresses wider than XLEN for RV32.
+The Sv39 and Sv48 page-based virtual-memory schemes described in
+<<sv39>> and <<sv48>> support a
+56-bit physical address space, so the RV64 PMP address registers impose
+the same limit.
+===='''
+zh = '''
+[NOTE]
+====
+<<sv32>> 中描述的 Sv32 基于页的虚拟内存方案为 RV32 支持 34 位物理地址，因此 PMP 方案在 RV32 下必须支持宽于 XLEN 的地址。<<sv39>> 和 <<sv48>> 中描述的 Sv39 和 Sv48 基于页的虚拟内存方案支持 56 位物理地址空间，因此 RV64 PMP 地址寄存器施加相同的限制。
+===='''

@@ -1,0 +1,13 @@
+unit_id = "54c9195c8c84ac9a4704d76048c58a0d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_vs_imprecise]#Implementations may choose to track the dirtiness of the vector register
+state in an analogous imprecise fashion, including possibly setting
+csr::[vs] to Dirty when software attempts to set csr::[vs]=Initial or csr::[vs]=Clean.#
+[#norm:mstatus_vs_no_change_dirty]#When csr::[vs]=Initial or csr::[vs]=Clean, it is implementation-defined whether an
+instruction that writes a vector register or vector CSR but does not
+alter its contents causes csr::[vs] to transition to Dirty.#'''
+zh = '''
+[#norm:mstatus_vs_imprecise]##实现可选择以类似的不精确方式跟踪向量寄存器状态的脏状态，包括在软件试图设置 csr::[vs]=Initial 或 csr::[vs]=Clean 时可能将 csr::[vs] 设置为 Dirty。##[#norm:mstatus_vs_no_change_dirty]##当 csr::[vs]=Initial 或 csr::[vs]=Clean 时，写入向量寄存器或向量 CSR 但不改变其内容的指令是否导致 csr::[vs] 转换为 Dirty 由实现定义。##'''

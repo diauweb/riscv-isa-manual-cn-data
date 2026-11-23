@@ -1,0 +1,11 @@
+unit_id = "c42ef8012d17d1896c2e2737c50c3560"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SubBytes and ShiftRows steps are applied to each round state element group from `vd`.
+This is then XORed with the round key in either the corresponding element group in `vs2` (vector-vector
+form) or the scalar element group in `vs2` (vector-scalar form).'''
+zh = '''
+对 `vd` 中的每个轮状态元素组应用 SubBytes 和 ShiftRows 步骤。
+随后将其与轮密钥进行异或：在向量-向量形式中，该轮密钥为 `vs2` 中对应的元素组；在向量-标量形式中，该轮密钥为 `vs2` 中的标量元素组。'''

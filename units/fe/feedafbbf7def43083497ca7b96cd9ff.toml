@@ -1,0 +1,17 @@
+unit_id = "feedafbbf7def43083497ca7b96cd9ff"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: We have considered adding a whole register mask load instruction
+(insn:vl1rm.v[]) but have decided to omit from initial extension.  The
+primary purpose would be to inform the microarchitecture that the data
+will be used as a mask.  The same effect can be achieved with the
+following code sequence, whose cost is at most four instructions. Of
+these, the first could likely be removed as csr:vl[] is often already
+in a scalar register, and the last might already be present if the
+following vector instruction needs a new SEW/LMUL. So, in best case
+only two instructions (of which only one performs vector operations) are needed to synthesize the effect of the
+dedicated instruction:'''
+zh = '''
+NOTE: 我们考虑过增加整寄存器掩码加载指令（insn:vl1rm.v[]），但决定从初始扩展中省略。其主要目的将是告知微架构该数据将用作掩码。相同效果可通过以下代码序列实现，其成本至多四条指令。其中第一条很可能可删除，因为 csr:vl[] 通常已在标量寄存器中；如果后续向量指令需要新的 SEW/LMUL，最后一条可能已经存在。因此，在最佳情况下，仅需两条指令（其中只有一条执行向量操作）即可合成专用指令的效果：'''

@@ -1,0 +1,20 @@
+unit_id = "b05316f27c3d5a2ca1f118037b9f100f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We do not mandate atomicity for misaligned accesses so execution
+environment implementations can use an invisible machine trap and a
+software handler to handle some or all misaligned accesses. If hardware
+misaligned support is provided, software can exploit this by simply
+using regular load and store instructions. Hardware can then
+automatically optimize accesses depending on whether runtime addresses
+are aligned.
+===='''
+zh = '''
+[NOTE]
+====
+我们不对非对齐访问强制要求原子性，因此执行环境实现可使用不可见机器陷阱和软件处理程序来处理部分或全部非对齐访问。如果提供硬件非对齐支持，软件可通过简单使用常规加载和存储指令来利用这一点。硬件随后可根据运行时地址是否对齐来自动优化访问。
+===='''

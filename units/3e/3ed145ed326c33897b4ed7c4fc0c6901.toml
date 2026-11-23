@@ -1,0 +1,24 @@
+unit_id = "3ed145ed326c33897b4ed7c4fc0c6901"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The memory accesses (implicit or explicit) made by a hart may appear to
+occur in a different order as perceived by another hart or by any other
+agent that can access the same memory. This perceived reordering of
+memory accesses is always constrained, however, by the applicable memory
+consistency model. The default memory consistency model for RISC-V is
+the RISC-V Weak Memory Ordering (RVWMO), defined in
+<<memorymodel>> and in appendices. Optionally,
+an implementation may adopt the stronger model of Total Store Ordering,
+defined as the extlink:ztso[] extension. The execution environment
+may also add constraints that further limit the perceived reordering of
+memory accesses. Since the RVWMO model is the weakest model allowed for
+any RISC-V implementation, software written for this model is compatible
+with the actual memory consistency rules of all RISC-V implementations.
+As with implicit reads, software must execute fence or cache-control
+instructions to ensure specific ordering of memory accesses beyond the
+requirements of the assumed memory consistency model and execution
+environment.'''
+zh = '''
+hart 进行的内存访问（隐式或显式）在另一个 hart 或任何其他能访问同一内存的代理看来，可能以不同顺序发生。然而，这种感知到的内存访问重排序始终受适用的内存一致性模型约束。RISC-V 的默认内存一致性模型是 RISC-V 弱内存排序（RVWMO），定义于 <<memorymodel>> 和附录中。可选地，实现可采用更强的全存储排序模型，定义为 extlink:ztso[] 扩展。执行环境还可添加约束，进一步限制感知到的内存访问重排序。由于 RVWMO 模型是任何 RISC-V 实现所允许的最弱模型，因此为该模型编写的软件与所有 RISC-V 实现的实际内存一致性规则兼容。与隐式读取一样，软件应执行 fence 或缓存控制指令，以确保超出假定内存一致性模型和执行环境要求之外的特定内存访问排序。'''

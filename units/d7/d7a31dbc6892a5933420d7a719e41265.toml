@@ -1,0 +1,10 @@
+unit_id = "d7a31dbc6892a5933420d7a719e41265"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Most uses of the vector unit will require an initial insn:vsetvli[], insn:vsetivli[], or insn:vsetvl[],
+which will reset csr:vstart[].  The csr:vxrm[] and csr:vxsat[] fields should be
+reset explicitly in software before use.'''
+zh = '''
+NOTE: 向量单元的大多数使用都需要初始的 insn:vsetvli[]、insn:vsetivli[] 或 insn:vsetvl[]，其将重置 csr:vstart[]。csr:vxrm[] 和 csr:vxsat[] 字段宜在使用前由软件显式复位。'''

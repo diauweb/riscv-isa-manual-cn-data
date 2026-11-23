@@ -1,0 +1,13 @@
+unit_id = "8e77b1ee285b081f5859e09ce027a33a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Executing the Program Buffer may cause the value of {csr-dpc} to become
+UNSPECIFIED. If that is the case, it must be possible to read/write
+{csr-dpc} using an abstract command with {accessregister-postexec} not
+set.  The debugger must attempt to save {csr-dpc} between halting and
+executing a Program Buffer, and then restore {csr-dpc} before leaving
+Debug Mode.'''
+zh = '''
+执行程序缓冲区可能导致 {csr-dpc} 的值变为未规定。若如此，必须能够使用 {accessregister-postexec} 未置位的抽象命令读/写 {csr-dpc}。调试器必须在停机与执行程序缓冲区之间尝试保存 {csr-dpc}，然后在离开调试模式之前恢复 {csr-dpc}。'''

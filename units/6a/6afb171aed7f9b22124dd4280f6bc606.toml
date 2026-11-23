@@ -1,0 +1,15 @@
+unit_id = "6afb171aed7f9b22124dd4280f6bc606"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction sources a single byte from `rs2` according to `bs`.
+To this it applies the forward AES SBox operation, and a partial forward
+MixColumn, before XOR'ing the result with `rs1`.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+说明::
+本指令根据 `bs` 从 `rs2` 中取一个字节。对其应用正向 AES SBox 操作和部分正向 MixColumn，然后将结果与 `rs1` 进行 XOR。
+本指令应__始终__以实现方式保证其执行延迟不依赖于所操作的数据。'''

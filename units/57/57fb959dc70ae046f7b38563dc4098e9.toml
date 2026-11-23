@@ -1,0 +1,72 @@
+unit_id = "57fb959dc70ae046f7b38563dc4098e9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* *Commercial ISAs are proprietary.* Except for SPARC V8, which is an
+open IEEE standard cite:[sparcieee1994] , most owners of commercial ISAs carefully guard
+their intellectual property and do not welcome freely available
+competitive implementations. This is much less of an issue for academic
+research and teaching using only software simulators, but has been a
+major concern for groups wishing to share actual RTL implementations. It
+is also a major concern for entities who do not want to trust the few
+sources of commercial ISA implementations, but who are prohibited from
+creating their own clean room implementations. We cannot guarantee that
+all RISC-V implementations will be free of third-party patent
+infringements, but we can guarantee we will not attempt to sue a RISC-V
+implementer.
+* *Commercial ISAs are only popular in certain market domains.* The most
+obvious examples at time of writing are that the ARM architecture is not
+well supported in the server space, and the Intel x86 architecture (or
+for that matter, almost every other architecture) is not well supported
+in the mobile space, though both Intel and ARM are attempting to enter
+each other's market segments. Another example is ARC and Tensilica,
+which provide extensible cores but are focused on the embedded space.
+This market segmentation dilutes the benefit of supporting a particular
+commercial ISA as in practice the software ecosystem only exists for
+certain domains, and has to be built for others.
+* *Commercial ISAs come and go.* Previous research infrastructures have
+been built around commercial ISAs that are no longer popular (SPARC,
+MIPS) or even no longer in production (Alpha). These lose the benefit of
+an active software ecosystem, and the lingering intellectual property
+issues around the ISA and supporting tools interfere with the ability of
+interested third parties to continue supporting the ISA. An open ISA
+might also lose popularity, but any interested party can continue using
+and developing the ecosystem.
+* *Popular commercial ISAs are complex.* The dominant commercial ISAs
+(x86 and ARM) are both very complex to implement in hardware to the
+level of supporting common software stacks and operating systems. Worse,
+nearly all the complexity is due to bad, or at least outdated, ISA
+design decisions rather than features that truly improve efficiency.
+* *Commercial ISAs alone are not enough to bring up applications.* Even
+if we expend the effort to implement a commercial ISA, this is not
+enough to run existing applications for that ISA. Most applications need
+a complete ABI (application binary interface) to run, not just the
+user-level ISA. Most ABIs rely on libraries, which in turn rely on
+operating system support. To run an existing operating system requires
+implementing the supervisor-level ISA and device interfaces expected by
+the OS. These are usually much less well-specified and considerably more
+complex to implement than the user-level ISA.
+* *Popular commercial ISAs were not designed for extensibility.* The
+dominant commercial ISAs were not particularly designed for
+extensibility, and as a consequence have added considerable instruction
+encoding complexity as their instruction sets have grown. Companies such
+as Tensilica (acquired by Cadence) and ARC (acquired by Synopsys) have
+built ISAs and toolchains around extensibility, but have focused on
+embedded applications rather than general-purpose computing systems.
+* *A modified commercial ISA is a new ISA.* One of our main goals is to
+support architecture research, including major ISA extensions. Even
+small extensions diminish the benefit of using a standard ISA, as
+compilers have to be modified and applications rebuilt from source code
+to use the extension. Larger extensions that introduce new architectural
+state also require modifications to the operating system. Ultimately,
+the modified commercial ISA becomes a new ISA, but carries along all the
+legacy baggage of the base ISA.'''
+zh = '''
+* **商业 ISA 是专有的。** 除 SPARC V8（其为开放的 IEEE 标准 cite:[sparcieee1994]）外，大多数商业 ISA 的所有者都谨慎保护其知识产权，并不欢迎可自由获取的竞争性实现。对于仅使用软件模拟器的学术研究和教学而言，这算不上大问题，但对于希望共享实际 RTL 实现的团体来说一直是个主要顾虑。对于那些不愿信任少数商业 ISA 实现来源、却又被禁止创建自己的净室实现的实体来说，这也是一个主要顾虑。我们无法保证所有 RISC-V 实现都不侵犯第三方专利，但我们可以保证不会试图起诉 RISC-V 实现者。
+* **商业 ISA 只在某些市场领域流行。** 撰写本文时最明显的例子是，ARM 体系结构在服务器领域支持不佳，而 Intel x86 体系结构（就此而言，几乎所有其他体系结构）在移动领域支持不佳，尽管 Intel 和 ARM 都在试图进入对方的市场细分。另一个例子是 ARC 和 Tensilica，它们提供可扩展的核，但专注于嵌入式领域。这种市场细分削弱了支持某一特定商业 ISA 的好处，因为实践中软件生态系统只存在于某些领域，其他领域则必须自建。
+* **商业 ISA 来来去去。** 以往的研究基础设施曾围绕已不再流行（SPARC、MIPS）甚至已不再生产（Alpha）的商业 ISA 构建。这些会失去活跃软件生态系统带来的好处，而围绕该 ISA 及配套工具的挥之不去的知识产权问题，会妨碍有兴趣的第三方继续支持该 ISA。开放的 ISA 也可能不再流行，但任何有兴趣的当事方都可以继续使用并发展其生态系统。
+* **流行的商业 ISA 很复杂。** 占主导地位的商业 ISA（x86 和 ARM）都非常复杂，要实现到支持常见软件栈和操作系统的硬件水平相当困难。更糟的是，几乎所有的复杂性都源于糟糕的、或至少是过时的 ISA 设计决策，而非真正提高效率的特性。
+* **仅有商业 ISA 不足以启动应用程序。** 即使我们付出努力实现某个商业 ISA，也不足以运行该 ISA 的现有应用程序。大多数应用程序需要完整的 ABI（应用程序二进制接口）才能运行，而不仅仅是用户级 ISA。大多数 ABI 依赖库，库又依赖操作系统支持。要运行现有操作系统，需要实现该操作系统所期望的监管级 ISA 和设备接口。这些通常规定得远不如用户级 ISA 完善，实现起来也复杂得多。
+* **流行的商业 ISA 并非为可扩展性而设计。** 占主导地位的商业 ISA 并非特别为可扩展性而设计，因此随着其指令集的增长，增加了相当多的指令编码复杂性。Tensilica（已被 Cadence 收购）和 ARC（已被 Synopsys 收购）等公司围绕可扩展性构建了 ISA 和工具链，但专注于嵌入式应用而非通用计算系统。
+* **修改后的商业 ISA 就是新的 ISA。** 我们的主要目标之一是支持体系结构研究，包括重大的 ISA 扩展。即使是小的扩展也会削弱使用标准 ISA 的好处，因为编译器必须修改，应用程序必须从源代码重新构建才能使用该扩展。引入新体系结构状态的较大扩展还需要修改操作系统。最终，修改后的商业 ISA 变成了新的 ISA，却背负着基础 ISA 的全部历史包袱。'''

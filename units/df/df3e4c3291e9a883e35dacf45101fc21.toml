@@ -1,0 +1,16 @@
+unit_id = "df3e4c3291e9a883e35dacf45101fc21"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The example loop has a high register pressure due to the many input variables
+and temporaries required. The compiler realizes there are two datatypes within
+the loop: an 8-bit 'char' and a 64-bit 'long *'. Without fractional LMUL, the
+compiler would be forced to use LMUL=1 for the 8-bit computation and LMUL=8 for
+the 64-bit computation(s), to have equal number of elements on all computations
+within the same loop iteration. Under LMUL=8, only 4 registers are available
+to the register allocator. Given the large number of 64-bit variables and
+temporaries required in this loop, the compiler ends up generating a lot of
+spill code. The code below demonstrates this effect:'''
+zh = '''
+该示例循环由于需要大量输入变量和临时变量而具有较高的寄存器压力。编译器意识到循环内存在 2 种数据类型：8 位 'char' 和 64 位 'long *'。若无分数 LMUL，编译器将被迫对 8 位计算使用 LMUL=1、对 64 位计算使用 LMUL=8，以便同一循环迭代内的所有计算具有相同数量的元素。在 LMUL=8 下，寄存器分配器仅能使用 4 个寄存器。考虑到该循环需要大量 64 位变量和临时变量，编译器最终会生成大量寄存器溢出代码。下面的代码展示了这一效果：'''

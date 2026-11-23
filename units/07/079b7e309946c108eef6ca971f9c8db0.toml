@@ -1,0 +1,15 @@
+unit_id = "079b7e309946c108eef6ca971f9c8db0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Attempts to access the `seed` CSR using a read-only CSR-access instruction
+(`CSRRS`/`CSRRC` with _rs1_=`x0` or `CSRRSI`/`CSRRCI` with _uimm_=0) raise an
+illegal instruction exception; any other CSR-access instruction may be used
+to access `seed`.
+The write value (in `rs1` or `uimm`) must be ignored by implementations.
+The purpose of the write is to signal polling and flushing.'''
+zh = '''
+使用只读 CSR 访问指令（_rs1_=`x0` 的 `CSRRS`/`CSRRC`，或 _uimm_=0 的 `CSRRSI`/`CSRRCI`）访问 `seed` CSR 会引发非法指令异常；任何其他 CSR 访问指令均可用于访问 `seed`。
+实现应忽略写值（位于 `rs1` 或 `uimm` 中）。
+写操作的目的是发出轮询和冲刷信号。'''

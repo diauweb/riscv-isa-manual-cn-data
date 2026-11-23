@@ -1,0 +1,13 @@
+unit_id = "e42ce8b526dbe86c33c7b4f1719bc887"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:lpad[] instruction uses the code points defined as HINTs for the insn:auipc[]
+opcode. When ext:zicfilp[] is not active at a privilege level or when the extension
+is not implemented, the landing pad instruction executes as a no-op. A program
+that is built with insn:lpad[] instructions can thus continue to operate correctly,
+but without forward-edge CFI, on processors that do not
+support the ext:zicfilp[] extension or if the ext:zicfilp[] extension is not active.'''
+zh = '''
+insn:lpad[] 指令使用定义为 insn:auipc[] 操作码 HINT 的编码点。当 ext:zicfilp[] 在某个特权级未处于活动状态，或者未实现该扩展时，着陆垫指令作为空操作执行。因此，使用 insn:lpad[] 指令构建的程序在不支持 ext:zicfilp[] 扩展、或 ext:zicfilp[] 扩展未处于活动状态的处理器上可以继续正确运行，但没有前向边 CFI。'''

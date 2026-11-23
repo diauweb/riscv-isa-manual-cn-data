@@ -1,0 +1,18 @@
+unit_id = "a6678c886f5f670f77d2e39c67d668a9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Load instructions may overwrite active destination vector register
+group elements past the element index at which the trap is reported.
+Similarly, fault-only-first load instructions may update active destination
+elements past the element that causes trimming of the vector length
+(but not past the original vector length).  The values of these
+spurious updates do not have to correspond to the values in memory at
+the addressed memory locations.  Non-idempotent memory locations can
+only be accessed when it is known the corresponding element load
+operation will not be restarted due to a trap or vector-length
+trimming.'''
+zh = '''
+加载指令可覆盖超过报告陷阱的元素索引的活跃目标向量寄存器组元素。
+类似地，仅首错加载指令可更新超过导致向量长度裁剪的元素（但不超过原始向量长度）的活跃目标元素。这些虚假更新的值不必对应于所寻址内存位置中的值。仅当已知相应元素加载操作不会因陷阱或向量长度裁剪而重启时，才可访问非幂等内存位置。'''

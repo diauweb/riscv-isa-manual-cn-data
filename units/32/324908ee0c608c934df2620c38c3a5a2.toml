@@ -1,0 +1,50 @@
+unit_id = "324908ee0c608c934df2620c38c3a5a2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.A litmus test MP+fence.w.w+fri-rfi-addr (outcome permitted)
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!Hart 0 2+^!Hart 1
+!!li t1, 1 !!li t2, 2
+>!(a) !sw t1,0(s0) >!(d) !lw a0,0(s1)
+>!(b) !fence w, w >!(e) !sw t2,0(s1)
+>!(c) !sw t1,0(s1) >!(f) !lw a1,0(s1)
+! ! >!(g) !xor t3,a1,a1
+! ! >!(h) !add s0,s0,t3
+! ! >!(i) !lw a2,0(s0)
+4+^!Outcome: `a0=1`, `a1=2`, `a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_mp_fenceww_fri_rfi_addr.txt[]
+a! image::graphviz/litmus_mp_fenceww_fri_rfi_addr.svg[]
+!===
+|==='''
+zh = '''
+.litmus 测试 MP+fence.w.w+fri-rfi-addr（结果允许）
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+!!li t1, 1 !!li t2, 2
+>!(a) !sw t1,0(s0) >!(d) !lw a0,0(s1)
+>!(b) !fence w, w >!(e) !sw t2,0(s1)
+>!(c) !sw t1,0(s1) >!(f) !lw a1,0(s1)
+! ! >!(g) !xor t3,a1,a1
+! ! >!(h) !add s0,s0,t3
+! ! >!(i) !lw a2,0(s0)
+4+^!结果：`a0=1`, `a1=2`, `a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_mp_fenceww_fri_rfi_addr.txt[]
+a! image::graphviz/litmus_mp_fenceww_fri_rfi_addr.svg[]
+!===
+|==='''

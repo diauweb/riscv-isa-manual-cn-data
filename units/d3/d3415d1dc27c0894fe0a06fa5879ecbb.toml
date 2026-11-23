@@ -1,0 +1,16 @@
+unit_id = "d3415d1dc27c0894fe0a06fa5879ecbb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Informally, an instruction instance is said to have _fully determined
+data_ if the load (and `sc`) instructions feeding its source registers
+are finished. Similarly, it is said to have a _fully determined memory
+footprint_ if the load (and `sc`) instructions feeding its memory
+operation address register are finished. Formally, we first define the
+notion of _fully determined register write_: a register write
+latexmath:[$w$] from _reg_writes_ of instruction instance
+latexmath:[$i$] is said to be _fully determined_ if one of the following
+conditions hold:'''
+zh = '''
+非形式地说，若为其源寄存器提供数据的加载（和 `sc`）指令已完成，则称指令实例具有__完全确定的数据__。类似地，若为其访存操作地址寄存器提供数据的加载（和 `sc`）指令已完成，则称其具有__完全确定的访存足迹__。形式地，我们首先定义__完全确定的寄存器写__这一概念：来自指令实例 latexmath:[$i$] 的 _reg_writes_ 的寄存器写 latexmath:[$w$]，在下列条件之一成立时称为__完全确定的__：'''

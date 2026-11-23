@@ -1,0 +1,16 @@
+unit_id = "613983aff12cc2caedc4df36df93b7b6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-sd_op]#C.SD is an XLEN=64-only instruction that stores a 64-bit value in
+register `_rs2′_` to memory. It computes an effective
+address by adding the _zero_-extended offset, scaled by 8, to the base
+address in register `_rs1′_`. It expands to
+`sd rs2′, offset(rs1′)`.#'''
+zh = '''
+[#norm:c-sd_op]#C.SD 是仅用于 XLEN=64 的指令，它将寄存器
+`_rs2′_` 中的 64 位值存储到内存。它通过将按 8 缩放的
+__零__扩展偏移加到寄存器 `_rs1′_` 中的基址上来计算
+有效地址。它展开为
+`sd rs2′, offset(rs1′)`。#'''

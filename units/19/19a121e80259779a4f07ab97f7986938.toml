@@ -1,0 +1,21 @@
+unit_id = "19a121e80259779a4f07ab97f7986938"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Non-normative
+====
+In systems in which a supervisor execution environment (SEE) implemented by an
+HS-mode hypervisor provides timer facilities via an SBI function call, this SBI
+call will continue to support requests to schedule a timer interrupt. The SEE
+will simply make use of vstimecmp, changing its value as appropriate. This
+ensures compatibility with existing guest VS-mode software that uses this SEE
+facility, while new VS-mode software takes advantage of vstimecmp directly.)
+===='''
+zh = '''
+[NOTE]
+.非规范性
+====
+在由 HS 模式虚拟机监控器实现的监管执行环境（SEE）通过 SBI 函数调用提供定时器设施的系统里，此 SBI 调用将继续支持调度定时器中断的请求。SEE 将直接利用 vstimecmp，并视情况更改其值。这确保了与使用此 SEE 设施的现有客户机 VS 模式软件的兼容性，同时新的 VS 模式软件直接利用 vstimecmp。）
+===='''

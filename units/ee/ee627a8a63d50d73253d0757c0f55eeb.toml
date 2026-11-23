@@ -1,0 +1,61 @@
+unit_id = "ee627a8a63d50d73253d0757c0f55eeb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. All implemented instructions operate just as they do in M-mode, unless
+an exception is mentioned in this list.
+. All operations are executed with machine mode privilege, except that
+additional Debug Mode CSRs are accessible and `mprv` in `mstatus` may be ignored
+according to {dcsr-mprven}. Full permission checks, or a relaxed set of permission
+checks, will apply according to {abstractcs-relaxedpriv}.
+. All interrupts (including NMI) are masked.
+. Traps don't take place. Instead, they end execution of the program
+buffer and the hart remains in Debug Mode. Because they do not trap to
+M-mode, they do not update registers such as `mstatus`, `mepc`, `mcause`,
+`mtval`, `mtval2`, and `mtinst`. The same is true for the equivalent
+privileged registers that are updated when trapping to other modes.
+Registers that may be updated as part of execution before the exception
+are allowed to be updated. For example, vector load/store instructions
+which raise exceptions may partially update the destination register and
+set `vstart` appropriately.
+. Triggers don't match or fire.
+. If {dcsr-stopcount} is 0 then counters continue. If it is 1 then counters are stopped.
+. If {dcsr-stoptime} is 0 then `time` continues to update. If it is 1 then `time` will not update. It will resynchronize with `time` after leaving Debug Mode.
+. Instructions that place the hart into a stalled state act as a `nop`.
+This includes `wfi`, `wrs.sto`, and `wrs.nto`.
+. Almost all instructions that change the privilege mode have UNSPECIFIED behavior.
+This includes `ecall`, `mret`, `sret`, and `uret`. (To change the
+privilege mode, the debugger can write {dcsr-prv} and {dcsr-v} in {csr-dcsr}). The only exception is
+`ebreak`, which ends execution of the Program Buffer when executed.
+. All control transfer instructions may act as illegal instructions if
+their destination is in the Program Buffer. If one such instruction acts
+as an illegal instruction, all such instructions must act as illegal
+instructions.
+. All control transfer instructions may act as illegal instructions if
+their destination is outside the Program Buffer. If one such instruction
+acts as an illegal instruction, all such instructions must act as
+illegal instructions.
+. Instructions that depend on the value of the PC (e.g. `auipc`) may act
+as illegal instructions.
+. When the Zicfilp extension is implemented, the `ELP` state is
+  `NO_LP_EXPECTED` and is not updated by any instructions. LPAD instruction
+  executes as a no-op.
+. Effective XLEN is DXLEN.
+. Forward progress is guaranteed.'''
+zh = '''
+. 所有已实现的指令的操作与在 M 模式下完全相同，除非此列表中提及了异常。
+. 所有操作均以机器模式特权执行，但可访问额外的调试模式 CSR，且根据 {dcsr-mprven}，`mstatus` 中的 `mprv` 可被忽略。将根据 {abstractcs-relaxedpriv} 适用完整权限检查或某组放宽的权限检查。
+. 所有中断（包括 NMI）均被屏蔽。
+. 陷阱不会发生。取而代之，它们结束程序缓冲区的执行，硬件线程保持于调试模式。由于它们不会陷入 M 模式，因此不更新诸如 `mstatus`、`mepc`、`mcause`、`mtval`、`mtval2` 和 `mtinst` 等寄存器。当陷入其他模式时更新的等效特权寄存器也是如此。在异常之前作为执行的一部分可能被更新的寄存器允许被更新。例如，引发异常的向量加载/存储指令可能部分更新目标寄存器并适当地设置 `vstart`。
+. 触发器不匹配也不触发。
+. 若 {dcsr-stopcount} 为 0，则计数器继续。若为 1，则计数器停止。
+. 若 {dcsr-stoptime} 为 0，则 `time` 继续更新。若为 1，则 `time` 不更新。离开调试模式后，它将与 `time` 重新同步。
+. 使硬件线程进入停顿状态的指令相当于 `nop`。这包括 `wfi`、`wrs.sto` 和 `wrs.nto`。
+. 几乎所有改变特权模式的指令都具有未规定行为。这包括 `ecall`、`mret`、`sret` 和 `uret`。（要更改特权模式，调试器可在 {csr-dcsr} 中写入 {dcsr-prv} 和 {dcsr-v}。）唯一例外是 `ebreak`，它在执行时结束程序缓冲区的执行。
+. 若所有控制转移指令的目标位于程序缓冲区中，则它们可能作为非法指令行事。若其中一条这样的指令作为非法指令行事，则所有这样的指令都必须作为非法指令行事。
+. 若所有控制转移指令的目标位于程序缓冲区之外，则它们可能作为非法指令行事。若其中一条这样的指令作为非法指令行事，则所有这样的指令都必须作为非法指令行事。
+. 依赖 PC 值的指令（例如 `auipc`）可能作为非法指令行事。
+. 当实现了 Zicfilp 扩展时，`ELP` 状态为 `NO_LP_EXPECTED`，且不会被任何指令更新。LPAD 指令作为空操作执行。
+. 有效 XLEN 为 DXLEN。
+. 保证向前推进。'''

@@ -1,0 +1,10 @@
+unit_id = "f966b665a405cb5241b503708b163b65"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the core implementation does not support insn:push[]/insn:pop[] to non-idempotent memories, the core may use an idempotency PMA to detect it and take a
+load (insn:pop[]/insn:popret[]) or store (insn:push[]) access-fault exception in order to avoid unpredictable results.'''
+zh = '''
+若核实现不支持对非幂等内存执行 insn:push[]/insn:pop[]，核可使用幂等性 PMA 来检测该情况，并产生
+加载（insn:pop[]/insn:popret[]）或存储（insn:push[]）访问故障异常，以避免不可预测的结果。'''

@@ -1,0 +1,19 @@
+unit_id = "21939a4bdd494e6d575139306e0f95a3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+We use the term _prefix_ to refer to the bits to the _right_ of an
+instruction encoding space (since instruction fetch in RISC-V is
+little-endian, the bits to the right are stored at earlier memory
+addresses, hence form a prefix in instruction-fetch order). The prefix
+for the standard base ISA encoding is the two-bit "11" field held in
+bits 1-0 of the 32-bit word, while the prefix for the standard atomic
+extension "A" is the seven-bit "0101111" field held in bits 6-0 of
+the 32-bit word representing the AMO major opcode. A quirk of the
+encoding format is that the 3-bit funct3 field used to encode a minor
+opcode is not contiguous with the major opcode bits in the 32-bit
+instruction format, but is considered part of the prefix for 22-bit
+instruction spaces.'''
+zh = '''
+我们使用术语__前缀__来指代位于指令编码空间__右侧__的位（由于 RISC-V 中的取指采用小端序，右侧的位存储在更早的内存地址中，因此在取指顺序中构成前缀）。标准基础 ISA 编码的前缀是 32 位字中位 1-0 所持有的 2 位“11”字段，而标准原子扩展“A”的前缀是表示 AMO 主操作码的 32 位字中位 6-0 所持有的 7 位“0101111”字段。该编码格式的一个特殊之处在于，用于编码次操作码的 3 位 `funct3` 字段在 32 位指令格式中与主操作码位不连续，但被视为 22 位指令空间前缀的一部分。'''

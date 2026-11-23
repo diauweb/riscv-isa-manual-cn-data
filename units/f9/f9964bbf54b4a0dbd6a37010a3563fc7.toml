@@ -1,0 +1,32 @@
+unit_id = "f9964bbf54b4a0dbd6a37010a3563fc7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The assembly syntax for insn:lui[] and insn:auipc[] does not represent the lower
+12 bits of the U-immediate, which are always zero.
+
+The insn:auipc[] instruction supports two-instruction sequences to access
+arbitrary offsets from the `pc` for both control-flow transfers and data
+accesses. The combination of an insn:auipc[] and the 12-bit immediate in a insn:jalr[]
+can transfer control to any 32-bit `pc`-relative address, while an insn:auipc[]
+plus the 12-bit immediate offset in regular load or store instructions
+can access any 32-bit `pc`-relative data address.
+
+The current `pc` can be obtained by setting the U-immediate to 0. Although
+a insn:jal[] +4 instruction could also be used to obtain the local `pc` (of the
+instruction following the insn:jal[]), it might cause pipeline breaks in
+simpler microarchitectures or pollute BTB structures in more complex
+microarchitectures.
+===='''
+zh = '''
+[NOTE]
+====
+insn:lui[] 和 insn:auipc[] 的汇编语法不表示 U 立即数的低 12 位，这些位始终为零。
+
+insn:auipc[] 指令支持双指令序列，用于在控制流传输和数据访问中访问相对于 `pc` 的任意偏移。insn:auipc[] 与 insn:jalr[] 中的 12 位立即数组合可以将控制转移到任何 32 位 `pc` 相对地址，而 insn:auipc[] 加上常规加载或存储指令中的 12 位立即数偏移可以访问任何 32 位 `pc` 相对数据地址。
+
+通过将 U 立即数设为 0 可以获得当前 `pc`。虽然也可以使用 insn:jal[] +4 指令获得局部 `pc`（insn:jal[] 之后指令的 `pc`），但这可能在较简单的微架构中导致流水线中断，或在更复杂的微架构中污染 BTB 结构。
+===='''

@@ -1,0 +1,28 @@
+unit_id = "f6cf186033f3aec51de9420f1f00e1cb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* It is essential to disable the trace from encoders associated with stopped harts as entering debug mode is NOT flushing any trace pipelines.
+* Disable and flush trace starting from Trace Encoders, then Trace Funnels and finally Trace Sinks or Trace Bridges.
+** Set `tr??Enable` = 0 and wait for `tr??Enable` = 0 and `tr??Empty` = 1 for each trace component.
+** It is important to do it in that order as otherwise data may be lost.
+* Stop physical capture if PIB sink was enabled (trace probe dependent).
+* Read the trace.
+** For RAM Trace Sink read `trRamWP` - depending on `trRamWrap` bit, you may read trace from two ranges.
+** For RAM Trace Sink in SRAM mode, set `trRamRP` and read `trRamData` multiple times.
+** For RAM Trace Sink in SMEM mode, read trace from system memory using memory read.
+** For PIB Trace Sink read trace from trace probe.
+** For ATB Bridge, read trace using Coresight components (ETB/TMC/TPIU).'''
+zh = '''
+* 对于已停止的硬件线程，必须禁用与之关联的编码器的跟踪，因为进入调试模式不会冲刷任何跟踪流水线。
+* 从跟踪编码器开始禁用并冲刷跟踪，然后依次跟踪漏斗，最后跟踪接收器或跟踪桥。
+** 对每个跟踪组件设置 `tr??Enable` = 0，并等待 `tr??Enable` = 0 且 `tr??Empty` = 1。
+** 按此顺序执行很重要，否则数据可能丢失。
+* 如果使用了 PIB 接收器，则停止物理捕获（取决于跟踪探针）。
+* 读取跟踪。
+** 对于 RAM 跟踪接收器，读取 `trRamWP`——根据 `trRamWrap` 位，你可能需要从两个范围读取跟踪。
+** 对于 SRAM 模式的 RAM 跟踪接收器，设置 `trRamRP` 并多次读取 `trRamData`。
+** 对于 SMEM 模式的 RAM 跟踪接收器，使用内存读取从系统内存读取跟踪。
+** 对于 PIB 跟踪接收器，从跟踪探针读取跟踪。
+** 对于 ATB 桥，使用 Coresight 组件（ETB/TMC/TPIU）读取跟踪。'''

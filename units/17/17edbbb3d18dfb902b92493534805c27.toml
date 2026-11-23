@@ -1,0 +1,17 @@
+unit_id = "17edbbb3d18dfb902b92493534805c27"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:wfi_intr_dis]#The WFI instruction can also be executed when interrupts are disabled.#
+[#norm:wfi_unaffected_conditions]#The operation of WFI must be unaffected by the global interrupt bits in
+`mstatus` (MIE and SIE) and the delegation register `mideleg` (i.e.,
+the hart must resume if a locally enabled interrupt becomes pending,
+even if it has been delegated to a less-privileged mode), but should
+honor the individual interrupt enables (e.g, MTIE) (i.e.,
+implementations should avoid resuming the hart if the interrupt is
+pending but not individually enabled). WFI is also required to resume
+execution for locally enabled interrupts pending at any privilege level,
+regardless of the global interrupt enable at each privilege level.#'''
+zh = '''
+[#norm:wfi_intr_dis]##WFI 指令也可在中断禁用时执行。##[#norm:wfi_unaffected_conditions]##WFI 的操作不应受 `mstatus` 中的全局中断位（MIE 和 SIE）以及委托寄存器 `mideleg` 的影响（即，若本地使能的中断成为挂起，即使它已被委托给较低特权模式，硬件线程也应恢复），但宜遵循各个中断使能位（例如 MTIE）（即，若中断挂起但未单独使能，实现宜避免恢复硬件线程）。WFI 还应在任一特权级的本地使能中断挂起时恢复执行，无论每个特权级的全局中断使能如何。##'''

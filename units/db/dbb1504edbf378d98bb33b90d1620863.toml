@@ -1,0 +1,14 @@
+unit_id = "dbb1504edbf378d98bb33b90d1620863"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To execute an abstract command, the DM first populates some internal
+words of the program buffer according to {dm-command}. When {accessregister-transfer} is set, the DM populates
+these words with `lw <gpr>, 0x400(zero)` or `sw <gpr>, 0x400(zero)`. 64-
+and 128-bit accesses use `ld`/`sd` and `lq`/`sq` respectively. If {accessregister-transfer} is not
+set, the DM populates these instructions as ``nop``s. If {accessregister-postexec} is set, execution
+continues to the debugger-controlled Program Buffer, otherwise the DM
+causes an `ebreak` to execute immediately.'''
+zh = '''
+为执行抽象命令，DM 首先按 {dm-command} 填充程序缓冲器的一些内部字。当置位 {accessregister-transfer} 时，DM 将这些字填充为 `lw <gpr>, 0x400(zero)` 或 `sw <gpr>, 0x400(zero)`。64 位和 128 位访问分别使用 `ld`/`sd` 和 `lq`/`sq`。若未置位 {accessregister-transfer}，则 DM 将这些指令填充为 ``nop`` 指令。若置位 {accessregister-postexec}，则继续执行调试器控制的程序缓冲器，否则 DM 使 `ebreak` 立即执行。'''

@@ -1,0 +1,5241 @@
+{
+  "sha": "25b3fbce6777d85fd1f2682f8c64c298f345a9c6",
+  "parent_sha": "18e7570b76018c88fefb95677534dae04a1f750f",
+  "is_baseline": false,
+  "date": "2026-03-22T18:18:49-07:00",
+  "title": "Merge Volumes I and II into a single document (#2770)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-25b3fbc-2026-03-23"
+  ],
+  "diff": {
+    "added": 3,
+    "modified": 13,
+    "moved": 586,
+    "deleted": 16,
+    "touched_chapters": [
+      "priv/_historical_rationale_for_extensions",
+      "priv/_history",
+      "priv/_introduction_3",
+      "priv/_preface_2",
+      "priv/_privileged_architecture_explanatory_material",
+      "priv/_risc_v_privileged_instruction_set_listings",
+      "priv/hypervisor",
+      "priv/indirect-csr",
+      "priv/machine",
+      "priv/priv-csrs",
+      "priv/smcntrpmf",
+      "priv/smctr",
+      "priv/Zpm",
+      "unpriv/_a_extension_for_atomic_instructions_version_2_1",
+      "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "unpriv/_introduction",
+      "unpriv/_preface",
+      "unpriv/_unprivileged_architecture_explanatory_material",
+      "unpriv/_zalasr_atomic_load_acquire_and_store_release_instructions_version_1_0",
+      "unpriv/chap:zihintntl",
+      "unpriv/csrinsts",
+      "unpriv/sec:zfinx"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": "heading",
+      "unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 0,
+      "unit_id": "4f5d5192100846cfc5bfa4513f6b3016",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 1,
+      "unit_id": "f4620e617f7d9b987b20afca9fee51f0",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 2,
+      "unit_id": "c9b211078bcdb7c990bbd76c2317c1d9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 3,
+      "unit_id": "b55b5f19fdec1a26e2d10d1e83a1fbff",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 4,
+      "unit_id": "623deb9b3eb950f1df68e1f071bd0993",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 5,
+      "unit_id": "4f5d5192100846cfc5bfa4513f6b3016",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 6,
+      "unit_id": "2fe6caddac62ab57453864595472da53",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 7,
+      "unit_id": "c9b211078bcdb7c990bbd76c2317c1d9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 8,
+      "unit_id": "53e528a20b7be9bc7706777e43754598",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 9,
+      "unit_id": "e57a6c55f89c2037f6f4653d3f06ebfe",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 10,
+      "unit_id": "1a43e81e89b96a4664881c1ae8b64566",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 11,
+      "unit_id": "e24501e8970bb75afd33d2d496be77d8",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 12,
+      "unit_id": "c9b211078bcdb7c990bbd76c2317c1d9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 13,
+      "unit_id": "df2a8625c5feb9353786c53c80c3e2b8",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 14,
+      "unit_id": "5c832709130b93d758c3aff450390adb",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 15,
+      "unit_id": "1df70b7834055ee877a7d6a7472fe58c",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 16,
+      "unit_id": "55be510162b9e96563eb2f4ae32f0c7e",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 17,
+      "unit_id": "fe5c107ed33c8fee3cde68a0e3958dbc",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 18,
+      "unit_id": "a55039200d78ca9a1757350d93988b17",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 19,
+      "unit_id": "c9b211078bcdb7c990bbd76c2317c1d9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 20,
+      "unit_id": "d2e649b770ebce5ea33b5eea588d5c4f",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 21,
+      "unit_id": "0b46cc9c983bece7ef29cacbd15223f9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 22,
+      "unit_id": "1df70b7834055ee877a7d6a7472fe58c",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 23,
+      "unit_id": "6c951a7c6dc0c3b95e6a498b7669f9d0",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 24,
+      "unit_id": "fe5c107ed33c8fee3cde68a0e3958dbc",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 25,
+      "unit_id": "d123e88a69c5e5d2189a0423357d8614",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 26,
+      "unit_id": "c9b211078bcdb7c990bbd76c2317c1d9",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 27,
+      "unit_id": "48d70e52488f0a2f4679b1c66f4fe14c",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 28,
+      "unit_id": "c2705a786091c71cb4b25f7830128417",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 29,
+      "unit_id": "a912616e31a2ab7ec80c2467954c3313",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 30,
+      "unit_id": "ce368757d93e496b32b4a025283a5b9e",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 31,
+      "unit_id": "8687e7b988ed9b12076fa0bba892a746",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 32,
+      "unit_id": "acfa48ba3709913d9ff030cc061d25bc",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 33,
+      "unit_id": "36edf2f532a5d4f1f51baebf425b480e",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 34,
+      "unit_id": "3a3f296ebb6b428fa697fe3f7f654727",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 35,
+      "unit_id": "7fe553bb1b8086403df82c314ef892c4",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 36,
+      "unit_id": "8b72109e47604118e2e75c9374cdcb22",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 37,
+      "unit_id": "eaeda430a877d912b6c4db484ada1e88",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 38,
+      "unit_id": "0f1d5cc65de7aef9413b9e3f7404283f",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_preface",
+      "section_id": "_preface",
+      "slot": 39,
+      "unit_id": "5fdf3335b8ceff6de19f0dcbc850ceab",
+      "status": "moved",
+      "moved_from": "src/colophon.adoc#_preface"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "_risc_v_software_execution_environments_and_harts",
+      "slot": 4,
+      "unit_id": "d1088eaf88870fb7c1c87c4c0c200683",
+      "status": "modified",
+      "prev_unit_id": "63f66de2a3d50f6e1a517c282025ad61"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": "heading",
+      "unit_id": "c264769f37364001df93b28d03ecbcfc",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 0,
+      "unit_id": "55ea0770457d5911b789e523c499dd33",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 1,
+      "unit_id": "4608cf2515eff882486d90b95c167229",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 2,
+      "unit_id": "451b132501f63c6574a2d275a8a104ff",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 3,
+      "unit_id": "a826e4504a7edc7e34b274abaf8322a7",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 4,
+      "unit_id": "6d5332a8579f0bd66633666838de4a09",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 5,
+      "unit_id": "13a4bfbe11dc2bd8b796b346448d17ef",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 6,
+      "unit_id": "f456e19b9db535529fe2221d8303544e",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 7,
+      "unit_id": "f0cb7b3b908a34b0e1b17a711d30ebd6",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/_introduction",
+      "section_id": "sec:intro-memory",
+      "slot": 8,
+      "unit_id": "0723d05089d31c112c760541afbd7161",
+      "status": "moved",
+      "moved_from": "unpriv/_introduction/_memory"
+    },
+    {
+      "chapter_key": "unpriv/csrinsts",
+      "section_id": "_csr_access_ordering",
+      "slot": 2,
+      "unit_id": "75b136c122bbf60c8183480886d43f34",
+      "status": "modified",
+      "prev_unit_id": "d69f4d07fbe6519effeee50952f82c30"
+    },
+    {
+      "chapter_key": "unpriv/csrinsts",
+      "section_id": "_csr_access_ordering",
+      "slot": 3,
+      "unit_id": "5fe9c7e98e5ade9d4c2db99df95916d1",
+      "status": "modified",
+      "prev_unit_id": "43e4e0caaeaad78a0d67c12ce5655c42"
+    },
+    {
+      "chapter_key": "unpriv/csrinsts",
+      "section_id": "_csr_access_ordering",
+      "slot": 4,
+      "unit_id": "6e190c9af3dd3b7ee2456b5a5a519c48",
+      "status": "modified",
+      "prev_unit_id": "434d03216849e6620af4cf05f0f01fe7"
+    },
+    {
+      "chapter_key": "unpriv/chap:zihintntl",
+      "section_id": "chap:zihintntl",
+      "slot": 12,
+      "unit_id": "b584a6bf04dacc76ff4e414890ef3316",
+      "status": "modified",
+      "prev_unit_id": "77fe29adf18eda90022ddceea3a7b421"
+    },
+    {
+      "chapter_key": "unpriv/_a_extension_for_atomic_instructions_version_2_1",
+      "section_id": "sec:amo",
+      "slot": 3,
+      "unit_id": "ab72719df3daa40658e379e9d117e15d",
+      "status": "modified",
+      "prev_unit_id": "a666737c7100cd9ecaf79aba34093a87"
+    },
+    {
+      "chapter_key": "unpriv/_zalasr_atomic_load_acquire_and_store_release_instructions_version_1_0",
+      "section_id": "_load_acquire_and_store_release_instructions",
+      "slot": 1,
+      "unit_id": "dc7194461765af95e115e8680ff952d8",
+      "status": "modified",
+      "prev_unit_id": "2bf5a95f670b9857c69ec83731afe50d"
+    },
+    {
+      "chapter_key": "unpriv/sec:zfinx",
+      "section_id": "_privileged_architecture_implications",
+      "slot": 0,
+      "unit_id": "44b82d76189fbd98f10eb953a8eac67e",
+      "status": "modified",
+      "prev_unit_id": "775aef93fecacb9568f1fa7c904b2013"
+    },
+    {
+      "chapter_key": "unpriv/_cryptography_extensions_vector_instructions_version_1_0",
+      "section_id": "crypto_vector_introduction",
+      "slot": 0,
+      "unit_id": "cb3385090ee8d9f4788111f3a926b254",
+      "status": "modified",
+      "prev_unit_id": "9729f8fe36e428baa91d9e93eda5de5d"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_unprivileged_architecture_explanatory_material",
+      "slot": "heading",
+      "unit_id": "876176b9c1defac48fdecdaff425b103",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "chap:rationale",
+      "slot": "heading",
+      "unit_id": "236ac1f2f47844a35b64a393381746d2",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_historical_rationale_for_extensions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "chap:rationale",
+      "slot": 0,
+      "unit_id": "f490b157400752e059e1c498d0d5ec14",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_historical_rationale_for_extensions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zihintpause_extension_for_pause_hint",
+      "slot": "heading",
+      "unit_id": "fb60d6248ff9d0f49e02ac7ad98aaed0",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zihintpause_extension_for_pause_hint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zihintpause_extension_for_pause_hint",
+      "slot": 0,
+      "unit_id": "f6c9e73b48c076333b8e52fd2235c3d0",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zihintpause_extension_for_pause_hint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zihintpause_extension_for_pause_hint",
+      "slot": 1,
+      "unit_id": "c2844768008afe6edbfa7f5dbd8de4f7",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zihintpause_extension_for_pause_hint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zicond_extension_for_integer_conditional_operations",
+      "slot": "heading",
+      "unit_id": "62bdd6f09d6c8f30e382603cc38f8bc3",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zicond_extension_for_integer_conditional_operations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zicond_extension_for_integer_conditional_operations",
+      "slot": 0,
+      "unit_id": "926e0a50cd6e4e72e0835c120d5b3070",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zicond_extension_for_integer_conditional_operations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zicond_extension_for_integer_conditional_operations",
+      "slot": 1,
+      "unit_id": "07cd534dd98991f22b0ea2d6cb84257e",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zicond_extension_for_integer_conditional_operations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zicond_extension_for_integer_conditional_operations",
+      "slot": 2,
+      "unit_id": "34d94ffa56aac30ad917b622982b91d4",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zicond_extension_for_integer_conditional_operations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zicond_extension_for_integer_conditional_operations",
+      "slot": 3,
+      "unit_id": "4b4fd3a3cf3325796d6dc8be17a8143e",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zicond_extension_for_integer_conditional_operations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions",
+      "slot": "heading",
+      "unit_id": "93489169dd6fd53bf854c9cbf9488442",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zacas_extension_for_atomic_compare_and_swap_cas_instructions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions",
+      "slot": 0,
+      "unit_id": "c54444a1ac5b3bc67196ed7909a743db",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zacas_extension_for_atomic_compare_and_swap_cas_instructions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions",
+      "slot": 1,
+      "unit_id": "6ec4a3134c4e7b5165a358536cfcb221",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zacas_extension_for_atomic_compare_and_swap_cas_instructions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2",
+      "slot": "heading",
+      "unit_id": "9c556930b7ea23c956340b4a81a1d393",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2",
+      "slot": 0,
+      "unit_id": "91e52c5134cf387aed490d86e1a7f24a",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2",
+      "slot": 1,
+      "unit_id": "40ed6f2fc9f65ba7e4f1a40ce70ecc53",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2",
+      "slot": 2,
+      "unit_id": "d94aadfe456932fb8bcb94890c13f4bc",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2",
+      "slot": 3,
+      "unit_id": "87f349acbed9eb565d27d2bfc8d565f8",
+      "status": "moved",
+      "moved_from": "unpriv/_historical_rationale_for_extensions/_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_2"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "app:mm-explanatory",
+      "slot": "heading",
+      "unit_id": "4b0e09315424718725f99d6b43931c8e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_rvwmo_explanatory_material_version_0_1"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "app:mm-explanatory",
+      "slot": 0,
+      "unit_id": "ee978fa7014d7fa23ffff50cf31c0a05",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_rvwmo_explanatory_material_version_0_1"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "whyrvwmo",
+      "slot": "heading",
+      "unit_id": "0abdbdceb776a273d1dd217a847a13cd",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/whyrvwmo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "whyrvwmo",
+      "slot": 0,
+      "unit_id": "f70612c626c1c9b9b074069758143560",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/whyrvwmo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "whyrvwmo",
+      "slot": 1,
+      "unit_id": "9501159e9d37752fda221e0617094ab5",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/whyrvwmo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "whyrvwmo",
+      "slot": 2,
+      "unit_id": "ae5598f1ec556dc80aad53ca0a610b07",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/whyrvwmo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "whyrvwmo",
+      "slot": 3,
+      "unit_id": "45d2ea4268b51880361ac2bd5842767b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/whyrvwmo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": "heading",
+      "unit_id": "0b58aeb80b750ebbd902746ecc9ae8d1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 0,
+      "unit_id": "d01614147c995628fe72877da99f0e42",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 1,
+      "unit_id": "dc4562b9e63a1ec750a4b950ae27fed1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 2,
+      "unit_id": "7724edd5bda93e9d229959550f35e76a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 3,
+      "unit_id": "c967e83811f01d9b12f06fdea8eca6af",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 4,
+      "unit_id": "f8a75eec6be2f5a01691a4e6d13e9dbb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 5,
+      "unit_id": "0e64e4e6995d73849838aa03e7ea0518",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 6,
+      "unit_id": "df4b913cbf86e857635dbe44ee87d7ed",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 7,
+      "unit_id": "432c7b83cd83571ee556c1bf652371fb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 8,
+      "unit_id": "74e22d6ec0b35ae912af4786c9521945",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "litmustests",
+      "slot": 9,
+      "unit_id": "2af295d4ba65cba2873b9376efcce6bb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/litmustests"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_explaining_the_rvwmo_rules",
+      "slot": "heading",
+      "unit_id": "9ccf5af4bf6ce6bffb82ed67c4d6075b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_explaining_the_rvwmo_rules"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_explaining_the_rvwmo_rules",
+      "slot": 0,
+      "unit_id": "6425277370ee2c6c32dd72317912bbfb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_explaining_the_rvwmo_rules"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_preserved_program_order_and_global_memory_order",
+      "slot": "heading",
+      "unit_id": "568f4a1d1268ca7c644451b8f9957f88",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_preserved_program_order_and_global_memory_order"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_preserved_program_order_and_global_memory_order",
+      "slot": 0,
+      "unit_id": "dc8e7d4ee0e362a46a38d5238ce08e91",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_preserved_program_order_and_global_memory_order"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_preserved_program_order_and_global_memory_order",
+      "slot": 1,
+      "unit_id": "e0d1fff309f5716b77765920bef13ba9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_preserved_program_order_and_global_memory_order"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_preserved_program_order_and_global_memory_order",
+      "slot": 2,
+      "unit_id": "0dc61f5833e50883a2b1231109f316e8",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_preserved_program_order_and_global_memory_order"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": "heading",
+      "unit_id": "8fd516eb0933fe4abab1dea01f96d9c1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 0,
+      "unit_id": "4c83c92e220f6f93bff95610bb8ccbb7",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 1,
+      "unit_id": "da21b39f26155561a15ebb6cbb108fa9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 2,
+      "unit_id": "c96995dbdb1481a3d370fd79a9b8de82",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 3,
+      "unit_id": "13edba9f2454d502f17c43c4d043dba6",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 4,
+      "unit_id": "851a2234db1a026dab1eef1b04f07c31",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 5,
+      "unit_id": "c71940d2fa967d356cc11854a5bdae73",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 6,
+      "unit_id": "b2ee9be6463e232ff9147ac4661a62d1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 7,
+      "unit_id": "b6a9af6e4a70a960e1655fa8f1171874",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 8,
+      "unit_id": "a26b71f6660ed71032796d8790d152f3",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 9,
+      "unit_id": "7b04daec14919d8a5d8060ce5bc3d0c4",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 10,
+      "unit_id": "795ee4c6fcf72b3ab3a0850558bd0519",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 11,
+      "unit_id": "ba4c5cfbbf37f43a8e6afe6ec8efcd79",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "loadvalueaxiom",
+      "slot": 12,
+      "unit_id": "fe37ea72be83d8ede5eab1998693a513",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/loadvalueaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": "heading",
+      "unit_id": "ad336ffd3a2a7f8bd066e0374890e70e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 0,
+      "unit_id": "6b63a665e21e13e4ef5e4eeb6c5226a3",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 1,
+      "unit_id": "c7d062bc2082d4356704068146f667b4",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 2,
+      "unit_id": "d87507f3c9ed97fa3e2fcf1034050e5a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 3,
+      "unit_id": "f6852aa5b1eafb539bfc79774446aaca",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 4,
+      "unit_id": "cdf8f60731e4a6e26b441a7af70411c1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "atomicityaxiom",
+      "slot": 5,
+      "unit_id": "4f0ef5eea5020bf8ca1274639d6393eb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/atomicityaxiom"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-progress",
+      "slot": "heading",
+      "unit_id": "84842d5c2c30b2757564e16711f8fb83",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-progress"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-progress",
+      "slot": 0,
+      "unit_id": "44abf123927088d3eaa56d85f552c1ba",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-progress"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-progress",
+      "slot": 1,
+      "unit_id": "821818331df86ad8472194f4f83d6a5a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-progress"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-progress",
+      "slot": 2,
+      "unit_id": "45bd696849f615606041f75081ffc7d8",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-progress"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-progress",
+      "slot": 3,
+      "unit_id": "82f000e924dbd0f3978ef3c67beb98c7",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-progress"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": "heading",
+      "unit_id": "853ca0fec99fa2a2ff8c59f04e9aaff1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 0,
+      "unit_id": "25497851367dcd3cf0a11da06e76ac43",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 1,
+      "unit_id": "31b6d2bf4442ee54db3c50a4825c151a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 2,
+      "unit_id": "31f22bb6792afa8124ffa989c2b581ae",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 3,
+      "unit_id": "97116f54fe5fb5623ee49af338a78309",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 4,
+      "unit_id": "0a9680400134d119e19560fcdb731d30",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 5,
+      "unit_id": "2147ab5c181b2a45052f39147b56c684",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 6,
+      "unit_id": "d06b2a3352055c48b9f63688e5a1bc91",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 7,
+      "unit_id": "b7fc71590d9c0c004c2eae9a6872a6bc",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 8,
+      "unit_id": "2a615c5f26273b0b4a4e1902fb8a54e9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 9,
+      "unit_id": "9ee2eb11860e5a4249e79778add6d9df",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 10,
+      "unit_id": "9a4260b553b38bf4e11f3129a6b01560",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 11,
+      "unit_id": "ab412c139330617183d0e77c50e7515f",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 12,
+      "unit_id": "a650c4576d5502df5e78a5b9b7f5bd26",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-overlap",
+      "slot": 13,
+      "unit_id": "f022b7fc688fc6d8494dd71086eb8987",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-overlap"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": "heading",
+      "unit_id": "5fe219c041b879be4d7e5b5032a74501",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 0,
+      "unit_id": "d97ca70bb42008567a814f68801837e9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 1,
+      "unit_id": "99439e3d6c403819a73aba8329d1c0bf",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 2,
+      "unit_id": "11b4121ddc36e339d7d982f36df2ee47",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 3,
+      "unit_id": "009751c9d8391f109cbba475ce05a94c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 4,
+      "unit_id": "6c162d1a9631710d35661004588e4766",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mm-fence",
+      "slot": 5,
+      "unit_id": "dc0c1bac76dd8057bd69a5864909ce70",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mm-fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": "heading",
+      "unit_id": "bdb3270609c4111a6f50a6dee795dadf",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 0,
+      "unit_id": "f37e8f40a5ed65df912196a12aeeb81f",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 1,
+      "unit_id": "1279845754249c72d04bfa6892b444d6",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 2,
+      "unit_id": "4df7d22aa7d5f68b984b360a70d88331",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 3,
+      "unit_id": "2ffd183a667494ceeb8e40705fac3d5d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 4,
+      "unit_id": "714dca610c2e4aec870b09a848fba8a6",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 5,
+      "unit_id": "eb52252317a3ebb33b1c487a6f79065c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 6,
+      "unit_id": "bfe5afee23ade87959fd1739c0a643ca",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 7,
+      "unit_id": "b9fb649b90d3cdc392be192dc131197d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 8,
+      "unit_id": "68462ea62d78d978dece10c6661404be",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:acqrel",
+      "slot": 9,
+      "unit_id": "47ab24a5f631e77a210b541d4f50e2e5",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:acqrel"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": "heading",
+      "unit_id": "c3eb488c4ed5f23116709fd5dc6c4144",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 0,
+      "unit_id": "e3cb398995f02c6a4a9ddfaf3bfbb14d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 1,
+      "unit_id": "12ccd7c315194528767c46746b87817e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 2,
+      "unit_id": "795798dd7096a916d269140ab564912a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 3,
+      "unit_id": "9f0a931d76dbdf036d45e62b9c40f3ee",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 4,
+      "unit_id": "487d3d6e201a78518e558139b69e68d5",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 5,
+      "unit_id": "bb8a77de42ba40ecef7f34f40780c972",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 6,
+      "unit_id": "428868acb5cfe963ad3c9a1d81fc390c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 7,
+      "unit_id": "ef0f8dd2b0dad4d49ba07711b442a3d2",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 8,
+      "unit_id": "53188bd4f275b0a70b4b779396bd0d8d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 9,
+      "unit_id": "53a90f40f6bb838a9cb056fc0821324b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 10,
+      "unit_id": "a68e7bdc7662950ac9d907903f8d7629",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 11,
+      "unit_id": "36fdf18b178ec22ceff0da5b2af0c21e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 12,
+      "unit_id": "d37429064429f37f020b8fd8b1b8845e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 13,
+      "unit_id": "d72810c70831c7fe5090eceb0e8a1339",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 14,
+      "unit_id": "c67742183d90baf48cc838788a93b487",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 15,
+      "unit_id": "4625000384338b1de0f3d90f949bb823",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:memory:dependencies",
+      "slot": 16,
+      "unit_id": "8b8fb7fda92fa0c27dc91f2c6f1393b2",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/sec:memory:dependencies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": "heading",
+      "unit_id": "2d2b9390bdab50cfc73e91d2232adb96",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 0,
+      "unit_id": "4840681c76b41094ec8428c43104fc74",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 1,
+      "unit_id": "fff92f2ed7ed6a702b5097354668cf3c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 2,
+      "unit_id": "e01d13c4275cfee827095ab0c45b7d05",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 3,
+      "unit_id": "7da097e3685e648099789b308a7a660b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 4,
+      "unit_id": "ef91a774a5e1ac08cd3e96c098143e4a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 5,
+      "unit_id": "ca470069f5328da415c73cfd97748b12",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 6,
+      "unit_id": "a08d179234a322fea52fd3e0cb4962dd",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory-ppopipeline",
+      "slot": 7,
+      "unit_id": "ed03c4d69d1b38269af3c4a33f624b28",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory-ppopipeline"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_beyond_main_memory",
+      "slot": "heading",
+      "unit_id": "e730f41b22f5945bf3548508c102f947",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_beyond_main_memory"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_beyond_main_memory",
+      "slot": 0,
+      "unit_id": "f5fad3f4e970115ad503b858a92cefde",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_beyond_main_memory"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_coherence_and_cacheability",
+      "slot": "heading",
+      "unit_id": "29e9e86564d35de94381767766be7f28",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_coherence_and_cacheability"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_coherence_and_cacheability",
+      "slot": 0,
+      "unit_id": "b8db329e6facef11672f9c63367a862d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_coherence_and_cacheability"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_coherence_and_cacheability",
+      "slot": 1,
+      "unit_id": "ada3cb40a621c1465c5c6feddea271bb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_coherence_and_cacheability"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": "heading",
+      "unit_id": "01416b49faea716aa6caa1a28bee6594",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 0,
+      "unit_id": "9c8ee7fca88b31df447e9340c88d2ff8",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 1,
+      "unit_id": "5532b36e773252f15525e43b4cf2836b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 2,
+      "unit_id": "8822f7d202a2cf88f42468291f749c8b",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 3,
+      "unit_id": "c7cf9953cbe19fb8b2e0f791e7e4d04d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 4,
+      "unit_id": "05d27aee5f088c043f055ead6da1bdb3",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 5,
+      "unit_id": "a42f82631c7769a15ab63ca715d7a7a3",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 6,
+      "unit_id": "123bc4d0644d8d0118b9a5349ed77bd4",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 7,
+      "unit_id": "ed34268233423c5295a98dacb66df065",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_io_ordering",
+      "slot": 8,
+      "unit_id": "851fb8c445f8985198b7ddf99e96a3cb",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_io_ordering"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": "heading",
+      "unit_id": "1a5356df8dba05b1bf3ecdeba1fe1c23",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 0,
+      "unit_id": "d2773a232b9e295d4907871e9e54eea1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 1,
+      "unit_id": "53cf629845fcddd841d2eb1b10c4d481",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 2,
+      "unit_id": "0b8ead1a06c3b751373bfedfe1b13a3f",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 3,
+      "unit_id": "6f368d312c3ca6c772edcf0a54f1ccc9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 4,
+      "unit_id": "8fcd59e098500ecb4964e44d78747568",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 5,
+      "unit_id": "51dfa76864fa896350957ae0a098dc5e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 6,
+      "unit_id": "f7307246ee5ee39d8af9032754c41eae",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 7,
+      "unit_id": "6f5f2db6374dcc12f214647fdab9c47c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 8,
+      "unit_id": "77f498dad45664f4ac91968c0c91125f",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 9,
+      "unit_id": "245ee6e36c68697ff8eeb3304ad15545",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 10,
+      "unit_id": "d002bbc04c2709bb4379c94ca5116008",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 11,
+      "unit_id": "30a4291491beab6e461f9c73e3ab3668",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 12,
+      "unit_id": "04a322f58aa9470c48da3bf218171029",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 13,
+      "unit_id": "b75c634a4ab827297ce89792c663cf77",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 14,
+      "unit_id": "db2d23d89eb31e6c5d76c162cbb810e5",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 15,
+      "unit_id": "03152537e4ae842c5f6666e30e368ad0",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 16,
+      "unit_id": "200336fe772b4b9e31032d45c3b8973a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 17,
+      "unit_id": "60df5ed2777137cd4393ba38eef861bf",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 18,
+      "unit_id": "40109e49999481f4694671bf7ce40cd4",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 19,
+      "unit_id": "19d0d9950ad19d4131b923cd4bd101ee",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 20,
+      "unit_id": "5e804f3290bde9670adeb50ad7375817",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "memory_porting",
+      "slot": 21,
+      "unit_id": "6dc71362aa966d8ad9cf6e507bc485c1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/memory_porting"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": "heading",
+      "unit_id": "7fbbec30254b34e014c3bc522cf3f652",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 0,
+      "unit_id": "c381f9ea9d199d4ea4a1299c552104ed",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 1,
+      "unit_id": "688139bdf6ff31a00e54ac640ad23fb3",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 2,
+      "unit_id": "f93476c3c4d7cd4ed3002df275b3c57e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 3,
+      "unit_id": "19ee4b3d24ecffa11faa34f1cd7f4ad4",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 4,
+      "unit_id": "cf9314131d220a7fc76808c9c1e66866",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 5,
+      "unit_id": "d82a87346249176c72b947f37b0903e9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 6,
+      "unit_id": "121e8e26c4fc338037a5d44643fc4d5e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 7,
+      "unit_id": "211e2c34d2154f58bb716e3e6e606c9d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 8,
+      "unit_id": "b4cc686e03dfe29965f10d5541ce0976",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 9,
+      "unit_id": "49bf10937ecd966ec5ec0799db89a7d9",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 10,
+      "unit_id": "80fc625b88370ad3b34dd241e0de7a4f",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 11,
+      "unit_id": "dcc6c40fdbba919c725ec24ec690991e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 12,
+      "unit_id": "e7ee2d03cc00852f799437c34e649ed7",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 13,
+      "unit_id": "d6654a343a5247aa34e6a4656578c810",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 14,
+      "unit_id": "1c28551ba071c9e6a8bb16120f598c65",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 15,
+      "unit_id": "a2d84b55eb27cc3b7e0fd61f590be337",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 16,
+      "unit_id": "b394d730c671f4deaacabd709f23136a",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 17,
+      "unit_id": "9890126bffa26b56c25aedea3db54e2d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_implementation_guidelines",
+      "slot": 18,
+      "unit_id": "7e1fc6dc65a3dd7ecddfdf8f6c4d627c",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_implementation_guidelines"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_possible_future_extensions",
+      "slot": "heading",
+      "unit_id": "e3e8b12a5de3d2b1350f09ea99c5b8d1",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_possible_future_extensions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_possible_future_extensions",
+      "slot": 0,
+      "unit_id": "ec65553936d198018744a2868ce8fb66",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_possible_future_extensions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_possible_future_extensions",
+      "slot": 1,
+      "unit_id": "478db62e0040502c31fca2d5d339fd12",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/_possible_future_extensions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "discrepancies",
+      "slot": "heading",
+      "unit_id": "4e7bbaace13caede23aa0670c9448f28",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/discrepancies"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mixedrsw",
+      "slot": "heading",
+      "unit_id": "d27215199d7822ed3bd3113a75c255e0",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mixedrsw"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mixedrsw",
+      "slot": 0,
+      "unit_id": "b43a55cfa10d4294672039721ee31608",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mixedrsw"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mixedrsw",
+      "slot": 1,
+      "unit_id": "36b54759151cf3a080801f76a4100d03",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mixedrsw"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mixedrsw",
+      "slot": 2,
+      "unit_id": "f80cdc6566199fa9cfe6ff4f5eb7a40e",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mixedrsw"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "mixedrsw",
+      "slot": 3,
+      "unit_id": "c6c324e9862a41f952e39d857dd6c28d",
+      "status": "moved",
+      "moved_from": "unpriv/_rvwmo_explanatory_material_version_0_1/mixedrsw"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "app:mm-formal",
+      "slot": "heading",
+      "unit_id": "bcbea19d0b36f207e4c8c3e7e7e0eb8f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_formal_memory_model_specifications_version_0_1"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "app:mm-formal",
+      "slot": 0,
+      "unit_id": "95d16a78831c9a8445629316876c3488",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_formal_memory_model_specifications_version_0_1"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "app:mm-formal",
+      "slot": 1,
+      "unit_id": "bb98a2650dad21675fd0cbc57b289e11",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_formal_memory_model_specifications_version_0_1"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": "heading",
+      "unit_id": "6029602a0652b25229be0de10f9a6d48",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 0,
+      "unit_id": "a7662a6219168f55c121e3ca9ca0505b",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 1,
+      "unit_id": "332bcb56cfe1dfe01c95199a797ee11f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 2,
+      "unit_id": "30bb31887c6835ddb9aec6c2c7b79fe0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 3,
+      "unit_id": "2ecfdd461865587083601c6075782f7c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 4,
+      "unit_id": "80e4df8c5d4fe97ccb7e491602771c73",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 5,
+      "unit_id": "23660d67519e1d99158ad243093dbb7d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "alloy",
+      "slot": 6,
+      "unit_id": "79626b0ac13b121f079fc461ea1d8f4c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/alloy"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": "heading",
+      "unit_id": "42f0cb15fa8354f2e16f47b58c8a0e66",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": 0,
+      "unit_id": "9490e8471f2de62906d3e1e5b3689de5",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": 1,
+      "unit_id": "89592e7acadce694176a65b5c6422bc1",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": 2,
+      "unit_id": "f9a35664ce60f49165e0a75a28022066",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": 3,
+      "unit_id": "e6d1f6cfe687090ec49eddcdb8c67d77",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sec:herd",
+      "slot": 4,
+      "unit_id": "c0215af608835f7d5678309901adc80c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sec:herd"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": "heading",
+      "unit_id": "7451967eb979a4e32db1481c4e8ca897",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 0,
+      "unit_id": "6fc51878bf700c302fb28929a60e3250",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 1,
+      "unit_id": "57d5f4c5f69ad6c9c851d550061b04d9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 2,
+      "unit_id": "739ce455ca525cca1e6d6de08f07dddd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 3,
+      "unit_id": "ca0c99e0c02e73925a4907bc54765d2a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 4,
+      "unit_id": "2e1cd2e6378952b8a9c728169df23661",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 5,
+      "unit_id": "01bf62a228b1bd7abcd7815076e0f802",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 6,
+      "unit_id": "a6ae7ff49d8075c9c0297b610c58b438",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 7,
+      "unit_id": "44d7f03c080730d79db704f07e502869",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 8,
+      "unit_id": "f60022d7229882203d66eefb74769093",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 9,
+      "unit_id": "656d3d83646812a4caa20e5cfb6fe8a1",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 10,
+      "unit_id": "5fcc5aa1104e6fec5738798fcd306349",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 11,
+      "unit_id": "4db3d31a4c6192fbc2f89166244c69dc",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 12,
+      "unit_id": "deb0ff424c0f1df27b6ea6d735499271",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 13,
+      "unit_id": "270149da10087cda2eb83504f490f6ba",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 14,
+      "unit_id": "27710fbc9f0cb235e5a8e0d38478c7bd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 15,
+      "unit_id": "f876f8fa38c9ecb486601c7c4f6a0bc5",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 16,
+      "unit_id": "860cb5723425eba5ec80eac77d0dd715",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 17,
+      "unit_id": "6cbaaa2f5c02789047f5e869997189ee",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 18,
+      "unit_id": "ed96e2c391de1775e447541e6753fc58",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 19,
+      "unit_id": "aa6373ffe7fe6c7f8b22a535747932f9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 20,
+      "unit_id": "db2ad72093c70a5d1481aab6dc3ff00d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 21,
+      "unit_id": "2b88e75f96c47ee68d0801c02e4d776f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 22,
+      "unit_id": "2c3c4b63a2e7fc44401c28115c521d20",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 23,
+      "unit_id": "ed34d0e395c5d639a4e383a8e519e817",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 24,
+      "unit_id": "0e9d9868dd84a48fc2232db89103c3b9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 25,
+      "unit_id": "b32fa889b082e0ae7f737587dfdd5a84",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 26,
+      "unit_id": "a165ac029e057b05b996ba683b7c1dc0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 27,
+      "unit_id": "911032cdfa71de003c22ae2e9d68ea98",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 28,
+      "unit_id": "7daed3eca0b25670ae89f41df0f7a41e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 29,
+      "unit_id": "34f57c3acd9a883f849721bb2e2274f0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 30,
+      "unit_id": "56407d8cf9665f3847f30a576a79d0a4",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 31,
+      "unit_id": "e284e13758f26ff033f0bbcde3f0e6d7",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 32,
+      "unit_id": "8f3de104a5a3a4b8a5e3b0180a89fd1f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 33,
+      "unit_id": "4cef6efb0d13ba2752eced4e6475cba8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 34,
+      "unit_id": "e82aebaddd1adb23a261e5e4bdce39bb",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 35,
+      "unit_id": "9cdb1cd890ed7f060b44821b4750ad39",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 36,
+      "unit_id": "4448a3939b008fe9b0737966e95a9974",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 37,
+      "unit_id": "f1a3a37fce5846ec1f8bc8f04172cb87",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "operational",
+      "slot": 38,
+      "unit_id": "98b86d1de4c79deb321579db0f6891ab",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/operational"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": "heading",
+      "unit_id": "226f323f981a9dc1b1e65925b00475d8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 0,
+      "unit_id": "382e4a0232864b5f521ca60223ad8a1a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 1,
+      "unit_id": "af5c4a0a4b6d650ed90b074000a8af6c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 2,
+      "unit_id": "f3988a91796c30f904b3f7dee2f1807e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 3,
+      "unit_id": "8b90d641efe53627ec9f985ea3c805a4",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 4,
+      "unit_id": "94035b625710dea0bda739ef31f0bb5a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 5,
+      "unit_id": "ba4ffb20a4bf787583ab8c807c8d0db0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 6,
+      "unit_id": "6f1fb6ed5f3322bd02c98749e201fe6c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 7,
+      "unit_id": "7be99f3a35a0c95af975ee865f6587ae",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 8,
+      "unit_id": "98dd414a69158d168071a48b1db296dd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 9,
+      "unit_id": "b136db49d6f0c33cae6ce07f268fb760",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "pseudocode_exec",
+      "slot": 10,
+      "unit_id": "33301490e29909b49ff0ba787f76c1df",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/pseudocode_exec"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": "heading",
+      "unit_id": "057d9861a438ecf0eb6b868fe65f430e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 0,
+      "unit_id": "7cc31fb7cf3527a3e845819f571d30b7",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 1,
+      "unit_id": "87d736eea7e444faaa3280fd4dfe2c19",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 2,
+      "unit_id": "ff96fce67c810fb0d346cdc117bccabe",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 3,
+      "unit_id": "e9f1edefa87aa7f95c9ccb4772691276",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 4,
+      "unit_id": "6d8707612c85b1f191ace78bf92ae9c8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 5,
+      "unit_id": "4ba56c353b3aba01d67481873c80859f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 6,
+      "unit_id": "b062333644fd3d2a2a5e81d675ecd1c1",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 7,
+      "unit_id": "d689809f3eff4e1dc52a33ef72a908ea",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 8,
+      "unit_id": "e0bd2a614a15934bc5e5b04f17b2cc05",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "inst_state",
+      "slot": 9,
+      "unit_id": "0b82e979f7ede5613f070a0513456dd8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/inst_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_hart_state",
+      "slot": "heading",
+      "unit_id": "9a736207287418e1fe71867f40e68f03",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_hart_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_hart_state",
+      "slot": 0,
+      "unit_id": "6571378edcc42501e008221e120ec470",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_hart_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_hart_state",
+      "slot": 1,
+      "unit_id": "5756a2ea384785757742eacc4d6c5845",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_hart_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_shared_memory_state",
+      "slot": "heading",
+      "unit_id": "c12a623dfbb7d3e726553ae4f9247822",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_shared_memory_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_shared_memory_state",
+      "slot": 0,
+      "unit_id": "ffe30e226c88ef7c80a7ea35b6a9182d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_shared_memory_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_shared_memory_state",
+      "slot": 1,
+      "unit_id": "65695018d5ce6e1a58e341a808c88570",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_shared_memory_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_shared_memory_state",
+      "slot": 2,
+      "unit_id": "8e0cb1efc3c036550f155a4b6a79c3d3",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/_shared_memory_state"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "transitions",
+      "slot": "heading",
+      "unit_id": "ca69388b4c34e3cf2e1201b0b6f62710",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/transitions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "transitions",
+      "slot": 0,
+      "unit_id": "c9522a19a0e284d15c643f14cb82c80d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/transitions"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "fetch",
+      "slot": "heading",
+      "unit_id": "26993e614f612d533a77a72adb491fbf",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/fetch"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "fetch",
+      "slot": 0,
+      "unit_id": "78f742d3ac2a4b786bf4f9c9913197db",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/fetch"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "fetch",
+      "slot": 1,
+      "unit_id": "b49a1fe2357a50f09255314bb603256e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/fetch"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "fetch",
+      "slot": 2,
+      "unit_id": "1124dab6a98b3a4662467081ec87a1f3",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/fetch"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "fetch",
+      "slot": 3,
+      "unit_id": "d782f41d8de6b572c4382b4942a05a52",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/fetch"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_load",
+      "slot": "heading",
+      "unit_id": "298f79a532656ca1c1d02de8b1155754",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_load"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_load",
+      "slot": 0,
+      "unit_id": "f604955959c7864289af730b75b6cfc3",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_load"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_load",
+      "slot": 1,
+      "unit_id": "db8177a399b77e689c07228d0835c850",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_load"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_load",
+      "slot": 2,
+      "unit_id": "786f7b2ccdaca18fa45b18c3f489b86b",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_load"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": "heading",
+      "unit_id": "a7db8dfac85f1917b30d43b382af3d48",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 0,
+      "unit_id": "f272cc7b2b6c661276470c4cf080ffbb",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 1,
+      "unit_id": "7ad1a0c133b53b7b67d806fb2c4fb2ec",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 2,
+      "unit_id": "1e5702f1ddb74cbd9a6faaeeee7da9d9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 3,
+      "unit_id": "69e44c16c2d7b69f3872a66a28b3614d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 4,
+      "unit_id": "5ea4a63903a21d0aa8646d0a9fdf0f42",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 5,
+      "unit_id": "554c9c19f9dc423b43aa069b21721fdd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 6,
+      "unit_id": "cc8200059f35dbc2cee7b5ae926491ba",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 7,
+      "unit_id": "43aa3c85ed175ac07cfae65a2924bea7",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_by_forwarding",
+      "slot": 8,
+      "unit_id": "20135c74cdbd69002f057ef6b8a23278",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_by_forwarding"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_from_mem",
+      "slot": "heading",
+      "unit_id": "6d70952561f2f5b738c017d72f8ebd9d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_from_mem"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_from_mem",
+      "slot": 0,
+      "unit_id": "0a9e821390692fc481208f5e3104536f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_from_mem"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sat_from_mem",
+      "slot": 1,
+      "unit_id": "6bd63c917b46dc7c53c33189e4bca194",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sat_from_mem"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "complete_loads",
+      "slot": "heading",
+      "unit_id": "0209fff41e948a78740015a6dca44340",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/complete_loads"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "complete_loads",
+      "slot": 0,
+      "unit_id": "f65de3672bf7318dcd4489a7ad23a06a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/complete_loads"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "early_sc_fail",
+      "slot": "heading",
+      "unit_id": "aaffe975885d93867a3cdf6cb8f2c070",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/early_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "early_sc_fail",
+      "slot": 0,
+      "unit_id": "232ef7ef38da5b72f374333857007da8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/early_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "paired_sc",
+      "slot": "heading",
+      "unit_id": "e05b43e5ea654f9a0fe1ff240dc47b73",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/paired_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "paired_sc",
+      "slot": 0,
+      "unit_id": "0e9a87ed820016b06b2e207b0a80b812",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/paired_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_store_footprint",
+      "slot": "heading",
+      "unit_id": "e4072e83f5bad4f1abf8dd6f3eed910e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_store_footprint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_store_footprint",
+      "slot": 0,
+      "unit_id": "ca88d0e5c64281bcd5e3b6b454e940bc",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_store_footprint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_store_footprint",
+      "slot": 1,
+      "unit_id": "e29f15110b8b71611b7c5ef0518fecf0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_store_footprint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "initiate_store_footprint",
+      "slot": 2,
+      "unit_id": "7d53a0eda173c903e55b3e67fa51c24d",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/initiate_store_footprint"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "instantiate_store_value",
+      "slot": "heading",
+      "unit_id": "16b5d5ff36b01c1cbbe3da2bc92823cb",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/instantiate_store_value"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "instantiate_store_value",
+      "slot": 0,
+      "unit_id": "fedbfb00a0a47c832b25c1308be506c2",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/instantiate_store_value"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "instantiate_store_value",
+      "slot": 1,
+      "unit_id": "1d7b2be363daf0707dc3767dd1f5f37f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/instantiate_store_value"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_stores",
+      "slot": "heading",
+      "unit_id": "1ef56a72b315829a2e77f6cfd424fd77",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_stores",
+      "slot": 0,
+      "unit_id": "7201e47d7b482342f77df24c246d3c47",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_stores",
+      "slot": 1,
+      "unit_id": "39bc0af645c4dcf1ee878f114ebd1052",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_stores",
+      "slot": 2,
+      "unit_id": "bbdec33e7c7193174fe627306a6e79c8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_stores",
+      "slot": 3,
+      "unit_id": "6f64ac91e51fc9d4223461a22224a5cc",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": "heading",
+      "unit_id": "744bd2a389b117e9a7f614ee03ca4fcf",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 0,
+      "unit_id": "26bd73284f13f514ce7e901db4fc347a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 1,
+      "unit_id": "7afcfa0393a0daa2187fe27b827aa250",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 2,
+      "unit_id": "0d71ba005906db7124ab084ba8524e37",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 3,
+      "unit_id": "a7750bf9e0efa10118a1dced5ec4630f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 4,
+      "unit_id": "5ea4a63903a21d0aa8646d0a9fdf0f42",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "prop_store",
+      "slot": 5,
+      "unit_id": "325eb8d14cecf37ee105d579b98d2f44",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/prop_store"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_sc",
+      "slot": "heading",
+      "unit_id": "a45ae3f1dd3fa582ba4c7ca6e0f688ad",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_sc",
+      "slot": 0,
+      "unit_id": "4526928036d386a05d0202d23ff912c7",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_sc",
+      "slot": 1,
+      "unit_id": "1f137732874773e9e5d1222210c5f2fd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_sc",
+      "slot": 2,
+      "unit_id": "5ea4a63903a21d0aa8646d0a9fdf0f42",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_sc",
+      "slot": 3,
+      "unit_id": "187cb0d3c663d7b6a60795aecf4dae43",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_sc"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "late_sc_fail",
+      "slot": "heading",
+      "unit_id": "55665347892d0a27955e760edf80d57a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/late_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "late_sc_fail",
+      "slot": 0,
+      "unit_id": "4141da315a0e071075b56b3ce386ba15",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/late_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "late_sc_fail",
+      "slot": 1,
+      "unit_id": "7d9dc0b5d1a1530f7dff52f3b9390ea9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/late_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "late_sc_fail",
+      "slot": 2,
+      "unit_id": "db9b6b12fff110859ae1fe8d8ccf3748",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/late_sc_fail"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "complete_stores",
+      "slot": "heading",
+      "unit_id": "a6bbe42356a15ad9f22feb520596d874",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/complete_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "complete_stores",
+      "slot": 0,
+      "unit_id": "58b7fcc0c1ea99bc441cdad3c57d316a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/complete_stores"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "do_amo",
+      "slot": "heading",
+      "unit_id": "beaa11c6f57a4e9e181e995ed0bcb3f1",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/do_amo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "do_amo",
+      "slot": 0,
+      "unit_id": "0969fd06260ea5340f914679004336cb",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/do_amo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "do_amo",
+      "slot": 1,
+      "unit_id": "aa0b8fc901e4c832ab69f1858b6b3238",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/do_amo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "do_amo",
+      "slot": 2,
+      "unit_id": "48f0a091ae3a407f4e1024ce205dffc9",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/do_amo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "do_amo",
+      "slot": 3,
+      "unit_id": "0c9ee5808a288a87af5692e96798e0a0",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/do_amo"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_fence",
+      "slot": "heading",
+      "unit_id": "ffd9e7feba137db31f9aa5a572bd8ecb",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_fence",
+      "slot": 0,
+      "unit_id": "ac37407364d4e9ccfead9eff921685b6",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_fence",
+      "slot": 1,
+      "unit_id": "fd5b251d3ada10d32cc74073521120c8",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_fence",
+      "slot": 2,
+      "unit_id": "5ea4a63903a21d0aa8646d0a9fdf0f42",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "commit_fence",
+      "slot": 3,
+      "unit_id": "6ba9bfffa9c5ddafb37bf58eb7368750",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/commit_fence"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_read",
+      "slot": "heading",
+      "unit_id": "4ee7a297e6b915ae9be26758b3320c6a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_read"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_read",
+      "slot": 0,
+      "unit_id": "c7b13ff611d1275d4dbd64fb647abfb6",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_read"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_read",
+      "slot": 1,
+      "unit_id": "ce6304c3ee1006b40f82ec28c63b645c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_read"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_read",
+      "slot": 2,
+      "unit_id": "e09f1022ce881512dd6e96e2a1476bdd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_read"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_write",
+      "slot": "heading",
+      "unit_id": "42fa1280b267443c1f27a625cb90634e",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_write"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_write",
+      "slot": 0,
+      "unit_id": "f9b020327b20462b6eb6628e67684cfd",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_write"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_write",
+      "slot": 1,
+      "unit_id": "260ca96ffb731b67558d3a33cb7d4df2",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_write"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "reg_write",
+      "slot": 2,
+      "unit_id": "3954d5150b42d94d77fdc4cf4198c9f1",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/reg_write"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sail_interp",
+      "slot": "heading",
+      "unit_id": "b4d13b149112182e7eac3b70366b085a",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sail_interp"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "sail_interp",
+      "slot": 0,
+      "unit_id": "135ad1cb46d88cf77c2e81e50867328f",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/sail_interp"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "finish",
+      "slot": "heading",
+      "unit_id": "dfbb98b731466d68a03293980592c77c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/finish"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "finish",
+      "slot": 0,
+      "unit_id": "b134cfdabda104561e27862c8828955c",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/finish"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "finish",
+      "slot": 1,
+      "unit_id": "f5a804321f92409642bc54f1fb6a0abc",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/finish"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "finish",
+      "slot": 2,
+      "unit_id": "5ea4a63903a21d0aa8646d0a9fdf0f42",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/finish"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "finish",
+      "slot": 3,
+      "unit_id": "0b61b60899e62f2008ce37b775ce7c76",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/finish"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "limitations",
+      "slot": "heading",
+      "unit_id": "4e91ffbebd56af760220352c0b5a7112",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/limitations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "limitations",
+      "slot": 0,
+      "unit_id": "e45365251a4198c24481234e7e087fd6",
+      "status": "moved",
+      "moved_from": "unpriv/_formal_memory_model_specifications_version_0_1/limitations"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_vector_assembly_code_examples",
+      "slot": "heading",
+      "unit_id": "c0a8965c4f34eebdd92ee4a141e248c4",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_vector_assembly_code_examples"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_vector_assembly_code_examples",
+      "slot": 0,
+      "unit_id": "bc42b5036cfd6781af598cb9b1718394",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_vector_assembly_code_examples"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_vector_vector_add_example",
+      "slot": "heading",
+      "unit_id": "b87067b0d43472808bab1057e631d075",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_vector_vector_add_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_vector_vector_add_example",
+      "slot": 0,
+      "unit_id": "6fa9f6ec28aecdaa2e8455ed0793bfe0",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_vector_vector_add_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_example_with_mixed_width_mask_and_compute",
+      "slot": "heading",
+      "unit_id": "174763efc5c9f93be18f95e306b83695",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_example_with_mixed_width_mask_and_compute"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_example_with_mixed_width_mask_and_compute",
+      "slot": 0,
+      "unit_id": "481072494556a49709346c7151c76a3a",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_example_with_mixed_width_mask_and_compute"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_memcpy_example",
+      "slot": "heading",
+      "unit_id": "db583a4b5ad3fb566e1ba0d3f99101e9",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_memcpy_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_memcpy_example",
+      "slot": 0,
+      "unit_id": "9ac051fbd7bc694c3745bbeb5f20295c",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_memcpy_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_conditional_example",
+      "slot": "heading",
+      "unit_id": "c577b31e37345cf1da62a15e5b2d5275",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_conditional_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_conditional_example",
+      "slot": 0,
+      "unit_id": "21f93e34b8ce93717045d189a968db2e",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_conditional_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_saxpy_example",
+      "slot": "heading",
+      "unit_id": "29df9815fdaa7c4248df208a1eeab307",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_saxpy_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_saxpy_example",
+      "slot": 0,
+      "unit_id": "7554d3e081cd380931010dbf664aafb0",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_saxpy_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_sgemm_example",
+      "slot": "heading",
+      "unit_id": "ebab7732ad31c5b89a86b2dec4964e06",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_sgemm_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_sgemm_example",
+      "slot": 0,
+      "unit_id": "8336143ca94a975ad7e3531488618fd3",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_sgemm_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_division_approximation_example",
+      "slot": "heading",
+      "unit_id": "0c547d1d38b9c99852855796f7c36688",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_division_approximation_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_division_approximation_example",
+      "slot": 0,
+      "unit_id": "79b2a56610b2151c6340d709c3f3c9ba",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_division_approximation_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_square_root_approximation_example",
+      "slot": "heading",
+      "unit_id": "9a682eb16dc4d65b6bf9a5e2bce38a94",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_square_root_approximation_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_square_root_approximation_example",
+      "slot": 0,
+      "unit_id": "13d2733de2558c8d26c9241fe7b8fcc3",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_square_root_approximation_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_c_standard_library_strcmp_example",
+      "slot": "heading",
+      "unit_id": "d323d304e67d80c8d4938f572d6e322a",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_c_standard_library_strcmp_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_c_standard_library_strcmp_example",
+      "slot": 0,
+      "unit_id": "08fcddd7e4c57b111b2e668230ce4a55",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_c_standard_library_strcmp_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": "heading",
+      "unit_id": "5cb990f582ec1f5b3e69a24c1763a112",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 0,
+      "unit_id": "f2b931ee4f82013e7e33c71bffd9becd",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 1,
+      "unit_id": "adfee172e5d65cea3e72f659822f12bb",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 2,
+      "unit_id": "8df9be1e2371a597c20adaeca3b06349",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 3,
+      "unit_id": "df3e4c3291e9a883e35dacf45101fc21",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 4,
+      "unit_id": "47f3c8853b7ab019ce1ae8acf54485b9",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 5,
+      "unit_id": "ca583011857565a9c24c1759738ea693",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_fractional_lmul_example",
+      "slot": 6,
+      "unit_id": "f378b04642e0519d1f45ed9a59e41774",
+      "status": "moved",
+      "moved_from": "unpriv/_vector_assembly_code_examples/_fractional_lmul_example"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_bit_manipulation_extensions_assembly_code_examples",
+      "slot": "heading",
+      "unit_id": "9f56f48d9632dd2bee213d9d6f490bbe",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_bit_manipulation_extensions_assembly_code_examples"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_bit_manipulation_extensions_assembly_code_examples",
+      "slot": 0,
+      "unit_id": "b652d4b6831f9906885f7aa55217c460",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_bit_manipulation_extensions_assembly_code_examples"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strlen",
+      "slot": "heading",
+      "unit_id": "08fc45f77d21da397a894bf651ce0112",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strlen"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strlen",
+      "slot": 0,
+      "unit_id": "420ca3d6dae94ff297d6ebd84f079451",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strlen"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strlen",
+      "slot": 1,
+      "unit_id": "d8d1ed12d9827275b6271ed0fe255e6b",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strlen"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strlen",
+      "slot": 2,
+      "unit_id": "42926c222906aefe148f9103584518e3",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strlen"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strlen",
+      "slot": 3,
+      "unit_id": "30299ed148843a8aa3e8bd93fb222189",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strlen"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strcmp",
+      "slot": "heading",
+      "unit_id": "3e85b614f834d3be563d678d023e2d65",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strcmp"
+    },
+    {
+      "chapter_key": "unpriv/_unprivileged_architecture_explanatory_material",
+      "section_id": "_strcmp",
+      "slot": 0,
+      "unit_id": "fb624b0c3b35b37130fa7440edbcd46c",
+      "status": "moved",
+      "moved_from": "unpriv/_bit_manipulation_extensions_assembly_code_examples/_strcmp"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": "heading",
+      "unit_id": "bd3ee3d422ff1b24049c51327cca0a4a",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 0,
+      "unit_id": "0f694cadec5dcfa1d4dc357b52a41437",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 1,
+      "unit_id": "0145eae127f3895c274818a081c6681a",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 2,
+      "unit_id": "824753696b4ecd31b51ba44fcfabbdc4",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 3,
+      "unit_id": "24c1c694bd8354148c36d9eb1c4dd3e4",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 4,
+      "unit_id": "b54cd714b3245cf2c5cf88f087ba93e9",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 5,
+      "unit_id": "0d915944652f7ac5469816ebea58258c",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 6,
+      "unit_id": "55be510162b9e96563eb2f4ae32f0c7e",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 7,
+      "unit_id": "fe5c107ed33c8fee3cde68a0e3958dbc",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 8,
+      "unit_id": "a85d8ca71a939f4dba43d6c9c091c3ac",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 9,
+      "unit_id": "722cd84a1657e7dbb8bcf0f51fbf18a4",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 10,
+      "unit_id": "0ab38c57e858b092429dcd4c645fd228",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 11,
+      "unit_id": "833103c43a03bd905db12dc4ef22ac6b",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 12,
+      "unit_id": "0d915944652f7ac5469816ebea58258c",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 13,
+      "unit_id": "55be510162b9e96563eb2f4ae32f0c7e",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 14,
+      "unit_id": "fe5c107ed33c8fee3cde68a0e3958dbc",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 15,
+      "unit_id": "44b3f7d2241660208cc7b904ab4fa39e",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 16,
+      "unit_id": "d8bf61b05f057588b7d0f7419a389c83",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 17,
+      "unit_id": "58b15510ec02e7a9e3d68b88eec157a1",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 18,
+      "unit_id": "2f258fbc107686603f903814f52bfcbd",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 19,
+      "unit_id": "f80e2ace0f143450a649d86108173c72",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 20,
+      "unit_id": "97919afaeac7eeb455a1d90b6dbfc23a",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 21,
+      "unit_id": "c6b513a9af754cae9c5c82b7c9ff487c",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 22,
+      "unit_id": "c4bb9f06a2432f6c08f841d954d491a2",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 23,
+      "unit_id": "aa89844f5dc86b89e537972ab9dcdc19",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 24,
+      "unit_id": "d84d094c49087296bd9427879ff36ce4",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 25,
+      "unit_id": "9f1c43e5efae24de696f4df7b9be90e9",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 26,
+      "unit_id": "8ab5e481ed6e902daaef2c2dce1fcab8",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 27,
+      "unit_id": "41aa3ea84edb07a815c68feba4451a29",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 28,
+      "unit_id": "37cbd4145610af783be22349124dc8c4",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 29,
+      "unit_id": "a9892c4cd5e09d19399c7e59a8111d03",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 30,
+      "unit_id": "031098c9bc0cec7d8ab77593e43041b3",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 31,
+      "unit_id": "0a0cfd79cea002a620d3b23df7f29678",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 32,
+      "unit_id": "8dd6c5222a4aac27690f8013dd68aad0",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 33,
+      "unit_id": "2c0bd6128d10a70e66092c9503cdabac",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 34,
+      "unit_id": "c48b97dce0b8afeb035252eea2c63373",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 35,
+      "unit_id": "dc5982e3c7158645d1cd0ffd5f5a9863",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 36,
+      "unit_id": "716496d86c43824bc288e6c8e1c7c3dc",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 37,
+      "unit_id": "f36f3afce7ccaba5de0582224941c69e",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 38,
+      "unit_id": "248d2ecdb2cb9205e6e053025a2ca421",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 39,
+      "unit_id": "3154220d0003d2b2e98b5ede922ae8cc",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 40,
+      "unit_id": "87a6f2928b1b87f48006bbd175d4c9e1",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 41,
+      "unit_id": "786a5a4e821d7ca86a584ed9cf113108",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 42,
+      "unit_id": "e177859a702521e7d3b35bf06799b4d7",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_preface_2",
+      "section_id": "_preface_2",
+      "slot": 43,
+      "unit_id": "1100ece01f344a4a2fb9ef34c30008b8",
+      "status": "moved",
+      "moved_from": "priv/_preface/_preface"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_introduction_3",
+      "slot": "heading",
+      "unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_introduction"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_introduction_3",
+      "slot": 0,
+      "unit_id": "8851895ae6e1e764df54f3be8ddaf6e5",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_introduction"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_introduction_3",
+      "slot": 1,
+      "unit_id": "06d0419623ed601c437aae0e5c9c5427",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_introduction"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": "heading",
+      "unit_id": "8b412737b8d0bed83e5a867ef11904d5",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 0,
+      "unit_id": "9ef8ac4a4c4f950aa7307af11a7bd386",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 1,
+      "unit_id": "367a14b031054f11e399052a71e389a5",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 2,
+      "unit_id": "a31a6d9965b6d84352923e3b484bcb35",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 3,
+      "unit_id": "28006755794ffce1d07b3e9e1406816a",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 4,
+      "unit_id": "a4cd3dba7745a6b80853abe9ff51564d",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 5,
+      "unit_id": "64518946e13c5a8bc28cbbe69115302a",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 6,
+      "unit_id": "da723e14cc95eb6ce9674211f8239091",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 7,
+      "unit_id": "0312511445eb20f34c032013ebeb358d",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_risc_v_privileged_software_stack_terminology",
+      "slot": 8,
+      "unit_id": "9a50764c958873622650ed05a9a74a3d",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_risc_v_privileged_software_stack_terminology"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": "heading",
+      "unit_id": "603f6750b91379ba7aa9d9afbe4da602",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 0,
+      "unit_id": "c00f99a913e300d9a35ebafb96ee84d8",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 1,
+      "unit_id": "90daa5999d1762efe94b0ebcad6b1812",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 2,
+      "unit_id": "6de7e5d6c3ab43307feed2d0436c030a",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 3,
+      "unit_id": "f0fa0c6916bcbc045c2bd85a48e9873f",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 4,
+      "unit_id": "404da7560d499d49e7cb0a40be3cee6b",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 5,
+      "unit_id": "6f6d09b50e4d4f6bdab129258d9a0100",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 6,
+      "unit_id": "3b0932173020d7a8ea125ff41b4429e6",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 7,
+      "unit_id": "4437ca9e9ce0ecc734369cb628dccc47",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 8,
+      "unit_id": "33dc85c964d609f4311709232d6b24b8",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 9,
+      "unit_id": "11355d70b284c07066e0923b3ebdbc23",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 10,
+      "unit_id": "55a3daa49f7984cd503980c76d944241",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 11,
+      "unit_id": "7b91ff74fae29328bfc42baf22e095ff",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_privilege_levels",
+      "slot": 12,
+      "unit_id": "6e66011f5a11e29b6bd19fd982956c63",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_privilege_levels"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_debug_mode",
+      "slot": "heading",
+      "unit_id": "9313bb5caadae2f9a55312a1280ccb9a",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_debug_mode"
+    },
+    {
+      "chapter_key": "priv/_introduction_3",
+      "section_id": "_debug_mode",
+      "slot": 0,
+      "unit_id": "d6df6dc6c095f9660c54be5d5d1c2145",
+      "status": "moved",
+      "moved_from": "priv/_introduction/_debug_mode"
+    },
+    {
+      "chapter_key": "priv/priv-csrs",
+      "section_id": "priv-csrs",
+      "slot": 1,
+      "unit_id": "132e3df269e69d5ad13bc53cee958123",
+      "status": "modified",
+      "prev_unit_id": "a557f6b640344708b3dbe3c7d1d42cd7"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": "heading",
+      "unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": 0,
+      "unit_id": "e3dcb6fa4204a4469a142e356abe88df",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": 1,
+      "unit_id": "25885af316f0f35408285238cfdd9cab",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": 2,
+      "unit_id": "3a7d52d602d8b456b8c7a46407d63cb9",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": 3,
+      "unit_id": "dab95e1f7824f93898cb3ed5dc65d7cf",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:mstatus",
+      "slot": 4,
+      "unit_id": "b31f6c9d494a444dc28df5efef73a9a7",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_mstatus_and_mstatush_registers"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_endianness_control_in_mstatus_and_mstatush_registers",
+      "slot": 7,
+      "unit_id": "2449fe68fb9bdcd2490ee1d5bd96c033",
+      "status": "modified",
+      "prev_unit_id": "1b05d5efcc7dd1e07b12223a3e8cca27"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_environment_call_and_breakpoint",
+      "slot": 4,
+      "unit_id": "318bc9e326058ff679b4cf7333775b9e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:misaligned-atomicity-granule",
+      "slot": "heading",
+      "unit_id": "d6e9bcc9a0c905071c47aeffc0d86e7e",
+      "status": "moved",
+      "moved_from": "priv/machine/_misaligned_atomicity_granule_pma"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:misaligned-atomicity-granule",
+      "slot": 0,
+      "unit_id": "eb70625ffa02b807c4985b048cfed0b4",
+      "status": "moved",
+      "moved_from": "priv/machine/_misaligned_atomicity_granule_pma"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:misaligned-atomicity-granule",
+      "slot": 1,
+      "unit_id": "b01248e6ab1a650d46c89bf02f93bb88",
+      "status": "moved",
+      "moved_from": "priv/machine/_misaligned_atomicity_granule_pma"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:misaligned-atomicity-granule",
+      "slot": 2,
+      "unit_id": "9dc52399c7b3fe73d716bda3f612db0b",
+      "status": "moved",
+      "moved_from": "priv/machine/_misaligned_atomicity_granule_pma"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:misaligned-atomicity-granule",
+      "slot": 3,
+      "unit_id": "6725b7bebe16613603afba64d5599293",
+      "status": "moved",
+      "moved_from": "priv/machine/_misaligned_atomicity_granule_pma"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": "heading",
+      "unit_id": "1c72928af330422e7a45d6ee3974ec3f",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 0,
+      "unit_id": "2054f1bbde3f533686731e011df93686",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 1,
+      "unit_id": "a958cbb9d17a790e304f635774d975c6",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 2,
+      "unit_id": "8e65f4a820a5af884d29df7c36ca7552",
+      "status": "modified",
+      "prev_unit_id": "bdb69c26cc3f4ca9d28997a3ca6a696f"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 3,
+      "unit_id": "0f5fa211bf6f8602587807a01d77339e",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 4,
+      "unit_id": "e3df5464fd036f26fb315697a62052e8",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 5,
+      "unit_id": "8194ce365c39f31022928e26f509257e",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 6,
+      "unit_id": "7f12b28d53a0da68a216117e8f7c984d",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:memory-ordering-pmas",
+      "slot": 7,
+      "unit_id": "b374e1019eb2151d4e64ba52cc255133",
+      "status": "moved",
+      "moved_from": "priv/machine/_memory_ordering_pmas"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": "heading",
+      "unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": 0,
+      "unit_id": "7951aa6fa4b52ad6048eecdf28298cff",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": 1,
+      "unit_id": "ccda06479516c299606ba1b37cf0e5b8",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": 2,
+      "unit_id": "003755661c483673d918e67a575497f0",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": 3,
+      "unit_id": "7a5b65e71020b134e362f7aca6938c04",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/indirect-csr",
+      "section_id": "_introduction_4",
+      "slot": 4,
+      "unit_id": "3a9cc6a03d4afa3c7060afeffb3ade25",
+      "status": "moved",
+      "moved_from": "priv/indirect-csr/_introduction_2"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_introduction_5",
+      "slot": "heading",
+      "unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_introduction_3"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_introduction_5",
+      "slot": 0,
+      "unit_id": "b06704d7d3a8bf427a278fe2e7692dc8",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_introduction_3"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_introduction_5",
+      "slot": 1,
+      "unit_id": "0ddc27431a35bbc9a0c3b61a912d27c1",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_introduction_3"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_introduction_5",
+      "slot": 2,
+      "unit_id": "d890aa72d422b8a3d9578788485a8105",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_introduction_3"
+    },
+    {
+      "chapter_key": "priv/smctr",
+      "section_id": "_instructions_2",
+      "slot": "heading",
+      "unit_id": "1ddd76143eb213c420f1510467b3edd3",
+      "status": "moved",
+      "moved_from": "priv/smctr/_instructions"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": "heading",
+      "unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 0,
+      "unit_id": "92cc45bfbc4e0d1a2de72ea365fb22dc",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 1,
+      "unit_id": "4aa3a2b95eb0f7dc516e7c9b8ae77e9d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 2,
+      "unit_id": "3c4ad8d1666708589542f6d271c91693",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 3,
+      "unit_id": "1c3d457f4f731d3d1cc5bd210b23af4f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 4,
+      "unit_id": "e2a1eb4d67022eb461443f2c9b6b2b36",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 5,
+      "unit_id": "5a61bca4434340a002e3db7ce85a8bd9",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 6,
+      "unit_id": "617a25bc7d47b9674cef5478d4ae3a6a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 7,
+      "unit_id": "f493ef255ac07202f7dcd52b51d431e0",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 8,
+      "unit_id": "003980292f224c531a7ab38a712c70a7",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 9,
+      "unit_id": "5b5dae94add5a995d7bf772c3982ed2c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 10,
+      "unit_id": "65c95ee9990cb05e789ff443df2f301d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 11,
+      "unit_id": "b131b6719442bd6e442fdcca17fcc3b7",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_mstatus_and_mstatush_registers_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_traps_2",
+      "slot": "heading",
+      "unit_id": "5c47820689220d9068f4c983b39a4d3b",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_traps"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": "heading",
+      "unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": 0,
+      "unit_id": "028007246c864a5a6de2d712773e3ee7",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": 1,
+      "unit_id": "b44982397e7079015e2b2d34c8f1917a",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": 2,
+      "unit_id": "88e6de1812c8106cb2aaa2d2d02ffe10",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": 3,
+      "unit_id": "b6a78b32650932d17a9c172c44eb5dcb",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_introduction_6",
+      "slot": 4,
+      "unit_id": "078d005173219d6252acc5c70a534b5e",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_introduction_4"
+    },
+    {
+      "chapter_key": "priv/Zpm",
+      "section_id": "_background_2",
+      "slot": "heading",
+      "unit_id": "91d1e1b57162004d103f48d03d2493c9",
+      "status": "moved",
+      "moved_from": "priv/Zpm/_background"
+    },
+    {
+      "chapter_key": "priv/_risc_v_privileged_instruction_set_listings",
+      "section_id": "_risc_v_privileged_instruction_set_listings",
+      "slot": 1,
+      "unit_id": "6f9bc1d8ae23d63f51bd4fd5793ff0be",
+      "status": "modified",
+      "prev_unit_id": "1e5fc48be0892ae744a7020c95fdf24c"
+    },
+    {
+      "chapter_key": "priv/_privileged_architecture_explanatory_material",
+      "section_id": "_privileged_architecture_explanatory_material",
+      "slot": "heading",
+      "unit_id": "7280d1a09d9ce3f27f4eb01bd79e3d6b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/_privileged_architecture_explanatory_material",
+      "section_id": "chap:priv-rationale",
+      "slot": "heading",
+      "unit_id": "236ac1f2f47844a35b64a393381746d2",
+      "status": "moved",
+      "moved_from": "priv/_historical_rationale_for_extensions/_historical_rationale_for_extensions"
+    },
+    {
+      "chapter_key": "priv/_privileged_architecture_explanatory_material",
+      "section_id": "chap:priv-rationale",
+      "slot": 0,
+      "unit_id": "f490b157400752e059e1c498d0d5ec14",
+      "status": "moved",
+      "moved_from": "priv/_historical_rationale_for_extensions/_historical_rationale_for_extensions"
+    },
+    {
+      "chapter_key": "priv/_privileged_architecture_explanatory_material",
+      "section_id": "smepmp_rationale",
+      "slot": "heading",
+      "unit_id": "cfd479d4b1db03df5b4514a94c082787",
+      "status": "moved",
+      "moved_from": "priv/_historical_rationale_for_extensions/smepmp_rationale"
+    },
+    {
+      "chapter_key": "priv/_privileged_architecture_explanatory_material",
+      "section_id": "smepmp_rationale",
+      "slot": 0,
+      "unit_id": "9fbce1c7c5500f067b575128470697de",
+      "status": "moved",
+      "moved_from": "priv/_historical_rationale_for_extensions/smepmp_rationale"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": null,
+      "unit_id": "f6d5759d77eefee64cf913c40537df8f"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "f6d5759d77eefee64cf913c40537df8f",
+      "unit_id": "cb5929e04d6cff41891ae93693bf4fea"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "cb5929e04d6cff41891ae93693bf4fea",
+      "unit_id": "84a8e334f3dc3009c50b7696ccb36a73"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "84a8e334f3dc3009c50b7696ccb36a73",
+      "unit_id": "5c928041bd404effe5e8bf1521e970fc"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "5c928041bd404effe5e8bf1521e970fc",
+      "unit_id": "cf60c5987da43550e9bc59019a3c4f63"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "cf60c5987da43550e9bc59019a3c4f63",
+      "unit_id": "940854d530ddf7ef3dc7b0483d47c7ce"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "940854d530ddf7ef3dc7b0483d47c7ce",
+      "unit_id": "80796b75da4dbc31e0e29b6559549031"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "80796b75da4dbc31e0e29b6559549031",
+      "unit_id": "678dc6b73e6e9728d1586c2a6755cf4a"
+    },
+    {
+      "chapter_key": "unpriv/_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "section_id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+      "after_unit_id": "678dc6b73e6e9728d1586c2a6755cf4a",
+      "unit_id": "9f8f33e12dd31a1d7165ea90a6cb2b47"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_environment_call_and_breakpoint",
+      "after_unit_id": "5fec4375e43fcf7e404a3e4fb48fb7c7",
+      "unit_id": "0ef8abd0294fbbc51dd31e5d266f1a60"
+    },
+    {
+      "chapter_key": "priv/_history",
+      "section_id": "_history",
+      "after_unit_id": null,
+      "unit_id": "4246891031be5c9523c247df6163077b"
+    },
+    {
+      "chapter_key": "priv/_history",
+      "section_id": "_research_funding_at_uc_berkeley",
+      "after_unit_id": null,
+      "unit_id": "82f2390bd8b1af34d4c7deeeeedec425"
+    },
+    {
+      "chapter_key": "priv/_history",
+      "section_id": "_research_funding_at_uc_berkeley",
+      "after_unit_id": "82f2390bd8b1af34d4c7deeeeedec425",
+      "unit_id": "d961db38c2d8f5b4fe9d363cf269253b"
+    },
+    {
+      "chapter_key": "priv/_history",
+      "section_id": "_research_funding_at_uc_berkeley",
+      "after_unit_id": "d961db38c2d8f5b4fe9d363cf269253b",
+      "unit_id": "41bdb985728120f04b0c4ddc0afa8318"
+    },
+    {
+      "chapter_key": "priv/_history",
+      "section_id": "_research_funding_at_uc_berkeley",
+      "after_unit_id": "41bdb985728120f04b0c4ddc0afa8318",
+      "unit_id": "836dfd87b1c91a523a5c19bcbed56fe9"
+    },
+    {
+      "chapter_key": "priv/_historical_rationale_for_extensions",
+      "section_id": "smepmp_rationale",
+      "after_unit_id": "9fbce1c7c5500f067b575128470697de",
+      "unit_id": "40bc9aebe78e45d4608eb4a63939685e"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/unpriv.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "ccd330a656a19a68"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "c9b3969080103dd5"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "758743e9b409a0ca"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "b3662c0d61b39d6e"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "7e4181e9e534c3bd"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "bd5806788ebfb593"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "1c78d2c92cb85517"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "16eda3dd85fd8c71"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "5301f93caae7d15e"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "b3ef52d3879d0354"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "a3405d5eba3472f1"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "0c506bd76d5f0d15"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "efe122494b842ca6"
+        },
+        {
+          "id": "_a_extension_for_atomic_instructions_version_2_1",
+          "chap_hash": "45ffbd16c7458699"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "c4c0e2e10ea6d867"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "7dfac363f4dbcd1f"
+        },
+        {
+          "id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0",
+          "chap_hash": "93dcb55aca062f45"
+        },
+        {
+          "id": "_zalasr_atomic_load_acquire_and_store_release_instructions_version_1_0",
+          "chap_hash": "51b312e5a6cedfb5"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "e4ec249f10e92545"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "20cdbd579b31190f"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "f9212d6b69d3cfbd"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "02520f67e745f710"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "a72a0eb750e94c37"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "8bddf14fb5ffac1c"
+        },
+        {
+          "id": "chap:zfh",
+          "chap_hash": "0333387fed057450"
+        },
+        {
+          "id": "bf16",
+          "chap_hash": "5eaecff1fb809956"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "d99366c2564b3911"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "4932c768a4a9dfe0"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "ab9aa61743aa0c68"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "9c2abaaefdd2532b"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "1adfe90a6efcb6cb"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "2e0ad8e890ed17dd"
+        },
+        {
+          "id": "crypto_scalar_instructions",
+          "chap_hash": "9c0e9840843e6713"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0",
+          "chap_hash": "f891fdc0b08703b3"
+        },
+        {
+          "id": "_control_flow_integrity_cfi",
+          "chap_hash": "73b229ada4aaf5a5"
+        },
+        {
+          "id": "sec:zilsd",
+          "chap_hash": "34bc33a55184cdc8"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "34bd3546c4406fea"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "385102444e1e56c6"
+        },
+        {
+          "id": "_unprivileged_architecture_explanatory_material",
+          "chap_hash": "4137394383b00fc4"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/priv.adoc",
+      "chapters": [
+        {
+          "id": "_preface_2",
+          "chap_hash": "7322779fde2cdb81"
+        },
+        {
+          "id": "_introduction_3",
+          "chap_hash": "364260c098d62d13"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "6498788ca7069d07"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "6e3639b0366a22ba"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "1b23ca91b8d50101"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "36b28c8a2bfc969d"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "ae63090f0bb4f6d9"
+        },
+        {
+          "id": "smcntrpmf",
+          "chap_hash": "85c2155053f9153e"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "ed288f087bd7f122"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "2a78e0ddb4b98c63"
+        },
+        {
+          "id": "smdbltrp",
+          "chap_hash": "9fc6bcb773ae09ce"
+        },
+        {
+          "id": "smctr",
+          "chap_hash": "adfea92467ac9e2f"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "960351437f45b2b2"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "5f5a3bb71fe86e26"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "283e2a751b25f30f"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "276156105d814230"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "65d98ca530a99590"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "cc9bbe7ced35e4c7"
+        },
+        {
+          "id": "sec:svrsw60t59b",
+          "chap_hash": "d7efdab9bb182980"
+        },
+        {
+          "id": "ssqosid",
+          "chap_hash": "c6e2ea77a25a528b"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "bb3becd4dd1f4060"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "e2433e04b3b772b7"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "e02b20479d221c2b"
+        },
+        {
+          "id": "priv-cfi",
+          "chap_hash": "56e244c3282e012b"
+        },
+        {
+          "id": "ssdbltrp",
+          "chap_hash": "844fb2d79beb106f"
+        },
+        {
+          "id": "Zpm",
+          "chap_hash": "43b3fe0c3d2ae3f0"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "73ddcd9f0318799d"
+        },
+        {
+          "id": "_privileged_architecture_explanatory_material",
+          "chap_hash": "6e359a4285fef3ea"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+unit_id = "b8682366d81a8cd4bc49d0833c442e5c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Health monitoring requires some state information related
+to the noise source to be maintained. The tests should be designed
+in a way that a specific number of samples guarantees a state
+flush (no hung states). We suggest flush size `W =< 1024` to
+match with the NIST SP 800-90B required tests (See Section 4.4 in
+cite:[TuBaKe:18]). The state is also fully zeroized in a system reset.'''
+zh = '''
+健康监测需要维护一些与噪声源相关的状态信息。测试设计应使得特定数量的样本保证状态冲刷（没有挂起状态）。我们建议冲刷大小 `W =< 1024`，以与 NIST SP 800-90B 要求的测试匹配（见 cite:[TuBaKe:18] 第 4.4 节）。状态在系统复位时也被完全清零。'''

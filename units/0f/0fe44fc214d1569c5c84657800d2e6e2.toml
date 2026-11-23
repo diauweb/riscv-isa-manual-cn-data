@@ -1,0 +1,26 @@
+unit_id = "0fe44fc214d1569c5c84657800d2e6e2"
+kind = "code"
+translatable = false
+en = '''
+[source,sail,subs="attributes+"]
+--
+
+// illegal-instruction exceptions
+if (((priv_mode != M) && !menvcfg.CBCFE) ||
+    ((priv_mode == U) && !senvcfg.CBCFE))
+{
+  <raise illegal-instruction exception>
+}
+// virtual-instruction exceptions
+else if (((priv_mode == VS) && !henvcfg.CBCFE) ||
+         ((priv_mode == VU) && !(henvcfg.CBCFE && senvcfg.CBCFE)))
+{
+  <raise virtual-instruction exception>
+}
+// execute instruction
+else
+{
+  <execute CBO.CLEAN or CBO.FLUSH>
+}
+
+--'''

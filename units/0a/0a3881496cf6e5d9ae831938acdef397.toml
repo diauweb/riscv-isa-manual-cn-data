@@ -1,0 +1,27 @@
+unit_id = "0a3881496cf6e5d9ae831938acdef397"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We provided fetch-and-op style atomic primitives as they scale to highly
+parallel systems better than LR/SC or CAS. A simple microarchitecture
+can implement AMOs using the LR/SC primitives, provided the
+implementation can guarantee the AMO eventually completes. More complex
+implementations might also implement AMOs at memory controllers, and can
+optimize away fetching the original value when the destination is `x0`.
+
+The set of AMOs was chosen to support the C11/C++11 atomic memory
+operations efficiently, and also to support parallel reductions in
+memory. Another use of AMOs is to provide atomic updates to
+memory-mapped device registers (e.g., setting, clearing, or toggling
+bits) in the I/O space.
+===='''
+zh = '''
+[NOTE]
+====
+我们提供取并运算（fetch-and-op）风格的原子原语，是因为它们比 LR/SC 或 CAS 更能扩展到高度并行的系统。简单微架构可使用 LR/SC 原语实现 AMO，前提是该实现能保证 AMO 最终完成。更复杂的实现还可在内存控制器中实现 AMO，并在目标为 `x0` 时优化掉对原始值的读取。
+
+AMO 集合的选择是为了高效支持 C11/C++11 原子内存操作，同时也支持内存中的并行归约。AMO 的另一用途是对 I/O 空间中内存映射的设备寄存器进行原子更新（例如置位、清零或翻转位）。
+===='''

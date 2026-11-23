@@ -1,0 +1,15 @@
+unit_id = "d7828f6811f89c7fe32b311f5d60db68"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The sign-injection instructions provide floating-point MV, ABS, and NEG, as well as supporting a few other operations, including the IEEE
+`copySign` operation and sign manipulation in transcendental math function libraries. Although MV, ABS, and NEG only need a single register operand, whereas FSGNJ instructions need two, it is unlikely most microarchitectures would add optimizations to benefit from the reduced number of register reads for these relatively infrequent instructions. Even in this case, a microarchitecture can simply detect when both source registers are the same for FSGNJ instructions and only read a single copy.
+===='''
+zh = '''
+[NOTE]
+====
+符号注入指令提供浮点 MV、ABS 和 NEG，并支持少数其他操作，包括 IEEE 的 `copySign` 操作以及超越数学函数库中的符号操作。虽然 MV、ABS 和 NEG 只需要一个寄存器操作数，而 FSGNJ 指令需要两个，但大多数微架构不太可能为这些相对不频繁的指令因减少寄存器读取次数而增加优化。即使如此，微架构也可以简单地检测 FSGNJ 指令的两个源寄存器是否相同，并只读取一份。
+===='''

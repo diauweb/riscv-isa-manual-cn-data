@@ -1,0 +1,428 @@
+unit_id = "c7f57e92597f1dc870dd7fff13a2eb6b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+==== Guest-Page Faults
+
+Guest-page-fault traps may be delegated from M-mode to HS-mode under the
+control of CSR `medeleg`, but cannot be delegated to other privilege
+modes. On a guest-page fault, CSR `mtval` or `stval` is written with the
+faulting guest virtual address as usual, and `mtval2` or `htval` is
+written either with zero or with the faulting guest physical address,
+shifted right by 2 bits. CSR `mtinst` or `htinst` may also be written
+with information about the faulting instruction or other reason for the
+access, as explained in <<tinst-vals>>.
+
+When an instruction fetch or a misaligned memory access straddles a page
+boundary, two different address translations are involved. When a
+guest-page fault occurs in such a circumstance, the faulting virtual
+address written to `mtval`/`stval` is the same as would be required for
+a regular page fault. Thus, the faulting virtual address may be a
+page-boundary address that is higher than the instruction's original
+virtual address, if the byte at that page boundary is among the accessed
+bytes.
+
+When a guest-page fault is not due to an implicit memory access for
+VS-stage address translation, a nonzero guest physical address written
+to `mtval2`/`htval` shall correspond to the exact virtual address
+written to `mtval`/`stval`.
+
+[[hyp-mm-fences]]
+==== Memory-Management Fences
+
+The behavior of the SFENCE.VMA instruction is affected by the current
+virtualization mode V. When V=0, the virtual-address argument is an
+HS-level virtual address, and the ASID argument is an HS-level ASID. The
+instruction orders stores only to HS-level address-translation
+structures with subsequent HS-level address translations.
+
+When V=1, the virtual-address argument to SFENCE.VMA is a guest virtual
+address within the current virtual machine, and the ASID argument is a
+VS-level ASID within the current virtual machine. The current virtual
+machine is identified by the VMID field of CSR `hgatp`, and the
+effective ASID can be considered to be the combination of this VMID with
+the VS-level ASID. The SFENCE.VMA instruction orders stores only to the
+VS-level address-translation structures with subsequent VS-stage address
+translations for the same virtual machine, i.e., only when `hgatp`.VMID
+is the same as when the SFENCE.VMA executed.
+
+Hypervisor instructions HFENCE.VVMA and HFENCE.GVMA provide additional
+memory-management fences to complement SFENCE.VMA. These instructions
+are described in <<hfence.vma>>.
+
+<<pmp-vmem>> discusses the intersection between
+physical memory protection (PMP) and page-based address translation. It
+is noted there that, when PMP settings are modified in a manner that
+affects either the physical memory that holds page tables or the
+physical memory to which page tables point, M-mode software must
+synchronize the PMP settings with the virtual memory system. For
+HS-level address translation, this is accomplished by executing in
+M-mode an SFENCE.VMA instruction with _rs1_=`x0` and _rs2_=`x0`, after
+the PMP CSRs are written. Synchronization with G-stage and VS-stage data
+structures is also needed. Executing an HFENCE.GVMA instruction with
+_rs1_=`x0` and _rs2_=`x0` suffices to flush all G-stage or VS-stage
+address-translation cache entries that have cached PMP settings
+corresponding to the final translated supervisor physical address. An
+HFENCE.VVMA instruction is not required.
+
+Similarly, if the setting of the PBMTE bit in `menvcfg` is changed, an
+HFENCE.GVMA instruction with _rs1_=`x0` and _rs2_=`x0` suffices to synchronize
+with respect to the altered interpretation of G-stage and VS-stage PTEs' PBMT
+fields.
+
+By contrast, if the PBMTE bit in `henvcfg` is changed, executing an
+HFENCE.VVMA with _rs1_=`x0` and _rs2_=`x0` suffices to synchronize with
+respect to the altered interpretation of VS-stage PTEs' PBMT fields for the
+currently active VMID.
+
+NOTE: No mechanism is provided to atomically change `vsatp` and `hgatp`
+together.  Hence, to prevent speculative execution causing one guest's
+VS-stage translations to be cached under another guest's VMID, world-switch
+code should zero `vsatp`, then swap `hgatp`, then finally write the new
+`vsatp` value.  Similarly, if `henvcfg`.PBMTE need be world-switched, it
+should be switched after zeroing `vsatp` but before writing the new `vsatp`
+value, obviating the need to execute an HFENCE.VVMA instruction.
+
+=== Traps
+
+[[sec:hcauses]]
+==== Trap Cause Codes
+
+The hypervisor extension augments the trap cause encoding.
+<<hcauses>> lists the possible M-mode and HS-mode
+trap cause codes when the hypervisor extension is implemented. Codes are
+added for VS-level interrupts (interrupts 2, 6, 10), for
+supervisor-level guest external interrupts (interrupt 12), for
+virtual-instruction exceptions (exception 22), and for guest-page faults
+(exceptions 20, 21, 23). Furthermore, environment calls from VS-mode are
+assigned cause 10, whereas those from HS-mode or S-mode use cause 9 as
+usual.
+
+[[hcauses]]
+.Machine and supervisor cause register (`mcause` and `scause`) values when the hypervisor extension is implemented.
+[%autowidth,float="center",align="center",cols=">,>,<",options="header"]
+|===
+|Interrupt |Exception Code |Description
+|1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2 +
+3
+|_Reserved_ +
+Supervisor software interrupt +
+Virtual supervisor software interrupt +
+Machine software interrupt
+|1 +
+1 +
+1 +
+1
+|4 +
+5 +
+6 +
+7
+|_Reserved_ +
+Supervisor timer interrupt +
+Virtual supervisor timer interrupt +
+Machine timer interrupt
+|1 +
+1 +
+1 +
+1
+|8 +
+9 +
+10 +
+11
+|_Reserved_ +
+Supervisor external interrupt +
+Virtual supervisor external interrupt +
+Machine external interrupt
+|1 +
+1 +
+1 +
+1
+|12 +
+13 +
+14-15 +
+&#8805;16
+|Supervisor guest external interrupt +
+_Reserved for counter-overflow interrupt_ +
+_Reserved_ +
+_Designated for platform use_
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10 +
+11 +
+12 +
+13 +
+14 +
+15 +
+16-19 +
+20 +
+21 +
+22 +
+23 +
+24-31 +
+32-47 +
+48-63 +
+&#8805;64
+|Instruction address misaligned +
+Instruction access fault  +
+Illegal instruction  +
+Breakpoint  +
+Load address misaligned +
+Load access fault +
+Store/AMO address misaligned +
+Store/AMO access fault +
+Environment call from U-mode or VU-mode +
+Environment call from HS-mode +
+Environment call from VS-mode +
+Environment call from M-mode +
+Instruction page fault +
+Load page fault +
+_Reserved_ +
+Store/AMO page fault +
+_Reserved_  +
+Instruction guest-page fault +
+Load guest-page fault +
+Virtual instruction +
+Store/AMO guest-page fault +
+_Designated for custom use_ +
+_Reserved_ +
+_Designated for custom use_ +
+_Reserved_
+|===
+
+HS-mode and VS-mode ECALLs use different cause values so they can be
+delegated separately.
+
+When V=1, a virtual-instruction exception (code 22) is normally raised
+instead of an illegal-instruction exception if the attempted instruction
+is _HS-qualified_ but is prevented from executing when V=1 either due to
+insufficient privilege or because the instruction is expressly disabled
+by a supervisor or hypervisor CSR such as `scounteren` or `hcounteren`.
+An instruction is _HS-qualified_ if it would be valid to execute in
+HS-mode (for some values of the instruction's register operands),
+assuming fields TSR and TVM of CSR `mstatus` are both zero.
+
+A special rule applies for CSR instructions that access 32-bit high-half
+CSRs such as `cycleh` and `htimedeltah`. When V=1 and
+XLEN=32, an invalid attempt to access a high-half CSR
+raises a virtual-instruction
+exception instead of an illegal-instruction exception if the same CSR
+instruction for the corresponding _low-half_ CSR (e.g.`cycle` or
+`htimedelta`) is HS-qualified.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+==== 客户机页错误
+
+客户机页错误陷阱可在 CSR `medeleg` 的控制下从 M 模式委托给 HS 模式，但不能委托给其他特权模式。发生客户机页错误时，CSR `mtval` 或 `stval` 照常写入发生错误的客户机虚拟地址，`mtval2` 或 `htval` 写入零或发生错误的客户机物理地址（右移 2 位）。CSR `mtinst` 或 `htinst` 还可写入关于发生错误的指令或访问的其他原因的信息，如 <<tinst-vals>> 所述。
+
+当取指或非对齐内存访问跨页边界时，涉及两个不同的地址转换。在此类情况下发生客户机页错误时，写入 `mtval`/`stval` 的发生错误的虚拟地址与常规页错误所要求的相同。因此，若该页边界处的字节属于被访问字节，则发生错误的虚拟地址可能是高于指令原始虚拟地址的页边界地址。
+
+当客户机页错误并非因 VS 阶段地址转换的隐式内存访问引起时，写入 `mtval2`/`htval` 的非零客户机物理地址应对应于写入 `mtval`/`stval` 的确切虚拟地址。
+
+[[hyp-mm-fences]]
+==== 内存管理屏障
+
+SFENCE.VMA 指令的行为受当前虚拟化模式 V 影响。当 V=0 时，虚拟地址参数为 HS 级虚拟地址，ASID 参数为 HS 级 ASID。该指令仅将发往 HS 级地址转换结构的存储与随后的 HS 级地址转换排序。
+
+当 V=1 时，SFENCE.VMA 的虚拟地址参数为当前虚拟机内的客户机虚拟地址，ASID 参数为当前虚拟机内的 VS 级 ASID。当前虚拟机由 CSR `hgatp` 的 VMID 字段标识，有效 ASID 可视为该 VMID 与 VS 级 ASID 的组合。SFENCE.VMA 指令仅将发往 VS 级地址转换结构的存储与同一虚拟机的随后 VS 阶段地址转换排序，即仅当 `hgatp`.VMID 与执行 SFENCE.VMA 时相同时。
+
+虚拟机监控器指令 HFENCE.VVMA 和 HFENCE.GVMA 提供附加的内存管理屏障，以补充 SFENCE.VMA。这些指令在 <<hfence.vma>> 中描述。
+
+<<pmp-vmem>> 讨论了物理内存保护（PMP）与基于页的地址转换之间的交集。其中指出，当 PMP 设置的修改影响持有页表的物理内存或页表所指向的物理内存时，M 模式软件应将 PMP 设置与虚拟内存系统同步。对于 HS 级地址转换，这通过在写入 PMP CSR 之后在 M 模式下执行 __rs1__=`x0` 且 __rs2__=`x0` 的 SFENCE.VMA 指令来完成。还需要与 G 阶段和 VS 阶段数据结构同步。执行 __rs1__=`x0` 且 __rs2__=`x0` 的 HFENCE.GVMA 指令足以冲刷所有已缓存与最终转换后的监管者物理地址相对应的 PMP 设置的 G 阶段或 VS 阶段地址转换缓存项。不需要 HFENCE.VVMA 指令。
+
+类似地，若更改了 `menvcfg` 中 PBMTE 位的设置，则 __rs1__=`x0` 且 __rs2__=`x0` 的 HFENCE.GVMA 指令足以就 G 阶段和 VS 阶段 PTE 的 PBMT 字段的更改后解释进行同步。
+
+相反，若更改了 `henvcfg` 中的 PBMTE 位，则执行 __rs1__=`x0` 且 __rs2__=`x0` 的 HFENCE.VVMA 足以就当前活动 VMID 的 VS 阶段 PTE 的 PBMT 字段的更改后解释进行同步。
+
+NOTE: 未提供将 `vsatp` 和 `hgatp` 原子地一起更改的机制。因此，为防止推测执行导致一个客户机的 VS 阶段转换被缓存在另一个客户机的 VMID 下，世界切换代码宜先将 `vsatp` 置零，然后交换 `hgatp`，最后写入新的 `vsatp` 值。类似地，若 `henvcfg`.PBMTE 需要世界切换，则宜在将 `vsatp` 置零之后、写入新 `vsatp` 值之前切换，从而免除执行 HFENCE.VVMA 指令的需要。
+
+=== 陷阱
+
+[[sec:hcauses]]
+==== 陷阱原因代码
+
+虚拟机监控器扩展增补了陷阱原因编码。<<hcauses>> 列出了实现虚拟机监控器扩展时可能的 M 模式和 HS 模式陷阱原因代码。为 VS 级中断（中断 2、6、10）、监管级客户机外部中断（中断 12）、虚拟指令异常（异常 22）和客户机页错误（异常 20、21、23）新增了代码。此外，来自 VS 模式的环境调用被赋予原因 10，而来自 HS 模式或 S 模式的环境调用照常使用原因 9。
+
+[[hcauses]]
+.实现虚拟机监控器扩展时的机器和监管者原因寄存器（`mcause` 和 `scause`）值
+[%autowidth,float="center",align="center",cols=">,>,<",options="header"]
+|===
+|中断 |异常代码 |描述
+|1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2 +
+3
+|__保留__ +
+监管者软件中断 +
+虚拟监管者软件中断 +
+机器软件中断
+|1 +
+1 +
+1 +
+1
+|4 +
+5 +
+6 +
+7
+|__保留__ +
+监管者定时器中断 +
+虚拟监管者定时器中断 +
+机器定时器中断
+|1 +
+1 +
+1 +
+1
+|8 +
+9 +
+10 +
+11
+|__保留__ +
+监管者外部中断 +
+虚拟监管者外部中断 +
+机器外部中断
+|1 +
+1 +
+1 +
+1
+|12 +
+13 +
+14-15 +
+&#8805;16
+|监管者客户机外部中断 +
+__保留用于计数器上溢中断__ +
+__保留__ +
+__指定供平台使用__
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10 +
+11 +
+12 +
+13 +
+14 +
+15 +
+16-19 +
+20 +
+21 +
+22 +
+23 +
+24-31 +
+32-47 +
+48-63 +
+&#8805;64
+|指令地址非对齐 +
+指令访问错误 +
+非法指令 +
+断点 +
+加载地址非对齐 +
+加载访问错误 +
+存储/AMO 地址非对齐 +
+存储/AMO 访问错误 +
+来自 U 模式或 VU 模式的环境调用 +
+来自 HS 模式的环境调用 +
+来自 VS 模式的环境调用 +
+来自 M 模式的环境调用 +
+指令页错误 +
+加载页错误 +
+__保留__ +
+存储/AMO 页错误 +
+__保留__ +
+指令客户机页错误 +
+加载客户机页错误 +
+虚拟指令 +
+存储/AMO 客户机页错误 +
+__指定供定制使用__ +
+__保留__ +
+__指定供定制使用__ +
+__保留__
+|===
+
+HS 模式和 VS 模式的 ECALL 使用不同的原因值，以便它们能够被分别委托。
+
+当 V=1 时，若所尝试的指令为__HS 合格__但在 V=1 时因特权不足或因为该指令被诸如 `scounteren` 或 `hcounteren` 等监管者或虚拟机监控器 CSR 明确禁用而被阻止执行，则通常引发虚拟指令异常（代码 22）而非非法指令异常。若一条指令在 HS 模式下执行是有效的（对于该指令寄存器操作数的某些值），假定 CSR `mstatus` 的字段 TSR 和 TVM 均为零，则该指令为__HS 合格__。
+
+对于访问 32 位高半 CSR（如 `cycleh` 和 `htimedeltah`）的 CSR 指令，适用特殊规则。当 V=1 且 XLEN=32 时，若针对对应__低半__ CSR（例如 `cycle` 或 `htimedelta`）的相同 CSR 指令为 HS 合格，则访问高半 CSR 的无效尝试引发虚拟指令异常而非非法指令异常。
+
+[NOTE]
+===='''

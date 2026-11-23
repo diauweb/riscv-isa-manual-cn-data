@@ -1,0 +1,36 @@
+unit_id = "9e9ae5690a8231a918d586ad0091878a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Zfhmin does not include the FSGNJ.H instruction, because it suffices to
+instead use the FSGNJ.S instruction to move half-precision values
+between floating-point registers.
+
+Half-precision addition, subtraction, multiplication, division, and
+square-root operations can be faithfully emulated by converting the
+half-precision operands to single-precision, performing the operation
+using single-precision arithmetic, then converting back to
+half-precision. cite:[roux:hal-01091186] Performing half-precision fused multiply-addition using
+this method incurs a 1-ulp error on some inputs for the RNE and RMM
+rounding modes.
+
+Conversion from 8- or 16-bit integers to half-precision can be emulated
+by first converting to single-precision, then converting to
+half-precision. Conversion from 32-bit integer can be emulated by first
+converting to double-precision. If the D extension is not present and a
+1-ulp error under RNE or RMM is tolerable, 32-bit integers can be first
+converted to single-precision instead. The same remark applies to
+conversions from 64-bit integers without the Q extension.
+===='''
+zh = '''
+[NOTE]
+====
+Zfhmin 不包含 FSGNJ.H 指令，因为改用 FSGNJ.S 指令在浮点寄存器之间移动半精度值就已足够。
+
+半精度加法、减法、乘法、除法和平方根操作可通过以下方式忠实仿真：将半精度操作数转换为单精度，使用单精度算术执行操作，然后再转换回半精度。cite:[roux:hal-01091186] 使用此方法执行半精度融合乘加时，在 RNE 和 RMM 舍入模式下对某些输入会产生 1 ulp 误差。
+
+从 8 位或 16 位整数到半精度的转换可通过先转换为单精度、再转换为半精度来仿真。从 32 位整数的转换可通过先转换为双精度来仿真。若不存在 D 扩展且可容忍 RNE 或 RMM 下的 1 ulp 误差，则可改为先将 32 位整数转换为单精度。同样的说明适用于不存在 Q 扩展时从 64 位整数的转换。
+===='''

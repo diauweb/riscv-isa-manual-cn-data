@@ -1,0 +1,30 @@
+unit_id = "702e2b12819f3655bc3fd1ed625f85b5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Interrupts can be separated from other traps with a single branch on the
+sign of the `mcause` register value. A shift left can remove the
+interrupt bit and scale the exception codes to index into a trap vector
+table.
+
+***
+
+We do not distinguish privileged instruction exceptions from
+illegal-instruction exceptions. This simplifies the architecture and also hides
+details of which higher-privilege instructions are supported by an
+implementation. The privilege level servicing the trap can implement a
+policy on whether these need to be distinguished, and if so, whether a
+given opcode should be treated as illegal or privileged.
+===='''
+zh = '''
+[NOTE]
+====
+可通过在 `mcause` 寄存器值的符号上进行单次分支，将中断与其他陷阱区分开。左移可移除中断位并缩放异常代码，以索引到陷阱向量表。
+
+***
+
+我们不区分特权指令异常与非法指令异常。这简化了架构，也隐藏了实现支持哪些较高特权指令的细节。服务该陷阱的特权级可实现一项策略，决定是否需要区分这些情况，以及若需要区分，给定操作码应被视为非法还是特权。
+===='''

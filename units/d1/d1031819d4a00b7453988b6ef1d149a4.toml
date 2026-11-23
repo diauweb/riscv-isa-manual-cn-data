@@ -1,0 +1,32 @@
+unit_id = "d1031819d4a00b7453988b6ef1d149a4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | `data1` | address |
+| Write | {dm-data0} |  value0 |
+| Write | {dm-command} | cmdtype=2, {accessmemory-aamsize}=2, write=1, {accessmemory-aampostincrement}=1 |
+| Write | {dm-abstractauto} | 1 | Re-execute the command when {dm-data0} is accessed
+| Write | {dm-data0} |  value1 |
+| Write | {dm-data0} |  value2 |
+| ... | ... | ... | ...
+| Write | {dm-data0} |  valueN |
+| Write | {dm-abstractauto} | 0 | Disable auto-exec
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | `data1` | 地址 |
+| 写 | {dm-data0} | 值0 |
+| 写 | {dm-command} | cmdtype=2, {accessmemory-aamsize}=2, write=1, {accessmemory-aampostincrement}=1 |
+| 写 | {dm-abstractauto} | 1 | 当访问 {dm-data0} 时重新执行命令
+| 写 | {dm-data0} | 值1 |
+| 写 | {dm-data0} | 值2 |
+| ... | ... | ... | ...
+| 写 | {dm-data0} | 值N |
+| 写 | {dm-abstractauto} | 0 | 禁用自动执行
+|==='''

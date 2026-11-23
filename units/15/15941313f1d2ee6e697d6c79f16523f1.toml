@@ -1,0 +1,18 @@
+unit_id = "15941313f1d2ee6e697d6c79f16523f1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:csrfld:misa:extensions:enc]#The Extensions field encodes the presence of the standard extensions,
+with a single bit per letter of the alphabet (bit 0 encodes presence of
+extension "A" , bit 1 encodes presence of extension "B", through to
+bit 25 which encodes "Z").#
+[#norm:csrfld:misa:i:set]#The "I" bit will be set for the RV32I and RV64I base ISAs#,
+and [#norm:csrfld:misa:e:set]#the "E" bit will be set for RV32E and RV64E.#
+[#norm:csrfld:misa:extensions:can_be_writable]#The Extensions field is a *WARL* field that can contain writable bits where the
+implementation allows the supported ISA to be modified.#
+[#norm:csrfld:misa:extensions:reset]#At reset,
+the Extensions field shall contain the maximal set of supported extensions,
+and "I" shall be selected over "E" if both are available.#'''
+zh = '''
+[#norm:csrfld:misa:extensions:enc]##Extensions 字段编码标准扩展的存在情况，字母表中每个字母对应一位（位 0 编码扩展“A”的存在，位 1 编码扩展“B”的存在，直至位 25 编码“Z”）。## [#norm:csrfld:misa:i:set]##对于 RV32I 和 RV64I 基础 ISA，“I”位将被置位##，并且 [#norm:csrfld:misa:e:set]##对于 RV32E 和 RV64E，“E”位将被置位。## [#norm:csrfld:misa:extensions:can_be_writable]##Extensions 字段是一个 *WARL* 字段，可包含可写位，此时实现允许修改所支持的 ISA。## [#norm:csrfld:misa:extensions:reset]##复位时，Extensions 字段应包含所支持扩展的最大集合，且若“I”和“E”均可用，则应选择“I”而非“E”。##'''

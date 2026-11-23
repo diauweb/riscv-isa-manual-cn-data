@@ -1,0 +1,18 @@
+unit_id = "3291e6fc94b6ab76c4cceba8ee61e676"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((double-precision, to single-precision)))
+(((single-precision, to double-precision )))
+[#norm:fcvt-s-d_fcvt-d-s_op]#The double-precision to single-precision and single-precision to
+double-precision conversion instructions, insn:fcvt.s.d[] and insn:fcvt.d.s[], are
+encoded in the OP-FP major opcode space and both the source and
+destination are floating-point registers. The _rs2_ field encodes the
+datatype of the source, and the _fmt_ field encodes the datatype of the
+destination#. [#norm:fcvt_float_rounding]#insn:fcvt.s.d[] rounds according to the _rm_ field; insn:fcvt.d.s[] will
+never round#.'''
+zh = '''
+(((双精度, 到单精度)))
+(((单精度, 到双精度)))
+[#norm:fcvt-s-d_fcvt-d-s_op]##双精度到单精度和单精度到双精度的转换指令 insn:fcvt.s.d[] 和 insn:fcvt.d.s[] 编码在 OP-FP 主操作码空间中，且源和目标均为浮点寄存器。_rs2_ 字段编码源的数据类型，_fmt_ 字段编码目标的数据类型。## [#norm:fcvt_float_rounding]##insn:fcvt.s.d[] 按 _rm_ 字段进行舍入；insn:fcvt.d.s[] 永远不会舍入。##'''

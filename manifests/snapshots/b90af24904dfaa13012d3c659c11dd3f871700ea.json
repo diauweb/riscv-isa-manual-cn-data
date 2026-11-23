@@ -1,0 +1,462 @@
+{
+  "sha": "b90af24904dfaa13012d3c659c11dd3f871700ea",
+  "parent_sha": "c3f6bcb33549056e76a03c536439f85d9217cc43",
+  "is_baseline": false,
+  "date": "2026-05-26T16:24:20-07:00",
+  "title": "fix: correct various typos, grammar errors and format issues across spec (#3148)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-b90af24-2026-05-26"
+  ],
+  "diff": {
+    "added": 0,
+    "modified": 32,
+    "moved": 0,
+    "deleted": 0,
+    "touched_chapters": [
+      "priv/machine",
+      "priv/sm",
+      "priv/supervisor",
+      "profiles/_introduction_6",
+      "profiles/_rva22_profiles",
+      "unpriv/app:mm",
+      "unpriv/app:rationale",
+      "unpriv/crypto",
+      "unpriv/zf",
+      "unpriv/zi"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/zi",
+      "section_id": "SSAMOSWAP",
+      "slot": 2,
+      "unit_id": "0083a15d51535e668da7b05e605880ae",
+      "status": "modified",
+      "prev_unit_id": "45ccedf1bc3baff225f73407d4f5fe35"
+    },
+    {
+      "chapter_key": "unpriv/zi",
+      "section_id": "SSAMOSWAP",
+      "slot": 4,
+      "unit_id": "74b702377cb2a0d9af21d17f4db8c443",
+      "status": "modified",
+      "prev_unit_id": "1a4dbe61ecce7e0f64365527893cbba0"
+    },
+    {
+      "chapter_key": "unpriv/zf",
+      "section_id": "nanboxing",
+      "slot": 0,
+      "unit_id": "5b2c6e75f18c758de3b2787ec289badd",
+      "status": "modified",
+      "prev_unit_id": "5927bbd09c1b10806d45e45dbc17d3d5"
+    },
+    {
+      "chapter_key": "unpriv/zf",
+      "section_id": "_load_immediate_instructions",
+      "slot": 8,
+      "unit_id": "432765959358b72fe003df49458b3673",
+      "status": "modified",
+      "prev_unit_id": "ed3839eca76b6d8294b004af9c5a3d69"
+    },
+    {
+      "chapter_key": "unpriv/crypto",
+      "section_id": "crypto-vector-scalar-instructions",
+      "slot": 4,
+      "unit_id": "157dd19c32768aa2e01e6f1e0ee06cae",
+      "status": "modified",
+      "prev_unit_id": "633d2a971dcc3ce1ec0483a3b11954cf"
+    },
+    {
+      "chapter_key": "unpriv/app:mm",
+      "section_id": "mm-fence",
+      "slot": 1,
+      "unit_id": "65e2442c7e1178320d2254d90061b3ff",
+      "status": "modified",
+      "prev_unit_id": "6d01b3aa7123213afa24b4d1e75c32c6"
+    },
+    {
+      "chapter_key": "unpriv/app:mm",
+      "section_id": "operational",
+      "slot": 22,
+      "unit_id": "5f3391bbebf9eccc0e0f65355422a156",
+      "status": "modified",
+      "prev_unit_id": "2c3c4b63a2e7fc44401c28115c521d20"
+    },
+    {
+      "chapter_key": "unpriv/app:mm",
+      "section_id": "do_amo",
+      "slot": 1,
+      "unit_id": "2660a3a5536dcf49a7173f3c7cdbdd5a",
+      "status": "modified",
+      "prev_unit_id": "aa0b8fc901e4c832ab69f1858b6b3238"
+    },
+    {
+      "chapter_key": "unpriv/app:rationale",
+      "section_id": "_extzicond_extension_for_integer_conditional_operations",
+      "slot": 1,
+      "unit_id": "f43c53e02ec0502f4ef3aff43a036ee5",
+      "status": "modified",
+      "prev_unit_id": "07cd534dd98991f22b0ea2d6cb84257e"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_hardware_performance_monitor",
+      "slot": 5,
+      "unit_id": "4bc37c86e673af7c5b7b54d9350a1280",
+      "status": "modified",
+      "prev_unit_id": "fcaf30fee3bc4141cc6de8e8b5a70c58"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 2,
+      "unit_id": "ad8243484f0cc7d72a3132ea402d4182",
+      "status": "modified",
+      "prev_unit_id": "52cfc181504931a84f2dc7ab01fe23cf"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sec:senvcfg",
+      "slot": 18,
+      "unit_id": "08e13d49a5a657388f8a3c323659c2dc",
+      "status": "modified",
+      "prev_unit_id": "5bef8e0df70b6af7644806ed46af0874"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_state_enable_extensions",
+      "slot": 7,
+      "unit_id": "24ef68ac47b93fbd68e40857c294006a",
+      "status": "modified",
+      "prev_unit_id": "68a6b5f5d21017739abbfeb44cc5f294"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_virtual_supervisor_level_csrs",
+      "slot": 5,
+      "unit_id": "6fcb7853d309e7235c5c15b25b681558",
+      "status": "modified",
+      "prev_unit_id": "b89d7baf081d064a61d927b7f758a578"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_virtual_supervisor_level_csrs",
+      "slot": 6,
+      "unit_id": "e53437073061574e605441dac8e5172e",
+      "status": "modified",
+      "prev_unit_id": "5497195258496203b21c49150a2289ea"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_virtual_supervisor_level_csrs",
+      "slot": 10,
+      "unit_id": "6ac7d7ae7c8093038128e4be4cb1e609",
+      "status": "modified",
+      "prev_unit_id": "01eaf247bcac2837b4d71b6ee11843c6"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_access_control_by_the_state_enable_csrs",
+      "slot": 1,
+      "unit_id": "72e126d7dc1cdaed0abc47675aee02b0",
+      "status": "modified",
+      "prev_unit_id": "6144057a74e71231a04fd5f15ecf2049"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_access_control_by_the_state_enable_csrs",
+      "slot": 2,
+      "unit_id": "bb8b7f8f31e9d7f982a7482d4b96828c",
+      "status": "modified",
+      "prev_unit_id": "7be183fa68f446f45e48593c0aa253a0"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_counter_delegation",
+      "slot": 12,
+      "unit_id": "efd25a9305570746d58b526f0cb064d8",
+      "status": "modified",
+      "prev_unit_id": "9ac70679f47d4e9905c4f72345cb4fd7"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_supervisor_counter_inhibit_scountinhibit_register",
+      "slot": 1,
+      "unit_id": "fd79223da557a35c0579d2537f8761b2",
+      "status": "modified",
+      "prev_unit_id": "09ec980bd27a924e65fd2859c5e830bb"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_virtualizing_scountovf",
+      "slot": 0,
+      "unit_id": "54e7cd99e8b4a69235c07a1acbdda9a3",
+      "status": "modified",
+      "prev_unit_id": "b0b66d31a2825e0f28fe25e4ef373de6"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_control_transfer_record_source_register_ctrsource",
+      "slot": 0,
+      "unit_id": "b802e51aae85e7baadc823223f680d6f",
+      "status": "modified",
+      "prev_unit_id": "516ec07a65e438f91ce07a96118f7da4"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_state_enable_access_control",
+      "slot": 1,
+      "unit_id": "ce488b4cd7c0e8510b1eb9c12229444e",
+      "status": "modified",
+      "prev_unit_id": "852845edb19776b1713db77d867e42fd"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_shadow_stack_pointer_csrssp_csr_access_control",
+      "slot": 0,
+      "unit_id": "508e5dbaf1d6b8b6b5c753a9613e201a",
+      "status": "modified",
+      "prev_unit_id": "2d53522c41284f640875e403469d108e"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "_shadow_stack_pointer_csrssp_csr_access_control",
+      "slot": 1,
+      "unit_id": "242bf727da7e3a0bdfe61a4e83ca5cbc",
+      "status": "modified",
+      "prev_unit_id": "bc7f08a8ddd62671f47cdc214f995a22"
+    },
+    {
+      "chapter_key": "priv/sm",
+      "section_id": "SSMP",
+      "slot": 11,
+      "unit_id": "c4b99b99a8cf9c8369a1af9a924ee9e3",
+      "status": "modified",
+      "prev_unit_id": "197d341367a12b27b938afaa72851549"
+    },
+    {
+      "chapter_key": "profiles/_introduction_6",
+      "section_id": "_profile_family",
+      "slot": 1,
+      "unit_id": "4ccb8a771c8163ec8a3abed0745a0d79",
+      "status": "modified",
+      "prev_unit_id": "d8391151d3aa477eef3c235383c51d8e"
+    },
+    {
+      "chapter_key": "profiles/_introduction_6",
+      "section_id": "_profile_isa_features",
+      "slot": 5,
+      "unit_id": "ce92eb5ce9cb774035f1a870009b1ff4",
+      "status": "modified",
+      "prev_unit_id": "c632f9964e6aee12e8151ea98d82cb6d"
+    },
+    {
+      "chapter_key": "profiles/_introduction_6",
+      "section_id": "_rva_profiles_rationale",
+      "slot": 9,
+      "unit_id": "1ca66e6ab7b9e444b8ec7f2890a33d40",
+      "status": "modified",
+      "prev_unit_id": "519ee011bc087fad3734d761502f07ce"
+    },
+    {
+      "chapter_key": "profiles/_introduction_6",
+      "section_id": "_rva_profiles_rationale",
+      "slot": 10,
+      "unit_id": "41fbcdf87647cc7a213b051ba78f3e7c",
+      "status": "modified",
+      "prev_unit_id": "a70c1c21596321ab77be35a29fffc3a5"
+    },
+    {
+      "chapter_key": "profiles/_rva22_profiles",
+      "section_id": "_rva22u64_mandatory_extensions",
+      "slot": 10,
+      "unit_id": "219856395622c44547162fe353d868ca",
+      "status": "modified",
+      "prev_unit_id": "36123ed83b082bba8ecc3ecb46e2cfee"
+    },
+    {
+      "chapter_key": "profiles/_rva22_profiles",
+      "section_id": "_rva22u64_mandatory_extensions",
+      "slot": 12,
+      "unit_id": "19f8aa1ffce83ced5f68b062b84838f8",
+      "status": "modified",
+      "prev_unit_id": "d49c2cbf24caa662a3cba789d5afe880"
+    }
+  ],
+  "deleted_blocks": [],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/unpriv/unpriv.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "d84f6c72e1e343ad"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "02868a5d65e1b68c"
+        },
+        {
+          "id": "base",
+          "chap_hash": "0f3ccc15ec892beb"
+        },
+        {
+          "id": "mm",
+          "chap_hash": "b5b1e1f7e9ba4e5a"
+        },
+        {
+          "id": "zi",
+          "chap_hash": "f3e1f3111a96df24"
+        },
+        {
+          "id": "za",
+          "chap_hash": "47c11582d68f7a69"
+        },
+        {
+          "id": "zf",
+          "chap_hash": "72c565409d178b19"
+        },
+        {
+          "id": "zc",
+          "chap_hash": "f113f222584aeaeb"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "086829f9a601ac2b"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "a13b4dab35a01a18"
+        },
+        {
+          "id": "zp",
+          "chap_hash": "915e6463a22dd5a7"
+        },
+        {
+          "id": "crypto",
+          "chap_hash": "671d9618c07ffc1d"
+        },
+        {
+          "id": "matrix",
+          "chap_hash": "a6345517c8c4b6f2"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "a4361ea3d615144d"
+        },
+        {
+          "id": "app:mm",
+          "chap_hash": "dff5d18a98ce0ef0"
+        },
+        {
+          "id": "app:naming",
+          "chap_hash": "7d86f409794c4f00"
+        },
+        {
+          "id": "app:code-examples",
+          "chap_hash": "3a1f7d039e569a03"
+        },
+        {
+          "id": "app:rationale",
+          "chap_hash": "15335b170dee8370"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/priv/priv.adoc",
+      "chapters": [
+        {
+          "id": "_preface_2",
+          "chap_hash": "da45f91e211872c2"
+        },
+        {
+          "id": "_introduction_2",
+          "chap_hash": "8981d3c862f62dcf"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "2efc3d5ad07130bc"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "b9511eb0a5883092"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "24034103aa910c74"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "667bd5b64edbcf0e"
+        },
+        {
+          "id": "sm",
+          "chap_hash": "bbc8ddea02bc4016"
+        },
+        {
+          "id": "sv",
+          "chap_hash": "dd0cca454b5ae6c5"
+        },
+        {
+          "id": "ss",
+          "chap_hash": "a5031235901cd7f9"
+        },
+        {
+          "id": "sh",
+          "chap_hash": "b03dcc2bdfeb0e32"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "debe87e4bcecc48f"
+        },
+        {
+          "id": "app:priv-rationale",
+          "chap_hash": "57f4305cd139b3ec"
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "title_en": "The RISC-V Instruction Set Manual, Volume III: Profiles",
+      "title_unit_id": "654555b9357d4601eff4650d45dc9b85",
+      "entry_file": "src/profiles/profiles.adoc",
+      "chapters": [
+        {
+          "id": "_preface_3",
+          "chap_hash": "aab3cc2b65a873ec"
+        },
+        {
+          "id": "_introduction_6",
+          "chap_hash": "ec474ae5088f7c1a"
+        },
+        {
+          "id": "_rvi20_profiles",
+          "chap_hash": "699b26195a7fcbd7"
+        },
+        {
+          "id": "_rva20_profiles",
+          "chap_hash": "8e2963aeb61ff099"
+        },
+        {
+          "id": "_rva22_profiles",
+          "chap_hash": "a8cf41de88fde6af"
+        },
+        {
+          "id": "_rva23_profiles",
+          "chap_hash": "d1af26ea50016a01"
+        },
+        {
+          "id": "_rvb23_profiles",
+          "chap_hash": "66835f719039f492"
+        }
+      ]
+    }
+  ]
+}

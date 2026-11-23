@@ -1,0 +1,14 @@
+unit_id = "8b4e4936ea50450c293140e938e4d838"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. all instructions older than the trapping vector instruction have committed their results
+. no instructions newer than the trapping vector instruction have altered architectural state
+. any operations within the trapping vector instruction affecting result elements preceding the index in the csr:vstart[] CSR have committed their results
+. no operations within the trapping vector instruction affecting elements at or following the csr:vstart[] CSR have altered architectural state except if restarting and completing the affected vector instruction will nevertheless produce the correct final state.'''
+zh = '''
+. 所有比陷入向量指令更旧的指令已提交其结果
+. 没有比陷入向量指令更新的指令改变架构状态
+. 陷入向量指令内影响 csr:vstart[] CSR 中索引之前结果元素的任何操作已提交其结果
+. 陷入向量指令内影响 csr:vstart[] CSR 处或之后元素的任何操作未改变架构状态，除非重启并完成受影响的向量指令仍将产生正确最终状态。'''

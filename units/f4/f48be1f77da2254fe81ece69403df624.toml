@@ -1,0 +1,22 @@
+unit_id = "f48be1f77da2254fe81ece69403df624"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. First direct conditional branch at address 0x102 is taken.
+* A <<msg_DirectBranch,DirectBranch>> message with *I-CNT=3* should be generated. It means, that a code block from <0x100..0x105> (as 6=2*3) was executed and a direct conditional branch at the end of this block was taken. Decoder will know PC=0x200 from an opcode of the direct conditional branch at an address 0x102.
+* Next message should be <<msg_ProgTraceCorrelation,ProgTraceCorrelation>> with *I-CNT=1* describing range <0x200..0x201> till *C.EBREAK* instruction.
+. First direct conditional branch at address 0x102 is not taken and second direct conditional branch at address 0x10A is taken.
+* A <<msg_DirectBranch,DirectBranch>> message with *I-CNT=7* should be generated. It means, that a code block from <0x100..0x10D> (as 0xE=2*7) was executed and a direct conditional branch at the end of this block was taken. Decoder will know PC=0x300 from an opcode of the direct conditional branch at an address 0x10A.
+* Next message should be <<msg_ProgTraceCorrelation,ProgTraceCorrelation>> with *I-CNT=2* describing a range <0x300..0x303> till *C.EBREAK* instruction.
+. Both direct conditional branches (at 0x102 and 0x10A) are not taken.
+* In this case only <<msg_ProgTraceCorrelation,ProgTraceCorrelation>> with *I-CNT=10* should be generated. It is describing a range <0x100..0x113> (as 0x14=10*2) till *C.EBREAK* instructions.'''
+zh = '''
+. 地址 0x102 处的第一条直接条件分支发生跳转。
+* 应生成 *I-CNT=3* 的 <<msg_DirectBranch,DirectBranch>> 消息。这意味着执行了来自 <0x100..0x105> 的代码块（因为 6=2*3），并且该块末尾的直接条件分支发生了跳转。解码器将从地址 0x102 处直接条件分支的操作码得知 PC=0x200。
+* 下一条消息应为 *I-CNT=1* 的 <<msg_ProgTraceCorrelation,ProgTraceCorrelation>>，描述直到 *C.EBREAK* 指令的 <0x200..0x201> 范围。
+. 地址 0x102 处的第一条直接条件分支未发生跳转，而地址 0x10A 处的第二条直接条件分支发生跳转。
+* 应生成 *I-CNT=7* 的 <<msg_DirectBranch,DirectBranch>> 消息。这意味着执行了来自 <0x100..0x10D> 的代码块（因为 0xE=2*7），并且该块末尾的直接条件分支发生了跳转。解码器将从地址 0x10A 处直接条件分支的操作码得知 PC=0x300。
+* 下一条消息应为 *I-CNT=2* 的 <<msg_ProgTraceCorrelation,ProgTraceCorrelation>>，描述直到 *C.EBREAK* 指令的 <0x300..0x303> 范围。
+. 地址 0x102 和 0x10A 处的两条直接条件分支均未发生跳转。
+* 在这种情况下，只应生成 *I-CNT=10* 的 <<msg_ProgTraceCorrelation,ProgTraceCorrelation>>。它描述直到 *C.EBREAK* 指令的 <0x100..0x113> 范围（因为 0x14=10*2）。'''

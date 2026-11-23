@@ -1,0 +1,15 @@
+unit_id = "b6c681057f7a0f0beeaf37f7782ef312"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Such jump targets are classified as _sequentially inferable_ if the pair
+of instructions are retired consecutively (i.e. the *_auipc_*, *_lui_*
+or *_c.lui_* immediately precedes the jump). Note: the restriction that
+the instructions are retired consecutively is necessary in order to
+minimize the additional signalling needed between the hart and the
+encoder, and should have a minimal impact on trace efficiency as it is
+anticipated that consecutive execution will be the norm. Support for
+sequentially inferable jumps is optional.'''
+zh = '''
+若这一对指令连续退休（即 *_auipc_*、*_lui_* 或 *_c.lui_* 紧接在跳转之前），则此类跳转目标被分类为 _顺序可推断_。注：要求指令连续退休是为了最小化硬件线程与编码器之间所需的附加信号，并且宜对跟踪效率产生最小影响，因为预计连续执行将是常态。对顺序可推断跳转的支持是可选的。'''

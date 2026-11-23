@@ -1,0 +1,14 @@
+unit_id = "84f125fe03c6cfa1a87b0d1bc58d8963"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The immediate forms of insn:vmslt.vi[] and insn:vmsltu.vi[] are not provided as the
+immediate value can be decreased by 1 and the insn:vmsle.vi[] and insn:vmsleu.vi[] variants
+used instead.  The insn:vmsle.vi[] range is -16 to 15, resulting in an
+effective insn:vmslt.vi[] range of -15 to 16.  The insn:vmsleu.vi[] range is 0
+to 15 giving an effective insn:vmsltu.vi[] range of 1 to 16 (Note,
+insn:vmsltu.vi[] with immediate 0 is not useful as it is always
+false).'''
+zh = '''
+NOTE: 未提供 insn:vmslt.vi[] 和 insn:vmsltu.vi[] 的立即数形式，因为可将立即数值减 1 并改用 insn:vmsle.vi[] 和 insn:vmsleu.vi[] 变体。insn:vmsle.vi[] 范围为 -16 到 15，从而有效 insn:vmslt.vi[] 范围为 -15 到 16。insn:vmsleu.vi[] 范围为 0 到 15，给出有效 insn:vmsltu.vi[] 范围为 1 到 16（注意，立即数为 0 的 insn:vmsltu.vi[] 无用，因为它始终为假）。'''

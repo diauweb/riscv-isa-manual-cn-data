@@ -1,0 +1,13 @@
+unit_id = "c3891b5a313e8451cf22ab66556886f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Debuggers won't be aware if an instruction has been partially executed.
+When they resume execution, they will execute the same instruction once
+more. Therefore, it's crucial that partially executing the instruction
+and then executing it again leaves the hart in a state closely
+resembling the state it would have been in if the instruction had only
+been executed once.'''
+zh = '''
+调试器不会察觉指令是否已被部分执行。当它们恢复执行时，将再次执行同一条指令。因此，部分执行该指令然后再次执行它，使硬件线程留下的状态必须非常接近该指令仅执行一次时的状态，这一点至关重要。'''

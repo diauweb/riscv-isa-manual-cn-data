@@ -1,0 +1,10 @@
+unit_id = "39db12252ec416a4a23996779ac4e40f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:ssccfg_hyp_m_s_vsireg_illegal]#An attempt to access any `vsireg*` from M or S mode raises an illegal-instruction exception.#
+* [#norm:ssccfg_hyp_vs_access_sireg_conditional]#An attempt from VS-mode to access any `sireg*` (really `vsireg*`) raises an illegal-instruction exception if `menvcfg`.CDE = 0, or a virtual-instruction exception if `menvcfg`.CDE = 1.#'''
+zh = '''
+* [#norm:ssccfg_hyp_m_s_vsireg_illegal]##从 M 或 S 模式访问任何 `vsireg*` 的尝试触发非法指令异常。##
+* [#norm:ssccfg_hyp_vs_access_sireg_conditional]##从 VS 模式访问任何 `sireg*`（实际上是 `vsireg*`）的尝试，若 `menvcfg`.CDE = 0 则触发非法指令异常，若 `menvcfg`.CDE = 1 则触发虚拟指令异常。##'''

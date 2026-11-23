@@ -1,0 +1,25 @@
+unit_id = "ffc977d3863fb67b1350e5fc2c70fbe1"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* An invalidate operation makes data from store operations performed by a set of
+  non-coherent agents visible to the set of coherent agents at a point common to
+  both sets by deallocating all copies of a cache block from the set of coherent
+  caches up to that point
+
+* A clean operation makes data from store operations performed by the set of
+  coherent agents visible to a set of non-coherent agents at a point common to
+  both sets by performing a write transfer of a copy of a cache block to that
+  point provided a coherent agent performed a store operation that modified the
+  data in the cache block since the previous invalidate, clean, or flush
+  operation on the cache block
+
+* A flush operation atomically performs a clean operation followed by an
+  invalidate operation'''
+zh = '''
+* 使无效操作通过解除分配一致高速缓存集合中截止到两个集合共有点处某缓存块的所有副本，使来自一组非一致代理所执行存储操作的数据在该共有点处对一致代理集合可见
+
+* 清洁操作通过在一致代理自上次对该缓存块执行使无效、清洁或冲刷操作以来已执行修改该缓存块中数据的存储操作的条件下，将该缓存块副本写传输到该共有点，使来自一致代理集合所执行存储操作的数据在该共有点处对一组非一致代理可见
+
+* 冲刷操作以原子方式执行清洁操作，随后执行使无效操作'''

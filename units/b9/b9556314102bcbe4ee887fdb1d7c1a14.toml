@@ -1,0 +1,804 @@
+unit_id = "b9556314102bcbe4ee887fdb1d7c1a14"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%header,cols="^3,^3,10,16,^2,^2,^2,^2"]
+|====
+|RV32
+|RV64
+|Mnemonic
+|Instruction
+|Zba
+|Zbb
+|Zbc
+|Zbs
+
+|
+|{check}
+|add.uw _rd_, _rs1_, _rs2_
+|<<#insns-add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|andn _rd_, _rs1_, _rs2_
+|<<#insns-andn>>
+|
+|{check}
+|
+|
+
+
+|{check}
+|{check}
+|clmul _rd_, _rs1_, _rs2_
+|<<#insns-clmul>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clmulh _rd_, _rs1_, _rs2_
+|<<#insns-clmulh>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clmulr _rd_, _rs1_, _rs2_
+|<<#insns-clmulr>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clz _rd_, _rs_
+|<<#insns-clz>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|clzw _rd_, _rs_
+|<<#insns-clzw>>
+|
+|{check}
+|
+|
+|{check}
+|{check}
+|cpop _rd_, _rs_
+|<<#insns-cpop>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|cpopw _rd_, _rs_
+|<<#insns-cpopw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|ctz _rd_, _rs_
+|<<#insns-ctz>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|ctzw _rd_, _rs_
+|<<#insns-ctzw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|max _rd_, _rs1_, _rs2_
+|<<#insns-max>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|maxu _rd_, _rs1_, _rs2_
+|<<#insns-maxu>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|min _rd_, _rs1_, _rs2_
+|<<#insns-min>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|minu _rd_, _rs1_, _rs2_
+|<<#insns-minu>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|orc.b _rd_, _rs_
+|<<#insns-orc_b>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|orn _rd_, _rs1_, _rs2_
+|<<#insns-orn>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rev8 _rd_, _rs_
+|<<#insns-rev8>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rol _rd_, _rs1_, _rs2_
+|<<#insns-rol>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|rolw _rd_, _rs1_, _rs2_
+|<<#insns-rolw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|ror _rd_, _rs1_, _rs2_
+|<<#insns-ror>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rori _rd_, _rs1_, _shamt_
+|<<#insns-rori>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|roriw _rd_, _rs1_, _shamt_
+|<<#insns-roriw>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|rorw _rd_, _rs1_, _rs2_
+|<<#insns-rorw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|bclr _rd_, _rs1_, _rs2_
+|<<#insns-bclr>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bclri _rd_, _rs1_, _imm_
+|<<#insns-bclri>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bext _rd_, _rs1_, _rs2_
+|<<#insns-bext>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bexti _rd_, _rs1_, _imm_
+|<<#insns-bexti>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|binv _rd_, _rs1_, _rs2_
+|<<#insns-binv>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|binvi _rd_, _rs1_, _imm_
+|<<#insns-binvi>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bset _rd_, _rs1_, _rs2_
+|<<#insns-bset>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bseti _rd_, _rs1_, _imm_
+|<<#insns-bseti>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|sext.b _rd_, _rs_
+|<<#insns-sext_b>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|sext.h _rd_, _rs_
+|<<#insns-sext_h>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|sh1add _rd_, _rs1_, _rs2_
+|<<#insns-sh1add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh1add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh1add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|sh2add _rd_, _rs1_, _rs2_
+|<<#insns-sh2add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh2add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh2add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|sh3add _rd_, _rs1_, _rs2_
+|<<#insns-sh3add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh3add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh3add_uw>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|slli.uw _rd_, _rs1_, _imm_
+|<<#insns-slli_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|xnor _rd_, _rs1_, _rs2_
+|<<#insns-xnor>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|zext.h _rd_, _rs_
+|<<#insns-zext_h>>
+|
+|{check}
+|
+|
+
+|===='''
+zh = '''
+[%header,cols="^3,^3,10,16,^2,^2,^2,^2"]
+|====
+|RV32
+|RV64
+|助记符
+|指令
+|Zba
+|Zbb
+|Zbc
+|Zbs
+
+|
+|{check}
+|add.uw _rd_, _rs1_, _rs2_
+|<<#insns-add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|andn _rd_, _rs1_, _rs2_
+|<<#insns-andn>>
+|
+|{check}
+|
+|
+
+
+|{check}
+|{check}
+|clmul _rd_, _rs1_, _rs2_
+|<<#insns-clmul>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clmulh _rd_, _rs1_, _rs2_
+|<<#insns-clmulh>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clmulr _rd_, _rs1_, _rs2_
+|<<#insns-clmulr>>
+|
+|
+|{check}
+|
+
+|{check}
+|{check}
+|clz _rd_, _rs_
+|<<#insns-clz>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|clzw _rd_, _rs_
+|<<#insns-clzw>>
+|
+|{check}
+|
+|
+|{check}
+|{check}
+|cpop _rd_, _rs_
+|<<#insns-cpop>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|cpopw _rd_, _rs_
+|<<#insns-cpopw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|ctz _rd_, _rs_
+|<<#insns-ctz>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|ctzw _rd_, _rs_
+|<<#insns-ctzw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|max _rd_, _rs1_, _rs2_
+|<<#insns-max>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|maxu _rd_, _rs1_, _rs2_
+|<<#insns-maxu>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|min _rd_, _rs1_, _rs2_
+|<<#insns-min>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|minu _rd_, _rs1_, _rs2_
+|<<#insns-minu>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|orc.b _rd_, _rs_
+|<<#insns-orc_b>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|orn _rd_, _rs1_, _rs2_
+|<<#insns-orn>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rev8 _rd_, _rs_
+|<<#insns-rev8>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rol _rd_, _rs1_, _rs2_
+|<<#insns-rol>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|rolw _rd_, _rs1_, _rs2_
+|<<#insns-rolw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|ror _rd_, _rs1_, _rs2_
+|<<#insns-ror>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|rori _rd_, _rs1_, _shamt_
+|<<#insns-rori>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|roriw _rd_, _rs1_, _shamt_
+|<<#insns-roriw>>
+|
+|{check}
+|
+|
+
+|
+|{check}
+|rorw _rd_, _rs1_, _rs2_
+|<<#insns-rorw>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|bclr _rd_, _rs1_, _rs2_
+|<<#insns-bclr>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bclri _rd_, _rs1_, _imm_
+|<<#insns-bclri>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bext _rd_, _rs1_, _rs2_
+|<<#insns-bext>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bexti _rd_, _rs1_, _imm_
+|<<#insns-bexti>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|binv _rd_, _rs1_, _rs2_
+|<<#insns-binv>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|binvi _rd_, _rs1_, _imm_
+|<<#insns-binvi>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bset _rd_, _rs1_, _rs2_
+|<<#insns-bset>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|bseti _rd_, _rs1_, _imm_
+|<<#insns-bseti>>
+|
+|
+|
+|{check}
+
+|{check}
+|{check}
+|sext.b _rd_, _rs_
+|<<#insns-sext_b>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|sext.h _rd_, _rs_
+|<<#insns-sext_h>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|sh1add _rd_, _rs1_, _rs2_
+|<<#insns-sh1add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh1add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh1add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|sh2add _rd_, _rs1_, _rs2_
+|<<#insns-sh2add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh2add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh2add_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|sh3add _rd_, _rs1_, _rs2_
+|<<#insns-sh3add>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|sh3add.uw _rd_, _rs1_, _rs2_
+|<<#insns-sh3add_uw>>
+|{check}
+|
+|
+|
+
+|
+|{check}
+|slli.uw _rd_, _rs1_, _imm_
+|<<#insns-slli_uw>>
+|{check}
+|
+|
+|
+
+|{check}
+|{check}
+|xnor _rd_, _rs1_, _rs2_
+|<<#insns-xnor>>
+|
+|{check}
+|
+|
+
+|{check}
+|{check}
+|zext.h _rd_, _rs_
+|<<#insns-zext_h>>
+|
+|{check}
+|
+|
+
+|===='''

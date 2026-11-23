@@ -1,0 +1,15 @@
+unit_id = "5be56f82acaf8f02ddd3764662b790f9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-subw_op]#`C.SUBW` is an XLEN=64-only instruction that subtracts the value in
+register _rs2′_ from the value in register
+_rd′_, then sign-extends the lower 32 bits of the
+difference before writing the result to register _rd′_.
+`C.SUBW` expands into `subw rd′, rd′, rs2′`.#'''
+zh = '''
+[#norm:c-subw_op]#`C.SUBW` 是仅用于 XLEN=64 的指令，它从寄存器
+_rd′_ 中的值减去寄存器 _rs2′_ 中的值，
+然后将差的低 32 位符号扩展后再写入寄存器 _rd′_。
+`C.SUBW` 展开为 `subw rd′, rd′, rs2′`。#'''

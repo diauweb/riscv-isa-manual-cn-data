@@ -1,0 +1,104 @@
+unit_id = "7e8097751541596ed4b2620a3b108f2e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Allocation of RISC-V CSR address ranges.
+[%autowidth,float="center",align="center",cols="^,^,^,^,<,<,<,<"]
+[.monofont]
+|===
+3+^|CSR Address 2.2+|Hex 3.2+|Use and Accessibility
+|[11:10] |[9:8] |[7:4]
+8+|Unprivileged and User-Level CSRs
+m|`00` m|`00` m|`XXXX` 2+m| `0x000`{endash}``0x0FF`` 3+|Standard read/write
+|`01` |`00` |`XXXX` 2+| `0x400`{endash}``0x4FF`` 3+|Standard read/write
+|`10` |`00` |`XXXX` 2+| `0x800`{endash}``0x8FF`` 3+|Custom read/write
+|`11` |`00` |`0XXX` 2+| `0xC00`{endash}``0xC7F`` 3+|Standard read-only
+|`11` |`00` |`10XX` 2+| `0xC80`{endash}``0xCBF`` 3+|Standard read-only
+|`11` |`00` |`11XX` 2+| `0xCC0`{endash}``0xCFF`` 3+|Custom read-only
+8+|Supervisor-Level CSRs
+|`00` |`01` |`XXXX` 2+| `0x100`{endash}``0x1FF`` 3+|Standard read/write
+|`01` |`01` |`0XXX` 2+| `0x500`{endash}``0x57F`` 3+|Standard read/write
+|`01` |`01` |`10XX` 2+| `0x580`{endash}``0x5BF`` 3+|Standard read/write
+|`01` |`01` |`11XX` 2+| `0x5C0`{endash}``0x5FF`` 3+|Custom read/write
+|`10` |`01` |`0XXX` 2+| `0x900`{endash}``0x97F`` 3+|Standard read/write
+|`10` |`01` |`10XX` 2+| `0x980`{endash}``0x9BF`` 3+|Standard read/write
+|`10` |`01` |`11XX` 2+| `0x9C0`{endash}``0x9FF`` 3+|Custom read/write
+|`11` |`01` |`0XXX` 2+| `0xD00`{endash}``0xD7F`` 3+|Standard read-only
+|`11` |`01` |`10XX` 2+| `0xD80`{endash}``0xDBF`` 3+|Standard read-only
+|`11` |`01` |`11XX` 2+| `0xDC0`{endash}``0xDFF`` 3+|Custom read-only
+8+|Hypervisor and VS CSRs
+|`00` |`10` |`XXXX` 2+| `0x200`{endash}``0x2FF`` 3+|Standard read/write
+|`01` |`10` |`0XXX` 2+| `0x600`{endash}``0x67F`` 3+|Standard read/write
+|`01` |`10` |`10XX` 2+| `0x680`{endash}``0x6BF`` 3+|Standard read/write
+|`01` |`10` |`11XX` 2+| `0x6C0`{endash}``0x6FF`` 3+|Custom read/write
+|`10` |`10` |`0XXX` 2+| `0xA00`{endash}``0xA7F`` 3+|Standard read/write
+|`10` |`10` |`10XX` 2+| `0xA80`{endash}``0xABF`` 3+|Standard read/write
+|`10` |`10` |`11XX` 2+| `0xAC0`{endash}``0xAFF`` 3+|Custom read/write
+|`11` |`10` |`0XXX` 2+| `0xE00`{endash}``0xE7F`` 3+|Standard read-only
+|`11` |`10` |`10XX` 2+| `0xE80`{endash}``0xEBF`` 3+|Standard read-only
+|`11` |`10` |`11XX` 2+| `0xEC0`{endash}``0xEFF`` 3+|Custom read-only
+8+|Machine-Level CSRs
+|`00` |`11` |`XXXX` 2+|`0x300`{endash}``0x3FF`` 3+|Standard read/write
+|`01` |`11` |`0XXX` 2+|`0x700`{endash}``0x77F`` 3+|Standard read/write
+|`01` |`11` |`100X` 2+|`0x780`{endash}``0x79F`` 3+|Standard read/write
+|`01` |`11` |`1010` 2+|`0x7A0`{endash}``0x7AF`` 3+|Standard read/write debug CSRs
+|`01` |`11` |`1011` 2+|`0x7B0`{endash}``0x7BF`` 3+|Debug-mode-only CSRs
+|`01` |`11` |`11XX` 2+|`0x7C0`{endash}``0x7FF`` 3+|Custom read/write
+|`10` |`11` |`0XXX` 2+|`0xB00`{endash}``0xB7F`` 3+|Standard read/write
+|`10` |`11` |`10XX` 2+|`0xB80`{endash}``0xBBF`` 3+|Standard read/write
+|`10` |`11` |`11XX` 2+|`0xBC0`{endash}``0xBFF`` 3+|Custom read/write
+|`11` |`11` |`0XXX` 2+|`0xF00`{endash}``0xF7F`` 3+|Standard read-only
+|`11` |`11` |`10XX` 2+|`0xF80`{endash}``0xFBF`` 3+|Standard read-only
+|`11` |`11` |`11XX` 2+|`0xFC0`{endash}``0xFFF`` 3+|Custom read-only
+|==='''
+zh = '''
+.RISC-V CSR 地址范围的分配。
+[%autowidth,float="center",align="center",cols="^,^,^,^,<,<,<,<"]
+[.monofont]
+|===
+3+^|CSR 地址 2.2+|十六进制 3.2+|用途与可访问性
+|[11:10] |[9:8] |[7:4]
+8+|非特权与用户级 CSR
+m|`00` m|`00` m|`XXXX` 2+m| `0x000`{endash}``0x0FF`` 3+|标准读写
+|`01` |`00` |`XXXX` 2+| `0x400`{endash}``0x4FF`` 3+|标准读写
+|`10` |`00` |`XXXX` 2+| `0x800`{endash}``0x8FF`` 3+|自定义读写
+|`11` |`00` |`0XXX` 2+| `0xC00`{endash}``0xC7F`` 3+|标准只读
+|`11` |`00` |`10XX` 2+| `0xC80`{endash}``0xCBF`` 3+|标准只读
+|`11` |`00` |`11XX` 2+| `0xCC0`{endash}``0xCFF`` 3+|自定义只读
+8+|监管级 CSR
+|`00` |`01` |`XXXX` 2+| `0x100`{endash}``0x1FF`` 3+|标准读写
+|`01` |`01` |`0XXX` 2+| `0x500`{endash}``0x57F`` 3+|标准读写
+|`01` |`01` |`10XX` 2+| `0x580`{endash}``0x5BF`` 3+|标准读写
+|`01` |`01` |`11XX` 2+| `0x5C0`{endash}``0x5FF`` 3+|自定义读写
+|`10` |`01` |`0XXX` 2+| `0x900`{endash}``0x97F`` 3+|标准读写
+|`10` |`01` |`10XX` 2+| `0x980`{endash}``0x9BF`` 3+|标准读写
+|`10` |`01` |`11XX` 2+| `0x9C0`{endash}``0x9FF`` 3+|自定义读写
+|`11` |`01` |`0XXX` 2+| `0xD00`{endash}``0xD7F`` 3+|标准只读
+|`11` |`01` |`10XX` 2+| `0xD80`{endash}``0xDBF`` 3+|标准只读
+|`11` |`01` |`11XX` 2+| `0xDC0`{endash}``0xDFF`` 3+|自定义只读
+8+|虚拟机监控器与 VS CSR
+|`00` |`10` |`XXXX` 2+| `0x200`{endash}``0x2FF`` 3+|标准读写
+|`01` |`10` |`0XXX` 2+| `0x600`{endash}``0x67F`` 3+|标准读写
+|`01` |`10` |`10XX` 2+| `0x680`{endash}``0x6BF`` 3+|标准读写
+|`01` |`10` |`11XX` 2+| `0x6C0`{endash}``0x6FF`` 3+|自定义读写
+|`10` |`10` |`0XXX` 2+| `0xA00`{endash}``0xA7F`` 3+|标准读写
+|`10` |`10` |`10XX` 2+| `0xA80`{endash}``0xABF`` 3+|标准读写
+|`10` |`10` |`11XX` 2+| `0xAC0`{endash}``0xAFF`` 3+|自定义读写
+|`11` |`10` |`0XXX` 2+| `0xE00`{endash}``0xE7F`` 3+|标准只读
+|`11` |`10` |`10XX` 2+| `0xE80`{endash}``0xEBF`` 3+|标准只读
+|`11` |`10` |`11XX` 2+| `0xEC0`{endash}``0xEFF`` 3+|自定义只读
+8+|机器级 CSR
+|`00` |`11` |`XXXX` 2+|`0x300`{endash}``0x3FF`` 3+|标准读写
+|`01` |`11` |`0XXX` 2+|`0x700`{endash}``0x77F`` 3+|标准读写
+|`01` |`11` |`100X` 2+|`0x780`{endash}``0x79F`` 3+|标准读写
+|`01` |`11` |`1010` 2+|`0x7A0`{endash}``0x7AF`` 3+|标准读写调试 CSR
+|`01` |`11` |`1011` 2+|`0x7B0`{endash}``0x7BF`` 3+|仅调试模式 CSR
+|`01` |`11` |`11XX` 2+|`0x7C0`{endash}``0x7FF`` 3+|自定义读写
+|`10` |`11` |`0XXX` 2+|`0xB00`{endash}``0xB7F`` 3+|标准读写
+|`10` |`11` |`10XX` 2+|`0xB80`{endash}``0xBBF`` 3+|标准读写
+|`10` |`11` |`11XX` 2+|`0xBC0`{endash}``0xBFF`` 3+|自定义读写
+|`11` |`11` |`0XXX` 2+|`0xF00`{endash}``0xF7F`` 3+|标准只读
+|`11` |`11` |`10XX` 2+|`0xF80`{endash}``0xFBF`` 3+|标准只读
+|`11` |`11` |`11XX` 2+|`0xFC0`{endash}``0xFFF`` 3+|自定义只读
+|==='''

@@ -1,0 +1,12 @@
+unit_id = "e6eb8ecb38f9cd1e892f3b7d21127d10"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The shadow stack, similar to the regular stack, grows downwards, from
+higher addresses to lower addresses. Each entry on the shadow stack is `XLEN`
+wide and holds the link register value. The csr:ssp[] points to the top of the
+shadow stack, which is the address of the last element stored on the shadow
+stack.'''
+zh = '''
+影子栈与常规栈类似，向下增长，即从较高地址向较低地址增长。影子栈上的每个表项为 `XLEN` 宽，保存链接寄存器值。csr:ssp[] 指向影子栈的栈顶，即存储在影子栈上的最后一个元素的地址。'''

@@ -1,0 +1,106 @@
+unit_id = "fc777410ee8017edb831199aecafde37"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Currently allocated RISC-V unprivileged CSR addresses
+[float="center",align="center",cols="<10%,<10%,<20%,<60%",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Unprivileged Floating-Point CSRs
+
+|`0x001` |URW |csr:fflags[] |Floating-Point Accrued Exceptions
+|`0x002` |URW |csr:frm[]    |Floating-Point Dynamic Rounding Mode
+|`0x003` |URW |csr:fcsr[]   |Floating-Point Control and Status Register (csr:frm[] + csr:fflags[])
+
+4+^|Unprivileged Vector CSRs
+
+|`0x008` |URW |csr:vstart[] |Vector start position
+|`0x009` |URW |csr:vxsat[]  |Fixed-point accrued saturation flag
+|`0x00A` |URW |csr:vxrm[]   |Fixed-point rounding mode
+|`0x00F` |URW |csr:vcsr[]   |Vector control and status register
+|`0xC20` |URO |csr:vl[]     |Vector length
+|`0xC21` |URO |csr:vtype[]  |Vector data type register
+|`0xC22` |URO |csr:vlenb[]  |Vector register length in bytes
+
+4+^|Unprivileged ext:zicfiss[] Extension CSR
+
+|`0x011` |URW |csr:ssp[] |Shadow Stack Pointer
+
+4+^|Unprivileged ext:zkr[] Extension CSR
+
+|`0x015` |URW |csr:seed[] |Seed for cryptographic random bit generators
+
+4+^|Unprivileged ext:zcmt[] Extension CSR
+
+|`0x017` |URW |csr:jvt[] |Table jump base vector and control register
+
+4+^|Unprivileged Counter/Timers
+
+|`0xC00` |URO |csr:cycle[]         |Cycle counter for insn:rdcycle[] instruction
+|`0xC01` |URO |csr:time[]          |Timer for insn:rdtime[] instruction
+|`0xC02` |URO |csr:instret[]       |Instructions-retired counter for insn:rdinstret[] instruction
+|`0xC03` |URO |csr:hpmcounter3[]   |Performance-monitoring counter
+|`0xC04` |URO |csr:hpmcounter4[]   |Performance-monitoring counter
+|        |    |{vertical-ellipsis} |
+|`0xC1F` |URO |csr:hpmcounter31[]  |Performance-monitoring counter
+|`0xC80` |URO |csr:cycleh[]        |Upper qty:32[bits] of csr:cycle[], RV32 only
+|`0xC81` |URO |csr:timeh[]         |Upper qty:32[bits] of csr:time[], RV32 only
+|`0xC82` |URO |csr:instreth[]      |Upper qty:32[bits] of csr:instret[], RV32 only
+|`0xC83` |URO |csr:hpmcounter3h[]  |Upper qty:32[bits] of csr:hpmcounter3[], RV32 only
+|`0xC84` |URO |csr:hpmcounter4h[]  |Upper qty:32[bits] of csr:hpmcounter4[], RV32 only
+|        |    |{vertical-ellipsis} |
+|`0xC9F` |URO |csr:hpmcounter31h[] |Upper qty:32[bits] of csr:hpmcounter31[], RV32 only
+
+|==='''
+zh = '''
+.当前已分配的 RISC-V 非特权 CSR 地址
+[float="center",align="center",cols="<10%,<10%,<20%,<60%",options="header"]
+|===
+|编号 |权限 |名称 |描述
+4+^|非特权浮点 CSR
+
+|`0x001` |URW |csr:fflags[] |浮点已产生的异常
+|`0x002` |URW |csr:frm[]    |浮点动态舍入模式
+|`0x003` |URW |csr:fcsr[]   |浮点控制与状态寄存器（csr:frm[] + csr:fflags[]）
+
+4+^|非特权向量 CSR
+
+|`0x008` |URW |csr:vstart[] |向量起始位置
+|`0x009` |URW |csr:vxsat[]  |定点已产生的饱和标志
+|`0x00A` |URW |csr:vxrm[]   |定点舍入模式
+|`0x00F` |URW |csr:vcsr[]   |向量控制与状态寄存器
+|`0xC20` |URO |csr:vl[]     |向量长度
+|`0xC21` |URO |csr:vtype[]  |向量数据类型寄存器
+|`0xC22` |URO |csr:vlenb[]  |向量寄存器长度（以字节计）
+
+4+^|非特权 ext:zicfiss[] 扩展 CSR
+
+|`0x011` |URW |csr:ssp[] |影子栈指针
+
+4+^|非特权 ext:zkr[] 扩展 CSR
+
+|`0x015` |URW |csr:seed[] |密码随机位生成器的种子
+
+4+^|非特权 ext:zcmt[] 扩展 CSR
+
+|`0x017` |URW |csr:jvt[] |表跳转基址向量与控制寄存器
+
+4+^|非特权计数器/定时器
+
+|`0xC00` |URO |csr:cycle[]         |insn:rdcycle[] 指令的周期计数器
+|`0xC01` |URO |csr:time[]          |insn:rdtime[] 指令的定时器
+|`0xC02` |URO |csr:instret[]       |insn:rdinstret[] 指令的已退休指令计数器
+|`0xC03` |URO |csr:hpmcounter3[]   |性能监控计数器
+|`0xC04` |URO |csr:hpmcounter4[]   |性能监控计数器
+|        |    |{vertical-ellipsis} |
+|`0xC1F` |URO |csr:hpmcounter31[]  |性能监控计数器
+|`0xC80` |URO |csr:cycleh[]        |csr:cycle[] 的高 qty:32[bits]，仅 RV32
+|`0xC81` |URO |csr:timeh[]         |csr:time[] 的高 qty:32[bits]，仅 RV32
+|`0xC82` |URO |csr:instreth[]      |csr:instret[] 的高 qty:32[bits]，仅 RV32
+|`0xC83` |URO |csr:hpmcounter3h[]  |csr:hpmcounter3[] 的高 qty:32[bits]，仅 RV32
+|`0xC84` |URO |csr:hpmcounter4h[]  |csr:hpmcounter4[] 的高 qty:32[bits]，仅 RV32
+|        |    |{vertical-ellipsis} |
+|`0xC9F` |URO |csr:hpmcounter31h[] |csr:hpmcounter31[] 的高 qty:32[bits]，仅 RV32
+
+|==='''

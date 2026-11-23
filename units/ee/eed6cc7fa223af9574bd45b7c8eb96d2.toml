@@ -1,0 +1,116 @@
+unit_id = "eed6cc7fa223af9574bd45b7c8eb96d2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+[[transitions]]
+==== Transitions
+
+Each of the paragraphs below describes a single kind of system
+transition. The description starts with a condition over the current
+system state. The transition can be taken in the current state only if
+the condition is satisfied. The condition is followed by an action that
+is applied to that state when the transition is taken, in order to
+generate the new system state.
+
+[[fetch]]
+===== Fetch instruction
+
+A possible program-order-successor of instruction instance
+latexmath:[$i$] can be fetched from address _loc_ if:
+
+. it has not already been fetched, i.e., none of the immediate
+successors of latexmath:[$i$] in the hart’s _instruction_tree_ are from
+_loc_; and
+. if latexmath:[$i$]’s pseudocode has already written an address to
+_pc_, then _loc_ must be that address, otherwise _loc_ is:
+* for a conditional branch, the successor address or the branch target
+address;
+* for a (direct) jump and link instruction (`jal`), the target address;
+* for an indirect jump instruction (`jalr`), any address; and
+* for any other instruction, latexmath:[$i.\textit{program\_loc}+4$].
+
+Action: construct a freshly initialized instruction instance
+latexmath:[$i'$] for the instruction in the program memory at _loc_,
+with state Plain(_isa_state_), computed from the instruction pseudocode,
+including the static information available from the pseudocode such as
+its _instruction_kind_, _src_regs_, and _dst_regs_, and add
+latexmath:[$i'$] to the hart’s _instruction_tree_ as a successor of
+latexmath:[$i$].
+
+The possible next fetch addresses (_loc_) are available immediately
+after fetching latexmath:[$i$] and the model does not need to wait for
+the pseudocode to write to _pc_; this allows out-of-order execution, and
+speculation past conditional branches and jumps. For most instructions
+these addresses are easily obtained from the instruction pseudocode. The
+only exception to that is the indirect jump instruction (`jalr`), where
+the address depends on the value held in a register. In principle the
+mathematical model should allow speculation to arbitrary addresses here.
+The exhaustive search in the `rmem` tool handles this by running the
+exhaustive search multiple times with a growing set of possible next
+fetch addresses for each indirect jump. The initial search uses empty
+sets, hence there is no fetch after indirect jump instruction until the
+pseudocode of the instruction writes to _pc_, and then we use that value
+for fetching the next instruction. Before starting the next iteration of
+exhaustive search, we collect for each indirect jump (grouped by code
+location) the set of values it wrote to _pc_ in all the executions in
+the previous search iteration, and use that as possible next fetch
+addresses of the instruction. This process terminates when no new fetch
+addresses are detected.
+
+[[initiate_load]]
+===== Initiate memory load operations
+
+An instruction instance latexmath:[$i$] in state Plain(Load_mem(_kind_,
+_address_, _size_, _load_continuation_)) can always initiate the
+corresponding memory load operations. Action:
+
+. Construct the appropriate memory load operations latexmath:[$mlos$]:
+* if _address_ is aligned to _size_ then latexmath:[$mlos$] is a single
+memory load operation of _size_ bytes from _address_;
+* otherwise, latexmath:[$mlos$] is a set of _size_ memory load
+operations, each of one byte, from the addresses
+latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$].
+. set _mem_loads_ of latexmath:[$i$] to latexmath:[$mlos$]; and
+. update the state of latexmath:[$i$] to
+Pending_mem_loads(_load_continuation_).
+[NOTE]
+===='''
+zh = '''
+====
+
+[[transitions]]
+==== 转移
+
+以下各段描述单一类型的系统转移。描述从对当前系统状态的条件开始。只有条件满足时，才能在当前状态中采取该转移。条件之后是当采取该转移时对该状态施加的动作，以生成新的系统状态。
+
+[[fetch]]
+===== 取指令
+
+指令实例 latexmath:[$i$] 的一个可能的程序顺序后继可从地址 _loc_ 取指，如果：
+
+. 它尚未被取指，即该硬件线程的 _instruction_tree_ 中 latexmath:[$i$] 的直接后继都不是来自 _loc_；且
+. 若 latexmath:[$i$] 的伪代码已向 _pc_ 写入地址，则 _loc_ 必须是该地址，否则 _loc_ 为：
+* 对于条件分支，为后继地址或分支目标地址；
+* 对于（直接）跳转并链接指令（`jal`），为目标地址；
+* 对于间接跳转指令（`jalr`），为任意地址；且
+* 对于任何其他指令，为 latexmath:[$i.\textit{program\_loc}+4$]。
+
+动作：为 _loc_ 处程序内存中的指令构造一个新初始化的指令实例 latexmath:[$i'$]，其状态为 Plain(_isa_state_)，由该指令伪代码计算得出，包括伪代码中可用的静态信息（如 _instruction_kind_、_src_regs_ 和 _dst_regs_），并将 latexmath:[$i'$] 作为 latexmath:[$i$] 的后继添加到该硬件线程的 _instruction_tree_ 中。
+
+可能的下一取指地址（_loc_）在取指 latexmath:[$i$] 之后立即可用，模型无需等待伪代码写入 _pc_；这允许乱序执行，以及在条件分支和跳转之后的推测。对大多数指令而言，这些地址可容易地从指令伪代码获得。唯一例外是间接跳转指令（`jalr`），其地址取决于寄存器中持有的值。原则上，数学模型宜允许在此推测到任意地址。`rmem` 工具中的穷举搜索通过为每个间接跳转使用不断增长的可能下一取指地址集合多次运行穷举搜索来处理这一点。初始搜索使用空集，因此在间接跳转指令的伪代码向 _pc_ 写入之前，该指令之后没有取指，然后我们使用该值取指下一条指令。在开始下一次穷举搜索迭代之前，我们针对每个间接跳转（按代码位置分组）收集其在上一次搜索迭代的所有执行中写入 _pc_ 的值的集合，并将其用作该指令可能的下一取指地址。当检测不到新的取指地址时，该过程终止。
+
+[[initiate_load]]
+===== 发起内存加载操作
+
+处于 Plain(Load_mem(_kind_, _address_, _size_, _load_continuation_)) 状态的指令实例 latexmath:[$i$] 总是可以发起相应的内存加载操作。动作：
+
+. 构造适当的内存加载操作 latexmath:[$mlos$]：
+* 若 _address_ 按 _size_ 对齐，则 latexmath:[$mlos$] 是从 _address_ 开始的 _size_ 字节的单个内存加载操作；
+* 否则，latexmath:[$mlos$] 是从地址 latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$] 开始的一组 _size_ 个内存加载操作，每个一字节。
+. 将 latexmath:[$i$] 的 _mem_loads_ 置为 latexmath:[$mlos$]；且
+. 将 latexmath:[$i$] 的状态更新为 Pending_mem_loads(_load_continuation_)。
+[NOTE]
+===='''

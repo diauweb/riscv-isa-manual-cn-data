@@ -1,0 +1,12 @@
+unit_id = "74b94f49707cf58f1192b65f1fc45167"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The prologue / epilogue reduce from 60-bytes in the original code, to 14-bytes with _-msave-restore_,
+and to 4-bytes with insn:push[] and insn:popret[].
+As well as reducing the code-size insn:push[] and insn:popret[] eliminate the branches from
+calling the millicode _save/restore_ routines and so may also perform better.'''
+zh = '''
+序言/尾声从原始代码的 60 字节缩减为使用 _-msave-restore_ 时的 14 字节，再缩减为使用 insn:push[] 和 insn:popret[] 时的 4 字节。
+除减小代码尺寸外，insn:push[] 和 insn:popret[] 还消除了调用 millicode _save/restore_ 例程产生的分支，因此性能可能也更好。'''

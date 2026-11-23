@@ -1,0 +1,8 @@
+unit_id = "7282e4f310531c8942fdbf3393e6915c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Trace encoder must implement a most significant bit detection (skipping identical 1-s or 0-s in addition to skipping identical 0-s as for any other variable size field) while sending F-ADDR/U-ADDR field. Trace decoders must do it in reverse order, which means that a sign extension (if needed) must be done after collecting the last MDO bit in an F-ADDR/U-ADDR field. Calculation of full address (as defined in <<Address Compression,Address Compression>> chapter above) must be done after sign extension of U-ADDR field.'''
+zh = '''
+跟踪编码器在发送 F-ADDR/U-ADDR 字段时必须实现最高有效位检测（除了像任何其他可变大小字段一样跳过相同 0 位外，还要跳过相同 1 位或 0 位）。跟踪解码器必须按相反顺序执行，这意味着在收集 F-ADDR/U-ADDR 字段中的最后一个 MDO 位之后，必须进行符号扩展（如果需要）。完整地址的计算（如上述 <<Address Compression,Address Compression>> 章所定义）必须在 U-ADDR 字段符号扩展之后进行。'''

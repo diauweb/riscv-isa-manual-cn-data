@@ -1,0 +1,30 @@
+unit_id = "19d6eb2ef8a4f7a3a226f56115d1850b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Maximum Field Sizes
+[cols="10%,25%,5%,~",options="header"]
+|======================================================================================================
+|Field|Symbol|Bits|Description
+|[[NTRACE_MAX_SRC]] SRC|NTRACE_MAX_SRC|12|Determined by size of Trace Control register field. Enough for 4096 (4K) trace sources.
+|[[NTRACE_MAX_ICNT]] I-CNT|NTRACE_MAX_ICNT|22|Usually a smaller value will be sufficient. An overflow bit may be used for efficient I-CNT full detection.
+|[[NTRACE_MAX_ADDR]] F-ADDR, U-ADDR|NTRACE_MAX_ADDR|63|Only 63 bits suffice as the least significant bit of an instruction address is always 0 and does not need to be reported.
+|[[NTRACE_MAX_HIST]] HIST|NTRACE_MAX_HIST|32|It includes stop-bit. This size is optimal for not wasting any bits in very often used <<msg_ResourceFull,ResourceFull>> messages.
+|[[NTRACE_MAX_TSTAMP]] TSTAMP|NTRACE_MAX_TSTAMP|64|It is certainly big enough. It corresponds to architecture defined timer and cycle count registers.
+|[[NTRACE_MAX_HREPEAT]] HREPEAT|NTRACE_MAX_HREPEAT|18|Assure some trace is periodically generated for very long loops.
+|[[NTRACE_MAX_BCNT]] B-CNT|NTRACE_MAX_BCNT|18|Assure some trace is periodically generated for very long loops.
+|======================================================================================================'''
+zh = '''
+.最大字段大小
+[cols="10%,25%,5%,~",options="header"]
+|======================================================================================================
+|字段|符号|位数|描述
+|[[NTRACE_MAX_SRC]] SRC|NTRACE_MAX_SRC|12|由跟踪控制寄存器字段的大小确定。足以支持 4096（4K）个跟踪源。
+|[[NTRACE_MAX_ICNT]] I-CNT|NTRACE_MAX_ICNT|22|通常较小的值就足够。可使用溢出位来高效检测 I-CNT 满。
+|[[NTRACE_MAX_ADDR]] F-ADDR, U-ADDR|NTRACE_MAX_ADDR|63|仅需 63 位，因为指令地址的最低有效位始终为 0，无须报告。
+|[[NTRACE_MAX_HIST]] HIST|NTRACE_MAX_HIST|32|包含停止位。该大小最适合在经常使用的 <<msg_ResourceFull,ResourceFull>> 消息中不浪费任何位。
+|[[NTRACE_MAX_TSTAMP]] TSTAMP|NTRACE_MAX_TSTAMP|64|肯定足够大。它对应于架构定义的定时器和周期计数寄存器。
+|[[NTRACE_MAX_HREPEAT]] HREPEAT|NTRACE_MAX_HREPEAT|18|确保对于非常长的循环周期性地生成一些跟踪。
+|[[NTRACE_MAX_BCNT]] B-CNT|NTRACE_MAX_BCNT|18|确保对于非常长的循环周期性地生成一些跟踪。
+|======================================================================================================'''

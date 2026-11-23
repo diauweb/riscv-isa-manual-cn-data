@@ -1,0 +1,13 @@
+unit_id = "2e7d0ba43593db77d3d0ce7c87781ba4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The LW instruction loads a 32-bit value from memory into _rd_. LH loads
+a 16-bit value from memory, then sign-extends to 32-bits before storing
+in _rd_. LHU loads a 16-bit value from memory but then zero extends to
+32-bits before storing in _rd_. LB and LBU are defined analogously for
+8-bit values. The SW, SH, and SB instructions store 32-bit, 16-bit, and
+8-bit values from the low bits of register _rs2_ to memory.'''
+zh = '''
+LW 指令从内存加载 32 位值到 _rd_。LH 从内存加载 16 位值，然后符号扩展至 32 位，再存入 _rd_。LHU 从内存加载 16 位值，但随后零扩展至 32 位，再存入 _rd_。LB 和 LBU 对 8 位值类似定义。SW、SH 和 SB 指令将寄存器 _rs2_ 低位的 32 位、16 位和 8 位值存入内存。'''

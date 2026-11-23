@@ -1,0 +1,12 @@
+unit_id = "95ef9bff648fbf331c3999a52d403994"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zicflip_lpad_enabled_instr_allowed]#When ext:zicfilp[] is enabled, insn:lpad[] is the only instruction allowed to execute when
+the `ELP` state is `LP_EXPECTED`. If ext:zicfilp[] is not enabled then the instruction
+is a no-op.# [#norm:zicflip_lpad_enabled_exception]#If ext:zicfilp[] is enabled, the insn:lpad[] instruction causes a
+software-check exception with `__x__tval` set to "landing pad fault (code=2)"# if
+any of the following conditions are true:'''
+zh = '''
+[#norm:zicflip_lpad_enabled_instr_allowed]##当启用 ext:zicfilp[] 时，在 `ELP` 状态为 `LP_EXPECTED` 时 insn:lpad[] 是唯一允许执行的指令。如果未启用 ext:zicfilp[]，则该指令为空操作。## [#norm:zicflip_lpad_enabled_exception]##如果启用了 ext:zicfilp[]，则当以下任一条件为真时，insn:lpad[] 指令触发软件检查异常，且 `__x__tval` 置为“landing pad fault (code=2)”##：'''

@@ -1,0 +1,11 @@
+unit_id = "6251d08af80de0e2db8c51d900266f53"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Ssdbltrp extension adds the double-trap-enable (`DTE`) field in `menvcfg`.
+When `menvcfg.DTE` is zero, the implementation behaves as though Ssdbltrp is not
+implemented. When Ssdbltrp is not implemented `sstatus.SDT`, `vsstatus.SDT`, and
+`henvcfg.DTE` bits are read-only zero.'''
+zh = '''
+Ssdbltrp 扩展在 `menvcfg` 中添加双陷阱使能（`DTE`）字段。当 `menvcfg.DTE` 为零时，实现的行为如同未实现 Ssdbltrp。当未实现 Ssdbltrp 时，`sstatus.SDT`、`vsstatus.SDT` 和 `henvcfg.DTE` 位为只读零。'''

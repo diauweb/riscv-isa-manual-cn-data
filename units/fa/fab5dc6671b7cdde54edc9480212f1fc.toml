@@ -1,0 +1,11 @@
+unit_id = "fab5dc6671b7cdde54edc9480212f1fc"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+  let condition = X(rs2);
+  result : xlenbits = if (condition != zeros()) then zeros()
+                                                else X(rs1);
+  X(rd) = result;
+--'''

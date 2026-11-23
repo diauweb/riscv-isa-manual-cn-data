@@ -1,0 +1,13 @@
+unit_id = "d8c230f988198a578dde5f93de32026c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Conceptually, an implementation might contain two address-translation
+caches: one that maps guest virtual addresses to guest physical
+addresses, and another that maps guest physical addresses to supervisor
+physical addresses. HFENCE.GVMA need not flush the former cache, but it
+must flush entries from the latter cache that match the HFENCE.GVMA’s
+address and VMID arguments.'''
+zh = '''
+从概念上讲，实现可能包含两个地址转换缓存：一个将客户机虚拟地址映射到客户机物理地址，另一个将客户机物理地址映射到监管者物理地址。HFENCE.GVMA 不必冲刷前者缓存，但必须从后者缓存中冲刷与 HFENCE.GVMA 的地址和 VMID 参数相匹配的项。'''

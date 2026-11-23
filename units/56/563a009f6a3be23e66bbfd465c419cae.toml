@@ -1,0 +1,18 @@
+unit_id = "563a009f6a3be23e66bbfd465c419cae"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Ssstrict definition applies to the execution environment
+claiming to be RVA23-compatible, which must have the hypervisor
+extension. That execution environment will take a contained trap to
+supervisor-mode (however that trap is implemented, including, but not
+limited to, emulation/delegation in the outer execution
+environment). Ssstrict (and all the other RVA23 mandates and options)
+do not apply to any guest VMs run by a hypervisor. An RVA23 hypervisor
+can provide guest VMs that are also RVA23-compatible but with an
+expanded set of emulated standard instructions. An RVA23 hypervisor
+can also choose to implement guest VMs that are not RVA23 compatible
+(e.g., lacking H, or only RVA20).'''
+zh = '''
+NOTE: Ssstrict 定义适用于声称兼容 RVA23 的执行环境，该执行环境应具有虚拟机监控器扩展。该执行环境将产生向监管模式的受控陷阱（无论该陷阱如何实现，包括但不限于外部执行环境中的模拟/委托）。Ssstrict（以及所有其他 RVA23 强制项和选项）不适用于虚拟机监控器运行的任何客户机 VM。RVA23 虚拟机监控器可提供同样兼容 RVA23、但具有扩展的模拟标准指令集的客户机 VM。RVA23 虚拟机监控器还可选择实现不兼容 RVA23 的客户机 VM（例如，缺少 H 扩展，或仅为 RVA20）。'''

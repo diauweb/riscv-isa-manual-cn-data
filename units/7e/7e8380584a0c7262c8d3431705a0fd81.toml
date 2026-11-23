@@ -1,0 +1,13 @@
+unit_id = "7e8380584a0c7262c8d3431705a0fd81"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If Sscofpmf is implemented, `sireg2` and `sireg5` provide access only to a
+subset of the event selector registers. Specifically, event selector bit
+62 (MINH) is read-only 0 when accessed through `sireg*`. Similarly, if
+Smcntrpmf is implemented, `sireg2` and `sireg5` provide access only to a
+subset of the counter configuration registers. Counter configuration
+register bit 62 (MINH) is read-only 0 when accessed through `sireg*`.'''
+zh = '''
+若实现了 Sscofpmf，则 `sireg2` 和 `sireg5` 仅提供对事件选择器寄存器子集的访问。具体而言，通过 `sireg*` 访问时，事件选择器位 62（MINH）为只读 0。类似地，若实现了 Smcntrpmf，则 `sireg2` 和 `sireg5` 仅提供对计数器配置寄存器子集的访问。通过 `sireg*` 访问时，计数器配置寄存器位 62（MINH）为只读 0。'''

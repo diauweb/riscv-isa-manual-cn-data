@@ -1,0 +1,15 @@
+unit_id = "57e3fed033bef5171d8fcabb7693d151"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:msip_sz_acc]#A hart's memory-mapped csr:msip[] register is a 32-bit read/write register#,
+where [#norm:msip_enc]#bits 31{endash}1 read as zero and bit 0 contains the csr::[msip] bit.#
+[#norm:msip_update_max_time]#When the memory-mapped csr:msip[] register changes, it is guaranteed to be
+reflected in csr:mip[msip] eventually, but not necessarily immediately.#
+[#norm:mip_msip_mie_msie_maybe_rdonly0]#If a system has only one hart, or
+if a platform standard supports the delivery of machine-level
+interprocessor interrupts through external interrupts (MEI) instead,
+then csr:mip[msip] and csr:mie[msie] may both be read-only zeros.#'''
+zh = '''
+[#norm:msip_sz_acc]##硬件线程的内存映射 csr:msip[] 寄存器是一个 32 位读写寄存器##，其中[#norm:msip_enc]##位 31{endash}1 读为零，位 0 包含 csr::[msip] 位。##[#norm:msip_update_max_time]##当内存映射 csr:msip[] 寄存器变化时，保证最终反映到 csr:mip[msip] 中，但不一定立即反映。##[#norm:mip_msip_mie_msie_maybe_rdonly0]##若系统只有一个硬件线程，或平台标准支持通过外部中断（MEI）递送机器级处理器间中断，则 csr:mip[msip] 和 csr:mie[msie] 可均为只读零。##'''

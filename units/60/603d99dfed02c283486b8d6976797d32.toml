@@ -1,0 +1,12 @@
+unit_id = "603d99dfed02c283486b8d6976797d32"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+However the data is compressed, upper bytes that are all the same value
+do not need to be included in the packet; the decoder can recreate the
+full-width value by sign extending from the most significant received
+bit. In cases where *data* is not the final field in the packet, the
+width of *data* is indicated by this field.'''
+zh = '''
+无论数据如何压缩，取值全部相同的上部字节无须包含在包中；解码器可通过从所接收的最高有效位进行符号扩展，重建完整宽度的值。在 *data* 不是包中最后一个字段的情况下，*data* 的宽度由该字段指示。'''

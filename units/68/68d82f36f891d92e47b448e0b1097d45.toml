@@ -1,0 +1,16 @@
+unit_id = "68d82f36f891d92e47b448e0b1097d45"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementation techniques such as speculative execution or hardware prefetching
+may cause a given cache to allocate or deallocate a copy of a cache block at any
+time, provided the corresponding physical addresses are accessible according to
+the supported access type PMA and are cacheable according to the cacheability
+PMA. Allocating a copy of a cache block results in a read transfer from another
+cache or from memory, while deallocating a copy of a cache block may result in a
+write transfer to another cache or to memory depending on whether the data in
+the copy were modified by a store operation. Additional details are discussed in
+<<#coherent-agents-caches>>.'''
+zh = '''
+诸如推测执行或硬件预取之类的实现技术可使给定高速缓存在任何时候分配或解除分配某缓存块的副本，只要相应物理地址根据所支持的访问类型 PMA 可访问，并根据可缓存性 PMA 可缓存。分配缓存块副本导致来自另一高速缓存或内存的读传输，而解除分配缓存块副本可能导致到另一高速缓存或内存的写传输，取决于该副本中的数据是否已被存储操作修改。更多细节在 <<#coherent-agents-caches>> 中讨论。'''

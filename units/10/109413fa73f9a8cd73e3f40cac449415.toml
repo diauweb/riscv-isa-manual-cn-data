@@ -1,0 +1,15 @@
+unit_id = "109413fa73f9a8cd73e3f40cac449415"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A full set of vector shift instructions are provided, including
+logical shift left (`sll`), and logical (zero-extending `srl`) and
+arithmetic (sign-extending `sra`) shift right.  The data to be shifted
+is in the vector register group specified by `vs2` and the shift
+amount value can come from a vector register group `vs1`, a scalar
+integer register `rs1`, or a zero-extended 5-bit immediate.  Only the low
+lg2(SEW) bits of the shift-amount value are used to control the shift
+amount.'''
+zh = '''
+提供完整的向量移位指令集，包括逻辑左移（`sll`），以及逻辑右移（零扩展 `srl`）和算术右移（符号扩展 `sra`）。要移位的数据位于 `vs2` 指定的向量寄存器组中，移位量值可来自向量寄存器组 `vs1`、标量整数寄存器 `rs1` 或零扩展的 5 位立即数。仅使用移位量值的最低 lg2(SEW) 位来控制移位量。'''

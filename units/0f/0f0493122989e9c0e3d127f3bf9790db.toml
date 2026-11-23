@@ -1,0 +1,18 @@
+unit_id = "0f0493122989e9c0e3d127f3bf9790db"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To return after handling a trap, there are separate trap return
+instructions per privilege level, MRET and SRET. MRET is always
+provided. SRET must be provided if supervisor mode is supported, and
+should raise an illegal-instruction exception otherwise. SRET should
+also raise an illegal-instruction exception when TSR=1 in `mstatus`, as
+described in <<virt-control>>. An __x__RET instruction
+can be executed in privilege mode _x_ or higher, where executing a
+lower-privilege __x__RET instruction will pop the relevant lower-privilege
+interrupt enable and privilege mode stack. In addition to manipulating
+the privilege stack as described in <<privstack>>,
+__x__RET sets the `pc` to the value stored in the `__x__epc` register.'''
+zh = '''
+为在处理陷阱后返回，每个特权级有单独的陷阱返回指令：MRET 和 SRET。MRET 始终提供。若支持监管模式，则应提供 SRET，且否则宜引发非法指令异常。当 `mstatus` 中 TSR=1 时，SRET 也宜引发非法指令异常，如 <<virt-control>> 所述。__x__RET 指令可在特权模式 _x_ 或更高模式下执行，其中执行较低特权的 __x__RET 指令将弹出相关的较低特权中断使能和特权模式栈。除按 <<privstack>> 所述操纵特权栈外，__x__RET 还将 `pc` 设置为 `__x__epc` 寄存器中存储的值。'''

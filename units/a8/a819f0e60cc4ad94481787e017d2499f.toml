@@ -1,0 +1,12 @@
+unit_id = "a819f0e60cc4ad94481787e017d2499f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations must only perform implicit reads of the translation data
+structures pointed to by the current contents of the `satp` register or
+a subsequent valid (V=1) translation data structure entry, and must only
+raise exceptions for implicit accesses that are generated as a result of
+instruction execution, not those that are performed speculatively.'''
+zh = '''
+实现应仅对由 `satp` 寄存器当前内容或后续有效（V=1）转换数据结构表项所指向的转换数据结构执行隐式读取，并且应仅对因指令执行而产生的隐式访问引发异常，而不对推测执行的隐式访问引发异常。'''

@@ -1,0 +1,1055 @@
+{
+  "chap_hash": "6d987cd180b4336f",
+  "id": "zf",
+  "sectname": "chapter",
+  "sectnum": "8",
+  "title_en": "Scalar Floating-Point Extensions",
+  "title_unit_id": "6a1b91d46ea796878ec87e639e5a48d3",
+  "source_path": "src/unpriv/zf.adoc",
+  "sections": [
+    {
+      "id": "zf",
+      "level": 1,
+      "sectnum": "8",
+      "title": "Scalar Floating-Point Extensions",
+      "heading_unit_id": "6a1b91d46ea796878ec87e639e5a48d3",
+      "heading_anchor_id": "zf",
+      "blocks": [
+        "5a74cebea2424d6b43def06f0a7a33c2",
+        "38fcd0423be60ef53db49f45da2cb010",
+        "c46b69247dcb13a104e3141afa3a16d5"
+      ]
+    },
+    {
+      "id": "single-float",
+      "level": 2,
+      "sectnum": "8.1",
+      "title": "\"F\" Extension for Single-Precision Floating-Point, Version 2.2",
+      "heading_unit_id": "3765a51be933635aca8681e70e289fc6",
+      "heading_anchor_id": "single-float",
+      "blocks": [
+        "9cbe9205f32328d143a6e8e8ee647d20"
+      ]
+    },
+    {
+      "id": "_f_register_state",
+      "level": 3,
+      "sectnum": "8.1.1",
+      "title": "F Register State",
+      "heading_unit_id": "ce84660ea03e7f4d6895c2e766c927cb",
+      "blocks": [
+        "d73d3a20ad0be578e291ac1213b4c3e7",
+        "5f8bb16308b45dbe8f6eee4f400d1b3d",
+        {
+          "unit_id": "7693e44112bcfaa63fd04a39db37ecd8",
+          "anchor_id": "fprs"
+        }
+      ]
+    },
+    {
+      "id": "_floating_point_control_and_status_register",
+      "level": 3,
+      "sectnum": "8.1.2",
+      "title": "Floating-Point Control and Status Register",
+      "heading_unit_id": "9001a7022c35db6539736607f2baad11",
+      "blocks": [
+        {
+          "unit_id": "b5d68a2362899cf88f4dbaeccca18b87",
+          "anchor_id": "norm:fcsr_op_sz_acc"
+        },
+        {
+          "unit_id": "1bf25ce6ea4c83b3565cf99050d02a2c",
+          "anchor_id": "fcsr"
+        },
+        "a8effd823ed8cea7432827889f26395a",
+        {
+          "unit_id": "46b80f97117efd18cb2b08d14444f966",
+          "anchor_id": "norm:fflags_frm_op_sz_acc"
+        },
+        {
+          "unit_id": "d061409d4d172f3993e6b3e44bba6690",
+          "anchor_id": "norm:fcsr_rsv"
+        },
+        "912cb9e0ad0b9d6a9b6f8fc08b0f86a2",
+        {
+          "unit_id": "bbf161474f4a74d3d9c1ec9d3f435ff0",
+          "anchor_id": "norm:dyn_round_enc"
+        },
+        "e763bfc410bf30136aa7fe8b8f7d61c4",
+        "117a73449774e95daa9c0f1be517853a",
+        {
+          "unit_id": "e6346e37237e0748597d876b4a7f9b36",
+          "anchor_id": "bitdef"
+        },
+        "92c081361b7bffd37210e2aeaeb418c8"
+      ]
+    },
+    {
+      "id": "_nan_generation_and_propagation",
+      "level": 3,
+      "sectnum": "8.1.3",
+      "title": "NaN Generation and Propagation",
+      "heading_unit_id": "8f9a1008778cb0ae0154a6e216195ca4",
+      "blocks": [
+        {
+          "unit_id": "8f50dbc92f9b5582076baa529da3dedc",
+          "anchor_id": "norm:F_canonical_NaN"
+        },
+        "b6daf902cfa9fe7c644f4b6f0ad42b3d",
+        "450ef5139cb7572aeb845f67adcd84dc"
+      ]
+    },
+    {
+      "id": "_subnormal_arithmetic",
+      "level": 3,
+      "sectnum": "8.1.4",
+      "title": "Subnormal Arithmetic",
+      "heading_unit_id": "3a4f20aec9d6793b364a48cb114aeb8c",
+      "blocks": [
+        {
+          "unit_id": "144e502957220eb1d5bf5d7069c5746f",
+          "anchor_id": "norm:ieee_std_subnormal"
+        },
+        {
+          "unit_id": "3b959aa51cd7ed1fc4ec2bb2d5021c16",
+          "anchor_id": "norm:ieee_std_tininess"
+        },
+        "f0338a58015b8912dd5de17fadccaf00"
+      ]
+    },
+    {
+      "id": "_single_precision_load_and_store_instructions",
+      "level": 3,
+      "sectnum": "8.1.5",
+      "title": "Single-Precision Load and Store Instructions",
+      "heading_unit_id": "30d1c969405c7b2397162420b30a7b38",
+      "blocks": [
+        {
+          "unit_id": "b8f0e570358fe74f2376f88fa17e7ed4",
+          "anchor_id": "norm:fsw_flw_op"
+        },
+        "a1ebe41ced8f0ba2c77209cc0351c353",
+        "65468fa01fee85736dedb3da2c6a99dd",
+        {
+          "unit_id": "337e64db6a57d28b5e9072f1250bc26a",
+          "anchor_id": "norm:fsw_flw_atomic_align"
+        },
+        {
+          "unit_id": "a329abf0c9b94459a41f95f0a35ac98c",
+          "anchor_id": "norm:fsw_flw_bits_maintained"
+        },
+        {
+          "unit_id": "cc8150598e2bcff12385185636fc4b95",
+          "anchor_id": "norm:fp_misaligned"
+        }
+      ]
+    },
+    {
+      "id": "single-float-compute",
+      "level": 3,
+      "sectnum": "8.1.6",
+      "title": "Single-Precision Floating-Point Computational Instructions",
+      "heading_unit_id": "58d8a9bcb808d4097bd451a3fe5e48f9",
+      "heading_anchor_id": "single-float-compute",
+      "blocks": [
+        "51f1384e84565f06e27e6a7db38ba5b8",
+        {
+          "unit_id": "2bf789f7d929dd5ccbf177cc7ec48a58",
+          "anchor_id": "norm:F_fmt_single"
+        },
+        {
+          "unit_id": "e81b8e4c7f6cbd2942a4f9d01a276778",
+          "anchor_id": "fmt"
+        },
+        {
+          "unit_id": "77a11f195905d370a3935eb93bce8e15",
+          "anchor_id": "norm:F_rm_field"
+        },
+        "953f63e810715512223360a290d93a06",
+        "2ca5daf7a963ef6f303baf30c9d8e9c8",
+        "6067e93c1692ed9918fbcaab61b25326",
+        {
+          "unit_id": "b6abd9516917023943d757f511c35dc3",
+          "anchor_id": "spfloat"
+        },
+        {
+          "unit_id": "24a51b7d7bb42bdc7bf72f7f9c97e676",
+          "anchor_id": "norm:fma_rs3"
+        },
+        {
+          "unit_id": "79a5eeb0a33c6e380fb9e42fc6af11cf",
+          "anchor_id": "norm:fmadd-s_op"
+        },
+        {
+          "unit_id": "38067cce31146046e1cabb35d1990d5b",
+          "anchor_id": "norm:fmsub-s_op"
+        },
+        {
+          "unit_id": "8df0a68a5be5e54cc171d7acfcf0c6fd",
+          "anchor_id": "norm:fnmsub-s_op"
+        },
+        {
+          "unit_id": "448f61810dc9752bcc8c67435ceb636d",
+          "anchor_id": "norm:fnmadd-s_op"
+        },
+        "fd7bdf75da3fc4edcc8952b651d1ce5b",
+        "3323092dc9fe1463a3c53c133038646f",
+        {
+          "unit_id": "fbec4676cf3478f18257099019ddb996",
+          "anchor_id": "fnmaddsub"
+        },
+        {
+          "unit_id": "a89018ffb297a91e0cb55d5a85116e50",
+          "anchor_id": "norm:fma_nv_flag"
+        },
+        "c36e7c1d6ec2c99fa484a52e32e9e336"
+      ]
+    },
+    {
+      "id": "_single_precision_floating_point_conversion_and_move_instructions",
+      "level": 3,
+      "sectnum": "8.1.7",
+      "title": "Single-Precision Floating-Point Conversion and Move Instructions",
+      "heading_unit_id": "6b624ba0958217f76086ec46b8d4d96c",
+      "blocks": [
+        "15cf283d8fc44647e146b551fb39ae59",
+        {
+          "unit_id": "a3003a93322bd7faee970c87259e272c",
+          "anchor_id": "norm:fcvt_round"
+        },
+        {
+          "unit_id": "44ccd5f7bc41d8ab803fea32a19e24fd",
+          "anchor_id": "int_conv"
+        },
+        {
+          "unit_id": "4103e039bf66aa1178a91d4e624c5c24",
+          "anchor_id": "norm:fcvt_nx"
+        },
+        "8c6208b5c3383e64fd9ad327c8f5edc5",
+        {
+          "unit_id": "7fee29b9ff79c8aba12f76489ba03c4b",
+          "anchor_id": "fcvt"
+        },
+        "ddf232e777f713140bc73b81aa271785",
+        {
+          "unit_id": "efe46dcfc28e8462d951dd3d6822b862",
+          "anchor_id": "inj"
+        },
+        "d269c70943b5c20c1bd4e080cf0e7d38",
+        {
+          "unit_id": "2e147b284504e3c8f2d3cd68befd114f",
+          "anchor_id": "norm:fmv-w-x_op"
+        },
+        "4f05b2b425e0f2419ee2986bb92f0d39",
+        "f83e69539ca4526fb091c22d72bddb22",
+        {
+          "unit_id": "584d986577aee7eeaa2dd5347e55eb6f",
+          "anchor_id": "spfloat-mv"
+        }
+      ]
+    },
+    {
+      "id": "_single_precision_floating_point_compare_instructions",
+      "level": 3,
+      "sectnum": "8.1.8",
+      "title": "Single-Precision Floating-Point Compare Instructions",
+      "heading_unit_id": "123b76a7653aac94d24cc5821429bd6a",
+      "blocks": [
+        {
+          "unit_id": "0cfa8292a1ec4b9a76bc2e46b0e8dcdd",
+          "anchor_id": "norm:feq-s_flt-s_fle-s_op"
+        },
+        "88a1b61b179ab7884ce7f684839f61ef",
+        "9e238fbf4cea0437939e3289d13c8221",
+        {
+          "unit_id": "aebd082cd4b75f0a26ed5a10bc5c2c89",
+          "anchor_id": "spfloat-comp"
+        }
+      ]
+    },
+    {
+      "id": "_single_precision_floating_point_classify_instruction",
+      "level": 3,
+      "sectnum": "8.1.9",
+      "title": "Single-Precision Floating-Point Classify Instruction",
+      "heading_unit_id": "1a16effecf2caa055f3d67f3a67b258a",
+      "blocks": [
+        {
+          "unit_id": "3a729edbd5982a1a366a6c7269ea58a3",
+          "anchor_id": "norm:fclass-s_op"
+        },
+        "bbb3882c7085c17445d58ad8369f4135",
+        {
+          "unit_id": "3d6b98aaad1f44b2addde9804aa7aeab",
+          "anchor_id": "fclass"
+        }
+      ]
+    },
+    {
+      "id": "chap:d",
+      "level": 2,
+      "sectnum": "8.2",
+      "title": "\"D\" Extension for Double-Precision Floating-Point, Version 2.2",
+      "heading_unit_id": "9d294fbdfc516437c9611ef839325df2",
+      "heading_anchor_id": "chap:d",
+      "blocks": [
+        "f2b95e27d995ca3fbfdcb4c01cc448d0"
+      ]
+    },
+    {
+      "id": "_d_register_state",
+      "level": 3,
+      "sectnum": "8.2.1",
+      "title": "D Register State",
+      "heading_unit_id": "77606e77357e0e7c671cac6be6706e8f",
+      "blocks": [
+        "d09cedaea746e4e0a69fece7d76db8de",
+        "81d706089003694ed4de8ba2ae82f93a",
+        "b4a5f827d92bc6cc8cc68058ca4fcbb5"
+      ]
+    },
+    {
+      "id": "nanboxing",
+      "level": 3,
+      "sectnum": "8.2.2",
+      "title": "NaN Boxing of Narrower Values",
+      "heading_unit_id": "ba02cf9e624d5ecea9caef4a3c88c0de",
+      "heading_anchor_id": "nanboxing",
+      "blocks": [
+        {
+          "unit_id": "3d0417dbfd8e445a58646634707061c1",
+          "anchor_id": "norm:fp_nan-boxing"
+        },
+        "c4c7953f24485602884e07b5328dc00c",
+        "c7b5a387f663c3e1e993118fc6be2787",
+        {
+          "unit_id": "14cc5107d1b2fda47894be1ce1dce413",
+          "anchor_id": "norm:FP_nontransfer_instrs_improper_nan-boxed_input"
+        },
+        "e64e73cbf9c73189cf2ea535a7cfdf4f"
+      ]
+    },
+    {
+      "id": "fld_fsd",
+      "level": 3,
+      "sectnum": "8.2.3",
+      "title": "Double-Precision Load and Store Instructions",
+      "heading_unit_id": "4ee97936a3d5db39a2b6e7770a39ea4f",
+      "heading_anchor_id": "fld_fsd",
+      "blocks": [
+        "214ffed364722bd84aedf3f168915c1f",
+        "a61f2e2f0f2c19d6d133c090d99cb102",
+        "5dc99f970d2b0ec26699ad3fa0aacc19",
+        "82d0f03a34ff34a5f52cd717ccd783fb",
+        {
+          "unit_id": "6ca76bd0e659f36c2bd23d333c7c172e",
+          "anchor_id": "norm:fld_fsd_atomic_align"
+        },
+        {
+          "unit_id": "69d04b37bdfd2fb15e1608f6a0ad0e23",
+          "anchor_id": "norm:fld_fsd_bits_maintained"
+        }
+      ]
+    },
+    {
+      "id": "_double_precision_floating_point_computational_instructions",
+      "level": 3,
+      "sectnum": "8.2.4",
+      "title": "Double-Precision Floating-Point Computational Instructions",
+      "heading_unit_id": "e0d4f0fb1cad5d8a76c8212af4b683da",
+      "blocks": [
+        {
+          "unit_id": "5c60fff63546aad03bd16562dde6da73",
+          "anchor_id": "norm:D_computational_instrs"
+        },
+        "eb9e705b31224c3f4a2ca04cf5270418",
+        "c9cc17037ed04d69c79c21af33c8e4f1"
+      ]
+    },
+    {
+      "id": "fl-compute",
+      "level": 3,
+      "sectnum": "8.2.5",
+      "title": "Double-Precision Floating-Point Conversion and Move Instructions",
+      "heading_unit_id": "3e017255d69e2827e2dc68d64af5392c",
+      "heading_anchor_id": "fl-compute",
+      "blocks": [
+        "3978c7ce53d3907f3e553c5c5b4a0b33",
+        "7c341b6798b6ad768bc693cc1bb748c1",
+        "c7171fc9b791f875072367ecae7af743",
+        {
+          "unit_id": "29b8aa0122a1321d3ea25e026cb82a90",
+          "anchor_id": "fl-convert-mv"
+        },
+        "7d48ac9a0cbb1a0e4c3e9c665b501555",
+        {
+          "unit_id": "abe10d2f41a2db015b56d656eac3896a",
+          "anchor_id": "norm:fsgnj-d_fsgnjn-d_fsgnjx-d_op"
+        },
+        "0b04321db1596c75747d45751350572d",
+        "01c951befdc04e6d450d3bf113b32a2a",
+        {
+          "unit_id": "3b1e4a8f21827ff222a064759d02d339",
+          "anchor_id": "norm:fmv_bits_preserved"
+        },
+        "75c290e09519ad823866c2ad28fe7a01",
+        {
+          "unit_id": "b03f8c727a46484d41dad23db90dcc26",
+          "anchor_id": "fmvxddx"
+        }
+      ]
+    },
+    {
+      "id": "_double_precision_floating_point_compare_instructions",
+      "level": 3,
+      "sectnum": "8.2.6",
+      "title": "Double-Precision Floating-Point Compare Instructions",
+      "heading_unit_id": "4d8bcbb7a748ee3ddb9a3dc4c00508ac",
+      "blocks": [
+        {
+          "unit_id": "ff065478431b996d063888a694271dbb",
+          "anchor_id": "norm:D_compare_instrs"
+        },
+        "78a7fd85571f48e1d291df1fd73a44f8"
+      ]
+    },
+    {
+      "id": "fl-compare",
+      "level": 3,
+      "sectnum": "8.2.7",
+      "title": "Double-Precision Floating-Point Classify Instruction",
+      "heading_unit_id": "3b2094c57385c9839df3b28b98ccd671",
+      "heading_anchor_id": "fl-compare",
+      "blocks": [
+        {
+          "unit_id": "84401225cb28a621ac3a43ee39097199",
+          "anchor_id": "norm:fclass-d_op"
+        },
+        "fa41826f60dd7c41391c716521748e1d"
+      ]
+    },
+    {
+      "id": "fl-class",
+      "level": 2,
+      "sectnum": "8.3",
+      "title": "\"Q\" Extension for Quad-Precision Floating-Point, Version 2.2",
+      "heading_unit_id": "b47f97deea18a8796d9178675d29dae2",
+      "heading_anchor_id": "fl-class",
+      "blocks": [
+        "2b1384da484275d99a57812655a0a108",
+        "20df1b148f32fff6117ff3cd3c87f353"
+      ]
+    },
+    {
+      "id": "_quad_precision_load_and_store_instructions",
+      "level": 3,
+      "sectnum": "8.3.1",
+      "title": "Quad-Precision Load and Store Instructions",
+      "heading_unit_id": "02849fe3e6fa7aa9aa6ed215367ae8bf",
+      "blocks": [
+        {
+          "unit_id": "34b35c3edd63e89a7e11e467714b6cb1",
+          "anchor_id": "norm:fsq_flq_op"
+        },
+        "c9078bf8e962244b84dcd22d8768fb63",
+        "e8de5c30ff561d04d5307e877812f6fc",
+        {
+          "unit_id": "7fe728cf70cb8459d530eb973ff6fee7",
+          "anchor_id": "norm:fsq_flq_atomic_align"
+        },
+        {
+          "unit_id": "c7521f3fc2c75696fff556b44bbdd5f7",
+          "anchor_id": "norm:fsq_flq_bits_maintained"
+        }
+      ]
+    },
+    {
+      "id": "_quad_precision_computational_instructions",
+      "level": 3,
+      "sectnum": "8.3.2",
+      "title": "Quad-Precision Computational Instructions",
+      "heading_unit_id": "a3bcf5e20e2c96e212054cd1bcdf18a9",
+      "blocks": [
+        "8c0631246b6a642a895f7e489dbc2945",
+        {
+          "unit_id": "8688be370f6f8d56a516c61de4951367",
+          "anchor_id": "fpextfmt"
+        },
+        {
+          "unit_id": "635272b579743441b2736d773c4a1861",
+          "anchor_id": "norm:Q_computational_instrs"
+        },
+        "69715950de315c56418a057be64134b9",
+        "6163fdb27bc0feb8b46fdc09cd4e170e"
+      ]
+    },
+    {
+      "id": "quad-compute",
+      "level": 3,
+      "sectnum": "8.3.3",
+      "title": "Quad-Precision Convert and Move Instructions",
+      "heading_unit_id": "947200d0fd3dac45f2323f519fe512af",
+      "heading_anchor_id": "quad-compute",
+      "blocks": [
+        "96b33ef6c5f130d3e48d6e3adb993f7a",
+        "204189e39c06614513d5aae5321cbdd6",
+        {
+          "unit_id": "b5bb56d4aa7f90335920f2414ef15bdf",
+          "anchor_id": "quad-cnvrt-mv"
+        },
+        "7e3e11901b34da7eb3d5fe8600e8753e",
+        {
+          "unit_id": "6c6528d501192d478f26d173e859ff6c",
+          "anchor_id": "norm:fsgnj-q_fsgnjn-q_fsgnjx-q_op"
+        },
+        "6407ab610ba94dce33140d10fd597b54",
+        {
+          "unit_id": "689b438e9469b7afff76573fe454ee26",
+          "anchor_id": "quad-cnvrt-intch-xqqx"
+        }
+      ]
+    },
+    {
+      "id": "_quad_precision_floating_point_compare_instructions",
+      "level": 3,
+      "sectnum": "8.3.4",
+      "title": "Quad-Precision Floating-Point Compare Instructions",
+      "heading_unit_id": "cea02f096f42efad2fd118cdfa12bcb0",
+      "blocks": [
+        {
+          "unit_id": "3adca8658730994a930f7ddff8333ad3",
+          "anchor_id": "norm:Q_compare_instrs"
+        },
+        "09e8cb30157c888fef44a4ea0bc36b31"
+      ]
+    },
+    {
+      "id": "quad-float-compare",
+      "level": 3,
+      "sectnum": "8.3.5",
+      "title": "Quad-Precision Floating-Point Classify Instruction",
+      "heading_unit_id": "8dad490bfe03409651519f75f614729d",
+      "heading_anchor_id": "quad-float-compare",
+      "blocks": [
+        {
+          "unit_id": "2d5eb186e74890f9061c416712d64fb2",
+          "anchor_id": "norm:fclass-q_op"
+        },
+        "5f61ac189555be4670aaf6e9ece71a4a"
+      ]
+    },
+    {
+      "id": "chap:zfh",
+      "level": 2,
+      "sectnum": "8.4",
+      "title": "Zfh Extension for Half-Precision Floating-Point",
+      "heading_unit_id": "ba532e7cef8082fb0bba97cc6474a1dd",
+      "heading_anchor_id": "chap:zfh",
+      "blocks": [
+        "a9d028e940c35f945a5b156c69c62405",
+        "b910d2656f26f7d6faf46e27e2278d9e"
+      ]
+    },
+    {
+      "id": "_half_precision_load_and_store_instructions",
+      "level": 3,
+      "sectnum": "8.4.1",
+      "title": "Half-Precision Load and Store Instructions",
+      "heading_unit_id": "8a6efc728045fc13b6a9932cf7f8f2cf",
+      "blocks": [
+        {
+          "unit_id": "e2dd36af7937d3ca6807517937135fff",
+          "anchor_id": "norm:fsh_flh_op"
+        },
+        "94583e33657c902f029914676aeabce0",
+        "6beacb92ff73d8e8d609af8ce12e15b0",
+        {
+          "unit_id": "75aad3ba87344add5b08aa6cca2cf53b",
+          "anchor_id": "norm:fsh_flh_atomic_align"
+        },
+        {
+          "unit_id": "bc822ed94f3b93f00e8165eb16cdb694",
+          "anchor_id": "norm:fsh_flh_bits_maintained"
+        }
+      ]
+    },
+    {
+      "id": "_half_precision_computational_instructions",
+      "level": 3,
+      "sectnum": "8.4.2",
+      "title": "Half-Precision Computational Instructions",
+      "heading_unit_id": "be3e558a1aedc8bd238007c88ba6d71d",
+      "blocks": [
+        "b0082128b837a855ccaaeb3041216faa",
+        {
+          "unit_id": "8688be370f6f8d56a516c61de4951367",
+          "anchor_id": "tab:fpextfmth"
+        },
+        {
+          "unit_id": "6f0b5aa38f0fd4cf420f5be66c3ac3a9",
+          "anchor_id": "norm:Zfh_computational_instrs"
+        },
+        "749f79316c7d654e5a45afa6ba042f20",
+        "5c01e11d42d654cd9180971469c6ad27"
+      ]
+    },
+    {
+      "id": "_half_precision_conversion_and_move_instructions",
+      "level": 3,
+      "sectnum": "8.4.3",
+      "title": "Half-Precision Conversion and Move Instructions",
+      "heading_unit_id": "41e626027f5ae809962df22cdbf5dbc4",
+      "blocks": [
+        "b4325dd203cdaf6b413c3012dd72e478",
+        "18b59639b080c37a10d1beb0da217bf0",
+        {
+          "unit_id": "2ccb885a354c8531f078540e20d99475",
+          "anchor_id": "half-prec-conv-and-mv"
+        },
+        "e8b542c1a48211ce7632991ed86a3268",
+        {
+          "unit_id": "e21e34126a35fd62c932411c7cf297cb",
+          "anchor_id": "norm:fsgnj-h_fsgnjn-h_fsgnjx-h_op"
+        },
+        "26c12166c2f07d434620f88cc434adbc",
+        {
+          "unit_id": "62745cc86f33c8e11bb5f95f8b3dda44",
+          "anchor_id": "flt-to-flt-sgn-inj-instr"
+        },
+        {
+          "unit_id": "1c5eb07873ab626e7bf19eb71f87f71f",
+          "anchor_id": "norm:fmv-h-x_op"
+        },
+        {
+          "unit_id": "cba8f330c175776062d339ec5943ed11",
+          "anchor_id": "norm:fmv_half_bits_preverved"
+        },
+        "074e312b17ca0089619e06b352d47356"
+      ]
+    },
+    {
+      "id": "flt-pt-to-int-move",
+      "level": 3,
+      "sectnum": "8.4.4",
+      "title": "Half-Precision Floating-Point Compare Instructions",
+      "heading_unit_id": "837e733a8c01e77cb66fc238ad453663",
+      "heading_anchor_id": "flt-pt-to-int-move",
+      "blocks": [
+        {
+          "unit_id": "d8e2fcae7fd235521b90a0bdcbe6b98f",
+          "anchor_id": "norm:Zfh_compare_instrs"
+        },
+        "e8beb2cb55d89545f363aa33b9f04713"
+      ]
+    },
+    {
+      "id": "half-pr-flt-pt-compare",
+      "level": 3,
+      "sectnum": "8.4.5",
+      "title": "Half-Precision Floating-Point Classify Instruction",
+      "heading_unit_id": "dbcdca3030659bdfd4b3e8815b1edee0",
+      "heading_anchor_id": "half-pr-flt-pt-compare",
+      "blocks": [
+        {
+          "unit_id": "08b844443c7928538c123b39be57a2fa",
+          "anchor_id": "norm:fclass-h_op"
+        },
+        "5dd4eda0d675b9f2ed66f92c83b70055"
+      ]
+    },
+    {
+      "id": "zfhmin",
+      "level": 2,
+      "sectnum": "8.5",
+      "title": "Zfhmin Standard Extension for Minimal Half-Precision Floating-Point",
+      "heading_unit_id": "0fe84b4f77938d4e7a30d2e595d21af0",
+      "heading_anchor_id": "zfhmin",
+      "blocks": [
+        "1efb4f28545c82ee468e30ed55430f82",
+        {
+          "unit_id": "78727b7418f3c6cac0c853ab1c6f32a2",
+          "anchor_id": "norm:zfhmin"
+        },
+        "9e9ae5690a8231a918d586ad0091878a"
+      ]
+    },
+    {
+      "id": "zfa",
+      "level": 2,
+      "sectnum": "8.6",
+      "title": "\"Zfa\" Extension for Additional Floating-Point Instructions, Version 1.0",
+      "heading_unit_id": "5fc5592cf5a24d37778344e3e32355ba",
+      "heading_anchor_id": "zfa",
+      "blocks": [
+        "5b288ea61c4a545a1b4675b8a351f8a1"
+      ]
+    },
+    {
+      "id": "_load_immediate_instructions",
+      "level": 3,
+      "sectnum": "8.6.1",
+      "title": "Load-Immediate Instructions",
+      "heading_unit_id": "d1f60b85eeb18d1dc92bf856f6deaf16",
+      "blocks": [
+        {
+          "unit_id": "0da78db19ade76bc11744f3c3b8b2501",
+          "anchor_id": "norm:fli-s_op"
+        },
+        {
+          "unit_id": "57826b8e003d70175a6ac55202328fa8",
+          "anchor_id": "tab:flis"
+        },
+        "d548cf10a06789eb4f2cf11d012ceb19",
+        "89ccd19c2f8b2c5be511b864564c0a34",
+        {
+          "unit_id": "fa5624cb6e3b8e6825095f9d2d86b245",
+          "anchor_id": "norm:fli-d_op"
+        },
+        {
+          "unit_id": "8d818c68f38d721d2a9b22157329ff00",
+          "anchor_id": "norm:fli-q_op"
+        },
+        {
+          "unit_id": "da932f48129df793082d10815ee629b9",
+          "anchor_id": "norm:fli-h_op"
+        },
+        "181c4e4cbf1c9882d28b7af247b04aea",
+        "7b62f559ee177c3b98c9e1ef8efaf546"
+      ]
+    },
+    {
+      "id": "_minimum_and_maximum_instructions",
+      "level": 3,
+      "sectnum": "8.6.2",
+      "title": "Minimum and Maximum Instructions",
+      "heading_unit_id": "e77e7bcfa9a49e075a13bd79d39d35dc",
+      "blocks": [
+        {
+          "unit_id": "8055a3ebd9227950572d226b51d88b81",
+          "anchor_id": "norm:fmaxm-s_fminm-s_op"
+        },
+        {
+          "unit_id": "3aea1d683562b96164aa446782e8a749",
+          "anchor_id": "norm:fmaxm-d_fminm-d_op"
+        },
+        {
+          "unit_id": "a515f768f1dde10b91143a73d68b6004",
+          "anchor_id": "norm:fmaxm-h_fminm-h_op"
+        },
+        {
+          "unit_id": "f3e5dcc0ce1b51d4e7ba16aa899ebfd7",
+          "anchor_id": "norm:fmaxm-q_fminm-q_op"
+        },
+        "71548e26b82239119c254059afa9d240",
+        "d4c711804950c204ac54fc12b3dc20ea"
+      ]
+    },
+    {
+      "id": "_round_to_integer_instructions",
+      "level": 3,
+      "sectnum": "8.6.3",
+      "title": "Round-to-Integer Instructions",
+      "heading_unit_id": "7943e80a22e56c1e9811d5d91428b2af",
+      "blocks": [
+        "f69aa04a5712561b25ebb22aea67237b",
+        {
+          "unit_id": "6163141d02ee0436ca3259c83bf633ce",
+          "anchor_id": "norm:froundnx-s_op"
+        },
+        {
+          "unit_id": "bdd1dd8e00099f6056c3c03f18029e4d",
+          "anchor_id": "norm:fround-d_froundnx-d_op"
+        },
+        {
+          "unit_id": "e59458cc37000c4b329a376eb28ee722",
+          "anchor_id": "norm:fround-h_froundnx-h_op"
+        },
+        {
+          "unit_id": "acb08e7963a242d1010c48f05e955d01",
+          "anchor_id": "norm:fround-q_froundnx-q_op"
+        },
+        "2b5d69d2a8abe3076a7822a8981667f0"
+      ]
+    },
+    {
+      "id": "_modular_convert_to_integer_instruction",
+      "level": 3,
+      "sectnum": "8.6.4",
+      "title": "Modular Convert-to-Integer Instruction",
+      "heading_unit_id": "282d9e69fc71f3eadb00e8e852fc2cc0",
+      "blocks": [
+        {
+          "unit_id": "e4858575f6357bee9b8a5c7972a4184c",
+          "anchor_id": "norm:fcvtmod-w-d_op"
+        },
+        {
+          "unit_id": "677513944cd907b1d28ab26a6a611c0c",
+          "anchor_id": "norm:fcvtmod-w-d_flags"
+        },
+        "0ca4db10bc489d1cccb84f7bc91259b0",
+        "738754a218fcc636f5c10e3e804b202a"
+      ]
+    },
+    {
+      "id": "_move_instructions",
+      "level": 3,
+      "sectnum": "8.6.5",
+      "title": "Move Instructions",
+      "heading_unit_id": "0ca6d90853603b3859a84328bc97a3fd",
+      "blocks": [
+        {
+          "unit_id": "2bbd83df04599e1a6f2d1aa807d48724",
+          "anchor_id": "norm:fmvh-x-d_op"
+        },
+        "42f01f7f3fb20f399403b4e26f3a75e4",
+        {
+          "unit_id": "6cc755e8a95a7d8c733aa5237a04321c",
+          "anchor_id": "norm:fmvp-d-x_op"
+        },
+        {
+          "unit_id": "cbcd90c522edfb61e1f37bef01973665",
+          "anchor_id": "norm:fmvh-x-q_op"
+        },
+        "227c39a0ee7ce2cd99d48c0490f6c6d8",
+        {
+          "unit_id": "9b28dcaeb8ada05ca39065335e05dfdf",
+          "anchor_id": "norm:fmvp-q-x_op"
+        }
+      ]
+    },
+    {
+      "id": "_comparison_instructions",
+      "level": 3,
+      "sectnum": "8.6.6",
+      "title": "Comparison Instructions",
+      "heading_unit_id": "cca80bd3ab68f6758f029cdf802e2728",
+      "blocks": [
+        {
+          "unit_id": "4e36857936c153b87b73daa4b4143620",
+          "anchor_id": "norm:fleq-s_fltq-s_op"
+        },
+        {
+          "unit_id": "17e09a183049df43aead3632ee93052b",
+          "anchor_id": "norm:fleq-d_fltq-d_op"
+        },
+        {
+          "unit_id": "12d368944a7223efa4688a296367977c",
+          "anchor_id": "norm:fleq-h_fltq-h_op"
+        },
+        {
+          "unit_id": "5af51c43db0ca9dfcd57e06c5b00ff6a",
+          "anchor_id": "norm:fleq-q_fltq-q_op"
+        },
+        "1f62eaa73726dfd02e6754622d5b780f",
+        "952a8ab376d963103939cb655955ad75"
+      ]
+    },
+    {
+      "id": "zfbfmin",
+      "level": 2,
+      "sectnum": "8.7",
+      "title": "Zfbfmin Extension for Scalar BFloat16 Conversions",
+      "heading_unit_id": "49535e59662be405be3fd624b7af7faf",
+      "heading_anchor_id": "zfbfmin",
+      "blocks": [
+        "cf58fa34935e1282da31fe4575cb114f",
+        "76bbf41e46acdfa331c78963d85a3ccf",
+        "50d5766605822b85d3afb60008c1a599",
+        "beca61d0101b15f4b1d30e0f1646834d",
+        "12b37261b2597ff3dcc28189c477aa0f"
+      ]
+    },
+    {
+      "id": "_bf16_number_format",
+      "level": 3,
+      "sectnum": "8.7.1",
+      "title": "BF16 Number Format",
+      "heading_unit_id": "fdfb38151197657355e1480b20efb3fc",
+      "blocks": [
+        "b1f3aa7e6a9ce79f22ef8a6b2974de38",
+        "519f37bd6fd88892ca66ca2b5af28e72",
+        "f6ea91b67b24545b172f90d13e9770db",
+        {
+          "unit_id": "ed2c5108e5433f2191c46bf9638e41da",
+          "anchor_id": "norm:bf16_subnorm"
+        },
+        "aeeb484be10a66ed0891843e57c99a07",
+        "9e45e637ff7d3d01a63c7b7c88dc22e9"
+      ]
+    },
+    {
+      "id": "_fcvt_bf16_s",
+      "level": 3,
+      "sectnum": "8.7.2",
+      "title": "fcvt.bf16.s",
+      "heading_unit_id": "f1425c603502e55551bf4938faa03baa",
+      "blocks": [
+        "7e3af6630265558b95fb5192107547fc",
+        "93ff0ff301aebed332ad71dd5830484a",
+        "f84627d26a085e5fa2e26cb573dbf841",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "e55500a213aafbe228414e9ae28a8778",
+          "anchor_id": "norm:fcvt-bf16-s_op"
+        },
+        "a76dc4c4e7c49d98c0b0a88eb66517bf",
+        "18414fa11effe2c2d319b0d198daf4bf"
+      ]
+    },
+    {
+      "id": "_fcvt_s_bf16",
+      "level": 3,
+      "sectnum": "8.7.3",
+      "title": "fcvt.s.bf16",
+      "heading_unit_id": "1f9cbb7d3886e52d4ae9f3cf9def077b",
+      "blocks": [
+        "0830b7d79ca95dc931a8f9a4f7ff876b",
+        "aa2ac206e439ce3426dc14a514a79778",
+        "c0929d16585faf7a906dad2d3fff6495",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        {
+          "unit_id": "654deb7668cd1bf84e44ffd1f63f33e9",
+          "anchor_id": "norm:fcvt-s-bf16_op"
+        },
+        "54107c926c32897129527a04bc8b7973",
+        "d85a65244adae89f4b32c2e880834a05",
+        "86e18f4b252e6d5b18a9ef3a91e998ad"
+      ]
+    },
+    {
+      "id": "sec:zfinx",
+      "level": 2,
+      "sectnum": "8.8",
+      "title": "\"Zfinx\", \"Zdinx\", \"Zhinx\", \"Zhinxmin\" Extensions for Floating-Point in Integer Registers, Version 1.0",
+      "heading_unit_id": "7eab3cbfeabc4230bac12748c1f9696b",
+      "heading_anchor_id": "sec:zfinx",
+      "blocks": [
+        "5f093ce49dd4738a8b982273549e1306",
+        "1ebd607f5007ff3db989f99f2cbee171",
+        {
+          "unit_id": "6d50667c51e607f80b47286e772dc33b",
+          "anchor_id": "norm:Zfinx_F_instrs"
+        },
+        "7f7242a7c6072831e3d93698341d61ca",
+        {
+          "unit_id": "140b174c872af8aabfb35d5cc3b4eccd",
+          "anchor_id": "norm:Zfinx_x_regs"
+        },
+        "5ba0acafb0434ed48b457737abce4102"
+      ]
+    },
+    {
+      "id": "_processing_of_narrower_values",
+      "level": 3,
+      "sectnum": "8.8.1",
+      "title": "Processing of Narrower Values",
+      "heading_unit_id": "1dd4c0e2bc03967e168db2f23538b6e9",
+      "blocks": [
+        {
+          "unit_id": "f52fb12785a440fd0bb1e1d186a062aa",
+          "anchor_id": "norm:Zfinx_narrow_operands"
+        },
+        {
+          "unit_id": "c252394490589b2572c9a3004e7015d6",
+          "anchor_id": "norm:Zfinx_narrow_result"
+        },
+        "ae7655a2bb54545e229fbb416d1c3992"
+      ]
+    },
+    {
+      "id": "_zdinx",
+      "level": 3,
+      "sectnum": "8.8.2",
+      "title": "Zdinx",
+      "heading_unit_id": "42245c4eafcefd47a91c6ae302842ba0",
+      "blocks": [
+        "c31dd37d15dc2d5cb4d8c89ad55e3a2f",
+        {
+          "unit_id": "b1ee6da111a4eda972388b82696ebf9a",
+          "anchor_id": "norm:Zdinx_D_instrs"
+        },
+        {
+          "unit_id": "296631138e43102fbc4510a562c6065b",
+          "anchor_id": "norm:Zdinx_x_regs"
+        }
+      ]
+    },
+    {
+      "id": "_processing_of_wider_values",
+      "level": 3,
+      "sectnum": "8.8.3",
+      "title": "Processing of Wider Values",
+      "heading_unit_id": "c89ae7c03975cf0e012a1026fd213371",
+      "blocks": [
+        {
+          "unit_id": "1408a95a8ba1ed510c509bd2703bd21e",
+          "anchor_id": "norm:Zdinx_x_reg_pair"
+        },
+        {
+          "unit_id": "0b14a16c7afcbe1bf83848a729297e16",
+          "anchor_id": "norm:Zdinx_endianness"
+        },
+        {
+          "unit_id": "1a718b005781ad2a273652b4f7c3c36a",
+          "anchor_id": "norm:Zdinx_x0_write"
+        },
+        {
+          "unit_id": "943da58669731f03bf2aa27c2c73e4e8",
+          "anchor_id": "norm:Zdinx_x0_read"
+        },
+        "ba2c080721c0487f4c5b8373fad9c571"
+      ]
+    },
+    {
+      "id": "_zhinx",
+      "level": 3,
+      "sectnum": "8.8.4",
+      "title": "Zhinx",
+      "heading_unit_id": "32c0c85999b41fb2eb598472889c647f",
+      "blocks": [
+        "a7594dedaecba72799dd53874588aa35",
+        {
+          "unit_id": "27e10aa4e4918eda3146ddf28f08de86",
+          "anchor_id": "norm:Zhinx_Zfh_instrs"
+        },
+        {
+          "unit_id": "03531091b0adcb352fe9eaf872ce93d0",
+          "anchor_id": "norm:Zhinx_x_regs"
+        }
+      ]
+    },
+    {
+      "id": "_zhinxmin",
+      "level": 3,
+      "sectnum": "8.8.5",
+      "title": "Zhinxmin",
+      "heading_unit_id": "73e99ddf93eee612c75b241a146a7572",
+      "blocks": [
+        "ceeba74f0cb431b5875bd5953a5a743f",
+        {
+          "unit_id": "cda50322d0340fe28b8cbb023c71100b",
+          "anchor_id": "norm:Zfhinxmin_instrs"
+        },
+        "f2842139864e93cde082c56f7e253086"
+      ]
+    },
+    {
+      "id": "_privileged_architecture_implications",
+      "level": 3,
+      "sectnum": "8.8.6",
+      "title": "Privileged Architecture Implications",
+      "heading_unit_id": "e764e67bdf0cb32b7ab6ad93f194f030",
+      "blocks": [
+        {
+          "unit_id": "44b82d76189fbd98f10eb953a8eac67e",
+          "anchor_id": "norm:Zfinx_mstatus_FS_zero"
+        },
+        {
+          "unit_id": "10958398c196641ff3b24717d8224002",
+          "anchor_id": "norm:Zfinx_misa_F_D_Q_zero"
+        },
+        "962369f9f6aefed3828ffa24235ed2cb"
+      ]
+    }
+  ]
+}

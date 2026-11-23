@@ -1,0 +1,16 @@
+unit_id = "584d986577aee7eeaa2dd5347e55eb6f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The base floating-point ISA was defined so as to allow implementations
+to employ an internal recoding of the floating-point format in registers to simplify handling of subnormal values and possibly to reduce functional unit latency. To this end, the F extension avoids
+representing integer values in the floating-point registers by defining conversion and comparison operations that read and write the integer register file directly. This also removes many of the common cases where explicit moves between integer and floating-point registers are required, reducing instruction count and critical paths for common mixed-format code sequences.
+===='''
+zh = '''
+[NOTE]
+====
+基本浮点 ISA 的定义允许实现采用寄存器内浮点格式的内部重编码，以简化非规格化值的处理，并可能降低功能单元延迟。为此，F 扩展通过定义直接读写整数寄存器堆的转换和比较操作，避免在浮点寄存器中表示整数值。这也消除了许多需要在整数寄存器与浮点寄存器之间显式移动的常见情况，从而减少常见混合格式代码序列的指令数和关键路径。
+===='''

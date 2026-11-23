@@ -1,0 +1,13 @@
+unit_id = "5ea88768c46f397ba6c8dbae7a580ced"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:addiw_op]#insn:addiw[] is an RV64I instruction that adds the sign-extended 12-bit
+immediate to register _rs1_ and produces the proper sign extension of a
+32-bit result in _rd_.# [#norm:addiw_overflow]#Overflows are ignored and the result is the low
+32 bits of the result sign-extended to 64 bits.# Note, insn:addiw[rd,rs1,0]
+writes the sign extension of the lower 32 bits of register _rs1_ into
+register _rd_ (assembler pseudoinstruction insn:sext.w[]).'''
+zh = '''
+[#norm:addiw_op]##insn:addiw[] 是一条 RV64I 指令，它将符号扩展的 12 位立即数与寄存器 _rs1_ 相加，并在 _rd_ 中产生 32 位结果的正确符号扩展。## [#norm:addiw_overflow]##忽略上溢，结果为该结果的低 32 位符号扩展至 64 位。## 注意，insn:addiw[rd,rs1,0] 将寄存器 _rs1_ 低 32 位的符号扩展写入寄存器 _rd_（汇编伪指令 insn:sext.w[]）。'''

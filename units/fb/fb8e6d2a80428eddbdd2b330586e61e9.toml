@@ -1,0 +1,11 @@
+unit_id = "fb8e6d2a80428eddbdd2b330586e61e9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Similarly, when V=1, both `vsstatus`.VS and the HS-level `sstatus`.VS
+are in effect. Attempts to execute a vector instruction when either
+field is 0 (Off) raise an illegal-instruction exception. Modifying the
+vector state when V=1 causes both fields to be set to 3 (Dirty).'''
+zh = '''
+类似地，当 V=1 时，`vsstatus`.VS 和 HS 级 `sstatus`.VS 均有效。当任一字段为 0（关闭）时，尝试执行向量指令会引发非法指令异常。当 V=1 时修改向量状态会使两个字段均置为 3（脏）。'''

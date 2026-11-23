@@ -1,0 +1,13 @@
+unit_id = "99f28c3a5fe90a2847e29d8a848eb62d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The DM can implement optional halt-on-reset bits for each hart, which it
+indicates by setting {dmstatus-hasresethaltreq} to 1. This means the DM implements the {dmcontrol-setresethaltreq} and {dmcontrol-clrresethaltreq} bits.  Writing 1 to {dmcontrol-setresethaltreq} sets the halt-on-reset request bit for each selected hart.
+When a hart's halt-on-reset request bit is set, the hart will
+immediately enter debug mode on the next deassertion of its reset. This
+is true regardless of the reset's cause. The hart's halt-on-reset
+request bit remains set until cleared by the debugger writing 1 to {dmcontrol-clrresethaltreq} while the hart is selected, or by DM reset.'''
+zh = '''
+DM 可为每个硬件线程实现可选的复位时停机位，通过将 {dmstatus-hasresethaltreq} 置为 1 来表示。这意味着 DM 实现了 {dmcontrol-setresethaltreq} 和 {dmcontrol-clrresethaltreq} 位。向 {dmcontrol-setresethaltreq} 写 1 会为每个所选硬件线程设置复位时停机请求位。当硬件线程的复位时停机请求位置位时，该硬件线程将在其复位下一次清零时立即进入调试模式。无论复位原因如何，均是如此。硬件线程的复位时停机请求位保持置位，直到调试器在选中该硬件线程时向其写 1 到 {dmcontrol-clrresethaltreq} 清零，或 DM 复位为止。'''

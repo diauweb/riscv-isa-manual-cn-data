@@ -1,0 +1,10 @@
+unit_id = "905746641293e5b24fd08ab338111032"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:jvt_op]#If <<Zcmt>> is implemented then _jvt_ must also be implemented, but can contain a read-only value. If _jvt_ is writable, the set of values the register may hold can vary by implementation. The value in the BASE field must always be aligned on a 64-byte boundary.
+Note that the CSR contains only bits XLEN-1 through 6 of the address _base_. When computing jump-table accesses, the lower six bits of _base_ are filled with zeroes to obtain an XLEN-bit jump-table base address _jvt.base_ that is always aligned on a 64-byte boundary.#'''
+zh = '''
+[#norm:jvt_op]##若实现了 <<Zcmt>>，则也应实现 _jvt_，但其可以包含只读值。若 _jvt_ 可写，则寄存器可保存的值的集合可因实现而异。BASE 字段中的值应始终在 64 字节边界上对齐。
+注意，该 CSR 仅包含地址 _base_ 的位 XLEN-1 至 6。在计算跳转表访问时，_base_ 的低六位填充为零，以获得始终在 64 字节边界上对齐的 XLEN 位跳转表基址 _jvt.base_。##'''

@@ -1,0 +1,13 @@
+unit_id = "8b764befa80fe85c689acf8b7ed415d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr:fcsr[] register can be read and written with the insn:frcsr[] and
+insn:fscsr[] instructions, which are assembler pseudoinstructions built on the
+underlying CSR access instructions. insn:frcsr[] reads csr:fcsr[] by copying it
+into integer register _rd_. insn:fscsr[] swaps the value in csr:fcsr[] by copying
+the original value into integer register _rd_, and then writing a new
+value obtained from integer register _rs1_ into csr:fcsr[].'''
+zh = '''
+csr:fcsr[] 寄存器可用 insn:frcsr[] 和 insn:fscsr[] 指令读写，这些指令是建立在底层 CSR 访问指令之上的汇编器伪指令。insn:frcsr[] 通过将 csr:fcsr[] 复制到整数寄存器 _rd_ 来读取它。insn:fscsr[] 通过将原值复制到整数寄存器 _rd_，然后将从整数寄存器 _rs1_ 获得的新值写入 csr:fcsr[]，来交换 csr:fcsr[] 中的值。'''

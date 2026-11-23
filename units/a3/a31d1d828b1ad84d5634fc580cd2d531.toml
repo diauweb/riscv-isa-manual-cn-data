@@ -1,0 +1,14 @@
+unit_id = "a31d1d828b1ad84d5634fc580cd2d531"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A cache-block prefetch instruction is permitted to access the specified cache
+block whenever a load instruction, store instruction, or instruction fetch is
+permitted to access the corresponding physical addresses. If access to the cache
+block is not permitted, a cache-block prefetch instruction does not raise any
+exceptions and shall not access any caches or memory. During address
+translation, the instruction does _not_ check the accessed and dirty bits and
+neither raises an exception nor sets the bits.'''
+zh = '''
+只要加载指令、存储指令或指令取指被允许访问相应物理地址，缓存块预取指令就被允许访问指定的缓存块。如果访问该缓存块不被允许，则缓存块预取指令不触发任何异常，且不应访问任何高速缓存或内存。在地址转换期间，该指令__不__检查访问位和脏位，既不触发异常也不置位这些位。'''

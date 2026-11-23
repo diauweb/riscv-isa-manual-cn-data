@@ -1,0 +1,24 @@
+unit_id = "7a8b3f4e33da9d24ae724732e54d512f"
+kind = "code"
+translatable = false
+en = '''
+----
+# global variables
+global       pc                          # Reconstructed program counter
+global       last_pc                     # PC of previous instruction
+global       branches = 0                # Number of branches to process
+global       branch_map = 0              # Bit vector of not taken/taken (1/0) status
+                                         #   for branches
+global bool  stop_at_last_branch = FALSE # Flag to indicate reconstruction is to end at
+                                         #   the final branch
+global bool  inferred_address = FALSE    # Flag to indicate that reported address from
+                                         #   format 0/1/2 was not following an uninferable
+                                         #   jump (and is therefore inferred)
+global bool  start_of_trace = TRUE       # Flag indicating 1st trace packet still
+                                         #   to be processed
+global       address                     # Reconstructed address from te_inst messages
+global       privilege                   # Privilege from te_inst messages
+global       options                     # Operating mode flags
+global array return_stack                # Array holding return address stack
+global       irstack_depth = 0           # Depth of the return address stack
+----'''

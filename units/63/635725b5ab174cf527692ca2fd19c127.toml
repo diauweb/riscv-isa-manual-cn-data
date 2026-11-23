@@ -1,0 +1,8 @@
+unit_id = "635725b5ab174cf527692ca2fd19c127"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In systems where the H Extension is present, `Ssnpm` also adds a new 2-bit WARL field (`PMM`) to bits 33:32 of `henvcfg`. Setting `PMM` enables or disables pointer masking for VS-mode, according to the values in <<pmm-values>>. Further, a 2-bit WARL field (`HUPMM`) is added to bits 49:48 of `hstatus`. Setting `hstatus.HUPMM` enables or disables pointer masking for `HLV.\*` and `HSV.*` instructions in U-mode, according to the values in <<pmm-values>>, when their explicit memory access is performed as though in VU-mode. In HS- and M-modes, pointer masking for these instructions is enabled or disabled by `senvcfg.PMM`, when their explicit memory access is performed as though in VU-mode. Setting `henvcfg.PMM` enables or disables pointer masking for `HLV.\*` and `HSV.*` when their explicit memory access is performed as though in VS-mode.'''
+zh = '''
+在存在 H 扩展的系统中，`Ssnpm` 还在 `henvcfg` 的位 33:32 中新增一个 2 位 WARL 字段（`PMM`）。根据 <<pmm-values>> 中的值，设置 `PMM` 即为 VS 模式使能或禁用指针掩码。此外，在 `hstatus` 的位 49:48 中新增一个 2 位 WARL 字段（`HUPMM`）。根据 <<pmm-values>> 中的值，当 U 模式中的 `HLV.\*` 和 `HSV.*` 指令的显式内存访问如同在 VU 模式中执行时，设置 `hstatus.HUPMM` 即为这些指令使能或禁用指针掩码。在 HS 和 M 模式中，当这些指令的显式内存访问如同在 VU 模式中执行时，由 `senvcfg.PMM` 使能或禁用指针掩码。当 `HLV.\*` 和 `HSV.*` 的显式内存访问如同在 VS 模式中执行时，设置 `henvcfg.PMM` 即为它们使能或禁用指针掩码。'''

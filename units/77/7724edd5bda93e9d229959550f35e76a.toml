@@ -1,0 +1,16 @@
+unit_id = "7724edd5bda93e9d229959550f35e76a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Litmus tests are used to understand the implications of the memory model
+in specific concrete situations. For example, in the litmus test of
+<<litmus-sample>>, the final value of `a0`
+in the first hart can be either 2, 4, or 5, depending on the dynamic
+interleaving of the instruction stream from each hart at runtime.
+However, in this example, the final value of `a0` in Hart 0 will never
+be 1 or 3; intuitively, the value 1 will no longer be visible at the
+time the load executes, and the value 3 will not yet be visible by the
+time the load executes. We analyze this test and many others below.'''
+zh = '''
+litmus 测试用于理解内存模型在特定具体情形中的含义。例如，在 <<litmus-sample>> 的 litmus 测试中，第一个硬件线程中 `a0` 的最终值可为 2、4 或 5，取决于运行时来自每个硬件线程的指令流的动态交错。然而，在此示例中，硬件线程 0 中 `a0` 的最终值绝不会是 1 或 3；直观上，值 1 在加载执行时将不再可见，而值 3 在加载执行时尚未可见。我们在下文分析该测试及许多其他测试。'''

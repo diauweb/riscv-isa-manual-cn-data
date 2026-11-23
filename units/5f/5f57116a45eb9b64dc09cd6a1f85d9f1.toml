@@ -1,0 +1,19 @@
+unit_id = "5f57116a45eb9b64dc09cd6a1f85d9f1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RV128I builds upon RV64I in the same way RV64I builds upon RV32I, with
+integer registers extended to 128 bits (i.e., XLEN=128). Most integer
+computational instructions are unchanged as they are defined to operate
+on XLEN bits. The RV64I "*W" integer instructions that operate on
+32-bit values in the low bits of a register are retained but now sign
+extend their results from bit 31 to bit 127. A new set of "*D" integer
+instructions are added that operate on 64-bit values held in the low
+bits of the 128-bit integer registers and sign extend their results from
+bit 63 to bit 127. The "*D" instructions consume two major opcodes
+(OP-IMM-64 and OP-64) in the standard 32-bit encoding.
+(((RV128I, compatibility with RV64)))'''
+zh = '''
+RV128I 以与 RV64I 建立在 RV32I 之上相同的方式建立在 RV64I 之上，整数寄存器扩展到 128 位（即 XLEN=128）。大多数整数计算指令保持不变，因为其定义是对 XLEN 位进行操作。RV64I 中在寄存器低位对 32 位值进行操作的“*W”整数指令予以保留，但其结果现在从位 31 符号扩展至位 127。新增一组“*D”整数指令，它们在 128 位整数寄存器的低位对 64 位值进行操作，并将其结果从位 63 符号扩展至位 127。“*D”指令在标准 32 位编码中占用两个主操作码（OP-IMM-64 和 OP-64）。
+(((RV128I, compatibility with RV64)))'''

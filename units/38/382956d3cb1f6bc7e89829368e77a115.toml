@@ -1,0 +1,13 @@
+unit_id = "382956d3cb1f6bc7e89829368e77a115"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_vs_imprecise]#Implementations may choose to track the dirtiness of the vector register
+state in an analogous imprecise fashion, including possibly setting VS
+to Dirty when software attempts to set VS=Initial or VS=Clean.#
+[#norm:mstatus_vs_no_change_dirty]#When VS=Initial or VS=Clean, it is implementation-defined whether an
+instruction that writes a vector register or vector CSR but does not
+alter its contents causes VS to transition to Dirty.#'''
+zh = '''
+[#norm:mstatus_vs_imprecise]##实现可选择以类似的不精确方式跟踪向量寄存器状态的脏状态，包括在软件试图设置 VS=Initial 或 VS=Clean 时可能将 VS 设置为 Dirty。##[#norm:mstatus_vs_no_change_dirty]##当 VS=Initial 或 VS=Clean 时，写入向量寄存器或向量 CSR 但不改变其内容的指令是否导致 VS 转换为 Dirty 由实现定义。##'''

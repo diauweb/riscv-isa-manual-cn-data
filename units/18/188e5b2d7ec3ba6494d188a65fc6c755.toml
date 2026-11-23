@@ -1,0 +1,13 @@
+unit_id = "188e5b2d7ec3ba6494d188a65fc6c755"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmask_maskreg_def]#Vector mask-register logical operations operate on mask registers.
+Each element in a mask register is a single bit,# [#norm:instrgrp_vmask_disregard_vlmul]#so these instructions
+all operate on single vector registers regardless of the setting of
+the `vlmul` field in `vtype`.  They do not change the value of
+`vlmul`.#  [#norm:vmask_vd_overlap_vs]#The destination vector register may be the same as either
+source vector register.#'''
+zh = '''
+[#norm:vmask_maskreg_def]##向量掩码寄存器逻辑操作对掩码寄存器操作。掩码寄存器中的每个元素是单个位，# [#norm:instrgrp_vmask_disregard_vlmul]##因此无论 `vtype` 中 `vlmul` 字段的设置如何，这些指令都对单个向量寄存器操作。它们不改变 `vlmul` 的值。##  [#norm:vmask_vd_overlap_vs]##目标向量寄存器可与任一源向量寄存器相同。##'''

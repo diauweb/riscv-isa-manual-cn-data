@@ -1,0 +1,47 @@
+unit_id = "86edcfb6d91a5a3f3961d1d8c1380c88"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Both compare-and-swap (CAS) and LR/SC can be used to build lock-free
+data structures. After extensive discussion, we opted for LR/SC for
+several reasons: 1) CAS suffers from the ABA problem, which LR/SC avoids
+because it monitors all writes to the address rather than only checking
+for changes in the data value; 2) CAS would also require a new integer
+instruction format to support three source operands (address, compare
+value, swap value) as well as a different memory system message format,
+which would complicate microarchitectures; 3) Furthermore, to avoid the
+ABA problem, other systems provide a double-wide CAS (DW-CAS) to allow a
+counter to be tested and incremented along with a data word. This
+requires reading five registers and writing two in one instruction, and
+also a new larger memory system message type, further complicating
+implementations; 4) LR/SC provides a more efficient implementation of
+many primitives as it only requires one load as opposed to two with CAS
+(one load before the CAS instruction to obtain a value for speculative
+computation, then a second load as part of the CAS instruction to check
+if value is unchanged before updating).
+
+The main disadvantage of LR/SC over CAS is livelock, which we avoid,
+under certain circumstances, with an architected guarantee of eventual
+forward progress as described below. Another concern is whether the
+influence of the current x86 architecture, with its DW-CAS, will
+complicate porting of synchronization libraries and other software that
+assumes DW-CAS is the basic machine primitive. A possible mitigating
+factor is the recent addition of transactional memory instructions to
+x86, which might cause a move away from DW-CAS.
+
+More generally, a multi-word atomic primitive is desirable, but there is
+still considerable debate about what form this should take, and
+guaranteeing forward progress adds complexity to a system.
+===='''
+zh = '''
+[NOTE]
+====
+比较并交换（CAS）和 LR/SC 都可用于构建无锁数据结构。经过大量讨论，我们出于若干原因选择了 LR/SC：1) CAS 存在 ABA 问题，而 LR/SC 避免了该问题，因为它监视对该地址的所有写，而不只是检查数据值的变化；2) CAS 还需要新的整数指令格式以支持三个源操作数（地址、比较值、交换值），以及不同的内存系统消息格式，这会使微架构复杂化；3) 此外，为避免 ABA 问题，其他系统提供双宽 CAS（DW-CAS），以允许计数器与数据字一起被检测和递增。这需要在一条指令中读取五个寄存器并写入两个寄存器，还需要新的更大的内存系统消息类型，进一步使实现复杂化；4) LR/SC 为许多原语提供了更高效的实现，因为它只需要一次加载，而 CAS 需要两次（在 CAS 指令之前先加载以获得用于推测计算的值，然后在 CAS 指令中再加载一次以在更新前检查值是否未变）。
+
+LR/SC 相对于 CAS 的主要缺点是活锁，如下文所述，我们在某些情况下通过体系结构规定的最终向前推进保证来避免它。另一个担忧是，当前 x86 体系结构及其 DW-CAS 的影响是否会使移植假定 DW-CAS 为基本机器原语的同步库和其他软件复杂化。一个可能的缓解因素是 x86 最近加入了事务内存指令，这可能促使人们远离 DW-CAS。
+
+更一般地说，多字原子原语是可取的，但关于它应采取何种形式仍有相当多的争论，而保证向前推进会给系统增加复杂性。
+===='''

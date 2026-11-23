@@ -1,0 +1,17 @@
+unit_id = "0ade4d0ccb4cf880a18fe5c89fe837f2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+SINVAL.VMA, HINVAL.VVMA, and HINVAL.GVMA require the same permissions
+and raise the same exceptions as SFENCE.VMA, HFENCE.VVMA, and
+HFENCE.GVMA, respectively. In particular, an attempt to execute any of
+these instructions in U-mode always raises an illegal-instruction
+exception, and an attempt to execute SINVAL.VMA or HINVAL.GVMA in S-mode
+or HS-mode when `mstatus`.TVM=1 also raises an illegal-instruction
+exception. An attempt to execute HINVAL.VVMA or HINVAL.GVMA in VS-mode
+or VU-mode, or to execute SINVAL.VMA in VU-mode, raises a
+virtual-instruction exception. When `hstatus`.VTVM=1, an attempt to execute
+SINVAL.VMA in VS-mode also raises a virtual instruction exception.'''
+zh = '''
+SINVAL.VMA、HINVAL.VVMA 和 HINVAL.GVMA 分别要求与 SFENCE.VMA、HFENCE.VVMA 和 HFENCE.GVMA 相同的权限，并引发相同的异常。特别地，在 U 模式下尝试执行这些指令中的任何一条，总会引发非法指令异常；当 `mstatus`.TVM=1 时，在 S 模式或 HS 模式下尝试执行 SINVAL.VMA 或 HINVAL.GVMA，也会引发非法指令异常。在 VS 模式或 VU 模式下尝试执行 HINVAL.VVMA 或 HINVAL.GVMA，或在 VU 模式下尝试执行 SINVAL.VMA，会引发虚拟指令异常。当 `hstatus`.VTVM=1 时，在 VS 模式下尝试执行 SINVAL.VMA 也会引发虚拟指令异常。'''

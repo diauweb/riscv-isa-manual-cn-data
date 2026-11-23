@@ -1,0 +1,19 @@
+unit_id = "12cdb489b9c88846034c6ddb1eeff681"
+kind = "code"
+translatable = false
+en = '''
+----
+# Vector constant-stride loads and stores
+
+# vd destination, rs1 base address, rs2 byte constant-stride
+vlse8.v    vd, (rs1), rs2, vm  #    8-bit constant-stride load
+vlse16.v   vd, (rs1), rs2, vm  #   16-bit constant-stride load
+vlse32.v   vd, (rs1), rs2, vm  #   32-bit constant-stride load
+vlse64.v   vd, (rs1), rs2, vm  #   64-bit constant-stride load
+
+# vs3 store data, rs1 base address, rs2 byte constant-stride
+vsse8.v    vs3, (rs1), rs2, vm  #    8-bit constant-stride store
+vsse16.v   vs3, (rs1), rs2, vm  #   16-bit constant-stride store
+vsse32.v   vs3, (rs1), rs2, vm  #   32-bit constant-stride store
+vsse64.v   vs3, (rs1), rs2, vm  #   64-bit constant-stride store
+----'''

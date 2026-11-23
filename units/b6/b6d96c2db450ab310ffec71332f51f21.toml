@@ -1,0 +1,15 @@
+unit_id = "b6d96c2db450ab310ffec71332f51f21"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_illegal_mode]#Attempts to access a CSR address without sufficient privilege
+raise illegal-instruction exceptions or, as described in
+<<sec:hcauses>>, virtual-instruction exceptions.#
+[#norm:Zicsr_illegal_acc]#Attempts to write a read-only CSR address raise illegal-instruction exceptions.#
+[#norm:Zicsr_write_ro]#A read/write register might also contain some bits that are
+read-only, in which case writes to the read-only bits are ignored.#'''
+zh = '''
+[#norm:Zicsr_illegal_mode]#尝试在特权不足的情况下访问 CSR 地址会引发非法指令异常，或者如 <<sec:hcauses>> 所述引发虚拟指令异常。#
+[#norm:Zicsr_illegal_acc]#尝试写入只读 CSR 地址会引发非法指令异常。#
+[#norm:Zicsr_write_ro]#读写寄存器也可能包含某些只读位，此时对这些只读位的写入被忽略。#'''

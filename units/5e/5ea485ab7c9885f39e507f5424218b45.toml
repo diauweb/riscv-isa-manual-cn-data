@@ -1,0 +1,20 @@
+unit_id = "5ea485ab7c9885f39e507f5424218b45"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtime_sz]#The `mtime` register has a 64-bit precision on all RV32 and RV64 systems.#
+[#norm:mtimecmp_sz]#Platforms provide a 64-bit memory-mapped machine-mode timer
+compare register (`mtimecmp`).#
+[#norm:mtime_intr_pending]#A machine timer interrupt becomes pending
+whenever `mtime` contains a value greater than or equal to `mtimecmp`,
+treating the values as unsigned integers.
+The interrupt remains posted until `mtimecmp` becomes greater than `mtime`#
+(typically as a result of writing `mtimecmp`).
+[#norm:mtime_intr_taken]#The interrupt will only be taken if interrupts are
+enabled and the MTIE bit is set in the `mie` register.#'''
+zh = '''
+[#norm:mtime_sz]##`mtime` 寄存器在所有 RV32 和 RV64 系统上具有 64 位精度。##
+[#norm:mtimecmp_sz]##平台提供一个 64 位内存映射的机器模式定时器比较寄存器（`mtimecmp`）。##
+[#norm:mtime_intr_pending]##每当 `mtime` 包含大于或等于 `mtimecmp` 的值时（将值视为无符号整数），机器定时器中断便成为挂起。该中断保持挂起，直到 `mtimecmp` 变得大于 `mtime`##（通常通过写入 `mtimecmp` 实现）。
+[#norm:mtime_intr_taken]##仅当使能中断且 `mie` 寄存器中的 MTIE 位被置位时，才会接受该中断。##'''

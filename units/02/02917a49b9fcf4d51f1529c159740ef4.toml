@@ -1,0 +1,8 @@
+unit_id = "02917a49b9fcf4d51f1529c159740ef4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that [#norm:pm_mode_only_dependency]#the pointer masking setting that is applied only depends on the active privilege mode, not on the address that is being masked.# Some operating systems (e.g., Linux) may use certain bits in the address to disambiguate between different types of addresses (e.g., kernel and user-mode addresses). Pointer masking _does not_ take these semantics into account and is purely an arithmetic operation on the address it is given.'''
+zh = '''
+注意，[#norm:pm_mode_only_dependency]##所应用的指针掩码设置仅取决于活动特权模式，而不取决于正在被掩码的地址。## 某些操作系统（例如 Linux）可能使用地址中的某些位来区分不同类型的地址（例如内核地址和用户模式地址）。指针掩码 _不_ 考虑这些语义，纯粹是对给定地址的算术操作。'''

@@ -1,0 +1,24 @@
+unit_id = "0789de7f0faad841776b9fd7c16fc5be"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Note to software developers
+====
+The first 16 SEW-sized words of the message schedule come from the _message block_
+in big-endian byte order. Since this instruction treats all words as little endian,
+software is required to endian swap these words.
+
+All of the subsequent message schedule words are produced by this instruction and
+therefore do not require an endian swap.
+===='''
+zh = '''
+[NOTE]
+.给软件开发者的说明
+====
+消息调度的前 16 个 SEW 大小的字来自按大端序字节顺序排列的__消息块__。
+由于本指令将所有字视为小端序，软件需要对这些字执行字节序交换。
+
+所有后续消息调度字均由本指令产生，因此不需要字节序交换。
+===='''

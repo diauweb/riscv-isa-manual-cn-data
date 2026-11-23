@@ -1,0 +1,8 @@
+unit_id = "43e74d56afb081dfe3649991cda700b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Trace RAM Sink may be instantiated or configured to support storing trace into dedicated SRAM or system memory. SRAM mode is using dedicated local memory inside of RAM sink, while system memory mode (SMEM mode) is accessing memory via system bus (care should be taken to not overwrite application code or data - it is usually done by reserving part of system memory for trace). Dedicated SRAM memory must be read via dedicated `trRamData` register, while memory in SMEM mode should be read as any other memory on system bus - for example using SBA (System Bus Access) access mode as defined in the RISC-V Debug Specification.'''
+zh = '''
+跟踪 RAM 接收器可被实例化或配置为支持将跟踪数据存储到专用 SRAM 或系统内存中。SRAM 模式使用 RAM 接收器内部的专用本地存储器，而系统内存模式（SMEM 模式）通过系统总线访问内存（应注意不要覆盖应用程序代码或数据——通常通过为跟踪保留一部分系统内存来实现）。专用 SRAM 存储器应通过专用 `trRamData` 寄存器读取，而 SMEM 模式下的内存应像系统总线上的任何其他内存一样读取——例如使用 RISC-V 调试规范中定义的 SBA（系统总线访问）访问模式。'''

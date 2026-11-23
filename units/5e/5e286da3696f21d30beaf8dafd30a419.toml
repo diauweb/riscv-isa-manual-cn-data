@@ -1,0 +1,82 @@
+unit_id = "5e286da3696f21d30beaf8dafd30a419"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Synchronous exception priority in decreasing priority order.
+[align="center",float="center", cols="^1,<1,<2,<2", options="header"]
+|===
+| Priority | Exception Code | Description | Trigger
+| _Highest_
+| 3 +
+3 +
+3 +
+3
+|
+| etrigger +
+icount +
+itrigger +
+mcontrol/mcontrol6 after (on previous instruction) +
+|| 3 | Instruction address breakpoint | mcontrol/mcontrol6 execute address before
+|| 12, 20, 1 | During instruction address translation: First encountered page fault, guest-page fault, or access fault |
+|| 1 | With physical address for instruction: Instruction access fault |
+|| 3 || mcontrol/mcontrol6 execute data before
+|| 2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3 +
+| Illegal instruction +
+Virtual instruction +
+Instruction address misaligned +
+Environment call +
+Environment break +
+Load/Store/AMO address breakpoint
+.>| mcontrol/mcontrol6 load/store address before, store data before
+|| 4, 6 | Optionally: Load/Store/AMO address misaligned |
+|| 13, 15, 21, 23, 5, 7 | During address translation for an explicit
+memory access: First encountered page fault, guest-page fault, or access
+fault |
+|| 5, 7 | With physical address for an explicit memory access: Load/store/AMO access fault |
+|| 4, 6 | If not higher priority: Load/store/AMO address misaligned |
+| _Lowest_ | 3 || mcontrol/mcontrol6 load data before
+|==='''
+zh = '''
+.同步异常优先级（按从高到低的优先级顺序）。
+[align="center",float="center", cols="^1,<1,<2,<2", options="header"]
+|===
+| 优先级 | 异常码 | 说明 | 触发器
+| _最高_
+| 3 +
+3 +
+3 +
+3
+|
+| etrigger +
+icount +
+itrigger +
+mcontrol/mcontrol6 after（在前一条指令上） +
+|| 3 | 指令地址断点 | mcontrol/mcontrol6 execute data before
+|| 12, 20, 1 | 指令地址转换期间：首次遇到的页错误、客户机页错误或访问错误 |
+|| 1 | 以指令物理地址：指令访问错误 |
+|| 3 || mcontrol/mcontrol6 execute data before
+|| 2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3 +
+| 非法指令 +
+虚拟指令 +
+指令地址未对齐 +
+环境调用 +
+环境断点 +
+加载/存储/AMO 地址断点
+.>| mcontrol/mcontrol6 load/store address before, store data before
+|| 4, 6 | 可选：加载/存储/AMO 地址未对齐 |
+|| 13, 15, 21, 23, 5, 7 | 显式内存访问的地址转换期间：首次遇到的页错误、客户机页错误或访问错误 |
+|| 5, 7 | 以显式内存访问的物理地址：加载/存储/AMO 访问错误 |
+|| 4, 6 | 若非更高优先级：加载/存储/AMO 地址未对齐 |
+| _最低_ | 3 || mcontrol/mcontrol6 load data before
+|==='''

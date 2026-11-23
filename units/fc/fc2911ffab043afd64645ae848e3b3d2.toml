@@ -1,0 +1,12 @@
+unit_id = "fc2911ffab043afd64645ae848e3b3d2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Single step is straightforward if the OS or a debug stub runs in M-Mode while the
+program being debugged runs in a less privileged mode. When a step is required,
+the OS or debug stub writes {icount-count}=1, {icount-action}=0,
+{icount-m}=0 before returning control to the lower user program with an
+`mret` instruction.'''
+zh = '''
+如果操作系统或调试桩在 M 模式中运行，而被调试程序在较低特权级模式下运行，则单步执行很简单。当需要单步时，操作系统或调试桩在通过 `mret` 指令将控制权返回给较低特权级的用户程序之前，写入 {icount-count}=1、{icount-action}=0、{icount-m}=0。'''

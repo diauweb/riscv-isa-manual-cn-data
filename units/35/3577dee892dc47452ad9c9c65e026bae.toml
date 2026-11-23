@@ -1,0 +1,17 @@
+unit_id = "3577dee892dc47452ad9c9c65e026bae"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:flen_param]#The F extension adds 32 floating-point registers, `f0-f31`, each 32
+bits wide#, and a floating-point control and status register `fcsr`,
+which contains the operating mode and exception status of the
+floating-point unit. This additional state is shown in
+<<fprs>>. We use the term FLEN to describe the width of
+the floating-point registers in the RISC-V ISA, and FLEN=32 for the F
+single-precision floating-point extension. Most floating-point
+instructions operate on values in the floating-point register file.
+Floating-point load and store instructions transfer floating-point
+values between registers and memory. Instructions to transfer values to and from the integer register file are also provided.'''
+zh = '''
+[#norm:flen_param]##F 扩展增加 32 个浮点寄存器 `f0-f31`，每个宽 32 位##，以及一个浮点控制与状态寄存器 `fcsr`，其中包含浮点单元的操作模式和异常状态。该附加状态如 <<fprs>> 所示。我们使用术语 FLEN 来描述 RISC-V ISA 中浮点寄存器的宽度，对于 F 单精度浮点扩展，FLEN=32。大多数浮点指令对浮点寄存器堆中的值进行操作。浮点加载和存储指令在寄存器与内存之间传送浮点值。还提供了与整数寄存器堆之间传送值的指令。'''

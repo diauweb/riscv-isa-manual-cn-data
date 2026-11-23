@@ -1,0 +1,11 @@
+unit_id = "08266b2a6d54ac6fcba2068301dc76c1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the event that causes the hart to resume execution does not cause an
+interrupt to be taken, execution will resume at `pc` + 4, and software
+must determine what action to take, including looping back to repeat the
+WFI if there was no actionable event.'''
+zh = '''
+若导致硬件线程恢复执行的事件未导致接受中断，则执行将在 `pc` + 4 处恢复，且软件应确定要采取的操作，包括在没有可操作事件时循环回到 WFI 以重复执行。'''

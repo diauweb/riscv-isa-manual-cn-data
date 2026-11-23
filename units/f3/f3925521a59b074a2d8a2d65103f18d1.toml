@@ -1,0 +1,13 @@
+unit_id = "f3925521a59b074a2d8a2d65103f18d1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `marchid` CSR is an MXLEN-bit read-only register encoding the base
+microarchitecture of the hart. This register must be readable in any
+implementation, but a value of 0 can be returned to indicate the field
+is not implemented. The combination of `mvendorid` and `marchid` should
+uniquely identify the type of hart microarchitecture that is
+implemented.'''
+zh = '''
+`marchid` CSR 是一个 MXLEN 位只读寄存器，编码硬件线程的基础微架构。该寄存器在任何实现中都应可读，但可返回 0 值以指示该字段未实现。`mvendorid` 和 `marchid` 的组合宜唯一标识所实现的硬件线程微架构类型。'''

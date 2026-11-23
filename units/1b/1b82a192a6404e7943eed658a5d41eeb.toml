@@ -1,0 +1,30 @@
+unit_id = "1b82a192a6404e7943eed658a5d41eeb"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[scontext-data]] `((data))`
+a|Supervisor mode software can write a context number to this
+register, which can be used to set triggers that only fire in that
+specific context.
+
+An implementation may tie any number of high bits in this field to
+0. It's recommended to implement 16 bits on RV32 and 32 bits on
+RV64.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[scontext-data]] `((data))`
+a|监管模式软件可向此寄存器写入上下文编号，可用于设置仅在该特定上下文中触发的触发器。
+
+实现可将此字段中任意数量的高位固定为 0。建议在 RV32 上实现 16 位，在 RV64 上实现 32 位。
+a|*WARL*
+a|0
+|==='''

@@ -1,0 +1,20 @@
+unit_id = "64b8dee0fde1f6f8a40858dcd7090ee6"
+kind = "diagram"
+translatable = false
+en = '''
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "SXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+
+(draw-box "stval" {:span 32})
+
+(draw-box "SXLEN" {:span 32 :borders {}})
+----'''

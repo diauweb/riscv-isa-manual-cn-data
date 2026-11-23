@@ -1,0 +1,14 @@
+unit_id = "5ae5a068fb128e662647d007c26bbdc0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hstatus-vsxl_op]#The VSXL field controls the effective XLEN for VS-mode (known as
+VSXLEN), which may differ from the XLEN for HS-mode (HSXLEN).# [#norm:hstatus-vsxl_32]#When
+HSXLEN=32, the VSXL field does not exist, and VSXLEN=32.# [#norm:hstatus-vsxl_64]#When HSXLEN=64,
+VSXL is a *WARL* field that is encoded the same as the MXL field of `misa`,
+shown in <<norm:misa_mxl_enc>>.# [#norm:vsxl_ro_param]#In particular, an
+implementation may make VSXL be a read-only field whose value always
+ensures that VSXLEN=HSXLEN.#'''
+zh = '''
+[#norm:hstatus-vsxl_op]##VSXL 字段控制 VS 模式的有效 XLEN（称为 VSXLEN），它可与 HS 模式的 XLEN（HSXLEN）不同。## [#norm:hstatus-vsxl_32]##当 HSXLEN=32 时，VSXL 字段不存在，VSXLEN=32。## [#norm:hstatus-vsxl_64]##当 HSXLEN=64 时，VSXL 是 *WARL* 字段，其编码与 `misa` 的 MXL 字段相同，如 <<norm:misa_mxl_enc>> 所示。## [#norm:vsxl_ro_param]##特别地，实现可使 VSXL 成为只读字段，其值始终确保 VSXLEN=HSXLEN。##'''

@@ -1,0 +1,40 @@
+unit_id = "31ec81707944c96b1219ee6162d1b46e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Terms Used In This Specification]
+.Terms Used In This Specification
+[cols="20%,~",options="header"]
+|======================================================================================================
+|Term| Definition
+|Message|N-Trace messages are sequences of bytes. First byte of every message includes the TCODE field, which defines the type of information carried in the message and its format. When messages are transmitted or stored, a protocol, described in <<N-Trace Transmission Protocol,N-Trace Transmission Protocol>> chapter, defines the start and the end of each message.
+
+|Field| A field is a distinct piece of the information contained within a message, and messages may contain one or more fields (in addition to the first TCODE field). Fields can be either of fixed-length or variable-length. Several fields may be packed into single byte and single field may span multiple bytes. Definitions of all fields can be found in <<Fields in Messages,Fields in Messages>> chapter.
+
+|Variable-length Field|Specifying that a field is variable-length (*Var* used as field size definition) means that the message must contain the field, but the field's size may vary from a minimum of 1 bit. When messages are transmitted or stored, variable-length fields must end on a byte boundary. If necessary, they must zero-fill bit positions beyond the highest order bit of the variable-length data. Because variable-length fields may be of different lengths in messages of the same type, when messages are transmitted or stored, a protocol, described in <<N-Trace Transmission Protocol,N-Trace Transmission Protocol>> chapter, defines the end of each variable-length field.
+
+|Configurable Field|Configurable field (*Cfg* used as field size) means that existence and size of this field depends on some configuration setting. See <<N-Trace Specific Trace Controls,N-Trace Specific Trace Controls>> chapter for details.
+|N-Trace| IEEE-5001 Nexus Standard Based Trace for RISC-V (as defined by this specification).
+|E-Trace| Efficient Trace for RISC-V (as defined by <<E-Trace_Specification,E-Trace Specification>>).
+|Unconditional Jump|On RISC-V ISA all jump instructions are always unconditional, but these two words are always used together to avoid any confusions with the term 'branch' used by the IEEE-5001 Nexus Standard. The two main sub-categories of unconditional jumps that are relevant for tracing are: direct unconditional jump and indirect unconditional jump.
+|Direct Conditional Branch|On RISC-V ISA all branch instructions are always direct and conditional (and also relative), but these three words are always used together to avoid confusion with the term 'branch' used by the IEEE-5001 Nexus Standard.
+|======================================================================================================'''
+zh = '''
+[#Terms Used In This Specification]
+.本规范中使用的术语
+[cols="20%,~",options="header"]
+|======================================================================================================
+|术语| 定义
+|消息| N-Trace 消息是字节序列。每条消息的第一个字节包含 TCODE 字段，该字段定义消息中承载的信息类型及其格式。当消息被传输或存储时，<<N-Trace Transmission Protocol,N-Trace Transmission Protocol>> 一章所述的协议定义每条消息的起始和结束。
+
+|字段| 字段是消息中所含信息的一个独立片段，消息可包含一个或多个字段（除第一个 TCODE 字段外）。字段可以是定长或变长。多个字段可打包进单个字节，单个字段也可跨多个字节。所有字段的定义见 <<Fields in Messages,Fields in Messages>> 一章。
+
+|变长字段| 将字段指定为变长（字段大小定义使用 *Var*）意味着消息应包含该字段，但字段大小可从最小 1 位起变化。当消息被传输或存储时，变长字段应在字节边界结束。如有必要，应把变长数据最高有效位之上的位位置填充为零。由于同一类型的消息中变长字段可能具有不同长度，当消息被传输或存储时，<<N-Trace Transmission Protocol,N-Trace Transmission Protocol>> 一章所述的协议定义每个变长字段的结束。
+
+|可配置字段| 可配置字段（字段大小使用 *Cfg*）意味着该字段的存在性和大小取决于某种配置设置。详见 <<N-Trace Specific Trace Controls,N-Trace Specific Trace Controls>> 一章。
+|N-Trace| 面向 RISC-V 的基于 IEEE-5001 Nexus 标准的跟踪（由本规范定义）。
+|E-Trace| 面向 RISC-V 的高效跟踪（由 <<E-Trace_Specification,E-Trace Specification>> 定义）。
+|无条件跳转| 在 RISC-V ISA 中，所有跳转指令始终是无条件的，但这两个词总是连用以避免与 IEEE-5001 Nexus 标准使用的术语“branch”（分支）发生混淆。与跟踪相关的两个主要无条件跳转子类别是：直接无条件跳转和间接无条件跳转。
+|直接条件分支| 在 RISC-V ISA 中，所有分支指令始终是直接的、有条件的（并且也是相对的），但这三个词总是连用以避免与 IEEE-5001 Nexus 标准使用的术语“branch”（分支）发生混淆。
+|======================================================================================================'''

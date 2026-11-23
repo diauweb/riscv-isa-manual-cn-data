@@ -1,0 +1,91 @@
+unit_id = "eb79cafa38e7fda1e1fbe1a8965cade0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="1,1,1,7",options="header",]
+|=======================================================================
+|Mode | `sseed` | `useed` | Description
+
+| M
+| `*`
+| `*`
+| The `seed` CSR is always available in machine mode as normal (with a
+CSR read-write instruction.) Attempted read without a write raises an
+illegal instruction exception regardless of mode and access control bits.
+
+| U
+| `*`
+| `0`
+| Any `seed` CSR access raises an illegal instruction exception.
+
+| U
+| `*`
+| `1`
+| The `seed` CSR is accessible as normal. No exception is raised for read-write.
+
+| S/HS
+| `0`
+| `*`
+| Any `seed` CSR access raises an illegal instruction exception.
+
+
+| S/HS
+| `1`
+| `*`
+| The `seed` CSR is accessible as normal. No exception is raised for read-write.
+
+| VS/VU
+| `0`
+| `*`
+| Any `seed` CSR access raises an illegal instruction exception.
+
+| VS/VU
+| `1`
+| `*`
+| A read-write `seed` access raises a virtual instruction exception,
+while other access conditions raise an illegal instruction exception.
+
+|======================================================================='''
+zh = '''
+[cols="1,1,1,7",options="header",]
+|=======================================================================
+|模式 | `sseed` | `useed` | 说明
+
+| M
+| `*`
+| `*`
+| `seed` CSR 在机器模式下始终正常可用（使用 CSR 读写指令）。无论模式和访问控制位如何，尝试读取而不写入都会引发非法指令异常。
+
+| U
+| `*`
+| `0`
+| 任何 `seed` CSR 访问都会引发非法指令异常。
+
+| U
+| `*`
+| `1`
+| `seed` CSR 可正常访问。读写不会引发异常。
+
+| S/HS
+| `0`
+| `*`
+| 任何 `seed` CSR 访问都会引发非法指令异常。
+
+
+| S/HS
+| `1`
+| `*`
+| `seed` CSR 可正常访问。读写不会引发异常。
+
+| VS/VU
+| `0`
+| `*`
+| 任何 `seed` CSR 访问都会引发非法指令异常。
+
+| VS/VU
+| `1`
+| `*`
+| 读写 `seed` 访问会引发虚拟指令异常，而其他访问条件会引发非法指令异常。
+
+|======================================================================='''

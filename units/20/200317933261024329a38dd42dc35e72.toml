@@ -1,0 +1,58 @@
+unit_id = "200317933261024329a38dd42dc35e72"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Control Transfer Type Definitions
+[%unbreakable]
+[cols="37%,63%", options="header",]
+|===
+| Transfer Type Name | Associated Opcodes
+.3+| Indirect call | JALR _x1_, _rs_ where _rs_ != _x5_
+| JALR _x5_, _rs_ where _rs_ != _x1_
+| C.JALR _rs1_ where _rs1_ != _x5_
+.4+| Direct call | JAL _x1_
+| JAL _x5_
+| C.JAL
+| CM.JALT _index_
+.2+| Indirect jump (without linkage) | JALR _x0_, _rs_ where _rs_ != (_x1_ or _x5_)
+| C.JR _rs1_ where _rs1_ != (_x1_ or _x5_)
+.3+| Direct jump (without linkage) | JAL _x0_
+| C.J
+| CM.JT _index_
+.3+| Co-routine swap | JALR _x1_, _x5_
+| JALR _x5_, _x1_
+| C.JALR _x5_
+.3+| Function return | JALR _rd_, _rs_ where _rs_ == (_x1_ or _x5_) and _rd_ != (_x1_ or _x5_)
+| C.JR _rs1_ where _rs1_ == (_x1_ or _x5_)
+| CM.POPRET(Z)
+| Other indirect jump (with linkage) | JALR _rd_, _rs_ where _rs_ != (_x1_ or _x5_) and _rd_ != (_x0_, _x1_, or _x5_)
+| Other direct jump (with linkage) | JAL _rd_ where _rd_ != (_x0_, _x1_, or _x5_)
+|==='''
+zh = '''
+.控制转移类型定义
+[%unbreakable]
+[cols="37%,63%", options="header",]
+|===
+| 转移类型名称 | 关联操作码
+.3+| 间接调用 | JALR _x1_, _rs_，其中 _rs_ != _x5_
+| JALR _x5_, _rs_，其中 _rs_ != _x1_
+| C.JALR _rs1_，其中 _rs1_ != _x5_
+.4+| 直接调用 | JAL _x1_
+| JAL _x5_
+| C.JAL
+| CM.JALT _index_
+.2+| 间接跳转（无链接） | JALR _x0_, _rs_，其中 _rs_ !=（_x1_ 或 _x5_）
+| C.JR _rs1_，其中 _rs1_ !=（_x1_ 或 _x5_）
+.3+| 直接跳转（无链接） | JAL _x0_
+| C.J
+| CM.JT _index_
+.3+| 协程交换 | JALR _x1_, _x5_
+| JALR _x5_, _x1_
+| C.JALR _x5_
+.3+| 函数返回 | JALR _rd_, _rs_，其中 _rs_ ==（_x1_ 或 _x5_）且 _rd_ !=（_x1_ 或 _x5_）
+| C.JR _rs1_，其中 _rs1_ ==（_x1_ 或 _x5_）
+| CM.POPRET(Z)
+| 其他间接跳转（带链接） | JALR _rd_, _rs_，其中 _rs_ !=（_x1_ 或 _x5_）且 _rd_ !=（_x0_、_x1_ 或 _x5_）
+| 其他直接跳转（带链接） | JAL _rd_，其中 _rd_ !=（_x0_、_x1_ 或 _x5_）
+|==='''

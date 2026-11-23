@@ -1,0 +1,10 @@
+unit_id = "72f9123b89f32b27b15d893e9b3a54ac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For the instret counter, most instructions do not affect mode transitions, so for those the behavior is clear: [#norm:instret_non_inhibited]#instructions that retire in a non-inhibited mode increment instret, and instructions that retire in an inhibited mode do not.#
+There are two types of instructions that can affect a privilege mode change: instructions that cause synchronous exceptions to a more privileged mode, and xRET instructions that return to a less privileged mode. [#norm:instret_exception]#The former are not considered to retire, and hence do not increment instret.# [#norm:instret_xret]#The latter do retire, and should increment instret only if the originating privilege mode is not inhibited.#'''
+zh = '''
+对于 instret 计数器，大多数指令不影响模式转换，因此这些指令的行为明确：[#norm:instret_non_inhibited]##在非受抑制模式退休的指令使 instret 递增，而在受抑制模式退休的指令不使其递增。##
+有两类指令可能影响特权模式改变：导致同步异常进入更高特权模式的指令，以及返回到较低特权模式的 xRET 指令。[#norm:instret_exception]##前者不被视为退休，因此不使 instret 递增。## [#norm:instret_xret]##后者确实退休，且仅当原特权模式未受抑制时才宜使 instret 递增。##'''

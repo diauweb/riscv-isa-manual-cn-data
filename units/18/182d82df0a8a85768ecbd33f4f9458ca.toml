@@ -1,0 +1,12 @@
+unit_id = "182d82df0a8a85768ecbd33f4f9458ca"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap is taken into M-mode, virtualization mode V gets set to 0,
+and fields MPV and MPP in `mstatus` (or `mstatush`) are set according to
+<<h-mpp>>. A trap into M-mode also writes fields GVA,
+MPIE, and MIE in `mstatus`/`mstatush` and writes CSRs `mepc`, `mcause`,
+`mtval`, `mtval2`, and `mtinst`.'''
+zh = '''
+当陷阱进入 M 模式时，虚拟化模式 V 被置为 0，并按 <<h-mpp>> 设置 `mstatus`（或 `mstatush`）中的 MPV 和 MPP 字段。进入 M 模式的陷阱还会写入 `mstatus`/`mstatush` 中的 GVA、MPIE 和 MIE 字段，并写入 CSR `mepc`、`mcause`、`mtval`、`mtval2` 和 `mtinst`。'''

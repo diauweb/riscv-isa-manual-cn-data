@@ -1,0 +1,15 @@
+unit_id = "1c3fc9f876cfa9229fa36cee9122575e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A _write_ pseudoinstruction (`0x00002020` or `0x00003020`) is used for
+the case that the machine is attempting automatically to update bits A
+and/or D in VS-level page tables. All other implicit memory accesses for
+VS-stage address translation will be reads. If a machine never
+automatically updates bits A or D in VS-level page tables (leaving this
+to software), the _write_ case will never arise. The fact that such a
+page table update must actually be atomic, not just a simple write, is
+ignored for the pseudoinstruction.'''
+zh = '''
+__写__伪指令（`0x00002020` 或 `0x00003020`）用于机器尝试自动更新 VS 级页表中 A 位和/或 D 位的情形。用于 VS 级地址转换的所有其他隐式内存访问均为读操作。若机器从不自动更新 VS 级页表中的 A 位或 D 位（将其留给软件处理），则__写__情形绝不会出现。此类页表更新实际上必须是原子操作而非简单写入，这一事实在伪指令中被忽略。'''

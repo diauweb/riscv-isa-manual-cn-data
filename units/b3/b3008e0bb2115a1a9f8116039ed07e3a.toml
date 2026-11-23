@@ -1,0 +1,71 @@
+unit_id = "b3008e0bb2115a1a9f8116039ed07e3a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. The meaning of `pmpcfg.L` changes: Instead of marking a rule as *locked* and
+  *enforced* in all modes, it now marks a rule as *M-mode-only* when set and
+  *S/U-mode-only* when unset. The formerly reserved encoding of `pmpcfg.RW=01`,
+  and the encoding `pmpcfg.LRWX=1111`, now encode a *Shared-Region*.
++
+  An _M-mode-only_ rule is *enforced* on Machine mode and *denied* in Supervisor
+  or User mode. It also remains *locked* so that any further modifications to
+  its associated configuration or address registers are ignored until a *PMP
+  reset*, unless `mseccfg.RLB` is set.
++
+  An _S/U-mode-only_ rule is *enforced* on Supervisor and User modes and
+  *denied* on Machine mode.
++
+  A _Shared-Region_ rule is *enforced* on all modes, with restrictions depending
+  on the `pmpcfg.L` and `pmpcfg.X` bits:
++
+  * A _Shared-Region_ rule where `pmpcfg.L` is not set can be used for sharing
+    data between M-mode and S/U-mode, so is not executable. M-mode has
+    read/write access to that region, and S/U-mode has read access if `pmpcfg.X`
+    is not set, or read/write access if `pmpcfg.X` is set.
++
+  * A _Shared-Region_ rule where `pmpcfg.L` is set can be used for sharing code
+    between M-mode and S/U-mode, so is not writable. Both M-mode and S/U-mode
+    have execute access on the region, and M-mode also has read access if
+    `pmpcfg.X` is set. The rule remains *locked* so that any further
+    modifications to its associated configuration or address registers are
+    ignored until a *PMP reset*, unless `mseccfg.RLB` is set.
++
+  * The encoding `pmpcfg.LRWX=1111` can be used for sharing data between M-mode
+    and S/U mode, where both modes only have read-only access to the region. The
+    rule remains *locked* so that any further modifications to its associated
+    configuration or address registers are ignored until a *PMP reset*, unless
+    `mseccfg.RLB` is set.
+
+. Adding a rule with executable privileges that either is *M-mode-only* or a
+  *locked* *Shared-Region* is not possible and such `pmpcfg` writes are
+  ignored, leaving `pmpcfg` unchanged. This restriction can be temporarily
+  lifted by setting `mseccfg.RLB` e.g. during the boot process.
+
+. Executing code with Machine mode privileges is only possible from memory
+  regions with a matching *M-mode-only* rule or a *locked* *Shared-Region* rule
+  with executable privileges. Executing code from a region without a matching
+  rule or with a matching _S/U-mode-only_ rule is *denied*.
+
+. If `mseccfg.MML` is not set, the combination of `pmpcfg.RW=01` remains
+  reserved for future standard use.'''
+zh = '''
+. `pmpcfg.L` 的含义改变：它不再将规则标记为在所有模式下 **锁定** 且 **强制执行**，而是在置位时将规则标记为 **仅 M 模式**，在未置位时标记为 **仅 S/U 模式**。原先保留的编码 `pmpcfg.RW=01` 以及编码 `pmpcfg.LRWX=1111` 现在编码 **共享区域**。
++
+  __仅 M 模式__ 规则在机器模式下 **强制执行**，在监管模式或用户模式下 **拒绝**。该规则也保持 **锁定**，因此除非设置了 `mseccfg.RLB`，否则对其关联配置或地址寄存器的任何进一步修改都被忽略，直到 **PMP 复位**。
++
+  __仅 S/U 模式__ 规则在监管模式和用户模式下 **强制执行**，在机器模式下 **拒绝**。
++
+  __共享区域__ 规则在所有模式下 **强制执行**，具体限制取决于 `pmpcfg.L` 和 `pmpcfg.X` 位：
++
+  * `pmpcfg.L` 未置位的 __共享区域__ 规则可用于在 M 模式与 S/U 模式之间共享数据，因此不可执行。M 模式对该区域具有读写访问权限，若未设置 `pmpcfg.X`，S/U 模式具有读访问权限，若设置了 `pmpcfg.X`，则具有读写访问权限。
++
+  * `pmpcfg.L` 置位的 __共享区域__ 规则可用于在 M 模式与 S/U 模式之间共享代码，因此不可写。M 模式和 S/U 模式对该区域均具有执行访问权限，且若设置了 `pmpcfg.X`，M 模式还具有读访问权限。该规则保持 **锁定**，因此除非设置了 `mseccfg.RLB`，否则对其关联配置或地址寄存器的任何进一步修改都被忽略，直到 **PMP 复位**。
++
+  * 编码 `pmpcfg.LRWX=1111` 可用于在 M 模式与 S/U 模式之间共享数据，两种模式对该区域均只具有只读访问权限。该规则保持 **锁定**，因此除非设置了 `mseccfg.RLB`，否则对其关联配置或地址寄存器的任何进一步修改都被忽略，直到 **PMP 复位**。
+
+. 无法添加具有可执行权限且属于 **仅 M 模式** 或 **锁定** **共享区域** 的规则，此类 `pmpcfg` 写入将被忽略，`pmpcfg` 保持不变。此限制可通过设置 `mseccfg.RLB` 暂时解除，例如在启动过程中。
+
+. 只有在具有匹配 **仅 M 模式** 规则或具有可执行权限的 **锁定** **共享区域** 规则的内存区域中，才能以机器模式特权执行代码。从不具有匹配规则的区域或具有匹配 __仅 S/U 模式__ 规则的区域执行代码会被 **拒绝**。
+
+. 若未设置 `mseccfg.MML`，则 `pmpcfg.RW=01` 这一组合仍保留供未来标准使用。'''

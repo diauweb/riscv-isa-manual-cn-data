@@ -1,0 +1,22 @@
+unit_id = "da27e28dc5d2b2751eb2c46611d303ef"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+//This is not SAIL, it's pseudocode. The SAIL hasn't been written yet.
+
+if (XLEN==32) bytes=4; else bytes=8;
+
+addr=sp-bytes;
+for(i in 27,26,25,24,23,22,21,20,19,18,9,8,1)  {
+  //if register i is in xreg_list
+  if (xreg_list[i]) {
+    switch(bytes) {
+      4:  asm("sw x[i], 0(addr)");
+      8:  asm("sd x[i], 0(addr)");
+    }
+    addr-=bytes;
+  }
+}
+----'''

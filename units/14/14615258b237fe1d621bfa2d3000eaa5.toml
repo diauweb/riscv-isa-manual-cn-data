@@ -1,0 +1,25 @@
+unit_id = "14615258b237fe1d621bfa2d3000eaa5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The base width can be quickly ascertained using branches on the sign of
+the returned `misa` value, and possibly a shift left by one and a second
+branch on the sign. These checks can be written in assembly code without
+knowing the register width (MXLEN) of the hart. The base width is
+given by __MXLEN=2^MXL+4^__.
+
+The base width can also be found if `misa` is zero, by placing the
+immediate 4 in a register then shifting the register left by 31 bits at
+a time. If zero after one shift, then the hart is RV32. If zero after
+two shifts, then the hart is RV64, else RV128.
+===='''
+zh = '''
+[NOTE]
+====
+利用对返回的 `misa` 值的符号进行分支，可能再进行一次左移一位并再次对符号进行分支，即可快速确定基础宽度。这些检查可以写成汇编代码，而无需知道硬件线程的寄存器宽度（MXLEN）。基础宽度由 __MXLEN=2^MXL+4^__ 给出。
+
+若 `misa` 为零，也可通过将立即数 4 放入寄存器，然后每次将该寄存器左移 31 位来确定基础宽度。若一次移位后为零，则硬件线程为 RV32。若两次移位后为零，则硬件线程为 RV64，否则为 RV128。
+===='''

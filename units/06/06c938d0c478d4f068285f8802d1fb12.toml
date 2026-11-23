@@ -1,0 +1,25 @@
+unit_id = "06c938d0c478d4f068285f8802d1fb12"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The csr::[mprv] and csr::[mxr] mechanisms were conceived to improve the efficiency of
+M-mode routines that emulate missing hardware features, e.g., misaligned
+loads and stores. csr::[mprv] obviates the need to perform address translation
+in software. csr::[mxr] allows instruction words to be loaded from pages marked
+execute-only.
+
+The current privilege mode and the privilege mode specified by csr::[mpp] might
+have different XLEN settings. When csr::[mprv]=1, load and store memory
+addresses are treated as though the current XLEN were set to MPP’s XLEN,
+following the rules in <<xlen-control>>.
+===='''
+zh = '''
+[NOTE]
+====
+csr::[mprv] 和 csr::[mxr] 机制旨在提高模拟缺失硬件特性（例如非对齐加载和存储）的 M 模式例程的效率。csr::[mprv] 免除了在软件中执行地址转换的需要。csr::[mxr] 允许从标记为仅可执行的页加载指令字。
+
+当前特权模式和 csr::[mpp] 指定的特权模式可能具有不同的 XLEN 设置。当 csr::[mprv]=1 时，加载和存储内存地址按 <<xlen-control>> 中的规则，如同当前 XLEN 被设置为 MPP 的 XLEN 一样处理。
+===='''

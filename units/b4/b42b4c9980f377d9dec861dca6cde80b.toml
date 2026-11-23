@@ -1,0 +1,15 @@
+unit_id = "b42b4c9980f377d9dec861dca6cde80b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For the non-exceptional cases, the seven high bits of significand (after the
+leading one) are used to address the following table.
+The output of the table becomes the seven high bits of the result significand
+(after the leading one); the remainder of the result significand is zero.
+Subnormal inputs are normalized and the exponent adjusted appropriately before
+the lookup.
+The output exponent is chosen to make the result approximate the reciprocal of
+the argument, and subnormal outputs are denormalized accordingly.'''
+zh = '''
+对于非异常情况，使用有效数七高位（在前导 1 之后）索引下表。表的输出成为结果有效数的高七位（在前导 1 之后）；结果有效数的其余位为零。非规格化输入被规格化，并在查找前适当调整指数。选择输出指数以使结果近似参数的倒数，并相应地反规格化非规格化输出。'''

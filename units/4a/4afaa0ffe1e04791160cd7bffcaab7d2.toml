@@ -1,0 +1,12 @@
+unit_id = "4afaa0ffe1e04791160cd7bffcaab7d2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Fields FS and VS in registers `sstatus` and `vsstatus` deviate from the usual
+_HS-qualified_ rule.
+If an instruction is prevented from executing because FS or VS is zero in
+either `sstatus` or `vsstatus`, the exception raised is always an
+illegal-instruction exception, never a virtual-instruction exception.'''
+zh = '''
+寄存器 `sstatus` 和 `vsstatus` 中的 FS 与 VS 字段偏离了通常的__HS 限定__规则。若某条指令因 `sstatus` 或 `vsstatus` 中的 FS 或 VS 为零而被阻止执行，则所引发的异常始终是非法指令异常，绝不会是虚拟指令异常。'''

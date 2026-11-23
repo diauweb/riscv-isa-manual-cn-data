@@ -1,0 +1,22 @@
+unit_id = "57bb356c05b59edcdcadabca2dedae95"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+HLVX cannot override machine-level physical memory protection (PMP), so
+attempting to read memory that PMP designates as execute-only still
+results in an access-fault exception.
+
+Although HLVX instructions’ explicit memory accesses require execute
+permissions, they still raise the same exceptions as other load
+instructions, rather than raising fetch exceptions instead.
+===='''
+zh = '''
+[NOTE]
+====
+HLVX 不能覆盖机器级物理内存保护（PMP），因此尝试读取 PMP 指定为仅执行的内存仍会导致访问错误异常。
+
+尽管 HLVX 指令的显式内存访问需要执行权限，但它们仍引发与其他加载指令相同的异常，而不是改为引发取指异常。
+===='''

@@ -1,0 +1,12 @@
+unit_id = "0e19ac11e3e84138dbee94440f0e09b0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When `SSEED` is 0, access to the `seed` CSR from S-/HS-mode raises an
+illegal-instruction exception. When `SSEED` is 1, read-write access to the
+`seed` CSR from S-/HS-mode is allowed; all other types of accesses raise an
+illegal-instruction exception. If Zkr or S-mode is not implemented, `SSEED` is
+read-only zero.'''
+zh = '''
+当 `SSEED` 为 0 时，从 S/HS 模式访问 `seed` CSR 引发非法指令异常。当 `SSEED` 为 1 时，允许从 S/HS 模式对 `seed` CSR 进行读写访问；所有其他类型的访问引发非法指令异常。若未实现 Zkr 或 S 模式，则 `SSEED` 为只读零。'''

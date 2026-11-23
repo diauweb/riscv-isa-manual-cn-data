@@ -1,0 +1,15 @@
+unit_id = "ad4582f580bfd27ee20a8f37f1d81cde"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:trap_exp]#When a trap is to be taken into M-mode, if the csr::[mdt] bit is currently 0, it is then set to 1, and the trap is delivered as expected.#
+[#norm:trap_unexp_mdt_1]#However, if csr::[mdt] is already set to 1, then this is an _unexpected trap_.#
+[#norm:trap_unexp_rnmi]#When the ext:smrnmi[] extension
+is implemented, a trap caused by an RNMI is not considered an _unexpected trap_
+irrespective of the state of the csr::[mdt] bit.#
+[#norm:mstatus_mdt_not_set_rnmi]#A trap caused by an RNMI does not set the csr::[mdt] bit.# However,
+[#norm:trap_unexp_mnstatus_nmie_0]#a trap that occurs when executing in M-mode with
+csr:mnstatus[nmie] set to 0 is an _unexpected trap_.#'''
+zh = '''
+[#norm:trap_exp]##当陷阱将被进入 M 模式时，若 csr::[mdt] 位当前为 0，则将其设置为 1，并按预期递送陷阱。##[#norm:trap_unexp_mdt_1]##然而，若 csr::[mdt] 已设置为 1，则这是一个 _意外陷阱_。##[#norm:trap_unexp_rnmi]##当实现了 ext:smrnmi[] 扩展时，由 RNMI 引起的陷阱无论 csr::[mdt] 位处于何种状态，都不被视为 _意外陷阱_。##[#norm:mstatus_mdt_not_set_rnmi]##由 RNMI 引起的陷阱不会设置 csr::[mdt] 位。##然而，[#norm:trap_unexp_mnstatus_nmie_0]##当在 M 模式下执行且 csr:mnstatus[nmie] 设置为 0 时发生的陷阱是一个 _意外陷阱_。##'''

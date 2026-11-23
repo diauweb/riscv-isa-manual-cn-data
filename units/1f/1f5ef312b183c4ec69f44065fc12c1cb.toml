@@ -1,0 +1,17 @@
+unit_id = "1f5ef312b183c4ec69f44065fc12c1cb"
+kind = "code"
+translatable = false
+en = '''
+----
+# v1 = v1 / v2 to almost 23 bits of precision.
+
+vfrec7.v v3, v2             # Estimate 1/v2
+  li t0, 0x40000000
+vmv.v.x v4, t0              # Splat 2.0
+vfnmsac.vv v4, v2, v3       # 2.0 - v2 * est(1/v2)
+vfmul.vv v3, v3, v4         # Better estimate of 1/v2
+vmv.v.x v4, t0              # Splat 2.0
+vfnmsac.vv v4, v2, v3       # 2.0 - v2 * est(1/v2)
+vfmul.vv v3, v3, v4         # Better estimate of 1/v2
+vfmul.vv v1, v1, v3         # Estimate of v1/v2
+----'''

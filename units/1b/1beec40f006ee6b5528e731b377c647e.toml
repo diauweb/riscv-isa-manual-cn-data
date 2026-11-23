@@ -1,0 +1,13 @@
+unit_id = "1beec40f006ee6b5528e731b377c647e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Although one of the bits 25--0 in `misa` being set to 1 implies that
+the corresponding feature is implemented, the inverse is not necessarily
+true: one of these bits being clear does not necessarily imply that the
+corresponding feature is not implemented.  This follows from the fact that,
+when a feature is not implemented, the corresponding opcodes and CSRs become
+reserved, not necessarily illegal.'''
+zh = '''
+NOTE: 尽管 `misa` 中位 25-0 之一被置为 1 意味着相应特性已实现，但反之未必成立：这些位之一为 0 并不一定意味着相应特性未实现。这是因为，当某特性未实现时，相应的操作码和 CSR 变为保留，而不一定是非法的。'''

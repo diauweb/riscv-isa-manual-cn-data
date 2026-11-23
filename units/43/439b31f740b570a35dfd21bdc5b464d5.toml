@@ -1,0 +1,13 @@
+unit_id = "439b31f740b570a35dfd21bdc5b464d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a PMP entry matches all bytes of an access, then the L, R, W, and X
+bits determine whether the access succeeds or fails. If the L bit is
+clear and the privilege mode of the access is M, the access succeeds.
+Otherwise, if the L bit is set or the privilege mode of the access is S
+or U, then the access succeeds only if the R, W, or X bit corresponding
+to the access type is set.'''
+zh = '''
+若 PMP 条目匹配访问的所有字节，则由 L、R、W 和 X 位决定访问成功还是失败。若 L 位为 0 且访问的特权模式为 M，则访问成功。否则，若 L 位置位或访问的特权模式为 S 或 U，则仅当对应于该访问类型的 R、W 或 X 位置位时，访问才成功。'''

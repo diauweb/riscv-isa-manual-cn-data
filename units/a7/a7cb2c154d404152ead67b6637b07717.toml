@@ -1,0 +1,13 @@
+unit_id = "a7cb2c154d404152ead67b6637b07717"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-jr_op]#insn:c.jr[] (jump register) performs an unconditional control transfer to the
+address in register _rs1_. It expands to insn:jalr[x0,0(rs1)].#
+[#norm:c-jr_rsv]#insn:c.jr[] is
+valid only when _rs1_≠`x0`; the code
+point with _rs1_=`x0` is reserved.#'''
+zh = '''
+[#norm:c-jr_op]##insn:c.jr[]（跳转寄存器）执行到寄存器 _rs1_ 中地址的无条件控制转移。它展开为 insn:jalr[x0,0(rs1)]。##
+[#norm:c-jr_rsv]##insn:c.jr[] 仅在 _rs1_≠`x0` 时有效；_rs1_=`x0` 的编码点保留。##'''

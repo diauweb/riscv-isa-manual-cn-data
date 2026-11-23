@@ -1,0 +1,11 @@
+unit_id = "122a30f8fa9710757ad9b2b7e8414e2d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[sd] bit is read-only and is set when either the csr::[fs], csr::[vs], or csr::[xs] bits
+encode a Dirty state (i.e., csr::[sd]=(csr::[fs]==0b11 OR csr::[xs]==0b11 OR csr::[vs]==0b11)). This
+allows privileged code to quickly determine when no additional context
+save is required beyond the integer register set and `pc`.'''
+zh = '''
+csr::[sd] 位为只读，当 csr::[fs]、csr::[vs] 或 csr::[xs] 位编码 Dirty 状态时置位（即 csr::[sd]=(csr::[fs]==0b11 OR csr::[xs]==0b11 OR csr::[vs]==0b11)）。这使特权代码能快速确定何时除整数寄存器组和 `pc` 之外不需要额外的上下文保存。'''

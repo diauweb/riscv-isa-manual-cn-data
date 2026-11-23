@@ -1,0 +1,17 @@
+unit_id = "a6b05c76fbdd947fffa5c8a3d34d7a8b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For breakpoint and memory access traps that write a nonzero value to
+`stval`, GVA is redundant with field SPV (the two bits are set the same)
+except when the explicit memory access of an HLV, HLVX, or HSV
+instruction causes a fault. In that case, SPV=0 but GVA=1.
+===='''
+zh = '''
+[NOTE]
+====
+对于向 `stval` 写入非零值的断点和内存访问陷阱，GVA 与字段 SPV 冗余（两位置位相同），除非 HLV、HLVX 或 HSV 指令的显式内存访问引发错误。在这种情况下，SPV=0 但 GVA=1。
+===='''

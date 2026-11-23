@@ -1,0 +1,24 @@
+unit_id = "a2e8e59bd737808fa0f81790f04f6686"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The first byte of a message sends the least significant bits of the message and is indicated by *MSEO[1:0]=00*.
+* Bytes occupied by fixed-length fields are sent using *MSEO[1:0]=00*.
+* The last byte of a variable-length field, that is not last byte of a message, is indicated by *MSEO[1:0]=01*.
+** A variable-length field in a message always ends on a byte boundary (zero extended as needed).
+** The non-last bytes of a variable-length fields are indicated by *MSEO[1:0]=00*.
+* The last byte of a message is indicated by *MSEO[1:0]=11*.
+** It also implies an end of the last (fixed-length or variable-length) field of a message.
+* Idle bytes (between messages or used as padding) are indicated by *MSEO[1:0]=11* and *MDO[5:0]=111111* (entire byte is *0xFF*).
+* Value of *MSEO[1:0]=10* is reserved for future extensions.'''
+zh = '''
+* 消息的第一个字节发送消息的最低有效位，并由 *MSEO[1:0]=00* 指示。
+* 由定长字段占用的字节使用 *MSEO[1:0]=00* 发送。
+* 不是消息最后字节的变长字段最后字节由 *MSEO[1:0]=01* 指示。
+** 消息中的变长字段始终在字节边界结束（按需零扩展）。
+** 变长字段的非最后字节由 *MSEO[1:0]=00* 指示。
+* 消息的最后字节由 *MSEO[1:0]=11* 指示。
+** 它还意味着消息最后一个（定长或变长）字段的结束。
+* 空闲字节（消息之间或用作填充）由 *MSEO[1:0]=11* 和 *MDO[5:0]=111111* 指示（整个字节为 *0xFF*）。
+* *MSEO[1:0]=10* 的值保留供将来扩展。'''

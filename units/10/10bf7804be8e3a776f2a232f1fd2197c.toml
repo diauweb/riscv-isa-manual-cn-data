@@ -1,0 +1,20 @@
+unit_id = "10bf7804be8e3a776f2a232f1fd2197c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: With only integer LMUL values, a loop operating on a range of
+sizes would have to allocate at least one whole vector register
+(LMUL=1) for the narrowest data type and then would consume multiple
+vector registers (LMUL>1) to form a vector register group for each
+wider vector operand.  This can limit the number of vector register groups
+available.  With fractional LMUL, the widest values need occupy only a
+single vector register while narrower values can occupy a fraction of
+a single vector register, allowing all 32 architectural vector
+register names to be used for different values in a vector loop even
+when handling mixed-width values.  Fractional LMUL implies portions of
+vector registers are unused, but in some cases, having more shorter
+register-resident vectors improves efficiency relative to fewer longer
+register-resident vectors.'''
+zh = '''
+NOTE: 如果仅使用整数 LMUL 值，对一定大小范围进行操作的循环将不得不为最窄数据类型分配至少一个完整向量寄存器（LMUL=1），然后为每个更宽向量操作数消耗多个向量寄存器（LMUL>1）以形成向量寄存器组。这会限制可用向量寄存器组的数量。使用分数 LMUL 时，最宽值只需占用单个向量寄存器，而较窄值可占用单个向量寄存器的一部分，从而允许在向量循环中为不同值使用全部 32 个架构向量寄存器名称，即使处理混合宽度值也是如此。分数 LMUL 意味着向量寄存器的一部分未使用，但在某些情况下，拥有更多较短的寄存器驻留向量比拥有更少较长的寄存器驻留向量可提高效率。'''

@@ -1,0 +1,13 @@
+unit_id = "4208e0ec84a03549a738545ae9410357"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: When adding a vector extension to the Zfinx/Zdinx/Zhinx
+extensions, floating-point scalar arguments are taken from the `x`
+registers.  NaN-boxing is not supported in these extensions, and so
+the vector floating-point scalar value is produced using the same
+rules as for an integer scalar operand (i.e., when XLEN > SEW use the
+lowest SEW bits, when XLEN < SEW use the sign-extended value).'''
+zh = '''
+NOTE: 当向 Zfinx/Zdinx/Zhinx 扩展添加向量扩展时，浮点标量参数取自 `x` 寄存器。这些扩展不支持 NaN 装箱，因此向量浮点标量值按与整数标量操作数相同的规则产生（即，当 XLEN > SEW 时使用最低 SEW 位，当 XLEN < SEW 时使用符号扩展值）。'''

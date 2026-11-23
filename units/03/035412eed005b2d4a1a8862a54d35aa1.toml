@@ -1,0 +1,10 @@
+unit_id = "035412eed005b2d4a1a8862a54d35aa1"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let rs1_data = EXTZ(X(rs1)[31..0];
+let result = (rs1_data >> shamt) | (rs1_data << (32 - shamt));
+X(rd) = EXTS(result[31..0]);
+--'''

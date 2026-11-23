@@ -1,0 +1,13 @@
+unit_id = "28847cd748f16bbd0c6f63ea43b26d12"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Whenever XLEN in any mode is set to a value less than the widest
+supported XLEN, all operations must ignore source operand register bits
+above the configured XLEN, and must sign-extend results to fill the
+entire widest supported XLEN in the destination register. Similarly,
+`pc` bits above XLEN are ignored, and when the `pc` is written, it is
+sign-extended to fill the widest supported XLEN.'''
+zh = '''
+每当任何模式下的 XLEN 被设置为小于所支持最宽 XLEN 的值时，所有操作应忽略源操作数寄存器中高于所配置 XLEN 的位，并应将结果符号扩展以填充目标寄存器中整个所支持最宽的 XLEN。类似地，`pc` 中高于 XLEN 的位被忽略，且当写入 `pc` 时，将其符号扩展以填充所支持最宽的 XLEN。'''

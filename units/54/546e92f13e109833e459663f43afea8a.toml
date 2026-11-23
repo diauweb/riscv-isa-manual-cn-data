@@ -1,0 +1,21 @@
+unit_id = "546e92f13e109833e459663f43afea8a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. latexmath:[$i'$] is finished;
+. every memory store operation that has been forwarded to
+latexmath:[$i'$] is propagated;
+. the conditions of <<commit_stores, Commit store instruction>> is satisfied;
+. the conditions of <<prop_store, Propagate store instruction>> is satisfied (notice that an `sc` instruction can
+only have one memory store operation); and
+. for every store slice latexmath:[$msos$] from latexmath:[$msoss$],
+latexmath:[$msos$] has not been overwritten, in the shared memory, by a
+store that is from a hart that is not latexmath:[$h$], at any point
+since latexmath:[$msos$] was propagated to memory.'''
+zh = '''
+. latexmath:[$i'$] 已完成；
+. 已转发给 latexmath:[$i'$] 的每个内存存储操作均已传播；
+. <<commit_stores, 提交存储指令>> 的条件得到满足；
+. <<prop_store, 传播存储指令>> 的条件得到满足（注意，`sc` 指令只能有一个内存存储操作）；且
+. 对于来自 latexmath:[$msoss$] 的每个存储分片 latexmath:[$msos$]，自 latexmath:[$msos$] 传播到内存以来的任何时刻，latexmath:[$msos$] 在共享内存中均未被来自并非 latexmath:[$h$] 的硬件线程的存储所覆写。'''

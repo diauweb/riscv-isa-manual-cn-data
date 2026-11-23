@@ -1,0 +1,30 @@
+unit_id = "9e1c25185e4c4d0e1dde1d1a2e06a755"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Bit 0 of these registers is not custom state itself; it is a standard field of
+a standard CSR, either mstateen0, hstateen0, or sstateen0. The
+requirements that non-standard extensions must meet to be conforming are not
+relaxed due solely to changes in the value of this bit. In particular, if
+software sets this bit but does not execute any custom instructions or access
+any custom state, the software must continue to execute as specified by all
+relevant RISC-V standards, or the hardware is not standard-conforming.
+The FCSR bit controls access to fcsr for the case when floating-point
+instructions operate on x registers instead of f registers as specified by
+the Zfinx and related extensions (Zdinx, etc.). Whenever misa.F = 1, bit 1 of
+mstateen0 is read-only zero (and hence read-only zero in hstateen0 and
+sstateen0 too). For convenience, when the stateen CSRs are implemented and
+misa.F = 0, then if bit 1 of a controlling stateen0 CSR is zero, all
+floating-point instructions cause an illegal instruction trap (or virtual
+instruction trap, if relevant), as though they all access fcsr, regardless of
+whether they really do.
+===='''
+zh = '''
+[NOTE]
+====
+这些寄存器的第 0 位本身不是自定义状态；它是标准 CSR（mstateen0、hstateen0 或 sstateen0）的标准字段。非标准扩展为符合规范而应满足的要求，并不会仅因该位取值变化而放宽。特别是，若软件置位该位但不执行任何自定义指令，也不访问任何自定义状态，则软件应继续按所有相关 RISC-V 标准的规定执行，否则硬件不符合标准。
+FCSR 位控制对 fcsr 的访问，适用于浮点指令按 Zfinx 及相关扩展（Zdinx 等）的规定对 x 寄存器而不是 f 寄存器进行操作的情况。每当 misa.F = 1 时，mstateen0 的第 1 位为只读零（因此 hstateen0 和 sstateen0 中该位也为只读零）。为方便起见，当实现了 stateen CSR 且 misa.F = 0 时，如果控制用 stateen0 CSR 的第 1 位为零，则所有浮点指令都会引发非法指令陷阱（或在相关时引发虚拟指令陷阱），就好像它们都访问 fcsr 一样，无论它们是否真的访问 fcsr。
+===='''

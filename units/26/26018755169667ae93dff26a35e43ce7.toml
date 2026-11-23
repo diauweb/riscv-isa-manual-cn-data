@@ -1,0 +1,30 @@
+unit_id = "26018755169667ae93dff26a35e43ce7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* A coherent cache is permitted to allocate and deallocate copies of a cache
+  block and perform read and write transfers as described in <<#memory-caches>>
+
+* A coherent cache is permitted to perform a write transfer to memory provided
+  that a store operation has modified the data in the cache block since the most
+  recent invalidate, clean, or flush operation on the cache block
+
+* At least one coherent cache is responsible for performing a write transfer to
+  memory once a store operation has modified the data in the cache block until
+  the next invalidate, clean, or flush operation on the cache block, after which
+  no coherent cache is responsible (or permitted) to perform a write transfer to
+  memory until the next store operation has modified the data in the cache block
+
+* A coherent cache is required to perform a write transfer to memory if a store
+  operation has modified the data in the cache block since the most recent
+  invalidate, clean, or flush operation on the cache block and if the next clean
+  or flush operation requires a write transfer to memory'''
+zh = '''
+* 一致高速缓存被允许分配和解除分配缓存块的副本，并按 <<#memory-caches>> 中所述执行读传输和写传输
+
+* 一致高速缓存被允许执行到内存的写传输，前提是自最近一次对该缓存块执行使无效、清洁或冲刷操作以来，某存储操作已修改该缓存块中的数据
+
+* 一旦某存储操作已修改该缓存块中的数据，至少一个一致高速缓存负责执行到内存的写传输，直到下一次对该缓存块执行使无效、清洁或冲刷操作，此后在下次某存储操作修改该缓存块中的数据之前，没有一致高速缓存负责（或被允许）执行到内存的写传输
+
+* 如果自最近一次对该缓存块执行使无效、清洁或冲刷操作以来，某存储操作已修改该缓存块中的数据，且如果下一次清洁或冲刷操作要求到内存的写传输，则要求某一致高速缓存执行到内存的写传输'''

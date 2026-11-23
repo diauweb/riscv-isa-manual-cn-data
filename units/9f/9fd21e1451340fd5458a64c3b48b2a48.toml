@@ -1,0 +1,15 @@
+unit_id = "9fd21e1451340fd5458a64c3b48b2a48"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some vector instructions have source and destination vector operands
+with the same number of elements but different widths, so that EEW and
+EMUL differ from SEW and LMUL respectively but EEW/EMUL = SEW/LMUL.
+For example, most widening arithmetic instructions have a source group
+with EEW=SEW and EMUL=LMUL but have a destination group with EEW=2*SEW and
+EMUL=2*LMUL.  Narrowing instructions have a source operand that has
+EEW=2*SEW and EMUL=2*LMUL but with a destination where EEW=SEW and EMUL=LMUL.'''
+zh = '''
+某些向量指令的源和目标向量操作数具有相同元素数但宽度不同，因此 EEW 和 EMUL 分别不同于 SEW 和 LMUL，但 EEW/EMUL = SEW/LMUL。
+例如，大多数加宽算术指令具有 EEW=SEW 且 EMUL=LMUL 的源组，但具有 EEW=2*SEW 且 EMUL=2*LMUL 的目标组。窄化指令的源操作数具有 EEW=2*SEW 且 EMUL=2*LMUL，但目标具有 EEW=SEW 且 EMUL=LMUL。'''

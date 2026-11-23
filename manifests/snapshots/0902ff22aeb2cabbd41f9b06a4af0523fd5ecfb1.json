@@ -1,0 +1,1763 @@
+{
+  "sha": "0902ff22aeb2cabbd41f9b06a4af0523fd5ecfb1",
+  "parent_sha": "ed61a8dfd6c78b68fd127591e8a7ed5126e60f2d",
+  "is_baseline": false,
+  "date": "2024-05-02T14:40:30-07:00",
+  "title": "Integrate Zicfilp and Zicfiss extension specs (#1380)",
+  "ratified_tag": null,
+  "draft_tags": [],
+  "diff": {
+    "added": 194,
+    "modified": 1,
+    "moved": 0,
+    "deleted": 14,
+    "touched_chapters": [
+      "priv/hypervisor",
+      "priv/machine",
+      "priv/priv-cfi",
+      "priv/priv-csrs",
+      "priv/supervisor",
+      "unpriv/_control_flow_integrity_cfi"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": "heading",
+      "unit_id": "9793f1320ce9072d817bc0c815fbf759",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 0,
+      "unit_id": "9414fb627292856c0598814adf796b23",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 1,
+      "unit_id": "c2b5df879fab0d3752488c1b6c967a7e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 2,
+      "unit_id": "a21501e62e78562cdbdf26464c04994e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 3,
+      "unit_id": "3affe5d896aaf34f0bc23209be6d8e92",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 4,
+      "unit_id": "17eb95df307633f32a0cfb9029de87ce",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 5,
+      "unit_id": "732b6e102da2d86ea21a0f1d77df60de",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 6,
+      "unit_id": "01a3265e2084eddc907391cc20f9b953",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 7,
+      "unit_id": "3f2da842e13c5bb6c018785cbac793b0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_control_flow_integrity_cfi",
+      "slot": 8,
+      "unit_id": "0ae47add63adcd09bc28dcc349e3a884",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": "heading",
+      "unit_id": "fb15c8770fe517947896ed53f267740f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 0,
+      "unit_id": "49a5e5efaaef14d1125754c909413547",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 1,
+      "unit_id": "fc59e623a370b27ada34e962abd1e26e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 2,
+      "unit_id": "38bd7a2c78ff54276119764bd0ea8778",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 3,
+      "unit_id": "8f643e28525534f67c9cba06a9b5e227",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 4,
+      "unit_id": "c8ad1d79368a58605a1fb55d042301a4",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 5,
+      "unit_id": "698c076b795d1c4a452ca784e8d338f8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 6,
+      "unit_id": "fc197674b0a984e6550aed019eb53e85",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 7,
+      "unit_id": "b829e1fb6d170c80f656068c2a2db02a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 8,
+      "unit_id": "daf8f91a4096dd6f16b3e9b966e9cb56",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-forward",
+      "slot": 9,
+      "unit_id": "c80418362c34c2e426704fb70a0387a9",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": "heading",
+      "unit_id": "873b18c5dd3f6b7a85a2e5cd7173db3a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 0,
+      "unit_id": "005e9fb8556f4cd9cb2d6cb8d38e33ba",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 1,
+      "unit_id": "46fe7cb50db2ea07b4eefd5d1df6e00d",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 2,
+      "unit_id": "591d7fd6a2f7767a9033c3a7f26a5d70",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 3,
+      "unit_id": "23fe193a6c695d5e1e100212a7ee5a69",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 4,
+      "unit_id": "ccd4d8db40454d006b6baf69b5599e21",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 5,
+      "unit_id": "8f7c1c4fdd36039acbb249f7081a02c5",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 6,
+      "unit_id": "e33f11e7e4ac8f089dc69c0e4eaef81d",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 7,
+      "unit_id": "572bca886f9b64bd7944a8d75d89fbc4",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 8,
+      "unit_id": "7db626cd69797a1a332536ac4ba2d772",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_landing_pad_enforcement",
+      "slot": 9,
+      "unit_id": "b4d1290d7e9ef0ee6da505d4fd543f28",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": "heading",
+      "unit_id": "829dec8052b2323eaf24e157e34166f2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 0,
+      "unit_id": "954ac01a74d546cbd259cb792303d228",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 1,
+      "unit_id": "7dc2d3cf107369b0b29bc3678d10db67",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 2,
+      "unit_id": "e1b2575b23b85ab85ab1fe44f7d9ed9f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 3,
+      "unit_id": "3d7a05ee227db129a9bf6e43450ab7d7",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 4,
+      "unit_id": "d25f7df380bc1da4ff1500510c7db716",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "LP_INST",
+      "slot": 5,
+      "unit_id": "4fd46c5f8b28f0b33958fe9b98519b3c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": "heading",
+      "unit_id": "11a21165223da7f9227496afb9a4a170",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 0,
+      "unit_id": "c7644467422494626d153fe2ece3c298",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 1,
+      "unit_id": "01f645ac767782f47484c0080b3d0209",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 2,
+      "unit_id": "d0ace068a924dc378b5f18bdd8a9ce91",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 3,
+      "unit_id": "a6d5ef2c372d3cf45d1114b9c996200f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 4,
+      "unit_id": "85a3d27959b5569c9da62101e44d9bba",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 5,
+      "unit_id": "51ba8b9f39a4c8345a982ba3688fb4bb",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 6,
+      "unit_id": "d45b8691510fd5a8f717f5c33b4de436",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 7,
+      "unit_id": "5b5be0d02e75365b02c68f7cded62aef",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 8,
+      "unit_id": "65c1fb12c710aae47009157485b37ed2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 9,
+      "unit_id": "4ecb67a7953377163bda34bd339a9270",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 10,
+      "unit_id": "24bd83038eb968b74e879e8b7aa13a26",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "unpriv-backward",
+      "slot": 11,
+      "unit_id": "71e77511a28834ab015728793c589df6",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_zicfiss_instructions_summary",
+      "slot": "heading",
+      "unit_id": "b02f2824663fee0840db10231fa63204",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_zicfiss_instructions_summary",
+      "slot": 0,
+      "unit_id": "5285b7daa1e64dba1ef2740c0ca8fa7c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_zicfiss_instructions_summary",
+      "slot": 1,
+      "unit_id": "179482bc3af85dbcba9ecf5ecc611b38",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_zicfiss_instructions_summary",
+      "slot": 2,
+      "unit_id": "a0d8dd3d4b2e859618bfa69b5a137f3f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_shadow_stack_pointer_ssp",
+      "slot": "heading",
+      "unit_id": "27881de60f6c201d870526f1a9150207",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_shadow_stack_pointer_ssp",
+      "slot": 0,
+      "unit_id": "ea1beea6d319009bdf2b8dac01901dba",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "_zicfiss_instructions",
+      "slot": "heading",
+      "unit_id": "14907db86b2de7dd7af43988f85e0786",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": "heading",
+      "unit_id": "f58581e642f4a2c805fb2524a45a815a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 0,
+      "unit_id": "6723be32f7538c448154bcfd9f664c9a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 1,
+      "unit_id": "d6e92c84109f2485545077431500a20c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 2,
+      "unit_id": "4c8bdea1eb11ece9fe893973856996b2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 3,
+      "unit_id": "3e6b10ae0ccb643f9b92965d0985f4d8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 4,
+      "unit_id": "6fb61f7b3d42840380a671f8d225e2c3",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 5,
+      "unit_id": "af55b86faa35b0a84bf1fb086ce10394",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 6,
+      "unit_id": "06768a76a7e32a926ee7a264c4357474",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_PUSH",
+      "slot": 7,
+      "unit_id": "e79d820591c3cf581552fe2949a9ff27",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": "heading",
+      "unit_id": "ae0e2b16eb26ccb27e88258d6df3039a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 0,
+      "unit_id": "caca456562bd0b1c5017ea1f9334a66b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 1,
+      "unit_id": "0c73a85b409c2b3c23ded03df4d44d88",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 2,
+      "unit_id": "804cc98867a0bb20895bfeda388aa986",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 3,
+      "unit_id": "bca28110d5980cde04a723eccfe47599",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 4,
+      "unit_id": "f66ce5940fdfc33b6c45f26cb4e30585",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 5,
+      "unit_id": "d3517455ac861d35731a3ecc89e3f3fa",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 6,
+      "unit_id": "410584ffefd79357a17bde332fa3e331",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 7,
+      "unit_id": "3c161aa4fa61651d5897786882022bd1",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 8,
+      "unit_id": "03151a224f7c20b01411614c87ce6b77",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 9,
+      "unit_id": "446ad433e0cd5704625560caa82a033c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 10,
+      "unit_id": "26512e3cc30b64272acb733bc0d54a32",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 11,
+      "unit_id": "7e45cff05ecba2c2b2a8d30a06a14cfb",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 12,
+      "unit_id": "5655c8fcb72ead8ce0096a618aee2b1c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 13,
+      "unit_id": "0371c28d015b6a310416c147f0edbdf6",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 14,
+      "unit_id": "b6607e622b8a8d0236002af92c968eed",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SS_POP",
+      "slot": 15,
+      "unit_id": "d38c1468b673c5f1f238aacca2e8501d",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": "heading",
+      "unit_id": "5bfa474132c008e902f4915afbb50d8b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 0,
+      "unit_id": "3974872c38e04b27f6c00f5250dab10e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 1,
+      "unit_id": "a3f9e3b8a7db93278e3fb638bb6b1fc9",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 2,
+      "unit_id": "32105fbb4b0b8a5e78a794d352a1b509",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 3,
+      "unit_id": "7a3d3459376552f11c1846dd11889cf0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 4,
+      "unit_id": "377749c18990e5476e57cc171328790d",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 5,
+      "unit_id": "e6fe7e633a0fd2538633513dc89d364f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSP_READ",
+      "slot": 6,
+      "unit_id": "c8038afce356937f98fd6b1856ad6398",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": "heading",
+      "unit_id": "d6c600272f0b37f36cc3bd5ee7246618",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 0,
+      "unit_id": "7b6b76e438d184bf5c6b603f3f0516a9",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 1,
+      "unit_id": "c305f2b6ab4ede3b0d21a8f1380eecca",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 2,
+      "unit_id": "b25f24bd6a9c6cfc556c8ae166d9bedd",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 3,
+      "unit_id": "5ecd5eb7d35ecf983ef6702b29c061bf",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 4,
+      "unit_id": "fdddcf4adfc2f5ea06c38c60ab4bf7e7",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 5,
+      "unit_id": "80a1df1035ef455a44967b0a93439c55",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 6,
+      "unit_id": "13fca48e410154e2fe654ae79d80ba2c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 7,
+      "unit_id": "575f6489563dd457c4e29de6d0201ede",
+      "status": "added"
+    },
+    {
+      "chapter_key": "unpriv/_control_flow_integrity_cfi",
+      "section_id": "SSAMOSWAP",
+      "slot": 8,
+      "unit_id": "7c466ae746e6287d7e2e986139f040ec",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-csrs",
+      "section_id": "_csr_listing",
+      "slot": 2,
+      "unit_id": "49abe1817d399a94bf3f25e4a3fc9ea7",
+      "status": "modified",
+      "prev_unit_id": "e261ec16b96e4402d5a46a49b7b33aaf"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 1,
+      "unit_id": "040d4d019635c7400cfbbbc0f2126359",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 2,
+      "unit_id": "9163afc99bc2f52d17e74a7a569c58a4",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 4,
+      "unit_id": "3296beeb87d918984e8b317834da0e77",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_previous_expected_landing_pad_elp_state_in_mstatus_register",
+      "slot": "heading",
+      "unit_id": "1b102c19bde7d24157af409b7c7514e8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_previous_expected_landing_pad_elp_state_in_mstatus_register",
+      "slot": 0,
+      "unit_id": "78d329327bfbe320e1b63567237fed70",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_previous_expected_landing_pad_elp_state_in_mstatus_register",
+      "slot": 1,
+      "unit_id": "c55607260d0f67c59e2db81a13a950d2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 10,
+      "unit_id": "6c4da6f785402e73136ad32980704a45",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 11,
+      "unit_id": "dcaae671ec74a4deeddf5411ffaf669c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": 1,
+      "unit_id": "284796bdaa73bca3ff5555b3ddedfe88",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": 16,
+      "unit_id": "e4bd8a2886bbf934c22e602c88362900",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": 17,
+      "unit_id": "55421aec594276b816137cf2cebdf997",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": 18,
+      "unit_id": "b253b33b61b476d863bceb988eaef342",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": 19,
+      "unit_id": "ec77348b0617fd8233c82d4eafb3d400",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 1,
+      "unit_id": "4dbfc1c9f1982088429384cf2933addf",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 5,
+      "unit_id": "5c71df8cbab19d93fa612a1776435825",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 6,
+      "unit_id": "55421aec594276b816137cf2cebdf997",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "slot": 1,
+      "unit_id": "a25e3b250620120b8266fe227234bd3b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "slot": 2,
+      "unit_id": "02d6e04b99c96711fd04aba866b08f24",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_previous_expected_landing_pad_elp_state_in_sstatus_register",
+      "slot": "heading",
+      "unit_id": "a6078648e04de89a7c0629465cc1f677",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_previous_expected_landing_pad_elp_state_in_sstatus_register",
+      "slot": 0,
+      "unit_id": "246e54a74834bb3dc6d108faae8c5c51",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_value_stval_register",
+      "slot": 8,
+      "unit_id": "23c643dc56ee730664c2a23f624eb532",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_value_stval_register",
+      "slot": 9,
+      "unit_id": "dcaae671ec74a4deeddf5411ffaf669c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 1,
+      "unit_id": "9a2f8fe31608397ebb9c23f6a55c20ae",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 2,
+      "unit_id": "25df87c0f31287792b282b1ae9bd36a0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 11,
+      "unit_id": "3ecf13c3609df0856c2ac02314b47af8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 12,
+      "unit_id": "55421aec594276b816137cf2cebdf997",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 13,
+      "unit_id": "82efc15ccfa8153ba915e0263d52cf37",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 14,
+      "unit_id": "63231b1af2771a4eb007a1bf74e03bbd",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "slot": 1,
+      "unit_id": "fbb054c2d20c534893914ee589eb4d22",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "slot": 11,
+      "unit_id": "3a5080b33e6aff2bf3fe1fca3b1925d7",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "slot": 12,
+      "unit_id": "55421aec594276b816137cf2cebdf997",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "slot": 13,
+      "unit_id": "3409f516e6944f6780169bbee9d6f2c0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "slot": 14,
+      "unit_id": "4c38d01f6c971f1913f05d7386ca44a5",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 1,
+      "unit_id": "83899cd0952d2815d769eded76547d9f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 2,
+      "unit_id": "3123e1aaf5ff9bbd9f0804ff1878b2a7",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 11,
+      "unit_id": "d9e4cdd4c011cd7ba05a3966fecb1f7a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 12,
+      "unit_id": "c55607260d0f67c59e2db81a13a950d2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-cfi",
+      "slot": "heading",
+      "unit_id": "9793f1320ce9072d817bc0c815fbf759",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-cfi",
+      "slot": 0,
+      "unit_id": "b4055e8ee5a35b912a652a68b056eb56",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-forward",
+      "slot": "heading",
+      "unit_id": "fb15c8770fe517947896ed53f267740f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-forward",
+      "slot": 0,
+      "unit_id": "323a44970453ed556422850f9559e87a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": "heading",
+      "unit_id": "91192ddc0a71ce62025111c9fb24733a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 0,
+      "unit_id": "bdebaf121016b1d307f573a2fe6f446e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 1,
+      "unit_id": "0b92a14e79ebc6839696d274e672ce52",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 2,
+      "unit_id": "f2ef360d5ff0d5a7b7d9e1f4b2a041b5",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 3,
+      "unit_id": "6693cc75827be6b31de4d443ca707f0a",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 4,
+      "unit_id": "23fb7892096050a1f5b233ec2d684984",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "FCIFIACT",
+      "slot": 5,
+      "unit_id": "2ec0a7021da9c9cccac65870911b16c9",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": "heading",
+      "unit_id": "7e98967559c154c67630e30a9252ac75",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 0,
+      "unit_id": "1c347ebeedd339b4e7fc937028203afb",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 1,
+      "unit_id": "e42765177a31824f997c96e2aefae067",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 2,
+      "unit_id": "00ef3d698fb7ed1c0e8ff44f7007f9b1",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 3,
+      "unit_id": "4f1b10dd1735fd3fab2e8f3f98580475",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 4,
+      "unit_id": "1748962e9a2946486c7338d25304ab1b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 5,
+      "unit_id": "c55e6cd321b4e27ccd9f07273615ff37",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 6,
+      "unit_id": "5ea5ae1b3e027ff358e325a80f1355ee",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 7,
+      "unit_id": "d316f1d16d09a8cd79ee7afa991e7080",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 8,
+      "unit_id": "df2e8ad509aecde54f539dc2283ae91f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "ZICFILP_FORWARD_TRAPS",
+      "slot": 9,
+      "unit_id": "45de11a7573bcc5abb992cf52c8b9cf5",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-backward",
+      "slot": "heading",
+      "unit_id": "11a21165223da7f9227496afb9a4a170",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "priv-backward",
+      "slot": 0,
+      "unit_id": "61e0aa4a2e49cbb2f659ea1b1110abc8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_pointer_ssp_csr_access_control",
+      "slot": "heading",
+      "unit_id": "9610aa72a796f4b9a7b9dd6c9072d51c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_pointer_ssp_csr_access_control",
+      "slot": 0,
+      "unit_id": "5ac5885716f07ac2caf62a40988bbacc",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_pointer_ssp_csr_access_control",
+      "slot": 1,
+      "unit_id": "a72da861fa0460002886700f0ee12422",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": "heading",
+      "unit_id": "d945e0359fb28585aaa5874adc6269f0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": 0,
+      "unit_id": "bc0a59030ab63f9c5fbe5e07c851bb57",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": 1,
+      "unit_id": "0b92a14e79ebc6839696d274e672ce52",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": 2,
+      "unit_id": "d4ca91aa6d9c54111b1144925a08317b",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": 3,
+      "unit_id": "125cbffa64512d1c168a9b12618d4b31",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "_shadow_stack_enabled_sse_state",
+      "slot": 4,
+      "unit_id": "ec08d2f3863d5070ee6ea8159c7bf43e",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": "heading",
+      "unit_id": "df94a55beb5aee72e63c2a81e3abcc10",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 0,
+      "unit_id": "73a1bac55b40b293e4d0c7a3bbfdea99",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 1,
+      "unit_id": "896865c11473db97ebd70ccea43765f2",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 2,
+      "unit_id": "58868d1d44e137826e7d7305c8b96799",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 3,
+      "unit_id": "bb2dfe898ac1579e639a09cd86f7b0a0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 4,
+      "unit_id": "5a9878c257b3f4e908c73f35ba377992",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 5,
+      "unit_id": "91c38d6d30ba0679ff03c62797d80b26",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 6,
+      "unit_id": "ebc412fae4d3b77287f9616478901937",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 7,
+      "unit_id": "1297da02bb42d09736024f693083f03f",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 8,
+      "unit_id": "acc65ce6ff16f277f24aa5a138e90fb8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 9,
+      "unit_id": "88f953fe8ff90208e5c4e27a9e7f25db",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 10,
+      "unit_id": "7ba64c80b8984fa86f657fb691654c23",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 11,
+      "unit_id": "591d16b902df37de92b977b1c99ccaf8",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 12,
+      "unit_id": "5a3747519b9588a5c9579f3d6c6a9804",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 13,
+      "unit_id": "b979db142341ebdcad534fe7ab46adca",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 14,
+      "unit_id": "091dbb16fe19c0753aed198300bdc338",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 15,
+      "unit_id": "2315bdc2c12377b29746ddc54f318a0c",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 16,
+      "unit_id": "5b6ea175a9cc281d5f7fdd539ab68081",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 17,
+      "unit_id": "f9743d88dfc8abb82e1fd9a9fd2976e0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 18,
+      "unit_id": "ffb451e6db34fd4ad193de277dbaa2d0",
+      "status": "added"
+    },
+    {
+      "chapter_key": "priv/priv-cfi",
+      "section_id": "SSMP",
+      "slot": 19,
+      "unit_id": "5225dea42ad1ad92437ebac1efbf921d",
+      "status": "added"
+    }
+  ],
+  "deleted_blocks": [
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "after_unit_id": "cd6d8d07b37a7a7fc400fa6fc41ddb79",
+      "unit_id": "47b9bc783b97b874feca778f90c1a252"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "after_unit_id": "47b9bc783b97b874feca778f90c1a252",
+      "unit_id": "bfaf72738435bb44a7caa97ddd3ba0a1"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "after_unit_id": "bfaf72738435bb44a7caa97ddd3ba0a1",
+      "unit_id": "c14d2fdcab7de81ee8a8abad6b5950df"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "after_unit_id": "b5be5b5da4c58d33e6faa972817122eb",
+      "unit_id": "ba2f741724a9b8a8a27e5a79edc57351"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "after_unit_id": "d56bc3679fd177b5cd230a573d78f0f4",
+      "unit_id": "8531fd339a0e11ece1c78452d032751e"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "after_unit_id": "0c69299dcd63d8c6f79e30d7280fe3f1",
+      "unit_id": "1bac5c38e211032fbacfb1129546f395"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "after_unit_id": "9f2ba15b81dc174ef19344cf0d4f7a9c",
+      "unit_id": "95128f12ea7590edca14761b7a5a5f25"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "after_unit_id": "95128f12ea7590edca14761b7a5a5f25",
+      "unit_id": "be42f833b2b90c30a844c7126e76c06d"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "after_unit_id": "be42f833b2b90c30a844c7126e76c06d",
+      "unit_id": "f91f9b06f91ad53f8a815942d9862ac4"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "after_unit_id": "f91f9b06f91ad53f8a815942d9862ac4",
+      "unit_id": "6352ddefa2d8fd41335dfdfe0ee3b64a"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "after_unit_id": "5ec9f698399843c7f62bc76a5c105ac2",
+      "unit_id": "34287e5ae7d7a7d4bd4bb7f0de3c6aba"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "sec:henvcfg",
+      "after_unit_id": "fd0792220b67f417c937962eb497ebe5",
+      "unit_id": "f909765697b07bf2dd1b79e836c316d9"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "after_unit_id": "63782b4e1b3ed7e5ac17f7c55e245b09",
+      "unit_id": "6367b294ae8defc407196ed0f1234ec3"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "after_unit_id": "6367b294ae8defc407196ed0f1234ec3",
+      "unit_id": "afdead123ea9e30034eb23ffe2325882"
+    }
+  ],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual Volume I: Unprivileged Architecture",
+      "title_unit_id": "bac0390e54af28bd7b1c4e819530b6a8",
+      "entry_file": "src/riscv-unprivileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "a6b9ceebeef9589b"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "8dde8fda2d9df256"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "707ee4e7b87ffc5d"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "c9b0e8f0cde4002c"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "f51cda5ce185fc09"
+        },
+        {
+          "id": "rv128",
+          "chap_hash": "cd6144583c2edbfd"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "6d6a7db1224116fa"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "be4109e7a479efe5"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "2bcb5ed9ff43bb5c"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "1be26bc845a44419"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "c939e0d365c3cbcf"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "9232c0a02c239aef"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "09883c0098719c47"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "dbe68b2fb1dc0c01"
+        },
+        {
+          "id": "atomics",
+          "chap_hash": "c870acc9db32f3ee"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "9f90b0a2573c4c3f"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "9cd8f3ed046f14fc"
+        },
+        {
+          "id": "_zabha_extension_for_byte_and_halfword_atomic_memory_operations_version_1_0_0",
+          "chap_hash": "d6e6cd288b4a5b9b"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "a09faaccb017e078"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "79ccccad876b2dd5"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "a2249f432e4887b3"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "54fbb49b16080034"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "aa693e24c7d17a69"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "4cf217579db88b5e"
+        },
+        {
+          "id": "quad-float-clssfy",
+          "chap_hash": "243df4fde0603dab"
+        },
+        {
+          "id": "bf16",
+          "chap_hash": "ed8072d0f271588e"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "3d4be3dfccf3de2b"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "9cb3297a24d0ed88"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "04ff0b574a5e64ce"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "f6e564890e1fe714"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "ccab4ff478fc2c36"
+        },
+        {
+          "id": "j-extendj",
+          "chap_hash": "433ba3608a67239f"
+        },
+        {
+          "id": "packedsimd",
+          "chap_hash": "a1ab319d821dd6f2"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "98d5641d63094841"
+        },
+        {
+          "id": "_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+          "chap_hash": "66dbba6faf766b04"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0_0",
+          "chap_hash": "37d68b5e9bbf1cbf"
+        },
+        {
+          "id": "_control_flow_integrity_cfi",
+          "chap_hash": "4efffce4e9c00eca"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "3143fc7f9f624c06"
+        },
+        {
+          "id": "extending",
+          "chap_hash": "d8dccc06327e99e5"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "f2a651dc14dc7db1"
+        },
+        {
+          "id": "history",
+          "chap_hash": "657a16293c770930"
+        },
+        {
+          "id": "_rvwmo_explanatory_material_version_0_1",
+          "chap_hash": "5dbb7dd2296f2f94"
+        },
+        {
+          "id": "_formal_memory_model_specifications_version_0_1",
+          "chap_hash": "d709c02e3d5ac377"
+        },
+        {
+          "id": "_vector_assembly_code_examples",
+          "chap_hash": "067aab6e3f966dda"
+        },
+        {
+          "id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+          "chap_hash": "153b2bded267d7e2"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual: Volume II: Privileged Architecture",
+      "title_unit_id": "a8216e121762a37b2ef41c6d4b20f6f4",
+      "entry_file": "src/riscv-privileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "98efaba0fa3806aa"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "29d7f4bfed3d7762"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "37b56d301210a80f"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "4454d375796880f5"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "b402cb134664e9d9"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "125814e834785263"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "6352f58d7e932a1b"
+        },
+        {
+          "id": "smcntrpmf",
+          "chap_hash": "d6f73d030c340175"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "fec822e00c009929"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "6394682c32542bc6"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "0e10f13f98b38962"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "a782760aac4e0e15"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "1781affe5cff500d"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "bde1746de439d6b6"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "d1c1af7752f7a515"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "c339b853e9ad73ec"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "b2368bbe6c9dc40e"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "76e1a4055cf99c9a"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "0745e2fd7c843f4b"
+        },
+        {
+          "id": "priv-cfi",
+          "chap_hash": "44788285b70d4205"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "4af03b9676539a6c"
+        },
+        {
+          "id": "_history",
+          "chap_hash": "1b2ed3496b10e620"
+        }
+      ]
+    }
+  ]
+}

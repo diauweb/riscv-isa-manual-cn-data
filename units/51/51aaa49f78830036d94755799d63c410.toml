@@ -1,0 +1,30 @@
+unit_id = "51aaa49f78830036d94755799d63c410"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The value written to the trap instruction CSR serves two purposes. The
+first is to improve the speed of instruction emulation in a trap
+handler, partly by allowing the handler to skip loading the trapping
+instruction from memory, and partly by obviating some of the work of
+decoding and executing the instruction. The second purpose is to supply,
+via pseudoinstructions, additional information about guest-page-fault
+exceptions caused by implicit memory accesses done for VS-stage address
+translation.
+
+A _transformation_ of the trapping instruction is written instead of
+simply a copy of the original instruction in order to minimize the
+burden for hardware yet still provide to a trap handler the information
+needed to emulate the instruction. An implementation may at any time
+reduce its effort by substituting zero in place of the transformed
+instruction.
+===='''
+zh = '''
+[NOTE]
+====
+写入陷阱指令 CSR 的值有两个用途。第一是提高陷阱处理程序中指令仿真的速度，部分通过允许处理程序跳过从内存加载引发陷阱的指令，部分通过省去该指令译码与执行的部分工作。第二是通过伪指令提供有关由 VS 级地址转换的隐式内存访问所引起的客户机页错误异常的附加信息。
+
+写入的是引发陷阱指令的__变换形式__，而非原指令的简单副本，目的是在仍向陷阱处理程序提供仿真该指令所需信息的前提下，尽量减轻硬件负担。实现可在任何时刻以零替代变换后的指令，以减少其工作量。
+===='''

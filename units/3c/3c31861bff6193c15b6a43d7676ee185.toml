@@ -1,0 +1,10 @@
+unit_id = "3c31861bff6193c15b6a43d7676ee185"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The transition of the most significant bit in the HIST register from 0 to 1 indicates the register is full. At this point, the
+entire register, including the most significant bit — which serves as the stop-bit — is transmitted
+using a <<msg2_ResourceFull,ResourceFull>> message with the <<field_RCODE,RCODE>> field set to either 1 or 2.'''
+zh = '''
+HIST 寄存器中最高有效位从 0 变为 1 表示寄存器已满。此时，整个寄存器（包括作为停止位的最高有效位）使用 <<msg2_ResourceFull,ResourceFull>> 消息发送，且 <<field_RCODE,RCODE>> 字段设置为 1 或 2。'''

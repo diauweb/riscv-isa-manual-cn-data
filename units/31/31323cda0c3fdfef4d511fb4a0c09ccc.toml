@@ -1,0 +1,8 @@
+unit_id = "31323cda0c3fdfef4d511fb4a0c09ccc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Even if reading trace (while trace is active) is implemented, circular trace buffer may be overwritten even several times, so values being read by `trRamData` will be of no use. However, when trace is started/stopped by infrequent triggers, reading SRAM trace may be useful. Also, the very last packet in memory may be incomplete as the last trace word may be buffered inside (and `trRamEmpty` = 0 will be observed).'''
+zh = '''
+NOTE: 即使在跟踪活动时实现了读取跟踪，循环跟踪缓冲区也可能被覆盖多次，因此通过 `trRamData` 读取的值将没有用处。然而，当跟踪由不频繁的触发启动/停止时，读取 SRAM 跟踪可能有用。此外，内存中的最后一个数据包可能不完整，因为最后一个跟踪字可能仍在内部缓冲（并且会观察到 `trRamEmpty` = 0）。'''

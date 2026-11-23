@@ -1,0 +1,14 @@
+unit_id = "a48caea560d9bf19efd472462ed53766"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Copy data from the memory location specified in `arg1` into the
+`arg0` portion of `data`, if {accessmemory-write} is clear.
+. Copy data from the `arg0` portion of `data` into the
+memory location specified in `arg1`, if {accessmemory-write} is set.
+. If {accessmemory-aampostincrement} is set, increment `arg1`.'''
+zh = '''
+. 若 {accessmemory-write} 为清零，则将数据从 `arg1` 所指定的内存位置复制到 `data` 的 `arg0` 部分。
+. 若 {accessmemory-write} 为置位，则将数据从 `data` 的 `arg0` 部分复制到 `arg1` 所指定的内存位置。
+. 若 {accessmemory-aampostincrement} 置位，则递增 `arg1`。'''

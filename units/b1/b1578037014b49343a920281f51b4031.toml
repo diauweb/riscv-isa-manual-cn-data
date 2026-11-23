@@ -1,0 +1,65 @@
+unit_id = "b1578037014b49343a920281f51b4031"
+kind = "code"
+translatable = false
+en = '''
+[source,pseudocode]
+--
+function clause execute (VSM4R(vd, vs2)) = {
+  if(LMUL*VLEN < EGW)  then {
+    handle_illegal();  // illegal instruction exception
+    RETIRE_FAIL
+  } else {
+
+  eg_len = (vl/EGS)
+  eg_start = (vstart/EGS)
+
+ let B  : bits(32) = 0;
+ let S  : bits(32) = 0;
+ let rk0 : bits(32) = 0;
+ let rk1 : bits(32) = 0;
+ let rk2 : bits(32) = 0;
+ let rk3 : bits(32) = 0;
+ let x0 : bits(32) = 0;
+ let x1 : bits(32) = 0;
+ let x2 : bits(32) = 0;
+ let x3 : bits(32) = 0;
+ let x4 : bits(32) = 0;
+ let x5 : bits(32) = 0;
+ let x6 : bits(32) = 0;
+ let x7 : bits(32) = 0;
+
+ let keyelem : bits(32) = 0;
+
+  foreach (i from eg_start to eg_len-1) {
+    keyelem = if suffix == "vv" then i else 0;
+    {rk3 @ rk2 @ rk1 @ rk0} : bits(128) = get_velem(vs2, EGW=128, keyelem);
+    {x3 @ x2 @ x1 @ x0} : bits(128) = get_velem(vd, EGW=128, i);
+
+    B  = x1 ^ x2 ^ x3 ^ rk0;
+    S = sm4_subword(B);
+    x4 = sm4_round(x0, S);
+
+    B = x2 ^ x3 ^ x4 ^ rk1;
+    S = sm4_subword(B);
+    x5= sm4_round(x1, S);
+
+    B = x3 ^ x4 ^ x5 ^ rk2;
+    S = sm4_subword(B);
+    x6 = sm4_round(x2, S);
+
+    B = x4 ^ x5 ^ x6 ^ rk3;
+    S = sm4_subword(B);
+    x7 = sm4_round(x3, S);
+
+    set_velem(vd, EGW=128, i, (x7 @ x6 @ x5 @ x4));
+
+  }
+  RETIRE_SUCCESS
+  }
+}
+
+val sm4_round : bits(32) -> bits(32)
+function sm4_round(X, S) = \
+  ((X) ^ ((S) ^ ROL32((S), 2) ^ ROL32((S), 10) ^ ROL32((S), 18) ^ ROL32((S), 24)))
+
+--'''

@@ -1,0 +1,55 @@
+unit_id = "6a32ffa3d795a8836360bea5b0f57433"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+On an interrupt, the value written to the trap instruction register is
+always zero. On a synchronous exception, if a nonzero value is written,
+one of the following shall be true about the value:
+
+* Bit 0 is `1`, and replacing bit 1 with `1` makes the value into a
+valid encoding of a standard instruction.
++
+In this case, the instruction that trapped is the same kind as indicated
+by the register value, and the register value is the transformation of
+the trapping instruction, as defined later. For example, if bits 1:0 are
+binary `11` and the register value is the encoding of a standard LW
+(load word) instruction, then the trapping instruction is LW, and the
+register value is the transformation of the trapping LW instruction.
+* Bit 0 is `1`, and replacing bit 1 with `1` makes the value into an
+instruction encoding that is explicitly designated for a custom
+instruction (_not_ an unused reserved encoding).
++
+This is a _custom value_. The instruction that trapped is a non-standard
+instruction. The interpretation of a custom value is not otherwise
+specified by this standard.
+* The value is one of the special pseudoinstructions defined later, all
+of which have bits 1:0 equal to `00`.
+
+These three cases exclude a large number of other possible values, such
+as all those having bits 1:0 equal to binary `10`. A future standard or
+extension may define additional cases, thus allowing values that are
+currently excluded. Software may safely treat an unrecognized value in a
+trap instruction register the same as zero.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+在中断时，写入陷阱指令寄存器的值始终为零。在同步异常时，若写入非零值，则关于该值，以下之一应为真：
+
+* 第 0 位为 `1`，且将第 1 位替换为 `1` 使该值成为标准指令的有效编码。
++
+在此情况下，引发陷阱的指令与寄存器值所指示的类型相同，且寄存器值是引发陷阱指令的变换，如后所定义。例如，若第 1:0 位为二进制 `11` 且寄存器值是标准 LW（加载字）指令的编码，则引发陷阱的指令为 LW，且寄存器值是引发陷阱的 LW 指令的变换。
+* 第 0 位为 `1`，且将第 1 位替换为 `1` 使该值成为明确指定为定制指令的指令编码（_而非_未使用的保留编码）。
++
+这是一个_定制值_。引发陷阱的指令是非标准指令。定制值的解释不另行由本标准规定。
+* 该值为后所定义的特殊伪指令之一，所有这些伪指令的第 1:0 位等于 `00`。
+
+这三种情况排除了大量其他可能值，例如所有第 1:0 位等于二进制 `10` 的值。未来的标准或扩展可定义附加情况，从而允许当前被排除的值。软件可将陷阱指令寄存器中无法识别的值安全地视为零。
+
+[NOTE]
+===='''

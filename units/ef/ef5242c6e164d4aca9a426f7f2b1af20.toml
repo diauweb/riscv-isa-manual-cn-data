@@ -1,0 +1,12 @@
+unit_id = "ef5242c6e164d4aca9a426f7f2b1af20"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This bit is encoded so that most of the time it will take the same value
+as the MSB of the *address* field, and will therefore compress away,
+having no impact on the encoding efficiency. It is required in order to
+cover the case where an address is reported as a result of a
+notification request, signalled by setting the *trigger[2]* input to 1.'''
+zh = '''
+该位经过编码，使大多数情况下其值与 *address* 字段的 MSB 相同，从而会被压缩掉，对编码效率没有影响。需要该位来覆盖因通知请求（通过将 *trigger[2]* 输入置为 1 来指示）而报告地址的情况。'''

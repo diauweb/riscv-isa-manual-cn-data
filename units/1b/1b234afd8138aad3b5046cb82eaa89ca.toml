@@ -1,0 +1,10 @@
+unit_id = "1b234afd8138aad3b5046cb82eaa89ca"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: There is no `vmulhus.vx` opcode to return high half of
+unsigned-vector * signed-scalar product.  The scalar can be splatted
+to a vector, then a `vmulhsu.vv` used.'''
+zh = '''
+NOTE: 不存在返回无符号向量 * 有符号标量乘积高半部分的 `vmulhus.vx` 操作码。可将标量广播到向量，然后使用 `vmulhsu.vv`。'''

@@ -1,0 +1,34 @@
+unit_id = "3c06e8d06320ff51afc1f226d48c9a1e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Context type *ctype* values and corresponding actions
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Type* | *Value* | *Actions*
+| Unreported | 0 | No action (don't report context).
+| Report context imprecisely | 1 | An example would be a SW thread or
+operating system process change. Report the new context value at the
+earliest convenient opportunity. It is reported without any address
+information, and the assumption is that the precise point of context
+change can be deduced from the source code (e.g. a CSR write).
+| Report context precisely | 2 | Report the address of the 1st instruction
+retired in this block, and the new context. If there were unreported
+branches beforehand, these need to be reported first. Treated the same
+as a privilege change.
+| Report context as an asynchronous discontinuity | 3 | An example would
+be a change of hart. Need to report the last instruction
+retired on the previous context, as well as the 1st on the new context.
+Treated the same as an exception.
+|==='''
+zh = '''
+.上下文类型 *ctype* 值及对应操作
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *类型* | *值* | *操作*
+| 未报告 | 0 | 无操作（不报告上下文）。
+| 不精确报告上下文 | 1 | 例如软件线程或操作系统进程改变。在最早方便的机会报告新上下文值。报告时不带任何地址信息，并假定上下文改变的精确点可从源代码推断（例如一次 CSR 写入）。
+| 精确报告上下文 | 2 | 报告本块中第 1 条退休指令的地址以及新上下文。若此前有未报告的分支，则需要先报告这些分支。按与特权级改变相同的方式处理。
+| 将上下文报告为异步不连续 | 3 | 例如硬件线程改变。需要报告上一上下文最后退休的指令，以及新上下文中的第 1 条指令。按与异常相同的方式处理。
+|==='''

@@ -1,0 +1,21 @@
+unit_id = "cc6982bf79350a1e47406f5dfdee7ba1"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. *Inferable Instructions*: This category includes instructions that do not perform control transfers or
+are direct jumps. The subsequent program counter (PC) for these instructions can be determined through static analysis of the binary code. Because these instructions exhibit a predictable
+execution flow, they are termed "inferable," and no trace is generated for them.
+
+. *Uninferable Instructions*: This category comprises conditional branches and indirect jumps, including return and indirect calls. Due to the unpredictability of the next PC as determined through
+static analysis alone, uninferable instructions require trace.
+
+. *Interrupts and Exceptions*: Control flow changes caused by interrupts and exceptions necessitate
+trace generation. These events alter the flow in an unpredictable manner, like uninferable
+instructions, thereby requiring their occurrences to be traced.'''
+zh = '''
+. **可推断指令**：此类别包括不执行控制转移或为直接跳转的指令。这些指令的后续程序计数器（PC）可通过二进制代码的静态分析确定。由于这些指令表现出可预测的执行流，它们被称为“可推断”，并且不为它们生成跟踪。
+
+. **不可推断指令**：此类别包括条件分支和间接跳转，包括返回和间接调用。由于仅通过静态分析确定的下一条 PC 不可预测，不可推断指令需要跟踪。
+
+. **中断和异常**：由中断和异常引起的控制流变化需要生成跟踪。这些事件以不可预测的方式改变流，类似于不可推断指令，因此需要跟踪它们的发生。'''

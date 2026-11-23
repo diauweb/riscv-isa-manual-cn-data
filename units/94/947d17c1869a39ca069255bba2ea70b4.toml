@@ -1,0 +1,19 @@
+unit_id = "947d17c1869a39ca069255bba2ea70b4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Setting the IMSIC bit in hstateen0 to zero prevents a virtual machine from
+accessing the hart's IMSIC the same as setting hstatus.VGEIN = 0.
+The AIA bit in hstateen0 controls access to all state introduced by the
+Ssaia extension and is not controlled by either the CSRIND or the IMSIC
+bits of hstateen0.
+===='''
+zh = '''
+[NOTE]
+====
+将 hstateen0 中的 IMSIC 位置零会阻止虚拟机访问该硬件线程的 IMSIC，其效果与设置 hstatus.VGEIN = 0 相同。
+hstateen0 中的 AIA 位控制对 Ssaia 扩展引入的所有状态的访问，且不受 hstateen0 的 CSRIND 位或 IMSIC 位控制。
+===='''

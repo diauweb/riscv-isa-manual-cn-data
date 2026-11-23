@@ -1,0 +1,52 @@
+unit_id = "a3f9277670eb9485c246e471ccd9aa9f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The previous version of this document was released under a Creative
+Commons Attribution 4.0 International License by the original authors,
+and this and future versions of this document will be released under the
+same license.
+* Rearranged chapters to put all extensions first in canonical order.
+* Improvements to the description and commentary.
+* Modified implicit hinting suggestion on `JALR` to support more efficient
+macro-op fusion of `LUI/JALR` and `AUIPC/JALR` pairs.
+* Clarification of constraints on load-reserved/store-conditional
+sequences.
+* A new table of control and status register (CSR) mappings.
+* Clarified purpose and behavior of high-order bits of `fcsr`.
+* Corrected the description of the `FNMADD`._fmt_ and `FNMSUB`._fmt_
+instructions, which had suggested the incorrect sign of a zero result.
+* Instructions `FMV.S.X` and `FMV.X.S` were renamed to `FMV.W.X` and `FMV.X.W`
+respectively to be more consistent with their semantics, which did not
+change. The old names will continue to be supported in the tools.
+* Specified behavior of narrower (latexmath:[$<$]FLEN) floating-point
+values held in wider `f` registers using NaN-boxing model.
+* Defined the exception behavior of FMA(latexmath:[$\infty$], 0, qNaN).
+* Added note indicating that the `P` extension might be reworked into an
+integer packed-SIMD proposal for fixed-point operations using the
+integer registers.
+* A draft proposal of the V vector instruction-set extension.
+* An early draft proposal of the N user-level traps extension.
+* An expanded pseudoinstruction listing.
+* Removal of the calling convention chapter, which has been superseded
+by the RISC-V ELF psABI Specification cite:[riscv-elf-psabi].
+* The C extension has been frozen and renumbered version 2.0.'''
+zh = '''
+* 本文档的上一版本由原作者根据 Creative Commons Attribution 4.0 International License 发布，本文档的当前版本和未来版本将根据同一许可证发布。
+* 重新排列各章，将所有扩展按规范顺序放在前面。
+* 改进了描述和评注。
+* 修改了 `JALR` 上的隐式提示建议，以支持更高效的 `LUI/JALR` 和 `AUIPC/JALR` 指令对的宏操作融合。
+* 澄清了对加载保留/条件存储序列的约束。
+* 新增控制与状态寄存器（CSR）映射表。
+* 澄清了 `fcsr` 高位的作用和行为。
+* 更正了 `FNMADD`._fmt_ 和 `FNMSUB`._fmt_ 指令的描述，原描述暗示了错误的零结果符号。
+* 指令 `FMV.S.X` 和 `FMV.X.S` 分别重命名为 `FMV.W.X` 和 `FMV.X.W`，以更符合其语义，语义本身未改变。工具将继续支持旧名称。
+* 规定了使用 NaN 装箱模型在更宽 `f` 寄存器中保存较窄（latexmath:[$<$]FLEN）浮点值的行为。
+* 定义了 FMA(latexmath:[$\infty$], 0, qNaN) 的异常行为。
+* 增加注释，指出 `P` 扩展可能被改写为使用整数寄存器的定点操作整数打包 SIMD 提案。
+* V 向量指令集扩展的草案提案。
+* N 用户级陷阱扩展的早期草案提案。
+* 扩展了伪指令列表。
+* 移除了调用约定章节，该章节已由 RISC-V ELF psABI 规范 cite:[riscv-elf-psabi] 取代。
+* C 扩展已冻结并重新编号为版本 2.0。'''

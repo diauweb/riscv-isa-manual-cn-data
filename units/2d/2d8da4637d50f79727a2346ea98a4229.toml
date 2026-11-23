@@ -1,0 +1,17 @@
+unit_id = "2d8da4637d50f79727a2346ea98a4229"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+RV64 harts use `pmpcfg2`, rather than `pmpcfg1`, to hold
+configurations for PMP entries 8-15. This design reduces the cost of
+supporting multiple MXLEN values, since the configurations for PMP
+entries 8-11 appear in `pmpcfg2`[31:0] for both RV32 and RV64.
+===='''
+zh = '''
+[NOTE]
+====
+RV64 硬件线程使用 `pmpcfg2`（而非 `pmpcfg1`）保存 PMP 条目 8-15 的配置。此设计降低了支持多个 MXLEN 值的成本，因为 PMP 条目 8-11 的配置在 RV32 和 RV64 中都出现在 `pmpcfg2`[31:0] 中。
+===='''

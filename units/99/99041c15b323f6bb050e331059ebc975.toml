@@ -1,0 +1,61 @@
+unit_id = "99041c15b323f6bb050e331059ebc975"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Split atomic with operand only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+110: Unified atomic or split atomic address +
+(other codes other packet formats)
+|*subtype* | 3 | Atomic sub-type +
+000: Swap +
+001: ADD +
+010: AND +
+011: OR +
+100: XOR +
+101: MAX +
+110: MIN +
+111: reserved
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*lrid* | _lrid_width_p_ | Load request ID
+|*diff* | 1 or 2 | 00: Full address and data (sync) +
+01: Differential address, XOR-compressed data +
+10: Differential address, full data +
+11: Differential address, differential data
+|*op_len* | *size* | Number of bytes of operand is *op_len* + 1
+|*operand* | 8 * (*op_len* + 1) | Operand. Value from rs2 before operator
+applied
+|*address* | _daddress_width_p_ |Address, aligned and encoded as per
+size
+|==='''
+zh = '''
+.拆分式原子操作的包格式，仅含操作数
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | 事务类型 +
+110：统一式原子操作或拆分式原子操作地址 +
+（其他编码为其他包格式）
+|*subtype* | 3 | 原子操作子类型 +
+000：交换 +
+001：ADD +
+010：AND +
+011：OR +
+100：XOR +
+101：MAX +
+110：MIN +
+111：保留
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*lrid* | _lrid_width_p_ | 加载请求 ID
+|*diff* | 1 或 2 | 00：完整地址和数据（同步） +
+01：差分地址，异或压缩数据 +
+10：差分地址，完整数据 +
+11：差分地址，差分数据
+|*op_len* | *size* | 操作数字节数为 *op_len* + 1
+|*operand* | 8 * (*op_len* + 1) | 操作数。应用运算符之前来自 rs2 的值
+|*address* | _daddress_width_p_ | 地址，按大小对齐并编码
+|==='''

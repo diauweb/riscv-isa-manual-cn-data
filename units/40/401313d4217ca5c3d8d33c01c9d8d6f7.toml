@@ -1,0 +1,12 @@
+unit_id = "401313d4217ca5c3d8d33c01c9d8d6f7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The TM external trigger input can signal when the trigger is prevented
+from firing due to one of the mechanisms in xref:nativetrigger[].
+An implementation may either ignore the signal altogether when it cannot
+fire (dropping the trigger event) or it may hold the action as pending
+and fire the trigger once it is legal to do so.'''
+zh = '''
+当触发器因 xref:nativetrigger[] 中的某个机制而被阻止触发时，TM 外部触发输入可发出信号。实现可要么在无法触发时完全忽略该信号（丢弃触发事件），要么将动作保持为挂起，并在合法时触发。'''

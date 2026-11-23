@@ -1,0 +1,291 @@
+unit_id = "671db1c12f15d825f379f6b53e0828b0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[dmstatus-ndmresetpending]] `((ndmresetpending))`
+a|
+
+0 (false): Unimplemented, or {dmcontrol-ndmreset} is zero and no ndmreset is currently
+in progress.
+
+
+1 (true): {dmcontrol-ndmreset} is currently nonzero, or there is an ndmreset in progress.
+a|*R*
+a|-
+|[[dmstatus-stickyunavail]] `((stickyunavail))`
+a|
+
+0 (current): The per-hart `unavail` bits reflect the current state of the hart.
+
+
+1 (sticky): The per-hart `unavail` bits are sticky. Once they are set, they will
+not clear until the debugger acknowledges them using {dmcontrol-ackunavail}.
+a|*R*
+a|Preset
+|[[dmstatus-impebreak]] `((impebreak))`
+a|If 1, then there is an implicit `ebreak` instruction at the
+non-existent word immediately after the Program Buffer. This saves
+the debugger from having to write the `ebreak` itself, and
+allows the Program Buffer to be one word smaller.
+
+This must be 1 when {abstractcs-progbufsize} is 1.
+a|*R*
+a|Preset
+|[[dmstatus-allhavereset]] `((allhavereset))`
+a|This field is 1 when all currently selected harts have been reset
+and reset has not been acknowledged for any of them.
+a|*R*
+a|-
+|[[dmstatus-anyhavereset]] `((anyhavereset))`
+a|This field is 1 when at least one currently selected hart has been
+reset and reset has not been acknowledged for that hart.
+a|*R*
+a|-
+|[[dmstatus-allresumeack]] `((allresumeack))`
+a|This field is 1 when all currently selected harts have their
+((resume ack bit)) set.
+a|*R*
+a|-
+|[[dmstatus-anyresumeack]] `((anyresumeack))`
+a|This field is 1 when any currently selected hart has its
+((resume ack bit)) set.
+a|*R*
+a|-
+|[[dmstatus-allnonexistent]] `((allnonexistent))`
+a|This field is 1 when all currently selected harts do not exist in
+this hardware platform.
+a|*R*
+a|-
+|[[dmstatus-anynonexistent]] `((anynonexistent))`
+a|This field is 1 when any currently selected hart does not exist in
+this hardware platform.
+a|*R*
+a|-
+|[[dmstatus-allunavail]] `((allunavail))`
+a|This field is 1 when all currently selected harts are
+unavailable, or (if {dmstatus-stickyunavail} is 1) were
+unavailable without that being acknowledged.
+a|*R*
+a|-
+|[[dmstatus-anyunavail]] `((anyunavail))`
+a|This field is 1 when any currently selected hart is unavailable,
+or (if {dmstatus-stickyunavail} is 1) was unavailable without
+that being acknowledged.
+a|*R*
+a|-
+|[[dmstatus-allrunning]] `((allrunning))`
+a|This field is 1 when all currently selected harts are running.
+a|*R*
+a|-
+|[[dmstatus-anyrunning]] `((anyrunning))`
+a|This field is 1 when any currently selected hart is running.
+a|*R*
+a|-
+|[[dmstatus-allhalted]] `((allhalted))`
+a|This field is 1 when all currently selected harts are halted.
+a|*R*
+a|-
+|[[dmstatus-anyhalted]] `((anyhalted))`
+a|This field is 1 when any currently selected hart is halted.
+a|*R*
+a|-
+|[[dmstatus-authenticated]] `((authenticated))`
+a|
+
+0 (false): Authentication is required before using the DM.
+
+
+1 (true): The authentication check has passed.
+
+On components that don't implement authentication, this bit must be
+preset as 1.
+a|*R*
+a|Preset
+|[[dmstatus-authbusy]] `((authbusy))`
+a|
+
+0 (ready): The authentication module is ready to process the next
+read/write to {dm-authdata}.
+
+
+1 (busy): The authentication module is busy. Accessing {dm-authdata} results
+in unspecified behavior.
+
+{dmstatus-authbusy} only becomes set in immediate response to an access to
+{dm-authdata}.
+a|*R*
+a|0
+|[[dmstatus-hasresethaltreq]] `((hasresethaltreq))`
+a|1 if this Debug Module supports halt-on-reset functionality
+controllable by the {dmcontrol-setresethaltreq} and {dmcontrol-clrresethaltreq} bits.
+0 otherwise.
+a|*R*
+a|Preset
+|[[dmstatus-confstrptrvalid]] `((confstrptrvalid))`
+a|
+
+0 (invalid): {dm-confstrptr0}--{dm-confstrptr3} hold information which
+is not relevant to the configuration structure.
+
+
+1 (valid): {dm-confstrptr0}--{dm-confstrptr3} hold the address of the
+configuration structure.
+a|*R*
+a|Preset
+|[[dmstatus-version]] `((version))`
+a|
+
+0 (none): There is no Debug Module present.
+
+
+1 (0.11): There is a Debug Module and it conforms to version 0.11 of this
+specification.
+
+
+2 (0.13): There is a Debug Module and it conforms to version 0.13 of this
+specification.
+
+
+3 (1.0): There is a Debug Module and it conforms to version 1.0 of this
+specification.
+
+
+15 (custom): There is a Debug Module but it does not conform to any
+available version of this spec.
+a|*R*
+a|3
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[dmstatus-ndmresetpending]] `((ndmresetpending))`
+a|
+
+0（假）：未实现，或 {dmcontrol-ndmreset} 为零且当前无 ndmreset 正在进行。
+
+
+1（真）：{dmcontrol-ndmreset} 当前非零，或有 ndmreset 正在进行。
+a|*R*
+a|-
+|[[dmstatus-stickyunavail]] `((stickyunavail))`
+a|
+
+0（当前）：每个硬件线程的 `unavail` 位反映硬件线程的当前状态。
+
+
+1（粘滞）：每个硬件线程的 `unavail` 位为粘滞。一旦置位，在调试器使用 {dmcontrol-ackunavail} 确认之前不会清零。
+a|*R*
+a|预设
+|[[dmstatus-impebreak]] `((impebreak))`
+a|若为 1，则在程序缓冲区之后紧接不存在的字处有一条隐式 `ebreak` 指令。这使调试器无需自行写入 `ebreak`，并使程序缓冲区可缩小一个字。
+
+当 {abstractcs-progbufsize} 为 1 时，此位必须为 1。
+a|*R*
+a|预设
+|[[dmstatus-allhavereset]] `((allhavereset))`
+a|当所有当前所选硬件线程均已被复位且其中任一硬件线程的复位尚未被确认时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anyhavereset]] `((anyhavereset))`
+a|当至少有一个当前所选硬件线程已被复位且该硬件线程的复位尚未被确认时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-allresumeack]] `((allresumeack))`
+a|当所有当前所选硬件线程的 ((恢复应答位)) 均置位时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anyresumeack]] `((anyresumeack))`
+a|当任何当前所选硬件线程的 ((恢复应答位)) 置位时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-allnonexistent]] `((allnonexistent))`
+a|当所有当前所选硬件线程均不存在于此硬件平台时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anynonexistent]] `((anynonexistent))`
+a|当任何当前所选硬件线程不存在于此硬件平台时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-allunavail]] `((allunavail))`
+a|当所有当前所选硬件线程均不可用，或（若 {dmstatus-stickyunavail} 为 1）曾不可用且该情况未被确认时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anyunavail]] `((anyunavail))`
+a|当任何当前所选硬件线程不可用，或（若 {dmstatus-stickyunavail} 为 1）曾不可用且该情况未被确认时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-allrunning]] `((allrunning))`
+a|当所有当前所选硬件线程均在运行时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anyrunning]] `((anyrunning))`
+a|当任何当前所选硬件线程在运行时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-allhalted]] `((allhalted))`
+a|当所有当前所选硬件线程均已停机时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-anyhalted]] `((anyhalted))`
+a|当任何当前所选硬件线程已停机时，此字段为 1。
+a|*R*
+a|-
+|[[dmstatus-authenticated]] `((authenticated))`
+a|
+
+0（假）：在使用 DM 之前需要认证。
+
+
+1（真）：认证检查已通过。
+
+在未实现认证的组件上，此位必须预设为 1。
+a|*R*
+a|预设
+|[[dmstatus-authbusy]] `((authbusy))`
+a|
+
+0（就绪）：认证模块已就绪，可处理对 {dm-authdata} 的下一次读/写。
+
+
+1（忙）：认证模块忙。访问 {dm-authdata} 会导致未规定行为。
+
+{dmstatus-authbusy} 仅在为响应访问 {dm-authdata} 时立即置位。
+a|*R*
+a|0
+|[[dmstatus-hasresethaltreq]] `((hasresethaltreq))`
+a|若此调试模块支持由 {dmcontrol-setresethaltreq} 和 {dmcontrol-clrresethaltreq} 位控制的复位时停机功能，则为 1。否则为 0。
+a|*R*
+a|预设
+|[[dmstatus-confstrptrvalid]] `((confstrptrvalid))`
+a|
+
+0（无效）：{dm-confstrptr0}--{dm-confstrptr3} 保存与配置结构无关的信息。
+
+
+1（有效）：{dm-confstrptr0}--{dm-confstrptr3} 保存配置结构的地址。
+a|*R*
+a|预设
+|[[dmstatus-version]] `((version))`
+a|
+
+0（无）：不存在调试模块。
+
+
+1（0.11）：存在调试模块，且符合本规范 0.11 版本。
+
+
+2（0.13）：存在调试模块，且符合本规范 0.13 版本。
+
+
+3（1.0）：存在调试模块，且符合本规范 1.0 版本。
+
+
+15（自定义）：存在调试模块，但不符合本规范的任何可用版本。
+a|*R*
+a|3
+|==='''

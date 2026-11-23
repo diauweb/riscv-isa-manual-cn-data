@@ -1,0 +1,15 @@
+unit_id = "5537ebb1071f50ee92490ab601931d8d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To read an arbitrary Debug Module register, select {dtm-dmi}, and scan in a value
+with {dmi-op} set to 1, and {dmi-address} set to the desired register address. In Update-DR the
+operation will start, and in Capture-DR its results will be captured
+into {dmi-data}. If the operation didn't complete in time, {dmi-op} will be 3 and the value
+in {dmi-data} must be ignored. The busy condition must be cleared by writing {dtmcs-dmireset} in {dtm-dtmcs},
+and then the second scan must be performed again. This process must
+be repeated until {dmi-op} returns 0. In later operations the debugger should
+allow for more time between Update-DR and Capture-DR.'''
+zh = '''
+要读取任意调试模块寄存器，选择 {dtm-dmi}，并在 {dmi-op} 设为 1、{dmi-address} 设为所需寄存器地址的情况下扫描输入一个值。在 Update-DR 中操作将启动，在 Capture-DR 中其结果将被捕获到 {dmi-data}。若操作未及时完成，{dmi-op} 将为 3，且应忽略 {dmi-data} 中的值。忙状态应通过在 {dtm-dtmcs} 中写入 {dtmcs-dmireset} 来清除，然后应再次执行第二次扫描。应重复此过程，直到 {dmi-op} 返回 0。在后续操作中，调试器宜在 Update-DR 与 Capture-DR 之间留出更多时间。'''

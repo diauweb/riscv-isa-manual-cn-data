@@ -1,0 +1,26 @@
+unit_id = "4df2fb1c9c6dc398c6f5688294cea2d8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| Op | Address | Value | Comment
+| Write | {dm-progbuf0} | `lw s0, 0(s0)` |
+| Write | `progbuf1` | `ebreak` |
+| Write | {dm-data0} | address |
+| Write | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1008 | Write `s0`, then execute program buffer
+| Write | {dm-command} | {accessregister-regno} = 0x1008 | Read `s0`
+| Read | {dm-data0} | - | Value read from memory
+|==='''
+zh = '''
+[align="center",float="center",cols="^3,^3,^10,<10",options="header"]
+|===
+| 操作 | 地址 | 值 | 注释
+| 写 | {dm-progbuf0} | `lw s0, 0(s0)` |
+| 写 | `progbuf1` | `ebreak` |
+| 写 | {dm-data0} | 地址 |
+| 写 | {dm-command} | {accessregister-transfer}, {accessregister-write}, {accessregister-postexec}, {accessregister-regno} = 0x1008 | 写 `s0`，然后执行程序缓冲器
+| 写 | {dm-command} | {accessregister-regno} = 0x1008 | 读 `s0`
+| 读 | {dm-data0} | - | 从内存读取的值
+|==='''

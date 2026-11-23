@@ -1,0 +1,18 @@
+unit_id = "0613f0e2d2613b5e7bae0aa763d699a5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This instruction is needed to avoid the need to "splat" a 128-bit vector register group when the round key is the same for
+all 128-bit "lanes". Such a splat would typically be implemented with a `vrgather` instruction which would hurt performance
+in many implementations.
+This instruction only exists in the `.vs` form because the `.vv` form would be identical to the `vxor.vv vd, vs2, vd` instruction.
+===='''
+zh = '''
+[NOTE]
+====
+当轮密钥对所有 128 位“通道”都相同时，需要本指令来避免对 128 位向量寄存器组进行“广播”。此类广播通常会用 `vrgather` 指令实现，而这会在许多实现中损害性能。
+本指令仅存在 `.vs` 形式，因为 `.vv` 形式将与 `vxor.vv vd, vs2, vd` 指令完全相同。
+===='''

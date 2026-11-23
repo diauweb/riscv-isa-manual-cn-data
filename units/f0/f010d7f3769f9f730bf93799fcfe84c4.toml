@@ -1,0 +1,25 @@
+unit_id = "f010d7f3769f9f730bf93799fcfe84c4"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. [#norm:vop-vi_imm_5bit]#For integer operations, the scalar can be a 5-bit immediate, `imm[4:0]`, encoded
+in the `rs1` field.  The value is sign-extended to SEW bits, unless otherwise specified.#
+
+. [#norm:vop-vx_xreg_rs1]#For integer operations, the scalar can be taken from the scalar `x`
+register specified by `rs1`.#  [#norm:vop-vx_rs1_trunc_lsb_sewbits]#If XLEN>SEW, the least-significant SEW bits of the `x` register are used, unless otherwise specified.#  [#norm:vop-vx_rs1_sext_sewbits]#If XLEN<SEW, the value from the `x` register is sign-extended to SEW
+bits.#
+
+. [#norm:vfop_freg]#For floating-point operations, the scalar can be taken from a scalar
+`f` register.#  [#norm:vfop_freg_nanbox_lsb_sewbits]#If FLEN > SEW, the value in the `f` registers is
+checked for a valid NaN-boxed value, in which case the
+least-significant SEW bits of the `f` register are used, else the
+canonical NaN value is used.#  [#norm:V_fp_eew_rsv]#Vector instructions where any
+floating-point vector operand's EEW is not a supported floating-point
+type width (which includes when FLEN < SEW) are reserved.#'''
+zh = '''
+. [#norm:vop-vi_imm_5bit]#对于整数操作，标量可以是编码在 `rs1` 字段中的 5 位立即数 `imm[4:0]`。除非另有说明，该值符号扩展到 SEW 位。#
+
+. [#norm:vop-vx_xreg_rs1]#对于整数操作，标量可取自 `rs1` 指定的标量 `x` 寄存器。# [#norm:vop-vx_rs1_trunc_lsb_sewbits]#如果 XLEN>SEW，除非另有说明，使用 `x` 寄存器的最低 SEW 位。# [#norm:vop-vx_rs1_sext_sewbits]#如果 XLEN<SEW，则来自 `x` 寄存器的值符号扩展到 SEW 位。#
+
+. [#norm:vfop_freg]#对于浮点操作，标量可取自标量 `f` 寄存器。# [#norm:vfop_freg_nanbox_lsb_sewbits]#如果 FLEN > SEW，则检查 `f` 寄存器中的值是否为有效的 NaN 装箱值；若是，则使用 `f` 寄存器的最低 SEW 位，否则使用规范 NaN 值。# [#norm:V_fp_eew_rsv]#任何浮点向量操作数的 EEW 不是受支持浮点类型宽度的向量指令（包括 FLEN < SEW 时）为保留。#'''

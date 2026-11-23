@@ -1,0 +1,44 @@
+unit_id = "02cc7ad01ce8f65855079d092feda927"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An example of side effects for CSR accesses would be if reading from a
+specific CSR causes a light bulb to turn on, while writing an odd value
+to the same CSR causes the light to turn off. Assume writing an even
+value has no effect. In this case, both the read and write have side
+effects controlling whether the bulb is lit, as this condition is not
+determined solely from the CSR value. (Note that after writing an odd
+value to the CSR to turn off the light, then reading to turn the light
+on, writing again the same odd value causes the light to turn off again.
+Hence, on the last write, it is not a change in the CSR value that turns
+off the light.)
+
+On the other hand, if a bulb is rigged to light whenever the value of a
+particular CSR is odd, then turning the light on and off is not
+considered a side effect of writing to the CSR but merely an indirect
+effect of such writes.
+
+More concretely, the <<vol:priv,RISC-V privileged architecture>> specifies that
+certain combinations of CSR values cause a trap to occur.
+When an explicit write to a CSR creates the conditions that trigger the
+trap, the trap is not considered a side effect of the write but merely
+an indirect effect.
+
+Standard CSRs do not have any side effects on reads. Standard CSRs may
+have side effects on writes. Custom extensions might add CSRs for which
+accesses have side effects on either reads or writes.
+===='''
+zh = '''
+[NOTE]
+====
+CSR 访问副作用的一个例子是：从某个特定 CSR 读取会使灯泡点亮，而向同一 CSR 写入奇数值会使灯泡熄灭。假设写入偶数值没有影响。在此情况下，读取和写入都具有控制灯泡是否点亮的副作用，因为该状态并非仅由 CSR 值决定。（注意，在向 CSR 写入奇数值以关灯之后，再读取以开灯，然后再次写入相同的奇数值又会再次关灯。因此，在最后一次写入时，并不是 CSR 值的变化使灯熄灭。）
+
+另一方面，如果灯泡被设置为只要特定 CSR 的值为奇数就点亮，那么开灯和关灯不被视为写入该 CSR 的副作用，而仅仅是此类写入的间接效应。
+
+更具体地，<<vol:priv,RISC-V 特权架构>>规定 CSR 值的某些组合会导致陷阱发生。当对 CSR 的显式写入造成触发陷阱的条件时，该陷阱不被视为该写入的副作用，而仅仅是间接效应。
+
+标准 CSR 在读取上没有副作用。标准 CSR 可能在写入上有副作用。自定义扩展可能添加访问时在读取或写入上有副作用的 CSR。
+===='''

@@ -1,0 +1,23 @@
+unit_id = "cc4875455b77df9278fedfacf594fa15"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The insn:fnmsub[] and insn:fnmadd[] instructions are counterintuitively named, owing
+to the naming of the corresponding instructions in MIPS-IV. The MIPS
+instructions were defined to negate the sum, rather than negating the
+product as the RISC-V instructions do, so the naming scheme was more
+rational at the time. The two definitions differ with respect to
+signed-zero results. The RISC-V definition matches the behavior of the
+x86 and ARM fused multiply-add instructions, but unfortunately the
+RISC-V insn:fnmsub[] and insn:fnmadd[] instruction names are swapped as compared to x86,
+whereas the RISC-V insn:fmsub[] and insn:fnmsub[] instruction names are swapped as
+compared to ARM.
+===='''
+zh = '''
+[NOTE]
+====
+insn:fnmsub[] 和 insn:fnmadd[] 指令的命名有违直觉，这是由 MIPS-IV 中相应指令的命名所致。MIPS 指令定义为对和取负，而不是像 RISC-V 指令那样对乘积取负，因此当时的命名方案更合理。这两种定义在有符号零结果方面不同。RISC-V 定义与 x86 和 ARM 融合乘加指令的行为一致，但不幸的是，与 x86 相比，RISC-V 的 insn:fnmsub[] 和 insn:fnmadd[] 指令名称交换了；而与 ARM 相比，RISC-V 的 insn:fmsub[] 和 insn:fnmsub[] 指令名称交换了。
+===='''

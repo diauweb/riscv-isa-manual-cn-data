@@ -1,0 +1,19 @@
+unit_id = "f8a75eec6be2f5a01691a4e6d13e9dbb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The diagram shown to the right of each litmus test shows a visual
+representation of the particular execution candidate being considered.
+These diagrams use a notation that is common in the memory model
+literature for constraining the set of possible global memory orders
+that could produce the execution in question. It is also the basis for
+the _herd_ models presented in
+<<sec:herd>>. This notation is explained in
+<<litmus-key>>. Of the listed relations, rf edges between
+harts, co edges, fr edges, and ppo edges directly constrain the global
+memory order (as do fence, addr, data, and some ctrl edges, via ppo).
+Other edges (such as intra-hart rf edges) are informative but do not
+constrain the global memory order.'''
+zh = '''
+每个 litmus 测试右侧所示的图给出所考虑特定执行候选的可视化表示。这些图使用的记法在内存模型文献中常用于约束可产生所讨论执行的可能的全局内存顺序集合。它也是 <<sec:herd>> 中给出的 __herd__ 模型的基础。该记法在 <<litmus-key>> 中解释。在所列出关系中，硬件线程之间的 rf 边、co 边、fr 边和 ppo 边直接约束全局内存顺序（fence、addr、data 以及某些 ctrl 边也通过 ppo 如此）。其他边（如硬件线程内的 rf 边）提供信息，但不约束全局内存顺序。'''

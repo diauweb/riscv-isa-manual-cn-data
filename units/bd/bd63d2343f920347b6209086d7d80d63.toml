@@ -1,0 +1,14 @@
+unit_id = "bd63d2343f920347b6209086d7d80d63"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Because in-register byte layouts are identical to in-memory byte
+layouts, the same data is written to the destination register group
+regardless of EEW.
+Hence, it would have sufficed to provide only EEW=8 variants.
+The full set of EEW variants is provided so that the encoded EEW can be used
+as a hint to indicate the destination register group will next be accessed
+with this EEW, which aids implementations that rearrange data internally.'''
+zh = '''
+NOTE: 因为寄存器内字节布局与内存内字节布局相同，所以无论 EEW 如何，相同数据都会写入目标寄存器组。因此，仅提供 EEW=8 变体就足够了。提供完整 EEW 变体集是为了使编码的 EEW 可作为提示，指示目标寄存器组接下来将以该 EEW 访问，这有助于在内部重排数据的实现。'''

@@ -1,0 +1,20 @@
+unit_id = "731c9347b895864e23ef3e348a7e1e5d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An EEI may not guarantee misaligned loads and stores are handled
+invisibly. In this case, loads and stores that are not naturally aligned
+may either complete execution successfully or raise an exception. The
+exception raised can be either an address-misaligned exception or an
+access-fault exception. For a memory access that would otherwise be able
+to complete except for the misalignment, an access-fault exception can
+be raised instead of an address-misaligned exception if the misaligned
+access should not be emulated, e.g., if accesses to the memory region
+have side effects. When an EEI does not guarantee misaligned loads and
+stores are handled invisibly, the EEI must define if exceptions caused
+by address misalignment result in a contained trap (allowing software
+running inside the execution environment to handle the trap) or a fatal
+trap (terminating execution).'''
+zh = '''
+EEI 未必保证非对齐加载和存储被隐式处理。在这种情况下，未自然对齐的加载和存储可成功完成执行，或产生异常。所产生的异常可以是地址非对齐异常或访问错误异常。对于原本除非对齐外能够完成的内存访问，如果不应仿真该非对齐访问，例如对该内存区域的访问具有副作用，则可改为产生访问错误异常，而不是地址非对齐异常。当 EEI 不保证非对齐加载和存储被隐式处理时，EEI 应定义由地址非对齐引起的异常导致受控陷阱（允许在执行环境内运行的软件处理该陷阱）还是致命陷阱（终止执行）。'''

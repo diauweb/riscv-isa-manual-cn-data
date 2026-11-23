@@ -1,0 +1,54 @@
+unit_id = "cff5802972bbd3613d8522b4344a9bc6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. All hart registers (including CSRs) can be read/written.
+. Memory can be accessed either from the hart's point of view, through
+the system bus directly, or both.
+. RV32, RV64, and future RV128 are all supported.
+. Any hart in the hardware platform can be independently debugged.
+. A debugger can discover almost footnote:[Notable exceptions include
+information about the memory map and peripherals.] everything it needs
+to know itself, without user configuration.
+. Each hart can be debugged from the very first instruction executed.
+. A RISC-V hart can be halted when a software breakpoint instruction is
+executed.
+. Hardware single-step can execute one instruction at a time.
+. Debug functionality is independent of the debug transport used.
+. The debugger does not need to know anything about the
+microarchitecture of the harts it is debugging.
+. Arbitrary subsets of harts can be halted and resumed simultaneously.
+(Optional)
+. Arbitrary instructions can be executed on a halted hart. That means no
+new debug functionality is needed when a core has additional or custom
+instructions or state, as long as there exist programs that can move
+that state into GPRs. (Optional)
+. Registers can be accessed without halting. (Optional)
+. A running hart can be directed to execute a short sequence of
+instructions, with little overhead. (Optional)
+. A system bus manager allows memory access without involving any hart.
+(Optional)
+. A RISC-V hart can be halted when a trigger matches the PC, read/write
+address/data, or an instruction opcode. (Optional)
+. Harts can be grouped, and harts in the same group will all halt when
+any of them halts. These groups can also react to or notify external
+triggers. (Optional)'''
+zh = '''
+. 所有硬件线程寄存器（包括 CSR）均可读/写。
+. 内存可从硬件线程的视角、直接通过系统总线，或二者兼有的方式进行访问。
+. 支持 RV32、RV64 以及未来的 RV128。
+. 硬件平台中的任何硬件线程均可被独立调试。
+. 调试器几乎能自行发现所需的一切信息，无需用户配置。脚注：[值得注意的例外包括内存映射和外设的信息。]
+. 每个硬件线程可从所执行的第一条指令开始调试。
+. 当执行软件断点指令时，RISC-V 硬件线程可停机。
+. 硬件单步可一次执行一条指令。
+. 调试功能与所用调试传输无关。
+. 调试器无需了解其所调试硬件线程的任何微体系结构细节。
+. 任意硬件线程子集可同时停机与恢复。（可选）
+. 可在停机的硬件线程上执行任意指令。这意味着当核具有额外或自定义指令或状态时，只要存在可将该状态移入 GPR 的程序，就无需新的调试功能。（可选）
+. 无需停机即可访问寄存器。（可选）
+. 可指示正在运行的硬件线程以极小的开销执行一段简短指令序列。（可选）
+. 系统总线管理器允许在不涉及任何硬件线程的情况下访问内存。（可选）
+. 当触发器匹配 PC、读/写地址/数据或指令操作码时，RISC-V 硬件线程可停机。（可选）
+. 硬件线程可分组，同一组中的硬件线程在任一线程停机时都会全部停机。这些组还可响应或通知外部触发器。（可选）'''

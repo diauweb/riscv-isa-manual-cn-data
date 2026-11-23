@@ -1,0 +1,16 @@
+unit_id = "f767a58401d158b6341b3dc35319d349"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If S or U mode is not implemented, then the corresponding `[s,u]seed`
+bits of `mseccfg` must be hardwired to zero.
+The `[s,u]seed` bits must have a defined reset value. The system
+must not allow them to be in an undefined state after a reset.
+`mseccfg` exists if `Zkr` is implemented, or if it is required by other
+processor features. If `Zkr` is _not_ implemented, the `[s,u]seed` bits must
+be hardwired to zero.'''
+zh = '''
+若未实现 S 或 U 模式，则 `mseccfg` 的相应 `[s,u]seed` 位应硬连线为零。
+`[s,u]seed` 位应具有已定义的复位值。系统不应允许它们在复位后处于未定义状态。
+若实现了 `Zkr`，或其他处理器特性要求 `mseccfg`，则 `mseccfg` 存在。若__未__实现 `Zkr`，则 `[s,u]seed` 位应硬连线为零。'''

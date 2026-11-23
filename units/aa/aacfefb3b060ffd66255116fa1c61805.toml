@@ -1,0 +1,20 @@
+unit_id = "aacfefb3b060ffd66255116fa1c61805"
+kind = "code"
+translatable = false
+en = '''
+----
+# Widening unsigned-integer multiply-add, overwrite addend
+vwmaccu.vv vd, vs1, vs2, vm   # vd[i] = (vs1[i] * vs2[i]) + vd[i]
+vwmaccu.vx vd, rs1, vs2, vm   # vd[i] = (x[rs1] * vs2[i]) + vd[i]
+
+# Widening signed-integer multiply-add, overwrite addend
+vwmacc.vv vd, vs1, vs2, vm    # vd[i] = (vs1[i] * vs2[i]) + vd[i]
+vwmacc.vx vd, rs1, vs2, vm    # vd[i] = (x[rs1] * vs2[i]) + vd[i]
+
+# Widening signed-unsigned-integer multiply-add, overwrite addend
+vwmaccsu.vv vd, vs1, vs2, vm  # vd[i] = (signed(vs1[i]) * unsigned(vs2[i])) + vd[i]
+vwmaccsu.vx vd, rs1, vs2, vm  # vd[i] = (signed(x[rs1]) * unsigned(vs2[i])) + vd[i]
+
+# Widening unsigned-signed-integer multiply-add, overwrite addend
+vwmaccus.vx vd, rs1, vs2, vm  # vd[i] = (unsigned(x[rs1]) * signed(vs2[i])) + vd[i]
+----'''

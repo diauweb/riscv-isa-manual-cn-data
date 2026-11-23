@@ -1,0 +1,19 @@
+unit_id = "d467d3dc5e4a2dfb0d17713a86a6058c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The supervisor memory-management fence instruction SFENCE.VMA is used to
+synchronize updates to in-memory memory-management data structures with
+current execution. Instruction execution causes implicit reads and
+writes to these data structures; however, these implicit references are
+ordinarily not ordered with respect to explicit loads and stores.
+Executing an SFENCE.VMA instruction guarantees that any previous stores
+already visible to the current RISC-V hart are ordered before certain
+implicit references by subsequent instructions in that hart to the
+memory-management data structures. The specific set of operations
+ordered by SFENCE.VMA is determined by _rs1_ and _rs2_, as described
+below. SFENCE.VMA is also used to invalidate entries in the
+address-translation cache associated with a hart (see <<sv32algorithm>>). Further details on the behavior of this instruction are described in <<virt-control>> and <<pmp-vmem>>.'''
+zh = '''
+监管内存管理栅栏指令 SFENCE.VMA 用于将内存中内存管理数据结构的更新与当前执行同步。指令执行会引发对这些数据结构的隐式读写；然而，这些隐式引用通常不与显式加载和存储按序排列。执行 SFENCE.VMA 指令保证：任何已对当前 RISC-V 硬件线程可见的先前存储，都排在该硬件线程中后续指令对内存管理数据结构的某些隐式引用之前。SFENCE.VMA 所排序的具体操作集合由 _rs1_ 和 _rs2_ 确定，如下所述。SFENCE.VMA 还用于使与某硬件线程关联的地址转换缓存中的表项无效（见 <<sv32algorithm>>）。该指令行为的更多细节见 <<virt-control>> 和 <<pmp-vmem>>。'''

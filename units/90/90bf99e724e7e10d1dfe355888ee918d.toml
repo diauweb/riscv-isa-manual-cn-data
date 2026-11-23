@@ -1,0 +1,19 @@
+unit_id = "90bf99e724e7e10d1dfe355888ee918d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Obviously, one way to prevent the use of new user-level CSRs as covert channels
+would be to add to csr:mstatus[] or csr:sstatus[] an csr::[xs] field for each relevant
+extension, paralleling the ext:v[] extension's csr::[vs] field. However, this is not
+considered a general solution to the problem due to the number of potential
+future extensions that may add small amounts of state. Even with a 64-bit
+csr:sstatus[] (necessitating adding csr:sstatush[] for RV32), it is not certain there are
+enough remaining bits in csr:sstatus[] to accommodate all future user-level
+extensions. In any event, there is no need to strain csr:sstatus[] (and add csr:sstatush[])
+for this purpose. The "`enable`" flags that are needed to plug covert channels
+are not generally expected to require swapping on context switches of user
+threads, making them a less-than-compelling candidate for inclusion in csr:sstatus[].
+Hence, a new place is provided for them instead.'''
+zh = '''
+显然，防止将新的用户级 CSR 用作隐蔽通道的一种方式，是在 csr:mstatus[] 或 csr:sstatus[] 中为每个相关扩展增加一个 csr::[xs] 字段，以与 ext:v[] 扩展的 csr::[vs] 字段相对应。然而，由于未来可能有大量扩展会增加少量状态，这被认为不是该问题的通用解决方案。即使使用 64 位 csr:sstatus[]（对 RV32 而言需要增加 csr:sstatush[]），也不能确定 csr:sstatus[] 中剩余位足以容纳未来所有用户级扩展。无论如何，都不必为此占用 csr:sstatus[]（并增加 csr:sstatush[]）。用于封堵隐蔽通道的“使能”标志通常不需要在用户线程上下文切换时交换，因此它们不是纳入 csr:sstatus[] 的有力候选。因此，改为为其提供新的位置。'''

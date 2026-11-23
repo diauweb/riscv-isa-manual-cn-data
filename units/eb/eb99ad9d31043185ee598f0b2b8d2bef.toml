@@ -1,0 +1,21 @@
+unit_id = "eb99ad9d31043185ee598f0b2b8d2bef"
+kind = "code"
+translatable = false
+en = '''
+----
+ viota.m vd, vs2, vm
+
+ # Example
+
+     7 6 5 4 3 2 1 0   Element number
+
+     1 0 0 1 0 0 0 1   v2 contents
+                       viota.m v4, v2 # Unmasked
+     2 2 2 1 1 1 1 0   v4 result
+
+     1 1 1 0 1 0 1 1   v0 contents
+     1 0 0 1 0 0 0 1   v2 contents
+     2 3 4 5 6 7 8 9   v4 contents
+                       viota.m v4, v2, v0.t # Masked, vtype.vma=0
+     1 1 1 5 1 7 1 0   v4 results
+----'''

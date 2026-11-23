@@ -1,0 +1,13 @@
+unit_id = "e8aaca35cc2213d87f9ff732bff26380"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sip_acc]#Each individual bit in register `sip` may be writable or may be
+read-only.# [#norm:sip_op]#When bit _i_ in `sip` is writable, a pending interrupt _i_
+can be cleared by writing 0 to this bit. If interrupt _i_ can become
+pending but bit _i_ in `sip` is read-only, the implementation must
+provide some other mechanism for clearing the pending interrupt (which
+may involve a call to the execution environment).#'''
+zh = '''
+[#norm:sip_acc]##`sip` 寄存器中的每个单独位可以是可写的，也可以是只读的。## [#norm:sip_op]##当 `sip` 中的位 _i_ 可写时，可通过向该位写入 0 来清除挂起的中断 _i_。若中断 _i_ 可变为挂起，但 `sip` 中的位 _i_ 为只读，则实现应提供某种其他机制来清除该挂起中断（这可能涉及调用执行环境）。##'''

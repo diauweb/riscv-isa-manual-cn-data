@@ -1,0 +1,17 @@
+unit_id = "af466fd0e78e1034e79fd8bd88a1f36f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+There are separate {dmcontrol-setresethaltreq} and {dmcontrol-clrresethaltreq} bits so that
+it is possible to write {dm-dmcontrol} without changing the halt-on-reset
+request bit for each selected hart, when not all selected harts have
+the same configuration.
+===='''
+zh = '''
+[NOTE]
+====
+{dmcontrol-setresethaltreq} 和 {dmcontrol-clrresethaltreq} 是分开的位，以便当并非所有所选硬件线程具有相同配置时，可以在不更改每个所选硬件线程的复位时停机请求位的情况下写入 {dm-dmcontrol}。
+===='''

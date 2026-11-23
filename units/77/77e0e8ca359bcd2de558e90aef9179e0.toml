@@ -1,0 +1,15 @@
+unit_id = "77e0e8ca359bcd2de558e90aef9179e0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When an extension's status is set to Off, any instruction that attempts
+to read or write the corresponding state will cause an
+illegal-instruction exception. When the status is Initial, the corresponding
+state should have an initial constant value. When the status is Clean,
+the corresponding state is potentially different from the initial value,
+but matches the last value stored on a context swap. When the status is
+Dirty, the corresponding state has potentially been modified since the
+last context save.'''
+zh = '''
+当某扩展的状态被设置为 Off 时，任何试图读取或写入相应状态的指令将导致非法指令异常。当状态为 Initial 时，相应状态宜具有初始常量值。当状态为 Clean 时，相应状态可能与初始值不同，但与上下文交换时存储的最后一个值匹配。当状态为 Dirty 时，相应状态自上次上下文保存以来可能已被修改。'''

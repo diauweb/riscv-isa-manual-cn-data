@@ -1,0 +1,17 @@
+unit_id = "64d3b75ef19fd2b585c361b473d05a77"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+More commonly, implementations contain address-translation caches that
+map guest virtual addresses directly to supervisor physical addresses,
+removing a level of indirection. For such implementations, any entry
+whose guest virtual address maps to a guest physical address that
+matches the HFENCE.GVMA’s address and VMID arguments must be flushed.
+Selectively flushing entries in this fashion requires tagging them with
+the guest physical address, which is costly, and so a common technique
+is to flush all entries that match the HFENCE.GVMA’s VMID argument,
+regardless of the address argument.'''
+zh = '''
+更常见地，实现包含将客户机虚拟地址直接映射到监管者物理地址的地址转换缓存，从而消除一级间接。对于此类实现，任何其客户机虚拟地址映射到的客户机物理地址与 HFENCE.GVMA 的地址和 VMID 参数相匹配的项都必须被冲刷。以这种方式选择性地冲刷项需要为这些项标记客户机物理地址，代价高昂，因此一种常用技术是冲刷所有与 HFENCE.GVMA 的 VMID 参数相匹配的项，而不论地址参数。
+</｜DSML｜ parameter>'''

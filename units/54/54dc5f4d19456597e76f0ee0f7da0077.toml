@@ -1,0 +1,38 @@
+unit_id = "54dc5f4d19456597e76f0ee0f7da0077"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Although the PMP mechanism supports regions as small as four bytes,
+platforms may specify coarser PMP regions. In general, the PMP grain is
+latexmath:[$2^{G+2}$] bytes and must be the same across all PMP regions.
+When latexmath:[$G \geq 1$], the NA4 mode is not selectable. When
+latexmath:[$G \geq 2$] and latexmath:[${\tt pmpcfg}_i$].A[1] is set,
+i.e. the mode is NAPOT, then bits latexmath:[${\tt pmpaddr}_i$][G-2:0]
+read as all ones. When latexmath:[$G \geq 1$] and
+latexmath:[${\tt pmpcfg}_i$].A[1] is clear, i.e. the mode is OFF or TOR,
+then bits latexmath:[${\tt pmpaddr}_i$][G-1:0] read as all zeros. Bits
+latexmath:[${\tt
+pmpaddr}_i$][G-1:0] do not affect the TOR address-matching logic.
+Although changing latexmath:[${\tt pmpcfg}_i$].A[1] affects the value
+read from latexmath:[${\tt pmpaddr}_i$], it does not affect the
+underlying value stored in that register—in particular,
+latexmath:[${\tt pmpaddr}_i$][G-1] retains its original value when
+latexmath:[${\tt pmpcfg}_i$].A is changed from NAPOT to TOR/OFF then
+back to NAPOT.'''
+zh = '''
+尽管 PMP 机制支持小至四字节的区域，平台可指定更粗粒度的 PMP 区域。通常，PMP 粒度为
+latexmath:[$2^{G+2}$] 字节，且在全部 PMP 区域中必须相同。
+当 latexmath:[$G \geq 1$] 时，NA4 模式不可选。当
+latexmath:[$G \geq 2$] 且 latexmath:[${\tt pmpcfg}_i$].A[1] 被置位，
+即模式为 NAPOT 时，位 latexmath:[${\tt pmpaddr}_i$][G-2:0]
+读取为全 1。当 latexmath:[$G \geq 1$] 且
+latexmath:[${\tt pmpcfg}_i$].A[1] 为 0，即模式为 OFF 或 TOR 时，
+则位 latexmath:[${\tt pmpaddr}_i$][G-1:0] 读取为全 0。位
+latexmath:[${\tt
+pmpaddr}_i$][G-1:0] 不影响 TOR 地址匹配逻辑。
+尽管更改 latexmath:[${\tt pmpcfg}_i$].A[1] 会影响从
+latexmath:[${\tt pmpaddr}_i$] 读取的值，但它不影响
+该寄存器中存储的底层值——特别是，
+当 latexmath:[${\tt pmpcfg}_i$].A 从 NAPOT 更改为 TOR/OFF 再
+回到 NAPOT 时，latexmath:[${\tt pmpaddr}_i$][G-1] 保留其原始值。'''

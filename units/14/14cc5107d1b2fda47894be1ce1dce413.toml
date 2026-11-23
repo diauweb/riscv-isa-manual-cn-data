@@ -1,0 +1,14 @@
+unit_id = "14cc5107d1b2fda47894be1ce1dce413"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Apart from transfer operations described in the previous paragraph, all
+other floating-point operations on narrower __n__-bit
+operations, _n_<FLEN, check if the input operands are
+correctly NaN-boxed, i.e., all upper FLEN-_n_ bits are 1. If
+so, the _n_ least-significant bits of the input are used as
+the input value, otherwise the input value is treated as an
+_n_-bit canonical NaN.'''
+zh = '''
+除上一段描述的传送操作外，所有其他对较窄 __n__ 位操作（_n_<FLEN）的浮点操作都会检查输入操作数是否已正确 NaN 装箱，即所有高 FLEN-_n_ 位是否为 1。若是，则使用输入的低 _n_ 位作为输入值；否则，输入值被视为 _n_ 位规范 NaN。'''

@@ -1,0 +1,14 @@
+unit_id = "82cbd544f474476e2959ed017d0c6670"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-sdsp_op]#C.SDSP is an XLEN=64-only instruction that stores a 64-bit value in
+register _rs2_ to memory. It computes an effective address by adding the
+_zero_-extended offset, scaled by 8, to the stack pointer, `x2`. It
+expands to `sd rs2, offset(x2)`.#'''
+zh = '''
+[#norm:c-sdsp_op]#C.SDSP 是仅用于 XLEN=64 的指令，它将寄存器 _rs2_ 中的
+64 位值存储到内存。它通过将按 8 缩放的
+__零__扩展偏移加到栈指针 `x2` 上来计算有效地址。它
+展开为 `sd rs2, offset(x2)`。#'''

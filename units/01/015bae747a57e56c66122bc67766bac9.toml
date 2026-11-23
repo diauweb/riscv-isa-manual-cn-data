@@ -1,0 +1,15 @@
+unit_id = "015bae747a57e56c66122bc67766bac9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The unused fields in the insn:fence.i[] instruction, _funct12_, _rs1_, and _rd_,
+are reserved for finer-grain fences in future extensions. For forward
+compatibility, base implementations shall ignore these fields, and standard
+software shall zero these fields.
+(((FENCE.I, finer-grained)))
+(((FENCE.I, forward compatibility)))'''
+zh = '''
+insn:fence.i[] 指令中的未使用字段 __funct12__、__rs1__ 和 __rd__ 为未来扩展中的更细粒度屏障保留。为向前兼容，基础实现应忽略这些字段，标准软件应将这些字段置零。
+(((FENCE.I, finer-grained)))
+(((FENCE.I, forward compatibility)))'''

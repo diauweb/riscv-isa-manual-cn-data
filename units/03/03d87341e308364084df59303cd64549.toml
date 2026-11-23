@@ -1,0 +1,204 @@
+unit_id = "03d87341e308364084df59303cd64549"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+[[commit_fence]]
+===== Commit fence
+
+A fence instruction instance latexmath:[$i$] in state
+Plain(Fence(_kind_, _next_state_)) can be committed if:
+
+. if latexmath:[$i$] is a normal fence and it has `.pr` set, all
+program-order-previous load instructions are finished;
+. if latexmath:[$i$] is a normal fence and it has `.pw` set, all
+program-order-previous store instructions are finished; and
+. if latexmath:[$i$] is a `fence.tso`, all program-order-previous load
+and store instructions are finished.
+
+Action:
+
+. record that latexmath:[$i$] is committed; and
+. update the state of latexmath:[$i$] to Plain(_next_state_).
+
+[[reg_read]]
+===== Register read
+
+An instruction instance latexmath:[$i$] in state
+Plain(Read_reg(_reg_name_, _read_cont_)) can do a register read of
+_reg_name_ if every instruction instance that it needs to read from has
+already performed the expected _reg_name_ register write.
+
+Let _read_sources_ include, for each bit of _reg_name_, the write to
+that bit by the most recent (in program order) instruction instance that
+can write to that bit, if any. If there is no such instruction, the
+source is the initial register value from _initial_register_state_. Let
+_reg_value_ be the value assembled from _read_sources_. Action:
+
+. add _reg_name_ to latexmath:[$i.\textit{reg\_reads}$] with
+_read_sources_ and _reg_value_; and
+. update the state of latexmath:[$i$] to Plain(_read_cont(reg_value)_).
+
+[[reg_write]]
+===== Register write
+
+An instruction instance latexmath:[$i$] in state
+Plain(Write_reg(_reg_name_, _reg_value_, _next_state_)) can always do a
+_reg_name_ register write. Action:
+
+. add _reg_name_ to latexmath:[$i.\textit{reg\_writes}$] with
+latexmath:[$deps$] and _reg_value_; and
+. update the state of latexmath:[$i$] to Plain(_next_state_).
+
+where latexmath:[$deps$] is a pair of the set of all _read_sources_ from
+latexmath:[$i.\textit{reg\_reads}$], and a flag that is true iff
+latexmath:[$i$] is a load instruction instance that has already been
+entirely satisfied.
+
+[[sail_interp]]
+===== Pseudocode internal step
+
+An instruction instance latexmath:[$i$] in state
+Plain(Internal(_next_state_)) can always do that pseudocode-internal
+step. Action: update the state of latexmath:[$i$] to
+Plain(_next_state_).
+
+[[finish]]
+===== Finish instruction
+
+A non-finished instruction instance latexmath:[$i$] in state Plain(Done)
+can be finished if:
+
+. if latexmath:[$i$] is a load instruction:
+.. all program-order-previous load-acquire instructions are finished;
+.. all program-order-previous `fence` instructions with `.sr` set are
+finished;
+.. for every program-order-previous `fence.tso` instruction,
+latexmath:[$f$], that is not finished, all load instructions that are
+program-order-before latexmath:[$f$] are finished; and
+.. it is guaranteed that the values read by the memory load operations
+of latexmath:[$i$] will not cause coherence violations, i.e., for any
+program-order-previous instruction instance latexmath:[$i'$], let
+latexmath:[$\textit{cfp}$] be the combined footprint of propagated
+memory store operations from store instructions program-order-between
+latexmath:[$i$] and latexmath:[$i'$], and _fixed memory store
+operations_ that were forwarded to latexmath:[$i$] from store
+instructions program-order-between latexmath:[$i$] and latexmath:[$i'$]
+including latexmath:[$i'$], and let
+latexmath:[$\overline{\textit{cfp}}$] be the complement of
+latexmath:[$\textit{cfp}$] in the memory footprint of latexmath:[$i$].
+If latexmath:[$\overline{\textit{cfp}}$] is not empty:
+... latexmath:[$i'$] has a fully determined memory footprint;
+... latexmath:[$i'$] has no unpropagated memory store operations that
+overlap with latexmath:[$\overline{\textit{cfp}}$]; and
+... if latexmath:[$i'$] is a load with a memory footprint that overlaps
+with latexmath:[$\overline{\textit{cfp}}$], then all the memory load
+operations of latexmath:[$i'$] that overlap with
+latexmath:[$\overline{\textit{cfp}}$] are satisfied and latexmath:[$i'$]
+is _non-restartable_ (see the <<prop_store, Propagate store operation>> transition for how to determined if an
+instruction is non-restartable).
++
+Here, a memory store operation is called fixed if the store instruction
+has fully determined data.
+. latexmath:[$i$] has a fully determined data; and
+. if latexmath:[$i$] is not a fence, all program-order-previous
+conditional branch and indirect jump instructions are finished.
+
+Action:
+
+. if latexmath:[$i$] is a conditional branch or indirect jump
+instruction, discard any untaken paths of execution, i.e., remove all
+instruction instances that are not reachable by the branch/jump taken in
+_instruction_tree_; and
+. record the instruction as finished, i.e., set _finished_ to _true_.
+
+[[limitations]]
+==== Limitations
+
+* The model covers user-level RV64I and RV64A. In particular, it does
+not support the misaligned atomicity granule PMA or the total store
+ordering extension "Ztso". It should be trivial to adapt the model to
+RV32I/A and to the G, Q and C extensions, but we have never tried it.
+This will involve, mostly, writing Sail code for the instructions, with
+minimal, if any, changes to the concurrency model.
+* The model covers only normal memory accesses (it does not handle I/O
+accesses).
+* The model does not cover TLB-related effects.
+* The model assumes the instruction memory is fixed. In particular, the
+<<fetch, Fetch instruction>> transition does not generate memory load operations, and the shared
+memory is not involved in the transition. Instead, the model depends on
+an external oracle that provides an opcode when given a memory location.
+* The model does not cover exceptions, traps and interrupts.'''
+zh = '''
+====
+[[commit_fence]]
+===== 提交屏障
+
+处于 Plain(Fence(_kind_, _next_state_)) 状态的屏障指令实例 latexmath:[$i$]，若满足以下条件，则可被提交：
+
+. 若 latexmath:[$i$] 是普通屏障且置位 `.pr`，则所有程序顺序在先的加载指令均已完成；
+. 若 latexmath:[$i$] 是普通屏障且置位 `.pw`，则所有程序顺序在先的存储指令均已完成；且
+. 若 latexmath:[$i$] 是 `fence.tso`，则所有程序顺序在先的加载和存储指令均已完成。
+
+动作：
+
+. 记录 latexmath:[$i$] 已提交；且
+. 将 latexmath:[$i$] 的状态更新为 Plain(_next_state_)。
+
+[[reg_read]]
+===== 寄存器读取
+
+处于 Plain(Read_reg(_reg_name_, _read_cont_)) 状态的指令实例 latexmath:[$i$]，若它需要读取的每个指令实例均已执行所期望的 _reg_name_ 寄存器写入，则可就 _reg_name_ 执行一次寄存器读取。
+
+令 _read_sources_ 包括对 _reg_name_ 的每一位，由能够写入该位的最近（按程序顺序）指令实例对该位的写入（若有）。若无此类指令，则来源为来自 _initial_register_state_ 的初始寄存器值。令 _reg_value_ 为由 _read_sources_ 组装而成的值。动作：
+
+. 将 _reg_name_ 连同 _read_sources_ 和 _reg_value_ 添加到 latexmath:[$i.\textit{reg\_reads}$]；且
+. 将 latexmath:[$i$] 的状态更新为 Plain(_read_cont(reg_value)_)。
+
+[[reg_write]]
+===== 寄存器写入
+
+处于 Plain(Write_reg(_reg_name_, _reg_value_, _next_state_)) 状态的指令实例 latexmath:[$i$] 总是可以执行一次 _reg_name_ 寄存器写入。动作：
+
+. 将 _reg_name_ 连同 latexmath:[$deps$] 和 _reg_value_ 添加到 latexmath:[$i.\textit{reg\_writes}$]；且
+. 将 latexmath:[$i$] 的状态更新为 Plain(_next_state_)。
+
+其中 latexmath:[$deps$] 是一个对，包含来自 latexmath:[$i.\textit{reg\_reads}$] 的所有 _read_sources_ 的集合，以及一个当且仅当 latexmath:[$i$] 是已完全满足的加载指令实例时为真的标志。
+
+[[sail_interp]]
+===== 伪代码内部步骤
+
+处于 Plain(Internal(_next_state_)) 状态的指令实例 latexmath:[$i$] 总是可以执行该伪代码内部步骤。动作：将 latexmath:[$i$] 的状态更新为 Plain(_next_state_)。
+
+[[finish]]
+===== 完成指令
+
+处于 Plain(Done) 状态的未完成指令实例 latexmath:[$i$]，若满足以下条件，则可被完成：
+
+. 若 latexmath:[$i$] 是加载指令：
+.. 所有程序顺序在先的加载-获取指令均已完成；
+.. 所有置位 `.sr` 的程序顺序在先的 `fence` 指令均已完成；
+.. 对于每条未完成的程序顺序在先的 `fence.tso` 指令 latexmath:[$f$]，程序顺序先于 latexmath:[$f$] 的所有加载指令均已完成；且
+.. 保证 latexmath:[$i$] 的内存加载操作所读取的值不会导致一致性违反，即：对于任何程序顺序在先的指令实例 latexmath:[$i'$]，令 latexmath:[$\textit{cfp}$] 为来自程序顺序介于 latexmath:[$i$] 与 latexmath:[$i'$] 之间的存储指令的已传播内存存储操作，以及从程序顺序介于 latexmath:[$i$] 与 latexmath:[$i'$] 之间（包括 latexmath:[$i'$]）的存储指令前递给 latexmath:[$i$] 的__固定内存存储操作__的合并足迹，并令 latexmath:[$\overline{\textit{cfp}}$] 为 latexmath:[$\textit{cfp}$] 在 latexmath:[$i$] 的内存足迹中的补集。若 latexmath:[$\overline{\textit{cfp}}$] 非空：
+... latexmath:[$i'$] 具有完全确定的内存足迹；
+... latexmath:[$i'$] 没有与 latexmath:[$\overline{\textit{cfp}}$] 重叠的未传播内存存储操作；且
+... 若 latexmath:[$i'$] 是内存足迹与 latexmath:[$\overline{\textit{cfp}}$] 重叠的加载，则 latexmath:[$i'$] 的所有与 latexmath:[$\overline{\textit{cfp}}$] 重叠的内存加载操作均已满足，且 latexmath:[$i'$] 是__不可重启的__（关于如何判断指令是否不可重启，见 <<prop_store, 传播存储操作>> 转移）。
++
+这里，若存储指令具有完全确定的数据，则称某内存存储操作是固定的。
+. latexmath:[$i$] 具有完全确定的数据；且
+. 若 latexmath:[$i$] 不是屏障，则所有程序顺序在先的条件分支和间接跳转指令均已完成。
+
+动作：
+
+. 若 latexmath:[$i$] 是条件分支或间接跳转指令，则丢弃任何未采用的执行路径，即移除 _instruction_tree_ 中不可由所采用的分支/跳转到达的所有指令实例；且
+. 记录该指令已完成，即置 _finished_ 为 _true_。
+
+[[limitations]]
+==== 限制
+
+* 该模型涵盖用户级 RV64I 和 RV64A。特别地，它不支持非对齐原子性粒度 PMA 或全存储排序扩展“Ztso”。将该模型适配到 RV32I/A 以及 G、Q 和 C 扩展应是微不足道的，但我们从未尝试过。这将主要涉及为指令编写 Sail 代码，对并发模型仅有极小（如果有）改动。
+* 该模型仅涵盖常规内存访问（不处理 I/O 访问）。
+* 该模型不涵盖 TLB 相关效应。
+* 该模型假定指令内存是固定的。特别地，<<fetch, 取指令>> 转移不生成内存加载操作，且共享内存不参与该转移。相反，该模型依赖一个外部 oracle，在给定内存位置时提供操作码。
+* 该模型不涵盖异常、陷阱和中断。'''

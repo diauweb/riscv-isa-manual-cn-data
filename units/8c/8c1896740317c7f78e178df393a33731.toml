@@ -1,0 +1,62 @@
+unit_id = "8c1896740317c7f78e178df393a33731"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+[[complete_stores]]
+===== Complete store operations
+
+A store instruction instance latexmath:[$i$] in state
+Pending_mem_stores(_store_continuation_), for which all the memory store
+operations in latexmath:[$i.\textit{mem\_stores}$] have been propagated,
+can always be completed (not to be confused with finished). Action:
+update the state of latexmath:[$i$] to
+Plain(_store_continuation(true)_).
+
+[[do_amo]]
+===== Satisfy, commit and propagate operations of an AMO
+
+An AMO instruction instance latexmath:[$i$] in state
+Pending_mem_loads(_load_continuation_) can perform its memory access if
+it is possible to perform the following sequence of transitions with no
+intervening transitions:
+
+. <<sat_from_mem, Satisfy memory load operation from memory>>
+. <<complete_loads, Complere load operations>>
+. <<sail_interp, Pseudocode internal step>> (zero or more times)
+. <<instantiate_store_value, Instantiate memory store operation values>>
+. <<commit_stores, Commit store instruction>>
+. <<prop_store, Propagate store operation>>
+. <<complete_stores, Complete store operations>>
+
+and in addition, the condition of <<finish, Finish instruction>>, with the exception of not requiring
+latexmath:[$i$] to be in state Plain(Done), holds after those
+transitions. Action: perform the above sequence of transitions (this
+does not include <<finish, Finish instruction>>), one after the other, with no intervening
+transitions.
+[NOTE]
+===='''
+zh = '''
+====
+[[complete_stores]]
+===== 完成存储操作
+
+处于 Pending_mem_stores(_store_continuation_) 状态的存储指令实例 latexmath:[$i$]，若 latexmath:[$i.\textit{mem\_stores}$] 中的所有内存存储操作均已传播，则总是可被完成（不要与已完成混淆）。动作：将 latexmath:[$i$] 的状态更新为 Plain(_store_continuation(true)_)。
+
+[[do_amo]]
+===== 满足、提交并传播 AMO 的操作
+
+处于 Pending_mem_loads(_load_continuation_) 状态的 AMO 指令实例 latexmath:[$i$]，若能无中间转移地执行以下转移序列，则可执行其内存访问：
+
+. <<sat_from_mem, 从内存满足内存加载操作>>
+. <<complete_loads, 完成加载操作>>
+. <<sail_interp, 伪代码内部步骤>>（零次或多次）
+. <<instantiate_store_value, 实例化内存存储操作的值>>
+. <<commit_stores, 提交存储指令>>
+. <<prop_store, 传播存储操作>>
+. <<complete_stores, 完成存储操作>>
+
+此外，<<finish, 完成指令>> 的条件在那些转移之后成立，但不要求 latexmath:[$i$] 处于 Plain(Done) 状态。动作：无中间转移地依次执行上述转移序列（这不包括 <<finish, 完成指令>>）。
+[NOTE]
+===='''

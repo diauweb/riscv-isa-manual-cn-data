@@ -1,0 +1,34 @@
+unit_id = "c1351b6b5bd8f52c105d0c41eb71f55c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Special pseudoinstruction values for guest-page faults.  The RV32 values are used when VSXLEN=32, and the RV64 values when VSXLEN=64.
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|Value |Meaning
+|`0x00002000` +
+`0x00002020`
+|32-bit read for VS-stage address translation (RV32) +
+32-bit write for VS-stage address translation (RV32)
+
+|`0x00003000` +
+`0x00003020`
+|64-bit read for VS-stage address translation (RV64) +
+64-bit write for VS-stage address translation (RV64)
+|==='''
+zh = '''
+.客户机页错误的特殊伪指令值。当 VSXLEN=32 时使用 RV32 值，当 VSXLEN=64 时使用 RV64 值。
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|值 |含义
+|`0x00002000` +
+`0x00002020`
+|用于 VS 级地址转换的 32 位读（RV32） +
+用于 VS 级地址转换的 32 位写（RV32）
+
+|`0x00003000` +
+`0x00003020`
+|用于 VS 级地址转换的 64 位读（RV64） +
+用于 VS 级地址转换的 64 位写（RV64）
+|==='''

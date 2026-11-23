@@ -1,0 +1,12 @@
+unit_id = "af6d1170b3541fe630b85fd5374f7d72"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The debugger can set bits in the hart array mask register using {dm-hawindowsel} and {dm-hawindow},
+then apply actions to all selected harts by setting {dmcontrol-hasel}. If this feature is
+supported, multiple harts can be halted, resumed, and reset
+simultaneously. The state of the hart array mask register is not
+affected by setting or clearing {dmcontrol-hasel}.'''
+zh = '''
+调试器可使用 {dm-hawindowsel} 和 {dm-hawindow} 在硬件线程阵列掩码寄存器中设置位，然后通过设置 {dmcontrol-hasel} 对所有选定的硬件线程施加操作。若支持此特性，则可同时停机、恢复和复位多个硬件线程。设置或清零 {dmcontrol-hasel} 不会影响硬件线程阵列掩码寄存器的状态。'''

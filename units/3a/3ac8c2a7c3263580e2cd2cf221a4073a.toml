@@ -1,0 +1,22 @@
+unit_id = "3ac8c2a7c3263580e2cd2cf221a4073a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. The value of the previous-width CSR is copied to a temporary register
+of the same width.
+. For the read-only bits of the previous-width CSR, the bits at the same
+positions in the temporary register are set to zeros.
+. The width of the temporary register is changed to the new width. If
+the new width _W_ is narrower than the previous width, the
+least-significant _W_ bits of the temporary register are
+retained and the more-significant bits are discarded. If the new width
+is wider than the previous width, the temporary register is
+zero-extended to the wider width.
+. Each writable field of the new-width CSR takes the value of the bits
+at the same positions in the temporary register.'''
+zh = '''
+. 将前一宽度 CSR 的值复制到相同宽度的临时寄存器。
+. 对于前一宽度 CSR 的只读位，将临时寄存器中相同位置的位设为 0。
+. 将临时寄存器的宽度改为新宽度。若新宽度 _W_ 窄于前一宽度，则保留临时寄存器的最低 _W_ 位并丢弃较高位。若新宽度宽于前一宽度，则将临时寄存器零扩展到较宽的宽度。
+. 新宽度 CSR 的每个可写字段取得临时寄存器中相同位置的位的值。'''

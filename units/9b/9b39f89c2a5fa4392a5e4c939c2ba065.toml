@@ -1,0 +1,48 @@
+unit_id = "9b39f89c2a5fa4392a5e4c939c2ba065"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="^1,^1,^1,^1,^3,^3",stripes=even,options="header"]
+|===
+4+|Bits on _pmpcfg_ register {set:cellbgcolor:green} 2+|Result
+|L|R|W|X|M Mode|S/U Mode
+|{set:cellbgcolor:!} 0|0|0|0 2+|Inaccessible region (Access Exception)
+|0|0|0|1|Access Exception|Execute-only region
+|0|0|1|0 2+|Shared data region: Read/write on M mode, read-only on S/U mode
+|0|0|1|1 2+|Shared data region: Read/write for both M and S/U mode
+|0|1|0|0|Access Exception|Read-only region
+|0|1|0|1|Access Exception|Read/Execute region
+|0|1|1|0|Access Exception|Read/Write region
+|0|1|1|1|Access Exception|Read/Write/Execute region
+|1|0|0|0 2+|Locked inaccessible region* (Access Exception)
+|1|0|0|1|Locked Execute-only region*|Access Exception
+|1|0|1|0 2+|Locked Shared code region: Execute only on both M and S/U mode.*
+|1|0|1|1 2+|Locked Shared code region: Execute only on S/U mode, read/execute on M mode.*
+|1|1|0|0|Locked Read-only region*|Access Exception
+|1|1|0|1|Locked Read/Execute region*|Access Exception
+|1|1|1|0|Locked Read/Write region*|Access Exception
+|1|1|1|1 2+|Locked Shared data region: Read only on both M and S/U mode.*
+|==='''
+zh = '''
+[cols="^1,^1,^1,^1,^3,^3",stripes=even,options="header"]
+|===
+4+|_pmpcfg_ 寄存器上的位 {set:cellbgcolor:green} 2+|结果
+|L|R|W|X|M 模式|S/U 模式
+|{set:cellbgcolor:!} 0|0|0|0 2+|不可访问区域（访问异常）
+|0|0|0|1|访问异常|仅执行区域
+|0|0|1|0 2+|共享数据区域：M 模式可读写，S/U 模式只读
+|0|0|1|1 2+|共享数据区域：M 和 S/U 模式均可读写
+|0|1|0|0|访问异常|只读区域
+|0|1|0|1|访问异常|读/执行区域
+|0|1|1|0|访问异常|读/写区域
+|0|1|1|1|访问异常|读/写/执行区域
+|1|0|0|0 2+|锁定的不可访问区域*（访问异常）
+|1|0|0|1|锁定的仅执行区域*|访问异常
+|1|0|1|0 2+|锁定的共享代码区域：M 和 S/U 模式均仅可执行。*
+|1|0|1|1 2+|锁定的共享代码区域：S/U 模式仅可执行，M 模式可读/执行。*
+|1|1|0|0|锁定的只读区域*|访问异常
+|1|1|0|1|锁定的读/执行区域*|访问异常
+|1|1|1|0|锁定的读/写区域*|访问异常
+|1|1|1|1 2+|锁定的共享数据区域：M 和 S/U 模式均只读。*
+|==='''

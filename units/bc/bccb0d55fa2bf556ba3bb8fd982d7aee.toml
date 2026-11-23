@@ -1,0 +1,18 @@
+unit_id = "bccb0d55fa2bf556ba3bb8fd982d7aee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PMAs must also be readable by software to correctly access certain
+devices or to correctly configure other hardware components that access
+memory, such as DMA engines. As PMAs are tightly tied to a given
+physical platform’s organization, many details are inherently
+platform-specific, as is the means by which software can learn the PMA
+values for a platform. Some devices, particularly legacy buses, do not
+support discovery of PMAs and so will give error responses or time out
+if an unsupported access is attempted. Typically, platform-specific
+machine-mode code will extract PMAs and ultimately present this
+information to higher-level less-privileged software using some standard
+representation.'''
+zh = '''
+PMA 也必须能被软件读取，以正确访问某些设备，或正确配置访问内存的其他硬件组件（如 DMA 引擎）。由于 PMA 与给定物理平台的组织紧密相关，许多细节本质上都是平台特定的，软件了解平台 PMA 值的手段也是如此。某些设备（特别是遗留总线）不支持 PMA 发现，因此若尝试不支持的访问，将给出错误响应或超时。通常，平台特定的机器模式代码将提取 PMA，并最终使用某种标准表示将这些信息呈现给较高层较低特权软件。'''

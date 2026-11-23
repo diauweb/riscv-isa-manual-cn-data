@@ -1,0 +1,15 @@
+unit_id = "9f0991e0ee324a3f6e30fbbd87a45ed9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In decoding the contents of `mtinst` or `htinst`, once software has
+determined that the register contains the encoding of a standard basic
+load (LB, LBU, LH, LHU, LW, LWU, LD, FLW, FLD, FLQ, or FLH) or basic
+store (SB, SH, SW, SD, FSW, FSD, FSQ, or FSH), it is not necessary to
+confirm also that the immediate offset fields (31:25, and 24:20 or 11:7)
+are zeros. The knowledge that the register’s value is the encoding of a
+basic load/store is sufficient to prove that the trapping instruction is
+of the same kind.'''
+zh = '''
+在译码 `mtinst` 或 `htinst` 的内容时，一旦软件确定该寄存器包含标准基本加载（LB、LBU、LH、LHU、LW、LWU、LD、FLW、FLD、FLQ 或 FLH）或基本存储（SB、SH、SW、SD、FSW、FSD、FSQ 或 FSH）的编码，就不必再确认立即偏移字段（31:25，以及 24:20 或 11:7）均为零。知道该寄存器的值是基本加载/存储的编码，就足以证明引发陷阱的指令属于同一类。'''

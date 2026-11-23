@@ -1,0 +1,12 @@
+unit_id = "082d06577ed876168fed822317b723d9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If executing or fetching the instruction causes a trigger to fire with
+action=1, Debug Mode is re-entered immediately after that trigger has
+fired. In that case {dcsr-cause} is set to 2 (trigger) instead of 4 (single step).
+Whether the instruction is executed or not depends on the specific
+configuration of the trigger.'''
+zh = '''
+若执行或取指该指令导致触发器以 action=1 触发，则在该触发器触发之后立即重新进入调试模式。在此情况下，{dcsr-cause} 被设为 2（触发器）而非 4（单步）。该指令是否被执行取决于触发器的具体配置。'''

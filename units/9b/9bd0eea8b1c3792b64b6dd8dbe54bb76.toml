@@ -1,0 +1,14 @@
+unit_id = "9bd0eea8b1c3792b64b6dd8dbe54bb76"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The mhpmevent__n__ registers are WARL registers that control which event causes
+the corresponding counter to increment and what happens when the corresponding
+count overflows. Currently just a few bits are defined here. Past this, the
+actual selection and meaning of events is defined by the platform, but
+(mhpmevent == 0) is defined to mean “no event" and that the corresponding
+counter will never be incremented. Typically the lower bits of mhpmevent will
+be used for event selection purposes.'''
+zh = '''
+mhpmevent__n__ 寄存器是 WARL 寄存器，控制哪个事件使对应计数器递增，以及对应计数溢出时会发生什么。当前在此仅定义了几个位。除此之外，事件的实际选择和含义由平台定义，但 (mhpmevent == 0) 被定义为表示“无事件”，且对应计数器将永不递增。通常 mhpmevent 的低位将用于事件选择目的。'''

@@ -1,0 +1,21 @@
+unit_id = "6f4c45a211e3a67ef8490f46ad59d2f9"
+kind = "code"
+translatable = false
+en = '''
+----
+# Signed multiply, returning low bits of product
+vmul.vv vd, vs2, vs1, vm   # Vector-vector
+vmul.vx vd, vs2, rs1, vm   # vector-scalar
+
+# Signed multiply, returning high bits of product
+vmulh.vv vd, vs2, vs1, vm   # Vector-vector
+vmulh.vx vd, vs2, rs1, vm   # vector-scalar
+
+# Unsigned multiply, returning high bits of product
+vmulhu.vv vd, vs2, vs1, vm   # Vector-vector
+vmulhu.vx vd, vs2, rs1, vm   # vector-scalar
+
+# Signed(vs2)-Unsigned multiply, returning high bits of product
+vmulhsu.vv vd, vs2, vs1, vm   # Vector-vector
+vmulhsu.vx vd, vs2, rs1, vm   # vector-scalar
+----'''

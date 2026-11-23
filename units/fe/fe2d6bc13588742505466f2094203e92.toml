@@ -1,0 +1,19 @@
+unit_id = "fe2d6bc13588742505466f2094203e92"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The header byte contains a 5-bit field specifying the payload length
+in bytes, a 2-bit field indicating the "flow" (destination routing
+indicator), and a bit to indicate whether an optional 16-bit timestamp
+is present;
+* The index field indicates the source of the packet. The number of bits
+is system dependent, And the initial value emitted by the trace encoder
+is zero (it gets adjusted as it propagates through the infrastructure);
+* An optional 2-byte timestamp;
+* The packet payload.'''
+zh = '''
+* 头字节包含一个 5 位字段，指定有效载荷长度（字节）、一个 2 位字段指示“流”（目的路由指示符），以及一个位指示是否存在可选的 16 位时间戳；
+* 索引字段指示包的来源。位数取决于系统，跟踪编码器发出的初始值为零（其值在通过基础设施传播时会被调整）；
+* 可选的 2 字节时间戳；
+* 包有效载荷。'''

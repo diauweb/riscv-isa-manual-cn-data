@@ -1,0 +1,14 @@
+unit_id = "ca425dcfeef2ae8b730e6c058105f6d5"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* ... < `11` DDDDDD> < `00` TTTTTT> ...           => No idle bits/cycles between consecutive messages.
+* ... < `11` DDDDDD> < `1*2` > < `00` TTTTTT> ... => Two (even) idle bits.
+* ... < `11` DDDDDD> < `1*3` > < `00` TTTTTT> ... => Three (odd) idle bits (second message starts at another trace clock edge).
+* ... < `11` DDDDDD> < `1*8` > < `00` TTTTTT> ... => 8 idle bits (idle sequence can be considered as byte 0xFF).'''
+zh = '''
+* ... < `11` DDDDDD> < `00` TTTTTT> ...           => 连续消息之间没有空闲位/周期。
+* ... < `11` DDDDDD> < `1*2` > < `00` TTTTTT> ... => 两个（偶数）空闲位。
+* ... < `11` DDDDDD> < `1*3` > < `00` TTTTTT> ... => 三个（奇数）空闲位（第二条消息在另一个跟踪时钟边沿开始）。
+* ... < `11` DDDDDD> < `1*8` > < `00` TTTTTT> ... => 8 个空闲位（空闲序列可视为字节 0xFF）。'''

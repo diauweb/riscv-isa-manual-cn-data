@@ -1,0 +1,12 @@
+unit_id = "6b79318236b90419ab3bf5504c5f0202"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Correct execution requires that _sp_ refers to idempotent memory (also see <<pushpop_non-idem-mem>>), because the core must be able to
+handle traps detected during the sequence.
+The entire insn:push[]/insn:pop[] sequence is re-executed after returning from the trap handler, and multiple traps are possible during the sequence.'''
+zh = '''
+正确执行要求 _sp_ 指向幂等内存（另见 <<pushpop_non-idem-mem>>），因为核必须能够
+处理该序列期间检测到的陷阱。
+在从陷阱处理程序返回后，整个 insn:push[]/insn:pop[] 序列会被重新执行，且该序列期间可能发生多次陷阱。'''

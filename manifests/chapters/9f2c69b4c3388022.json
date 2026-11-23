@@ -1,0 +1,315 @@
+{
+  "chap_hash": "9f2c69b4c3388022",
+  "id": "_debugger_implementation",
+  "sectname": "appendix",
+  "sectnum": "B",
+  "title_en": "Debugger Implementation",
+  "title_unit_id": "d2313fdd027d9da92e43bf066cfe7c65",
+  "source_path": "src/debug-trace/debugger_implementation.adoc",
+  "sections": [
+    {
+      "id": "_debugger_implementation",
+      "level": 1,
+      "sectnum": "B",
+      "title": "Debugger Implementation",
+      "heading_unit_id": "d2313fdd027d9da92e43bf066cfe7c65",
+      "blocks": []
+    },
+    {
+      "id": "_c_header_file",
+      "level": 2,
+      "sectnum": "B.1",
+      "title": "C Header File",
+      "heading_unit_id": "184d19a820455a057f9a47879567aec0",
+      "blocks": [
+        "a43c642707e351ceec6b74e0bec218f1"
+      ]
+    },
+    {
+      "id": "_external_debugger_implementation",
+      "level": 2,
+      "sectnum": "B.2",
+      "title": "External Debugger Implementation",
+      "heading_unit_id": "44b15db875c8086a7a90fe1ac85b68df",
+      "blocks": [
+        "87cd2a7db357c8d45fe4f64cf469ed65",
+        "11170a61c2a9dc1543a9bad2016694ee"
+      ]
+    },
+    {
+      "id": "dmiaccess",
+      "level": 3,
+      "sectnum": "B.2.1",
+      "title": "Debug Module Interface Access",
+      "heading_unit_id": "2e9f5f14d577e062c53aade3b86149a2",
+      "heading_anchor_id": "dmiaccess",
+      "blocks": [
+        "5537ebb1071f50ee92490ab601931d8d",
+        "9a8792e9ef61e855e15d3dc9bf3a7611",
+        "7b33db47bdbdc7f8d111a074ecca202a"
+      ]
+    },
+    {
+      "id": "_checking_for_halted_harts",
+      "level": 3,
+      "sectnum": "B.2.2",
+      "title": "Checking for Halted Harts",
+      "heading_unit_id": "d7e6204d99ed4484d805636d638ff500",
+      "blocks": [
+        "364a792215f4a33e18766303b04af81f"
+      ]
+    },
+    {
+      "id": "deb:halt",
+      "level": 3,
+      "sectnum": "B.2.3",
+      "title": "Halting",
+      "heading_unit_id": "a0e2697b2c0eaedf7cc0901012543f1a",
+      "heading_anchor_id": "deb:halt",
+      "blocks": [
+        "1898299aac0e4b56d807195d33a3f71b"
+      ]
+    },
+    {
+      "id": "_running",
+      "level": 3,
+      "sectnum": "B.2.4",
+      "title": "Running",
+      "heading_unit_id": "c0c36ce2155253fc50daa5c3cb79b7cf",
+      "blocks": [
+        "8fdea9423600d11b0f2035da03b91482"
+      ]
+    },
+    {
+      "id": "_single_step_2",
+      "level": 3,
+      "sectnum": "B.2.5",
+      "title": "Single Step",
+      "heading_unit_id": "e6d7e29812caaf2c502add1ba9999762",
+      "blocks": [
+        "7d6feff2befed25b516f754aa019f4fd"
+      ]
+    },
+    {
+      "id": "_accessing_registers",
+      "level": 3,
+      "sectnum": "B.2.6",
+      "title": "Accessing Registers",
+      "heading_unit_id": "42df5db7358c68eb56776bc1ffa263a2",
+      "blocks": []
+    },
+    {
+      "id": "deb:abstractreg",
+      "level": 4,
+      "sectnum": "B.2.6.1",
+      "title": "Using Abstract Command",
+      "heading_unit_id": "b250eaf30190e3727ae2635e31968d8c",
+      "heading_anchor_id": "deb:abstractreg",
+      "blocks": [
+        "814d0fd84db57dcc1f3b4252a8b53bcf",
+        "7bee1cf200d74bba63e449c60d85005a",
+        "b24fcfe30b475e0502a93791e2b640ed",
+        "5f183176fd7512c8a9ea53acbba78bc4"
+      ]
+    },
+    {
+      "id": "deb:regprogbuf",
+      "level": 4,
+      "sectnum": "B.2.6.2",
+      "title": "Using Program Buffer",
+      "heading_unit_id": "1b3ce77df9c5ec52956a24f161a8184b",
+      "heading_anchor_id": "deb:regprogbuf",
+      "blocks": [
+        "4c8ee552df5152cd772c441113a81636",
+        "7021965ff3d0d25fd079101c5f8d0177",
+        "ca9cfb35b3c9e4c64835163dcdfdf016",
+        "5a0dfca5e5a67508edf81cb00d4978a3",
+        "fe1dd5839331389fd9506406d18925b6"
+      ]
+    },
+    {
+      "id": "_reading_memory",
+      "level": 3,
+      "sectnum": "B.2.7",
+      "title": "Reading Memory",
+      "heading_unit_id": "514c437749ca8fb0f10de7b8f18a0c2e",
+      "blocks": []
+    },
+    {
+      "id": "deb:mrsysbus",
+      "level": 4,
+      "sectnum": "B.2.7.1",
+      "title": "Using System Bus Access",
+      "heading_unit_id": "0667bd0f86cb4792a29504c9cab19f0a",
+      "heading_anchor_id": "deb:mrsysbus",
+      "blocks": [
+        "eea133db5c84b5a7dbbd8351775d6fa1",
+        "31b9a8de973884013c1bc0e6f91a8c39",
+        "28a06586eee9517609837ba001525580",
+        "2e4b1d79720ad0b3945198f76b92e413",
+        "4940242e42eb35d2bf3e19bc80ae69c2"
+      ]
+    },
+    {
+      "id": "deb:mrprogbuf",
+      "level": 4,
+      "sectnum": "B.2.7.2",
+      "title": "Using Program Buffer",
+      "heading_unit_id": "1b3ce77df9c5ec52956a24f161a8184b",
+      "heading_anchor_id": "deb:mrprogbuf",
+      "blocks": [
+        "d4833a6cb7c0ba5b8312fc55d49b9fa0",
+        "b9b926ef499953640812839b42a70dab",
+        "4df2fb1c9c6dc398c6f5688294cea2d8",
+        "3c98d1829eaecbb22f8fbf1a906a840e",
+        "afb253ebb9da2e0bbb098299ccea1df0"
+      ]
+    },
+    {
+      "id": "deb:mrabstract",
+      "level": 4,
+      "sectnum": "B.2.7.3",
+      "title": "Using Abstract Memory Access",
+      "heading_unit_id": "82b425bdd482471997f536fb343e1d9b",
+      "heading_anchor_id": "deb:mrabstract",
+      "blocks": [
+        "dd72666a2199d29f3c2902012dfc7267",
+        "f78276b662e6f4d82a8c1a29a0903fa6",
+        "1dff4996c3ab6b7011a59d55ba228b6d",
+        "c8650d2c7a69d72df795edd07c479dd9",
+        "674597f501e7f51f82636ffc9371458d"
+      ]
+    },
+    {
+      "id": "writemem",
+      "level": 3,
+      "sectnum": "B.2.8",
+      "title": "Writing Memory",
+      "heading_unit_id": "bb834144de79298ff164978a8197c21a",
+      "heading_anchor_id": "writemem",
+      "blocks": []
+    },
+    {
+      "id": "deb:mrsysbuswrite",
+      "level": 4,
+      "sectnum": "B.2.8.1",
+      "title": "Using System Bus Access",
+      "heading_unit_id": "0667bd0f86cb4792a29504c9cab19f0a",
+      "heading_anchor_id": "deb:mrsysbuswrite",
+      "blocks": [
+        "eea133db5c84b5a7dbbd8351775d6fa1",
+        "032fe7fea34fc6b6e7470d14e8d1d82c",
+        "877fbbbe6340384fdc96281a680a3e5f",
+        "08eb7341633e3360800160657219ae2d",
+        "e2575c9bb7497c553f5929e63a255db0"
+      ]
+    },
+    {
+      "id": "deb:mrprogbufwrite",
+      "level": 4,
+      "sectnum": "B.2.8.2",
+      "title": "Using Program Buffer",
+      "heading_unit_id": "1b3ce77df9c5ec52956a24f161a8184b",
+      "heading_anchor_id": "deb:mrprogbufwrite",
+      "blocks": [
+        "334d60693cc04ea3a1a1f831a952a6f3",
+        "f33cfd3c30c87c47531d0bb1f0dbb4fc",
+        "47c1a5ff1632c7431a334ef2ed7aa1b0",
+        "090b7ebea4b4d593699da4eebd960086",
+        "ff46e321bae520de951aa1540b666d41"
+      ]
+    },
+    {
+      "id": "deb:mwabstract",
+      "level": 4,
+      "sectnum": "B.2.8.3",
+      "title": "Using Abstract Memory Access",
+      "heading_unit_id": "82b425bdd482471997f536fb343e1d9b",
+      "heading_anchor_id": "deb:mwabstract",
+      "blocks": [
+        "dd72666a2199d29f3c2902012dfc7267",
+        "83be34e9ec501c4a6acd9659fc3bd6c2",
+        "6ae5a5c0e659c6000cf4f3db02e1eeee",
+        "5b55e12dff144dea2f0b2c1ad4fc2582",
+        "d1031819d4a00b7453988b6ef1d149a4"
+      ]
+    },
+    {
+      "id": "_triggers",
+      "level": 3,
+      "sectnum": "B.2.9",
+      "title": "Triggers",
+      "heading_unit_id": "210165e52cbf7cf7435ce82cbc5eb0b2",
+      "blocks": [
+        "fd98bdd5eb02b7d62236335a1c8c73ba",
+        "4424dd340d41d3bed5aba50cffce8630",
+        "341de77d94ce38b23db1c3beac71d29f",
+        "33c3026e10b5be83adc30eeaf87c1a69",
+        "793c435e57f28f10b27d56fcaf26996a",
+        "f75008f9d69ee978c6006b7cc321a215",
+        "e9fbb0e6c65c341c5a0cfd94e08c78c2",
+        "8ef2eab352c39b16975a107c494b8c49",
+        "9d64a41a45e690cb9306dcc749672acc",
+        "8b23e99b00243ae2ec7ce254ee1b0ec0",
+        "b0630719e71b93e0ba8218d86f2581f9"
+      ]
+    },
+    {
+      "id": "_handling_exceptions",
+      "level": 3,
+      "sectnum": "B.2.10",
+      "title": "Handling Exceptions",
+      "heading_unit_id": "dd32a3854182c7f75ffddfee6b232eb5",
+      "blocks": [
+        "745d791424c67a359df927bf1222a969",
+        "e4a407c199f2e38965c9fee2959590d4"
+      ]
+    },
+    {
+      "id": "quickaccess",
+      "level": 3,
+      "sectnum": "B.2.11",
+      "title": "Quick Access",
+      "heading_unit_id": "fc4f3f633f695e6b3a0c25805ce6ffc3",
+      "heading_anchor_id": "quickaccess",
+      "blocks": [
+        "06aa9ba638995eb8b83da46f4b5c98b6",
+        "f4fdf4a3642fefd9040fbc5dc157a2e9",
+        "f434f814390f27b7e17e7e9f57d66fff",
+        "21c080ee66dfb62a7b2d5a4c59798f59",
+        "8c772131248ed26204072fbdd4c2978a"
+      ]
+    },
+    {
+      "id": "_native_debugger_implementation",
+      "level": 2,
+      "sectnum": "B.3",
+      "title": "Native Debugger Implementation",
+      "heading_unit_id": "aef986c4b3d534d7baf16efc1ce07bb9",
+      "blocks": [
+        "b2c3adf65277e30126f304722bcdae46"
+      ]
+    },
+    {
+      "id": "nativestep",
+      "level": 3,
+      "sectnum": "B.3.1",
+      "title": "Single Step",
+      "heading_unit_id": "e6d7e29812caaf2c502add1ba9999762",
+      "heading_anchor_id": "nativestep",
+      "blocks": [
+        "fc2911ffab043afd64645ae848e3b3d2",
+        "d0095c0ee4b9f020eb56bb49ba05219c",
+        "371f43ebcbbd11ee1fd63dfa1e83df8f",
+        "cc323ff0e5953ddd9c4405631d81e7ab",
+        "f23fef3eb46b8e9148b8581013c7e97c",
+        "2a3e413b6f0864d96aac12c7de4f5c2f",
+        "c5150d9dfea49499b0fccea4b4599190",
+        "6fc3c4edd0639230e926e1dc645445c1",
+        "9daa3204bf64a4f1819caf13f885f799",
+        "d38ca2c7a04e3ea65d642b5a360b029e",
+        "d8d2888243cff78662a750961b247322"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+unit_id = "02829a431285e0b341e616799241d8f6"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.ext:zca[] HINT instructions.
+[cols="<,<,>,<",options="header",]
+|===
+|Instruction |Constraints |Code Points |Purpose
+
+|insn:c.nop[] |_imm_≠0 |63 .6+.^|_Designated for future standard use_
+
+|insn:c.addi[] | _rd_≠`x0`, _imm_=0 |31
+
+|insn:c.li[] | _rd_=`x0` |64
+
+|insn:c.lui[] | _rd_=`x0`, _imm_≠0 |63
+
+|insn:c.mv[] | _rd_=`x0`, _rs2_≠`x0` |31
+
+|insn:c.add[] | _rd_=`x0`, _rs2_≠`x0`, _rs2_≠`x2-x5` | 27
+
+|insn:c.add[] | _rd_=`x0`, _rs2_=`x2-x5` |4|(rs2=x2) insn:c.ntl.p1[] (rs2=x3) insn:c.ntl.pall[] (rs2=x4) insn:c.ntl.s1[] (rs2=x5) insn:c.ntl.all[]
+
+|insn:c.slli[] |_rd_=`x0` or _shamt_=0 |63 (RV32), 95 (RV64)  .3+.^|_Designated for custom use_
+
+|insn:c.srli[] | _shamt_=0 |8
+
+|insn:c.srai[] | _shamt_=0 |8
+|==='''
+zh = '''
+.ext:zca[] HINT 指令
+[cols="<,<,>,<",options="header",]
+|===
+|指令 |约束 |编码点 |用途
+
+|insn:c.nop[] |_imm_≠0 |63 .6+.^|__指定供未来标准使用__
+
+|insn:c.addi[] | _rd_≠`x0`, _imm_=0 |31
+
+|insn:c.li[] | _rd_=`x0` |64
+
+|insn:c.lui[] | _rd_=`x0`, _imm_≠0 |63
+
+|insn:c.mv[] | _rd_=`x0`, _rs2_≠`x0` |31
+
+|insn:c.add[] | _rd_=`x0`, _rs2_≠`x0`, _rs2_≠`x2-x5` | 27
+
+|insn:c.add[] | _rd_=`x0`, _rs2_=`x2-x5` |4|(rs2=x2) insn:c.ntl.p1[] (rs2=x3) insn:c.ntl.pall[] (rs2=x4) insn:c.ntl.s1[] (rs2=x5) insn:c.ntl.all[]
+
+|insn:c.slli[] |_rd_=`x0` or _shamt_=0 |63 (RV32), 95 (RV64)  .3+.^|__指定供自定义使用__
+
+|insn:c.srli[] | _shamt_=0 |8
+
+|insn:c.srai[] | _shamt_=0 |8
+|==='''

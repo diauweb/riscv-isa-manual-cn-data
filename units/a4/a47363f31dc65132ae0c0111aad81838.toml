@@ -1,0 +1,12 @@
+unit_id = "a47363f31dc65132ae0c0111aad81838"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: In the above sequence, it is tempting to mask the second `vmfeq`
+instruction and remove the `vmand` instruction, but this more efficient
+sequence incorrectly fails to raise the invalid exception when an
+element of `va` contains a quiet NaN and the corresponding element in
+`vb` contains a signaling NaN.'''
+zh = '''
+NOTE: 在上述序列中，很容易想对第二条 `vmfeq` 指令进行掩码并去掉 `vmand` 指令，但该更高效的序列在 `va` 的某元素包含静默 NaN 且 `vb` 中对应元素包含信号 NaN 时，会错误地未能产生无效异常。'''

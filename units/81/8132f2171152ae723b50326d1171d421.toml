@@ -1,0 +1,112 @@
+unit_id = "8132f2171152ae723b50326d1171d421"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+=== Privilege Modes
+
+The current _virtualization mode_, denoted V, indicates whether the hart
+is currently executing in a guest. When V=1, the hart is either in
+virtual S-mode (VS-mode), or in virtual U-mode (VU-mode) atop a guest OS
+running in VS-mode. When V=0, the hart is either in M-mode, in HS-mode,
+or in U-mode atop an OS running in HS-mode. The virtualization mode also
+indicates whether two-stage address translation is active (V=1) or
+inactive (V=0). <<HPrivModes>> lists the
+possible privilege modes of a RISC-V hart with the hypervisor extension.
+
+<<<
+
+[[HPrivModes]]
+.Privilege modes with the hypervisor extension.
+[float="center",align="center",cols="~,~,~,~,~"]
+|===
+^|Virtualization +
+Mode (V) ^|Nominal Privilege |Abbreviation |Name |Two-Stage Translation
+
+^|0 +
+0 +
+0
+^| U +
+S +
+M
+|U-mode +
+HS-mode +
+M-mode
+|User mode +
+Hypervisor-extended supervisor mode +
+Machine mode
+|Off +
+Off +
+Off
+^|1 +
+1
+^|U +
+S
+|VU-mode +
+VS-mode
+|Virtual user mode +
+Virtual supervisor mode
+|On +
+On
+|===
+
+For privilege modes U and VU, the _nominal privilege mode_ is U, and for
+privilege modes HS and VS, the nominal privilege mode is S.
+
+HS-mode is more privileged than VS-mode, and VS-mode is more privileged
+than VU-mode. VS-mode interrupts are globally disabled when executing in
+U-mode.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+=== 特权模式
+
+当前__虚拟化模式__，记作 V，指示该硬件线程当前是否正在客户机中执行。当 V=1 时，硬件线程要么处于虚拟 S 模式（VS 模式），要么处于运行在 VS 模式上的客户机 OS 之上的虚拟 U 模式（VU 模式）。当 V=0 时，硬件线程要么处于 M 模式、HS 模式，要么处于运行在 HS 模式上的 OS 之上的 U 模式。虚拟化模式还指示两阶段地址转换是活动的（V=1）还是非活动的（V=0）。<<HPrivModes>> 列出了带虚拟机监控器扩展的 RISC-V 硬件线程可能的特权模式。
+
+<<<
+
+[[HPrivModes]]
+.带虚拟机监控器扩展的特权模式。
+[float="center",align="center",cols="~,~,~,~,~"]
+|===
+^|虚拟化 +
+模式（V） ^|名义特权 |缩写 |名称 |两阶段转换
+
+^|0 +
+0 +
+0
+^| U +
+S +
+M
+|U 模式 +
+HS 模式 +
+M 模式
+|用户模式 +
+虚拟机监控器扩展的监管模式 +
+机器模式
+|关 +
+关 +
+关
+^|1 +
+1
+^|U +
+S
+|VU 模式 +
+VS 模式
+|虚拟用户模式 +
+虚拟监管模式
+|开 +
+开
+|===
+
+对于特权模式 U 和 VU，__名义特权模式__为 U；对于特权模式 HS 和 VS，名义特权模式为 S。
+
+HS 模式特权高于 VS 模式，VS 模式特权高于 VU 模式。当在 U 模式中执行时，VS 模式中断全局禁用。
+
+[NOTE]
+===='''

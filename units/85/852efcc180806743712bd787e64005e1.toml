@@ -1,0 +1,15 @@
+unit_id = "852efcc180806743712bd787e64005e1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The DM supports a set of abstract commands, most of which are optional.
+Depending on the implementation, the debugger may be able to perform
+some abstract commands even when the selected hart is not halted.
+Debuggers can only determine which abstract commands are supported by a
+given hart in a given state (running, halted, or held in reset) by
+attempting them and then looking at {abstractcs-cmderr} in {dm-abstractcs} to see if they were successful. Commands may be supported with some options set, but not with other
+options set. If a command has unsupported options set or if bits that
+are defined as 0 aren't 0, then the DM must set {abstractcs-cmderr} to 2 (not supported).'''
+zh = '''
+DM 支持一组抽象命令，其中大多数为可选。取决于实现，即使所选硬件线程未停机，调试器也可能能够执行某些抽象命令。调试器只能通过尝试执行抽象命令，然后查看 {dm-abstractcs} 中的 {abstractcs-cmderr} 以判断其是否成功，来确定某给定硬件线程在给定状态（运行、停机或保持复位）下支持哪些抽象命令。命令可能在某些选项置位时受支持，而在其他选项置位时不受支持。若命令设置了不支持的选项，或定义为 0 的位不为 0，则 DM 必须将 {abstractcs-cmderr} 设为 2（不支持）。'''

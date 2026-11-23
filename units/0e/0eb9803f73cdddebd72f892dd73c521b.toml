@@ -1,0 +1,13 @@
+unit_id = "0eb9803f73cdddebd72f892dd73c521b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: As with other architectural mandates, implementations must
+_appear_ to perform each memory access. Microarchitectures are
+free to optimize away accesses that would not be observed by another
+agent, for example, in idempotent memory regions obeying RVWMO.  For
+non-idempotent memory regions, where by definition each access can be
+observed by a device, the optimization would not be possible.'''
+zh = '''
+NOTE: 与其他架构强制要求一样，实现必须 _看起来_ 执行了每次内存访问。微架构可自由优化掉不会被其他代理观察到的访问，例如在遵守 RVWMO 的幂等内存区域中。对于非幂等内存区域，根据定义每次访问都可被设备观察到，因此无法进行该优化。'''

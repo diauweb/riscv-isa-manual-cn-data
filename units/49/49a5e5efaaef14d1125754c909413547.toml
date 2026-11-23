@@ -1,0 +1,12 @@
+unit_id = "49a5e5efaaef14d1125754c909413547"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To enforce forward-edge control-flow integrity, the Zicfilp extension introduces
+a landing pad (`LPAD`) instruction. The `LPAD` instruction must be placed at the
+program locations that are valid targets of indirect jumps or calls. The `LPAD`
+instruction (See <<LP_INST>>) is encoded using the `AUIPC` major opcode with
+`rd=x0`.'''
+zh = '''
+为强制实施前向边控制流完整性，Zicfilp 扩展引入着陆垫（`LPAD`）指令。`LPAD` 指令必须放置在为间接跳转或调用的有效目标的程序位置处。`LPAD` 指令（见 <<LP_INST>>）使用 `rd=x0` 的 `AUIPC` 主操作码编码。'''

@@ -1,0 +1,19 @@
+unit_id = "60dd3dfec610bc0f6417b3902a1bcd36"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This instruction is identical to insn:vghsh.vv[] with _vs1_=0.
+This instruction is often used in GHASH code. In some cases it is followed
+by an XOR to perform a multiply-add. Implementations may choose to fuse these
+two instructions to improve performance on GHASH code that
+doesn't use the add-multiply form of the insn:vghsh.vv[] instruction.
+===='''
+zh = '''
+[NOTE]
+====
+本指令与 _vs1_=0 的 insn:vghsh.vv[] 相同。
+本指令常用于 GHASH 代码。在某些情况下，其后会跟一个异或以执行乘加。实现可选择融合这两条指令，以提高不使用 insn:vghsh.vv[] 指令加-乘形式的 GHASH 代码的性能。
+===='''

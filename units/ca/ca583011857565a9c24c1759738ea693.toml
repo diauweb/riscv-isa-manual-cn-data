@@ -1,0 +1,13 @@
+unit_id = "ca583011857565a9c24c1759738ea693"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If instead of using LMUL=1 for the 8-bit computation, the compiler is allowed
+to use a fractional LMUL=1/2, then the 64-bit computations can be performed
+using LMUL=4 (note that the same ratio of 64-bit elements and 8-bit elements is
+preserved as in the previous example). Now the compiler has 8 available
+registers to perform register allocation, resulting in no spill code, as
+shown in the loop below:'''
+zh = '''
+如果不再对 8 位计算使用 LMUL=1，而是允许编译器使用分数 LMUL=1/2，那么可使用 LMUL=4 执行 64 位计算（注意，与上一示例一样，保留 64 位元素与 8 位元素的相同比例）。此时编译器有 8 个可用寄存器进行寄存器分配，从而不会生成溢出代码，如下面的循环所示：'''

@@ -1,0 +1,15 @@
+unit_id = "edb615b4aa3fecc05489e8bd3c3c9931"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+VS and VU modes are present in systems with Hypervisor (H) extension
+implemented. If desired, a hypervisor can emulate accesses to the seed CSR
+from a virtual machine. Attempted access to `seed` from virtual modes
+VS and VU always raises an exception; a read-only instruction causes an
+illegal instruction exception, while a read-write instruction (that can
+potentially be emulated) causes a virtual instruction exception only if
+`mseccfg.sseed=1`. Note that `mseccfg.useed` has no effect on the exception
+type for either VS or VU modes.'''
+zh = '''
+VS 和 VU 模式存在于实现了虚拟机监控器（H）扩展的系统中。如有需要，虚拟机监控器可仿真来自虚拟机的对 seed CSR 的访问。从虚拟模式 VS 和 VU 对 `seed` 的访问尝试总是引发异常；只读指令引发非法指令异常，而读写指令（有可能被仿真）仅在 `mseccfg.sseed=1` 时引发虚拟指令异常。请注意，`mseccfg.useed` 对 VS 或 VU 模式的异常类型没有影响。'''

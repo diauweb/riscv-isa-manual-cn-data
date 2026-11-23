@@ -1,0 +1,63 @@
+unit_id = "8113290894646253845ae47826f971c4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[tinfo-version]] `((version))`
+a|Contains the version of the Sdtrig extension implemented.
+
+0 (0): Supports triggers as described in this spec at commit 5a5c078,
+made on February 2, 2023.
+
+In these older versions:
+
+. {csr-mcontrol6} has a timing bit identical to {mcontrol-timing}.
+. {mcontrol6-hit0} behaves just as {mcontrol-hit}.
+. {mcontrol6-hit1} is read-only 0.
+. Encodings for {mcontrol6-size} for access sizes larger than 64 bits are different.
+
+
+1 (1): Supports triggers as described in the ratified version 1.0 of
+this document.
+a|*R*
+a|Preset
+|[[tinfo-info]] `((info))`
+a|One bit for each possible {tdata1-type} enumerated in {csr-tdata1}. Bit N
+corresponds to type N. If the bit is set, then that type is
+supported by the currently selected trigger.
+
+If the currently selected trigger doesn't exist, this field
+contains 1.
+a|*R*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[tinfo-version]] `((version))`
+a|包含所实现的 Sdtrig 扩展版本。
+
+0（0）：支持本规范 2023 年 2 月 2 日提交 5a5c078 中所述的触发器。
+
+在这些较旧版本中：
+
+. {csr-mcontrol6} 具有与 {mcontrol-timing} 相同的时序位。
+. {mcontrol6-hit0} 的行为与 {mcontrol-hit} 完全相同。
+. {mcontrol6-hit1} 为只读 0。
+. 大于 64 位的访问尺寸的 {mcontrol6-size} 编码不同。
+
+
+1（1）：支持本文档批准版本 1.0 中所述的触发器。
+a|*R*
+a|预设
+|[[tinfo-info]] `((info))`
+a|{csr-tdata1} 中所枚举的每个可能的 {tdata1-type} 对应一位。第 N 位对应类型 N。若该位置位，则当前所选触发器支持该类型。
+
+若当前所选触发器不存在，此字段包含 1。
+a|*R*
+a|预设
+|==='''

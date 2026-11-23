@@ -1,0 +1,16 @@
+unit_id = "d79508990b243c227aafe7a8e6ee659e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Logical entry 0, accessed via `sireg*` when `siselect`=0x200, is always the physical buffer entry preceding the WRPTR entry.  More generally, the physical buffer entry Y associated with logical entry X (X < depth) can be determined using the formula Y = (WRPTR - X - 1) % depth, where depth = 2^(DEPTH+4)^.  Logical entries >= depth are read-only 0._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_当 `siselect`=0x200 时，通过 `sireg*` 访问的逻辑表项 0 始终是 WRPTR 表项之前的物理缓冲区表项。更一般地，与逻辑表项 X（X < depth）关联的物理缓冲区表项 Y 可使用公式 Y = (WRPTR - X - 1) % depth 确定，其中 depth = 2^(DEPTH+4)^。逻辑表项 >= depth 为只读 0。_
+===='''

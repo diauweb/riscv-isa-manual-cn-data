@@ -1,0 +1,55 @@
+unit_id = "8f4aec65174b4d4a04ae45f8048b0032"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The PTE updates due to memory accesses ordered-after a FENCE are not
+themselves ordered by the FENCE.
+
+Simpler implementations may order the Page Table Entry (PTE) update
+to precede all subsequent explicit memory accesses, as opposed to
+ensuring that the PTE update is precisely sequenced before subsequent
+explicit memory accesses to the associated virtual page.
+
+Prior versions of this specification required PTE A bit updates to be
+exact, but allowing the A bit to be updated as a result of speculation
+simplifies the implementation of address translation prefetchers. System
+software typically uses the A bit as a page replacement policy hint, but
+does not require exactness for functional correctness. On the other
+hand, D bit updates are still required to be exact and performed in
+program order, as the D bit affects the functional correctness of page
+eviction.
+
+Implementations are of course still permitted to perform both A and D
+bit updates only in an exact manner.
+
+In both cases, requiring atomicity ensures that the PTE update will not
+be interrupted by other intervening writes to the page table, as such
+interruptions could lead to A/D bits being set on PTEs that have been
+reused for other purposes, on memory that has been reclaimed for other
+purposes, and so on. Simple implementations may instead generate
+page-fault exceptions.
+
+The A and D bits are never cleared by the implementation. If the
+supervisor software does not rely on accessed and/or dirty bits, e.g. if
+it does not swap memory pages to secondary storage or if the pages are
+being used to map I/O space, it should always set them to 1 in the PTE
+to improve performance.
+===='''
+zh = '''
+[NOTE]
+====
+FENCE 之后排序的内存访问所引起的 PTE 更新本身并不受该 FENCE 排序。
+
+较简单的实现可将页表项（PTE）更新排序在所有后续显式内存访问之前，而不是确保 PTE 更新精确地排在针对相关联虚拟页的后续显式内存访问之前。
+
+本规范的先前版本要求 PTE A 位更新是精确的，但允许 A 位因推测而更新可简化地址转换预取器的实现。系统软件通常将 A 位用作页替换策略提示，但功能正确性不要求其精确。另一方面，D 位更新仍要求精确并按程序顺序执行，因为 D 位影响页逐出的功能正确性。
+
+实现当然仍被允许仅以精确方式执行 A 位和 D 位更新。
+
+在两种情况下，要求原子性可确保 PTE 更新不会被其他插入的页表写入中断，因为此类中断可能导致在已因其他用途而复用的 PTE 上、在已因其他用途而回收的内存上等位置置位 A/D 位。较简单的实现可改为引发页错误异常。
+
+A 位和 D 位从不会由实现清零。若监管软件不依赖已访问位和/或脏位，例如若不将内存页交换到二级存储，或若这些页用于映射 I/O 空间，则宜始终在 PTE 中将它们置为 1，以提高性能。
+===='''

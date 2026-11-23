@@ -1,0 +1,12 @@
+unit_id = "cf23995ed331b1c5d0ffd5dc1c5652c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-addw_op]#insn:c.addw[] is an XLEN=64-only instruction that adds the values in
+registers _rd′_ and _rs2′_, then
+sign-extends the lower 32 bits of the sum before writing the result to
+register _rd′_. It expands into
+insn:addw[rd′,rd′,rs2′].#'''
+zh = '''
+[#norm:c-addw_op]##insn:c.addw[] 是仅用于 XLEN=64 的指令，它将寄存器 _rd′_ 和 _rs2′_ 中的值相加，然后将和的低 32 位符号扩展后再写入寄存器 _rd′_。它展开为 insn:addw[rd′,rd′,rs2′]。##'''

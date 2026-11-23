@@ -1,0 +1,20 @@
+unit_id = "a5624e4242a1e3bd033680be0371ca81"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Rounding Mode and Accrued Exception Flags fields of csr:fcsr[] are also
+accessible individually as the csr:frm[] and csr:fflags[] CSRs, as shown in
+<<frm-csr>> and <<fflags-csr>>.
+[#norm:frm_op_sz_acc]#The csr:frm[] CSR contains the Rounding Mode field
+(csr:fcsr[] bits 7{endash}5), zero-extended.#
+[#norm:fflags_op_sz_acc]#The csr:fflags[] CSR contains the Accrued Exception
+Flags field (csr:fcsr[] bits 4{endash}0), zero-extended.#
+The insn:frrm[] pseudoinstruction performs a insn:csrr[] from
+csr:frm[]. insn:fsrm[] similarly performs a insn:csrrw[] to csr:frm[].
+insn:frflags[] and insn:fsflags[] are defined analogously for csr:fflags[].'''
+zh = '''
+csr:fcsr[] 的舍入模式字段和累积异常标志字段也可分别作为 csr:frm[] 和 csr:fflags[] CSR 访问，如 <<frm-csr>> 和 <<fflags-csr>> 所示。
+[#norm:frm_op_sz_acc]##csr:frm[] CSR 包含舍入模式字段（csr:fcsr[] 的位 7{endash}5），并对其进行零扩展。##
+[#norm:fflags_op_sz_acc]##csr:fflags[] CSR 包含累积异常标志字段（csr:fcsr[] 的位 4{endash}0），并对其进行零扩展。##
+insn:frrm[] 伪指令对 csr:frm[] 执行 insn:csrr[]。insn:fsrm[] 类似地对 csr:frm[] 执行 insn:csrrw[]。insn:frflags[] 和 insn:fsflags[] 对 csr:fflags[] 类似定义。'''

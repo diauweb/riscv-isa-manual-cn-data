@@ -1,0 +1,18 @@
+unit_id = "9f10b83c4d714f2d483737455e94b94e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:menvcfg_pbmte_op]#The PBMTE bit controls whether the Svpbmt extension is available for use
+in S-mode and G-stage address translation (i.e., for page tables pointed
+to by `satp` or `hgatp`). When PBMTE=1, Svpbmt is available for S-mode
+and G-stage address translation. When PBMTE=0, the implementation
+behaves as though Svpbmt were not implemented.#
+[#norm:menvcfg_pbmte_rdonly0]#If Svpbmt is not implemented, PBMTE is read-only zero.#
+Furthermore,
+[#norm:menvcfg_pbmte_henvcfg_pbmte_rdonly0]#for implementations with the hypervisor extension,
+`henvcfg`.PBMTE is read-only zero if `menvcfg`.PBMTE is zero.#'''
+zh = '''
+[#norm:menvcfg_pbmte_op]##PBMTE 位控制 Svpbmt 扩展是否可在 S 模式和 G 阶段地址转换中使用（即，对于由 `satp` 或 `hgatp` 指向的页表）。当 PBMTE=1 时，Svpbmt 可用于 S 模式和 G 阶段地址转换。当 PBMTE=0 时，实现的行为如同未实现 Svpbmt。##
+[#norm:menvcfg_pbmte_rdonly0]##若未实现 Svpbmt，则 PBMTE 为只读零。##
+此外，[#norm:menvcfg_pbmte_henvcfg_pbmte_rdonly0]##对于具有虚拟机监控器扩展的实现，若 `menvcfg`.PBMTE 为零，则 `henvcfg`.PBMTE 为只读零。##'''

@@ -1,0 +1,19 @@
+unit_id = "2f00d8b9d4f7ebabc31a88edb89d5e63"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Without SPVP, if instructions HLV, HLVX, and HSV looked instead to
+`sstatus`.SPP for the effective privilege of their memory accesses,
+then, even with HU=1, U-mode could not access virtual machine memory at
+VS-level, because to enter U-mode using SRET always leaves SPP=0. Unlike
+SPP, field SPVP is untouched by transitions back-and-forth between
+HS-mode and U-mode.
+===='''
+zh = '''
+[NOTE]
+====
+若无 SPVP，若 HLV、HLVX 和 HSV 指令改为查看 `sstatus`.SPP 以确定其内存访问的有效特权，那么即使 HU=1，U 模式也无法访问 VS 级虚拟机内存，因为使用 SRET 进入 U 模式总是使 SPP=0。与 SPP 不同，字段 SPVP 不受 HS 模式与 U 模式之间来回转换的影响。
+===='''

@@ -1,0 +1,27 @@
+unit_id = "d94aadfe456932fb8bcb94890c13f4bc"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. In systems with large-scale or Non-Uniform Memory Access (NUMA)
+  configurations, emulation based on `LR`/`SC` introduces issues related to
+  scalability and fairness, particularly under conditions of high contention.
+
+. Emulation of narrower AMOs through wider AMO* instructions on non-idempotent
+  IO memory regions may result in unintended side effects.
+
+. Utilizing wider AMO* instructions for emulating narrower AMOs risks activating
+  extraneous breakpoints or watchpoints.
+
+. In the absence of native support for subword atomics, compilers often resort
+  to inlining code sequences to provide the required emulation. This practice
+  contributes to an increase in code size, with consequent impacts on system
+  performance and memory utilization.'''
+zh = '''
+. 在具有大规模配置或非统一内存访问（NUMA）配置的系统中，基于 `LR`/`SC` 的仿真会引入可扩展性和公平性方面的问题，尤其是在高竞争条件下。
+
+. 在非幂等 IO 内存区域上，通过更宽的 AMO* 指令仿真较窄的 AMO 可能导致意外的副作用。
+
+. 使用更宽的 AMO* 指令仿真较窄的 AMO 有触发多余断点或观察点的风险。
+
+. 在缺少对子字原子操作的原生支持时，编译器常常内联代码序列来提供所需的仿真。这种做法导致代码体积增大，进而影响系统性能和内存利用率。'''

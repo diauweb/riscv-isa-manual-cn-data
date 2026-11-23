@@ -1,0 +1,10 @@
+unit_id = "f0cd3bd07ab7f43d7c7f8a0c41422fb7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Without this CSR, several instructions are needed to calculate
+VLEN in bytes, and the code has to disturb current csr:vl[] and csr:vtype[]
+settings which require them to be saved and restored.'''
+zh = '''
+NOTE: 没有此 CSR 时，需要多条指令计算以字节为单位的 VLEN，并且代码必须扰动当前 csr:vl[] 和 csr:vtype[] 设置，从而需要保存和恢复它们。'''

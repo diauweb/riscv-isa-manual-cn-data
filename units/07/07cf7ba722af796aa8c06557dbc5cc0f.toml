@@ -1,0 +1,88 @@
+unit_id = "07cf7ba722af796aa8c06557dbc5cc0f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[etrigger-hit]] `((hit))`
+a|If this bit is implemented, the hardware sets it when this
+trigger matches. The trigger's user can set or clear it at any
+time. It is used to determine which
+trigger(s) matched.  If the bit is not implemented, it is always 0
+and writing it has no effect.
+a|*WARL*
+a|0
+|[[etrigger-vs]] `((vs))`
+a|When set, enable this trigger for exceptions that are taken from VS
+mode.
+This bit is hard-wired to 0 if the hart does not support
+virtualization mode.
+a|*WARL*
+a|0
+|[[etrigger-vu]] `((vu))`
+a|When set, enable this trigger for exceptions that are taken from VU
+mode.
+This bit is hard-wired to 0 if the hart does not support
+virtualization mode.
+a|*WARL*
+a|0
+|[[etrigger-m]] `((m))`
+a|When set, enable this trigger for exceptions that are taken from M
+mode.
+a|*WARL*
+a|0
+|[[etrigger-s]] `((s))`
+a|When set, enable this trigger for exceptions that are taken from S/HS
+mode.
+This bit is hard-wired to 0 if the hart does not support
+S-mode.
+a|*WARL*
+a|0
+|[[etrigger-u]] `((u))`
+a|When set, enable this trigger for exceptions that are taken from U
+mode.
+This bit is hard-wired to 0 if the hart does not support
+U-mode.
+a|*WARL*
+a|0
+|[[etrigger-action]] `((action))`
+a|The action to take when the trigger fires. The values are explained
+in xref:tab:action[].
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[etrigger-hit]] `((hit))`
+a|若实现此位，则硬件在触发器匹配时将其置位。触发器的用户可随时设置或清除它。它用于确定哪些触发器匹配。若未实现该位，则它始终为 0，写入它无效果。
+a|*WARL*
+a|0
+|[[etrigger-vs]] `((vs))`
+a|置位时，为从 VS 模式采取的异常使能此触发器。若硬件线程不支持虚拟化模式，此位硬连线为 0。
+a|*WARL*
+a|0
+|[[etrigger-vu]] `((vu))`
+a|置位时，为从 VU 模式采取的异常使能此触发器。若硬件线程不支持虚拟化模式，此位硬连线为 0。
+a|*WARL*
+a|0
+|[[etrigger-m]] `((m))`
+a|置位时，为从 M 模式采取的异常使能此触发器。
+a|*WARL*
+a|0
+|[[etrigger-s]] `((s))`
+a|置位时，为从 S/HS 模式采取的异常使能此触发器。若硬件线程不支持 S 模式，此位硬连线为 0。
+a|*WARL*
+a|0
+|[[etrigger-u]] `((u))`
+a|置位时，为从 U 模式采取的异常使能此触发器。若硬件线程不支持 U 模式，此位硬连线为 0。
+a|*WARL*
+a|0
+|[[etrigger-action]] `((action))`
+a|触发器触发时要采取的动作。各值在 xref:tab:action[] 中说明。
+a|*WARL*
+a|0
+|==='''

@@ -1,0 +1,41 @@
+unit_id = "4183195100f1f45084a1b3f19b22ea2d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Conceptually, an implementation might contain two address-translation
+caches: one that maps guest virtual addresses to guest physical
+addresses, and another that maps guest physical addresses to supervisor
+physical addresses. HFENCE.GVMA need not flush the former cache, but it
+must flush entries from the latter cache that match the HFENCE.GVMA’s
+address and VMID arguments.
+
+More commonly, implementations contain address-translation caches that
+map guest virtual addresses directly to supervisor physical addresses,
+removing a level of indirection. For such implementations, any entry
+whose guest virtual address maps to a guest physical address that
+matches the HFENCE.GVMA’s address and VMID arguments must be flushed.
+Selectively flushing entries in this fashion requires tagging them with
+the guest physical address, which is costly, and so a common technique
+is to flush all entries that match the HFENCE.GVMA’s VMID argument,
+regardless of the address argument.
+
+***
+
+Like for a guest physical address written to `htval` on a trap, a guest
+physical address specified in _rs1_ is shifted right by 2 bits to
+accommodate addresses wider than the current XLEN.
+===='''
+zh = '''
+[NOTE]
+====
+概念上，实现可能包含两个地址转换缓存：一个将客户机虚拟地址映射到客户机物理地址，另一个将客户机物理地址映射到监管物理地址。HFENCE.GVMA 不必冲刷前者缓存，但必须从后者缓存中冲刷与 HFENCE.GVMA 的地址和 VMID 参数匹配的项。
+
+更常见的是，实现包含将客户机虚拟地址直接映射到监管物理地址的地址转换缓存，从而消除一级间接。对于此类实现，必须冲刷任何客户机虚拟地址映射到与 HFENCE.GVMA 的地址和 VMID 参数匹配的客户机物理地址的项。以这种方式选择性冲刷项需要为其标记客户机物理地址，这代价高昂，因此一种常用技术是冲刷所有与 HFENCE.GVMA 的 VMID 参数匹配的项，而不管地址参数。
+
+***
+
+与陷阱时写入 `htval` 的客户机物理地址一样，_rs1_ 中指定的客户机物理地址右移 2 位，以容纳比当前 XLEN 更宽的地址。
+===='''

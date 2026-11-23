@@ -1,0 +1,20 @@
+unit_id = "5b7018291bc6f60aad5b00d776a6175a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Construct the appropriate memory load operations latexmath:[$mlos$]:
+* if _address_ is aligned to _size_ then latexmath:[$mlos$] is a single
+memory load operation of _size_ bytes from _address_;
+* otherwise, latexmath:[$mlos$] is a set of _size_ memory load
+operations, each of one byte, from the addresses
+latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$].
+. set _mem_loads_ of latexmath:[$i$] to latexmath:[$mlos$]; and
+. update the state of latexmath:[$i$] to
+Pending_mem_loads(_load_continuation_).'''
+zh = '''
+. 构造相应的内存加载操作 latexmath:[$mlos$]：
+* 若 _address_ 按 _size_ 对齐，则 latexmath:[$mlos$] 是一个从 _address_ 开始的 _size_ 字节的单个内存加载操作；
+* 否则，latexmath:[$mlos$] 是一组 _size_ 个内存加载操作，每个为 1 字节，分别来自地址 latexmath:[$\textit{address}\ldots\textit{address}+\textit{size}-1$]。
+. 将 latexmath:[$i$] 的 _mem_loads_ 设置为 latexmath:[$mlos$]；且
+. 将 latexmath:[$i$] 的状态更新为 Pending_mem_loads(_load_continuation_)。'''

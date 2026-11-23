@@ -1,0 +1,23 @@
+unit_id = "f86fe8d07a4606c2f9c359f2af87e415"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_Like a load or store instruction, a CMO instruction may or may not be permitted
+to access a cache block based on the states of the `MPRV`, `MPV`, and `MPP` bits
+in `mstatus` and the `SUM` and `MXR` bits in `mstatus`, `sstatus`, and
+`vsstatus`._
+
+_This specification expects that implementations will process cache-block
+management instructions like store/AMO instructions, so store/AMO exceptions are
+appropriate for these instructions, regardless of the permissions required._
+===='''
+zh = '''
+[NOTE]
+====
+__与加载或存储指令一样，CMO 指令是否被允许访问某缓存块，可能取决于 `mstatus` 中的 `MPRV`、`MPV` 和 `MPP` 位以及 `mstatus`、`sstatus` 和 `vsstatus` 中的 `SUM` 和 `MXR` 位的状态。__
+
+__本规范期望实现将像处理存储/AMO 指令一样处理缓存块管理指令，因此无论所需权限如何，存储/AMO 异常都适用于这些指令。__
+===='''

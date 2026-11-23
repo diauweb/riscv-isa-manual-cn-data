@@ -1,0 +1,48 @@
+unit_id = "b952f1fae63dd8f2b19fb7f62d0298fc"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="1,1,1,1,6,6"]
+|===
+4+| output  | instruction | pseudoinstruction
+
+| 0 | 0 | 0 | 0 | insn:vmxor.mm[vd, vd, vd]    | insn:vmclr.m[vd]
+| 1 | 0 | 0 | 0 | insn:vmnor.mm[vd,src1,src2]  |
+| 0 | 1 | 0 | 0 | insn:vmandn.mm[vd,src2,src1] |
+| 1 | 1 | 0 | 0 | insn:vmnand.mm[vd,src1,src1] | insn:vmnot.m[vd,src1]
+| 0 | 0 | 1 | 0 | insn:vmandn.mm[vd,src1,src2] |
+| 1 | 0 | 1 | 0 | insn:vmnand.mm[vd,src2,src2] | insn:vmnot.m[vd,src2]
+| 0 | 1 | 1 | 0 | insn:vmxor.mm[vd,src1,src2]  |
+| 1 | 1 | 1 | 0 | insn:vmnand.mm[vd,src1,src2] |
+| 0 | 0 | 0 | 1 | insn:vmand.mm[vd,src1,src2]  |
+| 1 | 0 | 0 | 1 | insn:vmxnor.mm[vd,src1,src2] |
+| 0 | 1 | 0 | 1 | insn:vmand.mm[vd,src2,src2]  | insn:vmmv.m[vd,src2]
+| 1 | 1 | 0 | 1 | insn:vmorn.mm[vd,src2,src1]  |
+| 0 | 0 | 1 | 1 | insn:vmand.mm[vd,src1,src1]  | insn:vmmv.m[vd,src1]
+| 1 | 0 | 1 | 1 | insn:vmorn.mm[vd,src1,src2]  |
+| 0 | 1 | 1 | 1 | insn:vmor.mm[vd,src1,src2]   |
+| 1 | 1 | 1 | 1 | insn:vmxnor.mm[vd,vd,vd]     | insn:vmset.m[vd]
+|==='''
+zh = '''
+[cols="1,1,1,1,6,6"]
+|===
+4+| 输出  | 指令 | 伪指令
+
+| 0 | 0 | 0 | 0 | insn:vmxor.mm[vd, vd, vd]    | insn:vmclr.m[vd]
+| 1 | 0 | 0 | 0 | insn:vmnor.mm[vd,src1,src2]  |
+| 0 | 1 | 0 | 0 | insn:vmandn.mm[vd,src2,src1] |
+| 1 | 1 | 0 | 0 | insn:vmnand.mm[vd,src1,src1] | insn:vmnot.m[vd,src1]
+| 0 | 0 | 1 | 0 | insn:vmandn.mm[vd,src1,src2] |
+| 1 | 0 | 1 | 0 | insn:vmnand.mm[vd,src2,src2] | insn:vmnot.m[vd,src2]
+| 0 | 1 | 1 | 0 | insn:vmxor.mm[vd,src1,src2]  |
+| 1 | 1 | 1 | 0 | insn:vmnand.mm[vd,src1,src2] |
+| 0 | 0 | 0 | 1 | insn:vmand.mm[vd,src1,src2]  |
+| 1 | 0 | 0 | 1 | insn:vmxnor.mm[vd,src1,src2] |
+| 0 | 1 | 0 | 1 | insn:vmand.mm[vd,src2,src2]  | insn:vmmv.m[vd,src2]
+| 1 | 1 | 0 | 1 | insn:vmorn.mm[vd,src2,src1]  |
+| 0 | 0 | 1 | 1 | insn:vmand.mm[vd,src1,src1]  | insn:vmmv.m[vd,src1]
+| 1 | 0 | 1 | 1 | insn:vmorn.mm[vd,src1,src2]  |
+| 0 | 1 | 1 | 1 | insn:vmor.mm[vd,src1,src2]   |
+| 1 | 1 | 1 | 1 | insn:vmxnor.mm[vd,vd,vd]     | insn:vmset.m[vd]
+|==='''

@@ -1,0 +1,3588 @@
+{
+  "sha": "d2c44bb12ef536986e007c79868634779838a166",
+  "parent_sha": "217b3f8cdbd94583f4933bb7c7b35bae3e70f74d",
+  "is_baseline": false,
+  "date": "2024-04-18T07:37:40-05:00",
+  "title": "Merge pull request #1353 from riscv/kersten1-patch-4",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-d2c44bb-2024-04-18"
+  ],
+  "diff": {
+    "added": 0,
+    "modified": 80,
+    "moved": 331,
+    "deleted": 0,
+    "touched_chapters": [
+      "priv/hypervisor",
+      "priv/machine",
+      "priv/smcdeleg",
+      "priv/smcntrpmf",
+      "priv/Sscofpmf",
+      "priv/Sstc",
+      "priv/supervisor",
+      "unpriv/vector"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": "heading",
+      "unit_id": "8d4d28355dd947790a3a1f99177faee2",
+      "status": "modified",
+      "prev_unit_id": "fd55d7c439fcbbc49edd494ece27758e"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 0,
+      "unit_id": "4b8f82b0494fe41d305c9ae9affd6d97",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 1,
+      "unit_id": "a2e4bc12e8a11fb03a45d5b933f03e0b",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 2,
+      "unit_id": "b5ea70337f77d1e0212de7f44f231c15",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 3,
+      "unit_id": "788a8831a165baa7920daa81ed43dfd8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 4,
+      "unit_id": "b3fb480b4a4e6f49a8399b103f109be9",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 5,
+      "unit_id": "77504b4b3de44075526727e4267324c1",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 6,
+      "unit_id": "66ae7c54a25576447ddd3522f85e00e7",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 7,
+      "unit_id": "f253060a89b1551ba8327ece43a1aee3",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_type_vtype_register",
+      "slot": 8,
+      "unit_id": "fb3e8df58f56300679fd48303f284c5b",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_type_register_vtype"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_vl_register",
+      "slot": "heading",
+      "unit_id": "441191525f9ec7880a1fe48d1a1e203e",
+      "status": "modified",
+      "prev_unit_id": "6c31899b75b97f136ea4e27f72c7ceae"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_vl_register",
+      "slot": 0,
+      "unit_id": "4ac55806856d921003247f369967473e",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_length_register_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_vl_register",
+      "slot": 1,
+      "unit_id": "1594adce3ea5868d12b80209bddcb1d2",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_length_register_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_length_vl_register",
+      "slot": 2,
+      "unit_id": "a01a28bd21dff6ee20341ba8f137d8b5",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_length_register_vl"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_vlenb_register",
+      "slot": "heading",
+      "unit_id": "f07b15efc21850286b83b50dda79c260",
+      "status": "modified",
+      "prev_unit_id": "f29fdd6bc95f2a64b6784be8e6754dc8"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_vlenb_register",
+      "slot": 0,
+      "unit_id": "4a20e3c1b2e040b111bf22ad3753be29",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_byte_length_vlenb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_vlenb_register",
+      "slot": 1,
+      "unit_id": "f2f54257d5091ae8d922834c3ca207df",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_byte_length_vlenb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_byte_length_vlenb_register",
+      "slot": 2,
+      "unit_id": "f17bed794262f062ed1262b1bb168906",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_byte_length_vlenb"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": "heading",
+      "unit_id": "152d44603d0fb83fb6523e59b859e3d4",
+      "status": "modified",
+      "prev_unit_id": "fe814cc1c10b67ed15e0b34a37782e2f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 0,
+      "unit_id": "a7b1d72435fbd5bf4daaaf71d0e63260",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 1,
+      "unit_id": "73824379ec1c3b486fd16c8996d0f5cd",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 2,
+      "unit_id": "44f9f48d80aa641b4d6d1e3b12fb5fca",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 3,
+      "unit_id": "f33a4c749fb38e4eee9eea20f623d333",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 4,
+      "unit_id": "21913f0692f9113f4878f279d7ed37af",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 5,
+      "unit_id": "10012ad2c4399494be9c8d4c821c77a2",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 6,
+      "unit_id": "6690bad2cd133bbcd59c6d78d87f90d6",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 7,
+      "unit_id": "dfada0037f150737ac36973e133d8764",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 8,
+      "unit_id": "0946a9fcd744ffbb55473c9ccabda3c5",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 9,
+      "unit_id": "fd4d5ec788c0aaea51240d92ec37418e",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 10,
+      "unit_id": "1022b53be7f7faa5668a3c45e80410f6",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 11,
+      "unit_id": "eb5a3ad84638b9a93584dd88cf0ab8b0",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 12,
+      "unit_id": "ea7fb338a2a0f526d585d73d9249a497",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_start_index_vstart_register",
+      "slot": 13,
+      "unit_id": "f8dcb3e3fdbfad7395acc254fcf9dcbc",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_start_index_csr_vstart"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": "heading",
+      "unit_id": "8066c2ce786503957cd53c298e5d93b6",
+      "status": "modified",
+      "prev_unit_id": "46fe5d0159e1843daff360b108fb9445"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 0,
+      "unit_id": "ae31981836b7d7996c376215e8359fae",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 1,
+      "unit_id": "01e46feb03d86e09e60b85590fa1951b",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 2,
+      "unit_id": "22b1d9e2c708046e4345bd522f4933ab",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 3,
+      "unit_id": "495733cadbdfd7126d0b6d61c13a75c8",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 4,
+      "unit_id": "d37a97b55921226f0204202dc4b7e768",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 5,
+      "unit_id": "d466668f7837ce302674951db60ae829",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 6,
+      "unit_id": "5411ae9b45a2dee8ae7b464c9127efee",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_fixed_point_rounding_mode_vxrm_register",
+      "slot": 7,
+      "unit_id": "307d93d7282aa926a82bc1edb688150f",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_fixed_point_rounding_mode_register_vxrm"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_vcsr_register",
+      "slot": "heading",
+      "unit_id": "db141a1c19bead33a28c73e074437f3a",
+      "status": "modified",
+      "prev_unit_id": "e3ccf73db25789ecb9c3b64f2394880f"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_vcsr_register",
+      "slot": 0,
+      "unit_id": "f98d3ab24433d707fc492dc8af0c546c",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_control_and_status_register_vcsr"
+    },
+    {
+      "chapter_key": "unpriv/vector",
+      "section_id": "_vector_control_and_status_vcsr_register",
+      "slot": 1,
+      "unit_id": "915b45d532976a5ac3c304715c769097",
+      "status": "moved",
+      "moved_from": "unpriv/vector/_vector_control_and_status_register_vcsr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "misa",
+      "slot": "heading",
+      "unit_id": "b90fde52b007f749e776d6880567a7bc",
+      "status": "modified",
+      "prev_unit_id": "1edc9933108b690b8e9a110305213ebc"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_vendor_id_mvendorid_register",
+      "slot": "heading",
+      "unit_id": "6dda47e35362bf4cf48e11bdaaf74fa9",
+      "status": "modified",
+      "prev_unit_id": "151bdd8b53a7dc6f3da193b8f5948aa4"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_vendor_id_mvendorid_register",
+      "slot": 0,
+      "unit_id": "c633617d2bb55e3a482f1d442eab968e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_vendor_id_register_mvendorid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_vendor_id_mvendorid_register",
+      "slot": 1,
+      "unit_id": "093b530ffd9eb3ef028a911a1f137f32",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_vendor_id_register_mvendorid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_vendor_id_mvendorid_register",
+      "slot": 2,
+      "unit_id": "c84c3aba5c646c8b33ecfc0855453d14",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_vendor_id_register_mvendorid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_vendor_id_mvendorid_register",
+      "slot": 3,
+      "unit_id": "e89248249c3ca26ab60df0bb308e543e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_vendor_id_register_mvendorid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_architecture_id_marchid_register",
+      "slot": "heading",
+      "unit_id": "1962c2624a6f77b7bcdca8791f74426a",
+      "status": "modified",
+      "prev_unit_id": "7359f91000f2fc8702683aeff4ea7f1d"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_architecture_id_marchid_register",
+      "slot": 0,
+      "unit_id": "f3925521a59b074a2d8a2d65103f18d1",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_architecture_id_register_marchid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_architecture_id_marchid_register",
+      "slot": 1,
+      "unit_id": "caed4370ed7fdfb68d987d17d8a4ab49",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_architecture_id_register_marchid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_architecture_id_marchid_register",
+      "slot": 2,
+      "unit_id": "f70a95f1e5219b581e28fd6e915e74bf",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_architecture_id_register_marchid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_architecture_id_marchid_register",
+      "slot": 3,
+      "unit_id": "0e2ead1b9676518ad0df0f1457123402",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_architecture_id_register_marchid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_implementation_id_mimpid_register",
+      "slot": "heading",
+      "unit_id": "660897168d5d2aaf346162b8baee8ec4",
+      "status": "modified",
+      "prev_unit_id": "b5c612e6832fd02be334da95c3733266"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_implementation_id_mimpid_register",
+      "slot": 0,
+      "unit_id": "939044e703f0b9e7d5025ef2a1651ec3",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_implementation_id_register_mimpid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_implementation_id_mimpid_register",
+      "slot": 1,
+      "unit_id": "36b0491ced1dbb651448aa1b1b22afe2",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_implementation_id_register_mimpid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_implementation_id_mimpid_register",
+      "slot": 2,
+      "unit_id": "8337499139d58545629f48f2a84e3207",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_implementation_id_register_mimpid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_hart_id_mhartid_register",
+      "slot": "heading",
+      "unit_id": "d128bf7822d395db19223a2745a10304",
+      "status": "modified",
+      "prev_unit_id": "7c1508e6470c635e0e6668b962a75963"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_hart_id_mhartid_register",
+      "slot": 0,
+      "unit_id": "51622ec30fc3e7eb67cd3d94b0329204",
+      "status": "moved",
+      "moved_from": "priv/machine/_hart_id_register_mhartid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_hart_id_mhartid_register",
+      "slot": 1,
+      "unit_id": "14779cf30ecc8663f15bbab9260ebd8c",
+      "status": "moved",
+      "moved_from": "priv/machine/_hart_id_register_mhartid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_hart_id_mhartid_register",
+      "slot": 2,
+      "unit_id": "9bcf7f04d5b535a4f87b13ea7204def4",
+      "status": "moved",
+      "moved_from": "priv/machine/_hart_id_register_mhartid"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": "heading",
+      "unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "status": "modified",
+      "prev_unit_id": "5de7430b66477b3b08f12b9a4630ea1f"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 0,
+      "unit_id": "cd6d8d07b37a7a7fc400fa6fc41ddb79",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 1,
+      "unit_id": "47b9bc783b97b874feca778f90c1a252",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 2,
+      "unit_id": "bfaf72738435bb44a7caa97ddd3ba0a1",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 3,
+      "unit_id": "c14d2fdcab7de81ee8a8abad6b5950df",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 4,
+      "unit_id": "b5be5b5da4c58d33e6faa972817122eb",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers",
+      "slot": 5,
+      "unit_id": "ba2f741724a9b8a8a27e5a79edc57351",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_status_registers_mstatus_and_mstatush"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": "heading",
+      "unit_id": "4dc26309e65896f6e7aa684252864c56",
+      "status": "modified",
+      "prev_unit_id": "e1f5e15f4e46703a63f56bd2eb9104e8"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 0,
+      "unit_id": "32c7950bb55f373715ae5c3017ae8b3f",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 1,
+      "unit_id": "7626923e556830c580816aca306abfd3",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 2,
+      "unit_id": "321c1095ce2dbac6b0fc9f2db7860a13",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 3,
+      "unit_id": "820cfa6604c7fdd4f4f0ec9851a19e3f",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 4,
+      "unit_id": "d03b3a5d1eac66d92167950f6816b32d",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 5,
+      "unit_id": "a71feb124637f031c0249867718ad91e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 6,
+      "unit_id": "d5f0698edb14a3336f86d4bca8a66a61",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_vector_base_address_mtvec_register",
+      "slot": 7,
+      "unit_id": "5026d62f7bfd5cdbefc8c8e6ec3f1c86",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_vector_base_address_register_mtvec"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": "heading",
+      "unit_id": "c686eec830d002097fdae33101d5321b",
+      "status": "modified",
+      "prev_unit_id": "c4d3267623dbe6a968c060082c6b21db"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 0,
+      "unit_id": "8888464e487bb18e08484776dbf47da0",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 1,
+      "unit_id": "1cd5960f9efac119fb77cbee496efb82",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 2,
+      "unit_id": "d6594a23592729b99701c88d2600b6a6",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 3,
+      "unit_id": "c1f1b385d9b7771daaaceb2590b7193a",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 4,
+      "unit_id": "4328fd20758862afed9f5aed8e9e325d",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 5,
+      "unit_id": "0f25fc97ea7793c85c548adefad53b82",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 6,
+      "unit_id": "2c61a8e95f7d806a048f2d2438af540b",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 7,
+      "unit_id": "c2ec37d62c8112f1d23ad6ee05dd4283",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 8,
+      "unit_id": "ad733eb43b1dbd8f9556eaeb39cabf6c",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 9,
+      "unit_id": "97737578daa7998308e82e9fca2d1a90",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 10,
+      "unit_id": "9cf743e0e3d5e936d8047cce0dda4c5d",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 11,
+      "unit_id": "a18a15e715b6bf5bf283c89f06772421",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 12,
+      "unit_id": "bd4a03c9576785fa7810603cbb34db87",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 13,
+      "unit_id": "1721b86afef9367587bb569e1c26c0d8",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "slot": 14,
+      "unit_id": "024a95011abca40237fb8a1da02ba867",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_delegation_registers_medeleg_and_mideleg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": "heading",
+      "unit_id": "f1f0b0c7ba66bb90707c49fb5fa9af95",
+      "status": "modified",
+      "prev_unit_id": "17c525d16c87145a4e2f5584a7f5c126"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 0,
+      "unit_id": "db82714a6dae22a7bb02ef22b3fc936c",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 1,
+      "unit_id": "29a1596c633ec48d1b4e5c2db6c8e962",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 2,
+      "unit_id": "5c02f3c80debdef27e324f289f8547b9",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 3,
+      "unit_id": "5c02f3c80debdef27e324f289f8547b9",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 4,
+      "unit_id": "13617063da07c1dedca85351d793bc7a",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 5,
+      "unit_id": "14cda151687d46252701e15479fc5d8e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 6,
+      "unit_id": "d680b8633c4278e1fa2e5c6df7207802",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 7,
+      "unit_id": "8b895c46a91ba9a386391c44f14de715",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 8,
+      "unit_id": "47921b2815687108ec0e30d4c538cf09",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 9,
+      "unit_id": "3f2d4d89928c5d467425d6f9ed5e0e82",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 10,
+      "unit_id": "3eb614d0634fc75236b720d73849a9cc",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 11,
+      "unit_id": "6e2fe182387b13807ba5e82133b5379b",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 12,
+      "unit_id": "0fd9b1227d8dc6a6dad985ff2fc935b8",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 13,
+      "unit_id": "5a0525aac05f098b0284993c76a49878",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 14,
+      "unit_id": "7a87d2f6de6ded566595a982ce0cc8bb",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 15,
+      "unit_id": "b4692d9d91771ea9fcd092d4b87893fa",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 16,
+      "unit_id": "154de495e5122461c404a3c398c40f31",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 17,
+      "unit_id": "525458b7365c737167a7d08caf23c5c0",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 18,
+      "unit_id": "82e072cb8b0e6d04d26bc71e90835740",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 19,
+      "unit_id": "b2ffaf76e2377a6395467291be0493ae",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 20,
+      "unit_id": "2d44c66873192f155ce109a20e5a962f",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 21,
+      "unit_id": "ea5e0717c4533ceed55bd2cd91d11f18",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 22,
+      "unit_id": "63020972bcd53cee94e8230ad474fda9",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 23,
+      "unit_id": "0b3b2f7284171d6edef185f06cb3e2ba",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_interrupt_mip_and_mie_registers",
+      "slot": 24,
+      "unit_id": "25940a9abb4621e22e072fdff2ecf802",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_interrupt_registers_mip_and_mie"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "mcounteren",
+      "slot": "heading",
+      "unit_id": "e588e4bf4c226ab1d780056a510e7990",
+      "status": "modified",
+      "prev_unit_id": "ce79257d1a0a2eab557b98b60fe33d31"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": "heading",
+      "unit_id": "88f6adad8153b71e98366239ab9509e0",
+      "status": "modified",
+      "prev_unit_id": "e6b53498299fa5c19c47bb10c93e8244"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 0,
+      "unit_id": "0f6ba913e592c4427bf1b3100c042639",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 1,
+      "unit_id": "6bde654bda1c56ac8cb2d2644bf47610",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 2,
+      "unit_id": "bc7716c4715dd5173a5f34cf2534f216",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 3,
+      "unit_id": "a6f6db911d4f9c5558e540bd922f5be9",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 4,
+      "unit_id": "7aeaf7db89d70ff4579059ee9aa3379e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_counter_inhibit_mcountinhibit_register",
+      "slot": 5,
+      "unit_id": "4679534a493d0d8e765a791303382401",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_counter_inhibit_csr_mcountinhibit"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_scratch_mscratch_register",
+      "slot": "heading",
+      "unit_id": "4ab4246755536a9b6307bd01e077f806",
+      "status": "modified",
+      "prev_unit_id": "06d64def09d9cae059de30a21132b419"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_scratch_mscratch_register",
+      "slot": 0,
+      "unit_id": "8ad55bca146e2e702b9ecf1eac0287ce",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_scratch_register_mscratch"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_scratch_mscratch_register",
+      "slot": 1,
+      "unit_id": "7de723d1ebf5e5e1d58ed99463c278ba",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_scratch_register_mscratch"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_scratch_mscratch_register",
+      "slot": 2,
+      "unit_id": "aee4ec3778eccadf8b52aa019817c88f",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_scratch_register_mscratch"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "mcause",
+      "slot": "heading",
+      "unit_id": "7d9d2d87cf6096c5d8243a94af5d527e",
+      "status": "modified",
+      "prev_unit_id": "91b25af4cf579df7bc9fef347827a638"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": "heading",
+      "unit_id": "2395233dc089fa4787eec64f6c2041ef",
+      "status": "modified",
+      "prev_unit_id": "e31c2f2cf4383e685295f0b217a43f18"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 0,
+      "unit_id": "7f14ec715d70a5e98f93b0e666961291",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 1,
+      "unit_id": "92570fb12944a17f507398b28b102a9d",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 2,
+      "unit_id": "c6f1e0818561ec6b8d6fbbbf931cc8d5",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 3,
+      "unit_id": "27add20695a753523468911a69000304",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 4,
+      "unit_id": "130631314fff53d4f836536001ea2fed",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 5,
+      "unit_id": "6b4bbbf9f499ee83f593a68a6f349419",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 6,
+      "unit_id": "fcd2512667c000dae5ca09178c838c63",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 7,
+      "unit_id": "67444c173a69c30e69f4ce3a89e4583a",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 8,
+      "unit_id": "37edcfafc8d96064771ae9ba091aea31",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 9,
+      "unit_id": "97e20c02bfd878bc15b5a7a48f0c96e6",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 10,
+      "unit_id": "32d3a11cb074098596effde4d68d1403",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_trap_value_mtval_register",
+      "slot": 11,
+      "unit_id": "1abc77dc5ed19730e9422d64357b6477",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_trap_value_register_mtval"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": "heading",
+      "unit_id": "aff1481862347c6ca3b8087cb6235843",
+      "status": "modified",
+      "prev_unit_id": "6d25fa4164de749ea153657a686c5e5d"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 0,
+      "unit_id": "ad236203e8a0e3b0763541ae8475f155",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_configuration_pointer_register_mconfigptr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 1,
+      "unit_id": "ecc956efdb97a270dcab854fc48f6f14",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_configuration_pointer_register_mconfigptr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 2,
+      "unit_id": "6ac85343bbcfb4fdd0cc783c35f4b856",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_configuration_pointer_register_mconfigptr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 3,
+      "unit_id": "00b128437e42bc1e834ccc44d534885a",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_configuration_pointer_register_mconfigptr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_configuration_pointer_mconfigptr_register",
+      "slot": 4,
+      "unit_id": "902b3c1eee348428d160411ef536b570",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_configuration_pointer_register_mconfigptr"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "sec:menvcfg",
+      "slot": "heading",
+      "unit_id": "aa747b12b89b6137491cc74cc9706dd7",
+      "status": "modified",
+      "prev_unit_id": "e1e7f3fc962358620f6010f217be0eee"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": "heading",
+      "unit_id": "fb20f812f1ca1abf7707b4466f3c8ba9",
+      "status": "modified",
+      "prev_unit_id": "aeb09fac900ede3bbd3f03b86c35aa7c"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 0,
+      "unit_id": "0c69299dcd63d8c6f79e30d7280fe3f1",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 1,
+      "unit_id": "1bac5c38e211032fbacfb1129546f395",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 2,
+      "unit_id": "69cbb49255f94b6b8e80fc4d35f3e2e5",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 3,
+      "unit_id": "4d284a8c0d65772aa5e9380fd6ed950c",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 4,
+      "unit_id": "a9897d8b41d8c7420fc29204e37238b5",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_security_configuration_mseccfg_register",
+      "slot": 5,
+      "unit_id": "ed9f194c54954d6c05cb6673b2c925ea",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_security_configuration_register_mseccfg"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": "heading",
+      "unit_id": "c2c6b98d2db434932d9f35fc9b93c0d8",
+      "status": "modified",
+      "prev_unit_id": "bcd6c5cc34f81fed66af792465154252"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 0,
+      "unit_id": "78e6cb95e2d00372138ac897bcdb74ea",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 1,
+      "unit_id": "427558a689f71f74e65f514b6f7eea35",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 2,
+      "unit_id": "6907f6b9cdf1b6594ee08b96215d0831",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 3,
+      "unit_id": "782a246a2ff08a0e75bbcac65742f086",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 4,
+      "unit_id": "f495e70c0189b9a54cb32decad37634b",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 5,
+      "unit_id": "3447b9adf62428d66ed18c028b49346e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 6,
+      "unit_id": "9fd8e4a9629aef1fd5f03b9cac5c6fcb",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 7,
+      "unit_id": "97f5dd2f4203661b1d69a983020eda8e",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 8,
+      "unit_id": "cacac0ada2c53484db888805576e12aa",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "slot": 9,
+      "unit_id": "e2fe0182af47afe8d7ba5ee35b6db2f4",
+      "status": "moved",
+      "moved_from": "priv/machine/_machine_timer_registers_mtime_and_mtimecmp"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": "heading",
+      "unit_id": "c10d9312fe02e16b62e5be72806af569",
+      "status": "modified",
+      "prev_unit_id": "ae68fa38b7f2cc3b8f98496e8d706d8a"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 0,
+      "unit_id": "ca76d8d118cb0576f40ab6622ac08087",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 1,
+      "unit_id": "2a394b1c2406478475e5c4cd708077f9",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 2,
+      "unit_id": "44cea5681f1bd47817f0906e12dcb21d",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 3,
+      "unit_id": "68fb5fb2a979d935eadad111ffacf2bb",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 4,
+      "unit_id": "3817f82a54fbd19be6382e4e351c3ed2",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 5,
+      "unit_id": "e009bd7cb814cfc57420d9a9ac833cd8",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 6,
+      "unit_id": "2eb48c35ddd027f6c6aa643eb0a1e2c6",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 7,
+      "unit_id": "40bba2cfd43fe199b35e06f5f981f176",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcntrpmf",
+      "section_id": "_machine_counter_configuration_mcyclecfg_minstretcfg_registers",
+      "slot": 8,
+      "unit_id": "8fb7595820c5d96c5a0cb5f46c6a5154",
+      "status": "moved",
+      "moved_from": "priv/smcntrpmf/_machine_counter_configuration_registers_mcyclecfg_minstretcfg"
+    },
+    {
+      "chapter_key": "priv/smcdeleg",
+      "section_id": "_supervisor_counter_inhibit_scountinhibit_register",
+      "slot": "heading",
+      "unit_id": "85d98f02c672b2756691befb5176ba0a",
+      "status": "modified",
+      "prev_unit_id": "01457d58143d1a1955724525b1377962"
+    },
+    {
+      "chapter_key": "priv/smcdeleg",
+      "section_id": "_supervisor_counter_inhibit_scountinhibit_register",
+      "slot": 0,
+      "unit_id": "c3a5aa5aebcef9b59f3337aa2d043480",
+      "status": "moved",
+      "moved_from": "priv/smcdeleg/_supervisor_counter_inhibit_register_scountinhibit"
+    },
+    {
+      "chapter_key": "priv/smcdeleg",
+      "section_id": "_supervisor_counter_inhibit_scountinhibit_register",
+      "slot": 1,
+      "unit_id": "651be76f5006b79100bc32bf8beb2e89",
+      "status": "moved",
+      "moved_from": "priv/smcdeleg/_supervisor_counter_inhibit_register_scountinhibit"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "sstatus",
+      "slot": "heading",
+      "unit_id": "0654fbc08c8fc43ba02cb90ec07fb786",
+      "status": "modified",
+      "prev_unit_id": "df6bb76590dc36811ef146ce628e4700"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": "heading",
+      "unit_id": "76b19c98f9f057e70907a65e182c19de",
+      "status": "modified",
+      "prev_unit_id": "0ebada2a075b1085656a3ed6e87bd7f0"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 0,
+      "unit_id": "4b0abb778d88cfee5c374695b710c8ac",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_trap_vector_base_address_register_stvec"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 1,
+      "unit_id": "bc851bfcc3c7bf9ef4af8723a9990f93",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_trap_vector_base_address_register_stvec"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 2,
+      "unit_id": "6b8aeb29ec879b24bbccd4ebe3406ff3",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_trap_vector_base_address_register_stvec"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 3,
+      "unit_id": "3944bc144fe28f5f1c2fbe4fa77818bf",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_trap_vector_base_address_register_stvec"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_trap_vector_base_address_stvec_register",
+      "slot": 4,
+      "unit_id": "d404f0ae550756296ec5be1fc2810554",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_trap_vector_base_address_register_stvec"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": "heading",
+      "unit_id": "15b5dbfc54f34f34d5c96c906d6fa5ef",
+      "status": "modified",
+      "prev_unit_id": "20ea6ffd47249cf11d0cf67ef54d917b"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 0,
+      "unit_id": "f4e7d82eff718e34b3336faafcb7840b",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 1,
+      "unit_id": "28d76caca540596394c2a5db81f8ab9f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 2,
+      "unit_id": "28d76caca540596394c2a5db81f8ab9f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 3,
+      "unit_id": "2066d6025436bb865f7700a08f5df954",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 4,
+      "unit_id": "c46f009538bf81ce4a852bf54a4f371b",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 5,
+      "unit_id": "988e8c89a753aa569eed8a6414680db9",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 6,
+      "unit_id": "308bd3af3f7a6c9d43c383ec3ee4da5a",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 7,
+      "unit_id": "38d4625e795a66bf0dd9d3b25df2123f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 8,
+      "unit_id": "5e08dc65cd64856a62cb947b01614791",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 9,
+      "unit_id": "ba5ee6d7750e83fdb2da08fa40d43db6",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 10,
+      "unit_id": "46e8875ed4264e3d76174df45f33f951",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 11,
+      "unit_id": "9e6ff1ad310c74f8274fe14f3c8dec9b",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 12,
+      "unit_id": "4055609a94ab396b8396532e774c8a9e",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 13,
+      "unit_id": "3a251b9e79eadf51bf3db79ec04fb69b",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 14,
+      "unit_id": "de9ac8f5c64f4f54d224c9af4f1a0b87",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 15,
+      "unit_id": "6615310873d6d8251a9a955427ca33e8",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 16,
+      "unit_id": "662ccdd06ee36f22ad51b6746acce738",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 17,
+      "unit_id": "3d28a5d7050c394dc48a456d042ade0f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers",
+      "slot": 18,
+      "unit_id": "8cf2a73e6df5e4e8a7634d92aeff8cbe",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_interrupt_registers_sip_and_sie"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": "heading",
+      "unit_id": "5093137fe4b9626e0e5e427bc9e0b71a",
+      "status": "modified",
+      "prev_unit_id": "b477f00150de7710bb52fe269a8a8880"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": 0,
+      "unit_id": "6339a960fda9ddd3cb4577e3977b9f05",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_counter_enable_register_scounteren"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": 1,
+      "unit_id": "14e40e71e5688c4831de60d7e4672340",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_counter_enable_register_scounteren"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": 2,
+      "unit_id": "6a8c8bd17e162d09cad8d4daaee83e78",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_counter_enable_register_scounteren"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": 3,
+      "unit_id": "493239c54bd17bae7993af69bf765939",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_counter_enable_register_scounteren"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_counter_enable_scounteren_register",
+      "slot": 4,
+      "unit_id": "782137f28a808ab34003e9dc6b3a7b09",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_counter_enable_register_scounteren"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_scratch_sscratch_register",
+      "slot": "heading",
+      "unit_id": "ba46d1bcbc939b03387ee7b420fa82e8",
+      "status": "modified",
+      "prev_unit_id": "6f9307e80f7ff73f82537ee9b1d9d221"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_scratch_sscratch_register",
+      "slot": 0,
+      "unit_id": "f3899832b6a8154d96d9848cef802601",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_scratch_register_sscratch"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_scratch_sscratch_register",
+      "slot": 1,
+      "unit_id": "a6da8704b6f581826d32e013a25b0c44",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_scratch_register_sscratch"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": "heading",
+      "unit_id": "4681957f056a23d69519275fe61dddae",
+      "status": "modified",
+      "prev_unit_id": "8b67be80df9c09e133321585590b9726"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": 0,
+      "unit_id": "d1681487af584e1971b8a99c83586f0f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_exception_program_counter_sepc"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": 1,
+      "unit_id": "736c4ce474cd08cff9fe4f7da4819fd2",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_exception_program_counter_sepc"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": 2,
+      "unit_id": "1cd15e579746a8643f9ae563937fcfb9",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_exception_program_counter_sepc"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": 3,
+      "unit_id": "27aae092ea1741f0556e4de58fff46ab",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_exception_program_counter_sepc"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_exception_program_counter_sepc_register",
+      "slot": 4,
+      "unit_id": "b8f5164f8bfde910ee68107b25ab7c65",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_exception_program_counter_sepc"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "scause",
+      "slot": "heading",
+      "unit_id": "dfc6cab43be6475f5be6f17ddc368979",
+      "status": "modified",
+      "prev_unit_id": "d604ed1811b59fcaf89262577ed01f19"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": "heading",
+      "unit_id": "722bf5cf90fded3d14ade5bbd522d17b",
+      "status": "modified",
+      "prev_unit_id": "a6cd9353cc217ba944ab76e15dcc4e8b"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 0,
+      "unit_id": "5ec9f698399843c7f62bc76a5c105ac2",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 1,
+      "unit_id": "34287e5ae7d7a7d4bd4bb7f0de3c6aba",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 2,
+      "unit_id": "d0cccbb5d33cdd9549ef782789b26b70",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 3,
+      "unit_id": "0db202a3d01d48f84c6d3760a34b83a5",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 4,
+      "unit_id": "2bbe741572948b2477011a8081b031c6",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 5,
+      "unit_id": "d44844ca6a91e5683c3f0b86e696b61b",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 6,
+      "unit_id": "59f83ee568ab69345df666ae67fa2b4f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 7,
+      "unit_id": "6a5e53873a74650fb0817f7ee55b8f39",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 8,
+      "unit_id": "516e6d710e4320e50f4a15dae24d709f",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "_supervisor_environment_configuration_senvcfg_register",
+      "slot": 9,
+      "unit_id": "6588c234f81095b13227e25ee580cbf8",
+      "status": "moved",
+      "moved_from": "priv/supervisor/_supervisor_environment_configuration_register_senvcfg"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": "heading",
+      "unit_id": "57ac2bb540b5b909135f3a9534af6497",
+      "status": "modified",
+      "prev_unit_id": "c137abbee1f662421a0b0edf9da01b95"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 0,
+      "unit_id": "27aff26008cc19f49e79f20484666c9b",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_supervisor_timer_register_stimecmp"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 1,
+      "unit_id": "08f1878aaa3b235901f19426bd3a700f",
+      "status": "modified",
+      "prev_unit_id": "5fda1f69b18f3a273585af220c988b73"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 2,
+      "unit_id": "cf7f0f1e80c505f96792e5048c2bd2d0",
+      "status": "modified",
+      "prev_unit_id": "36a309ff2472f93dd0fdc410bc6fef34"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 3,
+      "unit_id": "b28bba02f273872a842758976145e88a",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_supervisor_timer_register_stimecmp"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 4,
+      "unit_id": "6d38c49c9b612e1e31babf3cf894fe37",
+      "status": "modified",
+      "prev_unit_id": "9d496fe8ffdb726ee877018426fad463"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_timer_stimecmp_register",
+      "slot": 5,
+      "unit_id": "a3187de665f0780d0e1f932e64872b44",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_supervisor_timer_register_stimecmp"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_2",
+      "slot": "heading",
+      "unit_id": "f1f0b0c7ba66bb90707c49fb5fa9af95",
+      "status": "modified",
+      "prev_unit_id": "9317b69397391b35e7c57cd6f337a69f"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_2",
+      "slot": 0,
+      "unit_id": "4f8665c29e820afacaab25b2d6419194",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_machine_interrupt_registers_mip_and_mie_2"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_2",
+      "slot": 1,
+      "unit_id": "30cff4a1d5196da837831c72c9eb9824",
+      "status": "modified",
+      "prev_unit_id": "aa7f231919e53ef7570596891897b0f4"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers_2",
+      "slot": "heading",
+      "unit_id": "15b5dbfc54f34f34d5c96c906d6fa5ef",
+      "status": "modified",
+      "prev_unit_id": "85f7772b5d6caefa36fb4d0dfe7bf417"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers_2",
+      "slot": 0,
+      "unit_id": "4f8665c29e820afacaab25b2d6419194",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_supervisor_interrupt_registers_sip_and_sie_2"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_supervisor_interrupt_sip_and_sie_registers_2",
+      "slot": 1,
+      "unit_id": "ea488d7aa92f702d883e8896b36c8c26",
+      "status": "modified",
+      "prev_unit_id": "1e1d1c2e27a7eea8a92d01fbfe19ca28"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_counter_enable_mcounteren_register",
+      "slot": "heading",
+      "unit_id": "e588e4bf4c226ab1d780056a510e7990",
+      "status": "modified",
+      "prev_unit_id": "5cdc6a33aacc0116bd6531e4d4a1ef9d"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_counter_enable_mcounteren_register",
+      "slot": 0,
+      "unit_id": "0ea1292a6c3a5215ac80bf57bcb33f5d",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_machine_counter_enable_register_mcounteren"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_machine_counter_enable_mcounteren_register",
+      "slot": 1,
+      "unit_id": "57258883be49a74a2313151323438e0f",
+      "status": "modified",
+      "prev_unit_id": "6d2951e61a7368430007728adcd9f77c"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": "heading",
+      "unit_id": "7f0e8115c6c3f7f0e3e5167ae777185c",
+      "status": "modified",
+      "prev_unit_id": "6ab590e5065bd29b83d0c24658b44cd4"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": 0,
+      "unit_id": "27aff26008cc19f49e79f20484666c9b",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_virtual_supervisor_timer_register_vstimecmp"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": 1,
+      "unit_id": "710c830e0394c59fdbf0359738b0c3cf",
+      "status": "modified",
+      "prev_unit_id": "a5adcd99d61ffdb80e17d22ec35483c0"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": 2,
+      "unit_id": "682c5157d78c3658a752f66a80b8bb9a",
+      "status": "modified",
+      "prev_unit_id": "ef71ee39c3cb8070f32a62de08c7c5be"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": 3,
+      "unit_id": "220b66f4950d29b0139d2f1288626852",
+      "status": "modified",
+      "prev_unit_id": "a617193af8d8297970afab47cb0cc785"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_virtual_supervisor_timer_vstimecmp_register",
+      "slot": 4,
+      "unit_id": "387a5d2c27acd3b003f9b5668f079fb9",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_virtual_supervisor_timer_register_vstimecmp"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_interrupt_hvip_hip_and_hie_registers",
+      "slot": "heading",
+      "unit_id": "0fc1bfd22e2cf65db512aa1d7e6a7904",
+      "status": "modified",
+      "prev_unit_id": "2933195e980e368a0edfd11d1751947f"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_interrupt_hvip_hip_and_hie_registers",
+      "slot": 0,
+      "unit_id": "8f83bbc6b6b82cb16ef2e894c7bee255",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_hypervisor_interrupt_registers_hvip_hip_and_hie"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_interrupt_hvip_hip_and_hie_registers",
+      "slot": 1,
+      "unit_id": "0754b8c972ef5c943f027af92b9d4e9b",
+      "status": "modified",
+      "prev_unit_id": "c58aedfdbbc2c3518a76e6beb805983d"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register",
+      "slot": "heading",
+      "unit_id": "322ef4f1d667d73b0a704d811b9763f1",
+      "status": "modified",
+      "prev_unit_id": "6342cef2ede6b7784fca9ad51a43a295"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register",
+      "slot": 0,
+      "unit_id": "0ea1292a6c3a5215ac80bf57bcb33f5d",
+      "status": "moved",
+      "moved_from": "priv/Sstc/_hypervisor_counter_enable_register_hcounteren"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register",
+      "slot": 1,
+      "unit_id": "962b4f76615a19a1e1d034e48cef356f",
+      "status": "modified",
+      "prev_unit_id": "3d09804d6144801507385e3c397f6ee1"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_environment_config_menvcfg_and_henvcfg_support",
+      "slot": "heading",
+      "unit_id": "c20d8bf37c80da406bfaf92fb8e63bd6",
+      "status": "modified",
+      "prev_unit_id": "27e30f9fc3774beffcc30829d3b9a143"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_environment_config_menvcfg_and_henvcfg_support",
+      "slot": 0,
+      "unit_id": "8672b49cecded9ec6ae9c2966c490c08",
+      "status": "modified",
+      "prev_unit_id": "b2255eb32b155866c35b9992c99b9da5"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_environment_config_menvcfg_and_henvcfg_support",
+      "slot": 1,
+      "unit_id": "3b2535f6c8308092a39209576ffd9ed9",
+      "status": "modified",
+      "prev_unit_id": "cab2d9643b9b640041eafdfd7d8176d4"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_environment_config_menvcfg_and_henvcfg_support",
+      "slot": 2,
+      "unit_id": "345e6b72b24fd49ba2fc0d103d873b2f",
+      "status": "modified",
+      "prev_unit_id": "ab5b45c493769c1980c29ec183afe327"
+    },
+    {
+      "chapter_key": "priv/Sstc",
+      "section_id": "_environment_config_menvcfg_and_henvcfg_support",
+      "slot": 3,
+      "unit_id": "382bc7dd0ce842983d99203c50029545",
+      "status": "modified",
+      "prev_unit_id": "a1dcfbff41eb2cc550653cda7666dd22"
+    },
+    {
+      "chapter_key": "priv/Sscofpmf",
+      "section_id": "_supervisor_count_overflow_scountovf_register",
+      "slot": "heading",
+      "unit_id": "c6c3ff5e7c661f32df8fe3ec75ff21c3",
+      "status": "modified",
+      "prev_unit_id": "117ddb1b0c04be57bbf00f7611f7ed1f"
+    },
+    {
+      "chapter_key": "priv/Sscofpmf",
+      "section_id": "_supervisor_count_overflow_scountovf_register",
+      "slot": 0,
+      "unit_id": "bc52cfafc77519ea7957d4564d1c55d2",
+      "status": "moved",
+      "moved_from": "priv/Sscofpmf/_supervisor_count_overflow_scountovf_csr"
+    },
+    {
+      "chapter_key": "priv/Sscofpmf",
+      "section_id": "_supervisor_count_overflow_scountovf_register",
+      "slot": 1,
+      "unit_id": "9695ddb315f48cee426d97c801d64a62",
+      "status": "moved",
+      "moved_from": "priv/Sscofpmf/_supervisor_count_overflow_scountovf_csr"
+    },
+    {
+      "chapter_key": "priv/Sscofpmf",
+      "section_id": "_supervisor_count_overflow_scountovf_register",
+      "slot": 2,
+      "unit_id": "2ee286b3b32815fa774e3abc94fb0425",
+      "status": "moved",
+      "moved_from": "priv/Sscofpmf/_supervisor_count_overflow_scountovf_csr"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": "heading",
+      "unit_id": "0dffca4742eabb15c2eceed82deb9a7c",
+      "status": "modified",
+      "prev_unit_id": "95e8951d795155be0d60e8074380086c"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 0,
+      "unit_id": "480e396fafde5a9e75b7ffa096b1e5c9",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 1,
+      "unit_id": "67c1de40890ce0a1c44b8af1a7a5e2cc",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 2,
+      "unit_id": "05f5059ee37ee9c5dc17e4fb4810d910",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 3,
+      "unit_id": "0ed78b6bffa1c4c3c2a4b6212ef41712",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 4,
+      "unit_id": "a02bb4546d649577bae23c2a7a0ab68a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 5,
+      "unit_id": "cb02affbc7e0f0c6cc6680a061fc58fe",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 6,
+      "unit_id": "b4c933a51c44a4183618c624a38ef273",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 7,
+      "unit_id": "017851b262b9d1f5d629c515a8081530",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 8,
+      "unit_id": "3d90cc228cd51dcf64989d443b2d0bb0",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 9,
+      "unit_id": "c6e560b79ad5947ba12a7f475b910008",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 10,
+      "unit_id": "8c4c7714ff4ada761d3975ce66cd041a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 11,
+      "unit_id": "2f00d8b9d4f7ebabc31a88edb89d5e63",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 12,
+      "unit_id": "c038199d0ab32186653c641a7994bf40",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 13,
+      "unit_id": "a6b05c76fbdd947fffa5c8a3d34d7a8b",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_status_hstatus_register",
+      "slot": 14,
+      "unit_id": "74650cbdc85511ce97ce1bea2200dc8e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_status_register_hstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": "heading",
+      "unit_id": "3729c3047fc04f413a3f2dad36ef7735",
+      "status": "modified",
+      "prev_unit_id": "1e7cc3a9d2705fdd2c2edb2e12731c87"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 0,
+      "unit_id": "752fec6eae67f684cca2cd5d22fe38f3",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 1,
+      "unit_id": "07310cc48b81fe3af2ca5adb50b0a4f0",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 2,
+      "unit_id": "b2a80dcfa30cc86f6b50d38ebc563f91",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 3,
+      "unit_id": "bfb42e797c502e2f4f42741f5275feec",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 4,
+      "unit_id": "fd0e9378037c03a019159de73f809a9c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 5,
+      "unit_id": "1584ed4e88d65707cc7cda82c21a44d4",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 6,
+      "unit_id": "3523a1be3b1d15d59d4951ad2cab180e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 7,
+      "unit_id": "c38442c6539d8109c778ce29419850ce",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_delegation_hedeleg_and_hideleg_registers",
+      "slot": 8,
+      "unit_id": "51a6119dcc79c209673c81f4eaec5cbe",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_delegation_registers_hedeleg_and_hideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "hinterruptregs",
+      "slot": "heading",
+      "unit_id": "0fc1bfd22e2cf65db512aa1d7e6a7904",
+      "status": "modified",
+      "prev_unit_id": "8ba3d58e1edb6c34b506a15162f43b62"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": "heading",
+      "unit_id": "322ef4f1d667d73b0a704d811b9763f1",
+      "status": "modified",
+      "prev_unit_id": "c3d4715dc1bc5dd7d85e5922ede66a2f"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": 0,
+      "unit_id": "309e7b3459e384146779859e086c9b4c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_counter_enable_register_hcounteren_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": 1,
+      "unit_id": "cc4387d4dfd6fe58a90ea075362eda9f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_counter_enable_register_hcounteren_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": 2,
+      "unit_id": "ce5b275a20d868890b882c1cbafa2411",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_counter_enable_register_hcounteren_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_counter_enable_hcounteren_register_2",
+      "slot": 3,
+      "unit_id": "162d94297564fc086f035f663ec35d11",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_counter_enable_register_hcounteren_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_time_delta_htimedelta_register",
+      "slot": "heading",
+      "unit_id": "8b7324e086e51c297188a4c186146329",
+      "status": "modified",
+      "prev_unit_id": "584796cf7c62160415968b6f5d11444e"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_time_delta_htimedelta_register",
+      "slot": 0,
+      "unit_id": "5d32824010cfe8ef3d1302926861537d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_time_delta_register_htimedelta"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_time_delta_htimedelta_register",
+      "slot": 1,
+      "unit_id": "38be52747cea8e848e2097c9f1bdd70e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_time_delta_register_htimedelta"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_time_delta_htimedelta_register",
+      "slot": 2,
+      "unit_id": "7c1296ca4a5f5b6f49f7d1f6366251f4",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_time_delta_register_htimedelta"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_time_delta_htimedelta_register",
+      "slot": 3,
+      "unit_id": "1be18d7ba13857550668d9dcee9b7c6c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_time_delta_register_htimedelta"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": "heading",
+      "unit_id": "7bd7a1f1894952557c01d57718dff044",
+      "status": "modified",
+      "prev_unit_id": "4e73c0332df0ea6753d4c0ada0017341"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 0,
+      "unit_id": "ca077609b039e9a02668f8cd31103093",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 1,
+      "unit_id": "e853efcc3dbc435021931f74ffcf7fbf",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 2,
+      "unit_id": "c001cc9f8f6435182362f476673b0294",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 3,
+      "unit_id": "d7ce27128849a94d95bcbeaef4e48822",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 4,
+      "unit_id": "ccd6ff138e168e68bb7e5ff1a7a320d5",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 5,
+      "unit_id": "91a3eb115178c41a23e69fc3dd5cb0f3",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 6,
+      "unit_id": "479e073468226eb88b68a5732943987b",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_value_htval_register",
+      "slot": 7,
+      "unit_id": "f86c9bce8220c14bb1c97c20d0b65d9f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_value_register_htval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_instruction_htinst_register",
+      "slot": "heading",
+      "unit_id": "0118f8261fbcfad980016963dec35072",
+      "status": "modified",
+      "prev_unit_id": "a9ee8ad31aa74b1b6fd1e9b69a4f5035"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_instruction_htinst_register",
+      "slot": 0,
+      "unit_id": "f1b063d042eef6a65abe8a7992187d02",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_instruction_register_htinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_instruction_htinst_register",
+      "slot": 1,
+      "unit_id": "e3e477fee362f8cd19bb51bb5dc6503d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_instruction_register_htinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_hypervisor_trap_instruction_htinst_register",
+      "slot": 2,
+      "unit_id": "141dcd54b4f294b5b168d3dde2b56cb8",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_hypervisor_trap_instruction_register_htinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "hgatp",
+      "slot": "heading",
+      "unit_id": "599b01f6628424679e0e76e6f512f002",
+      "status": "modified",
+      "prev_unit_id": "bb98fe52d6dd338513caa81f4a8b6944"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": "heading",
+      "unit_id": "2c894c8cc0bb33eb52664124cdbb181a",
+      "status": "modified",
+      "prev_unit_id": "e0dcebbdb142eaf21a8da1266b20ee53"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 0,
+      "unit_id": "63782b4e1b3ed7e5ac17f7c55e245b09",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 1,
+      "unit_id": "6367b294ae8defc407196ed0f1234ec3",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 2,
+      "unit_id": "afdead123ea9e30034eb23ffe2325882",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 3,
+      "unit_id": "ea0ecf57dded67cd39fff63610cd7df2",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 4,
+      "unit_id": "4c68bf9c3cf8a3789c36e07678c3e069",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 5,
+      "unit_id": "3d23c34b2c7cf95c6645ece56793797f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 6,
+      "unit_id": "b1007933c491d2de07e9a27f9ffc9dec",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 7,
+      "unit_id": "fb8e6d2a80428eddbdd2b330586e61e9",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 8,
+      "unit_id": "02b1284d2a982e619351c20cff3dfc9a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 9,
+      "unit_id": "804a8341985281136ad73f597d373370",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_status_vsstatus_register",
+      "slot": 10,
+      "unit_id": "acec519589c873792659fe0c991a3b86",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_status_register_vsstatus"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": "heading",
+      "unit_id": "51beb6a7be3561c3d8e0c2000a3ec2e4",
+      "status": "modified",
+      "prev_unit_id": "8c51de50de34f3700380af70124e83da"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 0,
+      "unit_id": "8c6f59a885116ca46d3163be235edff5",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 1,
+      "unit_id": "8e274786cadbd6b167f67ee7f55dec4d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 2,
+      "unit_id": "8e274786cadbd6b167f67ee7f55dec4d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 3,
+      "unit_id": "6afb4f8eb196ed63cebe0ce301291040",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 4,
+      "unit_id": "2601a88f1e24033f80d13fb1ff3992e6",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 5,
+      "unit_id": "a969f789f6f72ac47e0b14c9c0fd85a3",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 6,
+      "unit_id": "e5ea88705979586c0f7a722cb9591a0e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 7,
+      "unit_id": "dc8c911574e73d6ee23d0da992e0d63b",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 8,
+      "unit_id": "ee9d701c85a110d5212c09b8079fc8fa",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 9,
+      "unit_id": "9c3473b6c3244c5543f3da8cd7274ee7",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_interrupt_vsip_and_vsie_registers",
+      "slot": 10,
+      "unit_id": "9414bf5fbeb596fb408d49bf4fbfb633",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_interrupt_registers_vsip_and_vsie"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_vector_base_address_vstvec_register",
+      "slot": "heading",
+      "unit_id": "b245ac9d7f6110a15a02d3784792dca0",
+      "status": "modified",
+      "prev_unit_id": "aae7ebe8e5bbd8a1924f9bde2d8d0b95"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_vector_base_address_vstvec_register",
+      "slot": 0,
+      "unit_id": "ec90b18bd3f3d38e2d2ddc44d924c134",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_trap_vector_base_address_register_vstvec"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_vector_base_address_vstvec_register",
+      "slot": 1,
+      "unit_id": "0acb1ebd775dea8ae89ad627e2bd149c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_trap_vector_base_address_register_vstvec"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_scratch_vsscratch_register",
+      "slot": "heading",
+      "unit_id": "4bed74ba587226821c3e5667715749e8",
+      "status": "modified",
+      "prev_unit_id": "656d9c35914792e22b24e393ed83c384"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_scratch_vsscratch_register",
+      "slot": 0,
+      "unit_id": "180064892f0945f4175aa1cd4b6fbb1f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_scratch_register_vsscratch"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_scratch_vsscratch_register",
+      "slot": 1,
+      "unit_id": "37922879db0afbabffe480176bd534e4",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_scratch_register_vsscratch"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_exception_program_counter_vsepc_register",
+      "slot": "heading",
+      "unit_id": "d23b9f573a37b15cb1428863aa8ff715",
+      "status": "modified",
+      "prev_unit_id": "01fcdaaecbc6ca22052d77d6b7e3377f"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_exception_program_counter_vsepc_register",
+      "slot": 0,
+      "unit_id": "7422014206c620a3ec2e94c157b78270",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_exception_program_counter_vsepc"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_exception_program_counter_vsepc_register",
+      "slot": 1,
+      "unit_id": "abb754747c34f448272c324a1bffaa80",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_exception_program_counter_vsepc"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_exception_program_counter_vsepc_register",
+      "slot": 2,
+      "unit_id": "e901fb5b4c591abe040b667c7642449d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_exception_program_counter_vsepc"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_cause_vscause_register",
+      "slot": "heading",
+      "unit_id": "bee332aae62a3f67ccf124604a5307a3",
+      "status": "modified",
+      "prev_unit_id": "e5057a755c3efd10ab7195bbd14a7b4b"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_cause_vscause_register",
+      "slot": 0,
+      "unit_id": "fc782498de1aca037f51e1c17831fa98",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_cause_register_vscause"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_cause_vscause_register",
+      "slot": 1,
+      "unit_id": "2dc7716004a1119738c059953891bf44",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_cause_register_vscause"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_cause_vscause_register",
+      "slot": 2,
+      "unit_id": "eb7ca45ae0b0f78444cb3510ec6db7e8",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_cause_register_vscause"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_value_vstval_register",
+      "slot": "heading",
+      "unit_id": "c24d0e8e320e798e93ca564c269c2812",
+      "status": "modified",
+      "prev_unit_id": "1c594b7f59d4357abac550e96b02f085"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_value_vstval_register",
+      "slot": 0,
+      "unit_id": "b8b862e772500265b7c193d30fe40ff1",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_trap_value_register_vstval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_value_vstval_register",
+      "slot": 1,
+      "unit_id": "990cd6ba2ee783477d09faa2793f0d3a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_trap_value_register_vstval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_trap_value_vstval_register",
+      "slot": 2,
+      "unit_id": "e6d5b7eeac89fbf41e67fdccb3586ed3",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_trap_value_register_vstval"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": "heading",
+      "unit_id": "a11b17fb8990109acc01adc83b6364f6",
+      "status": "modified",
+      "prev_unit_id": "1a528ab1d3a1a1a7e5a9110a3752afdc"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 0,
+      "unit_id": "f5fc7692e1a6bddec3021f18eb3de2ca",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 1,
+      "unit_id": "e49d8d61c458f52fdb103305082183ce",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 2,
+      "unit_id": "31ead84ffe44b702168ff5b5f99f7e18",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 3,
+      "unit_id": "ef4808ffe7baaaaa0679e71618c289cf",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 4,
+      "unit_id": "aaa8216a878588b0d2e8343e02d20c24",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 5,
+      "unit_id": "e0887fd6b38fa3e4294ddb5dc551f85e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_virtual_supervisor_address_translation_and_protection_vsatp_register",
+      "slot": 6,
+      "unit_id": "0512889637db9b8c13213c6b3ec8ff43",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_virtual_supervisor_address_translation_and_protection_register_vsatp"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": "heading",
+      "unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "status": "modified",
+      "prev_unit_id": "5de7430b66477b3b08f12b9a4630ea1f"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 0,
+      "unit_id": "92cc45bfbc4e0d1a2de72ea365fb22dc",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 1,
+      "unit_id": "4aa3a2b95eb0f7dc516e7c9b8ae77e9d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 2,
+      "unit_id": "3c4ad8d1666708589542f6d271c91693",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 3,
+      "unit_id": "1c3d457f4f731d3d1cc5bd210b23af4f",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 4,
+      "unit_id": "e2a1eb4d67022eb461443f2c9b6b2b36",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 5,
+      "unit_id": "5a61bca4434340a002e3db7ce85a8bd9",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 6,
+      "unit_id": "617a25bc7d47b9674cef5478d4ae3a6a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 7,
+      "unit_id": "f493ef255ac07202f7dcd52b51d431e0",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 8,
+      "unit_id": "003980292f224c531a7ab38a712c70a7",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 9,
+      "unit_id": "5b5dae94add5a995d7bf772c3982ed2c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 10,
+      "unit_id": "65c95ee9990cb05e789ff443df2f301d",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_status_mstatus_and_mstatush_registers_2",
+      "slot": 11,
+      "unit_id": "b131b6719442bd6e442fdcca17fcc3b7",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_status_registers_mstatus_and_mstatush_2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_delegation_mideleg_register",
+      "slot": "heading",
+      "unit_id": "94dbb54d283ce21447aba38ff14d598b",
+      "status": "modified",
+      "prev_unit_id": "548e8c4f581840a02ab86031e1aa30c7"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_delegation_mideleg_register",
+      "slot": 0,
+      "unit_id": "4ae37554c5b68718985739dfa0caba32",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_delegation_register_mideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_delegation_mideleg_register",
+      "slot": 1,
+      "unit_id": "046ddf42a5f258bc5111587c5a13cbd9",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_delegation_register_mideleg"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_3",
+      "slot": "heading",
+      "unit_id": "f1f0b0c7ba66bb90707c49fb5fa9af95",
+      "status": "modified",
+      "prev_unit_id": "17c525d16c87145a4e2f5584a7f5c126"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_3",
+      "slot": 0,
+      "unit_id": "27e1018c9d8b0b15fa08433f64f60e56",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_registers_mip_and_mie_3"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_3",
+      "slot": 1,
+      "unit_id": "fac2499d9d6c0bb8d32bcfbb5206cf66",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_registers_mip_and_mie_3"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_3",
+      "slot": 2,
+      "unit_id": "90c0d66a498915498fea68095b2cda73",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_registers_mip_and_mie_3"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_interrupt_mip_and_mie_registers_3",
+      "slot": 3,
+      "unit_id": "1673963ebcbecda3f0a917c7dae53ef8",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_interrupt_registers_mip_and_mie_3"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": "heading",
+      "unit_id": "72e5607cf93baccc0f65faeca01cf50a",
+      "status": "modified",
+      "prev_unit_id": "67fc8b56eea2041993e8bc857cbc1636"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 0,
+      "unit_id": "46f82d7949fc61c0615ad49d6af90a3a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 1,
+      "unit_id": "83d006c3550c1dbe61a92d7038e0303e",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 2,
+      "unit_id": "4520516668ca1477b905274e6635d3f1",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 3,
+      "unit_id": "e81057e0624a0451ce369495579cb47a",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 4,
+      "unit_id": "294bb0156b59e2dc0d8ebc8efdd9664c",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_second_trap_value_mtval2_register",
+      "slot": 5,
+      "unit_id": "b6a89b692bceb0b05db8c3e77784fbed",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_second_trap_value_register_mtval2"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_trap_instruction_mtinst_register",
+      "slot": "heading",
+      "unit_id": "64857d8e52883524900f2ef96a4aee96",
+      "status": "modified",
+      "prev_unit_id": "a2f356aeba0160ff4dc2e0e47549c793"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_trap_instruction_mtinst_register",
+      "slot": 0,
+      "unit_id": "d959672b790514e827d754545ef5c279",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_trap_instruction_register_mtinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_trap_instruction_mtinst_register",
+      "slot": 1,
+      "unit_id": "4ee7b51136f1926c5f58af4fe0c7d2f0",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_trap_instruction_register_mtinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "_machine_trap_instruction_mtinst_register",
+      "slot": 2,
+      "unit_id": "4a8330a6ff8bfb32e8a9ef5acc3d5186",
+      "status": "moved",
+      "moved_from": "priv/hypervisor/_machine_trap_instruction_register_mtinst"
+    },
+    {
+      "chapter_key": "priv/hypervisor",
+      "section_id": "tinst-vals",
+      "slot": 9,
+      "unit_id": "144ed99bfb9c09b1bacd96bbe9fe588c",
+      "status": "modified",
+      "prev_unit_id": "bae82ce843ecaaf06f9d04174974799c"
+    }
+  ],
+  "deleted_blocks": [],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual Volume I: Unprivileged Architecture",
+      "title_unit_id": "bac0390e54af28bd7b1c4e819530b6a8",
+      "entry_file": "src/riscv-unprivileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "4fd65fb661ff7a5f"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "b465c2071a051ea7"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "7e7b15ff714d7b36"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "c9b0e8f0cde4002c"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "6412ac392d15d598"
+        },
+        {
+          "id": "rv128",
+          "chap_hash": "cd6144583c2edbfd"
+        },
+        {
+          "id": "zifencei",
+          "chap_hash": "6d6a7db1224116fa"
+        },
+        {
+          "id": "csrinsts",
+          "chap_hash": "c748b140a5c2e886"
+        },
+        {
+          "id": "counters",
+          "chap_hash": "2bcb5ed9ff43bb5c"
+        },
+        {
+          "id": "chap:zihintntl",
+          "chap_hash": "1be26bc845a44419"
+        },
+        {
+          "id": "zihintpause",
+          "chap_hash": "c939e0d365c3cbcf"
+        },
+        {
+          "id": "zimop",
+          "chap_hash": "9232c0a02c239aef"
+        },
+        {
+          "id": "Zicond",
+          "chap_hash": "09883c0098719c47"
+        },
+        {
+          "id": "mstandard",
+          "chap_hash": "1e837d143a75f226"
+        },
+        {
+          "id": "atomics",
+          "chap_hash": "c870acc9db32f3ee"
+        },
+        {
+          "id": "_zawrs_extension_for_wait_on_reservation_set_instructions_version_1_01",
+          "chap_hash": "9f90b0a2573c4c3f"
+        },
+        {
+          "id": "_zacas_extension_for_atomic_compare_and_swap_cas_instructions_version_1_0_0",
+          "chap_hash": "a3e4a3d87f93e2c8"
+        },
+        {
+          "id": "memorymodel",
+          "chap_hash": "dee1412e45d74bcd"
+        },
+        {
+          "id": "ztso",
+          "chap_hash": "c6ecbccd1d9387e1"
+        },
+        {
+          "id": "cmo",
+          "chap_hash": "693d8071e866b13e"
+        },
+        {
+          "id": "single-float",
+          "chap_hash": "db5f9cac0551674c"
+        },
+        {
+          "id": "_d_extension_for_double_precision_floating_point_version_2_2",
+          "chap_hash": "ce0cc4d2657d6654"
+        },
+        {
+          "id": "fl-class",
+          "chap_hash": "8a2d29a1b66c175e"
+        },
+        {
+          "id": "quad-float-clssfy",
+          "chap_hash": "6d7f2119915f5cef"
+        },
+        {
+          "id": "zfa",
+          "chap_hash": "73acedc0a689d2ea"
+        },
+        {
+          "id": "sec:zfinx",
+          "chap_hash": "5875db02b2c60854"
+        },
+        {
+          "id": "compressed",
+          "chap_hash": "20ca94e7db2a413d"
+        },
+        {
+          "id": "Zc",
+          "chap_hash": "e6c795f19c658695"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "f2dc2f9f081ab9bb"
+        },
+        {
+          "id": "j-extendj",
+          "chap_hash": "e0f508e9cc80149b"
+        },
+        {
+          "id": "packedsimd",
+          "chap_hash": "d96dcdf792bbec25"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "c1c7aab2f5a58ad3"
+        },
+        {
+          "id": "_cryptography_extensions_scalar_entropy_source_instructions_version_1_0_1",
+          "chap_hash": "7fdc51ae2bb84799"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0_0",
+          "chap_hash": "e2b5a9fc74fd683a"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "18b4df59162694dc"
+        },
+        {
+          "id": "extending",
+          "chap_hash": "0ff627ab82897b58"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "4eb4ea26b81d21d6"
+        },
+        {
+          "id": "history",
+          "chap_hash": "12e9329f52ea3ed2"
+        },
+        {
+          "id": "_rvwmo_explanatory_material_version_0_1",
+          "chap_hash": "8b0d6946f730385b"
+        },
+        {
+          "id": "_formal_memory_model_specifications_version_0_1",
+          "chap_hash": "d709c02e3d5ac377"
+        },
+        {
+          "id": "_vector_assembly_code_examples",
+          "chap_hash": "067aab6e3f966dda"
+        },
+        {
+          "id": "_calling_convention_for_vector_state_not_authoritative_placeholder_only",
+          "chap_hash": "153b2bded267d7e2"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual: Volume II: Privileged Architecture",
+      "title_unit_id": "a8216e121762a37b2ef41c6d4b20f6f4",
+      "entry_file": "src/riscv-privileged.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "98efaba0fa3806aa"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "29d7f4bfed3d7762"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "e685c4c2dee01e20"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "d40d957f5231c542"
+        },
+        {
+          "id": "smstateen",
+          "chap_hash": "b402cb134664e9d9"
+        },
+        {
+          "id": "indirect-csr",
+          "chap_hash": "284a77db959731cf"
+        },
+        {
+          "id": "smepmp",
+          "chap_hash": "6352f58d7e932a1b"
+        },
+        {
+          "id": "smcntrpmf",
+          "chap_hash": "97a318ede66ae3e7"
+        },
+        {
+          "id": "rnmi",
+          "chap_hash": "0fdfac56ca917798"
+        },
+        {
+          "id": "smcdeleg",
+          "chap_hash": "24a9501f4bb54782"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "8ea9a391226d9b80"
+        },
+        {
+          "id": "svnapot",
+          "chap_hash": "a782760aac4e0e15"
+        },
+        {
+          "id": "svpbmt",
+          "chap_hash": "1781affe5cff500d"
+        },
+        {
+          "id": "svinval",
+          "chap_hash": "bde1746de439d6b6"
+        },
+        {
+          "id": "sec:svadu",
+          "chap_hash": "d1c1af7752f7a515"
+        },
+        {
+          "id": "sec:svvptc",
+          "chap_hash": "c339b853e9ad73ec"
+        },
+        {
+          "id": "Sstc",
+          "chap_hash": "b2368bbe6c9dc40e"
+        },
+        {
+          "id": "Sscofpmf",
+          "chap_hash": "76e1a4055cf99c9a"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "96852c7e10e9f8ba"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "9cce4e831cb37af0"
+        },
+        {
+          "id": "_history",
+          "chap_hash": "6d2c90d8c65800f8"
+        }
+      ]
+    }
+  ]
+}

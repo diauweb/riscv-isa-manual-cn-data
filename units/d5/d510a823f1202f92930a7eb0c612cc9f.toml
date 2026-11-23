@@ -1,0 +1,14 @@
+unit_id = "d510a823f1202f92930a7eb0c612cc9f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+The xperm.n instruction operates on nibbles.
+The _rs1_ register contains a vector of XLEN/4 4-bit elements.
+The _rs2_ register contains a vector of XLEN/4 4-bit indexes.
+The result is each element in _rs2_ replaced by the indexed element in _rs1_,
+or zero if the index into _rs2_ is out of bounds.'''
+zh = '''
+说明::
+xperm.n 指令对半字节进行操作。_rs1_ 寄存器包含由 XLEN/4 个 4 位元素组成的向量。_rs2_ 寄存器包含由 XLEN/4 个 4 位索引组成的向量。结果是将 _rs2_ 中的每个元素替换为 _rs1_ 中经索引的元素，若指向 _rs2_ 的索引越界，则为零。'''

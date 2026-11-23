@@ -1,0 +1,19 @@
+unit_id = "6d38c49c9b612e1e31babf3cf894fe37"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A spurious timer interrupt might occur if an interrupt handler advances
+`stimecmp` then immediately returns, because STIP might not yet have fallen in
+the interim. All software should be written to assume this event is possible,
+but most software should assume this event is extremely unlikely. It is almost
+always more performant to incur an occasional spurious timer interrupt than to
+poll STIP until it falls.
+===='''
+zh = '''
+[NOTE]
+====
+若中断处理程序推进 `stimecmp` 后立即返回，则可能出现虚假定时器中断，因为在此期间 STIP 可能尚未下降。所有软件在编写时都要假定该事件可能发生，但大多数软件可假定该事件极不可能发生。相较于轮询 STIP 直至其下降，偶尔承受一次虚假定时器中断几乎总能获得更好的性能。
+===='''

@@ -1,0 +1,18 @@
+unit_id = "9dc52399c7b3fe73d716bda3f612db0b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pma_mag_op_amo]#If a misaligned AMO accesses a region that does not specify a misaligned
+atomicity granule PMA, or if not all accessed bytes lie within the same
+misaligned atomicity granule, then an exception is raised.#
+[#norm:pma_mag_op_ldst]#For regular loads and stores that access such a region or for which not all
+accessed bytes lie within the same atomicity granule, then either an exception
+is raised, or the access proceeds but is not guaranteed to be atomic.#
+[#norm:pma_mag_exc]#Implementations may raise access-fault exceptions instead of
+address-misaligned exceptions for some misaligned accesses, indicating the
+instruction should not be emulated by a trap handler.#'''
+zh = '''
+[#norm:pma_mag_op_amo]##若非对齐 AMO 访问未指定非对齐原子性粒度 PMA 的区域，或并非所有访问的字节都位于同一非对齐原子性粒度内，则引发异常。##
+[#norm:pma_mag_op_ldst]##对于访问此类区域的常规加载和存储，或并非所有访问字节都位于同一原子性粒度内的常规加载和存储，要么引发异常，要么访问继续进行但不保证原子性。##
+[#norm:pma_mag_exc]##对于某些非对齐访问，实现可引发访问错误异常而非地址非对齐异常，以指示该指令不应由陷阱处理程序模拟。##'''

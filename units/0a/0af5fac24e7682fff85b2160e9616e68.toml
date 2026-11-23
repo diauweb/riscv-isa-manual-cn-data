@@ -1,0 +1,18 @@
+unit_id = "0af5fac24e7682fff85b2160e9616e68"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The profile for a privilege mode describes the ISA features for an
+execution environment that has the eponymous privilege mode as the
+most-privileged mode available, but also includes all supported
+lower-privilege modes.  In general, available instructions vary by
+privilege mode, and the behavior of RISC-V instructions can depend on
+the current privilege mode.  For example, an S-mode profile includes
+U-mode as well as S-mode and describes the behavior of instructions
+when running in different modes in an S-mode execution environment,
+such as how an `ecall` instruction in U-mode causes a contained trap
+into an S-mode handler whereas an `ecall` in S-mode causes a requested
+trap out to the execution environment.'''
+zh = '''
+某个特权模式的配置集描述的是这样一种执行环境的 ISA 特性：该环境以同名特权模式作为可用的最高特权模式，但也包含所有支持的较低特权模式。一般而言，可用指令随特权模式而异，且 RISC-V 指令的行为可能取决于当前特权模式。例如，S 模式配置集包含 U 模式以及 S 模式，并描述指令在 S 模式执行环境中以不同模式运行时的行为，例如 U 模式下的 `ecall` 指令如何引起陷入到 S 模式处理程序的受控陷阱，而 S 模式下的 `ecall` 则引起向执行环境发出的请求陷阱。'''

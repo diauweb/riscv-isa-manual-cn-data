@@ -1,0 +1,15 @@
+unit_id = "5aa6e997d7760d7e409d8b6ef5b24dcd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+On some implementations, misaligned loads, stores, and instruction
+fetches may be decomposed into multiple memory operations, some of which may
+succeed before an access-fault exception occurs, as described in the RVWMO
+specification. PMP checking is performed on each memory operation independently.
+In particular, a portion of a misaligned store that passes
+the PMP check may become visible, even if another portion fails the PMP check.
+The same behavior may manifest for stores wider than XLEN bits (e.g., the
+FSD instruction in RV32D), even when the store address is naturally aligned.'''
+zh = '''
+在某些实现上，非对齐加载、存储和取指可被分解为多个内存操作，其中一些可能在发生访问错误异常之前成功，如 RVWMO 规范所述。PMP 检查对每个内存操作独立执行。特别是，通过 PMP 检查的非对齐存储的一部分可能变为可见，即使另一部分未通过 PMP 检查。对于宽于 XLEN 位的存储（例如 RV32D 中的 FSD 指令），即使存储地址自然对齐，也可能表现出相同行为。'''

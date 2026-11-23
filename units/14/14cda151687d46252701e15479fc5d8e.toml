@@ -1,0 +1,13 @@
+unit_id = "14cda151687d46252701e15479fc5d8e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+These conditions for an interrupt trap to occur must be evaluated in a
+bounded amount of time from when an interrupt becomes, or ceases to be,
+pending in `mip`, and must also be evaluated immediately following the
+execution of an __x__RET instruction or an explicit write to a CSR on
+which these interrupt trap conditions expressly depend (including `mip`,
+`mie`, `mstatus`, and `mideleg`).'''
+zh = '''
+这些中断陷入发生的条件必须在 `mip` 中中断变为挂起或不再挂起后的有界时间内求值，并且还必须在 __x__RET 指令或对这些中断陷入条件明确依赖的 CSR（包括 `mip`、`mie`、`mstatus` 和 `mideleg`）进行显式写入之后立即求值。'''

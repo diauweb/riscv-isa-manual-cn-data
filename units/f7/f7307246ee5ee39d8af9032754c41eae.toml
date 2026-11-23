@@ -1,0 +1,20 @@
+unit_id = "f7307246ee5ee39d8af9032754c41eae"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<armmappings>> provides a mapping from ARM memory
+operations onto RISC-V memory instructions. Since RISC-V does not
+currently have plain load and store opcodes with _aq_ or _rl_
+annotations, ARM load-acquire and store-release operations should be
+mapped using fences instead. Furthermore, in order to enforce
+store-release-to-load-acquire ordering, there must be a FENCE RW,RW
+between the store-release and load-acquire; <<armmappings>>
+enforces this by always placing the fence in front of each acquire
+operation. ARM load-exclusive and store-exclusive instructions can
+likewise map onto their RISC-V LR and SC equivalents, but instead of
+placing a FENCE RW,RW in front of an LR with _aq_ set, we simply also
+set _rl_ instead. ARM ISB maps on RISC-V to FENCE.I followed by
+FENCE R,R similarly to how ISYNC maps for Power.'''
+zh = '''
+<<armmappings>> 提供了从 ARM 内存操作到 RISC-V 内存指令的映射。由于 RISC-V 目前没有带 _aq_ 或 _rl_ 注解的普通加载和存储操作码，ARM 的 load-acquire 和 store-release 操作宜使用 fence 映射。此外，为强制 store-release 到 load-acquire 排序，store-release 和 load-acquire 之间必须有 FENCE RW,RW；<<armmappings>> 通过始终将 fence 放在每个获取操作之前来强制这一点。ARM 的 load-exclusive 和 store-exclusive 指令同样可映射到其 RISC-V 的 LR 和 SC 等价物，但我们不是在设置 _aq_ 的 LR 之前放置 FENCE RW,RW，而是简单地同时设置 _rl_。ARM 的 ISB 在 RISC-V 上映射为 FENCE.I 后跟 FENCE R,R，类似于 ISYNC 对 Power 的映射。'''

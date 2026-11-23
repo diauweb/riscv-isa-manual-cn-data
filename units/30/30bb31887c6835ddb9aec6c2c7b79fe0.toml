@@ -1,0 +1,36 @@
+unit_id = "30bb31887c6835ddb9aec6c2c7b79fe0"
+kind = "code"
+translatable = false
+en = '''
+.The RVWMO memory model formalized in Alloy (1/5: PPO)
+[source,c]
+----
+// =RVWMO PPO=
+
+// Preserved Program Order
+fun ppo : Event->Event {
+  // same-address ordering
+  po_loc :> Store
+  + rdw
+  + (AMO + StoreConditional) <: rfi
+
+  // explicit synchronization
+  + ppo_fence
+  + Acquire <: ^po :> MemoryEvent
+  + MemoryEvent <: ^po :> Release
+  + RCsc <: ^po :> RCsc
+  + pair
+
+  // syntactic dependencies
+  + addrdep
+  + datadep
+  + ctrldep :> Store
+
+  // pipeline dependencies
+  + (addrdep+datadep).rfi
+  + addrdep.^po :> Store
+}
+
+// the global memory order respects preserved program order
+fact { ppo in ^gmo }
+----'''

@@ -1,0 +1,29 @@
+unit_id = "d3692acf4afbf1b2e4a53b64d8be9fe8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This chapter defines the memory model for regular main memory
+operations. The interaction of the memory model with I/O memory,
+instruction fetches, FENCE.I, page table walks, and SFENCE.VMA is not
+(yet) formalized. Some or all of the above may be formalized in a future
+revision of this specification. The RV128 base ISA and future ISA
+extensions such as the V vector and J JIT extensions will need
+to be incorporated into a future revision as well.
+
+Memory consistency models supporting overlapping memory accesses of
+different widths simultaneously remain an active area of academic
+research and are not yet fully understood. The specifics of how memory
+accesses of different sizes interact under RVWMO are specified to the
+best of our current abilities, but they are subject to revision should
+new issues be uncovered.
+===='''
+zh = '''
+[NOTE]
+====
+本章定义常规主存操作的内存模型。内存模型与 I/O 内存、取指、FENCE.I、页表遍历以及 SFENCE.VMA 的交互尚未形式化。上述部分或全部内容可能在本规范的未来修订版中形式化。RV128 基础 ISA 以及诸如 V 向量和 J JIT 扩展等未来的 ISA 扩展也将需要在未来的修订版中一并纳入。
+
+同时支持不同宽度重叠内存访问的内存一致性模型仍是学术研究的活跃领域，尚未得到完全理解。RVWMO 下不同大小的内存访问如何交互的具体细节，已按我们当前的最佳能力予以规定，但若发现新问题，这些规定可能会修订。
+===='''

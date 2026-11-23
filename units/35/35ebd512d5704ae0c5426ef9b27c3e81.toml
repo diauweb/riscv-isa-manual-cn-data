@@ -1,0 +1,12 @@
+unit_id = "35ebd512d5704ae0c5426ef9b27c3e81"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: [#norm:V_Zinx_fp_scalar]#When adding a vector extension to the ext:zfinx[], ext:zdinx[], and
+ext:zhinx[] extensions, floating-point scalar arguments are taken from the `x` registers.
+NaN-boxing is not supported in these extensions, and so operands narrower
+than XLEN bits are not checked for a NaN box; bits XLEN-1:EEW are ignored.
+For RV32_Zdinx, EEW=64 scalar arguments are supplied by an `x`-register pair.#'''
+zh = '''
+NOTE: [#norm:V_Zinx_fp_scalar]##向 ext:zfinx[]、ext:zdinx[] 和 ext:zhinx[] 扩展添加向量扩展时，浮点标量参数取自 `x` 寄存器。这些扩展不支持 NaN 装箱，因此窄于 XLEN 位的操作数不检查 NaN 箱；位 XLEN-1:EEW 被忽略。对于 RV32_Zdinx，EEW=64 的标量参数由 `x` 寄存器对提供。##'''

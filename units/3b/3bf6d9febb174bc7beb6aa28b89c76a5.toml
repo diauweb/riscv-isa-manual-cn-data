@@ -1,0 +1,22 @@
+unit_id = "3bf6d9febb174bc7beb6aa28b89c76a5"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+----
+//This is not SAIL, it's pseudo-code. The SAIL hasn't been written yet.
+
+# target_address is temporary internal state, it doesn't represent a real register
+# InstMemory is byte indexed
+
+switch(XLEN) {
+  32:  table_address[XLEN-1:0] = jvt.base + (index<<2);
+  64:  table_address[XLEN-1:0] = jvt.base + (index<<3);
+}
+
+//fetch from the jump table
+target_address[XLEN-1:0] = InstMemory[table_address][XLEN-1:0];
+
+j target_address[XLEN-1:0]&~0x1;
+
+----'''

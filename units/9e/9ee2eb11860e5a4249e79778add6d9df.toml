@@ -1,0 +1,50 @@
+unit_id = "9ee2eb11860e5a4249e79778add6d9df"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!Hart 0 2+^!Hart 1
+2+!li t1, 1 >!(d) <!lw  a0,0(s1)
+>!(a) <!sw t1,0(s0) >!(e) !xor t2,a0,a0
+>!(b) <!fence w, w >!(f) !add s4,s2,t2
+>!(c) <!sw t1,0(s1) >!(g) !lw  a1,0(s4)
+! ! >!(h) !lw  a2,0(s2)
+! ! >!(i) !xor t3,a2,a2
+! ! >!(j) !add s0,s0,t3
+! ! >!(k) !lw  a3,0(s0)
+4+!Outcome: `a0=1`, `a1=v`, `a2=v`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_rsw.txt[]
+a! image::graphviz/litmus_rsw.png[]
+!===
+|==='''
+zh = '''
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+2+!li t1, 1 >!(d) <!lw  a0,0(s1)
+>!(a) <!sw t1,0(s0) >!(e) !xor t2,a0,a0
+>!(b) <!fence w, w >!(f) !add s4,s2,t2
+>!(c) <!sw t1,0(s1) >!(g) !lw  a1,0(s4)
+! ! >!(h) !lw  a2,0(s2)
+! ! >!(i) !xor t3,a2,a2
+! ! >!(j) !add s0,s0,t3
+! ! >!(k) !lw  a3,0(s0)
+4+!结果：`a0=1`, `a1=v`, `a2=v`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_rsw.txt[]
+a! image::graphviz/litmus_rsw.png[]
+!===
+|==='''

@@ -1,0 +1,36 @@
+unit_id = "7be94e2c74f070fd03e8b7c883dea623"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 3, subformat 0
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 11 (sync): synchronisation
+|*subformat*| 2| 00 (start): Start of tracing, or resync
+|*branch*| 1| Set to 0 if the address points to a branch instruction,
+and the branch was taken. Set to 1 if the instruction is not a branch or
+if the branch is not taken.
+|*privilege*| _privilege_width_p_| The privilege level of the reported
+instruction
+|*time*| _time_width_p_ or 0 if _notime_p_ is 1| The time value.
+|*context*| _context_width_p_, or 0 if _nocontext_p_ is 1| The
+instruction context.
+|*address*| _iaddress_width_p - iaddress_lsb_p_| Full instruction
+address. Address alignment is determined by _iaddress_lsb_p_ Address
+must be left shifted in order to recreate original byte address.
+|==='''
+zh = '''
+.包格式 3，子格式 0
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 11（sync）：同步
+|*subformat*| 2| 00（start）：跟踪开始或重同步
+|*branch*| 1| 若地址指向一条分支指令且该分支被采用，则置为 0。若该指令不是分支或该分支未被采用，则置为 1。
+|*privilege*| _privilege_width_p_| 所报告指令的特权级
+|*time*| _time_width_p_ 或 _notime_p_ 为 1 时为 0| 时间值。
+|*context*| _context_width_p_，或 _nocontext_p_ 为 1 时为 0| 指令上下文。
+|*address*| _iaddress_width_p - iaddress_lsb_p_| 完整指令地址。地址对齐由 _iaddress_lsb_p_ 确定。必须将地址左移以重建原始字节地址。
+|==='''

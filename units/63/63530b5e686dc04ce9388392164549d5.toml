@@ -1,0 +1,12 @@
+unit_id = "63530b5e686dc04ce9388392164549d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In spite of the fact that ext:ztso[] adds no new instructions to the ISA, code
+written assuming RVTSO will not run correctly on implementations not
+supporting ext:ztso[]. Binaries compiled to run only under ext:ztso[] should
+indicate as such via a flag in the binary, so that platforms which do
+not implement ext:ztso[] can simply refuse to run them.'''
+zh = '''
+尽管 ext:ztso[] 未向 ISA 添加任何新指令，假设 RVTSO 编写的代码在未支持 ext:ztso[] 的实现上无法正确运行。仅为在 ext:ztso[] 下运行而编译的二进制文件宜通过二进制文件中的标志表明这一点，以便未实现 ext:ztso[] 的平台能直接拒绝运行它们。'''

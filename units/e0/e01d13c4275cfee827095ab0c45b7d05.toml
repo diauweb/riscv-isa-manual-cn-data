@@ -1,0 +1,16 @@
+unit_id = "e01d13c4275cfee827095ab0c45b7d05"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PPO rules <<overlapping-ordering, 12>> and <<overlapping-ordering, 13>> reflect behaviors of almost all real processor
+pipeline implementations. Rule <<overlapping-ordering, 12>>
+states that a load cannot forward from a store until the address and
+data for that store are known. Consider <<litmus_datarfi>> (f) cannot be
+executed until the data for (e) has been resolved, because (f) must
+return the value written by (e) (or by something even later in the
+global memory order), and the old value must not be clobbered by the
+write-back of (e) before (d) has had a chance to perform. Therefore, (f)
+will never perform before (d) has performed.'''
+zh = '''
+PPO 规则 <<overlapping-ordering, 12>> 和 <<overlapping-ordering, 13>> 反映了几乎所有真实处理器流水线实现的行为。规则 <<overlapping-ordering, 12>> 指出，在已知该存储的地址和数据之前，加载不能从该存储转发。考虑 <<litmus_datarfi>>，(f) 不能在 (e) 的数据确定之前执行，因为 (f) 必须返回由 (e)（或全局内存顺序中更晚的某个操作）写入的值，并且在 (d) 有机会执行之前，旧值不得被 (e) 的写回破坏。因此，(f) 绝不会在 (d) 执行之前执行。'''

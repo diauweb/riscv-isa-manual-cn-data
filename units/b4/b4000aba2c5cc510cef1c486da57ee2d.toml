@@ -1,0 +1,22 @@
+unit_id = "b4000aba2c5cc510cef1c486da57ee2d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The insn:vsha2ch[] version of this instruction uses the two most significant message schedule
+words from the element group in _vs1_
+while the insn:vsha2cl[] version uses the two least significant message schedule words.
+Otherwise, these versions of the instruction are identical.
+Having a high and low version of this instruction typically improves performance when
+interleaving independent hashing operations (i.e., when hashing several files at once).
+===='''
+zh = '''
+[NOTE]
+====
+本指令的 insn:vsha2ch[] 版本使用 _vs1_ 中元素组的两个最高有效消息调度字，
+而 insn:vsha2cl[] 版本使用两个最低有效消息调度字。
+除此之外，这些版本的指令完全相同。
+为本指令提供高、低两个版本，通常能在交错执行独立杂凑操作（即同时杂凑多个文件）时提高性能。
+===='''

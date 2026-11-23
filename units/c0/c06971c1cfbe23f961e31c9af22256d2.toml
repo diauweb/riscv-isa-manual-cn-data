@@ -1,0 +1,57 @@
+unit_id = "c06971c1cfbe23f961e31c9af22256d2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For instance, it is illegal for both non-speculative and speculative
+executions of the translation algorithm to begin, read the level 2 page
+table, pause while the hart executes an SFENCE.VMA with
+_rs1_=_rs2_=`x0`, then resume using the now-stale level 2 PTE, as
+subsequent implicit reads could populate the address-translation cache
+with stale PTEs.
+
+In many implementations, an SFENCE.VMA instruction with _rs1_=`x0` will
+therefore either terminate all previously-launched speculative
+executions of the address-translation algorithm (for the specified ASID,
+if applicable), or simply wait for them to complete (in which case any
+address-translation cache entries created will be invalidated by the
+SFENCE.VMA as appropriate). Likewise, an SFENCE.VMA instruction with
+__rs1__≠``x0`` generally must either ensure that
+previously-launched speculative executions of the address-translation
+algorithm (for the specified ASID, if applicable) are prevented from
+creating new address-translation cache entries mapping leaf PTEs, or
+wait for them to complete.
+
+A consequence of implementations being permitted to read the translation
+data structures arbitrarily early and speculatively is that at any time,
+all page table entries reachable by executing the algorithm may be
+loaded into the address-translation cache.
+
+Although it would be uncommon to place page tables in non-idempotent
+memory, there is no explicit prohibition against doing so. Since the
+algorithm may only touch page tables reachable from the root page table
+indicated in `satp`, the range of addresses that an implementation's
+page table walker will touch is fully under supervisor control.
+
+***
+
+The algorithm does not admit the possibility of ignoring high-order PPN
+bits for implementations with narrower physical addresses.
+===='''
+zh = '''
+[NOTE]
+====
+例如，转换算法的非推测执行与推测执行均不得：开始执行、读取 2 级页表、暂停（此时硬件线程执行 _rs1_=_rs2_=`x0` 的 SFENCE.VMA），然后恢复使用现已过时的 2 级 PTE，因为后续隐式读取可能用过时的 PTE 填充地址转换缓存。
+
+因此在许多实现中，_rs1_=`x0` 的 SFENCE.VMA 指令将终止所有先前启动的地址转换算法推测执行（若适用，针对指定 ASID），或者只是等待它们完成（此时所创建的任何地址转换缓存表项都将由 SFENCE.VMA 酌情使无效）。同样，__rs1__≠``x0`` 的 SFENCE.VMA 指令通常必须确保先前启动的地址转换算法推测执行（若适用，针对指定 ASID）被阻止创建映射叶 PTE 的新地址转换缓存表项，或者等待它们完成。
+
+实现被允许任意早且推测地读取转换数据结构，其后果是：在任何时刻，通过执行该算法可到达的所有页表项都可能被加载到地址转换缓存中。
+
+尽管将页表放在非幂等内存中并不常见，但并没有明确禁止这样做。由于该算法仅可触及从 `satp` 中指示的根页表可达的页表，因此实现的页表遍历器可触及的地址范围完全受监管模式控制。
+
+***
+
+该算法不承认物理地址较窄的实现可以忽略高位 PPN 位的可能性。
+===='''

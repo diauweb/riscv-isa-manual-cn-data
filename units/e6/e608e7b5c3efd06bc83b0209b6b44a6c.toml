@@ -1,0 +1,12 @@
+unit_id = "e608e7b5c3efd06bc83b0209b6b44a6c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Which states a hart that is reset goes through is implementation
+dependent. Harts may be unavailable while reset is asserted, and some
+time after reset is deasserted. They might transition to running for
+some time after reset is deasserted. Finally they end up either running
+or halted, depending on {dmcontrol-haltreq} and `resethaltreq`.'''
+zh = '''
+被复位的硬件线程经历哪些状态取决于实现。在复位置位期间以及复位清零后的一段时间内，硬件线程可能不可用。在复位清零后，它们可能在某个时间段内转为运行状态。最终它们会依据 {dmcontrol-haltreq} 和 `resethaltreq` 进入运行或停机状态。'''

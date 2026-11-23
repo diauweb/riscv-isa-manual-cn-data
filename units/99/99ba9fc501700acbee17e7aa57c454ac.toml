@@ -1,0 +1,17 @@
+unit_id = "99ba9fc501700acbee17e7aa57c454ac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The PTE format for Sv57 is shown in <<sv57pte>>.
+Bits 63–54 and 9–0 have the same meaning as for Sv39.
+[#norm:Sv57_leaf_any_level]#Any level of PTE may be a leaf PTE#, so in
+addition to 4 KiB pages, Sv57 supports
+[#norm:Sv57_page_sizes]#2 MiB megapages, 1 GiB gigapages, 512 GiB
+terapages, and 256 TiB petapages#, each of which
+[#norm:Sv57_superpage_align]#must be virtually and physically aligned to
+a boundary equal to its size#.
+[#norm:Sv57_superpage_align_fault]#A page-fault exception is raised if
+the physical address is insufficiently aligned#.'''
+zh = '''
+Sv57 的 PTE 格式如 <<sv57pte>> 所示。位 63–54 和 9–0 的含义与 Sv39 相同。[#norm:Sv57_leaf_any_level]##任何级别的 PTE 都可以是叶 PTE##，因此除了 4 KiB 页之外，Sv57 还支持 [#norm:Sv57_page_sizes]##2 MiB 兆页、1 GiB 吉页、512 GiB 太页和 256 TiB 拍页##，其中每一者都 [#norm:Sv57_superpage_align]##应在虚拟和物理上对齐到与其大小相等的边界##。[#norm:Sv57_superpage_align_fault]##若物理地址未充分对齐，则引发页错误异常##。'''

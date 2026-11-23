@@ -1,0 +1,13 @@
+unit_id = "8bf7c1e5bfa6afa0472f489e80e49d09"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The agnostic policy was added to accommodate machines with
+vector register renaming.  With an undisturbed policy, all elements
+would have to be read from the old physical destination vector
+register to be copied into the new physical destination vector
+register.  This causes an inefficiency when these inactive or tail
+values are not required for subsequent calculations.'''
+zh = '''
+NOTE: 增加不可知策略是为了适应具有向量寄存器重命名的机器。在未扰动策略下，所有元素都必须从旧物理目标向量寄存器读取并复制到新物理目标向量寄存器。当这些非活动或尾部值后续计算不需要时，这会导致低效。'''

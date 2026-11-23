@@ -1,0 +1,12 @@
+unit_id = "fbdf75a4adc036dde65431e43535d9dd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An insn:mret[] or insn:sret[] instruction is used to return from a trap in M-mode or
+S-mode, respectively.  When executing an insn:xret[] instruction, if the new
+privilege mode is `y`, then `ELP` is set to the value of csr::[xpelp] if
+`__y__LPE` (see <<FCFIACT>>) is 1; otherwise, it is set to `NO_LP_EXPECTED`;
+csr::[xpelp] is set to `NO_LP_EXPECTED`.'''
+zh = '''
+insn:mret[] 或 insn:sret[] 指令分别用于从 M 模式或 S 模式的陷阱返回。执行 insn:xret[] 指令时，若新特权模式为 `y`，则当 `__y__LPE`（见 <<FCFIACT>>）为 1 时，`ELP` 置为 csr::[xpelp] 的值；否则置为 `NO_LP_EXPECTED`；csr::[xpelp] 置为 `NO_LP_EXPECTED`。'''

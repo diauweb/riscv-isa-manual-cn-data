@@ -1,0 +1,44 @@
+unit_id = "68378a3d068cb760f8af75e9d2ad231a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth.stretch,float="center",align="center",cols="^2m,^2m,^2m,^2m,<2m,>3m, <4m, >4m, <4m, >4m, <4m, >4m, <4m, >4m, <6m"]
+|===
+15+^|*RV64I Base Instruction Set (in addition to RV32I)*
+ 6+^|imm[11:0]                2+^|rs1   2+^|110    2+^|rd           2+^|0000011 <|[[norm:enc:insttable:lwu]]LWU
+ 6+^|imm[11:0]                2+^|rs1   2+^|011    2+^|rd           2+^|0000011 <|[[norm:enc:insttable:ld]]LD
+ 4+^|imm[11:5]      2+^|rs2   2+^|rs1   2+^|011    2+^|imm[4:0]     2+^|0100011 <|[[norm:enc:insttable:sd]]SD
+ 3+^|000000         3+^|shamt 2+^|rs1   2+^|001    2+^|rd           2+^|0010011 <|SLLI
+ 3+^|000000         3+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0010011 <|SRLI
+ 3+^|010000         3+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0010011 <|SRAI
+ 6+^|imm[11:0]                2+^|rs1   2+^|000    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:addiw]]ADDIW
+ 4+^|0000000        2+^|shamt 2+^|rs1   2+^|001    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:slliw]]SLLIW
+ 4+^|0000000        2+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:srliw]]SRLIW
+ 4+^|0100000        2+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:sraiw]]SRAIW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|000    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:addw]]ADDW
+ 4+^|0100000        2+^|rs2   2+^|rs1   2+^|000    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:subw]]SUBW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|001    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:sllw]]SLLW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|101    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:srlw]]SRLW
+ 4+^|0100000        2+^|rs2   2+^|rs1   2+^|101    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:sraw]]SRAW
+|==='''
+zh = '''
+[%autowidth.stretch,float="center",align="center",cols="^2m,^2m,^2m,^2m,<2m,>3m, <4m, >4m, <4m, >4m, <4m, >4m, <4m, >4m, <6m"]
+|===
+15+^|*RV64I 基础指令集（在 RV32I 基础上增补）*
+ 6+^|imm[11:0]                2+^|rs1   2+^|110    2+^|rd           2+^|0000011 <|[[norm:enc:insttable:lwu]]LWU
+ 6+^|imm[11:0]                2+^|rs1   2+^|011    2+^|rd           2+^|0000011 <|[[norm:enc:insttable:ld]]LD
+ 4+^|imm[11:5]      2+^|rs2   2+^|rs1   2+^|011    2+^|imm[4:0]     2+^|0100011 <|[[norm:enc:insttable:sd]]SD
+ 3+^|000000         3+^|shamt 2+^|rs1   2+^|001    2+^|rd           2+^|0010011 <|SLLI
+ 3+^|000000         3+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0010011 <|SRLI
+ 3+^|010000         3+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0010011 <|SRAI
+ 6+^|imm[11:0]                2+^|rs1   2+^|000    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:addiw]]ADDIW
+ 4+^|0000000        2+^|shamt 2+^|rs1   2+^|001    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:slliw]]SLLIW
+ 4+^|0000000        2+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:srliw]]SRLIW
+ 4+^|0100000        2+^|shamt 2+^|rs1   2+^|101    2+^|rd           2+^|0011011 <|[[norm:enc:insttable:sraiw]]SRAIW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|000    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:addw]]ADDW
+ 4+^|0100000        2+^|rs2   2+^|rs1   2+^|000    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:subw]]SUBW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|001    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:sllw]]SLLW
+ 4+^|0000000        2+^|rs2   2+^|rs1   2+^|101    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:srlw]]SRLW
+ 4+^|0100000        2+^|rs2   2+^|rs1   2+^|101    2+^|rd           2+^|0111011 <|[[norm:enc:insttable:sraw]]SRAW
+|==='''

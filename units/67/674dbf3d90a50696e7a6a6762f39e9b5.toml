@@ -1,0 +1,12 @@
+unit_id = "674dbf3d90a50696e7a6a6762f39e9b5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Like `siselect` and `sireg*`, the widths of `vsiselect` and `vsireg*` are always
+the current XLEN rather than VSXLEN. Hence, for example, if HSXLEN = 64
+and VSXLEN = 32, then these registers are 64 bits when accessed by a
+hypervisor in HS-mode (running RV64 code) but 32 bits for a guest OS in
+VS-mode (RV32 code).'''
+zh = '''
+与 `siselect` 和 `sireg*` 类似，`vsiselect` 和 `vsireg*` 的宽度始终为当前 XLEN，而不是 VSXLEN。因此，例如，若 HSXLEN = 64 且 VSXLEN = 32，则虚拟机监控器在 HS 模式（运行 RV64 代码）访问时这些寄存器为 64 位，而客户机操作系统在 VS 模式（RV32 代码）下为 32 位。'''

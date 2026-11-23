@@ -1,0 +1,19 @@
+unit_id = "a4f4ba34b9d640e0d62fbe76b04f5c0f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+TVM exists in `mstatus` to allow machine-level software to modify the
+address translations managed by a supervisor-level OS, usually for the
+purpose of inserting another stage of address translation below that
+controlled by the OS. The instruction traps enabled by TVM=1 permit
+machine level to co-opt both `satp` and `hgatp` and substitute _shadow
+page tables_ that merge the OS’s chosen page translations with M-level’s
+lower-stage translations, all without the OS being aware. M-level
+software needs this ability not only to emulate the hypervisor extension
+if not already supported, but also to emulate any future RISC-V
+extensions that may modify or add address translation stages, perhaps,
+for example, to improve support for nested hypervisors, i.e., running
+hypervisors atop other hypervisors.'''
+zh = '''
+TVM 存在于 `mstatus` 中，以允许机器级软件修改由监管级 OS 管理的地址转换，通常用于在该 OS 控制的转换之下插入另一级地址转换。由 TVM=1 使能的指令陷阱允许机器级并存 `satp` 和 `hgatp`，并替换_影子页表_，将 OS 所选的页转换与 M 级的下级转换合并，而 OS 全然不知。M 级软件需要此能力，不仅是为了在尚未支持时模拟虚拟机监控器扩展，也是为了模拟可能修改或新增地址转换级的任何未来 RISC-V 扩展，例如可能为了改善对嵌套虚拟机监控器（即在一个虚拟机监控器之上运行其他虚拟机监控器）的支持。'''

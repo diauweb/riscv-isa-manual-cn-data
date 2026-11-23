@@ -1,0 +1,13 @@
+unit_id = "7f4d4f9b8411caacaf4b8b5531afd684"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Plain unconditional indirect jumps (assembler pseudoinstruction JR) are
+encoded as a JALR with _rd_=`x0`.
+Procedure returns in the standard calling convention (assembler
+pseudoinstruction RET) are encoded as a JALR with _rd_=`x0`, _rs1_=`x1`, and
+_imm_=0.'''
+zh = '''
+普通无条件间接跳转（汇编伪指令 JR）编码为 _rd_=`x0` 的 JALR。
+标准调用约定中的过程返回（汇编伪指令 RET）编码为 _rd_=`x0`、_rs1_=`x1` 且 _imm_=0 的 JALR。'''

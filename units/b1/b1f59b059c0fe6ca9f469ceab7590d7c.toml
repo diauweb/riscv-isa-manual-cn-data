@@ -1,0 +1,14 @@
+unit_id = "b1f59b059c0fe6ca9f469ceab7590d7c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `hgeip` register is an HSXLEN-bit read-only register, formatted as
+shown in <<hgeipreg>>, that indicates pending guest
+external interrupts for this hart. The `hgeie` register is an HSXLEN-bit
+read/write register, formatted as shown in
+<<hgeiereg>>, that contains enable bits for the
+guest external interrupts at this hart. Guest external interrupt number
+_i_ corresponds with bit _i_ in both `hgeip` and `hgeie`.'''
+zh = '''
+`hgeip` 寄存器是 HSXLEN 位只读寄存器，格式如 <<hgeipreg>> 所示，指示该硬件线程的挂起客户机外部中断。`hgeie` 寄存器是 HSXLEN 位读写寄存器，格式如 <<hgeiereg>> 所示，包含该硬件线程的客户机外部中断使能位。客户机外部中断号 _i_ 对应 `hgeip` 和 `hgeie` 中的位 _i_。'''

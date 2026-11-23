@@ -1,0 +1,45 @@
+unit_id = "e392c7baa360c06298cb3b0ff0cf8fc2"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Corner Cases]
+.Corner Cases
+[cols="20%,~",options="header"]
+|====
+|Sequence of events|Messages Generated
+|Back to back return|Second message should have <<field_I-CNT,I-CNT>>=1 or 2 (depending on the size of the second return instruction).
+|Other back to back jumps or branches|Same as above (depending on the size of a second instruction).
+|Back to back exceptions|Second message with <<field_B-TYPE,B-TYPE>>=2 or 1 (Exception) and <<field_I-CNT,I-CNT>>=0 (nothing executed in between).
+|Exception at interrupt destination|Same as above.
+|Pending interrupt at debug mode exit|<<msg2_ProgTraceSync,ProgTraceSync>> with <<field_SYNC,SYNC>>=3 followed by message with <<field_B-TYPE,B-TYPE>>=3 or 1 (Interrupt).
+|Exception at first instruction traced|<<msg2_ProgTraceSync,ProgTraceSync>> with <<field_SYNC,SYNC>>=3 followed by a message with <<field_B-TYPE,B-TYPE>>=2 or 1 (Exception).
+|Trace starts disabled|<<msg2_ProgTraceCorrelation,ProgTraceCorrelation>> with <<field_EVCODE,EVCODE>>=4 (Trace Disabled). Once trace is enabled message with <<field_SYNC,SYNC>>=5 (Trace Enable).
+|Hart halted with trace disabled|<<msg2_ProgTraceCorrelation,ProgTraceCorrelation>> with <<field_EVCODE,EVCODE>>=0 (Enter Debug mode) and <<field_I-CNT,I-CNT>>=0 (nothing executed).
+|Exception/Interrupt immediately following trap return|
+Usual messages describing instructions up to return from trap (MRET/SRET) instruction. +
+Synchronizing message with an address of trap return with <<field_I-CNT,I-CNT>>=0 (as nothing executed after a trap return). +
+Optionally, an <<msg_Ownership,Ownership>> messages describing privilege level after return from a trap. +
+Synchronizing message with an address of interrupt/exception handler and appropriate SYNC code. +
+Optionally, an <<msg_Ownership,Ownership>> messages describing privilege level of new exception/interrupt handler.
+|===='''
+zh = '''
+.边界情况
+[cols="20%,~",options="header"]
+|====
+|事件序列|生成的消息
+|背靠背返回|第二条消息的 <<field_I-CNT,I-CNT>> 宜为 1 或 2（取决于第二条返回指令的大小）。
+|其他背靠背跳转或分支|同上（取决于第二条指令的大小）。
+|背靠背异常|第二条消息具有 <<field_B-TYPE,B-TYPE>>=2 或 1（异常）以及 <<field_I-CNT,I-CNT>>=0（其间未执行任何内容）。
+|中断目标处的异常|同上。
+|退出调试模式时存在挂起中断|先发送带 <<field_SYNC,SYNC>>=3 的 <<msg2_ProgTraceSync,ProgTraceSync>>，随后发送带 <<field_B-TYPE,B-TYPE>>=3 或 1（中断）的消息。
+|被跟踪的第一条指令处发生异常|先发送带 <<field_SYNC,SYNC>>=3 的 <<msg2_ProgTraceSync,ProgTraceSync>>，随后发送带 <<field_B-TYPE,B-TYPE>>=2 或 1（异常）的消息。
+|跟踪启动时处于禁用状态|带 <<field_EVCODE,EVCODE>>=4（跟踪禁用）的 <<msg2_ProgTraceCorrelation,ProgTraceCorrelation>>。一旦跟踪使能，发送带 <<field_SYNC,SYNC>>=5（跟踪使能）的消息。
+|硬件线程暂停且跟踪禁用|带 <<field_EVCODE,EVCODE>>=0（进入调试模式）和 <<field_I-CNT,I-CNT>>=0（未执行任何内容）的 <<msg2_ProgTraceCorrelation,ProgTraceCorrelation>>。
+|陷阱返回后立即发生异常/中断|
+通常的消息描述直到陷阱返回（MRET/SRET）指令的指令。 +
+带陷阱返回地址且 <<field_I-CNT,I-CNT>>=0 的同步消息（因为陷阱返回后未执行任何内容）。 +
+可选地，一条 <<msg_Ownership,Ownership>> 消息描述陷阱返回后的特权级。 +
+带中断/异常处理程序地址和适当 SYNC 代码的同步消息。 +
+可选地，一条 <<msg_Ownership,Ownership>> 消息描述新异常/中断处理程序的特权级。
+|===='''

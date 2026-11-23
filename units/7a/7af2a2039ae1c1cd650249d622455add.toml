@@ -1,0 +1,12 @@
+unit_id = "7af2a2039ae1c1cd650249d622455add"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Simpler implementations of HFENCE.VVMA can ignore the guest virtual
+address in _rs1_ and the guest ASID value in _rs2_, as well as
+`hgatp`.VMID, and always perform a global fence for the VS-level memory
+management of all virtual machines, or even a global fence for all
+memory-management data structures.'''
+zh = '''
+较简单的 HFENCE.VVMA 实现可忽略 _rs1_ 中的客户机虚拟地址和 _rs2_ 中的客户机 ASID 值以及 `hgatp`.VMID，并始终对所有虚拟机的 VS 级内存管理执行全局屏障，甚至对所有内存管理数据结构执行全局屏障。'''

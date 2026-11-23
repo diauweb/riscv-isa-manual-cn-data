@@ -1,0 +1,19 @@
+unit_id = "5c9624edd1b7053d1cee35eb91e959cf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In RISC-V, all instructions are executed unconditionally or at least
+their execution can be determined based on the program binary. The
+instructions between the deltas can all be assumed to be executed
+sequentially. Because of this, there is no need to report sequential
+instructions in the trace, only whether the branches were taken or not
+and the address of taken indirect branches or jumps. If the program
+counter is changed by an amount that cannot be determined from the
+execution binary, the trace decoder needs to be given the destination
+address (i.e. the address of the next valid instruction). Examples of
+this are indirect branches or jumps, where the next instruction address
+is determined by the contents of a register rather than a constant
+embedded in the program binary.'''
+zh = '''
+在 RISC-V 中，所有指令均无条件执行，或至少其执行情况可基于程序二进制确定。增量之间的指令均可假定为顺序执行。因此，无需在跟踪中报告顺序指令，只需报告分支是否发生转移，以及发生转移的间接分支或跳转的地址。若程序计数器的改变量无法从执行二进制文件确定，则必须向跟踪解码器提供目的地址（即下一条有效指令的地址）。间接分支或跳转即是一例，其中下一条指令地址由寄存器内容确定，而不是由程序二进制中内嵌的常量确定。'''

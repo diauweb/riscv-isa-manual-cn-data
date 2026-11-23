@@ -1,0 +1,28 @@
+unit_id = "43aa3c85ed175ac07cfae65a2924bea7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* program-order-successors of _j_ that have data-flow
+dependency on a register write of _j_;
+* program-order-successors of _j_ that have a memory load
+operation that reads from a memory store operation of _j_
+(by forwarding);
+* if _j_ is a load-acquire, all the program-order-successors
+of _j_;
+* if _j_ is a load, for every `fence`, _f_, with
+`.sr` and `.pr` set, and `.pw` not set, that is a
+program-order-successor of _j_, all the load instructions
+that are program-order-successors of _f_;
+* if _j_ is a load, for every `fence.tso`, _f_,
+that is a program-order-successor of _j_, all the load
+instructions that are program-order-successors of _f_; and
+* (recursively) all the restart-dependents of all the instruction
+instances above.'''
+zh = '''
+* 对 _j_ 的某个寄存器写具有数据流依赖的 _j_ 的程序顺序后继；
+* 具有从 _j_ 的某个内存存储操作读取（通过转发）的内存加载操作的 _j_ 的程序顺序后继；
+* 若 _j_ 是 load-acquire，则为 _j_ 的所有程序顺序后继；
+* 若 _j_ 是加载指令，则对于每个设置了 `.sr` 和 `.pr`、且未设置 `.pw` 的 `fence` 指令 _f_，若该指令是 _j_ 的程序顺序后继，则为 _f_ 的所有程序顺序后继加载指令；
+* 若 _j_ 是加载指令，则对于每个是 _j_ 程序顺序后继的 `fence.tso` 指令 _f_，为 _f_ 的所有程序顺序后继加载指令；且
+* （递归地）上述所有指令实例的所有重启依赖项。'''

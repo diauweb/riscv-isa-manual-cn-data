@@ -1,0 +1,15 @@
+unit_id = "2d1aabed039ba729eb2457b357102db7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A debugger can write a small program to the Program Buffer, and then
+execute it exactly once with the Access Register Abstract Command,
+setting the {accessregister-postexec} bit in {dm-command}. The debugger can write whatever program it likes
+(including jumps out of the Program Buffer), but the program must end
+with `ebreak` or `c.ebreak`. An implementation may support an implicit
+`ebreak` that is executed when a hart runs off the end of the Program
+Buffer. This is indicated by {dmstatus-impebreak}. With this feature, a Program Buffer of
+just 2 32-bit words can offer efficient debugging.'''
+zh = '''
+调试器可将小程序写入程序缓冲区，然后通过访问寄存器抽象命令并设置 {dm-command} 中的 {accessregister-postexec} 位，恰好执行一次。调试器可写入任何它喜欢的程序（包括跳出程序缓冲区的跳转），但该程序必须以 `ebreak` 或 `c.ebreak` 结尾。实现可支持当硬件线程运行到程序缓冲区末尾之外时执行隐式 `ebreak`。这由 {dmstatus-impebreak} 指示。借助此特性，仅 2 个 32 位字的程序缓冲区即可提供高效的调试。'''

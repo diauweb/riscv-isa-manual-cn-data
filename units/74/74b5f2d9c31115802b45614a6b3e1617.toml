@@ -1,0 +1,17 @@
+unit_id = "74b5f2d9c31115802b45614a6b3e1617"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In versions 1.9.1 and earlier, these registers existed but were
+hardwired to zero in M-mode only, or M/U without N harts. There is no
+reason to require they return zero in those cases, as the `misa`
+register indicates whether they exist.
+===='''
+zh = '''
+[NOTE]
+====
+在 1.9.1 及更早版本中，这些寄存器存在，但在仅有 M 模式或 M/U 而没有 N 硬件线程的情况下被硬连线为零。在这些情况下没有理由要求它们返回零，因为 `misa` 寄存器指示它们是否存在。
+===='''

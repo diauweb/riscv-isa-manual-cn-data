@@ -1,0 +1,24 @@
+unit_id = "630e93f77e6a4fffec4a092e70c8431e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Header Fields
+[[_table_Header]]
+[cols="<2, <1, <9", stripes=even, options="header"]
+|===
+|{set:cellbgcolor:lightblue}Field Name | # Bits | Description
+|{set:cellbgcolor:!} *length* |5| Encapsulated payload length.  A value of _L_ indicates an _L_ byte payload.  Must be > 0 - see <<_section_null_encapsulation>>.
+| *flow* | 2 | Flow indicator.  This can be used to direct packets to a particular sink in systems where multiple sinks exist, and those sinks include the ability to accept or discard packets based on the flow value.
+| *extend* | 1 | Indicates presence of timestamp when 1.  Must be 0 if timestamp width is 0.
+|==='''
+zh = '''
+.头部字段
+[[_table_Header]]
+[cols="<2, <1, <9", stripes=even, options="header"]
+|===
+|{set:cellbgcolor:lightblue}字段名 | 位数 | 描述
+|{set:cellbgcolor:!} *length* |5| 封装的有效载荷长度。值 _L_ 表示有效载荷为 _L_ 字节。应大于 0——见 <<_section_null_encapsulation>>。
+| *flow* | 2 | 流指示符。在存在多个接收端且这些接收端能够根据流值接受或丢弃数据包的系统中，可用于将数据包定向到特定接收端。
+| *extend* | 1 | 为 1 时指示存在时间戳。若时间戳宽度为 0，则应为 0。
+|==='''

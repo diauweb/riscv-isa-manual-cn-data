@@ -1,0 +1,69 @@
+unit_id = "01c8c66a2972a57a696f7b0fb929c5b1"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Privilege modes with the hypervisor extension.
+[float="center",align="center",cols="~,~,~,~,~"]
+|===
+^|Virtualization +
+Mode (V) ^|Nominal Privilege |Abbreviation |Name |Two-Stage Translation
+
+^|0 +
+0 +
+0
+^| U +
+S +
+M
+|U-mode +
+HS-mode +
+M-mode
+|User mode +
+Hypervisor-extended supervisor mode +
+Machine mode
+|Off +
+Off +
+Off
+^|1 +
+1
+^|U +
+S
+|VU-mode +
+VS-mode
+|Virtual user mode +
+Virtual supervisor mode
+|On +
+On
+|==='''
+zh = '''
+.带虚拟机监控器扩展的特权模式
+[float="center",align="center",cols="~,~,~,~,~"]
+|===
+^|虚拟化模式 (V) ^|名义特权 |缩写 |名称 |两阶段地址转换
+
+^|0 +
+0 +
+0
+^| U +
+S +
+M
+|U 模式 +
+HS 模式 +
+M 模式
+|用户模式 +
+虚拟机监控器扩展监管模式 +
+机器模式
+|关闭 +
+关闭 +
+关闭
+^|1 +
+1
+^|U +
+S
+|VU 模式 +
+VS 模式
+|虚拟用户模式 +
+虚拟监管模式
+|开启 +
+开启
+|==='''

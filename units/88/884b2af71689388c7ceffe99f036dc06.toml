@@ -1,0 +1,15 @@
+unit_id = "884b2af71689388c7ceffe99f036dc06"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Many architectures include separate notions of "`ordering`" and
+"`completion`" fences, especially as it relates to I/O (as opposed to
+regular main memory). Ordering fences simply ensure that memory
+operations stay in order, while completion fences ensure that
+predecessor accesses have all completed before any successors are made
+visible. RISC-V does not explicitly distinguish between ordering and
+completion fences. Instead, this distinction is simply inferred from
+different uses of the FENCE bits.'''
+zh = '''
+许多体系结构包含“排序”fence 和“完成”fence 的区分，特别是涉及 I/O（相对于常规主内存）时。排序 fence 仅确保内存操作保持顺序，而完成 fence 确保在前驱访问全部完成之后，任何后继访问才变为可见。RISC-V 不显式区分排序 fence 和完成 fence。相反，这种区分仅从 FENCE 位的不同用法推断。'''

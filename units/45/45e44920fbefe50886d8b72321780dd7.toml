@@ -1,0 +1,12 @@
+unit_id = "45e44920fbefe50886d8b72321780dd7"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: If `vd` is equal to `vs2`, the instruction does not change any
+vector register state.
+Implementations that rearrange data internally can treat this instruction
+as a hint that the register group will next be accessed with an EEW
+equal to SEW.'''
+zh = '''
+NOTE: 如果 `vd` 等于 `vs2`，则该指令不改变任何向量寄存器状态。在内部重排数据的实现可将此指令视为提示：该寄存器组接下来将以等于 SEW 的 EEW 访问。'''

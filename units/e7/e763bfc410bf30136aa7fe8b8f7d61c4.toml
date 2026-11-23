@@ -1,0 +1,28 @@
+unit_id = "e763bfc410bf30136aa7fe8b8f7d61c4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The C99 language standard effectively mandates the provision of a
+dynamic rounding mode register. In typical implementations, writes to
+the dynamic rounding mode CSR state will serialize the pipeline. Static
+rounding modes are used to implement specialized arithmetic operations
+that often have to switch frequently between different rounding modes.
+
+The ratified version of the F spec mandated that an illegal-instruction
+exception was raised when an instruction was executed with a reserved
+dynamic rounding mode. This has been weakened to reserved, which matches
+the behavior of static rounding-mode instructions. Raising an
+illegal-instruction exception is still valid behavior when encountering a
+reserved encoding, so implementations compatible with the ratified spec
+are compatible with the weakened spec.
+===='''
+zh = '''
+[NOTE]
+====
+C99 语言标准实际上要求提供动态舍入模式寄存器。在典型实现中，对动态舍入模式 CSR 状态的写入会使流水线串行化。静态舍入模式用于实现专用算术操作，这些操作通常需要在不同舍入模式之间频繁切换。
+
+F 规范的批准版本要求：当指令用保留的动态舍入模式执行时，触发非法指令异常。该要求已弱化为保留，这与静态舍入模式指令的行为一致。遇到保留编码时，触发非法指令异常仍是有效行为，因此与批准规范兼容的实现也与弱化规范兼容。
+===='''

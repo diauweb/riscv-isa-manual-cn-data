@@ -1,0 +1,50 @@
+unit_id = "d72e83a12362508e6fdd84b0e2260ee0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Domains of float-to-integer conversions and behavior for invalid inputs
+[%autowidth,float="center",align="center",cols="<,>,>,>,>",options="header",]
+|===
+| |FCVT.W.S |FCVT.WU.S |FCVT.L.S |FCVT.LU.S
+|Minimum valid input (after rounding) |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|Maximum valid input (after rounding) |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+
+|Output for out-of-range negative input |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|Output for latexmath:[$-\infty$] |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|Output for out-of-range positive input |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+
+|Output for latexmath:[$+\infty$] or NaN |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+|==='''
+zh = '''
+.浮点到整数转换的定义域及无效输入行为
+[%autowidth,float="center",align="center",cols="<,>,>,>,>",options="header",]
+|===
+| |FCVT.W.S |FCVT.WU.S |FCVT.L.S |FCVT.LU.S
+|最小有效输入（舍入后） |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|最大有效输入（舍入后） |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+
+|超出范围的负输入时的输出 |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|latexmath:[$-\infty$] 时的输出 |latexmath:[$-2^{31}$] |0
+|latexmath:[$-2^{63}$] |0
+
+|超出范围的正输入时的输出 |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+
+|latexmath:[$+\infty$] 或 NaN 时的输出 |latexmath:[$2^{31}-1$]
+|latexmath:[$2^{32}-1$] |latexmath:[$2^{63}-1$] |latexmath:[$2^{64}-1$]
+|==='''

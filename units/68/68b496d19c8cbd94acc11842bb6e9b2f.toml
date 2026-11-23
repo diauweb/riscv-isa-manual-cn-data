@@ -1,0 +1,138 @@
+unit_id = "68b496d19c8cbd94acc11842bb6e9b2f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+[[prop_store]]
+===== Propagate store operation
+
+For a committed instruction instance latexmath:[$i$] in state
+Pending_mem_stores(_store_continuation_), and an unpropagated memory
+store operation latexmath:[$mso$] in
+latexmath:[$i.\textit{mem\_stores}$], latexmath:[$mso$] can be
+propagated if:
+
+. all memory store operations of program-order-previous store
+instructions that overlap with latexmath:[$mso$] have already
+propagated;
+. all memory load operations of program-order-previous load instructions
+that overlap with latexmath:[$mso$] have already been satisfied, and
+(the load instructions) are _non-restartable_ (see definition below);
+and
+. all memory load operations that were satisfied by forwarding
+latexmath:[$mso$] are entirely satisfied.
+
+Where a non-finished instruction instance latexmath:[$j$] is
+_non-restartable_ if:
+
+. there does not exist a store instruction latexmath:[$s$] and an
+unpropagated memory store operation latexmath:[$mso$] of latexmath:[$s$]
+such that applying the action of the <<prop_store, Propagate store operation>> transition to
+latexmath:[$mso$] will result in the restart of latexmath:[$j$]; and
+. there does not exist a non-finished load instruction latexmath:[$l$]
+and a memory load operation latexmath:[$mlo$] of latexmath:[$l$] such
+that applying the action of the <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>/<<sat_from_mem, Satisfy memory load operation from memory>> transition (even if
+latexmath:[$mlo$] is already satisfied) to latexmath:[$mlo$] will result
+in the restart of latexmath:[$j$].
+
+Action:
+
+. update the shared memory state with latexmath:[$mso$];
+. update latexmath:[$i.\textit{mem\_stores}$] to indicate that
+latexmath:[$mso$] was propagated; and
+. restart any speculative instructions which have violated coherence as
+a result of this, i.e., for every non-finished instruction
+latexmath:[$i'$] program-order-after latexmath:[$i$] and every memory
+load operation latexmath:[$mlo'$] of latexmath:[$i'$] that was satisfied
+from latexmath:[$msoss'$], if there exists a memory store operation
+slice latexmath:[$msos'$] in latexmath:[$msoss'$] that overlaps with
+latexmath:[$mso$] and is not from latexmath:[$mso$], and
+latexmath:[$msos'$] is not from a program-order-successor of
+latexmath:[$i$], restart latexmath:[$i'$] and its _restart-dependents_
+(see <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>).
+
+[[commit_sc]]
+===== Commit and propagate store operation of an `sc`
+
+An uncommitted `sc` instruction instance latexmath:[$i$], from hart
+latexmath:[$h$], in state Pending_mem_stores(_store_continuation_), with
+a paired `lr` latexmath:[$i'$] that has been satisfied by some store
+slices latexmath:[$msoss$], can be committed and propagated at the same
+time if:
+
+. latexmath:[$i'$] is finished;
+. every memory store operation that has been forwarded to
+latexmath:[$i'$] is propagated;
+. the conditions of <<commit_stores, Commit store instruction>> is satisfied;
+. the conditions of <<prop_store, Propagate store instruction>> is satisfied (notice that an `sc` instruction can
+only have one memory store operation); and
+. for every store slice latexmath:[$msos$] from latexmath:[$msoss$],
+latexmath:[$msos$] has not been overwritten, in the shared memory, by a
+store that is from a hart that is not latexmath:[$h$], at any point
+since latexmath:[$msos$] was propagated to memory.
+
+Action:
+
+. apply the actions of <<commit_stores, Commit store instruction>>; and
+. apply the action of <<prop_store, Propagate store instruction>>.
+
+[[late_sc_fail]]
+===== Late `sc` fail
+
+An `sc` instruction instance latexmath:[$i$] in state
+Pending_mem_stores(_store_continuation_), that has not propagated its
+memory store operation, can always be made to fail. Action:
+
+. clear latexmath:[$i.\textit{mem\_stores}$]; and
+. update the state of latexmath:[$i$] to
+Plain(_store_continuation(false)_).
+[NOTE]
+===='''
+zh = '''
+====
+[[prop_store]]
+===== 传播存储操作
+
+对于处于 Pending_mem_stores(_store_continuation_) 状态的已提交指令实例 latexmath:[$i$]，以及 latexmath:[$i.\textit{mem\_stores}$] 中未传播的内存存储操作 latexmath:[$mso$]，若满足以下条件，则 latexmath:[$mso$] 可被传播：
+
+. 与 latexmath:[$mso$] 重叠的程序顺序在先的存储指令的所有内存存储操作均已传播；
+. 与 latexmath:[$mso$] 重叠的程序顺序在先的加载指令的所有内存加载操作均已满足，且（这些加载指令）是__不可重启的__（见下文定义）；且
+. 所有通过前递 latexmath:[$mso$] 而获得满足的内存加载操作均完全满足。
+
+其中，未完成的指令实例 latexmath:[$j$] 是__不可重启的__，如果：
+
+. 不存在某存储指令 latexmath:[$s$] 及其 latexmath:[$s$] 的未传播内存存储操作 latexmath:[$mso$]，使得对 latexmath:[$mso$] 施加 <<prop_store, 传播存储操作>> 转移的动作将导致 latexmath:[$j$] 重启；且
+. 不存在某未完成的加载指令 latexmath:[$l$] 及其 latexmath:[$l$] 的内存加载操作 latexmath:[$mlo$]，使得对 latexmath:[$mlo$] 施加 <<sat_by_forwarding, 通过从未传播的存储前递来满足内存加载操作>>/<<sat_from_mem, 从内存满足内存加载操作>> 转移的动作（即使 latexmath:[$mlo$] 已经满足）将导致 latexmath:[$j$] 重启。
+
+动作：
+
+. 用 latexmath:[$mso$] 更新共享内存状态；
+. 更新 latexmath:[$i.\textit{mem\_stores}$] 以指示 latexmath:[$mso$] 已被传播；且
+. 重启任何因之而违反一致性的推测指令，即：对于程序顺序后于 latexmath:[$i$] 的每个未完成指令 latexmath:[$i'$]，以及 latexmath:[$i'$] 的每个由 latexmath:[$msoss'$] 满足的内存加载操作 latexmath:[$mlo'$]，若 latexmath:[$msoss'$] 中存在某内存存储操作切片 latexmath:[$msos'$]，它与 latexmath:[$mso$] 重叠且并非来自 latexmath:[$mso$]，且 latexmath:[$msos'$] 并非来自 latexmath:[$i$] 的程序顺序后继，则重启 latexmath:[$i'$] 及其__重启依赖项__（见 <<sat_by_forwarding, 通过从未传播的存储前递来满足内存加载操作>>）。
+
+[[commit_sc]]
+===== 提交并传播 `sc` 的存储操作
+
+来自硬件线程 latexmath:[$h$]、处于 Pending_mem_stores(_store_continuation_) 状态的未提交 `sc` 指令实例 latexmath:[$i$]，若其配对的 `lr` latexmath:[$i'$] 已由某些存储切片 latexmath:[$msoss$] 满足，则在以下条件成立时可同时提交并传播：
+
+. latexmath:[$i'$] 已完成；
+. 已前递给 latexmath:[$i'$] 的每个内存存储操作均已传播；
+. <<commit_stores, 提交存储指令>> 的条件成立；
+. <<prop_store, 传播存储指令>> 的条件成立（注意 `sc` 指令只能有一个内存存储操作）；且
+. 对于 latexmath:[$msoss$] 中的每个存储切片 latexmath:[$msos$]，自 latexmath:[$msos$] 传播到内存以来的任何时刻，latexmath:[$msos$] 在共享内存中均未被来自非 latexmath:[$h$] 硬件线程的存储覆盖。
+
+动作：
+
+. 施加 <<commit_stores, 提交存储指令>> 的动作；且
+. 施加 <<prop_store, 传播存储指令>> 的动作。
+
+[[late_sc_fail]]
+===== 延迟 `sc` 失败
+
+处于 Pending_mem_stores(_store_continuation_) 状态、尚未传播其内存存储操作的 `sc` 指令实例 latexmath:[$i$]，总是可被置为失败。动作：
+
+. 清除 latexmath:[$i.\textit{mem\_stores}$]；且
+. 将 latexmath:[$i$] 的状态更新为 Plain(_store_continuation(false)_)。
+[NOTE]
+===='''

@@ -1,0 +1,14 @@
+unit_id = "35e7427255930fe16ad3773ccb16ffd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This can be used to judge "time" between various point in the trace
+stream and, more notably, to be able to correlate trace streams from
+different harts (i.e. this point in hart A's stream occurred at roughly
+the same time as that point in hart B's trace stream). The former helps
+one to judge performance of sections of code execution (to the
+granularity of timestamp insertion). The latter helps debugging
+multi-hart MP problems.'''
+zh = '''
+这可用于判断跟踪流中各个点之间的“时间”，更重要的是能够关联来自不同 hart 的跟踪流（即 hart A 流中的此点与 hart B 跟踪流中的彼点大致在同一时间发生）。前者有助于判断代码执行各部分的性能（达到时间戳插入的粒度）。后者有助于调试多 hart 的 MP 问题。'''

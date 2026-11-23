@@ -1,0 +1,15 @@
+unit_id = "6a4058a9c4dafcd436bd904cc4622bc0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the hypervisor extension is implemented, the same bit is defined also
+in hypervisor CSR `hstateen0`, but controls access to only `siselect` and `sireg*`
+(really `vsiselect` and `vsireg*`), which is the state potentially
+accessible to a virtual machine executing in VS or VU-mode. When
+`hstateen0`[60]=0 and `mstateen0`[60]=1, all attempts from VS or VU-mode to
+access `siselect` or `sireg*` raise a virtual instruction exception, not an
+illegal instruction exception, regardless of the value of `vsiselect` or
+any other mstateen bit.'''
+zh = '''
+若实现了虚拟机监控器扩展，则同样的位也在虚拟机监控器 CSR `hstateen0` 中定义，但仅控制对 `siselect` 和 `sireg*`（实际上是 `vsiselect` 和 `vsireg*`）的访问，即可能被在 VS 或 VU 模式执行的虚拟机访问的状态。当 `hstateen0`[60]=0 且 `mstateen0`[60]=1 时，从 VS 或 VU 模式访问 `siselect` 或 `sireg*` 的所有尝试均触发虚拟指令异常，而不是非法指令异常，无论 `vsiselect` 或任何其他 mstateen 位为何值。'''

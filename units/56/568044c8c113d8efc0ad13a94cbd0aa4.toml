@@ -1,0 +1,24 @@
+unit_id = "568044c8c113d8efc0ad13a94cbd0aa4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Payload Fields
+[[_table_payload]]
+[cols="<2, <1, <9", stripes=even, options="header"]
+|===
+|{set:cellbgcolor:lightblue}Field Name | # Bits | Description
+|{set:cellbgcolor:!} *type* |&#8805; 0| Packet type.  May be eliminated (i.e. width set to 0) for sources with only one packet type.  Length must be fixed for a given *srcID*, and discoverable if > 0. +
+| *trace_payload* | &#8804; R | Packet payloads such as those defined for E-Trace. +
+Maximum value of R is defined as 248 - Y - *srcID*%8, where Y is the length of the *type* field.  See <<_section_packet_length>> for details of the relationship between *srcID* and payload length.
+|==='''
+zh = '''
+.有效载荷字段
+[[_table_payload]]
+[cols="<2, <1, <9", stripes=even, options="header"]
+|===
+|{set:cellbgcolor:lightblue}字段名 | 位数 | 描述
+|{set:cellbgcolor:!} *type* |&#8805; 0| 数据包类型。对于只有一种数据包类型的源，可省略该字段（即宽度设为 0）。对于给定的 *srcID*，长度应固定；若大于 0，则应可发现。 +
+| *trace_payload* | &#8804; R | 数据包有效载荷，例如为 E-Trace 定义的有效载荷。 +
+R 的最大值定义为 248 - Y - *srcID*%8，其中 Y 是 *type* 字段的长度。有关 *srcID* 与有效载荷长度之间关系的详细信息，见 <<_section_packet_length>>。
+|==='''

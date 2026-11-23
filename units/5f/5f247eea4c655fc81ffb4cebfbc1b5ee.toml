@@ -1,0 +1,16 @@
+unit_id = "5f247eea4c655fc81ffb4cebfbc1b5ee"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Header - 1 byte
+* Index - N bits. As an example use 6 bits and the value of 0x5
+* Optional timestamp - 2 bytes. This example has no timestamp
+* A type field for the packet of 2 bits '01' meaning instruction trace
+* Payload - [0x73 0x00 0x00 0x00 0x00 0x91 0x82 0x00 0x10]'''
+zh = '''
+* 首部 - 1 字节
+* 索引 - N 位。例如使用 6 位，取值为 0x5
+* 可选的时间戳 - 2 字节。本示例无时间戳
+* 包的 2 位类型字段“01”，表示指令跟踪
+* 有效载荷 - [0x73 0x00 0x00 0x00 0x00 0x91 0x82 0x00 0x10]'''

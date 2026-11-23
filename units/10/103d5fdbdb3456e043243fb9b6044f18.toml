@@ -1,0 +1,12 @@
+unit_id = "103d5fdbdb3456e043243fb9b6044f18"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: We do not provide an equivalent fractional multiply where one
+input is unsigned, as these would retain all upper SEW bits and would
+not need to saturate.  This operation is partly covered by the
+insn:vmulhu[] and insn:vmulhsu[] instructions, for the case where rounding is
+simply truncation (`rdn`).'''
+zh = '''
+NOTE: 我们未提供其中一个输入为无符号的等效分数乘法，因为这会保留所有高 SEW 位且不需要饱和。该操作部分由 insn:vmulhu[] 和 insn:vmulhsu[] 指令覆盖，用于舍入只是截断（`rdn`）的情况。'''

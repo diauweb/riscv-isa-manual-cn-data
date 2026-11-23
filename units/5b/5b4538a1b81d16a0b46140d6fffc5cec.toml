@@ -1,0 +1,12 @@
+unit_id = "5b4538a1b81d16a0b46140d6fffc5cec"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This requires misaligned support for all regular load and store
+instructions (including scalar and vector) but not AMOs or other specialized
+forms of memory access.  Even though mandated, misaligned loads and stores might
+execute extremely slowly.  Standard software distributions should assume their
+existence only for correctness, not for performance.'''
+zh = '''
+NOTE: 这要求为所有常规加载和存储指令（包括标量和向量）提供非对齐支持，但不为 AMO 或其他专门形式的内存访问提供该支持。尽管为强制要求，非对齐加载和存储的执行可能极其缓慢。标准软件发行版宜仅为正确性而假定其存在，而非为性能。'''

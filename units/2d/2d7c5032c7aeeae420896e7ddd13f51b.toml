@@ -1,0 +1,9 @@
+unit_id = "2d7c5032c7aeeae420896e7ddd13f51b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Detection of valid ranges of each `trRamStart??` and `trRamLimit??` registers should be performed by writing 0 and 0xFFFFFFFF.
+After setting 0, the lowest possible value must be set. After setting 0xFFFFFFFF the highest possible value must be set. If the highest value for `trRamStartHigh` or `trRamLimitHigh` is 0, it means the register is NOT implemented.'''
+zh = '''
+每个 `trRamStart??` 和 `trRamLimit??` 寄存器的有效范围检测应通过写入 0 和 0xFFFFFFFF 来执行。写入 0 后，必须设置可能的最低值。写入 0xFFFFFFFF 后，必须设置可能的最高值。如果 `trRamStartHigh` 或 `trRamLimitHigh` 的最高值为 0，则表示该寄存器未实现。'''

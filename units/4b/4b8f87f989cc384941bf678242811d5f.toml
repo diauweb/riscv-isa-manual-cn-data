@@ -1,0 +1,13 @@
+unit_id = "4b8f87f989cc384941bf678242811d5f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a trap occurs in HS-mode or U-mode, it goes to M-mode, unless
+delegated by `medeleg` or `mideleg`, in which case it goes to HS-mode.
+When a trap occurs in VS-mode or VU-mode, it goes to M-mode, unless
+delegated by `medeleg` or `mideleg`, in which case it goes to HS-mode,
+unless further delegated by `hedeleg` or `hideleg`, in which case it
+goes to VS-mode.'''
+zh = '''
+当陷阱发生在 HS 模式或 U 模式时，它进入 M 模式，除非由 `medeleg` 或 `mideleg` 委托，此时它进入 HS 模式。当陷阱发生在 VS 模式或 VU 模式时，它进入 M 模式，除非由 `medeleg` 或 `mideleg` 委托，此时它进入 HS 模式，除非又由 `hedeleg` 或 `hideleg` 进一步委托，此时它进入 VS 模式。'''

@@ -1,0 +1,12 @@
+unit_id = "be113f4da58604e7af9aa3d273ae41a4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a debugger writes 1 to {dmcontrol-resumereq}, each selected hart's resume ack bit is
+cleared and each selected, halted hart is sent a resume request. Harts
+respond by resuming, clearing their halted signal, and asserting their
+running signal. At the end of this process the resume ack bit is set.
+These status signals of all selected harts are reflected in {dmstatus-allresumeack}, {dmstatus-anyresumeack}, {dmstatus-allrunning}, and {dmstatus-anyrunning}. Resume requests are ignored by running harts.'''
+zh = '''
+当调试器向 {dmcontrol-resumereq} 写 1 时，每个所选硬件线程的恢复应答位被清零，并向每个所选且已停机的硬件线程发送恢复请求。硬件线程通过恢复、清零其停机信号并置位其运行信号来响应。在此过程结束时，恢复应答位被置位。所有所选硬件线程的这些状态信号反映在 {dmstatus-allresumeack}、{dmstatus-anyresumeack}、{dmstatus-allrunning} 和 {dmstatus-anyrunning} 中。正在运行的硬件线程忽略恢复请求。'''

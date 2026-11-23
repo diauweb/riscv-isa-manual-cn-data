@@ -1,0 +1,14 @@
+unit_id = "61b69d74cbe78abea8a11987877f12ab"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Extension Shlcofideleg supports delegating LCOFI interrupts to VS-mode.
+If the Shlcofideleg extension is implemented, `hideleg` bit 13 is
+writable; otherwise, it is read-only zero.
+When bit 13 of `hideleg` is zero, `vsip`.LCOFIP and `vsie`.LCOFIE
+are read-only zeros.
+Else, `vsip`.LCOFIP and `vsie`.LCOFIE are aliases of `sip`.LCOFIP
+and `sie`.LCOFIE.'''
+zh = '''
+扩展 Shlcofideleg 支持将 LCOFI 中断委托给 VS 模式。若实现 Shlcofideleg 扩展，则 `hideleg` 位 13 可写；否则为只读零。当 `hideleg` 的位 13 为零时，`vsip`.LCOFIP 和 `vsie`.LCOFIE 为只读零。否则，`vsip`.LCOFIP 和 `vsie`.LCOFIE 是 `sip`.LCOFIP 和 `sie`.LCOFIE 的别名。'''

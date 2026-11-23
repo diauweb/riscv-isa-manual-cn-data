@@ -1,0 +1,14 @@
+unit_id = "61892836c48b0ab722fcaf0d30b34fcc"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. The hardware prevents triggers with {mcontrol-action}=0 from matching or firing while in M-mode and while `MIE` in `mstatus` is 0. If `medeleg` [3]=1 then it prevents triggers with {mcontrol-action}=0 from
+matching or firing while in S-mode and while `SIE` in `sstatus` is 0. If `medeleg` [3]=1 and `hedeleg` [3]=1 then it
+prevents triggers with {mcontrol-action}=0 from matching or firing while in VS-mode and while `SIE` in `vsstatus` is 0.
+
+. {tcontrol-mte} and {tcontrol-mpte} in {csr-tcontrol} are implemented. `medeleg` [3] is hard-wired to 0.'''
+zh = '''
+. 硬件阻止 {mcontrol-action}=0 的触发器在 M 模式下且 `mstatus` 中 `MIE` 为 0 时匹配或触发。若 `medeleg` [3]=1，则它在 S 模式下且 `sstatus` 中 `SIE` 为 0 时阻止 {mcontrol-action}=0 的触发器匹配或触发。若 `medeleg` [3]=1 且 `hedeleg` [3]=1，则它在 VS 模式下且 `vsstatus` 中 `SIE` 为 0 时阻止 {mcontrol-action}=0 的触发器匹配或触发。
+
+. 实现了 {csr-tcontrol} 中的 {tcontrol-mte} 和 {tcontrol-mpte}。`medeleg` [3] 硬连线为 0。'''

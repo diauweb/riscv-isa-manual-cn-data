@@ -1,0 +1,20 @@
+unit_id = "00a64fcad79632bc4adf56f833ec6cd6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For each `mstateen` CSR, bit 63 is defined to control access to the
+matching `sstateen` and `hstateen` CSRs.
+That is, bit 63 of `mstateen0` controls access to `sstateen0` and `hstateen0`;
+bit 63 of `mstateen1` controls access to `sstateen1` and `hstateen1`; etc.
+Likewise, bit 63 of each `hstateen` correspondingly controls access to
+the matching `sstateen` CSR.
+A hypervisor may need this control over
+accesses to the `sstateen` CSRs if it ever must emulate for a virtual machine an
+extension that is supposed to be affected by a bit in an `sstateen` CSR. (Even if
+such emulation is uncommon, it should not be excluded.) Machine-level software
+needs identical control to be able to emulate the hypervisor extension. (That
+is, machine level needs control over accesses to the supervisor-level `sstateen`
+CSRs in order to emulate the `hstateen` CSRs, which have such control.)'''
+zh = '''
+对于每个 `mstateen` CSR，第 63 位定义为控制对对应的 `sstateen` 和 `hstateen` CSR 的访问。也就是说，`mstateen0` 的第 63 位控制对 `sstateen0` 和 `hstateen0` 的访问；`mstateen1` 的第 63 位控制对 `sstateen1` 和 `hstateen1` 的访问；依此类推。同样，每个 `hstateen` 的第 63 位也相应地控制对对应 `sstateen` CSR 的访问。如果虚拟机监控器必须为虚拟机模拟某个本应受 `sstateen` CSR 中某位影响的扩展，则它可能需要这种对 `sstateen` CSR 访问的控制。（即使此类模拟并不常见，也不宜将其排除。）机器级软件需要同样的控制，以便能够模拟虚拟机监控器扩展。（也就是说，机器级需要控制对监管级 `sstateen` CSR 的访问，以便模拟 `hstateen` CSR，而这些 CSR 具有此类控制。）'''

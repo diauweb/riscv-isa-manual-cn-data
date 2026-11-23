@@ -1,0 +1,26 @@
+unit_id = "d782f41d8de6b572c4382b4942a05a52"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The possible next fetch addresses (_loc_) are available immediately
+after fetching _i_ and the model does not need to wait for
+the pseudocode to write to _pc_; this allows out-of-order execution, and
+speculation past conditional branches and jumps. For most instructions
+these addresses are easily obtained from the instruction pseudocode. The
+only exception to that is the indirect jump instruction (`jalr`), where
+the address depends on the value held in a register. In principle the
+mathematical model should allow speculation to arbitrary addresses here.
+The exhaustive search in the `rmem` tool handles this by running the
+exhaustive search multiple times with a growing set of possible next
+fetch addresses for each indirect jump. The initial search uses empty
+sets, hence there is no fetch after indirect jump instruction until the
+pseudocode of the instruction writes to _pc_, and then we use that value
+for fetching the next instruction. Before starting the next iteration of
+exhaustive search, we collect for each indirect jump (grouped by code
+location) the set of values it wrote to _pc_ in all the executions in
+the previous search iteration, and use that as possible next fetch
+addresses of the instruction. This process terminates when no new fetch
+addresses are detected.'''
+zh = '''
+可能的下一取指地址（_loc_）在取指 _i_ 之后立即可用，模型无须等待伪代码写入 _pc_；这允许乱序执行，以及越过条件分支和跳转进行推测执行。对于大多数指令，这些地址容易从指令伪代码获得。唯一的例外是间接跳转指令（`jalr`），其地址取决于保存在寄存器中的值。原则上，数学模型在此应允许推测到任意地址。`rmem` 工具中的穷举搜索通过以下方式处理：对每个间接跳转，以不断增长的可能下一取指地址集合多次运行穷举搜索。初始搜索使用空集，因此在间接跳转指令的伪代码写入 _pc_ 之前，该指令之后不会发生取指，随后我们使用该值取指下一指令。在开始下一次穷举搜索迭代之前，我们针对每个间接跳转（按代码位置分组）收集其在上一搜索迭代的所有执行中写入 _pc_ 的值的集合，并将其用作该指令可能的下一取指地址。当未检测到新的取指地址时，该过程终止。'''

@@ -1,0 +1,20 @@
+unit_id = "4d1f096264a310c2613e35603c0c4801"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+It is always legal to over-fence, e.g., by fencing only based on a
+subset of the bits in _rs1_ and/or _rs2_, and/or by simply treating all
+SFENCE.VMA instructions as having _rs1_=`x0` and/or _rs2_=`x0`. For
+example, simpler implementations can ignore the virtual address in _rs1_
+and the ASID value in _rs2_ and always perform a global fence. The
+choice not to raise an exception when an invalid virtual address is held
+in _rs1_ facilitates this type of simplification.
+===='''
+zh = '''
+[NOTE]
+====
+过度栅栏总是合法的，例如仅基于 _rs1_ 和/或 _rs2_ 中位的子集进行栅栏，和/或简单地将所有 SFENCE.VMA 指令视为具有 _rs1_=`x0` 和/或 _rs2_=`x0`。例如，较简单的实现可忽略 _rs1_ 中的虚拟地址和 _rs2_ 中的 ASID 值，并始终执行全局栅栏。当 _rs1_ 中保存无效虚拟地址时不引发异常这一选择，有助于此类简化。
+===='''

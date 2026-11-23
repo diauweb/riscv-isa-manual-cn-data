@@ -1,0 +1,30 @@
+unit_id = "b6f6814721efd741d075a6b2de123a0e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:constrained_lrsc_loop_size]#The loop comprises only an insn:lr[]/insn:sc[] sequence and code to retry the
+sequence in the case of failure, and must comprise at most 16
+instructions placed sequentially in memory.#
+* [#norm:constrained_lrsc_instruction_set]#An insn:lr[]/insn:sc[] sequence begins with an insn:lr[] instruction and ends with an
+insn:sc[] instruction. The dynamic code executed between the insn:lr[] and
+insn:sc[] instructions can only contain instructions from the base
+ext:i[] instruction set, excluding loads, stores, backward jumps, taken backward
+branches, insn:jalr[], insn:fence[], and insn:system[] instructions.#
+[#norm:constrained_lrsc_compressed_allowed]#Compressed forms of the aforementioned ext:i[] instructions in the
+ext:c[] (hence ext:zca[]) and ext:zcb[] extensions are also permitted.#
+* [#norm:constrained_lrsc_retry_code]#The code to retry a failing insn:lr[]/insn:sc[] sequence can contain backwards jumps
+and/or branches to repeat the insn:lr[]/insn:sc[] sequence, but otherwise has the same
+constraint as the code between the insn:lr[] and insn:sc[].#
+* [#norm:lrsc_eventuality_region]#The insn:lr[] and insn:sc[] addresses must lie within a memory region with the
+_insn:lr[]/insn:sc[] eventuality_ property. The execution environment is responsible
+for communicating which regions have this property.#
+* [#norm:lrsc_same_address_and_size]#The insn:sc[] must be to the same effective address and of the same data size
+as the latest insn:lr[] executed by the same hart.#'''
+zh = '''
+* [#norm:constrained_lrsc_loop_size]##该循环仅由 insn:lr[]/insn:sc[] 序列以及在失败情况下重试该序列的代码组成，并且应至多包含 16 条在内存中顺序放置的指令。##
+* [#norm:constrained_lrsc_instruction_set]##insn:lr[]/insn:sc[] 序列以 insn:lr[] 指令开始，以 insn:sc[] 指令结束。在 insn:lr[] 与 insn:sc[] 指令之间执行的动态代码只能包含来自基础 ext:i[] 指令集的指令，排除加载、存储、向后跳转、已采用的后向分支、insn:jalr[]、insn:fence[] 和 insn:system[] 指令。##
+[#norm:constrained_lrsc_compressed_allowed]##ext:c[]（因而 ext:zca[]）和 ext:zcb[] 扩展中上述 ext:i[] 指令的压缩形式也是允许的。##
+* [#norm:constrained_lrsc_retry_code]##用于重试失败的 insn:lr[]/insn:sc[] 序列的代码可以包含向后跳转和/或分支以重复该 insn:lr[]/insn:sc[] 序列，但在其他方面与 insn:lr[] 和 insn:sc[] 之间的代码具有相同的约束。##
+* [#norm:lrsc_eventuality_region]##insn:lr[] 和 insn:sc[] 的地址应位于具有 __insn:lr[]/insn:sc[] 最终性__（eventuality）属性的内存区域内。执行环境负责告知哪些区域具有该属性。##
+* [#norm:lrsc_same_address_and_size]##insn:sc[] 应发往与同一硬件线程执行的最新 insn:lr[] 相同的有效地址，且数据大小相同。##'''

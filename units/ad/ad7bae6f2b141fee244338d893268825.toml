@@ -1,0 +1,14 @@
+unit_id = "ad7bae6f2b141fee244338d893268825"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Typically, fewer bits are allocated for `RCID` (e.g., to support tens of RCIDs)
+than for `MCID` (e.g., to support hundreds of MCIDs). A common `RCID` is usually
+used to group apps or VMs, pooling resource allocations to meet collective SLAs.
+If an SLA breach occurs, unique MCIDs enable granular monitoring, aiding
+decisions on resource adjustment, associating a different `RCID` with a subset
+of members, or migrating members to other machines. The larger pool of MCIDs
+speeds up this analysis.'''
+zh = '''
+通常，为 `RCID` 分配的位数（例如，为支持数十个 RCID）少于为 `MCID` 分配的位数（例如，为支持数百个 MCID）。通常使用一个公共 `RCID` 来对应用或 VM 进行分组，汇集资源分配以满足总体 SLA。若发生 SLA 违例，唯一的 MCID 可实现细粒度监控，有助于就资源调整、将不同的 `RCID` 与成员子集关联，或将成员迁移到其他机器作出决策。更大的 MCID 池可加速此分析。'''

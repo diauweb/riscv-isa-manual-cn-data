@@ -1,0 +1,23 @@
+unit_id = "aa984da31a75c930dd759c24c24394b1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Floating-point-to-integer and integer-to-floating-point conversion
+instructions are encoded in the OP-FP major opcode space. FCVT.W.S or
+FCVT.L.S converts a floating-point number in floating-point register
+_rs1_ to a signed 32-bit or 64-bit integer, respectively, in integer
+register _rd_. FCVT.S.W or FCVT.S.L converts a 32-bit or 64-bit signed
+integer, respectively, in integer register _rs1_ into a floating-point
+number in floating-point register _rd_. FCVT.WU.S, FCVT.LU.S, FCVT.S.WU,
+and FCVT.S.LU variants convert to or from unsigned integer values. For
+XLEN>32, FCVT.W[U].S sign-extends the 32-bit result to the
+destination register width. FCVT.L[U].S and FCVT.S.L[U] are RV64-only
+instructions. If the rounded result is not representable in the
+destination format, it is clipped to the nearest value and the invalid
+flag is set. <<int_conv>> gives the range of valid inputs
+for FCVT._int_.S and the behavior for invalid inputs.
+(((floating-point, conversion)))'''
+zh = '''
+浮点到整数和整数到浮点的转换指令编码在 OP-FP 主操作码空间中。FCVT.W.S 或 FCVT.L.S 分别将浮点寄存器 _rs1_ 中的浮点数转换为整数寄存器 _rd_ 中的有符号 32 位或 64 位整数。FCVT.S.W 或 FCVT.S.L 分别将整数寄存器 _rs1_ 中的 32 位或 64 位有符号整数转换为浮点寄存器 _rd_ 中的浮点数。FCVT.WU.S、FCVT.LU.S、FCVT.S.WU 和 FCVT.S.LU 变体转换为无符号整数值或从无符号整数值转换。对于 XLEN>32，FCVT.W[U].S 将 32 位结果符号扩展到目标寄存器宽度。FCVT.L[U].S 和 FCVT.S.L[U] 是仅 RV64 指令。若舍入结果不能在目标格式中表示，则将其裁剪到最近值并置位无效标志。<<int_conv>> 给出 FCVT._int_.S 的有效输入范围以及无效输入时的行为。
+(((浮点, 转换)))'''

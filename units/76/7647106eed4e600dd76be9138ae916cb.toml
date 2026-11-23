@@ -1,0 +1,33 @@
+unit_id = "7647106eed4e600dd76be9138ae916cb"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VROR_VV(vs2, vs1, vd)) = {
+  foreach (i from vstart to vl - 1) {
+    set_velem(vd, EEW=SEW, i,
+      get_velem(vs2, i) >>> (get_velem(vs1, i) & (SEW-1))
+    )
+  }
+  RETIRE_SUCCESS
+}
+
+function clause execute (VROR_VX(vs2, rs1, vd)) = {
+  foreach (i from vstart to vl - 1) {
+    set_velem(vd, EEW=SEW, i,
+      get_velem(vs2, i) >>> (X(rs1) & (SEW-1))
+    )
+  }
+  RETIRE_SUCCESS
+}
+
+function clause execute (VROR_VI(vs2, imm[5:0], vd)) = {
+  foreach (i from vstart to vl - 1) {
+    set_velem(vd, EEW=SEW, i,
+      get_velem(vs2, i) >>> (imm[5:0] & (SEW-1))
+    )
+  }
+  RETIRE_SUCCESS
+}
+--'''

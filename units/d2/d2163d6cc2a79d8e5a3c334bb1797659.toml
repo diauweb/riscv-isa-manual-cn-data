@@ -1,0 +1,33 @@
+unit_id = "d2163d6cc2a79d8e5a3c334bb1797659"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. latexmath:[$i$] has fully determined data;
+. all program-order-previous conditional branch and indirect jump
+instructions are finished;
+. all program-order-previous `fence` instructions with `.sw` set are
+finished;
+. all program-order-previous `fence.tso` instructions are finished;
+. all program-order-previous load-acquire instructions are finished;
+. all program-order-previous store-acquire-release instructions are
+finished;
+. if latexmath:[$i$] is a store-release, all program-order-previous
+instructions are finished;
+. all program-order-previous memory access instructions have a fully
+determined memory footprint;
+. all program-order-previous store instructions, except for `sc` that failed,
+have initiated and so have non-empty _mem_stores_; and
+. all program-order-previous load instructions have initiated and so have
+non-empty _mem_loads_.'''
+zh = '''
+. latexmath:[$i$] 具有完全确定的数据；
+. 所有程序顺序在前的条件分支指令和间接跳转指令均已完成；
+. 所有设置了 `.sw` 的程序顺序在前的 `fence` 指令均已完成；
+. 所有程序顺序在前的 `fence.tso` 指令均已完成；
+. 所有程序顺序在前的 load-acquire 指令均已完成；
+. 所有程序顺序在前的 store-acquire-release 指令均已完成；
+. 若 latexmath:[$i$] 是 store-release，则所有程序顺序在前的指令均已完成；
+. 所有程序顺序在前的访存指令均具有完全确定的访存足迹；
+. 除失败的 `sc` 外，所有程序顺序在前的存储指令均已发起，因而其 _mem_stores_ 非空；且
+. 所有程序顺序在前的加载指令均已发起，因而其 _mem_loads_ 非空。'''

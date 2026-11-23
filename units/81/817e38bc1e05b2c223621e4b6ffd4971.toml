@@ -1,0 +1,17 @@
+unit_id = "817e38bc1e05b2c223621e4b6ffd4971"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+To improve compatibility with RV64, in a reverse of how RV32 to RV64 was
+handled, we might change the decoding around to rename RV64I ADD as a
+64-bit ADDD, and add a 128-bit ADDQ in what was previously the OP-64
+major opcode (now renamed the OP-128 major opcode).
+===='''
+zh = '''
+[NOTE]
+====
+为了改善与 RV64 的兼容性，与处理 RV32 到 RV64 的方式相反，可能调整译码，将 RV64I 的 ADD 重命名为 64 位的 ADDD，并在原先的 OP-64 主操作码（现重命名为 OP-128 主操作码）中加入 128 位的 ADDQ。
+===='''

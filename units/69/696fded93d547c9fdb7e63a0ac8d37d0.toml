@@ -1,0 +1,15 @@
+unit_id = "696fded93d547c9fdb7e63a0ac8d37d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A synchronous trap that has been delegated to HS-mode (using `medeleg`)
+is further delegated to VS-mode if V=1 before the trap and the
+corresponding `hedeleg` bit is set. Each bit of `hedeleg` shall be
+either writable or read-only zero. Many bits of `hedeleg` are required
+specifically to be writable or zero, as enumerated in
+<<hedeleg-bits>>. Bit 0, corresponding to
+instruction address-misaligned exceptions, must be writable if
+IALIGN=32.'''
+zh = '''
+已委托给 HS 模式的同步陷阱（使用 `medeleg`）在陷阱前 V=1 且对应 `hedeleg` 位置位时，进一步委托给 VS 模式。`hedeleg` 的每一位应为可写或只读零。`hedeleg` 的许多位具体要求为可写或零，如 <<hedeleg-bits>> 所枚举。位 0 对应指令地址非对齐异常，若 IALIGN=32 则应为可写。'''

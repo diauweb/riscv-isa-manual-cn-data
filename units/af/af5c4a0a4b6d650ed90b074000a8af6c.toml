@@ -1,0 +1,48 @@
+unit_id = "af5c4a0a4b6d650ed90b074000a8af6c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="<,<",grid="none"]
+|===
+|Load_mem(_kind_, _address_, _size_, _load_continuation_) |- memory load
+operation
+
+|Early_sc_fail(_res_continuation_) |- allow `sc` to fail early
+
+|Store_ea(_kind_, _address_, _size_, _next_state_) |- memory store
+effective address
+
+|Store_memv(_mem_value_, _store_continuation_) |- memory store value
+
+|Fence(_kind_, _next_state_) |- fence
+
+|Read_reg(_reg_name_, _read_continuation_) |- register read
+
+|Write_reg(_reg_name_, _reg_value_, _next_state_) |- register write
+
+|Internal(_next_state_) |- pseudocode internal step
+
+|Done |- end of pseudocode
+|==='''
+zh = '''
+[cols="<,<",grid="none"]
+|===
+|Load_mem(_kind_, _address_, _size_, _load_continuation_) |- 内存加载操作
+
+|Early_sc_fail(_res_continuation_) |- 允许 `sc` 提前失败
+
+|Store_ea(_kind_, _address_, _size_, _next_state_) |- 内存存储有效地址
+
+|Store_memv(_mem_value_, _store_continuation_) |- 内存存储值
+
+|Fence(_kind_, _next_state_) |- fence
+
+|Read_reg(_reg_name_, _read_continuation_) |- 寄存器读
+
+|Write_reg(_reg_name_, _reg_value_, _next_state_) |- 寄存器写
+
+|Internal(_next_state_) |- 伪代码内部步骤
+
+|Done |- 伪代码结束
+|==='''

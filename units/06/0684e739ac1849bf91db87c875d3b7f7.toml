@@ -1,0 +1,30 @@
+unit_id = "0684e739ac1849bf91db87c875d3b7f7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* delta address mode: program counter discontinuities are encoded as
+differences instead of absolute address values.
+* full address mode: program counter discontinuities are encoded as
+absolute address values.
+* implicit exception mode: the destination address of an exception (i.e.
+the address of the exception trap) is assumed to be known by the
+decoder, and thus not encoded in the trace.
+* Sequentially inferable jump mode: The target of an indirect jump can
+be inferred by considering the combined effect of two instructions.
+* implicit return mode: the destination address of function call returns
+is derived from a call stack, and thus not encoded in the trace.
+* branch prediction mode: branches that are predicted correctly by an
+encoder branch predictor (and an identical copy in the decoder) are not
+encoded as taken/non-taken, but as a more efficient branch count number.
+* Jump target cache mode: Rather than reporting the address of an
+uninferable jump target, efficiency can be improved by caching recent
+jump targets, and reporting the cache entry index instead.'''
+zh = '''
+* 增量地址模式：程序计数器不连续被编码为差值，而不是绝对地址值。
+* 完整地址模式：程序计数器不连续被编码为绝对地址值。
+* 隐式异常模式：异常的目的地址（即异常陷阱的地址）被假定为解码器已知，因此不在跟踪中编码。
+* 顺序可推断跳转模式：通过考虑两条指令的组合效果，可推断间接跳转的目标。
+* 隐式返回模式：函数调用返回的目的地址从调用栈导出，因此不在跟踪中编码。
+* 分支预测模式：由编码器分支预测器（以及解码器中完全相同的副本）正确预测的分支，不编码为已转移/未转移，而编码为更高效的分支计数值。
+* 跳转目标缓存模式：不报告不可推断跳转目标的地址，而是通过缓存最近的跳转目标并改为报告缓存项索引来提高效率。'''

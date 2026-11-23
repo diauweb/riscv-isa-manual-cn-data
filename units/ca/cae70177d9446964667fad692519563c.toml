@@ -1,0 +1,49 @@
+unit_id = "cae70177d9446964667fad692519563c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Transliterated the document from LaTeX into AsciiDoc.
+* Defined the `misa`.V field to reflect that the V extension has been
+implemented.
+* Defined the RV32-only `medelegh` and `hedelegh` CSRs.
+* Defined the misaligned atomicity granule PMA, superseding the proposed Zam
+  extension.
+* Allocated interrupt 13 for Sscofpmf LCOFI interrupt.
+* Defined hardware error and software check exception codes.
+* Specified synchronization requirements when changing the PBMTE fields
+in `menvcfg` and `henvcfg`.
+* Incorporated Svade and Svadu extension specifications.
+* Clarified that "platform- or custom-use" interrupts are actually
+"platform-use interrupts", where the platform can choose to make some custom.
+* Clarified semantics of explicit accesses to CSRs wider than XLEN bits.
+* Clarified that MXLEN&#8805;SXLEN.
+* Clarified that WFI is not a HINT instruction.
+* Clarified that VS-stage page-table accesses set G-stage A/D bits.
+* Clarified ordering rules when PBMT=IO is used on main-memory regions.
+* Clarified ordering rules for hardware A/D bit updates.
+* Clarified that, for a given exception cause, `__x__tval` might sometimes
+be set to a nonzero value but sometimes not.
+* Clarified exception behavior of unimplemented or inaccessible CSRs.
+* Clarified that Svpbmt allows implementations to override additional PMAs.
+* Exposed count-overflow interrups to VS-mode.'''
+zh = '''
+* 将文档由 LaTeX 转写为 AsciiDoc。
+* 定义了 `misa`.V 字段，以反映 V 扩展已实现。
+* 定义了仅 RV32 的 `medelegh` 和 `hedelegh` CSR。
+* 定义了非对齐原子性粒度 PMA，取代了提议的 Zam 扩展。
+* 为 Sscofpmf LCOFI 中断分配了中断 13。
+* 定义了硬件错误和软件检查异常代码。
+* 规定了在修改 `menvcfg` 和 `henvcfg` 中 PBMTE 字段时的同步要求。
+* 纳入了 Svade 和 Svadu 扩展规范。
+* 澄清了“平台使用或自定义使用”中断实际上为“平台使用中断”，其中平台可选择将其中一些作为自定义中断。
+* 澄清了对宽于 XLEN 位的 CSR 进行显式访问的语义。
+* 澄清了 MXLEN&#8805;SXLEN。
+* 澄清了 WFI 不是 HINT 指令。
+* 澄清了 VS 阶段页表访问会设置 G 阶段 A/D 位。
+* 澄清了在主内存区域使用 PBMT=IO 时的排序规则。
+* 澄清了硬件 A/D 位更新的排序规则。
+* 澄清了对于给定的异常原因，`__x__tval` 可能有时被设置为非零值，而有时则不是。
+* 澄清了未实现或不可访问的 CSR 的异常行为。
+* 澄清了 Svpbmt 允许实现覆盖额外的 PMA。
+* 将计数溢出中断暴露给 VS 模式。'''

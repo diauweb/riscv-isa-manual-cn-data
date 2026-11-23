@@ -1,0 +1,18 @@
+unit_id = "ab20bd2dca7fb1603d3fc2fac498b88f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An implementation can register an arbitrarily large reservation set on
+each LR, provided the reservation set includes all bytes of the
+addressed data word or doubleword. An SC can only pair with the most
+recent LR in program order. An SC may succeed only if no store from
+another hart to the reservation set can be observed to have occurred
+between the LR and the SC, and if there is no other SC between the LR
+and itself in program order. An SC may succeed only if no write from a
+device other than a hart to the bytes accessed by the LR instruction can
+be observed to have occurred between the LR and SC. Note this LR might
+have had a different effective address and data size, but reserved the
+SC's address as part of the reservation set.'''
+zh = '''
+实现可在每个 LR 上登记任意大的保留集，只要该保留集包含所寻址数据字或双字的所有字节。SC 只能与程序顺序上最近的 LR 配对。仅当在 LR 与 SC 之间观察不到来自其他硬件线程对保留集的存储发生，且程序顺序上在 LR 与其自身之间没有其他 SC 时，SC 才可成功。仅当在 LR 与 SC 之间观察不到来自硬件线程以外设备对 LR 指令所访问字节的写发生时，SC 才可成功。注意，此 LR 可能具有不同的有效地址和数据大小，但将 SC 的地址作为保留集的一部分予以保留。'''

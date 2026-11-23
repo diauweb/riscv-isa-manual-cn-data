@@ -1,0 +1,15 @@
+unit_id = "0123cd6af34c537335a0fe96268601c5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that we consider the standard A extension to have a greenfield
+encoding as it defines a new previously empty 25-bit encoding space in
+the leftmost bits of the full 32-bit base instruction encoding, even
+though its standard prefix locates it within the 30-bit encoding space
+of its parent base ISA. Changing only its single 7-bit prefix could move
+the A extension to a different 30-bit encoding space while only worrying
+about conflicts at the prefix level, not within the encoding space
+itself.'''
+zh = '''
+请注意，我们将标准 A 扩展视为具有绿地编码，因为它在完整 32 位基础指令编码的最左侧位中定义了一个先前为空的 25 位编码空间，尽管其标准前缀将其定位在父基础 ISA 的 30 位编码空间内。仅更改其单个 7 位前缀即可将 A 扩展移动到不同的 30 位编码空间，而只需担心前缀级的冲突，无须担心编码空间内部的冲突。'''

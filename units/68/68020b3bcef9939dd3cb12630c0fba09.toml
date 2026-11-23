@@ -1,0 +1,12 @@
+unit_id = "68020b3bcef9939dd3cb12630c0fba09"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zcmt_fetch]#For a table jump instruction, the table entry that the instruction selects is considered an extension of the instruction itself.#
+[#norm:Zcmt_two_fetches]#Hence, the execution of a table jump instruction involves two instruction fetches, the first to read the instruction (insn:cm.jt[]/insn:cm.jalt[])
+and the second to read from the jump vector table (JVT).# [#norm:Zcmt_fetch_implicit_exec_perm]#Both instruction fetches are _implicit_ reads, and both require
+execute permission; read permission is irrelevant.# It is recommended that the second fetch be ignored for hardware triggers and breakpoints.'''
+zh = '''
+[#norm:Zcmt_fetch]##对于表跳转指令，该指令所选择的表项被视为指令本身的扩展。##
+[#norm:Zcmt_two_fetches]##因此，表跳转指令的执行涉及两次取指，第一次读取指令（insn:cm.jt[]/insn:cm.jalt[]），第二次从跳转向量表（JVT）读取。## [#norm:Zcmt_fetch_implicit_exec_perm]##两次取指都是__隐式__读取，且都需要执行权限；读权限无关紧要。## 对于硬件触发器和断点，宜忽略第二次取指。'''

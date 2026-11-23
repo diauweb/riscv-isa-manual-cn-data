@@ -1,0 +1,53 @@
+unit_id = "2034654a24fb277484fd737338015759"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[tmexttrigger-hit]] `((hit))`
+a|If this bit is implemented, the hardware sets it when this
+trigger matches. The trigger's user can set or clear it at any
+time. It is used to determine which
+trigger(s) matched.  If the bit is not implemented, it is always 0
+and writing it has no effect.
+a|*WARL*
+a|0
+|[[tmexttrigger-intctl]] `((intctl))`
+a|This optional bit, when set, causes this trigger to fire whenever an attached
+interrupt controller signals a trigger.
+a|*WARL*
+a|0
+|[[tmexttrigger-select]] `((select))`
+a|Selects any combination of up to 16 TM external trigger inputs
+that cause this trigger to fire.
+a|*WARL*
+a|0
+|[[tmexttrigger-action]] `((action))`
+a|The action to take when the trigger fires. The values are explained
+in xref:tab:action[].
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[tmexttrigger-hit]] `((hit))`
+a|若实现此位，则硬件在触发器匹配时将其置位。触发器的用户可随时设置或清除它。它用于确定哪些触发器匹配。若未实现该位，则它始终为 0，写入它无效果。
+a|*WARL*
+a|0
+|[[tmexttrigger-intctl]] `((intctl))`
+a|此可选位置位时，导致每当所连接中断控制器发出触发信号时此触发器触发。
+a|*WARL*
+a|0
+|[[tmexttrigger-select]] `((select))`
+a|选择多达 16 个 TM 外部触发输入的任意组合，以导致此触发器触发。
+a|*WARL*
+a|0
+|[[tmexttrigger-action]] `((action))`
+a|触发器触发时要采取的动作。各值在 xref:tab:action[] 中说明。
+a|*WARL*
+a|0
+|==='''

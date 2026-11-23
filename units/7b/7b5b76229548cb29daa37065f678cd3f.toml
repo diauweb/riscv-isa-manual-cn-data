@@ -1,0 +1,13 @@
+unit_id = "7b5b76229548cb29daa37065f678cd3f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Vector memory unit-stride and constant-stride operations directly
+encode EEW of the data to be transferred statically in the instruction
+to reduce the number of `vtype` changes when accessing memory in a
+mixed-width routine.  Indexed operations use the explicit EEW encoding
+in the instruction to set the size of the indices used, and use
+SEW/LMUL to specify the data width.'''
+zh = '''
+向量内存单位步长和恒定步长操作在指令中静态直接编码要传输数据的 EEW，以减少在混合宽度例程中访问内存时 `vtype` 的改变次数。索引操作使用指令中的显式 EEW 编码来设置所用索引的大小，并使用 SEW/LMUL 指定数据宽度。'''

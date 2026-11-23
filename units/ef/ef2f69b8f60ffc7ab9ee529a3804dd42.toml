@@ -1,0 +1,20 @@
+unit_id = "ef2f69b8f60ffc7ab9ee529a3804dd42"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We reserve all-zero instructions to be illegal instructions to help trap
+attempts to execute zero-ed or non-existent portions of the memory
+space. The all-zero value should not be redefined in any non-standard
+extension. Similarly, we reserve instructions with all bits set to 1
+(corresponding to very long instructions in the RISC-V variable-length
+encoding scheme) as illegal to capture another common value seen in
+non-existent memory regions.
+===='''
+zh = '''
+[NOTE]
+====
+将全零指令保留为非法指令，以帮助捕获尝试执行内存空间中已清零或不存在部分的行为。全零值不宜在任何非标准扩展中重新定义。同样，将全 1 位指令（对应于 RISC-V 变长编码方案中的超长指令）保留为非法指令，以捕获在不存在内存区域中见到的另一种常见值。
+===='''

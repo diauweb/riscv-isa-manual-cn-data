@@ -1,0 +1,16 @@
+unit_id = "b46b8f9c32c4c027ec8159df43a512f9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:menvcfg_stce_op1]#The Sstc extension adds the `STCE` (STimecmp Enable) bit to `menvcfg` CSR.#
+[#norm:menvcfg_stce_rdonly0]#When the Sstc extension is not implemented, `STCE` is read-only zero.#
+[#norm:menvcfg_stce_op2]#The `STCE` bit enables `stimecmp` for S-mode when set to one.
+When this extension is implemented and `STCE` in `menvcfg` is zero, an attempt to access `stimecmp`
+in a mode other than M-mode raises an illegal-instruction exception, `STCE` in
+`henvcfg` is read-only zero, and `STIP` in `mip` and `sip` reverts to its
+defined behavior as if this extension is not implemented. Further, if the H
+extension is implemented, then `hip`.VSTIP also reverts its defined behavior as
+if this extension is not implemented.#'''
+zh = '''
+[#norm:menvcfg_stce_op1]##Sstc 扩展向 `menvcfg` CSR 添加了 `STCE`（STimecmp Enable）位。##[#norm:menvcfg_stce_rdonly0]##当未实现 Sstc 扩展时，`STCE` 为只读零。##[#norm:menvcfg_stce_op2]##`STCE` 位在置 1 时为 S 模式使能 `stimecmp`。当实现了此扩展且 `menvcfg` 中的 `STCE` 为零时，在非 M 模式下试图访问 `stimecmp` 将引发非法指令异常，`henvcfg` 中的 `STCE` 为只读零，且 `mip` 和 `sip` 中的 `STIP` 恢复为其定义行为，如同未实现此扩展。此外，若实现了 H 扩展，则 `hip`.VSTIP 也恢复其定义行为，如同未实现此扩展。##'''

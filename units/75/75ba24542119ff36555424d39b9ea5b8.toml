@@ -1,0 +1,15 @@
+unit_id = "75ba24542119ff36555424d39b9ea5b8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The expectation is that each ext:zcmop[] instruction is equivalent to some
+ext:zimop[] instruction, but the choice of expansion (if any) is left to the
+extension that redefines the MOP.
+Note, a ext:zcmop[] instruction that does not write a value can expand into a write
+to `x0`.'''
+zh = '''
+NOTE: 预期是每条 ext:zcmop[] 指令都等效于某条
+ext:zimop[] 指令，但展开方式（若有）的选择留给重定义该 MOP 的
+扩展。
+注意，不写入值的 ext:zcmop[] 指令可展开为对 `x0` 的写入。'''

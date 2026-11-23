@@ -1,0 +1,46 @@
+unit_id = "1b758e1faf8d2dba3c2eaa141aff851b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeTrigExtInControl: External Trigger Input Control Register (trBaseEncoder+0x054)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trTeTrigExtInAction0 a|
+Select action to perform when external trigger input #0 fires. If external trigger input #0 does not exist, then its action is fixed at 0. +
+*0:* No action +
+*1:* Reserved +
+*2:* *Trace-on action* +
+When `trTeInstTrigEnable` = 1 it will start instruction tracing (`trTeInstTracing` -> 1). +
+When `trTeDataTrigEnable` = 1 it will start data tracing (`trTeDataTracing` -> 1). +
+*3:* *Trace-off action* +
+When `trTeInstTrigEnable` = 1 it will stop instruction tracing (`trTeInstTracing` -> 0). +
+When `trTeDataTrigEnable` = 1 it will stop data tracing (`trTeDataTracing` -> 0). +
+*4:* *Trace-notify action* +
+If tracing is active (`trTeInstTracing` = 1), then the encoder generates a packet with the current PC and, if enabled, a timestamp. +
+*5-15:* Reserved +
+|WARL|<<Undef,Undef>>
+|31:4 |trTeTrigExtInAction**N** |Select actions (as defined for bits 3-0) for external trigger input #**N** (1..7). If an external trigger input does not exist, then its action is fixed at 0. |WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.**寄存器：trTeTrigExtInControl：外部触发输入控制寄存器（trBaseEncoder+0x054）**
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trTeTrigExtInAction0 a|
+选择当外部触发输入 #0 触发时执行的动作。如果外部触发输入 #0 不存在，则其动作固定为 0。 +
+*0:* 无动作 +
+*1:* 保留 +
+*2:* **跟踪开启动作** +
+当 `trTeInstTrigEnable` = 1 时，将启动指令跟踪（`trTeInstTracing` -> 1）。 +
+当 `trTeDataTrigEnable` = 1 时，将启动数据跟踪（`trTeDataTracing` -> 1）。 +
+*3:* **跟踪关闭动作** +
+当 `trTeInstTrigEnable` = 1 时，将停止指令跟踪（`trTeInstTracing` -> 0）。 +
+当 `trTeDataTrigEnable` = 1 时，将停止数据跟踪（`trTeDataTracing` -> 0）。 +
+*4:* **跟踪通知动作** +
+如果跟踪处于活动状态（`trTeInstTracing` = 1），则编码器生成包含当前 PC 的数据包，并在启用时包含时间戳。 +
+*5-15:* 保留 +
+|WARL|<<Undef,Undef>>
+|31:4 |trTeTrigExtInAction**N** |选择外部触发输入 #**N**（1..7）的动作（如位 3-0 所定义）。如果外部触发输入不存在，则其动作固定为 0。 |WARL|<<Undef,Undef>>
+|==='''

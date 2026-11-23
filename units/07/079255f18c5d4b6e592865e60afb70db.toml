@@ -1,0 +1,28 @@
+unit_id = "079255f18c5d4b6e592865e60afb70db"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since the ext:v[] extension requires a minimum of VLEN of 128,
+at most such implementations would require LMUL=2 to form the largest element groups in this specification.
+
+However, implementations with a smaller VLEN, such as embedded designs, will requires a larger LMUL
+to form the necessary element groups.
+It is important to keep in mind that this reduces the number of register groups available such
+that it may be difficult or impossible to write efficient code for the intended cryptographic algorithms.
+
+For example, an implementation with VLEN=32 would need to set LMUL=8 to create a
+256-bit element group for SM3. This would mean that there would only be 4 register groups,
+3 of which would be consumed by a single SM3 message-expansion instruction.
+===='''
+zh = '''
+[NOTE]
+====
+由于 ext:v[] 扩展要求 VLEN 至少为 128，因此至多此类实现需要 LMUL=2 来形成本规范中的最大元素组。
+
+然而，VLEN 较小的实现（如嵌入式设计）将需要更大的 LMUL 来形成必要的元素组。重要的是要记住，这会减少可用的寄存器组数量，以至于可能难以为目标密码算法编写高效代码，甚至不可能。
+
+例如，VLEN=32 的实现需要设置 LMUL=8 才能为 SM3 创建 256 位元素组。这意味着只有 4 个寄存器组，其中 3 个将被单条 SM3 消息扩展指令消耗。
+===='''

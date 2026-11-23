@@ -1,0 +1,12 @@
+unit_id = "a6f953ce51edcd89d7e98fc3573bd6f5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The number of bits implemented in csr:vl[] depends on the
+implementation's maximum vector length of the smallest supported
+type. The smallest vector implementation with VLEN=32 and supporting
+SEW=8 would need at least six bits in csr:vl[] to hold the values 0-32
+(VLEN=32, with LMUL=8 and SEW=8, yields VLMAX=32).'''
+zh = '''
+NOTE: csr:vl[] 中实现的位数取决于实现针对最小支持类型的最大向量长度。VLEN=32 且支持 SEW=8 的最小向量实现将需要 csr:vl[] 中至少六位来保存 0-32 的值（VLEN=32、LMUL=8、SEW=8 时 VLMAX=32）。'''

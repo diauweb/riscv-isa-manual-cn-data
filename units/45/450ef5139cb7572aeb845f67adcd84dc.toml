@@ -1,0 +1,21 @@
+unit_id = "450ef5139cb7572aeb845f67adcd84dc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We require implementations to return the standard-mandated default
+values in the case of exceptional conditions, without any further
+intervention on the part of user-level software (unlike the Alpha ISA
+floating-point trap barriers). We believe full hardware handling of
+exceptional cases will become more common, and so wish to avoid
+complicating the user-level ISA to optimize other approaches.
+Implementations can always trap to machine-mode software handlers to
+provide exceptional default values.
+===='''
+zh = '''
+[NOTE]
+====
+本规范要求实现在出现异常条件时返回标准规定的默认值，而无须用户级软件进一步干预（不同于 Alpha ISA 的浮点陷阱屏障）。我们认为对异常情况的完整硬件处理将变得更加常见，因此希望避免为了优化其他方案而使用户级 ISA 复杂化。实现总能陷入机器模式软件处理程序以提供异常默认值。
+===='''

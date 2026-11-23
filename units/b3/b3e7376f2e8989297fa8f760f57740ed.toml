@@ -1,0 +1,14 @@
+unit_id = "b3e7376f2e8989297fa8f760f57740ed"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A guest physical address written to `htval` is shifted right by 2 bits
+to accommodate addresses wider than the current XLEN. For RV32, the
+hypervisor extension permits guest physical addresses as wide as 34
+bits, and `htval` reports bits 33:2 of the address. This shift-by-2
+encoding of guest physical addresses matches the encoding of physical
+addresses in PMP address registers (<<pmp>>) and in
+page table entries (<<sv32>>, <<sv39>>, <<sv48>>, and <<sv57>>).'''
+zh = '''
+写入 `htval` 的客户机物理地址右移 2 位，以适应宽于当前 XLEN 的地址。对于 RV32，虚拟机监控器扩展允许客户机物理地址宽达 34 位，`htval` 报告地址的第 33:2 位。客户机物理地址的这种右移 2 位编码与 PMP 地址寄存器（<<pmp>>）及页表项（<<sv32>>、<<sv39>>、<<sv48>> 和 <<sv57>>）中物理地址的编码相匹配。'''

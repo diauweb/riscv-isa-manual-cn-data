@@ -1,0 +1,25 @@
+unit_id = "13d2733de2558c8d26c9241fe7b8fcc3"
+kind = "code"
+translatable = false
+en = '''
+----
+# v1 = sqrt(v1) to more than 23 bits of precision.
+
+  fmv.w.x ft0, x0           # Mask off zero inputs
+vmfne.vf v0, v1, ft0        #   to avoid DZ exception
+vfrsqrt7.v v2, v1, v0.t     # Estimate r ~= 1/sqrt(v1)
+vmfne.vf v0, v2, ft0, v0.t  # Mask off +inf to avoid NV
+  li t0, 0x3f800000
+  fli.s ft0, 0.5
+vmv.v.x v5, t0              # Splat 1.0
+vfmul.vv v3, v1, v2, v0.t   # t = v1 r
+vfmul.vf v4, v2, ft0, v0.t  # 0.5 r
+vfmsub.vv v3, v2, v5, v0.t  # t r - 1
+vfnmsac.vv v2, v3, v4, v0.t # r - (0.5 r) (t r - 1)
+                            # Better estimate of 1/sqrt(v1)
+vfmul.vv v1, v1, v2, v0.t   # t = v1 r
+vfmsub.vv v2, v1, v5, v0.t  # t r - 1
+vfmul.vf v3, v1, ft0, v0.t  # 0.5 t
+vfnmsac.vv v1, v2, v3, v0.t # t - (0.5 t) (t r - 1)
+                            # ~ sqrt(v1) to about 23.3 bits
+----'''

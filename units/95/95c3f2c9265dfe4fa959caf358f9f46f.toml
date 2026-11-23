@@ -1,0 +1,26 @@
+unit_id = "95c3f2c9265dfe4fa959caf358f9f46f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.`xLPE` determination when S-mode is implemented
+[width=100%]
+[%header, cols="^4,^12"]
+|===
+|Privilege Mode| xLPE
+|  M           | csr:mseccfg[mlpe]
+|  S or HS     | csr:menvcfg[lpe]
+|  VS          | csr:henvcfg[lpe]
+|  U or VU     | csr:senvcfg[lpe]
+|==='''
+zh = '''
+.S 模式实现时 `xLPE` 的确定
+[width=100%]
+[%header, cols="^4,^12"]
+|===
+|特权模式| xLPE
+|  M           | csr:mseccfg[mlpe]
+|  S 或 HS     | csr:menvcfg[lpe]
+|  VS          | csr:henvcfg[lpe]
+|  U 或 VU     | csr:senvcfg[lpe]
+|==='''

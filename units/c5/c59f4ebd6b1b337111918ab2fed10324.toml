@@ -1,0 +1,14 @@
+unit_id = "c59f4ebd6b1b337111918ab2fed10324"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For XLEN{ge}64 only, instructions are provided to move bit
+patterns between the floating-point and integer registers.
+[#norm:fmv-x-d_op]#insn:fmv.x.d[] moves the double-precision value in
+floating-point register _rs1_ to a representation in the IEEE 754-2008
+encoding in integer register _rd_#. [#norm:fmv-d-x_op]#insn:fmv.d.x[] moves the
+double-precision value encoded in the IEEE 754-2008 encoding from the
+integer register _rs1_ to the floating-point register _rd_#.'''
+zh = '''
+仅对于 XLEN{ge}64，提供在浮点寄存器与整数寄存器之间移动位模式的指令。[#norm:fmv-x-d_op]##insn:fmv.x.d[] 将浮点寄存器 _rs1_ 中的双精度值移动到整数寄存器 _rd_ 中以 IEEE 754-2008 编码表示的值。## [#norm:fmv-d-x_op]##insn:fmv.d.x[] 将从整数寄存器 _rs1_ 中以 IEEE 754-2008 编码表示的双精度值移动到浮点寄存器 _rd_。##'''

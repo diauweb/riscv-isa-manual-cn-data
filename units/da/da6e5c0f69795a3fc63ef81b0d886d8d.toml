@@ -1,0 +1,14 @@
+unit_id = "da6e5c0f69795a3fc63ef81b0d886d8d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[tvm] (Trap Virtual Memory) bit is a *WARL* field that supports intercepting
+supervisor virtual-memory management operations. When csr::[tvm]=1, attempts to
+read or write the csr:satp[] CSR or execute an insn:sfence.vma[] or insn:sinval.vma[]
+instruction while executing in S-mode will raise an illegal-instruction
+exception. When csr::[tvm]=0, these operations are permitted in S-mode. csr::[tvm] is
+read-only 0 when S-mode is not supported or if csr:satp[mode] is read-only 0;
+otherwise, it must be writable.'''
+zh = '''
+csr::[tvm]（Trap Virtual Memory）位是一个 *WARL* 字段，支持拦截监管级虚拟内存管理操作。当 csr::[tvm]=1 时，在 S 模式下执行时试图读取或写入 csr:satp[] CSR，或执行 insn:sfence.vma[] 或 insn:sinval.vma[] 指令，将引发非法指令异常。当 csr::[tvm]=0 时，允许在 S 模式下执行这些操作。当不支持 S 模式，或 csr:satp[mode] 为只读 0 时，csr::[tvm] 为只读 0；否则，它应为可写。'''

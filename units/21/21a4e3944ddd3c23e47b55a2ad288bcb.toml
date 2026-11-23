@@ -1,0 +1,26 @@
+unit_id = "21a4e3944ddd3c23e47b55a2ad288bcb"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RISC-V base opcode map, inst[1:0]=11
+[%autowidth.stretch,float="center",align="center",cols=  ">.^4m,  ^.^4m,    ^.^4m,      ^.^4m,    ^.^4m,  ^.^4m,      ^.^4m,           ^.^6m, ^.^4h"]
+|===
+|inst[4:2] .2+|000 .2+|001   .2+|010     .2+|011   .2+|100 .2+|101     .2+|110          .2+|111 (>32b)
+|inst[6:5]
+|00           |LOAD   |LOAD-FP  |_custom-0_ |MISC-MEM |OP-IMM |AUIPC      |OP-IMM-32       |48b
+|01           |STORE  |STORE-FP |_custom-1_ |AMO      |OP     |LUI        |OP-32           |64b
+|10           |MADD   |MSUB     |NMSUB      |NMADD    |OP-FP  |OP-V       |_custom-2_      |48b
+|11           |BRANCH |JALR     |_reserved_ |JAL      |SYSTEM |OP-VE      |_custom-3_      |&#8805;80b
+|==='''
+zh = '''
+.RISC-V 基础操作码映射，inst[1:0]=11
+[%autowidth.stretch,float="center",align="center",cols=  ">.^4m,  ^.^4m,    ^.^4m,      ^.^4m,    ^.^4m,  ^.^4m,      ^.^4m,           ^.^6m, ^.^4h"]
+|===
+|inst[4:2] .2+|000 .2+|001   .2+|010     .2+|011   .2+|100 .2+|101     .2+|110          .2+|111 (>32b)
+|inst[6:5]
+|00           |LOAD   |LOAD-FP  |_custom-0_ |MISC-MEM |OP-IMM |AUIPC      |OP-IMM-32       |48b
+|01           |STORE  |STORE-FP |_custom-1_ |AMO      |OP     |LUI        |OP-32           |64b
+|10           |MADD   |MSUB     |NMSUB      |NMADD    |OP-FP  |OP-V       |_custom-2_      |48b
+|11           |BRANCH |JALR     |__保留__   |JAL      |SYSTEM |OP-VE      |_custom-3_      |&#8805;80b
+|==='''

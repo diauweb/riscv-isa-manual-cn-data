@@ -1,0 +1,48 @@
+unit_id = "12f39e60dd5bcf77136e7a30a2f464be"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Details of MIPI20 Signals]
+.Details of MIPI20 Signals
+[cols = "6%,25%,~", options = header]
+|=================================================================================
+|Pin# | Pin Name         |Explanation
+| 1 | VREF                 |Reference voltage for all other pins and signals (single voltage for debug and trace).
+| 2 | TMS / TMSC         |JTAG TMS (from probe to target) or cJTAG TMSC (bi-directional) signal.
+| 4 | TCK / TCKC         |JTAG TCK (from probe to target) or cJTAG TCKC (from probe to target) signal.
+| 6 | TDO / `*SerialTrace*` |Either JTAG TDO (from target to probe) or serial trace (from target to probe) available in case cJTAG is used for debugging.
+| 7 | GND or KEY         |May be removed pin (to prevent wrong insertion for non-shrouded connectors and cable with plug in pin#7). In case the pin is not removed, it must be GND on the target side.
+| 8 | TDI                 |JTAG TDI (from probe to target) signal
+| 9 | GNDDetect             |Must be GND on the probe. On-board debug circuitry can use this pin to disable itself when the external debug probe is connected. If not used for that purpose it must be GND on the target side.
+| 10 | nRESET             |Active-low, open-drain SoC reset signal driven and monitored by the debug probe. Some debug probes may monitor this signal to handle and report resets from the target.
+| 11 | GND / TgtPwr+Cap     |In standard, most common configuration, these must be connected to GND. See below for explanation of optional TgtPwr+Cap function.
+| 12 | `*TRC_CLK*`         |Parallel trace clock (from target to probe).
+| 13 | GND / TgtPwr+Cap     |In standard, most common configuration, these must be connected to GND. See below for explanation of optional TgtPwr+Cap function.
+| 14 | `*TRC_DATA[0]*` / `*SerialTrace*` |Either parallel trace signal (from target to probe) or serial trace (from target to probe).
+| 16 | `*TRC_DATA[1]*` / nTRST |Either parallel trace signal (from target to probe) or in case nTRST signal is needed this pin can be used as nTRST. NOTE: Still 1-bit parallel or serial trace is possible.
+| 18 | `*TRC_DATA[2]*` / TRIGIN |Either parallel trace signal (from target to probe) or input debug trigger (from probe to target) or application UART (from probe to target).
+| 20 | `*TRC_DATA[3]*` / TRIGOUT |Either parallel trace signal (from target to probe) or output debug trigger (from target to probe) or application UART (from target to probe).
+|================================================================================='''
+zh = '''
+[#Details of MIPI20 Signals]
+.MIPI20 信号详解
+[cols = "6%,25%,~", options = header]
+|=================================================================================
+|引脚 # | 引脚名称         |说明
+| 1 | VREF                 |所有其他引脚和信号的参考电压（调试与跟踪共用单一电压）。
+| 2 | TMS / TMSC         |JTAG TMS（从探针到目标端）或 cJTAG TMSC（双向）信号。
+| 4 | TCK / TCKC         |JTAG TCK（从探针到目标端）或 cJTAG TCKC（从探针到目标端）信号。
+| 6 | TDO / `*SerialTrace*` |JTAG TDO（从目标端到探针）或串行跟踪（从目标端到探针），在 cJTAG 用于调试时可用。
+| 7 | GND 或 KEY         |可移除的引脚（用于防止非屏蔽连接器和引脚 #7 带插头的线缆错误插入）。若该引脚未移除，则在目标端应为 GND。
+| 8 | TDI                 |JTAG TDI（从探针到目标端）信号
+| 9 | GNDDetect             |在探针端应为 GND。板载调试电路可使用此引脚在外部调试探针连接时禁用自身。若不用于该目的，则在目标端应为 GND。
+| 10 | nRESET             |低有效、开漏的 SoC 复位信号，由调试探针驱动并监测。部分调试探针可监测此信号，以处理和报告来自目标端的复位。
+| 11 | GND / TgtPwr+Cap     |在标准的、最常见的配置中，这些引脚应连接到 GND。可选 TgtPwr+Cap 功能的说明见下文。
+| 12 | `*TRC_CLK*`         |并行跟踪时钟（从目标端到探针）。
+| 13 | GND / TgtPwr+Cap     |在标准的、最常见的配置中，这些引脚应连接到 GND。可选 TgtPwr+Cap 功能的说明见下文。
+| 14 | `*TRC_DATA[0]*` / `*SerialTrace*` |并行跟踪信号（从目标端到探针）或串行跟踪（从目标端到探针）。
+| 16 | `*TRC_DATA[1]*` / nTRST |并行跟踪信号（从目标端到探针）；若需要 nTRST 信号，此引脚可用作 nTRST。NOTE: 仍可实现 1 位并行跟踪或串行跟踪。
+| 18 | `*TRC_DATA[2]*` / TRIGIN |并行跟踪信号（从目标端到探针）、输入调试触发（从探针到目标端）或应用 UART（从探针到目标端）。
+| 20 | `*TRC_DATA[3]*` / TRIGOUT |并行跟踪信号（从目标端到探针）、输出调试触发（从目标端到探针）或应用 UART（从目标端到探针）。
+|================================================================================='''

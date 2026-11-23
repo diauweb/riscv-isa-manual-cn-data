@@ -1,0 +1,254 @@
+unit_id = "0ea946869486aab1e99a8576a30ee4cf"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+Same-address orderings where the latter is a store are straightforward:
+a load or store can never be reordered with a later store to an
+overlapping memory location. From a microarchitecture perspective,
+generally speaking, it is difficult or impossible to undo a
+speculatively reordered store if the speculation turns out to be
+invalid, so such behavior is simply disallowed by the model.
+Same-address orderings from a store to a later load, on the other hand,
+do not need to be enforced. As discussed in
+<<loadvalueaxiom>>, this reflects the observable
+behavior of implementations that forward values from buffered stores to
+later loads.
+
+Same-address load-load ordering requirements are far more subtle. The
+basic requirement is that a younger load must not return a value that is
+older than a value returned by an older load in the same hart to the
+same address. This is often known as "CoRR" (Coherence for Read-Read
+pairs), or as part of a broader "coherence" or "sequential
+consistency per location" requirement. Some architectures in the past
+have relaxed same-address load-load ordering, but in hindsight this is
+generally considered to complicate the programming model too much, and
+so RVWMO requires CoRR ordering to be enforced. However, because the
+global memory order corresponds to the order in which loads perform
+rather than the ordering of the values being returned, capturing CoRR
+requirements in terms of the global memory order requires a bit of
+indirection.
+
+[[frirfi]]
+.A litmus test MP+fence.w.w+fri-rfi-addr (outcome permitted)
+
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+.Litmus test MP+fence.w.w+fre-rfi-addr (outcome permitted)
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!Hart 0 2+^!Hart 1
+!!li t1, 1 !!li t2, 2
+>!(a) !sw t1,0(s0) >!(d) !lw a0,0(s1)
+>!(b) !fence w, w >!(e) !sw t2,0(s1)
+>!(c) !sw t1,0(s1) >!(f) !lw a1,0(s1)
+! ! >!(g) !xor t3,a1,a1
+! ! >!(h) !add s0,s0,t3
+! ! >!(i) !lw a2,0(s0)
+4+^!Outcome: `a0=1`, `a1=2`, `a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_mp_fenceww_fri_rfi_addr.txt[]
+a! image::graphviz/litmus_mp_fenceww_fri_rfi_addr.png[]
+!===
+|===
+Consider the litmus test of <<frirfi>>, which is one particular
+instance of the more general "fri-rfi" pattern. The term "fri-rfi"
+refers to the sequence (d), (e), (f): (d) "from-reads" (i.e., reads
+from an earlier write than) (e) which is the same hart, and (f) reads
+from (e) which is in the same hart.
+
+From a microarchitectural perspective, outcome `a0=1`, `a1=2`, `a2=0` is
+legal (as are various other less subtle outcomes). Intuitively, the
+following would produce the outcome in question:
+
+* (d) stalls (for whatever reason; perhaps it's stalled waiting
+for some other preceding instruction)
+* (e) executes and enters the store buffer (but does not yet
+drain to memory)
+* (f) executes and forwards from (e) in the store buffer
+* (g), (h), and (i) execute
+* (a) executes and drains to memory, (b) executes, and (c)
+executes and drains to memory
+* (d) unstalls and executes
+* (e) drains from the store buffer to memory
+
+This corresponds to a global memory order of (f), (i), (a), (c), (d),
+(e). Note that even though (f) performs before (d), the value returned
+by (f) is newer than the value returned by (d). Therefore, this
+execution is legal and does not violate the CoRR requirements.
+
+Likewise, if two back-to-back loads return the values written by the
+same store, then they may also appear out-of-order in the global memory
+order without violating CoRR. Note that this is not the same as saying
+that the two loads return the same value, since two different stores may
+write the same value.
+
+[[litmus-rsw]]
+.Litmus test RSW (outcome permitted)
+
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!Hart 0 2+^!Hart 1
+2+!li t1, 1 >!(d) <!lw  a0,0(s1)
+>!(a) <!sw t1,0(s0) >!(e) !xor t2,a0,a0
+>!(b) <!fence w, w >!(f) !add s4,s2,t2
+>!(c) <!sw t1,0(s1) >!(g) !lw  a1,0(s4)
+! ! >!(h) !lw  a2,0(s2)
+! ! >!(i) !xor t3,a2,a2
+! ! >!(j) !add s0,s0,t3
+! ! >!(k) !lw  a3,0(s0)
+4+!Outcome: `a0=1`, `a1=v`, `a2=v`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_rsw.txt[]
+a! image::graphviz/litmus_rsw.png[]
+!===
+|===
+
+Consider the litmus test of <<litmus-rsw>>.
+The outcome `a0=1`, `a1=v`, `a2=v`, `a3=0` (where _v_ is
+some value written by another hart) can be observed by allowing (g) and
+(h) to be reordered. This might be done speculatively, and the
+speculation can be justified by the microarchitecture (e.g., by snooping
+for cache invalidations and finding none) because replaying (h) after
+(g) would return the value written by the same store anyway. Hence
+assuming `a1` and `a2` would end up with the same value written by the
+same store anyway, (g) and (h) can be legally reordered. The global
+memory order corresponding to this execution would be
+(h),(k),(a),(c),(d),(g).
+
+Executions of the test in <<litmus-rsw>> in
+which `a1` does not equal `a2` do in fact require that (g) appears
+before (h) in the global memory order. Allowing (h) to appear before (g)
+in the global memory order would in that case result in a violation of
+CoRR, because then (h) would return an older value than that returned by
+(g). Therefore, <<overlapping-ordering, rule 2>> forbids this CoRR violation
+from occurring. As such, <<overlapping-ordering, rule 2>> strikes a careful
+balance between enforcing CoRR in all cases while simultaneously being
+weak enough to permit "RSW" and "fri-rfi" patterns that commonly
+appear in real microarchitectures.
+
+There is one more overlapping-address rule: <<overlapping-ordering,
+rule 3>> simply states that a value cannot
+be returned from an AMO or SC to a subsequent load until the AMO or SC
+has (in the case of the SC, successfully) performed globally. This
+follows somewhat naturally from the conceptual view that both AMOs and
+SC instructions are meant to be performed atomically in memory. However,
+notably, <<overlapping-ordering, rule 3>> states that hardware
+may not even non-speculatively forward the value being stored by an
+AMOSWAP to a subsequent load, even though for AMOSWAP that store value
+is not actually semantically dependent on the previous value in memory,
+as is the case for the other AMOs. The same holds true even when
+forwarding from SC store values that are not semantically dependent on
+the value returned by the paired LR.
+
+The three PPO rules above also apply when the memory accesses in
+question only overlap partially. This can occur, for example, when
+accesses of different sizes are used to access the same object. Note
+also that the base addresses of two overlapping memory operations need
+not necessarily be the same for two memory accesses to overlap. When
+misaligned memory accesses are being used, the overlapping-address PPO
+rules apply to each of the component memory accesses independently.
+
+[[mm-fence]]
+==== Fences (<<overlapping-ordering, Rule 4>>)
+
+[IMPORTANT]
+===='''
+zh = '''
+====
+
+后者为存储的同地址排序很直接：加载或存储绝不会与对重叠内存位置的较晚存储重排序。从微体系结构角度看，一般而言，如果推测被证明无效，要撤销被推测重排序的存储是困难或不可能的，因此此类行为被模型直接禁止。另一方面，从存储到较晚加载的同地址排序不需要强制。如 <<loadvalueaxiom>> 中所讨论的，这反映了将缓冲存储的值前递给较晚加载的实现的可观察行为。
+
+同地址加载-加载排序要求则微妙得多。基本要求是：同一硬件线程中对同一地址的较年轻加载不得返回比更旧加载所返回值更旧的值。这通常称为“CoRR”（读-读对的一致性），或作为更广义的“一致性”或“每位置顺序一致性”要求的一部分。过去有些架构放松了同地址加载-加载排序，但事后看来这通常被认为使编程模型过于复杂，因此 RVWMO 要求强制 CoRR 排序。然而，由于全局内存顺序对应于加载执行的顺序而非所返回值的顺序，用全局内存顺序来表达 CoRR 要求需要一点间接性。
+
+[[frirfi]]
+.一个 litmus 测试 MP+fence.w.w+fri-rfi-addr（允许的结果）
+
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+.Litmus 测试 MP+fence.w.w+fre-rfi-addr（允许的结果）
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+!!li t1, 1 !!li t2, 2
+>!(a) !sw t1,0(s0) >!(d) !lw a0,0(s1)
+>!(b) !fence w, w >!(e) !sw t2,0(s1)
+>!(c) !sw t1,0(s1) >!(f) !lw a1,0(s1)
+! ! >!(g) !xor t3,a1,a1
+! ! >!(h) !add s0,s0,t3
+! ! >!(i) !lw a2,0(s0)
+4+^!结果：`a0=1`、`a1=2`、`a2=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_mp_fenceww_fri_rfi_addr.txt[]
+a! image::graphviz/litmus_mp_fenceww_fri_rfi_addr.png[]
+!===
+|===
+考虑 <<frirfi>> 的 litmus 测试，它是更一般的“fri-rfi”模式的一个特定实例。“fri-rfi”一词指序列 (d)、(e)、(f)：(d) 对 (e) “从读”（from-read，即读取比 (e) 更早的写入），且 (d) 与 (e) 在同一硬件线程，(f) 从同一硬件线程中的 (e) 读取。
+
+从微体系结构角度看，结果 `a0=1`、`a1=2`、`a2=0` 是合法的（各种其他不那么微妙的结果也合法）。直观地说，以下过程会产生所讨论的结果：
+
+* (d) 停顿（无论出于何种原因；也许它在等待某条其他先前指令而停顿）
+* (e) 执行并进入存储缓冲器（但尚未排空到内存）
+* (f) 执行并从存储缓冲器中的 (e) 前递
+* (g)、(h) 和 (i) 执行
+* (a) 执行并排空到内存，(b) 执行，且 (c) 执行并排空到内存
+* (d) 解除停顿并执行
+* (e) 从存储缓冲器排空到内存
+
+这对应于全局内存顺序 (f)、(i)、(a)、(c)、(d)、(e)。注意，即使 (f) 先于 (d) 执行，(f) 返回的值也比 (d) 返回的值更新。因此，该执行是合法的，不违反 CoRR 要求。
+
+同样，若两个背靠背的加载返回由同一存储写入的值，则它们在全局内存顺序中也可以乱序出现而不违反 CoRR。注意这与说两个加载返回相同的值并不相同，因为两个不同的存储可能写入相同的值。
+
+[[litmus-rsw]]
+.Litmus 测试 RSW（允许的结果）
+
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,cols="^,<,^,<",options="header",float="center",align="center"]
+!===
+2+!硬件线程 0 2+^!硬件线程 1
+2+!li t1, 1 >!(d) <!lw  a0,0(s1)
+>!(a) <!sw t1,0(s0) >!(e) !xor t2,a0,a0
+>!(b) <!fence w, w >!(f) !add s4,s2,t2
+>!(c) <!sw t1,0(s1) >!(g) !lw  a1,0(s4)
+! ! >!(h) !lw  a2,0(s2)
+! ! >!(i) !xor t3,a2,a2
+! ! >!(j) !add s0,s0,t3
+! ! >!(k) !lw  a3,0(s0)
+4+!结果：`a0=1`、`a1=v`、`a2=v`、`a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_rsw.txt[]
+a! image::graphviz/litmus_rsw.png[]
+!===
+|===
+
+考虑 <<litmus-rsw>> 的 litmus 测试。
+结果 `a0=1`、`a1=v`、`a2=v`、`a3=0`（其中 _v_ 是由另一硬件线程写入的某个值）可通过允许 (g) 与 (h) 重排序而被观察到。这可能是推测地完成的，且该推测可由微体系结构证明合理（例如，通过窥探缓存失效且未发现失效），因为在 (g) 之后重放 (h) 无论如何都会返回由同一存储写入的值。因此，假定 `a1` 和 `a2` 最终无论如何都会得到由同一存储写入的相同值，(g) 和 (h) 就可以合法地重排序。对应该执行的全局内存顺序将是 (h)、(k)、(a)、(c)、(d)、(g)。
+
+在 <<litmus-rsw>> 的测试执行中，`a1` 不等于 `a2` 的执行确实要求在全局内存顺序中 (g) 出现在 (h) 之前。在这种情况下，允许 (h) 在全局内存顺序中出现在 (g) 之前将导致违反 CoRR，因为那样 (h) 将返回比 (g) 所返回值更旧的值。因此，<<overlapping-ordering, 规则 2>> 禁止这种 CoRR 违反发生。这样，<<overlapping-ordering, 规则 2>> 在所有情况下强制 CoRR 与同时足够弱以允许真实微体系结构中常见的“RSW”和“fri-rfi”模式之间取得了谨慎的平衡。
+
+还有一条重叠地址规则：<<overlapping-ordering, 规则 3>> 只是说明，在 AMO 或 SC 已在全局执行（对于 SC，是成功执行）之前，其值不能被返回给后续的加载。这在一定程度上自然源于如下概念观点：AMO 和 SC 指令都意在内存中原子地执行。然而值得注意的是，<<overlapping-ordering, 规则 3>> 说明硬件甚至不可以非推测地将 AMOSWAP 所存储的值前递给后续加载，即使对 AMOSWAP 而言该存储值实际上在语义上并不依赖于内存中的先前值（其他 AMO 则如此）。即便前递的是 SC 所存储的值，而该值在语义上并不依赖于配对 LR 返回的值，同样也是如此。
+
+上述三条 PPO 规则在所涉及的内存访问仅部分重叠时也适用。例如，当使用不同大小的访问访问同一对象时就会出现这种情况。另请注意，两次内存访问要重叠，其基址不必相同。当使用非对齐内存访问时，重叠地址 PPO 规则独立地适用于每个组成的内存访问。
+
+[[mm-fence]]
+==== 屏障（<<overlapping-ordering, 规则 4>>）
+
+[IMPORTANT]
+===='''

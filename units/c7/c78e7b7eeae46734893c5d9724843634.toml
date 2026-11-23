@@ -1,0 +1,34 @@
+unit_id = "c78e7b7eeae46734893c5d9724843634"
+kind = "code"
+translatable = false
+en = '''
+[source,Sail]
+--
+function clause execute (VAESKF1(rnd, vd, vs2)) = {
+  if(LMUL*VLEN < EGW)  then {
+    handle_illegal();  // illegal-instruction exception
+    RETIRE_FAIL
+  } else {
+
+ // project out-of-range immediates onto in-range values
+ if( (unsigned(rnd[3:0]) > 10) | (rnd[3:0] = 0)) then rnd[3] = ~rnd[3]
+
+  eg_len = (vl/EGS)
+  eg_start = (vstart/EGS)
+
+  let r : bits(4) = rnd-1;
+
+  foreach (i from eg_start to eg_len-1) {
+      let CurrentRoundKey[3:0]  : bits(128)  = get_velem(vs2, EGW=128, i);
+      let w[0] : bits(32) = aes_subword_fwd(aes_rotword(CurrentRoundKey[3])) XOR
+        aes_decode_rcon(r) XOR CurrentRoundKey[0]
+      let w[1] : bits(32) = w[0] XOR CurrentRoundKey[1]
+      let w[2] : bits(32) = w[1] XOR CurrentRoundKey[2]
+      let w[3] : bits(32) = w[2] XOR CurrentRoundKey[3]
+      set_velem(vd, EGW=128, i, w[3:0]);
+    }
+    RETIRE_SUCCESS
+  }
+}
+
+--'''

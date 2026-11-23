@@ -1,0 +1,12 @@
+unit_id = "99e6fb6c7a5196706c86e8879f47c8f0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. ProgramTraceSync message may be replaced with DirectBranchSync, IndirectBranchHistSync, IndirectBranchHistSync.
+. ProgramTraceSync message may be generated for a SYNC event, however, HIST information will not be reported. For HTM mode, the IndirectBranchHistSync or IndirectBranchSync message with SYNC=6 (Trace Event) should be used to ensure no trace data is lost.
+. Next available *...Branch...* message upgraded to *...Branch...Sync* counterpart, so SYNC code is reported.'''
+zh = '''
+. ProgramTraceSync 消息可替换为 DirectBranchSync、IndirectBranchHistSync、IndirectBranchHistSync。
+. ProgramTraceSync 消息可为 SYNC 事件生成，但 HIST 信息将不会被报告。对于 HTM 模式，应使用带 SYNC=6（跟踪事件）的 IndirectBranchHistSync 或 IndirectBranchSync 消息，以确保不丢失跟踪数据。
+. 下一个可用的 *...Branch...* 消息升级为 *...Branch...Sync* 对应消息，从而报告 SYNC 代码。'''

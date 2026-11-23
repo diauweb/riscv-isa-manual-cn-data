@@ -1,0 +1,10 @@
+unit_id = "d0ca7e2d85933b9ddafe6c8b114c2f0c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+insn:flh[] and insn:fsh[] do not modify the bits being transferred; in particular, the
+payloads of non-canonical NaNs are preserved. insn:flh[] NaN-boxes the result
+written to _rd_, whereas insn:fsh[] ignores all but the lower 16 bits in _rs2_.'''
+zh = '''
+insn:flh[] 和 insn:fsh[] 不修改被传送的位；特别地，非规范 NaN 的有效载荷得以保留。insn:flh[] 对写入 _rd_ 的结果进行 NaN 装箱，而 insn:fsh[] 忽略 _rs2_ 中除低 16 位以外的所有位。'''

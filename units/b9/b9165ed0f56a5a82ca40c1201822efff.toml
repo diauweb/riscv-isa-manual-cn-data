@@ -1,0 +1,13 @@
+unit_id = "b9165ed0f56a5a82ca40c1201822efff"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sfence-vma-sum-mxr_effect]#Changes to the `sstatus` fields SUM and MXR take effect immediately,
+without the need to execute an SFENCE.VMA instruction.#
+[#norm:sfence-vma-mode_effect]#Changing
+`satp`.MODE from Bare to other modes and vice versa also takes effect
+immediately, without the need to execute an SFENCE.VMA instruction.#
+[#norm:sfence-vma-asid_effect]#Likewise, changes to `satp`.ASID take effect immediately.#'''
+zh = '''
+[#norm:sfence-vma-sum-mxr_effect]##对 `sstatus` 字段 SUM 和 MXR 的更改立即生效，无须执行 SFENCE.VMA 指令。## [#norm:sfence-vma-mode_effect]##将 `satp`.MODE 从 Bare 更改为其他模式以及反之亦然也立即生效，无须执行 SFENCE.VMA 指令。## [#norm:sfence-vma-asid_effect]##同样，对 `satp`.ASID 的更改立即生效。##'''

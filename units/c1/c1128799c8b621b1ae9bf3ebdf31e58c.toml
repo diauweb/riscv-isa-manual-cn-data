@@ -1,0 +1,18 @@
+unit_id = "c1128799c8b621b1ae9bf3ebdf31e58c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vsm3c-vi_op_sm3]#The current state of eight 32-bit words is read in as an element group from `vd`. Eight 32-bit
+message words are read in as an element group from `vs2`, although only four of them are used.
+All of the 32-bit input words are byte-swapped from big endian to little endian.
+These inputs are processed somewhat differently based on the round group (as specified in rnds),
+and the next state is generated as an element group of eight 32-bit words.
+The next state of eight 32-bit words are generated,
+swapped from little endian to big endian, and are returned in
+an eight-element group.#'''
+zh = '''
+[#norm:vsm3c-vi_op_sm3]##从 `vd` 中以元素组形式读入八个 32 位字的当前状态。从 `vs2` 中以元素组形式读入八个 32 位消息字，尽管其中仅使用四个。
+所有 32 位输入字均从大端序字节交换为小端序。
+这些输入根据轮组（如 rnds 所指定）以略有不同的方式处理，并生成由八个 32 位字组成的下一状态元素组。
+生成八个 32 位字的下一状态，从小端序交换为大端序，并以八元素组返回。##'''

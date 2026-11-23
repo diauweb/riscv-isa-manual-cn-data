@@ -1,0 +1,15 @@
+unit_id = "97113e23c39ad15adede428db082e31e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:lw_op_rv64i]#The insn:lw[] instruction loads a 32-bit value from memory and sign-extends
+this to 64 bits before storing it in register _rd_ for RV64I.#
+[#norm:lwu_op]#The insn:lwu[] instruction, on the other hand, zero-extends the 32-bit value from
+memory for RV64I.# [#norm:lh_lhu_lb_lbu_op_rv64i]#insn:lh[] and insn:lhu[] are defined analogously for 16-bit values,
+as are insn:lb[] and insn:lbu[] for 8-bit values.# [#norm:sd_sw_sh_sb_op_rv64i]#The insn:sd[], insn:sw[], insn:sh[], and insn:sb[] instructions
+store 64-bit, 32-bit, 16-bit, and 8-bit values from the low bits of
+register _rs2_ to memory respectively.#'''
+zh = '''
+[#norm:lw_op_rv64i]##对于 RV64I，insn:lw[] 指令从内存加载 32 位值，并在存入寄存器 _rd_ 之前将其符号扩展至 64 位。##
+[#norm:lwu_op]##另一方面，对于 RV64I，insn:lwu[] 指令对来自内存的 32 位值进行零扩展。## [#norm:lh_lhu_lb_lbu_op_rv64i]##insn:lh[] 和 insn:lhu[] 对 16 位值类似定义，insn:lb[] 和 insn:lbu[] 对 8 位值亦然。## [#norm:sd_sw_sh_sb_op_rv64i]##insn:sd[]、insn:sw[]、insn:sh[] 和 insn:sb[] 指令分别将寄存器 _rs2_ 低位的 64 位、32 位、16 位和 8 位值存储到内存。##'''

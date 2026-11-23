@@ -1,0 +1,125 @@
+unit_id = "e85cd8a320dc33293dd1714d8065b77c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[textra32-mhvalue]] `((mhvalue))`
+a|Data used together with {textra32-mhselect}.
+a|*WARL*
+a|0
+|[[textra32-mhselect]] `((mhselect))`
+a|
+
+0 (ignore): Ignore {textra32-mhvalue}.
+
+
+4 (mcontext): This trigger will only match or fire if the low bits of
+{csr-mcontext}/{csr-hcontext} equal {textra32-mhvalue}.
+
+1, 5 (mcontext_select): This trigger will only match or fire if the
+low bits of
+{csr-mcontext}/{csr-hcontext} equal {{textra32-mhvalue}, mhselect[2]}.
+
+2, 6 (vmid_select): This trigger will only match or fire if VMID in
+hgatp equals the lower VMIDMAX
+(defined in the Privileged Spec) bits of {{textra32-mhvalue}, mhselect[2]}.
+
+3, 7 (reserved): Reserved.
+
+If the H extension is not supported, the only legal values are 0 and 4.
+a|*WARL*
+a|0
+|[[textra32-sbytemask]] `((sbytemask))`
+a|When the least significant bit of this field is 1, it causes bits 7:0
+in the comparison to be ignored, when {textra32-sselect}=1.
+When the next most significant bit of this field is 1, it causes bits 15:8
+to be ignored in the comparison, when {textra32-sselect}=1.
+a|*WARL*
+a|0
+|[[textra32-svalue]] `((svalue))`
+a|Data used together with {textra32-sselect}.
+
+This field should be tied to 0 when S-mode is not supported.
+a|*WARL*
+a|0
+|[[textra32-sselect]] `((sselect))`
+a|
+
+0 (ignore): Ignore {textra32-svalue}.
+
+
+1 (scontext): This trigger will only match or fire if the low bits of
+{csr-scontext} equal {textra32-svalue}.
+
+
+2 (asid): This trigger will only match or fire if:
+
+* the mode is VS-mode or VU-mode and ASID in `vsatp`
+equals the lower ASIDMAX (defined in the Privileged Spec) bits
+of {textra32-svalue}.
+
+* in all other modes, ASID in `satp` equals the lower
+ASIDMAX (defined in the Privileged Spec) bits of
+{textra32-svalue}.
+
+This field should be tied to 0 when S-mode is not supported.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[textra32-mhvalue]] `((mhvalue))`
+a|与 {textra32-mhselect} 一起使用的数据。
+a|*WARL*
+a|0
+|[[textra32-mhselect]] `((mhselect))`
+a|
+
+0（忽略）：忽略 {textra32-mhvalue}。
+
+
+4（mcontext）：仅当 {csr-mcontext}/{csr-hcontext} 的低位等于 {textra32-mhvalue} 时，此触发器才匹配或触发。
+
+1, 5（mcontext_select）：仅当 {csr-mcontext}/{csr-hcontext} 的低位等于 {{textra32-mhvalue}, mhselect[2]} 时，此触发器才匹配或触发。
+
+2, 6（vmid_select）：仅当 hgatp 中的 VMID 等于 {{textra32-mhvalue}, mhselect[2]} 的低 VMIDMAX（在特权规范中定义）位时，此触发器才匹配或触发。
+
+3, 7（保留）：保留。
+
+若不支持 H 扩展，则唯一的合法值为 0 和 4。
+a|*WARL*
+a|0
+|[[textra32-sbytemask]] `((sbytemask))`
+a|当此字段最低有效位为 1 时，它导致比较中忽略位 7:0，当 {textra32-sselect}=1 时。当此字段次高有效位为 1 时，它导致比较中忽略位 15:8，当 {textra32-sselect}=1 时。
+a|*WARL*
+a|0
+|[[textra32-svalue]] `((svalue))`
+a|与 {textra32-sselect} 一起使用的数据。
+
+当不支持 S 模式时，此字段宜固定为 0。
+a|*WARL*
+a|0
+|[[textra32-sselect]] `((sselect))`
+a|
+
+0（忽略）：忽略 {textra32-svalue}。
+
+
+1（scontext）：仅当 {csr-scontext} 的低位等于 {textra32-svalue} 时，此触发器才匹配或触发。
+
+
+2（asid）：仅当以下情况时，此触发器才匹配或触发：
+
+* 模式为 VS 模式或 VU 模式，且 `vsatp` 中的 ASID 等于 {textra32-svalue} 的低 ASIDMAX（在特权规范中定义）位。
+
+* 在所有其他模式中，`satp` 中的 ASID 等于 {textra32-svalue} 的低 ASIDMAX（在特权规范中定义）位。
+
+当不支持 S 模式时，此字段宜固定为 0。
+a|*WARL*
+a|0
+|==='''

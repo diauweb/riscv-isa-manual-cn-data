@@ -1,0 +1,11 @@
+unit_id = "15a58ca3cdd1d798dd3aa7e26d023125"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-j_op]#C.J performs an unconditional control transfer. The offset is
+sign-extended and added to the `pc` to form the jump target address. C.J
+can therefore target a {pm}2 KiB range. C.J expands to
+`jal x0, offset`.#'''
+zh = '''
+[#norm:c-j_op]##C.J 执行无条件控制转移。偏移量进行符号扩展并加到 `pc` 上以形成跳转目标地址。因此 C.J 可以指向 {pm}2 KiB 范围。C.J 展开为 `jal x0, offset`。##'''

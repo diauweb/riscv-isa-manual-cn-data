@@ -1,0 +1,52 @@
+unit_id = "678aa30723ce49b11d9f8142e86d372f"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeInstFeatures: Trace Instruction Features Register (trBaseEncoder+0x008)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trTeInstNoAddrDiff|When set, trace messages/packets always carry a full address.|WARL|<<Undef,Undef>>
+|1 |trTeInstNoTrapAddr|When set, do not include trap handler address in trap messages/packets.|WARL|<<Undef,Undef>>
+|2 |trTeInstEnSequentialJump|When set, treat sequentially inferrable jumps as inferable PC discontinuities.|WARL|<<Undef,Undef>>
+|3 |trTeInstEnImplicitReturn|When set, treat returns as inferable PC discontinuities when returning from a recent call on a stack. Field `trTeInstImplicitReturnMode` below provides more details.|WARL|<<Undef,Undef>>
+|4 |trTeInstEnBranchPrediction|When set, Branch Predictor based compression is enabled.|WARL|<<Undef,Undef>>
+|5 |trTeInstEnJumpTargetCache|When set, Jump Target Cache based compression is enabled.|WARL|<<Undef,Undef>>
+|7:6|trTeInstImplicitReturnMode|Defines how the decoder is handling stack of return addresses (if enabled by `trTeInstEnImplicitReturn` bit): +
+*0:* Implicit Return mode is not supported, or implementation is not reporting how it is implemented. +
+*1:* Simple level counting without the return address comparing. +
+*2:* Partial (LSB portion of return address) compare (smaller logic cost than 3 below, but in most cases adequate as chances to have an incorrect return address with same LSB bits is very slim). +
+*3:* Full address comparing (always assures skipped return addresses are the same as addresses deducted from call instruction). Implementation may take advantage of RAS (Return Address Stack) if implemented by the hart.
+|WARL|<<Undef,Undef>>
+|8 |trTeInstEnRepeatedHistory|Enable repeated branch history/map detection when set.|WARL|<<Undef,Undef>>
+|9 |trTeInstEnAllJumps|Enable emitting of trace message or add history/map bit for direct unconditional/inferable control flow changes (jumps or calls). Normally these instructions do not generate any trace as the decoder can determine the next instruction. Trace will not compress well but timestamp accuracy will be better - may be used when profiling loops.|WARL|<<Undef,Undef>>
+|10 |trTeInstExtendAddrMSB|When set, allow extended handing of MSB address bits. Encoding details are trace protocol dependent.|WARL|<<Undef,Undef>>
+|15:11 |--|Reserved for additional instruction trace control/status bits|--|0
+|27:16 |trTeSrcID |Trace source ID assigned to this trace encoder. If `trTeSrcBits` is not 0 and trace source is not disabled by `trTeInhibitSrc`, then trace messages from this TE will all include a trace source field of `trTeSrcBits` bits and all messages from this TE will use this value as trace source field.|WARL|<<Undef,Undef>>
+|31:28 |trTeSrcBits |The number of bits in the trace source field (0..12), unless disabled by `trTeInhibitSrc`. Some trace protocols may require that this field is identical for all enabled trace encoders within the same trace stream. |WARL|<<Undef,Undef>>
+|==='''
+zh = '''
+.**寄存器：trTeInstFeatures：跟踪指令特性寄存器（trBaseEncoder+0x008）**
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trTeInstNoAddrDiff|置位时，跟踪消息/数据包始终携带完整地址。|WARL|<<Undef,Undef>>
+|1 |trTeInstNoTrapAddr|置位时，不在陷阱消息/数据包中包含陷阱处理程序地址。|WARL|<<Undef,Undef>>
+|2 |trTeInstEnSequentialJump|置位时，将可按顺序推断的跳转视为可推断的 PC 不连续。|WARL|<<Undef,Undef>>
+|3 |trTeInstEnImplicitReturn|置位时，当从栈上最近的调用返回时，将返回视为可推断的 PC 不连续。下面的 `trTeInstImplicitReturnMode` 字段提供更多细节。|WARL|<<Undef,Undef>>
+|4 |trTeInstEnBranchPrediction|置位时，启用基于分支预测器的压缩。|WARL|<<Undef,Undef>>
+|5 |trTeInstEnJumpTargetCache|置位时，启用基于跳转目标缓存的压缩。|WARL|<<Undef,Undef>>
+|7:6|trTeInstImplicitReturnMode|定义解码器如何处理返回地址栈（如果由 `trTeInstEnImplicitReturn` 位启用）： +
+*0:* 不支持隐式返回模式，或实现未报告其实现方式。 +
+*1:* 简单层级计数，不比较返回地址。 +
+*2:* 部分比较（返回地址的 LSB 部分）（逻辑成本低于下面的 3，但在大多数情况下足够，因为具有相同 LSB 位的错误返回地址出现的机会非常小）。 +
+*3:* 完整地址比较（始终确保被跳过的返回地址与从调用指令推导出的地址相同）。如果硬件线程实现了 RAS（返回地址栈），则实现可利用它。
+|WARL|<<Undef,Undef>>
+|8 |trTeInstEnRepeatedHistory|置位时启用重复分支历史/映射检测。|WARL|<<Undef,Undef>>
+|9 |trTeInstEnAllJumps|启用为直接无条件/可推断控制流改变（跳转或调用）发出跟踪消息或添加历史/映射位。通常这些指令不生成任何跟踪数据，因为解码器可确定下一条指令。跟踪压缩效果不会很好，但时间戳准确性会更好——可用于分析循环。|WARL|<<Undef,Undef>>
+|10 |trTeInstExtendAddrMSB|置位时，允许对 MSB 地址位进行扩展处理。编码细节取决于跟踪协议。|WARL|<<Undef,Undef>>
+|15:11 |--|保留用于附加指令跟踪控制/状态位|--|0
+|27:16 |trTeSrcID |分配给此跟踪编码器的跟踪源 ID。如果 `trTeSrcBits` 不为 0 且跟踪源未被 `trTeInhibitSrc` 禁用，则来自此 TE 的跟踪消息都将包含 `trTeSrcBits` 位的跟踪源字段，并且来自此 TE 的所有消息都将使用该值作为跟踪源字段。|WARL|<<Undef,Undef>>
+|31:28 |trTeSrcBits |跟踪源字段的位数（0..12），除非由 `trTeInhibitSrc` 禁用。某些跟踪协议可能要求对于同一跟踪流中的所有已启用跟踪编码器，该字段相同。 |WARL|<<Undef,Undef>>
+|==='''

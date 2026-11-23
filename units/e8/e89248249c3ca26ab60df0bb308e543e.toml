@@ -1,0 +1,25 @@
+unit_id = "e89248249c3ca26ab60df0bb308e543e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In JEDEC's parlance, the bank number is one greater than the number of
+continuation codes; hence, the `mvendorid` Bank field encodes a value
+that is one less than the JEDEC bank number.
+
+***
+Previously the vendor ID was to be a number allocated by RISC-V
+International, but this duplicates the work of JEDEC in maintaining a
+manufacturer ID standard. At time of writing, registering a manufacturer
+ID with JEDEC has a one-time cost of $500.
+===='''
+zh = '''
+[NOTE]
+====
+在 JEDEC 的术语中，bank 号比延续码的数目大 1；因此，`mvendorid` 的 Bank 字段编码的值比 JEDEC bank 号小 1。
+
+***
+以前，厂商 ID 是由 RISC-V International 分配的一个编号，但这与 JEDEC 维护制造商 ID 标准的工作重复。撰写本文时，向 JEDEC 注册制造商 ID 的一次性费用为 500 美元。
+===='''

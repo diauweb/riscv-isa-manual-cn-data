@@ -1,0 +1,14 @@
+unit_id = "61cb1ac42a34584e3cb8ccf1d00a78f4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[fs] and csr::[xs] fields are read by the privileged code before saving the
+context. The csr::[fs] field is set directly by privileged code when resuming a
+user context, while the csr::[xs] field is set indirectly by writing to the
+status register of the individual extensions.
+[#norm:mstatus_fs_vs_xs_update_indep_priv]#The status fields will
+also be updated during execution of instructions, regardless of privilege mode.#'''
+zh = '''
+特权代码在保存上下文之前读取 csr::[fs] 和 csr::[xs] 字段。csr::[fs] 字段在恢复用户上下文时由特权代码直接设置，而 csr::[xs] 字段通过写入各扩展的状态寄存器间接设置。
+[#norm:mstatus_fs_vs_xs_update_indep_priv]##状态字段也会在指令执行期间更新，无论特权模式如何。##'''

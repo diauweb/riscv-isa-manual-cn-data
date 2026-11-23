@@ -1,0 +1,828 @@
+unit_id = "161519a6b2e5d840926c8e50964db185"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[.monocell]
+.Currently allocated RISC-V machine-level CSR addresses.
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|Number |Privilege |Name |Description
+4+^|Machine Information Registers
+
+|`0xF11` +
+`0xF12` +
+`0xF13` +
+`0xF14` +
+`0xF15`
+|MRO +
+MRO +
+MRO +
+MRO +
+MRO
+|`mvendorid` +
+`marchid` +
+`mimpid` +
+`mhartid` +
+`mconfigptr`
+|Vendor ID. +
+Architecture ID. +
+Implementation ID. +
+Hardware thread ID. +
+Pointer to configuration data structure.
+
+4+^|Machine Trap Setup
+
+|`0x300` +
+`0x301` +
+`0x302` +
+`0x303` +
+`0x304` +
+`0x305` +
+`0x306` +
+`0x310` +
+`0x312`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mstatus` +
+`misa` +
+`medeleg` +
+`mideleg` +
+`mie` +
+`mtvec` +
+`mcounteren` +
+`mstatush` +
+`medelegh`
+|Machine status register. +
+ISA and extensions +
+Machine exception delegation register. +
+Machine interrupt delegation register. +
+Machine interrupt-enable register. +
+Machine trap-handler base address. +
+Machine counter enable. +
+Additional machine status register, RV32 only. +
+Upper qty:32[bits] of csr:medeleg[], RV32 only.
+
+4+^|Machine Trap Handling
+
+|`0x340` +
+`0x341` +
+`0x342` +
+`0x343` +
+`0x344` +
+`0x34A` +
+`0x34B`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mscratch` +
+`mepc` +
+`mcause` +
+`mtval` +
+`mip` +
+`mtinst` +
+`mtval2`
+|Machine scratch register. +
+Machine exception program counter. +
+Machine trap cause. +
+Machine trap value. +
+Machine interrupt pending. +
+Machine trap instruction (transformed). +
+Machine second trap value.
+
+4+^|Machine Indirect
+
+|`0x350` +
+`0x351` +
+`0x352` +
+`0x353` +
+`0x355` +
+`0x356` +
+`0x357`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`miselect` +
+`mireg` +
+`mireg2` +
+`mireg3` +
+`mireg4` +
+`mireg5` +
+`mireg6`
+|Machine indirect register select. +
+Machine indirect register alias. +
+Machine indirect register alias 2. +
+Machine indirect register alias 3. +
+Machine indirect register alias 4. +
+Machine indirect register alias 5. +
+Machine indirect register alias 6.
+
+4+^|Machine Configuration
+
+|`0x30A` +
+`0x31A` +
+`0x747` +
+`0x757`
+|MRW +
+MRW +
+MRW +
+MRW
+|`menvcfg` +
+`menvcfgh` +
+`mseccfg` +
+`mseccfgh`
+|Machine environment configuration register. +
+Upper qty:32[bits] of csr:menvcfg[], RV32 only. +
+Machine security configuration register. +
+Upper qty:32[bits] of csr:mseccfg[], RV32 only.
+
+4+^|Machine Memory Protection
+
+|`0x3A0` +
+`0x3A1` +
+`0x3A2` +
+`0x3A3` +
+{nbsp} +
+`0x3AE` +
+`0x3AF` +
+`0x3B0` +
+`0x3B1` +
+{nbsp} +
+`0x3EF`
+|MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW
+|`pmpcfg0` +
+`pmpcfg1` +
+`pmpcfg2` +
+`pmpcfg3` +
+{ellipsis} +
+`pmpcfg14` +
+`pmpcfg15` +
+`pmpaddr0` +
+`pmpaddr1` +
+{ellipsis} +
+`pmpaddr63`
+|Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+{nbsp} +
+Physical memory protection configuration. +
+Physical memory protection configuration, RV32 only. +
+Physical memory protection address register. +
+Physical memory protection address register. +
+{nbsp} +
+Physical memory protection address register.
+
+4+^|Machine State Enable Registers
+|`0x30C` +
+ `0x30D` +
+ `0x30E` +
+ `0x30F` +
+ `0x31C` +
+ `0x31D` +
+ `0x31E` +
+ `0x31F`
+|MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW
+|`mstateen0`  +
+ `mstateen1`  +
+ `mstateen2`  +
+ `mstateen3`  +
+ `mstateen0h` +
+ `mstateen1h` +
+ `mstateen2h` +
+ `mstateen3h`
+|Machine State Enable 0 Register. +
+ Machine State Enable 1 Register. +
+ Machine State Enable 2 Register. +
+ Machine State Enable 3 Register. +
+ Upper qty:32[bits] of Machine State Enable 0 Register, RV32 only. +
+ Upper qty:32[bits] of Machine State Enable 1 Register, RV32 only. +
+ Upper qty:32[bits] of Machine State Enable 2 Register, RV32 only. +
+ Upper qty:32[bits] of Machine State Enable 3 Register, RV32 only.
+
+4+^|Machine Non-Maskable Interrupt Handling
+
+|`0x740` +
+`0x741` +
+`0x742` +
+`0x744`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mnscratch` +
+`mnepc` +
+`mncause` +
+`mnstatus`
+|Resumable NMI scratch register. +
+Resumable NMI program counter. +
+Resumable NMI cause. +
+Resumable NMI status.
+
+4+^|Machine Counter/Timers
+
+|`0xB00` +
+`0xB02` +
+`0xB03` +
+`0xB04` +
+{nbsp} +
+`0xB1F` +
+`0xB80` +
+`0xB82` +
+`0xB83` +
+`0xB84` +
+{nbsp} +
+`0xB9F`
+|MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+|`mcycle` +
+`minstret` +
+`mhpmcounter3` +
+`mhpmcounter4` +
+{vertical-ellipsis} +
+`mhpmcounter31` +
+`mcycleh` +
+`minstreth` +
+`mhpmcounter3h` +
+`mhpmcounter4h` +
+{vertical-ellipsis} +
+`mhpmcounter31h`
+|Machine cycle counter. +
+Machine instructions-retired counter. +
+Machine performance-monitoring counter. +
+Machine performance-monitoring counter. +
+{nbsp} +
+Machine performance-monitoring counter. +
+Upper qty:32[bits] of csr:mcycle[], RV32 only. +
+Upper qty:32[bits] of csr:minstret[], RV32 only. +
+Upper qty:32[bits] of csr:mhpmcounter3[], RV32 only. +
+Upper qty:32[bits] of csr:mhpmcounter4[], RV32 only. +
+{nbsp} +
+Upper qty:32[bits] of csr:mhpmcounter31[], RV32 only.
+
+4+^|Machine Counter Setup
+
+|`0x320` +
+`0x321` +
+`0x322` +
+`0x323` +
+`0x324` +
+{nbsp} +
+`0x33F` +
+`0x721` +
+`0x722` +
+`0x723` +
+`0x724` +
+{nbsp} +
+`0x73F`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW
+|`mcountinhibit` +
+`mcyclecfg` +
+`minstretcfg` +
+`mhpmevent3` +
+`mhpmevent4` +
+{vertical-ellipsis} +
+`mhpmevent31` +
+`mcyclecfgh` +
+`minstretcfgh` +
+`mhpmevent3h` +
+`mhpmevent4h` +
+{vertical-ellipsis} +
+`mhpmevent31h`
+|Machine counter-inhibit register. +
+Machine cycle counter configuration register. +
+Machine instret counter configuration register. +
+Machine performance-monitoring event selector. +
+Machine performance-monitoring event selector. +
+{nbsp} +
+Machine performance-monitoring event selector. +
+Upper qty:32[bits] of csr:mcyclecfg[], RV32 only. +
+Upper qty:32[bits] of csr:minstretcfg[], RV32 only. +
+Upper qty:32[bits] of csr:mhpmevent3[], RV32 only. +
+Upper qty:32[bits] of csr:mhpmevent4[], RV32 only. +
+{nbsp} +
+Upper qty:32[bits] of csr:mhpmevent31[], RV32 only.
+
+4+^|Machine Control Transfer Records Configuration
+|`0x34E`
+|MRW
+|`mctrctl`
+|Machine Control Transfer Records Control Register.
+
+4+^|Debug/Trace Registers (shared with Debug Mode)
+
+|`0x7A0` +
+`0x7A1`  +
+`0x7A2`  +
+`0x7A3` +
+`0x7A4` +
+`0x7A5` +
+`0x7A8`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`tselect` +
+`tdata1` +
+`tdata2` +
+`tdata3` +
+`tinfo`  +
+`tcontrol` +
+`mcontext`
+
+|Debug/Trace trigger register select. +
+First Debug/Trace trigger data register. +
+Second Debug/Trace trigger data register. +
+Third Debug/Trace trigger data register. +
+Trigger info register. +
+Trigger control register. +
+Machine-mode context register.
+
+4+^|Debug Mode Registers
+
+|`0x7B0` +
+`0x7B1` +
+`0x7B2` +
+`0x7B3`
+|DRW +
+DRW +
+DRW +
+DRW +
+|`dcsr` +
+`dpc` +
+`dscratch0` +
+`dscratch1`
+|Debug control and status register. +
+Debug program counter. +
+Debug scratch register 0. +
+Debug scratch register 1.
+|==='''
+zh = '''
+[.monocell]
+.当前已分配的 RISC-V 机器级 CSR 地址
+[%autowidth,float="center",align="center",cols="<,<,<,<",options="header"]
+|===
+|编号 |权限 |名称 |描述
+4+^|机器信息寄存器
+
+|`0xF11` +
+`0xF12` +
+`0xF13` +
+`0xF14` +
+`0xF15`
+|MRO +
+MRO +
+MRO +
+MRO +
+MRO
+|`mvendorid` +
+`marchid` +
+`mimpid` +
+`mhartid` +
+`mconfigptr`
+|厂商 ID。 +
+架构 ID。 +
+实现 ID。 +
+硬件线程 ID。 +
+指向配置数据结构的指针。
+
+4+^|机器陷阱设置
+
+|`0x300` +
+`0x301` +
+`0x302` +
+`0x303` +
+`0x304` +
+`0x305` +
+`0x306` +
+`0x310` +
+`0x312`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mstatus` +
+`misa` +
+`medeleg` +
+`mideleg` +
+`mie` +
+`mtvec` +
+`mcounteren` +
+`mstatush` +
+`medelegh`
+|机器状态寄存器。 +
+ISA 与扩展 +
+机器异常委托寄存器。 +
+机器中断委托寄存器。 +
+机器中断使能寄存器。 +
+机器陷阱处理程序基址。 +
+机器计数器使能。 +
+附加机器状态寄存器，仅 RV32。 +
+csr:medeleg[] 的高 qty:32[bits]，仅 RV32。
+
+4+^|机器陷阱处理
+
+|`0x340` +
+`0x341` +
+`0x342` +
+`0x343` +
+`0x344` +
+`0x34A` +
+`0x34B`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`mscratch` +
+`mepc` +
+`mcause` +
+`mtval` +
+`mip` +
+`mtinst` +
+`mtval2`
+|机器暂存寄存器。 +
+机器异常程序计数器。 +
+机器陷阱原因。 +
+机器陷阱值。 +
+机器中断挂起。 +
+机器陷阱指令（经变换）。 +
+机器第二陷阱值。
+
+4+^|机器间接
+
+|`0x350` +
+`0x351` +
+`0x352` +
+`0x353` +
+`0x355` +
+`0x356` +
+`0x357`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`miselect` +
+`mireg` +
+`mireg2` +
+`mireg3` +
+`mireg4` +
+`mireg5` +
+`mireg6`
+|机器间接寄存器选择。 +
+机器间接寄存器别名。 +
+机器间接寄存器别名 2。 +
+机器间接寄存器别名 3。 +
+机器间接寄存器别名 4。 +
+机器间接寄存器别名 5。 +
+机器间接寄存器别名 6。
+
+4+^|机器配置
+
+|`0x30A` +
+`0x31A` +
+`0x747` +
+`0x757`
+|MRW +
+MRW +
+MRW +
+MRW
+|`menvcfg` +
+`menvcfgh` +
+`mseccfg` +
+`mseccfgh`
+|机器环境配置寄存器。 +
+csr:menvcfg[] 的高 qty:32[bits]，仅 RV32。 +
+机器安全配置寄存器。 +
+csr:mseccfg[] 的高 qty:32[bits]，仅 RV32。
+
+4+^|机器内存保护
+
+|`0x3A0` +
+`0x3A1` +
+`0x3A2` +
+`0x3A3` +
+{nbsp} +
+`0x3AE` +
+`0x3AF` +
+`0x3B0` +
+`0x3B1` +
+{nbsp} +
+`0x3EF`
+|MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW
+|`pmpcfg0` +
+`pmpcfg1` +
+`pmpcfg2` +
+`pmpcfg3` +
+{ellipsis} +
+`pmpcfg14` +
+`pmpcfg15` +
+`pmpaddr0` +
+`pmpaddr1` +
+{ellipsis} +
+`pmpaddr63`
+|物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+{nbsp} +
+物理内存保护配置。 +
+物理内存保护配置，仅 RV32。 +
+物理内存保护地址寄存器。 +
+物理内存保护地址寄存器。 +
+{nbsp} +
+物理内存保护地址寄存器。
+
+4+^|机器状态使能寄存器
+|`0x30C` +
+ `0x30D` +
+ `0x30E` +
+ `0x30F` +
+ `0x31C` +
+ `0x31D` +
+ `0x31E` +
+ `0x31F`
+|MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW +
+ MRW
+|`mstateen0`  +
+ `mstateen1`  +
+ `mstateen2`  +
+ `mstateen3`  +
+ `mstateen0h` +
+ `mstateen1h` +
+ `mstateen2h` +
+ `mstateen3h`
+|机器状态使能 0 寄存器。 +
+ 机器状态使能 1 寄存器。 +
+ 机器状态使能 2 寄存器。 +
+ 机器状态使能 3 寄存器。 +
+ 机器状态使能 0 寄存器的高 qty:32[bits]，仅 RV32。 +
+ 机器状态使能 1 寄存器的高 qty:32[bits]，仅 RV32。 +
+ 机器状态使能 2 寄存器的高 qty:32[bits]，仅 RV32。 +
+ 机器状态使能 3 寄存器的高 qty:32[bits]，仅 RV32。
+
+4+^|机器不可屏蔽中断处理
+
+|`0x740` +
+`0x741` +
+`0x742` +
+`0x744`
+|MRW +
+MRW +
+MRW +
+MRW
+|`mnscratch` +
+`mnepc` +
+`mncause` +
+`mnstatus`
+|可恢复 NMI 暂存寄存器。 +
+可恢复 NMI 程序计数器。 +
+可恢复 NMI 原因。 +
+可恢复 NMI 状态。
+
+4+^|机器计数器/定时器
+
+|`0xB00` +
+`0xB02` +
+`0xB03` +
+`0xB04` +
+{nbsp} +
+`0xB1F` +
+`0xB80` +
+`0xB82` +
+`0xB83` +
+`0xB84` +
+{nbsp} +
+`0xB9F`
+|MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+|`mcycle` +
+`minstret` +
+`mhpmcounter3` +
+`mhpmcounter4` +
+{vertical-ellipsis} +
+`mhpmcounter31` +
+`mcycleh` +
+`minstreth` +
+`mhpmcounter3h` +
+`mhpmcounter4h` +
+{vertical-ellipsis} +
+`mhpmcounter31h`
+|机器周期计数器。 +
+机器已退休指令计数器。 +
+机器性能监控计数器。 +
+机器性能监控计数器。 +
+{nbsp} +
+机器性能监控计数器。 +
+csr:mcycle[] 的高 qty:32[bits]，仅 RV32。 +
+csr:minstret[] 的高 qty:32[bits]，仅 RV32。 +
+csr:mhpmcounter3[] 的高 qty:32[bits]，仅 RV32。 +
+csr:mhpmcounter4[] 的高 qty:32[bits]，仅 RV32。 +
+{nbsp} +
+csr:mhpmcounter31[] 的高 qty:32[bits]，仅 RV32。
+
+4+^|机器计数器设置
+
+|`0x320` +
+`0x321` +
+`0x322` +
+`0x323` +
+`0x324` +
+{nbsp} +
+`0x33F` +
+`0x721` +
+`0x722` +
+`0x723` +
+`0x724` +
+{nbsp} +
+`0x73F`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+{nbsp} +
+MRW
+|`mcountinhibit` +
+`mcyclecfg` +
+`minstretcfg` +
+`mhpmevent3` +
+`mhpmevent4` +
+{vertical-ellipsis} +
+`mhpmevent31` +
+`mcyclecfgh` +
+`minstretcfgh` +
+`mhpmevent3h` +
+`mhpmevent4h` +
+{vertical-ellipsis} +
+`mhpmevent31h`
+|机器计数器抑制寄存器。 +
+机器周期计数器配置寄存器。 +
+机器 instret 计数器配置寄存器。 +
+机器性能监控事件选择器。 +
+机器性能监控事件选择器。 +
+{nbsp} +
+机器性能监控事件选择器。 +
+csr:mcyclecfg[] 的高 qty:32[bits]，仅 RV32。 +
+csr:minstretcfg[] 的高 qty:32[bits]，仅 RV32。 +
+csr:mhpmevent3[] 的高 qty:32[bits]，仅 RV32。 +
+csr:mhpmevent4[] 的高 qty:32[bits]，仅 RV32。 +
+{nbsp} +
+csr:mhpmevent31[] 的高 qty:32[bits]，仅 RV32。
+
+4+^|机器控制转移记录配置
+|`0x34E`
+|MRW
+|`mctrctl`
+|机器控制转移记录控制寄存器。
+
+4+^|调试/跟踪寄存器（与调试模式共享）
+
+|`0x7A0` +
+`0x7A1`  +
+`0x7A2`  +
+`0x7A3` +
+`0x7A4` +
+`0x7A5` +
+`0x7A8`
+|MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW +
+MRW
+|`tselect` +
+`tdata1` +
+`tdata2` +
+`tdata3` +
+`tinfo`  +
+`tcontrol` +
+`mcontext`
+
+|调试/跟踪触发器寄存器选择。 +
+第一调试/跟踪触发器数据寄存器。 +
+第二调试/跟踪触发器数据寄存器。 +
+第三调试/跟踪触发器数据寄存器。 +
+触发器信息寄存器。 +
+触发器控制寄存器。 +
+机器模式上下文寄存器。
+
+4+^|调试模式寄存器
+
+|`0x7B0` +
+`0x7B1` +
+`0x7B2` +
+`0x7B3`
+|DRW +
+DRW +
+DRW +
+DRW +
+|`dcsr` +
+`dpc` +
+`dscratch0` +
+`dscratch1`
+|调试控制与状态寄存器。 +
+调试程序计数器。 +
+调试暂存寄存器 0。 +
+调试暂存寄存器 1。
+|==='''

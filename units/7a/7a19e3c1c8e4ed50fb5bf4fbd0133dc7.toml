@@ -1,0 +1,12 @@
+unit_id = "7a19e3c1c8e4ed50fb5bf4fbd0133dc7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction returns a single bit extracted from _rs1_ at the index specified in _shamt_.
+The index is read from the lower log2(XLEN) bits of _shamt_.
+[#norm:bexti_shamt_rsv_rv32]#For RV32, the encodings corresponding to _shamt[5]_=1 are reserved.#'''
+zh = '''
+说明::
+本指令返回从 _rs1_ 中 _shamt_ 所指定索引处提取的单个位。该索引从 _shamt_ 的低 log2(XLEN) 位读取。[#norm:bexti_shamt_rsv_rv32]##对于 RV32，与 _shamt[5]_=1 相对应的编码为保留编码。##'''

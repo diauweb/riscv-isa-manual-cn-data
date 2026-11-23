@@ -1,0 +1,14 @@
+unit_id = "4e059289f597c8560d0b68a4eafc3780"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+MUL performs an XLEN-bit×XLEN-bit multiplication of
+`rs1` by `rs2` and places the lower XLEN bits in the destination
+register. MULH, MULHU, and MULHSU perform the same multiplication but
+return the upper XLEN bits of the full 2×XLEN-bit
+product, for signed×signed,
+unsigned×unsigned, and `rs1`×unsigned `rs2` multiplication.
+If both the high and low bits of the same product are required, then the recommended code sequence is: `MULH[[S]U] rdh, rs1, rs2; MUL rdl, rs1, rs2` (source register specifiers must be in same order and `rdh` cannot be the same as `rs1` or `rs2`). Microarchitectures can then fuse these into a single multiply operation instead of performing two separate multiplies.'''
+zh = '''
+MUL 执行 `rs1` 与 `rs2` 的 XLEN 位×XLEN 位乘法，并将乘积的低 XLEN 位放入目标寄存器。MULH、MULHU 和 MULHSU 执行相同的乘法，但返回完整 2×XLEN 位乘积的高 XLEN 位，分别用于有符号×有符号、无符号×无符号以及 `rs1`×无符号 `rs2` 乘法。如果同一乘积的高位和低位都需要，推荐的代码序列为：`MULH[[S]U] rdh, rs1, rs2; MUL rdl, rs1, rs2`（源寄存器说明符的顺序应相同，且 `rdh` 不得与 `rs1` 或 `rs2` 相同）。微架构随后能将这些融合为单个乘法操作，而不是执行两次独立的乘法。'''

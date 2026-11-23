@@ -1,0 +1,33 @@
+unit_id = "0512d2c8d79d87b813ec88590b7a84f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The compressed instruction encodings are mostly common across XLEN=32 and
+XLEN=64, but as shown in <<rvc-instr-table0>>, a few opcodes are used for
+different purposes depending on base ISA.
+For example, the XLEN=64 variant requires additional opcodes to compress loads
+and stores of 64-bit integer values, whereas the XLEN=32-only extlink:zcf[] extension
+uses the same opcodes to compress loads and stores of single-precision
+floating-point values.
+If the C extension is implemented, the
+appropriate compressed floating-point load and store instructions must
+be provided whenever the relevant standard floating-point extension (F
+and/or D) is also implemented.
+In addition, the XLEN=32 variant includes a compressed jump and link
+instruction to compress short-range subroutine calls, where the same opcode is
+used to compress ADDIW for XLEN=64.'''
+zh = '''
+压缩指令编码在 XLEN=32 与
+XLEN=64 上大体相同，但如 <<rvc-instr-table0>> 所示，少数操作码根据基础 ISA
+的不同而用于不同目的。
+例如，XLEN=64 变体需要额外的操作码来压缩 64 位整数值的加载
+和存储，而仅用于 XLEN=32 的 extlink:zcf[] 扩展
+则使用相同的操作码来压缩单精度
+浮点值的加载和存储。
+如果实现了 C 扩展，则每当相关的标准浮点扩展（F
+和/或 D）也实现时，应提供相应的
+压缩浮点加载和存储指令。
+此外，XLEN=32 变体包含一条压缩跳转并链接
+指令，用于压缩短距离子程序调用，而在 XLEN=64 中，同一操作码
+用于压缩 ADDIW。'''

@@ -1,0 +1,20 @@
+unit_id = "2df98ec03bd76681482f3f53c9b66bcb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Some algorithms may load the previous data value of a memory location into the
+register used as the compare data value source by a ext:zacas[] instruction. When
+using a ext:zacas[] instruction that uses a register pair to source the compare value,
+the two registers may be loaded using two individual loads. The two individual
+loads may read an inconsistent pair of values but that is not an issue since the
+insn:amocas[] operation itself uses an atomic load-pair from memory to obtain the
+data value for its comparison.
+===='''
+zh = '''
+[NOTE]
+====
+某些算法可能将内存位置的先前数据值加载到用作 ext:zacas[] 指令比较数据值来源的寄存器中。当使用以寄存器对作为比较值来源的 ext:zacas[] 指令时，这两个寄存器可通过两条单独的加载指令加载。这两条单独的加载指令可能读到不一致的一对值，但这不成问题，因为 insn:amocas[] 操作本身使用对内存的原子加载对来获取其比较所用的数据值。
+===='''

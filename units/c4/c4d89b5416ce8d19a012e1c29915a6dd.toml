@@ -1,0 +1,16 @@
+unit_id = "c4d89b5416ce8d19a012e1c29915a6dd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hedeleg_sz_acc]#Register `hedeleg` is a 64-bit read/write register, formatted as shown in
+<<hedelegreg>>.#
+[#norm:hideleg_sz_acc]#Register `hideleg` is an HSXLEN-bit read/write register, formatted as shown in
+<<hidelegreg>>.#
+By default, all traps at
+any privilege level are handled in M-mode, though M-mode usually uses
+the `medeleg` and `mideleg` CSRs to delegate some traps to HS-mode. The
+`hedeleg` and `hideleg` CSRs allow these traps to be further delegated
+to a VS-mode guest; their layout is the same as `medeleg` and `mideleg`.'''
+zh = '''
+[#norm:hedeleg_sz_acc]##寄存器 `hedeleg` 是 64 位读写寄存器，格式如 <<hedelegreg>> 所示。## [#norm:hideleg_sz_acc]##寄存器 `hideleg` 是 HSXLEN 位读写寄存器，格式如 <<hidelegreg>> 所示。##默认情况下，任何特权级的所有陷阱都在 M 模式处理，不过 M 模式通常使用 `medeleg` 和 `mideleg` CSR 将某些陷阱委托给 HS 模式。`hedeleg` 和 `hideleg` CSR 允许将这些陷阱进一步委托给 VS 模式客户机；其布局与 `medeleg` 和 `mideleg` 相同。'''

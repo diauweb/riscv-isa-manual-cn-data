@@ -1,0 +1,29 @@
+unit_id = "405307340e494cf12ec5a8285490a16d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- <<mstandard,**M**>> Integer multiplication and division.
+- <<chap:a,**A**>> Atomic instructions.
+- <<single-float,**F**>> Single-precision floating-point instructions.
+- <<chap:d,**D**>> Double-precision floating-point instructions.
+- <<compressed,**C**>> Compressed Instructions.
+- <<csrinsts,**Zicsr**>>  CSR instructions.  These are implied by presence of Zicntr or F.
+- <<counters,**Zicntr**>> Basic counters.
+
+- <<ziccif,**Ziccif**>> Main memory regions with both the cacheability and
+  coherence PMAs must support instruction fetch, and any instruction
+  fetches of naturally aligned power-of-2 sizes up to min(ILEN,XLEN)
+  (i.e., 32 bits for RVA20) are atomic.'''
+zh = '''
+- <<mstandard,**M**>> 整数乘法和除法。
+- <<chap:a,**A**>> 原子指令。
+- <<single-float,**F**>> 单精度浮点指令。
+- <<chap:d,**D**>> 双精度浮点指令。
+- <<compressed,**C**>> 压缩指令。
+- <<csrinsts,**Zicsr**>>  CSR 指令。这些由 Zicntr 或 F 的存在所隐含。
+- <<counters,**Zicntr**>> 基本计数器。
+
+- <<ziccif,**Ziccif**>> 同时具有可缓存性和一致性 PMA 的主内存区域应支持取指，
+  并且，对自然对齐的 2 的幂大小（至多为 min(ILEN,XLEN)，即对于 RVA20 为 32 位）
+  的任何取指都是原子的。'''

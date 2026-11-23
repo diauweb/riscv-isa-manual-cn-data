@@ -1,0 +1,16 @@
+unit_id = "752778c6b7a9f9a6133c90830164eedd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+During a context save, the responsible privileged code need only write
+out the corresponding state if its status is Dirty, and can then reset
+the extension's status to Clean. During a context restore, the context
+need only be loaded from memory if the status is Clean (it should never
+be Dirty at restore). If the status is Initial, the context must be set
+to an initial constant value on context restore to avoid a security
+hole, but this can be done without accessing memory. For example, the
+floating-point registers can all be initialized to the immediate value
+0.'''
+zh = '''
+在上下文保存期间，负责的特权代码只需在其状态为 Dirty 时写出相应状态，然后可将该扩展的状态重置为 Clean。在上下文恢复期间，仅当状态为 Clean 时才需要从内存加载上下文（恢复时绝不应为 Dirty）。若状态为 Initial，则必须在上下文恢复时将上下文设置为初始常量值以避免安全漏洞，但这可以在不访问内存的情况下完成。例如，浮点寄存器均可初始化为立即数值 0。'''

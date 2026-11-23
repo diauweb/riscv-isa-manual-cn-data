@@ -1,0 +1,8 @@
+unit_id = "7b14f9a03ff10bb3811a8f155e5fafd9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This is caused by the desire to provide compatibility with initial versions of Arm trace. These older versions used these 4 pins to denote idle state. Modern trace probes ignore these signals, but just in case they do not, it is better and safer to provide logic level as above. As `*TRC_CTL*` is not used, it should be tied to 0 on PCB but may be optionally used as an extra external trace trigger (from target to probe).'''
+zh = '''
+这是为了与早期版本的 Arm 跟踪保持兼容。这些较早版本使用这 4 个引脚表示空闲状态。现代跟踪探针会忽略这些信号，但以防万一它们并不忽略，按上述方式提供逻辑电平更好也更安全。由于 `*TRC_CTL*` 未被使用，在 PCB 上宜将其接为 0，但也可选地用作额外的外部跟踪触发（从目标端到探针）。'''

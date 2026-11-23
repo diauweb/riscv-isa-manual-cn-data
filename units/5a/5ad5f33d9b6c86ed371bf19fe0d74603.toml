@@ -1,0 +1,14 @@
+unit_id = "5ad5f33d9b6c86ed371bf19fe0d74603"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If both the high and low bits of the same product are required, the recommended
+code sequence is insn:mulh[rdh,rs1,rs2] followed by insn:mul[rdl,rs1,rs2].
+insn:mulhu[] or insn:mulhsu[] can be used instead of insn:mulh[] if appropriate.
+Note that the source register specifiers, `rs1` and `rs2`, must be in same order
+and `rdh` cannot be the same as `rs1` or `rs2`.
+Microarchitectures can then fuse these into a single multiply operation instead
+of performing two separate multiplies.'''
+zh = '''
+如果同一乘积的高位和低位都需要，推荐的代码序列是先 insn:mulh[rdh,rs1,rs2] 然后 insn:mul[rdl,rs1,rs2]。如果合适，可用 insn:mulhu[] 或 insn:mulhsu[] 代替 insn:mulh[]。注意，源寄存器说明符 `rs1` 和 `rs2` 必须处于相同顺序，且 `rdh` 不能与 `rs1` 或 `rs2` 相同。微架构随后可将这些融合为单个乘法操作，而不是执行两次独立的乘法。'''

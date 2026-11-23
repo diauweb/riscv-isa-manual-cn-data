@@ -1,0 +1,993 @@
+{
+  "chap_hash": "c0790da5a4f3e332",
+  "id": "machine",
+  "sectname": "chapter",
+  "sectnum": "3",
+  "title_en": "Machine-Level ISA, Version 1.13",
+  "title_unit_id": "b8a072212cc695d925e45d53ebff9068",
+  "source_path": "src/machine.adoc",
+  "sections": [
+    {
+      "id": "machine",
+      "level": 1,
+      "sectnum": "3",
+      "title": "Machine-Level ISA, Version 1.13",
+      "heading_unit_id": "b8a072212cc695d925e45d53ebff9068",
+      "heading_anchor_id": "machine",
+      "blocks": [
+        "934cc08585f4231f3e1021933a139401"
+      ]
+    },
+    {
+      "id": "_machine_level_csrs",
+      "level": 2,
+      "sectnum": "3.1",
+      "title": "Machine-Level CSRs",
+      "heading_unit_id": "e3f5031e2ed1146f8bd3c6284cc67e91",
+      "blocks": [
+        "911e1aeac7dae394afd9f9425e9d5143"
+      ]
+    },
+    {
+      "id": "misa",
+      "level": 3,
+      "sectnum": "3.1.1",
+      "title": "Machine ISA (misa) Register",
+      "heading_unit_id": "b90fde52b007f749e776d6880567a7bc",
+      "heading_anchor_id": "misa",
+      "blocks": [
+        "391afea1b6798d25989d44d9979f7686",
+        "892a7e8220f8d357292248b2a58c7e00",
+        "3404d917d0e1ee71a229ddef9fa34a16",
+        {
+          "unit_id": "7ae88c198953d8c7df9e28ae97347221",
+          "anchor_id": "misabase"
+        },
+        "75f54c2c7e071fb8f4d4fa13053e3980",
+        "9a34502b2aad27ce5c2a1c391fd3a61e",
+        "389420beda907991be5214ecda4e3bd4",
+        {
+          "unit_id": "bcd7af8373e20c72e11b0f0358364ea1",
+          "anchor_id": "norm:misa_extensions_disabling"
+        },
+        "a9ce3dd89b5237e1daa4fe1a77e75b73",
+        "d226fd53f3f845976d8773a9a0468d91",
+        "77510a55d3705becd9c29f2c49811324",
+        "455fcb6b9a8fa300682958147cd11cea",
+        "c0d1869b1380d361d095b8b9bb2bf9ff",
+        "0577bdd5da57602a06caea04f9aa2b5a",
+        "5c3400dd993a9f796a195bc4f49a4fa7",
+        "270877b94b41620fc7ea9590e39f1208",
+        "da97ebf1fc8b6847c924c92475a87375",
+        "482fb4f7cd397b9bd4b5750d87654aa8",
+        "df440a8789dc909a6c7f5fbb42dbee98",
+        "e2043cfc5040c926a66f05c82cb5c290",
+        "4fb69b41d33b4bce24d57bbfaa5cb92b",
+        "43e501d6ca0ee9b797ec40d35457bf8c",
+        "1beec40f006ee6b5528e731b377c647e"
+      ]
+    },
+    {
+      "id": "_machine_vendor_id_mvendorid_register",
+      "level": 3,
+      "sectnum": "3.1.2",
+      "title": "Machine Vendor ID (mvendorid) Register",
+      "heading_unit_id": "6dda47e35362bf4cf48e11bdaaf74fa9",
+      "blocks": [
+        "1e159bff8c7de0f1b04c1cbc6daa9d10",
+        "093b530ffd9eb3ef028a911a1f137f32",
+        "c53b9fed493546d5ccedf680a18e08da",
+        "da3b48eb68cf0bb7585f9237534144ab"
+      ]
+    },
+    {
+      "id": "_machine_architecture_id_marchid_register",
+      "level": 3,
+      "sectnum": "3.1.3",
+      "title": "Machine Architecture ID (marchid) Register",
+      "heading_unit_id": "1962c2624a6f77b7bcdca8791f74426a",
+      "blocks": [
+        "8ef4f938f51e1f91969c5444e7772652",
+        "caed4370ed7fdfb68d987d17d8a4ab49",
+        "f70a95f1e5219b581e28fd6e915e74bf",
+        "5768037de44aaef4eae8962eb0eee4f2"
+      ]
+    },
+    {
+      "id": "_machine_implementation_id_mimpid_register",
+      "level": 3,
+      "sectnum": "3.1.4",
+      "title": "Machine Implementation ID (mimpid) Register",
+      "heading_unit_id": "660897168d5d2aaf346162b8baee8ec4",
+      "blocks": [
+        "43a62b7aff6b1235e49bbae6be9a77a3",
+        "36b0491ced1dbb651448aa1b1b22afe2",
+        "8337499139d58545629f48f2a84e3207"
+      ]
+    },
+    {
+      "id": "_hart_id_mhartid_register",
+      "level": 3,
+      "sectnum": "3.1.5",
+      "title": "Hart ID (mhartid) Register",
+      "heading_unit_id": "d128bf7822d395db19223a2745a10304",
+      "blocks": [
+        "3471406e94d0a308de06ac4ea105e229",
+        "14779cf30ecc8663f15bbab9260ebd8c",
+        "9bcf7f04d5b535a4f87b13ea7204def4"
+      ]
+    },
+    {
+      "id": "_machine_status_mstatus_and_mstatush_registers",
+      "level": 3,
+      "sectnum": "3.1.6",
+      "title": "Machine Status (mstatus and mstatush) Registers",
+      "heading_unit_id": "f8020f2084cd66b74930dc49dd043d0d",
+      "blocks": [
+        "e3dcb6fa4204a4469a142e356abe88df",
+        {
+          "unit_id": "25885af316f0f35408285238cfdd9cab",
+          "anchor_id": "mstatusreg-rv32"
+        },
+        {
+          "unit_id": "3a7d52d602d8b456b8c7a46407d63cb9",
+          "anchor_id": "mstatusreg"
+        },
+        "dab95e1f7824f93898cb3ed5dc65d7cf",
+        {
+          "unit_id": "b31f6c9d494a444dc28df5efef73a9a7",
+          "anchor_id": "mstatushreg"
+        }
+      ]
+    },
+    {
+      "id": "privstack",
+      "level": 4,
+      "sectnum": "3.1.6.1",
+      "title": "Privilege and Global Interrupt-Enable Stack in mstatus register",
+      "heading_unit_id": "954cbc3ce602644345e300f931026359",
+      "heading_anchor_id": "privstack",
+      "blocks": [
+        "f5a7427d66118e16f59f2b6f476387e7",
+        "63fbc1ca381b7dd2e0d7781a7ac69d32",
+        "71718ca82c46f0c76df2a64cedbb5e2e",
+        "1015ddfacac0676bea35db43fd74ecfe",
+        "10493a62fbc114bcf287a0e46dedca25",
+        "03d40ad62dc74e984c61e7f50e599f5c",
+        "0de7fcb1a50a18217653282e1d689d03",
+        "8c0b03f1e42f15741899a95b4c12ff25",
+        "d98c2c15ee3d980c7374eb4481399c9d",
+        "c1fb0e2909e3f23f0fde996c5f9f8b0a",
+        "7a2e646437efa14352db3ea653a8085d"
+      ]
+    },
+    {
+      "id": "machine-double-trap",
+      "level": 4,
+      "sectnum": "3.1.6.2",
+      "title": "Double Trap Control in mstatus Register",
+      "heading_unit_id": "b29d08d43c3cefa4c2b4ae683a17d7c6",
+      "heading_anchor_id": "machine-double-trap",
+      "blocks": [
+        "cd5b5b0f0ce1a69ea4876fcc069f8a4c",
+        "0855b563083999f72557e94ca86415c7",
+        "2af3df3c3d253a595ce41f22f4606d45",
+        "3491d8681392ab5b9141e56d8f642406",
+        "ffadd82e03c9e52cb61ac72fd43808bd",
+        "ce4e2d54eee5f4bd95f409841642779e",
+        "98b4d583d014a9c71191ea0df51223e3",
+        "0eef1b2522e0b4d62686166a8ba8436e",
+        "3ab68bd4b09aa5fe41636fa75ee3b013",
+        "6349accd3db3cc3997639e417a3abdf6"
+      ]
+    },
+    {
+      "id": "xlen-control",
+      "level": 4,
+      "sectnum": "3.1.6.3",
+      "title": "Base ISA Control in mstatus Register",
+      "heading_unit_id": "ae88b0258a9bc798e1b8fe91b2b85bc5",
+      "heading_anchor_id": "xlen-control",
+      "blocks": [
+        "126244c86d13fc446a651fd9e52a1258",
+        "20d8d0591d9c17bf51580389106d12ff",
+        "68ea500e00fa2fca737f9d9aafffef35",
+        "359af0749551c47c15ada628554b5c2f",
+        "5a06eaffda010733b8fc03a0ccb6e0d6",
+        "28847cd748f16bbd0c6f63ea43b26d12",
+        "b46373cedcc42fbf137baafe92016887",
+        "30e069fcf9ccf89a284059128796dc9e",
+        "87579029a918cdca771ab388c585cf96"
+      ]
+    },
+    {
+      "id": "_memory_privilege_in_mstatus_register",
+      "level": 4,
+      "sectnum": "3.1.6.4",
+      "title": "Memory Privilege in mstatus Register",
+      "heading_unit_id": "4285c0b5e425ade18bb6436703b62f86",
+      "blocks": [
+        "9bb05b733c80e30c2ab6a647b4461e8f",
+        "c79b61f425e96d66f6429fcf0be24ab9",
+        "0a8d81b952953533ab406388b97276fa",
+        "b75a2adc781915bf54c5e7c8a1b4729c",
+        "6e6fc75a40e6cfe4e57c2c8e6117c26f",
+        "cabbec7a1e21169ed3154c433e28f74c"
+      ]
+    },
+    {
+      "id": "_endianness_control_in_mstatus_and_mstatush_registers",
+      "level": 4,
+      "sectnum": "3.1.6.5",
+      "title": "Endianness Control in mstatus and mstatush Registers",
+      "heading_unit_id": "4bf1ea621ca6eae1b0449f3bdf1865ee",
+      "blocks": [
+        "344b615f57fffbcb45b3a99077aecdc5",
+        "6907099abb46f68ec421bec61a4756f0",
+        "cc64fd32dbe1899c9c61f8ee078a7a13",
+        "f26461c5db46f395350b6f220fd16d94",
+        "5d4c222a2ce5b543f20fb6550ff43d1b",
+        "e5c647b790dbcb89d2099c96d2115aa1",
+        "1ff05bb1743d0b021c1fbe70f062bc34",
+        "1b05d5efcc7dd1e07b12223a3e8cca27"
+      ]
+    },
+    {
+      "id": "virt-control",
+      "level": 4,
+      "sectnum": "3.1.6.6",
+      "title": "Virtualization Support in mstatus Register",
+      "heading_unit_id": "8db2683694d5dfa681831df24bd993cc",
+      "heading_anchor_id": "virt-control",
+      "blocks": [
+        "9937853d8a83f267824cf70061ce24ec",
+        "2d24fe2bdd1b480895fe80133686a831",
+        "9d4adf9362ee5051ea691a8e962a60c6",
+        "ffe66ebe744b28492cb17b3eca1d0325",
+        "ab97e95ce42baf6df0af993bf74da720",
+        "2e266955b960ee89b02eb963516d0095",
+        "cebedefe068a5693a13db14d014f5f01"
+      ]
+    },
+    {
+      "id": "_extension_context_status_in_mstatus_register",
+      "level": 4,
+      "sectnum": "3.1.6.7",
+      "title": "Extension Context Status in mstatus Register",
+      "heading_unit_id": "0cfdc497b66aa8931ccfbc3aa122dec3",
+      "blocks": [
+        "8c12ee48044fae8ed777ecf8ab33c920",
+        "6d7934a7819049770c14bab7305f5501",
+        "6a27e20fb529fe50d417ed5459046f9e",
+        "5f822eea20a32f8b95a8e0033213320b",
+        "5896486105e25abc1f5da5e3fdbf5924",
+        {
+          "unit_id": "70a0edeb62d833b18a54dc17f8e35f91",
+          "anchor_id": "fsxsencoding"
+        },
+        "e1570f9574451d014f1e2fb1f57fa374",
+        "8a31b4ec83d4f9bb1a8ff8670d30daca",
+        "a4e4badba488fc93ac6d7befa80b3f08",
+        "04e20d9103ca65ea4d744310e2a12779",
+        "966c3ba093a54f4f1c757fa9d4bd2dd1",
+        "36d5e0d7d880bbfffe4e48222618232a",
+        "8a5708883c8e586a27eadb6b4b1ca12a",
+        "33fa52df38d53dc9aeadd18e5ddd470e",
+        "77e0e8ca359bcd2de558e90aef9179e0",
+        "752778c6b7a9f9a6133c90830164eedd",
+        "ca2e4e9d053b2ef3653fc380ca560c62",
+        "31d4d359e658687322f840ce0fd54ec8",
+        "ded345d24876b926a2b65be3698575ba",
+        "04a7fd4b108488ed3224c2df6dc3ac53",
+        "f6b42fd9aa05207a410e050d7a9a43e5",
+        "6960dcbbf7507d5e163a7c634730bdc5",
+        "533a0f830f57d02bb27991aeda296835",
+        "f3e1939e22e35bec139a31dd607c0990",
+        "c7f7830180a8858587dc77fcf8de6236",
+        "53b0804425ebdf6a24e7a309465c8051",
+        {
+          "unit_id": "0a0ee83605e7d3aca4d745b86554add1",
+          "anchor_id": "fsxsstates"
+        },
+        "2481c052d50d13a3982d91ba76cb3c8c",
+        "d589e86e261f896ba7a04a7e9b0a0815",
+        "5842f82224e91262a195a3372cebfa1e",
+        "015c020cc610d289ccfd4eaf21f6fc3c",
+        "e5cfbd37ca226eb56e9a8f5dd4037124",
+        "3ef08a1847fed4f7f8872441f32a03ad",
+        "8c7ec59109f6069e9c213e5c385f03d9",
+        "49d8064f107690749c31daaf8aadf726",
+        "775d79d518b5d93b62a74b16f08e67cb",
+        "e7a63202e20fa86f9143555e3a891765",
+        "9089ac1aa67de0ecf2f5558c8f14b33c",
+        "9993a529655969cba2a2611e18bf4f0f",
+        "a1021e9317bfa5ca1374c77e7fe799a0",
+        "54fae49460930a533c51dab0e2f649b9"
+      ]
+    },
+    {
+      "id": "_previous_expected_landing_pad_elp_state_in_mstatus_register",
+      "level": 4,
+      "sectnum": "3.1.6.8",
+      "title": "Previous Expected Landing Pad (ELP) State in mstatus Register",
+      "heading_unit_id": "1b102c19bde7d24157af409b7c7514e8",
+      "blocks": [
+        "78d329327bfbe320e1b63567237fed70",
+        "c55607260d0f67c59e2db81a13a950d2"
+      ]
+    },
+    {
+      "id": "_machine_trap_vector_base_address_mtvec_register",
+      "level": 3,
+      "sectnum": "3.1.7",
+      "title": "Machine Trap-Vector Base-Address (mtvec) Register",
+      "heading_unit_id": "4dc26309e65896f6e7aa684252864c56",
+      "blocks": [
+        "32c7950bb55f373715ae5c3017ae8b3f",
+        "7626923e556830c580816aca306abfd3",
+        "cbae28861c9c94bbf37dc8deb409346f",
+        "820cfa6604c7fdd4f4f0ec9851a19e3f",
+        {
+          "unit_id": "d03b3a5d1eac66d92167950f6816b32d",
+          "anchor_id": "mtvec-mode"
+        },
+        "a71feb124637f031c0249867718ad91e",
+        "d5f0698edb14a3336f86d4bca8a66a61",
+        "5026d62f7bfd5cdbefc8c8e6ec3f1c86"
+      ]
+    },
+    {
+      "id": "_machine_trap_delegation_medeleg_and_mideleg_registers",
+      "level": 3,
+      "sectnum": "3.1.8",
+      "title": "Machine Trap Delegation (medeleg and mideleg) Registers",
+      "heading_unit_id": "c686eec830d002097fdae33101d5321b",
+      "blocks": [
+        "7d484a787bed5e57641e3626c603698d",
+        "1cd5960f9efac119fb77cbee496efb82",
+        "d6594a23592729b99701c88d2600b6a6",
+        "c1f1b385d9b7771daaaceb2590b7193a",
+        "4328fd20758862afed9f5aed8e9e325d",
+        "0f25fc97ea7793c85c548adefad53b82",
+        "2c61a8e95f7d806a048f2d2438af540b",
+        "c2ec37d62c8112f1d23ad6ee05dd4283",
+        "ad733eb43b1dbd8f9556eaeb39cabf6c",
+        "97737578daa7998308e82e9fca2d1a90",
+        "9cf743e0e3d5e936d8047cce0dda4c5d",
+        "6128dde0e58b8d200afc120b55f620e9",
+        "bd4a03c9576785fa7810603cbb34db87",
+        "1721b86afef9367587bb569e1c26c0d8",
+        "024a95011abca40237fb8a1da02ba867",
+        "c718860f7ebb07724e5aae2e3e4696c8"
+      ]
+    },
+    {
+      "id": "_machine_interrupt_mip_and_mie_registers",
+      "level": 3,
+      "sectnum": "3.1.9",
+      "title": "Machine Interrupt (mip and mie) Registers",
+      "heading_unit_id": "f1f0b0c7ba66bb90707c49fb5fa9af95",
+      "blocks": [
+        "db82714a6dae22a7bb02ef22b3fc936c",
+        "29a1596c633ec48d1b4e5c2db6c8e962",
+        "5c02f3c80debdef27e324f289f8547b9",
+        "5c02f3c80debdef27e324f289f8547b9",
+        "13617063da07c1dedca85351d793bc7a",
+        "14cda151687d46252701e15479fc5d8e",
+        "d680b8633c4278e1fa2e5c6df7207802",
+        "8b895c46a91ba9a386391c44f14de715",
+        "47921b2815687108ec0e30d4c538cf09",
+        "a4955601be0d84295a0bfcde0a883c40",
+        {
+          "unit_id": "3eb614d0634fc75236b720d73849a9cc",
+          "anchor_id": "mipreg-standard"
+        },
+        {
+          "unit_id": "6e2fe182387b13807ba5e82133b5379b",
+          "anchor_id": "miereg-standard"
+        },
+        "693d0fda9083c07f94963ed5bf949c62",
+        "5a0525aac05f098b0284993c76a49878",
+        "978aa3184880cf508ab068f371acea2e",
+        "b4692d9d91771ea9fcd092d4b87893fa",
+        "154de495e5122461c404a3c398c40f31",
+        "525458b7365c737167a7d08caf23c5c0",
+        "82e072cb8b0e6d04d26bc71e90835740",
+        "b2ffaf76e2377a6395467291be0493ae",
+        "2d44c66873192f155ce109a20e5a962f",
+        "8cc89732fd295233e9c18db08a2211f2",
+        "63020972bcd53cee94e8230ad474fda9",
+        "0b3b2f7284171d6edef185f06cb3e2ba",
+        "25940a9abb4621e22e072fdff2ecf802"
+      ]
+    },
+    {
+      "id": "_hardware_performance_monitor",
+      "level": 3,
+      "sectnum": "3.1.10",
+      "title": "Hardware Performance Monitor",
+      "heading_unit_id": "b217740a343da18258bbc527e066c2fb",
+      "blocks": [
+        "f2c770761540b351a7b22ed43d698af1",
+        "eff829a16af4db2a92e0647e185266c3",
+        "b1ac8a52230cc3a6384b6687ec607a7d",
+        "678c601bcf414839fc64bd2879dcec3e",
+        "96c0dbbfd8c12c97e71590b439980881",
+        "4ef643f8b01e6a037e2d3ac71630b6bd"
+      ]
+    },
+    {
+      "id": "mcounteren",
+      "level": 3,
+      "sectnum": "3.1.11",
+      "title": "Machine Counter-Enable (mcounteren) Register",
+      "heading_unit_id": "e588e4bf4c226ab1d780056a510e7990",
+      "heading_anchor_id": "mcounteren",
+      "blocks": [
+        "769334b8f34753a76621b7d5671fb8f1",
+        "dbfcd3bac9a8d481c2d81fd491e33187",
+        "0aa15634e560cfe0d9845e2ee1944db1",
+        "d60d7cc344f97410910a8a818d4fb733",
+        "8e59ec9a4a0fcc8f29c18fee26190719",
+        "b414629d24939e7b8f62a507b9ae0760",
+        "07303863b056b237ccf11da438f2e215",
+        "f244c9239d22fa4b2c494f1906805259"
+      ]
+    },
+    {
+      "id": "_machine_counter_inhibit_mcountinhibit_register",
+      "level": 3,
+      "sectnum": "3.1.12",
+      "title": "Machine Counter-Inhibit (mcountinhibit) Register",
+      "heading_unit_id": "88f6adad8153b71e98366239ab9509e0",
+      "blocks": [
+        "0f6ba913e592c4427bf1b3100c042639",
+        "6bde654bda1c56ac8cb2d2644bf47610",
+        "a057fe005f24eaa8c57b0f7f75c4997f",
+        "a6f6db911d4f9c5558e540bd922f5be9",
+        "7aeaf7db89d70ff4579059ee9aa3379e",
+        "36e60d488cd2ba8e1db20a8a2bf29d98"
+      ]
+    },
+    {
+      "id": "_machine_scratch_mscratch_register",
+      "level": 3,
+      "sectnum": "3.1.13",
+      "title": "Machine Scratch (mscratch) Register",
+      "heading_unit_id": "4ab4246755536a9b6307bd01e077f806",
+      "blocks": [
+        "8ad55bca146e2e702b9ecf1eac0287ce",
+        "7de723d1ebf5e5e1d58ed99463c278ba",
+        "aee4ec3778eccadf8b52aa019817c88f"
+      ]
+    },
+    {
+      "id": "_machine_exception_program_counter_mepc_register",
+      "level": 3,
+      "sectnum": "3.1.14",
+      "title": "Machine Exception Program Counter (mepc) Register",
+      "heading_unit_id": "f68a5be65cce1960c9e96e4ea429628f",
+      "blocks": [
+        "eb3ac410de4d2870ca354fe8877f3e84",
+        "85eafe094cfb1ca4db851f9128c70439",
+        "d0609d4f118d701c84391837751f5099",
+        "354989153ffb2ae0e5532728e4880360",
+        "fed719f319a919a6d090e5b38bea73d3",
+        {
+          "unit_id": "57c9fda2eab948785abc4b32271b84b1",
+          "anchor_id": "mepcreg"
+        }
+      ]
+    },
+    {
+      "id": "mcause",
+      "level": 3,
+      "sectnum": "3.1.15",
+      "title": "Machine Cause (mcause) Register",
+      "heading_unit_id": "7d9d2d87cf6096c5d8243a94af5d527e",
+      "heading_anchor_id": "mcause",
+      "blocks": [
+        "4cce3bbaf8de8e4c6928276ff19bf40f",
+        "6c0d2526130d34b638367b4012c5509a",
+        {
+          "unit_id": "b98dcfd4498d492a5ee68ac07fb7d362",
+          "anchor_id": "mcausereg"
+        },
+        "15fbf81272c2691bcb3b6cbea712cfd0",
+        "702e2b12819f3655bc3fd1ed625f85b5",
+        "bd349273f070f26861b33f0f68c58661",
+        {
+          "unit_id": "4eb6e362825f28c64733f0e45e18984a",
+          "anchor_id": "mcauses"
+        },
+        {
+          "unit_id": "7c09a804197fa3c401b5883cff5b024a",
+          "anchor_id": "exception-priority"
+        },
+        "c6fee152a7e40293a2f43625c402ca8a",
+        "8a555db4bf255fd65e30a50a39e62537",
+        "dd81be6aa7f954996b62a4ed77546d3b",
+        "fe96b2a37fff02107290114f40b6c906"
+      ]
+    },
+    {
+      "id": "_machine_trap_value_mtval_register",
+      "level": 3,
+      "sectnum": "3.1.16",
+      "title": "Machine Trap Value (mtval) Register",
+      "heading_unit_id": "2395233dc089fa4787eec64f6c2041ef",
+      "blocks": [
+        "7f14ec715d70a5e98f93b0e666961291",
+        "8b957e7f84011d1415d0bdcd18df9526",
+        "7aee64315e67633c8535b7f9cc410746",
+        "6da0c123b41f69906c7b599bcd5c18d6",
+        "c6f1e0818561ec6b8d6fbbbf931cc8d5",
+        {
+          "unit_id": "27add20695a753523468911a69000304",
+          "anchor_id": "mtvalreg"
+        },
+        "344852a7fc4d2e8266350ee66028ea3b",
+        "ee6d21d78c0bfeeeca44fc837e86565d",
+        "fcd2512667c000dae5ca09178c838c63",
+        "67444c173a69c30e69f4ce3a89e4583a",
+        "37edcfafc8d96064771ae9ba091aea31",
+        "97e20c02bfd878bc15b5a7a48f0c96e6",
+        "3ad754599a9cd2e9a3e3470b4891b0e7",
+        "dcaae671ec74a4deeddf5411ffaf669c",
+        "32d3a11cb074098596effde4d68d1403",
+        "1abc77dc5ed19730e9422d64357b6477"
+      ]
+    },
+    {
+      "id": "_machine_configuration_pointer_mconfigptr_register",
+      "level": 3,
+      "sectnum": "3.1.17",
+      "title": "Machine Configuration Pointer (mconfigptr) Register",
+      "heading_unit_id": "aff1481862347c6ca3b8087cb6235843",
+      "blocks": [
+        "d3aa2f99ef5410ec805d2c682f786d60",
+        {
+          "unit_id": "ecc956efdb97a270dcab854fc48f6f14",
+          "anchor_id": "mconfigptrreg"
+        },
+        "6ac85343bbcfb4fdd0cc783c35f4b856",
+        "ba2d408dc1979b9a65adaff3d9c40124",
+        "cba5abd282530e8af68aded6ec1a8094"
+      ]
+    },
+    {
+      "id": "sec:menvcfg",
+      "level": 3,
+      "sectnum": "3.1.18",
+      "title": "Machine Environment Configuration (menvcfg) Register",
+      "heading_unit_id": "aa747b12b89b6137491cc74cc9706dd7",
+      "heading_anchor_id": "sec:menvcfg",
+      "blocks": [
+        "d56bc3679fd177b5cd230a573d78f0f4",
+        {
+          "unit_id": "ac2e020af0d061cf33e947fc042fd0a7",
+          "anchor_id": "menvcfgreg"
+        },
+        "be3bb32aaeaff43353d28fe69b5d2489",
+        "902ffb2b50b7e78e494b4a3e4de43b7c",
+        "254e86c4530979c621ef797ec77baedf",
+        {
+          "unit_id": "5f5d9d7df647b9785a575754d059fef5",
+          "anchor_id": "menvcfg-FIOM"
+        },
+        "55c179882cbe6d47fe742732669f605b",
+        "13534f17ad8bc62806c3480488e3b306",
+        "5d80725e264e8f2104c922bd696edcf9",
+        "1b797134e1e334480a871ada3874f067",
+        "5890ee9a0f934f642e8e26c81012fd80",
+        "5dd782861b52c60d678eac966da64f85",
+        "a63ab3e441918f5a11bd895e0c394177",
+        "81ba6295dcabe96d1b0296e293e80321",
+        "0e4183788a792a6645c004f0aa794e3b",
+        "caf0280d1b3572b4e11c397855bb2cac",
+        "e4bd8a2886bbf934c22e602c88362900",
+        "55421aec594276b816137cf2cebdf997",
+        "b253b33b61b476d863bceb988eaef342",
+        "241d648fd5f140a91364a6a0efae333d",
+        "90eaba9cfd940052d156cb9898ad66dc",
+        "6251d08af80de0e2db8c51d900266f53",
+        "b9f19883eacc75e58995d7a8b32106dd",
+        "7b7db22aed6bf2f4f9cb25120f06afb5"
+      ]
+    },
+    {
+      "id": "_machine_security_configuration_mseccfg_register",
+      "level": 3,
+      "sectnum": "3.1.19",
+      "title": "Machine Security Configuration (mseccfg) Register",
+      "heading_unit_id": "fb20f812f1ca1abf7707b4466f3c8ba9",
+      "blocks": [
+        "0c69299dcd63d8c6f79e30d7280fe3f1",
+        {
+          "unit_id": "0ec5a9e9480cdce583993deb95354d56",
+          "anchor_id": "mseccfg"
+        },
+        "488b2b9661414ac7c768fcd961d8c467",
+        "f9eac617b9ff871150cfa0dd0a412794",
+        "491b42f8a80130d046ee5bbfdf936178",
+        "5c71df8cbab19d93fa612a1776435825",
+        "55421aec594276b816137cf2cebdf997",
+        "ed9f194c54954d6c05cb6673b2c925ea"
+      ]
+    },
+    {
+      "id": "_machine_level_memory_mapped_registers",
+      "level": 2,
+      "sectnum": "3.2",
+      "title": "Machine-Level Memory-Mapped Registers",
+      "heading_unit_id": "6e3df500b6240cc36451a6047b8f2183",
+      "blocks": []
+    },
+    {
+      "id": "_machine_timer_mtime_and_mtimecmp_registers",
+      "level": 3,
+      "sectnum": "3.2.1",
+      "title": "Machine Timer (mtime and mtimecmp) Registers",
+      "heading_unit_id": "c2c6b98d2db434932d9f35fc9b93c0d8",
+      "blocks": [
+        "78e6cb95e2d00372138ac897bcdb74ea",
+        "427558a689f71f74e65f514b6f7eea35",
+        "6907f6b9cdf1b6594ee08b96215d0831",
+        "782a246a2ff08a0e75bbcac65742f086",
+        "f495e70c0189b9a54cb32decad37634b",
+        "c98225e3a224db1d26d2c4d4d68e5a9e",
+        "9fd8e4a9629aef1fd5f03b9cac5c6fcb",
+        "97f5dd2f4203661b1d69a983020eda8e",
+        "cacac0ada2c53484db888805576e12aa",
+        "e2fe0182af47afe8d7ba5ee35b6db2f4",
+        "9724f2c35d727066606fab4a620389a2"
+      ]
+    },
+    {
+      "id": "_machine_mode_privileged_instructions",
+      "level": 2,
+      "sectnum": "3.3",
+      "title": "Machine-Mode Privileged Instructions",
+      "heading_unit_id": "ccb539148851b2d0ca02329861d3b98e",
+      "blocks": []
+    },
+    {
+      "id": "_environment_call_and_breakpoint",
+      "level": 3,
+      "sectnum": "3.3.1",
+      "title": "Environment Call and Breakpoint",
+      "heading_unit_id": "a801fcdb318317ae2631a5f67ae88857",
+      "blocks": [
+        "7a7eb14b44bf2162a0ac484d54ee9b9b",
+        "dc90f6358369a2dd82af355485cd23f5",
+        "a43b10ee151e0e98985217f2b5c77fe3",
+        "5fec4375e43fcf7e404a3e4fb48fb7c7",
+        "0ef8abd0294fbbc51dd31e5d266f1a60",
+        "de67e7fb3cf5197755b027acbc6357b5"
+      ]
+    },
+    {
+      "id": "otherpriv",
+      "level": 3,
+      "sectnum": "3.3.2",
+      "title": "Trap-Return Instructions",
+      "heading_unit_id": "ffa4d8ec53c182763c8a25138f442408",
+      "heading_anchor_id": "otherpriv",
+      "blocks": [
+        "0ddded21fdcf8c5d13e855b9bf145dd1",
+        "cf8dc040a77d8761b22392afee048cfa",
+        "bfc74c2a6639d5e80125d4bd35af9d23",
+        "36cda643c7140009d022abad3906be12",
+        "1587ab4786093a2c2813375ec5252691"
+      ]
+    },
+    {
+      "id": "wfi",
+      "level": 3,
+      "sectnum": "3.3.3",
+      "title": "Wait for Interrupt",
+      "heading_unit_id": "285f9fbc598221818787e9abd09122bd",
+      "heading_anchor_id": "wfi",
+      "blocks": [
+        "cfca42a141fe515812dfb9976692df3d",
+        "0f79e5fdaacff713789e14f9c521b5b5",
+        "da497dc51c8aaf7e6213c68dbeaffdb6",
+        "964abd33669c97392f680d2435b517bd",
+        "066953a0f209621777c4a4da436c0459",
+        "5417886654190cc16de16ccc89ed7963",
+        "b20dfb33c8c990e68a9590921af57bd9",
+        "08266b2a6d54ac6fcba2068301dc76c1",
+        "30eeb9fd46cbbc6923e00c92c1488202"
+      ]
+    },
+    {
+      "id": "_custom_system_instructions",
+      "level": 3,
+      "sectnum": "3.3.4",
+      "title": "Custom SYSTEM Instructions",
+      "heading_unit_id": "6e50d24e7b667cdf5d87286bfe6577c2",
+      "blocks": [
+        "3083f2d34029ab6b1de7a22c35a888dd",
+        {
+          "unit_id": "9640cdc1259a9c0a7e5ff00d6ab01be0",
+          "anchor_id": "customsys"
+        }
+      ]
+    },
+    {
+      "id": "reset",
+      "level": 2,
+      "sectnum": "3.4",
+      "title": "Reset",
+      "heading_unit_id": "ba387a7b1af8b6911cd8ccb646b57654",
+      "heading_anchor_id": "reset",
+      "blocks": [
+        "d7acb89cde33c3f0670199a46eb7269e",
+        "69960ec52513c6ad91b8b9452ca6df8b",
+        "0c1bff0dd847b4f5b602e7bc3bc3e54d"
+      ]
+    },
+    {
+      "id": "nmi",
+      "level": 2,
+      "sectnum": "3.5",
+      "title": "Non-Maskable Interrupts",
+      "heading_unit_id": "cc887f76310762682dd197c9da350f93",
+      "heading_anchor_id": "nmi",
+      "blocks": [
+        "23530bfd984c27c81b50f28da4f52ca2",
+        "f8e34598fd421455556e315b97b8ebb8",
+        "015100be558271778c6f5fc60e9de1e3"
+      ]
+    },
+    {
+      "id": "pma",
+      "level": 2,
+      "sectnum": "3.6",
+      "title": "Physical Memory Attributes",
+      "heading_unit_id": "87ca53cd303bb32b4eff5d1a7c848fd9",
+      "heading_anchor_id": "pma",
+      "blocks": [
+        "7fbb9bcccaddb21eacf0fdebcbac3f1d",
+        "67b8baf6a31deae2ab83e865a7a9e740",
+        "bbbcad04c5a5e108a3e5eb30819aeb4e",
+        "9248231dfcf77e4969f72900ff239a0e",
+        "bccb0d55fa2bf556ba3bb8fd982d7aee",
+        "f69ea12145cffb4fdc8725af687a5606"
+      ]
+    },
+    {
+      "id": "_main_memory_versus_io_regions",
+      "level": 3,
+      "sectnum": "3.6.1",
+      "title": "Main Memory versus I/O Regions",
+      "heading_unit_id": "40b7eb60de8b24a9a6ac9f66109a02c5",
+      "blocks": [
+        "14130beea56148f3d883119268db5aa5",
+        "61379aab4112d0f2efef8ab27ae49284"
+      ]
+    },
+    {
+      "id": "_supported_access_type_pmas",
+      "level": 3,
+      "sectnum": "3.6.2",
+      "title": "Supported Access Type PMAs",
+      "heading_unit_id": "d7b40ffef1ab4367388bd5a1cdd56b29",
+      "blocks": [
+        "511d25e11958814c1008719377c764f6",
+        "0d4eb4b2d5e5d4b0cab5cc37eb10f423",
+        "8a84a145dbbedfa36aea7b852de43fca",
+        "2b235661c8c36cdb61d256fa2871f186",
+        "43f07e4ac948d205a19304120cecebd6",
+        "75fd8ecc972715d209e6327765ddc6b4",
+        "bfe6d39680dbce219a80cc3bc77217c6"
+      ]
+    },
+    {
+      "id": "_atomicity_pmas",
+      "level": 3,
+      "sectnum": "3.6.3",
+      "title": "Atomicity PMAs",
+      "heading_unit_id": "5ef7ffde4b6bb38ff2a6224d52e854af",
+      "blocks": [
+        "4c0cac7317d332c1c30cfd2453e70b81",
+        "410f22df23427093453552f4a88c23f4"
+      ]
+    },
+    {
+      "id": "_amo_pma",
+      "level": 4,
+      "sectnum": "3.6.3.1",
+      "title": "AMO PMA",
+      "heading_unit_id": "70112c3dadab6b0cfb746fef478454f9",
+      "blocks": [
+        "abe67364c13386b9dd9d41b82985bf70",
+        "cb550377f4a87af86683da6a273a0983",
+        "60c46c3b7469deae3f695d19231d69f9"
+      ]
+    },
+    {
+      "id": "_reservability_pma",
+      "level": 4,
+      "sectnum": "3.6.3.2",
+      "title": "Reservability PMA",
+      "heading_unit_id": "b850eeca866104a32cc5128c720a7fdc",
+      "blocks": [
+        "3f17b4db3b5976681ba7baa5b5f9faa7",
+        "4425e202cae2e8dd7fab9a52fc517058"
+      ]
+    },
+    {
+      "id": "_misaligned_atomicity_granule_pma",
+      "level": 3,
+      "sectnum": "3.6.4",
+      "title": "Misaligned Atomicity Granule PMA",
+      "heading_unit_id": "d6e9bcc9a0c905071c47aeffc0d86e7e",
+      "blocks": [
+        "eb70625ffa02b807c4985b048cfed0b4",
+        "827a108a52aaa1506ff8ccf510c7f9e7",
+        "e0bf82cb519351ba8f4f8ab840be8de7",
+        "d715efb7efe24527d4a0a202e16e2cb3"
+      ]
+    },
+    {
+      "id": "_memory_ordering_pmas",
+      "level": 3,
+      "sectnum": "3.6.5",
+      "title": "Memory-Ordering PMAs",
+      "heading_unit_id": "1c72928af330422e7a45d6ee3974ec3f",
+      "blocks": [
+        "2054f1bbde3f533686731e011df93686",
+        "a958cbb9d17a790e304f635774d975c6",
+        "bdb69c26cc3f4ca9d28997a3ca6a696f",
+        "a991f2e8dd3603b1116c3b451ab69543",
+        "e3df5464fd036f26fb315697a62052e8",
+        "3018f459f70aeef9546c624bc93d6adf",
+        "a6a5fdf86f17df63c134a320f8c3264c",
+        "b374e1019eb2151d4e64ba52cc255133"
+      ]
+    },
+    {
+      "id": "_coherence_and_cacheability_pmas",
+      "level": 3,
+      "sectnum": "3.6.6",
+      "title": "Coherence and Cacheability PMAs",
+      "heading_unit_id": "ec3aa668fd7e8aa68e98658fe48cc570",
+      "blocks": [
+        "93172022c4103f7f1ad8c06ea7e6ca00",
+        "3443a310ef457939acfdbfa235cf312e",
+        "fe1fde482e522a632c0f7edf56c5079e",
+        "2b3082f0696431c16fe6a2d7c265be59",
+        "93bb987a815db02a87d815d74bb7bcd4",
+        "af921fa6f3ea02fd4dd0e9fa89d6888c"
+      ]
+    },
+    {
+      "id": "_idempotency_pmas",
+      "level": 3,
+      "sectnum": "3.6.7",
+      "title": "Idempotency PMAs",
+      "heading_unit_id": "47bb9a6a50bfffd309ad00f4006b7a96",
+      "blocks": [
+        "c9728bdc23cb6655895fe9b153769518",
+        "b48f1af92206af4168dec9b9867d181f",
+        "1e8176bd1b2bec63eec94db4c838b0c3",
+        "6d54b3c203ad8c4496337360584ca6af"
+      ]
+    },
+    {
+      "id": "pmp",
+      "level": 2,
+      "sectnum": "3.7",
+      "title": "Physical Memory Protection",
+      "heading_unit_id": "9575c274aa4346a45e42538f27c05e54",
+      "heading_anchor_id": "pmp",
+      "blocks": [
+        "2f621a7c237e9c101734b07d03a7cf2f",
+        "b0b1a86826c02aa78f1ca1a26cf885ed",
+        "c9848d08957894ce5675d35ff21ed1ca",
+        "cb0b31a60b81beeac499742a4380f0a5",
+        "32354620356d98643123308327b617eb"
+      ]
+    },
+    {
+      "id": "_physical_memory_protection_csrs",
+      "level": 3,
+      "sectnum": "3.7.1",
+      "title": "Physical Memory Protection CSRs",
+      "heading_unit_id": "aac9ac6e243a71a22e0d4cde3587d764",
+      "blocks": [
+        "219a6149d60d63ae9825cff00ea27e46",
+        "aecd7c5515310309ef264057f7930ad7",
+        "2d8da4637d50f79727a2346ea98a4229",
+        {
+          "unit_id": "7d453ce822b9225e8a17da249ef83fc7",
+          "anchor_id": "pmpcfg-rv32"
+        },
+        {
+          "unit_id": "ef93126d09199f4d4d0ed990683b8fd9",
+          "anchor_id": "pmpcfg-rv64"
+        },
+        "93ac61d8f9f5a5a524de6fcea6cfb020",
+        "8eedd7ff178646cb656c3201f158a178",
+        {
+          "unit_id": "46d4fa335900faf34c15a13ea2c753b0",
+          "anchor_id": "pmpaddr-rv32"
+        },
+        {
+          "unit_id": "37d544f3e33d1331f1eebbab8053a1da",
+          "anchor_id": "pmpaddr-rv64"
+        },
+        "9557c6d44188633ed77cd8a24b1236d5",
+        {
+          "unit_id": "e8a14fdbdace7e1eccbe065d0ac66faa",
+          "anchor_id": "pmpcfg"
+        },
+        "77f5c5d307417efe7c1433c4f5c0a7d5"
+      ]
+    },
+    {
+      "id": "_address_matching",
+      "level": 4,
+      "sectnum": "3.7.1.1",
+      "title": "Address Matching",
+      "heading_unit_id": "f1fd745870af16c473a2608b6e613009",
+      "blocks": [
+        "8a298f7608341d6e913de5a56ac6631f",
+        {
+          "unit_id": "6f7ebbc73a9423d8b9e2e3eec369d362",
+          "anchor_id": "pmpcfg-a"
+        },
+        "ce1cd518e813042580898c8e7e399cb5",
+        {
+          "unit_id": "f8ade43c3926212522fc79820e4628fe",
+          "anchor_id": "pmpcfg-napot"
+        },
+        "2f279d1712410021f805379644095d10",
+        "a0d56ac881e071c054a16b18e3cdb344",
+        "54dc5f4d19456597e76f0ee0f7da0077",
+        "24ccf091cf01252287b18baa86b8af74"
+      ]
+    },
+    {
+      "id": "_locking_and_privilege_mode",
+      "level": 4,
+      "sectnum": "3.7.1.2",
+      "title": "Locking and Privilege Mode",
+      "heading_unit_id": "ce49f6de8686b8f71a61dbf3e30b7e26",
+      "blocks": [
+        "020bf309db296ba2f2003bbb4ac9f949",
+        "254e199203df01ca2bd4bcfbbc846499",
+        "71455df4b6ebceeae4484f21fbf32324"
+      ]
+    },
+    {
+      "id": "_priority_and_matching_logic",
+      "level": 4,
+      "sectnum": "3.7.1.3",
+      "title": "Priority and Matching Logic",
+      "heading_unit_id": "1fe7414887b97b12b23bc85af6205824",
+      "blocks": [
+        "bea55f7f03677f40646e1205a29b8d2a",
+        "439b31f740b570a35dfd21bdc5b464d5",
+        "be7d11775a606e897fafca4bb3bb1de1",
+        "cbd354f8abf015a02ca136a7b41ca23a",
+        "6389ce74c7129a81e6384cd5f02953dd",
+        "e75d0aac5a4550eab682a0c6697feccb"
+      ]
+    },
+    {
+      "id": "pmp-vmem",
+      "level": 3,
+      "sectnum": "3.7.2",
+      "title": "Physical Memory Protection and Paging",
+      "heading_unit_id": "6c1199e6f11f0cc8bb5061f83f10a200",
+      "heading_anchor_id": "pmp-vmem",
+      "blocks": [
+        "1d515f9b8380632f875174b9a525e800",
+        "217ba5ad451741842276db0f3a364dab",
+        "dbe42fc90fe7ebf7adee5eae05c7293b"
+      ]
+    }
+  ]
+}

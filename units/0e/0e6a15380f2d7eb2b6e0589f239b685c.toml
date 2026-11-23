@@ -1,0 +1,12 @@
+unit_id = "0e6a15380f2d7eb2b6e0589f239b685c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `scause` register is an SXLEN-bit read-write register formatted as
+shown in <<scausereg>>. When a trap is taken into
+S-mode, `scause` is written with a code indicating the event that
+caused the trap. Otherwise, `scause` is never written by the
+implementation, though it may be explicitly written by software.'''
+zh = '''
+`scause` 寄存器是一个 SXLEN 位可读写寄存器，格式如 <<scausereg>> 所示。当陷阱陷入 S 模式时，`scause` 被写入指示导致该陷阱的事件的编码。除此之外，实现从不会写入 `scause`，但软件可显式写入它。'''

@@ -1,0 +1,18 @@
+unit_id = "16bc5b7643630c2d754a5d26a3825c31"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The jump and link (JAL) instruction uses the J-type format, where the
+J-immediate encodes a signed offset in multiples of 2 bytes.
+[#norm:jal_target]#The offset is sign-extended and added to the address of the jump instruction to
+form the jump target address.# Jumps can therefore target a {pm}1 MiB range.
+[#norm:jal_op]#JAL stores the address of the instruction
+following the jump ('pc'+4) into register _rd_.#
+The standard software calling convention uses 'x1' as the return address register and 'x5' as
+an alternate link register.'''
+zh = '''
+跳转并链接（JAL）指令使用 J 型格式，其中 J 立即数以 2 字节的倍数编码有符号偏移。
+[#norm:jal_target]##对该偏移进行符号扩展并加到跳转指令的地址上，以形成跳转目标地址。## 因此，跳转的目标范围可为 {pm}1 MiB。
+[#norm:jal_op]##JAL 将跳转之后指令的地址（`pc`+4）存入寄存器 _rd_。##
+标准软件调用约定使用 `x1` 作为返回地址寄存器，使用 `x5` 作为备用链接寄存器。'''

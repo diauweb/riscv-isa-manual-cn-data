@@ -1,0 +1,12 @@
+unit_id = "b202b6e97691c7f26e65290fa5223c33"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Similarly, insn:vmsge.vi[] and insn:vmsgeu.vi[] are not provided and comparison is
+implemented using insn:vmsgt.vi[] and insn:vmsgtu.vi[] with the immediate decremented by one.
+The resulting effective insn:vmsge.vi[] range is -15 to 16, and the
+resulting effective insn:vmsgeu.vi[] range is 1 to 16 (Note, insn:vmsgeu.vi[] with
+immediate 0 is not useful as it is always true).'''
+zh = '''
+NOTE: 类似地，未提供 insn:vmsge.vi[] 和 insn:vmsgeu.vi[]，比较通过将立即数减一后使用 insn:vmsgt.vi[] 和 insn:vmsgtu.vi[] 实现。所得有效 insn:vmsge.vi[] 范围为 -15 到 16，所得有效 insn:vmsgeu.vi[] 范围为 1 到 16（注意，立即数为 0 的 insn:vmsgeu.vi[] 无用，因为它始终为真）。'''

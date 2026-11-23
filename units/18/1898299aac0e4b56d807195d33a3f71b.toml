@@ -1,0 +1,10 @@
+unit_id = "1898299aac0e4b56d807195d33a3f71b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To halt one or more harts, the debugger selects them, sets {dmcontrol-haltreq}, and then
+waits for {dmstatus-allhalted} to indicate the harts are halted. Then it can clear {dmcontrol-haltreq} to 0, or
+leave it high to catch a hart that resets while halted.'''
+zh = '''
+要使一个或多个硬件线程停机，调试器选择这些硬件线程，设置 {dmcontrol-haltreq}，然后等待 {dmstatus-allhalted} 指示这些硬件线程已停机。随后可将 {dmcontrol-haltreq} 清零为 0，或将其保持为高，以捕获在停机期间复位的硬件线程。'''

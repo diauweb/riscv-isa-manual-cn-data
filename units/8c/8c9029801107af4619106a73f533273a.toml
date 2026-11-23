@@ -1,0 +1,12 @@
+unit_id = "8c9029801107af4619106a73f533273a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This trigger may fire on up to XLEN of the Exception Codes defined in
+`mcause` (described in the Privileged Spec, with Interrupt=0). Those
+causes are configured by writing the corresponding bit in {csr-tdata2}.
+(E.g.  to trap on an illegal instruction, the debugger sets bit 2 in
+{csr-tdata2}.)'''
+zh = '''
+此触发器可在 `mcause` 中所定义的至多 XLEN 个异常码上触发（如特权规范中所述，其中 Interrupt=0）。这些原因通过向 {csr-tdata2} 中写入相应位来配置。（例如，要在非法指令上陷入，调试器在 {csr-tdata2} 中设置第 2 位。）'''

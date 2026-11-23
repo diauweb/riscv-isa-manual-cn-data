@@ -1,0 +1,12 @@
+unit_id = "e427aadde48106cab7f0a86f72e53bab"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vsstatus_mxr_vm]#The `vsstatus` field MXR, which makes execute-only pages readable by explicit loads, only
+overrides VS-stage page protection. Setting MXR at VS-level does not
+override guest-physical page protections.#
+[#norm:sstatus_mxr_vm]#Setting MXR at HS-level,
+however, overrides both VS-stage and G-stage execute-only permissions.#'''
+zh = '''
+[#norm:vsstatus_mxr_vm]##`vsstatus` 的字段 MXR 使仅执行页可被显式加载读取，但它只覆盖 VS 阶段页保护。##在 VS 级设置 MXR 不覆盖客户机物理页保护。[#norm:sstatus_mxr_vm]##然而，在 HS 级设置 MXR 会同时覆盖 VS 阶段和 G 阶段的仅执行权限。##'''

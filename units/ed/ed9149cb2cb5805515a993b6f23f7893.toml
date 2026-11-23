@@ -1,0 +1,8 @@
+unit_id = "ed9149cb2cb5805515a993b6f23f7893"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+From an implementation perspective, ignoring bits is deeply connected to the maximum virtual and physical address space supported by the processor (e.g., Bare, Sv48, Sv57). In particular, applying the above transformation is cheap if it covers only bits that are not used by **any** supported address translation mode (as it is equivalent to switching off validity checks). Masking NVBITS beyond those bits is more expensive as it requires ignoring them in the TLB tag, and even more expensive if the masked bits extend into the VBITS portion of the address (as it requires performing the actual sign extension). Similarly, when running in Bare or M mode, it is common for implementations to not use a particular number of bits at the top of the physical address range and fix them to zero. Applying the ignore transformation to those bits is cheap as well, since it will result in a valid physical address with all the upper bits fixed to 0.'''
+zh = '''
+从实现角度看，忽略位与处理器支持的最大虚拟和物理地址空间（例如 Bare、Sv48、Sv57）密切相关。特别是，若上述变换仅覆盖 **任何** 支持的地址转换模式都不使用的位（因为它等同于关闭有效性检查），则应用该变换的代价很低。掩码超出这些位的 NVBITS 代价更高，因为这要求在 TLB 标记中忽略它们；若掩码位扩展到地址的 VBITS 部分，则代价更高（因为需要执行实际符号扩展）。类似地，在 Bare 或 M 模式运行时，实现通常不使用物理地址范围顶部的特定位数并将其固定为零。对这些位应用忽略变换代价也很低，因为它将产生所有高位固定为 0 的有效物理地址。'''

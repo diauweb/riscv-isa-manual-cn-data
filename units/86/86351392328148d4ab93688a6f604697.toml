@@ -1,0 +1,13 @@
+unit_id = "86351392328148d4ab93688a6f604697"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This mechanism cleanly supports a system which supports multiple
+privilege levels, where the OS or a debug stub runs in M-Mode while the
+program being debugged runs in a less privileged mode. Systems that only
+support M-Mode can use {csr-icount} as well, but {icount-count} must be able to count
+several instructions (depending on the software implementation). See
+xref:nativestep[].'''
+zh = '''
+此机制可干净地支持多特权级系统，其中 OS 或调试桩运行于 M 模式，而被调试的程序运行于较低特权模式。仅支持 M 模式的系统也可使用 {csr-icount}，但 {icount-count} 必须能够计数若干条指令（取决于软件实现）。见 xref:nativestep[]。'''

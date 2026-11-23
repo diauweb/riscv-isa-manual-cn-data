@@ -1,0 +1,13 @@
+unit_id = "0191529cc92afb30ff45c1f56a3161e4"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let shamt = if   xlen == 32
+            then shamt[4..0]
+            else shamt[5..0];
+let result = (X(rs1) >> shamt) | (X(rs1) << (xlen - shamt));
+
+X(rd) = result;
+--'''

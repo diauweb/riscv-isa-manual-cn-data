@@ -1,0 +1,17 @@
+unit_id = "db3d15deb5f018f99d64489b45b64193"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (VCLZ(vs2)) = {
+
+  foreach (i from vstart to vl-1) {
+    let input = get_velem(vs2, SEW, i);
+    for (j = (SEW - 1); j >= 0;  j--)
+      if [input[j]] == 0b1 then break;
+    set_velem(vd, SEW, i, SEW - 1 - j)
+  }
+  RETIRE_SUCCESS
+}
+--'''

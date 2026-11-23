@@ -1,0 +1,28 @@
+unit_id = "f9d355a66583ec6dad55a8848fe48381"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Fix order of operations described in {dm-sbdata0}.
+https://github.com/riscv/riscv-debug-spec/pull/392[#392]
+. Resume ack is set after resume, in <<runcontrol>>.
+https://github.com/riscv/riscv-debug-spec/pull/400[#400]
+. {textra32-sselect} applies to {textra32-svalue}. https://github.com/riscv/riscv-debug-spec/pull/402[#402]
+. {tcontrol-mte} only applies when action=0.
+https://github.com/riscv/riscv-debug-spec/pull/411[#411]
+. {accessmemory-aamsize} does not affect Argument Width.
+https://github.com/riscv/riscv-debug-spec/pull/420[#420]
+. Clarify that harts halt out of reset if {dmcontrol-haltreq}=1.
+https://github.com/riscv/riscv-debug-spec/pull/419[#419]'''
+zh = '''
+. 修正 {dm-sbdata0} 中所描述的操作顺序。
+https://github.com/riscv/riscv-debug-spec/pull/392[#392]
+. 在 <<runcontrol>> 中，恢复应答在恢复之后设置。
+https://github.com/riscv/riscv-debug-spec/pull/400[#400]
+. {textra32-sselect} 适用于 {textra32-svalue}。https://github.com/riscv/riscv-debug-spec/pull/402[#402]
+. {tcontrol-mte} 仅在 action=0 时适用。
+https://github.com/riscv/riscv-debug-spec/pull/411[#411]
+. {accessmemory-aamsize} 不影响参数宽度。
+https://github.com/riscv/riscv-debug-spec/pull/420[#420]
+. 澄清当 {dmcontrol-haltreq}=1 时，硬件线程在复位后立即停机。
+https://github.com/riscv/riscv-debug-spec/pull/419[#419]'''

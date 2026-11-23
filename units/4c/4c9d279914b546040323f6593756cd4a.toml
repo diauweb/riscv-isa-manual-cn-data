@@ -1,0 +1,11 @@
+unit_id = "4c9d279914b546040323f6593756cd4a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A *prefetch.i* instruction indicates to hardware that the cache block whose
+effective address is the sum of the base address specified in _rs1_ and the
+sign-extended offset encoded in _imm[11:0]_, where _imm[4:0]_ equals `0b00000`,
+is likely to be accessed by an instruction fetch in the near future.'''
+zh = '''
+*prefetch.i* 指令向硬件指示：有效地址为 __rs1__ 中指定的基址与编码在 __imm[11:0]__ 中的符号扩展偏移之和（其中 __imm[4:0]__ 等于 `0b00000`）的缓存块，很可能在不久的将来被指令取指访问。'''

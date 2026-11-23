@@ -1,0 +1,56 @@
+unit_id = "181fdc65e1d6ed7df0dbe7243d2f67a6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We originally chose little-endian byte ordering for the RISC-V memory
+system because little-endian systems are currently dominant commercially
+(all x86 systems; iOS, Android, and Windows for ARM). A minor point is
+that we have also found little-endian memory systems to be more natural
+for hardware designers. However, certain application areas, such as IP
+networking, operate on big-endian data structures, and certain legacy
+code bases have been built assuming big-endian processors, so we have
+defined big-endian and bi-endian variants of RISC-V.
+
+We have to fix the order in which instruction parcels are stored in
+memory, independent of memory system endianness, to ensure that the
+length-encoding bits always appear first in halfword address order. This
+allows the length of a variable-length instruction to be quickly
+determined by an instruction-fetch unit by examining only the first few
+bits of the first 16-bit instruction parcel.
+
+We further make the instruction parcels themselves little-endian to
+decouple the instruction encoding from the memory system endianness
+altogether. This design benefits both software tooling and bi-endian
+hardware. Otherwise, for instance, a RISC-V assembler or disassembler
+would always need to know the intended active endianness, despite that
+in bi-endian systems, the endianness mode might change dynamically
+during execution. In contrast, by giving instructions a fixed
+endianness, it is sometimes possible for carefully written software to
+be endianness-agnostic even in binary form, much like
+position-independent code.
+
+The choice to have instructions be only little-endian does have
+consequences, however, for RISC-V software that encodes or decodes
+machine instructions. Big-endian JIT compilers, for example, must swap
+the byte order when storing to instruction memory.
+
+Once we had decided to fix on a little-endian instruction encoding, this
+naturally led to placing the length-encoding bits in the LSB positions
+of the instruction format to avoid breaking up opcode fields.
+===='''
+zh = '''
+[NOTE]
+====
+我们最初为 RISC-V 内存系统选择小端序字节排序，因为小端序系统目前在商业上占主导地位（所有 x86 系统；面向 ARM 的 iOS、Android 和 Windows）。一个次要观点是，我们还发现小端序内存系统对硬件设计者来说更自然。然而，某些应用领域（如 IP 网络）处理大端序数据结构，并且某些遗留代码库在假定大端序处理器的情况下构建，因此我们定义了 RISC-V 的大端序和双端序变体。
+
+我们必须固定指令包在内存中的存储顺序，且与内存系统字节序无关，以确保长度编码位始终在按半字地址排序时最先出现。这使取指单元只需检查第一个 16 位指令包的前几位，就能快速确定变长指令的长度。
+
+我们进一步使指令包本身采用小端序，从而将指令编码与内存系统字节序完全解耦。这种设计既有利于软件工具，也有利于双端序硬件。否则，例如 RISC-V 汇编器或反汇编器将始终需要知道预期的活动字节序，尽管在双端序系统中，字节序模式可能在执行期间动态变化。相比之下，通过赋予指令固定字节序，精心编写的软件有时即使以二进制形式也可做到字节序无关，很像位置无关代码。
+
+然而，选择让指令仅采用小端序确实会对编码或译码机器指令的 RISC-V 软件产生影响。例如，大端序 JIT 编译器在存储到指令内存时必须交换字节顺序。
+
+一旦我们决定固定采用小端序指令编码，这自然导致将长度编码位放在指令格式的 LSB 位置，以避免拆分操作码字段。
+===='''

@@ -1,0 +1,24 @@
+unit_id = "27d6fef91fdc8871c5e97b9bdc69bbc4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_It is expected that operating systems (OSs) will access `sctrdepth` only at boot, to select the maximum supported depth value.  More frequent accesses may result in reduced performance in virtualization scenarios, as a result of traps from VS-mode incurred._
+
+_There may be scenarios where software chooses to operate on only a subset of the entries, to reduce overhead.  In such cases tools may choose to read only the lower entries, and OSs may choose to save/restore only on the lower entries while using SCTRCLR to clear the others._
+
+_The value in configurable depth lies in supporting VM migration.  It is expected that a platform spec may specify that one or more CTR depth values must be supported.  A hypervisor may wish to restrict guests to using one of these required depths, in order to ensure that such guests can be migrated to any system that complies with the platform spec.  The trapping behavior specified for VS-mode accesses to `sctrdepth` ensures that the hypervisor can impose such restrictions._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_预期操作系统（OS）仅在启动时访问 `sctrdepth`，以选择支持的最大深度值。更频繁的访问可能因来自 VS 模式的陷阱而导致虚拟化场景中的性能下降。_
+
+_可能存在软件选择仅操作部分表项以减少开销的场景。在此类情况下，工具可选择仅读取较低表项，操作系统可选择仅保存/恢复较低表项，同时使用 SCTRCLR 清除其他表项。_
+
+_可配置深度的价值在于支持虚拟机迁移。预期平台规范可能规定必须支持一个或多个 CTR 深度值。虚拟机监控器可能希望限制客户机使用这些必需深度之一，以确保此类客户机可迁移到任何符合平台规范的系统。针对 VS 模式访问 `sctrdepth` 规定的陷阱行为确保虚拟机监控器可施加此类限制。_
+===='''

@@ -1,0 +1,17 @@
+unit_id = "4fdd8e1847e948b247dba13a2acbda4e"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+val LowestSetBit32 : forall ('N : Int), 'N >= 0. bits('N) -> int
+
+function LowestSetBit32 x = {
+  foreach (i from 0 to 31 by 1 in inc)
+    if [x[i]] == 0b1 then return(i) else ();
+  return 32;
+}
+
+let rs = X(rs);
+X[rd] = LowestSetBit32(rs);
+--'''

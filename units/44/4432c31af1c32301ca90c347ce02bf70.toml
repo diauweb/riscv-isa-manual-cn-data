@@ -1,0 +1,11 @@
+unit_id = "4432c31af1c32301ca90c347ce02bf70"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let base = X(rs2);
+let index = EXTZ(X(rs1)[31..0]);
+
+X(rd) = base + (index << 2);
+--'''

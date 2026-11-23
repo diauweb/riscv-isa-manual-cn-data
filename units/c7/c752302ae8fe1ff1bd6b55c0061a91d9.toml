@@ -1,0 +1,42 @@
+unit_id = "c752302ae8fe1ff1bd6b55c0061a91d9"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* `00` - `BIST`
+indicates that Built-In Self-Test "`on-demand`" (BIST) testing is being
+performed. If `OPST` returns temporarily to `BIST` from any other
+state, this signals a non-fatal self-test alarm,
+which is non-actionable, apart from being logged.
+[#norm:seed_bist_latch]#Such a `BIST` alarm must be latched until polled at least once to enable
+software to record its occurrence.#
+
+* `01` - `WAIT`
+means that a sufficient amount of entropy is not yet available. This
+is not an error condition and may (in fact) be more frequent than ES16
+since physical entropy sources often have low bandwidth.
+
+* `10` - `ES16`
+indicates success; the low bits `seed[15:0]` will have 16 bits of
+randomness (`entropy`), which is guaranteed to meet certain minimum entropy
+requirements, regardless of implementation.
+
+* `11` - `DEAD`
+is an unrecoverable self-test error. This may indicate a hardware
+fault, a security issue, or (extremely rarely) a type-1 statistical
+false positive in the continuous testing procedures. In case of a fatal
+failure, an immediate lockdown may also be an appropriate response in
+dedicated security devices.'''
+zh = '''
+* `00` - `BIST`
+表示正在执行内置自测试（“按需”）（BIST）测试。若 `OPST` 从任何其他状态暂时返回 `BIST`，这表示出现了非致命自检告警，除记录外无需采取行动。
+[#norm:seed_bist_latch]##此类 `BIST` 告警应锁存，直到至少被轮询一次，以便软件记录其发生。##
+
+* `01` - `WAIT`
+表示尚未获得足够数量的熵。这不是错误状态，实际上可能比 ES16 更常见，因为物理熵源通常带宽较低。
+
+* `10` - `ES16`
+表示成功；低位 `seed[15:0]` 将有 16 位随机性（`entropy`），无论实现如何，均保证满足特定的最低熵要求。
+
+* `11` - `DEAD`
+是不可恢复的自检错误。这可能表示硬件故障、安全问题，或（极少数情况下）连续测试过程中的 1 型统计假阳性。发生致命故障时，在专用安全设备中立即锁定也可能是一种适当响应。'''

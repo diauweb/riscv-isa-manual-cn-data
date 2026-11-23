@@ -1,0 +1,12 @@
+unit_id = "94a57c063b5f70a351d28464fb4bf22c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:csrfld:misa:e:ro]#The "E" bit is read-only.#
+[#norm:csrfld:misa:e:not_i]#Unless `misa` is all read-only zero, the
+"E" bit always reads as the complement of the "I" bit.#
+If an execution environment supports both RV32E and RV32I, software can select
+RV32E by clearing the "I" bit.'''
+zh = '''
+[#norm:csrfld:misa:e:ro]##“E”位为只读。## [#norm:csrfld:misa:e:not_i]##除非 `misa` 全为只读零，否则“E”位始终读取为“I”位的补码。##若执行环境同时支持 RV32E 和 RV32I，软件可通过清除“I”位来选择 RV32E。'''

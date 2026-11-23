@@ -1,0 +1,26 @@
+unit_id = "68e5e6493c3307f5f155984d79994e66"
+kind = "code"
+translatable = false
+en = '''
+[source,sail,subs="attributes+"]
+--
+
+// illegal instruction exceptions
+if (((priv_mode != M) && !m{csrname}.CBZE) ||
+    ((priv_mode == U) && !s{csrname}.CBZE))
+{
+  <raise illegal instruction exception>
+}
+// virtual instruction exceptions
+else if (((priv_mode == VS) && !h{csrname}.CBZE) ||
+         ((priv_mode == VU) && !(h{csrname}.CBZE && s{csrname}.CBZE)))
+{
+  <raise virtual instruction exception>
+}
+// execute instruction
+else
+{
+  <execute CBO.ZERO>
+}
+
+--'''

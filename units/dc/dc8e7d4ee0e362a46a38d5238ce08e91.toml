@@ -1,0 +1,14 @@
+unit_id = "dc8e7d4ee0e362a46a38d5238ce08e91"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Preserved program order represents the subset of program order that must
+be respected within the global memory order. Conceptually, events from
+the same hart that are ordered by preserved program order must appear in
+that order from the perspective of other harts and/or observers. Events
+from the same hart that are not ordered by preserved program order, on
+the other hand, may appear reordered from the perspective of other harts
+and/or observers.'''
+zh = '''
+保留程序顺序表示在全局内存顺序中必须被遵守的程序顺序子集。概念上，来自同一硬件线程、受保留程序顺序排序的事件，从其他硬件线程和/或观察者的角度看，必须以该顺序出现。另一方面，来自同一硬件线程、未受保留程序顺序排序的事件，从其他硬件线程和/或观察者的角度看，可能出现重排序。'''

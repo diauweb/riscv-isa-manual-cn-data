@@ -1,0 +1,22 @@
+unit_id = "dc3c2ec2d943afd993f0c5595a4439c4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The FNMSUB and FNMADD instructions are counterintuitively named, owing
+to the naming of the corresponding instructions in MIPS-IV. The MIPS
+instructions were defined to negate the sum, rather than negating the
+product as the RISC-V instructions do, so the naming scheme was more
+rational at the time. The two definitions differ with respect to
+signed-zero results. The RISC-V definition matches the behavior of the
+x86 and ARM fused multiply-add instructions, but unfortunately the
+RISC-V FNMSUB and FNMADD instruction names are swapped compared to x86
+and ARM.
+===='''
+zh = '''
+[NOTE]
+====
+FNMSUB 和 FNMADD 指令的命名有违直觉，这是由 MIPS-IV 中相应指令的命名所致。MIPS 指令定义为对和取负，而不是像 RISC-V 指令那样对乘积取负，因此当时的命名方案更合理。这两种定义在有符号零结果方面不同。RISC-V 定义与 x86 和 ARM 融合乘加指令的行为一致，但不幸的是，与 x86 和 ARM 相比，RISC-V 的 FNMSUB 和 FNMADD 指令名称交换了。
+===='''

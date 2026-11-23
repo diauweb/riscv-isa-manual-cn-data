@@ -1,0 +1,14 @@
+unit_id = "d1df54e3990b7f7aed6862abf4adb8ba"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vslide1down` instruction places the `x` register argument at
+location `vl`-1 in the destination vector register, provided that
+element `vl-1` is active, otherwise the destination element update
+follows the current mask agnostic/undisturbed policy.
+If XLEN < SEW, the value is sign-extended to SEW bits.  If
+XLEN > SEW, the least-significant bits are copied over and the high
+SEW-XLEN bits are ignored.'''
+zh = '''
+[#norm:vslide1down-vx_op_details]##`vslide1down` 指令将 `x` 寄存器参数放置到目标向量寄存器中的位置 `vl`-1，前提是元素 `vl-1` 活跃；否则目标元素更新遵循当前掩码不可知/未扰动策略。如果 XLEN < SEW，则该值符号扩展到 SEW 位。如果 XLEN > SEW，则复制最低位，忽略高 SEW-XLEN 位。##'''

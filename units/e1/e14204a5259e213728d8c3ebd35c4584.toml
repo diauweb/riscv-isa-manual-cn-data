@@ -1,0 +1,18 @@
+unit_id = "e14204a5259e213728d8c3ebd35c4584"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The double-precision to single-precision and single-precision to
+double-precision conversion instructions, FCVT.S.D and FCVT.D.S, are
+encoded in the OP-FP major opcode space and both the source and
+destination are floating-point registers. The _rs2_ field encodes the
+datatype of the source, and the _fmt_ field encodes the datatype of the
+destination. FCVT.S.D rounds according to the RM field; FCVT.D.S will
+never round.
+(((double-precision, to single-precision)))
+(((single-precision, to double-precision )))'''
+zh = '''
+双精度到单精度和单精度到双精度的转换指令 FCVT.S.D 和 FCVT.D.S 编码在 OP-FP 主操作码空间中，且源和目标均为浮点寄存器。_rs2_ 字段编码源的数据类型，_fmt_ 字段编码目标的数据类型。FCVT.S.D 按 RM 字段进行舍入；FCVT.D.S 永远不会舍入。
+(((双精度, 到单精度)))
+(((单精度, 到双精度)))'''

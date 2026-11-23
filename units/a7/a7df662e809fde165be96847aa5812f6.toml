@@ -1,0 +1,11 @@
+unit_id = "a7df662e809fde165be96847aa5812f6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Correct execution of shadow stack instructions that access memory requires the
+the accessed memory to be idempotent. [#norm:ssmp_ss_idempotent_memory]#If the memory referenced by
+`SSPUSH`/`C.SSPUSH`/`SSPOPCHK`/`C.SSPOPCHK`/`SSAMOSWAP.W/D` instructions is not
+idempotent, then the instructions cause a store/AMO access-fault exception.#'''
+zh = '''
+正确执行访问内存的影子栈指令要求所访问内存是幂等的。[#norm:ssmp_ss_idempotent_memory]##若 `SSPUSH`/`C.SSPUSH`/`SSPOPCHK`/`C.SSPOPCHK`/`SSAMOSWAP.W/D` 指令引用的内存不是幂等的，则这些指令导致存储/AMO 访问故障异常。##'''

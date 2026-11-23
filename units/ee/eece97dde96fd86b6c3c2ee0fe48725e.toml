@@ -1,0 +1,18 @@
+unit_id = "eece97dde96fd86b6c3c2ee0fe48725e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+This implies, for example, that an Sv48 implementation may not use two
+separate 4B reads to non-atomically access a single 8B PTE, and that A/D
+bit updates performed by the implementation are treated as atomically
+updating the entire PTE, rather than just the A and/or D bit alone (even
+though the PTE value does not otherwise change).
+===='''
+zh = '''
+[NOTE]
+====
+例如，这意味着 Sv48 实现不得使用两次独立的 4B 读取来非原子地访问单个 8B PTE，并且实现所执行的 A/D 位更新应被视为原子地更新整个 PTE，而非仅更新 A 位和/或 D 位（即使 PTE 值在其他方面并未改变）。
+===='''

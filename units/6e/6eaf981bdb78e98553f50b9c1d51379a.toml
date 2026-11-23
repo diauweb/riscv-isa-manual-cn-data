@@ -1,0 +1,22 @@
+unit_id = "6eaf981bdb78e98553f50b9c1d51379a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[TIP]
+.Note to software developers
+====
+The {W~11~, W~10~, W~9~, W~4~} element group can easily be formed by using a vector
+vmerge instruction with the appropriate mask (for example with `vl=4` and `4b0001`
+as the 4 mask bits)
+
+`vmerge.vvm {W~11~, W~10~, W~9~, W~4~}, {W~11~, W~10~, W~9~, W~8~}, {W~7~, W~6~, W~5~, W~4~}, V0`
+===='''
+zh = '''
+[TIP]
+.给软件开发者的说明
+====
+通过使用带有合适掩码的向量 vmerge 指令，可容易地形成 {W~11~, W~10~, W~9~, W~4~} 元素组（例如，使用 `vl=4` 和 `4b0001` 作为 4 个掩码位）
+
+`vmerge.vvm {W~11~, W~10~, W~9~, W~4~}, {W~11~, W~10~, W~9~, W~8~}, {W~7~, W~6~, W~5~, W~4~}, V0`
+===='''

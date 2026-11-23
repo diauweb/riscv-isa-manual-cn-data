@@ -1,0 +1,14 @@
+unit_id = "70993e733b447930452aaa326dad1f26"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Many operations are only defined for one EEW, e.g., SHA-256
+requires EEW=32.  Encoding EEWs statically in the instruction removes
+a dynamic dependency on the SEW value and the need to check for errors
+in SEW values.  However, ignoring SEW also prevents reuse of the
+static opcode with a different dynamic SEW, and in many cases, the SEW
+setting will be needed for regular vector instructions used to process
+the individual elements in the vector.'''
+zh = '''
+NOTE: 许多操作仅对一种 EEW 定义，例如 SHA-256 要求 EEW=32。在指令中静态编码 EEW 消除了对 SEW 值的动态依赖以及检查 SEW 值错误的需要。然而，忽略 SEW 也阻止了静态操作码与不同动态 SEW 的重用，并且在许多情况下，处理向量中各个元素的常规向量指令将需要 SEW 设置。'''

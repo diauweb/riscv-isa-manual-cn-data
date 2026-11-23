@@ -1,0 +1,18 @@
+unit_id = "7f14ec715d70a5e98f93b0e666961291"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mtval` register is an MXLEN-bit read-write register formatted as
+shown in <<mtvalreg>>. When a trap is taken into
+M-mode, `mtval` is either set to zero or written with exception-specific
+information to assist software in handling the trap. Otherwise, `mtval`
+is never written by the implementation, though it may be explicitly
+written by software. The hardware platform will specify which exceptions
+must set `mtval` informatively, which may unconditionally set it to
+zero, and which may exhibit either behavior, depending on the underlying event
+that caused the exception.
+If the hardware platform specifies that no exceptions set `mtval`
+to a nonzero value, then `mtval` is read-only zero.'''
+zh = '''
+`mtval` 寄存器是一个 MXLEN 位读写寄存器，格式如 <<mtvalreg>> 所示。当陷阱被进入 M 模式时，`mtval` 要么被设置为零，要么被写入异常特定信息以帮助软件处理陷阱。否则，实现从不写入 `mtval`，但软件可显式写入。硬件平台将规定哪些异常应信息性地设置 `mtval`，哪些可无条件将其设置为零，以及哪些可根据引起异常的底层事件而表现出任一行为。若硬件平台规定没有异常将 `mtval` 设置为非零值，则 `mtval` 为只读零。'''

@@ -1,0 +1,16 @@
+unit_id = "cbc9aa176370248615db6f488576a00a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This last form of the instructions allows the `vtype` register to
+be changed while maintaining the current `vl`, provided VLMAX is not
+reduced.  This design was chosen to ensure `vl` would always hold a
+legal value for current `vtype` setting.  The current `vl` value can
+be read from the `vl` CSR.  The `vl` value could be reduced by this
+instruction if the new SEW/LMUL ratio causes VLMAX to shrink, and so
+this case has been reserved as it is not clear this is a generally
+useful operation, and implementations can otherwise assume `vl` is not
+changed by this instruction to optimize their microarchitecture.'''
+zh = '''
+NOTE: 指令的最后一种形式允许在保持当前 `vl` 的同时改变 `vtype` 寄存器，前提是 VLMAX 不减小。此设计旨在确保 `vl` 始终保存对当前 `vtype` 设置合法的值。当前 `vl` 值可从 `vl` CSR 读取。如果新的 SEW/LMUL 比率导致 VLMAX 缩小，则此指令可能减小 `vl` 值，因此此情况被保留，因为尚不清楚这是否是普遍有用的操作；实现可以假定此指令不会改变 `vl` 以优化其微架构。'''

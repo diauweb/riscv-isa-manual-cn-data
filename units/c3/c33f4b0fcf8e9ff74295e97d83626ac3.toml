@@ -1,0 +1,14 @@
+unit_id = "c33f4b0fcf8e9ff74295e97d83626ac3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Second, the Quick Access abstract command can be used to halt a hart,
+quickly execute the contents of the Program Buffer, and let the hart run
+again. Combined with instructions that allow Program Buffer code to
+access the `data` registers, as described in {dm-hartinfo}, this can be used to
+quickly perform a memory or register access. For some hardware platforms
+this will be too intrusive, but many hardware platforms that can't be
+halted can bear an occasional hiccup of a hundred or less cycles.'''
+zh = '''
+其次，快速访问抽象命令可用于使硬件线程停机、快速执行程序缓冲区内容，然后让硬件线程再次运行。结合允许程序缓冲区代码访问 `data` 寄存器的指令（如 {dm-hartinfo} 所述），这可用于快速执行内存或寄存器访问。对于某些硬件平台，这将过于侵入，但许多无法停机的硬件平台可以承受偶尔一百个或更少周期的抖动。'''

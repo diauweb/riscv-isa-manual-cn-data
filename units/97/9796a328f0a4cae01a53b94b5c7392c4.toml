@@ -1,0 +1,31 @@
+unit_id = "9796a328f0a4cae01a53b94b5c7392c4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Complex atomic memory operations on a single memory word or doubleword
+are performed with the load-reserved (LR) and store-conditional (SC)
+instructions. [#norm:lr_w_op]#LR.W loads a word from the address in _rs1_, places the
+sign-extended value in _rd_, and registers a _reservation set_—a set of
+bytes that subsumes the bytes in the addressed word.# [#norm:sc_w_success]#SC.W conditionally
+writes a word in _rs2_ to the address in _rs1_: the SC.W succeeds only
+if the reservation is still valid and the reservation set contains the
+bytes being written. If the SC.W succeeds, the instruction writes the
+word in _rs2_ to memory, and it writes zero to _rd_.# [#norm:sc_w_failure]#If the SC.W fails,
+the instruction does not write to memory, and it writes a nonzero value
+to _rd_.#
+[#norm:sc_retire_permission]#No SC.W instruction shall retire unless it passes memory permission checks,#
+[#norm:sc_failed_side_effects]#but it is UNSPECIFIED whether any side effects of implicit address translation
+and protection memory accesses (such as setting a page-table entry D bit)
+occur on a failed SC.W.#
+[#norm:sc_failed_as_store]#For the purposes of memory protection, a failed SC.W may be
+treated like a store.#
+[#norm:sc_reservation_invalidate]#Regardless of success or failure, executing an
+SC.W instruction invalidates any reservation held by this hart.# [#norm:lr_sc_rv64]#LR.D and
+SC.D act analogously on doublewords and are only available on RV64. For
+RV64, LR.W and SC.W sign-extend the value placed in _rd_.#'''
+zh = '''
+对单个内存__字__或__双字__的复杂原子内存操作通过加载保留（LR）和条件存储（SC）指令执行。[#norm:lr_w_op]##LR.W 从 _rs1_ 中的地址加载一个字，将符号扩展后的值放入 _rd_，并登记一个__保留集__——一个包含所寻址字中各字节的字节集合。##[#norm:sc_w_success]##SC.W 有条件地将 _rs2_ 中的一个字写入 _rs1_ 中的地址：仅当保留仍然有效且保留集包含正在写入的字节时，SC.W 才成功。若 SC.W 成功，该指令将该字写入内存，并向 _rd_ 写入零。##[#norm:sc_w_failure]##若 SC.W 失败，该指令不写入内存，并向 _rd_ 写入非零值。##
+[#norm:sc_retire_permission]##任何 SC.W 指令不应退休，除非其通过内存权限检查，##[#norm:sc_failed_side_effects]##但对于失败的 SC.W，隐式地址转换和保护内存访问的任何副作用（例如设置页表项的 D 位）是否发生是 UNSPECIFIED 的。##
+[#norm:sc_failed_as_store]##出于内存保护的目的，失败的 SC.W 可被当作存储处理。##
+[#norm:sc_reservation_invalidate]##无论成功还是失败，执行 SC.W 指令都会使该硬件线程持有的任何保留无效。## [#norm:lr_sc_rv64]##LR.D 和 SC.D 对双字起类似作用，且仅在 RV64 上可用。对于 RV64，LR.W 和 SC.W 对放入 _rd_ 的值进行符号扩展。##'''

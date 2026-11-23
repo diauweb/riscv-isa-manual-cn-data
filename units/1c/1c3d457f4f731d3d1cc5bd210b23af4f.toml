@@ -1,0 +1,13 @@
+unit_id = "1c3d457f4f731d3d1cc5bd210b23af4f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The MPV bit (Machine Previous Virtualization Mode) is written by the
+implementation whenever a trap is taken into M-mode. Just as the MPP
+field is set to the (nominal) privilege mode at the time of the trap,
+the MPV bit is set to the value of the virtualization mode V at the time
+of the trap. When an MRET instruction is executed, the virtualization
+mode V is set to MPV, unless MPP=3, in which case V remains 0.'''
+zh = '''
+MPV 位（机器前一虚拟化模式）在陷阱进入 M 模式时由实现写入。正如 MPP 字段被置为陷阱发生时的（名义）特权模式，MPV 位被置为陷阱发生时虚拟化模式 V 的值。当执行 MRET 指令时，虚拟化模式 V 被置为 MPV，除非 MPP=3，此时 V 保持 0。'''

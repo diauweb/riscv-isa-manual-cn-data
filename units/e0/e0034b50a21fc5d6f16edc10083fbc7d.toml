@@ -1,0 +1,22 @@
+unit_id = "e0034b50a21fc5d6f16edc10083fbc7d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction is supported for both RV32 and RV64 base architectures.
+For RV32, the entire `XLEN` source register is operated on.
+For RV64, the low `32` bits of the source register are operated on, and the
+result sign extended to `XLEN` bits.
+Though named for SHA2-256, the instruction works for both the
+SHA2-224 and SHA2-256 parameterisations as described in
+cite:[nist:fips:180:4].
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+说明::
+本指令在 RV32 和 RV64 基础架构上均受支持。
+对于 RV32，对整个 `XLEN` 源寄存器进行操作。
+对于 RV64，对源寄存器的低 `32` 位进行操作，并将结果符号扩展到 `XLEN` 位。
+尽管名称源自 SHA2-256，但该指令适用于 cite:[nist:fips:180:4] 中所述的 SHA2-224 和 SHA2-256 两种参数化。
+本指令应__始终__以实现方式保证其执行延迟不依赖于所操作的数据。'''

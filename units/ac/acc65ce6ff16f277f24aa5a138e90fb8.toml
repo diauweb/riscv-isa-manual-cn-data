@@ -1,0 +1,13 @@
+unit_id = "acc65ce6ff16f277f24aa5a138e90fb8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Shadow stack instructions are restricted to accessing shadow stack
+(`pte.xwr=010b`) pages. Should a shadow stack instruction access a page that is
+not designated as a shadow stack page and is not marked as read-only
+(`pte.xwr=001`), a store/AMO access-fault exception will be invoked. Conversely,
+if the page being accessed by a shadow stack instruction is a read-only page, a
+store/AMO page-fault exception will be triggered.'''
+zh = '''
+影子栈指令仅限访问影子栈（`pte.xwr=010b`）页。若影子栈指令访问的页未指定为影子栈页且未标记为只读（`pte.xwr=001`），则将触发存储/AMO 访问故障异常。相反，若影子栈指令访问的页是只读页，则将触发存储/AMO 页错误异常。'''

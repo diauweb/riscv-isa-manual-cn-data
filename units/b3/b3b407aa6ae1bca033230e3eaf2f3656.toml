@@ -1,0 +1,17 @@
+unit_id = "b3b407aa6ae1bca033230e3eaf2f3656"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sv48 implementations support a 48-bit virtual address space, divided
+into pages. An Sv48 address is partitioned as shown in
+<<sv48va>>. Instruction fetch addresses and load and
+store effective addresses, which are 64 bits,
+[#norm:Sv48_va_signext]#must have bits 63–48 all equal to bit 47, or else
+a page-fault exception will occur#.
+The [#norm:Sv48_vpn_sz]#36-bit VPN# is translated into a
+[#norm:satp-ppn_sv48_sz]#44-bit PPN# via a
+[#norm:Sv48_levels]#four-level page table#, while the
+[#norm:Sv48_page_offset_sz]#12-bit page offset is untranslated#.'''
+zh = '''
+Sv48 实现支持 48 位虚拟地址空间，该空间划分为若干页。Sv48 地址的划分如 <<sv48va>> 所示。取指地址以及加载和存储有效地址均为 64 位，[#norm:Sv48_va_signext]##其位 63–48 应全部等于位 47，否则将发生页错误异常##。该 [#norm:Sv48_vpn_sz]#36 位 VPN# 通过 [#norm:Sv48_levels]##四级页表## 转换为 [#norm:satp-ppn_sv48_sz]#44 位 PPN#，而 [#norm:Sv48_page_offset_sz]##12 位页偏移不进行转换##。'''

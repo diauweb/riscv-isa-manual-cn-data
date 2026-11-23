@@ -1,0 +1,441 @@
+unit_id = "39f18dcd4c2a20eacf790ddcbc00a47a"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[mcontrol-maskmax]] `((maskmax))`
+a|Specifies the largest naturally aligned powers-of-two (NAPOT) range
+supported by the hardware when {mcontrol-match} is 1. The value is the
+logarithm base 2 of the number of bytes in that range.
+A value of 0 indicates {mcontrol-match} 1 is not supported.
+A value of 63 corresponds to the maximum NAPOT range, which is
+2^63^ bytes in size.
+a|*R*
+a|Preset
+|[[mcontrol-sizehi]] `((sizehi))`
+a|This field only exists when XLEN is at least 64.
+It contains the 2 high bits of the access size. The low bits
+come from {mcontrol-sizelo}. See {mcontrol-sizelo} for how this
+is used.
+a|*WARL*
+a|0
+|[[mcontrol-hit]] `((hit))`
+a|If this bit is implemented then it must become set when this
+trigger fires and may become set when this trigger matches.
+The trigger's user can set or clear it at any
+time. It is used to determine which
+trigger(s) matched.  If the bit is not implemented, it is always 0
+and writing it has no effect.
+a|*WARL*
+a|0
+|[[mcontrol-select]] `((select))`
+a|This bit determines the contents of the XLEN-bit compare values.
+
+0 (address): There is at least one compare value and it contains the lowest
+virtual address of the access.
+It is recommended that there are additional compare values for
+the other accessed virtual addresses.
+(E.g. on a 32-bit read from 0x4000, the lowest address is 0x4000
+and the other addresses are 0x4001, 0x4002, and 0x4003.)
+
+
+1 (data): There is exactly one compare value and it contains the data
+value loaded or stored, or the instruction executed.
+Any bits beyond the size of the data access will contain 0.
+a|*WARL*
+a|0
+|[[mcontrol-timing]] `((timing))`
+a|
+
+0 (before): The action for this trigger will be taken just before the
+instruction that triggered it is retired, but after all preceding
+instructions are retired. `xepc` or {csr-dpc} (depending
+on {mcontrol-action}) must be set to the virtual address of the
+instruction that matched.
+
+If this is combined with {mcontrol-load} and
+{mcontrol-select}=1 then a memory access will be
+performed (including any side effects of performing such an access) even
+though the load will not update its destination register. Debuggers
+should consider this when setting such breakpoints on, for example,
+memory-mapped I/O addresses.
+
+If an instruction matches this trigger and the instruction performs
+multiple memory accesses, it is UNSPECIFIED which memory accesses
+have completed before the trigger fires.
+
+
+1 (after): The action for this trigger will be taken after the instruction
+that triggered it is retired. It should be taken before the next
+instruction is retired, but it is better to implement triggers imprecisely
+than to not implement them at all.  `xepc` or
+{csr-dpc} (depending on {mcontrol-action}) must be set to
+the virtual address of the next instruction that must be executed to
+preserve the program flow.
+
+Most hardware will only implement one timing or the other, possibly
+dependent on {mcontrol-select}, {mcontrol-execute},
+{mcontrol-load}, and {mcontrol-store}. This bit
+primarily exists for the hardware to communicate to the debugger
+what will happen. Hardware may implement the bit fully writable, in
+which case the debugger has a little more control.
+
+Data load triggers with {mcontrol-timing} of 0 will result in the same load
+happening again when the debugger lets the hart run. For data load
+triggers, debuggers must first attempt to set the breakpoint with
+{mcontrol-timing} of 1.
+
+If a trigger with {mcontrol-timing} of 0 matches, it is
+implementation-dependent whether that prevents a trigger with
+{mcontrol-timing} of 1 matching as well.
+a|*WARL*
+a|0
+|[[mcontrol-sizelo]] `((sizelo))`
+a|This field contains the 2 low bits of the access size. The high bits come
+from {mcontrol-sizehi}. The combined value is interpreted as follows:
+
+0 (any): The trigger will attempt to match against an access of any size.
+The behavior is only well-defined if {mcontrol-select}=0, or if the access
+size is XLEN.
+
+
+1 (8bit): The trigger will only match against 8-bit memory accesses.
+
+
+2 (16bit): The trigger will only match against 16-bit memory accesses or
+execution of 16-bit instructions.
+
+
+3 (32bit): The trigger will only match against 32-bit memory accesses or
+execution of 32-bit instructions.
+
+
+4 (48bit): The trigger will only match against execution of 48-bit instructions.
+
+
+5 (64bit): The trigger will only match against 64-bit memory accesses or
+execution of 64-bit instructions.
+
+
+6 (80bit): The trigger will only match against execution of 80-bit instructions.
+
+
+7 (96bit): The trigger will only match against execution of 96-bit instructions.
+
+
+8 (112bit): The trigger will only match against execution of 112-bit instructions.
+
+
+9 (128bit): The trigger will only match against 128-bit memory accesses or
+execution of 128-bit instructions.
+
+An implementation must support the value of 0, but all other values
+are optional. When an implementation supports address triggers
+({mcontrol-select}=0), it is recommended that those triggers
+support every access size that the hart supports, as well as for
+every instruction size that the hart supports.
+
+Implementations such as RV32D or RV64V are able to perform loads
+and stores that are wider than XLEN. Custom extensions may also
+support instructions that are wider than XLEN. Because
+{csr-tdata2} is of size XLEN, there is a known limitation that
+data value triggers ({mcontrol-select}=1) can only be supported
+for access sizes up to XLEN bits.  When an implementation supports
+data value triggers ({mcontrol-select}=1), it is recommended
+that those triggers support every access size up to XLEN that the
+hart supports, as well as for every instruction length up to XLEN
+that the hart supports.
+a|*WARL*
+a|0
+|[[mcontrol-action]] `((action))`
+a|The action to take when the trigger fires. The values are explained
+in xref:tab:action[].
+a|*WARL*
+a|0
+|[[mcontrol-chain]] `((chain))`
+a|
+
+0 (disabled): When this trigger matches, the configured action is taken.
+
+
+1 (enabled): While this trigger does not match, it prevents the trigger with
+the next index from matching.
+
+A trigger chain starts on the first trigger with `chain`=1 after
+a trigger with `chain`=0, or simply on the first trigger if that
+has `chain`=1. It ends on the first trigger after that which has
+`chain`=0. This final trigger is part of the chain. The action
+on all but the final trigger is ignored.  The action on that final
+trigger will be taken if and only if all the triggers in the chain
+match at the same time.
+
+Debuggers should not terminate a chain with a trigger with a
+different type. It is undefined when exactly such a chain fires.
+
+Because {mcontrol-chain} affects the next trigger, hardware must zero it in
+writes to {csr-mcontrol} that set {tdata1-dmode} to 0 if the next trigger has
+{tdata1-dmode} of 1.
+In addition hardware should ignore writes to {csr-mcontrol} that set
+{tdata1-dmode} to 1 if the previous trigger has both {tdata1-dmode} of 0 and
+{mcontrol-chain} of 1. Debuggers must avoid the latter case by checking
+{mcontrol-chain} on the previous trigger if they're writing {csr-mcontrol}.
+
+Implementations that wish to limit the maximum length of a trigger
+chain (e.g. to meet timing requirements) may do so by zeroing
+{mcontrol-chain} in writes to {csr-mcontrol} that would make the chain too long.
+a|*WARL*
+a|0
+|[[mcontrol-match]] `((match))`
+a|
+
+0 (equal): Matches when any compare value equals {csr-tdata2}.
+
+
+1 (napot): Matches when the top `M` bits of any compare value match the top
+`M` bits of {csr-tdata2}.
+`M` is `XLEN-1` minus the index of the least-significant
+bit containing 0 in {csr-tdata2}. Debuggers should only write values
+to {csr-tdata2} such that `M` + {mcontrol-maskmax} ≥ `XLEN`
+and `M` > 0, otherwise it's undefined on what conditions the
+trigger will match.
+
+
+2 (ge): Matches when any compare value is greater than (unsigned) or
+equal to {csr-tdata2}.
+
+
+3 (lt): Matches when any compare value is less than (unsigned)
+{csr-tdata2}.
+
+
+4 (mask low): Matches when `XLEN/2-1:0` of any compare value
+equals `XLEN/2-1:0` of {csr-tdata2} after
+`XLEN/2-1:0` of the compare value is ANDed with
+`XLEN-1:XLEN/2` of {csr-tdata2}.
+
+
+5 (mask high): Matches when `XLEN-1:XLEN/2` of any compare
+value equals `XLEN/2-1:0` of {csr-tdata2} after
+`XLEN-1:XLEN/2` of the compare value is ANDed with
+`XLEN-1:XLEN/2` of {csr-tdata2}.
+
+
+8 (not equal): Matches when {mcontrol-match}=0 would not match.
+
+
+9 (not napot): Matches when {mcontrol-match}=1 would not match.
+
+
+12 (not mask low): Matches when {mcontrol-match}=4 would not match.
+
+
+13 (not mask high): Matches when {mcontrol-match}=5 would not match.
+
+Other values are reserved for future use.
+
+All comparisons only look at the lower XLEN (in the current mode)
+bits of the compare values and of {csr-tdata2}.
+When {mcontrol-select}=1 and access size is N, this is further
+reduced, and comparisons only look at the lower N bits of the
+compare values and of {csr-tdata2}.
+a|*WARL*
+a|0
+|[[mcontrol-m]] `((m))`
+a|When set, enable this trigger in M-mode.
+a|*WARL*
+a|0
+|[[mcontrol-s]] `((s))`
+a|When set, enable this trigger in S/HS-mode.
+This bit is hard-wired to 0 if the hart does not support
+S-mode.
+a|*WARL*
+a|0
+|[[mcontrol-u]] `((u))`
+a|When set, enable this trigger in U-mode.
+This bit is hard-wired to 0 if the hart does not support
+U-mode.
+a|*WARL*
+a|0
+|[[mcontrol-execute]] `((execute))`
+a|When set, the trigger fires on the virtual address or opcode of an
+instruction that is executed.
+a|*WARL*
+a|0
+|[[mcontrol-store]] `((store))`
+a|When set, the trigger fires on the virtual address or data of any
+store.
+a|*WARL*
+a|0
+|[[mcontrol-load]] `((load))`
+a|When set, the trigger fires on the virtual address or data of any
+load.
+a|*WARL*
+a|0
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[mcontrol-maskmax]] `((maskmax))`
+a|指定当 {mcontrol-match} 为 1 时硬件支持的最大自然对齐的 2 的幂（NAPOT）范围。该值为该范围字节数的以 2 为底的对数。值 0 表示不支持 {mcontrol-match} 为 1。值 63 对应最大 NAPOT 范围，即 2^63^ 字节。
+a|*R*
+a|Preset
+|[[mcontrol-sizehi]] `((sizehi))`
+a|该字段仅在 XLEN 大于或等于 64 时存在。它包含访问大小的高 2 位。低位来自 {mcontrol-sizelo}。有关其用法见 {mcontrol-sizelo}。
+a|*WARL*
+a|0
+|[[mcontrol-hit]] `((hit))`
+a|若实现了该位，则当此触发器触发时必须将其置位，当此触发器匹配时可将其置位。该触发器的用户可在任意时刻置位或清零它。它用于确定哪些触发器发生了匹配。若未实现该位，则它始终为 0，写入它没有任何效果。
+a|*WARL*
+a|0
+|[[mcontrol-select]] `((select))`
+a|该位决定 XLEN 位比较值的内容。
+
+0（地址）：至少有一个比较值，它包含该访问的最低虚拟地址。宜为其他被访问的虚拟地址提供额外的比较值。（例如，在从 0x4000 开始的 32 位读取中，最低地址是 0x4000，其他地址是 0x4001、0x4002 和 0x4003。）
+
+
+1（数据）：恰好有一个比较值，它包含加载或存储的数据值，或所执行的指令。超出数据访问大小的任何位都将为 0。
+a|*WARL*
+a|0
+|[[mcontrol-timing]] `((timing))`
+a|
+
+0（之前）：此触发器的动作将在触发它的指令退休之前、但在所有前序指令退休之后执行。`xepc` 或 {csr-dpc}（取决于 {mcontrol-action}）必须设置为匹配指令的虚拟地址。
+
+若此设置与 {mcontrol-load} 及 {mcontrol-select}=1 组合，则将执行一次内存访问（包括执行此类访问的任何副作用），即使该加载不会更新其目标寄存器。调试器在例如内存映射 I/O 地址上设置此类断点时应考虑这一点。
+
+若一条指令匹配此触发器且该指令执行多次内存访问，则哪些内存访问在触发器触发之前完成是未指定的。
+
+
+1（之后）：此触发器的动作将在触发它的指令退休之后执行。宜在下一条指令退休之前执行，但不精确地实现触发器总好过完全不实现它们。`xepc` 或 {csr-dpc}（取决于 {mcontrol-action}）必须设置为保持程序流所需执行的下一条指令的虚拟地址。
+
+大多数硬件只会实现其中一种时序，可能取决于 {mcontrol-select}、{mcontrol-execute}、{mcontrol-load} 和 {mcontrol-store}。该位主要是为了让硬件向调试器传达将会发生什么。硬件可将该位实现为完全可写，此时调试器拥有稍多的控制权。
+
+{mcontrol-timing} 为 0 的数据加载触发器会导致在调试器让硬件线程运行时再次发生同一次加载。对于数据加载触发器，调试器必须首先尝试使用 {mcontrol-timing} 为 1 来设置断点。
+
+若 {mcontrol-timing} 为 0 的触发器发生匹配，这是否会阻止 {mcontrol-timing} 为 1 的触发器也发生匹配取决于实现。
+a|*WARL*
+a|0
+|[[mcontrol-sizelo]] `((sizelo))`
+a|该字段包含访问大小的低 2 位。高位来自 {mcontrol-sizehi}。合并后的值解释如下：
+
+0（任意）：触发器将尝试匹配任意大小的访问。仅当 {mcontrol-select}=0 或访问大小为 XLEN 时行为才有明确定义。
+
+
+1（8 位）：触发器仅匹配 8 位内存访问。
+
+
+2（16 位）：触发器仅匹配 16 位内存访问或 16 位指令的执行。
+
+
+3（32 位）：触发器仅匹配 32 位内存访问或 32 位指令的执行。
+
+
+4（48 位）：触发器仅匹配 48 位指令的执行。
+
+
+5（64 位）：触发器仅匹配 64 位内存访问或 64 位指令的执行。
+
+
+6（80 位）：触发器仅匹配 80 位指令的执行。
+
+
+7（96 位）：触发器仅匹配 96 位指令的执行。
+
+
+8（112 位）：触发器仅匹配 112 位指令的执行。
+
+
+9（128 位）：触发器仅匹配 128 位内存访问或 128 位指令的执行。
+
+实现必须支持值 0，但所有其他值都是可选的。当实现支持地址触发器（{mcontrol-select}=0）时，宜让这些触发器支持硬件线程所支持的每种访问大小以及每种指令长度。
+
+诸如 RV32D 或 RV64V 的实现能执行宽于 XLEN 的加载和存储。自定义扩展也可能支持宽于 XLEN 的指令。由于 {csr-tdata2} 的大小为 XLEN，存在一个已知限制：数据值触发器（{mcontrol-select}=1）仅能支持不大于 XLEN 位的访问大小。当实现支持数据值触发器（{mcontrol-select}=1）时，宜让这些触发器支持硬件线程所支持的不大于 XLEN 的每种访问大小，以及不大于 XLEN 的每种指令长度。
+a|*WARL*
+a|0
+|[[mcontrol-action]] `((action))`
+a|触发器触发时要执行的动作。各值在 xref:tab:action[] 中说明。
+a|*WARL*
+a|0
+|[[mcontrol-chain]] `((chain))`
+a|
+
+0（禁用）：当此触发器匹配时，执行所配置的动作。
+
+
+1（启用）：当此触发器不匹配时，它阻止索引紧随其后的触发器匹配。
+
+触发器链始于 `chain`=0 的触发器之后的第一个 `chain`=1 的触发器，或者如果第一个触发器即为 `chain`=1，则直接始于该触发器。它终止于其后第一个 `chain`=0 的触发器。这个最终触发器是链的一部分。除最终触发器外，所有触发器的动作都被忽略。当且仅当链中所有触发器同时匹配时，才会执行最终触发器的动作。
+
+调试器不宜用不同类型的触发器终止链。此类链的确切触发时机是未定义的。
+
+由于 {mcontrol-chain} 会影响下一个触发器，硬件在写入 {csr-mcontrol} 且将 {tdata1-dmode} 置为 0 时，若下一个触发器的 {tdata1-dmode} 为 1，则必须将该位清零。此外，若前一个触发器同时具有 {tdata1-dmode} 为 0 和 {mcontrol-chain} 为 1，硬件宜忽略将 {tdata1-dmode} 置为 1 的对 {csr-mcontrol} 的写入。调试器在写入 {csr-mcontrol} 时必须通过检查前一个触发器的 {mcontrol-chain} 来避免后一种情况。
+
+希望限制触发器链最大长度的实现（例如为满足时序要求）可在会令链过长的写入 {csr-mcontrol} 操作中清零 {mcontrol-chain}。
+a|*WARL*
+a|0
+|[[mcontrol-match]] `((match))`
+a|
+
+0（相等）：当任一比较值等于 {csr-tdata2} 时匹配。
+
+
+1（NAPOT）：当任一比较值的高 `M` 位与 {csr-tdata2} 的高 `M` 位匹配时匹配。`M` 等于 `XLEN-1` 减去 {csr-tdata2} 中含 0 的最低有效位的索引。调试器宜只向 {csr-tdata2} 写入满足 `M` + {mcontrol-maskmax} ≥ `XLEN` 且 `M` > 0 的值，否则在何种条件下触发器会匹配是未定义的。
+
+
+2（大于或等于）：当任一比较值大于（无符号）或等于 {csr-tdata2} 时匹配。
+
+
+3（小于）：当任一比较值小于（无符号）{csr-tdata2} 时匹配。
+
+
+4（低位掩码）：当将比较值的 `XLEN/2-1:0` 与 {csr-tdata2} 的 `XLEN-1:XLEN/2` 进行按位与后，任一比较值的 `XLEN/2-1:0` 等于 {csr-tdata2} 的 `XLEN/2-1:0` 时匹配。
+
+
+5（高位掩码）：当将比较值的 `XLEN-1:XLEN/2` 与 {csr-tdata2} 的 `XLEN-1:XLEN/2` 进行按位与后，任一比较值的 `XLEN-1:XLEN/2` 等于 {csr-tdata2} 的 `XLEN/2-1:0` 时匹配。
+
+
+8（不相等）：当 {mcontrol-match}=0 不会匹配时匹配。
+
+
+9（非 NAPOT）：当 {mcontrol-match}=1 不会匹配时匹配。
+
+
+12（非低位掩码）：当 {mcontrol-match}=4 不会匹配时匹配。
+
+
+13（非高位掩码）：当 {mcontrol-match}=5 不会匹配时匹配。
+
+其他值保留供未来使用。
+
+所有比较只查看比较值和 {csr-tdata2} 的低 XLEN（当前模式下）位。当 {mcontrol-select}=1 且访问大小为 N 时，此范围进一步缩小，比较只查看比较值和 {csr-tdata2} 的低 N 位。
+a|*WARL*
+a|0
+|[[mcontrol-m]] `((m))`
+a|置位时，在 M 模式下使能此触发器。
+a|*WARL*
+a|0
+|[[mcontrol-s]] `((s))`
+a|置位时，在 S/HS 模式下使能此触发器。若硬件线程不支持 S 模式，则该位硬连线为 0。
+a|*WARL*
+a|0
+|[[mcontrol-u]] `((u))`
+a|置位时，在 U 模式下使能此触发器。若硬件线程不支持 U 模式，则该位硬连线为 0。
+a|*WARL*
+a|0
+|[[mcontrol-execute]] `((execute))`
+a|置位时，触发器在执行的指令的虚拟地址或操作码上触发。
+a|*WARL*
+a|0
+|[[mcontrol-store]] `((store))`
+a|置位时，触发器在任何存储的虚拟地址或数据上触发。
+a|*WARL*
+a|0
+|[[mcontrol-load]] `((load))`
+a|置位时，触发器在任何加载的虚拟地址或数据上触发。
+a|*WARL*
+a|0
+|==='''

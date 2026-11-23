@@ -1,0 +1,14 @@
+unit_id = "9f060132a3750520c089309e1e8016d8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In addition, [#norm:mcounteren_tm_clr]#when the TM bit in the `mcounteren` register is clear, attempts to
+access the `stimecmp` or `vstimecmp` register while executing in a mode less
+privileged than M will cause an illegal-instruction exception.#
+[#norm:mcounteren_tm_set]#When this bit is set, access to the `stimecmp` or `vstimecmp` register is permitted in S-mode
+if implemented, and access to the `vstimecmp` register (via `stimecmp`) is
+permitted in VS-mode if implemented and not otherwise prevented by the TM bit in
+`hcounteren`.#'''
+zh = '''
+此外，[#norm:mcounteren_tm_clr]##当 `mcounteren` 寄存器中的 TM 位为 0 时，在低于 M 的模式下执行时试图访问 `stimecmp` 或 `vstimecmp` 寄存器将引发非法指令异常。##[#norm:mcounteren_tm_set]##当该位被置位时，若实现了 S 模式，则在 S 模式下允许访问 `stimecmp` 或 `vstimecmp` 寄存器；若实现了 VS 模式且未被 `hcounteren` 中的 TM 位另行阻止，则在 VS 模式下允许（通过 `stimecmp`）访问 `vstimecmp` 寄存器。##'''

@@ -1,0 +1,68 @@
+unit_id = "9e51ce0875c2f72ea60ab6880f62ffdd"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="1a, 2a",frame="none",grid="none"]
+|===
+|
+[%autowidth,float="right",align="right",cols="^,^",frame="none",grid="none",options="noheader"]
+!===
+!Format ! Meaning
+!CR ! Register
+!CI ! Immediate
+!CSS ! Stack-relative Store
+!CIW ! Wide Immediate
+!CL ! Load
+!CS ! Store
+!CA ! Arithmetic
+!CB ! Branch/Arithmetic
+!CJ ! Jump
+!===
+|
+[float="left",align="left",cols="1,1,1,1,1,1,1",options="noheader"]
+!===
+2+^!15 14 13 12 2+^!11 10 9 8 7 2+^!6 5 4 3 2 ^!1 0
+2+^!funct4 2+^!rd/rs1 2+^!rs2 ^!  op
+^!funct3 ^!imm 2+^!rd/rs1  2+^!imm ^!  op
+^!funct3 3+^!imm  2+^!rs2 ^!  op
+^!funct3 4+^!imm ^!rd&#x2032; ^! op
+^!funct3 2+^!imm ^!rs1&#x2032; ^!imm ^!rd&#x2032; ^! op
+^!funct3 2+^!imm ^!rs1&#x2032; ^! imm ^!rs2&#x2032; ^! op
+3+^!funct6 ^!rd&#x2032;/rs1&#x2032; ^!funct2 ^!rs2&#x2032; ^! op
+^!funct3 2+^!offset ^!rd&#x2032;/rs1&#x2032; 2+^!offset ^! op
+^!funct3 5+^!jump target ^! op
+!===
+|==='''
+zh = '''
+[float="center",align="center",cols="1a, 2a",frame="none",grid="none"]
+|===
+|
+[%autowidth,float="right",align="right",cols="^,^",frame="none",grid="none",options="noheader"]
+!===
+!格式 ! 含义
+!CR ! 寄存器
+!CI ! 立即数
+!CSS ! 栈相对存储
+!CIW ! 宽立即数
+!CL ! 加载
+!CS ! 存储
+!CA ! 算术
+!CB ! 分支/算术
+!CJ ! 跳转
+!===
+|
+[float="left",align="left",cols="1,1,1,1,1,1,1",options="noheader"]
+!===
+2+^!15 14 13 12 2+^!11 10 9 8 7 2+^!6 5 4 3 2 ^!1 0
+2+^!funct4 2+^!rd/rs1 2+^!rs2 ^!  op
+^!funct3 ^!imm 2+^!rd/rs1  2+^!imm ^!  op
+^!funct3 3+^!imm  2+^!rs2 ^!  op
+^!funct3 4+^!imm ^!rd&#x2032; ^! op
+^!funct3 2+^!imm ^!rs1&#x2032; ^!imm ^!rd&#x2032; ^! op
+^!funct3 2+^!imm ^!rs1&#x2032; ^! imm ^!rs2&#x2032; ^! op
+3+^!funct6 ^!rd&#x2032;/rs1&#x2032; ^!funct2 ^!rs2&#x2032; ^! op
+^!funct3 2+^!offset ^!rd&#x2032;/rs1&#x2032; 2+^!offset ^! op
+^!funct3 5+^!jump target ^! op
+!===
+|==='''

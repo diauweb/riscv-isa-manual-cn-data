@@ -1,0 +1,17 @@
+unit_id = "d0c2de6a736101a678a7432515e935dd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The results of implicit address-translation reads in step 2 may be held
+in a read-only, incoherent _address-translation cache_ but not shared
+with other harts. The address-translation cache may hold an arbitrary
+number of entries, including an arbitrary number of entries for the same
+address and ASID. Entries in the address-translation cache may then
+satisfy subsequent step 2 reads if the ASID associated with the entry
+matches the ASID loaded in step 1 or if the entry is associated with a
+_global_ mapping. To ensure that implicit reads observe writes to the
+same memory locations, an SFENCE.VMA instruction must be executed after
+the writes to flush the relevant cached translations.'''
+zh = '''
+步骤 2 中隐式地址转换读取的结果可保存在只读的、非一致的__地址转换缓存__中，但不得与其他硬件线程共享。该地址转换缓存可保存任意数量的表项，包括针对同一地址和 ASID 的任意数量表项。若表项关联的 ASID 与步骤 1 中加载的 ASID 匹配，或者该表项关联的是__全局__映射，则地址转换缓存中的表项可满足后续的步骤 2 读取。为确保隐式读取能观察到对同一内存位置的写入，应在写入之后执行 SFENCE.VMA 指令以冲刷相关的缓存转换。'''

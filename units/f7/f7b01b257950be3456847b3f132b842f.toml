@@ -1,0 +1,23 @@
+unit_id = "f7b01b257950be3456847b3f132b842f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. {dcsr-cause} is updated.
+. {dcsr-prv} and {dcsr-v} are set to reflect current privilege mode and virtualization mode.
+. If the Zicfilp extension is implemented, {dcsr-pelp} is set to the current
+  `ELP` state and `ELP` is set to `NO_LP_EXPECTED`.
+. {csr-dpc} is set to the next instruction that should be executed.
+. If the current instruction can be partially executed and should be
+restarted to complete, then the relevant state for that is updated. E.g.
+if a halt occurs during a partially executed vector instruction, then
+`vstart` is updated, and {csr-dpc} is updated to the address of the partially
+executed instruction. This is analogous to how vector instructions behave for exceptions.
+. The hart enters Debug Mode.'''
+zh = '''
+. 更新 {dcsr-cause}。
+. 设置 {dcsr-prv} 和 {dcsr-v} 以反映当前特权模式和虚拟化模式。
+. 若实现了 Zicfilp 扩展，则 {dcsr-pelp} 被设为当前 `ELP` 状态，且 `ELP` 被设为 `NO_LP_EXPECTED`。
+. {csr-dpc} 被设为下一条应执行的指令。
+. 若当前指令可部分执行且应重新启动以完成，则更新相关状态。例如，若在部分执行的向量指令期间发生停机，则更新 `vstart`，并将 {csr-dpc} 更新为部分执行指令的地址。这类似于向量指令在异常时的行为。
+. 硬件线程进入调试模式。'''

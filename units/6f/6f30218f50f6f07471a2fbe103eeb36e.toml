@@ -1,0 +1,16 @@
+unit_id = "6f30218f50f6f07471a2fbe103eeb36e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The FENCE instruction is used to order device I/O and memory accesses as
+viewed by other RISC-V harts and external devices or coprocessors. Any
+combination of device input (I), device output (O), memory reads \(R),
+and memory writes (W) may be ordered with respect to any combination of
+the same. Informally, no other RISC-V hart or external device can
+observe any operation in the _successor_ set following a FENCE before
+any operation in the _predecessor_ set preceding the FENCE.
+<<memorymodel>> provides a precise description
+of the RISC-V memory consistency model.'''
+zh = '''
+FENCE 指令用于按其他 RISC-V 硬件线程以及外部设备或协处理器的观察来排序设备 I/O 和内存访问。设备输入（I）、设备输出（O）、内存读（R）和内存写（W）的任意组合均可相对于相同组合的任意组合进行排序。通俗地说，其他 RISC-V 硬件线程或外部设备不能先观察到 FENCE 之后的__后继__集合中的任何操作，再观察到 FENCE 之前的__前驱__集合中的任何操作。<<memorymodel>> 给出了 RISC-V 内存一致性模型的精确描述。'''

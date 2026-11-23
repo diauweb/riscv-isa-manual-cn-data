@@ -1,0 +1,22 @@
+unit_id = "1efd6885278c261c7d260bbe7e1a0ff9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Another use-case is to build a research prototype for a new type of
+instruction-set extension. The researchers might not want to expend the
+effort to implement a variable-length instruction-fetch unit, and so
+would like to prototype their extension using a simple 32-bit
+fixed-width instruction encoding. However, this new extension might be
+too large to coexist with standard extensions in the 32-bit space. If
+the research experiments do not need all of the standard extensions, a
+standard-compatible global encoding might drop the unused standard
+extensions and reuse their prefixes to place the proposed extension in a
+non-standard location to simplify engineering of the research prototype.
+Standard tools will still be able to target the base and any standard
+extensions that are present to reduce development time. Once the
+instruction-set extension has been evaluated and refined, it could then
+be made available for packing into a larger variable-length encoding
+space to avoid conflicts with all standard extensions.'''
+zh = '''
+另一种使用场景是为新型指令集扩展构建研究原型。研究人员可能不希望耗费精力实现变长取指单元，因此希望使用简单的 32 位定长指令编码来为其扩展构建原型。然而，这种新扩展可能太大，无法与标准扩展共存于 32 位空间中。如果研究实验不需要所有标准扩展，则标准兼容全局编码可能舍弃未使用的标准扩展，并重用其前缀，将所提议的扩展放置在非标准位置，以简化研究原型的工程实现。标准工具仍能面向基础 ISA 和任何存在的标准扩展，从而减少开发时间。一旦该指令集扩展经过评估和完善，便可将其用于打包到更大的变长编码空间，以避免与所有标准扩展冲突。'''

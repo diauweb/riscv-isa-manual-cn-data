@@ -1,0 +1,64 @@
+unit_id = "843180f100816053b14f86ca3462fea9"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Page table entry encodings when __pte__.N=1
+[%autowidth,float="center",align="center",cols="^,^,<,^",options="header"]
+|===
+|i |_pte_._ppn_[_i_] |Description |_pte_.__napot_bits__
+|0 +
+0 +
+0 +
+0 +
+0 +
+{ge}1
+|`x xxxx xxx1` +
+`x xxxx xx1x` +
+`x xxxx x1xx` +
+`x xxxx 1000` +
+`x xxxx 0xxx` +
+`x xxxx xxxx`
+|_Reserved_ +
+_Reserved_ +
+_Reserved_ +
+64 KiB contiguous region +
+_Reserved_ +
+_Reserved_
+| - +
+- +
+- +
+4 +
+- +
+-
+|==='''
+zh = '''
+.当 __pte__.N=1 时的页表项编码
+[%autowidth,float="center",align="center",cols="^,^,<,^",options="header"]
+|===
+|i |_pte_._ppn_[_i_] |描述 |_pte_.__napot_bits__
+|0 +
+0 +
+0 +
+0 +
+0 +
+{ge}1
+|`x xxxx xxx1` +
+`x xxxx xx1x` +
+`x xxxx x1xx` +
+`x xxxx 1000` +
+`x xxxx 0xxx` +
+`x xxxx xxxx`
+|__保留__ +
+__保留__ +
+__保留__ +
+64 KiB 连续区域 +
+__保留__ +
+__保留__
+| - +
+- +
+- +
+4 +
+- +
+-
+|==='''

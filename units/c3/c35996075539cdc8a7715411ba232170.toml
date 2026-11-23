@@ -1,0 +1,14 @@
+unit_id = "c35996075539cdc8a7715411ba232170"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The U bit indicates whether the page is accessible to user mode. U-mode
+software may only access the page when U=1. If the SUM bit in the
+`sstatus` register is set, supervisor mode software may also access
+pages with U=1. However, supervisor code normally operates with the SUM
+bit clear, in which case, supervisor code will fault on accesses to
+user-mode pages. Irrespective of SUM, the supervisor may not execute
+code on pages with U=1.'''
+zh = '''
+U 位指示该页是否可被用户模式访问。U 模式软件仅当 U=1 时才能访问该页。若 `sstatus` 寄存器中的 SUM 位被置位，则监管模式软件也可访问 U=1 的页。然而，监管代码通常在 SUM 位清零的情况下运行，此时监管代码对用户模式页的访问将出错。无论 SUM 如何，监管模式都不得在 U=1 的页上执行代码。'''

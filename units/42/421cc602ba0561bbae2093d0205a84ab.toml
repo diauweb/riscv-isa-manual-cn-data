@@ -1,0 +1,17 @@
+unit_id = "421cc602ba0561bbae2093d0205a84ab"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Global mappings need not be stored redundantly in address-translation
+caches for multiple ASIDs. Additionally, they need not be flushed from
+local address-translation caches when an SFENCE.VMA instruction is
+executed with __rs2__{ne}``x0``.
+===='''
+zh = '''
+[NOTE]
+====
+全局映射无须为多个 ASID 在地址转换缓存中冗余存储。此外，当执行 __rs2__{ne}``x0`` 的 SFENCE.VMA 指令时，也无须从本地地址转换缓存中冲刷它们。
+===='''

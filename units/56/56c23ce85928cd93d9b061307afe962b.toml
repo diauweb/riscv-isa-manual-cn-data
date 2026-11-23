@@ -1,0 +1,15 @@
+unit_id = "56c23ce85928cd93d9b061307afe962b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Support for non-POT EGS was considered but causes many practical
+complications and so has been dropped.  Error checking for `vl` is a
+little more difficult.  For LMUL>1, non-POT EGSs will result in groups
+straddling the individual vector registers in a vector register
+group. Non-POT EGS can also cause large increases in the
+lowest-common-multiple of element group sizes, which adds constraints
+to `vl` setting in order to avoid splitting an element group across
+stripmine iterations in vector-length-agnostic code.'''
+zh = '''
+NOTE: 曾考虑支持非 POT EGS，但会造成许多实际复杂性，因此已放弃。`vl` 的错误检查会稍困难。对于 LMUL>1，非 POT EGS 将导致组跨越向量寄存器组中的各个向量寄存器。非 POT EGS 还可能导致元素组大小的最小公倍数大幅增加，从而对 `vl` 设置增加约束，以避免在向量长度无关代码中将元素组拆分到条带挖掘迭代中。'''

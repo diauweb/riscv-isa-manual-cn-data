@@ -1,0 +1,13 @@
+unit_id = "9a67670d5c7a0662543e092891bb3568"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Registers might not be accessible if they wouldn't be accessible by M
+mode code currently running. (E.g. `fflags` might not be accessible
+when `mstatus.FS` is 0.) If this is the case, the debugger is
+responsible for changing state to make the registers accessible. The
+Core Debug Registers (xref:debreg[]) should be accessible if
+abstract CSR access is implemented.'''
+zh = '''
+如果寄存器不能被当前运行的 M 模式代码访问，则它们可能不可访问。（例如，当 `mstatus.FS` 为 0 时，`fflags` 可能不可访问。）在此情况下，调试器负责更改状态以使寄存器可访问。若实现了抽象 CSR 访问，则核心调试寄存器（xref:debreg[]）宜可访问。'''

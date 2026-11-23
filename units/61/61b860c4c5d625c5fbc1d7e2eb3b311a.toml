@@ -1,0 +1,28 @@
+unit_id = "61b860c4c5d625c5fbc1d7e2eb3b311a"
+kind = "code"
+translatable = false
+en = '''
+----
+    vmsbf.m vd, vs2, vm
+
+ # Example
+
+     7 6 5 4 3 2 1 0   Element number
+
+     1 0 0 1 0 1 0 0   v3 contents
+                       vmsbf.m v2, v3
+     0 0 0 0 0 0 1 1   v2 contents
+
+     1 0 0 1 0 1 0 1   v3 contents
+                       vmsbf.m v2, v3
+     0 0 0 0 0 0 0 0   v2
+
+     0 0 0 0 0 0 0 0   v3 contents
+                       vmsbf.m v2, v3
+     1 1 1 1 1 1 1 1   v2
+
+     1 1 0 0 0 0 1 1   v0 vcontents
+     1 0 0 1 0 1 0 0   v3 contents
+                       vmsbf.m v2, v3, v0.t
+     0 1 x x x x 1 1   v2 contents
+----'''

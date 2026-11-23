@@ -1,0 +1,12 @@
+unit_id = "954ac01a74d546cbd259cb792303d228"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When Zicfilp is enabled, `LPAD` is the only instruction allowed to execute when
+the `ELP` state is `LP_EXPECTED`. If Zicfilp is not enabled then the instruction
+is a no-op. If Zicfilp is enabled, the `LPAD` instruction causes a
+software-check exception with `__x__tval` set to "landing pad fault (code=2)" if
+any of the following conditions are true:'''
+zh = '''
+当启用 Zicfilp 时，在 `ELP` 状态为 `LP_EXPECTED` 时 `LPAD` 是唯一允许执行的指令。如果未启用 Zicfilp，则该指令为空操作。如果启用了 Zicfilp，则当以下任一条件为真时，`LPAD` 指令触发软件检查异常，且 `__x__tval` 置为“landing pad fault (code=2)”：'''

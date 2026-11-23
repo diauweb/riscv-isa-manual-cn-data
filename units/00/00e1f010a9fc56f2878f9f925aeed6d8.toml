@@ -1,0 +1,60 @@
+unit_id = "00e1f010a9fc56f2878f9f925aeed6d8"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.ext:zca[] opcode map.
+[%autowidth,float="center",align="center",cols=">,^,^,^,^,^,^,^,^,^,<]
+|===
+2+>|inst[15:13] +
+inst[1:0] ^.^s|000 ^.^s|001 ^.^s|010 ^.^s|011 ^.^s|100 ^.^s|101 ^.^s|110 ^.^s|111 |
+
+2+>.^|00 .^|ADDI4SPN ^.^|FLD +
+FLD ^.^| LW ^.^| FLW +
+LD ^.^| _Reserved_ ^.^| FSD +
+FSD ^.^| SW ^.^| FSW +
+SD
+^.^| RV32 +
+RV64
+
+2+>.^|01 ^.^|ADDI ^.^|JAL +
+ADDIW ^.^|LI ^.^|LUI/ADDI16SP ^.^|MISC-ALU ^.^|J ^.^|BEQZ ^.^|BNEZ ^.^|RV32 +
+RV64
+
+2+>.^|10 ^.^|SLLI ^.^|FLDSP +
+FLDSP ^.^|LWSP ^.^|FLWSP +
+LDSP ^.^|J[AL]R/MV/ADD ^.^|FSDSP +
+FSDSP ^.^|SWSP ^.^|FSWSP +
+SDSP ^.^|RV32 +
+RV64
+
+2+>.^|11 9+^|>16b
+|==='''
+zh = '''
+.ext:zca[] 操作码映射
+[%autowidth,float="center",align="center",cols=">,^,^,^,^,^,^,^,^,^,<"]
+|===
+2+>|inst[15:13] +
+inst[1:0] ^.^s|000 ^.^s|001 ^.^s|010 ^.^s|011 ^.^s|100 ^.^s|101 ^.^s|110 ^.^s|111 |
+
+2+>.^|00 .^|ADDI4SPN ^.^|FLD +
+FLD ^.^| LW ^.^| FLW +
+LD ^.^| __保留__ ^.^| FSD +
+FSD ^.^| SW ^.^| FSW +
+SD
+^.^| RV32 +
+RV64
+
+2+>.^|01 ^.^|ADDI ^.^|JAL +
+ADDIW ^.^|LI ^.^|LUI/ADDI16SP ^.^|MISC-ALU ^.^|J ^.^|BEQZ ^.^|BNEZ ^.^|RV32 +
+RV64
+
+2+>.^|10 ^.^|SLLI ^.^|FLDSP +
+FLDSP ^.^|LWSP ^.^|FLWSP +
+LDSP ^.^|J[AL]R/MV/ADD ^.^|FSDSP +
+FSDSP ^.^|SWSP ^.^|FSWSP +
+SDSP ^.^|RV32 +
+RV64
+
+2+>.^|11 9+^|>16b
+|==='''

@@ -1,0 +1,17 @@
+unit_id = "6e4f79cfbf43b840b1703bd6be0bc0c1"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- The destination EEW equals the source EEW.
+- The destination EEW is smaller than the source EEW and the overlap is in
+  the lowest-numbered part of the source register group (e.g., when LMUL=1,
+  `vnsrl.wi v0, v0, 3` is legal, but a destination of `v1` is not).
+- The destination EEW is greater than the source EEW, the source EMUL is
+  at least 1, and the overlap is in the highest-numbered part of the
+  destination register group (e.g., when LMUL=8, `vzext.vf4 v0, v6` is legal,
+  but a source of `v0`, `v2`, or `v4` is not).'''
+zh = '''
+- 目标 EEW 等于源 EEW。
+- 目标 EEW 小于源 EEW，且重叠位于源寄存器组编号最低的部分（例如，当 LMUL=1 时，`vnsrl.wi v0, v0, 3` 合法，但目标为 `v1` 不合法）。
+- 目标 EEW 大于源 EEW，源 EMUL 至少为 1，且重叠位于目标寄存器组编号最高的部分（例如，当 LMUL=8 时，`vzext.vf4 v0, v6` 合法，但源为 `v0`、`v2` 或 `v4` 不合法）。'''

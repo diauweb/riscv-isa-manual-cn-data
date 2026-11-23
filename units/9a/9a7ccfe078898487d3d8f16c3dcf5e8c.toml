@@ -1,0 +1,16 @@
+unit_id = "9a7ccfe078898487d3d8f16c3dcf5e8c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `stateen` registers at each level control access to state at all
+less-privileged levels, but not at its own level. This is analogous to how the
+existing `counteren` CSRs control access to performance counter registers. Just
+as with the `counteren` CSRs, when a `stateen` CSR prevents access to state by
+less-privileged levels, an attempt in one of those privilege modes to execute
+an instruction that would read or write the protected state raises an illegal-instruction
+exception, or, if executing in VS or VU mode and the circumstances
+for a virtual-instruction  exception apply, raises a virtual-instruction
+exception instead of an illegal-instruction exception.'''
+zh = '''
+每个级别的 `stateen` 寄存器控制对所有更低特权级状态的访问，但不控制对本级状态的访问。这与现有 `counteren` CSR 控制对性能计数器寄存器访问的方式类似。与 `counteren` CSR 一样，当 `stateen` CSR 阻止更低特权级访问某些状态时，在其中某个特权模式下试图执行会读取或写入受保护状态的指令，将引发非法指令异常；或者，若在 VS 或 VU 模式下执行且满足虚拟指令异常的条件，则改为引发虚拟指令异常而不是非法指令异常。'''

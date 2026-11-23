@@ -1,0 +1,16 @@
+unit_id = "6e142769dba777057a0b77cb46ce678a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Single message (if branch was not taken)
+** *I-CNT=5*     => Instruction XYZ did not change the flow and code in range <0x100..0x10A) got executed
+* Two messages (if branch was taken)
+** *I-CNT=4*, *F-ADDR=0x100* (denote address 0x200)  => Code in range <0x100..0x108) got executed and next PC after instruction XYZ is 0x200
+** *I-CNT=1*                                         => Code in range <0x200..0x202) got executed next'''
+zh = '''
+* 单条消息（如果分支未发生跳转）
+** *I-CNT=5*     => 指令 XYZ 未改变流，且 <0x100..0x10A) 范围内的代码被执行
+* 两条消息（如果分支发生跳转）
+** *I-CNT=4*、*F-ADDR=0x100*（表示地址 0x200）  => <0x100..0x108) 范围内的代码被执行，且指令 XYZ 之后的下一条 PC 为 0x200
+** *I-CNT=1*                                         => 接下来执行 <0x200..0x202) 范围内的代码'''

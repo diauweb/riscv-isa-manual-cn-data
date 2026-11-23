@@ -1,0 +1,10 @@
+unit_id = "ff604621477bbf2be749cbf8766f637e"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+let lo_half : bits(16) = X(rs1)[15..0];
+let hi_half : bits(16) = X(rs2)[15..0];
+X(rd) = EXTS(hi_half @ lo_half);
+--'''

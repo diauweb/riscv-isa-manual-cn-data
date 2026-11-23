@@ -1,0 +1,29 @@
+unit_id = "641dec1df433d91bdfbd9aaa7c6c199a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Terms:
+* *PMP Entry*: A pair of ``pmpcfg[i]`` / ``pmpaddr[i]`` registers.
+* *PMP Rule*: The contents of a pmpcfg register and its associated pmpaddr register(s), that encode a valid protected physical memory region, where ``pmpcfg[i].A != OFF``, and if ``pmpcfg[i].A == TOR``, ``pmpaddr[i-1] < pmpaddr[i]``.
+* *Ignored*: Any permissions set by a matching PMP rule are ignored, and _all_ accesses to the requested address range are allowed.
+* *Enforced*: Only access types configured in the PMP rule matching the requested address range are allowed; failures will cause an access-fault exception.
+* *Denied*: Any permissions set by a matching PMP rule are ignored, and _no_ accesses to the requested address range are allowed.; failures will cause an access-fault exception.
+* *Locked*: A PMP rule/entry where the ``pmpcfg.L`` bit is set.
+* *PMP reset*: A reset process where all PMP settings of the hart, including locked rules/settings, are re-initialized to a set of safe defaults, before releasing the hart (back) to the firmware / OS / application.
+===='''
+zh = '''
+[NOTE]
+====
+术语：
+
+* **PMP 表项**：一对 ``pmpcfg[i]`` / ``pmpaddr[i]`` 寄存器。
+* **PMP 规则**：pmpcfg 寄存器及其关联 pmpaddr 寄存器的内容，编码一个有效的受保护物理内存区域，其中 ``pmpcfg[i].A != OFF``，且若 ``pmpcfg[i].A == TOR``，则 ``pmpaddr[i-1] < pmpaddr[i]``。
+* **忽略**：匹配 PMP 规则设置的任何权限均被忽略，对请求地址范围的 _所有_ 访问均被允许。
+* **强制执行**：仅允许匹配请求地址范围的 PMP 规则中配置的访问类型；失败将导致访问故障异常。
+* **拒绝**：匹配 PMP 规则设置的任何权限均被忽略，对请求地址范围的 _任何_ 访问均不被允许；失败将导致访问故障异常。
+* **锁定**：``pmpcfg.L`` 位置位的 PMP 规则/表项。
+* **PMP 复位**：一种复位过程，在将硬件线程释放（回）给固件/操作系统/应用程序之前，将该硬件线程的所有 PMP 设置（包括锁定的规则/设置）重新初始化为一组安全默认值。
+===='''

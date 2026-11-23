@@ -1,0 +1,14 @@
+unit_id = "20d8c1281fd23384de615500c392d883"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Notice that program-order-previous stores cannot be forwarded to the
+load of an AMO. This is simply because the sequence of transitions above
+does not include the forwarding transition. But even if it did include
+it, the sequence will fail when trying to do the <<prop_store, Propagate store operation>> transition, as this
+transition requires all program-order-previous store operations to
+overlapping memory footprints to be propagated, and forwarding requires
+the store operation to be unpropagated.'''
+zh = '''
+注意，程序顺序在先的存储不能前递给 AMO 的加载。这仅仅是因为上述转移序列不包含前递转移。但即使它包含前递转移，该序列在尝试执行 <<prop_store, 传播存储操作>> 转移时也会失败，因为该转移要求所有对重叠内存足迹的程序顺序在先的存储操作均已传播，而前递要求该存储操作未传播。'''

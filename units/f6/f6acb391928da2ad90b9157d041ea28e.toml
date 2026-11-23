@@ -1,0 +1,13 @@
+unit_id = "f6acb391928da2ad90b9157d041ea28e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `nf[2:0]` field encodes the number of fields in each segment.  For
+regular vector loads and stores, `nf`=0, indicating that a single
+value is moved between a vector register group and memory at each
+element position.  Larger values in the `nf` field are used to access
+multiple contiguous fields within a segment as described below in
+Section <<sec-aos>>.'''
+zh = '''
+`nf[2:0]` 字段编码每个段中的字段数。对于常规向量加载和存储，`nf`=0，表示在每个元素位置在向量寄存器组和内存之间移动单个值。`nf` 字段中的较大值用于访问段内多个连续字段，如下文第 <<sec-aos>> 节所述。'''

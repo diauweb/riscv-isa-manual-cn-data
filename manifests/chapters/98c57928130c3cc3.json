@@ -1,0 +1,234 @@
+{
+  "chap_hash": "98c57928130c3cc3",
+  "id": "extending",
+  "sectname": "chapter",
+  "sectnum": "37",
+  "title_en": "Extending RISC-V",
+  "title_unit_id": "be567387c4f6aab6c06b4e627d9d59d9",
+  "source_path": "src/extending.adoc",
+  "sections": [
+    {
+      "id": "extending",
+      "level": 1,
+      "sectnum": "37",
+      "title": "Extending RISC-V",
+      "heading_unit_id": "be567387c4f6aab6c06b4e627d9d59d9",
+      "heading_anchor_id": "extending",
+      "blocks": [
+        "9e7f0c741fdfd3e433869920fb2b559a",
+        "dab9d189a8ae6bd0e554454da5cf5394"
+      ]
+    },
+    {
+      "id": "_extension_terminology",
+      "level": 2,
+      "sectnum": "37.1",
+      "title": "Extension Terminology",
+      "heading_unit_id": "1511d508991d227caae935fa3e7476f5",
+      "blocks": [
+        "022914e0a12e037d1413480887e62dc3"
+      ]
+    },
+    {
+      "id": "_standard_versus_non_standard_extension",
+      "level": 3,
+      "sectnum": "37.1.1",
+      "title": "Standard versus Non-Standard Extension",
+      "heading_unit_id": "e13ca5468613aedee73e444df61e1aab",
+      "blocks": [
+        "fcf500d8139ba4f318c04b4d735f15c1",
+        "9faf40aa9f2341f0429a9b6821351397"
+      ]
+    },
+    {
+      "id": "_instruction_encoding_spaces_and_prefixes",
+      "level": 3,
+      "sectnum": "37.1.2",
+      "title": "Instruction Encoding Spaces and Prefixes",
+      "heading_unit_id": "41ccbc635ef391756e0fb1bab31a58d4",
+      "blocks": [
+        "89a5673b89dd3efd04b88f206e6e8342",
+        "21939a4bdd494e6d575139306e0f95a3",
+        "38fe48559b161565cefced48b6011b29",
+        {
+          "unit_id": "31210920d56d20b94aafa3c7e62e6418",
+          "anchor_id": "encodingspaces"
+        }
+      ]
+    },
+    {
+      "id": "_greenfield_versus_brownfield_extensions",
+      "level": 3,
+      "sectnum": "37.1.3",
+      "title": "Greenfield versus Brownfield Extensions",
+      "heading_unit_id": "38a6e507381a692ef5d8a0c6a18f6aa3",
+      "blocks": [
+        "a280fd5d5dd7d2307111d68094c2bfd3",
+        "0123cd6af34c537335a0fe96268601c5",
+        {
+          "unit_id": "d495f81c588f0013df740c4d518fbe48",
+          "anchor_id": "exttax"
+        },
+        "ca224b9c4bf6f0f446c2e71c099b1340",
+        "1ac8b07bf9194ee5590b5a6c861a2d52"
+      ]
+    },
+    {
+      "id": "_standard_compatible_global_encodings",
+      "level": 3,
+      "sectnum": "37.1.4",
+      "title": "Standard-Compatible Global Encodings",
+      "heading_unit_id": "4a8819deff38e3094e7957a14b47ba66",
+      "blocks": [
+        "27712c914d66757aa7856f9eb8bc86d0",
+        "05c329ceefb17a4fdd117f35e72eb5bc"
+      ]
+    },
+    {
+      "id": "_guaranteed_non_standard_encoding_space",
+      "level": 3,
+      "sectnum": "37.1.5",
+      "title": "Guaranteed Non-Standard Encoding Space",
+      "heading_unit_id": "360e42894e7dff1807b122be7d41e508",
+      "blocks": [
+        "6f6dae032a620f218117c5abcb0aae7a"
+      ]
+    },
+    {
+      "id": "_risc_v_extension_design_philosophy",
+      "level": 2,
+      "sectnum": "37.2",
+      "title": "RISC-V Extension Design Philosophy",
+      "heading_unit_id": "da79abe968ab66da0f84a9f1b469d61d",
+      "blocks": [
+        "b560619dde9039cc3959748316f98d29",
+        "34c0d4e4ee56f0f6380f94f8f3590fea",
+        "230b536025ba5aa2a742ca9d98934c64",
+        "1efd6885278c261c7d260bbe7e1a0ff9",
+        "3e99208bcff21daa86fd1698c3199dd9"
+      ]
+    },
+    {
+      "id": "fix32b",
+      "level": 2,
+      "sectnum": "37.3",
+      "title": "Extensions within fixed-width 32-bit instruction format",
+      "heading_unit_id": "3e53b40f344edbd420681dece182c216",
+      "heading_anchor_id": "fix32b",
+      "blocks": [
+        "788fbbb093e9f6f725233bcc371ea1c7",
+        "5a5c7b88df66985e715059a0d3f9260b"
+      ]
+    },
+    {
+      "id": "_available_30_bit_instruction_encoding_spaces",
+      "level": 3,
+      "sectnum": "37.3.1",
+      "title": "Available 30-bit instruction encoding spaces",
+      "heading_unit_id": "d42286788344dad452913fdc3bfe62f8",
+      "blocks": [
+        "b15f0a6852c13420882043ad259258fa"
+      ]
+    },
+    {
+      "id": "_available_25_bit_instruction_encoding_spaces",
+      "level": 3,
+      "sectnum": "37.3.2",
+      "title": "Available 25-bit instruction encoding spaces",
+      "heading_unit_id": "1bdadcd8223a06de5c12278a3e21c457",
+      "blocks": [
+        "4b29bfd8d1a3c099a7427fada16bad99",
+        "f2331f87f99c278724710b2ee993a35f",
+        "b19bf66f3c1f86805ce4b65112b7f4d2",
+        "b43cb846ac57ce11790b2ed9ee1a7428",
+        "0c79a91e950c2f39c451014f82de4f12",
+        "046da370477bd8361925dd876c932dfe"
+      ]
+    },
+    {
+      "id": "_available_22_bit_instruction_encoding_spaces",
+      "level": 3,
+      "sectnum": "37.3.3",
+      "title": "Available 22-bit instruction encoding spaces",
+      "heading_unit_id": "af7263f5dd6b64393bcf31d8c00993b3",
+      "blocks": [
+        "bf878673c72eaedc3fd1aa14a85b9a87",
+        "9cb0fdc9b052cc5f9f472f95d24c8b83"
+      ]
+    },
+    {
+      "id": "_other_spaces",
+      "level": 3,
+      "sectnum": "37.3.4",
+      "title": "Other spaces",
+      "heading_unit_id": "19c0f14a72c1e76c551926f99411d0ca",
+      "blocks": [
+        "6d60a42425fa775369b5928d1bec527a"
+      ]
+    },
+    {
+      "id": "_adding_aligned_64_bit_instruction_extensions",
+      "level": 2,
+      "sectnum": "37.4",
+      "title": "Adding aligned 64-bit instruction extensions",
+      "heading_unit_id": "bcbe2ea1c8d523111a00e068c1403a51",
+      "blocks": [
+        "f844ea9aecc25cb6762474f3af234dfc",
+        "f8b82c30c5154694753a4e37bc1ba070",
+        "ff058a3acd57b4bb02d0d23b703fd324"
+      ]
+    },
+    {
+      "id": "_supporting_vliw_encodings",
+      "level": 2,
+      "sectnum": "37.5",
+      "title": "Supporting VLIW encodings",
+      "heading_unit_id": "8ac40f1bc7667d3de7b6ae09bf363abe",
+      "blocks": [
+        "bfbf492e84d83c719ccaa75fe84d1b43"
+      ]
+    },
+    {
+      "id": "_fixed_size_instruction_group",
+      "level": 3,
+      "sectnum": "37.5.1",
+      "title": "Fixed-size instruction group",
+      "heading_unit_id": "d43b4da8fc774dee30b0063df2b75212",
+      "blocks": [
+        "34f518123b11394ad5c42fdc2ab8f293"
+      ]
+    },
+    {
+      "id": "_encoded_length_groups",
+      "level": 3,
+      "sectnum": "37.5.2",
+      "title": "Encoded-Length Groups",
+      "heading_unit_id": "a05cd042ca6fe88db6d959dd427ebb46",
+      "blocks": [
+        "6b48866505990027fb230db4c94ecf96",
+        "db20362081d4d82bae566abef0ad6db0"
+      ]
+    },
+    {
+      "id": "_fixed_size_instruction_bundles",
+      "level": 3,
+      "sectnum": "37.5.3",
+      "title": "Fixed-Size Instruction Bundles",
+      "heading_unit_id": "07855307838e2f4636cb245af1af1ee3",
+      "blocks": [
+        "dd2ce3cee989b3fde67b5de9e31ee044"
+      ]
+    },
+    {
+      "id": "_end_of_group_bits_in_prefix",
+      "level": 3,
+      "sectnum": "37.5.4",
+      "title": "End-of-Group bits in Prefix",
+      "heading_unit_id": "17e137fdd465fb02777b334f683059b9",
+      "blocks": [
+        "4d4efb0582a94fffb8df332274783f25",
+        "6b03f25521a2f6f0539cb33bb0c40267"
+      ]
+    }
+  ]
+}

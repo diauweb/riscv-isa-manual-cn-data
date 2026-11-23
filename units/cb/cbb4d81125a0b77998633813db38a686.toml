@@ -1,0 +1,16 @@
+unit_id = "cbb4d81125a0b77998633813db38a686"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_mdt_sz_warl]#The M-mode-disable-trap (`MDT`) bit is a WARL field introduced by the Smdbltrp extension.#
+[#norm:mstatus_mdt_rst]#Upon reset, the `MDT` field is set to 1.#
+[#norm:mstatus_mie_clr_by_mdt]#When the `MDT` bit is set to 1 by an explicit CSR write,
+the `MIE` (Machine Interrupt Enable) bit is cleared to 0.#
+[#norm:mstatus_mie_clr_by_mdt_rv64]#For RV64, this clearing occurs regardless of the value written, if any, to the `MIE` bit by the same write.#
+[#norm:mstatus_mie_set_mdt_0]#The `MIE` bit can only be set to 1 by an
+explicit CSR write if the `MDT` bit is already 0#
+[#norm:mstatus_mie_set_mdt_0_rv64]#or, for RV64, is being set to 0 by the same write#
+(For RV32, the `MDT` bit is in `mstatush` and the `MIE` bit in `mstatus` register).'''
+zh = '''
+[#norm:mstatus_mdt_sz_warl]##M 模式禁用陷阱（`MDT`）位是由 Smdbltrp 扩展引入的 WARL 字段。##[#norm:mstatus_mdt_rst]##复位时，`MDT` 字段被设置为 1。##[#norm:mstatus_mie_clr_by_mdt]##当通过显式 CSR 写入将 `MDT` 位设置为 1 时，`MIE`（机器中断使能）位被清零为 0。##[#norm:mstatus_mie_clr_by_mdt_rv64]##对于 RV64，无论同一次写入对 `MIE` 位写入了什么值（如果有），该清零都会发生。##[#norm:mstatus_mie_set_mdt_0]##仅当 `MDT` 位已经为 0 时，`MIE` 位才可通过显式 CSR 写入设置为 1##[#norm:mstatus_mie_set_mdt_0_rv64]##，或者对于 RV64，在同一次写入中 `MDT` 位正被设置为 0##（对于 RV32，`MDT` 位在 `mstatush` 中，`MIE` 位在 `mstatus` 寄存器中）。'''

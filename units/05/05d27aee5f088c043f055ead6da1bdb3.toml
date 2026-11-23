@@ -1,0 +1,24 @@
+unit_id = "05d27aee5f088c043f055ead6da1bdb3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a fence is in fact used, implementations must assume that the
+device may attempt to access memory immediately after receiving the MMIO
+signal, and subsequent memory accesses from that device to memory must
+observe the effects of all accesses ordered prior to that MMIO
+operation. In other words, in <<wo>>,
+suppose `0(a0)` is in main memory and `0(a1)` is the address of a device
+register in I/O memory. If the device accesses `0(a0)` upon receiving
+the MMIO write, then that load must conceptually appear after the first
+store to `0(a0)` according to the rules of the RVWMO memory model. In
+some implementations, the only way to ensure this will be to require
+that the first store does in fact complete before the MMIO write is
+issued. Other implementations may find ways to be more aggressive, while
+others still may not need to do anything different at all for I/O and
+main memory accesses. Nevertheless, the RVWMO memory model does not
+distinguish between these options; it simply provides an
+implementation-agnostic mechanism to specify the orderings that must be
+enforced.'''
+zh = '''
+当实际使用 fence 时，实现必须假定设备可能在接收到 MMIO 信号后立即尝试访问内存，并且来自该设备的后续内存访问必须观察到在该 MMIO 操作之前排序的所有访问的效果。换句话说，在 <<wo>> 中，假设 `0(a0)` 位于主内存，而 `0(a1)` 是 I/O 内存中设备寄存器的地址。如果设备在收到 MMIO 写时访问 `0(a0)`，则根据 RVWMO 内存模型的规则，该加载在概念上必须出现在对 `0(a0)` 的第一次存储之后。在某些实现中，确保这一点的唯一方式是要求第一次存储在发出 MMIO 写之前确实完成。其他实现可能找到更激进的方法，而另一些实现对于 I/O 和主内存访问可能根本不需要做任何不同的事情。尽管如此，RVWMO 内存模型不区分这些选项；它仅提供一种与实现无关的机制来指定必须强制执行的排序。'''

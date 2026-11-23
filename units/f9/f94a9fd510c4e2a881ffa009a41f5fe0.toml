@@ -1,0 +1,11 @@
+unit_id = "f94a9fd510c4e2a881ffa009a41f5fe0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The insn:sspush[] instruction and its compressed form insn:c.sspush[] can be used to push
+a link register on the shadow stack. The insn:sspush[] and insn:c.sspush[] instructions
+perform a store identically to the existing store instructions, with the
+difference that the base is implicitly csr:ssp[] and the width is implicitly `XLEN`.'''
+zh = '''
+insn:sspush[] 指令及其压缩形式 insn:c.sspush[] 可用于将链接寄存器压入影子栈。insn:sspush[] 和 insn:c.sspush[] 指令执行的存储与现有存储指令完全相同，区别在于基址隐式为 csr:ssp[]，宽度隐式为 `XLEN`。'''

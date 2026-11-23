@@ -1,0 +1,52 @@
+unit_id = "f5a804321f92409642bc54f1fb6a0abc"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. if _i_ is a load instruction:
+.. all program-order-previous load-acquire instructions are finished;
+.. all program-order-previous `fence` instructions with `.sr` set are
+finished;
+.. for every program-order-previous `fence.tso` instruction,
+_f_, that is not finished, all load instructions that are
+program-order-before _f_ are finished; and
+.. it is guaranteed that the values read by the memory load operations
+of _i_ will not cause coherence violations, i.e., for any
+program-order-previous instruction instance _i'_, let
+_cfp_ be the combined footprint of propagated
+memory store operations from store instructions program-order-between
+_i_ and _i'_, and _fixed memory store
+operations_ that were forwarded to _i_ from store
+instructions program-order-between _i_ and _i'_
+including _i'_, and let
+_/cfp_ be the complement of
+_cfp_ in the memory footprint of _i_.
+If _/cfp_ is not empty:
+... _i'_ has a fully determined memory footprint;
+... _i'_ has no unpropagated memory store operations that
+overlap with _/cfp_; and
+... if _i'_ is a load with a memory footprint that overlaps
+with _/cfp_, then all the memory load
+operations of _i'_ that overlap with
+_/cfp_ are satisfied and _i'_
+is _non-restartable_ (see the <<prop_store, Propagate store operation>> transition for how to determined if an
+instruction is non-restartable).
++
+Here, a memory store operation is called fixed if the store instruction
+has fully determined data.
+. _i_ has a fully determined data; and
+. if _i_ is not a fence, all program-order-previous
+conditional branch and indirect jump instructions are finished.'''
+zh = '''
+. 若 _i_ 是加载指令：
+.. 所有程序顺序在前的 load-acquire 指令均已完成；
+.. 所有设置了 `.sr` 的程序顺序在前的 `fence` 指令均已完成；
+.. 对于每一条未完成的程序顺序在前的 `fence.tso` 指令 _f_，程序顺序在 _f_ 之前的所有加载指令均已完成；且
+.. 保证 _i_ 的内存加载操作所读取的值不会导致一致性违反，即：对于任何程序顺序在前的指令实例 _i'_，令 _cfp_ 为组合足迹，它由程序顺序介于 _i_ 与 _i'_ 之间的存储指令的已传播内存存储操作，以及从程序顺序介于 _i_ 与 _i'_ 之间（含 _i'_）的存储指令转发给 _i_ 的__固定内存存储操作__组成；并令 _/cfp_ 为 _cfp_ 在 _i_ 的访存足迹中的补集。若 _/cfp_ 非空：
+... _i'_ 具有完全确定的访存足迹；
+... _i'_ 没有与 _/cfp_ 重叠的未传播内存存储操作；且
+... 若 _i'_ 是访存足迹与 _/cfp_ 重叠的加载指令，则 _i'_ 中与 _/cfp_ 重叠的所有内存加载操作均已满足，且 _i'_ 是__不可重启的__（关于如何确定指令是否不可重启，见 <<prop_store, 传播存储操作>> 迁移）。
++
+此处，若存储指令具有完全确定的数据，则称其内存存储操作是固定的。
+. _i_ 具有完全确定的数据；且
+. 若 _i_ 不是 fence，则所有程序顺序在前的条件分支指令和间接跳转指令均已完成。'''

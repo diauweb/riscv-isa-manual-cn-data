@@ -1,0 +1,44 @@
+unit_id = "03330baa31f9692388da75c4c5bc2e54"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Double-precision loads and stores are a significant fraction of static and
+dynamic instructions, hence the motivation to provide the extlink:zcd[] extension.
+
+Single-precision loads and stores are not a significant source of static or
+dynamic compression for programs compiled for the LP64D and ILP32D calling
+conventions.
+However, for microcontrollers that only provide hardware single-precision
+floating-point units and whose programs use the ILP32F calling convention, the
+single-precision loads and stores are used at least as frequently as
+double-precision loads and stores are used in LP64D and ILP32D--hence the
+motivation to provide compressed support for these in the XLEN=32-only extlink:zcf[]
+extension.
+
+[[c-jal-rv32-rationale]]
+Short-range subroutine calls are more likely in small binaries for
+microcontrollers, hence the motivation to include insn:c.jal[] only in the
+XLEN=32 variant of ext:zca[].
+
+Although reusing opcodes for different purposes for different base ISAs
+adds some complexity to documentation, the impact on implementation
+complexity is small even for designs that support multiple base ISAs.
+The compressed floating-point load and store variants use the same
+instruction format with the same register specifiers as the wider
+integer loads and stores.
+===='''
+zh = '''
+[NOTE]
+====
+双精度加载和存储占静态和动态指令的很大一部分，因此有必要提供 extlink:zcd[] 扩展。
+
+对于针对 LP64D 和 ILP32D 调用约定编译的程序，单精度加载和存储并不是静态或动态压缩的重要来源。然而，对于仅提供硬件单精度浮点单元且程序使用 ILP32F 调用约定的微控制器，单精度加载和存储的使用频率至少与 LP64D 和 ILP32D 中双精度加载和存储的使用频率一样高——因此有必要在仅用于 XLEN=32 的 extlink:zcf[] 扩展中为这些指令提供压缩支持。
+
+[[c-jal-rv32-rationale]]
+短距离子程序调用更可能出现在微控制器的小型二进制文件中，因此有必要仅在 ext:zca[] 的 XLEN=32 变体中包含 insn:c.jal[]。
+
+尽管为不同基础 ISA 将操作码复用于不同目的会增加一些文档复杂性，但即使对于支持多种基础 ISA 的设计，对实现复杂度的影响也很小。压缩浮点加载和存储变体使用与更宽整数加载和存储相同的指令格式和相同的寄存器说明符。
+===='''

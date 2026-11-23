@@ -1,0 +1,19 @@
+unit_id = "971a3ea5e1ec52c1761eca03989ad10b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* A branch is mis-predicted. The count value will be the number of
+correctly predicted branches, minus 31. No address information is
+provided - it is implicitly that of the branch which failed prediction;
+* An updiscon, interrupt or exception requires the encoder to output an
+address. In this case the encoder will output the branch count (number
+of correctly predicted branches, minus 31);
+* The branch count reaches its maximum value. Strictly speaking an
+address isn't required for this case, but is included to avoid having to
+distinguish the packet format from the case above. It will occur so
+rarely that the bandwidth impact can be ignored.'''
+zh = '''
+* 一个分支被误预测。计数值将为正确预测的分支数减去 31。不提供地址信息——隐式使用预测失败分支的地址；
+* updiscon、中断或异常要求编码器输出地址。在此情况下，编码器将输出分支计数（正确预测的分支数减去 31）；
+* 分支计数达到其最大值。严格来说，此情况不需要地址，但包含地址是为了避免必须将该包格式与上述情况区分开。这种情况出现得极少，因此可忽略其带宽影响。'''

@@ -1,0 +1,16 @@
+unit_id = "0f667e647611b4674e34f9c84de8deac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ssccfg_illegal_sireg_cde0]#* attempts to access any `sireg*` when `menvcfg`.CDE = 0;#
+[#norm:ssccfg_illegal_sireg3_6]#* attempts to access `sireg3` or `sireg6`;#
+[#norm:ssccfg_illegal_sireg4_5_xlen64]#* attempts to access `sireg4` or `sireg5` when XLEN = 64;#
+[#norm:ssccfg_illegal_sireg_not_delegated]#* attempts to access `sireg*` when `siselect` = 0x41, or when the counter
+selected by `siselect` is not delegated to S-mode (the corresponding bit
+in `mcounteren` = 0).#'''
+zh = '''
+[#norm:ssccfg_illegal_sireg_cde0]#* 当 `menvcfg`.CDE = 0 时，尝试访问任何 `sireg*`；#
+[#norm:ssccfg_illegal_sireg3_6]#* 尝试访问 `sireg3` 或 `sireg6`；#
+[#norm:ssccfg_illegal_sireg4_5_xlen64]#* 当 XLEN = 64 时，尝试访问 `sireg4` 或 `sireg5`；#
+[#norm:ssccfg_illegal_sireg_not_delegated]#* 当 `siselect` = 0x41 时，或当 `siselect` 选定的计数器未委托给 S 模式（`mcounteren` 中对应位 = 0）时，尝试访问 `sireg*`。#'''

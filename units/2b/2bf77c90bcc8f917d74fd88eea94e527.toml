@@ -1,0 +1,19 @@
+unit_id = "2bf77c90bcc8f917d74fd88eea94e527"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Branch instructions compare two registers.
+[#norm:beq_bne_op]#insn:beq[] and insn:bne[] take the branch if registers _rs1_ and _rs2_ are equal or unequal respectively.#
+[#norm:blt_bltu_op]#insn:blt[] and insn:bltu[] take the branch if _rs1_ is less than _rs2_, using signed and
+unsigned comparison respectively.#
+[#norm:bge_bgeu_op]#insn:bge[] and insn:bgeu[] take the branch if _rs1_ is greater than or equal to _rs2_,
+using signed and unsigned comparison respectively.#
+Note, insn:bgt[], insn:bgtu[], insn:ble[], and insn:bleu[] can be synthesized by
+reversing the operands to insn:blt[], insn:bltu[], insn:bge[], and insn:bgeu[], respectively.'''
+zh = '''
+分支指令比较两个寄存器。
+[#norm:beq_bne_op]##若寄存器 _rs1_ 与 _rs2_ 分别相等或不相等，则 insn:beq[] 和 insn:bne[] 执行分支。##
+[#norm:blt_bltu_op]##若 _rs1_ 小于 _rs2_，则 insn:blt[] 和 insn:bltu[] 分别使用有符号比较和无符号比较执行分支。##
+[#norm:bge_bgeu_op]##若 _rs1_ 大于或等于 _rs2_，则 insn:bge[] 和 insn:bgeu[] 分别使用有符号比较和无符号比较执行分支。##
+注意，可通过分别反转 insn:blt[]、insn:bltu[]、insn:bge[] 和 insn:bgeu[] 的操作数来合成 insn:bgt[]、insn:bgtu[]、insn:ble[] 和 insn:bleu[]。'''

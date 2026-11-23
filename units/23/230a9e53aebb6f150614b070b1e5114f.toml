@@ -1,0 +1,14 @@
+unit_id = "230a9e53aebb6f150614b070b1e5114f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Non-maskable interrupts (NMIs) are only used for hardware error
+conditions, and [#norm:nmi_op]#cause an immediate jump to an implementation-defined NMI
+vector running in M-mode regardless of the state of a hart’s interrupt
+enable bits. The `mepc` register is written with the virtual address of
+the instruction that was interrupted,# and [#norm:nmi_mcause_source]#`mcause` is set to a value
+indicating the source of the NMI.# The NMI can thus overwrite state in an
+active machine-mode interrupt handler.'''
+zh = '''
+不可屏蔽中断（NMI）仅用于硬件错误状况，且[#norm:nmi_op]##无论硬件线程中断使能位的状态如何，都会导致立即跳转到运行在 M 模式的实现定义 NMI 向量。`mepc` 寄存器被写入被中断指令的虚拟地址##，且[#norm:nmi_mcause_source]##`mcause` 被设置为指示 NMI 来源的值。##因此 NMI 可覆盖活动机器模式中断处理程序中的状态。'''

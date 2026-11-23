@@ -1,0 +1,18 @@
+unit_id = "7afcfa0393a0daa2187fe27b827aa250"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. all memory store operations of program-order-previous store
+instructions that overlap with _mso_ have already
+propagated;
+. all memory load operations of program-order-previous load instructions
+that overlap with _mso_ have already been satisfied, and
+(the load instructions) are _non-restartable_ (see definition below);
+and
+. all memory load operations that were satisfied by forwarding
+_mso_ are entirely satisfied.'''
+zh = '''
+. 程序顺序在前的存储指令中与 _mso_ 重叠的所有内存存储操作均已传播；
+. 程序顺序在前的加载指令中与 _mso_ 重叠的所有内存加载操作均已满足，且（这些加载指令）是__不可重启的__（见下文定义）；且
+. 通过转发 _mso_ 而得到满足的所有内存加载操作均已完全满足。'''

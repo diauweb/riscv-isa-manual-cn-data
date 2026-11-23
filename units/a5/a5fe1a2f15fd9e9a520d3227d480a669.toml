@@ -1,0 +1,18 @@
+unit_id = "a5fe1a2f15fd9e9a520d3227d480a669"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+SP 800-90C cite:[BaKeMc:25] states that each conditioned block of n bits
+is required to have n+64 bits of input entropy to attain full entropy.
+Hence NIST SP 800-90B cite:[TuBaKe:18] min-entropy assessment must
+guarantee at least 128 + 64 = 192 bits input entropy per 256-bit block
+(cite:[BaKeMc:25], Sections 4.1. and 4.3.2).
+Only then a hashing of 16 * 16 = 256 bits from the entropy source
+will produce the desired 128 bits of full entropy. This follows from
+the specific requirements, threat model, and distinguishability proof
+contained in SP 800-90C  cite:[BaKeMc:25], Appendix A.
+The implied min-entropy rate is 192/256=12/16=0.75. The expected
+Shannon entropy is much larger.'''
+zh = '''
+SP 800-90C cite:[BaKeMc:25] 指出，每个经过调节的 n 位块需要具有 n+64 位输入熵才能获得完全熵。因此，NIST SP 800-90B cite:[TuBaKe:18] 最小熵评估必须保证每 256 位块至少 128 + 64 = 192 位输入熵（cite:[BaKeMc:25]，第 4.1 节和第 4.3.2 节）。只有这样，对来自熵源的 16 * 16 = 256 位进行杂凑，才会产生所需的 128 位完全熵。这遵循 SP 800-90C cite:[BaKeMc:25] 附录 A 中包含的特定要求、威胁模型和可区分性证明。隐含的最小熵率为 192/256=12/16=0.75。预期香农熵要大得多。'''

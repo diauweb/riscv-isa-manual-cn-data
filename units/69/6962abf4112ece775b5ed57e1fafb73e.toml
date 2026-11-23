@@ -1,0 +1,56 @@
+unit_id = "6962abf4112ece775b5ed57e1fafb73e"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[#Mictor-38 Connector Layout]
+.Mictor-38 Connector Layout
+[cols = "~,10%,8%,8%,10%,~", options = header, align=center, width=80%]
+|======================================
+|Signal|Ref Voltage|Odd Pin#|Even Pin#|Ref Voltage|Signal
+|NC          |     | 1 | 2 |     | NC
+|NC          |     | 3 | 4 |     | NC
+|GND         |     | 5 | 6 |Trace| `*TRC_CLK*`
+|TRIGIN      |Debug| 7 | 8 |Debug| TRIGOUT
+|nRESET      |Debug| 9 | 10|Trace| `*EXTTRIG*`
+|TDO         |Debug|11 | 12|Trace| `*VREF_TRACE*`
+|GND         |     |13 | 14|Debug| VREF_DEBUG
+|TCK / TCKC  |Debug|15 | 16|Trace| `*TRC_DATA[7]*`
+|TMS / TMSC  |Debug|17 | 18|Trace| `*TRC_DATA[6]*`
+|TDI         |Debug|19 | 20|Trace| `*TRC_DATA[5]*`
+|nTRST       |Debug|21 | 22|Trace| `*TRC_DATA[4]*`
+|`*TRC_DATA[15]*`|Trace|23 | 24|Trace| `*TRC_DATA[3]*`
+|`*TRC_DATA[14]*`|Trace|25 | 26|Trace| `*TRC_DATA[2]*`
+|`*TRC_DATA[13]*`|Trace|27 | 28|Trace| `*TRC_DATA[1]*`
+|`*TRC_DATA[12]*`|Trace|29 | 30|Trace| Logic '0' (GND)
+|`*TRC_DATA[11]*`|Trace|31 | 32|Trace| Logic '0' (GND)
+|`*TRC_DATA[10]*`|Trace|33 | 34|Trace| `*Logic '1'*`
+|`*TRC_DATA[9]*` |Trace|35 | 36|Trace| `*EXT*` / `*TRC_CTL*`
+|`*TRC_DATA[8]*` |Trace|37 | 38|Trace| `*TRC_DATA[0]*`
+|======================================'''
+zh = '''
+[#Mictor-38 Connector Layout]
+.Mictor-38 连接器布局
+[cols = "~,10%,8%,8%,10%,~", options = header, align=center, width=80%]
+|======================================
+|信号|参考电压|奇数引脚 #|偶数引脚 #|参考电压|信号
+|NC          |     | 1 | 2 |     | NC
+|NC          |     | 3 | 4 |     | NC
+|GND         |     | 5 | 6 |跟踪| `*TRC_CLK*`
+|TRIGIN      |调试| 7 | 8 |调试| TRIGOUT
+|nRESET      |调试| 9 | 10|跟踪| `*EXTTRIG*`
+|TDO         |调试|11 | 12|跟踪| `*VREF_TRACE*`
+|GND         |     |13 | 14|调试| VREF_DEBUG
+|TCK / TCKC  |调试|15 | 16|跟踪| `*TRC_DATA[7]*`
+|TMS / TMSC  |调试|17 | 18|跟踪| `*TRC_DATA[6]*`
+|TDI         |调试|19 | 20|跟踪| `*TRC_DATA[5]*`
+|nTRST       |调试|21 | 22|跟踪| `*TRC_DATA[4]*`
+|`*TRC_DATA[15]*`|跟踪|23 | 24|跟踪| `*TRC_DATA[3]*`
+|`*TRC_DATA[14]*`|跟踪|25 | 26|跟踪| `*TRC_DATA[2]*`
+|`*TRC_DATA[13]*`|跟踪|27 | 28|跟踪| `*TRC_DATA[1]*`
+|`*TRC_DATA[12]*`|跟踪|29 | 30|跟踪| 逻辑 ‘0’（GND）
+|`*TRC_DATA[11]*`|跟踪|31 | 32|跟踪| 逻辑 ‘0’（GND）
+|`*TRC_DATA[10]*`|跟踪|33 | 34|跟踪| `*Logic '1'*`
+|`*TRC_DATA[9]*` |跟踪|35 | 36|跟踪| `*EXT*` / `*TRC_CTL*`
+|`*TRC_DATA[8]*` |跟踪|37 | 38|跟踪| `*TRC_DATA[0]*`
+|======================================'''

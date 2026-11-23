@@ -1,0 +1,60 @@
+unit_id = "79626b0ac13b121f079fc461ea1d8f4c"
+kind = "code"
+translatable = false
+en = '''
+.The RVWMO memory model formalized in Alloy (5/5: Auxiliaries)
+[source,asm]
+....
+// po
+fact { acyclic[po] }
+
+// gmo
+fact { total[^gmo, MemoryEvent] } // gmo is a total order over all MemoryEvents
+
+//rf
+fact { rf.~rf in iden } // each read returns the value of only one write
+fact { rf in Store <: address.~address :> Load }
+fun rfi : MemoryEvent->MemoryEvent { rf & (*po + *~po) }
+
+//dep
+fact { no StoreNormal <: (addrdep + ctrldep + datadep) }
+fact { addrdep + ctrldep + datadep + pair in ^po }
+fact { datadep in datadep :> Store }
+fact { ctrldep.*po in ctrldep }
+fact { no pair & (^po :> (LoadReserve + StoreConditional)).^po }
+fact { StoreConditional in LoadReserve.pair } // assume all SCs succeed
+
+// rdw
+fun rdw : Event->Event {
+  (Load <: po_loc :> Load)  // start with all same_address load-load pairs,
+  - (~rf.rf)                // subtract pairs that read from the same store,
+  - (po_loc.rfi)            // and subtract out "fri-rfi" patterns
+}
+
+// filter out redundant instances and/or visualizations
+fact { no gmo & gmo.gmo } // keep the visualization uncluttered
+fact { all a: Address | some a.~address }
+
+// =Optional: opcode encoding restrictions=
+
+// the list of blessed fences
+fact { Fence in
+  Fence.pr.sr
+  + Fence.pw.sw
+  + Fence.pr.pw.sw
+  + Fence.pr.sr.sw
+  + FenceTSO
+  + Fence.pr.pw.sr.sw
+}
+
+pred restrict_to_current_encodings {
+  no (LoadNormal + StoreNormal) & (Acquire + Release)
+}
+
+// =Alloy shortcuts=
+pred acyclic[rel: Event->Event] { no iden & ^rel }
+pred total[rel: Event->Event, bag: Event] {
+  all disj e, f: bag | e->f in rel + ~rel
+  acyclic[rel]
+}
+....'''

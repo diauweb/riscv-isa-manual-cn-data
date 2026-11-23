@@ -1,0 +1,48 @@
+unit_id = "31255ef7aeae95b212addabde2eb6823"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RISC-V instruction length encoding. Only the 16-bit and 32-bit encodings are considered frozen at this time.
+[%autowidth,cols="^2,^2,^3,^3,<4"]
+|===
+||||xxxxxxxxxxxxxxaa |16-bit (aa&#8800;11)
+
+|||xxxxxxxxxxxxxxxx |xxxxxxxxxxxbbb11 |32-bit (bbb&#8800;111)
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xxxxxxxxxx011111 |48-bit
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xxxxxxxxx0111111 |64-bit
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xnnnxxxxx1111111 |(80+16*nnn)-bit, nnn&#8800;111
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|x111xxxxx1111111 |Reserved for &#8805;192-bits
+
+|Byte Address: >|base+4 >|base+2 >|base |
+|==='''
+zh = '''
+.RISC-V 指令长度编码。目前仅 16 位和 32 位编码被视为已冻结
+[%autowidth,cols="^2,^2,^3,^3,<4"]
+|===
+||||xxxxxxxxxxxxxxaa |16 位（aa&#8800;11）
+
+|||xxxxxxxxxxxxxxxx |xxxxxxxxxxxbbb11 |32 位（bbb&#8800;111）
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xxxxxxxxxx011111 |48 位
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xxxxxxxxx0111111 |64 位
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|xnnnxxxxx1111111 |(80+16*nnn) 位，nnn&#8800;111
+
+||latexmath:[$\cdot\cdot\cdot$]xxxx |xxxxxxxxxxxxxxxx
+|x111xxxxx1111111 |为 &#8805;192 位保留
+
+|字节地址： >|base+4 >|base+2 >|base |
+|==='''

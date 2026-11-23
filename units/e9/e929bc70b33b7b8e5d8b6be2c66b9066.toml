@@ -1,0 +1,15 @@
+unit_id = "e929bc70b33b7b8e5d8b6be2c66b9066"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:ss_fault_exception_code]#If a shadow stack (SS) instruction raises an access-fault, page-fault, or
+guest-page-fault exception that is supposed to indicate the original instruction
+type (load or store/AMO), then the reported exception cause is respectively a
+store/AMO access fault (code 7), a store/AMO page fault (code 15), or a
+store/AMO guest-page fault (code 23).# For shadow stack instructions, the
+reported instruction type is always as though it were a store or AMO, even for
+instructions `SSPOPCHK` and `C.SSPOPCHK` that only read from memory and do not
+write to it.'''
+zh = '''
+[#norm:ss_fault_exception_code]##若影子栈（SS）指令触发的访问故障、页错误或客户机页错误异常本应指示原始指令类型（加载或存储/AMO），则报告的异常原因分别为存储/AMO 访问故障（代码 7）、存储/AMO 页错误（代码 15）或存储/AMO 客户机页错误（代码 23）。## 对于影子栈指令，报告的指令类型始终如同存储或 AMO，即使是仅从内存读取而不写入内存的 `SSPOPCHK` 和 `C.SSPOPCHK` 指令。'''

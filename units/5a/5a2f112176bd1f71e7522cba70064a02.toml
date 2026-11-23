@@ -1,0 +1,22 @@
+unit_id = "5a2f112176bd1f71e7522cba70064a02"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 4-bit mode is supported by most (if not all) trace probes and less expensive MIPI20 connectors can be used.
+** 1-bit and 2-bit modes should be only used when there are critical constraints on the number of MCU pins. Not all trace probes may support these modes.
+* Serial mode should be only considered when either limited trace is required, or cores run slowly. Not all trace probes may support this mode and max allowed speeds may vary.
+** Manchester encoding is self-synchronizing and may provide a more reliable trace. However UART mode may provide better bandwidth. It is suggested to support both.
+* 8-bit and 16-bit modes will provide better bandwidth, but require a more expensive Mictor connector and only more advanced trace probe models may support it.
+* It is suggested to provide as fast as possible trace logic clock, and allow a trace tool to set the divider in the `trPibDivider` field.
+* For TRC_CLK frequencies higher than 50MHz, it is suggested to provide a calibration mode.
+** If possible, implement `trPibClkCenter` for better flexibility.'''
+zh = '''
+* 大多数（即使不是全部）跟踪探针支持 4 位模式，并且可使用较便宜的 MIPI20 连接器。
+** 仅当 MCU 引脚数量有严格约束时，才宜使用 1 位和 2 位模式。并非所有跟踪探针都支持这些模式。
+* 仅当需要有限跟踪或内核运行缓慢时，才宜考虑串行模式。并非所有跟踪探针都支持此模式，且最大允许速度可能不同。
+** 曼彻斯特编码是自同步的，可提供更可靠的跟踪。然而 UART 模式可提供更好的带宽。建议同时支持两者。
+* 8 位和 16 位模式将提供更好的带宽，但需要更昂贵的 Mictor 连接器，并且只有更高级的跟踪探针型号可能支持。
+* 建议提供尽可能快的跟踪逻辑时钟，并允许跟踪工具在 `trPibDivider` 字段中设置分频值。
+* 对于高于 50MHz 的 TRC_CLK 频率，建议提供校准模式。
+** 如果可能，实现 `trPibClkCenter` 以获得更好的灵活性。'''

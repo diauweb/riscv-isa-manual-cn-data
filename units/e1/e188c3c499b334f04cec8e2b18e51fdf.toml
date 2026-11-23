@@ -1,0 +1,39 @@
+unit_id = "e188c3c499b334f04cec8e2b18e51fdf"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+(((PAUSE, energy consumption)))
+Software can use the insn:pause[] instruction to reduce energy consumption
+while executing spin-wait code sequences. Multithreaded cores might
+temporarily relinquish execution resources to other harts when insn:pause[] is
+executed. It is recommended that a insn:pause[] instruction generally be
+included in the code sequence for a spin-wait loop.
+
+(((PAUSE, duration)))
+The duration of a insn:pause[] instruction's effect may vary significantly
+within and among implementations. In typical implementations this
+duration should be much less than the time to perform a context switch,
+probably more on the rough order of an on-chip cache miss latency or a
+cacheless access to main memory.
+
+A series of insn:pause[] instructions can be used to create a cumulative delay
+loosely proportional to the number of insn:pause[] instructions. In spin-wait
+loops in portable code, however, only one insn:pause[] instruction should be
+used before re-evaluating loop conditions, else the hart might stall
+longer than optimal on some implementations, degrading system
+performance.
+===='''
+zh = '''
+[NOTE]
+====
+(((PAUSE, energy consumption)))
+软件可使用 insn:pause[] 指令在执行自旋等待代码序列时降低能耗。多线程核在执行 insn:pause[] 时可能暂时将执行资源让与其他硬件线程。建议通常在自旋等待循环的代码序列中包含一条 insn:pause[] 指令。
+
+(((PAUSE, duration)))
+insn:pause[] 指令效果的持续时间在实现内和实现间可能差异很大。在典型实现中，该持续时间宜远小于执行上下文切换的时间，大致上可能约为片上高速缓存缺失延迟或对主存的未缓存访问的量级。
+
+一系列 insn:pause[] 指令可用于产生大致与 insn:pause[] 指令数量成正比的累积延迟。然而，在可移植代码的自旋等待循环中，宜在重新评估循环条件之前只用一条 insn:pause[] 指令，否则硬件线程在某些实现上可能停顿超过最优时间，从而降低系统性能。
+===='''

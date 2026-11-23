@@ -1,0 +1,13 @@
+unit_id = "9070b4a8f764f5bd033b0df75267aa50"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that writing `hgatp` does not imply any ordering constraints
+between page-table updates and subsequent G-stage address translations.
+If the new virtual machine’s guest physical page tables have been
+modified, or if a VMID is reused, it may be necessary to execute an
+HFENCE.GVMA instruction (see <<hfence.vma>>) before or
+after writing `hgatp`.'''
+zh = '''
+注意，写入 `hgatp` 不隐含页表更新与后续 G 阶段地址转换之间的任何排序约束。若新虚拟机的客户机物理页表已被修改，或若复用 VMID，则可能需要在写入 `hgatp` 之前或之后执行 HFENCE.GVMA 指令（见 <<hfence.vma>>）。'''

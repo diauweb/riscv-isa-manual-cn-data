@@ -1,0 +1,14 @@
+unit_id = "ab210cdcd8e8a4059ab4deca1583a6ce"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:cycle_instret_hpmcounter_op_rdonly]#The `cycle`, `instret`, and `hpmcountern` CSRs are read-only shadows of `mcycle`, `minstret`, and `mhpmcounter n`, respectively.#
+[#norm:time_op_rdonly]#The `time` CSR is a read-only shadow of the memory-mapped `mtime` register.#
+Analogously, [#norm:cycleh_instreth_hpmcounternh_op_rdonly]#when XLEN=32, the `cycleh`, `instreth` and `hpmcounternh` CSRs
+are read-only shadows of `mcycleh`, `minstreth` and `mhpmcounternh`, respectively.#
+[#norm:timeh_op_rdonly]#When XLEN=32, the `timeh` CSR is a read-only shadow of the
+upper 32 bits of the memory-mapped `mtime` register#, while `time`
+shadows only the lower 32 bits of `mtime`.'''
+zh = '''
+[#norm:cycle_instret_hpmcounter_op_rdonly]##`cycle`、`instret` 和 `hpmcountern` CSR 分别是 `mcycle`、`minstret` 和 `mhpmcounter n` 的只读影子。##[#norm:time_op_rdonly]##`time` CSR 是内存映射 `mtime` 寄存器的只读影子。##类似地，[#norm:cycleh_instreth_hpmcounternh_op_rdonly]##当 XLEN=32 时，`cycleh`、`instreth` 和 `hpmcounternh` CSR 分别是 `mcycleh`、`minstreth` 和 `mhpmcounternh` 的只读影子。##[#norm:timeh_op_rdonly]##当 XLEN=32 时，`timeh` CSR 是内存映射 `mtime` 寄存器高 32 位的只读影子##，而 `time` 仅影子 `mtime` 的低 32 位。'''

@@ -1,0 +1,9 @@
+unit_id = "aa80f87a2f77faf6c6c40760a5c5ab9a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the core implementation does not support PUSH/POP to non-idempotent memories, the core may use an idempotency PMA to detect it and take a
+load (POP/POPRET) or store (PUSH) access fault exception in order to avoid unpredictable results.'''
+zh = '''
+若核实现不支持对非幂等内存执行 PUSH/POP，则核可使用幂等性 PMA 检测该情况，并产生加载（POP/POPRET）或存储（PUSH）访问故障异常，以避免不可预测的结果。'''

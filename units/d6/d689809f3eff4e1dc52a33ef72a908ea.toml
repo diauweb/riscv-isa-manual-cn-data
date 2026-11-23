@@ -1,0 +1,15 @@
+unit_id = "d689809f3eff4e1dc52a33ef72a908ea"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. _i_ is finished; or
+. the value written by _w_ is not affected by a memory
+operation that _i_ has made (i.e. a value loaded from memory
+or the result of `sc`), and, for every register read that
+_i_ has made, that affects _w_, the register
+write from which _i_ read is fully determined (or
+_i_ read from the initial register state).'''
+zh = '''
+. _i_ 已完成；或
+. _w_ 所写的值不受 _i_ 已执行的访存操作（即从内存加载的值或 `sc` 的结果）影响，并且，对于 _i_ 已执行的、影响 _w_ 的每一次寄存器读，_i_ 所读取的寄存器写都是完全确定的（或 _i_ 读取自初始寄存器状态）。'''

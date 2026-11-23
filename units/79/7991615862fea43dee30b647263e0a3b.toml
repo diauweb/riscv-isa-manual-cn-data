@@ -1,0 +1,18 @@
+unit_id = "7991615862fea43dee30b647263e0a3b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+G-stage address translation uses the identical format for PTEs as
+regular address translation, even including the U bit, due to the
+possibility of sharing some (or all) page tables between G-stage
+translation and regular HS-level address translation. Regardless of
+whether this usage will ever become common, we chose not to preclude it.
+===='''
+zh = '''
+[NOTE]
+====
+G 阶段地址转换使用与常规地址转换相同的 PTE 格式，甚至包括 U 位，因为某些（或所有）页表可能在 G 阶段转换与常规 HS 级地址转换之间共享。无论这种用法是否会变得常见，我们选择不排除它。
+===='''

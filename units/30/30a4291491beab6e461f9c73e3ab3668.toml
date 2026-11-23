@@ -1,0 +1,19 @@
+unit_id = "30a4291491beab6e461f9c73e3ab3668"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Always use FENCE RW,W/FENCE R,RW, and never use _aq_/_rl_. This
+suffices but is undesirable, as it defeats the purpose of the _aq_/_rl_
+modifiers.
+. Always use _aq_/_rl_, and never use FENCE RW,W/FENCE R,RW. This does
+not currently work due to the lack of load and store opcodes with _aq_
+and _rl_ modifiers.
+. Strengthen the mappings of release operations such that they would
+enforce sufficient orderings in the presence of either type of acquire
+mapping. This is the currently recommended solution, and the one shown
+in <<linuxmappings>>.'''
+zh = '''
+. 始终使用 FENCE RW,W/FENCE R,RW，并且从不使用 _aq_/_rl_。这已足够，但不可取，因为它违背了 _aq_/_rl_ 修饰符的目的。
+. 始终使用 _aq_/_rl_，并且从不使用 FENCE RW,W/FENCE R,RW。由于缺少带 _aq_ 和 _rl_ 修饰符的加载和存储操作码，这目前不可行。
+. 加强释放操作的映射，使其在存在任一类型的获取映射时强制足够的排序。这是当前推荐的解决方案，也是 <<linuxmappings>> 中所示的方案。'''

@@ -1,0 +1,49 @@
+unit_id = "73f8747ce6d01a463f0699068e5f0f83"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+After a trap handler has saved the state, such as `scause`, `sepc`,
+and `stval`, needed for resuming from the trap and is reentrant, it
+should clear the `SDT` bit.
+
+Resetting the `SDT` by an `SRET` enables the trap handler to detect a double
+trap that may occur during the tail phase, where it restores critical state
+to return from a trap.
+
+The consequence of this specification is that if a critical error condition was
+caused by a guest page-fault, then the GPA will not be available in `mtval2`
+when the double trap is delivered to M-mode. This condition arises if the
+HS-mode invokes a hypervisor virtual-machine load or store instruction when
+`SDT` is 1 and the instruction raises a guest page-fault. The use of such an
+instruction in this phase of trap handling is not common. However, not recording
+the GPA is considered benign because, if required, it can still be obtained
+-- albeit with added effort -- through the process of walking the page tables.
+
+For a double trap that originates in VS-mode, M-mode should redirect the exception
+to HS-mode by copying the values of M-mode CSRs updated by the trap to HS-mode
+CSRs and should use an `MRET` to resume execution at the address in `stvec`.
+
+Supervisor Software Events (SSE), an extension to the SBI, provide a
+mechanism for supervisor software to register and service system events
+emanating from an SBI implementation, such as firmware or a hypervisor. In the
+event of a double trap, HS-mode and M-mode can utilize the SSE mechanism to
+invoke a critical-error handler in VS-mode or S/HS-mode, respectively.
+Additionally, the implementation of an SSE protocol can be considered as an
+optional measure to aid in the recovery from such critical errors.
+===='''
+zh = '''
+[NOTE]
+====
+陷阱处理程序在保存了从陷阱恢复所需的状态（如 `scause`、`sepc` 和 `stval`）并且可重入之后，宜清除 `SDT` 位。
+
+由 `SRET` 对 `SDT` 的复位使陷阱处理程序能检测在尾部阶段可能发生的双重陷阱，在该阶段它恢复关键状态以从陷阱返回。
+
+本规定的一个后果是，若某个关键错误条件由客户机页错误引起，则当双重陷阱被递送到 M 模式时，GPA 将无法在 `mtval2` 中获得。若 HS 模式在 `SDT` 为 1 时调用虚拟机监控器虚拟机加载或存储指令，且该指令引发客户机页错误，则会出现这种情形。在陷阱处理的这一阶段使用此类指令并不常见。然而，不记录 GPA 被认为是无害的，因为如果需要，仍可通过遍历页表的过程获得它——尽管需要付出额外的工作。
+
+对于源自 VS 模式的双重陷阱，M 模式宜将陷阱所更新的 M 模式 CSR 的值复制到 HS 模式 CSR，从而将异常重定向到 HS 模式，并宜使用 `MRET` 在 `stvec` 中的地址处恢复执行。
+
+监管软件事件（SSE）是 SBI 的一个扩展，为监管软件提供了一种注册和处理源自 SBI 实现（如固件或虚拟机监控器）的系统事件的机制。在发生双重陷阱时，HS 模式和 M 模式可分别利用 SSE 机制在 VS 模式或 S/HS 模式中调用关键错误处理程序。此外，SSE 协议的实现可被视为一种辅助从此类关键错误中恢复的可选措施。
+===='''

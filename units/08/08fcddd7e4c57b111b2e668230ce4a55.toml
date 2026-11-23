@@ -1,0 +1,17 @@
+unit_id = "08fcddd7e4c57b111b2e668230ce4a55"
+kind = "code"
+translatable = false
+en = '''
+    .text
+    .balign 4
+    .global strcmp
+  # int strcmp(const char *src1, const char* src2)
+strcmp:
+    ##  Using LMUL=2, but same register names work for larger LMULs
+    li t1, 0                # Initial pointer bump
+loop:
+    vsetvli t0, x0, e8, m2, ta, ma  # Max length vectors of bytes
+    add a0, a0, t1          # Bump src1 pointer
+    vle8ff.v v8, (a0)       # Get src1 bytes
+    add a1, a1, t1          # Bump src2 pointer
+    vle8ff.v v16, (a1)      # Get src2 bytes'''

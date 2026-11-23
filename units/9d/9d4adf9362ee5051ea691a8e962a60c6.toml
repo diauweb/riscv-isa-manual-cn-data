@@ -1,0 +1,18 @@
+unit_id = "9d4adf9362ee5051ea691a8e962a60c6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The TW (Timeout Wait) bit is a *WARL* field that supports intercepting the WFI
+instruction (see <<wfi>>). When TW=0, the WFI
+instruction may execute in lower privilege modes when not prevented for
+some other reason. When TW=1, then if WFI is executed in any
+less-privileged mode, and it does not complete within an
+implementation-specific, bounded time limit, the WFI instruction causes
+an illegal-instruction exception. An implementation may have WFI always
+raise an illegal-instruction exception in less-privileged modes when
+TW=1, even if there are pending globally-disabled interrupts when the
+instruction is executed. TW is read-only 0 when there are no modes less
+privileged than M.'''
+zh = '''
+TW（Timeout Wait）位是一个 *WARL* 字段，支持拦截 WFI 指令（见 <<wfi>>）。当 TW=0 时，WFI 指令可在较低特权模式下执行（当未因其他原因被阻止时）。当 TW=1 时，若在任一较低特权模式下执行 WFI，且它未在实现特定的有界时间限制内完成，则 WFI 指令引发非法指令异常。当 TW=1 时，实现可使 WFI 在较低特权模式下始终引发非法指令异常，即使执行该指令时存在挂起的全局禁用中断。当不存在低于 M 的模式时，TW 为只读 0。'''

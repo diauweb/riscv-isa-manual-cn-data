@@ -1,0 +1,44 @@
+unit_id = "bcf13515a98dd6b8e6322407843e4a19"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Contained Trap:::
+  The trap is visible to, and handled by, software running inside the
+  execution environment. For example, in an EEI providing both
+  supervisor and user mode on harts, an ECALL by a user-mode hart will
+  generally result in a transfer of control to a supervisor-mode handler
+  running on the same hart. Similarly, in the same environment, when a
+  hart is interrupted, an interrupt handler will be run in supervisor
+  mode on the hart.
+Requested Trap:::
+  The trap is a synchronous exception that is an explicit call to the
+  execution environment requesting an action on behalf of software
+  inside the execution environment. An example is a system call. In this
+  case, execution may or may not resume on the hart after the requested
+  action is taken by the execution environment. For example, a system
+  call could remove the hart or cause an orderly termination of the
+  entire execution environment.
+Invisible Trap:::
+  The trap is handled transparently by the execution environment and
+  execution resumes normally after the trap is handled. Examples include
+  emulating missing instructions, handling non-resident page faults in a
+  demand-paged virtual-memory system, or handling device interrupts for
+  a different job in a multiprogrammed machine. In these cases, the
+  software running inside the execution environment is not aware of the
+  trap (we ignore timing effects in these definitions).
+Fatal Trap:::
+  The trap represents a fatal failure and causes the execution
+  environment to terminate execution. Examples include failing a
+  virtual-memory page-protection check or allowing a watchdog timer to
+  expire. Each EEI should define how execution is terminated and
+  reported to an external environment.'''
+zh = '''
+包含陷阱:::
+  该陷阱对执行环境内部运行的软件可见，并由其处理。例如，在同时为 hart 提供监管模式和用户模式的 EEI 中，用户模式 hart 执行 ECALL 通常会导致控制转移到在同一 hart 上运行的监管模式处理程序。类似地，在同一环境中，当 hart 被中断时，将在该 hart 上以监管模式运行中断处理程序。
+请求陷阱:::
+  该陷阱是一种同步异常，它是对执行环境的显式调用，请求代表执行环境内部软件执行某项操作。一个示例是系统调用。在这种情况下，在执行环境采取所请求的操作之后，执行可能在 hart 上恢复，也可能不恢复。例如，系统调用可移除该 hart，或导致整个执行环境有序终止。
+不可见陷阱:::
+  该陷阱由执行环境透明处理，并且在陷阱处理后执行正常恢复。示例包括仿真缺失指令、在请求分页虚拟内存系统中处理非常驻页错误，或在多道程序机器中为不同作业处理设备中断。在这些情况下，执行环境内部运行的软件不会察觉该陷阱（在这些定义中我们忽略时序影响）。
+致命陷阱:::
+  该陷阱表示致命失败，并导致执行环境终止执行。示例包括未通过虚拟内存页保护检查，或允许看门狗定时器到期。每个 EEI 宜定义执行如何终止以及如何向外部环境报告。'''

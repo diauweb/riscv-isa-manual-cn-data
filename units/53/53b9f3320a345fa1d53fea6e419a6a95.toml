@@ -1,0 +1,13 @@
+unit_id = "53b9f3320a345fa1d53fea6e419a6a95"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+This extension serves to provide supervisor mode with its own CSR-based timer
+interrupt facility that it can directly manage to provide its own timer service
+(in the form of having its own `stimecmp` register) - thus eliminating the large
+overheads for emulating S/HS-mode timers and timer interrupt generation up in
+M-mode. Further, this extension adds a similar facility to the Hypervisor
+extension for VS-mode.'''
+zh = '''
+本扩展旨在为监管模式提供其自己的基于 CSR 的定时器中断设施，监管模式能直接管理该设施以提供自己的定时器服务（形式为拥有自己的 `stimecmp` 寄存器）——从而消除在 M 模式中仿真 S/HS 模式定时器和定时器中断生成所带来的巨大开销。此外，本扩展还为虚拟机监控器扩展添加了适用于 VS 模式的类似设施。'''

@@ -1,0 +1,20 @@
+unit_id = "7fbb9bcccaddb21eacf0fdebcbac3f1d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The physical memory map for a complete system includes various address
+ranges, some corresponding to memory regions and some to memory-mapped
+control registers, portions of which might not be accessible.  Some
+memory regions might not support reads, writes, or execution; some might
+not support subword or subblock accesses; some might not support atomic
+operations; and some might not support cache coherence or might have
+different memory models. Similarly, memory-mapped control registers vary
+in their supported access widths, support for atomic operations, and
+whether read and write accesses have associated side effects. In RISC-V
+systems, these properties and capabilities of each region of the
+machine's physical address space are termed _physical memory attributes_
+(PMAs). This section describes RISC-V PMA terminology and how RISC-V
+systems implement and check PMAs.'''
+zh = '''
+完整系统的物理内存映射包含各种地址范围，其中一些对应内存区域，一些对应内存映射控制寄存器，其中部分可能不可访问。某些内存区域可能不支持读、写或执行；某些可能不支持子字或子块访问；某些可能不支持原子操作；某些可能不支持缓存一致性或可能具有不同的内存模型。类似地，内存映射控制寄存器在支持的访问宽度、对原子操作的支持以及读和写访问是否具有相关副作用方面各不相同。在 RISC-V 系统中，机器物理地址空间每个区域的这些属性和能力称为 _物理内存属性_（PMA）。本节描述 RISC-V PMA 术语以及 RISC-V 系统如何实现和检查 PMA。'''

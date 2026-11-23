@@ -1,0 +1,16 @@
+unit_id = "c91d865644047907eb4e032d9fe96c30"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If extension Smstateen is implemented together with Smcsrind, bit 60 of
+state-enable register `mstateen0` controls access to `siselect`, `sireg*`,
+`vsiselect`, and `vsireg*`. When `mstateen0`[60]=0, an attempt to access one
+of these CSRs from a privilege mode less privileged than M-mode results
+in an illegal-instruction exception. As always, the state-enable CSRs do
+not affect the accessibility of any state when in M-mode, only in less
+privileged modes. For more explanation, see the documentation for
+extension
+https://github.com/riscv/riscv-state-enable/releases/download/v1.0.0/Smstateen.pdf[[.underline]#Smstateen#].'''
+zh = '''
+若 Smstateen 扩展与 Smcsrind 一起实现，则状态使能寄存器 `mstateen0` 的位 60 控制对 `siselect`、`sireg*`、`vsiselect` 和 `vsireg*` 的访问。当 `mstateen0`[60]=0 时，从低于 M 模式的特权模式访问这些 CSR 之一将触发非法指令异常。一如既往，状态使能 CSR 不影响 M 模式下任何状态的可访问性，只影响较低特权模式。更多说明见扩展 https://github.com/riscv/riscv-state-enable/releases/download/v1.0.0/Smstateen.pdf[[.underline]#Smstateen#] 的文档。'''

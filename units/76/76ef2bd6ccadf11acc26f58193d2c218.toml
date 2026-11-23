@@ -1,0 +1,11 @@
+unit_id = "76ef2bd6ccadf11acc26f58193d2c218"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_sxl_acc_mxlen64]#When MXLEN=64, if S-mode is not supported, then csr::[sxl] is read-only zero.
+Otherwise, it is a *WARL* field that encodes the current value of SXLEN.#
+In particular, [#norm:mstatus_sxl_rdonly_mxlen64]#an implementation may make csr::[sxl] be a read-only field whose
+value always ensures that SXLEN=MXLEN.#'''
+zh = '''
+[#norm:mstatus_sxl_acc_mxlen64]##当 MXLEN=64 时，若不支持 S 模式，则 csr::[sxl] 为只读零。否则，它是一个编码 SXLEN 当前值的 *WARL* 字段。##特别是，[#norm:mstatus_sxl_rdonly_mxlen64]##实现可使 csr::[sxl] 成为只读字段，其值始终确保 SXLEN=MXLEN。##'''

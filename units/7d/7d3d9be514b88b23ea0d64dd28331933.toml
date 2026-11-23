@@ -1,0 +1,12 @@
+unit_id = "7d3d9be514b88b23ea0d64dd28331933"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If `stval` is written with a nonzero value when an instruction
+access-fault or page-fault exception occurs on a system with
+variable-length instructions, then `stval` will contain the virtual
+address of the portion of the instruction that caused the fault, while
+`sepc` will point to the beginning of the instruction.'''
+zh = '''
+若在具有变长指令的系统中因取指发生访问出错或页错误异常，且 `stval` 被写入非零值，则 `stval` 将包含导致出错的该部分指令的虚拟地址，而 `sepc` 将指向该指令的起始位置。'''

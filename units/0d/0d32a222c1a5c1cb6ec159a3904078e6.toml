@@ -1,0 +1,20 @@
+unit_id = "0d32a222c1a5c1cb6ec159a3904078e6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Exposing the WRPTR provides a more efficient means for synthesizing CTR entries.  If a qualified control transfer is emulated, the emulator can simply increment the WRPTR, then write the synthesized record to logical entry 0.  If a qualified function return is emulated while RASEMU=1, the emulator can clear `ctrsource`.V for logical entry 0, then decrement the WRPTR._
+
+_Exposing the WRPTR may also allow support for Linux perf's https://lwn.net/Articles/802821[[.underline]#stack stitching#] capability._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_公开 WRPTR 提供了更高效合成 CTR 表项的手段。若仿真一次合格控制转移，仿真器可简单地递增 WRPTR，然后将合成记录写入逻辑表项 0。若在 RASEMU=1 时仿真一次合格函数返回，仿真器可清除逻辑表项 0 的 `ctrsource`.V，然后递减 WRPTR。_
+
+_公开 WRPTR 还可能支持 Linux perf 的 https://lwn.net/Articles/802821[[.underline]#stack stitching#] 能力。_
+===='''

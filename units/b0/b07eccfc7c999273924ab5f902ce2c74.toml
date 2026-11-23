@@ -1,0 +1,8 @@
+unit_id = "b07eccfc7c999273924ab5f902ce2c74"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Without the Smepmp extension, it is not possible for a PMP rule to be *enforced* only on non-Machine modes and *denied* on Machine mode, in order to allow access to a memory region solely by less-privileged modes. It is only possible to have a *locked* rule that will be *enforced* on all modes, or a rule that will be *enforced* on non-Machine modes and be *ignored* by Machine mode. So for any physical memory region which is not protected with a Locked rule, Machine mode has unlimited access, including the ability to execute it.'''
+zh = '''
+没有 Smepmp 扩展时，PMP 规则不可能仅对非机器模式 *强制执行* 而对机器模式 *拒绝*，从而仅允许较低特权模式访问某内存区域。只可能有一条 *锁定* 规则对所有模式 *强制执行*，或一条对非机器模式 *强制执行* 而机器模式 *忽略* 的规则。因此，对于任何未受锁定规则保护的物理内存区域，机器模式具有不受限制的访问权，包括执行它的能力。'''

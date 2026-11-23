@@ -1,0 +1,11 @@
+unit_id = "c001cc9f8f6435182362f476673b0294"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a guest-page-fault trap is taken into HS-mode, `htval` is written
+with either zero or the guest physical address that faulted, shifted
+right by 2 bits. For other traps, `htval` is set to zero, but a future
+standard or extension may redefine `htval's` setting for other traps.'''
+zh = '''
+当客户机页错误陷阱进入 HS 模式时，`htval` 被写入零或触发错误的客户机物理地址右移 2 位后的值。对于其他陷阱，`htval` 置零，但未来标准或扩展可能重新定义 `htval's` 对其他陷阱的设置。'''

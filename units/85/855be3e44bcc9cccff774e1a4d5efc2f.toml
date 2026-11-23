@@ -1,0 +1,13 @@
+unit_id = "855be3e44bcc9cccff774e1a4d5efc2f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor extension has been designed to be efficiently emulable on
+platforms that do not implement the extension, by running the hypervisor
+in S-mode and trapping into M-mode for hypervisor CSR accesses and to
+maintain shadow page tables. The majority of CSR accesses for type-2
+hypervisors are valid S-mode accesses so need not be trapped.
+Hypervisors can support nested virtualization analogously.'''
+zh = '''
+虚拟机监控器扩展经设计可在未实现该扩展的平台上高效模拟，其方式是在 S 模式下运行虚拟机监控器，并针对虚拟机监控器 CSR 访问以及为维护影子页表而陷入 M 模式。对于类型 2 虚拟机监控器，大多数 CSR 访问是有效的 S 模式访问，因此不必陷入。虚拟机监控器能以类似方式支持嵌套虚拟化。'''

@@ -1,0 +1,105 @@
+unit_id = "04bfc6b01792dd66bc8cdfadb0da928d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61",options="header"]
+|===
+|Field |Description
+|[[accessmemory-cmdtype]] `((cmdtype))`
+a|This is 2 to indicate Access Memory Command.
+|[[accessmemory-aamvirtual]] `((aamvirtual))`
+a|An implementation does not have to implement both virtual and
+physical accesses, but it must fail accesses that it doesn't
+support.
+
+0 (physical): Addresses are physical (to the hart they are performed on).
+
+
+1 (virtual): Addresses are virtual, and translated the way they would be from
+M-mode, with `MPRV` set.
+
+Debug Modules on systems without address translation (i.e. virtual addresses equal physical)
+may optionally allow {accessmemory-aamvirtual} set to 1, which would produce the same result as
+that same abstract command with {accessmemory-aamvirtual} cleared.
+|[[accessmemory-aamsize]] `((aamsize))`
+a|
+
+0 (8bit): Access the lowest 8 bits of the memory location.
+
+
+1 (16bit): Access the lowest 16 bits of the memory location.
+
+
+2 (32bit): Access the lowest 32 bits of the memory location.
+
+
+3 (64bit): Access the lowest 64 bits of the memory location.
+
+
+4 (128bit): Access the lowest 128 bits of the memory location.
+|[[accessmemory-aampostincrement]] `((aampostincrement))`
+a|After a memory access has completed, if this bit is 1, increment
+`arg1` (which contains the address used) by the number of bytes
+encoded in {accessmemory-aamsize}.
+
+Supporting this variant is optional, but highly recommended for
+performance reasons.
+|[[accessmemory-write]] `((write))`
+a|
+
+0 (arg0): Copy data from the memory location specified in `arg1` into
+the low bits of `arg0`. The value of the remaining bits of
+`arg0` is UNSPECIFIED.
+
+
+1 (memory): Copy data from the low bits of `arg0` into the memory
+location specified in `arg1`.
+|[[accessmemory-target-specific]] `((target-specific))`
+a|These bits are reserved for target-specific uses.
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61",options="header"]
+|===
+|字段 |说明
+|[[accessmemory-cmdtype]] `((cmdtype))`
+a|此值为 2，表示访问内存命令。
+|[[accessmemory-aamvirtual]] `((aamvirtual))`
+a|实现不必同时实现虚拟和物理访问，但必须使其不支持的访问失败。
+
+0（物理）：地址为物理地址（相对于执行访问的硬件线程）。
+
+
+1（虚拟）：地址为虚拟地址，并按从 M 模式且在 `MPRV` 置位时的相同方式进行转换。
+
+无地址转换系统（即虚拟地址等于物理地址）上的调试模块可选地允许 {accessmemory-aamvirtual} 置为 1，此时将产生与同一抽象命令在 {accessmemory-aamvirtual} 清零时相同的结果。
+|[[accessmemory-aamsize]] `((aamsize))`
+a|
+
+0（8 位）：访问内存位置的最低 8 位。
+
+
+1（16 位）：访问内存位置的最低 16 位。
+
+
+2（32 位）：访问内存位置的最低 32 位。
+
+
+3（64 位）：访问内存位置的最低 64 位。
+
+
+4（128 位）：访问内存位置的最低 128 位。
+|[[accessmemory-aampostincrement]] `((aampostincrement))`
+a|内存访问完成后，若此位为 1，则将 `arg1`（包含所用地址）增加 {accessmemory-aamsize} 所编码的字节数。
+
+支持此变体为可选，但出于性能原因强烈建议支持。
+|[[accessmemory-write]] `((write))`
+a|
+
+0（arg0）：将数据从 `arg1` 所指定的内存位置复制到 `arg0` 的低位。`arg0` 其余位的值未规定。
+
+
+1（memory）：将数据从 `arg0` 的低位复制到 `arg1` 所指定的内存位置。
+|[[accessmemory-target-specific]] `((target-specific))`
+a|这些位保留供目标特定用途。
+|==='''

@@ -1,0 +1,18 @@
+unit_id = "9a4260b553b38bf4e11f3129a6b01560"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Consider the litmus test of <<litmus-rsw>>.
+The outcome `a0=1`, `a1=v`, `a2=v`, `a3=0` (where _v_ is
+some value written by another hart) can be observed by allowing (g) and
+(h) to be reordered. This might be done speculatively, and the
+speculation can be justified by the microarchitecture (e.g., by snooping
+for cache invalidations and finding none) because replaying (h) after
+(g) would return the value written by the same store anyway. Hence
+assuming `a1` and `a2` would end up with the same value written by the
+same store anyway, (g) and (h) can be legally reordered. The global
+memory order corresponding to this execution would be
+(h),(k),(a),(c),(d),(g).'''
+zh = '''
+考虑 <<litmus-rsw>> 中的 litmus 测试。结果 `a0=1`、`a1=v`、`a2=v`、`a3=0`（其中 _v_ 是由另一个硬件线程写入的某个值）可通过允许 (g) 和 (h) 重排序来观察到。这可能是推测地完成，微体系结构可证明该推测合理（例如，通过窥探缓存使无效而未发现任何无效），因为在 (g) 之后重放 (h) 反正会返回由同一存储写入的值。因此，假定 `a1` 和 `a2` 最终反正都会得到由同一存储写入的相同值，(g) 和 (h) 可合法地重排序。对应于该执行的全局内存顺序将是 (h),(k),(a),(c),(d),(g)。'''

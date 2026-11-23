@@ -1,0 +1,13 @@
+unit_id = "9937853d8a83f267824cf70061ce24ec"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The TVM (Trap Virtual Memory) bit is a *WARL* field that supports intercepting
+supervisor virtual-memory management operations. When TVM=1, attempts to
+read or write the `satp` CSR or execute an SFENCE.VMA or SINVAL.VMA
+instruction while executing in S-mode will raise an illegal-instruction
+exception. When TVM=0, these operations are permitted in S-mode. TVM is
+read-only 0 when S-mode is not supported.'''
+zh = '''
+TVM（Trap Virtual Memory）位是一个 *WARL* 字段，支持拦截监管级虚拟内存管理操作。当 TVM=1 时，在 S 模式下执行时试图读取或写入 `satp` CSR，或执行 SFENCE.VMA 或 SINVAL.VMA 指令，将引发非法指令异常。当 TVM=0 时，这些操作在 S 模式下被允许。当不支持 S 模式时，TVM 为只读 0。'''

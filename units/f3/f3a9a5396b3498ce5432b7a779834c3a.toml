@@ -1,0 +1,69 @@
+unit_id = "f3a9a5396b3498ce5432b7a779834c3a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Where there is a choice between:
+  . supporting diverse implementation strategies for an algorithm
+  or
+  . supporting a single implementation style which is more performant /
+     less expensive;
+  the crypto extension will pick the more constrained but performant
+  option.
+  This fits a common pattern in other parts of the RISC-V specification,
+  where recommended (but not required) instruction sequences for performing
+  particular tasks are given as an example, such that both hardware and
+  software implementers can optimise for only a single use-case.
+
+* The extension will be designed to support _existing_ standardised
+  cryptographic constructs well.
+  It will not try to support proposed standards, or cryptographic
+  constructs which exist only in academia.
+  Cryptographic standards which are settled upon concurrently with or after
+  the RISC-V cryptographic extension standardisation will be dealt with
+  by future additions to, or versions of, the RISC-V cryptographic
+  standard extension. It is anticipated that the NIST Lightweight
+  Cryptography contest and the NIST Post-Quantum Cryptography contest
+  may be dealt with this way, depending on timescales.
+
+* Historically, there has been some discussion
+  cite:[LSYRR:04]
+  on how newly supported operations in general-purpose computing might
+  enable new bases for cryptographic algorithms.
+  The standard will not try to anticipate new useful low-level
+  operations which _may_ be useful as building blocks for
+  future cryptographic constructs.
+
+* Regarding side-channel countermeasures:
+  Where relevant, proposed instructions must aim to remove the
+  possibility of any timing side-channels.
+  For side-channels based on power or electro-magnetic (EM) measurements,
+  the extension will not aim to support countermeasures which are
+  implemented above the ISA abstraction layer.
+  Recommendations will be given where relevant on how micro-architectures
+  can implement instructions in a power/EM side-channel resistant way.'''
+zh = '''
+* 在以下二者之间做选择时：
+  . 支持针对某一算法的多样化实现策略
+  或
+  . 支持性能更高／成本更低的单一实现风格；
+  密码学扩展将选择约束更强但性能更好的方案。
+  这符合 RISC-V 规范其他部分中的常见模式：以示例形式给出执行特定任务的推荐（但非必需）指令序列，从而使硬件和软件实现者都能仅针对单一用例进行优化。
+
+* 扩展的设计将能良好支持__现有__的标准化密码学构造。
+  它不会尝试支持尚在提案中的标准，或仅存在于学术界的密码学构造。
+  与 RISC-V 密码学扩展标准化同时或之后确定下来的密码学标准，
+  将由 RISC-V 密码学标准扩展的未来增补或版本来处理。预计 NIST 轻量级
+  密码学竞赛和 NIST 后量子密码学竞赛可能会依时间尺度以此方式处理。
+
+* 历史上曾有过一些讨论
+  cite:[LSYRR:04]
+  关于通用计算中新支持的操作如何可能为密码算法带来新的基础。
+  本标准不会尝试预判那些*可能*作为未来密码学构造构建模块的
+  有用新底层操作。
+
+* 关于侧信道对策：
+  在相关处，所提议的指令应旨在消除任何时序侧信道的可能性。
+  对于基于功耗或电磁（EM）测量的侧信道，
+  扩展不会旨在支持在 ISA 抽象层之上实现的对策。
+  在相关处，将给出建议，说明微体系结构如何以抗功耗/EM 侧信道的方式实现指令。'''

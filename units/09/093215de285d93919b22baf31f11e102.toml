@@ -1,0 +1,25 @@
+unit_id = "093215de285d93919b22baf31f11e102"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Freeze on LCOFI ensures that the execution path leading to the sampled
+instruction (`__x__epc`) is preserved, and that the local counter overflow
+interrupt (LCOFI) and associated Interrupt Service Routine (ISR) do not
+displace any recorded transfer history state. It is the responsibility
+of the ISR to clear FROZEN before __x__RET, if continued control transfer
+recording is desired._
+
+_LCOFI refers only to architectural traps directly caused by a local counter overflow. If a local counter overflow interrupt is recognized without a trap, FROZEN is not automatically set.  For instance, no freeze occurs if the LCOFI is pended while interrupts are masked, and software recognizes the LCOFI (perhaps by reading `stopi` or `sip`) and clears `sip`.LCOFIP before the trap is raised.  As a result, some or all CTR history may be overwritten while handling the LCOFI.  Such cases are expected to be very rare; for most usages (e.g., application profiling) privilege mode filtering is sufficient to ensure that CTR updates are inhibited while interrupts are handled in a more privileged mode._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_在 LCOFI 时冻结可确保通向被采样指令（`__x__epc`）的执行路径得以保留，并且本地计数器溢出中断（LCOFI）及关联中断服务例程（ISR）不会取代任何已记录转移历史状态。若希望继续记录控制转移，ISR 负责在 __x__RET 前清除 FROZEN。_
+
+_LCOFI 仅指直接由本地计数器溢出引起的架构陷阱。若本地计数器溢出中断被识别但未陷入，则不自动设置 FROZEN。例如，若在中断被屏蔽时 LCOFI 变为待处理，并且软件识别到该 LCOFI（也许通过读取 `stopi` 或 `sip`）并在陷阱被触发前清除 `sip`.LCOFIP，则不会发生冻结。结果，在处理 LCOFI 期间可能覆盖部分或全部 CTR 历史。此类情况预期非常罕见；对于大多数用途（例如应用剖析），特权模式过滤足以确保在更高特权模式处理中断时禁止 CTR 更新。_
+===='''

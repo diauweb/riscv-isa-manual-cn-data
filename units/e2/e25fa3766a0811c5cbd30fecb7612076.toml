@@ -1,0 +1,9 @@
+unit_id = "e25fa3766a0811c5cbd30fecb7612076"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Not-taken direct conditional branches and direct unconditional jumps increment I-CNT but do not generate any trace.
+Direct unconditional jumps change the PC to the destination address of such a jump. The I-CNT enables determination of the PC of the last instruction in the code block(s).'''
+zh = '''
+NOTE: 不跳转的直接条件分支和直接无条件跳转会增加 I-CNT，但不生成任何跟踪。直接无条件跳转将 PC 改为该跳转的目标地址。I-CNT 使得能够确定代码块中最后一条指令的 PC。'''

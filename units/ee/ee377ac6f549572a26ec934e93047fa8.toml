@@ -1,0 +1,56 @@
+unit_id = "ee377ac6f549572a26ec934e93047fa8"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+1. Lower voltage allows faster trace, but it is then more critical to have correct PCB design.
+
+2. Allowed reference voltage ranges (for JTAG and trace) are different for different probes.
+
+3. Lower voltage used for trace may be a good choice with FPGA-based development boards.
+
+* Trace pins may be available on an FPGA bank, which is setup for lower IO voltage.
+
+4. When high-speed trace is important Mictor-38 should be the only debug and trace connector on the PCB.
+
+* In case two connectors are used, trace signals should have routing priority.
+
+* Many probe vendors provide adapters from Mictor to standard JTAG-only connectors, so non-trace probes can be used with target/PCB with Mictor-only connector.
+
+5. Not all trace probes which support the Mictor-38 connector are capable of handling dual voltage tracing.
+
+* At the moment of this writing at least I-jet-Trace-A/R/M (by IAR Systems) and Trace32 (by Lauterbach) probes support such a mode (in both single Mictor and two Mictor + JTAG connectors).
+
+6. It is not recommended to add buffers on PCB to adjust JTAG (usually higher) voltage to trace voltage.
+
+* It not only affects signal quality but also introduces extra delays, which may create problems for simple probes.
+
+* It is very hard to properly handle fast switching of bidirectional signals, so cJTAG and SWD debug protocols may never reliably work.
+
+* It makes PCB more complicated without good reason.'''
+zh = '''
+1. 较低的电压可实现更快的跟踪，但此时正确的 PCB 设计更为关键。
+
+2. 不同探针允许的参考电压范围（针对 JTAG 和跟踪）各不相同。
+
+3. 对基于 FPGA 的开发板而言，跟踪采用较低电压可能是较好的选择。
+
+* 跟踪引脚可能位于某个 FPGA bank 上，该 bank 已设置为较低的 IO 电压。
+
+4. 当高速跟踪很重要时，Mictor-38 宜为 PCB 上唯一的调试与跟踪连接器。
+
+* 若使用两个连接器，跟踪信号的布线宜具有更高优先级。
+
+* 许多探针厂商提供从 Mictor 到标准纯 JTAG 连接器的适配器，因此非跟踪探针可用于仅带 Mictor 连接器的目标板/PCB。
+
+5. 并非所有支持 Mictor-38 连接器的跟踪探针都能处理双电压跟踪。
+
+* 在撰写本文时，至少有 I-jet-Trace-A/R/M（IAR Systems）和 Trace32（Lauterbach）探针支持此类模式（在单个 Mictor 和 Mictor + JTAG 双连接器两种情形下）。
+
+6. 不宜在 PCB 上增加缓冲器以将 JTAG（通常较高）的电压调整为跟踪电压。
+
+* 这不仅影响信号质量，还会引入额外延迟，可能给简单的探针带来问题。
+
+* 双向信号的快速切换很难正确处理，因此 cJTAG 和 SWD 调试协议可能永远无法可靠工作。
+
+* 这会使 PCB 无谓地更加复杂。'''

@@ -1,0 +1,46 @@
+unit_id = "e33f11e7e4ac8f089dc69c0e4eaef81d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+When the register source is a link register and the register destination is
+`x0`, then it's a return from a procedure and does not require a landing pad at
+the target.
+
+When the register source and register destination are both link registers, then
+it is a semantically-direct-call. For example, the `call offset`
+pseudoinstruction may expand to a two instruction sequence composed of a
+`lui ra, imm20` or a `auipc ra, imm20` instruction followed by a
+`jalr ra, imm12(ra)` instruction where `ra` is the link register (either `x1` or
+`x5`). Since the address of the procedure was not explicitly taken and the
+computed address is not obtained from mutable memory, such semantically-direct
+calls do not require a landing pad to be placed at the target. Compilers and
+JITers must use the semantically-direct calls only if the `rs1` was computed as
+a PC-relative or an absolute offset to the symbol.
+
+The `tail offset` pseudoinstruction used to tail call a far-away procedure may
+also be expanded to a two instruction sequence composed of a `lui x7, imm20` or
+`auipc x7, imm20` followed by a `jalr x0, x7`. Since the address of the
+procedure was not explicitly taken and the computed address is not obtained from
+mutable memory, such semantically-direct tail-calls do not require a landing pad
+to be placed at the target.
+
+Software guarded branches may also be used by compilers to generate code for
+constructs like switch-cases. When using the software guarded branches, the
+compiler is required to ensure it has full control on the possible jump
+targets (e.g., by obtaining the targets from a read-only table in memory and
+performing bounds checking on the index into the table, etc.).
+===='''
+zh = '''
+[NOTE]
+====
+当寄存器源为链接寄存器且寄存器目标为 `x0` 时，它是一次从过程返回，不要求在目标处有着陆垫。
+
+当寄存器源和寄存器目标都是链接寄存器时，它是一次语义直接调用。例如，`call offset` 伪指令可能展开为两条指令的序列，由一条 `lui ra, imm20` 或 `auipc ra, imm20` 指令后跟一条 `jalr ra, imm12(ra)` 指令组成，其中 `ra` 是链接寄存器（`x1` 或 `x5`）。由于未显式取用过程地址，且所计算的地址并非从可变内存获得，此类语义直接调用不要求在目标处放置着陆垫。编译器和 JIT 器仅当 `rs1` 是作为 PC 相对的或绝对的符号偏移计算得出时，才必须使用语义直接调用。
+
+用于尾调用远处过程的 `tail offset` 伪指令也可展开为两条指令的序列，由一条 `lui x7, imm20` 或 `auipc x7, imm20` 后跟一条 `jalr x0, x7` 组成。由于未显式取用过程地址，且所计算的地址并非从可变内存获得，此类语义直接尾调用不要求在目标处放置着陆垫。
+
+编译器也可使用软件保护分支来为诸如 switch-case 之类的构造生成代码。使用软件保护分支时，编译器须确保它完全控制可能的跳转目标（例如，通过从内存中的只读表获得目标并对表中索引进行边界检查等）。
+===='''

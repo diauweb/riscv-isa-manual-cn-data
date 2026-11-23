@@ -1,0 +1,17 @@
+unit_id = "0a5f8e636f7d38e2b66e432c7cc7cae6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The instructions operate with an effective vector length,
+`evl`=NFIELDS*VLEN/EEW, regardless of current settings in `vtype` and
+`vl`.  The usual property that no elements are written if `vstart`
+{ge} `vl` does not apply to these instructions.
+Similarly, the property that the instructions are reserved if `vstart`
+exceeds the largest element index for the current `vtype` setting
+does not apply.
+Instead, the instructions are reserved if `vstart` {ge} `evl`.'''
+zh = '''
+无论 `vtype` 和 `vl` 中的当前设置如何，这些指令以有效向量长度 `evl`=NFIELDS*VLEN/EEW 操作。通常的性质——若 `vstart` {ge} `vl` 则不写入任何元素——不适用于这些指令。
+类似地，若 `vstart` 超过当前 `vtype` 设置的最大元素索引则指令保留的性质也不适用。
+相反，如果 `vstart` {ge} `evl`，则这些指令为保留。'''

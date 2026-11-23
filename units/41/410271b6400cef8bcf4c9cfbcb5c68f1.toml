@@ -1,0 +1,12 @@
+unit_id = "410271b6400cef8bcf4c9cfbcb5c68f1"
+kind = "code"
+translatable = false
+en = '''
+----
+vslide1up behavior when vl > 0
+
+                  i < vstart  unchanged
+              0 = i = vstart  vd[i] = x[rs1] if v0.mask[i] enabled
+max(vstart, 1) <= i < vl      vd[i] = vs2[i-1] if v0.mask[i] enabled
+            vl <= i < VLMAX   Follow tail policy
+----'''

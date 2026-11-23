@@ -1,0 +1,12 @@
+unit_id = "b330e91f5946e9b6eb9faad7c2b0d8ee"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+All standard vector floating-point arithmetic operations follow the
+IEEE 754-2008 arithmetic standard.  [#norm:V_fp_frm]#All vector floating-point operations use the dynamic rounding mode in the `frm` register.#  [#norm:V_inv_frm_rsv]#Use of the `frm` field
+when it contains an invalid rounding mode by any vector floating-point
+instruction--even those that do not depend on the rounding mode, or
+when `vl`=0, or when `vstart` {ge} `vl`--is reserved.#'''
+zh = '''
+所有标准向量浮点算术操作遵循 IEEE 754-2008 算术标准。  [#norm:V_fp_frm]##所有向量浮点操作使用 `frm` 寄存器中的动态舍入模式。##  [#norm:V_inv_frm_rsv]##任何向量浮点指令在 `frm` 字段包含无效舍入模式时使用该字段——即使这些指令不依赖该舍入模式，或在 `vl`=0 时，或在 `vstart` {ge} `vl` 时——均为保留。##'''

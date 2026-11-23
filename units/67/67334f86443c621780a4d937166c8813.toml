@@ -1,0 +1,24 @@
+unit_id = "67334f86443c621780a4d937166c8813"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The CSR address convention uses the upper bits of the CSR address to
+encode default access privileges. This simplifies error checking in the
+hardware and provides a larger CSR space, but does constrain the mapping
+of CSRs into the address space.
+
+Implementations might allow a more-privileged level to trap otherwise
+permitted CSR accesses by a less-privileged level to allow these
+accesses to be intercepted. This change should be transparent to the
+less-privileged software.
+===='''
+zh = '''
+[NOTE]
+====
+CSR 地址约定使用 CSR 地址的高位来编码默认访问权限。这简化了硬件中的错误检查并提供了更大的 CSR 空间，但确实约束了 CSR 到地址空间的映射。
+
+实现可能允许更高特权级对较低特权级原本允许的 CSR 访问触发陷阱，以便拦截这些访问。此变更宜对较低特权级软件透明。
+===='''

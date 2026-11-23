@@ -1,0 +1,8 @@
+unit_id = "62b1c3c47a4ce8e8cf799ce3423e4eec"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Insertion of _null_ packets typically occurs at a trace sink where there are no sideband signals accompanying the data stream to identify valid data. Packets emitted from a trace source are generally transported over some form of on-chip transport (e.g. ATB) that includes sideband signalling to indicate when data is valid.  In this situation when there is no data to send, valid is simply deasserted.  That said, the *flow* field definition in _null_ packets is unchanged, so _null_ packets can be routed from a trace source to a specific sink if required.  When generated at a sink, the *flow* field value is unimportant and is typically 0. If the sink is generating a bit stream (i.e. the byte boundaries are not inherently known to the recipient) then the *flow* field must be zero in all _null_ packets within the generated bitstream.'''
+zh = '''
+空数据包的插入通常发生在跟踪接收端，此处没有随数据流一起用于标识有效数据的边带信号。从跟踪源发出的数据包通常通过某种形式的片上传输（例如 ATB）传输，该传输包含用于指示数据何时有效的边带信号。在这种情况下，当没有数据要发送时，只需将 valid 信号置无效。尽管如此，空数据包中的 *flow* 字段定义保持不变，因此如果需要，可将空数据包从跟踪源路由到特定接收端。在接收端生成时，*flow* 字段的值不重要，通常为 0。如果接收端生成的是位流（即接收方并非天然知道字节边界），则在生成的位流中，所有空数据包内的 *flow* 字段都应为 0。'''

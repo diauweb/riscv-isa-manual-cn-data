@@ -1,0 +1,14 @@
+unit_id = "43bc628a7e447b63e1432ffd1dc2bde8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Accessing the same location using different cacheability attributes
+[#norm:Svpbmt_cacheable_aliasing_may_cause_coherence_loss]#may
+cause loss of coherence.# Executing the following sequence between such
+accesses
+[#norm:Svpbmt_cacheable_aliasing_fence_flush_fence_required]#prevents both loss of coherence and loss of memory ordering:#
+`fence iorw, iorw`, followed by `cbo.flush` to an address of that
+location, followed by a `fence iorw, iorw`.'''
+zh = '''
+使用不同的可缓存性属性访问同一位置[#norm:Svpbmt_cacheable_aliasing_may_cause_coherence_loss]##可能导致一致性丢失。##在此类访问之间执行以下序列[#norm:Svpbmt_cacheable_aliasing_fence_flush_fence_required]##既能防止一致性丢失，也能防止内存排序丢失：##`fence iorw, iorw`，然后对该位置的一个地址执行 `cbo.flush`，再执行 `fence iorw, iorw`。'''

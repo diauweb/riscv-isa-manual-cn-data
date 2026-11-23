@@ -1,0 +1,14 @@
+unit_id = "984678177d1fbb9389ed23c810aeb046"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zalasr instructions always sign-extend the value placed in _rd_ and ignore the upper bits of the value of _rs2_.
+The instructions in the Zalasr extension require that the address held in _rs1_ be naturally aligned to the size in bytes (2^width^) of the operand.
+If the address is not naturally aligned, an address-misaligned exception or an access-fault exception will be generated.
+The access-fault exception can be generated for a memory access that would otherwise be able to complete except for the misalignment, if the misaligned access should not be emulated.'''
+zh = '''
+[#norm:Zalasr_signext_rd]##Zalasr 指令总是对放入 _rd_ 的值进行符号扩展##，并且[#norm:Zalasr_ignore_rs2_upper]##忽略 _rs2_ 值的较高位。##
+[#norm:Zalasr_natural_align]##Zalasr 扩展中的指令要求 _rs1_ 中持有的地址按操作数的字节大小（2^width^）自然对齐。##
+[#norm:Zalasr_misaligned_exception]##若地址不是自然对齐，将产生地址非对齐异常或访问错误异常。##
+对于本可完成（除对齐外）的内存访问，若非对齐访问不应被仿真，则可产生访问错误异常。'''

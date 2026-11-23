@@ -1,0 +1,26 @@
+unit_id = "63002429f5f555f50486dabe796c7263"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.encoding for loads
+[cols="1,1,7,6"]
+|===
+2+| mop [1:0] | Description | Opcodes
+
+| 0 | 0 | unit-stride       | VLE<EEW>
+| 0 | 1 | indexed-unordered | VLUXEI<EEW>
+| 1 | 0 | strided           | VLSE<EEW>
+| 1 | 1 | indexed-ordered   | VLOXEI<EEW>
+|==='''
+zh = '''
+.加载编码
+[cols="1,1,7,6"]
+|===
+2+| mop [1:0] | 描述 | 操作码
+
+| 0 | 0 | 单位步长       | VLE<EEW>
+| 0 | 1 | 索引-无序 | VLUXEI<EEW>
+| 1 | 0 | 跨步           | VLSE<EEW>
+| 1 | 1 | 索引-有序   | VLOXEI<EEW>
+|==='''

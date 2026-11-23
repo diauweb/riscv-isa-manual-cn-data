@@ -1,0 +1,12 @@
+unit_id = "c46acfd29d8b1f16d9b3d8055d821901"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mscratch_sz_acc]#The `mscratch` register is an MXLEN-bit read/write register dedicated
+for use by machine mode.  The `mscratch` register must be implemented.#
+Typically, it is used to hold a pointer to a
+machine-mode hart-local context space and swapped with a user register
+upon entry to an M-mode trap handler.'''
+zh = '''
+[#norm:mscratch_sz_acc]##`mscratch` 寄存器是一个 MXLEN 位读写寄存器，专供机器模式使用。`mscratch` 寄存器应实现。##通常，它用于保存指向机器模式硬件线程本地上下文空间的指针，并在进入 M 模式陷阱处理程序时与用户寄存器交换。'''

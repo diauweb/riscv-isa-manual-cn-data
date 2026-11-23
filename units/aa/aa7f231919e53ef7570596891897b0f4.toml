@@ -1,0 +1,15 @@
+unit_id = "aa7f231919e53ef7570596891897b0f4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If supervisor mode is implemented, its mip.STIP and mie.STIE are the
+interrupt-pending and interrupt-enable bits for supervisor-level timer
+interrupts. If the stimecmp register is not implemented, STIP is writable in
+mip, and may be written by M-mode software to deliver timer interrupts to
+S-mode. If the stimecmp (supervisor-mode timer compare) register is
+implemented, STIP is read-only in mip and reflects the supervisor-level timer
+interrupt signal resulting from stimecmp. This timer interrupt signal is
+cleared by writing stimecmp with a value greater than the current time value.'''
+zh = '''
+若实现了监管模式，则其 mip.STIP 和 mie.STIE 是监管级定时器中断的中断挂起位和中断使能位。若未实现 stimecmp 寄存器，则 STIP 在 mip 中可写，且可由 M 模式软件写入，以向 S 模式递送定时器中断。若实现了 stimecmp（监管模式定时器比较）寄存器，则 STIP 在 mip 中为只读，且反映由 stimecmp 产生的监管级定时器中断信号。该定时器中断信号通过向 stimecmp 写入大于当前时间值的值来清除。'''

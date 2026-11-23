@@ -1,0 +1,11 @@
+unit_id = "92f9a30d1338cdab4003d6f9f00256ab"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An external debugger can cause a halted hart to execute a single
+instruction or trap and then re-enter Debug Mode by setting {dcsr-step} before
+resuming. If {dcsr-step} is set when a hart resumes then it will single step,
+regardless of the reason for resuming.'''
+zh = '''
+外部调试器可通过在恢复前设置 {dcsr-step}，使已停机的硬件线程执行单条指令或陷阱，然后重新进入调试模式。若硬件线程恢复时 {dcsr-step} 置位，则它将单步执行，无论恢复的原因如何。'''

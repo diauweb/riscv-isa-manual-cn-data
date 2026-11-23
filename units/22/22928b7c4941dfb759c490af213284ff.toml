@@ -1,0 +1,11 @@
+unit_id = "22928b7c4941dfb759c490af213284ff"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:sstateen_user_access_control]#Each bit of a supervisor-level `sstateen` CSR controls user-level access (from
+U-mode or VU-mode) to an extension's state.# The intention is to allocate the
+bits of `sstateen` CSRs starting at the least-significant end, bit 0, through to
+bit 31, and then on to the next-higher-numbered `sstateen` CSR.'''
+zh = '''
+[#norm:sstateen_user_access_control]##监管级 `sstateen` CSR 的每一位控制用户级（来自 U 模式或 VU 模式）对某个扩展状态的访问。##其意图是：从最低有效端第 0 位开始分配 `sstateen` CSR 的各位直到第 31 位，然后继续使用编号更高的下一个 `sstateen` CSR。'''

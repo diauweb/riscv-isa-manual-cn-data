@@ -1,0 +1,21 @@
+unit_id = "9d118fd1d4f95d86cb18f5d3f0a6e610"
+kind = "code"
+translatable = false
+en = '''
+----
+# FP widening multiply-accumulate, overwrites addend
+vfwmacc.vv vd, vs1, vs2, vm    # vd[i] = +(vs1[i] * vs2[i]) + vd[i]
+vfwmacc.vf vd, rs1, vs2, vm    # vd[i] = +(f[rs1] * vs2[i]) + vd[i]
+
+# FP widening negate-(multiply-accumulate), overwrites addend
+vfwnmacc.vv vd, vs1, vs2, vm   # vd[i] = -(vs1[i] * vs2[i]) - vd[i]
+vfwnmacc.vf vd, rs1, vs2, vm   # vd[i] = -(f[rs1] * vs2[i]) - vd[i]
+
+# FP widening multiply-subtract-accumulator, overwrites addend
+vfwmsac.vv vd, vs1, vs2, vm    # vd[i] = +(vs1[i] * vs2[i]) - vd[i]
+vfwmsac.vf vd, rs1, vs2, vm    # vd[i] = +(f[rs1] * vs2[i]) - vd[i]
+
+# FP widening negate-(multiply-subtract-accumulator), overwrites addend
+vfwnmsac.vv vd, vs1, vs2, vm   # vd[i] = -(vs1[i] * vs2[i]) + vd[i]
+vfwnmsac.vf vd, rs1, vs2, vm   # vd[i] = -(f[rs1] * vs2[i]) + vd[i]
+----'''

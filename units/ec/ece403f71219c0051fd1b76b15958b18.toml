@@ -1,0 +1,106 @@
+unit_id = "ece403f71219c0051fd1b76b15958b18"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+When V=0, a write to `vsatp` with an unsupported MODE value is either
+ignored as it is for `satp`, or the fields of `vsatp` are treated as *WARL* in
+the normal way. However, when V=1, a write to `satp` with an unsupported
+MODE value _is_ ignored and no write to `vsatp` is effected.
+
+When V=0, `vsatp` does not directly affect the behavior of the machine,
+unless a virtual-machine load/store (HLV, HLVX, or HSV) or the MPRV
+feature in the `mstatus` register is used to execute a load or store _as
+though_ V=1.
+
+=== Hypervisor Instructions
+
+The hypervisor extension adds virtual-machine load and store
+instructions and two privileged fence instructions.
+
+==== Hypervisor Virtual-Machine Load and Store Instructions
+
+//hypv-virt-load-and-store.edn
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode',    type: 3, attr: ['7','SYSTEM', 'SYSTEM', 'SYSTEM']},
+  {bits: 5, name: 'rd',  type: 5, attr: ['5','dest', 'dest', '0']},
+  {bits: 3, name: 'funct3',    type: 5, attr: ['3','PRIVM', 'PRIVM', 'PRIVM']},
+  {bits: 5, name: 'rs1',    type: 4, attr: ['5','addr', 'addr', 'addr']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['5','[U]', 'HLVX', 'src']},
+  {bits: 7, name: 'funct7',        type: 5, attr: ['7','HLV.width', 'HLVX.HU/WU', 'HSV.width']},
+], config: {bits: 32}}
+....
+
+The hypervisor virtual-machine load and store instructions are valid
+only in M-mode or HS-mode, or in U-mode when `hstatus`.HU=1. Each
+instruction performs an explicit memory access as though V=1; i.e., with
+the address translation and protection, and the endianness, that apply
+to memory accesses in either VS-mode or VU-mode. Field SPVP of `hstatus`
+controls the privilege level of the access. The explicit memory access
+is done as though in VU-mode when SPVP=0, and as though in VS-mode when
+SPVP=1. As usual when V=1, two-stage address translation is applied, and
+the HS-level `sstatus`.SUM is ignored. HS-level `sstatus`.MXR makes
+execute-only pages readable for both stages of address translation
+(VS-stage and G-stage), whereas `vsstatus`.MXR affects only the first
+translation stage (VS-stage).
+
+For every RV32I or RV64I load instruction, LB, LBU, LH, LHU, LW, LWU,
+and LD, there is a corresponding virtual-machine load instruction:
+HLV.B, HLV.BU, HLV.H, HLV.HU, HLV.W, HLV.WU, and HLV.D. For every RV32I
+or RV64I store instruction, SB, SH, SW, and SD, there is a corresponding
+virtual-machine store instruction: HSV.B, HSV.H, HSV.W, and HSV.D.
+Instructions HLV.WU, HLV.D, and HSV.D are not valid for RV32, of course.
+
+Instructions HLVX.HU and HLVX.WU are the same as HLV.HU and HLV.WU,
+except that _execute_ permission takes the place of _read_ permission
+during address translation. That is, the memory being read must be
+executable in both stages of address translation, but read permission is
+not required. For the supervisor physical address that results from
+address translation, the supervisor physical memory attributes must
+grant both _execute_ and _read_ permissions. (The _supervisor physical
+memory attributes_ are the machine’s physical memory attributes as
+modified by physical memory protection, <<pmp>>, for
+supervisor level.)
+
+[NOTE]
+===='''
+zh = '''
+====
+
+当 V=0 时，以不受支持的 MODE 值写入 `vsatp` 要么像 `satp` 一样被忽略，要么 `vsatp` 的字段以常规方式被视为 *WARL*。然而，当 V=1 时，以不受支持的 MODE 值写入 `satp` _会_被忽略，且不会对 `vsatp` 产生写入。
+
+当 V=0 时，`vsatp` 不直接影响机器行为，除非使用虚拟机加载/存储（HLV、HLVX 或 HSV）或 `mstatus` 寄存器中的 MPRV 特性来_如同_V=1 一样执行加载或存储。
+
+=== 虚拟机监控器指令
+
+虚拟机监控器扩展新增虚拟机加载和存储指令以及两条特权屏障指令。
+
+==== 虚拟机监控器虚拟机加载和存储指令
+
+//hypv-virt-load-and-store.edn
+
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode',    type: 3, attr: ['7','SYSTEM', 'SYSTEM', 'SYSTEM']},
+  {bits: 5, name: 'rd',  type: 5, attr: ['5','dest', 'dest', '0']},
+  {bits: 3, name: 'funct3',    type: 5, attr: ['3','PRIVM', 'PRIVM', 'PRIVM']},
+  {bits: 5, name: 'rs1',    type: 4, attr: ['5','addr', 'addr', 'addr']},
+  {bits: 5, name: 'rs2',    type: 4, attr: ['5','[U]', 'HLVX', 'src']},
+  {bits: 7, name: 'funct7',        type: 5, attr: ['7','HLV.width', 'HLVX.HU/WU', 'HSV.width']},
+], config: {bits: 32}}
+....
+
+虚拟机监控器虚拟机加载和存储指令仅在 M 模式或 HS 模式下有效，或在 `hstatus`.HU=1 时在 U 模式下有效。每条指令如同 V=1 一样执行显式内存访问；即采用适用于 VS 模式或 VU 模式内存访问的地址转换和保护及字节序。`hstatus` 的字段 SPVP 控制访问的特权级。当 SPVP=0 时，显式内存访问如同在 VU 模式中进行；当 SPVP=1 时，如同在 VS 模式中进行。如 V=1 时通常那样，应用两阶段地址转换，且忽略 HS 级 `sstatus`.SUM。HS 级 `sstatus`.MXR 使仅可执行页在地址转换的两个阶段（VS 阶段和 G 阶段）均可读，而 `vsstatus`.MXR 仅影响第一转换阶段（VS 阶段）。
+
+对于每条 RV32I 或 RV64I 加载指令 LB、LBU、LH、LHU、LW、LWU 和 LD，存在相应的虚拟机加载指令：HLV.B、HLV.BU、HLV.H、HLV.HU、HLV.W、HLV.WU 和 HLV.D。对于每条 RV32I 或 RV64I 存储指令 SB、SH、SW 和 SD，存在相应的虚拟机存储指令：HSV.B、HSV.H、HSV.W 和 HSV.D。当然，指令 HLV.WU、HLV.D 和 HSV.D 对 RV32 无效。
+
+指令 HLVX.HU 和 HLVX.WU 与 HLV.HU 和 HLV.WU 相同，区别在于地址转换期间以_执行_权限取代_读_权限。也就是说，所读取的内存在两个地址转换阶段中均必须可执行，但不要求读权限。对于地址转换产生的监管者物理地址，监管者物理内存属性必须授予_执行_和_读_两种权限。（_监管者物理内存属性_是机器的物理内存属性经物理内存保护 <<pmp>> 针对监管级修改后的结果。）
+
+[NOTE]
+===='''

@@ -1,0 +1,14 @@
+unit_id = "8b940fad3bd7e709c970c3c18fe466ad"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Guest physical addresses (GPAs) are 2-bit wider than the corresponding virtual
+address translation modes, resulting in additional address translation schemes
+Sv32x4, Sv39x4, Sv48x4, and Sv57x4 for translating guest physical addresses to
+supervisor physical addresses. When running with virtualization in VS/VU mode
+with csr:vsatp[mode]=Bare, this means that those qty:2[bits] may be subject to
+pointer masking, depending on csr:hgatp[mode] and csr:senvcfg[pmm] or csr:henvcfg[pmm] (for
+VU/VS mode). If csr:vsatp[mode]{ne}Bare, this issue does *not* apply.'''
+zh = '''
+客户机物理地址（GPA）比对应的虚拟地址转换模式宽 2 位，因此产生了用于将客户机物理地址转换为监管物理地址的附加地址转换方案 Sv32x4、Sv39x4、Sv48x4 和 Sv57x4。当在 VS/VU 模式下运行虚拟化且 csr:vsatp[mode]=Bare 时，这意味着这 qty:2[bits] 可能受指针掩码影响，具体取决于 csr:hgatp[mode] 以及 csr:senvcfg[pmm] 或 csr:henvcfg[pmm]（对于 VU/VS 模式）。若 csr:vsatp[mode]{ne}Bare，则此问题**不**适用。'''

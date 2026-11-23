@@ -1,0 +1,8 @@
+unit_id = "7b7afe0a9cb42c60a811dfc023b2d2f9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+`ctrsource` is an MXLEN-bit WARL register that must be able to hold all valid virtual or physical addresses that can serve as a `pc`. It need not be able to hold any invalid addresses; implementations may convert an invalid address into a valid address that the register is capable of holding.  When XLEN < MXLEN, both explicit writes (by software) and implicit writes (for recorded transfers) will be zero-extended.'''
+zh = '''
+[#norm:Ssctr_ctrsource_sz_acc_op]##`ctrsource` 是 MXLEN 位 WARL 寄存器，必须能够保存所有可充当 `pc` 的有效虚拟或物理地址。它不必能够保存任何无效地址；实现可将无效地址转换为该寄存器能够保存的有效地址。当 XLEN < MXLEN 时，显式写入（由软件）和隐式写入（用于记录转移）均将零扩展。##'''

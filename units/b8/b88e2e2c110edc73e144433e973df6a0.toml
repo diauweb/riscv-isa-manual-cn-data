@@ -1,0 +1,216 @@
+unit_id = "b88e2e2c110edc73e144433e973df6a0"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Supervisor cause (`scause`) register values after trap. Synchronous exception priorities are given by <<exception-priority>>.
+[%autowidth,float="center",align="center",cols=">,>,3",options="header"]
+|===
+|Interrupt |Exception Code |Description
+|1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2-4 +
+5 +
+6-8 +
+9 +
+10-12 +
+13 +
+14-15 +
+{ge}16
+|_Reserved_ +
+Supervisor software interrupt +
+_Reserved_ +
+Supervisor timer interrupt +
+_Reserved_ +
+Supervisor external interrupt +
+_Reserved_ +
+Counter-overflow interrupt +
+_Reserved_ +
+_Designated for platform use_
+
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10-11 +
+12 +
+13 +
+14 +
+15 +
+16-17 +
+18 +
+19 +
+20-23 +
+24-31 +
+32-47 +
+48-63 +
+{ge}64
+|Instruction address misaligned +
+Instruction access fault +
+Illegal instruction +
+Breakpoint +
+Load address misaligned +
+Load access fault +
+Store/AMO address misaligned +
+Store/AMO access fault +
+Environment call from U-mode +
+Environment call from S-mode +
+_Reserved_ +
+Instruction page fault +
+Load page fault +
+_Reserved_ +
+Store/AMO page fault +
+_Reserved_ +
+Software check +
+Hardware error +
+_Reserved_ +
+_Designated for custom use_ +
+_Reserved_ +
+_Designated for custom use_ +
+_Reserved_
+|==='''
+zh = '''
+.陷阱发生后监管原因（`scause`）寄存器的值。同步异常优先级由 <<exception-priority>> 给出。
+[%autowidth,float="center",align="center",cols=">,>,3",options="header"]
+|===
+|中断 |异常编码 |说明
+|1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1 +
+1
+|0 +
+1 +
+2-4 +
+5 +
+6-8 +
+9 +
+10-12 +
+13 +
+14-15 +
+{ge}16
+|_保留_ +
+监管软件中断 +
+_保留_ +
+监管定时器中断 +
+_保留_ +
+监管外部中断 +
+_保留_ +
+计数器溢出中断 +
+_保留_ +
+_指定供平台使用_
+
+|0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0 +
+0
+|0 +
+1 +
+2 +
+3 +
+4 +
+5 +
+6 +
+7 +
+8 +
+9 +
+10-11 +
+12 +
+13 +
+14 +
+15 +
+16-17 +
+18 +
+19 +
+20-23 +
+24-31 +
+32-47 +
+48-63 +
+{ge}64
+|指令地址非对齐 +
+指令访问出错 +
+非法指令 +
+断点 +
+加载地址非对齐 +
+加载访问出错 +
+存储/AMO 地址非对齐 +
+存储/AMO 访问出错 +
+来自 U 模式的环境调用 +
+来自 S 模式的环境调用 +
+_保留_ +
+指令页错误 +
+加载页错误 +
+_保留_ +
+存储/AMO 页错误 +
+_保留_ +
+软件检查 +
+硬件错误 +
+_保留_ +
+_指定供自定义使用_ +
+_保留_ +
+_指定供自定义使用_ +
+_保留_
+|==='''

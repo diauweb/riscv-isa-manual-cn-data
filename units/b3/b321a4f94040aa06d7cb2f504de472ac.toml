@@ -1,0 +1,11 @@
+unit_id = "b321a4f94040aa06d7cb2f504de472ac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The operand value for the atomic operation. Uncompressed, although upper
+bytes that are all the same value do not need to be included in the
+packet; the decoder can recreate the full-width value by sign extending
+from the most significant received bit; see <<sec:atomic-datalen>>.'''
+zh = '''
+原子操作的操作数值。不压缩，不过取值全部相同的上部字节无须包含在包中；解码器可通过从所接收的最高有效位进行符号扩展，重建完整宽度的值；见 <<sec:atomic-datalen>>。'''

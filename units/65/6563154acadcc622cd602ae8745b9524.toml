@@ -1,0 +1,52 @@
+unit_id = "6563154acadcc622cd602ae8745b9524"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Zicfiss Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||Source Registers |Destination Registers |Accumulating CSRs|
+
+|insn:sspush[]‡ |_rs2_ ^D^, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:c.sspush[]‡ |`x1` ^D^, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:sspopchk[]‡ |_rs1_, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:c.sspopchk[]‡ |`x5`, csr:ssp[] ^A^ |csr:ssp[] | |
+
+5+| ‡ carries a dependency from csr:ssp[] to csr:ssp[]
+
+|insn:ssrdp[] |csr:ssp[] |_rd_ | |
+
+|insn:ssamoswap.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:ssamoswap.d[]†^*^ |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+5+| ^*^ insn:ssamoswap.d[] is RV64-only.
+|==='''
+zh = '''
+.Zicfiss 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+||源寄存器 |目标寄存器 |累积 CSR|
+
+|insn:sspush[]‡ |_rs2_ ^D^, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:c.sspush[]‡ |`x1` ^D^, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:sspopchk[]‡ |_rs1_, csr:ssp[] ^A^ |csr:ssp[] | |
+
+|insn:c.sspopchk[]‡ |`x5`, csr:ssp[] ^A^ |csr:ssp[] | |
+
+5+| ‡ 携带从 csr:ssp[] 到 csr:ssp[] 的依赖
+
+|insn:ssrdp[] |csr:ssp[] |_rd_ | |
+
+|insn:ssamoswap.w[]† |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+|insn:ssamoswap.d[]†^*^ |_rs1_ ^A^, _rs2_ ^D^ |_rd_ | |
+
+5+| ^*^ insn:ssamoswap.d[] 仅适用于 RV64。
+|==='''

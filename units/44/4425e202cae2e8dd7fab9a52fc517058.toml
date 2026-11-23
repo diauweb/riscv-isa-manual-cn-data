@@ -1,0 +1,27 @@
+unit_id = "4425e202cae2e8dd7fab9a52fc517058"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We recommend providing RsrvEventual support for main memory regions
+where possible. Most I/O regions will not support LR/SC accesses, as
+these are most conveniently built on top of a cache-coherence scheme,
+but some may support RsrvNonEventual or RsrvEventual.
+
+***
+
+When LR/SC is used for memory locations marked RsrvNonEventual, software
+should provide alternative fall-back mechanisms used when lack of
+progress is detected.
+===='''
+zh = '''
+[NOTE]
+====
+我们建议尽可能为主存区域提供 RsrvEventual 支持。大多数 I/O 区域将不支持 LR/SC 访问，因为这些访问最方便地构建在缓存一致性方案之上，但某些区域可能支持 RsrvNonEventual 或 RsrvEventual。
+
+***
+
+当 LR/SC 用于标记为 RsrvNonEventual 的内存位置时，软件宜提供在检测到缺乏进展时使用的替代回退机制。
+===='''

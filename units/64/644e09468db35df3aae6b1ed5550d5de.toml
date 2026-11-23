@@ -1,0 +1,14 @@
+unit_id = "644e09468db35df3aae6b1ed5550d5de"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (AES64ESM(rs2, rs1, rd)) = {
+  let sr : bits(64) = aes_rv64_shiftrows_fwd(X(rs2)[63..0], X(rs1)[63..0]);
+  let wd : bits(64) = sr[63..0];
+  let sb : bits(64) = aes_apply_fwd_sbox_to_each_byte(wd);
+  X(rd)  =  aes_mixcolumn_fwd(sb[63..32]) @ aes_mixcolumn_fwd(sb[31..0]);
+  RETIRE_SUCCESS
+}
+--'''

@@ -1,0 +1,36 @@
+unit_id = "423bed2d41d40a66f9dcd48818ed84c2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+
+Trace software should handle versions as follows (let's assume hypothetical version 2.3 was defined as current version in moment of release of trace software)
+
+* 0.x => Reject as not supported or generate a warning and handle as pre-ratified/initial version 0.
+* 2.3 => Accept silently.
+* 2.2 => Accept silently (and trim features or not allow users to set newer features).
+* 2.4 => Generate a warning but continue using 2.3 features.
+* 2.15 => Generate an "experimental version" warning but continue using 2.3 features.
+* 1.x => Generate a warning and continue or reject as an obsolete (referring to last debugger supporting this version).
+* 3.x => Generate a fatal error that this future version is not compatible with existing software and possibly redirect to the tool update page.
+
+Displayed messages should report component name, component base address and current and supported version numbers. It is suggested to display the full hexadecimal value of `tr??Impl` register as it may aid in debugging of possibly incorrect/incompatible component configuration.
+===='''
+zh = '''
+[NOTE]
+====
+
+跟踪软件宜按如下方式处理版本（假设在跟踪软件发布时，假想版本 2.3 被定义为当前版本）
+
+* 0.x => 因不受支持而拒绝，或生成警告并按预批准/初始版本 0 处理。
+* 2.3 => 静默接受。
+* 2.2 => 静默接受（并裁剪特性，或不允许用户设置较新的特性）。
+* 2.4 => 生成警告，但继续使用 2.3 特性。
+* 2.15 => 生成“实验性版本”警告，但继续使用 2.3 特性。
+* 1.x => 生成警告并继续，或作为过时版本拒绝（引用支持此版本的最后一个调试器）。
+* 3.x => 生成致命错误，指出此未来版本与现有软件不兼容，并可能重定向到工具更新页面。
+
+显示的消息宜报告组件名称、组件基地址以及当前和支持的版本号。建议显示 `tr??Impl` 寄存器的完整十六进制值，因为这可能有助于调试可能不正确/不兼容的组件配置。
+===='''

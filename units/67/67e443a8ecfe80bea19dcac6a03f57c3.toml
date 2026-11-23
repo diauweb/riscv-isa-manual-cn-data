@@ -1,0 +1,37 @@
+unit_id = "67e443a8ecfe80bea19dcac6a03f57c3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:m_mode_priv_at_reset]#Upon reset, a hart’s privilege mode is set to M.#
+[#norm:mstatus_mie_mprv_rst]#The `mstatus` fields MIE and MPRV are reset to 0.#
+[#norm:mstatus_mstatush_mbe_rst]#If little-endian memory accesses are supported, the `mstatus`/`mstatush` field MBE is reset to 0.#
+[#norm:misa_extensions_reset_ref]#The `misa` register is reset to enable the maximal set of supported
+extensions, as described in <<misa>>.#
+[#norm:ld_rsv_rst]#For implementations with the Zalrsc standard extension, there is no valid
+load reservation.#
+[#norm:pc_rst]#The `pc` is set to an implementation-defined reset vector.#
+[#norm:mcause_rst1_val]#The `mcause` register is set to a value indicating the cause of the reset.#
+[#norm:pmp_a_l_rst]#Writable PMP registers’ A and L fields are set to 0, unless
+the platform mandates a different reset value for some PMP registers’ A
+and L fields.#
+[#norm:hgatp_vsatp_mode_rst]#If the hypervisor extension is implemented, the
+`hgatp`.MODE and `vsatp`.MODE fields are reset to 0.#
+[#norm:mnstatus_nmie_rst]#If the Smrnmi extension is implemented, the `mnstatus`.NMIE field is reset to 0.#
+[#norm:warl_rst]#No *WARL* field contains an illegal value.#
+[#norm:mseccfg_mlpe_rst]#If the Zicfilp extension is implemented, the `mseccfg`.MLPE field is reset to 0.#
+[#norm:rst_other_state_unspec]#All other hart state is UNSPECIFIED.#'''
+zh = '''
+[#norm:m_mode_priv_at_reset]##复位后，硬件线程的特权模式被设置为 M。##
+[#norm:mstatus_mie_mprv_rst]##`mstatus` 字段 MIE 和 MPRV 被复位为 0。##
+[#norm:mstatus_mstatush_mbe_rst]##若支持小端序内存访问，则 `mstatus`/`mstatush` 字段 MBE 被复位为 0。##
+[#norm:misa_extensions_reset_ref]##`misa` 寄存器被复位为使能所支持扩展的最大集合，如 <<misa>> 所述。##
+[#norm:ld_rsv_rst]##对于具有 Zalrsc 标准扩展的实现，不存在有效的加载保留。##
+[#norm:pc_rst]##`pc` 被设置为实现定义的复位向量。##
+[#norm:mcause_rst1_val]##`mcause` 寄存器被设置为指示复位原因的值。##
+[#norm:pmp_a_l_rst]##可写 PMP 寄存器的 A 和 L 字段被设置为 0，除非平台要求某些 PMP 寄存器的 A 和 L 字段具有不同的复位值。##
+[#norm:hgatp_vsatp_mode_rst]##若实现了虚拟机监控器扩展，则 `hgatp`.MODE 和 `vsatp`.MODE 字段被复位为 0。##
+[#norm:mnstatus_nmie_rst]##若实现了 Smrnmi 扩展，则 `mnstatus`.NMIE 字段被复位为 0。##
+[#norm:warl_rst]##没有 *WARL* 字段包含非法值。##
+[#norm:mseccfg_mlpe_rst]##若实现了 Zicfilp 扩展，则 `mseccfg`.MLPE 字段被复位为 0。##
+[#norm:rst_other_state_unspec]##所有其他硬件线程状态为 UNSPECIFIED。##'''

@@ -1,0 +1,14 @@
+unit_id = "db82714a6dae22a7bb02ef22b3fc936c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `mip` register is an MXLEN-bit read/write register containing
+information on pending interrupts, while `mie` is the corresponding
+MXLEN-bit read/write register containing interrupt enable bits.
+Interrupt cause number _i_ (as reported in CSR `mcause`,
+<<mcause>>) corresponds with bit _i_ in both `mip` and
+`mie`. Bits 15:0 are allocated to standard interrupt causes only, while
+bits 16 and above are designated for platform use.'''
+zh = '''
+`mip` 寄存器是一个 MXLEN 位读写寄存器，包含挂起中断的信息，而 `mie` 是相应的 MXLEN 位读写寄存器，包含中断使能位。中断原因编号 _i_（如 CSR `mcause` 中报告，<<mcause>>）对应于 `mip` 和 `mie` 中的位 _i_。位 15:0 仅分配给标准中断原因，而位 16 及以上指定用于平台。'''

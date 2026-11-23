@@ -1,0 +1,24 @@
+unit_id = "56a102e97abe065b36acb5511e84e7ee"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+It is permitted for multiple address-translation cache entries to
+co-exist for the same address. This represents the fact that in a
+conventional TLB hierarchy, it is possible for multiple entries to match
+a single address if, for example, a page is upgraded to a superpage
+without first clearing the original non-leaf PTE’s valid bit and
+executing an SFENCE.VMA with _rs1_=`x0`, or if multiple TLBs exist in
+parallel at a given level of the hierarchy. In this case, just as if an
+SFENCE.VMA is not executed between a write to the memory-management
+tables and subsequent implicit read of the same address: it is
+unpredictable whether the old non-leaf PTE or the new leaf PTE is used,
+but the behavior is otherwise well defined.
+===='''
+zh = '''
+[NOTE]
+====
+允许针对同一地址共存多个地址转换缓存表项。这反映了在传统 TLB 层次结构中，多个表项可能匹配同一地址；例如，若某页被升级为超级页，而未先清除原非叶 PTE 的有效位并执行 _rs1_=`x0` 的 SFENCE.VMA，或者在给定层次结构级别上并行存在多个 TLB。在这种情况下，正如在写入内存管理表与随后对同一地址的隐式读取之间未执行 SFENCE.VMA 一样：使用旧的非叶 PTE 还是新的叶 PTE 是不可预测的，但除此之外行为是良定义的。
+===='''

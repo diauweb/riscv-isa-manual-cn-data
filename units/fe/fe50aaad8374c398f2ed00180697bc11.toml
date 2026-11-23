@@ -1,0 +1,8 @@
+unit_id = "fe50aaad8374c398f2ed00180697bc11"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instruction Trace is a system that collects a history of processor execution, along with other events. The trace system may be set up and controlled using a register-based interface. Hart execution activity appears on the Ingress Port and feeds into a Trace Encoder where it is compressed and formatted into trace messages. The Trace Encoder transmits trace messages to a Trace Sink. In multi-core systems, each hart has its own Trace Encoder, and typically all will connect to a Trace Funnel that aggregates the trace data from multiple sources and sends the data to a single destination.'''
+zh = '''
+指令跟踪是一种收集处理器执行历史及其他事件的系统。跟踪系统可使用基于寄存器的接口进行设置和控制。硬件线程的执行活动出现在入口端口，并馈入跟踪编码器，在此处被压缩并格式化为跟踪消息。跟踪编码器将跟踪消息发送到跟踪接收器。在多核系统中，每个硬件线程都有自己的跟踪编码器，并且通常所有跟踪编码器都会连接到跟踪漏斗，由后者聚合来自多个源的跟踪数据并将数据发送到单个目的地。'''

@@ -1,0 +1,12 @@
+unit_id = "4816378e26a93d03a64ae342d9cf822b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Due to clock and power domain crossing issues, it might not be possible
+to perform arbitrary DMI accesses across hardware platform reset. While
+{dmcontrol-ndmreset}  or any external reset is asserted, the only supported DM
+operations are reading/writing {dm-dmcontrol} and reading
+{dmstatus-ndmresetpending}. The behavior of other accesses is undefined.'''
+zh = '''
+由于时钟和电源域跨越问题，可能无法在硬件平台复位期间执行任意 DMI 访问。在 {dmcontrol-ndmreset} 或任何外部复位置位期间，唯一支持的 DM 操作为读/写 {dm-dmcontrol} 和读取 {dmstatus-ndmresetpending}。其他访问的行为未定义。'''

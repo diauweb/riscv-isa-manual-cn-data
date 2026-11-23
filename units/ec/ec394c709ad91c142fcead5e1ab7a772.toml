@@ -1,0 +1,16 @@
+unit_id = "ec394c709ad91c142fcead5e1ab7a772"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+`Smmpm` implementations need to satisfy max(largest supported virtual address
+size, largest supported supervisor physical address size) <= (XLEN - PMLEN)
+bits to avoid any masking logic on the TLB access path.
+===='''
+zh = '''
+[NOTE]
+====
+`Smmpm` 实现需要满足 max(所支持的最大虚拟地址大小, 所支持的最大监管物理地址大小) <= (XLEN - PMLEN) 位，以避免在 TLB 访问路径上出现任何掩蔽逻辑。
+===='''

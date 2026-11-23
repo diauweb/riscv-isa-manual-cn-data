@@ -1,0 +1,12 @@
+unit_id = "d56a5fd0075a87feff746889dab289b4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The standard RISC-V ISA sets aside a 12-bit encoding space (csr[11:0])
+for up to 4,096 CSRs. The upper qty:4[bits] of the CSR address
+(csr[11:8]) are used to encode the read and write accessibility of the
+CSRs according to privilege level as shown in <<csrrwpriv>>. [#norm:Zicsr_rw]#The top two bits (csr[11:10]) indicate whether the register is read/write (`00`,`01`, or `10`) or read-only (`11`).#
+[#norm:Zicsr_access]#The next two bits (csr[9:8]) encode the lowest privilege level that can access the CSR, with the pattern `10` representing hypervisor CSRs.#'''
+zh = '''
+标准 RISC-V ISA 划出 12 位编码空间（csr[11:0]）用于至多 4,096 个 CSR。CSR 地址的高 qty:4[bits]（csr[11:8]）用于按特权级编码 CSR 的读、写可访问性，如 <<csrrwpriv>> 所示。[#norm:Zicsr_rw]##最高两位（csr[11:10]）指示该寄存器是可读写（`00`、`01` 或 `10`）还是只读（`11`）。## [#norm:Zicsr_access]##接下来的两位（csr[9:8]）编码可访问该 CSR 的最低特权级，其中模式 `10` 表示虚拟机监控器 CSR。##'''

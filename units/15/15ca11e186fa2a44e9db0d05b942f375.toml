@@ -1,0 +1,64 @@
+unit_id = "15ca11e186fa2a44e9db0d05b942f375"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+There is no dedicated stack pointer or subroutine return address link
+register in the Base Integer ISA; the instruction encoding allows any
+`x` register to be used for these purposes. However, the standard
+software calling convention uses register `x1` to hold the return
+address for a call, with register `x5` available as an alternate link
+register. The standard calling convention uses register `x2` as the
+stack pointer.
+
+Hardware might choose to accelerate function calls and returns that use
+`x1` or `x5`. See the descriptions of the JAL and JALR instructions.
+
+The optional compressed 16-bit instruction format is designed around the
+assumption that `x1` is the return address register and `x2` is the
+stack pointer. Software using other conventions will operate correctly
+but may have greater code size.
+
+The number of available architectural registers can have large impacts
+on code size, performance, and energy consumption. Although 16 registers
+would arguably be sufficient for an integer ISA running compiled code,
+it is impossible to encode a complete ISA with 16 registers in 16-bit
+instructions using a 3-address format. Although a 2-address format would
+be possible, it would increase instruction count and lower efficiency.
+We wanted to avoid intermediate instruction sizes (such as Xtensa's
+24-bit instructions) to simplify base hardware implementations, and once
+a 32-bit instruction size was adopted, it was straightforward to support
+32 integer registers. A larger number of integer registers also helps
+performance on high-performance code, where there can be extensive use
+of loop unrolling, software pipelining, and cache tiling.
+
+For these reasons, we chose a conventional size of 32 integer registers
+for RV32I. Dynamic register usage tends to be dominated by a few
+frequently accessed registers, and regfile implementations can be
+optimized to reduce access energy for the frequently accessed
+registers cite:[jtseng:sbbci]. The optional compressed 16-bit instruction format mostly
+only accesses 8 registers and hence can provide a dense instruction
+encoding, while additional instruction-set extensions could support a
+much larger register space (either flat or hierarchical) if desired.
+
+For resource-constrained embedded applications, we have defined the
+RV32E subset, which only has 16 registers
+(<<rv32e>>).
+===='''
+zh = '''
+[NOTE]
+====
+基础整数 ISA 中没有专用的栈指针或子程序返回地址链接寄存器；指令编码允许任意 `x` 寄存器用于这些目的。然而，标准软件调用约定使用寄存器 `x1` 保存调用的返回地址，并可使用寄存器 `x5` 作为备用链接寄存器。标准调用约定使用寄存器 `x2` 作为栈指针。
+
+硬件可能选择加速使用 `x1` 或 `x5` 的函数调用和返回。参见 JAL 和 JALR 指令的描述。
+
+可选的压缩 16 位指令格式围绕 `x1` 是返回地址寄存器且 `x2` 是栈指针的假设而设计。使用其他约定的软件将正确运行，但代码大小可能更大。
+
+可用架构寄存器的数量会对代码大小、性能和能耗产生重大影响。尽管对于运行编译代码的整数 ISA 而言，16 个寄存器可以说已经足够，但使用 3 地址格式在 16 位指令中编码具有 16 个寄存器的完整 ISA 是不可能的。虽然 2 地址格式可行，但会增加指令数并降低效率。我们希望避免中间指令长度（例如 Xtensa 的 24 位指令）以简化基础硬件实现；一旦采用 32 位指令长度，支持 32 个整数寄存器便是顺理成章的。更多的整数寄存器还有助于高性能代码的性能，这类代码可能大量使用循环展开、软件流水和缓存分块。
+
+出于这些原因，我们为 RV32I 选择了 32 个整数寄存器的常规规模。动态寄存器使用往往由少数频繁访问的寄存器主导，而寄存器堆实现可进行优化，以降低频繁访问寄存器的访问能耗 cite:[jtseng:sbbci]。可选的压缩 16 位指令格式大多只访问 8 个寄存器，因此可提供密集的指令编码；而附加的指令集扩展在需要时可支持大得多的寄存器空间（平面或层次化）。
+
+对于资源受限的嵌入式应用，我们定义了 RV32E 子集，它只有 16 个寄存器（<<rv32e>>）。
+===='''

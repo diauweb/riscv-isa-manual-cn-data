@@ -1,0 +1,18 @@
+unit_id = "7e48f7f10f71cd3d5ac355ed85411f05"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The encoder is enabled or disabled, or its configuration is changed,
+to inform the decoder of the operating mode of the encoder;
+* After the final qualified instruction has been traced, to inform the
+decoder that tracing has stopped;
+* If trace packets are lost (for example if the buffer into which
+packets are being written fills up), in this situation, the 1st packet
+loaded into the buffer when space next becomes available must be a
+_support_ packet. Following this, tracing will resume with a sync
+packet.'''
+zh = '''
+* 编码器被使能或禁用，或其配置发生更改时，用于告知解码器编码器的工作模式；
+* 在最后一条合格指令被跟踪后，用于告知解码器跟踪已停止；
+* 若跟踪包丢失（例如写入包的缓冲区被填满），在此情况下，当空间再次可用时载入缓冲区的第 1 个包应为 _support_ 包。此后，跟踪将以同步包恢复。'''

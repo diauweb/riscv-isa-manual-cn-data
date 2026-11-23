@@ -1,0 +1,20 @@
+unit_id = "1a67810d50ff4c3f3cd0f18fa08bea93"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Note that external trap recording does not depend on EXCINH/INTRINH.  Thus, when external traps are enabled, both external interrupts and external exceptions are recorded._
+
+_STE allows recording of traps from U-mode to S-mode as well as from VS/VU-mode to HS-mode.  The hypervisor can flip `sctrctl`.STE before entering a guest if it wants different behavior for U-to-S vs VS/VU-to-HS._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_注意，外部陷阱记录不依赖于 EXCINH/INTRINH。因此，当外部陷阱使能时，外部中断和外部异常均被记录。_
+
+_STE 允许记录从 U 模式到 S 模式以及从 VS/VU 模式到 HS 模式的陷阱。若虚拟机监控器希望 U 到 S 与 VS/VU 到 HS 的行为不同，可在进入客户机前切换 `sctrctl`.STE。_
+===='''

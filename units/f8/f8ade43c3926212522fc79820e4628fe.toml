@@ -1,0 +1,70 @@
+unit_id = "f8ade43c3926212522fc79820e4628fe"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.`NAPOT` range encoding in PMP address and configuration registers.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|`pmpaddr` |`pmpcfg`.A |Match type and size
+|`yyyy...yyyy` +
+`yyyy...yyy0` +
+`yyyy...yy01` +
+`yyyy...y011` +
+... +
+`yy01...1111` +
+`y011...1111` +
+`0111...1111` +
+`1111...1111`
+|NA4 +
+NAPOT +
+NAPOT +
+NAPOT +
+... +
+NAPOT +
+NAPOT +
+NAPOT +
+NAPOT
+|4-byte NAPOT range +
+8-byte NAPOT range +
+16-byte NAPOT range +
+32-byte NAPOT range +
+… +
+2^XLEN^-byte NAPOT range +
+2^XLEN+1^-byte NAPOT range +
+2^XLEN+2^-byte NAPOT range +
+2^XLEN+3^-byte NAPOT range
+|==='''
+zh = '''
+.PMP 地址寄存器和配置寄存器中的 `NAPOT` 范围编码
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+|`pmpaddr` |`pmpcfg`.A |匹配类型和大小
+|`yyyy...yyyy` +
+`yyyy...yyy0` +
+`yyyy...yy01` +
+`yyyy...y011` +
+... +
+`yy01...1111` +
+`y011...1111` +
+`0111...1111` +
+`1111...1111`
+|NA4 +
+NAPOT +
+NAPOT +
+NAPOT +
+... +
+NAPOT +
+NAPOT +
+NAPOT +
+NAPOT
+|4 字节 NAPOT 范围 +
+8 字节 NAPOT 范围 +
+16 字节 NAPOT 范围 +
+32 字节 NAPOT 范围 +
+… +
+2^XLEN^ 字节 NAPOT 范围 +
+2^XLEN+1^ 字节 NAPOT 范围 +
+2^XLEN+2^ 字节 NAPOT 范围 +
+2^XLEN+3^ 字节 NAPOT 范围
+|==='''

@@ -1,0 +1,14 @@
+unit_id = "7f38d8738499c914db18f2c4cac3876a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The vector architecture includes instructions that take multiple
+source and destination vector operands with different element widths,
+but the same number of elements.  The effective LMUL (EMUL) of each
+vector operand is determined by the number of registers required to
+hold the elements.  For example, for a widening add operation, such as
+add 32-bit values to produce 64-bit results, a double-width result
+requires twice the LMUL of the single-width inputs.'''
+zh = '''
+NOTE: 向量架构包括采用多个源和目标向量操作数的指令，这些操作数具有不同元素宽度但元素数量相同。每个向量操作数的有效 LMUL（EMUL）由保存元素所需的寄存器数量确定。例如，对于加宽加法操作，如将 32 位值相加产生 64 位结果，双宽度结果所需的 LMUL 是单宽度输入的两倍。'''

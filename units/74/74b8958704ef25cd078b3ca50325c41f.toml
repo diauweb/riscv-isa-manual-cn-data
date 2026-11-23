@@ -1,0 +1,11 @@
+unit_id = "74b8958704ef25cd078b3ca50325c41f"
+kind = "code"
+translatable = false
+en = '''
+----
+# v0 holds mask
+# v1 holds packed data
+# v11 holds input expanded vector and result
+viota.m v10, v0                 # Calc iota from mask in v0
+vrgather.vv v11, v1, v10, v0.t  # Expand into destination
+----'''

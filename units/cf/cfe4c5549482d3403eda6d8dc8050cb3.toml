@@ -1,0 +1,17 @@
+unit_id = "cfe4c5549482d3403eda6d8dc8050cb3"
+kind = "code"
+translatable = false
+en = '''
+----
+# Widening FP add/subtract, 2*SEW = SEW +/- SEW
+vfwadd.vv vd, vs2, vs1, vm  # vector-vector
+vfwadd.vf vd, vs2, rs1, vm  # vector-scalar
+vfwsub.vv vd, vs2, vs1, vm  # vector-vector
+vfwsub.vf vd, vs2, rs1, vm  # vector-scalar
+
+# Widening FP add/subtract, 2*SEW = 2*SEW +/- SEW
+vfwadd.wv  vd, vs2, vs1, vm  # vector-vector
+vfwadd.wf  vd, vs2, rs1, vm  # vector-scalar
+vfwsub.wv  vd, vs2, vs1, vm  # vector-vector
+vfwsub.wf  vd, vs2, rs1, vm  # vector-scalar
+----'''

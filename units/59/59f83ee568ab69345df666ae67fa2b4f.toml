@@ -1,0 +1,48 @@
+unit_id = "59f83ee568ab69345df666ae67fa2b4f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Bit FIOM exists for a specific circumstance when an I/O device is being
+emulated for U-mode and both of the following are true: (a) the emulated
+device has a memory buffer that should be I/O space but is actually
+mapped to main memory via address translation, and (b) multiple physical
+harts are involved in accessing this emulated device from U-mode.
+
+A hypervisor running in S-mode without the benefit of the hypervisor
+extension of <<hypervisor>> may need to emulate
+a device for U-mode if paravirtualization cannot be employed. If the
+same hypervisor provides a virtual machine (VM) with multiple virtual
+harts, mapped one-to-one to real harts, then multiple harts may
+concurrently access the emulated device, perhaps because: (a) the guest
+OS within the VM assigns device interrupt handling to one hart while the
+device is also accessed by a different hart outside of an interrupt
+handler, or (b) control of the device (or partial control) is being
+migrated from one hart to another, such as for interrupt load balancing
+within the VM. For such cases, guest software within the VM is expected
+to properly coordinate access to the (emulated) device across multiple
+harts using mutex locks and/or interprocessor interrupts as usual, which
+in part entails executing I/O fences. But those I/O fences may not be
+sufficient if some of the device ``I/O'' is actually main memory,
+unknown to the guest. Setting FIOM=1 modifies those fences (and all
+other I/O fences executed in U-mode) to include main memory, too.
+
+Software can always avoid the need to set FIOM by never using main
+memory to emulate a device memory buffer that should be I/O space.
+However, this choice usually requires trapping all U-mode accesses to
+the emulated buffer, which might have a noticeable impact on
+performance. The alternative offered by FIOM is sufficiently inexpensive
+to implement that we consider it worth supporting even if only rarely
+enabled.
+===='''
+zh = '''
+[NOTE]
+====
+当为 U 模式模拟 I/O 设备，且以下两项均成立时，存在 FIOM 位：(a) 被模拟设备具有一个应属于 I/O 空间的内存缓冲区，但实际通过地址转换映射到主存；(b) 多个物理硬件线程参与从 U 模式访问该被模拟设备。
+
+在 S 模式下运行且未受益于 <<hypervisor>> 的虚拟机监控器扩展的虚拟机监控器，若无法采用半虚拟化，则可能需要为 U 模式模拟设备。若同一虚拟机监控器提供一台虚拟机（VM），其多个虚拟硬件线程与真实硬件线程一一映射，则多个硬件线程可能并发访问该被模拟设备，或许是因为：(a) VM 内的客户机操作系统将设备中断处理分配给一个硬件线程，而该设备也被另一个硬件线程在中断处理程序之外访问，或 (b) 设备控制权（或部分控制权）正从一个硬件线程迁移到另一个硬件线程，例如为了 VM 内的中断负载均衡。对于此类情况，VM 内的客户机软件预期会像通常那样使用互斥锁和/或处理器间中断，在多个硬件线程间正确协调对（被模拟）设备的访问，这在一定程度上包括执行 I/O 栅栏。但若设备的某些“I/O”实际上是主存，而客户机并不知晓，则那些 I/O 栅栏可能不够。设置 FIOM=1 会修改那些栅栏（以及在 U 模式下执行的所有其他 I/O 栅栏），使其也包含主存。
+
+软件始终可通过绝不使用主存来模拟应属于 I/O 空间的设备内存缓冲区，从而避免设置 FIOM 的需要。然而，这种选择通常需要捕获所有对模拟缓冲区的 U 模式访问，这可能对性能产生明显影响。FIOM 提供的替代方案实现起来足够低廉，因此我们认为即使很少启用也值得支持。
+===='''

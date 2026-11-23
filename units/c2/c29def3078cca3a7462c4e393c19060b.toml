@@ -1,0 +1,20 @@
+unit_id = "c29def3078cca3a7462c4e393c19060b"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+val xperm8_lookup : (bits(8), xlenbits) -> bits(8)
+function xperm8_lookup (idx, lut) = {
+    (lut >> (idx @ 0b000))[7..0]
+}
+
+function clause execute ( XPERM8 (rs2,rs1,rd)) = {
+    result : xlenbits = EXTZ(0b0);
+    foreach(i from 0 to (xlen - 8) by 8) {
+        result[i+7..i] = xperm8_lookup(X(rs2)[i+7..i], X(rs1));
+    };
+    X(rd) = result;
+    RETIRE_SUCCESS
+}
+--'''

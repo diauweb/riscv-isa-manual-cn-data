@@ -1,0 +1,14 @@
+unit_id = "e17f24c62cb4470864e51b45eb7f705f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+On some implementations, misaligned loads, stores, and instruction
+fetches may also be decomposed into multiple accesses, some of which may
+succeed before a page-fault exception occurs. In particular, a
+portion of a misaligned store that passes the exception check may become
+visible, even if another portion fails the exception check. The same behavior
+may manifest for stores wider than XLEN bits (e.g., the FSD instruction
+in RV32D), even when the store address is naturally aligned.'''
+zh = '''
+在某些实现上，非对齐加载、存储和取指也可能分解为多次访问，其中一些访问可能在发生页错误异常之前成功。特别是，通过异常检查的非对齐存储的一部分可能变为可见，即使另一部分未通过异常检查。对于宽于 XLEN 位的存储（例如 RV32D 中的 FSD 指令），即使存储地址自然对齐，也可能表现出相同行为。'''

@@ -1,0 +1,31 @@
+unit_id = "b2101c04928fd09e17420674aad0eced"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trAtbBridgeControl: ATB Bridge Control Register (trAtbBridgeBase+0x000)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|0 |trAtbBridgeActive |Primary activate/reset for the ATB Bridge. When 0, the ATB Bridge may have clocks gated off or be powered
+down, and other register locations may be inaccessible. Hardware may take an arbitrarily long time to process power-up and power-down and will indicate completion when the read value of this bit matches what was written. See <<Reset and Discovery,Reset and Discovery>> chapter for more details.|RW|0
+|1 |trAtbBridgeEnable |*1:* ATB Bridge enabled. Setting `trAtbBridgeEnable` to 0 flushes any queued trace data to ATB. See <<Enabling and Disabling,Enabling and Disabling>> chapter for more details.|RW|0
+|2 |--|Reserved|--|0
+|3 |trAtbBridgeEmpty |Reads 1 when ATB Bridge internal buffers are empty |RO|1
+|7:4 |--|Reserved|--|0
+|14:8 |trAtbBridgeID |ID of this node on ATB. Values of 0x00 and 0x70-0x7F are reserved by the ATB specification and should not be used. |RW|<<Undef,Undef>>
+|31:15 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trAtbBridgeControl：ATB 桥控制寄存器 (trAtbBridgeBase+0x000)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|0 |trAtbBridgeActive |ATB 桥的主激活/复位。当为 0 时，ATB 桥可能被门控时钟或断电，其他寄存器位置可能不可访问。硬件处理上电和下电可能耗时任意长，并当该位的读取值与写入值匹配时指示完成。更多细节见 <<Reset and Discovery,复位与发现>> 章。|RW|0
+|1 |trAtbBridgeEnable |*1:* ATB 桥使能。将 `trAtbBridgeEnable` 置为 0 会将任何排队的跟踪数据冲刷到 ATB。更多细节见 <<Enabling and Disabling,使能与禁用>> 章。|RW|0
+|2 |--|保留|--|0
+|3 |trAtbBridgeEmpty |当 ATB 桥内部缓冲区为空时读为 1|RO|1
+|7:4 |--|保留|--|0
+|14:8 |trAtbBridgeID |此节点在 ATB 上的 ID。值 0x00 和 0x70-0x7F 由 ATB 规范保留，不应使用。|RW|<<Undef,Undef>>
+|31:15 |--|保留|--|0
+|==='''

@@ -1,0 +1,11 @@
+unit_id = "b3d71c60c121ee1b6972f8f6e98375a3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_vs_acc2]#If neither the `v` registers nor S-mode is implemented, then csr::[vs] is
+read-only zero.#
+[#norm:mstatus_vs_rdonly0_s_no_V]#If S-mode is implemented but the `v` registers are not,
+csr::[vs] may optionally be read-only zero.#'''
+zh = '''
+[#norm:mstatus_vs_acc2]##若既未实现 `v` 寄存器也未实现 S 模式，则 csr::[vs] 为只读零。##[#norm:mstatus_vs_rdonly0_s_no_V]##若实现了 S 模式但未实现 `v` 寄存器，则 csr::[vs] 可选地为只读零。##'''

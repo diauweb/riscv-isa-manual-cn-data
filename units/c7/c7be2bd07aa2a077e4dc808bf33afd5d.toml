@@ -1,0 +1,29 @@
+unit_id = "c7be2bd07aa2a077e4dc808bf33afd5d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format 0, subformat 0 - no address, branch count
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 00 (opt-ext): formats for optional efficiency
+extensions
+|*subformat*| See <<sec:f0s>>| 0 (correctly predicted
+branches)
+|*branch_count*| 32| Count of the number of correctly predicted
+branches, minus 31.
+|*branch_fmt*| 2| 00 (no-addr): Packet does not contain an *address*,
+and the branch following the last correct prediction failed. -11:
+(cannot occur for this format)
+|==='''
+zh = '''
+.包格式 0，子格式 0——无地址、分支计数
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name*| *Bits*| *Description*
+|*format*| 2| 00（opt-ext）：用于可选效率扩展的格式
+|*subformat*| 见 <<sec:f0s>>| 0（正确预测的分支）
+|*branch_count*| 32| 正确预测的分支数减去 31。
+|*branch_fmt*| 2| 00（no-addr）：包中不含 *address*，且最后一次正确预测之后的分支预测失败。-11：（此格式不会出现）
+|==='''

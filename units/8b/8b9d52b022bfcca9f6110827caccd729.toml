@@ -1,0 +1,26 @@
+unit_id = "8b9d52b022bfcca9f6110827caccd729"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register Layout for Component*
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*Address Offset* |*Register Name* |*Compliance* |*Description*
+|0x000 |tr??Control |Required |Main control register for this trace component
+|0x004 |tr??Impl |Required |Trace Implementation information for this trace component
+|0x008 - 0x00F |extra controls|Optional |Extra controls for this trace component (named differently)
+|0x010 - 0xDFF |--|Optional |Additional registers (specific for the type of a component). All not used registers are reserved and should read as 0 and ignore writes.
+|0xE00 - 0xFFF |--|Optional |Registers reserved for implementation/vendor specific details. May allow identification of components on a system bus.
+|==='''
+zh = '''
+.**组件寄存器布局**
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*地址偏移* |*寄存器名称* |*合规性* |*描述*
+|0x000 |tr??Control |必需 |此跟踪组件的主控制寄存器
+|0x004 |tr??Impl |必需 |此跟踪组件的跟踪实现信息
+|0x008 - 0x00F |额外控制|可选 |此跟踪组件的额外控制（名称不同）
+|0x010 - 0xDFF |--|可选 |附加寄存器（特定于组件类型）。所有未使用的寄存器均为保留寄存器，宜读为 0 并忽略写入。
+|0xE00 - 0xFFF |--|可选 |保留给实现/供应商特定细节的寄存器。可允许识别系统总线上的组件。
+|==='''

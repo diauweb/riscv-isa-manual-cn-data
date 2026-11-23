@@ -1,0 +1,22 @@
+unit_id = "9e5db2cc69b132d96080431d74ebbeaa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="^1,^1,<3",options="header"]
+.Fence mode encoding
+|===
+|_fm_ field |Mnemonic |Meaning
+|0000 |_none_ |Normal Fence
+|1000 |TSO |With `FENCE RW,RW`: exclude write-to-read ordering; otherwise: _Reserved for future use._
+2+|_other_ |_Reserved for future use._
+|==='''
+zh = '''
+[float="center",align="center",cols="^1,^1,<3",options="header"]
+.Fence 模式编码
+|===
+|_fm_ 字段 |助记符 |含义
+|0000 |_none_ |正常 Fence
+|1000 |TSO |使用 `FENCE RW,RW` 时：排除写后读排序；否则：__保留供将来使用__
+2+|_other_ |__保留供将来使用__
+|==='''

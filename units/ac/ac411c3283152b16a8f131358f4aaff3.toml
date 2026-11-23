@@ -1,0 +1,51 @@
+unit_id = "ac411c3283152b16a8f131358f4aaff3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In the following litmus test, for example, the outcome `a0`=1, `a1`=0 on
+the consumer hart is forbidden, assuming little-endian RV32IC harts:
+
+```
+Initially, flag = 0.
+
+Producer hart:                                  Consumer hart:
+
+la t0, patch_me                                 la t2, flag
+li t1, 0x4585                                   lw a0, (t2)
+sh t1, (t0)   # patch_me := c.li a1, 1          fence.i
+fence w, w    # order flag write              patch_me:
+la t0, flag                                     c.li a1, 0
+li t1, 1
+sw t1, (t0)   # flag := 1
+```
+
+Note that this example is only meant to illustrate the aforementioned ordering
+property.
+In a realistic producer-consumer code-generation scheme, the consumer would loop
+until `flag` becomes 1 before executing the FENCE.I instruction.
+===='''
+zh = '''
+[NOTE]
+====
+例如，在下面的 litmus 测试中，假设为小端序 RV32IC 硬件线程，则消费者硬件线程上结果 `a0`=1、`a1`=0 是被禁止的：
+
+```
+Initially, flag = 0.
+
+Producer hart:                                  Consumer hart:
+
+la t0, patch_me                                 la t2, flag
+li t1, 0x4585                                   lw a0, (t2)
+sh t1, (t0)   # patch_me := c.li a1, 1          fence.i
+fence w, w    # order flag write              patch_me:
+la t0, flag                                     c.li a1, 0
+li t1, 1
+sw t1, (t0)   # flag := 1
+```
+
+注意，该示例仅用于说明上述排序性质。
+在实际的生产者-消费者代码生成方案中，消费者会循环直到 `flag` 变为 1 后才执行 FENCE.I 指令。
+===='''

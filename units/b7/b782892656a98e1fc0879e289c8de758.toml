@@ -1,0 +1,19 @@
+unit_id = "b782892656a98e1fc0879e289c8de758"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This choice of behavior for `vl`=0 reduces implementation
+complexity as it is consistent with other operations on vector
+register state.  For the common case that the source and destination
+scalar operand are the same vector register, this behavior also
+produces the expected result.  For the uncommon case that the source
+and destination scalar operand are in different vector registers, this
+instruction will not copy the source into the destination when `vl`=0.
+However, it is expected that in most of these cases it will be
+statically known that `vl` is not zero.  In other cases, a check for
+`vl`=0 will have to be added to ensure that the source scalar is
+copied to the destination (e.g., by explicitly setting `vl`=1 and
+performing a register-register copy).'''
+zh = '''
+NOTE: 对 `vl`=0 的这种行为选择降低了实现复杂度，因为它与对向量寄存器状态的其他操作一致。对于源和目标标量操作数在同一向量寄存器的常见情况，此行为也产生预期结果。对于源和目标标量操作数在不同向量寄存器的少见情况，当 `vl`=0 时该指令不会将源复制到目标。然而，预期在大多数这些情况下，静态可知 `vl` 不为零。在其他情况下，必须增加对 `vl`=0 的检查，以确保源标量被复制到目标（例如，通过显式设置 `vl`=1 并执行寄存器-寄存器复制）。'''

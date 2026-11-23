@@ -1,0 +1,14 @@
+unit_id = "5a65c2f2aebbe14a1673c172350b25a4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some HINT instructions are encoded as integer computational instructions that
+overwrite their destination register with its current value, e.g.,
+`c.addi x8, 0`.
+When such a HINT is executed with XLEN < SXLEN and bits SXLEN..XLEN of the
+destination register not all equal to bit XLEN-1, it is implementation-defined
+whether bits SXLEN..XLEN of the destination register are unchanged or are
+overwritten with copies of bit XLEN-1.'''
+zh = '''
+某些 HINT 指令被编码为整数计算指令，它们用当前值覆写其目标寄存器，例如 `c.addi x8, 0`。当此类 HINT 在 XLEN < SXLEN 且目标寄存器的位 SXLEN..XLEN 不全等于位 XLEN-1 的情况下执行时，目标寄存器的位 SXLEN..XLEN 是保持不变还是用位 XLEN-1 的副本覆写，由实现定义。'''

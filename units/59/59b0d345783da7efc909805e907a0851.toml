@@ -1,0 +1,17 @@
+unit_id = "59b0d345783da7efc909805e907a0851"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction implements the rotation, SubBytes and Round Constant
+addition steps of the AES block cipher Key Schedule.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.
+Note that `rnum` must be in the range `0x0..0xA`.
+The values `0xB..0xF` are reserved.'''
+zh = '''
+说明::
+本指令实现 AES 分组密码密钥编排中的循环移位、SubBytes 和轮常量相加步骤。
+本指令应__始终__以实现方式保证其执行延迟不依赖于所操作的数据。
+请注意，`rnum` 应位于 `0x0..0xA` 范围内。`0xB..0xF` 值为保留值。'''

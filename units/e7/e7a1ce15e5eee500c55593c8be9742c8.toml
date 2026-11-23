@@ -1,0 +1,13 @@
+unit_id = "e7a1ce15e5eee500c55593c8be9742c8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some standard supervisor CSRs (`senvcfg`, `scounteren`, and `scontext`,
+possibly others) have no matching VS CSR. These supervisor CSRs continue
+to have their usual function and accessibility even when V=1, except
+with VS-mode and VU-mode substituting for HS-mode and U-mode. Hypervisor
+software is expected to manually swap the contents of these registers as
+needed.'''
+zh = '''
+某些标准监管 CSR（`senvcfg`、`scounteren` 和 `scontext`，可能还有其他）没有匹配的 VS CSR。即使 V=1，这些监管 CSR 仍保持其通常功能和可访问性，只是由 VS 模式和 VU 模式替代 HS 模式和 U 模式。虚拟机监控器软件预期根据需要手动交换这些寄存器的内容。'''

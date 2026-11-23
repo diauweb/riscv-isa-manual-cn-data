@@ -1,0 +1,30 @@
+unit_id = "69b2fb95062ca3cc52698a12fbd492e8"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Each component sending a trace message/packet must assure the entire packet can be accepted by the destination component (or pushed into the FIFO buffer).
+** Sending a partial packet is NEVER allowed as it will not be possible to process and decode such a trace.
+* If a component cannot send an entire message/packet it must wait until it is possible to do so.
+* Tracing is typically required to be non-intrusive, and if the Trace Encoder cannot keep up with the hart it should drop the packet and wait for the receiver to be ready.
+** Once trace is allowed to resume it must issue an instruction trace synchronization message/packet so the decoder will be aware that some (unknown) amount of trace has been lost.
+** It is advisable to drain the trace pipeline to some hysteresis level before resuming - otherwise a lot of short chunks of trace may be produced.
+* Optionally the Trace Encoder may be configured to stall the hart to avoid trace data loss.
+* To prevent trace overflows the following techniques can be used:
+** Add a FIFO capable of holding several trace messages/packets to mitigate bursts of trace data.
+** Use wider internal busses to provide more bandwidth.
+** Make sure funnels and sinks provide the same or more bandwidth than encoders.
+** Use triggers to create trace windows/ranges to limit amount of trace data - especially in multi-core configurations.'''
+zh = '''
+* 每个发送跟踪消息/数据包的组件都应确保整个数据包可被目的地组件接受（或推入 FIFO 缓冲区）。
+** 绝不允许发送部分数据包，因为不可能处理和解码这样的跟踪数据。
+* 如果组件无法发送整个消息/数据包，它应等待直到能够发送。
+* 跟踪通常要求是非侵入式的，如果跟踪编码器无法跟上硬件线程，它宜丢弃数据包并等待接收方就绪。
+** 一旦允许跟踪恢复，它应发出指令跟踪同步消息/数据包，以便解码器知道已丢失某些（未知数量的）跟踪数据。
+** 建议在恢复之前将跟踪流水线排空到某个迟滞水平——否则可能产生大量短小的跟踪数据块。
+* 可选地，可将跟踪编码器配置为停顿硬件线程以避免跟踪数据丢失。
+* 为防止跟踪上溢，可使用以下技术：
+** 添加能够保存若干跟踪消息/数据包的 FIFO，以缓解跟踪数据突发。
+** 使用更宽的内部总线以提供更多带宽。
+** 确保漏斗和接收器提供与编码器相同或更大的带宽。
+** 使用触发器创建跟踪窗口/范围以限制跟踪数据量——尤其是在多核配置中。'''

@@ -1,0 +1,54 @@
+unit_id = "03151a224f7c20b01411614c87ce6b77"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Storing the return address on both stacks preserves the call stack layout and
+the ABI, while also allowing for the detection of corruption of the return
+address on the regular stack. The prologue and epilogue of a non-leaf function
+that uses shadow stacks is as follows:
+
+[listing]
+----
+    function_entry:
+        addi sp,sp,-8  # push link register x1
+        sd x1,(sp)     # on regular stack
+        sspush x1      # push link register x1 on shadow stack
+         :
+        ld x1,(sp)     # pop link register x1 from regular stack
+        addi sp,sp,8
+        sspopchk x1    # fault if x1 not equal to shadow return address
+        ret
+----
+
+This example illustrates the use of `x1` register as the link register.
+Alternatively, the `x5` register may also be used as the link register.
+
+A leaf function, a function that does not itself make function calls, does
+not need to spill the link register. Consequently, the return value may be held
+in the link register itself for the duration of the leaf function's execution.
+===='''
+zh = '''
+[NOTE]
+====
+将返回地址存储在两个栈上既保留了调用栈布局和 ABI，又允许检测常规栈上返回地址的破坏。使用影子栈的非叶子函数的序言和尾声如下：
+
+[listing]
+----
+    function_entry:
+        addi sp,sp,-8  # push link register x1
+        sd x1,(sp)     # on regular stack
+        sspush x1      # push link register x1 on shadow stack
+         :
+        ld x1,(sp)     # pop link register x1 from regular stack
+        addi sp,sp,8
+        sspopchk x1    # fault if x1 not equal to shadow return address
+        ret
+----
+
+该示例说明了使用 `x1` 寄存器作为链接寄存器。替代地，也可使用 `x5` 寄存器作为链接寄存器。
+
+叶子函数（即自身不进行函数调用的函数）不需要溢出链接寄存器。因此，返回值可在叶子函数执行期间一直保存在链接寄存器本身中。
+===='''

@@ -1,0 +1,21 @@
+unit_id = "97c678cd504300e7aec299d660ebc8d5"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[%unbreakable]
+[NOTE]
+====
+Ordinarily, each `mireg`*_i_* will access register state, access
+read-only 0 state, or raise an illegal-instruction exception.
+
+For RV32, if an extension defines an indirectly accessed register as 64 bits wide, it is recommended that the lower 32 bits of the register are accessed through one of `mireg`, `mireg2`, or `mireg3`, while the upper 32 bits are accessed through `mireg4`, `mireg5`, or `mireg6`, respectively.
+===='''
+zh = '''
+[%unbreakable]
+[NOTE]
+====
+通常，每个 `mireg`*_i_* 将访问寄存器状态、访问只读 0 状态或触发非法指令异常。
+
+对于 RV32，若某扩展将间接访问的寄存器定义为 64 位宽，则建议通过 `mireg`、`mireg2` 或 `mireg3` 之一访问该寄存器的低 32 位，并分别通过 `mireg4`、`mireg5` 或 `mireg6` 访问高 32 位。
+===='''

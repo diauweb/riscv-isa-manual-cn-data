@@ -1,0 +1,18 @@
+unit_id = "21b3489e1169ec4a27b1568b0f36da35"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In RV64, MUL can be used to obtain the upper 32 bits of the 64-bit
+product, but signed arguments must be proper 32-bit signed values,
+whereas unsigned arguments must have their upper 32 bits clear. If the
+arguments are not known to be sign- or zero-extended, an alternative is
+to shift both arguments left by 32 bits, then use MULH[[S]U].
+===='''
+zh = '''
+[NOTE]
+====
+在 RV64 中，可用 MUL 获取 64 位乘积的高 32 位，但有符号参数必须是恰当的有符号 32 位值，而无符号参数的高 32 位必须为零。如果不知道参数是否已符号扩展或零扩展，另一种做法是将两个参数左移 32 位，然后使用 MULH[[S]U]。
+===='''

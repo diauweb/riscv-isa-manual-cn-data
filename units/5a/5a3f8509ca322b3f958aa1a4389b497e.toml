@@ -1,0 +1,17 @@
+unit_id = "5a3f8509ca322b3f958aa1a4389b497e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:constrained_lrsc_forward_progress_sc]#_H_ or some other hart executes a successful SC to the reservation set
+of the LR instruction in _H_'s constrained LR/SC loops.#
+* [#norm:constrained_lrsc_forward_progress_store_amo]#Some other hart executes an unconditional store or AMO instruction to
+the reservation set of the LR instruction in _H_'s constrained LR/SC
+loop, or some other device in the system writes to that reservation set.#
+* [#norm:constrained_lrsc_forward_progress_branch]#_H_ executes a branch or jump that exits the constrained LR/SC loop.#
+* [#norm:constrained_lrsc_forward_progress_trap]#_H_ traps.#'''
+zh = '''
+* [#norm:constrained_lrsc_forward_progress_sc]##_H_ 或某个其他硬件线程对 _H_ 的受约束 LR/SC 循环中 LR 指令的保留集执行成功的 SC。##
+* [#norm:constrained_lrsc_forward_progress_store_amo]##某个其他硬件线程对 _H_ 的受约束 LR/SC 循环中 LR 指令的保留集执行无条件存储或 AMO 指令，或者系统中某个其他设备写入该保留集。##
+* [#norm:constrained_lrsc_forward_progress_branch]##_H_ 执行退出该受约束 LR/SC 循环的分支或跳转。##
+* [#norm:constrained_lrsc_forward_progress_trap]##_H_ 陷入陷阱。##'''

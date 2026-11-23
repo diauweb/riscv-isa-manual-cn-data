@@ -1,0 +1,14 @@
+unit_id = "c85cb2dc51fd787648daf1caa4a2c2b2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the normalized output exponent is 0 or -1, the result is subnormal: the
+output exponent is 0, and the output significand is given by concatenating
+a 1 bit to the left of the normalized output significand, then shifting that
+quantity right by 1 minus the normalized output exponent.
+Otherwise, the output exponent equals the normalized output exponent, and the
+output significand equals the normalized output significand.
+The output sign equals the input sign.'''
+zh = '''
+如果规格化输出指数为 0 或 -1，则结果为非规格化：输出指数为 0，输出有效数由在规格化输出有效数左侧拼接 1 位，然后将该量右移 1 减去规格化输出指数位得到。否则，输出指数等于规格化输出指数，输出有效数等于规格化输出有效数。输出符号等于输入符号。'''

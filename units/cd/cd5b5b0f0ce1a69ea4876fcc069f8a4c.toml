@@ -1,0 +1,20 @@
+unit_id = "cd5b5b0f0ce1a69ea4876fcc069f8a4c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A double trap typically arises during a sensitive phase in trap handling
+operations -- when an exception or interrupt occurs while the trap handler (the
+component responsible for managing these events) is in a non-reentrant state.
+This non-reentrancy usually occurs in the early phase of trap handling, wherein
+the trap handler has not yet preserved the necessary state to handle and resume
+from the trap. The occurrence of a trap during this phase can lead to an
+overwrite of critical state information, resulting in the loss of data needed to
+recover from the initial trap. The trap that caused this critical error
+condition is henceforth called the _unexpected trap_. Trap handlers are designed
+to neither enable interrupts nor cause exceptions during this phase of handling.
+However, managing Hardware-Error exceptions,  which may occur unpredictably,
+presents significant challenges in trap handler implementation due to the
+potential risk of a double trap.'''
+zh = '''
+双陷阱通常出现在陷阱处理操作的敏感阶段——当异常或中断在陷阱处理程序（负责管理这些事件的组件）处于不可重入状态时发生。这种不可重入性通常出现在陷阱处理的早期阶段，此时陷阱处理程序尚未保存处理陷阱和从陷阱恢复所需的状态。在此阶段发生陷阱可能覆盖关键状态信息，导致丢失从初始陷阱恢复所需的数据。导致此关键错误状况的陷阱此后称为 _意外陷阱_。陷阱处理程序的设计使其在该处理阶段既不使能中断也不导致异常。然而，管理可能不可预测发生的硬件错误异常，由于存在双陷阱的潜在风险，给陷阱处理程序的实现带来了重大挑战。'''

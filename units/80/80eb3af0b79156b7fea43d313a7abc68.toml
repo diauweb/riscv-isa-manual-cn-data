@@ -1,0 +1,18 @@
+unit_id = "80eb3af0b79156b7fea43d313a7abc68"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+<<ntl>> lists several sample memory hierarchies and
+recommends how each NTL variant maps onto each cache level. The table
+also recommends which NTL variant that implementation-tuned software
+should use to avoid allocating in a particular cache level. For example,
+for a system with a private L1 and a shared L2, it is recommended that
+NTL.P1 and NTL.PALL indicate that temporal locality cannot be exploited
+by the L1, and that NTL.S1 and NTL.ALL indicate that temporal locality
+cannot be exploited by the L2. Furthermore, software tuned for such a
+system should use NTL.P1 to indicate a lack of temporal locality
+exploitable by the L1, or should use NTL.ALL indicate a lack of temporal
+locality exploitable by the L2.'''
+zh = '''
+<<ntl>> 列出了若干示例内存层次，并推荐每个 NTL 变体如何映射到每个高速缓存层次。该表还推荐针对实现调优的软件宜使用哪个 NTL 变体来避免在特定高速缓存层次中分配。例如，对于具有私有 L1 和共享 L2 的系统，建议 NTL.P1 和 NTL.PALL 指示 L1 无法利用时间局部性，而 NTL.S1 和 NTL.ALL 指示 L2 无法利用时间局部性。此外，针对此类系统调优的软件宜使用 NTL.P1 指示 L1 无法利用的时间局部性缺失，或宜使用 NTL.ALL 指示 L2 无法利用的时间局部性缺失。'''

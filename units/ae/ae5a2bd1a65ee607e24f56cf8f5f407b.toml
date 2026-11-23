@@ -1,0 +1,67 @@
+unit_id = "ae5a2bd1a65ee607e24f56cf8f5f407b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+RDCYCLE is intended to return the number of cycles executed by the
+processor core, not the hart. Precisely defining what is a "core" is
+difficult given some implementation choices (e.g., AMD Bulldozer).
+Precisely defining what is a "clock cycle" is also difficult given the
+range of implementations (including software emulations), but the intent
+is that RDCYCLE is used for performance monitoring along with the other
+performance counters. In particular, where there is one hart/core, one
+would expect cycle-count/instructions-retired to measure CPI for a hart.
+
+Cores don't have to be exposed to software at all, and an implementor
+might choose to pretend multiple harts on one physical core are running
+on separate cores with one hart/core, and provide separate cycle
+counters for each hart. This might make sense in a simple barrel
+processor (e.g., CDC 6600 peripheral processors) where inter-hart timing
+interactions are non-existent or minimal.
+
+Where there is more than one hart/core and dynamic multithreading, it is
+not generally possible to separate out cycles per hart (especially with
+SMT). It might be possible to define a separate performance counter that
+tried to capture the number of cycles a particular hart was running, but
+this definition would have to be very fuzzy to cover all the possible
+threading implementations. For example, should we only count cycles for
+which any instruction was issued to execution for this hart, and/or
+cycles any instruction retired, or include cycles this hart was
+occupying machine resources but couldn't execute due to stalls while
+other harts went into execution? Likely, "all of the above" would be
+needed to have understandable performance stats. This complexity of
+defining a per-hart cycle count, and also the need in any case for a
+total per-core cycle count when tuning multithreaded code led to just
+standardizing the per-core cycle counter, which also happens to work
+well for the common single hart/core case.
+
+Standardizing what happens during "sleep" is not practical given that
+what "sleep" means is not standardized across execution environments,
+but if the entire core is paused (entirely clock-gated or powered-down
+in deep sleep), then it is not executing clock cycles, and the cycle
+count shouldn't be increasing per the spec. There are many details,
+e.g., whether clock cycles required to reset a processor after waking up
+from a power-down event should be counted, and these are considered
+execution-environment-specific details.
+
+Even though there is no precise definition that works for all platforms,
+this is still a useful facility for most platforms, and an imprecise,
+common, "usually correct" standard here is better than no standard.
+The intent of RDCYCLE was primarily performance monitoring/tuning, and
+the specification was written with that goal in mind.
+===='''
+zh = '''
+[NOTE]
+====
+RDCYCLE 意在返回处理器核执行的周期数，而非硬件线程的周期数。鉴于某些实现选择（例如 AMD Bulldozer），精确界定何为“核”很困难。鉴于实现范围广泛（包括软件仿真），精确界定何为“时钟周期”同样困难，但其意图是 RDCYCLE 与其他性能计数器一起用于性能监测。特别地，在存在一个硬件线程/核的情况下，人们会期望用周期数/已退休指令数来衡量某硬件线程的每指令周期数（CPI）。
+
+核完全不必暴露给软件，实现者可能选择假装一个物理核上的多个硬件线程是各自在一个硬件线程/核的独立核上运行，并为每个硬件线程提供单独的周期计数器。这在简单的桶形处理器（例如 CDC 6600 外围处理器）中可能有意义，因为此类处理器中硬件线程之间的时序交互不存在或极小。
+
+在存在多个硬件线程/核以及动态多线程的情况下，通常无法按硬件线程分离周期数（尤其是在 SMT 下）。可能可以定义一个单独的、试图捕获某特定硬件线程运行周期数的性能计数器，但该定义必须非常模糊才能覆盖所有可能的线程实现。例如，是否应只统计该硬件线程有任何指令被发射执行的周期、任何指令退休的周期或二者，还是应包括该硬件线程占用机器资源但因停顿而无法执行、同时其他硬件线程进入执行的周期？可能“以上全部”都是获得可理解性能统计数据所必需的。定义每硬件线程周期数的这种复杂性，加上在调优多线程代码时无论如何都需要每核总周期数，导致最终只对每核周期计数器进行标准化，而这恰好也很好地适用于常见的单硬件线程/核情形。
+
+鉴于“睡眠”的含义在各执行环境中并未标准化，对“睡眠”期间发生的行为进行标准化并不实际，但如果整个核被暂停（在深度睡眠中完全时钟门控或断电），则它不执行时钟周期，按照规范周期计数不应增加。有许多细节，例如从断电事件唤醒后复位处理器所需的时钟周期是否应计入，这些被认为是执行环境特定的细节。
+
+尽管不存在适用于所有平台的精确定义，这对大多数平台仍是有用的设施，此处一个不精确的、通用的、“通常正确”的标准总比没有标准好。RDCYCLE 的意图主要是性能监测/调优，本规范正是本着这一目标编写的。
+===='''

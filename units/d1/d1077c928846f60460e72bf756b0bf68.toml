@@ -1,0 +1,25 @@
+unit_id = "d1077c928846f60460e72bf756b0bf68"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+If an interrupt occurs between the execution of an NTL instruction and
+its target instruction, execution will normally resume at the target
+instruction. That the NTL instruction is not re-executed does not change
+the semantics of the program.
+
+Some implementations might prefer not to process the NTL instruction
+until the target instruction is seen (e.g., so that the NTL can be fused
+with the memory access it modifies). Such implementations might
+preferentially take the interrupt before the NTL, rather than between
+the NTL and the memory access.
+===='''
+zh = '''
+[NOTE]
+====
+如果在 NTL 指令的执行与其目标指令之间发生中断，执行通常将在目标指令处恢复。NTL 指令未重新执行并不改变程序的语义。
+
+某些实现可能倾向于在看到目标指令之前不处理 NTL 指令（例如，以便 NTL 能与它所修饰的内存访问融合）。此类实现可能优先在 NTL 之前接受中断，而不是在 NTL 与内存访问之间。
+===='''

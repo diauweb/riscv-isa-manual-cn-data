@@ -1,0 +1,29 @@
+unit_id = "7c683ef86145c0c4bbd465c71ce7d442"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Changed insn:mret[] and insn:sret[] to clear csr:mstatus[mprv] when leaving M-mode.
+* Reserved additional csr:satp[] patterns for future use.
+* Stated that the csr:scause[] Exception Code field must implement bits 4–0
+at minimum.
+* Relaxed I/O regions have been specified to follow RVWMO. The previous
+specification implied that PPO rules other than fences and
+acquire/release annotations did not apply.
+* Constrained the LR/SC reservation set size and shape when using
+page-based virtual memory.
+* PMP changes require an insn:sfence.vma[] on any hart that implements
+page-based virtual memory, even if VM is not currently enabled.
+* Allowed for speculative updates of page table entry A bits.
+* Clarify that if the address-translation algorithm non-speculatively
+reaches a PTE in which a bit reserved for future standard use is set, a
+page-fault exception must be raised.'''
+zh = '''
+* 将 insn:mret[] 和 insn:sret[] 改为在离开 M 模式时清零 csr:mstatus[mprv]。
+* 为将来使用保留了额外的 csr:satp[] 模式。
+* 说明 csr:scause[] 的异常代码字段至少应实现位 4–0。
+* 已规定宽松的 I/O 区域遵循 RVWMO。此前的规范暗示，除 fence 和获取/释放标注之外的 PPO 规则不适用。
+* 限制了使用基于页的虚拟内存时 LR/SC 保留集的大小和形状。
+* PMP 变更要求任何实现了基于页的虚拟内存的硬件线程执行 insn:sfence.vma[]，即使当前未使能 VM。
+* 允许对页表项 A 位进行推测性更新。
+* 澄清：若地址转换算法在非推测执行中到达某个 PTE，而该 PTE 中为未来标准使用保留的位被置位，则应触发页错误异常。'''

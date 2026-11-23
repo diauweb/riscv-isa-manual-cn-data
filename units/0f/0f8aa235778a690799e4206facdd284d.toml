@@ -1,0 +1,20 @@
+unit_id = "0f8aa235778a690799e4206facdd284d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Software Hint
+[NOTE, caption="SW"]
+===============================================================
+Calculating the absolute value of a signed integer can be performed
+using the following sequence: insn:neg[rD,rS] followed by insn:max[rD,rS,rD].
+When using this common sequence, it is suggested that they
+are scheduled with no intervening instructions so that
+implementations that are so optimized can fuse them together.
+==============================================================='''
+zh = '''
+.软件提示
+[NOTE, caption="SW"]
+===============================================================
+计算有符号整数的绝对值可使用以下序列：insn:neg[rD,rS]，随后是 insn:max[rD,rS,rD]。当使用这一常见序列时，宜将其调度为中间没有其他指令，以便经过此类优化的实现能将它们融合在一起。
+==============================================================='''

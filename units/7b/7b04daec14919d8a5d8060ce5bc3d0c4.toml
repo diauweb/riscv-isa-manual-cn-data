@@ -1,0 +1,17 @@
+unit_id = "7b04daec14919d8a5d8060ce5bc3d0c4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Nevertheless, even if (b) precedes (a) and/or (f) precedes (e) in the
+global memory order, the only sensible possibility in this example is
+for (b) to return the value written by (a), and likewise for (f) and
+(e). This combination of circumstances is what leads to the second
+option in the definition of the load value axiom. Even though (b)
+precedes (a) in the global memory order, (a) will still be visible to
+(b) by virtue of sitting in the store buffer at the time (b) executes.
+Therefore, even if (b) precedes (a) in the global memory order, (b)
+should return the value written by (a) because (a) precedes (b) in
+program order. Likewise for (e) and (f).'''
+zh = '''
+尽管如此，即使 (b) 在全局内存顺序中先于 (a) 和/或 (f) 先于 (e)，本示例中唯一合理的可能性仍是 (b) 返回由 (a) 写入的值，对 (f) 和 (e) 同理。这种情形组合正是加载值公理定义中第二个选项的由来。即使 (b) 在全局内存顺序中先于 (a)，由于 (a) 在 (b) 执行时仍位于存储缓冲器中，(a) 对 (b) 仍然可见。因此，即使 (b) 在全局内存顺序中先于 (a)，(b) 仍宜返回由 (a) 写入的值，因为 (a) 在程序顺序中先于 (b)。对 (e) 和 (f) 同理。'''

@@ -1,0 +1,11 @@
+unit_id = "da497dc51c8aaf7e6213c68dbeaffdb6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If an enabled interrupt is present or later becomes present while the
+hart is stalled, the interrupt trap will be taken on the following
+instruction, i.e., execution resumes in the trap handler and `mepc` =
+`pc` + 4.'''
+zh = '''
+若硬件线程停顿时存在已使能的中断或其后出现已使能的中断，则在后续指令上接受中断陷阱，即执行在陷阱处理程序中恢复，且 `mepc` = `pc` + 4。'''

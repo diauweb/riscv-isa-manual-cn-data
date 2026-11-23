@@ -1,0 +1,14 @@
+unit_id = "24ccf091cf01252287b18baa86b8af74"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Software may determine the PMP granularity by writing zero to `pmp0cfg`, then writing all ones to `pmpaddr0`, then reading back `pmpaddr0`. If _G_ is the index of the least-significant bit set, the PMP granularity is 2^G+2^ bytes.
+===='''
+zh = '''
+[NOTE]
+====
+软件可通过向 `pmp0cfg` 写入零、然后向 `pmpaddr0` 写入全 1、然后读回 `pmpaddr0` 来确定 PMP 粒度。若 _G_ 为置位的最低有效位的索引，则 PMP 粒度为 2^G+2^ 字节。
+===='''

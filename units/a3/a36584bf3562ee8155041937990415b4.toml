@@ -1,0 +1,11 @@
+unit_id = "a36584bf3562ee8155041937990415b4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mtval_vaddr_not_paddr]#When page-based virtual memory is enabled, `mtval` is written with the
+faulting virtual address, even for physical-memory access-fault exceptions.#
+This design reduces datapath cost for most implementations,
+particularly those with hardware page-table walkers.'''
+zh = '''
+[#norm:mtval_vaddr_not_paddr]##当启用基于页的虚拟内存时，`mtval` 被写入出错虚拟地址，即使对于物理内存访问错误异常也是如此。##此设计降低了大多数实现的数据通路成本，尤其是那些具有硬件页表遍历器的实现。'''

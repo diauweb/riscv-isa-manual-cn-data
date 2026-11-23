@@ -1,0 +1,21 @@
+unit_id = "34d94ffa56aac30ad917b622982b91d4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicond extension was defined to solve the same problem as conditional
+select and conditional move, but with very little incremental cost for complex
+microarchitectures.
+It provides conditional-zero instructions, which read two source operands and,
+based upon the zeroness of the second operand, produce either the first operand
+or zero.
+These instructions can be used as part of a three-instruction sequence to
+synthesize conditional select.
+Several common conditional-execution idioms require only two instructions,
+as would be the case with conditional select or move, including
+conditional addition, subtraction, and bitwise AND, OR, and XOR.'''
+zh = '''
+定义 Zicond 扩展是为了解决与条件选择和条件移动相同的问题，但对复杂微体系结构而言只需极少的增量代价。
+它提供条件零指令，这些指令读取两个源操作数，并根据第二个操作数是否为零，产生第一个操作数或零。
+这些指令可作为三指令序列的一部分来合成条件选择。
+若干常见的条件执行惯用法只需两条指令，如同使用条件选择或条件移动那样，包括条件加、条件减以及按位与、按位或和按位异或。'''

@@ -1,0 +1,13 @@
+unit_id = "f66ce5940fdfc33b6c45f26cb4e30585"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Programs with a shadow stack push the return address onto the regular stack as
+well as the shadow stack in the prologue of non-leaf functions. When returning
+from these non-leaf functions, such programs pop the link register from the
+regular stack and pop a shadow copy of the link register from the shadow stack.
+The two values are then compared. If the values do not match, it is indicative
+of a corruption of the return address variable on the regular stack.'''
+zh = '''
+使用影子栈的程序在非叶子函数的序言中将返回地址压入常规栈以及影子栈。当从这些非叶子函数返回时，此类程序从常规栈弹出链接寄存器，并从影子栈弹出链接寄存器的影子副本。然后比较这两个值。如果值不匹配，则表示常规栈上的返回地址变量遭到破坏。'''

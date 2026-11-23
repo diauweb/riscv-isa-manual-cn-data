@@ -1,0 +1,8 @@
+unit_id = "b941afd66f78ac1365dfc3737f023922"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pm_rv64_only]#Pointer masking only applies to RV64.# [#norm:pm_rv32_illegal]#In RV32, trying to enable pointer masking will result in an illegal WARL write and not update the pointer masking configuration bits# (see <<sec:mseccfg>>, <<sec:menvcfg>>, <<sec:henvcfg>>, and <<sec:senvcfg>> for details). The same is the case on RV64 or larger systems when UXL/SXL is set to 1 for the corresponding privilege mode. Note that in RV32, the CSR bits introduced by pointer masking are still present, for compatibility between RV32 and larger systems with UXL/SXL set to 1. [#norm:pm_uxl_clear]#Setting UXL/SXL to 1 will clear the corresponding pointer masking configuration bits.#'''
+zh = '''
+[#norm:pm_rv64_only]##指针掩码仅适用于 RV64。## [#norm:pm_rv32_illegal]##在 RV32 中，试图使能指针掩码将导致非法 WARL 写入，并且不更新指针掩码配置位##（详见 <<sec:mseccfg>>、<<sec:menvcfg>>、<<sec:henvcfg>> 和 <<sec:senvcfg>>）。对于 RV64 或更大系统，若对应特权模式的 UXL/SXL 置为 1，情况同样如此。注意，在 RV32 中，指针掩码引入的 CSR 位仍然存在，以便 RV32 与 UXL/SXL 置为 1 的更大系统兼容。[#norm:pm_uxl_clear]##将 UXL/SXL 置为 1 将清除对应的指针掩码配置位。##'''

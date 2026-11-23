@@ -1,0 +1,17 @@
+unit_id = "5770247f345fa456f5978ac142e028cc"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+val LowestSetBit : forall ('N : Int), 'N >= 0. bits('N) -> int
+
+function LowestSetBit x = {
+  foreach (i from 0 to (xlen - 1) by 1 in dec)
+    if [x[i]] == 0b1 then return(i) else ();
+  return xlen;
+}
+
+let rs = X(rs);
+X[rd] = LowestSetBit(rs);
+--'''

@@ -1,0 +1,27 @@
+unit_id = "de2a195c58b1456aecda07b09d114e91"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. csr:vl[] = AVL if `AVL {le} VLMAX`
+. `ceil(AVL / 2) {le} vl {le} VLMAX` if `AVL < (2 * VLMAX)`
+. csr:vl[] = VLMAX if `AVL {ge} (2 * VLMAX)`
+. Deterministic on any given implementation for same input AVL and VLMAX values
+. These specific properties follow from the prior rules:
+.. csr:vl[] = 0 if  `AVL = 0`
+.. csr:vl[] > 0 if `AVL > 0`
+.. csr:vl[] {le} VLMAX
+.. csr:vl[] {le} AVL
+.. a value read from csr:vl[] when used as the AVL argument to insn:vsetvli[], insn:vsetivli[], or insn:vsetvl[] results in the same
+value in csr:vl[], provided the resultant VLMAX equals the value of VLMAX at the time that csr:vl[] was read'''
+zh = '''
+. 如果 `AVL {le} VLMAX`，则 csr:vl[] = AVL
+. 如果 `AVL < (2 * VLMAX)`，则 `ceil(AVL / 2) {le} vl {le} VLMAX`
+. 如果 `AVL {ge} (2 * VLMAX)`，则 csr:vl[] = VLMAX
+. 对于相同的输入 AVL 和 VLMAX 值，在任何给定实现上是确定性的
+. 以下特定性质由前述规则得出：
+.. 如果 `AVL = 0`，则 csr:vl[] = 0
+.. 如果 `AVL > 0`，则 csr:vl[] > 0
+.. csr:vl[] {le} VLMAX
+.. csr:vl[] {le} AVL
+.. 从 csr:vl[] 读取的值用作 insn:vsetvli[]、insn:vsetivli[] 或 insn:vsetvl[] 的 AVL 参数时，如果得到的 VLMAX 等于读取 csr:vl[] 时的 VLMAX 值，则在 csr:vl[] 中产生相同的值'''

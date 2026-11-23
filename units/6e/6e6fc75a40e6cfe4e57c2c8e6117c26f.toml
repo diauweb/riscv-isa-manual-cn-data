@@ -1,0 +1,15 @@
+unit_id = "6e6fc75a40e6cfe4e57c2c8e6117c26f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SUM (permit Supervisor User Memory access) bit modifies the
+privilege with which S-mode loads and stores access virtual memory. When
+SUM=0, S-mode memory accesses to pages that are accessible by U-mode
+(U=1 in <<sv32pte>>) will fault. When SUM=1, these
+accesses are permitted. SUM has no effect when page-based virtual memory
+is not in effect. Note that, while SUM is ordinarily ignored when not
+executing in S-mode, it _is_ in effect when MPRV=1 and MPP=S. SUM is
+read-only 0 if S-mode is not supported or if `satp`.MODE is read-only 0.'''
+zh = '''
+SUM（permit Supervisor User Memory access）位修改 S 模式加载和存储访问虚拟内存时所用的权限。当 SUM=0 时，S 模式对 U 模式可访问的页（<<sv32pte>> 中 U=1）的内存访问将出错。当 SUM=1 时，这些访问被允许。当基于页的虚拟内存未生效时，SUM 没有影响。注意，虽然 SUM 在非 S 模式执行时通常被忽略，但当 MPRV=1 且 MPP=S 时它 _确实_ 生效。若不支持 S 模式，或 `satp`.MODE 为只读 0，则 SUM 为只读 0。'''

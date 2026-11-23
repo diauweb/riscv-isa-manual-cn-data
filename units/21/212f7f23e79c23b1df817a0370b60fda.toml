@@ -1,0 +1,22 @@
+unit_id = "212f7f23e79c23b1df817a0370b60fda"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Storing a PPN in `satp`, rather than a physical address, supports a
+physical address space larger than 4 GiB for RV32.
+
+The `satp`.PPN field might not be capable of holding all physical page
+numbers. Some platform standards might place constraints on the values
+`satp`.PPN may assume, e.g., by requiring that all physical page numbers
+corresponding to main memory be representable.
+===='''
+zh = '''
+[NOTE]
+====
+在 `satp` 中存储 PPN 而非物理地址，支持 RV32 的物理地址空间大于 4 GiB。
+
+`satp`.PPN 字段可能不能保存所有物理页号。某些平台标准可能对 `satp`.PPN 可采用的取值施加约束，例如要求主存对应的所有物理页号均可表示。
+===='''

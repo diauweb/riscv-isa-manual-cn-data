@@ -1,0 +1,26 @@
+unit_id = "a5f85970c43d242b2092615dae00c040"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Repeat Branch Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=30(0x1E). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|[[field_B-CNT]] Var |B-CNT            |Standard Branch Count field.
+Number of times the previous branch message (without a <<field_SYNC,SYNC>> field) is repeated. Generated if I-CNT, HIST and target address is the same as in the previous branch message.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.RepeatBranch 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=30(0x1E)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|[[field_B-CNT]] Var |B-CNT            |标准分支计数字段。
+前一条分支消息（不带 <<field_SYNC,SYNC>> 字段）重复的次数。如果 I-CNT、HIST 和目标地址与前一条分支消息相同，则生成。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

@@ -1,0 +1,38 @@
+unit_id = "04cbf8ecf16da043591626a0d3b1c5aa"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RISC-V control and status register (CSR) address map.
+[%autowidth,float="center",align="center",cols="<m,<,<m,<",options="header"]
+|===
+|Number|Privilege|Name|Description
+4+^|Floating-Point Control and Status Registers
+|0x001|Read write|fflags|Floating-Point Accrued Exceptions.
+|0x002|Read write|frm|Floating-Point Dynamic Rounding Mode.
+|0x003|Read write|fcsr|Floating-Point Control and Status Register (`frm` + `fflags`).
+4+^|Counters and Timers
+|0xC00|Read-only|cycle|Cycle counter for RDCYCLE instruction.
+|0xC01|Read-only|time|Timer for RDTIME instruction.
+|0xC02|Read-only|instret|Instructions-retired counter for RDINSTRET instruction.
+|0xC80|Read-only|cycleh|Upper 32 bits of `cycle`, RV32I only.
+|0xC81|Read-only|timeh|Upper 32 bits of `time`, RV32I only.
+|0xC82|Read-only|instreth|Upper 32 bits of `instret`, RV32I only.
+|==='''
+zh = '''
+.RISC-V 控制与状态寄存器（CSR）地址映射
+[%autowidth,float="center",align="center",cols="<m,<,<m,<",options="header"]
+|===
+|编号|特权级|名称|描述
+4+^|浮点控制与状态寄存器
+|0x001|可读写|fflags|浮点累计异常。
+|0x002|可读写|frm|浮点动态舍入模式。
+|0x003|可读写|fcsr|浮点控制与状态寄存器（`frm` + `fflags`）。
+4+^|计数器与定时器
+|0xC00|只读|cycle|RDCYCLE 指令的周期计数器。
+|0xC01|只读|time|RDTIME 指令的定时器。
+|0xC02|只读|instret|RDINSTRET 指令的指令退休计数器。
+|0xC80|只读|cycleh|`cycle` 的高 32 位，仅 RV32I。
+|0xC81|只读|timeh|`time` 的高 32 位，仅 RV32I。
+|0xC82|只读|instreth|`instret` 的高 32 位，仅 RV32I。
+|==='''

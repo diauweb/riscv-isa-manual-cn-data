@@ -1,0 +1,26 @@
+unit_id = "c545a01c476989339ca95a3b4685a17c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Absent the execution of a FENCE.I instruction, there is no requirement that
+younger instruction fetches appear in the global memory order later than older
+explicit memory accesses.
+For example, if a program consists of two store instructions X and Y to
+distinct addresses AX and AY, then the following global orders are valid:
+
+- fetch X, fetch Y, store AX, store AY
+- fetch X, fetch Y, store AY, store AX
+- fetch X, store AX, fetch Y, store AY
+===='''
+zh = '''
+[NOTE]
+====
+在未执行 FENCE.I 指令的情况下，不要求较年轻的指令取指在全局内存顺序中出现在较早的显式内存访问之后。例如，如果程序由两条分别写入不同地址 AX 和 AY 的存储指令 X 和 Y 组成，则以下全局顺序是有效的：
+
+- fetch X, fetch Y, store AX, store AY
+- fetch X, fetch Y, store AY, store AX
+- fetch X, store AX, fetch Y, store AY
+===='''

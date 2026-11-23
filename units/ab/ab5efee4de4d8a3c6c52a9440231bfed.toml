@@ -1,0 +1,70 @@
+unit_id = "ab5efee4de4d8a3c6c52a9440231bfed"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Let _a_ be ``satp``.__ppn__×PAGESIZE, and let __i__=LEVELS-1. (For Sv32, PAGESIZE=2^12^ and LEVELS=2.) The `satp` register must be
+_active_, i.e., the effective privilege mode must be S-mode or U-mode.
+
+. Let _pte_ be the value of the PTE at address __a__+__va__.__vpn__[__i__]×PTESIZE. (For Sv32, PTESIZE=4.)  If accessing _pte_ violates a PMA or PMP check, raise an access-fault exception corresponding to the original access type.
+
+. If _pte_._v_=0, or if _pte_._r_=0 and _pte_._w_=1, or if any bits or encodings that are reserved for future standard use are set within _pte_, stop and raise a page-fault exception corresponding to the original access type.
+
+. Otherwise, the PTE is valid. If __pte__.__r__=1 or __pte__.__x__=1, go to step 5. Otherwise, this PTE is a pointer to the next level of the page table. Let __i=i__-1. If __i__<0, stop and raise a page-fault exception corresponding to the original access type. Otherwise, let
+__a__=__pte__.__ppn__×PAGESIZE and go to step 2.
+
+. A leaf PTE has been reached. If _i>0_ and _pte_._ppn_[__i__-1:0] ≠ 0, this is a misaligned superpage; stop and raise a page-fault exception corresponding to the original access type.
+
+. Determine if the requested memory access is allowed by the _pte_._u_ bit, given the current privilege mode and the value of the SUM and MXR fields of the *mstatus* register. If not, stop and raise a page-fault exception corresponding to the original access type.
+
+. Determine if the requested memory access is allowed by the _pte_._r_, _pte_._w_, and _pte_._x_ bits, given the Shadow Stack Memory Protection rules. If not, stop and raise an access-fault exception.
+
+. Determine if the requested memory access is allowed by the _pte_._r_, _pte_._w_, and _pte_._x_ bits. If not, stop and raise a page-fault exception corresponding to the original access type.
+
+. If _pte_._a_=0, or if the original memory access is a store and _pte_._d_=0:
+
+* If the Svade extension is implemented, stop and raise a page-fault exception corresponding to the original access type.
+* If a store to _pte_ would violate a PMA or PMP check,
+raise an access-fault exception corresponding to the original access
+type.
+* Perform the following steps atomically:
+** Compare _pte_ to the value of the PTE at address __a__+__va.vpn__[__i__]×PTESIZE.
+** If the values match, set _pte_._a_ to 1 and, if the
+original memory access is a store, also set _pte_._d_ to 1.
+** If the comparison fails, return to step 2.
+
+. The translation is successful. The translated physical address is
+given as follows:
+* _pa.pgoff_ = _va.pgoff_.
+* If _i_>0, then this is a superpage translation and __pa.ppn__[__i__-1:0] = __va.vpn__[__i__-1:0].
+* _pa.ppn_[LEVELS-1:__i__] = _pte_._ppn_[LEVELS-1:__i__].'''
+zh = '''
+. 设 _a_ 为 ``satp``.__ppn__×PAGESIZE，并设 __i__=LEVELS-1。（对于 Sv32，PAGESIZE=2^12^ 且 LEVELS=2。）`satp` 寄存器必须是__活动的__，即有效特权模式必须为 S 模式或 U 模式。
+
+. 设 _pte_ 为地址 __a__+__va__.__vpn__[__i__]×PTESIZE 处的 PTE 值。（对于 Sv32，PTESIZE=4。）若访问 _pte_ 违反 PMA 或 PMP 检查，则引发与原始访问类型相对应的访问出错异常。
+
+. 若 _pte_._v_=0，或 _pte_._r_=0 且 _pte_._w_=1，或 _pte_ 内设置了任何保留供未来标准使用的位或编码，则停止并引发与原始访问类型相对应的页错误异常。
+
+. 否则，该 PTE 有效。若 __pte__.__r__=1 或 __pte__.__x__=1，则转到步骤 5。否则，该 PTE 是指向下一级页表的指针。设 __i=i__-1。若 __i__<0，则停止并引发与原始访问类型相对应的页错误异常。否则，设 __a__=__pte__.__ppn__×PAGESIZE 并转到步骤 2。
+
+. 已到达叶 PTE。若 _i>0_ 且 _pte_._ppn_[__i__-1:0] ≠ 0，则这是非对齐超级页；停止并引发与原始访问类型相对应的页错误异常。
+
+. 在给定当前特权模式以及 *mstatus* 寄存器中 SUM 和 MXR 字段值的情况下，确定所请求的内存访问是否被 _pte_._u_ 位允许。若不允许，则停止并引发与原始访问类型相对应的页错误异常。
+
+. 在给定影子栈内存保护规则的情况下，确定所请求的内存访问是否被 _pte_._r_、_pte_._w_ 和 _pte_._x_ 位允许。若不允许，则停止并引发访问出错异常。
+
+. 确定所请求的内存访问是否被 _pte_._r_、_pte_._w_ 和 _pte_._x_ 位允许。若不允许，则停止并引发与原始访问类型相对应的页错误异常。
+
+. 若 _pte_._a_=0，或原始内存访问为存储且 _pte_._d_=0：
+
+* 若实现了 Svade 扩展，则停止并引发与原始访问类型相对应的页错误异常。
+* 若对 _pte_ 的存储会违反 PMA 或 PMP 检查，则引发与原始访问类型相对应的访问出错异常。
+* 原子地执行以下步骤：
+** 将 _pte_ 与地址 __a__+__va.vpn__[__i__]×PTESIZE 处的 PTE 值进行比较。
+** 若值匹配，则将 _pte_._a_ 置为 1，并且若原始内存访问为存储，还将 _pte_._d_ 置为 1。
+** 若比较失败，则返回步骤 2。
+
+. 转换成功。转换后的物理地址如下给出：
+* _pa.pgoff_ = _va.pgoff_。
+* 若 _i_>0，则这是一次超级页转换，且 __pa.ppn__[__i__-1:0] = __va.vpn__[__i__-1:0]。
+* _pa.ppn_[LEVELS-1:__i__] = _pte_._ppn_[LEVELS-1:__i__]。'''

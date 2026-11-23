@@ -1,0 +1,15 @@
+unit_id = "66e7680f9821b98271c7bdd3508936e7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The RV32I/RV64I does not have a dedicated instruction for calling a procedure or
+returning from a procedure. A insn:jal[] or insn:jalr[] may be used to perform a procedure
+call and insn:jalr[] to return from a procedure. The RISC-V ABI however defines the
+convention that a insn:jal[]/insn:jalr[] where `rd` (i.e. the link register) is `x1` or
+`x5` is a procedure call, and a insn:jalr[] where `rs1` is the conventional
+link register (i.e. `x1` or `x5`) is a return from procedure. The architecture
+allows for using these hints and conventions to support return address
+prediction (See <<norm:jalr_ras_hints_tbl>>).'''
+zh = '''
+RV32I/RV64I 没有专门用于调用过程或从过程返回的指令。可用 insn:jal[] 或 insn:jalr[] 执行过程调用，用 insn:jalr[] 从过程返回。然而，RISC-V ABI 定义了这样的约定：`rd`（即链接寄存器）为 `x1` 或 `x5` 的 insn:jal[]/insn:jalr[] 是过程调用，而 `rs1` 为常规链接寄存器（即 `x1` 或 `x5`）的 insn:jalr[] 是从过程返回。架构允许使用这些提示和约定来支持返回地址预测（见 <<norm:jalr_ras_hints_tbl>>）。'''

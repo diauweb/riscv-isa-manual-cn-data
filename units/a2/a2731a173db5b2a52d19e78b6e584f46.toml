@@ -1,0 +1,10 @@
+unit_id = "a2731a173db5b2a52d19e78b6e584f46"
+kind = "code"
+translatable = false
+en = '''
+----
+    vmmv.m vd, vs  => vmand.mm vd, vs, vs   # Copy mask register
+    vmclr.m vd     => vmxor.mm vd, vd, vd   # Clear mask register
+    vmset.m vd     => vmxnor.mm vd, vd, vd  # Set mask register
+    vmnot.m vd, vs => vmnand.mm vd, vs, vs  # Invert bits
+----'''

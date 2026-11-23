@@ -1,0 +1,14 @@
+unit_id = "3bd2f22697498d189f1738b3a7af31a2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Values of `siselect` with the most-significant bit set (bit XLEN - 1 = 1)
+are designated only for custom use, presumably for accessing custom registers through the alias
+CSRs. Values of `siselect` with the most-significant bit clear are
+designated only for standard use and are reserved until allocated to a
+standard architecture extension. If XLEN is changed, the
+most-significant bit of `siselect` moves to the new position, retaining
+its value from before.'''
+zh = '''
+最高有效位置位（位 XLEN - 1 = 1）的 `siselect` 值仅指定用于自定义用途，推测是通过别名 CSR 访问自定义寄存器。最高有效位清零的 `siselect` 值仅指定用于标准用途，并在分配给标准架构扩展之前保留。若 XLEN 改变，`siselect` 的最高有效位移动到新位置，并保留其先前值。'''

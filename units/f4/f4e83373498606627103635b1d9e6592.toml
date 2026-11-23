@@ -1,0 +1,56 @@
+unit_id = "f4e83373498606627103635b1d9e6592"
+kind = "code"
+translatable = false
+en = '''
+----
+.LBB0_4:                                # %vector.body
+                                        # =>This Inner Loop Header: Depth=1
+	add	s9, a2, s6
+	vsetvli	s1, zero, e8,mf2,ta,mu // LMUL=1/2 !
+	vle8.v	v25, (s9)
+	add	s1, a3, s6
+	vle8.v	v26, (s1)
+	vadd.vv	v25, v26, v25
+	add	s1, a1, s6
+	vse8.v	v25, (s1)
+	add	s9, a5, s10
+	vsetvli	s1, zero, e64,m4,ta,mu // LMUL=4
+	vle64.v	v28, (s9)
+	add	s1, a6, s10
+	vle64.v	v8, (s1)
+	vadd.vv	v28, v8, v28
+	add	s1, a7, s10
+	vle64.v	v8, (s1)
+	add	s1, s3, s10
+	vle64.v	v12, (s1)
+	add	s1, t6, s10
+	vle64.v	v16, (s1)
+	add	s1, t5, s10
+	vle64.v	v20, (s1)
+	add	s1, a4, s10
+	vse64.v	v28, (s1)
+	vadd.vv	v8, v12, v8
+	vadd.vv	v12, v20, v16
+	add	s1, t2, s10
+	vle64.v	v16, (s1)
+	add	s1, t3, s10
+	vle64.v	v20, (s1)
+	add	s1, s2, s10
+	vse64.v	v8, (s1)
+	add	s9, t4, s10
+	vadd.vv	v16, v20, v16
+	add	s11, t0, s10
+	vle64.v	v20, (s11)
+	vse64.v	v12, (s9)
+	add	s1, t1, s10
+	vse64.v	v16, (s1)
+	vsll.vi	v20, v20, 1
+	vadd.vv	v28, v8, v28
+	vadd.vv	v28, v28, v12
+	vadd.vv	v28, v28, v16
+	vadd.vv	v28, v28, v20
+	vse64.v	v28, (s11)
+	add	s6, s6, s7
+	add	s10, s10, s8
+	bne	s6, s4, .LBB0_4
+----'''

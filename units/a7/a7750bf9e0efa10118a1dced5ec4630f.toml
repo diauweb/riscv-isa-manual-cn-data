@@ -1,0 +1,17 @@
+unit_id = "a7750bf9e0efa10118a1dced5ec4630f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. there does not exist a store instruction _s_ and an
+unpropagated memory store operation _mso_ of _s_
+such that applying the action of the <<prop_store, Propagate store operation>> transition to
+_mso_ will result in the restart of _j_; and
+. there does not exist a non-finished load instruction _l_
+and a memory load operation _mlo_ of _l_ such
+that applying the action of the <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>/<<sat_from_mem, Satisfy memory load operation from memory>> transition (even if
+_mlo_ is already satisfied) to _mlo_ will result
+in the restart of _j_.'''
+zh = '''
+. 不存在这样的存储指令 _s_ 及其尚未传播的内存存储操作 _mso_：将 <<prop_store, 传播存储操作>> 迁移的动作施加到 _mso_ 会导致 _j_ 重启；且
+. 不存在这样的未完成加载指令 _l_ 及其内存加载操作 _mlo_：将 <<sat_by_forwarding, 通过从尚未传播的存储转发来满足内存加载操作>>/<<sat_from_mem, 从内存满足内存加载操作>> 迁移的动作（即使 _mlo_ 已经满足）施加到 _mlo_ 会导致 _j_ 重启。'''

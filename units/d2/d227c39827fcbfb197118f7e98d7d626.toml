@@ -1,0 +1,21 @@
+unit_id = "d227c39827fcbfb197118f7e98d7d626"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Notes to software developers
+[NOTE,caption="SH"]
+====
+These instructions perform a bit-interleave (or de-interleave) operation, and
+are useful for implementing the 64-bit rotations in the
+SHA3 cite:[nist:fips:202] algorithm on
+a 32-bit architecture.
+On RV64, the relevant operations in SHA3 can be done natively using
+rotation instructions, so `zip` and `unzip` are not required.
+===='''
+zh = '''
+.软件开发者注
+[NOTE,caption="SH"]
+====
+这些指令执行位交织（或解交织）操作，可用于在 32 位架构上实现 SHA3 cite:[nist:fips:202] 算法中的 64 位循环移位。在 RV64 上，SHA3 中的相关操作可使用循环移位指令原生完成，因此不需要 `zip` 和 `unzip`。
+===='''

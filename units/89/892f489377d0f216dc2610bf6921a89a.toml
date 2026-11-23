@@ -1,0 +1,23 @@
+unit_id = "892f489377d0f216dc2610bf6921a89a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* "Bare metal" hardware platforms where harts are directly implemented
+by physical processor threads and instructions have full access to the
+physical address space. The hardware platform defines an execution
+environment that begins at power-on reset.
+* RISC-V operating systems that provide multiple user-level execution
+environments by multiplexing user-level harts onto available physical
+processor threads and by controlling access to memory via virtual
+memory.
+* RISC-V hypervisors that provide multiple supervisor-level execution
+environments for guest operating systems.
+* RISC-V emulators, such as Spike, QEMU or rv8, which emulate RISC-V
+harts on an underlying x86 system, and which can provide either a
+user-level or a supervisor-level execution environment.'''
+zh = '''
+* “裸机”硬件平台，其中 hart 由物理处理器线程直接实现，并且指令可完全访问物理地址空间。该硬件平台定义了一个从上电复位开始的执行环境。
+* RISC-V 操作系统，通过将用户级 hart 多路复用到可用的物理处理器线程上，并通过虚拟内存控制对内存的访问，来提供多个用户级执行环境。
+* RISC-V 虚拟机监控器，为客户机操作系统提供多个监管级执行环境。
+* RISC-V 仿真器，例如 Spike、QEMU 或 rv8，它们在底层 x86 系统上仿真 RISC-V hart，并且能提供用户级或监管级执行环境。'''

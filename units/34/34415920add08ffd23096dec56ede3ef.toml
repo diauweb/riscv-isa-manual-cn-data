@@ -1,0 +1,15 @@
+unit_id = "34415920add08ffd23096dec56ede3ef"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Memory mapped as an SS page cannot be written to by instructions other than
+`SSAMOSWAP.W/D`, `SSPUSH`, and `C.SSPUSH`. Attempts will raise a store/AMO
+access-fault exception. Access to a SS page using _cache-block operation_
+(`CBO.*`) instructions is not permitted. Such accesses will raise a store/AMO
+access-fault exception. Implicit accesses, including instruction fetches to an
+SS page, are not permitted. Such accesses will raise an access-fault exception
+appropriate to the access type. However, the shadow stack is readable by all
+instructions that only load from memory.'''
+zh = '''
+映射为 SS 页的内存不能由 `SSAMOSWAP.W/D`、`SSPUSH` 和 `C.SSPUSH` 以外的指令写入。尝试将触发存储/AMO 访问故障异常。不允许使用 _缓存块操作_（`CBO.*`）指令访问 SS 页。此类访问将触发存储/AMO 访问故障异常。不允许隐式访问，包括对 SS 页的指令取指。此类访问将触发适合该访问类型的访问故障异常。然而，影子栈可由所有仅从内存加载的指令读取。'''

@@ -1,0 +1,44 @@
+unit_id = "76981faf8456a1a3fcf95c2cf999dd40"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV64D Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |Source Registers |Destination Registers |Accumulating CSRs |
+
+|insn:fcvt.l.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|insn:fcvt.lu.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|insn:fmv.x.d[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.d.l[] |_rs1_, frm^*^ |_rd_ |NX |^*^if rm=111
+
+|insn:fcvt.d.lu[] |_rs1_, frm^*^ |_rd_ |NX |^*^if rm=111
+
+|insn:fmv.d.x[] |_rs1_ |_rd_ | |
+
+|==='''
+zh = '''
+.RV64D 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |源寄存器 |目标寄存器 |累积 CSR |
+
+|insn:fcvt.l.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|insn:fcvt.lu.d[] |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|insn:fmv.x.d[] |_rs1_ |_rd_ | |
+
+|insn:fcvt.d.l[] |_rs1_, frm^*^ |_rd_ |NX |^*^如果 rm=111
+
+|insn:fcvt.d.lu[] |_rs1_, frm^*^ |_rd_ |NX |^*^如果 rm=111
+
+|insn:fmv.d.x[] |_rs1_ |_rd_ | |
+
+|==='''

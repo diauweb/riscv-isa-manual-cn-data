@@ -1,0 +1,17 @@
+unit_id = "7d484a787bed5e57641e3626c603698d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By default, all traps at any privilege level are handled in machine
+mode, though a machine-mode handler can redirect traps back to the
+appropriate level with the MRET instruction
+(<<otherpriv>>). To increase performance,
+implementations can provide individual read/write bits within `medeleg`
+and `mideleg` to indicate that certain exceptions and interrupts should
+be processed directly by a lower privilege level. The machine exception
+delegation register (`medeleg`) is a 64-bit read/write register.
+The machine interrupt delegation (`mideleg`) register is an MXLEN-bit
+read/write register.'''
+zh = '''
+默认情况下，任何特权级的所有陷阱都在机器模式下处理，不过机器模式处理程序可用 MRET 指令将陷阱重定向回适当的级别（<<otherpriv>>）。为提高性能，实现可在 `medeleg` 和 `mideleg` 中提供单独的可读写位，以指示某些异常和中断应由较低特权级直接处理。机器异常委托寄存器（`medeleg`）是一个 64 位读写寄存器。机器中断委托寄存器（`mideleg`）是一个 MXLEN 位读写寄存器。'''

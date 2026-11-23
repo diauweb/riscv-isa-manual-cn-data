@@ -1,0 +1,27 @@
+unit_id = "9e2af70d4c15dd451bdf56cdc64112d6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* M: Mandatory. The interface must include an instance of this signal.
+* O: Optional. The interface may include an instance of this signal.
+* MR: Mandatory, may be replicated. For harts that can retire a maximum
+of N "special" instructions per clock cycle, the interface must include
+N instances of this signal.
+* OR: Optional, may be replicated. For harts that can retire a maximum
+of N "special" per clock cycle, the interface must include zero or N
+instances of this signal.
+* BR: Block, may be replicated. Mandatory for harts that can retire
+multiple instructions in a block. Replication as per OR. If omitted, the
+interface must include SR group signals instead.
+* SR: Single, may be replicated. Mandatory for harts that can only
+retire one instruction in a block. Replication as per OR (see
+<<sec:alt-multi>>). If omitted, the interface must include
+BR group signals instead.'''
+zh = '''
+* M：必需。接口必须包含此信号的一个实例。
+* O：可选。接口可包含此信号的一个实例。
+* MR：必需，可复制。对于每个时钟周期最多可退休 N 条“特殊”指令的硬件线程，接口必须包含此信号的 N 个实例。
+* OR：可选，可复制。对于每个时钟周期最多可退休 N 条“特殊”指令的硬件线程，接口必须包含零个或 N 个此信号的实例。
+* BR：块，可复制。对于每个时钟周期可退休多条指令的硬件线程为必需。复制方式同 OR。若省略，接口必须改为包含 SR 组信号。
+* SR：单条，可复制。对于每个时钟周期只能退休一条指令的硬件线程为必需。复制方式同 OR（见 <<sec:alt-multi>>）。若省略，接口必须改为包含 BR 组信号。'''

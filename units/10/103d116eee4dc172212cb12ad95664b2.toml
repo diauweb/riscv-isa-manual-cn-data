@@ -1,0 +1,12 @@
+unit_id = "103d116eee4dc172212cb12ad95664b2"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+This instruction returns _rs1_ with a single bit inverted at the index specified in _shamt_.
+The index is read from the lower log2(XLEN) bits of _shamt_.
+[#norm:binvi_shamt_rsv_rv32]#For RV32, the encodings corresponding to _shamt[5]_=1 are reserved.#'''
+zh = '''
+说明::
+本指令返回 _rs1_，其中 _shamt_ 所指定索引处的单个位被取反。该索引从 _shamt_ 的低 log2(XLEN) 位读取。[#norm:binvi_shamt_rsv_rv32]##对于 RV32，与 _shamt[5]_=1 相对应的编码为保留编码。##'''

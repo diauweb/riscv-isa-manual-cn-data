@@ -1,0 +1,12 @@
+unit_id = "f1f3f6de3fda8c9fc54c23c133ee64b4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When ext:zicfilp[] extension is not active or not implemented, the hart does not
+require landing pad instructions at the targets of indirect calls/jumps, and the
+landing instructions revert to being no-ops. This allows a program compiled
+with landing pad instructions to operate correctly but without forward-edge
+CFI.'''
+zh = '''
+当 ext:zicfilp[] 扩展未处于活动状态或未实现时，硬件线程不要求在间接调用/跳转的目标处有着陆垫指令，且着陆垫指令恢复为空操作。这使使用着陆垫指令编译的程序能够正确运行，但没有前向边 CFI。'''

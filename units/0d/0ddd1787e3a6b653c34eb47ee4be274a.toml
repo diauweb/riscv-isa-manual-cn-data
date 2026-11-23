@@ -1,0 +1,11 @@
+unit_id = "0ddd1787e3a6b653c34eb47ee4be274a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When executing in VS or VU mode, if the `VTW` bit is set in `hstatus`, the
+`TW` bit in `mstatus` is clear, and the `WRS.NTO` does not complete within an
+implementation-specific bounded time limit, the `WRS.NTO` instruction will cause
+a virtual-instruction  exception.'''
+zh = '''
+在 VS 模式或 VU 模式下执行时，若 `hstatus` 中的 `VTW` 位置位、`mstatus` 中的 `TW` 位清零，且 `WRS.NTO` 未在实现特定的有界时间限制内完成，则 `WRS.NTO` 指令将导致虚拟指令异常。'''

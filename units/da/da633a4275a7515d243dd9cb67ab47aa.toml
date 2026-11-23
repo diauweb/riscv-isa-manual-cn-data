@@ -1,0 +1,15 @@
+unit_id = "da633a4275a7515d243dd9cb67ab47aa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Some CSRs, such as the instructions-retired counter, csr:instret[], may be
+modified as side effects of instruction execution. In these cases, if a
+CSR access instruction reads a CSR, it reads the value prior to the
+execution of the instruction. If a CSR access instruction writes such a
+CSR, the explicit write is done instead of the update from the side effect.
+In particular, a value
+written to csr:instret[] by one instruction will be the value read by the
+following instruction.'''
+zh = '''
+某些 CSR（例如已退休指令计数器 csr:instret[]）可能作为指令执行的副作用被修改。在此类情况下，如果某条 CSR 访问指令读取该 CSR，则它读取该指令执行之前的值。如果某条 CSR 访问指令写入此类 CSR，则执行显式写入，而不是来自副作用的更新。特别地，一条指令写入 csr:instret[] 的值将是下一条指令所读取的值。'''

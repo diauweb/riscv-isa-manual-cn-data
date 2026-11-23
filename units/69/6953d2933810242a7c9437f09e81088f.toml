@@ -1,0 +1,33 @@
+unit_id = "6953d2933810242a7c9437f09e81088f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The implementation must produce a result equivalent to a reduction tree
+composed of binary operator nodes, with the inputs being elements from
+the source vector register group (`vs2`) and the source scalar value
+(`vs1[0]`).  Each operator in the tree accepts two inputs and produces
+one result.
+Each operator first computes an exact sum as a RISC-V scalar floating-point
+addition with infinite exponent range and precision, then converts this exact
+sum to a floating-point format with range and precision each at least as great
+as the element floating-point format indicated by SEW, rounding using the
+currently active floating-point dynamic rounding mode and raising exception
+flags as necessary.
+A different floating-point range and precision may be chosen for the result of
+each operator.
+A node where one input is derived only from elements masked-off or beyond the
+active vector length may either treat that input as the additive identity of the
+appropriate EEW or simply copy the other input to its output.
+The rounded result from the root node in the tree is converted (rounded again,
+using the dynamic rounding mode) to the standard floating-point format
+indicated by SEW.
+An implementation
+is allowed to add an additional additive identity to the final result.'''
+zh = '''
+实现应产生等效于由二元运算符节点组成的归约树的结果，其输入为来自源向量寄存器组（`vs2`）的元素和源标量值（`vs1[0]`）。树中的每个运算符接受两个输入并产生一个结果。
+每个运算符首先将精确和计算为具有无限指数范围和精度的 RISC-V 标量浮点加法，然后将该精确和转换为范围和精度均至少与 SEW 指示的元素浮点格式一样大的浮点格式，使用当前活跃的浮点动态舍入模式舍入，并按需产生异常标志。
+可为每个运算符的结果选择不同的浮点范围和精度。
+如果一个输入仅来自被掩码关闭或超出活跃向量长度的元素，则该节点可将该输入视为相应 EEW 的加法单位元，或简单地将另一输入复制到其输出。
+树中根节点的舍入结果被转换（再次使用动态舍入模式舍入）为 SEW 指示的标准浮点格式。
+允许实现对最终结果添加额外的加法单位元。'''

@@ -1,0 +1,16 @@
+unit_id = "6d5ad9820ff4ed95b2dc3007fbaf5691"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+((((register source specifiers, c-ext))))
+The formats were designed to keep bits for the two register source
+specifiers in the same place in all instructions, while the destination
+register field can move. When the full 5-bit destination register
+specifier is present, it is in the same place as in the 32-bit RISC-V
+encoding. Where immediates are sign-extended, the sign extension is
+always from bit 12. Immediate fields have been scrambled, as in the base
+specification, to reduce the number of immediate muxes required.'''
+zh = '''
+((((register source specifiers, c-ext))))
+这些格式的设计目标是使两个寄存器源说明符的位在所有指令中位于相同位置，而目标寄存器字段可以移动。当存在完整的 5 位目标寄存器说明符时，它位于与 32 位 RISC-V 编码相同的位置。在立即数进行符号扩展的情况下，符号扩展始终从位 12 开始。立即数字段已与基础规范中一样被打乱，以减少所需的立即数多路复用器数量。'''

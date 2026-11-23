@@ -1,0 +1,901 @@
+unit_id = "0a5bd1c70d0bbef376520fe87424d5ae"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+The hypervisor extension changes the behavior of the Modify Privilege
+field, MPRV, of `mstatus`. When MPRV=0, translation and protection
+behave as normal. When MPRV=1, explicit memory accesses are translated
+and protected, and endianness is applied, as though the current
+virtualization mode were set to MPV and the current nominal privilege
+mode were set to MPP. <<h-mprv>> enumerates the cases.
+
+[[h-mprv]]
+.Effect of MPRV on the translation and protection of explicit memory accesses.
+[float="center",align="center",cols="^15,^10,^10,<70",options="header"]
+|===
+|MPRV |MPV |MPP |Effect
+|0 |- |- |Normal access; current privilege mode applies.
+
+|1 |0 |0 |U-level access with HS-level translation and protection only.
+
+|1 |0 |1 |HS-level access with HS-level translation and protection only.
+
+|1 |- |3 |M-level access with no translation.
+
+|1 |1 |0 |VU-level access with two-stage translation and protection. The
+HS-level MXR bit makes any executable page readable. `vsstatus`.MXR
+makes readable those pages marked executable at the VS translation
+stage, but only if readable at the guest-physical translation stage.
+
+|1 |1 |1 |VS-level access with two-stage translation and protection. The
+HS-level MXR bit makes any executable page readable. `vsstatus`.MXR
+makes readable those pages marked executable at the VS translation
+stage, but only if readable at the guest-physical translation stage.
+`vsstatus`.SUM applies instead of the HS-level SUM bit.
+|===
+
+MPRV does not affect the virtual-machine load/store instructions, HLV,
+HLVX, and HSV. The explicit loads and stores of these instructions
+always act as though V=1 and the nominal privilege mode were
+`hstatus`.SPVP, overriding MPRV.
+
+The `mstatus` register is a superset of the HS-level `sstatus` register
+but is not a superset of `vsstatus`.
+
+==== Machine Interrupt Delegation Register (`mideleg`)
+
+When the hypervisor extension is implemented, bits 10, 6, and 2 of
+`mideleg` (corresponding to the standard VS-level interrupts) are each
+read-only one. Furthermore, if any guest external interrupts are
+implemented (GEILEN is nonzero), bit 12 of `mideleg` (corresponding to
+supervisor-level guest external interrupts) is also read-only one.
+VS-level interrupts and guest external interrupts are always delegated
+past M-mode to HS-mode.
+
+For bits of `mideleg` that are zero, the corresponding bits in
+`hideleg`, `hip`, and `hie` are read-only zeros.
+
+==== Machine Interrupt Registers (`mip` and `mie`)
+
+The hypervisor extension gives registers `mip` and `mie` additional
+active bits for the hypervisor-added interrupts. <<hypervisor-mipreg-standard>> and <<hypervisor-miereg-standard>> show the
+standard portions (bits 15:0) of registers `mip` and `mie` when the
+hypervisor extension is implemented.
+
+[[hypervisor-mipreg-standard]]
+.Standard portion (bits 15:0) of `mip`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:span 3 :borders {}})
+(draw-box "11" {:span 2 :borders {}})
+(draw-box "10" {:span 3 :borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "0" {:span 4})
+(draw-box "SGEIP" {:span 3})
+(draw-box "MEIP" {:span 2})
+(draw-box "VSEIP" {:span 3})
+(draw-box "SEIP" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MTIP" {:span 2})
+(draw-box "VSTIP" {:span 2})
+(draw-box "STIP" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MSIP" {:span 2})
+(draw-box "VSSIP" {:span 2})
+(draw-box "SSIP" {:span 2})
+(draw-box "0" {:span 2})
+
+(draw-box "3" {:span 4 :borders {}})
+(draw-box "1" {:span 3:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+[[hypervisor-miereg-standard]]
+.Standard portion (bits 15:0) of `mie`.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:span 3 :borders {}})
+(draw-box "11" {:span 2 :borders {}})
+(draw-box "10" {:span 3 :borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "0" {:span 4})
+(draw-box "SGEIE" {:span 3})
+(draw-box "MEIE" {:span 2})
+(draw-box "VSEIE" {:span 3})
+(draw-box "SEIE" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MTIE" {:span 2})
+(draw-box "VSTIE" {:span 2})
+(draw-box "STIE" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MSIE" {:span 2})
+(draw-box "VSSIE" {:span 2})
+(draw-box "SSIE" {:span 2})
+(draw-box "0" {:span 2})
+
+(draw-box "3" {:span 4 :borders {}})
+(draw-box "1" {:span 3:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+Bits SGEIP, VSEIP, VSTIP, and VSSIP in `mip` are aliases for the same
+bits in hypervisor CSR `hip`, while SGEIE, VSEIE, VSTIE, and VSSIE in
+`mie` are aliases for the same bits in `hie`.
+
+==== Machine Second Trap Value Register (`mtval2`)
+
+The `mtval2` register is an MXLEN-bit read/write register formatted as
+shown in <<mtval2reg>>. When a trap is taken into
+M-mode, `mtval2` is written with additional exception-specific
+information, alongside `mtval`, to assist software in handling the trap.
+
+[[mtval2reg]]
+.Machine second trap value register (`mtval2`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "MXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "mtval2" {:span 32})
+(draw-box "MXLEN" {:span 32 :borders {}})
+----
+
+
+When a guest-page-fault trap is taken into M-mode, `mtval2` is written
+with either zero or the guest physical address that faulted, shifted
+right by 2 bits. For other traps, `mtval2` is set to zero, but a future
+standard or extension may redefine `mtval2's` setting for other traps.
+
+If a guest-page fault is due to an implicit memory access during
+first-stage (VS-stage) address translation, a guest physical address
+written to `mtval2` is that of the implicit memory access that faulted.
+Additional information is provided in CSR `mtinst` to disambiguate such
+situations.
+
+Otherwise, for misaligned loads and stores that cause guest-page faults,
+a nonzero guest physical address in `mtval2` corresponds to the faulting
+portion of the access as indicated by the virtual address in `mtval`.
+For instruction guest-page faults on systems with variable-length
+instructions, a nonzero `mtval2` corresponds to the faulting portion of
+the instruction as indicated by the virtual address in `mtval`.
+
+`mtval2` is a *WARL* register that must be able to hold zero and may be
+capable of holding only an arbitrary subset of other 2-bit-shifted guest
+physical addresses, if any.
+
+==== Machine Trap Instruction Register (`mtinst`)
+
+The `mtinst` register is an MXLEN-bit read/write register formatted as
+shown in <<mtinstreg>>. When a trap is taken into
+M-mode, `mtinst` is written with a value that, if nonzero, provides
+information about the instruction that trapped, to assist software in
+handling the trap. The values that may be written to `mtinst` on a trap
+are documented in <<tinst-vals>>.
+
+[[mtinstreg]]
+.Machine trap instruction register (`mtinst`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "MXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "mtinst" {:span 32})
+(draw-box "MXLEN" {:span 32 :borders {}})
+----
+
+`mtinst` is a *WARL* register that need only be able to hold the values that
+the implementation may automatically write to it on a trap.
+
+[[two-stage-translation]]
+=== Two-Stage Address Translation
+
+Whenever the current virtualization mode V is 1, two-stage address
+translation and protection is in effect. For any virtual memory access,
+the original virtual address is converted in the first stage by VS-level
+address translation, as controlled by the `vsatp` register, into a
+_guest physical address_. The guest physical address is then converted
+in the second stage by guest physical address translation, as controlled
+by the `hgatp` register, into a supervisor physical address. The two
+stages are known also as VS-stage and G-stage translation. Although
+there is no option to disable two-stage address translation when V=1,
+either stage of translation can be effectively disabled by zeroing the
+corresponding `vsatp` or `hgatp` register.
+
+The `vsstatus` field MXR, which makes execute-only pages readable, only
+overrides VS-stage page protection. Setting MXR at VS-level does not
+override guest-physical page protections. Setting MXR at HS-level,
+however, overrides both VS-stage and G-stage execute-only permissions.
+
+When V=1, memory accesses that would normally bypass address translation
+are subject to G-stage address translation alone. This includes memory
+accesses made in support of VS-stage address translation, such as reads
+and writes of VS-level page tables.
+
+Machine-level physical memory protection applies to supervisor physical
+addresses and is in effect regardless of virtualization mode.
+
+[[guest-addr-translation]]
+==== Guest Physical Address Translation
+
+The mapping of guest physical addresses to supervisor physical addresses
+is controlled by CSR `hgatp` (<<hgatp>>).
+
+When the address translation scheme selected by the MODE field of
+`hgatp` is Bare, guest physical addresses are equal to supervisor
+physical addresses without modification, and no memory protection
+applies in the trivial translation of guest physical addresses to
+supervisor physical addresses.
+
+When `hgatp`.MODE specifies a translation scheme of Sv32x4, Sv39x4,
+Sv48x4, or Sv57x4, G-stage address translation is a variation on the
+usual page-based virtual address translation scheme of Sv32, Sv39, Sv48,
+or Sv57, respectively. In each case, the size of the incoming address is
+widened by 2 bits (to 34, 41, 50, or 59 bits). To accommodate the
+2 extra bits, the root page table (only) is expanded by a factor of four
+to be 16 KiB instead of the usual 4 KiB. Matching its larger size, the
+root page table also must be aligned to a 16 KiB boundary instead of the
+usual 4 KiB page boundary. Except as noted, all other aspects of Sv32,
+Sv39, Sv48, or Sv57 are adopted unchanged for G-stage translation.
+Non-root page tables and all page table entries (PTEs) have the same
+formats as documented in <<sv32>>, <<sv39>>, <<sv48>>, and <<sv57>>.
+
+For Sv32x4, an incoming guest physical address is partitioned into a
+virtual page number (VPN) and page offset as shown in
+<<sv32x4va>>. This partitioning is identical to
+that for an Sv32 virtual address as depicted in
+<<sv32va>>, except with 2 more bits at the
+high end in VPN[1]. (Note that the fields of a partitioned guest
+physical address also correspond one-for-one with the structure that
+Sv32 assigns to a physical address, depicted in
+<<sv32va>>.)
+
+[[sv32x4va]]
+.Sv32x4 virtual address (guest physical address).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "33" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 4 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[1]" {:span 6})
+(draw-box "VPN[0]" {:span 6})
+(draw-box "page offset" {:span 8})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "12" {:span 6 :borders {}})
+(draw-box "10" {:span 6 :borders {}})
+(draw-box "12" {:span 8 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+For Sv39x4, an incoming guest physical address is partitioned as shown
+in <<sv39x4va>>. This partitioning is identical to that for an Sv39 virtual address as depicted in <<sv39va>>, except with 2 more bits at the
+high end in VPN[2]. Address bits 63:41 must all be zeros, or else a
+guest-page-fault exception occurs.
+
+[[sv39x4va]]
+.Sv39x4 virtual address (guest physical address).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "40" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 4 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 8})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 8 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+For Sv48x4, an incoming guest physical address is partitioned as shown
+in <<sv48x4va>>. This partitioning is identical to
+that for an Sv48 virtual address as depicted in
+<<sv48va>>, except with 2 more bits at the
+high end in VPN[3]. Address bits 63:50 must all be zeros, or else a
+guest-page-fault exception occurs.
+
+[[sv48x4va]]
+.Sv48x4 virtual address (guest physical address).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "49" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "39" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "38" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[3]" {:span 4})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 4})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 4 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+For Sv57x4, an incoming guest physical address is partitioned as shown
+in <<sv57x4va>>. This partitioning is identical to
+that for an Sv57 virtual address as depicted in
+<<sv57va>>, except with 2 more bits at the
+high end in VPN[4]. Address bits 63:59 must all be zeros, or else a
+guest-page-fault exception occurs.
+
+[[sv57x4va]]
+.Sv57x4 virtual address (guest physical address).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "58" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "48" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "47" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "39" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "38" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+(draw-box nil {:span 4 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "VPN[4]" {:span 4})
+(draw-box "VPN[3]" {:span 4})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 4})
+(draw-box nil {:span 4 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 4 :borders {}})
+(draw-box nil {:span 4 :borders {}})
+----
+
+[NOTE]
+===='''
+zh = '''
+====
+
+虚拟机监控器扩展改变 `mstatus` 中修改特权字段 MPRV 的行为。当 MPRV=0 时，转换和保护照常运作。当 MPRV=1 时，显式内存访问被转换和保护，并应用字节序，如同当前虚拟化模式被置为 MPV 且当前名义特权模式被置为 MPP。<<h-mprv>> 列举了这些情况。
+
+[[h-mprv]]
+.MPRV 对显式内存访问的转换和保护的影响。
+[float="center",align="center",cols="^15,^10,^10,<70",options="header"]
+|===
+|MPRV |MPV |MPP |效果
+|0 |- |- |正常访问；当前特权模式适用。
+
+|1 |0 |0 |U 级访问，仅使用 HS 级转换和保护。
+
+|1 |0 |1 |HS 级访问，仅使用 HS 级转换和保护。
+
+|1 |- |3 |M 级访问，无转换。
+
+|1 |1 |0 |VU 级访问，使用两阶段转换和保护。HS 级 MXR 位使任何可执行页可读。`vsstatus`.MXR 使在 VS 转换阶段标记为可执行的页可读，但仅在客户机物理转换阶段可读时。
+
+|1 |1 |1 |VS 级访问，使用两阶段转换和保护。HS 级 MXR 位使任何可执行页可读。`vsstatus`.MXR 使在 VS 转换阶段标记为可执行的页可读，但仅在客户机物理转换阶段可读时。适用 `vsstatus`.SUM 而非 HS 级 SUM 位。
+|===
+
+MPRV 不影响虚拟机加载/存储指令 HLV、HLVX 和 HSV。这些指令的显式加载和存储始终如同 V=1 且名义特权模式为 `hstatus`.SPVP 一样动作，覆盖 MPRV。
+
+`mstatus` 寄存器是 HS 级 `sstatus` 寄存器的超集，但不是 `vsstatus` 的超集。
+
+==== 机器中断委托寄存器（`mideleg`）
+
+当实现了虚拟机监控器扩展时，`mideleg` 的位 10、6 和 2（对应标准 VS 级中断）均为只读 1。此外，若实现了任何客户机外部中断（GEILEN 非零），则 `mideleg` 的位 12（对应监管级客户机外部中断）也为只读 1。VS 级中断和客户机外部中断总是越过 M 模式委托给 HS 模式。
+
+对于 `mideleg` 中为零的位，`hideleg`、`hip` 和 `hie` 中的相应位为只读 0。
+
+==== 机器中断寄存器（`mip` 和 `mie`）
+
+虚拟机监控器扩展为寄存器 `mip` 和 `mie` 提供额外的活动位，用于虚拟机监控器新增的中断。<<hypervisor-mipreg-standard>> 和 <<hypervisor-miereg-standard>> 展示了实现虚拟机监控器扩展时寄存器 `mip` 和 `mie` 的标准部分（第 15:0 位）。
+
+[[hypervisor-mipreg-standard]]
+.`mip` 的标准部分（第 15:0 位）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:span 3 :borders {}})
+(draw-box "11" {:span 2 :borders {}})
+(draw-box "10" {:span 3 :borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "0" {:span 4})
+(draw-box "SGEIP" {:span 3})
+(draw-box "MEIP" {:span 2})
+(draw-box "VSEIP" {:span 3})
+(draw-box "SEIP" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MTIP" {:span 2})
+(draw-box "VSTIP" {:span 2})
+(draw-box "STIP" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MSIP" {:span 2})
+(draw-box "VSSIP" {:span 2})
+(draw-box "SSIP" {:span 2})
+(draw-box "0" {:span 2})
+
+(draw-box "3" {:span 4 :borders {}})
+(draw-box "1" {:span 3:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+[[hypervisor-miereg-standard]]
+.`mie` 的标准部分（第 15:0 位）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "15" {:borders {}})
+(draw-box nil {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box "12" {:span 3 :borders {}})
+(draw-box "11" {:span 2 :borders {}})
+(draw-box "10" {:span 3 :borders {}})
+(draw-box "9" {:span 2 :borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "0" {:span 4})
+(draw-box "SGEIE" {:span 3})
+(draw-box "MEIE" {:span 2})
+(draw-box "VSEIE" {:span 3})
+(draw-box "SEIE" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MTIE" {:span 2})
+(draw-box "VSTIE" {:span 2})
+(draw-box "STIE" {:span 2})
+(draw-box "0" {:span 2})
+(draw-box "MSIE" {:span 2})
+(draw-box "VSSIE" {:span 2})
+(draw-box "SSIE" {:span 2})
+(draw-box "0" {:span 2})
+
+(draw-box "3" {:span 4 :borders {}})
+(draw-box "1" {:span 3:borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+`mip` 中的位 SGEIP、VSEIP、VSTIP 和 VSSIP 是虚拟机监控器 CSR `hip` 中相同位的别名，而 `mie` 中的 SGEIE、VSEIE、VSTIE 和 VSSIE 是 `hie` 中相同位的别名。
+
+==== 机器第二陷阱值寄存器（`mtval2`）
+
+`mtval2` 寄存器是一个 MXLEN 位读/写寄存器，格式如 <<mtval2reg>> 所示。当陷入 M 模式时，`mtval2` 写入异常专用的附加信息，与 `mtval` 并列，以协助软件处理陷阱。
+
+[[mtval2reg]]
+.机器第二陷阱值寄存器（`mtval2`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "MXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "mtval2" {:span 32})
+(draw-box "MXLEN" {:span 32 :borders {}})
+----
+
+
+当客户机页错误陷阱陷入 M 模式时，`mtval2` 写入零或发生错误的客户机物理地址（右移 2 位）。对于其他陷阱，`mtval2` 置零，但未来的标准或扩展可能为其他陷阱重新定义 `mtval2's` 的设置。
+
+若客户机页错误源于第一阶段（VS 阶段）地址转换期间的隐式内存访问，则写入 `mtval2` 的客户机物理地址是发生错误的隐式内存访问的地址。CSR `mtinst` 中提供附加信息以消解此类情况。
+
+否则，对于导致客户机页错误的非对齐加载和存储，`mtval2` 中的非零客户机物理地址对应于由 `mtval` 中虚拟地址所指示的访问的错误部分。对于具有变长指令的系统上的指令客户机页错误，非零的 `mtval2` 对应于由 `mtval` 中虚拟地址所指示的指令的错误部分。
+
+`mtval2` 是一个 *WARL* 寄存器，必须能够保存零，并且可能仅能够保存其他右移 2 位的客户机物理地址的任意子集（若有）。
+
+==== 机器陷阱指令寄存器（`mtinst`）
+
+`mtinst` 寄存器是一个 MXLEN 位读/写寄存器，格式如 <<mtinstreg>> 所示。当陷入 M 模式时，`mtinst` 写入一个值，若非零，则提供关于引发陷阱的指令的信息，以协助软件处理陷阱。在陷阱时可能写入 `mtinst` 的值记录于 <<tinst-vals>>。
+
+[[mtinstreg]]
+.机器陷阱指令寄存器（`mtinst`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "MXLEN-1" {:span 16 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 16 :text-anchor "end" :borders {}})
+(draw-box "mtinst" {:span 32})
+(draw-box "MXLEN" {:span 32 :borders {}})
+----
+
+`mtinst` 是一个 *WARL* 寄存器，仅需要能够保存实现在陷阱时可能自动写入的值。
+
+[[two-stage-translation]]
+=== 两阶段地址转换
+
+每当当前虚拟化模式 V 为 1 时，两阶段地址转换和保护即生效。对于任何虚拟内存访问，原始虚拟地址在第一阶段由 VS 级地址转换（由 `vsatp` 寄存器控制）转换为_客户机物理地址_。客户机物理地址随后在第二阶段由客户机物理地址转换（由 `hgatp` 寄存器控制）转换为监管者物理地址。这两个阶段也称为 VS 阶段转换和 G 阶段转换。尽管 V=1 时无法选择禁用两阶段地址转换，但通过将相应的 `vsatp` 或 `hgatp` 寄存器置零，任一转换阶段均可被有效禁用。
+
+`vsstatus` 字段 MXR 使仅可执行页可读，但仅覆盖 VS 阶段页保护。在 VS 级置 MXR 不覆盖客户机物理页保护。然而，在 HS 级置 MXR 覆盖 VS 阶段和 G 阶段的仅可执行权限。
+
+当 V=1 时，通常绕过地址转换的内存访问仅受 G 阶段地址转换约束。这包括为支持 VS 阶段地址转换而进行的内存访问，例如读取和写入 VS 级页表。
+
+机器级物理内存保护作用于监管者物理地址，且无论虚拟化模式如何均生效。
+
+[[guest-addr-translation]]
+==== 客户机物理地址转换
+
+客户机物理地址到监管者物理地址的映射由 CSR `hgatp` 控制（<<hgatp>>）。
+
+当 `hgatp` 的 MODE 字段所选的地址转换方案为 Bare 时，客户机物理地址不经修改即等于监管者物理地址，且在客户机物理地址到监管者物理地址的平凡转换中不适用内存保护。
+
+当 `hgatp`.MODE 指定 Sv32x4、Sv39x4、Sv48x4 或 Sv57x4 转换方案时，G 阶段地址转换是对通常 Sv32、Sv39、Sv48 或 Sv57 分页虚拟地址转换方案的变体。在每种情况下，入站地址的位宽增加 2 位（到 34、41、50 或 59 位）。为容纳额外的 2 位，根页表（仅根页表）扩大四倍，为 16 KiB 而非通常的 4 KiB。与其更大的尺寸相匹配，根页表还必须对齐到 16 KiB 边界而非通常的 4 KiB 页边界。除已指出的外，Sv32、Sv39、Sv48 或 Sv57 的所有其他方面在 G 阶段转换中不变地采用。非根页表和所有页表项（PTE）具有与 <<sv32>>、<<sv39>>、<<sv48>> 和 <<sv57>> 中所记载相同的格式。
+
+对于 Sv32x4，入站客户机物理地址被划分为虚拟页号（VPN）和页偏移，如 <<sv32x4va>> 所示。此划分与 <<sv32va>> 中所描绘的 Sv32 虚拟地址的划分相同，区别在于 VPN[1] 的高端多 2 位。（注意，已划分的客户机物理地址的各字段也与 Sv32 赋予物理地址的结构（如 <<sv32va>> 所描绘）一一对应。）
+
+[[sv32x4va]]
+.Sv32x4 虚拟地址（客户机物理地址）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "33" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 4 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[1]" {:span 6})
+(draw-box "VPN[0]" {:span 6})
+(draw-box "page offset" {:span 8})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "12" {:span 6 :borders {}})
+(draw-box "10" {:span 6 :borders {}})
+(draw-box "12" {:span 8 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+对于 Sv39x4，入站客户机物理地址的划分如 <<sv39x4va>> 所示。此划分与 <<sv39va>> 中所描绘的 Sv39 虚拟地址的划分相同，区别在于 VPN[2] 的高端多 2 位。地址位 63:41 必须全为零，否则发生客户机页错误异常。
+
+[[sv39x4va]]
+.Sv39x4 虚拟地址（客户机物理地址）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "40" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 4 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 8})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 8 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+对于 Sv48x4，入站客户机物理地址的划分如 <<sv48x4va>> 所示。此划分与 <<sv48va>> 中所描绘的 Sv48 虚拟地址的划分相同，区别在于 VPN[3] 的高端多 2 位。地址位 63:50 必须全为零，否则发生客户机页错误异常。
+
+[[sv48x4va]]
+.Sv48x4 虚拟地址（客户机物理地址）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "49" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "39" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "38" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "VPN[3]" {:span 4})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 4})
+(draw-box nil {:span 6 :borders {}})
+
+(draw-box nil {:span 6 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 4 :borders {}})
+(draw-box nil {:span 6 :borders {}})
+----
+
+对于 Sv57x4，入站客户机物理地址的划分如 <<sv57x4va>> 所示。此划分与 <<sv57va>> 中所描绘的 Sv57 虚拟地址的划分相同，区别在于 VPN[4] 的高端多 2 位。地址位 63:59 必须全为零，否则发生客户机页错误异常。
+
+[[sv57x4va]]
+.Sv57x4 虚拟地址（客户机物理地址）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "58" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "48" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "47" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "39" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "38" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "30" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "29" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "21" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "20" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "12" {:span 2 :text-anchor "end" :borders {}})
+(draw-box "11" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+(draw-box nil {:span 4 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "VPN[4]" {:span 4})
+(draw-box "VPN[3]" {:span 4})
+(draw-box "VPN[2]" {:span 4})
+(draw-box "VPN[1]" {:span 4})
+(draw-box "VPN[0]" {:span 4})
+(draw-box "page offset" {:span 4})
+(draw-box nil {:span 4 :borders {}})
+
+(draw-box nil {:span 4 :borders {}})
+(draw-box "11" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "9" {:span 4 :borders {}})
+(draw-box "12" {:span 4 :borders {}})
+(draw-box nil {:span 4 :borders {}})
+----
+
+[NOTE]
+===='''

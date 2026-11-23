@@ -1,0 +1,50 @@
+unit_id = "3760b5de65fedf4b1f3522e4ba434fcf"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Data interface signals
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*dretire* | M | Data access retired (when high)
+|*dtype*[_dtype_width_p_-1:0] | M | Data access type. Encoding given in
+<<tab:dtype>>
+|*daddr*[_daddress_width_p_-1:0] | M | The data access address
+|*dsize*[_dsize_width_p_-1:0] | M | The data access size is 2^*dsize*^
+bytes
+|*data*[_data_width_p_-1:0] | U | The data
+|*iaddr_lsbs*[_iaddr_lsbs_width_p_-1:0] | O | LSBs of the data access
+instruction address. Required if _retires_p_ > 1
+|*dblock*[_dblock_width_p_-1:0] | O | Instruction block in which the data
+access instruction is retired. Required if there are replicated
+instruction block signals
+|*lrid*[_lrid_width_p_-1:0] | S | Load request ID. Valid when *dretire*
+is high
+|*lresp*[_lresp_width_p_-1:0] | S | Load response:: None: reserved: Okay.
+Load successful; *ldata* valid: Error. Load failed; *ldata* not valid
+|*lid*[_lrid_width_p_-1:0] | S | Split Load ID. Valid when *lresp* is
+non-zero
+|*sdata*[_sdata_width_p_-1:0] | S | Store data. Valid when *dretire* is
+high
+|*ldata*[_ldata_width_p_-1:0] | S | Load data. Valid when *lresp* is
+non-zero
+|==='''
+zh = '''
+.数据接口信号
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Signal* | *Group* | *Function*
+|*dretire* | M | 数据访问退休（为高时）
+|*dtype*[_dtype_width_p_-1:0] | M | 数据访问类型。编码见 <<tab:dtype>>
+|*daddr*[_daddress_width_p_-1:0] | M | 数据访问地址
+|*dsize*[_dsize_width_p_-1:0] | M | 数据访问大小为 2^*dsize*^ 字节
+|*data*[_data_width_p_-1:0] | U | 数据
+|*iaddr_lsbs*[_iaddr_lsbs_width_p_-1:0] | O | 数据访问指令地址的低位。若 _retires_p_ > 1 则为必需
+|*dblock*[_dblock_width_p_-1:0] | O | 数据访问指令退休所在的指令块。若存在复制的指令块信号则为必需
+|*lrid*[_lrid_width_p_-1:0] | S | 加载请求 ID。当 *dretire* 为高时有效
+|*lresp*[_lresp_width_p_-1:0] | S | 加载响应：None：保留；Okay：加载成功，*ldata* 有效；Error：加载失败，*ldata* 无效
+|*lid*[_lrid_width_p_-1:0] | S | 拆分加载 ID。当 *lresp* 非零时有效
+|*sdata*[_sdata_width_p_-1:0] | S | 存储数据。当 *dretire* 为高时有效
+|*ldata*[_ldata_width_p_-1:0] | S | 加载数据。当 *lresp* 非零时有效
+|==='''

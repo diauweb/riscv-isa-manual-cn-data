@@ -1,0 +1,60 @@
+unit_id = "f36f3afce7ccaba5de0582224941c69e"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Moved Machine and Supervisor spec to *Ratified* status.
+* Improvements to the description and commentary.
+* Added a draft proposal for a hypervisor extension.
+* Specified which interrupt sources are reserved for standard use.
+* Allocated some synchronous exception causes for custom use.
+* Specified the priority ordering of synchronous exceptions.
+* Added specification that xRET instructions may, but are not required
+to, clear LR reservations if A extension present.
+* The virtual-memory system no longer permits supervisor mode to execute
+instructions from user pages, regardless of the SUM setting.
+* Clarified that ASIDs are private to a hart, and added commentary about
+the possibility of a future global-ASID extension.
+* SFENCE.VMA semantics have been clarified.
+* Made the `mstatus`.MPP field *WARL*, rather than *WLRL*.
+* Made the unused `__x__ip` fields *WPRI*, rather than *WIRI*.
+* Made the unused `misa` fields *WARL*, rather than *WIRI*.
+* Made the unused `pmpaddr` and `pmpcfg` fields *WARL*, rather than *WIRI*.
+* Required all harts in a system to employ the same PTE-update scheme as
+each other.
+* Rectified an editing error that misdescribed the mechanism by which
+`mstatus.__x__IE` is written upon an exception.
+* Described scheme for emulating misaligned AMOs.
+* Specified the behavior of the `misa` and `__x__epc` registers in systems
+with variable IALIGN.
+* Specified the behavior of writing self-contradictory values to the
+`misa` register.
+* Defined the `mcountinhibit` CSR, which stops performance counters from
+incrementing to reduce energy consumption.
+* Specified semantics for PMP regions coarser than four bytes.
+* Specified contents of CSRs across XLEN modification.
+* Moved PLIC chapter into its own document.'''
+zh = '''
+* 将机器与监管规范移至 *已批准* 状态。
+* 改进了描述和评注。
+* 增加了虚拟机监控器扩展的草案提案。
+* 规定了哪些中断源为标准使用保留。
+* 为自定义使用分配了一些同步异常原因。
+* 规定了同步异常的优先级顺序。
+* 增加了以下规定：若存在 A 扩展，xRET 指令可清除 LR 保留，但并非必须。
+* 虚拟内存系统不再允许监管模式执行用户页中的指令，无论 SUM 设置如何。
+* 澄清了 ASID 对硬件线程是私有的，并增加了关于未来全局 ASID 扩展可能性的评注。
+* 澄清了 SFENCE.VMA 的语义。
+* 将 `mstatus`.MPP 字段设为 *WARL*，而非 *WLRL*。
+* 将未使用的 `__x__ip` 字段设为 *WPRI*，而非 *WIRI*。
+* 将未使用的 `misa` 字段设为 *WARL*，而非 *WIRI*。
+* 将未使用的 `pmpaddr` 和 `pmpcfg` 字段设为 *WARL*，而非 *WIRI*。
+* 要求系统中的所有硬件线程采用彼此相同的 PTE 更新方案。
+* 修正了一处编辑错误，该错误错误地描述了异常发生时写入 `mstatus.__x__IE` 的机制。
+* 描述了模拟非对齐 AMO 的方案。
+* 规定了在 IALIGN 可变的系统中 `misa` 和 `__x__epc` 寄存器的行为。
+* 规定了向 `misa` 寄存器写入自相矛盾的值时的行为。
+* 定义了 `mcountinhibit` CSR，用于停止性能计数器递增以降低能耗。
+* 规定了粒度粗于 4 字节的 PMP 区域的语义。
+* 规定了 XLEN 改变时 CSR 的内容。
+* 将 PLIC 章节移入其单独的文档。'''

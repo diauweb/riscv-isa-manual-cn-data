@@ -1,0 +1,15 @@
+unit_id = "d0359af4e3a9b66415219273bbeb19d8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `seed` CSR is by default only available in M mode, but can be made
+available to other modes via the `mseccfg.sseed` and `mseccfg.useed`
+access control bits. `sseed` is bit `9` of and `useed` is
+bit `8` of the `mseccfg` CSR.
+Without the corresponding access control bit set to 1, any attempted
+access to `seed` from U, S, or HS modes will raise an illegal instruction
+exception.'''
+zh = '''
+`seed` CSR 默认仅在 M 模式可用，但可通过 `mseccfg.sseed` 和 `mseccfg.useed` 访问控制位使其在其他模式中可用。`sseed` 是 `mseccfg` CSR 的第 `9` 位，`useed` 是第 `8` 位。
+在未将相应访问控制位置 1 的情况下，从 U、S 或 HS 模式对 `seed` 的任何访问尝试都将引发非法指令异常。'''

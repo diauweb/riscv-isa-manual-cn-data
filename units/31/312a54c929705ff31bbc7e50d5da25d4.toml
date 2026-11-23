@@ -1,0 +1,37 @@
+unit_id = "312a54c929705ff31bbc7e50d5da25d4"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Split load - Data only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | Transaction type +
+100: split load data +
+(other codes select other packet formats)
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*lrid* | _lrid_width_p_ | Load request ID
+|*resp* | 2 | 00: Error (no data) +
+01: XOR-compressed data +
+10: Full data +
+11: Differential data
+|*data* | _data_width_p_ | Data
+|==='''
+zh = '''
+.拆分式加载的包格式——仅含数据
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 3 | 事务类型 +
+100：拆分式加载数据 +
+（其他编码选择其他包格式）
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*lrid* | _lrid_width_p_ | 加载请求 ID
+|*resp* | 2 | 00：错误（无数据） +
+01：异或压缩数据 +
+10：完整数据 +
+11：差分数据
+|*data* | _data_width_p_ | 数据
+|==='''

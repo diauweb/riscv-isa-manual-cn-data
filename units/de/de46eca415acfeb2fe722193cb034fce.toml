@@ -1,0 +1,12 @@
+unit_id = "de46eca415acfeb2fe722193cb034fce"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To enforce forward-edge CFI, the ext:zicfilp[] extension introduces
+a landing pad (insn:lpad[]) instruction. The insn:lpad[] instruction must be placed at the
+program locations that are valid targets of indirect jumps or calls.
+[#norm:zicflip_lpad_enc]#The insn:lpad[] instruction (See <<LP_INST>>) is
+encoded using the insn:auipc[] major opcode with _rd_=`x0`.#'''
+zh = '''
+为强制实施前向边 CFI，ext:zicfilp[] 扩展引入着陆垫（insn:lpad[]）指令。insn:lpad[] 指令应放置在作为间接跳转或调用有效目标的程序位置处。[#norm:zicflip_lpad_enc]##insn:lpad[] 指令（见 <<LP_INST>>）使用 _rd_=`x0` 的 insn:auipc[] 主操作码编码。##'''

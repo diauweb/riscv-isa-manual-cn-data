@@ -1,0 +1,13 @@
+unit_id = "e40e839ced065242d1d12c9cc2c69a60"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A virtual register is one that doesn't exist directly in the hardware, but
+that the debugger exposes as if it does. Debug software should implement
+them, but hardware can skip this section. Virtual registers exist to give
+users access to functionality that's not part of standard debuggers without
+requiring them to carefully modify debug registers while the debugger is
+also accessing those same registers.'''
+zh = '''
+虚拟寄存器是并非直接存在于硬件中，但调试器将其当作存在而暴露的寄存器。调试软件宜实现它们，但硬件可跳过本节。虚拟寄存器的存在是为了让用户能够访问不属于标准调试器的功能，而无需用户在调试器同时也访问相同寄存器时小心翼翼地修改调试寄存器。'''

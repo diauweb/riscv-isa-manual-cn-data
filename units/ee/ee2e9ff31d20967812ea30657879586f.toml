@@ -1,0 +1,16 @@
+unit_id = "ee2e9ff31d20967812ea30657879586f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* All synchronizing messages fully reset the encoder state, so decoding can be started from this message.
+** Before resetting the encoder state, the trace up to the current location must be emitted (it includes HIST, I-CNT, HREPEAT and B-CNT counters).
+* All synchronizing messages emit an absolute <<field_TSTAMP,TSTAMP>> field (if enabled), so decoder may calculate full/absolute timestamps from this message forward.
+* An <<msg_Ownership,Ownership>> messages (if enabled) must be emitted immediately after all synchronizing messages.
+* Some synchronizing messages not related to code being executed (periodic, notifications etc.) may be emitted between indirect jumps. In such a case field <<field_B-TYPE,B-TYPE>>=0 will be emitted, but it will not mean indirect flow change.'''
+zh = '''
+* 所有同步消息完全复位编码器状态，因此可从该消息开始解码。
+** 在复位编码器状态之前，必须发出直到当前位置的跟踪（包括 HIST、I-CNT、HREPEAT 和 B-CNT 计数器）。
+* 所有同步消息发出绝对 <<field_TSTAMP,TSTAMP>> 字段（如果启用），因此解码器可从该消息起计算完整/绝对时间戳。
+* 如果启用了 <<msg_Ownership,Ownership>> 消息，则必须在所有同步消息之后立即发出。
+* 一些与正在执行的代码无关的同步消息（周期性、通知等）可在间接跳转之间发出。在这种情况下，将发出字段 <<field_B-TYPE,B-TYPE>>=0，但这不意味着间接流变化。'''

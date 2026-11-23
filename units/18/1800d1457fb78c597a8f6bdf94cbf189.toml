@@ -1,0 +1,12 @@
+unit_id = "1800d1457fb78c597a8f6bdf94cbf189"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mhpmevent-OF_op]#The OF bit is set when the corresponding hpmcounter overflows, and remains set
+until written by software.# [#norm:hpmcounter_overflow]#Since hpmcounter values are unsigned values,
+overflow is defined as unsigned overflow of the implemented counter bits.# Note
+that there is no loss of information after an overflow since the counter wraps
+around and keeps counting while the sticky OF bit remains set.'''
+zh = '''
+[#norm:mhpmevent-OF_op]##当对应 hpmcounter 溢出时，置位 OF 位，并保持置位直到由软件写入。## [#norm:hpmcounter_overflow]##由于 hpmcounter 的值为无符号值，溢出定义为所实现计数器位的无符号溢出。## 注意，溢出后不会丢失信息，因为计数器会回绕并继续计数，同时粘滞 OF 位保持置位。'''

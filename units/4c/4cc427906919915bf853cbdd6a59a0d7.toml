@@ -1,0 +1,34 @@
+unit_id = "4cc427906919915bf853cbdd6a59a0d7"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trTeImpl: Trace Encoder Implementation Register (trBaseEncoder+0x004)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|3:0 |trTeVerMajor |Trace Encoder Component Major Version. Value 1 means the component is compliant with this document. Value 0 means pre-ratified/initial version - see 'Pre-ratified/Initial Interface Version' chapter at the end. |RO|1
+|7:4 |trTeVerMinor |Trace Encoder Component Minor Version. Value 0 means the component is compliant with this document. |RO|0
+|11:8 |trTeCompType |Trace Encoder Component Type (Trace Encoder) |RO|0x1
+|15:12 |--|Reserved for future versions of this standard|--|0
+|19:16 |trTeProtocolMajor |Trace Protocol Major Version. As specified by specification governing `trTeFormat`.
+|RO|<<SD,SD>>
+|23:20 |trTeProtocolMinor |Trace Protocol Minor Version. As specified by specification governing `trTeFormat`.
+|RO|<<SD,SD>>
+|31:24 |--|Reserved for vendor specific implementation details|--|<<SD,SD>>
+|==='''
+zh = '''
+.**寄存器：trTeImpl：跟踪编码器实现寄存器（trBaseEncoder+0x004）**
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|3:0 |trTeVerMajor |跟踪编码器组件主版本。值 1 表示该组件符合本文档。值 0 表示预批准/初始版本——见末尾的“预批准/初始接口版本”一章。 |RO|1
+|7:4 |trTeVerMinor |跟踪编码器组件次版本。值 0 表示该组件符合本文档。 |RO|0
+|11:8 |trTeCompType |跟踪编码器组件类型（跟踪编码器） |RO|0x1
+|15:12 |--|保留用于本标准的未来版本|--|0
+|19:16 |trTeProtocolMajor |跟踪协议主版本。按管辖 `trTeFormat` 的规范规定。
+|RO|<<SD,SD>>
+|23:20 |trTeProtocolMinor |跟踪协议次版本。按管辖 `trTeFormat` 的规范规定。
+|RO|<<SD,SD>>
+|31:24 |--|保留用于供应商特定实现细节|--|<<SD,SD>>
+|==='''

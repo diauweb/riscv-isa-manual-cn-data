@@ -1,0 +1,15 @@
+unit_id = "6960dcbbf7507d5e163a7c634730bdc5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations may choose to track the dirtiness of the floating-point
+register state imprecisely by reporting the state to be dirty even when
+it has not been modified. On some implementations, some instructions
+that do not mutate the floating-point state may cause the state to
+transition from Initial or Clean to Dirty. On other implementations,
+dirtiness might not be tracked at all, in which case the valid FS states
+are Off and Dirty, and an attempt to set FS to Initial or Clean causes
+it to be set to Dirty.'''
+zh = '''
+实现可选择以不精确方式跟踪浮点寄存器状态的脏状态，即在其尚未修改时报告为脏。在某些实现上，一些不改变浮点状态的指令可能导致状态从 Initial 或 Clean 转换为 Dirty。在其他实现上，可能根本不跟踪脏状态，此时有效的 FS 状态为 Off 和 Dirty，试图将 FS 设置为 Initial 或 Clean 会导致其被设置为 Dirty。'''

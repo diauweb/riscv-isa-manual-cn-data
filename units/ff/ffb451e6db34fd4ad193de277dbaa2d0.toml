@@ -1,0 +1,12 @@
+unit_id = "ffb451e6db34fd4ad193de277dbaa2d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The PMA checks are extended to require memory referenced by shadow stack
+instructions to be idempotent. The PMP checks are extended to require read-write
+permission for memory accessed by shadow stack instructions. If the PMP does not
+provide read-write permissions or if the accessed memory is not idempotent then
+a store/AMO access-fault exception is raised.'''
+zh = '''
+PMA 检查被扩展为要求影子栈指令引用的内存是幂等的。PMP 检查被扩展为要求影子栈指令访问的内存具有读写权限。若 PMP 不提供读写权限，或所访问内存不是幂等的，则触发存储/AMO 访问故障异常。'''

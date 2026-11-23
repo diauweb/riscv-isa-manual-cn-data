@@ -1,0 +1,41 @@
+unit_id = "c75b31e9300f39e98cfe335ee3851c94"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Give the debugger necessary information about the implementation.
+(Required)
+. Allow any individual hart to be halted and resumed. (Required)
+. Provide status on which harts are halted. (Required)
+. Provide abstract read and write access to a halted hart's GPRs.
+(Required)
+. Provide access to a reset signal that allows debugging from the very
+first instruction after reset. (Required)
+. Provide a mechanism to allow debugging harts immediately out of reset
+(regardless of the reset cause). (Optional)
+. Provide abstract access to non-GPR hart registers. (Optional)
+. Provide a Program Buffer to force the hart to execute arbitrary
+instructions. (Optional)
+. Allow multiple harts to be halted, resumed, and/or reset at the same
+time. (Optional)
+. Allow memory access from a hart's point of view. (Optional)
+. Allow direct System Bus Access. (Optional)
+. Group harts. When any hart in the group halts, they all halt. (Optional)
+. Respond to external triggers by halting each hart in a configured group.
+(Optional)
+. Signal an external trigger when a hart in a group halts. (Optional)'''
+zh = '''
+. 向调试器提供有关实现的必要信息。（必需）
+. 允许任何单个硬件线程停机与恢复。（必需）
+. 提供哪些硬件线程已停机的状态。（必需）
+. 提供对已停机硬件线程 GPR 的抽象读写访问。（必需）
+. 提供对复位信号的访问，允许从复位后的第一条指令开始调试。（必需）
+. 提供一种机制，允许硬件线程在复位后立即调试（无论复位原因如何）。（可选）
+. 提供对非 GPR 硬件线程寄存器的抽象访问。（可选）
+. 提供程序缓冲区以强制硬件线程执行任意指令。（可选）
+. 允许同时停机、恢复和/或复位多个硬件线程。（可选）
+. 允许从硬件线程的视角访问内存。（可选）
+. 允许直接系统总线访问。（可选）
+. 对硬件线程分组。当组中任一硬件线程停机时，它们全部停机。（可选）
+. 通过使所配置组中的每个硬件线程停机来响应外部触发器。（可选）
+. 当组中硬件线程停机时发出外部触发器信号。（可选）'''

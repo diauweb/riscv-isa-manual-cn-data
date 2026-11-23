@@ -1,0 +1,20 @@
+unit_id = "8af3a23b1d63a210ad01a5ef1c88e3cc"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* [#norm:zicfiss_m_menvcfg_sse]#If the privilege mode is less than M and `menvcfg.SSE` is 0, an
+  illegal-instruction exception is raised.#
+* [#norm:zicfiss_u_senvcfg_sse]#Otherwise, if in U-mode and `senvcfg.SSE` is 0, an illegal-instruction
+  exception is raised.#
+* [#norm:zicfiss_vs_henvcfg_sse]#Otherwise, if in VS-mode and `henvcfg.SSE` is 0, a virtual-instruction
+  exception is raised.#
+* [#norm:zicfiss_vu_henvcfg_senvcfg_sse]#Otherwise, if in VU-mode and either `henvcfg.SSE` or `senvcfg.SSE` is 0,
+  a virtual-instruction  exception is raised.#
+* [#norm:zicfiss_sse_access]#Otherwise, the access is allowed.#'''
+zh = '''
+* [#norm:zicfiss_m_menvcfg_sse]##若特权模式低于 M 且 `menvcfg.SSE` 为 0，则触发非法指令异常。##
+* [#norm:zicfiss_u_senvcfg_sse]##否则，若处于 U 模式且 `senvcfg.SSE` 为 0，则触发非法指令异常。##
+* [#norm:zicfiss_vs_henvcfg_sse]##否则，若处于 VS 模式且 `henvcfg.SSE` 为 0，则触发虚拟指令异常。##
+* [#norm:zicfiss_vu_henvcfg_senvcfg_sse]##否则，若处于 VU 模式且 `henvcfg.SSE` 或 `senvcfg.SSE` 为 0，则触发虚拟指令异常。##
+* [#norm:zicfiss_sse_access]##否则，允许访问。##'''

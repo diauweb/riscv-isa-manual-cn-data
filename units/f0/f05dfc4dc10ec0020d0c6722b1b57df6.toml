@@ -1,0 +1,18 @@
+unit_id = "f05dfc4dc10ec0020d0c6722b1b57df6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:trap_del_S_mode_op]#When a trap is delegated to S-mode,
+the csr:scause[] register is written
+with the trap cause; the csr:sepc[] register is written with the virtual
+address of the instruction that took the trap; the csr:stval[] register is
+written with an exception-specific datum; the csr::[spp] field of csr:mstatus[] is
+written with the active privilege mode at the time of the trap; the
+csr::[spie] field of csr:mstatus[] is written with the value of the csr::[sie] field at the
+time of the trap; and the csr::[sie] field of csr:mstatus[] is cleared.#
+[#norm:trap_del_S_mode_no_M_mode]#The csr:mcause[], csr:mepc[], and csr:mtval[] registers and the csr::[mpp] and csr::[mpie] fields of
+csr:mstatus[] are not written.#'''
+zh = '''
+[#norm:trap_del_S_mode_op]##当陷阱被委托给 S 模式时，csr:scause[] 寄存器被写入陷阱原因；csr:sepc[] 寄存器被写入发生陷阱的指令的虚拟地址；csr:stval[] 寄存器被写入异常特定的数据；csr:mstatus[] 的 csr::[spp] 字段被写入陷阱发生时的活动特权模式；csr:mstatus[] 的 csr::[spie] 字段被写入陷阱发生时 csr::[sie] 字段的值；且 csr:mstatus[] 的 csr::[sie] 字段被清零。##
+[#norm:trap_del_S_mode_no_M_mode]##csr:mcause[]、csr:mepc[] 和 csr:mtval[] 寄存器以及 csr:mstatus[] 的 csr::[mpp] 和 csr::[mpie] 字段不被写入。##'''

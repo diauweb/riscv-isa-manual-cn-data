@@ -1,0 +1,14 @@
+unit_id = "f63a6bab7264c2b75e037f4778f0710d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+These bits are encoded so that most of the time they will compress away,
+having no impact on efficiency, by taking on the same value as the
+preceding bit in the packet (*notify* is normally the same value as the
+MSB of the *address* field, and *updiscon* is normally the same value as
+*notify*). They are required in order to cover a pathological case where
+otherwise the decoding software would not be able to reconstruct the
+program execution unambiguously. Consider the following code fragment:'''
+zh = '''
+这些位经过编码，使大多数情况下它们会取包中前一位的相同值（*notify* 通常与 *address* 字段的 MSB 相同，*updiscon* 通常与 *notify* 相同），从而被压缩掉，对效率没有影响。需要这些位来覆盖一种病态情形，否则解码软件将无法无歧义地重建程序执行。考虑以下代码片段：'''

@@ -1,0 +1,19 @@
+unit_id = "8dcd734ab891e854281d3babd3b60c7d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.Software Hint
+[NOTE, caption="SH" ]
+===============================================================
+The byte-reverse operation is only available for the full register
+width.  To emulate word-sized and halfword-sized byte-reversal,
+perform a insn:rev8[rd,rs] followed by a insn:srai[rd,rd,K], where K is
+XLEN-32 and XLEN-16, respectively.
+==============================================================='''
+zh = '''
+.软件提示
+[NOTE, caption="SH" ]
+===============================================================
+字节反转操作仅适用于完整寄存器宽度。要模拟字大小和半字大小的字节反转，可执行 insn:rev8[rd,rs]，随后执行 insn:srai[rd,rd,K]，其中 K 分别为 XLEN-32 和 XLEN-16。
+==============================================================='''

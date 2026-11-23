@@ -1,0 +1,41 @@
+unit_id = "0c263f7b85e80bea5ede7fc158d3cd2d"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Packet format for Unified load or store, with data only
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 2 or 3 | Transaction type +
+000: Unified load or split load address, aligned +
+001: Unified load or split load address, unaligned +
+010: Store, aligned address +
+011: Store, unaligned address +
+(other codes select other packet formats)
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | Transfer size is
+2^*size*^ bytes
+|*diff* | 1 or 2 | 00: Full data (sync) +
+01: Compressed data (XOR if 2 bits) +
+10: reserved +
+11 : Differential data
+|*data* | _data_width_p_ | Data
+|==='''
+zh = '''
+.统一式加载或存储的包格式，仅含数据
+[%autowidth,align="center",float="center",cols="<,<,<",options="header"]
+|===
+| *Field name* | *Bits* | *Description*
+|*format* | 2 或 3 | 事务类型 +
+000：统一式加载或拆分式加载地址，已对齐 +
+001：统一式加载或拆分式加载地址，未对齐 +
+010：存储，地址已对齐 +
+011：存储，地址未对齐 +
+（其他编码选择其他包格式）
+|*size* | max(1, clog2(clog2( _data_width_p_/8 + 1))) | 传输大小为 2^*size*^ 字节
+|*diff* | 1 或 2 | 00：完整数据（同步） +
+01：压缩数据（若为 2 位则为异或） +
+10：保留 +
+11：差分数据
+|*data* | _data_width_p_ | 数据
+|==='''

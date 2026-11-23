@@ -1,0 +1,18 @@
+unit_id = "31b6d2bf4442ee54db3c50a4825c151a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Same-address orderings where the latter is a store are straightforward:
+a load or store can never be reordered with a later store to an
+overlapping memory location. From a microarchitecture perspective,
+generally speaking, it is difficult or impossible to undo a
+speculatively reordered store if the speculation turns out to be
+invalid, so such behavior is simply disallowed by the model.
+Same-address orderings from a store to a later load, on the other hand,
+do not need to be enforced. As discussed in
+<<loadvalueaxiom>>, this reflects the observable
+behavior of implementations that forward values from buffered stores to
+later loads.'''
+zh = '''
+后一操作为存储的同地址排序很直接：加载或存储绝不能与后面对重叠内存位置的存储重排序。从微体系结构的角度看，一般而言，如果推测结果无效，则很难或不可能撤销已推测重排序的存储，因此模型直接禁止这种行为。另一方面，从存储到后续加载的同地址排序则无须强制执行。如 <<loadvalueaxiom>> 所述，这反映了将缓冲存储中的值转发给后续加载的的实现的可观察行为。'''

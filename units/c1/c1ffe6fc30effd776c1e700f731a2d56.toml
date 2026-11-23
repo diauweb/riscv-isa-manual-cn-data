@@ -1,0 +1,11 @@
+unit_id = "c1ffe6fc30effd776c1e700f731a2d56"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:satp-mode_bare]#If `satp.MODE` (or `vsatp.MODE` when `V=1`) is set to `Bare` and the effective
+privilege mode is less than M, shadow stack instructions raise a store/AMO access-fault exception.#
+[#norm:ssmp_ssamoswap]#When the effective privilege mode is M, memory access
+by an `SSAMOSWAP.W/D` instruction results in a store/AMO access-fault exception.#'''
+zh = '''
+[#norm:satp-mode_bare]##若 `satp.MODE`（或 `V=1` 时的 `vsatp.MODE`）设置为 `Bare` 且有效特权模式低于 M，则影子栈指令触发存储/AMO 访问故障异常。## [#norm:ssmp_ssamoswap]##当有效特权模式为 M 时，`SSAMOSWAP.W/D` 指令的内存访问导致存储/AMO 访问故障异常。##'''

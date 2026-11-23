@@ -1,0 +1,18 @@
+unit_id = "8707b2924bce6193312d6362550d9d4e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+By default, all data trace packets include both address and data.
+However, provision is made for run-time configuration options to exclude
+either the address or the data, in order to minimize trace bandwidth.
+For example, if filtering has been configured to only trace from a
+specific data access address there is no need to report the address in
+the trace. Alternatively, the user may want to know which locations are
+accessed but not care about the data value. Information about whether
+address or data are omitted is not encoded in the packets themselves as
+it does not change dynamically, and to do so would reduce encoding
+efficiency. The run-time configuration should be reported in the Format
+3, subformat 3 support packet (see <<sec:format33>>). The following sections include examples for all three cases.'''
+zh = '''
+默认情况下，所有数据跟踪包同时包含地址和数据。然而，规定了运行时配置选项以排除地址或数据之一，从而尽量减小跟踪带宽。例如，若过滤配置为仅跟踪来自特定数据访问地址的数据，则无须在跟踪中报告地址。或者，用户可能想知道访问了哪些位置，但不关心数据值。关于是否省略地址或数据的信息不编码在包本身中，因为它不会动态变化，而且这样做会降低编码效率。运行时配置应在格式 3、子格式 3 支持包中报告（见 <<sec:format33>>）。以下各节包含全部三种情况的示例。'''

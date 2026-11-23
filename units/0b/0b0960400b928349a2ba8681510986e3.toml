@@ -1,0 +1,18 @@
+unit_id = "0b0960400b928349a2ba8681510986e3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+=====
+* Phrase *inferable unconditional jumps (all types)* include indirect unconditional jumps, which may be inferable.
+* Extra fields like <<field_SYNC,SYNC>>/<<field_B-TYPE,B-TYPE>> only provide extra details, but are NOT essential for a decoder to reconstruct the PC flow.
+* See https://github.com/riscv-non-isa/tg-nexus-trace/tree/main/refcode/c[N-Trace Reference Code] for simple but fully functional implementation.
+====='''
+zh = '''
+[NOTE]
+=====
+* 短语**可推断无条件跳转（所有类型）**包括可能可推断的间接无条件跳转。
+* <<field_SYNC,SYNC>>/<<field_B-TYPE,B-TYPE>> 等额外字段仅提供额外细节，但对解码器重建 PC 流不是必需的。
+* 简单但功能完整的实现见 https://github.com/riscv-non-isa/tg-nexus-trace/tree/main/refcode/c[N-Trace Reference Code]。
+====='''

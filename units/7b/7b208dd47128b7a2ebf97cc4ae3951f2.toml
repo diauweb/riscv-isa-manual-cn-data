@@ -1,0 +1,18 @@
+unit_id = "7b208dd47128b7a2ebf97cc4ae3951f2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:cbm_access]#A cache-block management instruction is permitted to access the specified cache
+block whenever a load instruction or store instruction is permitted to access
+the corresponding physical addresses.# If neither a load instruction nor store
+instruction is permitted to access the physical addresses, but an instruction
+fetch is permitted to access the physical addresses, whether a cache-block
+management instruction is permitted to access the cache block is UNSPECIFIED. [#norm:cbm_unperm_fault]#If
+access to the cache block is not permitted, a cache-block management instruction
+raises a store page-fault or store guest-page-fault exception if address
+translation does not permit any access or raises a store access-fault exception
+otherwise.# [#norm:cbm_unperm_translate]#During address translation, the instruction also checks the accessed
+bit and may either raise an exception or set the bit as required.#'''
+zh = '''
+[#norm:cbm_access]##只要加载指令或存储指令被允许访问相应物理地址，缓存块管理指令就被允许访问指定的缓存块。## 如果加载指令和存储指令均不被允许访问这些物理地址，但指令取指被允许访问这些物理地址，则缓存块管理指令是否被允许访问该缓存块是未规定的。[#norm:cbm_unperm_fault]##如果访问该缓存块不被允许，则缓存块管理指令在地址转换不允许任何访问时触发存储页错误或存储客户机页错误异常，否则触发存储访问错误异常。## [#norm:cbm_unperm_translate]##在地址转换期间，该指令还会检查访问位，并可按要求触发异常或置位该位。##'''

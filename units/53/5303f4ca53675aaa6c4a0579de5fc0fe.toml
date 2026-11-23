@@ -1,0 +1,15 @@
+unit_id = "5303f4ca53675aaa6c4a0579de5fc0fe"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Set {sbcs-sbbusy}.
+. Perform a bus write of the new value of `sbdata` to `sbaddress`.
+. If the write succeeded and {sbcs-sbautoincrement} is set,
+increment `sbaddress`.
+. Clear {sbcs-sbbusy}.'''
+zh = '''
+. 置位 {sbcs-sbbusy}。
+. 将 `sbdata` 的新值总线写入 `sbaddress`。
+. 若写成功且 {sbcs-sbautoincrement} 置位，则递增 `sbaddress`。
+. 清零 {sbcs-sbbusy}。'''

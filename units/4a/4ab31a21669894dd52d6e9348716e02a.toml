@@ -1,0 +1,14 @@
+unit_id = "4ab31a21669894dd52d6e9348716e02a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:cbp_access]#A cache-block prefetch instruction is permitted to access the specified cache
+block whenever a load instruction, store instruction, or instruction fetch is
+permitted to access the corresponding physical addresses.# [#norm:cbp_unperm_noexcep]#If access to the cache
+block is not permitted, a cache-block prefetch instruction does not raise any
+exceptions and shall not access any caches or memory.# [#norm:cbp_unperm_translate]#During address
+translation, the instruction does _not_ check the accessed and dirty bits and
+neither raises an exception nor sets the bits.#'''
+zh = '''
+[#norm:cbp_access]##只要加载指令、存储指令或指令取指被允许访问相应物理地址，缓存块预取指令就被允许访问指定的缓存块。## [#norm:cbp_unperm_noexcep]##如果访问该缓存块不被允许，则缓存块预取指令不触发任何异常，且不应访问任何高速缓存或内存。## [#norm:cbp_unperm_translate]##在地址转换期间，该指令_不_检查访问位和脏位，既不触发异常也不置位这些位。##'''

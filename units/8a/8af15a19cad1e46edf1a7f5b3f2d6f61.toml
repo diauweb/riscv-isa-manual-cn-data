@@ -1,0 +1,16 @@
+unit_id = "8af15a19cad1e46edf1a7f5b3f2d6f61"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An unsuccessful `AMOCAS.W/D/Q` may either not perform a memory write or may
+write back the old value loaded from memory. The memory write, if produced, does
+not have release semantics, regardless of `rl`.
+===='''
+zh = '''
+[NOTE]
+====
+不成功的 `AMOCAS.W/D/Q` 可能不执行内存写，也可能写回从内存加载的旧值。若产生该内存写，则无论 `rl` 如何，它都不具有释放语义。
+===='''

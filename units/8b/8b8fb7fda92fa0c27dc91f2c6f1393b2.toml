@@ -1,0 +1,16 @@
+unit_id = "8b8fb7fda92fa0c27dc91f2c6f1393b2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+We also note that syntactic dependencies between instructions only have
+any force when they take the form of a syntactic address, control,
+and/or data dependency. For example: a syntactic dependency between two
+`F` instructions via one of the `accumulating CSRs` in
+<<source-dest-regs>> does _not_ imply
+that the two `F` instructions must be executed in order. Such a
+dependency would only serve to ultimately set up later a dependency from
+both `F` instructions to a later CSR instruction accessing the CSR
+flag in question.'''
+zh = '''
+我们还注意到，指令之间的语法依赖只有在采取语法地址、控制和/或数据依赖形式时才具有效力。例如：在 <<source-dest-regs>> 中，两条 `F` 指令通过某个 `accumulating CSRs` 形成的语法依赖，并 _不_ 意味着这两条 `F` 指令必须按序执行。这种依赖只会在最终建立从两条 `F` 指令到后续访问相关 CSR 标志的 CSR 指令的依赖时起作用。'''

@@ -1,0 +1,17 @@
+unit_id = "427fef674bc9d1f173dbf0ef734ca8fb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Indirect and direct calls are recorded as normal
+* Function returns pop the most recent call, by decrementing the WRPTR then invalidating the WRPTR entry (by setting ctrsource.V=0).  As a result, logical entry 0 is invalidated and moves to logical entry depth-1, while logical entries 1..depth-1 move to 0..depth-2.
+* Co-routine swaps affect both a return and a call. Logical entry 0 is
+overwritten, and WRPTR is not modified.
+* Other transfer types are inhibited
+* Transfer type filtering bits (`__x__ctrctl`[47:32]) and external trap enable bits (`__x__ctrctl`.__x__TE) are ignored'''
+zh = '''
+* 间接调用和直接调用按正常方式记录
+* 函数返回弹出最近的调用，方法是递减 WRPTR 然后使该 WRPTR 表项无效（通过设置 ctrsource.V=0）。结果，逻辑表项 0 无效并移到逻辑表项 depth-1，而逻辑表项 1..depth-1 移到 0..depth-2。
+* 协程交换同时影响返回和调用。逻辑表项 0 被覆盖，WRPTR 不修改。
+* 其他转移类型被禁止
+* 转移类型过滤位（`__x__ctrctl`[47:32]）和外部陷阱使能位（`__x__ctrctl`.__x__TE）被忽略'''

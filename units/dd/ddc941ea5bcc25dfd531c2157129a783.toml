@@ -1,0 +1,34 @@
+unit_id = "ddc941ea5bcc25dfd531c2157129a783"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.External Trap Enable Requirements
+[%unbreakable]
+[options="header", width="85%", cols="23%,23%,54%"]
+|===
+|Source Mode |Target Mode |External Trap Enable(s) Required
+.2+|U-mode | S-mode | [#norm:exttrap_us]#`sctrctl`.STE#
+|M-mode | [#norm:exttrap_um]#`mctrctl`.MTE, `sctrctl`.STE#
+|S-mode | M-mode | [#norm:exttrap_Sm]#`mctrctl`.MTE#
+.3+|VU-mode | VS-mode | [#norm:exttrap_vuvs]#`vsctrctl`.STE#
+| HS-mode | [#norm:exttrap_vuhs]#`sctrctl`.STE, `vsctrctl`.STE#
+| M-mode | [#norm:exttrap_vum]#`mctrctl`.MTE, `sctrctl`.STE, `vsctrctl`.STE#
+.2+| VS-mode | HS-mode | [#norm:exttrap_vshs]#`sctrctl`.STE#
+| M-mode | [#norm:exttrap_vsm]#`mctrctl`.MTE, `sctrctl`.STE#
+|==='''
+zh = '''
+.外部陷阱使能要求
+[%unbreakable]
+[options="header", width="85%", cols="23%,23%,54%"]
+|===
+|源模式 |目标模式 |所需外部陷阱使能
+.2+|U 模式 | S 模式 | [#norm:exttrap_us]##`sctrctl`.STE#
+|M 模式 | [#norm:exttrap_um]##`mctrctl`.MTE、`sctrctl`.STE#
+|S 模式 | M 模式 | [#norm:exttrap_Sm]##`mctrctl`.MTE#
+.3+|VU 模式 | VS 模式 | [#norm:exttrap_vuvs]##`vsctrctl`.STE#
+| HS 模式 | [#norm:exttrap_vuhs]##`sctrctl`.STE、`vsctrctl`.STE#
+| M 模式 | [#norm:exttrap_vum]##`mctrctl`.MTE、`sctrctl`.STE、`vsctrctl`.STE#
+.2+| VS 模式 | HS 模式 | [#norm:exttrap_vshs]##`sctrctl`.STE#
+| M 模式 | [#norm:exttrap_vsm]##`mctrctl`.MTE、`sctrctl`.STE#
+|==='''

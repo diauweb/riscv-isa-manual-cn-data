@@ -1,0 +1,11 @@
+unit_id = "b2a3ce5c562e3cd7dcc9a99005e29f0a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.JR (jump register) performs an unconditional control transfer to the
+address in register _rs1_. C.JR expands to `jalr x0, 0(rs1)`. C.JR is
+only valid when latexmath:[$\textit{rs1}{\neq}\texttt{x0}$]; the code
+point with latexmath:[$\textit{rs1}{=}\texttt{x0}$] is reserved.'''
+zh = '''
+C.JR（跳转寄存器）执行到寄存器 _rs1_ 中地址的无条件控制转移。C.JR 展开为 `jalr x0, 0(rs1)`。C.JR 仅在 latexmath:[$\textit{rs1}{\neq}\texttt{x0}$] 时有效；latexmath:[$\textit{rs1}{=}\texttt{x0}$] 的编码点保留。'''

@@ -1,0 +1,25 @@
+unit_id = "ff89b43135cd620db9ea709f31866b34"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+.Note to software developers
+====
+The entire Sigma0 transform for SHA2-512 may be computed on RV32
+using the following instruction sequence:
+
+ sha512sig0l    t0, a0, a1
+ sha512sig0h    t1, a1, a0
+
+===='''
+zh = '''
+[NOTE]
+.致软件开发者的说明
+====
+在 RV32 上，可使用以下指令序列计算 SHA2-512 的完整 Sigma0 变换：
+
+ sha512sig0l    t0, a0, a1
+ sha512sig0h    t1, a1, a0
+
+===='''

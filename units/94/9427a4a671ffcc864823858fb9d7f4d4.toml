@@ -1,0 +1,22 @@
+unit_id = "9427a4a671ffcc864823858fb9d7f4d4"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Bit `trRamHasSRAM` must be tied to 1 and `trRamMode` must be tied to 0.
+* Bit `trRamWrap` must be implemented.
+* Register `trRamLimitLow` must be implemented but can be hard coded to value '2^M-4' (address 0x..FC).
+* Register `trRamWPLow` must at least accept a write of 0.
+* Register `trRamRPLow` must accept any 32-bit aligned value in inclusive range < 0 .. `trRamLimitLow` >.
+** If width of access to SRAM is wider than 32-bits any 32-bit aligned value of `trRamRP` must be allowed and reads must be buffered.
+* Register `trRamData` may be implemented for reading only.
+* All other registers/fields/bits may be tied to 0.'''
+zh = '''
+* 位 `trRamHasSRAM` 必须固定为 1，`trRamMode` 必须固定为 0。
+* 必须实现位 `trRamWrap`。
+* 必须实现寄存器 `trRamLimitLow`，但可硬编码为值“2^M-4”（地址 0x..FC）。
+* 寄存器 `trRamWPLow` 至少必须接受写入 0。
+* 寄存器 `trRamRPLow` 必须接受包含范围 < 0 .. `trRamLimitLow` > 内的任何 32 位对齐值。
+** 如果对 SRAM 的访问宽度大于 32 位，则必须允许 `trRamRP` 的任何 32 位对齐值，并且必须缓冲读取。
+* 寄存器 `trRamData` 可仅实现为读取。
+* 所有其他寄存器/字段/位可固定为 0。'''

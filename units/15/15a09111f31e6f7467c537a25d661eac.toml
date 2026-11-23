@@ -1,0 +1,16 @@
+unit_id = "15a09111f31e6f7467c537a25d661eac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The averaging add and subtract instructions right shift the result by
+one bit and round off the result according to the setting in `vxrm`.
+Computation is performed in infinite precision before rounding and truncating.
+Both unsigned and signed versions are provided.
+For `vaaddu` and `vaadd` there can be no overflow in the result.
+For `vasub` and `vasubu`, overflow is ignored and the result wraps around.'''
+zh = '''
+平均加法和减法指令将结果右移一位，并根据 `vxrm` 中的设置对结果进行舍入。计算在舍入和截断之前以无限精度执行。
+提供无符号和有符号版本。
+对于 `vaaddu` 和 `vaadd`，结果不可能上溢。
+对于 `vasub` 和 `vasubu`，忽略上溢且结果回绕。'''

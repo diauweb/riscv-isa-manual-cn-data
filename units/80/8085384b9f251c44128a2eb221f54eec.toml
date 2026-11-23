@@ -1,0 +1,11 @@
+unit_id = "8085384b9f251c44128a2eb221f54eec"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `s{csrname}` register is used by all supervisor modes, including VS-mode. A
+hypervisor is responsible for saving and restoring `s{csrname}` on guest context
+switches. The `h{csrname}` register is only present if the H-extension is
+implemented and enabled.'''
+zh = '''
+`s{csrname}` 寄存器由所有监管模式使用，包括 VS 模式。虚拟机监控器负责在客户机上下文切换时保存和恢复 `s{csrname}`。仅当实现了 H 扩展并使其使能时，`h{csrname}` 寄存器才存在。'''

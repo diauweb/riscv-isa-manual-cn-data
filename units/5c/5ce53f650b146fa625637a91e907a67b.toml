@@ -1,0 +1,23 @@
+unit_id = "5ce53f650b146fa625637a91e907a67b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+*	<<crypto_scalar_es_req_90b>>: A physical entropy source meeting
+	NIST SP 800-90B cite:[TuBaKe:18] criteria with evaluated min-entropy
+	of 192 bits for each 256 output bits (min-entropy rate 0.75).
+
+*	<<crypto_scalar_es_req_ptg2>>: A physical entropy source meeting the
+	AIS-31 PTG.2 cite:[KiSc11] criteria, implying average Shannon entropy
+	rate 0.997. The source must also meet the NIST 800-90B
+	min-entropy rate 192/256 = 0.75.
+
+*	<<crypto_scalar_es_req_virt>>: A virtual entropy source is a DRBG
+	seeded from a physical entropy source. It must have at least a
+	256-bit (Post-Quantum Category 5) internal security level.'''
+zh = '''
+* <<crypto_scalar_es_req_90b>>：满足 NIST SP 800-90B cite:[TuBaKe:18] 准则的物理熵源，每 256 个输出位评估的最小熵为 192 位（最小熵率 0.75）。
+
+* <<crypto_scalar_es_req_ptg2>>：满足 AIS-31 PTG.2 cite:[KiSc11] 准则的物理熵源，意味着平均香农熵率为 0.997。该源还应满足 NIST 800-90B 的最小熵率 192/256 = 0.75。
+
+* <<crypto_scalar_es_req_virt>>：虚拟熵源是由物理熵源提供种子的 DRBG。它应至少具有 256 位（后量子类别 5）的内部安全级别。'''

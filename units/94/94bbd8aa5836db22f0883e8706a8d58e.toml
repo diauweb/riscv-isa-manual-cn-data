@@ -1,0 +1,23 @@
+unit_id = "94bbd8aa5836db22f0883e8706a8d58e"
+kind = "code"
+translatable = false
+en = '''
+----
+# Saturating adds of unsigned integers.
+vsaddu.vv vd, vs2, vs1, vm   # Vector-vector
+vsaddu.vx vd, vs2, rs1, vm   # vector-scalar
+vsaddu.vi vd, vs2, imm, vm   # vector-immediate
+
+# Saturating adds of signed integers.
+vsadd.vv vd, vs2, vs1, vm   # Vector-vector
+vsadd.vx vd, vs2, rs1, vm   # vector-scalar
+vsadd.vi vd, vs2, imm, vm   # vector-immediate
+
+# Saturating subtract of unsigned integers.
+vssubu.vv vd, vs2, vs1, vm   # Vector-vector
+vssubu.vx vd, vs2, rs1, vm   # vector-scalar
+
+# Saturating subtract of signed integers.
+vssub.vv vd, vs2, vs1, vm   # Vector-vector
+vssub.vx vd, vs2, rs1, vm   # vector-scalar
+----'''

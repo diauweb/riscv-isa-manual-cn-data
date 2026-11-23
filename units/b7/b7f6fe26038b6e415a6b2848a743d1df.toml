@@ -1,0 +1,14 @@
+unit_id = "b7f6fe26038b6e415a6b2848a743d1df"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In all the transformed instructions above, the Addr. Offset field that
+replaces the instruction’s rs1 field in bits 19:15 is the positive
+difference between the faulting virtual address (written to `mtval` or
+`stval`) and the original virtual address. This difference can be
+nonzero only for a misaligned memory access. Note also that, for basic
+loads and stores, the transformations replace the instruction’s
+immediate offset fields with zero.'''
+zh = '''
+在上述所有变换后的指令中，替换指令位 19:15 处 rs1 字段的 Addr. Offset 字段，是引发故障的虚拟地址（写入 `mtval` 或 `stval`）与原虚拟地址之间的正差值。该差值仅在内存访问非对齐时才可能非零。另请注意，对于基本加载和存储，变换形式将指令的立即数偏移字段替换为零。'''

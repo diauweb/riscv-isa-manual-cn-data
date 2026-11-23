@@ -1,0 +1,13 @@
+unit_id = "9ad174c9af9f0e1b0ed843cd6a92499f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Sv39 page tables contain [#norm:Sv39_pte_count]#2^9^ page table entries
+(PTEs)#, [#norm:Sv39_pte_sz]#eight bytes each#.
+A page table is [#norm:Sv39_pt_sz]#exactly the size of a page# and
+[#norm:Sv39_pt_align]#must always be aligned to a page boundary#.
+The physical page number of the root page table is stored in the `satp`
+register's PPN field.'''
+zh = '''
+Sv39 页表包含 [#norm:Sv39_pte_count]##2^9^ 个页表项（PTE）##，[#norm:Sv39_pte_sz]##每项 8 字节##。页表 [#norm:Sv39_pt_sz]##的大小恰好等于一页##，并且 [#norm:Sv39_pt_align]##应始终按页边界对齐##。根页表的物理页号保存在 `satp` 寄存器的 PPN 字段中。'''

@@ -1,0 +1,11 @@
+unit_id = "9810b6734e3b2453e4e1097f295589a0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Simpler implementations of HFENCE.GVMA can ignore the guest physical
+address in _rs1_ and the VMID value in _rs2_ and always perform a global
+fence for the guest-physical memory management of all virtual machines,
+or even a global fence for all memory-management data structures.'''
+zh = '''
+较简单的 HFENCE.GVMA 实现可忽略 __rs1__ 中的客户机物理地址和 __rs2__ 中的 VMID 值，并始终对所有虚拟机的客户机物理内存管理执行全局屏障，甚至对所有内存管理数据结构执行全局屏障。'''

@@ -1,0 +1,12 @@
+unit_id = "1b74ce236fe4a712923aa3d3a7bc49ad"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+result : xlenbits = EXTZ(0b0);
+foreach (i from 0 to sizeof(xlen) by 8) {
+    result[i+7..i] = reverse_bits_in_byte(X(rs1)[i+7..i]);
+};
+X(rd) = result;
+--'''

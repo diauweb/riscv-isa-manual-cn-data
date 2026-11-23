@@ -1,0 +1,33 @@
+unit_id = "0146ace3b28aea40f7843b648573b76c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+PAUSE is encoded as a hint within the FENCE opcode because some
+implementations are expected to deliberately stall the PAUSE instruction
+until outstanding memory transactions have completed. Because the
+successor set is null, however, PAUSE does not _mandate_ any particular
+memory ordering—hence, it truly is a HINT.
+(((PAUSE, encoding)))
+
+Like other FENCE instructions, PAUSE cannot be used within LR/SC
+sequences without voiding the forward-progress guarantee.
+(((PAUSE, LR/RC sequences)))
+
+The choice of a predecessor set of W is arbitrary, since the successor
+set is null. Other HINTs similar to PAUSE might be encoded with other
+predecessor sets.
+===='''
+zh = '''
+[NOTE]
+====
+PAUSE 之所以编码为 FENCE 操作码内的一个 HINT，是因为预期某些实现会故意停顿 PAUSE 指令，直到未完成的内存事务完成为止。然而，由于后继集为空，PAUSE 并不__强制__任何特定的内存排序——因此，它确实是一个 HINT。
+(((PAUSE, encoding)))
+
+与其他 FENCE 指令一样，PAUSE 不能在 LR/SC 序列内使用而不使前向进展保证失效。
+(((PAUSE, LR/RC sequences)))
+
+由于后继集为空，选择 W 作为前驱集是任意的。其他类似 PAUSE 的 HINT 可能使用其他前驱集编码。
+===='''

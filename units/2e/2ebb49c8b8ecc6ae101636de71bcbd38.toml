@@ -1,0 +1,23 @@
+unit_id = "2ebb49c8b8ecc6ae101636de71bcbd38"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+When __rs2__≠`x0`, bits XLEN-1:VMIDMAX of the value held
+in _rs2_ are reserved for future standard use. Until their use is
+defined by a standard extension, they should be zeroed by software and
+ignored by current implementations. Furthermore, if
+VMIDLEN < VMIDMAX, the implementation shall ignore bits
+VMIDMAX-1:VMIDLEN of the value held in _rs2_.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+当 __rs2__≠`x0` 时，__rs2__ 所持值的第 XLEN-1:VMIDMAX 位保留供未来标准使用。在标准扩展定义其用途之前，软件宜将其置零，当前实现应忽略它们。此外，若 VMIDLEN < VMIDMAX，则实现应忽略 __rs2__ 所持值的第 VMIDMAX-1:VMIDLEN 位。
+
+[NOTE]
+===='''

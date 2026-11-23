@@ -1,0 +1,19 @@
+unit_id = "b0f4707525703a8582dc34000f656b68"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:hgatp_sz_acc_op]#The `hgatp` register is an HSXLEN-bit read/write register, formatted as
+shown in <<rv32hgatp>> for HSXLEN=32 and
+<<rv64hgatp>> for HSXLEN=64, which controls
+G-stage address translation and protection, the second stage of
+two-stage translation for guest virtual addresses (see
+<<two-stage-translation>>).# Similar to CSR `satp`, this
+register holds the physical page number (PPN) of the guest-physical root
+page table; a virtual machine identifier (VMID), which facilitates
+address-translation fences on a per-virtual-machine basis; and the MODE
+field, which selects the address-translation scheme for guest physical
+addresses. [#norm:hgatp_tvm_illegal]#When `mstatus`.TVM=1, attempts to read or write `hgatp` while
+executing in HS-mode will raise an illegal-instruction exception.#'''
+zh = '''
+[#norm:hgatp_sz_acc_op]##`hgatp` 寄存器是 HSXLEN 位读写寄存器，当 HSXLEN=32 时格式如 <<rv32hgatp>> 所示，当 HSXLEN=64 时格式如 <<rv64hgatp>> 所示，它控制 G 阶段地址转换与保护，即客户机虚拟地址两阶段转换的第二阶段（见 <<two-stage-translation>>）。##与 CSR `satp` 类似，此寄存器保存客户机物理根页表的物理页号（PPN）；虚拟机标识符（VMID），便于按虚拟机执行地址转换栅栏；以及 MODE 字段，为客户机物理地址选择地址转换方案。[#norm:hgatp_tvm_illegal]##当 `mstatus`.TVM=1 时，在 HS 模式执行期间尝试读取或写入 `hgatp` 会引发非法指令异常。##'''

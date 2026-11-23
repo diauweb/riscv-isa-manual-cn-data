@@ -1,0 +1,8 @@
+unit_id = "01a45d24a6ece4802b89312ab8fd7019"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Note that pointer masking is purely an arithmetic operation on the address that makes no assumption about the meaning of the addresses it is applied to. [#norm:pm_deterministic_effect]#Pointer masking with the same value of PMLEN always has the same effect for the same type of address (virtual or physical).# This ensures that code that relies on pointer masking does not need to be aware of the environment it runs in once pointer masking has been enabled, as long as the value of PMLEN is known, and whether or not addresses are virtual or physical. For example, the same application or library code can run in user mode, supervisor mode or M-mode (with different address translation modes) without modification.'''
+zh = '''
+注意，指针掩码纯粹是对地址的算术操作，不对其所应用地址的含义作任何假设。[#norm:pm_deterministic_effect]##对于相同类型的地址（虚拟或物理），相同 PMLEN 值的指针掩码始终具有相同效果。## 这确保依赖指针掩码的代码在指针掩码使能后无需知道其运行环境，只要知道 PMLEN 的值以及地址是虚拟还是物理即可。例如，同一应用或库代码可在用户模式、监管模式或 M 模式（具有不同地址转换模式）下无需修改地运行。'''

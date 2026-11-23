@@ -1,0 +1,49 @@
+unit_id = "3743018a4d19063e745e18bcce291ee6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The following common situations typically require executing an
+SFENCE.VMA instruction:
+
+* When software recycles an ASID (i.e., reassociates it with a different
+page table), it should _first_ change `satp` to point to the new page
+table using the recycled ASID, _then_ execute SFENCE.VMA with __rs1__=`x0`
+and _rs2_ set to the recycled ASID. Alternatively, software can execute
+the same SFENCE.VMA instruction while a different ASID is loaded into
+`satp`, provided the next time `satp` is loaded with the recycled ASID,
+it is simultaneously loaded with the new page table.
+* If the implementation does not provide ASIDs, or software chooses to
+always use ASID 0, then after every `satp` write, software should
+execute SFENCE.VMA with __rs1__=`x0`. In the common case that no global
+translations have been modified, _rs2_ should be set to a register other
+than `x0` but which contains the value zero, so that global translations
+are not flushed.
+* If software modifies a non-leaf PTE, it should execute SFENCE.VMA with
+__rs1__=`x0`. If any PTE along the traversal path had its G bit set, _rs2_
+must be `x0`; otherwise, _rs2_ should be set to the ASID for which the
+translation is being modified.
+* If software modifies a leaf PTE, it should execute SFENCE.VMA with
+_rs1_ set to a virtual address within the page. If any PTE along the
+traversal path had its G bit set, _rs2_ must be `x0`; otherwise, _rs2_
+should be set to the ASID for which the translation is being modified.
+* For the special cases of increasing the permissions on a leaf PTE and
+changing an invalid PTE to a valid leaf, software may choose to execute
+the SFENCE.VMA lazily. After modifying the PTE but before executing
+SFENCE.VMA, either the new or old permissions will be used. In the
+latter case, a page-fault exception might occur, at which point software
+should execute SFENCE.VMA in accordance with the previous bullet point.
+===='''
+zh = '''
+[NOTE]
+====
+以下常见情形通常需要执行 SFENCE.VMA 指令：
+
+* 当软件回收 ASID（即将其与不同页表重新关联）时，宜__首先__更改 `satp`，使其使用回收的 ASID 指向新页表，__然后__执行 __rs1__=`x0` 且 _rs2_ 设置为该回收 ASID 的 SFENCE.VMA。或者，软件可在将不同 ASID 加载到 `satp` 时执行相同的 SFENCE.VMA 指令，只要下一次将回收的 ASID 加载到 `satp` 时，同时将其与新页表一起加载。
+* 若实现不提供 ASID，或软件选择始终使用 ASID 0，则在每次写入 `satp` 之后，软件宜执行 __rs1__=`x0` 的 SFENCE.VMA。在未修改任何全局转换的常见情形下，宜将 _rs2_ 设置为 `x0` 之外的某个寄存器，但该寄存器包含值零，从而不冲刷全局转换。
+* 若软件修改非叶 PTE，宜执行 __rs1__=`x0` 的 SFENCE.VMA。若遍历路径上的任何 PTE 的 G 位置位，则 _rs2_ 应为 `x0`；否则，宜将 _rs2_ 设置为正在修改其转换的 ASID。
+* 若软件修改叶 PTE，宜执行 _rs1_ 设置为该页内某个虚拟地址的 SFENCE.VMA。若遍历路径上的任何 PTE 的 G 位置位，则 _rs2_ 应为 `x0`；否则，宜将 _rs2_ 设置为正在修改其转换的 ASID。
+* 对于提高叶 PTE 权限以及将无效 PTE 更改为有效叶 PTE 的特殊情形，软件可选择延迟执行 SFENCE.VMA。在修改 PTE 之后、执行 SFENCE.VMA 之前，将使用新权限或旧权限。在后一种情况下，可能发生页错误异常，此时软件宜按照上一项执行 SFENCE.VMA。
+===='''

@@ -1,0 +1,13 @@
+unit_id = "04a7fd4b108488ed3224c2df6dc3ac53"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Executing a user-mode instruction to disable a unit and place it into
+the Off state will cause an illegal-instruction exception to be raised
+if any subsequent instruction tries to use the unit before it is turned
+back on. A user-mode instruction to turn a unit on must also ensure the
+unit's state is properly initialized, as the unit might have been used
+by another context meantime.'''
+zh = '''
+执行一条用户模式指令来禁用某单元并将其置于 Off 状态后，若任何后续指令在该单元重新开启之前试图使用该单元，将引发非法指令异常。用于开启单元的用户模式指令还必须确保该单元的状态得到正确初始化，因为该单元在此期间可能已被另一个上下文使用。'''

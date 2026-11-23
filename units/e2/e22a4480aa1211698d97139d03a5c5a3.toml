@@ -1,0 +1,14 @@
+unit_id = "e22a4480aa1211698d97139d03a5c5a3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Triggers can be used for native debugging when {mcontrol-action}=0. If supported by the
+hart and desired by the debugger, triggers will often be programmed to
+have {mcontrol-m}=0 so that when they fire they cause a breakpoint exception to trap to
+a more privileged mode. That breakpoint exception can either be taken in
+M-mode or it can be delegated to a less privileged mode. However, it is
+possible for triggers to fire in the same mode that the resulting
+exception will be handled in.'''
+zh = '''
+当 {mcontrol-action}=0 时，触发器可用于本机调试。若硬件线程支持且调试器希望，触发器通常会被编程为 {mcontrol-m}=0，以便在触发时引发断点异常并陷入更高特权模式。该断点异常可在 M 模式中处理，或委托给较低特权模式。然而，触发器也可能在将处理结果异常的同一模式中触发。'''

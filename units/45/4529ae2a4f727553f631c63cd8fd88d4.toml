@@ -1,0 +1,25 @@
+unit_id = "4529ae2a4f727553f631c63cd8fd88d4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+.A note on extension rationale
+[NOTE, caption="SH"]
+====
+Specialist encryption and decryption instructions are separated into different
+functional groups because some use cases (e.g., Galois/Counter
+Mode in TLS 1.3) do not require decryption functionality.
+
+The NIST and ShangMi algorithms suites are separated because their
+usefulness is heavily dependent on the countries a device is expected to
+operate in. NIST ciphers are a part of most standardised internet
+protocols, while ShangMi ciphers are required for use in China.
+===='''
+zh = '''
+.关于扩展理由的说明
+[NOTE, caption="SH"]
+====
+专用加密和解密指令被划分为不同的功能组，因为某些用例（例如 TLS 1.3 中的 Galois/Counter 模式）不需要解密功能。
+
+NIST 和 ShangMi 算法套件被分开，是因为其实用性在很大程度上取决于设备预期运行所在的国家。NIST 密码算法是大多数标准化互联网协议的一部分，而 ShangMi 密码算法在中国是要求使用的。
+===='''

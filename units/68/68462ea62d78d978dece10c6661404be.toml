@@ -1,0 +1,13 @@
+unit_id = "68462ea62d78d978dece10c6661404be"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+PPO rule 8 indicates that an SC must appear after
+its paired LR in the global memory order. This will follow naturally
+from the common use of LR/SC to perform an atomic read-modify-write
+operation due to the inherent data dependency. However, PPO
+rule 8 also applies even when the value being stored
+does not syntactically depend on the value returned by the paired LR.'''
+zh = '''
+PPO 规则 8 表明，SC 在全局内存顺序中必须出现在其配对 LR 之后。由于使用 LR/SC 执行原子读-改-写操作时存在固有的数据依赖，这一规则会自然成立。然而，即使所存储的值在语法上不依赖于配对 LR 返回的值，PPO 规则 8 也适用。'''

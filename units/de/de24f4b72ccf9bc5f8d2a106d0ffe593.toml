@@ -1,0 +1,12 @@
+unit_id = "de24f4b72ccf9bc5f8d2a106d0ffe593"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Restricted views of the csr:mip[] and csr:mie[] registers appear as the csr:sip[]
+and csr:sie[] registers for supervisor level. If an interrupt is delegated
+to S-mode by setting a bit in the csr:mideleg[] register, it becomes visible
+in the csr:sip[] register and is maskable using the csr:sie[] register.
+Otherwise, the corresponding bits in csr:sip[] and csr:sie[] are read-only zero.'''
+zh = '''
+csr:mip[] 和 csr:mie[] 寄存器的受限视图在监管级表现为 csr:sip[] 和 csr:sie[] 寄存器。若通过在 csr:mideleg[] 寄存器中设置某一位将中断委托给 S 模式，则该中断在 csr:sip[] 寄存器中可见，并可使用 csr:sie[] 寄存器屏蔽。否则，csr:sip[] 和 csr:sie[] 中的相应位为只读零。'''

@@ -1,0 +1,15 @@
+unit_id = "2f1a0c1ca319b907c4622cfb1eb86f72"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Looking at this from the perspective of the decoder, the decoder
+receives a format 1/2 reporting the address of the 1st instruction in
+the loop (looplabel). It follows the execution path from the last
+reported address, until it reaches looplabel. Because looplabel is not
+preceded by an uninferable discontinuity, it must take the value of
+*notify* and *updiscon* into consideration, and may need to wait for the
+next packet in order to determine whether it has reached the final
+retired instruction:'''
+zh = '''
+从解码器的角度看，解码器收到一个格式 1/2 包，报告循环中第一条指令的地址（looplabel）。它从最后报告的地址开始沿执行路径前进，直到到达 looplabel。由于 looplabel 之前不是不可推断不连续点，它必须考虑 *notify* 和 *updiscon* 的值，并且可能需要等待下一个包才能确定是否已到达最后退休的指令：'''

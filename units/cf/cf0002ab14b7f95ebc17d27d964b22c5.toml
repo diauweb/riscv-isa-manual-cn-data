@@ -1,0 +1,12 @@
+unit_id = "cf0002ab14b7f95ebc17d27d964b22c5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The SINVAL.VMA instruction invalidates any address-translation cache
+entries that an SFENCE.VMA instruction with the same values of _rs1_ and
+_rs2_ would invalidate. However, unlike SFENCE.VMA, SINVAL.VMA
+instructions are only ordered with respect to SFENCE.VMA,
+SFENCE.W.INVAL, and SFENCE.INVAL.IR instructions as defined below.'''
+zh = '''
+SINVAL.VMA 指令会使地址转换缓存项失效；对于相同的 _rs1_ 和 _rs2_ 值，这些缓存项正是 SFENCE.VMA 指令所会使失效的项。然而，与 SFENCE.VMA 不同，SINVAL.VMA 指令仅相对于 SFENCE.VMA、SFENCE.W.INVAL 和 SFENCE.INVAL.IR 指令按如下定义排序。'''

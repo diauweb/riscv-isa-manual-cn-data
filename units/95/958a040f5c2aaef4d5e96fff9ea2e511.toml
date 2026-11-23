@@ -1,0 +1,18 @@
+unit_id = "958a040f5c2aaef4d5e96fff9ea2e511"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:zicntr_rdcycle_op]#The insn:rdcycle[] pseudoinstruction reads the low
+XLEN bits of the csr:cycle[] CSR which holds a count of the number of clock
+cycles executed by the processor core on which the hart is running from an
+arbitrary start time in the past.#
+[#norm:zicntr_rdcycleh_op]#insn:rdcycleh[] is only present when XLEN=32 and reads bits 63-32
+of the same cycle counter.# The underlying 64-bit counter should never
+overflow in practice. The rate at which the cycle counter advances will
+depend on the implementation and operating environment. The execution
+environment should provide a means to determine the current rate
+(cycles/second) at which the cycle counter is incrementing.'''
+zh = '''
+[#norm:zicntr_rdcycle_op]##insn:rdcycle[] 伪指令读取 csr:cycle[] CSR 的低 XLEN 位，该 CSR 保存硬件线程所运行的处理器核自过去某个任意起始时刻起已执行的时钟周期数。##
+[#norm:zicntr_rdcycleh_op]##insn:rdcycleh[] 仅在 XLEN=32 时存在，读取同一周期计数器的位 63-32。## 底层 64 位计数器在实践中不宜上溢。周期计数器的推进速率取决于实现和运行环境。执行环境宜提供确定周期计数器当前递增速率（周期/秒）的方法。'''

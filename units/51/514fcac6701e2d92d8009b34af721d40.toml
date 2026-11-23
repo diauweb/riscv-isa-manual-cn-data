@@ -1,0 +1,14 @@
+unit_id = "514fcac6701e2d92d8009b34af721d40"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:stateen_unimplemented_state_roz]#Bits in any `stateen` CSR that are defined to control state that a hart doesn't
+implement are read-only zeros for that hart.# [#norm:stateen-reserved_roz]#Likewise, all reserved bits not
+yet given a defined meaning are also read-only zeros.# For every bit in an
+`mstateen` CSR that is zero (whether read-only zero or set to zero), the same bit
+appears as read-only zero in the matching `hstateen` and `sstateen` CSRs. [#norm:sstateen_vsmode_access_roz]#For every
+bit in an `hstateen` CSR that is zero (whether read-only zero or set to zero),
+the same bit appears as read-only zero in `sstateen` when accessed in VS-mode.#'''
+zh = '''
+[#norm:stateen_unimplemented_state_roz]##任何 `stateen` CSR 中被定义为控制某硬件线程未实现状态的位，对该硬件线程而言都是只读零。##[#norm:stateen-reserved_roz]##同样，所有尚未赋予定义含义的保留位也都是只读零。##对于 `mstateen` CSR 中为零的每一位（无论是只读零还是被置为零），在对应的 `hstateen` 和 `sstateen` CSR 中同一位都表现为只读零。[#norm:sstateen_vsmode_access_roz]##对于 `hstateen` CSR 中为零的每一位（无论是只读零还是被置为零），在 VS 模式下访问 `sstateen` 时同一位都表现为只读零。##'''

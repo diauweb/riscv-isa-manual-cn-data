@@ -1,0 +1,40 @@
+unit_id = "41f28e4d1b628c092cdc995a22553ef4"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Numerous additions and improvements to the commentary sections.
+* Separate version numbers for each chapter.
+* Modification to long instruction encodings >64 bits to
+avoid moving the _rd_ specifier in very long instruction formats.
+* CSR instructions are now described in the base integer format where
+the counter registers are introduced, as opposed to only being
+introduced later in the floating-point section (and the companion
+privileged architecture manual).
+* The insn:scall[] and insn:sbreak[] instructions have been renamed to insn:ecall[] and
+insn:ebreak[], respectively. Their encoding and functionality are unchanged.
+* Clarification of floating-point NaN handling, and a new canonical NaN
+value.
+* Clarification of values returned by floating-point to integer
+conversions that overflow.
+* Clarification of insn:lr[]/insn:sc[] allowed successes and required failures,
+including use of compressed instructions in the sequence.
+* A new RV32E base ISA proposal for reduced integer register counts,
+supports ext:m[], ext:a[], and ext:c[] extensions.
+* A revised calling convention.
+* Relaxed stack alignment for soft-float calling convention, and
+description of the RV32E calling convention.
+* A revised proposal for the ext:c[] compressed extension, version 1.9.'''
+zh = '''
+* 对评注章节进行了大量补充和改进。
+* 每章具有单独的版本号。
+* 修改了大于 64 位的长指令编码，以避免在超长指令格式中移动 _rd_ 说明符。
+* CSR 指令现在在引入计数器寄存器的基础整数格式中描述，而不再仅在后面的浮点部分（以及配套的特权架构手册）中引入。
+* 指令 insn:scall[] 和 insn:sbreak[] 已分别重命名为 insn:ecall[] 和 insn:ebreak[]。其编码和功能未改变。
+* 澄清了浮点 NaN 处理，并新增规范 NaN 值。
+* 澄清了溢出的浮点到整数转换所返回的值。
+* 澄清了 insn:lr[]/insn:sc[] 的允许成功和必需失败的情形，包括在序列中使用压缩指令。
+* 新的 RV32E 基础 ISA 提案用于减少整数寄存器数量，支持 ext:m[]、ext:a[] 和 ext:c[] 扩展。
+* 修订了调用约定。
+* 放宽了软浮点调用约定的栈对齐要求，并描述了 RV32E 调用约定。
+* ext:c[] 压缩扩展版本 1.9 的修订提案。'''

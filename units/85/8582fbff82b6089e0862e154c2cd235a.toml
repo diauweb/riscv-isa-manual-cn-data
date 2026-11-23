@@ -1,0 +1,22 @@
+unit_id = "8582fbff82b6089e0862e154c2cd235a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+Description::
+Implements a T-tables in hardware style approach to accelerating the
+SM4 Key Schedule.
+A byte is extracted from _rs2_ based on _bs_, to which the SBox and
+linear layer transforms are applied, before the result is XOR'd with
+_rs1_ and written back to _rd_.
+This instruction exists on RV32 and RV64 base architectures.
+On RV64, the 32-bit result is sign-extended to XLEN bits.
+This instruction must _always_ be implemented such that its execution
+latency does not depend on the data being operated on.'''
+zh = '''
+说明::
+以实现 T 表（T-tables）的硬件风格方法加速 SM4 密钥编排。
+根据 _bs_ 从 _rs2_ 中提取一个字节，对其应用 SBox 和线性层变换，然后将结果与 _rs1_ 进行 XOR 并写回 _rd_。
+本指令存在于 RV32 和 RV64 基础架构上。
+在 RV64 上，32 位结果符号扩展到 XLEN 位。
+本指令应__始终__以实现方式保证其执行延迟不依赖于所操作的数据。'''

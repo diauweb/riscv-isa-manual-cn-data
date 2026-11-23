@@ -1,0 +1,17 @@
+unit_id = "6780d2af2e66d51001dc0ed17c28f987"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:fence_unused_flds_rsv]#The unused fields in the FENCE
+instructions, _rs1_ and _rd_, are reserved
+for finer-grain fences in future extensions. For forward compatibility,
+base implementations shall ignore these fields#, and standard software
+shall zero these fields. Likewise, many _fm_ and predecessor/successor
+set settings are also reserved for future use.
+Base implementations shall treat all such reserved configurations as
+`FENCE` instructions (with _fm_=`0000`), and standard software shall use only
+non-reserved configurations.'''
+zh = '''
+[#norm:fence_unused_flds_rsv]##FENCE 指令中未使用的字段，即 _rs1_ 和 _rd_，保留供未来扩展中的更细粒度 FENCE 使用。为了向前兼容，基础实现应忽略这些字段##，标准软件应将这些字段清零。同样，许多 _fm_ 以及前驱/后继集合设置也保留供将来使用。
+基础实现应将所有此类保留配置视为 `FENCE` 指令（_fm_=`0000`），标准软件应仅使用非保留配置。'''

@@ -1,0 +1,18 @@
+unit_id = "76fd4075071a53511c465e3ff266c3ef"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since the NTL instructions are encoded as ADDs, they can be used within
+LR/SC loops without voiding the forward-progress guarantee.
+But, since using other loads and stores within an LR/SC loop _does_ void the
+forward-progress guarantee, the only reason to use an NTL within such a
+loop is to modify the LR or the SC.
+===='''
+zh = '''
+[NOTE]
+====
+由于 NTL 指令编码为 ADD 指令，它们可在 LR/SC 循环内使用而不使前向进展保证失效。但是，由于在 LR/SC 循环内使用其他加载和存储__确实__会使前向进展保证失效，在此类循环内使用 NTL 的唯一理由就是修改 LR 或 SC。
+===='''

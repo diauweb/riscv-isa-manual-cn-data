@@ -1,0 +1,8 @@
+unit_id = "d16541037fdd417a0c8eb744f40308fc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Trace tool should start interacting with Trace RAM Sink by releasing RAM Sink from reset by setting `trRamActive` = 1 and waiting for this bit to be set. After that it should verify `trRamEmpty` = 1, read `trRamImpl` and verify `trRamCompType` and `trRamVer??` fields. Values of `trRamHasSRAM/SMEM` fields will provide main types of RAM Sink being implemented.'''
+zh = '''
+跟踪工具应通过将 `trRamActive` 置为 1 并使 RAM 接收器退出复位来开始与跟踪 RAM 接收器交互，并等待该位置位。之后，它应验证 `trRamEmpty` = 1，读取 `trRamImpl` 并验证 `trRamCompType` 和 `trRamVer??` 字段。`trRamHasSRAM/SMEM` 字段的值将提供所实现 RAM 接收器的主要类型。'''

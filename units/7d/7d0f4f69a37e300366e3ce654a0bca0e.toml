@@ -1,0 +1,10 @@
+unit_id = "7d0f4f69a37e300366e3ce654a0bca0e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A shadow stack push operation is defined as decrement of the csr:ssp[] by `XLEN/8`
+followed by a store of the value in the link register to memory at the new top
+of the shadow stack.'''
+zh = '''
+影子栈压入操作定义为：将 csr:ssp[] 减去 `XLEN/8`，然后将链接寄存器中的值存储到影子栈新栈顶处的内存。'''

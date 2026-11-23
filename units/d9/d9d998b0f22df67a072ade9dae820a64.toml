@@ -1,0 +1,12 @@
+unit_id = "d9d998b0f22df67a072ade9dae820a64"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: In particular, all XLEN bits of the register `vtype` argument to
+the `vsetvl` instruction must be checked.  Implementations cannot
+ignore fields they do not implement. All bits must be checked to
+ensure that new code assuming unsupported vector features in `vtype`
+traps instead of executing incorrectly on an older implementation.'''
+zh = '''
+NOTE: 特别地，必须检查 `vsetvl` 指令的 `vtype` 参数寄存器的所有 XLEN 位。实现不能忽略其未实现的字段。必须检查所有位，以确保假定 `vtype` 中不受支持向量特性的新代码在较旧实现上陷入而不是错误执行。'''

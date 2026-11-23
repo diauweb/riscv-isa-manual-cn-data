@@ -1,0 +1,20 @@
+unit_id = "6f1b598f2ce1f989ac4e082346270ed9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:csr_weakly_ordered]#For the RVWMO memory consistency model (<<memorymodel>>), CSR accesses are weakly
+ordered by default, so other harts or devices may observe CSR accesses
+in an order different from program order.# [#norm:csr_memory_access_ordering]#In addition, CSR accesses are
+not ordered with respect to explicit memory accesses, unless a CSR
+access modifies the execution behavior of the instruction that performs
+the explicit memory access or unless a CSR access and an explicit memory
+access are ordered by either the syntactic dependencies defined by the
+memory model or the ordering requirements defined in
+<<sec:memory-ordering-pmas>>.# To enforce ordering in all
+other cases, software should execute a insn:fence[] instruction between the
+relevant accesses. [#norm:csr_fence_ordering]#For the purposes of the insn:fence[] instruction, CSR read
+accesses are classified as device input (I), and CSR write accesses are
+classified as device output (O).#'''
+zh = '''
+[#norm:csr_weakly_ordered]##对于 RVWMO 内存一致性模型（<<memorymodel>>），CSR 访问默认是弱排序的，因此其他硬件线程或设备可能以不同于程序顺序的顺序观察到 CSR 访问。## [#norm:csr_memory_access_ordering]##此外，CSR 访问与显式内存访问之间不排序，除非 CSR 访问修改了执行该显式内存访问的指令的执行行为，或者除非 CSR 访问与显式内存访问由内存模型定义的语法依赖或 <<sec:memory-ordering-pmas>> 中定义的排序要求所排序。## 为在所有其他情况下强制排序，软件宜在相关访问之间执行一条 insn:fence[] 指令。[#norm:csr_fence_ordering]##就 insn:fence[] 指令而言，CSR 读取访问归类为设备输入（I），CSR 写入访问归类为设备输出（O）。##'''

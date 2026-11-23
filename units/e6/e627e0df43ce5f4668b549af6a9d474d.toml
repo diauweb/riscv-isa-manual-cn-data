@@ -1,0 +1,13 @@
+unit_id = "e627e0df43ce5f4668b549af6a9d474d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_sbe_implicit]#For _implicit_ accesses to supervisor-level memory management data
+structures, such as page tables, endianness is always controlled by csr::[sbe].#
+[#norm:mstatus_sbe_change_fence]#Since changing csr::[sbe] alters the implementation’s interpretation of these
+data structures, if any such data structures remain in use across a
+change to csr::[sbe], M-mode software must follow such a change to csr::[sbe] by
+executing an insn:sfence.vma[] instruction with _rs1_=`x0` and _rs2_=`x0`.#'''
+zh = '''
+[#norm:mstatus_sbe_implicit]##对于对监管级内存管理数据结构（如页表）的 _隐式_ 访问，字节序始终由 csr::[sbe] 控制。##[#norm:mstatus_sbe_change_fence]##由于更改 csr::[sbe] 会改变实现对这些数据结构的解释，若在对 csr::[sbe] 的更改期间仍有此类数据结构在使用，M 模式软件必须在更改 csr::[sbe] 后，通过执行一条 _rs1_=`x0` 且 _rs2_=`x0` 的 insn:sfence.vma[] 指令来同步。##'''

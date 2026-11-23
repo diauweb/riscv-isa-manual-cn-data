@@ -1,0 +1,12 @@
+unit_id = "06926e597e9f462e8f8e651296f2ca69"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+After changing `menvcfg`.ADUE, executing an SFENCE.VMA instruction with
+_rs1_=`x0` and _rs2_=`x0` suffices to synchronize address-translation caches
+with respect to the altered interpretation of page-table entries' A/D bits.
+See <<hyp-mm-fences>> for additional synchronization requirements when the
+hypervisor extension is implemented.'''
+zh = '''
+在更改 `menvcfg`.ADUE 之后，执行一条 _rs1_=`x0` 且 _rs2_=`x0` 的 SFENCE.VMA 指令，就足以使地址转换缓存与页表项 A/D 位的更改后解释同步。当实现了虚拟机监控器扩展时，有关额外的同步要求，见 <<hyp-mm-fences>>。'''

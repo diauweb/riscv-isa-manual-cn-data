@@ -1,0 +1,17 @@
+unit_id = "92cc45bfbc4e0d1a2de72ea365fb22dc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The hypervisor extension adds two fields, MPV and GVA, to the
+machine-level `mstatus` or `mstatush` CSR, and modifies the behavior of
+several existing `mstatus` fields.
+<<hypervisor-mstatus>> shows the modified
+`mstatus` register when the hypervisor extension is implemented and
+MXLEN=64. When MXLEN=32, the hypervisor extension adds MPV and GVA not
+to `mstatus` but to `mstatush`.
+<<hypervisor-mstatush>> shows the
+`mstatush` register when the hypervisor extension is implemented and
+MXLEN=32.'''
+zh = '''
+虚拟机监控器扩展向机器级 `mstatus` 或 `mstatush` CSR 添加两个字段 MPV 和 GVA，并修改若干现有 `mstatus` 字段的行为。<<hypervisor-mstatus>> 示出实现虚拟机监控器扩展且 MXLEN=64 时修改后的 `mstatus` 寄存器。当 MXLEN=32 时，虚拟机监控器扩展将 MPV 和 GVA 添加到 `mstatush` 而不是 `mstatus`。<<hypervisor-mstatush>> 示出实现虚拟机监控器扩展且 MXLEN=32 时的 `mstatush` 寄存器。'''

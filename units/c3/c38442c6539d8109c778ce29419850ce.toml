@@ -1,0 +1,16 @@
+unit_id = "c38442c6539d8109c778ce29419850ce"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a virtual supervisor external interrupt (code 10) is delegated to
+VS-mode, it is automatically translated by the machine into a supervisor
+external interrupt (code 9) for VS-mode, including the value written to
+`vscause` on an interrupt trap. Likewise, a virtual supervisor timer
+interrupt (6) is translated into a supervisor timer interrupt (5) for
+VS-mode, and a virtual supervisor software interrupt (2) is translated
+into a supervisor software interrupt (1) for VS-mode. Similar
+translations may or may not be done for platform interrupt
+causes (codes 16 and above).'''
+zh = '''
+当虚拟监管外部中断（代码 10）被委托给 VS 模式时，机器自动将其转换为 VS 模式的监管外部中断（代码 9），包括在中断陷阱时写入 `vscause` 的值。同样，虚拟监管定时器中断（6）转换为 VS 模式的监管定时器中断（5），虚拟监管软件中断（2）转换为 VS 模式的监管软件中断（1）。对于平台中断原因（代码 16 及以上），可能进行也可能不进行类似转换。'''

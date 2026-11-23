@@ -1,0 +1,18 @@
+unit_id = "8cedcc7e3953b492cafd8e18baca1f67"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Notice that if condition
+<<commit_stores, 8>> is satisfied
+the conditions
+<<commit_stores, 9>> and
+<<commit_stores, 10>> are also
+satisfied, or will be satisfied after taking some eager transitions.
+Hence, requiring them does not strengthen the model. By requiring them,
+we guarantee that previous memory access instructions have taken enough
+transitions to make their memory operations visible for the condition
+check of , which is the next transition the instruction will take,
+making that condition simpler.'''
+zh = '''
+注意，若条件 <<commit_stores, 8>> 满足，则条件 <<commit_stores, 9>> 和 <<commit_stores, 10>> 也满足，或在采取某些急切转移后将会满足。因此，要求它们并不强化模型。通过要求它们，我们保证此前的内存访问指令已采取足够的转移，使其内存操作对（该指令接下来将采取的）下一转移的条件检查可见，从而使该条件更简单。'''

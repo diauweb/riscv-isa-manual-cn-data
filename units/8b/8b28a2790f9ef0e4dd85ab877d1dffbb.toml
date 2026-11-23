@@ -1,0 +1,11 @@
+unit_id = "8b28a2790f9ef0e4dd85ab877d1dffbb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations may implement csr:mseccfg[] such that csr::[sseed] and csr::[useed] is a read-only
+constant value `0`. Software may discover if access to the csr:seed[] CSR can be
+enabled in U and S mode by writing a `1` to csr::[sseed] and csr::[useed] and reading back
+the result.'''
+zh = '''
+实现可将 csr:mseccfg[] 实现为 csr::[sseed] 和 csr::[useed] 是只读常量值 `0`。软件可通过向 csr::[sseed] 和 csr::[useed] 写入 `1` 并读回结果，来判断是否可在 U 和 S 模式下启用对 csr:seed[] CSR 的访问。'''

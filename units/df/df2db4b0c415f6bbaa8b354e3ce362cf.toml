@@ -1,0 +1,12 @@
+unit_id = "df2db4b0c415f6bbaa8b354e3ce362cf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a trap occurs during the sequence, then any loads which were executed before the trap may update architectural state.
+The loads will be re-executed once the trap handler completes, so the values will be overwritten.
+Therefore it is permitted for an implementation to update some of the destination registers before taking a fault.'''
+zh = '''
+若在该序列期间发生陷阱，则陷阱前已执行的任何加载都可能更新架构状态。
+陷阱处理程序完成后这些加载将被重新执行，因此这些值会被覆盖。
+因此允许实现在发生故障之前更新部分目的寄存器。'''

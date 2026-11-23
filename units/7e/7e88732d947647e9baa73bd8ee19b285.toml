@@ -1,0 +1,46 @@
+unit_id = "7e88732d947647e9baa73bd8ee19b285"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A consequence of this specification is that an implementation may use
+any translation for an address that was valid at any time since the most
+recent SFENCE.VMA that subsumes that address. In particular, if a leaf
+PTE is modified but a subsuming SFENCE.VMA is not executed, either the
+old translation or the new translation will be used, but the choice is
+unpredictable. The behavior is otherwise well-defined.
+
+In a conventional TLB design, it is possible for multiple entries to
+match a single address if, for example, a page is upgraded to a
+superpage without first clearing the original non-leaf PTE’s valid bit
+and executing an SFENCE.VMA with __rs1__=`x0`. In this case, a similar
+remark applies: it is unpredictable whether the old non-leaf PTE or the
+new leaf PTE is used, but the behavior is otherwise well defined.
+
+Another consequence of this specification is that it is generally unsafe
+to update a PTE using a set of stores of a width less than the width of
+the PTE, as it is legal for the implementation to read the PTE at any
+time, including when only some of the partial stores have taken effect.
+
+***
+
+This specification permits the caching of PTEs whose V (Valid) bit is
+clear. Operating systems must be written to cope with this possibility,
+but implementers are reminded that eagerly caching invalid PTEs will
+reduce performance by causing additional page faults.
+===='''
+zh = '''
+[NOTE]
+====
+本规定的一个后果是，实现可对自最近一次涵盖该地址的 SFENCE.VMA 以来任意时刻有效的地址使用任意转换。特别地，若修改了某个叶 PTE 但未执行涵盖该 PTE 的 SFENCE.VMA，则将使用旧转换或新转换，但这一选择是不可预测的。除此之外，行为是良定义的。
+
+在传统 TLB 设计中，若例如某页被升级为超级页，而未先清除原非叶 PTE 的有效位并执行 __rs1__=`x0` 的 SFENCE.VMA，则多个表项可能匹配同一地址。在这种情况下，类似的说明也适用：使用旧的非叶 PTE 还是新的叶 PTE 是不可预测的，但除此之外行为是良定义的。
+
+本规定的另一个后果是，通常不安全的是用一组宽度小于 PTE 宽度的存储来更新一个 PTE，因为实现可在任意时刻读取该 PTE，包括仅在部分存储已生效时。
+
+***
+
+本规定允许对 V（有效）位清零的 PTE 进行缓存。操作系统在编写上必须能够应对这种可能性，但提醒实现者：急切地缓存无效 PTE 会引发额外的页错误，从而降低性能。
+===='''

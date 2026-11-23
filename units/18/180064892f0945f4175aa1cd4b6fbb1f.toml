@@ -1,0 +1,13 @@
+unit_id = "180064892f0945f4175aa1cd4b6fbb1f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vsscratch` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `sscratch`, formatted as shown
+in <<vsscratchreg>>. When V=1, `vsscratch`
+substitutes for the usual `sscratch`, so instructions that normally read
+or modify `sscratch` actually access `vsscratch` instead. The contents
+of `vsscratch` never directly affect the behavior of the machine.'''
+zh = '''
+`vsscratch` 寄存器是 VSXLEN 位读写寄存器，是 VS 模式版本的监管寄存器 `sscratch`，格式如 <<vsscratchreg>> 所示。当 V=1 时，`vsscratch` 替代常规 `sscratch`，因此通常读取或修改 `sscratch` 的指令实际上改为访问 `vsscratch`。`vsscratch` 的内容从不直接影响机器行为。'''

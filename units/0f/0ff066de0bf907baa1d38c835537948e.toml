@@ -1,0 +1,12 @@
+unit_id = "0ff066de0bf907baa1d38c835537948e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_high_half_rv64_rsv]#Standard high-half CSRs are accessible only when
+the base RISC-V instruction set is RV32 (XLEN=32).
+For RV64 (when XLEN=64), the addresses of all standard high-half CSRs
+are reserved, so an attempt to access a high-half CSR
+typically raises an illegal-instruction exception.#'''
+zh = '''
+[#norm:Zicsr_high_half_rv64_rsv]#仅当基础 RISC-V 指令集为 RV32（XLEN=32）时，标准高半 CSR 才可访问。对于 RV64（XLEN=64 时），所有标准高半 CSR 的地址均保留，因此尝试访问高半 CSR 通常引发非法指令异常。#'''

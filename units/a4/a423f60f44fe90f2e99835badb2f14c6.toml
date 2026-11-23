@@ -1,0 +1,18 @@
+unit_id = "a423f60f44fe90f2e99835badb2f14c6"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As allowed by the standard, we do not support traps on floating-point
+exceptions in the F extension, but instead require explicit checks of
+the flags in software. We considered adding branches controlled directly
+by the contents of the floating-point accrued exception flags, but
+ultimately chose to omit these instructions to keep the ISA simple.
+===='''
+zh = '''
+[NOTE]
+====
+如标准所允许，F 扩展不支持浮点异常陷阱，而是要求在软件中显式检查标志。曾考虑增加由浮点累积异常标志内容直接控制的分支，但最终选择省略这些指令以保持 ISA 简单。
+===='''

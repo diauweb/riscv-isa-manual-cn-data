@@ -1,0 +1,26 @@
+unit_id = "34f57c3acd9a883f849721bb2e2274f0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+[disc]
+* <<early_sc_fail, Early sc fail>>: This causes the `sc` to fail, either a spontaneous fail or because it is not paired with a program-order-previous `lr`.
+
+* <<paired_sc, Paired sc>>: This transition indicates the `sc` is paired with an `lr` and might
+succeed.
+
+* <<commit_sc, Commit and propagate store operation of an sc>>: This is an atomic execution of the transitions <<commit_stores, Commit store instruction>> and <<prop_store, Propagate store operation>>, it is enabled
+only if the stores from which the `lr` read from have not been
+overwritten.
+
+* <<late_sc_fail, Late sc fail>>: This causes the `sc` to fail, either a spontaneous fail or because
+the stores from which the `lr` read from have been overwritten.'''
+zh = '''
+[disc]
+* <<early_sc_fail, 早期 `sc` 失败>>：这使 `sc` 失败，既可能是自发失败，也可能是由于它未与程序顺序在前的 `lr` 配对。
+
+* <<paired_sc, 配对的 `sc`>>：该迁移表明 `sc` 与某个 `lr` 配对并且可能成功。
+
+* <<commit_sc, 提交并传播 `sc` 的存储操作>>：这是迁移 <<commit_stores, 提交存储指令>> 和 <<prop_store, 传播存储操作>> 的原子执行；仅当 `lr` 所读取的存储尚未被覆写时才启用。
+
+* <<late_sc_fail, 晚期 `sc` 失败>>：这使 `sc` 失败，既可能是自发失败，也可能是由于 `lr` 所读取的存储已被覆写。'''

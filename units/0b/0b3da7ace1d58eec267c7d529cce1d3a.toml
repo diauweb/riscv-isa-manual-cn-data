@@ -1,0 +1,42 @@
+unit_id = "0b3da7ace1d58eec267c7d529cce1d3a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+- extlink:m[] Integer multiplication and division.
+- extlink:a[] Atomic instructions.
+- <<single-float,**F**>> Single-precision floating-point instructions.
+- <<chap:d,**D**>> Double-precision floating-point instructions.
+- extlink:c[] Compressed Instructions.
+- extlink:zicsr[]  CSR instructions.  These are implied by presence of F.
+- extlink:zicntr[] Base counters and timers.
+
+- extlink:ziccif[] Main memory regions with both the coherence and
+  cacheability PMAs must support instruction fetch, and any instruction fetches
+  of naturally aligned power-of-2 sizes up to min(ILEN,XLEN) (i.e., 32 bits for
+  RVA22) are atomic.
+
+- extlink:ziccrse[] Main memory regions with both the coherence and cacheability
+  PMAs must support RsrvEventual.
+
+- extlink:ziccamoa[] Main memory regions with both the coherence and
+  cacheability PMAs must support AMOArithmetic.
+
+- extlink:zicclsm[] Misaligned loads and stores to main memory regions with both
+  the coherence and cacheability PMAs must be supported.'''
+zh = '''
+- extlink:m[] 整数乘法和除法。
+- extlink:a[] 原子指令。
+- <<single-float,**F**>> 单精度浮点指令。
+- <<chap:d,**D**>> 双精度浮点指令。
+- extlink:c[] 压缩指令。
+- extlink:zicsr[]  CSR 指令。这些指令因 F 的存在而隐含。
+- extlink:zicntr[] 基础计数器和定时器。
+
+- extlink:ziccif[] 同时具有一致性和可缓存性 PMA 的主存区域应支持取指，并且对自然对齐的、大小为 2 的幂且不超过 min(ILEN,XLEN)（即对于 RVA22 为 32 位）的任何取指都是原子的。
+
+- extlink:ziccrse[] 同时具有一致性和可缓存性 PMA 的主存区域应支持 RsrvEventual。
+
+- extlink:ziccamoa[] 同时具有一致性和可缓存性 PMA 的主存区域应支持 AMOArithmetic。
+
+- extlink:zicclsm[] 应支持对同时具有一致性和可缓存性 PMA 的主存区域进行非对齐加载和存储。'''

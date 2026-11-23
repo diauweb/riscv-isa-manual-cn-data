@@ -1,0 +1,14 @@
+unit_id = "cf6d4e54ef2017725b8040c58eb25f98"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The csr::[mxr] (Make eXecutable Readable) bit modifies the privilege with which loads access virtual memory.
+[#norm:mstatus_mxr_op]#When csr::[mxr]=0, only loads from pages marked readable (R=1 in <<sv32pte>>) will succeed.
+When csr::[mxr]=1, loads from pages marked either readable or executable (R=1 or
+X=1) will succeed.  csr::[mxr] has no effect when page-based virtual memory is not in effect.#
+[#norm:mstatus_mxr_rdonly0_no_smode]#csr::[mxr] is read-only 0 if S-mode is not supported or if csr:satp[mode] is read-only 0; otherwise, it must be writable.#'''
+zh = '''
+csr::[mxr]（Make eXecutable Readable）位修改加载访问虚拟内存时所用的权限。
+[#norm:mstatus_mxr_op]##当 csr::[mxr]=0 时，仅从标记为可读的页（<<sv32pte>> 中 R=1）进行的加载会成功。当 csr::[mxr]=1 时，从标记为可读或可执行的页（R=1 或 X=1）进行的加载会成功。当基于页的虚拟内存未生效时，csr::[mxr] 没有影响。##
+[#norm:mstatus_mxr_rdonly0_no_smode]##若未实现 S 模式，或 csr:satp[mode] 为只读 0，则 csr::[mxr] 为只读 0；否则，它应为可写。##'''

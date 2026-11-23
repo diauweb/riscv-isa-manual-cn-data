@@ -1,0 +1,11 @@
+unit_id = "2e58821014e8cd8f23db960180706e0a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RISC-V applies NaN boxing to scalar results and checks for NaN boxing when a floating-point operation
+--- even a vector-scalar operation --- consumes a value from a scalar floating-point register.
+If the value is properly NaN-boxed, its least significant bits are used as the operand, otherwise
+it is treated as if it were the canonical QNaN.'''
+zh = '''
+RISC-V 对标量结果应用 NaN 装箱，并在浮点操作（甚至向量-标量操作）从标量浮点寄存器读取值时检查 NaN 装箱。若该值已正确 NaN 装箱，则使用其最低有效位作为操作数，否则将其视为规范 QNaN。'''

@@ -1,0 +1,26 @@
+unit_id = "fc41dba996b3b32cfd49c9b31bdba1ae"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[frame=none]
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|===='''
+zh = '''
+[frame=none]
+|====
+|(a) lr.d a0, 0(s0) |(a) lr.d a0, 0(s0) |(a) lr.w a0, 0(s0) |(a) lr.w a0, 0(s0)
+
+|(b) sd t1, 0(s0)  |(b) sw t1, 4(s0)  |(b) sw t1, 4(s0) |(b) sw t1, 4(s0)
+
+|(c) sc.d t3, t2, 0(s0) |(c) sc.d t3, t2, 0(s0) |(c) sc.w t3, t2, 0(s0) |(c) addi s0, s0, 8
+
+||||(d) sc.w t3, t2, 0(s0)
+|===='''

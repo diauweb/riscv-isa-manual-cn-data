@@ -1,0 +1,28 @@
+unit_id = "6a27144f5a236e43c6afc1a290fe6eb3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Note that mcontrol/mcontrol6 triggers which fire after the
+instruction which hit the trigger are considered
+to be high priority causes on the subsequent instruction.  Therefore,
+an execute trigger with timing=after on an ebreak instruction is lower
+priority than the ebreak itself because the trigger will fire after the
+ebreak instruction.  For the same reason, if a single instruction is
+stepped with both icount and {dcsr-step} then the {dcsr-step} has
+priority.  See <<tab:priority>> for the relative priorities of
+triggers with respect to the ebreak instruction.
+
+Most multi-hart implementations will probably hardwire {dcsr-stoptime}
+to 0, as the implementation can get complicated and the benefit is
+small.
+===='''
+zh = '''
+[NOTE]
+====
+注意，在命中触发器的指令之后触发的 mcontrol/mcontrol6 触发器被视为后续指令上的高优先级原因。因此，在 ebreak 指令上具有 timing=after 的执行触发器优先级低于 ebreak 本身，因为该触发器将在 ebreak 指令之后触发。同理，若单条指令同时由 icount 和 {dcsr-step} 单步执行，则 {dcsr-step} 具有优先级。触发器相对于 ebreak 指令的相对优先级见 <<tab:priority>>。
+
+大多数多硬件线程实现可能会将 {dcsr-stoptime} 硬连线为 0，因为实现可能变得复杂而收益甚微。
+===='''

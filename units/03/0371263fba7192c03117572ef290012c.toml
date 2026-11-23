@@ -1,0 +1,14 @@
+unit_id = "0371263fba7192c03117572ef290012c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For guest-page faults, the trap instruction register is written with a
+special pseudoinstruction value if: (a) the fault is caused by an
+implicit memory access for VS-stage address translation, and (b) a
+nonzero value (the faulting guest physical address) is written to
+`mtval2` or `htval`. If both conditions are met, the value written to
+`mtinst` or `htinst` must be taken from
+<<norm:H_trap_xtinst_pseudoinst_tbl>>; zero is not allowed.'''
+zh = '''
+对于客户机页错误，若满足以下两个条件，则陷阱指令寄存器写入特殊伪指令值：(a) 故障由 VS 级地址转换的隐式内存访问引起，且 (b) 非零值（引发故障的客户机物理地址）被写入 `mtval2` 或 `htval`。若两个条件均满足，则写入 `mtinst` 或 `htinst` 的值必须取自 <<norm:H_trap_xtinst_pseudoinst_tbl>>；不允许为零。'''

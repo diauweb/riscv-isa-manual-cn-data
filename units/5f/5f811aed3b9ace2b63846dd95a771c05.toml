@@ -1,0 +1,16 @@
+unit_id = "5f811aed3b9ace2b63846dd95a771c05"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((compressed, CIW)))
+C.ADDI4SPN is a CIW-format instruction that adds a _zero_-extended
+non-zero immediate, scaled by 4, to the stack pointer, `x2`, and writes
+the result to `rd′`. This instruction is used to generate
+pointers to stack-allocated variables, and expands to
+`addi rd′, x2, nzuimm[9:2]`. C.ADDI4SPN is only valid when
+_nzuimm_≠0; the code points with _nzuimm_=0 are
+reserved.'''
+zh = '''
+(((compressed, CIW)))
+C.ADDI4SPN 是 CIW 格式指令，它将按 4 缩放的__零__扩展非零立即数加到栈指针 `x2` 上，并将结果写入 `rd′`。此指令用于生成指向栈分配变量的指针，并展开为 `addi rd′, x2, nzuimm[9:2]`。C.ADDI4SPN 仅在 _nzuimm_≠0 时有效；_nzuimm_=0 的编码点保留。'''

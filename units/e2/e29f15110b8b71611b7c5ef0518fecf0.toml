@@ -1,0 +1,20 @@
+unit_id = "e29f15110b8b71611b7c5ef0518fecf0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. construct the appropriate memory store operations _msos_
+(without the store value):
+* if _address_ is aligned to _size_ then _msos_ is a single
+memory store operation of _size_ bytes to _address_;
+* otherwise, _msos_ is a set of _size_ memory store
+operations, each of one-byte size, to the addresses
+_address_..._address_+_size_−1.
+. set _i.mem_stores_ to _msos_; and
+. update the state of _i_ to Plain(_next_state_).'''
+zh = '''
+. 构造相应的内存存储操作 _msos_（不含存储值）：
+* 若 _address_ 按 _size_ 对齐，则 _msos_ 是一个向 _address_ 写入的 _size_ 字节的单个内存存储操作；
+* 否则，_msos_ 是一组 _size_ 个内存存储操作，每个为 1 字节，分别写入地址 _address_..._address_+_size_−1。
+. 将 _i.mem_stores_ 设置为 _msos_；且
+. 将 _i_ 的状态更新为 Plain(_next_state_)。'''

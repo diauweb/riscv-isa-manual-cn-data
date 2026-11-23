@@ -1,0 +1,12 @@
+unit_id = "d5dc58a5616ca3188b713d11dcd09c31"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Bits `hip`.SGEIP and `hie`.SGEIE are the interrupt-pending and
+interrupt-enable bits for guest external interrupts at supervisor level
+(HS-level). SGEIP is read-only in `hip`, and is 1 if and only if the
+bitwise logical-AND of CSRs `hgeip` and `hgeie` is nonzero in any bit.
+(See <<hgeinterruptregs>>.)'''
+zh = '''
+位 `hip`.SGEIP 和 `hie`.SGEIE 是监管级（HS 级）客户机外部中断的中断挂起位和中断使能位。SGEIP 在 `hip` 中为只读，当且仅当 CSR `hgeip` 和 `hgeie` 的按位逻辑与在任何位上非零时为 1。（见 <<hgeinterruptregs>>。）'''

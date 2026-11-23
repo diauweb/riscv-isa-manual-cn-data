@@ -1,0 +1,13 @@
+unit_id = "d28ccc8b8e2177367572376e9e715f2d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To resume execution, the debug module sets a flag which causes the hart
+to execute a `dret`. `dret` is an instruction that only has meaning
+while in Debug Mode and not executing from the Program Buffer. Its
+recommended encoding is 0x7b200073. When `dret` is executed, `pc` is restored
+from {csr-dpc} and normal execution resumes at the privilege set by {dcsr-prv} and {dcsr-v},
+and the ELP state set by {dcsr-pelp}.'''
+zh = '''
+为恢复执行，调试模块设置一个标志，使硬件线程执行 `dret`。`dret` 是一条仅在调试模式下且不在执行程序缓冲器时才具有含义的指令。其推荐编码为 0x7b200073。执行 `dret` 时，`pc` 从 {csr-dpc} 恢复，正常执行在由 {dcsr-prv} 和 {dcsr-v} 设定的特权级以及由 {dcsr-pelp} 设定的 ELP 状态下恢复。'''

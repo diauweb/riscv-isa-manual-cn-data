@@ -1,0 +1,13 @@
+unit_id = "282f68ef3c130970bfd10742a87f60d6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Depending on the microarchitecture, data accessed through System Bus
+Access might not always be coherent with that observed by each hart. It
+is up to the debugger to enforce coherency if the implementation does
+not. This specification does not define a standard way to do this.
+Possibilities may include writing to special memory-mapped locations, or
+executing special instructions via the Program Buffer.'''
+zh = '''
+取决于微体系结构，通过系统总线访问所访问的数据可能并不总是与每个硬件线程所观察到的数据一致。若实现未强制一致性，则须由调试器来强制。本规范未定义执行此操作的标准方式。可能的方式包括写入特殊内存映射位置，或通过程序缓冲区执行特殊指令。'''

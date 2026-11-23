@@ -1,0 +1,17 @@
+unit_id = "8e65f4a820a5af884d29df7c36ca7552"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Accesses by one hart to an I/O region are observable not only by other
+harts and bus mastering devices but also by the targeted I/O devices,
+and I/O regions may be accessed with either _relaxed_ or _strong_
+ordering. Accesses to an I/O region with relaxed ordering are generally
+observed by other harts and bus mastering devices in a manner similar to
+the ordering of accesses to an RVWMO memory region, as discussed in
+the I/O Ordering section in <<app:mm-explanatory>>.
+By contrast, accesses
+to an I/O region with strong ordering are generally observed by other
+harts and bus mastering devices in program order.'''
+zh = '''
+一个硬件线程对 I/O 区域的访问不仅可被其他硬件线程和总线主控设备观察到，还可被目标 I/O 设备观察到，且 I/O 区域可用 _宽松_ 或 _强_ 排序访问。对具有宽松排序的 I/O 区域的访问通常由其他硬件线程和总线主控设备以类似于对 RVWMO 内存区域访问排序的方式观察到，如 <<app:mm-explanatory>> 的 I/O 排序一节所讨论。相比之下，对具有强排序的 I/O 区域的访问通常由其他硬件线程和总线主控设备按程序顺序观察到。'''

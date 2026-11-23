@@ -1,0 +1,16 @@
+unit_id = "e4ffef162837a28886e01e2cc408be4f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[%unbreakable]
+[NOTE]
+====
+Ordinarily, each `vsireg`*_i_* will access register state, access read-only 0 state, or raise an exception (either an illegal instruction exception or, for select accesses from VS-mode, a virtual instruction exception).  When `vsiselect` holds a value that is implemented at HS level but not at VS level, attempts to access `sireg*` (really `vsireg*`) from VS-mode will typically raise a virtual instruction exception.  But there may be cases specific to an extension where different behavior is more appropriate.
+===='''
+zh = '''
+[%unbreakable]
+[NOTE]
+====
+通常，每个 `vsireg`*_i_* 将访问寄存器状态、访问只读 0 状态或触发异常（非法指令异常，或对于来自 VS 模式的选择访问，触发虚拟指令异常）。当 `vsiselect` 持有 HS 级已实现但 VS 级未实现的值时，从 VS 模式访问 `sireg*`（实际上是 `vsireg*`）通常将触发虚拟指令异常。但可能存在特定于某扩展的情况，此时不同行为更合适。
+===='''

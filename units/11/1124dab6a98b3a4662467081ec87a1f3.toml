@@ -1,0 +1,14 @@
+unit_id = "1124dab6a98b3a4662467081ec87a1f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Action: construct a freshly initialized instruction instance
+_i'_ for the instruction in the program memory at _loc_,
+with state Plain(_isa_state_), computed from the instruction pseudocode,
+including the static information available from the pseudocode such as
+its _instruction_kind_, _src_regs_, and _dst_regs_, and add
+_i'_ to the hart’s _instruction_tree_ as a successor of
+_i_.'''
+zh = '''
+动作：为 _loc_ 处程序内存中的指令构造一个全新初始化的指令实例 _i'_，其状态为 Plain(_isa_state_)，由该指令伪代码计算得到，包括伪代码中可用的静态信息，如它的 _instruction_kind_、_src_regs_ 和 _dst_regs_，并将 _i'_ 作为 _i_ 的后继添加到硬件线程的 _instruction_tree_ 中。'''

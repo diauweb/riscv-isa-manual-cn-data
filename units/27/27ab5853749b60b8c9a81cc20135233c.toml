@@ -1,0 +1,84 @@
+unit_id = "27ab5853749b60b8c9a81cc20135233c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RVC opcode map instructions.
+[%autowidth,float="center",align="center",cols=">,^,^,^,^,^,^,^,^,^,<]
+|===
+2+>|inst[15:13] +
+inst[1:0] ^.^s|000 ^.^s|001 ^.^s|010 ^.^s|011 ^.^s|100 ^.^s|101 ^.^s|110 ^.^s|111 |
+
+2+>.^|00 .^|ADDI4SPN ^.^|FLD +
+FLD +
+LQ ^.^| LW ^.^| FLW +
+LD +
+LD ^.^| _Reserved_ ^.^| FSD +
+FSD +
+SQ ^.^| SW ^.^| FSW +
+SD +
+SD
+^.^| RV32 +
+RV64 +
+RV128
+
+2+>.^|01 ^.^|ADDI ^.^|JAL +
+ADDIW +
+ADDIW ^.^|LI ^.^|LUI/ADDI16SP ^.^|MISC-ALU ^.^|J ^.^|BEQZ ^.^|BNEZ ^.^|RV32 +
+RV64 +
+RV128
+
+2+>.^|10 ^.^|SLLI ^.^|FLDSP +
+FLDSP +
+LQSP ^.^|LWSP ^.^|FLWSP +
+LDSP +
+LDSP ^.^|J[AL]R/MV/ADD ^.^|FSDSP +
+FSDSP +
+SQSP ^.^|SWSP ^.^|FSWSP +
+SDSP +
+SDSP ^.^|RV32 +
+RV64 +
+RV128
+
+2+>.^|11 9+^|>16b
+|==='''
+zh = '''
+.RVC 操作码映射指令
+[%autowidth,float="center",align="center",cols=">,^,^,^,^,^,^,^,^,^,<"]
+|===
+2+>|inst[15:13] +
+inst[1:0] ^.^s|000 ^.^s|001 ^.^s|010 ^.^s|011 ^.^s|100 ^.^s|101 ^.^s|110 ^.^s|111 |
+
+2+>.^|00 .^|ADDI4SPN ^.^|FLD +
+FLD +
+LQ ^.^| LW ^.^| FLW +
+LD +
+LD ^.^| __保留__ ^.^| FSD +
+FSD +
+SQ ^.^| SW ^.^| FSW +
+SD +
+SD
+^.^| RV32 +
+RV64 +
+RV128
+
+2+>.^|01 ^.^|ADDI ^.^|JAL +
+ADDIW +
+ADDIW ^.^|LI ^.^|LUI/ADDI16SP ^.^|MISC-ALU ^.^|J ^.^|BEQZ ^.^|BNEZ ^.^|RV32 +
+RV64 +
+RV128
+
+2+>.^|10 ^.^|SLLI ^.^|FLDSP +
+FLDSP +
+LQSP ^.^|LWSP ^.^|FLWSP +
+LDSP +
+LDSP ^.^|J[AL]R/MV/ADD ^.^|FSDSP +
+FSDSP +
+SQSP ^.^|SWSP ^.^|FSWSP +
+SDSP +
+SDSP ^.^|RV32 +
+RV64 +
+RV128
+
+2+>.^|11 9+^|>16b
+|==='''

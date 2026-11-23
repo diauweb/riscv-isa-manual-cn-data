@@ -1,0 +1,20 @@
+unit_id = "bbbcad04c5a5e108a3e5eb30819aeb4e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Most systems will require that at least some PMAs are dynamically
+checked in hardware later in the execution pipeline after the physical
+address is known, as some operations will not be supported at all
+physical memory addresses, and some operations require knowing the
+current setting of a configurable PMA attribute. While many other
+architectures specify some PMAs in the virtual memory page tables and
+use the TLB to inform the pipeline of these properties, this approach
+injects platform-specific information into a virtualized layer and can
+cause system errors unless attributes are correctly initialized in each
+page-table entry for each physical memory region. In addition, the
+available page sizes might not be optimal for specifying attributes in
+the physical memory space, leading to address-space fragmentation and
+inefficient use of expensive TLB entries.'''
+zh = '''
+大多数系统将要求在物理地址已知之后、在执行流水线的较后阶段由硬件至少动态检查某些 PMA，因为某些操作在所有物理内存地址上都不受支持，且某些操作需要知道可配置 PMA 属性的当前设置。尽管许多其他架构在虚拟内存页表中规定某些 PMA 并使用 TLB 将这些属性告知流水线，但这种方法将平台特定信息注入虚拟化层，除非在每个物理内存区域的每个页表项中正确初始化属性，否则可能导致系统错误。此外，可用的页大小可能并非规定物理内存空间中属性的最佳选择，从而导致地址空间碎片化和昂贵 TLB 表项的低效使用。'''

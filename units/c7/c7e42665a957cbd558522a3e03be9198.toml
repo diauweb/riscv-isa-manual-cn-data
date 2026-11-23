@@ -1,0 +1,375 @@
+unit_id = "c7e42665a957cbd558522a3e03be9198"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+<<tinst-values>> shows the values that may be
+automatically written to the trap instruction register for each standard
+exception cause. For exceptions that prevent the fetching of an
+instruction, only zero or a pseudoinstruction value may be written. A
+custom value may be automatically written only if the instruction that
+traps is non-standard. A future standard or extension may permit other
+values to be written, chosen from the set of allowed values established
+earlier.
+
+<<<
+
+[[tinst-values]]
+.Values that may be automatically written to the trap instruction register (`mtinst` or `htinst`) on an exception trap.
+[float="center",align="center",cols="2,^,^,^,^",options="header"]
+|===
+<.>|Exception
+^.>|Zero
+|Transformed +
+Standard +
+Instruction
+^.>|Custom Value
+^.>|Pseudo-instruction Value
+|Instruction address misaligned |Yes |No |Yes |No
+|Instruction access fault +
+Illegal instruction +
+Breakpoint +
+Virtual instruction
+|Yes +
+Yes +
+Yes +
+Yes
+|No +
+No +
+No +
+No +
+|No +
+No +
+Yes +
+Yes
+|No +
+No +
+No +
+No
+|Load address misaligned +
+Load access fault +
+Store/AMO address misaligned +
+Store/AMO access fault
+|Yes +
+Yes +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes +
+Yes
+|No +
+No +
+No +
+No
+|Environment call |Yes |No |Yes |No
+|Instruction page fault +
+Load page fault +
+Store/AMO page fault
+|Yes +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+No +
+No
+|Instruction guest-page fault +
+Load guest-page fault +
+Store/AMO guest-page fault
+|Yes +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|No +
+Yes +
+Yes
+|Yes +
+Yes +
+Yes
+|===
+
+As enumerated in the table, a synchronous exception may write to the
+trap instruction register a standard transformation of the trapping
+instruction only for exceptions that arise from explicit memory accesses
+(from loads, stores, and AMO instructions). Accordingly, standard
+transformations are currently defined only for these memory-access
+instructions. If a synchronous trap occurs for a standard instruction
+for which no transformation has been defined, the trap instruction
+register shall be written with zero (or, under certain circumstances,
+with a special pseudoinstruction value).
+
+For a standard load instruction that is not a compressed instruction and
+is one of LB, LBU, LH, LHU, LW, LWU, LD, FLW, FLD, FLQ, or FLH, the
+transformed instruction has the format shown in
+<<transformedloadinst>>.
+
+[[transformedloadinst]]
+.Transformed noncompressed load instruction (LB, LBU, LH, LHU, LW, LWU, LD, FLW, FLD, FLQ, or FLH). Fields funct3, rd, and opcode are the same as the trapping load instruction.
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: '0', type: 4, attr: ['5']},
+  {bits: 7, name: '0', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+For a standard store instruction that is not a compressed instruction
+and is one of SB, SH, SW, SD, FSW, FSD, FSQ, or FSH, the transformed
+instruction has the format shown in
+<<transformedstoreinst>>.
+
+[[transformedstoreinst]]
+.Transformed noncompressed store instruction (SB, SH, SW, SD, FSW, FSD, FSQ, or FSH). Fields rs2, funct3, and opcode are the same as the trapping store instruction.
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: '0', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2', type: 4, attr: ['5']},
+  {bits: 7, name: '0', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+For a standard atomic instruction (load-reserved, store-conditional, or AMO instruction), the transformed instruction has the format shown in <<transformedatomicinst>>.
+
+[[transformedatomicinst]]
+.Transformed atomic instruction (load-reserved, store-conditional, or AMO instruc-tion). All fields are the same as the trapping instruction except bits 19:15, Addr. Offset.
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2',type: 4, attr: ['5']},
+  {bits: 1, name: 'rl',type: 4, attr: ['1']},
+  {bits: 1, name: 'aq',type: 4, attr: ['1']},
+  {bits: 5, name: 'funct5', type: 8, attr: ['5']},
+], config: {bits: 32}}
+....
+
+For a standard virtual-machine load/store instruction (HLV, HLVX, or HSV), the transformed instruction has the format shown in <<transformedvmaccessinst>>.
+
+[[transformedvmaccessinst]]
+.Transformed virtual-machine load/store instruction (HLV, HLVX, HSV). All fields are the same as the trapping instruction except bits 19:15, Addr. Offset
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2', type: 4, attr: ['5']},
+  {bits: 7, name: 'funct7', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+In all the transformed instructions above, the Addr. Offset field that
+replaces the instruction’s rs1 field in bits 19:15 is the positive
+difference between the faulting virtual address (written to `mtval` or
+`stval`) and the original virtual address. This difference can be
+nonzero only for a misaligned memory access. Note also that, for basic
+loads and stores, the transformations replace the instruction’s
+immediate offset fields with zero.
+
+For a standard compressed instruction (16-bit size), the transformed
+instruction is found as follows:
+
+. Expand the compressed instruction to its 32-bit equivalent.
+. Transform the 32-bit equivalent instruction.
+. Replace bit 1 with a `0`.
+
+Bits 1:0 of a transformed standard instruction will be binary `01` if
+the trapping instruction is compressed and `11` if not.
+[NOTE]
+===='''
+zh = '''
+====
+
+<<tinst-values>> 展示了每种标准异常原因可自动写入陷阱指令寄存器的值。对于阻止取指的异常，只能写入零或伪指令值。仅当引发陷阱的指令为非标准时，才可自动写入定制值。未来的标准或扩展可能允许写入其他值，选自先前建立的允许值集合。
+
+<<<
+
+[[tinst-values]]
+.异常陷阱时可自动写入陷阱指令寄存器（`mtinst` 或 `htinst`）的值。
+[float="center",align="center",cols="2,^,^,^,^",options="header"]
+|===
+<.>|异常
+^.>|零
+|变换后 +
+标准 +
+指令
+^.>|定制值
+^.>|伪指令值
+|指令地址非对齐 |是 |否 |是 |否
+|指令访问错误 +
+非法指令 +
+断点 +
+虚拟指令
+|是 +
+是 +
+是 +
+是
+|否 +
+否 +
+否 +
+否
+|否 +
+否 +
+是 +
+是
+|否 +
+否 +
+否 +
+否
+|加载地址非对齐 +
+加载访问错误 +
+存储/AMO 地址非对齐 +
+存储/AMO 访问错误
+|是 +
+是 +
+是 +
+是
+|是 +
+是 +
+是 +
+是
+|是 +
+是 +
+是 +
+是
+|否 +
+否 +
+否 +
+否
+|环境调用 |是 |否 |是 |否
+|指令页错误 +
+加载页错误 +
+存储/AMO 页错误
+|是 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+否 +
+否
+|指令客户机页错误 +
+加载客户机页错误 +
+存储/AMO 客户机页错误
+|是 +
+是 +
+是
+|否 +
+是 +
+是
+|否 +
+是 +
+是
+|是 +
+是 +
+是
+|===
+
+如表中所示，同步异常仅对于由显式内存访问（来自加载、存储和 AMO 指令）引起的异常，可将引发陷阱指令的标准变换写入陷阱指令寄存器。因此，标准变换目前仅针对这些内存访问指令定义。若标准指令发生同步陷阱而尚未为其定义变换，则陷阱指令寄存器应写入零（或在某些情况下写入特殊伪指令值）。
+
+对于非压缩指令且为 LB、LBU、LH、LHU、LW、LWU、LD、FLW、FLD、FLQ 或 FLH 之一的标准加载指令，变换后指令格式如 <<transformedloadinst>> 所示。
+
+[[transformedloadinst]]
+.变换后的非压缩加载指令（LB、LBU、LH、LHU、LW、LWU、LD、FLW、FLD、FLQ 或 FLH）。字段 funct3、rd 和 opcode 与引发陷阱的加载指令相同。
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: '0', type: 4, attr: ['5']},
+  {bits: 7, name: '0', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+对于非压缩指令且为 SB、SH、SW、SD、FSW、FSD、FSQ 或 FSH 之一的标准存储指令，变换后指令格式如 <<transformedstoreinst>> 所示。
+
+[[transformedstoreinst]]
+.变换后的非压缩存储指令（SB、SH、SW、SD、FSW、FSD、FSQ 或 FSH）。字段 rs2、funct3 和 opcode 与引发陷阱的存储指令相同。
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: '0', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2', type: 4, attr: ['5']},
+  {bits: 7, name: '0', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+对于标准原子指令（加载保留、存储条件或 AMO 指令），变换后指令格式如 <<transformedatomicinst>> 所示。
+
+[[transformedatomicinst]]
+.变换后的原子指令（加载保留、存储条件或 AMO 指令）。除第 19:15 位 Addr. Offset 外，所有字段与引发陷阱的指令相同。
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2',type: 4, attr: ['5']},
+  {bits: 1, name: 'rl',type: 4, attr: ['1']},
+  {bits: 1, name: 'aq',type: 4, attr: ['1']},
+  {bits: 5, name: 'funct5', type: 8, attr: ['5']},
+], config: {bits: 32}}
+....
+
+对于标准虚拟机加载/存储指令（HLV、HLVX 或 HSV），变换后指令格式如 <<transformedvmaccessinst>> 所示。
+
+[[transformedvmaccessinst]]
+.变换后的虚拟机加载/存储指令（HLV、HLVX、HSV）。除第 19:15 位 Addr. Offset 外，所有字段与引发陷阱的指令相同
+[wavedrom, ,svg]
+....
+{reg: [
+  {bits: 7, name: 'opcode', type: 8, attr: ['7']},
+  {bits: 5, name: 'rd', type: 2, attr: ['5']},
+  {bits: 3, name: 'funct3', type: 8, attr: ['3']},
+  {bits: 5, name: 'Addr. Offset', type: 4, attr: ['5']},
+  {bits: 5, name: 'rs2', type: 4, attr: ['5']},
+  {bits: 7, name: 'funct7', type: 8, attr: ['7']},
+], config: {bits: 32}}
+....
+
+在上述所有变换后指令中，替换指令第 19:15 位 rs1 字段的 Addr. Offset 字段是发生错误的虚拟地址（写入 `mtval` 或 `stval`）与原始虚拟地址之间的正差。此差仅在非对齐内存访问时可为非零。还注意，对于基本加载和存储，变换将指令的立即偏移字段替换为零。
+
+对于标准压缩指令（16 位大小），按如下方式找到变换后指令：
+
+. 将压缩指令展开为其 32 位等效形式。
+. 变换该 32 位等效指令。
+. 将第 1 位替换为 `0`。
+
+若引发陷阱的指令为压缩指令，则变换后标准指令的第 1:0 位为二进制 `01`；若非压缩，则为 `11`。
+[NOTE]
+===='''

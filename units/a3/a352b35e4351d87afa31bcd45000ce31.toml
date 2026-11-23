@@ -1,0 +1,32 @@
+unit_id = "a352b35e4351d87afa31bcd45000ce31"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+It is sometimes desirable to define instruction-set extensions whose
+instructions, rather than raising illegal-instruction exceptions when the extension is
+not implemented, take no useful action (beyond writing `x[rd]`).
+For example, programs with control-flow integrity checks can
+execute correctly on implementations without the corresponding extension,
+provided the checks are simply ignored.  Implementing these checks as MOPs
+allows the same programs to run on implementations with or without the
+corresponding extension.
+
+Although similar in some respects to HINTs, MOPs cannot be encoded as HINTs,
+because unlike HINTs, MOPs are allowed to alter architectural state.
+
+Because MOPs may be redefined by later extensions, standard software should
+not execute a MOP unless it is deliberately targeting an extension that has
+redefined that MOP.
+===='''
+zh = '''
+[NOTE]
+====
+有时宜定义这样的指令集扩展：当该扩展未实现时，其指令不触发非法指令异常，而是不采取有用的动作（除写入 `x[rd]` 之外）。例如，带有控制流完整性检查的程序，只要这些检查被简单忽略，就能在没有相应扩展的实现上正确执行。将这些检查实现为 MOP 可使相同的程序在具有或不具有相应扩展的实现上运行。
+
+尽管在某些方面与 HINT 相似，但 MOP 不能编码为 HINT，因为与 HINT 不同，MOP 允许改变架构状态。
+
+由于 MOP 可能由后续扩展重新定义，标准软件不应执行 MOP，除非它有意针对已重新定义该 MOP 的扩展。
+===='''

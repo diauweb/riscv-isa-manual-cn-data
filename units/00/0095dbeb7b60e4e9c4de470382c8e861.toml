@@ -1,0 +1,23 @@
+unit_id = "0095dbeb7b60e4e9c4de470382c8e861"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The sign-injection instructions provide floating-point insn:mv[], insn:abs[], and insn:neg[],
+as well as supporting a few other operations, including the IEEE
+754-2008 `copySign` operation and sign manipulation in transcendental
+math function libraries. Although insn:mv[], insn:abs[], and insn:neg[] only need a single
+register operand, whereas insn:fsgnj[] instructions need two, it is unlikely
+most microarchitectures would add optimizations to benefit from the
+reduced number of register reads for these relatively infrequent
+instructions. Even in this case, a microarchitecture can simply detect
+when both source registers are the same for insn:fsgnj[] instructions and only
+read a single copy.
+===='''
+zh = '''
+[NOTE]
+====
+符号注入指令提供浮点 insn:mv[]、insn:abs[] 和 insn:neg[]，并支持少数其他操作，包括 IEEE 754-2008 的 `copySign` 操作以及超越数学函数库中的符号操作。虽然 insn:mv[]、insn:abs[] 和 insn:neg[] 只需要一个寄存器操作数，而 insn:fsgnj[] 指令需要两个，但大多数微架构不太可能为这些相对不频繁的指令因减少寄存器读取次数而增加优化。即使如此，微架构也可以简单地检测 insn:fsgnj[] 指令的两个源寄存器是否相同，并只读取一份。
+===='''

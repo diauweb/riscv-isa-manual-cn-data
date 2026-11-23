@@ -1,0 +1,14 @@
+unit_id = "6144057a74e71231a04fd5f15ecf2049"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Other extensions may specify that certain mstateen bits control access
+to registers accessed indirectly through `siselect` + `sireg*`, and/or
+`vsiselect` + `vsireg*`. However, regardless of any other mstateen bits, if
+`mstateen0`[60] = 1, a virtual-instruction  exception is raised as
+described in the previous section for all attempts from VS-mode or
+VU-mode to directly access `vsiselect` or `vsireg*`, and for all attempts
+from VU-mode to access `siselect` or `sireg*`.'''
+zh = '''
+其他扩展可能规定某些 mstateen 位控制对通过 `siselect` + `sireg*` 和/或 `vsiselect` + `vsireg*` 间接访问的寄存器的访问。然而，无论其他 mstateen 位如何，若 `mstateen0`[60] = 1，则对于从 VS 模式或 VU 模式直接访问 `vsiselect` 或 `vsireg*` 的所有尝试，以及从 VU 模式访问 `siselect` 或 `sireg*` 的所有尝试，均按上一节所述触发虚拟指令异常。'''

@@ -1,0 +1,13 @@
+unit_id = "97d86094eb7fe38c7c04b2cbf5075d3f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Treating the vector length and mask as control rather than data
+typically matches the semantics of the corresponding scalar code, where branch
+instructions ordinarily would have been used.
+Treating the mask as control allows masked vector load instructions to access
+memory before the mask value is known, without the need for
+a misspeculation-recovery mechanism.'''
+zh = '''
+NOTE: 将向量长度和掩码视为控制而非数据通常与相应标量代码的语义相符，在标量代码中通常使用分支指令。将掩码视为控制允许受掩码向量加载指令在掩码值已知之前访问内存，而无需错误推测恢复机制。'''

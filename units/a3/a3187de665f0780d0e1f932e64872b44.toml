@@ -1,0 +1,19 @@
+unit_id = "a3187de665f0780d0e1f932e64872b44"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+In systems in which a supervisor execution environment (SEE) provides timer
+facilities via an SBI function call, this SBI call will continue to support
+requests to schedule a timer interrupt. The SEE will simply make use of
+stimecmp, changing its value as appropriate. This ensures compatibility with
+existing S-mode software that uses this SEE facility, while new S-mode software
+takes advantage of stimecmp directly.)
+===='''
+zh = '''
+[NOTE]
+====
+在由监管执行环境（SEE）通过 SBI 函数调用提供定时器设施的系统里，此 SBI 调用将继续支持调度定时器中断的请求。SEE 将直接利用 stimecmp，并视情况更改其值。这确保了与使用此 SEE 设施的现有 S 模式软件的兼容性，同时新的 S 模式软件直接利用 stimecmp。）
+===='''

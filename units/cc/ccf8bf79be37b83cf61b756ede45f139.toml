@@ -1,0 +1,15 @@
+unit_id = "ccf8bf79be37b83cf61b756ede45f139"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If extension Smstateen is implemented together with Ssqosid, then Ssqosid also
+requires the P1P14 bit in `mstateen0` to be implemented.
+If P1P14 of `mstateen0` is 0, attempts to access `srmcfg` in privilege modes
+less privileged than M-mode raise an illegal-instruction exception.
+If P1P14 bit of `mstateen0` is 1 or if extension Smstateen is not implemented,
+attempts to access `srmcfg` when `V=1` raise a virtual-instruction exception.'''
+zh = '''
+若扩展 Smstateen 与 Ssqosid 一起实现，则 Ssqosid 还要求实现 `mstateen0` 中的 P1P14 位。
+若 `mstateen0` 的 P1P14 为 0，则在低于 M 模式的特权级中访问 `srmcfg` 会引发非法指令异常。
+若 `mstateen0` 的 P1P14 位为 1，或未实现扩展 Smstateen，则在 `V=1` 时访问 `srmcfg` 会引发虚拟指令异常。'''

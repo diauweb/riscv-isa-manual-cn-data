@@ -1,0 +1,26 @@
+unit_id = "e40fe547c29abeaec51f33fc2be0d004"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For example, in a system with a private L1 and shared L2, insn:ntl.p1[]
+followed by insn:prefetch.r[] might prefetch into L2 with read intent.
+
+To prefetch into the innermost level of cache, do not prefix the
+prefetch instruction with an insn:ntl[] instruction.
+
+In some systems, insn:ntl.all[] followed by a prefetch instruction might
+prefetch into a cache or prefetch buffer internal to a memory
+controller.
+===='''
+zh = '''
+[NOTE]
+====
+例如，在具有私有 L1 和共享 L2 的系统中，insn:ntl.p1[] 后跟 insn:prefetch.r[] 可能以读取意图预取到 L2。
+
+要预取到最内层高速缓存，不要用 insn:ntl[] 指令作为预取指令的前缀。
+
+在某些系统中，insn:ntl.all[] 后跟预取指令可能预取到内存控制器内部的高速缓存或预取缓冲。
+===='''

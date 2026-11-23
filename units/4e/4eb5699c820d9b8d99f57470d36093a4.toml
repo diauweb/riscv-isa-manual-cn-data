@@ -1,0 +1,362 @@
+unit_id = "4eb5699c820d9b8d99f57470d36093a4"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+Register `hgeie` selects the subset of guest external interrupts that
+cause a supervisor-level (HS-level) guest external interrupt. The enable
+bits in `hgeie` do not affect the VS-level external interrupt signal
+selected from `hgeip` by `hstatus`.VGEIN.
+
+[[sec:henvcfg]]
+====  Hypervisor Environment Configuration Register (`henvcfg`)
+
+The `henvcfg` CSR is a 64-bit read/write register, formatted
+as shown in <<henvcfg>>, that controls
+certain characteristics of the execution environment when virtualization
+mode V=1.
+
+[[henvcfg]]
+.Hypervisor environment configuration register (`henvcfg`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 33)
+
+(draw-box "63" {:span 2 :borders {}})
+(draw-box "62" {:span 2 :borders {}})
+(draw-box "61" {:span 2 :borders {}})
+(draw-box "60" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "34" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "33" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "32" {:span 1 :text-anchor "end" :borders {}})
+(draw-box "31" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "8" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:borders {}})
+(draw-box "4" {:borders {}})
+(draw-box "3" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "STCE" {:span 2})
+(draw-box "PBMTE" {:font-size 22 :span 2})
+(draw-box "ADUE" {:span 2})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 7})
+(draw-box "PMM" {:span 3})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 7})
+(draw-box "CBZE" {:span 2})
+(draw-box "CBCFE" {:span 2})
+(draw-box "CBIE" {:span 2})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 2})
+(draw-box "FIOM" {:span 2})
+
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "27" {:span 7 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "24" {:span 7 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+If bit FIOM (Fence of I/O implies Memory) is set to one in `henvcfg`,
+FENCE instructions executed when V=1 are modified so the requirement to
+order accesses to device I/O implies also the requirement to order main
+memory accesses. <<henvcfg-FIOM>> details the modified
+interpretation of FENCE instruction bits PI, PO, SI, and SO when FIOM=1
+and V=1.
+
+Similarly, when FIOM=1 and V=1, if an atomic instruction that accesses a
+region ordered as device I/O has its _aq_ and/or _rl_ bit set, then that
+instruction is ordered as though it accesses both device I/O and memory.
+
+[[henvcfg-FIOM]]
+.Modified interpretation of FENCE predecessor and successor sets when FIOM=1 and virtualization mode V=1.
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|Instruction bit |Meaning when set
+|PI +
+PO
+|Predecessor device input and memory reads (PR implied) +
+Predecessor device output and memory writes (PW implied)
+|SI +
+SO
+|Successor device input and memory reads (SR implied) +
+Successor device output and memory writes (SW implied)
+|===
+
+The PBMTE bit controls whether the Svpbmt extension is available for use
+in VS-stage address translation. When PBMTE=1, Svpbmt is available for
+VS-stage address translation. When PBMTE=0, the implementation behaves
+as though Svpbmt were not implemented for VS-stage address translation.
+If Svpbmt is not implemented, PBMTE is read-only zero.
+
+If the Svadu extension is implemented, the ADUE bit controls whether hardware
+updating of PTE A/D bits is enabled for VS-stage address translation.
+When ADUE=1, hardware updating of PTE A/D bits is enabled during VS-stage
+address translation, and the implementation behaves as though the Svade
+extension were not implemented for VS-mode address translation.
+When ADUE=0, the implementation behaves as though Svade were implemented for
+VS-stage address translation.
+If Svadu is not implemented, ADUE is read-only zero.
+
+The definition of the STCE field will be furnished by the forthcoming
+Sstc extension. Its allocation within `henvcfg` may change prior to the
+
+The definition of the CBZE field will be furnished by the forthcoming
+Zicboz extension. Its allocation within `henvcfg` may change prior to
+the ratification of that extension.
+
+The definitions of the CBCFE and CBIE fields will be furnished by the
+forthcoming Zicbom extension. Their allocations within `henvcfg` may
+change prior to the ratification of that extension.
+
+The definition of the PMM field will be furnished by the forthcoming
+Ssnpm extension. Its allocation within `henvcfg` may change prior to the
+ratification of that extension.
+
+When XLEN=32, `henvcfgh` is a
+32-bit read/write register that aliases bits 63:32
+of `henvcfg`. Register `henvcfgh` does not exist when
+XLEN=64.
+
+==== Hypervisor Counter-Enable Register (`hcounteren`)
+
+The counter-enable register `hcounteren` is a 32-bit register that
+controls the availability of the hardware performance monitoring
+counters to the guest virtual machine.
+
+.Hypervisor counter-enable register (`hcounteren`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 2 :borders {}})
+(draw-box "30" {:span 2 :borders {}})
+(draw-box "29" {:span 2 :borders {}})
+(draw-box "28" {:span 10 :text-anchor "start" :borders {}})
+(draw-box "6" {:span 7 :text-anchor "end" :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "HPM31" {:font-size 20 :span 2})
+(draw-box "HPM30" {:font-size 20 :span 2})
+(draw-box "HPM29" {:font-size 20 :span 2})
+(draw-box "..." {:span 17})
+(draw-box "HPM5" {:span 2})
+(draw-box "HPM4" {:span 2})
+(draw-box "HPM3" {:span 2})
+(draw-box "IR" )
+(draw-box "TM" )
+(draw-box "CY" )
+
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "23" {:span 17 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "1" {:borders {}})
+----
+
+When the CY, TM, IR, or HPM_n_ bit in the `hcounteren` register is
+clear, attempts to read the `cycle`, `time`, `instret`, or
+`hpmcounter` _n_ register while V=1 will cause a virtual-instruction
+exception if the same bit in `mcounteren` is 1. When one of these bits
+is set, access to the corresponding register is permitted when V=1,
+unless prevented for some other reason. In VU-mode, a counter is not
+readable unless the applicable bits are set in both `hcounteren` and
+`scounteren`.
+
+`hcounteren` must be implemented. However, any of the bits may be
+read-only zero, indicating reads to the corresponding counter will cause
+an exception when V=1. Hence, they are effectively *WARL* fields.
+
+==== Hypervisor Time Delta Register (`htimedelta`)
+
+The `htimedelta` CSR is a 64-bit read/write register that contains the delta
+between the value of the `time` CSR and the value returned in VS-mode or
+VU-mode. That is, reading the `time` CSR in VS or VU mode returns the
+sum of the contents of `htimedelta` and the actual value of `time`.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+寄存器 `hgeie` 选择导致监管级（HS 级）客户机外部中断的客户机外部中断子集。`hgeie` 中的使能位不影响由 `hstatus`.VGEIN 从 `hgeip` 选择的 VS 级外部中断信号。
+
+[[sec:henvcfg]]
+====  虚拟机监控器环境配置寄存器（`henvcfg`）
+
+`henvcfg` CSR 是一个 64 位读/写寄存器，格式如 <<henvcfg>> 所示，当虚拟化模式 V=1 时控制执行环境的某些特性。
+
+[[henvcfg]]
+.虚拟机监控器环境配置寄存器（`henvcfg`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 33)
+
+(draw-box "63" {:span 2 :borders {}})
+(draw-box "62" {:span 2 :borders {}})
+(draw-box "61" {:span 2 :borders {}})
+(draw-box "60" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "34" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "33" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "32" {:span 1 :text-anchor "end" :borders {}})
+(draw-box "31" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "8" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "7" {:span 2 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:borders {}})
+(draw-box "4" {:borders {}})
+(draw-box "3" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "0" {:span 2 :borders {}})
+
+(draw-box "STCE" {:span 2})
+(draw-box "PBMTE" {:font-size 22 :span 2})
+(draw-box "ADUE" {:span 2})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 7})
+(draw-box "PMM" {:span 3})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 7})
+(draw-box "CBZE" {:span 2})
+(draw-box "CBCFE" {:span 2})
+(draw-box "CBIE" {:span 2})
+(draw-box (text "WPRI" {:font-size 24 :font-weight "bold"}) {:span 2})
+(draw-box "FIOM" {:span 2})
+
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "27" {:span 7 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "24" {:span 7 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "2" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+----
+
+若 `henvcfg` 中的位 FIOM（Fence of I/O implies Memory，I/O 屏障蕴含内存屏障）置 1，则在 V=1 时执行的 FENCE 指令被修改，使得对设备 I/O 访问排序的要求也蕴含对主存访问排序的要求。<<henvcfg-FIOM>> 详细说明 FIOM=1 且 V=1 时 FENCE 指令位 PI、PO、SI 和 SO 的修改后解释。
+
+类似地，当 FIOM=1 且 V=1 时，若访问按设备 I/O 排序区域的原子指令的 _aq_ 和/或 _rl_ 位置位，则该指令如同访问设备 I/O 和内存两者一样排序。
+
+[[henvcfg-FIOM]]
+.当 FIOM=1 且虚拟化模式 V=1 时对 FENCE 前驱集和后继集的修改后解释。
+[%autowidth,float="center",align="center",cols="^,<",options="header"]
+|===
+|指令位 |置位时的含义
+|PI +
+PO
+|前驱设备输入和内存读（隐含 PR） +
+前驱设备输出和内存写（隐含 PW）
+|SI +
+SO
+|后继设备输入和内存读（隐含 SR） +
+后继设备输出和内存写（隐含 SW）
+|===
+
+PBMTE 位控制 Svpbmt 扩展是否可用于 VS 阶段地址转换。当 PBMTE=1 时，Svpbmt 可用于 VS 阶段地址转换。当 PBMTE=0 时，实现的行为如同 Svpbmt 未针对 VS 阶段地址转换实现。若未实现 Svpbmt，则 PBMTE 为只读 0。
+
+若实现了 Svadu 扩展，ADUE 位控制针对 VS 阶段地址转换是否使能 PTE A/D 位的硬件更新。当 ADUE=1 时，VS 阶段地址转换期间使能 PTE A/D 位的硬件更新，且实现的行为如同 Svade 扩展未针对 VS 模式地址转换实现。当 ADUE=0 时，实现的行为如同 Svade 已针对 VS 阶段地址转换实现。若未实现 Svadu，则 ADUE 为只读 0。
+
+STCE 字段的定义将由即将发布的 Sstc 扩展提供。其在 `henvcfg` 内的分配可能在该扩展批准之前发生变化。
+
+CBZE 字段的定义将由即将发布的 Zicboz 扩展提供。其在 `henvcfg` 内的分配可能在该扩展批准之前发生变化。
+
+CBCFE 和 CBIE 字段的定义将由即将发布的 Zicbom 扩展提供。它们在 `henvcfg` 内的分配可能在该扩展批准之前发生变化。
+
+PMM 字段的定义将由即将发布的 Ssnpm 扩展提供。其在 `henvcfg` 内的分配可能在该扩展批准之前发生变化。
+
+当 XLEN=32 时，`henvcfgh` 是一个 32 位读/写寄存器，别名 `henvcfg` 的第 63:32 位。当 XLEN=64 时，寄存器 `henvcfgh` 不存在。
+
+==== 虚拟机监控器计数器使能寄存器（`hcounteren`）
+
+计数器使能寄存器 `hcounteren` 是一个 32 位寄存器，控制硬件性能监控计数器对客户机虚拟机的可用性。
+
+.虚拟机监控器计数器使能寄存器（`hcounteren`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 2 :borders {}})
+(draw-box "30" {:span 2 :borders {}})
+(draw-box "29" {:span 2 :borders {}})
+(draw-box "28" {:span 10 :text-anchor "start" :borders {}})
+(draw-box "6" {:span 7 :text-anchor "end" :borders {}})
+(draw-box "5" {:span 2 :borders {}})
+(draw-box "4" {:span 2 :borders {}})
+(draw-box "3" {:span 2 :borders {}})
+(draw-box "2" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "HPM31" {:font-size 20 :span 2})
+(draw-box "HPM30" {:font-size 20 :span 2})
+(draw-box "HPM29" {:font-size 20 :span 2})
+(draw-box "..." {:span 17})
+(draw-box "HPM5" {:span 2})
+(draw-box "HPM4" {:span 2})
+(draw-box "HPM3" {:span 2})
+(draw-box "IR" )
+(draw-box "TM" )
+(draw-box "CY" )
+
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "23" {:span 17 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "1" {:borders {}})
+(draw-box "1" {:borders {}})
+----
+
+当 `hcounteren` 寄存器中的 CY、TM、IR 或 HPM_n_ 位为 0 时，若 `mcounteren` 中相同位为 1，则在 V=1 时尝试读取 `cycle`、`time`、`instret` 或 `hpmcounter` _n_ 寄存器将导致虚拟指令异常。当这些位之一置位时，允许在 V=1 时访问相应寄存器，除非因某种其他原因被阻止。在 VU 模式下，除非适用位在 `hcounteren` 和 `scounteren` 中均置位，否则计数器不可读。
+
+`hcounteren` 必须实现。然而，其中任何位均可为只读 0，表示在 V=1 时读取相应计数器将导致异常。因此，它们实际上是 *WARL* 字段。
+
+==== 虚拟机监控器时间差寄存器（`htimedelta`）
+
+`htimedelta` CSR 是一个 64 位读/写寄存器，包含 `time` CSR 的值与在 VS 模式或 VU 模式中返回的值之间的差值。也就是说，在 VS 或 VU 模式下读取 `time` CSR 返回 `htimedelta` 的内容与 `time` 实际值之和。
+
+[NOTE]
+===='''

@@ -1,0 +1,18 @@
+unit_id = "f2b8ea0a4cefdd0fb49e41281cf00789"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The RISC-V ABI was changed to make the frequently used registers map to
+registers `x8`-`x15`. This simplifies the decompression decoder by
+having a contiguous naturally aligned set of register numbers, and is
+also compatible with the RV32E and RV64E base ISAs, which only have 16 integer
+registers.
+===='''
+zh = '''
+[NOTE]
+====
+RISC-V ABI 经过更改，使常用寄存器映射到寄存器 `x8`-`x15`。这样通过具有一组连续且自然对齐的寄存器编号来简化解压译码器，并且还与只有 16 个整数寄存器的 RV32E 和 RV64E 基础 ISA 兼容。
+===='''

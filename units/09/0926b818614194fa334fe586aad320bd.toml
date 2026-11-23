@@ -1,0 +1,20 @@
+unit_id = "0926b818614194fa334fe586aad320bd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Experts working in machine learning noticed that FP16 was a much more compact way of
+storing operands and often provided sufficient precision for them. However, they also
+found that intermediate values were much better when accumulated into a higher precision.
+The final computations were then typically converted back into the more compact FP16
+encoding.  This approach has become very common in machine learning
+(ML) inference where the weights and
+activations are stored in FP16 encodings.  There was the added benefit that smaller
+multiplication blocks could be created for the FP16's smaller number of significant bits. At this
+point, widening multiply-accumulate instructions became much more common. Also, more
+complicated dot product instructions started to show up including those that packed two
+FP16 numbers in a 32-bit register, multiplied these by another pair of FP16 numbers in
+another register, added these two products to an FP32 accumulate value in a 3rd register
+and returned an FP32 result.'''
+zh = '''
+从事机器学习工作的专家注意到，FP16 是一种紧凑得多的操作数存储方式，而且往往能为其提供足够的精度。然而，他们也发现，将中间值累加到更高精度时效果要好得多。最终的运算结果随后通常会被转换回更紧凑的 FP16 编码。这种方法在机器学习（ML）推理中已变得非常普遍，其中权重和激活值以 FP16 编码存储。还有一个额外好处：由于 FP16 的有效位数更少，可以构建更小的乘法块。此时，扩展乘加指令变得更为常见。此外，更复杂的点积指令开始出现，包括这样的指令：将 32 位寄存器中的两个 FP16 数打包，与另一寄存器中的另一对 FP16 数相乘，把这两个乘积加到第 3 个寄存器中的 FP32 累加值上，并返回 FP32 结果。'''

@@ -1,0 +1,16 @@
+unit_id = "8da8d43075de49c31a8b13a8e7bced15"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vnclipu_vnclip_op]#The insn:vnclip[] instructions are used to pack a fixed-point value into a
+narrower destination.  The instructions support rounding, scaling, and
+saturation into the final destination format.  The source data is in
+the vector register group specified by `vs2`. The scaling shift amount
+value can come from a vector register group `vs1`, a scalar integer
+register `rs1`, or a zero-extended 5-bit immediate.#  [#norm:vnclipu_vnclip_shamt]#The low
+lg2(2*SEW) bits of the vector or scalar shift-amount value (e.g., the
+low 6 bits for a SEW=64-bit to SEW=32-bit narrowing operation) are
+used to control the right shift amount, which provides the scaling.#'''
+zh = '''
+[#norm:vnclipu_vnclip_op]#insn:vnclip[] 指令用于将定点值打包到更窄的目标中。这些指令支持舍入、缩放以及饱和到最终目标格式。源数据位于 `vs2` 指定的向量寄存器组中。缩放移位量值可来自向量寄存器组 `vs1`、标量整数寄存器 `rs1` 或零扩展的 5 位立即数。# [#norm:vnclipu_vnclip_shamt]#使用向量或标量移位量值的最低 lg2(2*SEW) 位（例如，对于 SEW=64 位到 SEW=32 位窄化操作，使用低 6 位）来控制右移量，从而提供缩放。#'''

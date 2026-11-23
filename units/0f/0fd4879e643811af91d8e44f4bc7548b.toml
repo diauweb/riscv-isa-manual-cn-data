@@ -1,0 +1,20 @@
+unit_id = "0fd4879e643811af91d8e44f4bc7548b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+[%unbreakable]
+====
+_Because the `sctrstatus` register is updated by hardware, writes should be performed with caution.  If a multi-instruction read-modify-write to `sctrstatus` is performed while CTR is active, and between the read and write a qualified transfer or trap that causes CTR freeze completes, a hardware update could be lost.  Software may wish to ensure that CTR is inactive before performing a read-modify-write, by ensuring that either `sctrstatus`.FROZEN=1, or that the current privilege mode is not enabled for recording._
+
+_When restoring CTR state, `sctrstatus` should be written before CTR entry state is restored.  This ensures that the software writes to logical CTR entries modify the proper physical entries._
+===='''
+zh = '''
+[NOTE]
+[%unbreakable]
+====
+_由于 `sctrstatus` 寄存器由硬件更新，写入宜谨慎执行。若在 CTR 活动时对 `sctrstatus` 执行多指令读-改-写，且在读取和写入之间完成了导致 CTR 冻结的合格转移或陷阱，则硬件更新可能丢失。软件可希望在执行读-改-写之前确保 CTR 不活动，方法是确保 `sctrstatus`.FROZEN=1，或当前特权模式未使能记录。_
+
+_恢复 CTR 状态时，宜先写入 `sctrstatus`，再恢复 CTR 表项状态。这可确保软件对逻辑 CTR 表项的写入修改正确的物理表项。_
+===='''

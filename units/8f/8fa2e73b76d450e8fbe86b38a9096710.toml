@@ -1,0 +1,12 @@
+unit_id = "8fa2e73b76d450e8fbe86b38a9096710"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-subw_op]#insn:c.subw[] is an XLEN=64-only instruction that subtracts the value in
+register _rs2′_ from the value in register
+_rd′_, then sign-extends the lower 32 bits of the
+difference before writing the result to register _rd′_.
+It expands into insn:subw[rd′,rd′,rs2′].#'''
+zh = '''
+[#norm:c-subw_op]##insn:c.subw[] 是仅用于 XLEN=64 的指令，它从寄存器 _rd′_ 中的值减去寄存器 _rs2′_ 中的值，然后将差的低 32 位符号扩展后再写入寄存器 _rd′_。它展开为 insn:subw[rd′,rd′,rs2′]。##'''

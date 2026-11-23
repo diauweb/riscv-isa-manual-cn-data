@@ -1,0 +1,13 @@
+unit_id = "63231b1af2771a4eb007a1bf74e03bbd"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 32-bit Zicfiss instructions will revert to their behavior as defined by Zimop.
+* 16-bit Zicfiss instructions will revert to their behavior as defined by Zcmop.
+* When `menvcfg.SSE` is one, `SSAMOSWAP.W/D` raises an illegal-instruction
+  exception in U-mode and a virtual instruction exception in VU-mode.'''
+zh = '''
+* 32 位 Zicfiss 指令将恢复为 Zimop 所定义的行为。
+* 16 位 Zicfiss 指令将恢复为 Zcmop 所定义的行为。
+* 当 `menvcfg.SSE` 为 1 时，`SSAMOSWAP.W/D` 在 U 模式下引发非法指令异常，在 VU 模式下引发虚拟指令异常。'''

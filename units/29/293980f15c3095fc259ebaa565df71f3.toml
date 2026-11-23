@@ -1,0 +1,16 @@
+unit_id = "293980f15c3095fc259ebaa565df71f3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The fields within the csr:fcsr[] can also be accessed individually through
+different CSR addresses, and separate assembler pseudoinstructions are defined
+for these accesses. The insn:frrm[] instruction reads the Rounding Mode field
+csr:frm[] (csr:fcsr[] bits 7{endash}5) and copies it into the least-significant three bits of
+integer register _rd_, with zero in all other bits. insn:fsrm[] swaps the value in
+csr:frm[] by copying the original value into integer register _rd_, and then
+writing a new value obtained from the three least-significant bits of integer
+register _rs1_ into csr:frm[]. insn:frflags[] and insn:fsflags[] are defined analogously for the
+Accrued Exception Flags field csr:fflags[] (csr:fcsr[] bits 4{endash}0).'''
+zh = '''
+csr:fcsr[] 内的字段也可通过不同的 CSR 地址单独访问，并为这些访问定义了单独的汇编器伪指令。insn:frrm[] 指令读取舍入模式字段 csr:frm[]（csr:fcsr[] 位 7{endash}5），并将其复制到整数寄存器 _rd_ 的最低三位，其他所有位为零。insn:fsrm[] 通过将原值复制到整数寄存器 _rd_，然后将从整数寄存器 _rs1_ 的最低三位获得的新值写入 csr:frm[]，来交换 csr:frm[] 中的值。insn:frflags[] 和 insn:fsflags[] 针对累积异常标志字段 csr:fflags[]（csr:fcsr[] 位 4{endash}0）类似地定义。'''

@@ -1,0 +1,13 @@
+unit_id = "70abd92c79d0849efc10a880fcaf65b6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Carry-less multiplication is the multiplication in the polynomial ring over
+GF(2).  [#norm:Zbkc_insns]#This extension is a subset of the ext:zbc[] extension, and only
+provides insn:clmul[] and insn:clmulh[].# These are the crucial instructions needed to
+efficiently implement the GHASH operation, a critical operation in some
+cryptographic workloads such as the AES-GCM authenticated encryption scheme.
+See ext:zbc[] for further instruction details for these two instructions.'''
+zh = '''
+无进位乘法是 GF(2) 上多项式环中的乘法。[#norm:Zbkc_insns]##本扩展是 ext:zbc[] 扩展的子集，仅提供 insn:clmul[] 和 insn:clmulh[]。## 这些是高效实现 GHASH 操作所需的关键指令，而 GHASH 操作是一些密码学工作负载（例如 AES-GCM 认证加密方案）中的关键操作。有关这两条指令的更多指令细节，见 ext:zbc[]。'''

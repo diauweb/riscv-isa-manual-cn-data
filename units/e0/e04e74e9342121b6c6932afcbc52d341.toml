@@ -1,0 +1,14 @@
+unit_id = "e04e74e9342121b6c6932afcbc52d341"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* that there is no store instruction program-order-between latexmath:[$i$]
+and latexmath:[$i'$] with a memory store operation overlapping
+latexmath:[$msos$]; and
+* that there is no load instruction program-order-between latexmath:[$i$]
+and latexmath:[$i'$] that was satisfied from an overlapping memory store
+operation slice from a different hart.'''
+zh = '''
+* 在 latexmath:[$i$] 与 latexmath:[$i'$] 之间（按程序顺序）不存在这样的存储指令：其内存存储操作与 latexmath:[$msos$] 重叠；且
+* 在 latexmath:[$i$] 与 latexmath:[$i'$] 之间（按程序顺序）不存在这样的加载指令：它由来自不同硬件线程的重叠内存存储操作分片所满足。'''

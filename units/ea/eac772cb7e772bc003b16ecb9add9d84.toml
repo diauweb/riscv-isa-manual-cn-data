@@ -1,0 +1,20 @@
+unit_id = "eac772cb7e772bc003b16ecb9add9d84"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trFunnelDisInput: Disable Individual Funnel Inputs (trBaseFunnel+0x008)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|15:0 |trFunnelDisInput |*1:* Funnel input *#n* (bit position in register) is disabled. Incoming messages are read from diabled input but discarded.|WARL|<<Undef,Undef>>
+|31:16 |--|Reserved|--|0
+|==='''
+zh = '''
+.*寄存器：trFunnelDisInput：禁用单个漏斗输入 (trBaseFunnel+0x008)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|15:0 |trFunnelDisInput |*1:* 漏斗输入 *#n*（寄存器中的位位置）被禁用。来自禁用输入的传入消息会被读取但被丢弃。|WARL|<<Undef,Undef>>
+|31:16 |--|保留|--|0
+|==='''

@@ -1,0 +1,16 @@
+unit_id = "3a729edbd5982a1a366a6c7269ea58a3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The FCLASS.S instruction examines the value in floating-point register
+_rs1_ and writes to integer register _rd_ a 10-bit mask that indicates
+the class of the floating-point number. The format of the mask is
+described in <<fclass>>. The corresponding bit in _rd_ will
+be set if the property is true and clear otherwise. All other bits in
+_rd_ are cleared. Note that exactly one bit in _rd_ will be set.
+FCLASS.S does not set the floating-point exception flags.
+(((floating-point, classification)))'''
+zh = '''
+FCLASS.S 指令检查浮点寄存器 _rs1_ 中的值，并将指示该浮点数类别的 10 位掩码写入整数寄存器 _rd_。掩码格式在 <<fclass>> 中描述。若相应属性为真，则 _rd_ 中的对应位置位，否则清零。_rd_ 中所有其他位均清零。注意，_rd_ 中恰好会有一个位置位。FCLASS.S 不置位浮点异常标志。
+(((浮点, 分类)))'''

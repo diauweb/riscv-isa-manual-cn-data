@@ -1,0 +1,12 @@
+unit_id = "e126216666e2db171de7eac0fa9a0210"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If any of these operations fail, {abstractcs-cmderr} is set and none of the
+remaining steps are executed. An implementation may detect an upcoming
+failure early, and fail the overall command before it reaches the step
+that would cause failure. If the failure is that the requested register
+does not exist in the hart, {abstractcs-cmderr} must be set to 3 (exception).'''
+zh = '''
+若其中任一操作失败，则设置 {abstractcs-cmderr}，且不再执行剩余步骤。实现可提前检测即将发生的失败，并在到达将导致失败的步骤之前使整个命令失败。若失败原因是所请求的寄存器在硬件线程中不存在，则 {abstractcs-cmderr} 必须设为 3（异常）。'''

@@ -1,0 +1,16 @@
+unit_id = "a00ac768910869b9ccde917595c05664"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vmerge` instructions are encoded as masked instructions (`vm=0`).
+The instructions combine two
+sources as follows.  At elements where the mask value is zero, the
+first operand is copied to the destination element, otherwise the
+second operand is copied to the destination element.  The first
+operand is always a vector register group specified by `vs2`.  The
+second operand is a vector register group specified by `vs1` or a
+scalar `x` register specified by `rs1` or a 5-bit sign-extended
+immediate.'''
+zh = '''
+`vmerge` 指令编码为受掩码指令（`vm=0`）。这些指令按如下方式组合两个源。在掩码值为零的元素处，将第一个操作数复制到目标元素，否则将第二个操作数复制到目标元素。第一个操作数始终是由 `vs2` 指定的向量寄存器组。第二个操作数是由 `vs1` 指定的向量寄存器组，或由 `rs1` 指定的标量 `x` 寄存器，或 5 位符号扩展立即数。'''

@@ -1,0 +1,13 @@
+unit_id = "fc782498de1aca037f51e1c17831fa98"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `vscause` register is a VSXLEN-bit read/write register that is
+VS-mode’s version of supervisor register `scause`, formatted as shown in
+<<vscausereg>>. When V=1, `vscause` substitutes
+for the usual `scause`, so instructions that normally read or modify
+`scause` actually access `vscause` instead. When V=0, `vscause` does not
+directly affect the behavior of the machine.'''
+zh = '''
+`vscause` 寄存器是 VSXLEN 位读写寄存器，是 VS 模式版本的监管寄存器 `scause`，格式如 <<vscausereg>> 所示。当 V=1 时，`vscause` 替代常规 `scause`，因此通常读取或修改 `scause` 的指令实际上改为访问 `vscause`。当 V=0 时，`vscause` 不直接影响机器行为。'''

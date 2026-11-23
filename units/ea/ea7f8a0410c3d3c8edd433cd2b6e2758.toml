@@ -1,0 +1,15 @@
+unit_id = "ea7f8a0410c3d3c8edd433cd2b6e2758"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Among instructions in RV32GC and RV64GC, each aligned memory instruction
+gives rise to exactly one memory operation, with two exceptions. First,
+an unsuccessful SC instruction does not give rise to any memory
+operations. Second, FLD and FSD instructions may each give rise to
+multiple memory operations if XLEN<64, as stated in
+<<fld_fsd>> and clarified below. An aligned AMO
+gives rise to a single memory operation that is both a load operation
+and a store operation simultaneously.'''
+zh = '''
+在 RV32GC 和 RV64GC 的指令中，每条对齐的内存指令恰好产生一个内存操作，但有两个例外。第一，不成功的 SC 指令不产生任何内存操作。第二，当 XLEN<64 时，FLD 和 FSD 指令各自可能产生多个内存操作，如 <<fld_fsd>> 所述并在下文阐明。对齐的 AMO 产生单个同时既是加载操作又是存储操作的内存操作。'''

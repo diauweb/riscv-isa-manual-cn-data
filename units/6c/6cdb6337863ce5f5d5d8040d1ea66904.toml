@@ -1,0 +1,418 @@
+unit_id = "6cdb6337863ce5f5d5d8040d1ea66904"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+If `hgatp`.MODE is changed for a given VMID, an HFENCE.GVMA with
+_rs1_=`x0` (and _rs2_ set to either `x0` or the VMID) must be executed
+to order subsequent guest translations with the MODE change—even if the
+old MODE or new MODE is Bare.
+
+Attempts to execute HFENCE.VVMA or HFENCE.GVMA when V=1 cause a
+virtual-instruction exception, while attempts to do the same in U-mode cause an
+illegal-instruction exception. Attempting to execute HFENCE.GVMA in HS-mode
+when `mstatus`.TVM=1 also causes an illegal-instruction exception.
+
+=== Machine-Level CSRs
+
+The hypervisor extension augments or modifies machine CSRs `mstatus`,
+`mstatush`, `mideleg`, `mip`, and `mie`, and adds CSRs `mtval2` and
+`mtinst`.
+
+==== Machine Status Registers (`mstatus` and `mstatush`)
+
+The hypervisor extension adds two fields, MPV and GVA, to the
+machine-level `mstatus` or `mstatush` CSR, and modifies the behavior of
+several existing `mstatus` fields.
+<<hypervisor-mstatus>> shows the modified
+`mstatus` register when the hypervisor extension is implemented and
+MXLEN=64. When MXLEN=32, the hypervisor extension adds MPV and GVA not
+to `mstatus` but to `mstatush`.
+<<hypervisor-mstatush>> shows the
+`mstatush` register when the hypervisor extension is implemented and
+MXLEN=32.
+
+[[hypervisor-mstatus]]
+.Machine status register (`mstatus`) fpr RV64 when the hypervisor extension is implemented.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 3 :borders {}})
+(draw-box "62" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "40" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "39" {:span 3 :borders {}})
+(draw-box "38" {:span 3 :borders {}})
+(draw-box "37" {:span 3 :borders {}})
+(draw-box "36" {:span 3 :borders {}})
+(draw-box "35" {:span 2 :borders {}})
+(draw-box "34" {:span 2 :borders {}})
+(draw-box "33" {:span 2 :borders {}})
+(draw-box "32" {:span 2 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box "SD" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 8})
+(draw-box "MPV" {:span 3})
+(draw-box "GVA" {:span 3})
+(draw-box "MBE" {:span 3})
+(draw-box "SBE" {:span 3})
+(draw-box "SXL[1:0]" {:span 4})
+(draw-box "UXL[1:0]" {:span 4})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "23" {:span 8 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:borders {}})
+(draw-box "31" {:span 3 :text-align "start" :borders {}})
+(draw-box "23" {:span 3 :text-align "end" :borders {}})
+(draw-box "22" {:span 3 :borders {}})
+(draw-box "21" {:span 3 :borders {}})
+(draw-box "20" {:span 3 :borders {}})
+(draw-box "19" {:span 3 :borders {}})
+(draw-box "18" {:span 3 :borders {}})
+(draw-box "17" {:span 3 :borders {}})
+(draw-box "16" {:span 2 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 6})
+(draw-box "TSR" {:span 3})
+(draw-box "TW" {:span 3})
+(draw-box "TVM" {:span 3})
+(draw-box "MXR" {:span 3})
+(draw-box "SUM" {:span 3})
+(draw-box "MPRV" {:span 3})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box nil {:borders {}})
+(draw-box "9" {:span 6 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 3 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 3 :borders {}})
+(draw-box "4" {:span 3 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "0" {:span 3 :borders {}})
+
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "MPP[1:0]" {:span 3})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box "MPIE" {:span 3})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box "MIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box "SIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+
+(draw-box nil {:borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+
+----
+
+[[hypervisor-mstatush]]
+.Additional machine status register (`mstatush`) for RV32 when the hypervisor extension is implemented.  The format of `mstatus` is unchanged for RV32.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "8" {:span 8 :text-anchor "end" :borders {}})
+(draw-box "7" {:span 3 :borders {}})
+(draw-box "6" {:span 3 :borders {}})
+(draw-box "5" {:span 3 :borders {}})
+(draw-box "4" {:span 3 :borders {}})
+(draw-box "3" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 16})
+(draw-box "MPV" {:span 3})
+(draw-box "GVA" {:span 3})
+(draw-box "MBE" {:span 3})
+(draw-box "SBE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 4})
+
+(draw-box "24" {:span 16 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "4" {:span 4 :borders {}})
+----
+
+The MPV bit (Machine Previous Virtualization Mode) is written by the
+implementation whenever a trap is taken into M-mode. Just as the MPP
+field is set to the (nominal) privilege mode at the time of the trap,
+the MPV bit is set to the value of the virtualization mode V at the time
+of the trap. When an MRET instruction is executed, the virtualization
+mode V is set to MPV, unless MPP=3, in which case V remains 0.
+
+Field GVA (Guest Virtual Address) is written by the implementation
+whenever a trap is taken into M-mode. For any trap (breakpoint, address
+misaligned, access fault, page fault, or guest-page fault) that writes a
+guest virtual address to `mtval`, GVA is set to 1. For any other trap
+into M-mode, GVA is set to 0.
+
+The TSR and TVM fields of `mstatus` affect execution only in HS-mode,
+not in VS-mode. The TW field affects execution in all modes except
+M-mode.
+
+Setting TVM=1 prevents HS-mode from accessing `hgatp` or executing
+HFENCE.GVMA or HINVAL.GVMA, but has no effect on accesses to `vsatp` or
+instructions HFENCE.VVMA or HINVAL.VVMA.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+若针对给定 VMID 更改了 `hgatp`.MODE，则必须执行 __rs1__=`x0`（且 __rs2__ 设置为 `x0` 或该 VMID）的 HFENCE.GVMA，以使后续客户机转换随 MODE 更改排序——即使旧 MODE 或新 MODE 为 Bare。
+
+当 V=1 时尝试执行 HFENCE.VVMA 或 HFENCE.GVMA 将导致虚拟指令异常，而在 U 模式下尝试执行同样操作将导致非法指令异常。当 `mstatus`.TVM=1 时在 HS 模式下尝试执行 HFENCE.GVMA 也将导致非法指令异常。
+
+=== 机器级 CSR
+
+虚拟机监控器扩展增补或修改机器 CSR `mstatus`、`mstatush`、`mideleg`、`mip` 和 `mie`，并新增 CSR `mtval2` 和 `mtinst`。
+
+==== 机器状态寄存器（`mstatus` 和 `mstatush`）
+
+虚拟机监控器扩展向机器级 `mstatus` 或 `mstatush` CSR 新增两个字段 MPV 和 GVA，并修改若干现有 `mstatus` 字段的行为。当实现了虚拟机监控器扩展且 MXLEN=64 时，<<hypervisor-mstatus>> 展示修改后的 `mstatus` 寄存器。当 MXLEN=32 时，虚拟机监控器扩展将 MPV 和 GVA 添加到 `mstatush` 而非 `mstatus`。当实现了虚拟机监控器扩展且 MXLEN=32 时，<<hypervisor-mstatush>> 展示 `mstatush` 寄存器。
+
+[[hypervisor-mstatus]]
+.实现虚拟机监控器扩展时的 RV64 机器状态寄存器（`mstatus`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 3 :borders {}})
+(draw-box "62" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "40" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "39" {:span 3 :borders {}})
+(draw-box "38" {:span 3 :borders {}})
+(draw-box "37" {:span 3 :borders {}})
+(draw-box "36" {:span 3 :borders {}})
+(draw-box "35" {:span 2 :borders {}})
+(draw-box "34" {:span 2 :borders {}})
+(draw-box "33" {:span 2 :borders {}})
+(draw-box "32" {:span 2 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box "SD" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 8})
+(draw-box "MPV" {:span 3})
+(draw-box "GVA" {:span 3})
+(draw-box "MBE" {:span 3})
+(draw-box "SBE" {:span 3})
+(draw-box "SXL[1:0]" {:span 4})
+(draw-box "UXL[1:0]" {:span 4})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "23" {:span 8 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box "2" {:span 4 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:borders {}})
+(draw-box "31" {:span 3 :text-align "start" :borders {}})
+(draw-box "23" {:span 3 :text-align "end" :borders {}})
+(draw-box "22" {:span 3 :borders {}})
+(draw-box "21" {:span 3 :borders {}})
+(draw-box "20" {:span 3 :borders {}})
+(draw-box "19" {:span 3 :borders {}})
+(draw-box "18" {:span 3 :borders {}})
+(draw-box "17" {:span 3 :borders {}})
+(draw-box "16" {:span 2 :borders {}})
+(draw-box "15" {:borders {}})
+(draw-box "14" {:span 2 :borders {}})
+(draw-box "13" {:borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 6})
+(draw-box "TSR" {:span 3})
+(draw-box "TW" {:span 3})
+(draw-box "TVM" {:span 3})
+(draw-box "MXR" {:span 3})
+(draw-box "SUM" {:span 3})
+(draw-box "MPRV" {:span 3})
+(draw-box "XS[1:0]" {:span 3})
+(draw-box "FS[1:0]" {:span 3})
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box nil {:borders {}})
+(draw-box "9" {:span 6 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box nil {:borders {}})
+
+(draw-box nil {:span 32 :borders {}})
+
+(draw-box nil {:borders {}})
+(draw-box "12" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "11" {:borders {}})
+(draw-box "10" {:borders {}})
+(draw-box nil {:borders {}})
+(draw-box "9" {:borders {}})
+(draw-box "8" {:span 2 :borders {}})
+(draw-box "7" {:span 3 :borders {}})
+(draw-box "6" {:span 2 :borders {}})
+(draw-box "5" {:span 3 :borders {}})
+(draw-box "4" {:span 3 :borders {}})
+(draw-box "3" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "0" {:span 3 :borders {}})
+
+(draw-box nil {:borders {:top :border-unrelated :bottom :border-unrelated}})
+(draw-box "MPP[1:0]" {:span 3})
+(draw-box "VS[1:0]" {:span 3})
+(draw-box "SPP" {:span 2})
+(draw-box "MPIE" {:span 3})
+(draw-box "UBE" {:span 2})
+(draw-box "SPIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box "MIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+(draw-box "SIE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 3})
+
+(draw-box nil {:borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "2" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 2 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+
+----
+
+[[hypervisor-mstatush]]
+.当实现虚拟机监控器扩展时，RV32 的附加机器状态寄存器（`mstatush`）。RV32 的 `mstatus` 格式不变。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 8 :text-anchor "start" :borders {}})
+(draw-box "8" {:span 8 :text-anchor "end" :borders {}})
+(draw-box "7" {:span 3 :borders {}})
+(draw-box "6" {:span 3 :borders {}})
+(draw-box "5" {:span 3 :borders {}})
+(draw-box "4" {:span 3 :borders {}})
+(draw-box "3" {:span 2 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 2 :text-anchor "end" :borders {}})
+
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 16})
+(draw-box "MPV" {:span 3})
+(draw-box "GVA" {:span 3})
+(draw-box "MBE" {:span 3})
+(draw-box "SBE" {:span 3})
+(draw-box (text "WPRI" {:font-weight "bold" :font-size 24}) {:span 4})
+
+(draw-box "24" {:span 16 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "4" {:span 4 :borders {}})
+----
+
+MPV 位（Machine Previous Virtualization Mode，机器先前虚拟化模式）在陷入 M 模式时由实现写入。正如 MPP 字段被置为陷阱发生时的（名义）特权模式一样，MPV 位被置为陷阱发生时虚拟化模式 V 的值。当执行 MRET 指令时，虚拟化模式 V 被置为 MPV，除非 MPP=3，此时 V 保持为 0。
+
+字段 GVA（客户机虚拟地址）在陷入 M 模式时由实现写入。对于任何将客户机虚拟地址写入 `mtval` 的陷阱（断点、地址非对齐、访问错误、页错误或客户机页错误），GVA 被置为 1。对于任何其他陷入 M 模式的陷阱，GVA 被置为 0。
+
+`mstatus` 的 TSR 和 TVM 字段仅在 HS 模式下影响执行，在 VS 模式下不影响。TW 字段在除 M 模式外的所有模式下影响执行。
+
+置 TVM=1 阻止 HS 模式访问 `hgatp` 或执行 HFENCE.GVMA 或 HINVAL.GVMA，但对访问 `vsatp` 或指令 HFENCE.VVMA 或 HINVAL.VVMA 没有影响。
+
+[NOTE]
+===='''

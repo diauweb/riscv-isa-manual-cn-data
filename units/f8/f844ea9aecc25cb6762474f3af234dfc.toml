@@ -1,0 +1,13 @@
+unit_id = "f844ea9aecc25cb6762474f3af234dfc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The simplest approach to provide space for extensions that are too large
+for the base 32-bit fixed-width instruction format is to add naturally
+aligned 64-bit instructions. The implementation must still support the
+32-bit base instruction format, but can require that 64-bit instructions
+are aligned on 64-bit boundaries to simplify instruction fetch, with a
+32-bit NOP instruction used as alignment padding where necessary.'''
+zh = '''
+为对于基础 32 位定长指令格式而言过大的扩展提供空间，最简单的方法是添加自然对齐的 64 位指令。实现仍应支持 32 位基础指令格式，但可要求 64 位指令按 64 位边界对齐，以简化取指；必要时使用 32 位 NOP 指令作为对齐填充。'''

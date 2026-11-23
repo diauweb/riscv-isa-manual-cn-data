@@ -1,0 +1,22 @@
+unit_id = "a7b44391b506d1ab67447500917cd32a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. update the shared memory state with latexmath:[$mso$];
+. update latexmath:[$i.\textit{mem\_stores}$] to indicate that
+latexmath:[$mso$] was propagated; and
+. restart any speculative instructions which have violated coherence as
+a result of this, i.e., for every non-finished instruction
+latexmath:[$i'$] program-order-after latexmath:[$i$] and every memory
+load operation latexmath:[$mlo'$] of latexmath:[$i'$] that was satisfied
+from latexmath:[$msoss'$], if there exists a memory store operation
+slice latexmath:[$msos'$] in latexmath:[$msoss'$] that overlaps with
+latexmath:[$mso$] and is not from latexmath:[$mso$], and
+latexmath:[$msos'$] is not from a program-order-successor of
+latexmath:[$i$], restart latexmath:[$i'$] and its _restart-dependents_
+(see <<sat_by_forwarding, Satisfy memory load operation by forwarding from unpropagated stores>>).'''
+zh = '''
+. 用 latexmath:[$mso$] 更新共享内存状态；
+. 更新 latexmath:[$i.\textit{mem\_stores}$]，以表明 latexmath:[$mso$] 已被传播；且
+. 重启任何因此违反一致性的推测指令，即：对于每个未完成且程序顺序在 latexmath:[$i$] 之后的指令 latexmath:[$i'$]，以及 latexmath:[$i'$] 的每个由 latexmath:[$msoss'$] 满足的内存加载操作 latexmath:[$mlo'$]，若存在 latexmath:[$msoss'$] 中与 latexmath:[$mso$] 重叠且并非来自 latexmath:[$mso$] 的内存存储操作分片 latexmath:[$msos'$]，且 latexmath:[$msos'$] 并非来自 latexmath:[$i$] 的程序顺序后继，则重启 latexmath:[$i'$] 及其__重启依赖项__（见 <<sat_by_forwarding, 通过从尚未传播的存储转发来满足内存加载操作>>）。'''

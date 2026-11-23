@@ -1,0 +1,14 @@
+unit_id = "63f66de2a3d50f6e1a517c282025ad61"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The execution environment is responsible for ensuring the eventual
+forward progress of each of its harts. For a given hart, that
+responsibility is suspended while the hart is exercising a mechanism
+that explicitly waits for an event, such as the wait-for-interrupt
+instruction defined in Volume II of this specification; and that
+responsibility ends if the hart is terminated. The following events
+constitute forward progress:'''
+zh = '''
+执行环境负责确保其每个 hart 最终向前推进。对于给定 hart，当该 hart 正在使用显式等待事件的机制（例如本规范第二卷中定义的等待中断指令）时，该责任暂停；如果该 hart 终止，该责任终止。以下事件构成向前推进：'''

@@ -1,0 +1,52 @@
+unit_id = "6acbd0fee6a2171a7156a81baf775c37"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Supervisor Control Transfer Records Depth Register Field Definitions
+[%unbreakable]
+[width="100%",cols="15%,85%",options="header",]
+|===
+|Field |Description
+|DEPTH |[#norm:sctrdepth-depth_op0]#WARL field that selects the depth of the CTR buffer.# Encodings:
+
+‘000 - 16
+
+‘001 - 32
+
+‘010 - 64
+
+‘011 - 128
+
+‘100 - 256
+
+'11x - reserved
+
+[#norm:sctrdepth-depth_op1]#The depth of the CTR buffer dictates the number of entries to which the hardware records transfers. For a depth of N, the hardware records transfers to entries 0..N-1. All <<_entry_registers, Entry Registers>> read as '0' and are read-only when the selected entry is in the range N to 255.  When the depth is increased, the newly accessible entries contain unspecified but legal values.#
+
+[#norm:sctrdepth-depth_param]#It is implementation-specific which DEPTH value(s) are supported.#
+|==='''
+zh = '''
+.监管控制转移记录深度寄存器字段定义
+[%unbreakable]
+[width="100%",cols="15%,85%",options="header",]
+|===
+|字段 |描述
+|DEPTH |[#norm:sctrdepth-depth_op0]##选择 CTR 缓冲区深度的 WARL 字段。## 编码：
+
+‘000 - 16
+
+‘001 - 32
+
+‘010 - 64
+
+‘011 - 128
+
+‘100 - 256
+
+'11x - 保留
+
+[#norm:sctrdepth-depth_op1]##CTR 缓冲区的深度决定硬件记录转移所至的表项数。对于深度 N，硬件将转移记录到表项 0..N-1。当所选表项在 N 到 255 范围内时，所有 <<_entry_registers, 表项寄存器>> 读为 '0' 且为只读。当深度增加时，新可访问的表项包含未指定但合法的值。##
+
+[#norm:sctrdepth-depth_param]##支持哪些 DEPTH 值由实现定义。##
+|==='''

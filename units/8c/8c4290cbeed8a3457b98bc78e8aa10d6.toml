@@ -1,0 +1,12 @@
+unit_id = "8c4290cbeed8a3457b98bc78e8aa10d6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vreduction_scalar_def]#Vector reduction operations take a vector register group of elements
+and a scalar held in element 0 of a vector register group, and perform a
+reduction using some binary operator, to produce a scalar result in
+element 0 of a vector register group.#  [#norm:vreduction_scalar_disregard_LMUL]#The scalar input and output operands
+are held in element 0 of a group with EMUL = ceil(EEW/VLEN), regardless of LMUL setting.#'''
+zh = '''
+[#norm:vreduction_scalar_def]##向量归约操作取一个元素向量寄存器组和一个保存在向量寄存器组元素 0 中的标量，使用某种二元运算符执行归约，以在向量寄存器组的元素 0 中产生标量结果。##  [#norm:vreduction_scalar_disregard_LMUL]##标量输入和输出操作数保存在 EMUL = ceil(EEW/VLEN) 的组的元素 0 中，无论 LMUL 设置如何。##'''

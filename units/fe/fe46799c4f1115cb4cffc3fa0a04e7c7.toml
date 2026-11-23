@@ -1,0 +1,128 @@
+unit_id = "fe46799c4f1115cb4cffc3fa0a04e7c7"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61",options="header"]
+|===
+|Field |Description
+|[[accessregister-cmdtype]] `((cmdtype))`
+a|This is 0 to indicate Access Register Command.
+|[[accessregister-aarsize]] `((aarsize))`
+a|
+
+2 (32bit): Access the lowest 32 bits of the register.
+
+
+3 (64bit): Access the lowest 64 bits of the register.
+
+
+4 (128bit): Access the lowest 128 bits of the register.
+
+If {accessregister-aarsize} specifies a size larger than the register's actual size,
+then the access must fail. If a register is accessible, then reads of {accessregister-aarsize}
+less than or equal to the register's actual size must be supported.
+Writing less than the full register may be supported, but what
+happens to the high bits in that case is UNSPECIFIED.
+
+This field controls the Argument Width as referenced in
+xref:tab:datareg[].
+|[[accessregister-aarpostincrement]] `((aarpostincrement))`
+a|
+
+0 (disabled): No effect. This variant must be supported.
+
+
+1 (enabled): After a successful register access, {accessregister-regno} is
+incremented. Incrementing past the highest supported value
+causes {accessregister-regno} to become UNSPECIFIED.  Supporting
+this variant is optional. It is undefined whether the increment
+happens when {accessregister-transfer} is 0.
+|[[accessregister-postexec]] `((postexec))`
+a|
+
+0 (disabled): No effect. This variant must be supported, and is the only
+supported one if {abstractcs-progbufsize} is 0.
+
+
+1 (enabled): Execute the program in the Program Buffer exactly once after
+performing the transfer, if any. Supporting this variant is
+optional.
+|[[accessregister-transfer]] `((transfer))`
+a|
+
+0 (disabled): Don't do the operation specified by {accessregister-write}.
+
+
+1 (enabled): Do the operation specified by {accessregister-write}.
+
+This bit can be used to just execute the Program Buffer without
+having to worry about placing valid values into {accessregister-aarsize} or {accessregister-regno}.
+|[[accessregister-write]] `((write))`
+a|When {accessregister-transfer} is set:
+
+0 (arg0): Copy data from the specified register into `arg0` portion
+of `data`.
+
+
+1 (register): Copy data from `arg0` portion of `data` into the
+specified register.
+|[[accessregister-regno]] `((regno))`
+a|Number of the register to access, as described in
+xref:tab:regno[].
+{csr-dpc} may be used as an alias for PC if this command is
+supported on a non-halted hart.
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61",options="header"]
+|===
+|字段 |说明
+|[[accessregister-cmdtype]] `((cmdtype))`
+a|此值为 0，表示访问寄存器命令。
+|[[accessregister-aarsize]] `((aarsize))`
+a|
+
+2（32 位）：访问寄存器的最低 32 位。
+
+
+3（64 位）：访问寄存器的最低 64 位。
+
+
+4（128 位）：访问寄存器的最低 128 位。
+
+若 {accessregister-aarsize} 指定的尺寸大于寄存器的实际尺寸，则该访问必须失败。若寄存器可访问，则必须支持 {accessregister-aarsize} 小于或等于寄存器实际尺寸的读取。可支持写入少于完整寄存器，但在此情况下高位发生什么为未规定。
+
+此字段控制 xref:tab:datareg[] 中所引用的参数宽度。
+|[[accessregister-aarpostincrement]] `((aarpostincrement))`
+a|
+
+0（禁用）：无效果。必须支持此变体。
+
+
+1（启用）：成功访问寄存器后，{accessregister-regno} 被递增。递增超过所支持的最高值将使 {accessregister-regno} 变为未规定。支持此变体为可选。当 {accessregister-transfer} 为 0 时是否发生递增未定义。
+|[[accessregister-postexec]] `((postexec))`
+a|
+
+0（禁用）：无效果。必须支持此变体，且当 {abstractcs-progbufsize} 为 0 时它是唯一受支持的变体。
+
+
+1（启用）：在执行传输（若有）之后，恰好执行程序缓冲区中的程序一次。支持此变体为可选。
+|[[accessregister-transfer]] `((transfer))`
+a|
+
+0（禁用）：不执行 {accessregister-write} 所指定的操作。
+
+
+1（启用）：执行 {accessregister-write} 所指定的操作。
+
+此位可用于仅执行程序缓冲区，而无需担心需将有效值放入 {accessregister-aarsize} 或 {accessregister-regno}。
+|[[accessregister-write]] `((write))`
+a|当 {accessregister-transfer} 置位时：
+
+0（arg0）：将数据从所指定寄存器复制到 `data` 的 `arg0` 部分。
+
+
+1（register）：将数据从 `data` 的 `arg0` 部分复制到所指定寄存器。
+|[[accessregister-regno]] `((regno))`
+a|要访问的寄存器编号，如 xref:tab:regno[] 中所述。若此命令在非停机硬件线程上受支持，则 {csr-dpc} 可用作 PC 的别名。
+|==='''

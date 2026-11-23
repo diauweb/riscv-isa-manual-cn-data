@@ -1,0 +1,12 @@
+unit_id = "8b895c46a91ba9a386391c44f14de715"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Each individual bit in register `mip` may be writable or may be
+read-only. When bit _i_ in `mip` is writable, a pending interrupt _i_
+can be cleared by writing 0 to this bit. If interrupt _i_ can become
+pending but bit _i_ in `mip` is read-only, the implementation must
+provide some other mechanism for clearing the pending interrupt.'''
+zh = '''
+寄存器 `mip` 中的每个单独位可以是可写的或只读的。当 `mip` 中的位 _i_ 可写时，可通过向该位写 0 来清除挂起中断 _i_。若中断 _i_ 可成为挂起，但 `mip` 中的位 _i_ 为只读，则实现应提供其他机制来清除挂起中断。'''

@@ -1,0 +1,11 @@
+unit_id = "537cd15adef92718ed12140e4289706d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mcountinhibit_clear_op]#When the csr::[cy], csr::[ir], or HPM__n__ bit in the csr:mcountinhibit[] register is clear,
+the csr:mcycle[], csr:minstret[], or `mhpmcounter__n__` register increments as usual.
+When the csr::[cy], csr::[ir], or HPM__n__ bit is set, the corresponding counter does
+not increment.#'''
+zh = '''
+[#norm:mcountinhibit_clear_op]##当 csr:mcountinhibit[] 寄存器中的 csr::[cy]、csr::[ir] 或 HPM__n__ 位为 0 时，csr:mcycle[]、csr:minstret[] 或 `mhpmcounter__n__` 寄存器按正常方式递增。当 csr::[cy]、csr::[ir] 或 HPM__n__ 位被置位时，相应计数器不递增。##'''

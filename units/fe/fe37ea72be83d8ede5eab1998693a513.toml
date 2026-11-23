@@ -1,0 +1,29 @@
+unit_id = "fe37ea72be83d8ede5eab1998693a513"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* (e) executes speculatively and enters the second hart's private
+store buffer (but does not drain to memory)
+* (f) executes speculatively and forwards its return value 1 from
+(e) in the store buffer
+* (g) executes speculatively and reads the value 0 from memory
+* (a) executes, enters the first hart's private store buffer, and
+drains to memory
+* (b) executes and retires
+* (c) executes, enters the first hart's private store buffer, and
+drains to memory
+* (d) executes and reads the value 1 from memory
+* (e), (f), and (g) commit, since the speculation turned out to be
+correct
+* (e) drains from the store buffer to memory'''
+zh = '''
+* (e) 推测执行并进入第二个硬件线程的私有存储缓冲器（但不排空到内存）
+* (f) 推测执行并从存储缓冲器中的 (e) 转发其返回值 1
+* (g) 推测执行并从内存读取值 0
+* (a) 执行，进入第一个硬件线程的私有存储缓冲器，并排空到内存
+* (b) 执行并退休
+* (c) 执行，进入第一个硬件线程的私有存储缓冲器，并排空到内存
+* (d) 执行并从内存读取值 1
+* (e)、(f) 和 (g) 提交，因为推测结果正确
+* (e) 从存储缓冲器排空到内存'''

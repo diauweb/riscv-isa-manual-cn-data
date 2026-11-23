@@ -1,0 +1,105 @@
+unit_id = "1ca44d8a9e26b3a2d4d96f9513670a00"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+For guest-page faults, the trap instruction register is written with a
+special pseudoinstruction value if: (a) the fault is caused by an
+implicit memory access for VS-stage address translation, and (b) a
+nonzero value (the faulting guest physical address) is written to
+`mtval2` or `htval`. If both conditions are met, the value written to
+`mtinst` or `htinst` must be taken from
+<<pseudoinsts>>; zero is not allowed.
+
+[[pseudoinsts]]
+.Special pseudoinstruction values for guest-page faults.  The RV32 values are used when VSXLEN=32, and the RV64 values when VSXLEN=64.
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|Value |Meaning
+|`0x00002000` +
+`0x00002020`
+|32-bit read for VS-stage address translation (RV32) +
+32-bit write for VS-stage address translation (RV32)
+
+|`0x00003000` +
+`0x00003020`
+|64-bit read for VS-stage address translation (RV64) +
+64-bit write for VS-stage address translation (RV64)
+|===
+
+The defined pseudoinstruction values are designed to correspond closely
+with the encodings of basic loads and stores, as illustrated by
+<<pseudoinsts-basis>>.
+
+[[pseudoinsts-basis]]
+.Standard instructions corresponding to the special psudoinstructions of <<pseudoinsts>>.
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|Encoding |Instruction
+|`0x00002003` +
+`0x00002023`
+|`lw x0,0(x0)` +
+`sw x0,0(x0)`
+
+|`0x00003003` +
+`0x00003023`
+|`ld x0,0(x0)` +
+`sd x0,0(x0)`
+|===
+
+A _write_ pseudoinstruction (`0x00002020` or `0x00003020`) is used for
+the case that the machine is attempting automatically to update bits A
+and/or D in VS-level page tables. All other implicit memory accesses for
+VS-stage address translation will be reads. If a machine never
+automatically updates bits A or D in VS-level page tables (leaving this
+to software), the _write_ case will never arise. The fact that such a
+page table update must actually be atomic, not just a simple write, is
+ignored for the pseudoinstruction.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+对于客户机页错误，若满足以下条件，则陷阱指令寄存器写入特殊伪指令值：(a) 该错误由 VS 阶段地址转换的隐式内存访问引起，且 (b) 非零值（发生错误的客户机物理地址）写入 `mtval2` 或 `htval`。若两个条件均满足，则写入 `mtinst` 或 `htinst` 的值必须取自 <<pseudoinsts>>；不允许为零。
+
+[[pseudoinsts]]
+.客户机页错误的特殊伪指令值。RV32 值在 VSXLEN=32 时使用，RV64 值在 VSXLEN=64 时使用。
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|值 |含义
+|`0x00002000` +
+`0x00002020`
+|用于 VS 阶段地址转换的 32 位读（RV32） +
+用于 VS 阶段地址转换的 32 位写（RV32）
+
+|`0x00003000` +
+`0x00003020`
+|用于 VS 阶段地址转换的 64 位读（RV64） +
+用于 VS 阶段地址转换的 64 位写（RV64）
+|===
+
+所定义的伪指令值经设计以与基本加载和存储的编码紧密对应，如 <<pseudoinsts-basis>> 所图示。
+
+[[pseudoinsts-basis]]
+.与 <<pseudoinsts>> 的特殊伪指令对应的标准指令。
+[%autowidth,float="center",align="center",cols="<,<",options="header"]
+|===
+|编码 |指令
+|`0x00002003` +
+`0x00002023`
+|`lw x0,0(x0)` +
+`sw x0,0(x0)`
+
+|`0x00003003` +
+`0x00003023`
+|`ld x0,0(x0)` +
+`sd x0,0(x0)`
+|===
+
+_写_伪指令（`0x00002020` 或 `0x00003020`）用于机器尝试自动更新 VS 级页表中 A 和/或 D 位的情况。为 VS 阶段地址转换的所有其他隐式内存访问将是读。若机器从不自动更新 VS 级页表中的 A 或 D 位（将其留给软件），则_写_情况将永远不会出现。此类页表更新实际上必须是原子操作而非仅仅简单写入这一事实，在伪指令中被忽略。
+
+[NOTE]
+===='''

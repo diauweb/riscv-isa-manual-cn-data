@@ -1,0 +1,13 @@
+unit_id = "4b00e5c05c9d6888b40e475f22ea3549"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatus_fs_wr]#Changing the setting of FS has no effect on the contents of the
+floating-point register state. In particular, setting FS=Off does not
+destroy the state, nor does setting FS=Initial clear the contents.# Similarly,
+[#norm:mstatus_vs_wr]#the setting of VS has no effect on the contents of the vector
+register state.#
+Other extensions, however, might not preserve state when set to Off.'''
+zh = '''
+[#norm:mstatus_fs_wr]##更改 FS 的设置对浮点寄存器状态的内容没有影响。特别是，设置 FS=Off 不会破坏状态，设置 FS=Initial 也不会清除内容。##类似地，[#norm:mstatus_vs_wr]##VS 的设置对向量寄存器状态的内容没有影响。##然而，其他扩展在设置为 Off 时可能不保留状态。'''

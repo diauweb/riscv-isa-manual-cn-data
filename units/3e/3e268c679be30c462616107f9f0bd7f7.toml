@@ -1,0 +1,12 @@
+unit_id = "3e268c679be30c462616107f9f0bd7f7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For RV32C, _shamt[5]_ must be zero; the code points with _shamt[5]_=1
+are designated for custom extensions. For RV32C and RV64C, the shift
+amount must be non-zero; the code points with _shamt_=0 are HINTs. For
+all base ISAs, the code points with `_rd_=x0` are HINTs, except those
+with _shamt[5]_=1 in RV32C.'''
+zh = '''
+对于 RV32C，_shamt[5]_ 应为 0；_shamt[5]_=1 的编码点指定用于自定义扩展。对于 RV32C 和 RV64C，移位量应为非零；_shamt_=0 的编码点为 HINT。对于所有基础 ISA，`_rd_=x0` 的编码点为 HINT，但 RV32C 中 _shamt[5]_=1 的编码点除外。'''

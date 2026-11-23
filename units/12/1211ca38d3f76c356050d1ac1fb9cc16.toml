@@ -1,0 +1,170 @@
+unit_id = "1211ca38d3f76c356050d1ac1fb9cc16"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Typically, PTEs are marked as Valid by the operating system following a
+page-fault exception or during system calls for memory mapping. In such cases,
+the trap handler commonly employs an `SRET` instruction to return from the trap.
+When Svvptc is implemented, the stores it executes to change the Valid bit
+of the PTEs from 0 to 1 then become visible to implicit references to those PTEs
+within a bounded timeframe. This visibility pertains to the instructions like
+the one causing the page-fault or those accessing new memory regions. A
+memory-management fence can be used to force immediate visibility of these PTE
+updates to all implicit references associated with instructions following the
+memory-management fence. However, when Svvptc is implemented, visibility (in a
+bounded amount of time) is guaranteed and use of a memory-management fence is
+not required in these scenarios. While this approach might lead to an occasional
+gratuitous page-fault, the performance benefit of omitting the memory-management
+fence instructions outweighs the occasional cost of a gratuitous page-fault.
+=======
+
+[[sec:ssqosid]]
+== "Ssqosid" Standard Extension for Quality-of-Service (QoS) Identifiers, Version 1.0
+
+Quality of Service (QoS) is defined as the minimal end-to-end performance
+guaranteed in advance by a service level agreement (SLA) to a workload.
+Performance metrics might include measures such as instructions per cycle (IPC),
+latency of service, etc.
+
+When multiple workloads execute concurrently on modern processors—equipped with
+large core counts, multiple cache hierarchies, and multiple memory
+controllers—the performance of any given workload becomes less deterministic, or
+even non-deterministic, due to shared resource contention.
+
+To manage performance variability, system software needs resource allocation and
+monitoring capabilities. These capabilities allow for the reservation of
+resources like cache and bandwidth, thus meeting individual performance targets
+while minimizing interference. For resource management, hardware should provide
+monitoring features that allow system software to profile workload resource
+consumption and allocate resources accordingly.
+
+To facilitate this, the QoS Identifiers extension (Ssqosid) introduces the
+`srmcfg` register, which configures a hart with two identifiers: a Resource
+Control ID (`RCID`) and a Monitoring Counter ID (`MCID`). These identifiers
+accompany each request issued by the hart to shared resource controllers.
+
+Additional metadata, like the nature of the memory access and the ID of the
+originating supervisor domain, can accompany `RCID` and `MCID`. Resource
+controllers may use this metadata for differentiated service such as a different
+capacity allocation for code storage vs. data storage. Resource controllers can
+use this data for security policies such as not exposing statistics of one
+security domain to another.
+
+These identifiers are crucial for the RISC-V Capacity and Bandwidth Controller
+QoS Register Interface (CBQRI) specification, which provides methods for setting
+resource usage limits and monitoring resource consumption. The `RCID` controls
+resource allocations, while the `MCID` is used for tracking resource usage.
+
+=== Supervisor Resource Management Configuration register
+
+The `srmcfg` register is an SXLEN-bit read/write register used to configure a
+Resource Control ID (`RCID`) and a Monitoring Counter ID (`MCID`). Both `RCID`
+and `MCID` are WARL fields. The register is formatted as shown in <<SRMCFG64>>
+when SXLEN=64 and <<SRMCFG32>> when SXLEN=32.
+
+The `RCID` and `MCID` accompany each request made by the hart to shared resource
+controllers. The `RCID` is used to determine the resource allocations (e.g.,
+cache occupancy limits, memory bandwidth limits, etc.) to enforce. The `MCID` is
+used to identify a counter to monitor resource usage.
+
+[[SRMCFG64]]
+.Supervisor Resource Management Configuration (`srmcfg`) register for SXLEN=64
+
+[wavedrom, , ]
+....
+{reg: [
+  {bits: 12, name: 'RCID'},
+  {bits:  4, name: 'WPRI'},
+  {bits: 12, name: 'MCID'},
+  {bits: 36, name: 'WPRI'},
+], config:{lanes: 2, hspace:1024}}
+....
+
+[[SRMCFG32]]
+.Supervisor Resource Management Configuration (`srmcfg`) register for SXLEN=32
+
+[wavedrom, , ]
+....
+{reg: [
+  {bits: 12, name: 'RCID'},
+  {bits:  4, name: 'WPRI'},
+  {bits: 12, name: 'MCID'},
+  {bits:  4, name: 'WPRI'},
+], config:{lanes: 1, hspace:1024}}
+....
+
+The `RCID` and `MCID` configured in the `srmcfg` CSR apply to all privilege
+modes of software execution on that hart by default, but this behavior may be
+overridden by future extensions.
+
+If extension Smstateen is implemented together with Ssqosid, then Ssqosid also
+requires the bit 55 in `mstateen0` introduced by Priv 1.14 to be implemented. If
+bit 55 of `mstateen0` is 0, attempts to access `srmcfg` in privilege modes less
+privileged than M-mode raise an illegal-instruction exception. If bit 55 of
+`mstateen0` is 1 or if extension Smstateen is not implemented, attempts to
+access `srmcfg` when `V=1` raise a virtual-instruction exception.
+
+[NOTE]
+===='''
+zh = '''
+[NOTE]
+====
+通常，在发生页错误异常之后或在用于内存映射的系统调用期间，操作系统会将 PTE 标记为有效。在此类情况下，陷阱处理程序通常使用 `SRET` 指令从陷阱返回。当实现了 Svvptc 扩展时，它为将 PTE 的有效位从 0 改为 1 而执行的存储，随后会在有界时间范围内对此类 PTE 的隐式引用变为可见。这种可见性涉及引发页错误的指令或访问新内存区域的指令等。内存管理屏障可用于强制使这些 PTE 更新立即对内存管理屏障之后指令相关的所有隐式引用可见。然而，当实现了 Svvptc 扩展时，在有界时间内可见性得到保证，且在这些场景中不需要使用内存管理屏障。尽管这种方法可能导致偶发的无端页错误，但省略内存管理屏障指令带来的性能收益超过了偶发无端页错误的代价。
+=======
+
+[[sec:ssqosid]]
+== 服务质量的“Ssqosid”标准扩展标识符（QoS），版本 1.0
+
+服务质量（QoS）的定义为服务级别协议（SLA）事先向工作负载保证的最小端到端性能。性能指标可能包括每周期指令数（IPC）、服务延迟等度量。
+
+当多个工作负载在现代处理器（配备大量核心、多个缓存层次结构和多个内存控制器）上并发执行时，由于共享资源争用，任何给定工作负载的性能变得不太确定，甚至非确定。
+
+为管理性能波动，系统软件需要资源分配和监控能力。这些能力允许预留如高速缓存和带宽等资源，从而在最小化干扰的同时满足个体性能目标。对于资源管理，硬件宜提供监控功能，使系统软件能够分析工作负载的资源消耗并相应地分配资源。
+
+为促进这一点，QoS 标识符扩展（Ssqosid）引入了 `srmcfg` 寄存器，它为硬件线程配置两个标识符：资源控制 ID（`RCID`）和监控计数器 ID（`MCID`）。这些标识符伴随硬件线程向共享资源控制器发出的每个请求。
+
+附加元数据，例如内存访问的性质和发起的监管者域的 ID，可与 `RCID` 和 `MCID` 一起提供。资源控制器可将这些元数据用于差异化服务，例如为代码存储与数据存储分配不同容量。资源控制器可将这些数据用于安全策略，例如不将一个安全域的统计信息暴露给另一个安全域。
+
+这些标识符对于 RISC-V 容量和带宽控制器 QoS 寄存器接口（CBQRI）规范至关重要，该规范提供设置资源使用限制和监控资源消耗的方法。`RCID` 控制资源分配，而 `MCID` 用于跟踪资源使用。
+
+=== 监管者资源管理配置寄存器
+
+`srmcfg` 寄存器是一个 SXLEN 位读/写寄存器，用于配置资源控制 ID（`RCID`）和监控计数器 ID（`MCID`）。`RCID` 和 `MCID` 均为 WARL 字段。当 SXLEN=64 时，该寄存器格式如 <<SRMCFG64>> 所示；当 SXLEN=32 时，如 <<SRMCFG32>> 所示。
+
+`RCID` 和 `MCID` 伴随硬件线程向共享资源控制器发出的每个请求。`RCID` 用于确定要实施的资源分配（例如，高速缓存占用限制、内存带宽限制等）。`MCID` 用于标识监控资源使用的计数器。
+
+[[SRMCFG64]]
+.当 SXLEN=64 时的监管者资源管理配置（`srmcfg`）寄存器
+
+[wavedrom, , ]
+....
+{reg: [
+  {bits: 12, name: 'RCID'},
+  {bits:  4, name: 'WPRI'},
+  {bits: 12, name: 'MCID'},
+  {bits: 36, name: 'WPRI'},
+], config:{lanes: 2, hspace:1024}}
+....
+
+[[SRMCFG32]]
+.当 SXLEN=32 时的监管者资源管理配置（`srmcfg`）寄存器
+
+[wavedrom, , ]
+....
+{reg: [
+  {bits: 12, name: 'RCID'},
+  {bits:  4, name: 'WPRI'},
+  {bits: 12, name: 'MCID'},
+  {bits:  4, name: 'WPRI'},
+], config:{lanes: 1, hspace:1024}}
+....
+
+`srmcfg` CSR 中配置的 `RCID` 和 `MCID` 默认适用于该硬件线程上软件执行的所有特权模式，但未来扩展可覆盖此行为。
+
+若扩展 Smstateen 与 Ssqosid 一起实现，则 Ssqosid 还要求实现由 Priv 1.14 引入的 `mstateen0` 中的第 55 位。若 `mstateen0` 的第 55 位为 0，则在特权级低于 M 模式的模式下尝试访问 `srmcfg` 将引发非法指令异常。若 `mstateen0` 的第 55 位为 1，或未实现扩展 Smstateen，则在 `V=1` 时尝试访问 `srmcfg` 将引发虚拟指令异常。
+
+[NOTE]
+===='''

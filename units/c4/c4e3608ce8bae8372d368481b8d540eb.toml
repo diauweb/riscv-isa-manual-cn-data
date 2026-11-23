@@ -1,0 +1,17 @@
+unit_id = "c4e3608ce8bae8372d368481b8d540eb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a hart is executing in privilege mode _x_, interrupts are globally
+enabled when __x__IE=1 and globally disabled when __x__IE=0. Interrupts for
+lower-privilege modes, __w__<__x__, are always globally
+disabled regardless of the setting of any global __w__IE bit for the
+lower-privilege mode. Interrupts for higher-privilege modes,
+__y__>__x__, are always globally enabled regardless of the
+setting of the global __y__IE bit for the higher-privilege mode.
+Higher-privilege-level code can use separate per-interrupt enable bits
+to disable selected higher-privilege-mode interrupts before ceding
+control to a lower-privilege mode.'''
+zh = '''
+当硬件线程在特权模式 _x_ 下执行时，若 __x__IE=1 则中断全局使能，若 __x__IE=0 则中断全局禁用。对于较低特权模式 __w__<__x__ 的中断，无论该较低特权模式的全局 __w__IE 位如何设置，始终全局禁用。对于较高特权模式 __y__>__x__ 的中断，无论该较高特权模式的全局 __y__IE 位如何设置，始终全局使能。较高特权级代码可使用单独的每中断使能位，在将控制权交给较低特权模式之前禁用选定的较高特权模式中断。'''

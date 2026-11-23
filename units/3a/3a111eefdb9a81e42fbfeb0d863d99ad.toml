@@ -1,0 +1,14 @@
+unit_id = "3a111eefdb9a81e42fbfeb0d863d99ad"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `FENCE.TSO` instruction is encoded as a `FENCE` instruction
+with _fm_=`1000`, _predecessor_=`RW`, and _successor_=`RW`. `FENCE.TSO` orders
+all load operations in its predecessor set before all memory operations
+in its successor set, and all store operations in its predecessor set
+before all store operations in its successor set. This leaves `non-AMO`
+store operations in the `FENCE.TSO's` predecessor set unordered with
+`non-AMO` loads in its successor set.'''
+zh = '''
+`FENCE.TSO` 指令编码为 _fm_=`1000`、_predecessor_=`RW` 且 _successor_=`RW` 的 `FENCE` 指令。`FENCE.TSO` 将其前驱集合中的所有加载操作排序在其后继集合中的所有内存操作之前，并将其前驱集合中的所有存储操作排序在其后继集合中的所有存储操作之前。这使得 `FENCE.TSO's` 前驱集合中的 `non-AMO` 存储操作与其后继集合中的 `non-AMO` 加载操作之间不排序。'''

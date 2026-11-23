@@ -1,0 +1,14 @@
+unit_id = "69e44c16c2d7b69f3872a66a28b3614d"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* that there is no store instruction program-order-between _i_
+and _i'_ with a memory store operation overlapping
+_msos_; and
+* that there is no load instruction program-order-between _i_
+and _i'_ that was satisfied from an overlapping memory store
+operation slice from a different hart.'''
+zh = '''
+* 在 _i_ 与 _i'_ 之间（按程序顺序）不存在这样的存储指令：其内存存储操作与 _msos_ 重叠；且
+* 在 _i_ 与 _i'_ 之间（按程序顺序）不存在这样的加载指令：它由来自不同硬件线程的重叠内存存储操作分片所满足。'''

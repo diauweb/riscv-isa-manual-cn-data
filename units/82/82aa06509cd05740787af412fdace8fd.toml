@@ -1,0 +1,12 @@
+unit_id = "82aa06509cd05740787af412fdace8fd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: If no elements are active, no additions are performed, so the scalar in
+`vs1[0]` is simply copied to the destination register, without canonicalizing
+NaN values and without setting any exception flags.  This behavior preserves
+the handling of NaNs, exceptions, and rounding when autovectorizing a scalar
+summation loop.'''
+zh = '''
+NOTE: 如果没有活跃元素，则不执行任何加法，因此 `vs1[0]` 中的标量被简单复制到目标寄存器，不规范化 NaN 值也不设置任何异常标志。此行为在自动向量化标量求和循环时保留了 NaN、异常和舍入的处理。'''

@@ -1,0 +1,132 @@
+unit_id = "45027f4392e437a13b6b403d3b37d386"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+.Hypervisor time delta register.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htimedelta" {:font-size 20 :span 32})
+
+(draw-box "64" {:span 32 :borders {}})
+----
+
+When XLEN=32, `htimedeltah` is a 32-bit read/write register
+that aliases bits 63:32 of `htimedelta`.
+Register `htimedeltah` does not exist when XLEN=64.
+
+==== Hypervisor Trap Value Register (`htval`)
+
+The `htval` register is an HSXLEN-bit read/write register formatted as
+shown in <<htvalreg>>. When a trap is taken into
+HS-mode, `htval` is written with additional exception-specific
+information, alongside `stval`, to assist software in handling the trap.
+
+[[htvalreg]]
+.Hypervisor trap value register (`htval`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "HSXLEN-1" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htval" {:font-size 20 :span 32})
+
+(draw-box "HSXLEN" {:span 32 :borders {}})
+----
+
+When a guest-page-fault trap is taken into HS-mode, `htval` is written
+with either zero or the guest physical address that faulted, shifted
+right by 2 bits. For other traps, `htval` is set to zero, but a future
+standard or extension may redefine `htval's` setting for other traps.
+
+A guest-page fault may arise due to an implicit memory access during
+first-stage (VS-stage) address translation, in which case a guest
+physical address written to `htval` is that of the implicit memory
+access that faulted—for example, the address of a VS-level page table
+entry that could not be read. (The guest physical address corresponding
+to the original virtual address is unknown when VS-stage translation
+fails to complete.) Additional information is provided in CSR `htinst`
+to disambiguate such situations.
+
+Otherwise, for misaligned loads and stores that cause guest-page faults,
+a nonzero guest physical address in `htval` corresponds to the faulting
+portion of the access as indicated by the virtual address in `stval`.
+For instruction guest-page faults on systems with variable-length
+instructions, a nonzero `htval` corresponds to the faulting portion of
+the instruction as indicated by the virtual address in `stval`.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+.虚拟机监控器时间差寄存器。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htimedelta" {:font-size 20 :span 32})
+
+(draw-box "64" {:span 32 :borders {}})
+----
+
+当 XLEN=32 时，`htimedeltah` 是一个 32 位读/写寄存器，别名 `htimedelta` 的第 63:32 位。当 XLEN=64 时，寄存器 `htimedeltah` 不存在。
+
+==== 虚拟机监控器陷阱值寄存器（`htval`）
+
+`htval` 寄存器是一个 HSXLEN 位读/写寄存器，格式如 <<htvalreg>> 所示。当陷入 HS 模式时，`htval` 写入异常专用的附加信息，与 `stval` 并列，以协助软件处理陷阱。
+
+[[htvalreg]]
+.虚拟机监控器陷阱值寄存器（`htval`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "HSXLEN-1" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htval" {:font-size 20 :span 32})
+
+(draw-box "HSXLEN" {:span 32 :borders {}})
+----
+
+当客户机页错误陷阱陷入 HS 模式时，`htval` 写入零或发生错误的客户机物理地址（右移 2 位）。对于其他陷阱，`htval` 置零，但未来的标准或扩展可能为其他陷阱重新定义 `htval's` 的设置。
+
+客户机页错误可能源于第一阶段（VS 阶段）地址转换期间的隐式内存访问，在此情况下，写入 `htval` 的客户机物理地址是发生错误的隐式内存访问的地址——例如，无法读取的 VS 级页表项的地址。（当 VS 阶段转换未能完成时，原始虚拟地址对应的客户机物理地址未知。）CSR `htinst` 中提供附加信息以消解此类情况。
+
+否则，对于导致客户机页错误的非对齐加载和存储，`htval` 中的非零客户机物理地址对应于由 `stval` 中虚拟地址所指示的访问的错误部分。对于具有变长指令的系统上的指令客户机页错误，非零的 `htval` 对应于由 `stval` 中虚拟地址所指示的指令的错误部分。
+
+[NOTE]
+===='''

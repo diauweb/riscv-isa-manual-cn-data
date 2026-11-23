@@ -1,0 +1,277 @@
+{
+  "chap_hash": "7a655f3b593a5763",
+  "id": "_control_flow_integrity_cfi",
+  "sectname": "chapter",
+  "sectnum": "31",
+  "title_en": "Control-flow Integrity (CFI)",
+  "title_unit_id": "9793f1320ce9072d817bc0c815fbf759",
+  "source_path": "src/unpriv-cfi.adoc",
+  "sections": [
+    {
+      "id": "_control_flow_integrity_cfi",
+      "level": 1,
+      "sectnum": "31",
+      "title": "Control-flow Integrity (CFI)",
+      "heading_unit_id": "9793f1320ce9072d817bc0c815fbf759",
+      "blocks": [
+        "9414fb627292856c0598814adf796b23",
+        "c2b5df879fab0d3752488c1b6c967a7e",
+        "a21501e62e78562cdbdf26464c04994e",
+        "3affe5d896aaf34f0bc23209be6d8e92",
+        {
+          "unit_id": "3de22cdd9907ad070a624be75cb15b96",
+          "anchor_id": "norm:cfi_call_term"
+        },
+        {
+          "unit_id": "a8db9d86fa86ae0d8b25ccc4346853e5",
+          "anchor_id": "norm:cfi_return_term"
+        },
+        {
+          "unit_id": "1494de4e116c88ab28ead908fb503f78",
+          "anchor_id": "norm:cfi_indirect-jump_term"
+        },
+        "3f2da842e13c5bb6c018785cbac793b0",
+        "0ae47add63adcd09bc28dcc349e3a884"
+      ]
+    },
+    {
+      "id": "unpriv-forward",
+      "level": 2,
+      "sectnum": "31.1",
+      "title": "Landing Pad (Zicfilp)",
+      "heading_unit_id": "fb15c8770fe517947896ed53f267740f",
+      "heading_anchor_id": "unpriv-forward",
+      "blocks": [
+        "2032ad4fb4d0225fbf261285b28a59d7",
+        "fc59e623a370b27ada34e962abd1e26e",
+        "38bd7a2c78ff54276119764bd0ea8778",
+        "8f643e28525534f67c9cba06a9b5e227",
+        "c8ad1d79368a58605a1fb55d042301a4",
+        "698c076b795d1c4a452ca784e8d338f8",
+        "fc197674b0a984e6550aed019eb53e85",
+        "b829e1fb6d170c80f656068c2a2db02a",
+        "daf8f91a4096dd6f16b3e9b966e9cb56",
+        "c80418362c34c2e426704fb70a0387a9"
+      ]
+    },
+    {
+      "id": "_landing_pad_enforcement",
+      "level": 3,
+      "sectnum": "31.1.1",
+      "title": "Landing Pad Enforcement",
+      "heading_unit_id": "873b18c5dd3f6b7a85a2e5cd7173db3a",
+      "blocks": [
+        "005e9fb8556f4cd9cb2d6cb8d38e33ba",
+        "46fe7cb50db2ea07b4eefd5d1df6e00d",
+        "591d7fd6a2f7767a9033c3a7f26a5d70",
+        {
+          "unit_id": "23fe193a6c695d5e1e100212a7ee5a69",
+          "anchor_id": "norm:zicflip_lpad_expected"
+        },
+        {
+          "unit_id": "73527ffdb029155f9b7aa6b24abb84e0",
+          "anchor_id": "IND_CALL_JMP"
+        },
+        {
+          "unit_id": "8f7c1c4fdd36039acbb249f7081a02c5",
+          "anchor_id": "norm:zicflip_indirect_branch_lpad"
+        },
+        "e33f11e7e4ac8f089dc69c0e4eaef81d",
+        "43a2cc7f00fdaed97b6288199cc7eec8",
+        {
+          "unit_id": "7db626cd69797a1a332536ac4ba2d772",
+          "anchor_id": "norm:zicflip_elp_lpad_expected"
+        },
+        "b4d1290d7e9ef0ee6da505d4fd543f28"
+      ]
+    },
+    {
+      "id": "LP_INST",
+      "level": 3,
+      "sectnum": "31.1.2",
+      "title": "Landing Pad Instruction",
+      "heading_unit_id": "829dec8052b2323eaf24e157e34166f2",
+      "heading_anchor_id": "LP_INST",
+      "blocks": [
+        "406ac429f24bde569d52ccb050ba1050",
+        "6a9ad5042d1457d5aee759eef0f1745d",
+        {
+          "unit_id": "e1b2575b23b85ab85ab1fe44f7d9ed9f",
+          "anchor_id": "norm:zicflip_lpad_no_sw_exception"
+        },
+        "3d7a05ee227db129a9bf6e43450ab7d7",
+        "d25f7df380bc1da4ff1500510c7db716",
+        "4fd46c5f8b28f0b33958fe9b98519b3c",
+        "db55b95d9088061b85f64201e103d719"
+      ]
+    },
+    {
+      "id": "unpriv-backward",
+      "level": 2,
+      "sectnum": "31.2",
+      "title": "Shadow Stack (Zicfiss)",
+      "heading_unit_id": "11a21165223da7f9227496afb9a4a170",
+      "heading_anchor_id": "unpriv-backward",
+      "blocks": [
+        "c7644467422494626d153fe2ece3c298",
+        "01f645ac767782f47484c0080b3d0209",
+        "d0ace068a924dc378b5f18bdd8a9ce91",
+        "a6d5ef2c372d3cf45d1114b9c996200f",
+        "85a3d27959b5569c9da62101e44d9bba",
+        "51ba8b9f39a4c8345a982ba3688fb4bb",
+        "51774172bbc369c7d0d23f0466cc37c4",
+        "3b2b0306ed8a8288de3ae63bc3bca15a",
+        "65c1fb12c710aae47009157485b37ed2",
+        "4ecb67a7953377163bda34bd339a9270",
+        "24bd83038eb968b74e879e8b7aa13a26",
+        "76df3a471d7c8b56c7f9e89da7d12157"
+      ]
+    },
+    {
+      "id": "_zicfiss_instructions_summary",
+      "level": 3,
+      "sectnum": "31.2.1",
+      "title": "Zicfiss Instructions Summary",
+      "heading_unit_id": "b02f2824663fee0840db10231fa63204",
+      "blocks": [
+        "5285b7daa1e64dba1ef2740c0ca8fa7c",
+        "13c896774bd75a10b405f37f464679b5",
+        "a0d8dd3d4b2e859618bfa69b5a137f3f"
+      ]
+    },
+    {
+      "id": "_shadow_stack_pointer_ssp",
+      "level": 3,
+      "sectnum": "31.2.2",
+      "title": "Shadow Stack Pointer (ssp)",
+      "heading_unit_id": "27881de60f6c201d870526f1a9150207",
+      "blocks": [
+        "74c2615b4449b458be6c8aea742daf84"
+      ]
+    },
+    {
+      "id": "_zicfiss_instructions",
+      "level": 3,
+      "sectnum": "31.2.3",
+      "title": "Zicfiss Instructions",
+      "heading_unit_id": "14907db86b2de7dd7af43988f85e0786",
+      "blocks": []
+    },
+    {
+      "id": "SS_PUSH",
+      "level": 3,
+      "sectnum": "31.2.4",
+      "title": "Push to the Shadow Stack",
+      "heading_unit_id": "f58581e642f4a2c805fb2524a45a815a",
+      "heading_anchor_id": "SS_PUSH",
+      "blocks": [
+        {
+          "unit_id": "6723be32f7538c448154bcfd9f664c9a",
+          "anchor_id": "norm:ss_push"
+        },
+        "d6e92c84109f2485545077431500a20c",
+        "4c8bdea1eb11ece9fe893973856996b2",
+        "3e6b10ae0ccb643f9b92965d0985f4d8",
+        {
+          "unit_id": "6fb61f7b3d42840380a671f8d225e2c3",
+          "anchor_id": "norm:sspush_c-sspush_instr"
+        },
+        "af55b86faa35b0a84bf1fb086ce10394",
+        "06768a76a7e32a926ee7a264c4357474",
+        {
+          "unit_id": "e79d820591c3cf581552fe2949a9ff27",
+          "anchor_id": "norm:sspush_c-sspush_decrement"
+        }
+      ]
+    },
+    {
+      "id": "SS_POP",
+      "level": 3,
+      "sectnum": "31.2.5",
+      "title": "Pop from the Shadow Stack",
+      "heading_unit_id": "ae0e2b16eb26ccb27e88258d6df3039a",
+      "heading_anchor_id": "SS_POP",
+      "blocks": [
+        {
+          "unit_id": "caca456562bd0b1c5017ea1f9334a66b",
+          "anchor_id": "norm:ss_pop"
+        },
+        "0c73a85b409c2b3c23ded03df4d44d88",
+        "804cc98867a0bb20895bfeda388aa986",
+        "bca28110d5980cde04a723eccfe47599",
+        "f66ce5940fdfc33b6c45f26cb4e30585",
+        {
+          "unit_id": "d3517455ac861d35731a3ecc89e3f3fa",
+          "anchor_id": "norm:sspopchk_shadow_return_pop"
+        },
+        "410584ffefd79357a17bde332fa3e331",
+        "3c161aa4fa61651d5897786882022bd1",
+        "aa22ec51fbdb38e5e3f5030849d5817c",
+        {
+          "unit_id": "446ad433e0cd5704625560caa82a033c",
+          "anchor_id": "norm:sspopchk-c_load_op"
+        },
+        "26512e3cc30b64272acb733bc0d54a32",
+        "d82c7be6a93f6452b9d19a005c04f23d",
+        {
+          "unit_id": "5655c8fcb72ead8ce0096a618aee2b1c",
+          "anchor_id": "norm:sspop_exception"
+        },
+        {
+          "unit_id": "0371c28d015b6a310416c147f0edbdf6",
+          "anchor_id": "norm:sspop_increment"
+        },
+        "b6607e622b8a8d0236002af92c968eed",
+        "d38c1468b673c5f1f238aacca2e8501d"
+      ]
+    },
+    {
+      "id": "SSP_READ",
+      "level": 3,
+      "sectnum": "31.2.6",
+      "title": "Read ssp into a Register",
+      "heading_unit_id": "5bfa474132c008e902f4915afbb50d8b",
+      "heading_anchor_id": "SSP_READ",
+      "blocks": [
+        {
+          "unit_id": "3974872c38e04b27f6c00f5250dab10e",
+          "anchor_id": "norm:ssrdp_read"
+        },
+        "a3f9e3b8a7db93278e3fb638bb6b1fc9",
+        "1fc2157511b5e824ebf5f510fc4bd49b",
+        "7a3d3459376552f11c1846dd11889cf0",
+        "377749c18990e5476e57cc171328790d",
+        "e6fe7e633a0fd2538633513dc89d364f",
+        "265521389adddc74205160a0bfd0d7fe"
+      ]
+    },
+    {
+      "id": "SSAMOSWAP",
+      "level": 3,
+      "sectnum": "31.2.7",
+      "title": "Atomic Swap from a Shadow Stack Location",
+      "heading_unit_id": "d6c600272f0b37f36cc3bd5ee7246618",
+      "heading_anchor_id": "SSAMOSWAP",
+      "blocks": [
+        "7b6b76e438d184bf5c6b603f3f0516a9",
+        {
+          "unit_id": "c305f2b6ab4ede3b0d21a8f1380eecca",
+          "anchor_id": "norm:rv32_ssamoswap-w_op"
+        },
+        "aeed6a49199afac349c2e35505589fd1",
+        {
+          "unit_id": "5ecd5eb7d35ecf983ef6702b29c061bf",
+          "anchor_id": "norm:rv64_ssamoswap-w_op"
+        },
+        "7c2d3800f61e32286fca22b4444e0073",
+        {
+          "unit_id": "80a1df1035ef455a44967b0a93439c55",
+          "anchor_id": "norm:ssamoswap_address"
+        },
+        "13fca48e410154e2fe654ae79d80ba2c",
+        "575f6489563dd457c4e29de6d0201ede",
+        "7c466ae746e6287d7e2e986139f040ec"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+unit_id = "a4862d0602f602c20c48cca41a6c30df"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((RV64I, LUI)))
+insn:lui[] (load upper immediate) uses the same opcode as RV32I.
+[#norm:lui_op_rv64i]#insn:lui[] places the
+32-bit U-immediate into register _rd_, filling in the lowest 12 bits
+with zeros. The 32-bit result is sign-extended to 64 bits.#'''
+zh = '''
+(((RV64I, LUI)))
+insn:lui[]（加载高位立即数）使用与 RV32I 相同的操作码。
+[#norm:lui_op_rv64i]##insn:lui[] 将 32 位 U 立即数放入寄存器 _rd_，最低 12 位填零。32 位结果符号扩展至 64 位。##'''

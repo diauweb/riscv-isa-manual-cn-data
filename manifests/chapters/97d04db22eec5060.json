@@ -1,0 +1,448 @@
+{
+  "chap_hash": "97d04db22eec5060",
+  "id": "cmo",
+  "sectname": "chapter",
+  "sectnum": "20",
+  "title_en": "\"CMO\" Extensions for Base Cache Management Operation ISA, Version 1.0.0",
+  "title_unit_id": "1b0f714d54751d39f6b6a459cf98facf",
+  "source_path": "src/cmo.adoc",
+  "sections": [
+    {
+      "id": "cmo",
+      "level": 1,
+      "sectnum": "20",
+      "title": "\"CMO\" Extensions for Base Cache Management Operation ISA, Version 1.0.0",
+      "heading_unit_id": "1b0f714d54751d39f6b6a459cf98facf",
+      "heading_anchor_id": "cmo",
+      "blocks": []
+    },
+    {
+      "id": "_pseudocode_for_instruction_semantics",
+      "level": 2,
+      "sectnum": "20.1",
+      "title": "Pseudocode for instruction semantics",
+      "heading_unit_id": "8e94066a625c1a0836b0bca2f1eb1abf",
+      "blocks": [
+        "e9fd755a7426e6469963c9ad62077c1b"
+      ]
+    },
+    {
+      "id": "intro-cmo",
+      "level": 2,
+      "sectnum": "20.2",
+      "title": "Introduction",
+      "heading_unit_id": "411999f32c29fcf510a3ea111fcb24ca",
+      "heading_anchor_id": "intro-cmo",
+      "blocks": [
+        "a37351bdfb6d733ef1bdae602519d5be",
+        "4ad8b4202aa5968eab39b5a7129c23b2",
+        "531f6bb3dbbd62f7a7fd309b657fab4a",
+        "490c3e5f2e6423dea235f49d0edc96c1",
+        "1873187564135b80ae011b4feef73a47",
+        "08a3bee9d212cb7f8455a432451f6dfd",
+        "e7d9e696ba902fd6e69637743f19a303"
+      ]
+    },
+    {
+      "id": "background",
+      "level": 2,
+      "sectnum": "20.3",
+      "title": "Background",
+      "heading_unit_id": "91d1e1b57162004d103f48d03d2493c9",
+      "heading_anchor_id": "background",
+      "blocks": [
+        "46080b53deaf3eae5f84f208bd680c5f"
+      ]
+    },
+    {
+      "id": "memory-caches",
+      "level": 3,
+      "sectnum": "20.3.1",
+      "title": "Memory and Caches",
+      "heading_unit_id": "08b1d96729e7032ba90ca2a19c5cffe2",
+      "heading_anchor_id": "memory-caches",
+      "blocks": [
+        "6de815ca75956a844e9fe00a427de26a",
+        "3dc4e02a7e7619c9df69f487ab5cb2e2",
+        "9a6f1bd33259020d19cd605fd74e81ce",
+        "7547e9975a127fb7f789786e211768b1",
+        "53565d281321cffef0f35138f8cde4c9",
+        "2149e0dcc924d303076696a25352a27c",
+        "f87a5ae6988c376b01ff89922ff66a16",
+        "68d82f36f891d92e47b448e0b1097d45"
+      ]
+    },
+    {
+      "id": "_cache_block_operations",
+      "level": 3,
+      "sectnum": "20.3.2",
+      "title": "Cache-Block Operations",
+      "heading_unit_id": "60b969eecae76843cfafef35bc9e7ce0",
+      "blocks": [
+        "4742e7b97bc305e63e406e75d82976cf",
+        "f3069db78aaccba1d8e272f3c38d38e5",
+        "c909ecb262993a536321a4226c3d5e8c",
+        "31760ba47996e22e69c50d7534739c8d",
+        "d7427b6f3e6fe5634140bdda0b9eb12d",
+        "cef0f4cef0b3c3dcf420973576764696"
+      ]
+    },
+    {
+      "id": "coherent-agents-caches",
+      "level": 2,
+      "sectnum": "20.4",
+      "title": "Coherent Agents and Caches",
+      "heading_unit_id": "0b4417d142f33452c47272f817644d9a",
+      "heading_anchor_id": "coherent-agents-caches",
+      "blocks": [
+        "586790bb9c08b755efcaad8235ab5521",
+        "4f2e49adaba5eef1a88d368cde831702",
+        "626f098c6c09f07c3ef89f63ddb92d69",
+        "aec680013e488bbff56c017c62ad2940",
+        "cd8a00805ce18c58c90bd7d75b8bf48d",
+        "00e553992fac6fa6b0eed955c2849d8b",
+        "95375584a25891a556075088c06035ec",
+        "26018755169667ae93dff26a35e43ce7",
+        "02059daa07a084396960fd42a8a2c519",
+        "28502a50e5791c5cd18c2115dc220098"
+      ]
+    },
+    {
+      "id": "_memory_ordering",
+      "level": 3,
+      "sectnum": "20.4.1",
+      "title": "Memory Ordering",
+      "heading_unit_id": "b7219b79f003b0f803de670a9e7ddb15",
+      "blocks": []
+    },
+    {
+      "id": "_preserved_program_order_2",
+      "level": 4,
+      "sectnum": "20.4.1.1",
+      "title": "Preserved Program Order",
+      "heading_unit_id": "3e0d288e614a295db38a6f2528a267f5",
+      "blocks": [
+        "c4a9252e64753ebdbc41182f064878bd",
+        "1132e312057176d1019937a285188fe2",
+        "5c14987a22bdcd85f1977dac3804a0ca",
+        "ded17f7aa8b6a9ae89ade261615fac82",
+        "d694c93eda56bd89dfd3a12146d39c06",
+        "4b55812a9d14f362c54b1ef2c89ed6d3",
+        "430f5067a5888b1a9eb99df782cc07a7"
+      ]
+    },
+    {
+      "id": "_load_values",
+      "level": 4,
+      "sectnum": "20.4.1.2",
+      "title": "Load Values",
+      "heading_unit_id": "c10725ceffd20f922efa629970876146",
+      "blocks": [
+        "35676e963927b7517be31212ecb7d5f3",
+        "138ad39af2ce5167753ac3b07d289f57",
+        "e79f5a809151a2b4b9d2e999dd57c179"
+      ]
+    },
+    {
+      "id": "_traps",
+      "level": 3,
+      "sectnum": "20.4.2",
+      "title": "Traps",
+      "heading_unit_id": "5c47820689220d9068f4c983b39a4d3b",
+      "blocks": [
+        "bf8d87189a3760d94096bcb1e7c3511e"
+      ]
+    },
+    {
+      "id": "_illegal_instruction_and_virtual_instruction_exceptions",
+      "level": 4,
+      "sectnum": "20.4.2.1",
+      "title": "Illegal Instruction and Virtual Instruction Exceptions",
+      "heading_unit_id": "82f9323789e0cd48563e86fe1f6edbcc",
+      "blocks": [
+        "7e3911a3ba7b9cd107264ecd13ffe96f",
+        "58184e986441b92bffe1a995f0edb1a4"
+      ]
+    },
+    {
+      "id": "_page_fault_guest_page_fault_and_access_fault_exceptions",
+      "level": 4,
+      "sectnum": "20.4.2.2",
+      "title": "Page Fault, Guest-Page Fault, and Access Fault Exceptions",
+      "heading_unit_id": "0a0873f11bfaeaaadf6c676b0d9742ce",
+      "blocks": [
+        "42dd8f3428d4e884972554a065a11e47",
+        "8038eebc828da46939f15c1fa5fb5d30",
+        "95481044fdc5bbb50a4e525528eeac5e",
+        "6ecad563e786e546b380a4456338bf16",
+        "9388ea6b9120aff8cefec4091239c7ae",
+        "7d0df36a1192a293e8b69b633ae299c6",
+        "660981ca0c7cbb12a243fdbaa7d61d9a",
+        "1a61539388be63152ebd5eb80f9afe4e",
+        "99f1425fcb2afb7a6517117635a59d71",
+        "a31d1d828b1ad84d5634fc580cd2d531",
+        "3509698f1070c7cf57aff3ea169f1005",
+        "f86fe8d07a4606c2f9c359f2af87e415"
+      ]
+    },
+    {
+      "id": "_address_misaligned_exceptions",
+      "level": 4,
+      "sectnum": "20.4.2.3",
+      "title": "Address Misaligned Exceptions",
+      "heading_unit_id": "f0d793853d1b9419308cb3c2f9aeb9c7",
+      "blocks": [
+        "ccdc2aa85e8498dfc88b02cc4cdbead5"
+      ]
+    },
+    {
+      "id": "_breakpoint_exceptions_and_debug_mode_entry",
+      "level": 4,
+      "sectnum": "20.4.2.4",
+      "title": "Breakpoint Exceptions and Debug Mode Entry",
+      "heading_unit_id": "7dc3f398d54b25e04373c2ef2f5bd9ff",
+      "blocks": [
+        "36fdd27c29c3749e5d3be3dcf8d65a30",
+        "9fdfe1a753b3ae9b22d14c4a9af4eeb6"
+      ]
+    },
+    {
+      "id": "_hypervisor_extension",
+      "level": 4,
+      "sectnum": "20.4.2.5",
+      "title": "Hypervisor Extension",
+      "heading_unit_id": "ca5c9a82da734ed7b2c78fbbd7e5702a",
+      "blocks": [
+        "55f54790be536bebdde67f7d181f1120",
+        "bb1e565617b378611309dc8247378763",
+        "ba83aaa486d42784effa1753826ad6a7",
+        "184d5ad034a5c15fc7a1ff1a7e4355fe"
+      ]
+    },
+    {
+      "id": "_effects_on_constrained_lrsc_loops",
+      "level": 3,
+      "sectnum": "20.4.3",
+      "title": "Effects on Constrained LR/SC Loops",
+      "heading_unit_id": "5ce135cd452fc39897357aba210f2ee0",
+      "blocks": [
+        "c944fa99b83298f56fb5e1d3c5b930c1",
+        "1543afa2d30508df4d21407c5effcb59",
+        "c6c4d3482c6c0d04139d6e65fc1ff8c5"
+      ]
+    },
+    {
+      "id": "_software_discovery",
+      "level": 3,
+      "sectnum": "20.4.4",
+      "title": "Software Discovery",
+      "heading_unit_id": "9541d06f87ade9e604d19d0a9c4294a1",
+      "blocks": [
+        "a3e8bb3976f9dc3f3223c9cd63cb7c8f",
+        "e7cb1aa6370305f0865a7b1a5b7ff771",
+        "c99de8fca796ffcd2b64db2d3a704c5f"
+      ]
+    },
+    {
+      "id": "csr_state",
+      "level": 2,
+      "sectnum": "20.5",
+      "title": "Control and Status Register State",
+      "heading_unit_id": "0fa82ba7bcfeea53cbeb50466e06da39",
+      "heading_anchor_id": "csr_state",
+      "blocks": [
+        "922b5539e028ab1a598eb4629f8e87db",
+        "820fe983eb3323c018f784078a28f86d",
+        "683676516b1df3072da8d078a399fbb4",
+        "8085384b9f251c44128a2eb221f54eec",
+        "a2f87d380f3db533b924c7db8b14eb72",
+        "f421dcaae2684d18eb82361b24a6ceeb",
+        "8ec42d0b97e000e33f60791f53f670d4",
+        "3755fedab73d79bd0a1054271eec69c5",
+        "2c23a45cfe37e697019cf9380dadbe03",
+        "e9c6a160012e254d2ba77d460da07247",
+        "312df0aaf31572f25c15014516d07578",
+        "314aa53a03c6e568ec66eb6d17e8f123",
+        "4eac8d231204dad32fc0174d241cf91d",
+        "68e5e6493c3307f5f155984d79994e66",
+        "65b3b92cc1fbd4ac47b6f665ef597ba8"
+      ]
+    },
+    {
+      "id": "extensions",
+      "level": 2,
+      "sectnum": "20.6",
+      "title": "Extensions",
+      "heading_unit_id": "0ce0781a8c4275be9e39490bd00ca058",
+      "heading_anchor_id": "extensions",
+      "blocks": [
+        "b80800a309aa8425509147e48c87e860",
+        "4a754dc81ddc6edd4d09378c8d00df7a"
+      ]
+    },
+    {
+      "id": "Zicbom",
+      "level": 3,
+      "sectnum": "20.6.1",
+      "title": "Cache-Block Management Instructions",
+      "heading_unit_id": "35201505265bdcd5fe921a19267e303a",
+      "heading_anchor_id": "Zicbom",
+      "blocks": [
+        "8ed1c6f00e44542e03b60000f9ca9472",
+        "ffc977d3863fb67b1350e5fc2c70fbe1",
+        "0976900ffe21770a851dd188f8e00ca9",
+        "ee2a6796b41a9ea1588b64143ba34357",
+        "a08557f6c7d5e6dd452c32cd8b4c4c3e",
+        "07fb579710a9c55370bd54982fe10514",
+        "7eab443df3ff06e0c06cbf587298487b"
+      ]
+    },
+    {
+      "id": "Zicboz",
+      "level": 3,
+      "sectnum": "20.6.2",
+      "title": "Cache-Block Zero Instructions",
+      "heading_unit_id": "31aba726a66ea8710e4a72e1e2654027",
+      "heading_anchor_id": "Zicboz",
+      "blocks": [
+        "f58282c74cec0978f72e7a77bb563d3a",
+        "3bf7398341467d5122628168179a5f91",
+        "996920bcd1e90f536e99e6505c2350ea",
+        "fa29a124753cb8b6b05fceb3bf336390",
+        "d4d05ad9bbd867133685cad6d67d401d"
+      ]
+    },
+    {
+      "id": "Zicbop",
+      "level": 3,
+      "sectnum": "20.6.3",
+      "title": "Cache-Block Prefetch Instructions",
+      "heading_unit_id": "e0d1e6fcd87bc8e7d7004364a825111b",
+      "heading_anchor_id": "Zicbop",
+      "blocks": [
+        "b9b2097f988e1b1921d699cd58c8c4f4",
+        "8a676f714eae9d22a20fc0a8e7259ace",
+        "458ffefa0bb11e27906dc81d6eae22b6",
+        "0149ad5e21c2ef0e455d528304cca3b5",
+        "f4747fb4dd638465a6122bf0b1139f49"
+      ]
+    },
+    {
+      "id": "insns",
+      "level": 2,
+      "sectnum": "20.7",
+      "title": "Instructions",
+      "heading_unit_id": "1ddd76143eb213c420f1510467b3edd3",
+      "heading_anchor_id": "insns",
+      "blocks": []
+    },
+    {
+      "id": "insns-cbo_clean",
+      "level": 3,
+      "sectnum": "20.7.1",
+      "title": "cbo.clean",
+      "heading_unit_id": "777cd4320678e148bf4be3e48899282c",
+      "heading_anchor_id": "insns-cbo_clean",
+      "blocks": [
+        "74c8346fcf545ae100d1a6a2df69d3c8",
+        "9e6a195758868e613045a0b77c52963f",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "d8c9e1d61fe832fa0f455d462b6a46c5",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-cbo_flush",
+      "level": 3,
+      "sectnum": "20.7.2",
+      "title": "cbo.flush",
+      "heading_unit_id": "47b9c5209675d687e1820c086cc21458",
+      "heading_anchor_id": "insns-cbo_flush",
+      "blocks": [
+        "2efb0e2a45c7e610a56a272d7a606fdb",
+        "ac3222b5acbb127358a8af56fe789e65",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-cbo_inval",
+      "level": 3,
+      "sectnum": "20.7.3",
+      "title": "cbo.inval",
+      "heading_unit_id": "f1f6fb036d9e21a8763df1b4c2fdafe5",
+      "heading_anchor_id": "insns-cbo_inval",
+      "blocks": [
+        "b08a7190daf9746e05862de4aa245410",
+        "4e37825313e5bdbd2dc298c1fa57d3f4",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "6452236ac83fbf3c2ad8ce68f1e008c2",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-cbo_zero",
+      "level": 3,
+      "sectnum": "20.7.4",
+      "title": "cbo.zero",
+      "heading_unit_id": "05df1faff36523bbaaaea5e9b0da6d49",
+      "heading_anchor_id": "insns-cbo_zero",
+      "blocks": [
+        "7499c51daa5ac8321e26d9602db1fcf8",
+        "4964ab84b0aa771ce08eb7b95f56b18b",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-prefetch_i",
+      "level": 3,
+      "sectnum": "20.7.5",
+      "title": "prefetch.i",
+      "heading_unit_id": "5c3f84eb9e4d4da6452cff3731e11ff1",
+      "heading_anchor_id": "insns-prefetch_i",
+      "blocks": [
+        "b70aa41af21e27e7cef4f193eb1af045",
+        "8cc2adf153cacfdb9fbe60fe8d0a7f65",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "8ae4f8ecc047718beb93dbe179e656f8",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-prefetch_r",
+      "level": 3,
+      "sectnum": "20.7.6",
+      "title": "prefetch.r",
+      "heading_unit_id": "7c95fec05ec9d2edf44dc8db3647fd40",
+      "heading_anchor_id": "insns-prefetch_r",
+      "blocks": [
+        "ae5be857dd409622548f986619ce2c7c",
+        "e86941b1fc036b73d18b39889e7bbd90",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "92b95298712ce2f9e477c2092760ae28",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    },
+    {
+      "id": "insns-prefetch_w",
+      "level": 3,
+      "sectnum": "20.7.7",
+      "title": "prefetch.w",
+      "heading_unit_id": "04202a758f109aa6b8b4fdd1573dd4fd",
+      "heading_anchor_id": "insns-prefetch_w",
+      "blocks": [
+        "d91104c37d2953128356f98259c9ba62",
+        "24324fe003936b5b99d76e02713120d9",
+        "979eec7eb0e0bfa8b24a8f5fd9567e7c",
+        "a4a400cc5e3d958c0250a5a16fc22c8c",
+        "1bf9d6956e113de3dd13db50a2a04105",
+        "5f3f076d2fb0127185abdb534a3978a1"
+      ]
+    }
+  ]
+}

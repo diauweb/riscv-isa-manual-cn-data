@@ -1,0 +1,24 @@
+unit_id = "de1cb94166eafe52769818bd6044b7bd"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* **Base Instruction Set**: LB, LH, LW, LBU, LHU, LWU, LD, SB, SH, SW, SD.
+* **Atomics**: All instructions in RV32A and RV64A.
+* **Floating Point**: FLW, FLD, FLQ, FSW, FSD, FSQ.
+* **Compressed**: All instructions mapping to any of the above, and C.LWSP, C.LDSP, C.FLWSP, C.FLDSP, C.SWSP, C.SDSP, C.FSWSP, C.FSDSP.
+* **Hypervisor Extension**: HLV.\*, HSV.* (in some cases; see <<sec:hstatus>>).
+* **Cache Management Operations**: All instructions in Zicbom, Zicbop and Zicboz.
+* **Vector Extension**: All vector load and store instructions in the ratified RVV 1.0 spec.
+* **Zicfiss Extension**: SSPUSH, C.SSPUSH, SSPOPCHK, C.SSPOPCHK, SSAMOSWAP.W/D.
+* **Assorted**: FENCE, FENCE.I (if the currently unused address fields become enabled in the future).'''
+zh = '''
+* **基础指令集**：LB、LH、LW、LBU、LHU、LWU、LD、SB、SH、SW、SD。
+* **原子操作**：RV32A 和 RV64A 中的所有指令。
+* **浮点**：FLW、FLD、FLQ、FSW、FSD、FSQ。
+* **压缩指令**：映射到上述任一指令的所有指令，以及 C.LWSP、C.LDSP、C.FLWSP、C.FLDSP、C.SWSP、C.SDSP、C.FSWSP、C.FSDSP。
+* **虚拟机监控器扩展**：HLV.\*、HSV.*（某些情况下；见 <<sec:hstatus>>）。
+* **缓存管理操作**：Zicbom、Zicbop 和 Zicboz 中的所有指令。
+* **向量扩展**：已批准 RVV 1.0 规范中的所有向量加载和存储指令。
+* **Zicfiss 扩展**：SSPUSH、C.SSPUSH、SSPOPCHK、C.SSPOPCHK、SSAMOSWAP.W/D。
+* **其他**：FENCE、FENCE.I（若当前未使用的地址字段将来变为使能）。'''

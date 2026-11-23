@@ -1,0 +1,8 @@
+unit_id = "54acbc18e945ca4da7d4547610dade9e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Trap returns have similar treatment.  [#norm:ctr_trapret_enabled]#Trap returns between enabled privilege modes are recorded as normal.#  [#norm:ctr_trapret_to_disabled]#Trap returns from an enabled mode back to a disabled mode are partially recorded, such that `ctrtarget`.PC is 0.#  [#norm:ctr_trapret_from_disabled]#Trap returns from a disabled mode to an enabled mode are not recorded.#'''
+zh = '''
+陷阱返回的处理类似。[#norm:ctr_trapret_enabled]##使能特权模式之间的陷阱返回按正常方式记录。## [#norm:ctr_trapret_to_disabled]##从使能模式返回到禁用模式的陷阱返回被部分记录，使得 `ctrtarget`.PC 为 0。## [#norm:ctr_trapret_from_disabled]##从禁用模式到使能模式的陷阱返回不记录。##'''

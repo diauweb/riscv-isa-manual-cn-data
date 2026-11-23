@@ -1,0 +1,13 @@
+unit_id = "f0fca7cd34e4e8820be90559c4aff2ce"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Additional unit-stride mask load and store instructions are
+provided to transfer mask values to/from memory.  These
+operate similarly to unmasked byte loads or stores (EEW=8), except that
+the effective vector length is ``evl``=ceil(``vl``/8) (i.e. EMUL=1),
+and the destination register is always written with a tail-agnostic
+policy.'''
+zh = '''
+提供了附加的单位步长掩码加载和存储指令，用于在内存与掩码值之间传输。这些指令的操作类似于未掩码字节加载或存储（EEW=8），不同之处在于有效向量长度为 ``evl``=ceil(``vl``/8)（即 EMUL=1），且目标寄存器始终按尾部不可知策略写入。'''

@@ -1,0 +1,16 @@
+unit_id = "9fa2a6b047fe470df07a577765a3f9fd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: Standard vector load instructions access memory values that are
+the same size as the destination register elements.  Some application
+code needs to operate on a range of operand widths in a wider element,
+for example, loading a byte from memory and adding to an eight-byte
+element.  To avoid having to provide the cross-product of the number
+of vector load instructions by the number of data types (byte, word,
+halfword, and also signed/unsigned variants), we instead add explicit
+extension instructions that can be used if an appropriate widening
+arithmetic instruction is not available.'''
+zh = '''
+NOTE: 标准向量加载指令访问与目标寄存器元素大小相同的内存值。某些应用代码需要在更宽元素中操作一系列操作数宽度，例如从内存加载一个字节并加到八字节元素。为避免提供向量加载指令数量与数据类型数量（字节、字、半字以及有符号/无符号变体）的叉积，我们改为增加显式扩展指令，在合适的加宽算术指令不可用时使用。'''

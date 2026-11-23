@@ -1,0 +1,33 @@
+unit_id = "46abc5b4b44d96aedc3616adb62209cb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[TIP]
+====
+In a system for which endianness is byte-address invariant, the
+following property holds: if a byte is stored to memory at some address
+in some endianness, then a byte-sized load from that address in any
+endianness returns the stored value.
+
+In a little-endian configuration, multibyte stores write the
+least-significant register byte at the lowest memory byte address,
+followed by the other register bytes in ascending order of their
+significance. Loads similarly transfer the contents of the lesser memory
+byte addresses to the less-significant register bytes.
+
+In a big-endian configuration, multibyte stores write the
+most-significant register byte at the lowest memory byte address,
+followed by the other register bytes in descending order of their
+significance. Loads similarly transfer the contents of the greater
+memory byte addresses to the less-significant register bytes.
+===='''
+zh = '''
+[TIP]
+====
+在字节序具有字节地址不变性的系统中，以下性质成立：若某个字节以某种字节序存储到内存中的某个地址，则以任何字节序从该地址进行字节大小的加载都会返回所存储的值。
+
+在小端序配置中，多字节存储将最低有效寄存器字节写入最低内存字节地址，然后按重要性升序写入其他寄存器字节。类似地，加载将较低内存字节地址的内容传输到较低有效寄存器字节。
+
+在大端序配置中，多字节存储将最高有效寄存器字节写入最低内存字节地址，然后按重要性降序写入其他寄存器字节。类似地，加载将较高内存字节地址的内容传输到较低有效寄存器字节。
+===='''

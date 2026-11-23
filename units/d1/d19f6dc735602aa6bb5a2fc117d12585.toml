@@ -1,0 +1,17 @@
+unit_id = "d19f6dc735602aa6bb5a2fc117d12585"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zvkt_diel_def]#Data-independent execution latency (DIEL) applies to all _data operands_ of an instruction, even those that are not a
+part of the body or that are inactive. However, DIEL does not apply
+to other values such as csr:vl[], csr:vtype[], and the mask (when used to control
+execution of a masked vector instruction).#
+[#norm:Zvkt_diel_constants_exempt]#Also, DIEL does not apply to constant values specified in the
+instruction encoding such as the use of the zero register (`x0`), and, in the
+case of immediate forms of an instruction, the values in the immediate
+fields (i.e., _imm_ and _uimm_).#'''
+zh = '''
+[#norm:Zvkt_diel_def]##数据无关执行延迟（DIEL）适用于指令的所有__数据操作数__，即使这些操作数不属于指令主体或处于非活动状态。然而，DIEL 不适用于
+csr:vl[]、csr:vtype[] 以及掩码（当用于控制掩码向量指令的执行时）等其他值。##
+[#norm:Zvkt_diel_constants_exempt]##此外，DIEL 不适用于指令编码中指定的常量值，例如使用零寄存器（`x0`）的情况；对于指令的立即数形式，也不适用于立即数字段（即 _imm_ 和 _uimm_）中的值。##'''

@@ -1,0 +1,17 @@
+unit_id = "90626346c278f8ca6a6c60bdd933fb66"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When a branch count is reported without an address it is because a
+branch has failed the prediction. However, when an address is reported
+along with a branch count, it will be because the packet was initiated
+by an uninferable discontinuity, an exception, or because a branch has
+been encountered that increments *branch_count* to 0xffff_ffff. For the
+latter case, the reported address will always be for a branch, and in
+the former cases it may be. If it is a branch, it is necessary to be
+explicit about whether or not the prediction was met or not. If it is
+met, then the reported address is that of the last correctly predicted
+branch.'''
+zh = '''
+当报告分支计数而不含地址时，是因为某个分支预测失败。然而，当报告地址并附带分支计数时，则是因为该包由不可推断不连续点或异常发起，或是因为遇到了一个使 *branch_count* 递增到 0xffff_ffff 的分支。对于后一种情况，所报告的地址始终是某个分支的地址，而在前几种情况中则可能是。若该地址是分支，则必须明确说明预测是否命中。若命中，则所报告地址是最后一个正确预测的分支的地址。'''

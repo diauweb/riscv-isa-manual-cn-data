@@ -1,0 +1,16 @@
+unit_id = "23014928f5057b7bb16876f822268b37"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 32-bit _j_ calls
+* 32-bit _jal_ ra calls
+* 64-bit _auipc+jr_ calls to fixed locations
+* 64-bit _auipc+jalr ra_ calls to fixed locations
+** The _auipc+jr/jalr_ sequence is used because the offset from the PC is out of the ±1{nbsp}MB range.'''
+zh = '''
+* 32 位 _j_ 调用
+* 32 位 _jal_ ra 调用
+* 64 位 _auipc+jr_ 到固定位置的调用
+* 64 位 _auipc+jalr ra_ 到固定位置的调用
+** 使用 _auipc+jr/jalr_ 序列是因为相对于 PC 的偏移超出 ±1{nbsp}MB 范围。'''

@@ -1,0 +1,237 @@
+unit_id = "393d28ad813221def67c8437d36533ed"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|Field |Description |Access |Reset
+|[[sbcs-sbversion]] `((sbversion))`
+a|
+
+0 (legacy): The System Bus interface conforms to mainline drafts of this
+spec older than 1 January, 2018.
+
+
+1 (1.0): The System Bus interface conforms to this version of the spec.
+
+Other values are reserved for future versions.
+a|*R*
+a|1
+|[[sbcs-sbbusyerror]] `((sbbusyerror))`
+a|Set when the debugger attempts to read data while a read is in
+progress, or when the debugger initiates a new access while one is
+already in progress (while {sbcs-sbbusy} is set). It remains set until
+it's explicitly cleared by the debugger.
+
+While this field is set, no more system bus accesses can be
+initiated by the Debug Module.
+a|*R/W1C*
+a|0
+|[[sbcs-sbbusy]] `((sbbusy))`
+a|When 1, indicates the system bus manager is busy. (Whether the
+system bus itself is busy is related, but not the same thing.) This
+bit goes high immediately when a read or write is requested for any
+reason, and does not go low until the access is fully completed.
+
+Writes to {dm-sbcs} while {sbcs-sbbusy} is high result in undefined
+behavior.  A debugger must not write to {dm-sbcs} until it reads
+{sbcs-sbbusy} as 0.
+a|*R*
+a|0
+|[[sbcs-sbreadonaddr]] `((sbreadonaddr))`
+a|When 1, every write to {dm-sbaddress0} automatically triggers a
+system bus read at the new address.
+a|*R/W*
+a|0
+|[[sbcs-sbaccess]] `((sbaccess))`
+a|Select the access size to use for system bus accesses.
+
+0 (8bit): 8-bit
+
+
+1 (16bit): 16-bit
+
+
+2 (32bit): 32-bit
+
+
+3 (64bit): 64-bit
+
+
+4 (128bit): 128-bit
+
+If {sbcs-sbaccess} has an unsupported value when the DM starts a bus
+access, the access is not performed and {sbcs-sberror} is set to 4.
+a|*R/W*
+a|2
+|[[sbcs-sbautoincrement]] `((sbautoincrement))`
+a|When 1, `sbaddress` is incremented by the access size (in
+bytes) selected in {sbcs-sbaccess} after every system bus access.
+a|*R/W*
+a|0
+|[[sbcs-sbreadondata]] `((sbreadondata))`
+a|When 1, every read from {dm-sbdata0} automatically triggers a
+system bus read at the (possibly auto-incremented) address.
+a|*R/W*
+a|0
+|[[sbcs-sberror]] `((sberror))`
+a|When the Debug Module's system bus
+manager encounters an error, this field gets set. The bits in this
+field remain set until they are cleared by writing 1 to them.
+While this field is non-zero, no more system bus accesses can be
+initiated by the Debug Module.
+
+An implementation may report ``Other'' (7) for any error condition.
+
+0 (none): There was no bus error.
+
+
+1 (timeout): There was a timeout.
+
+
+2 (address): A bad address was accessed.
+
+
+3 (alignment): There was an alignment error.
+
+
+4 (size): An access of unsupported size was requested.
+
+
+7 (other): Other.
+a|*R/W1C*
+a|0
+|[[sbcs-sbasize]] `((sbasize))`
+a|Width of system bus addresses in bits. (0 indicates there is no bus
+access support.)
+a|*R*
+a|Preset
+|[[sbcs-sbaccess128]] `((sbaccess128))`
+a|1 when 128-bit system bus accesses are supported.
+a|*R*
+a|Preset
+|[[sbcs-sbaccess64]] `((sbaccess64))`
+a|1 when 64-bit system bus accesses are supported.
+a|*R*
+a|Preset
+|[[sbcs-sbaccess32]] `((sbaccess32))`
+a|1 when 32-bit system bus accesses are supported.
+a|*R*
+a|Preset
+|[[sbcs-sbaccess16]] `((sbaccess16))`
+a|1 when 16-bit system bus accesses are supported.
+a|*R*
+a|Preset
+|[[sbcs-sbaccess8]] `((sbaccess8))`
+a|1 when 8-bit system bus accesses are supported.
+a|*R*
+a|Preset
+|==='''
+zh = '''
+[float="center",align="center",cols="<23,<61,^10,^10",options="header"]
+|===
+|字段 |说明 |访问 |复位
+|[[sbcs-sbversion]] `((sbversion))`
+a|
+
+0（旧版）：系统总线接口符合本规范早于 2018 年 1 月 1 日的主线草案。
+
+
+1（1.0）：系统总线接口符合本规范的此版本。
+
+其他值保留供未来版本使用。
+a|*R*
+a|1
+|[[sbcs-sbbusyerror]] `((sbbusyerror))`
+a|当调试器在读取进行期间尝试读取数据，或当调试器在已有访问正在进行（{sbcs-sbbusy} 置位）时发起新访问时置位。它保持置位，直到调试器显式清零。
+
+在此字段置位期间，调试模块不能再发起任何系统总线访问。
+a|*R/W1C*
+a|0
+|[[sbcs-sbbusy]] `((sbbusy))`
+a|为 1 时表示系统总线管理器忙。（系统总线本身是否忙与之相关，但并不相同。）此位在因任何原因请求读或写时立即变高，并直到访问完全完成后才变低。
+
+在 {sbcs-sbbusy} 为高时写 {dm-sbcs} 会导致未定义行为。调试器必须在读到 {sbcs-sbbusy} 为 0 之前不得写 {dm-sbcs}。
+a|*R*
+a|0
+|[[sbcs-sbreadonaddr]] `((sbreadonaddr))`
+a|当为 1 时，每次写 {dm-sbaddress0} 都会自动在新地址处触发一次系统总线读。
+a|*R/W*
+a|0
+|[[sbcs-sbaccess]] `((sbaccess))`
+a|选择用于系统总线访问的访问尺寸。
+
+0（8 位）：8 位
+
+
+1（16 位）：16 位
+
+
+2（32 位）：32 位
+
+
+3（64 位）：64 位
+
+
+4（128 位）：128 位
+
+若 DM 启动总线访问时 {sbcs-sbaccess} 为不支持的值，则不执行该访问，并将 {sbcs-sberror} 设为 4。
+a|*R/W*
+a|2
+|[[sbcs-sbautoincrement]] `((sbautoincrement))`
+a|当为 1 时，每次系统总线访问后，`sbaddress` 增加 {sbcs-sbaccess} 所选的访问尺寸（以字节计）。
+a|*R/W*
+a|0
+|[[sbcs-sbreadondata]] `((sbreadondata))`
+a|当为 1 时，每次从 {dm-sbdata0} 读取都会在（可能自动递增的）地址处自动触发一次系统总线读。
+a|*R/W*
+a|0
+|[[sbcs-sberror]] `((sberror))`
+a|当调试模块的系统总线管理器遇到错误时，此字段被置位。此字段中的位保持置位，直到通过向它们写 1 而清零。在此字段非零期间，调试模块不能再发起任何系统总线访问。
+
+实现可对任何错误情况报告 ``Other''（7）。
+
+0（无）：无总线错误。
+
+
+1（超时）：发生超时。
+
+
+2（地址）：访问了错误地址。
+
+
+3（对齐）：发生对齐错误。
+
+
+4（尺寸）：请求了不支持尺寸的访问。
+
+
+7（其他）：其他。
+a|*R/W1C*
+a|0
+|[[sbcs-sbasize]] `((sbasize))`
+a|系统总线地址的宽度，以位计。（0 表示不支持总线访问。）
+a|*R*
+a|预设
+|[[sbcs-sbaccess128]] `((sbaccess128))`
+a|当支持 128 位系统总线访问时为 1。
+a|*R*
+a|预设
+|[[sbcs-sbaccess64]] `((sbaccess64))`
+a|当支持 64 位系统总线访问时为 1。
+a|*R*
+a|预设
+|[[sbcs-sbaccess32]] `((sbaccess32))`
+a|当支持 32 位系统总线访问时为 1。
+a|*R*
+a|预设
+|[[sbcs-sbaccess16]] `((sbaccess16))`
+a|当支持 16 位系统总线访问时为 1。
+a|*R*
+a|预设
+|[[sbcs-sbaccess8]] `((sbaccess8))`
+a|当支持 8 位系统总线访问时为 1。
+a|*R*
+a|预设
+|==='''

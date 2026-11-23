@@ -1,0 +1,15 @@
+unit_id = "aef51bf358efcff381d1c7b76879e9fd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:insts:slti_sltiu:operation]#SLTI (set less than immediate) places the value 1 in register _rd_ if
+register _rs1_ is less than the sign-extended immediate when both are
+treated as signed numbers, else 0 is written to _rd_. SLTIU is similar
+but compares the values as unsigned numbers (i.e., the immediate is
+first sign-extended to XLEN bits then treated as an unsigned number).#
+Note, SLTIU _rd, rs1, 1_ sets _rd_ to 1 if _rs1_ equals zero, otherwise
+sets _rd_ to 0 (assembler pseudoinstruction SEQZ _rd, rs_).'''
+zh = '''
+[#norm:insts:slti_sltiu:operation]##SLTI（小于立即数置位）在寄存器 _rs1_ 与符号扩展立即数均被视为有符号数时，若 _rs1_ 小于该立即数，则将值 1 放入寄存器 _rd_，否则将 0 写入 _rd_。SLTIU 类似，但将值作为无符号数比较（即先将立即数符号扩展至 XLEN 位，再将其视为无符号数）。##
+注意，若 _rs1_ 等于零，则 SLTIU _rd, rs1, 1_ 将 _rd_ 置为 1，否则将 _rd_ 置为 0（汇编伪指令 SEQZ _rd, rs_）。'''

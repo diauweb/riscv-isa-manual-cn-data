@@ -1,0 +1,11 @@
+unit_id = "ea0ecf57dded67cd39fff63610cd7df2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The UXL field controls the effective XLEN for VU-mode, which may differ
+from the XLEN for VS-mode (VSXLEN). When VSXLEN=32, the UXL field does
+not exist, and VU-mode XLEN=32. When VSXLEN=64, UXL is a *WARL* field that is
+encoded the same as the MXL field of `misa`, shown in <<misabase>>. In particular, an implementation may make UXL be a read-only copy of field VSXL of `hstatus`, forcing VU-mode XLEN=VSXLEN.'''
+zh = '''
+UXL 字段控制 VU 模式的有效 XLEN，它可与 VS 模式的 XLEN（VSXLEN）不同。当 VSXLEN=32 时，UXL 字段不存在，VU 模式 XLEN=32。当 VSXLEN=64 时，UXL 是 *WARL* 字段，其编码与 `misa` 的 MXL 字段相同，如 <<misabase>> 所示。特别地，实现可使 UXL 成为 `hstatus` 字段 VSXL 的只读副本，强制 VU 模式 XLEN=VSXLEN。'''

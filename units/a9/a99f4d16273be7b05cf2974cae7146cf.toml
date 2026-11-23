@@ -1,0 +1,15 @@
+unit_id = "a99f4d16273be7b05cf2974cae7146cf"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-ldsp_op]#C.LDSP is an RV64C-only instruction that loads a 64-bit value
+from memory into register _rd_. It computes its effective address by
+adding the zero-extended offset, scaled by 8, to the stack pointer,
+`x2`. It expands to `ld rd, offset(x2)`.#
+[#norm:c-ldsp_rsv]#C.LDSP is valid only when
+_rd_≠`x0`; the code points with
+_rd_=`x0` are reserved.#'''
+zh = '''
+[#norm:c-ldsp_op]##C.LDSP 是仅用于 RV64C 的指令，它从内存加载 64 位值到寄存器 _rd_。它通过将按 8 缩放的零扩展偏移加到栈指针 `x2` 上来计算有效地址。它展开为 `ld rd, offset(x2)`。##
+[#norm:c-ldsp_rsv]##C.LDSP 仅在 _rd_≠`x0` 时有效；_rd_=`x0` 的编码点保留。##'''

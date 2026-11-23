@@ -1,0 +1,12 @@
+unit_id = "10b957b2f1a99c13bfc79fe678792486"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An interrupt _i_ will trap to HS-mode whenever all of the following are
+true: (a) either the current operating mode is HS-mode and the SIE bit
+in the `sstatus` register is set, or the current operating mode has less
+privilege than HS-mode; (b) bit _i_ is set in both `sip` and `sie`, or
+in both `hip` and `hie`; and (c) bit _i_ is not set in `hideleg`.'''
+zh = '''
+中断 _i_ 在以下所有条件都成立时会陷入 HS 模式：(a) 当前操作模式为 HS 模式且 `sstatus` 寄存器中的 SIE 位置位，或当前操作模式的特权低于 HS 模式；(b) 位 _i_ 在 `sip` 和 `sie` 中均置位，或在 `hip` 和 `hie` 中均置位；以及 (c) 位 _i_ 未在 `hideleg` 中置位。'''

@@ -1,0 +1,14 @@
+unit_id = "9e0d0a3d7009dc73e5557c28118821c1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For example, many simple RV32I and RV64I cores (without Multiply, Compressed,
+Bitmanip, or Cryptographic extensions) are technically compliant with Zkt.
+A constant-time AES can be implemented on them using "bit-slice" techniques,
+but it will be excruciatingly slow when compared to implementation with AES
+instructions. There are no guarantees that even a bit-sliced cipher
+implementation (largely based on boolean logic instructions) is secure on a
+core without Zkt attestation.'''
+zh = '''
+例如，许多简单的 RV32I 和 RV64I 核（没有乘法、压缩、位操作或密码学扩展）在技术上符合 Zkt。可以使用“位切片”技术在其上实现常量时间 AES，但与使用 AES 指令的实现相比会极其缓慢。无法保证即使位切片密码实现（主要基于布尔逻辑指令）在没有 Zkt 证明的核上是安全的。'''

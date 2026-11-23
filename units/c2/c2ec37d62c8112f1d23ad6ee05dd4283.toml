@@ -1,0 +1,15 @@
+unit_id = "c2ec37d62c8112f1d23ad6ee05dd4283"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Traps never transition from a more-privileged mode to a less-privileged
+mode. For example, if M-mode has delegated illegal-instruction
+exceptions to S-mode, and M-mode software later executes an illegal
+instruction, the trap is taken in M-mode, rather than being delegated to
+S-mode. By contrast, traps may be taken horizontally. Using the same
+example, if M-mode has delegated illegal-instruction exceptions to
+S-mode, and S-mode software later executes an illegal instruction, the
+trap is taken in S-mode.'''
+zh = '''
+陷阱永远不会从较高特权模式转换为较低特权模式。例如，若 M 模式已将非法指令异常委托给 S 模式，而 M 模式软件随后执行了一条非法指令，则该陷阱在 M 模式下接受，而不会被委托给 S 模式。相比之下，陷阱可以水平接受。沿用同一示例，若 M 模式已将非法指令异常委托给 S 模式，而 S 模式软件随后执行了一条非法指令，则该陷阱在 S 模式下接受。'''

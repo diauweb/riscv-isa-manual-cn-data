@@ -1,0 +1,14 @@
+unit_id = "3544323e90b356ab137711b202d4026f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In addition, [#norm:mcounteren_tm_clr]#when the csr:[tm] bit in the csr:mcounteren[] register is clear, attempts to
+access the csr:stimecmp[] or csr:vstimecmp[] register while executing in a mode less
+privileged than M will cause an illegal-instruction exception.#
+[#norm:mcounteren_tm_set]#When this bit is set, access to the csr:stimecmp[] or csr:vstimecmp[] register is permitted in S-mode
+if implemented, and access to the csr:vstimecmp[] register (via csr:stimecmp[]) is
+permitted in VS-mode if implemented and not otherwise prevented by the csr::[tm] bit in
+csr:hcounteren[].#'''
+zh = '''
+此外，[#norm:mcounteren_tm_clr]##当 csr:mcounteren[] 寄存器中的 csr:[tm] 位为 0 时，在低于 M 的模式下试图访问 csr:stimecmp[] 或 csr:vstimecmp[] 寄存器将引发非法指令异常。##[#norm:mcounteren_tm_set]##当该位被置位时，若实现了 S 模式，则允许在 S 模式下访问 csr:stimecmp[] 或 csr:vstimecmp[] 寄存器；若实现了 VS 模式且未被 csr:hcounteren[] 中的 csr::[tm] 位另行阻止，则允许在 VS 模式下（通过 csr:stimecmp[]）访问 csr:vstimecmp[] 寄存器。##'''

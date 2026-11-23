@@ -1,0 +1,16 @@
+unit_id = "25adcc46aa0129beff693e01d17073ef"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Because insn:fence[RW,RW] imposes a superset of the orderings that
+insn:fence.tso[] imposes, it is correct to ignore the _fm_ field and implement insn:fence.tso[] as
+insn:fence[RW,RW].
+===='''
+zh = '''
+[NOTE]
+====
+由于 insn:fence[RW,RW] 施加的排序是 insn:fence.tso[] 所施加排序的超集，因此忽略 _fm_ 字段并将 insn:fence.tso[] 实现为 insn:fence[RW,RW] 是正确的。
+===='''

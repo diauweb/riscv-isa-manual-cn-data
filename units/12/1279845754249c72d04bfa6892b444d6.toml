@@ -1,0 +1,16 @@
+unit_id = "1279845754249c72d04bfa6892b444d6"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An _acquire_ operation, as would be used at the start of a critical
+section, requires all memory operations following the acquire in program
+order to also follow the acquire in the global memory order. This
+ensures, for example, that all loads and stores inside the critical
+section are up to date with respect to the synchronization variable
+being used to protect it. Acquire ordering can be enforced in one of two
+ways: with an acquire annotation, which enforces ordering with respect
+to just the synchronization variable itself, or with a FENCE R,RW, which
+enforces ordering with respect to all previous loads.'''
+zh = '''
+_获取_ 操作，如将在临界区开头使用的那样，要求在程序顺序中位于该获取之后的所有内存操作也在全局内存顺序中位于该获取之后。例如，这确保临界区内的所有加载和存储相对于用于保护它的同步变量是最新的。获取排序可通过以下两种方式之一强制：使用获取注解，它仅强制相对于同步变量本身的排序；或使用 FENCE R,RW，它强制相对于所有先前加载的排序。'''

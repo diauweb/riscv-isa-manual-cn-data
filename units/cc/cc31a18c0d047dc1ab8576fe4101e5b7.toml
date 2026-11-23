@@ -1,0 +1,11 @@
+unit_id = "cc31a18c0d047dc1ab8576fe4101e5b7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zawrs_priv_illegal_instr_excp]#When the `TW` (Timeout Wait) bit in `mstatus` is set and `WRS.NTO` is executed
+in any privilege mode other than M mode, and it does not complete within an
+implementation-specific bounded time limit, the `WRS.NTO` instruction will cause
+an illegal-instruction exception.#'''
+zh = '''
+[#norm:Zawrs_priv_illegal_instr_excp]##当 `mstatus` 中的 `TW`（Timeout Wait，超时等待）位置位，且在除 M 模式外的任何特权模式下执行 `WRS.NTO`，并且它未在实现特定的有界时间限制内完成时，`WRS.NTO` 指令将导致非法指令异常。##'''

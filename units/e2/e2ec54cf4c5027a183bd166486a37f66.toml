@@ -1,0 +1,12 @@
+unit_id = "e2ec54cf4c5027a183bd166486a37f66"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For the `sstateen` CSRs whose access by a guest OS is permitted by bit 63 of the
+corresponding `hstateen` CSRs, a hypervisor must include the `sstateen` CSRs in the
+context it swaps for a guest OS. When it starts a new guest OS, it must ensure
+the writable bits of those `sstateen` CSRs are initialized to zeros, and it must
+emulate accesses to any other `sstateen` CSRs.'''
+zh = '''
+对于允许客户机操作系统访问（由对应的 `hstateen` CSR 第 63 位许可）的 `sstateen` CSR，虚拟机监控器必须在其为客户机操作系统切换的上下文中包含这些 `sstateen` CSR。在启动新的客户机操作系统时，它必须确保将这些 `sstateen` CSR 的可写位初始化为零，并且必须模拟对其他任何 `sstateen` CSR 的访问。'''

@@ -1,0 +1,21 @@
+unit_id = "50f5e7696240d6c201f9e756356593f0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_speculative_translations]#Implementations with virtual memory are permitted to perform address
+translations speculatively and earlier than required by an explicit
+memory access, and are permitted to cache them in address translation
+cache structures—including possibly caching the identity mappings from
+effective address to physical address used in Bare translation modes and
+M-mode. The PMP settings for the resulting physical address may be
+checked (and possibly cached) at any point between the address
+translation and the explicit memory access.# Hence, [#norm:pmp_sfence_required]#when the PMP settings
+are modified, M-mode software must synchronize the PMP settings with the
+virtual memory system and any PMP or address-translation caches. This is
+accomplished by executing an SFENCE.VMA instruction with _rs1_=`x0` and
+_rs2_=`x0`, after the PMP CSRs are written.#
+See <<hyp-mm-fences>> for additional synchronization requirements when the
+hypervisor extension is implemented.'''
+zh = '''
+[#norm:pmp_speculative_translations]##具有虚拟内存的实现被允许推测性地且早于显式内存访问所要求的时间执行地址转换，并被允许将其缓存在地址转换缓存结构中——包括可能缓存 Bare 转换模式和 M 模式下使用的有效地址到物理地址的恒等映射。结果物理地址的 PMP 设置可在地址转换与显式内存访问之间的任何时刻检查（并可能缓存）。##因此，[#norm:pmp_sfence_required]##当修改 PMP 设置时，M 模式软件应将 PMP 设置与虚拟内存系统以及任何 PMP 或地址转换缓存同步。这通过在写入 PMP CSR 之后执行一条 _rs1_=`x0` 且 _rs2_=`x0` 的 SFENCE.VMA 指令来完成。##当实现了虚拟机监控器扩展时，有关额外的同步要求，见 <<hyp-mm-fences>>。'''

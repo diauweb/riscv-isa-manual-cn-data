@@ -1,0 +1,16 @@
+unit_id = "a71feb124637f031c0249867718ad91e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The encoding of the MODE field is shown in
+<<mtvec-mode>>. When MODE=Direct, all traps into
+machine mode cause the `pc` to be set to the address in the BASE field.
+When MODE=Vectored, all synchronous exceptions into machine mode cause
+the `pc` to be set to the address in the BASE field, whereas interrupts
+cause the `pc` to be set to the address in the BASE field plus four
+times the interrupt cause number. For example, a machine-mode timer
+interrupt (see <<mcauses>>) causes the `pc`
+to be set to BASE+`0x1c`.'''
+zh = '''
+MODE 字段的编码如 <<mtvec-mode>> 所示。当 MODE=Direct 时，进入机器模式的所有陷阱都使 `pc` 被设置为 BASE 字段中的地址。当 MODE=Vectored 时，进入机器模式的所有同步异常使 `pc` 被设置为 BASE 字段中的地址，而中断使 `pc` 被设置为 BASE 字段中的地址加上四倍中断原因编号。例如，机器模式定时器中断（见 <<mcauses>>）使 `pc` 被设置为 BASE+`0x1c`。'''

@@ -1,0 +1,39 @@
+unit_id = "9949a9600065bb15c23e8aec164a2082"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Stores to shadow stack pages by instructions other than `SSAMOSWAP`, `SSPUSH`,
+and `C.SSPUSH` will trigger a store/AMO access-fault exception, not a store/AMO
+page-fault exception, signaling a fatal error. A store/AMO page-fault suggests
+that the operating system could address and rectify the fault, which is not
+feasible in this scenario. Hence, the page-fault handler must decode the opcode
+of the faulting instruction to discern whether the fault was caused by a
+non-shadow-stack instruction writing to an SS page (a fatal condition) or by a
+shadow stack instruction to a non-resident page (a recoverable condition). The
+performance-critical nature of operating system page fault handlers necessitates
+triggering an access fault instead of a page fault, allowing for a
+straightforward distinction between fatal conditions and recoverable faults.
+
+Operating systems must ensure that no writable, non-shadow-stack alias virtual
+address mappings exist for the physical memory backing the shadow stack.
+Furthermore, in systems where an address-misaligned exception supersedes the
+access-fault exception, handlers emulating misaligned stores must be designed to
+cause an access-fault exception when the store is directed to a shadow stack
+page.
+
+All instructions that perform load operations are allowed to read from the
+shadow stack. This feature facilitates debugging and performance profiling by
+allowing examination of the link register values backed up in the shadow stack.
+===='''
+zh = '''
+[NOTE]
+====
+由 `SSAMOSWAP`、`SSPUSH` 和 `C.SSPUSH` 以外的指令对影子栈页进行存储将触发存储/AMO 访问故障异常，而不是存储/AMO 页错误异常，表示致命错误。存储/AMO 页错误意味着操作系统可以处理并纠正该错误，在此场景中不可行。因此，页错误处理程序必须译码故障指令的操作码，以辨别故障是由非影子栈指令写入 SS 页（致命条件）引起，还是由影子栈指令访问非驻留页（可恢复条件）引起。操作系统页错误处理程序的性能关键性质要求触发访问故障而不是页错误，从而能够直接区分致命条件和可恢复错误。
+
+操作系统必须确保影子栈所依托的物理内存不存在可写的、非影子栈别名的虚拟地址映射。此外，在地址非对齐异常优先于访问故障异常的系统，仿真非对齐存储的处理程序必须设计为在存储指向影子栈页时导致访问故障异常。
+
+所有执行加载操作的指令均允许从影子栈读取。该特性通过允许检查影子栈中备份的链接寄存器值，便于调试和性能剖析。
+===='''

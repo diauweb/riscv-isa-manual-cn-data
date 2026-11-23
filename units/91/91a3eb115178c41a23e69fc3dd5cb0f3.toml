@@ -1,0 +1,29 @@
+unit_id = "91a3eb115178c41a23e69fc3dd5cb0f3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+A guest physical address written to `htval` is shifted right by 2 bits
+to accommodate addresses wider than the current XLEN. For RV32, the
+hypervisor extension permits guest physical addresses as wide as 34
+bits, and `htval` reports bits 33:2 of the address. This shift-by-2
+encoding of guest physical addresses matches the encoding of physical
+addresses in PMP address registers (<<pmp>>) and in
+page table entries (<<sv32>>, <<sv39>>, <<sv48>>, and <<sv57>>).
+
+If the least-significant two bits of a faulting guest physical address
+are needed, these bits are ordinarily the same as the least-significant
+two bits of the faulting virtual address in `stval`. For faults due to
+implicit memory accesses for VS-stage address translation, the
+least-significant two bits are instead zeros. These cases can be
+distinguished using the value provided in register `htinst`.
+===='''
+zh = '''
+[NOTE]
+====
+写入 `htval` 的客户机物理地址右移 2 位，以容纳比当前 XLEN 更宽的地址。对于 RV32，虚拟机监控器扩展允许客户机物理地址宽达 34 位，`htval` 报告地址的位 33:2。这种客户机物理地址右移两位的编码与 PMP 地址寄存器（<<pmp>>）和页表项（<<sv32>>、<<sv39>>、<<sv48>> 和 <<sv57>>）中的物理地址编码相匹配。
+
+若需要触发错误的客户机物理地址的最低两位，这些位通常与 `stval` 中触发错误的虚拟地址的最低两位相同。对于因 VS 阶段地址转换的隐式内存访问导致的错误，最低两位反而为零。这些情况可使用寄存器 `htinst` 中提供的值来区分。
+===='''

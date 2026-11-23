@@ -1,0 +1,18 @@
+unit_id = "a4e4badba488fc93ac6d7befa80b3f08"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Implementations with S-mode but without the F extension are permitted,
+but not required, to make the FS field be read-only zero. Some such
+implementations will choose _not_ to have the FS field be read-only
+zero, so as to enable emulation of the F extension for both S-mode and
+U-mode via invisible traps into M-mode.
+===='''
+zh = '''
+[NOTE]
+====
+允许但不要求具有 S 模式而无 F 扩展的实现将 FS 字段设为只读零。某些此类实现会选择 _不_ 将 FS 字段设为只读零，以便通过陷入 M 模式的不可见陷阱，为 S 模式和 U 模式模拟 F 扩展。
+===='''

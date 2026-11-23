@@ -1,0 +1,14 @@
+unit_id = "8afe956b38a7ea250488501189849f3a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A special rule applies for CSR instructions that access 32-bit high-half
+CSRs such as `cycleh` and `htimedeltah`. When V=1 and
+XLEN=32, an invalid attempt to access a high-half CSR
+raises a virtual-instruction
+exception instead of an illegal-instruction exception if the same CSR
+instruction for the corresponding _low-half_ CSR (e.g.`cycle` or
+`htimedelta`) is HS-qualified.'''
+zh = '''
+对于访问 32 位高半部分 CSR（如 `cycleh` 和 `htimedeltah`）的 CSR 指令，适用一条特殊规则。当 V=1 且 XLEN=32 时，若针对相应__低半部分__ CSR（如 `cycle` 或 `htimedelta`）的同一条 CSR 指令属于 HS 限定，则访问高半部分 CSR 的无效尝试会引发虚拟指令异常，而非非法指令异常。'''

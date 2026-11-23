@@ -1,0 +1,28 @@
+unit_id = "aae6eab6b384d3593af666356245ab75"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Program Trace Synchronization Message Fields
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|Bits|Name|Description
+|6   |TCODE            |Value=9(0x9). Standard Transfer Code (<<field_TCODE,TCODE>>) field.
+|Cfg |SRC              |Standard Message Source (<<field_SRC,SRC>>) field.
+|4   |SYNC             |Standard Synchronization Reason (<<field_SYNC,SYNC>>) field.
+|Var |I-CNT            |Standard Instruction Count (<<field_I-CNT,I-CNT>>) field.
+|Var |F-ADDR           |Standard Full Address (<<field_F-ADDR,F-ADDR>>) field.
+|Var,Cfg |TSTAMP       |Standard Timestamp (<<field_TSTAMP,TSTAMP>>) field.
+|======================================================================================================'''
+zh = '''
+.ProgTraceSync 消息字段
+[cols="8%,10%,~",options="header"]
+|======================================================================================================
+|位数|名称|描述
+|6   |TCODE            |值=9(0x9)。标准传输码（<<field_TCODE,TCODE>>）字段。
+|Cfg |SRC              |标准消息源（<<field_SRC,SRC>>）字段。
+|4   |SYNC             |标准同步原因（<<field_SYNC,SYNC>>）字段。
+|Var |I-CNT            |标准指令计数（<<field_I-CNT,I-CNT>>）字段。
+|Var |F-ADDR           |标准完整地址（<<field_F-ADDR,F-ADDR>>）字段。
+|Var,Cfg |TSTAMP       |标准时间戳（<<field_TSTAMP,TSTAMP>>）字段。
+|======================================================================================================'''

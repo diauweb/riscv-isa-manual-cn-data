@@ -1,0 +1,20 @@
+unit_id = "87dedb599540d82480e886d3999141f4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The compressed instruction encodings are mostly common across RV32C and
+RV64C, but as shown in <<rvc-instr-table0>>, a few opcodes are used for
+different purposes depending on base ISA. For example, the wider
+address-space RV64C variant requires additional opcodes to
+compress loads and stores of 64-bit integer values, while RV32C uses the
+same opcodes to compress loads and stores of single-precision
+floating-point values.
+If the C extension is implemented, the
+appropriate compressed floating-point load and store instructions must
+be provided whenever the relevant standard floating-point extension (F
+and/or D) is also implemented. In addition, RV32C includes a compressed
+jump and link instruction to compress short-range subroutine calls,
+where the same opcode is used to compress ADDIW for RV64C.'''
+zh = '''
+压缩指令编码在 RV32C 与 RV64C 上大体相同，但如 <<rvc-instr-table0>> 所示，少数操作码根据基础 ISA 的不同而用于不同目的。例如，地址空间更宽的 RV64C 变体需要额外的操作码来压缩 64 位整数值的加载和存储，而 RV32C 则使用相同的操作码来压缩单精度浮点值的加载和存储。如果实现了 C 扩展，则每当相关的标准浮点扩展（F 和/或 D）也实现时，应提供相应的压缩浮点加载和存储指令。此外，RV32C 包含一条压缩跳转并链接指令，用于压缩短距离子程序调用，而在 RV64C 中，同一操作码用于压缩 ADDIW。'''

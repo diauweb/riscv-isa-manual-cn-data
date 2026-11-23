@@ -1,0 +1,11 @@
+unit_id = "526dff4d72a422f3dc41773ea5eeadfa"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations may implement `mseccfg` such that `[s,u]seed` is a read-only
+constant value `0`. Software may discover if access to the `seed` CSR can be
+enabled in U and S mode by writing a `1` to `[s,u]seed` and reading back
+the result.'''
+zh = '''
+实现可将 `mseccfg` 实现为 `[s,u]seed` 是只读常量值 `0`。软件可通过向 `[s,u]seed` 写入 `1` 并读回结果，来判断是否可在 U 和 S 模式下启用对 `seed` CSR 的访问。'''

@@ -1,0 +1,56 @@
+unit_id = "f43145dbe7c8aabfb7f6e559ae7d7ecb"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We did not include special instruction-set support for overflow checks
+on integer arithmetic operations in the base instruction set, as many
+overflow checks can be cheaply implemented using RISC-V branches.
+Overflow checking for unsigned addition requires only a single
+additional branch instruction after the addition:
+insn:add[t0,t1,t2]; insn:bltu[t0,t1,overflow].
+
+For signed addition, if one operand's sign is known, overflow checking
+requires only a single branch after the addition:
+insn:addi[t0,t1,+imm]; insn:blt[t0,t1,overflow]. This covers the common case
+of addition with an immediate operand.
+
+For general signed addition, three additional instructions after the
+addition are required, leveraging the observation that the sum should be
+less than one of the operands if and only if the other operand is
+negative.
+
+[source,asm]
+....
+    add t0, t1, t2
+    slti t3, t2, 0
+    slt t4, t0, t1
+    bne t3, t4, overflow
+....
+
+In RV64I, checks of 32-bit signed additions can be optimized further by
+comparing the results of insn:add[] and insn:addw[] on the operands.
+===='''
+zh = '''
+[NOTE]
+====
+我们没有在基础指令集中为整数算术运算的溢出检查包含专门的指令集支持，因为许多溢出检查可以使用 RISC-V 分支廉价地实现。无符号加法的溢出检查在加法之后仅需一条额外分支指令：
+insn:add[t0,t1,t2]; insn:bltu[t0,t1,overflow]。
+
+对于有符号加法，若一个操作数的符号已知，则溢出检查在加法之后仅需一条分支：
+insn:addi[t0,t1,+imm]; insn:blt[t0,t1,overflow]。这涵盖了立即数操作数加法的常见情形。
+
+对于一般有符号加法，需要在加法之后增加三条指令，利用以下观察：当且仅当另一个操作数为负时，和应小于其中一个操作数。
+
+[source,asm]
+....
+    add t0, t1, t2
+    slti t3, t2, 0
+    slt t4, t0, t1
+    bne t3, t4, overflow
+....
+
+在 RV64I 中，32 位有符号加法的检查可以通过比较操作数上 insn:add[] 与 insn:addw[] 的结果进一步优化。
+===='''

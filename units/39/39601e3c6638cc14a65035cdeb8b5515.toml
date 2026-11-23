@@ -1,0 +1,12 @@
+unit_id = "39601e3c6638cc14a65035cdeb8b5515"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Svpbmt_io_pma_nc_pbmt_obey_rvwmo]#If the underlying physical memory attribute for a page is I/O, and the
+page has PBMT=NC, then
+accesses to that page obey RVWMO.# However,
+[#norm:Svpbmt_io_pma_nc_pbmt_treated_as_io_and_memory]#accesses to such pages are considered to be _both_ I/O and main memory
+accesses for the purposes of FENCE, _.aq_, and _.rl_.#'''
+zh = '''
+[#norm:Svpbmt_io_pma_nc_pbmt_obey_rvwmo]##若某页的底层物理内存属性为 I/O，且该页具有 PBMT=NC，则对该页的访问遵守 RVWMO。##然而，[#norm:Svpbmt_io_pma_nc_pbmt_treated_as_io_and_memory]##就 FENCE、_.aq_ 和 _.rl_ 而言，对此类页的访问被视为既是 I/O 访问也是主内存访问。##'''

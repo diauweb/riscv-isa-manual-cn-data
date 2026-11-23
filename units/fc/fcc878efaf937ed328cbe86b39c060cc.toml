@@ -1,0 +1,14 @@
+unit_id = "fcc878efaf937ed328cbe86b39c060cc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Zicbom extension adds the `CBIE` (Cache Block Invalidate instruction Enable)
+WARL field to `senvcfg` to control execution of the `CBO.INVAL` instruction in
+U-mode. The encoding `10b` is reserved. When the Zicbom extension is not
+implemented, `CBIE` is read-only zero. Execution of `CBO.INVAL` in U-mode is
+enabled only if execution of the instruction is enabled for use in S-mode and
+`CBIE` is set to `01b` or `11b`; otherwise, an illegal-instruction exception is
+raised.'''
+zh = '''
+Zicbom 扩展向 `senvcfg` 添加了 `CBIE`（Cache Block Invalidate instruction Enable，缓存块使无效指令使能）WARL 字段，以控制在 U 模式下执行 `CBO.INVAL` 指令。编码 `10b` 为保留。当未实现 Zicbom 扩展时，`CBIE` 为只读零。仅当该指令被使能用于 S 模式且 `CBIE` 被置为 `01b` 或 `11b` 时，才允许在 U 模式下执行 `CBO.INVAL`；否则引发非法指令异常。'''

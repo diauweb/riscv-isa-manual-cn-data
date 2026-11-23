@@ -1,0 +1,10 @@
+unit_id = "78013197272b71fe7ec970672b8cb57b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The misaligned atomicity granule PMA, defined in Volume II of this manual, optionally relaxes this alignment requirement.
+If all accessed bytes lie within the same misaligned atomicity granule, the instruction will not raise an exception for reasons of address alignment, and the instruction will give rise to only one memory operation for the purposes of RVWMO—i.e., it will execute atomically.'''
+zh = '''
+[#norm:Zalasr_misaligned_pma_relax]##本手册第 II 卷中定义的非对齐原子性粒度 PMA 可选地放宽该对齐要求。##
+[#norm:Zalasr_misaligned_single_op]##若所有被访问字节都位于同一非对齐原子性粒度内，则该指令不会因地址对齐原因引发异常，并且就 RVWMO 而言该指令只产生一次内存操作——即，它原子地执行。##'''

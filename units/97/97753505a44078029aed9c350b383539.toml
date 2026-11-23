@@ -1,0 +1,24 @@
+unit_id = "97753505a44078029aed9c350b383539"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The supervisor should only view CSR state that should be visible to a
+supervisor-level operating system. In particular, there is no
+information about the existence (or non-existence) of higher privilege
+levels (machine level or other) visible in the CSRs accessible by the
+supervisor.
+
+Many supervisor CSRs are a subset of the equivalent machine-mode CSR,
+and the machine-mode chapter should be read first to help understand the
+supervisor-level CSR descriptions.
+===='''
+zh = '''
+[NOTE]
+====
+监管模式宜仅查看应对监管级操作系统可见的 CSR 状态。特别是，监管模式可访问的 CSR 中不包含有关更高特权级（机器级或其他）是否存在的信息。
+
+许多监管 CSR 是等效机器模式 CSR 的子集，宜先阅读机器模式章节，以帮助理解监管级 CSR 的描述。
+===='''

@@ -1,0 +1,11 @@
+unit_id = "e0887fd6b38fa3e4294ddb5dc551f85e"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When V=0, a write to `vsatp` with an unsupported MODE value is either
+ignored as it is for `satp`, or the fields of `vsatp` are treated as *WARL* in
+the normal way. However, when V=1, a write to `satp` with an unsupported
+MODE value _is_ ignored and no write to `vsatp` is effected.'''
+zh = '''
+当 V=0 时，对 `vsatp` 写入不支持的 MODE 值，或像 `satp` 那样被忽略，或 `vsatp` 的字段按常规方式视为 *WARL*。然而，当 V=1 时，对 `satp` 写入不支持的 MODE 值__会__被忽略，且不会对 `vsatp` 产生写入。'''

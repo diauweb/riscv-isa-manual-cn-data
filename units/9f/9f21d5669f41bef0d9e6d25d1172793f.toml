@@ -1,0 +1,22 @@
+unit_id = "9f21d5669f41bef0d9e6d25d1172793f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+image::es_noisetest.svg[title="Entropy source can't be read in test mode.", align="center",scaledwidth=66%]
+In csr::[noise_test] mode, the WAIT and ES16 states are unreachable,
+and no entropy is output. Implementation of test interfaces that directly
+affect ES16 entropy output from the csr:seed[] CSR interface is discouraged.
+Such vendor test interfaces have been exploited in attacks. For example,
+an ECDSA cite:[nist:fips:186:4] signature process without sufficient
+entropy will not only create an insecure signature but can also reveal
+the secret signing key, that can be used for authentication forgeries by
+attackers. Hence even a temporary lapse in `entropy` security may have serious
+security implications.
+===='''
+zh = '''
+====
+image::es_noisetest.svg[title="测试模式下不能读取熵源。", align="center",scaledwidth=66%]
+在 csr::[noise_test] 模式下，WAIT 和 ES16 状态不可达，并且不输出熵。不鼓励实现直接影响 csr:seed[] CSR 接口的 ES16 熵输出的测试接口。此类供应商测试接口已在攻击中被利用。例如，ECDSA cite:[nist:fips:186:4] 签名过程如果没有足够的熵，不仅会创建不安全的签名，还可能泄露秘密签名密钥，攻击者可用于身份验证伪造。因此，即使 `entropy` 安全性临时失效也可能有严重的安全影响。
+===='''

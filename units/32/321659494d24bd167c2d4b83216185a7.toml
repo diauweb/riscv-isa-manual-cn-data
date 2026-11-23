@@ -1,0 +1,12 @@
+unit_id = "321659494d24bd167c2d4b83216185a7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If the Smnpm extension is implemented, the `PMM` field enables or disables
+pointer masking (see <<Zpm>>) for the next-lower privilege mode (S-/HS-mode if
+S-mode is implemented, or U-mode otherwise), according to the values in
+<<menvcfg-pmm-values>>. If Smnpm is not implemented, `PMM` is read-only zero.
+The `PMM` field is read-only zero for RV32.'''
+zh = '''
+若实现了 Smnpm 扩展，则 `PMM` 字段根据 <<menvcfg-pmm-values>> 中的值，为下一较低特权模式（若实现了 S 模式则为 S/HS 模式，否则为 U 模式）使能或禁用指针掩蔽（见 <<Zpm>>）。若未实现 Smnpm，则 `PMM` 为只读零。`PMM` 字段在 RV32 下为只读零。'''

@@ -1,0 +1,15 @@
+unit_id = "ca5b4ba439317a6905745f5c231490cd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Now, an instruction instance latexmath:[$i$] is said to have _fully
+determined data_ if for every register read latexmath:[$r$] from
+_reg_reads_, the register writes that latexmath:[$r$] reads from are
+fully determined. An instruction instance latexmath:[$i$] is said to
+have a _fully determined memory footprint_ if for every register read
+latexmath:[$r$] from _reg_reads_ that feeds into latexmath:[$i$]’s
+memory operation address, the register writes that latexmath:[$r$] reads
+from are fully determined.'''
+zh = '''
+现在，若对于来自 _reg_reads_ 的每一次寄存器读 latexmath:[$r$]，latexmath:[$r$] 所读取的寄存器写都是完全确定的，则称指令实例 latexmath:[$i$] 具有__完全确定的数据__。若对于来自 _reg_reads_ 的、为 latexmath:[$i$] 的访存操作地址提供输入的每一次寄存器读 latexmath:[$r$]，latexmath:[$r$] 所读取的寄存器写都是完全确定的，则称指令实例 latexmath:[$i$] 具有__完全确定的访存足迹__。'''

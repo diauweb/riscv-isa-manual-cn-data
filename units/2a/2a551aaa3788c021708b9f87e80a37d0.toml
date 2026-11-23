@@ -1,0 +1,13 @@
+unit_id = "2a551aaa3788c021708b9f87e80a37d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The number of bits implemented in `hgeip` and `hgeie` for guest external
+interrupts is UNSPECIFIED and may be zero. This number is known as _GEILEN_. The
+least-significant bits are implemented first, apart from bit 0. Hence,
+if GEILEN is nonzero, bits GEILEN:1 shall be writable in `hgeie`, and
+all other bit positions shall be read-only zeros in both `hgeip` and
+`hgeie`.'''
+zh = '''
+为客户机外部中断在 `hgeip` 和 `hgeie` 中实现的位数未规定，且可为零。此位数称为 _GEILEN_。除位 0 外，最低有效位先实现。因此，若 GEILEN 非零，则位 GEILEN:1 在 `hgeie` 中应可写，而所有其他位位置在 `hgeip` 和 `hgeie` 中都应为只读零。'''

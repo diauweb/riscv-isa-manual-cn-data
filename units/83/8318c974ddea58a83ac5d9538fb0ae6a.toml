@@ -1,0 +1,14 @@
+unit_id = "8318c974ddea58a83ac5d9538fb0ae6a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+A hypervisor is always free to _emulate_ devices for any number of
+virtual harts without being limited by GEILEN. Only direct pass-through
+(direct assignment) of interrupts is affected by the GEILEN limit, and
+the limit is on the number of virtual harts receiving such interrupts,
+not the number of distinct interrupts received. The number of distinct
+interrupts a single virtual hart may receive is determined by the
+interrupt controller.'''
+zh = '''
+虚拟机监控器始终可自由地为任意数目的虚拟硬件线程_模拟_设备，而不受 GEILEN 限制。只有中断的直接直通（直接分配）受 GEILEN 限制影响，且该限制针对的是接收此类中断的虚拟硬件线程数目，而非接收的不同中断数目。单个虚拟硬件线程可接收的不同中断数目由中断控制器确定。'''

@@ -1,0 +1,34 @@
+unit_id = "ada3cb40a621c1465c5c6feddea271bb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Main memory vs.I/O, and I/O memory ordering PMAs: the memory model as
+defined applies to main memory regions. I/O ordering is discussed below.
+* Supported access types and atomicity PMAs: the memory model is simply
+applied on top of whatever primitives each region supports.
+* Cacheability PMAs: the cacheability PMAs in general do not affect the
+memory model. Non-cacheable regions may have more restrictive behavior
+than cacheable regions, but the set of allowed behaviors does not change
+regardless. However, some platform-specific and/or device-specific
+cacheability settings may differ.
+* Coherence PMAs: The memory consistency model for memory regions marked
+as non-coherent in PMAs is currently platform-specific and/or
+device-specific: the load-value axiom, the atomicity axiom, and the
+progress axiom all may be violated with non-coherent memory. Note
+however that coherent memory does not require a hardware cache coherence
+protocol. The RISC-V Privileged ISA Specification suggests that
+hardware-incoherent regions of main memory are discouraged, but the
+memory model is compatible with hardware coherence, software coherence,
+implicit coherence due to read-only memory, implicit coherence due to
+only one agent having access, or otherwise.
+* Idempotency PMAs: Idempotency PMAs are used to specify memory regions
+for which loads and/or stores may have side effects, and this in turn is
+used by the microarchitecture to determine, e.g., whether prefetches are
+legal. This distinction does not affect the memory model.'''
+zh = '''
+* 主内存与 I/O，以及 I/O 内存排序 PMA：所定义的内存模型适用于主内存区域。I/O 排序在下面讨论。
+* 支持的访问类型与原子性 PMA：内存模型仅叠加在每个区域所支持的任何原语之上。
+* 可缓存性 PMA：可缓存性 PMA 通常不影响内存模型。非可缓存区域可能具有比可缓存区域更严格的行为，但允许的行为集合无论如何不变。然而，某些平台特定和/或设备特定的可缓存性设置可能有所不同。
+* 一致性 PMA：对于 PMA 中标记为非一致的内存区域，其内存一致性模型目前是平台特定和/或设备特定的：加载值公理、原子性公理和进展公理在非一致内存上均可能被违反。但请注意，一致内存不要求硬件缓存一致性协议。RISC-V 特权 ISA 规范建议不鼓励主内存中的硬件不一致区域，但内存模型与硬件一致性、软件一致性、由于只读内存而隐含的一致性、由于只有一个代理具有访问权而隐含的一致性或其他情况兼容。
+* 幂等性 PMA：幂等性 PMA 用于指定加载和/或存储可能具有副作用的内存区域，微体系结构进而用它来确定（例如）预取是否合法。这种区分不影响内存模型。'''

@@ -1,0 +1,68 @@
+unit_id = "5e523c1e7a432ecc4e752254a0325a67"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The _Svade_ extension: when a virtual page is accessed and the A bit is
+  clear, or is written and the D bit is clear, a page-fault exception is
+  raised.
+
+* When the Svade extension is not implemented, the following scheme applies. +
+                                                                             +
+  When a virtual page is accessed and the A bit is clear, the PTE is
+  updated to set the A bit.  When the virtual page is written and the D
+  bit is clear, the PTE is updated to set the D bit. When G-stage address
+  translation is in use and is not Bare, the G-stage virtual pages may be
+  accessed or written by implicit accesses to VS-level memory management
+  data structures, such as page tables.                                 +
+                                                                        +
+  When two-stage address translation is in use, an explicit access may
+  cause both VS-stage and G-stage PTEs to be updated. The following rules
+  apply to all PTE updates caused by an explicit or an implicit memory
+  accesses.                                                             +
+                                                                        +
+  The PTE update must be atomic with respect to other accesses to the
+  PTE, and must atomically perform all tablewalk checks for that leaf
+  PTE as part of, and before, conditionally updating the PTE value.
+  Updates of the A bit may be performed as a result of speculation, even
+  if the associated memory access ultimately is not performed
+  architecturally. However, updates to the D bit, resulting from an
+  explicit store, must be exact (i.e., non-speculative), and observed in
+  program order by the local hart. When two-stage address translation is
+  active, updates to the D bit in G-stage PTEs may be performed by an
+  implicit access to a VS-stage PTE, if the G-stage PTE provides write
+  permission, before any speculative access to the VS-stage PTE.        +
+                                                                        +
+  The PTE update must appear in the global memory order before the
+  memory access that caused the PTE update and before any subsequent
+  explicit memory access to that virtual page by the local hart. The
+  ordering on loads and stores provided by FENCE instructions and the
+  acquire/release bits on atomic instructions also orders the PTE updates
+  associated with those loads and stores as observed by remote harts.   +
+                                                                        +
+  The PTE update is not required to be atomic with respect to the memory
+  access that caused the update and a trap may occur between the PTE
+  update and the memory access that caused the PTE update. If a trap
+  occurs then the A and/or D bit may be updated but the memory access
+  that caused the PTE update might not occur. The hart must not perform
+  the memory access that caused the PTE update before the PTE update is
+  globally visible.                                                     +
+                                                                        +
+  The page tables must be located in memory with hardware page-table
+  write access and _RsrvEventual_ PMA.'''
+zh = '''
+* _Svade_ 扩展：当访问某虚拟页且 A 位清零，或写入某虚拟页且 D 位清零时，引发页错误异常。
+
+* 当未实现 Svade 扩展时，适用以下方案。 +
++
+当访问某虚拟页且 A 位清零时，更新该 PTE 以置位 A 位。当写入该虚拟页且 D 位清零时，更新该 PTE 以置位 D 位。当使用 G 级地址转换且其不为 Bare 时，G 级虚拟页可能因对 VS 级内存管理数据结构（如页表）的隐式访问而被访问或写入。 +
++
+当使用两阶段地址转换时，一次显式访问可能同时导致 VS 级和 G 级 PTE 被更新。以下规则适用于由显式或隐式内存访问引起的所有 PTE 更新。 +
++
+PTE 更新应相对于对该 PTE 的其他访问是原子的，并且应作为有条件更新 PTE 值的一部分并在其之前，原子地执行针对该叶 PTE 的所有页表遍历检查。A 位的更新可能因推测而执行，即使相关联的内存访问最终未在架构上执行。然而，由显式存储引起的 D 位更新应是精确的（即非推测的），并由本地硬件线程按程序顺序观察到。当两阶段地址转换处于活动状态时，若 G 级 PTE 提供写权限，则对 G 级 PTE 中 D 位的更新可能由对 VS 级 PTE 的隐式访问执行，且先于对 VS 级 PTE 的任何推测访问。 +
++
+PTE 更新应在导致该 PTE 更新的内存访问之前、并在本地硬件线程对该虚拟页的任何后续显式内存访问之前，出现在全局内存顺序中。FENCE 指令以及原子指令上的获取/释放位所提供的加载和存储排序，也会按远程硬件线程所观察到的顺序，对那些加载和存储相关联的 PTE 更新进行排序。 +
++
+PTE 更新不要求与导致该更新的内存访问是原子的，并且在 PTE 更新与导致该 PTE 更新的内存访问之间可能发生陷阱。若发生陷阱，则 A 位和/或 D 位可能已被更新，但导致该 PTE 更新的内存访问可能未发生。硬件线程不应在 PTE 更新全局可见之前执行导致该 PTE 更新的内存访问。 +
++
+页表应位于具有硬件页表写访问权限和 _RsrvEventual_ PMA 的内存中。'''

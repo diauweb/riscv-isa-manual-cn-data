@@ -1,0 +1,16 @@
+unit_id = "5b25d5d2e62fbd16632e91f092d058d0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+However, setting TVM=1 does not cause traps for accesses to `vsatp` or
+instructions HFENCE.VVMA or HINVAL.VVMA, or for any actions taken in
+VS-mode, because M-level software is not expected to need to involve
+itself in VS-stage address translation. For virtual machines, it should
+be sufficient, and in all likelihood faster as well, to leave VS-stage
+address translation alone and merge all other translation stages into
+G-stage shadow page tables controlled by `hgatp`. This assumption does
+place some constraints on possible future RISC-V extensions that current
+machines will be able to emulate efficiently.'''
+zh = '''
+然而，置 TVM=1 不会为访问 `vsatp` 或指令 HFENCE.VVMA 或 HINVAL.VVMA 导致陷阱，也不会为在 VS 模式下采取的任何行动导致陷阱，因为 M 级软件预期不必介入 VS 阶段地址转换。对于虚拟机，不干涉 VS 阶段地址转换并将所有其他转换级合并到由 `hgatp` 控制的 G 阶段影子页表中，宜足够且在一切可能情况下也更快。此假设确实对当前机器将能够高效模拟的可能的未来 RISC-V 扩展施加某种约束。'''

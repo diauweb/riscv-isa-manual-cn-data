@@ -1,0 +1,24 @@
+unit_id = "fa30e280c072dc658a2a397cf8e3bfa2"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* *I-CNT=1* is a correct value.
+** The only valid reason to generate a message with I-CNT=1 would be an exception (or interrupt) at an instruction at address 0x102.
+** In this case an encoder should generate an <<msg_IndirectBranch,IndirectBranch>> or <<msg_IndirectBranchSync,IndirectBranchSync>> message with I-CNT=1, B-TYPE=1 (exception) and U-ADDR/F-ADDR field encoding an address of an exception/interrupt handler.
+
+* *I-CNT=5* is also correct.
+** It means that exception/interrupt happened before an instruction at an address 0x10A (after instruction at 0x106).
+
+* *I-CNT=0* is also possible.
+** It should be generated when an interrupt was pending before we started the code (and trace) and instruction at address 0x100 was not executed/retired.
+** Another reason for I-CNT=0 may be a case, where instruction at address 0x100 will generate page fault or is illegal.'''
+zh = '''
+* *I-CNT=1* 是正确值。
+** 生成 I-CNT=1 消息的唯一有效原因是在地址 0x102 的指令处发生异常（或中断）。
+** 在这种情况下，编码器应生成 *I-CNT=1*、B-TYPE=1（异常）且 U-ADDR/F-ADDR 字段编码异常/中断处理程序地址的 <<msg_IndirectBranch,IndirectBranch>> 或 <<msg_IndirectBranchSync,IndirectBranchSync>> 消息。
+* *I-CNT=5* 也是正确的。
+** 这意味着异常/中断发生在地址 0x10A 的指令之前（在地址 0x106 的指令之后）。
+* *I-CNT=0* 也是可能的。
+** 当启动代码（和跟踪）之前中断已挂起，并且地址 0x100 的指令未执行/退休时，应生成该值。
+** I-CNT=0 的另一个原因可能是地址 0x100 的指令将产生页错误或是非法指令。'''

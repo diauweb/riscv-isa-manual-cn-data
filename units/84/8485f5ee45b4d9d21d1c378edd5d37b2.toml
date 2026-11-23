@@ -1,0 +1,18 @@
+unit_id = "8485f5ee45b4d9d21d1c378edd5d37b2"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since the insn:ntl[] instructions are encoded as insn:add[]s, they can be used within
+LR/SC loops without voiding the forward-progress guarantee.
+However, since using other loads and stores within an LR/SC loop _does_ void the
+forward-progress guarantee, the only reason to use an insn:ntl[] within such a
+loop is to modify the LR or the SC.
+===='''
+zh = '''
+[NOTE]
+====
+由于 insn:ntl[] 指令编码为 insn:add[]，它们可在 LR/SC 循环内使用而不使前向进展保证失效。然而，由于在 LR/SC 循环内使用其他加载和存储_确实_会使前向进展保证失效，在此类循环内使用 insn:ntl[] 的唯一理由就是修改 LR 或 SC。
+===='''

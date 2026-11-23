@@ -1,0 +1,80 @@
+unit_id = "97a1d3e5fe714708bea1ade7232b41e3"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%header,cols="^3,^3,10,16,^2,^2,^2,^2"]
+|====
+|RV32   |RV64   |Mnemonic                  |Instruction            |Zbb    |Zbkb   |Zbc    |Zbkc
+|{check}|{check}|andn _rd_, _rs1_, _rs2_   |<<#insns-andn>>        |{check}|{check}|       |
+|{check}|{check}|brev8 _rd_, _rs_          |<<#insns-brev8>>       |       |{check}|       |
+|{check}|{check}|clmul _rd_, _rs1_, _rs2_  |<<#insns-clmul>>       |       |       |{check}|{check}
+|{check}|{check}|clmulh _rd_, _rs1_, _rs2_ |<<#insns-clmulh>>      |       |       |{check}|{check}
+|{check}|{check}|clmulr _rd_, _rs1_, _rs2_ |<<#insns-clmulr>>      |       |       |{check}|
+|{check}|{check}|clz _rd_, _rs_            |<<#insns-clz>>         |{check}|       |       |
+|       |{check}|clzw _rd_, _rs_           |<<#insns-clzw>>        |{check}|       |       |
+|{check}|{check}|cpop _rd_, _rs_           |<<#insns-cpop>>        |{check}|       |       |
+|       |{check}|cpopw _rd_, _rs_          |<<#insns-cpopw>>       |{check}|       |       |
+|{check}|{check}|ctz _rd_, _rs_            |<<#insns-ctz>>         |{check}|       |       |
+|       |{check}|ctzw _rd_, _rs_           |<<#insns-ctzw>>        |{check}|       |       |
+|{check}|{check}|max _rd_, _rs1_, _rs2_    |<<#insns-max>>         |{check}|       |       |
+|{check}|{check}|maxu _rd_, _rs1_, _rs2_   |<<#insns-maxu>>        |{check}|       |       |
+|{check}|{check}|min _rd_, _rs1_, _rs2_    |<<#insns-min>>         |{check}|       |       |
+|{check}|{check}|minu _rd_, _rs1_, _rs2_   |<<#insns-minu>>        |{check}|       |       |
+|{check}|{check}|orc.b _rd_, _rs_          |<<#insns-orc_b>>       |{check}|       |       |
+|{check}|{check}|orn _rd_, _rs1_, _rs2_    |<<#insns-orn>>         |{check}|{check}|       |
+|{check}|{check}|pack _rd_, _rs1_, _rs2_   |<<#insns-pack>>        |       |{check}|       |
+|{check}|{check}|packh _rd_, _rs1_, _rs2_  |<<#insns-packh>>       |       |{check}|       |
+|       |{check}|packw _rd_, _rs1_, _rs2_  |<<#insns-packw>>       |       |{check}|       |
+|{check}|{check}|rev8 _rd_, _rs_           |<<#insns-rev8>>        |{check}|{check}|       |
+|{check}|{check}|rol _rd_, _rs1_, _rs2_    |<<#insns-rol>>         |{check}|{check}|       |
+|       |{check}|rolw _rd_, _rs1_, _rs2_   |<<#insns-rolw>>        |{check}|{check}|       |
+|{check}|{check}|ror _rd_, _rs1_, _rs2_    |<<#insns-ror>>         |{check}|{check}|       |
+|{check}|{check}|rori _rd_, _rs1_, _shamt_ |<<#insns-rori>>        |{check}|{check}|       |
+|       |{check}|roriw _rd_, _rs1_, _shamt_|<<#insns-roriw>>       |{check}|{check}|       |
+|       |{check}|rorw _rd_, _rs1_, _rs2_   |<<#insns-rorw>>        |{check}|{check}|       |
+|{check}|{check}|sext.b _rd_, _rs_         |<<#insns-sext_b>>      |{check}|       |       |
+|{check}|{check}|sext.h _rd_, _rs_         |<<#insns-sext_h>>      |{check}|       |       |
+|{check}|       |unzip _rd_, _rs_          |<<#insns-unzip>>       |       |{check}|       |
+|{check}|{check}|xnor _rd_, _rs1_, _rs2_   |<<#insns-xnor>>        |{check}|{check}|       |
+|{check}|{check}|zext.h _rd_, _rs_         |<<#insns-zext_h>>      |{check}|       |       |
+|{check}|       |zip _rd_, _rs_            |<<#insns-zip>>         |       |{check}|       |
+|===='''
+zh = '''
+[%header,cols="^3,^3,10,16,^2,^2,^2,^2"]
+|====
+|RV32   |RV64   |助记符                  |指令            |Zbb    |Zbkb   |Zbc    |Zbkc
+|{check}|{check}|andn _rd_, _rs1_, _rs2_   |<<#insns-andn>>        |{check}|{check}|       |
+|{check}|{check}|brev8 _rd_, _rs_          |<<#insns-brev8>>       |       |{check}|       |
+|{check}|{check}|clmul _rd_, _rs1_, _rs2_  |<<#insns-clmul>>       |       |       |{check}|{check}
+|{check}|{check}|clmulh _rd_, _rs1_, _rs2_ |<<#insns-clmulh>>      |       |       |{check}|{check}
+|{check}|{check}|clmulr _rd_, _rs1_, _rs2_ |<<#insns-clmulr>>      |       |       |{check}|
+|{check}|{check}|clz _rd_, _rs_            |<<#insns-clz>>         |{check}|       |       |
+|       |{check}|clzw _rd_, _rs_           |<<#insns-clzw>>        |{check}|       |       |
+|{check}|{check}|cpop _rd_, _rs_           |<<#insns-cpop>>        |{check}|       |       |
+|       |{check}|cpopw _rd_, _rs_          |<<#insns-cpopw>>       |{check}|       |       |
+|{check}|{check}|ctz _rd_, _rs_            |<<#insns-ctz>>         |{check}|       |       |
+|       |{check}|ctzw _rd_, _rs_           |<<#insns-ctzw>>        |{check}|       |       |
+|{check}|{check}|max _rd_, _rs1_, _rs2_    |<<#insns-max>>         |{check}|       |       |
+|{check}|{check}|maxu _rd_, _rs1_, _rs2_   |<<#insns-maxu>>        |{check}|       |       |
+|{check}|{check}|min _rd_, _rs1_, _rs2_    |<<#insns-min>>         |{check}|       |       |
+|{check}|{check}|minu _rd_, _rs1_, _rs2_   |<<#insns-minu>>        |{check}|       |       |
+|{check}|{check}|orc.b _rd_, _rs_          |<<#insns-orc_b>>       |{check}|       |       |
+|{check}|{check}|orn _rd_, _rs1_, _rs2_    |<<#insns-orn>>         |{check}|{check}|       |
+|{check}|{check}|pack _rd_, _rs1_, _rs2_   |<<#insns-pack>>        |       |{check}|       |
+|{check}|{check}|packh _rd_, _rs1_, _rs2_  |<<#insns-packh>>       |       |{check}|       |
+|       |{check}|packw _rd_, _rs1_, _rs2_  |<<#insns-packw>>       |       |{check}|       |
+|{check}|{check}|rev8 _rd_, _rs_           |<<#insns-rev8>>        |{check}|{check}|       |
+|{check}|{check}|rol _rd_, _rs1_, _rs2_    |<<#insns-rol>>         |{check}|{check}|       |
+|       |{check}|rolw _rd_, _rs1_, _rs2_   |<<#insns-rolw>>        |{check}|{check}|       |
+|{check}|{check}|ror _rd_, _rs1_, _rs2_    |<<#insns-ror>>         |{check}|{check}|       |
+|{check}|{check}|rori _rd_, _rs1_, _shamt_ |<<#insns-rori>>        |{check}|{check}|       |
+|       |{check}|roriw _rd_, _rs1_, _shamt_|<<#insns-roriw>>       |{check}|{check}|       |
+|       |{check}|rorw _rd_, _rs1_, _rs2_   |<<#insns-rorw>>        |{check}|{check}|       |
+|{check}|{check}|sext.b _rd_, _rs_         |<<#insns-sext_b>>      |{check}|       |       |
+|{check}|{check}|sext.h _rd_, _rs_         |<<#insns-sext_h>>      |{check}|       |       |
+|{check}|       |unzip _rd_, _rs_          |<<#insns-unzip>>       |       |{check}|       |
+|{check}|{check}|xnor _rd_, _rs1_, _rs2_   |<<#insns-xnor>>        |{check}|{check}|       |
+|{check}|{check}|zext.h _rd_, _rs_         |<<#insns-zext_h>>      |{check}|       |       |
+|{check}|       |zip _rd_, _rs_            |<<#insns-zip>>         |       |{check}|       |
+|===='''

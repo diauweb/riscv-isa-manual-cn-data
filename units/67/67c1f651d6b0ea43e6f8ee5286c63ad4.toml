@@ -1,0 +1,8 @@
+unit_id = "67c1f651d6b0ea43e6f8ee5286c63ad4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Smctr_transfer_steps]#Recorded transfers are inserted at the write pointer, which is then incremented, while older recorded transfers may be overwritten once the buffer is full. Or the user can enable RAS (Return Address Stack) emulation mode, where only function calls are recorded, and function returns pop the last call record.  The source PC, target PC, and some optional metadata (transfer type, elapsed cycles) are stored for each recorded transfer.#'''
+zh = '''
+[#norm:Smctr_transfer_steps]##记录的转移插入写指针处，然后写指针递增；一旦缓冲区满，较旧的记录转移可被覆盖。或者用户可使能 RAS（返回地址栈）仿真模式，其中仅记录函数调用，函数返回则弹出最后一条调用记录。对于每次记录的转移，保存源 PC、目标 PC 和一些可选元数据（转移类型、已用周期）。##'''

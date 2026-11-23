@@ -1,0 +1,23 @@
+unit_id = "7f87651d048f62b0824775eb46542dd4"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Although it is convenient to speak of _the_ RISC-V ISA, RISC-V is
+actually a family of related ISAs, of which there are currently four
+base ISAs. Each base integer instruction set is characterized by the
+width of the integer registers and the corresponding size of the address
+space and by the number of integer registers. There are two primary base
+integer variants, RV32I and RV64I, described in
+<<rv32>> and <<rv64>>, which provide 32-bit
+or 64-bit address spaces respectively. We use the term XLEN to refer to
+the width of an integer register in bits (either 32 or 64).
+<<rv32e, Chapter 6>> describes the RV32E and RV64E subset variants of the
+RV32I or RV64I base instruction sets respectively, which have been added to support small
+microcontrollers, and which have half the number of integer registers.
+<<rv128, Chapter 8>> sketches a future RV128I variant of the
+base integer instruction set supporting a flat 128-bit address space
+(XLEN=128). The base integer instruction sets use a two's-complement
+representation for signed integer values.'''
+zh = '''
+尽管将 _the_ RISC-V ISA 作为一个单一 ISA 来谈论很方便，但实际上 RISC-V 是一个相关 ISA 家族，目前其中有四个基础 ISA。每个基础整数指令集的特征在于整数寄存器的宽度、相应的地址空间大小以及整数寄存器的数量。有两个主要基础整数变体，RV32I 和 RV64I，分别在 <<rv32>> 和 <<rv64>> 中描述，它们分别提供 32 位或 64 位地址空间。我们用术语 XLEN 指代整数寄存器的宽度（以位为单位，为 32 或 64）。<<rv32e, 第 6 章>> 分别描述 RV32I 和 RV64I 基础指令集的 RV32E 和 RV64E 子集变体，这些变体是为了支持小型微控制器而加入的，并且其整数寄存器数量为一半。<<rv128, 第 8 章>> 勾画了基础整数指令集的一种未来 RV128I 变体，它支持平坦的 128 位地址空间（XLEN=128）。基础整数指令集对有符号整数值采用补码表示。'''

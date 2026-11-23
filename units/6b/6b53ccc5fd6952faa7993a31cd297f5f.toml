@@ -1,0 +1,18 @@
+unit_id = "6b53ccc5fd6952faa7993a31cd297f5f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The encoding of the csr::[mode] field is shown in <<norm:mtvec_mode_enc>>.
+[#norm:mtvec_mode_direct_op]#When csr::[mode]=Direct, all traps into
+machine mode cause the `pc` to be set to the address in the csr::[base] field.#
+[#norm:mtvec_mode_vectored_op]#When csr::[mode]=Vectored, all synchronous exceptions into machine mode cause
+the `pc` to be set to the address in the csr::[base] field, whereas interrupts
+cause the `pc` to be set to the address in the csr::[base] field plus four
+times the interrupt cause number.#
+For example, a machine-mode timer interrupt (see <<norm:mcause_exccode_enc_img>>) causes the `pc` to be set to csr::[base]+`0x1c`.'''
+zh = '''
+csr::[mode] 字段的编码如 <<norm:mtvec_mode_enc>> 所示。
+[#norm:mtvec_mode_direct_op]##当 csr::[mode]=Direct 时，进入机器模式的所有陷阱都使 `pc` 被设置为 csr::[base] 字段中的地址。##
+[#norm:mtvec_mode_vectored_op]##当 csr::[mode]=Vectored 时，进入机器模式的所有同步异常使 `pc` 被设置为 csr::[base] 字段中的地址，而中断使 `pc` 被设置为 csr::[base] 字段中的地址加上四倍中断原因编号。##
+例如，机器模式定时器中断（见 <<norm:mcause_exccode_enc_img>>）使 `pc` 被设置为 csr::[base]+`0x1c`。'''

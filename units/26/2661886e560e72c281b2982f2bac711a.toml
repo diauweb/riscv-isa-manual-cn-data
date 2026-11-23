@@ -1,0 +1,12 @@
+unit_id = "2661886e560e72c281b2982f2bac711a"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zimop_mop-rr_op]#The Zimop extension additionally defines 8 MOP instructions named
+MOP.RR.__n__, where __n__ is an integer between 0 and 7, inclusive.
+Unless redefined by another extension, these instructions simply
+write 0 to `x[rd]`.#  Their encoding allows future extensions to define them to
+read `x[rs1]` and `x[rs2]`, as well as write `x[rd]`.'''
+zh = '''
+[#norm:Zimop_mop-rr_op]##Zimop 扩展还定义了 8 条名为 MOP.RR.__n__ 的 MOP 指令，其中 __n__ 是 0 到 7（含）之间的整数。除非被另一扩展重新定义，这些指令仅向 `x[rd]` 写入 0。## 其编码允许未来扩展将其定义为读取 `x[rs1]` 和 `x[rs2]` 并写入 `x[rd]`。'''

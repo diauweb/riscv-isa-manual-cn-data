@@ -1,0 +1,242 @@
+{
+  "sha": "eaeba49da71900933e55f048120fd09e1530f425",
+  "parent_sha": "1df73bb147d4b43eb2858a023dda7526218b3fa8",
+  "is_baseline": false,
+  "date": "2026-04-30T00:04:19-07:00",
+  "title": "Clarify that WRS interrupt interaction matches WFI (#2996)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-eaeba49-2026-04-30"
+  ],
+  "diff": {
+    "added": 0,
+    "modified": 4,
+    "moved": 0,
+    "deleted": 0,
+    "touched_chapters": [
+      "priv/machine",
+      "unpriv/za"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "unpriv/za",
+      "section_id": "_wait_on_reservation_set_instructions",
+      "slot": 0,
+      "unit_id": "e0d9c0b2a04300bc42ce20c7f2bb7a4e",
+      "status": "modified",
+      "prev_unit_id": "a2ae6f3ac11f6eff2451c25a9cadc6a4"
+    },
+    {
+      "chapter_key": "unpriv/za",
+      "section_id": "_wait_on_reservation_set_instructions",
+      "slot": 3,
+      "unit_id": "255ec1fcd52495d37c151ad3f941c5a8",
+      "status": "modified",
+      "prev_unit_id": "e70ad3558d1d0bc9280c6d8d7e6a9eb9"
+    },
+    {
+      "chapter_key": "unpriv/za",
+      "section_id": "_wait_on_reservation_set_instructions",
+      "slot": 5,
+      "unit_id": "23438160c67d8a6b0503e3dab80e180a",
+      "status": "modified",
+      "prev_unit_id": "bac16941cf55e055238a4cca862047a1"
+    },
+    {
+      "chapter_key": "priv/machine",
+      "section_id": "wfi",
+      "slot": 6,
+      "unit_id": "39df2b81241d133def5ee43926a1a2c9",
+      "status": "modified",
+      "prev_unit_id": "17edbbb3d18dfb902b92493534805c27"
+    }
+  ],
+  "deleted_blocks": [],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/unpriv.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "0ed42eef2175f4d8"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "3ffec2830e969418"
+        },
+        {
+          "id": "rv32",
+          "chap_hash": "e0c830bc9a092b88"
+        },
+        {
+          "id": "rv32e",
+          "chap_hash": "b3662c0d61b39d6e"
+        },
+        {
+          "id": "rv64",
+          "chap_hash": "7e4181e9e534c3bd"
+        },
+        {
+          "id": "mm",
+          "chap_hash": "bbb1ab2dc21b3880"
+        },
+        {
+          "id": "zi",
+          "chap_hash": "782217ef8e6f3af0"
+        },
+        {
+          "id": "za",
+          "chap_hash": "d5f81293c842b726"
+        },
+        {
+          "id": "zf",
+          "chap_hash": "4817588b065d51d2"
+        },
+        {
+          "id": "zc",
+          "chap_hash": "6212903e26de9b6e"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "d72052f196f7f1bb"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "704f17e97dd69f78"
+        },
+        {
+          "id": "zp",
+          "chap_hash": "3ac2dd49f55bb0fc"
+        },
+        {
+          "id": "crypto_scalar_instructions",
+          "chap_hash": "32c2cbfd7b4acf15"
+        },
+        {
+          "id": "_cryptography_extensions_vector_instructions_version_1_0",
+          "chap_hash": "566822259ef8cbf5"
+        },
+        {
+          "id": "matrix",
+          "chap_hash": "7e5c13399eebb94c"
+        },
+        {
+          "id": "naming",
+          "chap_hash": "568558ebae96a48c"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "cb826c319f201d54"
+        },
+        {
+          "id": "app:mm",
+          "chap_hash": "2a293f9a3d4b50b9"
+        },
+        {
+          "id": "app:code-examples",
+          "chap_hash": "f1c4dc7933339d2b"
+        },
+        {
+          "id": "app:rationale",
+          "chap_hash": "a3b4eec665358106"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/priv/priv.adoc",
+      "chapters": [
+        {
+          "id": "_preface_2",
+          "chap_hash": "185273a6acdec241"
+        },
+        {
+          "id": "_introduction_3",
+          "chap_hash": "b1d847159e66cdc0"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "0185310812358f1f"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "2487c73a84c96dc8"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "c9301ebc17fc0880"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "420d6810e5d89a18"
+        },
+        {
+          "id": "sm",
+          "chap_hash": "8994021b1e6479ff"
+        },
+        {
+          "id": "sv",
+          "chap_hash": "2cf65231e3481cdb"
+        },
+        {
+          "id": "ss",
+          "chap_hash": "2044087951a3537d"
+        },
+        {
+          "id": "sh",
+          "chap_hash": "f54a4085d051a503"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "debe87e4bcecc48f"
+        },
+        {
+          "id": "app:priv-rationale",
+          "chap_hash": "ea0a5da83728b94b"
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "title_en": "The RISC-V Instruction Set Manual, Volume III: Profiles",
+      "title_unit_id": "654555b9357d4601eff4650d45dc9b85",
+      "entry_file": "src/profiles/profiles.adoc",
+      "chapters": [
+        {
+          "id": "_preface_3",
+          "chap_hash": "aab3cc2b65a873ec"
+        },
+        {
+          "id": "_introduction_7",
+          "chap_hash": "a4be85fea573ad41"
+        },
+        {
+          "id": "_rvi20_profiles",
+          "chap_hash": "699b26195a7fcbd7"
+        },
+        {
+          "id": "_rva20_profiles",
+          "chap_hash": "a269935bbacef33e"
+        },
+        {
+          "id": "_rva22_profiles",
+          "chap_hash": "ce12b6a6cbbdcbb1"
+        },
+        {
+          "id": "_rva23_profiles",
+          "chap_hash": "24c93303b2b82201"
+        },
+        {
+          "id": "_rvb23_profiles",
+          "chap_hash": "19bbd4b23343ac39"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+unit_id = "1adbe3ef98e9ff2a77bb370586641e27"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Even when misaligned loads and stores complete successfully, these
+accesses might run extremely slowly depending on the implementation
+(e.g., when implemented via an invisible trap). Furthermore, whereas
+[#norm:ldst_atomicity_for_aligned]#naturally aligned
+loads and stores are guaranteed to execute atomically#,
+misaligned loads and stores might not, and hence require additional
+synchronization to ensure atomicity.'''
+zh = '''
+即使非对齐加载和存储成功完成，这些访问也可能根据实现而运行得极其缓慢（例如，当通过不可见陷阱实现时）。此外，[#norm:ldst_atomicity_for_aligned]##自然对齐的加载和存储保证原子执行##，而非对齐加载和存储则未必，因此需要额外的同步来确保原子性。'''

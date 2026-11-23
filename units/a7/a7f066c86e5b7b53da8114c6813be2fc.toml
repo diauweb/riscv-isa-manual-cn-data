@@ -1,0 +1,19 @@
+unit_id = "a7f066c86e5b7b53da8114c6813be2fc"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Since insn:csrrs[] and insn:csrrc[] perform a read-modify-write operation, any bits that read as
+a different value to their underlying value may be modified by these
+instructions even if the corresponding bit is not set in _rs1_. For example,
+pmpaddr__n__[G-1] may have an underlying value of 1 but read as 0. Executing
+insn:csrrc[] or insn:csrrs[] to modify a different bit will cause 0 to be read from
+pmpaddr__n__[G-1] and then written back, updating the underlying value to 0.
+===='''
+zh = '''
+[NOTE]
+====
+由于 insn:csrrs[] 和 insn:csrrc[] 执行读-改-写操作，所以即使对应位未在 __rs1__ 中置位，任何读出的值与其底层值不同的位也可能被这些指令修改。例如，pmpaddr__n__[G-1] 的底层值可能为 1，但读出为 0。执行 insn:csrrc[] 或 insn:csrrs[] 以修改其他位，会导致从 pmpaddr__n__[G-1] 读出 0 再写回，从而将底层值更新为 0。
+===='''

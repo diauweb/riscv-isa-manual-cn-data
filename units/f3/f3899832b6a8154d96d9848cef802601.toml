@@ -1,0 +1,12 @@
+unit_id = "f3899832b6a8154d96d9848cef802601"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `sscratch` register is an SXLEN-bit read/write register, dedicated
+for use by the supervisor. Typically, `sscratch` is used to hold a
+pointer to the hart-local supervisor context while the hart is executing
+user code. At the beginning of a trap handler, `sscratch` is swapped
+with a user register to provide an initial working register.'''
+zh = '''
+`sscratch` 寄存器是一个 SXLEN 位可读写寄存器，专供监管模式使用。通常，`sscratch` 用于在硬件线程执行用户代码时保存指向该硬件线程本地监管上下文的指针。在陷阱处理程序的开头，`sscratch` 与一个用户寄存器交换，以提供一个初始工作寄存器。'''

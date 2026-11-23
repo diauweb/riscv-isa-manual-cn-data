@@ -1,0 +1,12 @@
+unit_id = "93fbc7a10f0b86606e737568a7ce02f2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The DTM can start a request when the DM sets REQ_READY to 1. When this
+is the case REQ_OP can be set to 1 for a read or 2 for a write request.
+The desired address is driven with the REQ_ADDRESS signal. Finally
+REQ_VALID is set high, indicating to the DM that a valid request is
+pending.'''
+zh = '''
+当 DM 将 REQ_READY 置为 1 时，DTM 可发起请求。此时可将 REQ_OP 置为 1 表示读请求，或置为 2 表示写请求。所需地址由 REQ_ADDRESS 信号驱动。最后将 REQ_VALID 置高，向 DM 指示有一个有效请求待处理。'''

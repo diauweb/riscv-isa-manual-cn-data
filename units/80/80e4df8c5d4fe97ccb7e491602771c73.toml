@@ -1,0 +1,59 @@
+unit_id = "80e4df8c5d4fe97ccb7e491602771c73"
+kind = "code"
+translatable = false
+en = '''
+.The RVWMO memory model formalized in Alloy (3/5: model of memory)
+[source,sml]
+....
+//Basic model of memory
+
+sig Hart {  // hardware thread
+  start : one Event
+}
+sig Address {}
+abstract sig Event {
+  po: lone Event // program order
+}
+
+abstract sig MemoryEvent extends Event {
+  address: one Address,
+  acquireRCpc: lone MemoryEvent,
+  acquireRCsc: lone MemoryEvent,
+  releaseRCpc: lone MemoryEvent,
+  releaseRCsc: lone MemoryEvent,
+  addrdep: set MemoryEvent,
+  ctrldep: set Event,
+  datadep: set MemoryEvent,
+  gmo: set MemoryEvent,  // global memory order
+  rf: set MemoryEvent
+}
+sig LoadNormal extends MemoryEvent {} // l{b|h|w|d}
+sig LoadReserve extends MemoryEvent { // lr
+  pair: lone StoreConditional
+}
+sig StoreNormal extends MemoryEvent {}       // s{b|h|w|d}
+// all StoreConditionals in the model are assumed to be successful
+sig StoreConditional extends MemoryEvent {}  // sc
+sig AMO extends MemoryEvent {}               // amo
+sig NOP extends Event {}
+
+fun Load : Event { LoadNormal + LoadReserve + AMO }
+fun Store : Event { StoreNormal + StoreConditional + AMO }
+
+sig Fence extends Event {
+  pr: lone Fence, // opcode bit
+  pw: lone Fence, // opcode bit
+  sr: lone Fence, // opcode bit
+  sw: lone Fence  // opcode bit
+}
+sig FenceTSO extends Fence {}
+
+/* Alloy encoding detail: opcode bits are either set (encoded, e.g.,
+ * as f.pr in iden) or unset (f.pr not in iden).  The bits cannot be used for
+ * anything else */
+fact { pr + pw + sr + sw in iden }
+// likewise for ordering annotations
+fact { acquireRCpc + acquireRCsc + releaseRCpc + releaseRCsc in iden }
+// don't try to encode FenceTSO via pr/pw/sr/sw; just use it as-is
+fact { no FenceTSO.(pr + pw + sr + sw) }
+....'''

@@ -1,0 +1,40 @@
+unit_id = "f495e70c0189b9a54cb32decad37634b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The timer facility is defined to use wall-clock time rather than a cycle
+counter to support modern processors that run with a highly variable
+clock frequency to save energy through dynamic voltage and frequency
+scaling.
+
+Accurate real-time clocks (RTCs) are relatively expensive to provide
+(requiring a crystal or MEMS oscillator) and have to run even when the
+rest of system is powered down, and so there is usually only one in a
+system located in a different frequency/voltage domain from the
+processors. Hence, the RTC must be shared by all the harts in a system
+and accesses to the RTC will potentially incur the penalty of a
+voltage-level-shifter and clock-domain crossing. It is thus more natural
+to expose `mtime` as a memory-mapped register than as a CSR.
+
+Lower privilege levels do not have their own `timecmp` registers.
+Instead, machine-mode software can implement any number of virtual
+timers on a hart by multiplexing the next timer interrupt into the
+`mtimecmp` register.
+
+Simple fixed-frequency systems can use a single clock for both cycle
+counting and wall-clock time.
+===='''
+zh = '''
+[NOTE]
+====
+定时器设施定义为使用挂钟时间而不是周期计数器，以支持通过动态电压和频率调节来节约能耗、以高度可变时钟频率运行的现代处理器。
+
+提供精确的实时时钟（RTC）相对昂贵（需要晶体或 MEMS 振荡器），且必须在系统其余部分断电时仍运行，因此系统中通常只有一个 RTC，其位于与处理器不同的频率/电压域。因此，RTC 必须由系统中所有硬件线程共享，对 RTC 的访问可能招致电平转换器和时钟域交叉的代价。因此，将 `mtime` 暴露为内存映射寄存器比暴露为 CSR 更为自然。
+
+较低特权级没有自己的 `timecmp` 寄存器。相反，机器模式软件可通过将下一个定时器中断复用到 `mtimecmp` 寄存器中，在一个硬件线程上实现任意数量的虚拟定时器。
+
+简单的固定频率系统可使用单个时钟同时进行周期计数和挂钟计时。
+===='''

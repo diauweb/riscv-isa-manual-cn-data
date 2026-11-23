@@ -1,0 +1,32 @@
+unit_id = "b4d68dd01c99bfd672b28b08948da452"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The assembly syntax for `lui` and `auipc` does not represent the lower
+12 bits of the U-immediate, which are always zero.
+
+The AUIPC instruction supports two-instruction sequences to access
+arbitrary offsets from the PC for both control-flow transfers and data
+accesses. The combination of an AUIPC and the 12-bit immediate in a JALR
+can transfer control to any 32-bit PC-relative address, while an AUIPC
+plus the 12-bit immediate offset in regular load or store instructions
+can access any 32-bit PC-relative data address.
+
+The current PC can be obtained by setting the U-immediate to 0. Although
+a JAL +4 instruction could also be used to obtain the local PC (of the
+instruction following the JAL), it might cause pipeline breaks in
+simpler microarchitectures or pollute BTB structures in more complex
+microarchitectures.
+===='''
+zh = '''
+[NOTE]
+====
+`lui` 和 `auipc` 的汇编语法不表示 U 立即数的低 12 位，这些位始终为零。
+
+AUIPC 指令支持双指令序列，用于在控制流传输和数据访问中访问相对于 PC 的任意偏移。AUIPC 与 JALR 中的 12 位立即数组合可以将控制转移到任何 32 位 PC 相对地址，而 AUIPC 加上常规加载或存储指令中的 12 位立即数偏移可以访问任何 32 位 PC 相对数据地址。
+
+通过将 U 立即数设为 0 可以获得当前 PC。虽然也可以使用 JAL +4 指令获得局部 PC（JAL 之后指令的 PC），但这可能在较简单的微架构中导致流水线中断，或在更复杂的微架构中污染 BTB 结构。
+===='''

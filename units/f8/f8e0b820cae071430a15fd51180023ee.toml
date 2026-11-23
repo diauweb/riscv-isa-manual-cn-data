@@ -1,0 +1,71 @@
+unit_id = "f8e0b820cae071430a15fd51180023ee"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.JTAG Connector Pin Functions
+[%autowidth,align="center",float="center",cols="^,^,^"]
+|===
+.6+| Essential | GND | Connected to ground.
+|TCK | JTAG TCK signal, driven by the debug adapter.
+|TDI |JTAG TDI signal, driven by the debug adapter.
+|TDO | JTAG TDO signal, driven by the target.
+|TMS | JTAG TMS signal, driven by the debug adapter.
+|VREF DEBUG |Reference voltage for logic high.
+.2+|Recommended | nRESET | Open drain active low reset signal, usually
+driven by the debug adapter. The signal may be used bi-directional to
+drive or sense the target reset signal. +
+Asserting reset should reset any RISC-V cores as well as any other
+peripherals on the PCB. It should not reset the debug logic. This pin is
+optional but strongly encouraged. +
+nRESET should never be connected to the TAP reset, otherwise the
+debugger might not be able to debug through a reset to discover the
+cause of a crash or to maintain execution control after the reset.
+|KEY | This pin may be cut on the male and plugged on the female header
+to ensure the header is always plugged in correctly. It is, however,
+recommended to use this pin as an additional ground, to allow for
+fastest TCK speeds. A shrouded connector should be used to prevent the
+cable from being plugged in incorrectly.
+.3+|Advanced | EXT | Reserved for custom use. Could be an input or an
+output.
+| TRIGIN | Not used by this specification, to be driven by debug
+adapter. (Can be used for extended functions like UART or boot mode
+selection by some debug adapters).
+| TRIGOUT | Not used by this specification, driven by the target.
+|Specialized | nTRST | Test reset, driven by the debug adapter. Asserting
+nTRST initializes the JTAG DTM asynchronously. It is used in systems
+where the JTAG DTM is not ready to be used after a normal power up. This
+signal is sometimes called TRST*.
+.2+|Legacy | RTCK | Return test clock, driven by the target. A target may
+relay the TCK signal here once it has processed it, allowing a debugger
+to adjust its TCK frequency in response. +
+This signal should only be used to support legacy components that rely
+on this functionality.
+| nTRST_PD | Test reset pull-down, driven by the debug adapter. Same
+function as nTRST, but with pull-down resistor on target. +
+This signal should only be used to support legacy components that rely
+on this functionality.
+|==='''
+zh = '''
+.JTAG 连接器引脚功能
+[%autowidth,align="center",float="center",cols="^,^,^"]
+|===
+.6+| 必要 | GND | 连接到地。
+|TCK | JTAG TCK 信号，由调试适配器驱动。
+|TDI |JTAG TDI 信号，由调试适配器驱动。
+|TDO | JTAG TDO 信号，由目标驱动。
+|TMS | JTAG TMS 信号，由调试适配器驱动。
+|VREF DEBUG |逻辑高电平的参考电压。
+.2+|推荐 | nRESET | 开漏低有效复位信号，通常由调试适配器驱动。该信号可作为双向信号使用，以驱动或感测目标复位信号。 +
+置有效复位宜复位所有 RISC-V 核以及 PCB 上的任何其他外设。它不宜复位调试逻辑。该引脚是可选的，但强烈建议使用。 +
+在任何情况下都不宜将 nRESET 连接到 TAP 复位，否则调试器可能无法在复位过程中进行调试，以发现崩溃原因或在复位后保持执行控制。
+|KEY | 该引脚可在外排针上剪断并在母座上堵住，以确保排针始终正确插入。然而，宜将此引脚用作附加地，以获得最快的 TCK 速度。宜使用带护罩的连接器，以防止电缆插错。
+.3+|高级 | EXT | 保留供自定义使用。可以是输入或输出。
+| TRIGIN | 本规范未使用，由调试适配器驱动。（某些调试适配器可将其用于 UART 或启动模式选择等扩展功能。）
+| TRIGOUT | 本规范未使用，由目标驱动。
+|专用 | nTRST | 测试复位，由调试适配器驱动。置有效 nTRST 会异步初始化 JTAG DTM。它用于在上电后 JTAG DTM 尚未就绪的系统中。该信号有时称为 TRST*。
+.2+|传统 | RTCK | 返回测试时钟，由目标驱动。目标可在处理完 TCK 信号后在此转发该信号，使调试器能够相应地调整其 TCK 频率。 +
+该信号宜仅用于支持依赖此功能的传统组件。
+| nTRST_PD | 测试复位下拉，由调试适配器驱动。功能与 nTRST 相同，但目标端带有下拉电阻。 +
+该信号宜仅用于支持依赖此功能的传统组件。
+|==='''

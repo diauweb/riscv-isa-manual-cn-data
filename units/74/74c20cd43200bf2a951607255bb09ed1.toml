@@ -1,0 +1,17 @@
+unit_id = "74c20cd43200bf2a951607255bb09ed1"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The ext:zilsd[] extension defines load-pair and store-pair instructions for RV32.
+When this extension is not implemented, transferring double-precision operands
+in ext:zdinx[] from or to memory requires two loads or stores. Register moves
+need only a single insn:fsgnj.d[] instruction, however.
+===='''
+zh = '''
+[NOTE]
+====
+ext:zilsd[] 扩展为 RV32 定义加载对和存储对指令。未实现该扩展时，将 ext:zdinx[] 中的双精度操作数从内存传出或传入内存需要两次加载或存储。然而，寄存器移动只需要一条 insn:fsgnj.d[] 指令。
+===='''

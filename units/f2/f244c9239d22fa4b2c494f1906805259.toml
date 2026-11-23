@@ -1,0 +1,12 @@
+unit_id = "f244c9239d22fa4b2c494f1906805259"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In harts with U-mode, the `mcounteren` must be implemented, but all
+fields are *WARL* and may be read-only zero, indicating reads to the
+corresponding counter will cause an illegal-instruction exception when
+executing in a less-privileged mode. In harts without U-mode, the
+`mcounteren` register should not exist.'''
+zh = '''
+在具有 U 模式的硬件线程中，`mcounteren` 应实现，但所有字段均为 *WARL*，且可为只读零，指示在较低特权模式下执行时读取相应计数器将引发非法指令异常。在没有 U 模式的硬件线程中，`mcounteren` 寄存器不宜存在。'''

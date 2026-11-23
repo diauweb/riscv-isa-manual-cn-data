@@ -1,0 +1,17 @@
+unit_id = "9171b83246115fda2367b881f025d389"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Instructions that access a non-existent CSR are reserved.
+[#norm:Zicsr_illegal_mode]#Attempts to access a CSR without appropriate privilege level
+raise illegal-instruction exceptions or, as described in
+<<sec:hcauses>>, virtual-instruction exceptions.#
+[#norm:Zicsr_illegal_acc]#Attempts to write a read-only register raise illegal-instruction exceptions.#
+[#norm:Zicwr_write_ro]#A read/write register might also contain some bits that are
+read-only, in which case writes to the read-only bits are ignored.#'''
+zh = '''
+访问不存在的 CSR 的指令是保留的。
+[#norm:Zicsr_illegal_mode]#尝试在未具备适当特权级的情况下访问 CSR 会引发非法指令异常，或者如 <<sec:hcauses>> 所述引发虚拟指令异常。#
+[#norm:Zicsr_illegal_acc]#尝试写入只读寄存器会引发非法指令异常。#
+[#norm:Zicwr_write_ro]#读写寄存器还可能包含某些只读位，此时忽略对只读位的写入。#'''

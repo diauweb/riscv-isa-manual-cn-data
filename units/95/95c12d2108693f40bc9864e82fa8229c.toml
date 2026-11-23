@@ -1,0 +1,11 @@
+unit_id = "95c12d2108693f40bc9864e82fa8229c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:Zicsr_wide_csr_access]#If a standard CSR is wider than XLEN bits, then an explicit read
+of the CSR returns the register's least-significant XLEN bits,
+and an explicit write to the CSR modifies only the register's
+least-significant XLEN bits, leaving the upper bits unchanged.#'''
+zh = '''
+[#norm:Zicsr_wide_csr_access]#若标准 CSR 宽于 XLEN 位，则对该 CSR 的显式读取返回该寄存器的最低 XLEN 位，对该 CSR 的显式写入仅修改该寄存器的最低 XLEN 位，使高位保持不变。#'''

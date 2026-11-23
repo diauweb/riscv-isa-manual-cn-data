@@ -1,0 +1,14 @@
+unit_id = "0a99d0f9740194d3fb6b5f1581fee497"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-mv_op]#insn:c.mv[] copies the value in register _rs2_ into register _rd_. It expands
+into insn:add[rd,x0,rs2].#
+[#norm:c-mv_jr]#insn:c.mv[] is valid only when
+_rs2_≠`x0`; the code points with _rs2_=`x0` correspond to the insn:c.jr[] instruction.#
+[#norm:c-mv_hint]#The code points with _rs2_≠`x0` and _rd_=`x0` are HINTs.#'''
+zh = '''
+[#norm:c-mv_op]##insn:c.mv[] 将寄存器 _rs2_ 中的值复制到寄存器 _rd_。它展开为 insn:add[rd,x0,rs2]。##
+[#norm:c-mv_jr]##insn:c.mv[] 仅在 _rs2_≠`x0` 时有效；_rs2_=`x0` 的编码点对应于 insn:c.jr[] 指令。##
+[#norm:c-mv_hint]##_rs2_≠`x0` 且 _rd_=`x0` 的编码点为 HINT。##'''

@@ -1,0 +1,32 @@
+unit_id = "78dd6fd1e68227cd9500a8e3b120b419"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Encoding of `stvec` MODE field.
+[%autowidth,float="center",align="center",cols=">,^,<",options="header",]
+|===
+|Value |Name |Description
+|0 +
+1 +
+{ge}2
+|Direct +
+Vectored
+|All exceptions set `pc` to BASE. +
+Asynchronous interrupts set `pc` to BASE+4{times}cause. +
+_Reserved_
+|==='''
+zh = '''
+.`stvec` MODE 字段的编码
+[%autowidth,float="center",align="center",cols=">,^,<",options="header",]
+|===
+|值 |名称 |说明
+|0 +
+1 +
+{ge}2
+|Direct +
+Vectored
+|所有异常将 `pc` 设置为 BASE。 +
+异步中断将 `pc` 设置为 BASE+4{times}cause。 +
+_保留_
+|==='''

@@ -1,0 +1,18 @@
+unit_id = "ee0975413ec8a3c8134fdbb1643f6576"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mip_mandatory]#The csr:mip[] register must always be implemented,
+but can contain read-only zeros in any position, indicating that interrupt
+can never become pending.#
+[#norm:mip_bits_wr_or_rdonly]#Each individual bit in register csr:mip[] may be writable or may be read-only.#
+[#norm:mip_bits_wr_op]#When bit _i_ in csr:mip[] is writable, a pending interrupt _i_
+can be cleared by writing 0 to this bit.#
+[#norm:mip_bits_rdonly_op]#If interrupt _i_ can become pending but bit _i_ in csr:mip[] is read-only, the implementation must
+provide some other mechanism for clearing the pending interrupt.#'''
+zh = '''
+[#norm:mip_mandatory]##csr:mip[] 寄存器应始终实现，但可在任意位置包含只读零，表示该中断永远不会变为挂起。##
+[#norm:mip_bits_wr_or_rdonly]##寄存器 csr:mip[] 中的每个单独位可以是可写或只读的。##
+[#norm:mip_bits_wr_op]##当 csr:mip[] 中的位 _i_ 可写时，可通过向该位写 0 来清除挂起中断 _i_。##
+[#norm:mip_bits_rdonly_op]##若中断 _i_ 可成为挂起，但 csr:mip[] 中的位 _i_ 为只读，则实现应提供某种其他机制来清除该挂起中断。##'''

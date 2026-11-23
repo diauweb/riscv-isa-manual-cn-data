@@ -1,0 +1,15 @@
+unit_id = "fd5b251d3ada10d32cc74073521120c8"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. if _i_ is a normal fence and it has `.pr` set, all
+program-order-previous load instructions are finished;
+. if _i_ is a normal fence and it has `.pw` set, all
+program-order-previous store instructions are finished; and
+. if _i_ is a `fence.tso`, all program-order-previous load
+and store instructions are finished.'''
+zh = '''
+. 若 _i_ 是普通 fence 且设置了 `.pr`，则所有程序顺序在前的加载指令均已完成；
+. 若 _i_ 是普通 fence 且设置了 `.pw`，则所有程序顺序在前的存储指令均已完成；且
+. 若 _i_ 是 `fence.tso`，则所有程序顺序在前的加载指令和存储指令均已完成。'''

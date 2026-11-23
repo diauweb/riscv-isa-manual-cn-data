@@ -1,0 +1,18 @@
+unit_id = "cfaa2b118561a056b164757ade74ab7b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:H_vscsrs_sub]#When V=1, the VS CSRs substitute for the corresponding supervisor CSRs,
+taking over all functions of the usual supervisor CSRs except as
+specified otherwise. Instructions that normally read or modify a
+supervisor CSR shall instead access the corresponding VS CSR.#
+[#norm:H_vscsrs_acc_vs]#When V=1,
+an attempt to read or write a VS CSR directly by its own separate CSR
+address causes a virtual-instruction exception.#
+([#norm:H_vscsrs_acc_u]#Attempts from U-mode
+cause an illegal-instruction exception as usual.#)
+[#norm:H_vscsrs_acc_m_hs]#The VS CSRs can be
+accessed as themselves only from M-mode or HS-mode.#'''
+zh = '''
+[#norm:H_vscsrs_sub]##当 V=1 时，VS CSR 替代对应的监管 CSR，接管常规监管 CSR 的全部功能，除非另有规定。通常读取或修改监管 CSR 的指令应改为访问对应的 VS CSR。## [#norm:H_vscsrs_acc_vs]##当 V=1 时，尝试通过其自身独立的 CSR 地址直接读取或写入 VS CSR 会引发虚拟指令异常。##（[#norm:H_vscsrs_acc_u]##来自 U 模式的尝试按常规引发非法指令异常。##）[#norm:H_vscsrs_acc_m_hs]##只能从 M 模式或 HS 模式以 VS CSR 自身访问这些 CSR。##'''

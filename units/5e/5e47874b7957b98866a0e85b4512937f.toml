@@ -1,0 +1,19 @@
+unit_id = "5e47874b7957b98866a0e85b4512937f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:lw_op]#The insn:lw[] instruction loads a 32-bit value from memory into _rd_.#
+[#norm:lh_op]#insn:lh[] loads a 16-bit value from memory, then sign-extends to 32-bits before storing
+in _rd_.#
+[#norm:lhu_op]#insn:lhu[] loads a 16-bit value from memory but then zero extends to
+32-bits before storing in _rd_.#
+[#norm:lb_lbu_op]#insn:lb[] and insn:lbu[] are defined analogously for 8-bit values.#
+[#norm:sw_sh_sb_op]#The insn:sw[], insn:sh[], and insn:sb[] instructions store 32-bit, 16-bit, and
+8-bit values from the low bits of register _rs2_ to memory.#'''
+zh = '''
+[#norm:lw_op]##insn:lw[] 指令从内存加载 32 位值到 _rd_。##
+[#norm:lh_op]##insn:lh[] 从内存加载 16 位值，然后符号扩展至 32 位，再存入 _rd_。##
+[#norm:lhu_op]##insn:lhu[] 从内存加载 16 位值，但随后零扩展至 32 位，再存入 _rd_。##
+[#norm:lb_lbu_op]##insn:lb[] 和 insn:lbu[] 对 8 位值类似定义。##
+[#norm:sw_sh_sb_op]##insn:sw[]、insn:sh[] 和 insn:sb[] 指令将寄存器 _rs2_ 低位的 32 位、16 位和 8 位值存入内存。##'''

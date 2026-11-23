@@ -1,0 +1,18 @@
+unit_id = "4a7138df1cc0186c613824e665696b91"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Register: trRamData: Trace RAM Sink Data Register (trBaseRamSink+0x040)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*Bit* |*Field* |*Description* |*RW* |*Reset*
+|31:0 |trRamData |Read (and optional write) value for trace sink memory access. SRAM is always accessed by 32-bit words through this path regardless of the actual width of the sink memory. Required for SRAM mode and optional for SMEM mode. |R or RW|<<Undef,Undef>>
+|==='''
+zh = '''
+.*寄存器：trRamData：跟踪 RAM 接收器数据寄存器 (trBaseRamSink+0x040)*
+[cols="6%,24%,~,7%,7%",options="header"]
+|===
+|*位* |*字段* |*描述* |*RW* |*复位*
+|31:0 |trRamData |用于跟踪接收器内存访问的读取（以及可选写入）值。无论接收器内存的实际宽度如何，SRAM 始终通过此路径按 32 位字访问。SRAM 模式必需，SMEM 模式可选。|R 或 RW|<<Undef,Undef>>
+|==='''

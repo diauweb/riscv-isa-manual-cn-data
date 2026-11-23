@@ -1,0 +1,26 @@
+unit_id = "61cdc35ee2edec4255a0d7198f188994"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+_Until a modified cache block has updated memory, a insn:cbo.inval[] instruction may
+expose stale data values in memory if the CSRs are programmed to perform an
+invalidate operation. This behavior may result in a security hole if lower
+privileged level software performs an invalidate operation and accesses
+sensitive information in memory._
+
+_To avoid such holes, higher privileged level software must perform either a
+clean or flush operation on the cache block before permitting lower privileged
+level software to perform an invalidate operation on the block. Alternatively,
+higher privileged level software may program the CSRs so that insn:cbo.inval[]
+either traps or performs a flush operation in a lower privileged level._
+===='''
+zh = '''
+[NOTE]
+====
+__在已修改的缓存块更新内存之前，如果 CSR 被编程为执行使无效操作，则 insn:cbo.inval[] 指令可能暴露内存中陈旧的数据值。如果较低特权级软件执行使无效操作并访问内存中的敏感信息，这种行为可能导致安全漏洞。__
+
+__为避免此类漏洞，较高特权级软件必须对该缓存块执行清洁或冲刷操作，然后才能允许较低特权级软件对该块执行使无效操作。或者，较高特权级软件可将 CSR 编程为使得 insn:cbo.inval[] 在较低特权级中要么触发陷阱，要么执行冲刷操作。__
+===='''

@@ -1,0 +1,464 @@
+{
+  "chap_hash": "8230d43ff0939e7b",
+  "id": "_formal_memory_model_specifications_version_0_1",
+  "sectname": "appendix",
+  "sectnum": "B",
+  "title_en": "Formal Memory Model Specifications, Version 0.1",
+  "title_unit_id": "bcbea19d0b36f207e4c8c3e7e7e0eb8f",
+  "source_path": "src/mm-formal.adoc",
+  "sections": [
+    {
+      "id": "_formal_memory_model_specifications_version_0_1",
+      "level": 1,
+      "sectnum": "B",
+      "title": "Formal Memory Model Specifications, Version 0.1",
+      "heading_unit_id": "bcbea19d0b36f207e4c8c3e7e7e0eb8f",
+      "blocks": [
+        {
+          "unit_id": "95d16a78831c9a8445629316876c3488",
+          "anchor_id": "mm-formal"
+        },
+        "949e3517a039e280684b7ca6b1664fe3"
+      ]
+    },
+    {
+      "id": "alloy",
+      "level": 2,
+      "sectnum": "B.1",
+      "title": "Formal Axiomatic Specification in Alloy",
+      "heading_unit_id": "6029602a0652b25229be0de10f9a6d48",
+      "heading_anchor_id": "alloy",
+      "blocks": [
+        "a7662a6219168f55c121e3ca9ca0505b",
+        "332bcb56cfe1dfe01c95199a797ee11f",
+        "30bb31887c6835ddb9aec6c2c7b79fe0",
+        "2ecfdd461865587083601c6075782f7c",
+        "80e4df8c5d4fe97ccb7e491602771c73",
+        "23660d67519e1d99158ad243093dbb7d",
+        "33fcb353ab8fcf3e27261d71b4bdbfd7"
+      ]
+    },
+    {
+      "id": "sec:herd",
+      "level": 2,
+      "sectnum": "B.2",
+      "title": "Formal Axiomatic Specification in Herd",
+      "heading_unit_id": "42f0cb15fa8354f2e16f47b58c8a0e66",
+      "heading_anchor_id": "sec:herd",
+      "blocks": [
+        "0ae231803e425a0ca012a7e9c742e5d7",
+        "89592e7acadce694176a65b5c6422bc1",
+        {
+          "unit_id": "f9a35664ce60f49165e0a75a28022066",
+          "anchor_id": "herd1"
+        },
+        {
+          "unit_id": "e6d1f6cfe687090ec49eddcdb8c67d77",
+          "anchor_id": "herd2"
+        },
+        {
+          "unit_id": "c0215af608835f7d5678309901adc80c",
+          "anchor_id": "herd3"
+        }
+      ]
+    },
+    {
+      "id": "operational",
+      "level": 2,
+      "sectnum": "B.3",
+      "title": "An Operational Memory Model",
+      "heading_unit_id": "7451967eb979a4e32db1481c4e8ca897",
+      "heading_anchor_id": "operational",
+      "blocks": [
+        "6fc51878bf700c302fb28929a60e3250",
+        "57d5f4c5f69ad6c9c851d550061b04d9",
+        "739ce455ca525cca1e6d6de08f07dddd",
+        "ca0c99e0c02e73925a4907bc54765d2a",
+        "2e1cd2e6378952b8a9c728169df23661",
+        "01bf62a228b1bd7abcd7815076e0f802",
+        "a6ae7ff49d8075c9c0297b610c58b438",
+        "44d7f03c080730d79db704f07e502869",
+        "f60022d7229882203d66eefb74769093",
+        "656d3d83646812a4caa20e5cfb6fe8a1",
+        "5fcc5aa1104e6fec5738798fcd306349",
+        "4db3d31a4c6192fbc2f89166244c69dc",
+        "f570d6ae79577eefedc85aa71985b5e8",
+        "270149da10087cda2eb83504f490f6ba",
+        "27710fbc9f0cb235e5a8e0d38478c7bd",
+        "f876f8fa38c9ecb486601c7c4f6a0bc5",
+        "860cb5723425eba5ec80eac77d0dd715",
+        "6cbaaa2f5c02789047f5e869997189ee",
+        "ed96e2c391de1775e447541e6753fc58",
+        "aa6373ffe7fe6c7f8b22a535747932f9",
+        "db2ad72093c70a5d1481aab6dc3ff00d",
+        "2b88e75f96c47ee68d0801c02e4d776f",
+        "362f2acb48442cae025b8cbd868be52c",
+        "ed34d0e395c5d639a4e383a8e519e817",
+        "0e9d9868dd84a48fc2232db89103c3b9",
+        "b32fa889b082e0ae7f737587dfdd5a84",
+        "a165ac029e057b05b996ba683b7c1dc0",
+        "911032cdfa71de003c22ae2e9d68ea98",
+        "7daed3eca0b25670ae89f41df0f7a41e",
+        "34f57c3acd9a883f849721bb2e2274f0",
+        "56407d8cf9665f3847f30a576a79d0a4",
+        "e284e13758f26ff033f0bbcde3f0e6d7",
+        "8f3de104a5a3a4b8a5e3b0180a89fd1f",
+        "4cef6efb0d13ba2752eced4e6475cba8",
+        "67602faa09a852b34c7ad3203f7d6c01",
+        "9cdb1cd890ed7f060b44821b4750ad39",
+        "4448a3939b008fe9b0737966e95a9974",
+        "d7bbd8bf9afa20abeefada011ca87706",
+        "98b86d1de4c79deb321579db0f6891ab"
+      ]
+    },
+    {
+      "id": "pseudocode_exec",
+      "level": 3,
+      "sectnum": "B.3.1",
+      "title": "Intra-instruction Pseudocode Execution",
+      "heading_unit_id": "226f323f981a9dc1b1e65925b00475d8",
+      "heading_anchor_id": "pseudocode_exec",
+      "blocks": [
+        "382e4a0232864b5f521ca60223ad8a1a",
+        "af5c4a0a4b6d650ed90b074000a8af6c",
+        "f3988a91796c30f904b3f7dee2f1807e",
+        "8b90d641efe53627ec9f985ea3c805a4",
+        "94035b625710dea0bda739ef31f0bb5a",
+        "ba4ffb20a4bf787583ab8c807c8d0db0",
+        "6f1fb6ed5f3322bd02c98749e201fe6c",
+        "7be99f3a35a0c95af975ee865f6587ae",
+        "98dd414a69158d168071a48b1db296dd",
+        "1a51842288566abdbb286ece1dcb6dbd",
+        "33301490e29909b49ff0ba787f76c1df"
+      ]
+    },
+    {
+      "id": "inst_state",
+      "level": 3,
+      "sectnum": "B.3.2",
+      "title": "Instruction Instance State",
+      "heading_unit_id": "057d9861a438ecf0eb6b868fe65f430e",
+      "heading_anchor_id": "inst_state",
+      "blocks": [
+        "7cc31fb7cf3527a3e845819f571d30b7",
+        "87d736eea7e444faaa3280fd4dfe2c19",
+        "ff96fce67c810fb0d346cdc117bccabe",
+        "e9f1edefa87aa7f95c9ccb4772691276",
+        "6d8707612c85b1f191ace78bf92ae9c8",
+        "4ba56c353b3aba01d67481873c80859f",
+        "d3415d1dc27c0894fe0a06fa5879ecbb",
+        "3fa03ec9a09acc8e5f293c9971eda045",
+        "ca5b4ba439317a6905745f5c231490cd",
+        "0b82e979f7ede5613f070a0513456dd8"
+      ]
+    },
+    {
+      "id": "_hart_state",
+      "level": 3,
+      "sectnum": "B.3.3",
+      "title": "Hart State",
+      "heading_unit_id": "9a736207287418e1fe71867f40e68f03",
+      "blocks": [
+        "6571378edcc42501e008221e120ec470",
+        "5756a2ea384785757742eacc4d6c5845"
+      ]
+    },
+    {
+      "id": "_shared_memory_state",
+      "level": 3,
+      "sectnum": "B.3.4",
+      "title": "Shared Memory State",
+      "heading_unit_id": "c12a623dfbb7d3e726553ae4f9247822",
+      "blocks": [
+        "ffe30e226c88ef7c80a7ea35b6a9182d",
+        "65695018d5ce6e1a58e341a808c88570",
+        "8e0cb1efc3c036550f155a4b6a79c3d3"
+      ]
+    },
+    {
+      "id": "transitions",
+      "level": 3,
+      "sectnum": "B.3.5",
+      "title": "Transitions",
+      "heading_unit_id": "ca69388b4c34e3cf2e1201b0b6f62710",
+      "heading_anchor_id": "transitions",
+      "blocks": [
+        "c9522a19a0e284d15c643f14cb82c80d"
+      ]
+    },
+    {
+      "id": "fetch",
+      "level": 4,
+      "sectnum": "B.3.5.1",
+      "title": "Fetch instruction",
+      "heading_unit_id": "26993e614f612d533a77a72adb491fbf",
+      "heading_anchor_id": "fetch",
+      "blocks": [
+        "b95c0c09be258ec491e2a31d79dd6b0a",
+        "f18ad62dffc8827c03f6986474be9a8e",
+        "7d59f2de68ba6831fb87434fbf048fe7",
+        "2ee031b2b96c0c156a1636fc8769aa8b"
+      ]
+    },
+    {
+      "id": "initiate_load",
+      "level": 4,
+      "sectnum": "B.3.5.2",
+      "title": "Initiate memory load operations",
+      "heading_unit_id": "298f79a532656ca1c1d02de8b1155754",
+      "heading_anchor_id": "initiate_load",
+      "blocks": [
+        "9af2dbb014c6b86163a6014ca3eb503e",
+        "5b7018291bc6f60aad5b00d776a6175a",
+        "786f7b2ccdaca18fa45b18c3f489b86b"
+      ]
+    },
+    {
+      "id": "sat_by_forwarding",
+      "level": 4,
+      "sectnum": "B.3.5.3",
+      "title": "Satisfy memory load operation by forwarding from unpropagated stores",
+      "heading_unit_id": "a7db8dfac85f1917b30d43b382af3d48",
+      "heading_anchor_id": "sat_by_forwarding",
+      "blocks": [
+        "f08fc0e4d7280836e9100a18bc28cfdf",
+        "387462f25edc4e46d5d98427eabc9d48",
+        "de953157d603151b66d0e83c40c6b362",
+        "e04e74e9342121b6c6932afcbc52d341",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "12577fc10387f670a6b5a377dbac55fe",
+        "c4589cc4d8c96b0202b7342047c19056",
+        "d372bc0e9fdc3ebc9745e3770ef994d0",
+        "82250d4a0bcf4c0062a156f7da6daf4f"
+      ]
+    },
+    {
+      "id": "sat_from_mem",
+      "level": 4,
+      "sectnum": "B.3.5.4",
+      "title": "Satisfy memory load operation from memory",
+      "heading_unit_id": "6d70952561f2f5b738c017d72f8ebd9d",
+      "heading_anchor_id": "sat_from_mem",
+      "blocks": [
+        "62f10742c68440eb9077e22c2ac0c634",
+        "6bd63c917b46dc7c53c33189e4bca194"
+      ]
+    },
+    {
+      "id": "complete_loads",
+      "level": 4,
+      "sectnum": "B.3.5.5",
+      "title": "Complete load operations",
+      "heading_unit_id": "0209fff41e948a78740015a6dca44340",
+      "heading_anchor_id": "complete_loads",
+      "blocks": [
+        "276bf78b7f472e4687bea73b4c95aab8"
+      ]
+    },
+    {
+      "id": "early_sc_fail",
+      "level": 4,
+      "sectnum": "B.3.5.6",
+      "title": "Early sc fail",
+      "heading_unit_id": "aaffe975885d93867a3cdf6cb8f2c070",
+      "heading_anchor_id": "early_sc_fail",
+      "blocks": [
+        "f3af76212e5ad097a6761cfa55b1259a"
+      ]
+    },
+    {
+      "id": "paired_sc",
+      "level": 4,
+      "sectnum": "B.3.5.7",
+      "title": "Paired sc",
+      "heading_unit_id": "e05b43e5ea654f9a0fe1ff240dc47b73",
+      "heading_anchor_id": "paired_sc",
+      "blocks": [
+        "2912a273c027756fffe6fe4a292b0a1f"
+      ]
+    },
+    {
+      "id": "initiate_store_footprint",
+      "level": 4,
+      "sectnum": "B.3.5.8",
+      "title": "Initiate memory store operation footprints",
+      "heading_unit_id": "e4072e83f5bad4f1abf8dd6f3eed910e",
+      "heading_anchor_id": "initiate_store_footprint",
+      "blocks": [
+        "d1be68c71cab88bdf5becfc457c8528a",
+        "c1531daeafc78125707597194cb3b1b6",
+        "7d53a0eda173c903e55b3e67fa51c24d"
+      ]
+    },
+    {
+      "id": "instantiate_store_value",
+      "level": 4,
+      "sectnum": "B.3.5.9",
+      "title": "Instantiate memory store operation values",
+      "heading_unit_id": "16b5d5ff36b01c1cbbe3da2bc92823cb",
+      "heading_anchor_id": "instantiate_store_value",
+      "blocks": [
+        "cab28821a45c4aef86f9f70b28281eb6",
+        "cfb3b5bd06153e5eaa94f30563230fe7"
+      ]
+    },
+    {
+      "id": "commit_stores",
+      "level": 4,
+      "sectnum": "B.3.5.10",
+      "title": "Commit store instruction",
+      "heading_unit_id": "1ef56a72b315829a2e77f6cfd424fd77",
+      "heading_anchor_id": "commit_stores",
+      "blocks": [
+        "1b46fd184bef824e8811acf4514b5172",
+        "d2163d6cc2a79d8e5a3c334bb1797659",
+        "bbdec33e7c7193174fe627306a6e79c8",
+        "6f64ac91e51fc9d4223461a22224a5cc"
+      ]
+    },
+    {
+      "id": "prop_store",
+      "level": 4,
+      "sectnum": "B.3.5.11",
+      "title": "Propagate store operation",
+      "heading_unit_id": "744bd2a389b117e9a7f614ee03ca4fcf",
+      "heading_anchor_id": "prop_store",
+      "blocks": [
+        "f57d09fa8af1ad4e83044f29d4707549",
+        "83e35b9090303548dd8fb6d3a71e0283",
+        "c8cf9b3c9850479992e81cdcca6f95f3",
+        "369c9de3730b816192239d401f840325",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "a7b44391b506d1ab67447500917cd32a"
+      ]
+    },
+    {
+      "id": "commit_sc",
+      "level": 4,
+      "sectnum": "B.3.5.12",
+      "title": "Commit and propagate store operation of an sc",
+      "heading_unit_id": "a45ae3f1dd3fa582ba4c7ca6e0f688ad",
+      "heading_anchor_id": "commit_sc",
+      "blocks": [
+        "579c602afcccb943da98a43051dcb35a",
+        "546e92f13e109833e459663f43afea8a",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "187cb0d3c663d7b6a60795aecf4dae43"
+      ]
+    },
+    {
+      "id": "late_sc_fail",
+      "level": 4,
+      "sectnum": "B.3.5.13",
+      "title": "Late sc fail",
+      "heading_unit_id": "55665347892d0a27955e760edf80d57a",
+      "heading_anchor_id": "late_sc_fail",
+      "blocks": [
+        "2f5d22fd846363ca3f324bf8d8c692ed",
+        "98b97d410f127a71175996e9e0a458a0",
+        "db9b6b12fff110859ae1fe8d8ccf3748"
+      ]
+    },
+    {
+      "id": "complete_stores",
+      "level": 4,
+      "sectnum": "B.3.5.14",
+      "title": "Complete store operations",
+      "heading_unit_id": "a6bbe42356a15ad9f22feb520596d874",
+      "heading_anchor_id": "complete_stores",
+      "blocks": [
+        "93c4e467a378be18163a9ae129d2a372"
+      ]
+    },
+    {
+      "id": "do_amo",
+      "level": 4,
+      "sectnum": "B.3.5.15",
+      "title": "Satisfy, commit and propagate operations of an AMO",
+      "heading_unit_id": "beaa11c6f57a4e9e181e995ed0bcb3f1",
+      "heading_anchor_id": "do_amo",
+      "blocks": [
+        "33a0f2df8d7373a4dc75a3051779c74d",
+        "aa0b8fc901e4c832ab69f1858b6b3238",
+        "78b4e8e0ae554c59f59c07e1a40a06f1",
+        "0c9ee5808a288a87af5692e96798e0a0"
+      ]
+    },
+    {
+      "id": "commit_fence",
+      "level": 4,
+      "sectnum": "B.3.5.16",
+      "title": "Commit fence",
+      "heading_unit_id": "ffd9e7feba137db31f9aa5a572bd8ecb",
+      "heading_anchor_id": "commit_fence",
+      "blocks": [
+        "968afbd5886202baf99ae9d37e4c6139",
+        "001d38dc43fe5b5fb432cf6a235b089a",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "85a355f6f671184275e3e4ba3a929d84"
+      ]
+    },
+    {
+      "id": "reg_read",
+      "level": 4,
+      "sectnum": "B.3.5.17",
+      "title": "Register read",
+      "heading_unit_id": "4ee7a297e6b915ae9be26758b3320c6a",
+      "heading_anchor_id": "reg_read",
+      "blocks": [
+        "26d074da26e128a40f0e026665baca10",
+        "ce6304c3ee1006b40f82ec28c63b645c",
+        "1e2ad13a5e5fe3f3f8601041dae866fb"
+      ]
+    },
+    {
+      "id": "reg_write",
+      "level": 4,
+      "sectnum": "B.3.5.18",
+      "title": "Register write",
+      "heading_unit_id": "42fa1280b267443c1f27a625cb90634e",
+      "heading_anchor_id": "reg_write",
+      "blocks": [
+        "5325feafc90f81bf6633b1a9124e477b",
+        "413e96b9a80a6e1e3c120d4f03460ab5",
+        "21a4c23adb05fdf49e05339e5dfb98e4"
+      ]
+    },
+    {
+      "id": "sail_interp",
+      "level": 4,
+      "sectnum": "B.3.5.19",
+      "title": "Pseudocode internal step",
+      "heading_unit_id": "b4d13b149112182e7eac3b70366b085a",
+      "heading_anchor_id": "sail_interp",
+      "blocks": [
+        "0ab19a9b71b77269753bbe614feda2e3"
+      ]
+    },
+    {
+      "id": "finish",
+      "level": 4,
+      "sectnum": "B.3.5.20",
+      "title": "Finish instruction",
+      "heading_unit_id": "dfbb98b731466d68a03293980592c77c",
+      "heading_anchor_id": "finish",
+      "blocks": [
+        "6304f1681a85d5c86d99f9c6cee5ff71",
+        "f25c4f48dc89168932185ddd2049c37e",
+        "5ea4a63903a21d0aa8646d0a9fdf0f42",
+        "b1677b5941fa20a84288f3db3aae401f"
+      ]
+    },
+    {
+      "id": "limitations",
+      "level": 3,
+      "sectnum": "B.3.6",
+      "title": "Limitations",
+      "heading_unit_id": "4e91ffbebd56af760220352c0b5a7112",
+      "heading_anchor_id": "limitations",
+      "blocks": [
+        "e45365251a4198c24481234e7e087fd6"
+      ]
+    }
+  ]
+}

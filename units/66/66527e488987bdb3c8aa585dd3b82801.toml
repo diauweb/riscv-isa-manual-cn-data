@@ -1,0 +1,17 @@
+unit_id = "66527e488987bdb3c8aa585dd3b82801"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Shifts by a constant are encoded as a specialization of the I-type
+format. The operand to be shifted is in _rs1_, and the shift amount is
+encoded in the lower 5 bits of the I-immediate field. The right-shift
+type is encoded in bit 30.
+[#norm:slli_op]#SLLI is a logical left shift (zeros are shifted into the lower bits);#
+[#norm:srli_op]#SRLI is a logical right shift (zeros are shifted into the upper bits);# and
+[#norm:srai_op]#SRAI is an arithmetic right shift (the original sign bit is copied into the vacated upper bits).#'''
+zh = '''
+常量移位以 I 型格式的特化形式编码。被移位的操作数位于 _rs1_，移位量编码在 I 立即数字段的低 5 位中。右移类型编码在位 30 中。
+[#norm:slli_op]##SLLI 是逻辑左移（零移入低位）；##
+[#norm:srli_op]##SRLI 是逻辑右移（零移入高位）；## 以及
+[#norm:srai_op]##SRAI 是算术右移（原符号位复制到空出的高位）。##'''

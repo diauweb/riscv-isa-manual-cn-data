@@ -1,0 +1,15 @@
+unit_id = "bf0f1e7e8d9391aabcbf6353e46ee5f5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:c-addiw_op]#C.ADDIW is an RV64C-only instruction that performs the same
+computation but produces a 32-bit result, then sign-extends result to 64
+bits. C.ADDIW expands into `addiw rd, rd, imm`. The immediate can be
+zero for C.ADDIW, where this corresponds to `sext.w rd`.#
+[#norm:c-addiw_rsv]#C.ADDIW is
+valid only when _rd_≠`x0`; the code points with
+_rd_=`x0` are reserved.#'''
+zh = '''
+[#norm:c-addiw_op]##C.ADDIW 是仅用于 RV64C 的指令，它执行相同的计算但产生 32 位结果，然后将结果符号扩展到 64 位。C.ADDIW 展开为 `addiw rd, rd, imm`。对于 C.ADDIW，立即数可以为零，此时对应于 `sext.w rd`。##
+[#norm:c-addiw_rsv]##C.ADDIW 仅在 _rd_≠`x0` 时有效；_rd_=`x0` 的编码点保留。##'''

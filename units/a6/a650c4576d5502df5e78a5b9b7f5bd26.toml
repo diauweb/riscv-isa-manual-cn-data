@@ -1,0 +1,20 @@
+unit_id = "a650c4576d5502df5e78a5b9b7f5bd26"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+There is one more overlapping-address rule: <<overlapping-ordering,
+rule 3>> simply states that a value cannot
+be returned from an AMO or SC to a subsequent load until the AMO or SC
+has (in the case of the SC, successfully) performed globally. This
+follows somewhat naturally from the conceptual view that both AMOs and
+SC instructions are meant to be performed atomically in memory. However,
+notably, <<overlapping-ordering, rule 3>> states that hardware
+may not even non-speculatively forward the value being stored by an
+AMOSWAP to a subsequent load, even though for AMOSWAP that store value
+is not actually semantically dependent on the previous value in memory,
+as is the case for the other AMOs. The same holds true even when
+forwarding from SC store values that are not semantically dependent on
+the value returned by the paired LR.'''
+zh = '''
+还有一条重叠地址规则：<<overlapping-ordering, 规则 3>> 仅指出，在 AMO 或 SC 已在全局执行（对于 SC，是成功执行）之前，不能从该 AMO 或 SC 向后续加载返回值。这在某种程度上自然源于如下概念视角：AMO 和 SC 指令都意在内存中原子地执行。然而值得注意的是，<<overlapping-ordering, 规则 3>> 指出，硬件甚至不得将 AMOSWAP 所存储的值非推测性地转发给后续加载，即使对于 AMOSWAP，该存储值在语义上实际上并不依赖于内存中的先前值（其他 AMO 则如此）。即使从 SC 存储值转发，而这些值在语义上并不依赖于配对 LR 返回的值，也同样如此。'''

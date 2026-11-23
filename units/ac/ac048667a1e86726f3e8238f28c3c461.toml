@@ -1,0 +1,12 @@
+unit_id = "ac048667a1e86726f3e8238f28c3c461"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* < `11` DDDDDD> - 8 bits in a last byte of a message (`11` = MSEO, DDDDDD = DATA bits)
+* < `1*n` >      - sequence of `n`-bits long idle bits (each must be `1`)
+* < `00` TTTTTT> - 8 bits in a first byte of a message (`00` = MSEO, TTTTTTT = TCODE bits)'''
+zh = '''
+* < `11` DDDDDD> - 消息最后字节中的 8 位（`11` = MSEO，DDDDDD = DATA 位）
+* < `1*n` >      - 长度为 `n` 位的空闲位序列（每个必须为 `1`）
+* < `00` TTTTTT> - 消息第一个字节中的 8 位（`00` = MSEO，TTTTTTT = TCODE 位）'''

@@ -1,0 +1,31 @@
+unit_id = "588428a5710eddd39d8e77995af0d65e"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The set of guest external interrupts received and handled at one
+physical hart may differ from those received at other harts. Guest
+external interrupt number _i_ at one physical hart is typically expected
+not to be the same as guest external interrupt _i_ at any other hart.
+For any one physical hart, the maximum number of virtual harts that may
+directly receive guest external interrupts is limited by GEILEN. The
+maximum this number can be for any implementation is 31 for RV32 and 63
+for RV64, per physical hart.
+
+A hypervisor is always free to _emulate_ devices for any number of
+virtual harts without being limited by GEILEN. Only direct pass-through
+(direct assignment) of interrupts is affected by the GEILEN limit, and
+the limit is on the number of virtual harts receiving such interrupts,
+not the number of distinct interrupts received. The number of distinct
+interrupts a single virtual hart may receive is determined by the
+interrupt controller.
+===='''
+zh = '''
+[NOTE]
+====
+在一个物理硬件线程上接收和处理的客户机外部中断集合可能不同于在其他硬件线程上接收的集合。一个物理硬件线程上的客户机外部中断号 _i_ 通常预期不等于任何其他硬件线程上的客户机外部中断 _i_。对于任一物理硬件线程，可直接接收客户机外部中断的虚拟硬件线程最大数受 GEILEN 限制。对于任何实现，每个物理硬件线程的该最大数在 RV32 上为 31，在 RV64 上为 63。
+
+虚拟机监控器始终可__仿真__任意数量虚拟硬件线程的设备，而不受 GEILEN 限制。只有中断的直接直通（直接分配）受 GEILEN 限制影响，且限制在于接收此类中断的虚拟硬件线程数量，而不是接收的不同中断数量。单个虚拟硬件线程可接收的不同中断数量由中断控制器确定。
+===='''

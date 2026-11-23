@@ -1,0 +1,48 @@
+unit_id = "6f4a81b7ef8bfd6c3eca2c1bb085a7ed"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Software can use the PAUSE instruction to reduce energy consumption
+while executing spin-wait code sequences. Multithreaded cores might
+temporarily relinquish execution resources to other harts when PAUSE is
+executed. It is recommended that a PAUSE instruction generally be
+included in the code sequence for a spin-wait loop.
+(((PAUSE, energy consumption)))
+
+A future extension might add primitives similar to the x86 MONITOR/MWAIT
+instructions, which provide a more efficient mechanism to wait on writes
+to a specific memory location. However, these instructions would not
+supplant PAUSE. PAUSE is more appropriate when polling for non-memory
+events, when polling for multiple events, or when software does not know
+precisely what events it is polling for.
+
+The duration of a PAUSE instruction's effect may vary significantly
+within and among implementations. In typical implementations this
+duration should be much less than the time to perform a context switch,
+probably more on the rough order of an on-chip cache miss latency or a
+cacheless access to main memory.
+(((PAUSE, duration)))
+
+A series of PAUSE instructions can be used to create a cumulative delay
+loosely proportional to the number of PAUSE instructions. In spin-wait
+loops in portable code, however, only one PAUSE instruction should be
+used before re-evaluating loop conditions, else the hart might stall
+longer than optimal on some implementations, degrading system
+performance.
+===='''
+zh = '''
+[NOTE]
+====
+软件可使用 PAUSE 指令在执行自旋等待代码序列时降低能耗。多线程核在执行 PAUSE 时可能暂时将执行资源让与其他硬件线程。宜在自旋等待循环的代码序列中一般包含一条 PAUSE 指令。
+(((PAUSE, energy consumption)))
+
+未来的扩展可能添加类似于 x86 MONITOR/MWAIT 指令的原语，这些原语提供一种更高效的机制来等待对特定内存位置的写入。然而，这些指令不会取代 PAUSE。当轮询非内存事件时、当轮询多个事件时，或当软件无法确切知道其所轮询的事件时，PAUSE 更为合适。
+
+PAUSE 指令效果的持续时间在实现内和实现间可能差异很大。在典型实现中，该持续时间宜远小于执行上下文切换的时间，大致上可能约为片上高速缓存缺失延迟或对主存的未缓存访问的量级。
+(((PAUSE, duration)))
+
+一系列 PAUSE 指令可用于产生大致与 PAUSE 指令数量成正比的累积延迟。然而，在可移植代码的自旋等待循环中，宜在重新评估循环条件之前只用一条 PAUSE 指令，否则硬件线程在某些实现上可能停顿超过最优时间，从而降低系统性能。
+===='''

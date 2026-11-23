@@ -1,0 +1,14 @@
+unit_id = "faaf5ccbd9ca5286e2c8cbc96959f58b"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Trace messages/packets are considered as sequences of bytes and are always transmitted with least significant bits/bytes first.
+* IEEE-5001 Nexus Standard MSEO bits are transmitted on the least significant part and bit#0 first.
+* Idle state must be transmitted as all 1s MSEO and MDO bits.
+* For transmission on a 16bit interface (e.g. PIB 16-bit mode), the first byte of message/packet is transmitted on the least significant part and the MSEO of the second/odd byte is transmitted on bits #8-#9 and MDO on bits #10-#15.'''
+zh = '''
+* 跟踪消息/分组被视为字节序列，并且始终先传输最低有效位/字节。
+* IEEE-5001 Nexus 标准 MSEO 位在最低有效部分传输，且位 #0 先传输。
+* 空闲状态应作为全 1 的 MSEO 和 MDO 位传输。
+* 对于 16 位接口上的传输（例如 PIB 16 位模式），消息/分组的第一个字节在最低有效部分传输，第二个/奇数字节的 MSEO 在位 #8-#9 上传输，MDO 在位 #10-#15 上传输。'''

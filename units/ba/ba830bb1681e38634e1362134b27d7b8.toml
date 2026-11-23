@@ -1,0 +1,26 @@
+unit_id = "ba830bb1681e38634e1362134b27d7b8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For RISC-V, we separate out specification and checking of PMAs into a
+separate hardware structure, the _PMA checker_. In many cases, the
+attributes are known at system design time for each physical address
+region, and can be hardwired into the PMA checker.
+[#norm:pma_rtcfg_mmr]#Where the attributes are run-time configurable,
+platform-specific memory-mapped control
+registers can be provided# to specify these attributes at a granularity
+appropriate to each region on the platform (e.g., for an on-chip SRAM
+that can be flexibly divided between cacheable and uncacheable uses).
+[#norm:pma_chk_paddr]#PMAs are checked for any access to physical memory, including accesses
+that have undergone virtual to physical memory translation.# To aid in
+system debugging, [#norm:pma_precise_recom]#we strongly recommend that, where possible, RISC-V
+processors precisely trap physical memory accesses that fail PMA checks.
+Precisely trapped PMA violations manifest as instruction, load, or store
+access-fault exceptions, distinct from virtual-memory page-fault exceptions.#
+[#norm:pma_imprecise_ok]#Precise PMA traps might not always be possible, for example,
+when probing a legacy bus architecture that uses access failures as part
+of the discovery mechanism. In this case, error responses from
+peripheral devices will be reported as imprecise bus-error interrupts.#'''
+zh = '''
+对于 RISC-V，我们将 PMA 的指定和检查分离到一个单独的硬件结构，即 _PMA 检查器_。在许多情况下，各物理地址区域的属性在系统设计时已知，并可硬连线到 PMA 检查器中。[#norm:pma_rtcfg_mmr]##在属性可运行时配置的情况下，可提供平台特定的内存映射控制寄存器##，以适合平台上每个区域的粒度指定这些属性（例如，对于可在可缓存和不可缓存用途之间灵活划分的片上 SRAM）。[#norm:pma_chk_paddr]##PMA 针对对物理内存的任何访问进行检查，包括已经过虚拟到物理内存转换的访问。##为帮助系统调试，[#norm:pma_precise_recom]##我们强烈建议尽可能让 RISC-V 处理器精确陷入未通过 PMA 检查的物理内存访问。精确陷入的 PMA 违例表现为指令、加载或存储访问错误异常，区别于虚拟内存页错误异常。##[#norm:pma_imprecise_ok]##精确 PMA 陷阱可能并非总是可行，例如在探测使用访问失败作为发现机制一部分的遗留总线架构时。在这种情况下，来自外设设备的错误响应将报告为非精确总线错误中断。##'''

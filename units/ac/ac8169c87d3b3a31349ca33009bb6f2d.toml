@@ -1,0 +1,30 @@
+unit_id = "ac8169c87d3b3a31349ca33009bb6f2d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The trace probe needs to be able to synchronize with the trace stream and to detect trace message boundaries. This procedure is sometimes referred to as "message alignment synchronization" or "alignment-sync".
+
+For 8-bit or 16-bit trace idle cycles are not required (to detect an alignment) as MSEO bits are in well-defined positions and trace probes will know where is a start of a message.
+
+For 1-bit, 2-bit and 4-bit trace modes PIB must generate at least one idle byte to allow trace probes to detect which bit is the first MSEO bit of a message.
+How it is done is not defined in this specification. Here are two possible implementations:
+
+* Generate at least one idle byte periodically in a trace stream anywhere between messages (PIB is aware about message boundaries as end of message has MSEO=11 bits).
+* Always add an extra idle byte before sending synchronizing messages. It will guarantee that boundaries of every synchronizing message are always detectable and decoding may start from it.
+===='''
+zh = '''
+[NOTE]
+====
+跟踪探头需要能够与跟踪流同步，并检测跟踪消息边界。此过程有时称为“消息对齐同步”或“对齐同步”。
+
+对于 8 位或 16 位跟踪，不需要空闲周期（用于检测对齐），因为 MSEO 位处于明确定义的位置，跟踪探头会知道消息的起始位置。
+
+对于 1 位、2 位和 4 位跟踪模式，PIB 应生成至少一个空闲字节，以使跟踪探头能检测消息的第一个 MSEO 位是哪一位。
+本规范未定义如何做到这一点。以下是两种可能的实现：
+
+* 在跟踪流中消息之间的任意位置周期性生成至少一个空闲字节（PIB 知道消息边界，因为消息结束具有 MSEO=11 位）。
+* 在发送同步消息之前始终添加一个额外空闲字节。这将保证每条同步消息的边界始终可检测，并且解码可从该消息开始。
+===='''

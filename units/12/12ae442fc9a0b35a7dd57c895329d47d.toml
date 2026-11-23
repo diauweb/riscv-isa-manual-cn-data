@@ -1,0 +1,15 @@
+unit_id = "12ae442fc9a0b35a7dd57c895329d47d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Privileged Spec says that breakpoint exceptions that occur on
+instruction fetches, loads, or stores update the `tval` CSR
+with either zero or the faulting virtual address.  The faulting
+virtual address for an mcontrol trigger with {mcontrol-action}=0 is the
+address being accessed and which caused that trigger to fire.
+If multiple mcontrol triggers are chained then the faulting
+virtual address is the address which caused any of the chained
+triggers to fire.'''
+zh = '''
+特权规范指出，在指令取指、加载或存储时发生的断点异常会用零或出错虚拟地址更新 `tval` CSR。对于 {mcontrol-action}=0 的 mcontrol 触发器，出错虚拟地址是正在访问且导致该触发器触发的地址。若链接了多个 mcontrol 触发器，则出错虚拟地址是导致链中任何触发器触发的地址。'''

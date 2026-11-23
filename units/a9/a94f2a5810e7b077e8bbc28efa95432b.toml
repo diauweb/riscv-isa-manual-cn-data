@@ -1,0 +1,46 @@
+unit_id = "a94f2a5810e7b077e8bbc28efa95432b"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.A store buffer forwarding litmus test (outcome permitted)
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",align="center"]
+!===
+2+^!Hart 0 2+^!Hart 1
+2+^!li t1, 1 2+^!li t1, 1
+2+<!(a) sw t1,0(s0) 2+!(e) sw t1,0(s1)
+2+<!(b) lw a0,0(s0) 2+!(f) lw a2,0(s1)
+2+<!(c) fence r,r 2+!(g) fence r,r
+2+<!(d) lw a1,0(s1) 2+!(h) lw a3,0(s0)
+4+^!Outcome: `a0=1`, `a1=0`, `a2=1`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_sb_fwd.txt[]
+a! image::graphviz/litmus_sb_fwd.svg[]
+!===
+|==='''
+zh = '''
+.存储缓冲器转发 litmus 测试（结果允许）
+[float="center",align="center",cols=".^1a,.^1a",frame="none",grid="none",options="noheader"]
+|===
+|
+[%autowidth,float="center",align="center",cols="^,<,^,<",options="header",align="center"]
+!===
+2+^!硬件线程 0 2+^!硬件线程 1
+2+^!li t1, 1 2+^!li t1, 1
+2+<!(a) sw t1,0(s0) 2+!(e) sw t1,0(s1)
+2+<!(b) lw a0,0(s0) 2+!(f) lw a2,0(s1)
+2+<!(c) fence r,r 2+!(g) fence r,r
+2+<!(d) lw a1,0(s1) 2+!(h) lw a3,0(s0)
+4+^!结果：`a0=1`, `a1=0`, `a2=1`, `a3=0`
+!===
+|
+!===
+//a! graphviz::images/graphviz/litmus_sb_fwd.txt[]
+a! image::graphviz/litmus_sb_fwd.svg[]
+!===
+|==='''

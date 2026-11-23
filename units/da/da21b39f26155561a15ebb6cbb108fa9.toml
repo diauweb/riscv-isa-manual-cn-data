@@ -1,0 +1,15 @@
+unit_id = "da21b39f26155561a15ebb6cbb108fa9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Preserved program order is _not_ required to respect the ordering of a
+store followed by a load to an overlapping address. This complexity
+arises due to the ubiquity of store buffers in nearly all
+implementations. Informally, the load may perform (return a value) by
+forwarding from the store while the store is still in the store buffer,
+and hence before the store itself performs (writes back to globally
+visible memory). Any other hart will therefore observe the load as
+performing before the store.'''
+zh = '''
+保留程序顺序 _不_ 要求遵守存储后跟对重叠地址的加载这一顺序。这种复杂性源于几乎所有实现中存储缓冲器的普遍存在。非正式地说，加载可在存储仍位于存储缓冲器时通过从该存储转发来执行（返回值），因而在该存储本身执行（写回全局可见内存）之前执行。因此，任何其他硬件线程都会观察到该加载先于该存储执行。'''

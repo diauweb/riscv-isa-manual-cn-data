@@ -1,0 +1,94 @@
+unit_id = "5b044f3ab94b4d37cedcb39b066b5014"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Machine Control Transfer Records Control Register Field Definitions
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|Field |Description
+|M, S, U |Enable transfer recording in the selected privileged mode(s).
+
+|RASEMU |Enables RAS (Return Address Stack) Emulation Mode.  See <<RAS (Return Address Stack) Emulation Mode>>.
+
+|MTE |Enables recording of traps to M-mode when M=0.  See <<External Traps>>.
+
+|STE |Enables recording of traps to S-mode when S=0.  See <<External Traps>>.
+
+|BPFRZ |Set `sctrstatus`.FROZEN on a breakpoint exception that traps to M-mode or S-mode. See <<Freeze>>.
+
+|LCOFIFRZ |Set `sctrstatus`.FROZEN on local counter overflow interrupt (LCOFI) that traps to M-mode or S-mode. See <<Freeze>>.
+
+|EXCINH |Inhibit recording of exceptions.  See <<Transfer Type Filtering>>.
+
+|INTRINH |Inhibit recording of interrupts.  See <<Transfer Type Filtering>>.
+
+|TRETINH |Inhibit recording of trap returns.  See <<Transfer Type Filtering>>.
+
+|NTBREN |Enable recording of not-taken branches.  See <<Transfer Type Filtering>>.
+
+|TKBRINH |Inhibit recording of taken branches.  See <<Transfer Type Filtering>>.
+
+|INDCALLINH |Inhibit recording of indirect calls.  See <<Transfer Type Filtering>>.
+
+|DIRCALLINH |Inhibit recording of direct calls.  See <<Transfer Type Filtering>>.
+
+|INDJMPINH |Inhibit recording of indirect jumps (without linkage).  See <<Transfer Type Filtering>>.
+
+|DIRJMPINH |Inhibit recording of direct jumps (without linkage).  See <<Transfer Type Filtering>>.
+
+|CORSWAPINH |Inhibit recording of co-routine swaps.  See <<Transfer Type Filtering>>.
+
+|RETINH |Inhibit recording of function returns.  See <<Transfer Type Filtering>>.
+
+|INDLJMPINH |Inhibit recording of other indirect jumps (with linkage).  See <<Transfer Type Filtering>>.
+
+|DIRLJMPINH |Inhibit recording of other direct jumps (with linkage).  See <<Transfer Type Filtering>>.
+|Custom[3:0] | WARL bits designated for custom use.  The value 0 must correspond to standard behavior.  See <<Custom Extensions>>.
+|==='''
+zh = '''
+.机器控制转移记录控制寄存器字段定义
+[%unbreakable]
+[width="100%",cols="20%,80%",options="header",]
+|===
+|字段 |描述
+|M, S, U |[#norm:mctrctl-mode_op]##在选定的特权模式中使能转移记录。##
+
+|RASEMU |[#norm:mctrctl-rasemu_op]##使能 RAS（返回地址栈）仿真模式。##  见 <<RAS (Return Address Stack) Emulation Mode>>。
+
+|MTE |[#norm:mctrctl-mte_op]##当 M=0 时，使能记录陷入 M 模式的陷阱。##  见 <<External Traps>>。
+
+|STE |[#norm:mctrctl-ste_op]##当 S=0 时，使能记录陷入 S 模式的陷阱。##  见 <<External Traps>>。
+
+|BPFRZ |[#norm:mctrctl-bpfrz_op]##在断点异常陷入 M 模式或 S 模式时设置 `sctrstatus`.FROZEN。## 见 <<Freeze>>。
+
+|LCOFIFRZ |[#norm:mctrctl-lcofifrz_op]##在本地计数器溢出中断（LCOFI）陷入 M 模式或 S 模式时设置 `sctrstatus`.FROZEN。## 见 <<Freeze>>。
+
+|EXCINH |[#norm:mctrctl-excinh_op]##禁止记录异常。##  见 <<Transfer Type Filtering>>。
+
+|INTRINH |[#norm:mctrctl-intrinh_op]##禁止记录中断。##  见 <<Transfer Type Filtering>>。
+
+|TRETINH |[#norm:mctrctl-tretinh_op]##禁止记录陷阱返回。##  见 <<Transfer Type Filtering>>。
+
+|NTBREN |[#norm:mctrctl-ntbren_op]##使能记录未采用分支。##  见 <<Transfer Type Filtering>>。
+
+|TKBRINH |[#norm:mctrctl-tkbrinh_op]##禁止记录采用分支。##  见 <<Transfer Type Filtering>>。
+
+|INDCALLINH |[#norm:mctrctl-indcallinh_op]##禁止记录间接调用。##  见 <<Transfer Type Filtering>>。
+
+|DIRCALLINH |[#norm:mctrctl-dircallinh_op]##禁止记录直接调用。##  见 <<Transfer Type Filtering>>。
+
+|INDJMPINH |[#norm:mctrctl-indjmpinh_op]##禁止记录间接跳转（无链接）。##  见 <<Transfer Type Filtering>>。
+
+|DIRJMPINH |[#norm:mctrctl-dirjmpinh_op]##禁止记录直接跳转（无链接）。##  见 <<Transfer Type Filtering>>。
+
+|CORSWAPINH |[#norm:mctrctl-corswapinh_op]##禁止记录协程交换。##  见 <<Transfer Type Filtering>>。
+
+|RETINH |[#norm:mctrctl-retinh_op]##禁止记录函数返回。##  见 <<Transfer Type Filtering>>。
+
+|INDLJMPINH |[#norm:mctrctl-indljmpinh_op]##禁止记录其他间接跳转（带链接）。##  见 <<Transfer Type Filtering>>。
+
+|DIRLJMPINH |[#norm:mctrctl-dirljmpinh_op]##禁止记录其他直接跳转（带链接）。##  见 <<Transfer Type Filtering>>。
+|Custom[3:0] | [#norm:mctrctl-custom_op]##指定用于自定义用途的 WARL 位。##  值 0 必须对应标准行为。  见 <<Custom Extensions>>。
+|==='''

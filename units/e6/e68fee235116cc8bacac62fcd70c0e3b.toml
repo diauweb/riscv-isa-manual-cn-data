@@ -1,0 +1,12 @@
+unit_id = "e68fee235116cc8bacac62fcd70c0e3b"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: This definition allows implementations to elide register write-back for
+some HINTs, while allowing them to execute other HINTs in the same manner as
+other integer computational instructions.
+The implementation choice is observable only by S-mode with SXLEN > UXLEN; it
+is invisible to U-mode.'''
+zh = '''
+NOTE: 该定义允许实现省略某些 HINT 的寄存器写回，同时允许它们以与其他整数计算指令相同的方式执行其他 HINT。该实现选择仅对 SXLEN > UXLEN 的 S 模式可见；对 U 模式不可见。'''

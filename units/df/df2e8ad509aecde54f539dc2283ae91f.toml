@@ -1,0 +1,13 @@
+unit_id = "df2e8ad509aecde54f539dc2283ae91f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the Smrnmi extension is implemented, a `MNPELP` field (bit 9)
+is provided in the `mnstatus` CSR to hold the previous `ELP` state on a trap to
+the RNMI handler. When a RNMI trap is delivered, the `MNPELP` is set to `ELP`
+and `ELP` set to `NO_LP_EXPECTED`. Upon a `MNRET`, if the `mnstatus.MNPP` holds
+the value `y`, then `ELP` is set to the value of `MNPELP` if `yLPE` is 1;
+otherwise, it is set to `NO_LP_EXPECTED`.'''
+zh = '''
+当实现 Smrnmi 扩展时，`mnstatus` CSR 中提供 `MNPELP` 字段（第 9 位），以在陷阱递送到 RNMI 处理程序时保存先前的 `ELP` 状态。当递送 RNMI 陷阱时，`MNPELP` 置为 `ELP`，且 `ELP` 置为 `NO_LP_EXPECTED`。执行 `MNRET` 时，若 `mnstatus.MNPP` 的值为 `y`，则当 `yLPE` 为 1 时，`ELP` 置为 `MNPELP` 的值；否则置为 `NO_LP_EXPECTED`。'''

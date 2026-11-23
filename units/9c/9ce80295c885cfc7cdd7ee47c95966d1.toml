@@ -1,0 +1,11 @@
+unit_id = "9ce80295c885cfc7cdd7ee47c95966d1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_inc_ialign]#Writing csr:misa[] may increase IALIGN, e.g., by disabling the
+ext:c[] extension. If an instruction that would write csr:misa[] increases IALIGN,
+and the subsequent instruction's address is not IALIGN-bit aligned, the
+write to csr:misa[] is suppressed, leaving csr:misa[] unchanged.#'''
+zh = '''
+[#norm:misa_inc_ialign]##写入 csr:misa[] 可能增大 IALIGN，例如通过禁用 ext:c[] 扩展。##若某条将写入 csr:misa[] 的指令增大了 IALIGN，且后续指令的地址不是 IALIGN 位对齐的，则对 csr:misa[] 的写入被抑制，csr:misa[] 保持不变。##'''

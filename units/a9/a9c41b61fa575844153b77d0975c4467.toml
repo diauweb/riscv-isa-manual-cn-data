@@ -1,0 +1,151 @@
+unit_id = "a9c41b61fa575844153b77d0975c4467"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+The pseudocode of each instruction performs at most one store or one
+load, except for AMOs that perform exactly one load and one store. Those
+memory accesses are then split apart into the architecturally atomic
+units by the hart semantics (see <<initiate_load, Initiate memory load operations>> and <<initiate_store_footprint, Initiate memory store operation footprints>> below).
+
+Informally, each bit of a register read should be satisfied from a
+register write by the most recent (in program order) instruction
+instance that can write that bit (or from the hart’s initial register
+state if there is no such write). Hence, it is essential to know the
+register write footprint of each instruction instance, which we
+calculate when the instruction instance is created (see the <<fetch, Fetch instruction>> action of
+below). We ensure in the pseudocode that each instruction does at most
+one register write to each register bit, and also that it does not try
+to read a register value it just wrote.
+
+Data-flow dependencies (address and data) in the model emerge from the
+fact that each register read has to wait for the appropriate register
+write to be executed (as described above).
+
+[[inst_state]]
+==== Instruction Instance State
+
+Each instruction instance __i_ has a state comprising:
+
+* _program_loc_, the memory address from which the instruction was
+fetched;
+* _instruction_kind_, identifying whether this is a load, store, AMO,
+fence, branch/jump or a `simple` instruction (this also includes a
+_kind_ similar to the one described for the pseudocode execution
+states);
+* _src_regs_, the set of source _reg_name_s (including system
+registers), as statically determined from the pseudocode of the
+instruction;
+* _dst_regs_, the destination _reg_name_s (including system registers),
+as statically determined from the pseudocode of the instruction;
+* _pseudocode_state_ (or sometimes just `state` for short), one of (this
+is a tagged union; tags in small-caps): +
+
+
+[cols="<,<",grid="none"]
+|===
+|Plain(_isa_state_) |- ready to make a pseudocode transition
+
+|Pending_mem_loads(_load_continuation_) |- requesting memory load
+operation(s)
+
+|Pending_mem_stores(_store_continuation_) |- requesting memory store
+operation(s)
+|===
+* _reg_reads_, the register reads the instance has performed, including,
+for each one, the register write slices it read from;
+* _reg_writes_, the register writes the instance has performed;
+* _mem_loads_, a set of memory load operations, and for each one the
+as-yet-unsatisfied slices (the byte indices that have not been satisfied
+yet), and, for the satisfied slices, the store slices (each consisting
+of a memory store operation and subset of its byte indices) that
+satisfied it.
+* _mem_stores_, a set of memory store operations, and for each one a
+flag that indicates whether it has been propagated (passed to the shared
+memory) or not.
+* information recording whether the instance is committed, finished,
+etc.
+
+Each memory load operation includes a memory footprint (address and
+size). Each memory store operations includes a memory footprint, and,
+when available, a value.
+
+A load instruction instance with a non-empty _mem_loads_, for which all
+the load operations are satisfied (i.e. there are no unsatisfied load
+slices) is said to be _entirely satisfied_.
+
+Informally, an instruction instance is said to have _fully determined
+data_ if the load (and `sc`) instructions feeding its source registers
+are finished. Similarly, it is said to have a _fully determined memory
+footprint_ if the load (and `sc`) instructions feeding its memory
+operation address register are finished. Formally, we first define the
+notion of _fully determined register write_: a register write
+latexmath:[$w$] from _reg_writes_ of instruction instance
+latexmath:[$i$] is said to be _fully determined_ if one of the following
+conditions hold:
+
+. latexmath:[$i$] is finished; or
+. the value written by latexmath:[$w$] is not affected by a memory
+operation that latexmath:[$i$] has made (i.e. a value loaded from memory
+or the result of `sc`), and, for every register read that
+latexmath:[$i$] has made, that affects latexmath:[$w$], the register
+write from which latexmath:[$i$] read is fully determined (or
+latexmath:[$i$] read from the initial register state).
+
+Now, an instruction instance latexmath:[$i$] is said to have _fully
+determined data_ if for every register read latexmath:[$r$] from
+_reg_reads_, the register writes that latexmath:[$r$] reads from are
+fully determined. An instruction instance latexmath:[$i$] is said to
+have a _fully determined memory footprint_ if for every register read
+latexmath:[$r$] from _reg_reads_ that feeds into latexmath:[$i$]’s
+memory operation address, the register writes that latexmath:[$r$] reads
+from are fully determined.
+[NOTE]
+===='''
+zh = '''
+====
+每条指令的伪代码至多执行一次存储或一次加载，但执行恰好一次加载和一次存储的 AMO 除外。这些内存访问随后由硬件线程语义拆分为架构上原子的单元（见下文 <<initiate_load, 发起内存加载操作>> 和 <<initiate_store_footprint, 发起内存存储操作足迹>>）。
+
+非正式地说，寄存器读取的每一位宜由在程序顺序中最近、且能写入该位的指令实例的寄存器写入来满足（若无此类写入，则由硬件线程的初始寄存器状态满足）。因此，必须知道每个指令实例的寄存器写入足迹，我们在创建指令实例时计算该足迹（见下文的 <<fetch, 取指令>> 动作）。我们在伪代码中确保每条指令对每个寄存器位至多执行一次寄存器写入，且不会尝试读取它刚刚写入的寄存器值。
+
+模型中的数据流依赖（地址依赖和数据依赖）源于如下事实：每次寄存器读取都必须等待相应的寄存器写入被执行（如上所述）。
+
+[[inst_state]]
+==== 指令实例状态
+
+每个指令实例 __i_ 具有一个状态，包括：
+
+* _program_loc_，该指令被取指的内存地址；
+* _instruction_kind_，标识这是加载、存储、AMO、屏障、分支/跳转还是一条 `simple` 指令（这还包括与伪代码执行状态所述类似的 _kind_）；
+* _src_regs_，由该指令的伪代码静态确定的源 _reg_name_ 集合（包括系统寄存器）；
+* _dst_regs_，由该指令的伪代码静态确定的目标 _reg_name_ 集合（包括系统寄存器）；
+* _pseudocode_state_（有时简称为 `state`），取以下之一（这是一个带标签的联合；标签为小型大写字母）：+
+
+
+[cols="<,<",grid="none"]
+|===
+|Plain(_isa_state_) |- 准备好进行伪代码状态转移
+
+|Pending_mem_loads(_load_continuation_) |- 正在请求内存加载操作
+
+|Pending_mem_stores(_store_continuation_) |- 正在请求内存存储操作
+|===
+* _reg_reads_，该实例已执行的寄存器读取，包括对每次读取记录其所读取的寄存器写入切片；
+* _reg_writes_，该实例已执行的寄存器写入；
+* _mem_loads_，一个内存加载操作集合，以及对每个加载操作记录尚未满足的切片（尚未满足的字节索引），并且对已满足的切片记录满足它的存储切片（每个存储切片由一个内存存储操作及其字节索引子集组成）。
+* _mem_stores_，一个内存存储操作集合，以及对每个存储操作记录一个标志，指示它是否已被传播（传给共享内存）。
+* 记录该实例是否已提交、已完成等的信息。
+
+每个内存加载操作包括一个内存足迹（地址和大小）。每个内存存储操作包括一个内存足迹，以及在可用时的值。
+
+一个具有非空 _mem_loads_ 且所有加载操作均已满足（即没有未满足的加载切片）的加载指令实例称为_完全满足_。
+
+非正式地说，如果为某指令实例的源寄存器提供输入的加载（和 `sc`）指令均已完成，则称该指令实例具有_完全确定的数据_。类似地，如果为某指令实例的内存操作地址寄存器提供输入的加载（和 `sc`）指令均已完成，则称其具有_完全确定的内存足迹_。形式上，我们首先定义_完全确定的寄存器写入_的概念：若以下条件之一成立，则称指令实例 latexmath:[$i$] 的 _reg_writes_ 中的寄存器写入 latexmath:[$w$] 是_完全确定的_：
+
+. latexmath:[$i$] 已完成；或
+. latexmath:[$w$] 所写的值不受 latexmath:[$i$] 已执行的内存操作影响（即从内存加载的值或 `sc` 的结果），并且，对于 latexmath:[$i$] 已执行、且影响 latexmath:[$w$] 的每次寄存器读取，latexmath:[$i$] 所读取的寄存器写入都是完全确定的（或 latexmath:[$i$] 读取自初始寄存器状态）。
+
+现在，若对于 _reg_reads_ 中的每次寄存器读取 latexmath:[$r$]，latexmath:[$r$] 所读取的寄存器写入都是完全确定的，则称指令实例 latexmath:[$i$] 具有_完全确定的数据_。若对于 _reg_reads_ 中每次为 latexmath:[$i$] 的内存操作地址提供输入的寄存器读取 latexmath:[$r$]，latexmath:[$r$] 所读取的寄存器写入都是完全确定的，则称指令实例 latexmath:[$i$] 具有_完全确定的内存足迹_。
+[NOTE]
+===='''

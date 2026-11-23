@@ -1,0 +1,37 @@
+unit_id = "0761a29ac5e05d8b144e9b65de33bd27"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+As with other architectural mandates, it suffices to appear "`as if`"
+harts are synchronized to within one tick of the real-time clock, i.e.,
+software is unable to observe that there is a greater delta between the
+real-time clock values observed on two harts.
+
+If, for example, the real-time clock increments at a frequency of 1 GHz, then
+all harts must appear to be synchronized to within 1 ns.
+But it is also acceptable for this example implementation to only update the
+real-time clock at, say, a frequency of 100 MHz with increments of 10 ticks.
+As long as software cannot observe this seeming violation of the above
+synchronization requirement, and software always observes time across harts to
+be monotonically nondecreasing, then this implementation is compliant.
+
+A platform spec may then, for example, specify an apparent real-time clock
+tick frequency (e.g. 1 GHz) and also a minimum update frequency (e.g. 100 MHz)
+at which updated time values are guaranteed to be observable by software.
+Software may read time more frequently, but it should only observe
+monotonically nondecreasing values and it should observe a new value at least
+once every 10 ns (corresponding to the 100 MHz update frequency in this
+example).
+===='''
+zh = '''
+[NOTE]
+====
+与其他架构强制要求一样，只需“表现得好像”硬件线程之间同步到实时时钟的一个节拍之内即可，即软件无法观察到两个硬件线程上观测到的实时时钟值之间存在更大偏差。
+
+例如，如果实时时钟以 1 GHz 的频率递增，则所有硬件线程必须表现为同步到 1 ns 之内。但该示例实现也可以只以例如 100 MHz 的频率、以 10 个节拍的增量更新实时时钟。只要软件无法观察到这种表面上违反上述同步要求的情况，并且软件总是观测到各硬件线程之间的时间单调非减，则该实现就是符合规范的。
+
+随后，平台规范可以例如规定一个表观实时时钟节拍频率（例如 1 GHz）以及一个最小更新频率（例如 100 MHz），保证更新后的时间值在该频率下可被软件观测到。软件可以更频繁地读取时间，但它宜只观测到单调非减的值，并且宜至少每 10 ns 观测到一个新值（对应本示例中的 100 MHz 更新频率）。
+===='''

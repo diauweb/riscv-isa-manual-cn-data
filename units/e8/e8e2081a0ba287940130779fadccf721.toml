@@ -1,0 +1,14 @@
+unit_id = "e8e2081a0ba287940130779fadccf721"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmv-s-x_op]#The insn:vmv.s.x[] instruction copies the scalar integer register to element 0 of
+the destination vector register group with EMUL = ceil(EEW/VLEN).
+If SEW < XLEN, the least-significant bits
+are copied and the upper XLEN-SEW bits are ignored.  If SEW > XLEN, the value
+is sign-extended to SEW bits.  The other elements in the destination vector
+register ( 0 < index < VLEN/SEW) are treated as tail elements using the current tail agnostic/undisturbed policy.#  [#norm:vmv-s-x_vstart_ge_vl]#If csr:vstart[] {ge} csr:vl[], no
+operation is performed and the destination register is not updated.#'''
+zh = '''
+[#norm:vmv-s-x_op]#insn:vmv.s.x[] 指令将标量整数寄存器复制到目标向量寄存器组的元素 0，EMUL = ceil(EEW/VLEN)。如果 SEW < XLEN，则复制最低位，忽略高 XLEN-SEW 位。如果 SEW > XLEN，则该值符号扩展到 SEW 位。目标向量寄存器中的其他元素（0 < 索引 < VLEN/SEW）按当前尾部未知/未扰动策略作为尾部元素处理。# [#norm:vmv-s-x_vstart_ge_vl]#如果 csr:vstart[] {ge} csr:vl[]，则不执行任何操作，且目标寄存器不更新。#'''

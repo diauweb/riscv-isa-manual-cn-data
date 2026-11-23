@@ -1,0 +1,22 @@
+unit_id = "738754a218fcc636f5c10e3e804b202a"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The assembly syntax requires the RTZ rounding mode to be explicitly
+specified, i.e., `fcvtmod.w.d rd, rs1, rtz`.
+
+The FCVTMOD.W.D instruction was added principally to accelerate the
+processing of JavaScript Numbers. Numbers are double-precision
+values, but some operators implicitly truncate them to signed integers
+mod 2^32^.
+===='''
+zh = '''
+[NOTE]
+====
+汇编语法要求显式指定 RTZ 舍入模式，即 `fcvtmod.w.d rd, rs1, rtz`。
+
+增加 FCVTMOD.W.D 指令主要是为了加速 JavaScript Number 的处理。Number 是双精度值，但某些运算符会隐式将其截断为模 2^32^ 的有符号整数。
+===='''

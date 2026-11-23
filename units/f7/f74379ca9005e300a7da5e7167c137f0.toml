@@ -1,0 +1,122 @@
+unit_id = "f74379ca9005e300a7da5e7167c137f0"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+[[sat_by_forwarding]]
+===== Satisfy memory load operation by forwarding from unpropagated stores
+
+For a non-AMO load instruction instance latexmath:[$i$] in state
+Pending_mem_loads(_load_continuation_), and a memory load operation
+latexmath:[$mlo$] in latexmath:[$i.\textit{mem\_loads}$] that has
+unsatisfied slices, the memory load operation can be partially or
+entirely satisfied by forwarding from unpropagated memory store
+operations by store instruction instances that are program-order-before
+latexmath:[$i$] if:
+
+. all program-order-previous `fence` instructions with `.sr` and `.pw`
+set are finished;
+. for every program-order-previous `fence` instruction, latexmath:[$f$],
+with `.sr` and `.pr` set, and `.pw` not set, if latexmath:[$f$] is not
+finished then all load instructions that are program-order-before
+latexmath:[$f$] are entirely satisfied;
+. for every program-order-previous `fence.tso` instruction,
+latexmath:[$f$], that is not finished, all load instructions that are
+program-order-before latexmath:[$f$] are entirely satisfied;
+. if latexmath:[$i$] is a load-acquire-RCsc, all program-order-previous
+store-releases-RCsc are finished;
+. if latexmath:[$i$] is a load-acquire-release, all
+program-order-previous instructions are finished;
+. all non-finished program-order-previous load-acquire instructions are
+entirely satisfied; and
+. all program-order-previous store-acquire-release instructions are
+finished;
+
+Let latexmath:[$msoss$] be the set of all unpropagated memory store
+operation slices from non-`sc` store instruction instances that are
+program-order-before latexmath:[$i$] and have already calculated the
+value to be stored, that overlap with the unsatisfied slices of
+latexmath:[$mlo$], and which are not superseded by intervening store
+operations or store operations that are read from by an intervening
+load. The last condition requires, for each memory store operation slice
+latexmath:[$msos$] in latexmath:[$msoss$] from instruction
+latexmath:[$i'$]:
+
+* that there is no store instruction program-order-between latexmath:[$i$]
+and latexmath:[$i'$] with a memory store operation overlapping
+latexmath:[$msos$]; and
+* that there is no load instruction program-order-between latexmath:[$i$]
+and latexmath:[$i'$] that was satisfied from an overlapping memory store
+operation slice from a different hart.
+
+Action:
+
+. update latexmath:[$i.\textit{mem\_loads}$] to indicate that
+latexmath:[$mlo$] was satisfied by latexmath:[$msoss$]; and
+. restart any speculative instructions which have violated coherence as
+a result of this, i.e., for every non-finished instruction
+latexmath:[$i'$] that is a program-order-successor of latexmath:[$i$],
+and every memory load operation latexmath:[$mlo'$] of latexmath:[$i'$]
+that was satisfied from latexmath:[$msoss'$], if there exists a memory
+store operation slice latexmath:[$msos'$] in latexmath:[$msoss'$], and
+an overlapping memory store operation slice from a different memory
+store operation in latexmath:[$msoss$], and latexmath:[$msos'$] is not
+from an instruction that is a program-order-successor of
+latexmath:[$i$], restart latexmath:[$i'$] and its _restart-dependents_.
+
+Where, the _restart-dependents_ of instruction latexmath:[$j$] are:
+
+* program-order-successors of latexmath:[$j$] that have data-flow
+dependency on a register write of latexmath:[$j$];
+* program-order-successors of latexmath:[$j$] that have a memory load
+operation that reads from a memory store operation of latexmath:[$j$]
+(by forwarding);
+* if latexmath:[$j$] is a load-acquire, all the program-order-successors
+of latexmath:[$j$];
+* if latexmath:[$j$] is a load, for every `fence`, latexmath:[$f$], with
+`.sr` and `.pr` set, and `.pw` not set, that is a
+program-order-successor of latexmath:[$j$], all the load instructions
+that are program-order-successors of latexmath:[$f$];
+* if latexmath:[$j$] is a load, for every `fence.tso`, latexmath:[$f$],
+that is a program-order-successor of latexmath:[$j$], all the load
+instructions that are program-order-successors of latexmath:[$f$]; and
+* (recursively) all the restart-dependents of all the instruction
+instances above.
+[NOTE]
+===='''
+zh = '''
+====
+[[sat_by_forwarding]]
+===== 通过从未传播的存储前递来满足内存加载操作
+
+对于处于 Pending_mem_loads(_load_continuation_) 状态的、非 AMO 的加载指令实例 latexmath:[$i$]，以及 latexmath:[$i.\textit{mem\_loads}$] 中具有未满足切片的某内存加载操作 latexmath:[$mlo$]，若满足以下条件，则可由程序顺序先于 latexmath:[$i$] 的存储指令实例从未传播的内存存储操作前递来部分或完全满足该内存加载操作：
+
+. 所有置位 `.sr` 和 `.pw` 的程序顺序在先的 `fence` 指令均已完成；
+. 对于每条置位 `.sr` 和 `.pr` 且未置位 `.pw` 的程序顺序在先的 `fence` 指令 latexmath:[$f$]，若 latexmath:[$f$] 未完成，则程序顺序先于 latexmath:[$f$] 的所有加载指令均完全满足；
+. 对于每条未完成的程序顺序在先的 `fence.tso` 指令 latexmath:[$f$]，程序顺序先于 latexmath:[$f$] 的所有加载指令均完全满足；
+. 若 latexmath:[$i$] 是加载-获取-RCsc，则所有程序顺序在先的存储-释放-RCsc 均已完成；
+. 若 latexmath:[$i$] 是加载-获取-释放，则所有程序顺序在先的指令均已完成；
+. 所有未完成的程序顺序在先的加载-获取指令均完全满足；且
+. 所有程序顺序在先的存储-获取-释放指令均已完成；
+
+令 latexmath:[$msoss$] 为来自程序顺序先于 latexmath:[$i$] 且已计算出待存储值的非 `sc` 存储指令实例的所有未传播内存存储操作切片的集合，这些切片与 latexmath:[$mlo$] 的未满足切片重叠，且不被其间插入的存储操作或被其间插入的加载所读取的存储操作所取代。最后一项条件要求，对于来自指令 latexmath:[$i'$] 的 latexmath:[$msoss$] 中每个内存存储操作切片 latexmath:[$msos$]：
+
+* 在 latexmath:[$i$] 与 latexmath:[$i'$] 之间没有带与 latexmath:[$msos$] 重叠的内存存储操作的存储指令；且
+* 在 latexmath:[$i$] 与 latexmath:[$i'$] 之间没有从另一硬件线程的重叠内存存储操作切片获得满足的加载指令。
+
+动作：
+
+. 更新 latexmath:[$i.\textit{mem\_loads}$] 以指示 latexmath:[$mlo$] 已由 latexmath:[$msoss$] 满足；且
+. 重启任何因之而违反一致性的推测指令，即：对于 latexmath:[$i$] 的每个未完成的程序顺序后继指令 latexmath:[$i'$]，以及 latexmath:[$i'$] 的每个由 latexmath:[$msoss'$] 满足的内存加载操作 latexmath:[$mlo'$]，若 latexmath:[$msoss'$] 中存在某内存存储操作切片 latexmath:[$msos'$]，且 latexmath:[$msoss$] 中存在与它重叠的、来自不同内存存储操作的内存存储操作切片，且 latexmath:[$msos'$] 并非来自 latexmath:[$i$] 的程序顺序后继指令，则重启 latexmath:[$i'$] 及其_重启依赖项_。
+
+其中，指令 latexmath:[$j$] 的_重启依赖项_为：
+
+* 与 latexmath:[$j$] 的某个寄存器写入存在数据流依赖的 latexmath:[$j$] 的程序顺序后继；
+* 具有从 latexmath:[$j$] 的某个内存存储操作读取（通过前递）的内存加载操作的 latexmath:[$j$] 的程序顺序后继；
+* 若 latexmath:[$j$] 是加载-获取，则为 latexmath:[$j$] 的所有程序顺序后继；
+* 若 latexmath:[$j$] 是加载，则对于每条置位 `.sr` 和 `.pr` 且未置位 `.pw`、且是 latexmath:[$j$] 的程序顺序后继的 `fence` 指令 latexmath:[$f$]，为程序顺序后于 latexmath:[$f$] 的所有加载指令；
+* 若 latexmath:[$j$] 是加载，则对于每条是 latexmath:[$j$] 的程序顺序后继的 `fence.tso` 指令 latexmath:[$f$]，为程序顺序后于 latexmath:[$f$] 的所有加载指令；以及
+* （递归地）上述所有指令实例的所有重启依赖项。
+[NOTE]
+===='''

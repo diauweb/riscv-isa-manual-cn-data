@@ -1,0 +1,12 @@
+unit_id = "6ce4ec0f19e3420dff9545be2d90aac5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Accessing the same location using different attributes that are both
+non-cacheable (e.g., NC and IO) does not cause loss of coherence, but
+might result in weaker memory ordering than the stricter attribute
+ordinarily guarantees. Executing a `fence iorw, iorw` instruction
+between such accesses suffices to prevent loss of memory ordering.'''
+zh = '''
+使用两种均不可缓存的属性（例如 NC 和 IO）访问同一位置不会导致一致性丢失，但可能导致内存排序弱于更严格属性通常保证的排序。在此类访问之间执行 `fence iorw, iorw` 指令足以防止内存排序丢失。'''

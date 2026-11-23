@@ -1,0 +1,14 @@
+unit_id = "e0833600ae005ceb1390d02b517e2bbe"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:misa_mxl_op_isa]#The MXL (Machine XLEN) field encodes the native base integer ISA width as
+shown in <<norm:misa_mxl_enc>>.#
+[#norm:misa_mxl_acc]#The MXL field is read-only.#
+[#norm:misa_mxl_op_nz]#If `misa` is nonzero, the
+MXL field indicates the effective XLEN in M-mode, a constant termed _MXLEN_.#
+[#norm:xlen_le_mxlen]#XLEN is never greater than MXLEN, but XLEN might be smaller than MXLEN in
+less-privileged modes.#'''
+zh = '''
+[#norm:misa_mxl_op_isa]##MXL（Machine XLEN）字段编码原生基础整数 ISA 宽度，如 <<norm:misa_mxl_enc>> 所示。##[#norm:misa_mxl_acc]##MXL 字段为只读。##[#norm:misa_mxl_op_nz]##若 `misa` 非零，则 MXL 字段指示 M 模式下的有效 XLEN，该常量称为 __MXLEN__。##[#norm:xlen_le_mxlen]##XLEN 永远不会大于 MXLEN，但在较低特权模式下 XLEN 可能小于 MXLEN。##'''

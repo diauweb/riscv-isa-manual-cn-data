@@ -1,0 +1,17 @@
+unit_id = "db9b6b12fff110859ae1fe8d8ccf3748"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For efficiency, the `rmem` tool allows this transition only when it is
+not possible to take the <<commit_sc, Commit and propagate store operation of an sc>> transition. This does not affect the set of
+allowed final states, but when explored interactively, if the `sc`
+should fail one should use the <<early_sc_fail, Early sc fail>> transition instead of waiting for this transition.
+===='''
+zh = '''
+[NOTE]
+====
+为提高效率，`rmem` 工具仅在无法采用 <<commit_sc, 提交并传播 sc 的存储操作>> 迁移时允许该迁移。这不会影响允许的最终状态集合，但在交互式探索时，若 `sc` 会失败，宜使用 <<early_sc_fail, 早期 sc 失败>> 迁移，而不是等待该迁移。
+===='''

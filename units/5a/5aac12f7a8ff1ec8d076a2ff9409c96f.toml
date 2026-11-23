@@ -1,0 +1,8 @@
+unit_id = "5aac12f7a8ff1ec8d076a2ff9409c96f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+As described in <<_determining_the_value_of_pmlen>>, [#norm:pmlen_mode_depend]#the supported values of PMLEN may depend on the effective privilege mode. The current standard only defines PMLEN=XLEN-48 and PMLEN=XLEN-57,# but this assumption may be relaxed in future extensions and profiles. [#norm:pmlen_illegal_warl]#Trying to enable pointer masking in an unsupported scenario represents an illegal write to the corresponding pointer masking enable bit and follows WARL semantics.# Future profiles may choose to define certain combinations of privilege modes and supported values of PMLEN as mandatory.'''
+zh = '''
+如 <<_determining_the_value_of_pmlen>> 所述，[#norm:pmlen_mode_depend]##PMLEN 的受支持值可能取决于有效特权模式。当前标准仅定义 PMLEN=XLEN-48 和 PMLEN=XLEN-57，##但未来扩展和配置集可能放宽此假设。[#norm:pmlen_illegal_warl]##在不支持的场景中试图使能指针掩码，表示对对应指针掩码使能位的非法写入，并遵循 WARL 语义。## 未来配置集可选择将某些特权模式与受支持 PMLEN 值的组合定义为强制。'''

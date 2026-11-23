@@ -1,0 +1,13 @@
+unit_id = "81a9651452dca5539c7a86639e30cd0f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If control is transferred to a trap handler while executing the
+instruction, then Debug Mode is re-entered immediately after the PC is
+changed to the trap handler, and the appropriate `tval` and `cause`
+registers are updated. In this case none of the trap handler is
+executed, and if the cause was a pending interrupt no instructions might
+be executed at all.'''
+zh = '''
+若在执行该指令期间将控制转移到陷阱处理程序，则在 PC 改为陷阱处理程序之后立即重新进入调试模式，并更新相应的 `tval` 和 `cause` 寄存器。在此情况下不执行陷阱处理程序的任何部分，且若原因为挂起的中断，则可能根本不执行任何指令。'''

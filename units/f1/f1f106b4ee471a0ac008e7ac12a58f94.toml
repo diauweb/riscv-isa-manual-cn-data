@@ -1,0 +1,13 @@
+unit_id = "f1f106b4ee471a0ac008e7ac12a58f94"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+It can be enabled for individual interrupt numbers by setting the bit
+corresponding to the interrupt number in {csr-tdata2}. The interrupt
+number is interpreted in the mode that the trap handler executes in.
+(E.g. virtualized interrupt numbers are not the same in every mode.)
+In addition the trigger can be enabled for non-maskable interrupts using
+{itrigger-nmi}.'''
+zh = '''
+可通过在 {csr-tdata2} 中设置对应于中断编号的位，来为各个中断编号使能它。中断编号按陷阱处理程序执行所处的模式解释。（例如，虚拟化中断编号并非在每个模式中都相同。）此外，可使用 {itrigger-nmi} 为非屏蔽中断使能该触发器。'''

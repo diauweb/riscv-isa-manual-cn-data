@@ -1,0 +1,14 @@
+unit_id = "3b83995cafb089475080a40cfea45327"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The Smdbltrp extension addresses a double trap (See <<machine-double-trap>>) in
+M-mode. When the Smrnmi extension (<<rnmi>>) is implemented, it enables
+invocation of the RNMI handler on a double trap in M-mode to handle the
+critical error. If the Smrnmi extension is not implemented or if a double trap
+occurs during the RNMI handler's execution, this extension helps transition the
+hart to a critical error state and enables signaling the critical error to the
+platform.'''
+zh = '''
+Smdbltrp 扩展处理 M 模式中的双陷阱（见 <<machine-double-trap>>）。当实现 Smrnmi 扩展（<<rnmi>>）时，它使得在 M 模式发生双陷阱时能够调用 RNMI 处理程序来处理该严重错误。若未实现 Smrnmi 扩展，或 RNMI 处理程序执行期间发生双陷阱，则本扩展帮助硬件线程转换到严重错误状态，并使能向平台发出该严重错误的信号。'''

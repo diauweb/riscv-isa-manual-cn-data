@@ -1,0 +1,14 @@
+unit_id = "7eba6466b45158fcbcc62c13c6fa0347"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The immediate forms of `vmslt{u}.vi` are not provided as the
+immediate value can be decreased by 1 and the `vmsle{u}.vi` variants
+used instead.  The `vmsle.vi` range is -16 to 15, resulting in an
+effective `vmslt.vi` range of -15 to 16.  The `vmsleu.vi` range is 0
+to 15 giving an effective `vmsltu.vi` range of 1 to 16 (Note,
+`vmsltu.vi` with immediate 0 is not useful as it is always
+false).'''
+zh = '''
+NOTE: 未提供 `vmslt{u}.vi` 的立即数形式，因为可将立即数值减 1 并改用 `vmsle{u}.vi` 变体。`vmsle.vi` 范围为 -16 到 15，从而有效 `vmslt.vi` 范围为 -15 到 16。`vmsleu.vi` 范围为 0 到 15，给出有效 `vmsltu.vi` 范围为 1 到 16（注意，立即数为 0 的 `vmsltu.vi` 无用，因为它始终为假）。'''

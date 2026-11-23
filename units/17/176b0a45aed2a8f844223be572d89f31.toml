@@ -1,0 +1,16 @@
+unit_id = "176b0a45aed2a8f844223be572d89f31"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `stval` CSR is an SXLEN-bit read-write register formatted as
+shown in <<stvalreg>>. When a trap is taken into
+S-mode, `stval` is written with exception-specific information to assist
+software in handling the trap. Otherwise, `stval` is never written by
+the implementation, though it may be explicitly written by software. The
+hardware platform will specify which exceptions must set `stval`
+informatively, which may unconditionally set it to zero, and which may
+exhibit either behavior, depending on the underlying event that caused the
+exception.'''
+zh = '''
+`stval` CSR 是一个 SXLEN 位可读写寄存器，格式如 <<stvalreg>> 所示。当陷阱陷入 S 模式时，`stval` 被写入异常特定信息，以辅助软件处理该陷阱。除此之外，实现从不会写入 `stval`，但软件可显式写入它。硬件平台将规定哪些异常应信息性地设置 `stval`，哪些可无条件将其置零，以及哪些可表现出任一种行为，取决于导致该异常的底层事件。'''

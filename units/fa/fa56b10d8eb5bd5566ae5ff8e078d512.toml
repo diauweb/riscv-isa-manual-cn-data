@@ -1,0 +1,34 @@
+unit_id = "fa56b10d8eb5bd5566ae5ff8e078d512"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.funct3
+[cols="1,1,1,3,5,5"]
+|===
+3+| funct3[2:0] | Category | Operands | Type of scalar operand
+
+| 0 | 0 | 0 | OPIVV | vector-vector    |       N/A
+| 0 | 0 | 1 | OPFVV | vector-vector    |       N/A
+| 0 | 1 | 0 | OPMVV | vector-vector    |       N/A
+| 0 | 1 | 1 | OPIVI | vector-immediate | `imm[4:0]`
+| 1 | 0 | 0 | OPIVX | vector-scalar    | GPR `x` register `rs1`
+| 1 | 0 | 1 | OPFVF | vector-scalar    | FP `f` register `rs1`
+| 1 | 1 | 0 | OPMVX | vector-scalar    | GPR `x` register `rs1`
+| 1 | 1 | 1 | OPCFG | scalars-imms     | GPR `x` register `rs1` & `rs2`/`imm`
+|==='''
+zh = '''
+funct3
+[cols="1,1,1,3,5,5"]
+|===
+3+| funct3[2:0] | 类别 | 操作数 | 标量操作数类型
+
+| 0 | 0 | 0 | OPIVV | 向量-向量    |       N/A
+| 0 | 0 | 1 | OPFVV | 向量-向量    |       N/A
+| 0 | 1 | 0 | OPMVV | 向量-向量    |       N/A
+| 0 | 1 | 1 | OPIVI | 向量-立即数 | `imm[4:0]`
+| 1 | 0 | 0 | OPIVX | 向量-标量    | GPR `x` 寄存器 `rs1`
+| 1 | 0 | 1 | OPFVF | 向量-标量    | FP `f` 寄存器 `rs1`
+| 1 | 1 | 0 | OPMVX | 向量-标量    | GPR `x` 寄存器 `rs1`
+| 1 | 1 | 1 | OPCFG | 标量-立即数     | GPR `x` 寄存器 `rs1` 和 `rs2`/`imm`
+|==='''

@@ -1,0 +1,26 @@
+unit_id = "9ace51ae63e109d06331be6898179a5d"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+For example, if we name the software-writable csr::[seip] bit `B` and the
+signal from the external interrupt controller `E`, then if
+insn:csrrs[t0,mip,t1] is executed, `t0`[9] is written with `B` || `E`, then
+`B` is written with `B` || `t1`[9]. If insn:csrrw[t0,mip,t1] is executed,
+then `t0`[9] is written with `B` || `E`, and `B` is simply written with
+`t1`[9]. In neither case does `B` depend upon `E`.
+
+The csr::[seip] field behavior is designed to allow a higher privilege layer to
+mimic external interrupts cleanly, without losing any real external
+interrupts. The behavior of the CSR instructions is slightly modified
+from regular CSR accesses as a result.
+===='''
+zh = '''
+[NOTE]
+====
+例如，若我们将软件可写的 csr::[seip] 位命名为 `B`，将来自外部中断控制器的信号命名为 `E`，则若执行 insn:csrrs[t0,mip,t1]，`t0`[9] 被写入 `B` || `E`，然后 `B` 被写入 `B` || `t1`[9]。若执行 insn:csrrw[t0,mip,t1]，则 `t0`[9] 被写入 `B` || `E`，而 `B` 直接写入 `t1`[9]。两种情况下 `B` 都不依赖于 `E`。
+
+csr::[seip] 字段的行为设计为使较高特权层能够干净地模拟外部中断，而不丢失任何真实外部中断。因此，CSR 指令的行为相对于常规 CSR 访问略有修改。
+===='''

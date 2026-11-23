@@ -1,0 +1,13 @@
+unit_id = "a7a76ee9cedeb0808ca645befe2164ad"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Software should not set the _rl_ bit on an
+insn:lr[] instruction unless the _aq_ bit is also set, nor should software set
+the _aq_ bit on an insn:sc[] instruction unless the _rl_ bit is also set.
+insn:lr.rl[] and insn:sc.aq[] instructions are not guaranteed to provide any
+stronger ordering than those with both bits clear, but may result in lower
+performance.'''
+zh = '''
+除非同时置位 _aq_ 位，否则软件不宜在 insn:lr[] 指令上置位 _rl_ 位；除非同时置位 _rl_ 位，否则软件不宜在 insn:sc[] 指令上置位 _aq_ 位。insn:lr.rl[] 和 insn:sc.aq[] 指令不保证提供比两位均清零时更强的排序，但可能导致性能下降。'''

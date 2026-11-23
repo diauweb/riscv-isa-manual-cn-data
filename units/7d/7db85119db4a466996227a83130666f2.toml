@@ -1,0 +1,12 @@
+unit_id = "7db85119db4a466996227a83130666f2"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The instructions operate with an effective vector length,
+`evl`=NFIELDS*VLEN/EEW, regardless of current settings in `vtype` and
+`vl`.  The usual property that no elements are written if `vstart`
+{ge} `vl` does not apply to these instructions.  Instead, no elements
+are written if `vstart` {ge} `evl`.'''
+zh = '''
+无论 `vtype` 和 `vl` 中的当前设置如何，这些指令以有效向量长度 `evl`=NFIELDS*VLEN/EEW 操作。通常的性质——若 `vstart` {ge} `vl` 则不写入任何元素——不适用于这些指令。相反，如果 `vstart` {ge} `evl`，则不写入任何元素。'''

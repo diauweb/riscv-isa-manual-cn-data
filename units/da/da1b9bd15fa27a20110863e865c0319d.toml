@@ -1,0 +1,74 @@
+unit_id = "da1b9bd15fa27a20110863e865c0319d"
+kind = "code"
+translatable = false
+en = '''
+....
+1: *************************************************************************************
+2: ****************** Fragment 0x80000222 - 0x80000226:illegal_opcode ******************
+3: *************************************************************************************
+4:   KEY: ">" means pre-fragment execution, "<" means post-fragment execution
+5: ^^^^^^^^^^^^^^^^^^^^^^^^^^ Part 1 of 1 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+6:
+7: elf:
+8:  >  0000000080000104 <j_exception_stimulus>:
+9:  >      80000104:    00000297            auipc   t0,0x0
+10: >      80000108:    11e28293            addi    t0,t0,286 # 80000222 <bad_opcode>
+11: >      8000010c:    8282                    jr  t0
+12: >      80000154:    9282                    jalr    t0
+13:     0000000080000222 <bad_opcode>:
+14:         80000222:   0000                    unimp
+15:         80000224:   0000                    unimp
+16:         80000226:   b709                    j   80000128 <j_target_end_fail>
+17: <  00000000800001b0 <machine_trap_entry>:
+18: <      800001b0:    a805                    j   800001e0 <machine_trap_entry_0>
+19: <  00000000800001e0 <machine_trap_entry_0>:
+20: <      800001e0:    342023f3            csrr    t2,mcause
+21: <      800001e4:    fff0031b            addiw   t1,zero,-1
+22: <      800001e8:    137e                    slli    t1,t1,0x3f
+23:
+24: trace_spike:
+25: ******** Data from br_j_asm.spike_pc_trace line 5029 ********
+26: >  ADDRESS=80000154, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+27: >  ADDRESS=80000104, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+28: >  ADDRESS=80000108, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+29: >  ADDRESS=8000010c, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+30:    ADDRESS=80000222, PRIVILEGE=3, EXCEPTION=1, ECAUSE=2, TVAL=0, INTERRUPT=0
+31: <  ADDRESS=800001b0, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+32: <  ADDRESS=800001e0, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+33: <  ADDRESS=800001e4, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+34: <  ADDRESS=800001e8, PRIVILEGE=3, EXCEPTION=0, ECAUSE=0, TVAL=0, INTERRUPT=0
+35:
+36: encoder_input:
+37: ******** Data from br_j_asm.encoder_input line 5029 ********
+38: >  UNINFERABLE_JUMP, cause=0, tval=0, priv=3, iaddr_0=80000154, context=0, ctype=0, ilastsize_0=2
+39: >  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=80000104, context=0, ctype=0, ilastsize_0=4
+40: >  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=80000108, context=0, ctype=0, ilastsize_0=4
+41: >  UNINFERABLE_JUMP, cause=0, tval=0, priv=3, iaddr_0=8000010c, context=0, ctype=0, ilastsize_0=2
+42:    EXCEPTION, cause=2, tval=0, priv=3, iaddr_0=80000222, context=0, ctype=0, ilastsize_0=2,
+                                                                              ----------> NOT RETIRED
+43: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=800001b0, context=0, ctype=0, ilastsize_0=2
+44: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=800001e0, context=0, ctype=0, ilastsize_0=4
+45: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=800001e4, context=0, ctype=0, ilastsize_0=4
+46: <  ITYPE_NONE, cause=0, tval=0, priv=3, iaddr_0=800001e8, context=0, ctype=0, ilastsize_0=2
+47:
+48: te_inst:
+49: ******** Data from br_j_asm.te_inst_annotated line 5071 ********
+50: >  next=80000154 curr=80000150 prev=8000014c
+51: >  next=80000104 curr=80000154 prev=80000150
+52: >  next=80000108 curr=80000104 prev=80000154
+53: >  format=1, address=80000104, branches=1, branch_map=0, irreport=0, notify=0, updiscon=0,
+                                                  Reason[prev_updiscon] Payload[05 04 01 00 80 00]
+54: >  next=8000010c curr=80000108 prev=80000104
+55:    next=80000222 curr=8000010c prev=80000108
+56:    format=2, address=8000010c, irreport=0, notify=0, updiscon=0, Reason[exc_only]
+                                                    Payload[32 04 00 00 02]
+57: <  next=800001b0 curr=80000222 prev=8000010c
+58: <  format=3, subformat=TRAP, address=80000222, branch=1, context=0, ecause=2, interrupt=0,
+                                                  privilege=3, thaddr=0, tval=0, Reason[prev_updiscon, curr_exc_only]
+                                                     Payload[77 00 00 00 00 81 88 00 00 20]
+59: <  format=3, subformat=START, address=800001b0, branch=1, context=0,
+                                             privilege=3, Reason[exception_prev, reported]
+                                                  Payload[73 00 00 00 00 6c 00 00 10]
+60: <  next=800001e4 curr=800001e0 prev=800001b0
+61: <  next=800001e8 curr=800001e4 prev=800001e0
+....'''

@@ -1,0 +1,64 @@
+unit_id = "b134092a8d2767f4c1febb379344127c"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.*Trace Encoder Registers (trTe??, trTs??)*
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*Address Offset* |*Register Name* |*Compliance* |*Description*
+|0x000 |trTeControl |Required |Trace Encoder control register
+|0x004 |trTeImpl |Required |Trace Encoder implementation information
+|0x008 |trTeInstFeatures |Optional |Extra instruction trace encoder features and trace source IDs
+|0x00C |trTeInstFilters|Optional |Mask of filters to qualify an instruction trace
+4+|*_Data trace control (trTeData??)_*
+|0x010 |trTeDataControl |Optional |Data trace control and features
+|0x014 - 0x018 |--|Reserved|Reserved for data trace related future standard extension
+|0x01C |trTeDataFilters|Optional |Mask of filters to qualify data trace
+4+|*_Reserved_*
+|0x020 - 0x03F |--|Reserved|Reserved for future standard extension
+4+|*_Timestamp control (trTs??)_*
+|0x040 |trTsControl |Optional |Timestamp control register
+|0x044 |--|Reserved|Reserved for future timestamp related standard extension
+|0x048 |trTsCounterLow |Optional |Lower 32 bits of timestamp counter
+|0x04C |trTsCounterHigh |Optional |Upper bits of timestamp counter
+4+|*_Trigger control (trTeTrig??)_*
+|0x050 |trTeTrigDbgControl |Optional |Debug Triggers control register
+|0x054 |trTeTrigExtInControl |Optional |External Triggers Input control register
+|0x058 |trTeTrigExtOutControl |Optional |External Triggers Output control register
+4+|*_Reserved_*
+|0x060 - 0x3FF |--|Reserved|Reserved for future standard extension
+4+|*_Filters & comparators (trTeFilter??, trTeComp??)_*
+|0x400 - 0x5FF |trTeFilter?? |Optional |Trace Encoder Filter Registers
+|0x600 - 0x7FF |trTeComp?? |Optional |Trace Encoder Comparator Registers
+|==='''
+zh = '''
+.**跟踪编码器寄存器（trTe??, trTs??）**
+[cols="15%,23%,12%,~",options="header"]
+|===
+|*地址偏移* |*寄存器名称* |*合规性* |*描述*
+|0x000 |trTeControl |必需 |跟踪编码器控制寄存器
+|0x004 |trTeImpl |必需 |跟踪编码器实现信息
+|0x008 |trTeInstFeatures |可选 |额外的指令跟踪编码器特性和跟踪源 ID
+|0x00C |trTeInstFilters|可选 |用于限定指令跟踪的过滤器掩码
+4+|*__数据跟踪控制（trTeData??）__*
+|0x010 |trTeDataControl |可选 |数据跟踪控制与特性
+|0x014 - 0x018 |--|保留|保留用于数据跟踪相关的未来标准扩展
+|0x01C |trTeDataFilters|可选 |用于限定数据跟踪的过滤器掩码
+4+|*__保留__*
+|0x020 - 0x03F |--|保留|保留用于未来标准扩展
+4+|*__时间戳控制（trTs??）__*
+|0x040 |trTsControl |可选 |时间戳控制寄存器
+|0x044 |--|保留|保留用于未来时间戳相关的标准扩展
+|0x048 |trTsCounterLow |可选 |时间戳计数器的低 32 位
+|0x04C |trTsCounterHigh |可选 |时间戳计数器的高位
+4+|*__触发器控制（trTeTrig??）__*
+|0x050 |trTeTrigDbgControl |可选 |调试触发器控制寄存器
+|0x054 |trTeTrigExtInControl |可选 |外部触发器输入控制寄存器
+|0x058 |trTeTrigExtOutControl |可选 |外部触发器输出控制寄存器
+4+|*__保留__*
+|0x060 - 0x3FF |--|保留|保留用于未来标准扩展
+4+|*__过滤器与比较器（trTeFilter??, trTeComp??）__*
+|0x400 - 0x5FF |trTeFilter?? |可选 |跟踪编码器过滤器寄存器
+|0x600 - 0x7FF |trTeComp?? |可选 |跟踪编码器比较器寄存器
+|==='''

@@ -1,0 +1,43 @@
+unit_id = "c5b0f17ab2fce4efeaceb8d98d37d4f9"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Given the code size and energy savings of a compressed format, we wanted
+to build in support for a compressed format to the ISA encoding scheme
+rather than adding this as an afterthought, but to allow simpler
+implementations we didn't want to make the compressed format mandatory.
+We also wanted to optionally allow longer instructions to support
+experimentation and larger instruction-set extensions. Although our
+encoding convention required a tighter encoding of the core RISC-V ISA,
+this has several beneficial effects.
+(((IMAFD)))
+
+An implementation of the standard IMAFD ISA need only hold the
+most-significant 30 bits in instruction caches (a 6.25% saving). On
+instruction cache refills, any instructions encountered with either low
+bit clear should be recoded into illegal 30-bit instructions before
+storing in the cache to preserve illegal-instruction exception behavior.
+
+Perhaps more importantly, by condensing our base ISA into a subset of
+the 32-bit instruction word, we leave more space available for
+non-standard and custom extensions. In particular, the base RV32I ISA
+uses less than 1/8 of the encoding space in the 32-bit instruction word.
+An implementation that does not require support
+for the standard compressed instruction extension can map 3 additional non-conforming
+30-bit instruction spaces into the 32-bit fixed-width format, while preserving
+support for standard {ge}32-bit instruction-set
+extensions.
+===='''
+zh = '''
+[NOTE]
+====
+鉴于压缩格式可节省代码大小和能耗，我们希望将压缩格式支持内建到 ISA 编码方案中，而不是事后添加；但为了允许更简单的实现，我们并不希望将压缩格式设为强制。我们还希望可选地允许更长指令，以支持实验和更大的指令集扩展。尽管我们的编码约定要求对核心 RISC-V ISA 进行更紧凑的编码，但这具有若干有益效果。
+(((IMAFD)))
+
+标准 IMAFD ISA 的实现只需在指令高速缓存中保存最高有效 30 位（节省 6.25%）。在指令高速缓存重填时，遇到的任何低位清零的指令宜在存入高速缓存之前重新编码为非法 30 位指令，以保持非法指令异常行为。
+
+也许更重要的是，通过将基础 ISA 压缩到 32 位指令字的一个子集，我们为非标准和定制扩展留出了更多可用空间。特别是，基础 RV32I ISA 使用 32 位指令字中不到 1/8 的编码空间。不需要支持标准压缩指令扩展的实现可将 3 个额外的非符合 30 位指令空间映射到 32 位定长格式中，同时保留对标准 {ge}32 位指令集扩展的支持。
+===='''

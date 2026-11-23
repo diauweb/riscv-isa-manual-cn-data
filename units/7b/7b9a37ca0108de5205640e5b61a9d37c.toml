@@ -1,0 +1,23 @@
+unit_id = "7b9a37ca0108de5205640e5b61a9d37c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The NaN-boxing scheme employed in the `f` registers was designed to
+efficiently support recoded floating-point formats. Recoding is less
+practical for ext:zfinx[], though, since the same registers hold both
+floating-point and integer operands. Hence, the need for NaN boxing is
+diminished.
+
+Sign-extending 32-bit floating-point numbers when held in RV64 `x`
+registers is compatible with the existing RV64 calling conventions, which leave bits 63-32 undefined when passing a 32-bit floating point value in `x` registers. To keep the architecture more regular, we extend this pattern to 16-bit floating-point numbers in both RV32 and RV64.
+===='''
+zh = '''
+[NOTE]
+====
+`f` 寄存器中采用的 NaN 装箱方案旨在高效支持重编码浮点格式。然而，重编码对于 ext:zfinx[] 不太实用，因为同一组寄存器同时保存浮点操作数和整数操作数。因此，对 NaN 装箱的需求降低了。
+
+当 32 位浮点数保存在 RV64 `x` 寄存器中时对其进行符号扩展，与现有 RV64 调用约定兼容；这些约定在通过 `x` 寄存器传递 32 位浮点值时将位 63-32 保留为未定义。为保持架构更规则，我们将此模式扩展到 RV32 和 RV64 中的 16 位浮点数。
+===='''

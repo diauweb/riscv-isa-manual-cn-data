@@ -1,0 +1,21 @@
+unit_id = "01fb7fab68368fea8500838d6e41ce42"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Contenders for a lock waiting for the lock variable to be updated.
+
+. Consumers waiting on the tail of an empty queue for the producer to queue
+  work/data. The producer may be code executing on a RISC-V hart, an accelerator
+  device, an external I/O agent.
+
+. Code waiting on a flag to be set in memory indicative of an event occurring.
+  For example, software on a RISC-V hart may wait on a "done" flag to be set in
+  memory by an accelerator device indicating completion of a job previously
+  submitted to the device.'''
+zh = '''
+. 争用锁的竞争者等待锁变量更新。
+
+. 消费者在空队列尾部等待生产者将工作/数据入队。生产者可以是在 RISC-V 硬件线程上执行的代码、加速器设备或外部 I/O 代理。
+
+. 代码等待内存中的某个标志置位，以指示事件发生。例如，RISC-V 硬件线程上的软件可能等待加速器设备在内存中置位的“done”标志，以指示先前提交给该设备的作业已完成。'''

@@ -1,0 +1,713 @@
+{
+  "sha": "d090627b96c51888c93c5fbe6db455ce121d45e2",
+  "parent_sha": "8da2c9ad574f56b3f8eafa7aa104606d17474de7",
+  "is_baseline": false,
+  "date": "2026-06-08T07:16:50-07:00",
+  "title": "Use macros for Sv extensions (#3191)",
+  "ratified_tag": null,
+  "draft_tags": [
+    "riscv-isa-release-d090627-2026-06-08"
+  ],
+  "diff": {
+    "added": 0,
+    "modified": 11,
+    "moved": 53,
+    "deleted": 0,
+    "touched_chapters": [
+      "priv/supervisor",
+      "priv/sv",
+      "profiles/_rva22_profiles",
+      "profiles/_rva23_profiles",
+      "profiles/_rvb23_profiles"
+    ]
+  },
+  "changes": [
+    {
+      "chapter_key": "priv/supervisor",
+      "section_id": "addressing-and-memory-protection",
+      "slot": 6,
+      "unit_id": "6aa6fc6841a9132f39f55f82c4b362e1",
+      "status": "modified",
+      "prev_unit_id": "0b5d31e580b79788fdf93e6dac77913a"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": "heading",
+      "unit_id": "d0dc15e4de204fce567495eb8f2e5118",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 0,
+      "unit_id": "895582da29a7944da2e155630dbe48a9",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 1,
+      "unit_id": "8ed672093c9b3943e72ef027b99e4b2b",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 2,
+      "unit_id": "843180f100816053b14f86ca3462fea9",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 3,
+      "unit_id": "f6fafdf059deb41800f2da4d907a0c72",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 4,
+      "unit_id": "691cd6f87c6c5aff0c0ee298c2595860",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 5,
+      "unit_id": "71e2aa0e6907ef96fe788b7044b61e90",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svnapot",
+      "slot": 6,
+      "unit_id": "37df2331e5d59ddd4ea55c95194c6700",
+      "status": "moved",
+      "moved_from": "priv/sv/svnapot"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": "heading",
+      "unit_id": "46caa8a4f909ee5dfe6dd88245e7082f",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 0,
+      "unit_id": "7eec36da4af7877e93702bdb6fbaeef8",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 1,
+      "unit_id": "88fdd4a5cbdf41293b6669e3d00bac1f",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 2,
+      "unit_id": "378cd6bdb26b64aa16f739218019e45c",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 3,
+      "unit_id": "a91f09fcf7a7d1bd7ab8fd2badc5b1b8",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 4,
+      "unit_id": "1f6e55a62c82d63091d713fb9e61e61b",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 5,
+      "unit_id": "1fabbc06eaacc8fd4ace19b03b34e5f6",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 6,
+      "unit_id": "d38416547b3339142587ab267928397b",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 7,
+      "unit_id": "573cae321c85853e0ca4442464544375",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 8,
+      "unit_id": "39601e3c6638cc14a65035cdeb8b5515",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 9,
+      "unit_id": "1054033f29bdae475621a4975aeb1cbf",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 10,
+      "unit_id": "d3b10d7be369eacc52ad5d0fd47c7033",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 11,
+      "unit_id": "95be2e10a2ec2e539df71e763b888886",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 12,
+      "unit_id": "12a275a5e44f09a3a2695fcb231769fb",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 13,
+      "unit_id": "43bc628a7e447b63e1432ffd1dc2bde8",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 14,
+      "unit_id": "98c33277cc542537e62a48ec27281258",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 15,
+      "unit_id": "022341775301a85a870999d9a285a713",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svpbmt",
+      "slot": 16,
+      "unit_id": "ed190efa064548a6e567814ce871e52d",
+      "status": "moved",
+      "moved_from": "priv/sv/svpbmt"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svadu",
+      "slot": "heading",
+      "unit_id": "3530308535fff151e4af00dbc9132de1",
+      "status": "moved",
+      "moved_from": "priv/sv/svadu"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svadu",
+      "slot": 0,
+      "unit_id": "3b7c2e5292d8cb47d8ac896bf389f591",
+      "status": "moved",
+      "moved_from": "priv/sv/svadu"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svadu",
+      "slot": 1,
+      "unit_id": "64c98c467a0b83eb4074403b9a7fccb8",
+      "status": "moved",
+      "moved_from": "priv/sv/svadu"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svadu",
+      "slot": 2,
+      "unit_id": "20fb5ff43b415a9893785616dc9b670a",
+      "status": "moved",
+      "moved_from": "priv/sv/svadu"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": "heading",
+      "unit_id": "51772d155be7e65826a7a9c265475be3",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 0,
+      "unit_id": "a0fe90a382650e818b367db48fc392d7",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 1,
+      "unit_id": "931f4239701bf6091c9bef1f9af010f7",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 2,
+      "unit_id": "f47dca9f3634cee36df7035e6a8aed0c",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 3,
+      "unit_id": "6ccb43c5a09f5aff085f76b7a0e524d8",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 4,
+      "unit_id": "2ae1605cd4aed88c54600b622867aba4",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 5,
+      "unit_id": "22541679ebe171940fdbaa8ea73cdce9",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 6,
+      "unit_id": "06521099f8d22fe590449049907f2ada",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 7,
+      "unit_id": "47a843116ed7219c4b648e81288d3d2c",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 8,
+      "unit_id": "bcb1cd12893d8d9045d87c8a3c579771",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 9,
+      "unit_id": "358182d1e34b23c6ddc26b81f5f01855",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 10,
+      "unit_id": "e75187b938cd4d78eaef0c8a78cd328a",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 11,
+      "unit_id": "c588b987c7333d5799cf0bcda5431cad",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 12,
+      "unit_id": "8d4d10b4a98f0b7c40a7e65875acd289",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svinval",
+      "slot": 13,
+      "unit_id": "33a3c62bd286459c08bfafad0d02a9f5",
+      "status": "moved",
+      "moved_from": "priv/sv/svinval"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svvptc",
+      "slot": "heading",
+      "unit_id": "26ea0433ec10e19038369a5f8959ab24",
+      "status": "moved",
+      "moved_from": "priv/sv/svvptc"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svvptc",
+      "slot": 0,
+      "unit_id": "d850e692c6a7056028c8d62adb5625e2",
+      "status": "moved",
+      "moved_from": "priv/sv/svvptc"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svvptc",
+      "slot": 1,
+      "unit_id": "69469b331259daf68c9982c970d71866",
+      "status": "moved",
+      "moved_from": "priv/sv/svvptc"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svrsw60t59b",
+      "slot": "heading",
+      "unit_id": "da7beb97e9e1e550e0073a462ffac74f",
+      "status": "moved",
+      "moved_from": "priv/sv/svrsw60t59b"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svrsw60t59b",
+      "slot": 0,
+      "unit_id": "089747b09b040b9d504e214af11de022",
+      "status": "moved",
+      "moved_from": "priv/sv/svrsw60t59b"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svrsw60t59b",
+      "slot": 1,
+      "unit_id": "a9fdc9b6034c1f7ff9c2f3eca5dcff13",
+      "status": "moved",
+      "moved_from": "priv/sv/svrsw60t59b"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svrsw60t59b",
+      "slot": 2,
+      "unit_id": "5b27a0a3ba46afaeabd13a7a687f2b53",
+      "status": "moved",
+      "moved_from": "priv/sv/svrsw60t59b"
+    },
+    {
+      "chapter_key": "priv/sv",
+      "section_id": "ext:svrsw60t59b",
+      "slot": 3,
+      "unit_id": "89d8c56cde390cc28361b0811f87a914",
+      "status": "moved",
+      "moved_from": "priv/sv/svrsw60t59b"
+    },
+    {
+      "chapter_key": "profiles/_rva22_profiles",
+      "section_id": "_rva22s64_mandatory_extensions",
+      "slot": 6,
+      "unit_id": "4961324e0ba086dcd95625849e65fcc7",
+      "status": "modified",
+      "prev_unit_id": "f45e521d4486eaf932a86e114b63a10a"
+    },
+    {
+      "chapter_key": "profiles/_rva22_profiles",
+      "section_id": "_rva22s64_optional_extensions",
+      "slot": 2,
+      "unit_id": "2213d14b0e95cf6c3d51f6ad6f14abe4",
+      "status": "modified",
+      "prev_unit_id": "38e44a0ca4580b26a916401cd8b838c8"
+    },
+    {
+      "chapter_key": "profiles/_rva23_profiles",
+      "section_id": "_rva23s64_mandatory_extensions",
+      "slot": 7,
+      "unit_id": "9f7241d517121e4d630ddd22d5aea4dc",
+      "status": "modified",
+      "prev_unit_id": "7abebfac81c5fb6935f4f7467340b491"
+    },
+    {
+      "chapter_key": "profiles/_rva23_profiles",
+      "section_id": "_rva23s64_mandatory_extensions",
+      "slot": 9,
+      "unit_id": "dfe6cff8a1c3080e7b0438b0324315b7",
+      "status": "modified",
+      "prev_unit_id": "406ade3761a33fec57e42e8a27e84f5f"
+    },
+    {
+      "chapter_key": "profiles/_rva23_profiles",
+      "section_id": "_expansion_options_2",
+      "slot": 3,
+      "unit_id": "d834ab6a686f01b5cf932d7ea9f1745b",
+      "status": "modified",
+      "prev_unit_id": "686c64720929fad6d10225e83a542fd7"
+    },
+    {
+      "chapter_key": "profiles/_rva23_profiles",
+      "section_id": "_expansion_options_2",
+      "slot": 6,
+      "unit_id": "10c640cfa22e0b77e4fe55de3c476ee9",
+      "status": "modified",
+      "prev_unit_id": "70adf6f84083e7266977e4602c190df2"
+    },
+    {
+      "chapter_key": "profiles/_rvb23_profiles",
+      "section_id": "_rvb23s64_mandatory_extensions",
+      "slot": 6,
+      "unit_id": "dfe6cff8a1c3080e7b0438b0324315b7",
+      "status": "modified",
+      "prev_unit_id": "406ade3761a33fec57e42e8a27e84f5f"
+    },
+    {
+      "chapter_key": "profiles/_rvb23_profiles",
+      "section_id": "_rvb23s64_mandatory_extensions",
+      "slot": 8,
+      "unit_id": "33fa71b17f6db1a5012f2deb9b9d6638",
+      "status": "modified",
+      "prev_unit_id": "da612cc90f94fb35785e637272c40199"
+    },
+    {
+      "chapter_key": "profiles/_rvb23_profiles",
+      "section_id": "_expansion_options_4",
+      "slot": 5,
+      "unit_id": "171b4e2a5dbe4f9f08d210986752e741",
+      "status": "modified",
+      "prev_unit_id": "5e868f2074b53ce0908aaba5da022485"
+    },
+    {
+      "chapter_key": "profiles/_rvb23_profiles",
+      "section_id": "_expansion_options_4",
+      "slot": 8,
+      "unit_id": "10c640cfa22e0b77e4fe55de3c476ee9",
+      "status": "modified",
+      "prev_unit_id": "70adf6f84083e7266977e4602c190df2"
+    }
+  ],
+  "deleted_blocks": [],
+  "volumes": [
+    {
+      "id": "unpriv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume I: Unprivileged Architecture",
+      "title_unit_id": "415224dda702d3f4581b34f2849eeb67",
+      "entry_file": "src/unpriv/unpriv.adoc",
+      "chapters": [
+        {
+          "id": "_preface",
+          "chap_hash": "b0aa6cf8ea1b53f7"
+        },
+        {
+          "id": "_introduction",
+          "chap_hash": "02868a5d65e1b68c"
+        },
+        {
+          "id": "base",
+          "chap_hash": "0f3ccc15ec892beb"
+        },
+        {
+          "id": "mm",
+          "chap_hash": "b5b1e1f7e9ba4e5a"
+        },
+        {
+          "id": "zi",
+          "chap_hash": "892719c772622c7e"
+        },
+        {
+          "id": "za",
+          "chap_hash": "dc7a3a41639732d2"
+        },
+        {
+          "id": "zf",
+          "chap_hash": "72c565409d178b19"
+        },
+        {
+          "id": "zc",
+          "chap_hash": "f113f222584aeaeb"
+        },
+        {
+          "id": "bits",
+          "chap_hash": "086829f9a601ac2b"
+        },
+        {
+          "id": "vector",
+          "chap_hash": "a13b4dab35a01a18"
+        },
+        {
+          "id": "zp",
+          "chap_hash": "915e6463a22dd5a7"
+        },
+        {
+          "id": "crypto",
+          "chap_hash": "671d9618c07ffc1d"
+        },
+        {
+          "id": "matrix",
+          "chap_hash": "a6345517c8c4b6f2"
+        },
+        {
+          "id": "rv32-64g",
+          "chap_hash": "a4361ea3d615144d"
+        },
+        {
+          "id": "app:mm",
+          "chap_hash": "dff5d18a98ce0ef0"
+        },
+        {
+          "id": "app:naming",
+          "chap_hash": "7d86f409794c4f00"
+        },
+        {
+          "id": "app:code-examples",
+          "chap_hash": "3a1f7d039e569a03"
+        },
+        {
+          "id": "app:rationale",
+          "chap_hash": "15335b170dee8370"
+        }
+      ]
+    },
+    {
+      "id": "priv",
+      "title_en": "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture",
+      "title_unit_id": "022327da77ae75a085cb5da090c74de1",
+      "entry_file": "src/priv/priv.adoc",
+      "chapters": [
+        {
+          "id": "_preface_2",
+          "chap_hash": "da45f91e211872c2"
+        },
+        {
+          "id": "_introduction_2",
+          "chap_hash": "8981d3c862f62dcf"
+        },
+        {
+          "id": "priv-csrs",
+          "chap_hash": "2efc3d5ad07130bc"
+        },
+        {
+          "id": "machine",
+          "chap_hash": "bbe27fb9a6d65929"
+        },
+        {
+          "id": "supervisor",
+          "chap_hash": "76fbc6cf82935b0d"
+        },
+        {
+          "id": "hypervisor",
+          "chap_hash": "51f0c957ec8f4cac"
+        },
+        {
+          "id": "sm",
+          "chap_hash": "7c7c440633e409dd"
+        },
+        {
+          "id": "sv",
+          "chap_hash": "15480262ed5673d5"
+        },
+        {
+          "id": "ss",
+          "chap_hash": "2719d518cd2168b1"
+        },
+        {
+          "id": "sh",
+          "chap_hash": "b03dcc2bdfeb0e32"
+        },
+        {
+          "id": "_risc_v_privileged_instruction_set_listings",
+          "chap_hash": "debe87e4bcecc48f"
+        },
+        {
+          "id": "app:priv-rationale",
+          "chap_hash": "57f4305cd139b3ec"
+        }
+      ]
+    },
+    {
+      "id": "profiles",
+      "title_en": "The RISC-V Instruction Set Manual, Volume III: Profiles",
+      "title_unit_id": "654555b9357d4601eff4650d45dc9b85",
+      "entry_file": "src/profiles/profiles.adoc",
+      "chapters": [
+        {
+          "id": "_preface_3",
+          "chap_hash": "aab3cc2b65a873ec"
+        },
+        {
+          "id": "_introduction_6",
+          "chap_hash": "ec474ae5088f7c1a"
+        },
+        {
+          "id": "_rvi20_profiles",
+          "chap_hash": "699b26195a7fcbd7"
+        },
+        {
+          "id": "_rva20_profiles",
+          "chap_hash": "8e2963aeb61ff099"
+        },
+        {
+          "id": "_rva22_profiles",
+          "chap_hash": "73760dcdf26de68c"
+        },
+        {
+          "id": "_rva23_profiles",
+          "chap_hash": "924faf8e68b66ab9"
+        },
+        {
+          "id": "_rvb23_profiles",
+          "chap_hash": "0c5c9ef5ff2b57f1"
+        }
+      ]
+    }
+  ]
+}

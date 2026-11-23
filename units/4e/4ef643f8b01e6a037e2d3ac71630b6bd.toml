@@ -1,0 +1,13 @@
+unit_id = "4ef643f8b01e6a037e2d3ac71630b6bd"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When XLEN=32, reads of the `mcycle`, `minstret`, `mhpmcounter__n__`, and `mhpmevent__n__`
+CSRs return bits 31-0 of the corresponding register, and writes change
+only bits 31-0; reads of the `mcycleh`, `minstreth`, `mhpmcounter__n__h`, and `mhpmevent__n__h`
+CSRs return bits 63-32 of the corresponding register, and writes change
+only bits 63-32.
+The `mhpmevent__n__h` CSRs are provided only if the Sscofpmf extension is implemented.'''
+zh = '''
+当 XLEN=32 时，读取 `mcycle`、`minstret`、`mhpmcounter__n__` 和 `mhpmevent__n__` CSR 返回相应寄存器的位 31-0，写入仅改变位 31-0；读取 `mcycleh`、`minstreth`、`mhpmcounter__n__h` 和 `mhpmevent__n__h` CSR 返回相应寄存器的位 63-32，写入仅改变位 63-32。`mhpmevent__n__h` CSR 仅在实现了 Sscofpmf 扩展时提供。'''

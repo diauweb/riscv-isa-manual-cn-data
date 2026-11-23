@@ -1,0 +1,18 @@
+unit_id = "29914b63456191ac8036b4c778dd3350"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Whenever the current virtualization mode V is 1, two-stage address
+translation and protection is in effect. For any virtual memory access,
+the original virtual address is converted in the first stage by VS-level
+address translation, as controlled by the `vsatp` register, into a
+_guest physical address_. The guest physical address is then converted
+in the second stage by guest physical address translation, as controlled
+by the `hgatp` register, into a supervisor physical address. The two
+stages are known also as VS-stage and G-stage translation. Although
+there is no option to disable two-stage address translation when V=1,
+either stage of translation can be effectively disabled by zeroing the
+corresponding `vsatp` or `hgatp` register.'''
+zh = '''
+每当当前虚拟化模式 V 为 1 时，两阶段地址转换与保护生效。对于任何虚拟内存访问，原始虚拟地址在第一阶段由 VS 级地址转换（受 `vsatp` 寄存器控制）转换为__客户机物理地址__。然后，客户机物理地址在第二阶段由客户机物理地址转换（受 `hgatp` 寄存器控制）转换为监管物理地址。这两个阶段也称为 VS 阶段和 G 阶段转换。尽管 V=1 时没有禁用两阶段地址转换的选项，但任一阶段均可通过将对应的 `vsatp` 或 `hgatp` 寄存器清零来有效禁用。'''

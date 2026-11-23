@@ -1,0 +1,20 @@
+unit_id = "719c81dbba25d8f2b2abcbd3e3599528"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Single-precision loads and stores are not a significant source of static or
+dynamic compression for programs compiled for the LP64D and ILP32D calling
+conventions.
+However, for microcontrollers that only provide hardware single-precision
+floating-point units and whose programs use the ILP32F calling convention, the
+single-precision loads and stores are used at least as frequently as
+double-precision loads and stores are used in LP64D and ILP32D.
+===='''
+zh = '''
+[NOTE]
+====
+对于针对 LP64D 和 ILP32D 调用约定编译的程序，单精度加载和存储并不是静态或动态压缩的重要来源。然而，对于仅提供硬件单精度浮点单元且程序使用 ILP32F 调用约定的微控制器，单精度加载和存储的使用频率至少与 LP64D 和 ILP32D 中双精度加载和存储的使用频率一样高。
+===='''

@@ -1,0 +1,17 @@
+unit_id = "299a5f44ab562c3a2b6b8a154e6d5ac3"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+It is common for multiple AES encryption rounds (for example) to be performed in parallel with the same
+round key (e.g. in counter modes).
+Rather than having to first splat the common key across the whole vector group, these vector-scalar
+crypto instructions allow the round key to be specified as a scalar element group.
+===='''
+zh = '''
+[NOTE]
+====
+通常，(例如) 使用相同轮密钥并行执行多个 AES 加密轮（例如在计数器模式中）。这些向量-标量密码学指令允许将轮密钥指定为标量元素组，而不必先将公共密钥散布到整个向量组中。
+===='''

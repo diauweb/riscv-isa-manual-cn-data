@@ -1,0 +1,21 @@
+unit_id = "affb219939cac3c9eb8470f899628e7d"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+For non-idempotent regions, implicit reads and writes must not be
+performed early or speculatively, with the following exceptions. When a
+non-speculative implicit read is performed, an implementation is
+permitted to additionally read any of the bytes within a naturally
+aligned power-of-2 region containing the address of the non-speculative
+implicit read. Furthermore, when a non-speculative instruction fetch is
+performed, an implementation is permitted to additionally read any of
+the bytes within the _next_ naturally aligned power-of-2 region of the
+same size (with the address of the region taken modulo
+2^XLEN^). The results of these additional reads
+may be used to satisfy subsequent early or speculative implicit reads.
+The size of these naturally aligned power-of-2 regions is
+implementation-defined, but, for systems with page-based virtual memory,
+must not exceed the smallest supported page size.'''
+zh = '''
+对于非幂等区域，不应提前或推测性地执行隐式读和写，但有以下例外。当执行非推测性隐式读时，允许实现额外读取包含该非推测性隐式读地址的自然对齐 2 的幂区域内的任何字节。此外，当执行非推测性取指时，允许实现额外读取同一大小的 _下一个_ 自然对齐 2 的幂区域内的任何字节（区域地址对 2^XLEN^ 取模）。这些额外读取的结果可用于满足后续的提前或推测性隐式读。这些自然对齐 2 的幂区域的大小由实现定义，但对于具有基于页的虚拟内存的系统，不得超过所支持的最小页大小。'''

@@ -1,0 +1,12 @@
+unit_id = "4728bf1aec6eca54c232709fdb6e0b1c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:amo_ops_supported]#The operations supported are swap, integer add, bitwise AND, bitwise OR,
+bitwise XOR, and signed and unsigned integer maximum and minimum.#
+Without ordering constraints, these AMOs can be used to implement
+parallel reduction operations, where typically the return value would be
+discarded by writing to `x0`.'''
+zh = '''
+[#norm:amo_ops_supported]##所支持的操作有交换、整数加、按位与、按位或、按位异或，以及有符号和无符号整数最大值和最小值。##在没有排序约束的情况下，这些 AMO 可用于实现并行归约操作，此时通常通过写入 `x0` 丢弃返回值。'''

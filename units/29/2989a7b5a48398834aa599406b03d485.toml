@@ -1,0 +1,11 @@
+unit_id = "2989a7b5a48398834aa599406b03d485"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (SHA512SUM1(rs1, rd)) = {
+  X(rd) = ror64(X(rs1), 14) ^ ror64(X(rs1), 18) ^ ror64(X(rs1) ,41);
+  RETIRE_SUCCESS
+}
+--'''

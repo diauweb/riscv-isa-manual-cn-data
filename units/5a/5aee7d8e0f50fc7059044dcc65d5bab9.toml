@@ -1,0 +1,17 @@
+unit_id = "5aee7d8e0f50fc7059044dcc65d5bab9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:H_trap_xtinst_std_trans_mem]#As enumerated in the table, a synchronous exception may write to the
+trap instruction register a standard transformation of the trapping
+instruction only for exceptions that arise from explicit memory accesses
+(from load, store, AMO, cache-block management, and
+cache-block zero instructions).# Accordingly, standard
+transformations are currently defined only for these memory-access
+instructions. [#norm:H_trap_xtinst_no_trans_zero]#If a synchronous trap occurs for a standard instruction
+for which no transformation has been defined, the trap instruction
+register shall be written with zero (or, under certain circumstances,
+with a special pseudoinstruction value).#'''
+zh = '''
+[#norm:H_trap_xtinst_std_trans_mem]##如表中所列举，同步异常仅在由显式内存访问（来自加载、存储、AMO、缓存块管理及缓存块清零指令）引起时，才可将引发陷阱指令的标准变换形式写入陷阱指令寄存器。## 因此，目前只为这些内存访问指令定义了标准变换形式。 [#norm:H_trap_xtinst_no_trans_zero]##若某条标准指令发生同步陷阱，而未为其定义变换形式，则陷阱指令寄存器应写入零（或在特定情形下写入特殊伪指令值）。##'''

@@ -1,0 +1,32 @@
+unit_id = "fdcf1416d4b912397ce317dc70efc41c"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* **Effective address (as defined in the RISC-V Base ISA):** A load/store effective address sent to the memory subsystem (e.g., as generated during the execution of load/store instructions). This does not include addresses corresponding to implicit accesses, such as page-table walks.
+
+* **Masked bits:** The upper PMLEN bits of an address, where PMLEN is a configurable parameter. We will use PMLEN consistently throughout this document to refer to this parameter.
+
+* **Transformed address:** An effective address after the ignore transformation has been applied.
+
+* **Address translation mode:** The MODE of the currently active address translation scheme as defined in the RISC-V privileged specification. This could, for example, refer to Bare, Sv39, Sv48, and Sv57. In accordance with the privileged specification, non-Bare translation modes are referred to as virtual-memory schemes. For the purpose of this specification, M-mode translation is treated as equivalent to Bare.
+
+* **Address validity:** The RISC-V privileged spec defines validity of addresses based on the address translation mode that is currently in use (e.g., Sv57, Sv48, Sv39, etc.). For a virtual address to be valid, all bits in the unused portion of the address must be the same as the Most Significant Bit (MSB) of the used portion. For example, when page-based 48-bit virtual memory (Sv48) is used, load/store effective addresses, which are 64 bits, must have bits 63–48 all set to bit 47, or else a page-fault exception will occur. For physical addresses, validity means that bits XLEN-1 to PABITS are zero, where PABITS is the number of physical address bits supported by the processor.
+
+* **NVBITS:** The upper bits within a virtual address that have no effect on addressing memory and are only used for validity checks. These bits depend on the currently active address translation mode. For example, in Sv48, these are bits 63-48.
+
+* **VBITS:** The bits within a virtual address that affect which memory is addressed. These are the bits of an address which are used to index into page tables.'''
+zh = '''
+* **有效地址（按 RISC-V 基础 ISA 的定义）：** 发送到内存子系统的加载/存储有效地址（例如在加载/存储指令执行期间生成）。这不包括与隐式访问对应的地址，例如页表遍历。
+
+* **掩码位：** 地址的高 PMLEN 位，其中 PMLEN 是可配置参数。本文档将始终使用 PMLEN 指代该参数。
+
+* **变换后地址：** 应用忽略变换后的有效地址。
+
+* **地址转换模式：** 按 RISC-V 特权规范定义的当前活动地址转换方案的 MODE。例如，这可以指 Bare、Sv39、Sv48 和 Sv57。按照特权规范，非 Bare 转换模式称为虚拟内存方案。就本规范而言，M 模式转换视为等同于 Bare。
+
+* **地址有效性：** RISC-V 特权规范基于当前使用的地址转换模式（例如 Sv57、Sv48、Sv39 等）定义地址有效性。对于虚拟地址有效，地址未使用部分的所有位必须与使用部分的最高有效位（MSB）相同。例如，当使用基于页的 48 位虚拟内存（Sv48）时，64 位的加载/存储有效地址必须将位 63–48 全部设置为位 47，否则将发生页错误异常。对于物理地址，有效意味着位 XLEN-1 到 PABITS 为零，其中 PABITS 是处理器支持的物理地址位数。
+
+* **NVBITS：** 虚拟地址中对寻址内存无影响、仅用于有效性检查的高位。这些位取决于当前活动的地址转换模式。例如，在 Sv48 中，这些是位 63-48。
+
+* **VBITS：** 虚拟地址中影响寻址哪块内存的位。这些是用于索引页表的地址位。'''

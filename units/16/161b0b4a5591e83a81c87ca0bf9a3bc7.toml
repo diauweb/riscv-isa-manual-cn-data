@@ -1,0 +1,13 @@
+unit_id = "161b0b4a5591e83a81c87ca0bf9a3bc7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations may override additional PMAs not explicitly listed in
+<<pbmt>>.
+For example, to be consistent with the characteristics of a typical I/O region,
+a misaligned memory access to a page with PBMT=IO might raise an exception,
+even if the underlying region were main memory and the same access would have
+succeeded for PBMT=PMA.'''
+zh = '''
+实现可覆盖未在 <<pbmt>> 中明确列出的其他 PMA。例如，为与典型 I/O 区域的特性保持一致，对 PBMT=IO 的页进行非对齐内存访问可能引发异常，即使底层区域为主内存，并且同一访问在 PBMT=PMA 时本会成功。'''

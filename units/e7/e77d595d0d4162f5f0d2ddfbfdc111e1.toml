@@ -1,0 +1,13 @@
+unit_id = "e77d595d0d4162f5f0d2ddfbfdc111e1"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+C.ADDI adds the non-zero sign-extended 6-bit immediate to the value in
+register _rd_ then writes the result to _rd_. C.ADDI expands into
+`addi rd, rd, imm`. C.ADDI is only valid when
+`_rd_≠x0` and `_imm_≠0`. The code
+points with `_rd_=x0` encode the C.NOP instruction; the remaining code
+points with _imm_=0 encode HINTs.'''
+zh = '''
+C.ADDI 将非零符号扩展的 6 位立即数加到寄存器 _rd_ 中的值，然后将结果写回 _rd_。C.ADDI 展开为 `addi rd, rd, imm`。C.ADDI 仅在 `_rd_≠x0` 且 `_imm_≠0` 时有效。`_rd_=x0` 的编码点编码 C.NOP 指令；_imm_=0 的其余编码点编码 HINT。'''

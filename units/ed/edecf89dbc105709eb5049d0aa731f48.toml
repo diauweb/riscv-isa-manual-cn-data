@@ -1,0 +1,11 @@
+unit_id = "edecf89dbc105709eb5049d0aa731f48"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:cbo-inval_s_mode_enabled_op]#If `CBO.INVAL` is enabled in S-mode to perform a flush operation, then when the
+instruction is enabled in U-mode it performs a flush operation, even if `CBIE`
+is set to `0b11`. Otherwise, the instruction behaves as follows, depending on the
+`CBIE` encoding:#'''
+zh = '''
+[#norm:cbo-inval_s_mode_enabled_op]##若在 S 模式下使能 `CBO.INVAL` 以执行冲刷操作，则当该指令在 U 模式下被使能时，它执行冲刷操作，即使 `CBIE` 被置为 `0b11`。否则，该指令的行为取决于 `CBIE` 的编码，如下所示：##'''

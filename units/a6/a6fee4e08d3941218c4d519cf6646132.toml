@@ -1,0 +1,14 @@
+unit_id = "a6fee4e08d3941218c4d519cf6646132"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The CSRs listed in the table above provide a window for accessing
+register state indirectly. [#norm:miselect_op]#The value of `miselect` determines which
+register is accessed upon read or write of each of the machine indirect alias
+CSRs (`mireg*`).# [#norm:miselect_value_range]#`miselect` value ranges are allocated to dependent
+extensions, which specify the register state accessible via each
+`mireg__i__` register, for each `miselect` value.# [#norm:miselect_warl]#`miselect` is a WARL
+register.#'''
+zh = '''
+上表中的 CSR 提供间接访问寄存器状态的窗口。[#norm:miselect_op]##`miselect` 的值确定在读取或写入每个机器间接别名 CSR（`mireg*`）时访问哪个寄存器。## [#norm:miselect_value_range]##`miselect` 值范围分配给相关扩展，这些扩展针对每个 `miselect` 值指定可通过每个 `mireg__i__` 寄存器访问的寄存器状态。## [#norm:miselect_warl]##`miselect` 是 WARL 寄存器。##'''

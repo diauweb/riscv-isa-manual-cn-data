@@ -1,0 +1,32 @@
+unit_id = "950f5a5a29431292f3ffc9f0ceba2bbe"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="1,1,1"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+| Input | Output | Exceptions raised
+
+| -{inf} {le} _x_ < -0.0     | canonical NaN           | NV
+| -0.0                       | -{inf}                  | DZ
+| +0.0                       | +{inf}                  | DZ
+| +0.0 < _x_ < +{inf}        | _estimate of 1/sqrt(x)_ |
+| +{inf}                     | +0.0                    |
+| qNaN                       | canonical NaN           |
+| sNaN                       | canonical NaN           | NV
+|==='''
+zh = '''
+[cols="1,1,1"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+| 输入 | 输出 | 产生的异常
+
+| -{inf} {le} _x_ < -0.0     | 规范 NaN           | NV
+| -0.0                       | -{inf}                  | DZ
+| +0.0                       | +{inf}                  | DZ
+| +0.0 < _x_ < +{inf}        | _1/sqrt(x) 的估计值_ |
+| +{inf}                     | +0.0                    |
+| qNaN                       | 规范 NaN           |
+| sNaN                       | 规范 NaN           | NV
+|==='''

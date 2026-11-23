@@ -1,0 +1,14 @@
+unit_id = "c0c28c0fbfef478d33bf0d76f05c98ed"
+kind = "code"
+translatable = false
+en = '''
+----
+Desired functionality of 'vdecompress'
+7 6 5 4 3 2 1 0     # vid
+
+      e d c b a     # packed vector of 5 elements
+1 0 0 1 1 1 0 1     # mask vector of 8 elements
+p q r s t u v w     # destination register before vdecompress
+
+e q r d c b v a     # result of vdecompress
+----'''

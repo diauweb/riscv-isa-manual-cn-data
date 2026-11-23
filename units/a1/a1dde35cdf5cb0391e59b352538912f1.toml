@@ -1,0 +1,10 @@
+unit_id = "a1dde35cdf5cb0391e59b352538912f1"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: It is recommended that implementations trap if csr:vstart[] is out
+of bounds.  It is not required to trap, as a possible future use of
+upper csr:vstart[] bits is to store imprecise trap information.'''
+zh = '''
+NOTE: 建议实现在 csr:vstart[] 越界时陷入。不要求陷入，因为将来可能使用 csr:vstart[] 的高位来存储非精确陷阱信息。'''

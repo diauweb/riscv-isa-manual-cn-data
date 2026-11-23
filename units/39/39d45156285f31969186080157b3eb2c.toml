@@ -1,0 +1,14 @@
+unit_id = "39d45156285f31969186080157b3eb2c"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An insn:lr[] instruction and an insn:sc[] instruction are said to be _paired_ if the
+insn:lr[] precedes the insn:sc[] in program order and if there are no other insn:lr[] or
+insn:sc[] instructions in between; the corresponding memory operations are said to
+be paired as well (except in case of a failed insn:sc[], where no store
+operation is generated). The complete list of conditions determining
+whether an insn:sc[] must succeed, may succeed, or must fail is defined in
+extlink:zalrsc[].'''
+zh = '''
+如果 insn:lr[] 指令在程序顺序中先于 insn:sc[] 指令，并且二者之间没有其他 insn:lr[] 或 insn:sc[] 指令，则称该 insn:lr[] 指令和该 insn:sc[] 指令为__配对__；相应的内存操作也称为__配对__的（失败的 insn:sc[] 除外，此种情况下不产生存储操作）。确定 insn:sc[] 必须成功、可以成功还是必须失败的完整条件列表在 extlink:zalrsc[] 中定义。'''

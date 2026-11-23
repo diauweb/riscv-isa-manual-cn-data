@@ -1,0 +1,26 @@
+unit_id = "d5c1836250af3f9dda484300f50a31c6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. {itrigger-nmi} was moved from {csr-etrigger} to {csr-itrigger}, and is now subject to the mode bits in that trigger.
+
+. https://github.com/riscv/riscv-debug-spec/pull/728[#728] introduced
+Message Registers, which were later removed in
+https://github.com/riscv/riscv-debug-spec/pull/878[#878].
+. It may not be possible to read the contents of the Program Buffer using
+the `progbuf` registers.
+https://github.com/riscv/riscv-debug-spec/pull/731[#731]
+. {csr-tcontrol} fields apply to all traps, not just breakpoint traps. This reverts
+https://github.com/riscv/riscv-debug-spec/pull/723[#723].
+https://github.com/riscv/riscv-debug-spec/pull/880[#880]'''
+zh = '''
+. {itrigger-nmi} 已从 {csr-etrigger} 移至 {csr-itrigger}，现在受该触发器中的模式位约束。
+
+. https://github.com/riscv/riscv-debug-spec/pull/728[#728] 引入了消息寄存器，随后在
+https://github.com/riscv/riscv-debug-spec/pull/878[#878] 中被移除。
+. 可能无法通过 `progbuf` 寄存器读取程序缓冲区的内容。
+https://github.com/riscv/riscv-debug-spec/pull/731[#731]
+. {csr-tcontrol} 字段适用于所有陷阱，而不仅仅是断点陷阱。这撤销了
+https://github.com/riscv/riscv-debug-spec/pull/723[#723]。
+https://github.com/riscv/riscv-debug-spec/pull/880[#880]'''

@@ -1,0 +1,361 @@
+unit_id = "6a7268204afd61d287182b56d5341dfa"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+
+==== Hypervisor Trap Instruction Register (`htinst`)
+
+The `htinst` register is an HSXLEN-bit read/write register formatted as
+shown in <<htinstreg>>. When a trap is taken into
+HS-mode, `htinst` is written with a value that, if nonzero, provides
+information about the instruction that trapped, to assist software in
+handling the trap. The values that may be written to `htinst` on a trap
+are documented in <<tinst-vals>>.
+
+[[htinstreg]]
+.Hypervisor trap instruction register (`htinst`).
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "HSXLEN-1" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htinst" {:font-size 20 :span 32})
+
+(draw-box "HSXLEN" {:span 32 :borders {}})
+----
+
+`htinst` is a *WARL* register that need only be able to hold the values that
+the implementation may automatically write to it on a trap.
+
+[[hgatp]]
+==== Hypervisor Guest Address Translation and Protection Register (`hgatp`)
+
+The `hgatp` register is an HSXLEN-bit read/write register, formatted as
+shown in <<rv32hgatp>> for HSXLEN=32 and
+<<rv64hgatp>> for HSXLEN=64, which controls
+G-stage address translation and protection, the second stage of
+two-stage translation for guest virtual addresses (see
+<<two-stage-translation>>). Similar to CSR `satp`, this
+register holds the physical page number (PPN) of the guest-physical root
+page table; a virtual machine identifier (VMID), which facilitates
+address-translation fences on a per-virtual-machine basis; and the MODE
+field, which selects the address-translation scheme for guest physical
+addresses. When `mstatus`.TVM=1, attempts to read or write `hgatp` while
+executing in HS-mode will raise an illegal-instruction exception.
+
+[[rv32hgatp]]
+.Hypervisor guest address translation and protection register `hgatp` when HSXLEN=32.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 3 :borders {}})
+(draw-box "30" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "29" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "28" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 7 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "MODE" {:span 3})
+(draw-box "0" {:span 3 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "VMID" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 3 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "PPN" {:span 7 :text-anchor "end":borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 7 :borders {}})
+(draw-box "7" {:span 7 :borders {}})
+(draw-box "22" {:span 15 :borders {}})
+----
+
+[[rv64hgatp]]
+.Hypervisor guest address translation and protection register `hgatp` when HSXLEN=64 for MODE values Bare, Sv39x4, and Sv57x4.
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "60" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "59" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "58" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "57" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "44" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "43" {:span 5 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 5 :text-anchor "end" :borders {}})
+
+(draw-box "MODE" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "0" {:span 3 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 3 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "VMID" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "PPN" {:span 5 :text-anchor "end":borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 5 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "4" {:span 8 :borders {}})
+(draw-box "2" {:span 6 :borders {}})
+(draw-box "14" {:span 8 :borders {}})
+(draw-box "44" {:span 10 :borders {}})
+----
+
+<<hgatp-mode>> shows the encodings of the MODE field when
+HSXLEN=32 and HSXLEN=64. When MODE=Bare, guest physical addresses are
+equal to supervisor physical addresses, and there is no further memory
+protection for a guest virtual machine beyond the physical memory
+protection scheme described in <<pmp>>. In this
+case, the remaining fields in `hgatp` must be set to zeros.
+
+When HSXLEN=32, the only other valid setting for MODE is Sv32x4, which
+is a modification of the usual Sv32 paged virtual-memory scheme,
+extended to support 34-bit guest physical addresses. When HSXLEN=64,
+modes Sv39x4, Sv48x4, and Sv57x4 are defined as modifications of the
+Sv39, Sv48, and Sv57 paged virtual-memory schemes. All of these paged
+virtual-memory schemes are described in
+<<guest-addr-translation>>.
+
+The remaining MODE settings when HSXLEN=64 are reserved for future use
+and may define different interpretations of the other fields in `hgatp`.
+
+[[hgatp-mode]]
+.Encoding of `hgatp` MODE field.
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|HSXLEN=32
+|Value |Name |Description
+|0 +
+1
+|Bare +
+Sv32x4
+|No translation or protection. +
+Page-based 34-bit virtual addressing (2-bit extension of
+Sv32).
+3+s|HSXLEN=64
+|Value |Name |Description
+|0 +
+1-7 +
+8 +
+9 +
+10 +
+11-15
+|Bare +
+— +
+Sv39x4 +
+Sv48x4 +
+Sv57x4 +
+—
+|No translation or protection. +
+_Reserved_ +
+Page-based 41-bit virtual addressing (2-bit extension of
+Sv39). +
+Page-based 50-bit virtual addressing (2-bit extension of
+Sv48). +
+Page-based 59-bit virtual addressing (2-bit extension of
+Sv57). +
+_Reserved_
+|===
+
+Implementations are not required to support all defined MODE settings
+when HSXLEN=64.
+
+A write to `hgatp` with an unsupported MODE value is not ignored as it
+is for `satp`. Instead, the fields of `hgatp` are *WARL* in the normal way,
+when so indicated.
+
+As explained in <<guest-addr-translation>>, for the
+paged virtual-memory schemes (Sv32x4, Sv39x4, Sv48x4, and Sv57x4), the
+root page table is 16 KiB and must be aligned to a 16-KiB boundary. In
+these modes, the lowest two bits of the physical page number (PPN) in
+`hgatp` always read as zeros. An implementation that supports only the
+defined paged virtual-memory schemes and/or Bare may make PPN[1:0]
+read-only zero.
+
+The number of VMID bits is UNSPECIFIED and may be zero. The number of implemented
+VMID bits, termed _VMIDLEN_, may be determined by writing one to every
+bit position in the VMID field, then reading back the value in `hgatp`
+to see which bit positions in the VMID field hold a one. The
+least-significant bits of VMID are implemented first: that is, if
+VMIDLEN > 0, VMID[VMIDLEN-1:0] is writable. The maximal
+value of VMIDLEN, termed VMIDMAX, is 7 for Sv32x4 or 14 for Sv39x4,
+Sv48x4, and Sv57x4.
+
+The `hgatp` register is considered _active_ for the purposes of the
+address-translation algorithm _unless_ the effective privilege mode is U
+and `hstatus`.HU=0.
+
+[NOTE]
+===='''
+zh = '''
+====
+
+==== 虚拟机监控器陷阱指令寄存器（`htinst`）
+
+`htinst` 寄存器是一个 HSXLEN 位读/写寄存器，格式如 <<htinstreg>> 所示。当陷入 HS 模式时，`htinst` 写入一个值，若非零，则提供关于引发陷阱的指令的信息，以协助软件处理陷阱。在陷阱时可能写入 `htinst` 的值记录于 <<tinst-vals>>。
+
+[[htinstreg]]
+.虚拟机监控器陷阱指令寄存器（`htinst`）。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "HSXLEN-1" {:span 31 :text-anchor "start" :borders {}})
+(draw-box "0" {:borders {}})
+
+(draw-box "htinst" {:font-size 20 :span 32})
+
+(draw-box "HSXLEN" {:span 32 :borders {}})
+----
+
+`htinst` 是一个 *WARL* 寄存器，仅需要能够保存实现在陷阱时可能自动写入的值。
+
+[[hgatp]]
+==== 虚拟机监控器客户机地址转换和保护寄存器（`hgatp`）
+
+`hgatp` 寄存器是一个 HSXLEN 位读/写寄存器，当 HSXLEN=32 时格式如 <<rv32hgatp>> 所示，当 HSXLEN=64 时格式如 <<rv64hgatp>> 所示，控制 G 阶段地址转换和保护，即客户机虚拟地址两阶段转换的第二阶段（见 <<two-stage-translation>>）。与 CSR `satp` 类似，此寄存器保存客户机物理根页表的物理页号（PPN）；虚拟机标识符（VMID），便于按虚拟机进行地址转换屏障；以及 MODE 字段，为客户机物理地址选择地址转换方案。当 `mstatus`.TVM=1 时，在 HS 模式下执行时尝试读取或写入 `hgatp` 将引发非法指令异常。
+
+[[rv32hgatp]]
+.当 HSXLEN=32 时的虚拟机监控器客户机地址转换和保护寄存器 `hgatp`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "31" {:span 3 :borders {}})
+(draw-box "30" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "29" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "28" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "22" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "21" {:span 7 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 8 :text-anchor "end" :borders {}})
+
+(draw-box "MODE" {:span 3})
+(draw-box "0" {:span 3 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "VMID" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 3 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "PPN" {:span 7 :text-anchor "end":borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 8 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "1" {:span 3 :borders {}})
+(draw-box "2" {:span 7 :borders {}})
+(draw-box "7" {:span 7 :borders {}})
+(draw-box "22" {:span 15 :borders {}})
+----
+
+[[rv64hgatp]]
+.当 HSXLEN=64 时，MODE 值为 Bare、Sv39x4 和 Sv57x4 的虚拟机监控器客户机地址转换和保护寄存器 `hgatp`。
+[bytefield]
+----
+(defattrs :plain [:plain {:font-family "M+ 1p Fallback" :font-size 24}])
+(def row-height 40 )
+(def row-header-fn nil)
+(def left-margin 30)
+(def right-margin 30)
+(def boxes-per-row 32)
+
+(draw-box "63" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "60" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "59" {:span 3 :text-anchor "start" :borders {}})
+(draw-box "58" {:span 3 :text-anchor "end" :borders {}})
+(draw-box "57" {:span 4 :text-anchor "start" :borders {}})
+(draw-box "44" {:span 4 :text-anchor "end" :borders {}})
+(draw-box "43" {:span 5 :text-anchor "start" :borders {}})
+(draw-box "0" {:span 5 :text-anchor "end" :borders {}})
+
+(draw-box "MODE" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "0" {:span 3 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 3 :text-anchor "start":borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "VMID" {:span 4 :text-anchor "end" :borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 4 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box "PPN" {:span 5 :text-anchor "end":borders {:left :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+(draw-box (text "(WARL)" {:font-weight "bold" :font-size 24}) {:span 5 :text-anchor "start" :borders {:right :border-unrelated :top :border-unrelated :bottom :border-unrelated}})
+
+(draw-box "4" {:span 8 :borders {}})
+(draw-box "2" {:span 6 :borders {}})
+(draw-box "14" {:span 8 :borders {}})
+(draw-box "44" {:span 10 :borders {}})
+----
+
+<<hgatp-mode>> 展示了当 HSXLEN=32 和 HSXLEN=64 时 MODE 字段的编码。当 MODE=Bare 时，客户机物理地址等于监管者物理地址，且除 <<pmp>> 中所述的物理内存保护方案外，对客户机虚拟机没有进一步的内存保护。在此情况下，`hgatp` 中其余字段必须置零。
+
+当 HSXLEN=32 时，MODE 的唯一其他有效设置为 Sv32x4，它是对通常 Sv32 分页虚拟内存方案的修改，扩展以支持 34 位客户机物理地址。当 HSXLEN=64 时，模式 Sv39x4、Sv48x4 和 Sv57x4 被定义为 Sv39、Sv48 和 Sv57 分页虚拟内存方案的修改。所有这些分页虚拟内存方案在 <<guest-addr-translation>> 中描述。
+
+当 HSXLEN=64 时，其余 MODE 设置保留供未来使用，并可能为 `hgatp` 中的其他字段定义不同的解释。
+
+[[hgatp-mode]]
+.`hgatp` MODE 字段的编码。
+[%autowidth,float="center",align="center",cols="^,^,<",options="header"]
+|===
+3+|HSXLEN=32
+|值 |名称 |描述
+|0 +
+1
+|Bare +
+Sv32x4
+|无转换或保护。 +
+基于页的 34 位虚拟寻址（Sv32 的 2 位扩展）。
+3+s|HSXLEN=64
+|值 |名称 |描述
+|0 +
+1-7 +
+8 +
+9 +
+10 +
+11-15
+|Bare +
+— +
+Sv39x4 +
+Sv48x4 +
+Sv57x4 +
+—
+|无转换或保护。 +
+_保留_ +
+基于页的 41 位虚拟寻址（Sv39 的 2 位扩展）。 +
+基于页的 50 位虚拟寻址（Sv48 的 2 位扩展）。 +
+基于页的 59 位虚拟寻址（Sv57 的 2 位扩展）。 +
+_保留_
+|===
+
+当 HSXLEN=64 时，实现不要求支持所有已定义的 MODE 设置。
+
+以不受支持的 MODE 值写入 `hgatp` 不会像 `satp` 那样被忽略。相反，`hgatp` 的字段在如此指示时以常规方式为 *WARL*。
+
+如 <<guest-addr-translation>> 所述，对于分页虚拟内存方案（Sv32x4、Sv39x4、Sv48x4 和 Sv57x4），根页表为 16 KiB，且必须对齐到 16 KiB 边界。在这些模式下，`hgatp` 中物理页号（PPN）的最低两位始终读为 0。仅支持已定义的分页虚拟内存方案和/或 Bare 的实现可将 PPN[1:0] 设为只读 0。
+
+VMID 位数未规定，且可为零。已实现的 VMID 位数称为_VMIDLEN_，可通过向 VMID 字段的每个位位置写 1，然后从 `hgatp` 读回值以查看 VMID 字段中哪些位位置保持为 1 来确定。VMID 的最低有效位首先实现：也就是说，若 VMIDLEN > 0，则 VMID[VMIDLEN-1:0] 可写。VMIDLEN 的最大值称为 VMIDMAX，对于 Sv32x4 为 7，对于 Sv39x4、Sv48x4 和 Sv57x4 为 14。
+
+就地址转换算法而言，`hgatp` 寄存器被视为_活动_，_除非_有效特权模式为 U 且 `hstatus`.HU=0。
+
+[NOTE]
+===='''

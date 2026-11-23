@@ -1,0 +1,19 @@
+unit_id = "8a60e7d4ebf01b33bfe1175ef702a832"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When csr:hgatp[mode] specifies a translation scheme of Sv32x4, Sv39x4,
+Sv48x4, or Sv57x4, G-stage address translation is a variation on the
+usual page-based virtual address translation scheme of Sv32, Sv39, Sv48,
+or Sv57, respectively. In each case, the size of the incoming address is
+widened by qty:2[bits] (to 34, 41, 50, or qty:59[bits]). To accommodate the
+two extra bits, the root page table (only) is expanded by a factor of 4
+to be qty:16[KiB] instead of the usual qty:4[KiB]. Matching its larger size, the
+root page table also must be aligned to a qty:16[KiB] boundary instead of the
+usual qty:4[KiB] page boundary. Except as noted, all other aspects of Sv32,
+Sv39, Sv48, or Sv57 are adopted unchanged for G-stage translation.
+Non-root page tables and all page table entries (PTEs) have the same
+formats as documented in <<sv32>>, <<sv39>>, <<sv48>>, and <<sv57>>.'''
+zh = '''
+当 csr:hgatp[mode] 指定 Sv32x4、Sv39x4、Sv48x4 或 Sv57x4 转换方案时，G 阶段地址转换分别是对 Sv32、Sv39、Sv48 或 Sv57 常规基于页的虚拟地址转换方案的变体。在每种情况下，输入地址的大小加宽 qty:2[bits]（到 34、41、50 或 qty:59[bits]）。为容纳这两个额外位，根页表（仅根页表）扩展为原来的 4 倍，即 qty:16[KiB] 而不是常规 qty:4[KiB]。与其更大尺寸匹配，根页表还应对齐到 qty:16[KiB] 边界，而不是常规 qty:4[KiB] 页边界。除所指出的外，Sv32、Sv39、Sv48 或 Sv57 的所有其他方面在 G 阶段转换中保持不变。非根页表和所有页表项（PTE）具有与 <<sv32>>、<<sv39>>、<<sv48>> 和 <<sv57>> 中所述相同的格式。'''

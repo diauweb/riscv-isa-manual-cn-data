@@ -1,0 +1,15 @@
+unit_id = "c2ea2f3c47aec301e1acbf0234dbc253"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+ADD performs the addition of _rs1_ and _rs2_. SUB performs the
+subtraction of _rs2_ from _rs1_. Overflows are ignored and the low XLEN
+bits of results are written to the destination _rd_. SLT and SLTU
+perform signed and unsigned compares respectively, writing 1 to _rd_ if
+_rs1_ < _rs2_, 0 otherwise. Note, SLTU _rd_, _x0_, _rs2_ sets _rd_ to 1 if
+_rs2_ is not equal to zero, otherwise sets _rd_ to zero (assembler
+pseudoinstruction SNEZ _rd, rs_). AND, OR, and XOR perform bitwise
+logical operations.'''
+zh = '''
+ADD 执行 _rs1_ 与 _rs2_ 的加法。SUB 执行从 _rs1_ 中减去 _rs2_。忽略溢出，并将结果的低 XLEN 位写入目标 _rd_。SLT 和 SLTU 分别执行有符号和无符号比较，若 _rs1_ < _rs2_ 则向 _rd_ 写入 1，否则写入 0。注意，若 _rs2_ 不等于零，则 SLTU _rd_, _x0_, _rs2_ 将 _rd_ 置为 1，否则将 _rd_ 置为零（汇编伪指令 SNEZ _rd, rs_）。AND、OR 和 XOR 执行按位逻辑运算。'''

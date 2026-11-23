@@ -1,0 +1,22 @@
+unit_id = "a9d17b2bb8846708c84aebae93d5c0b0"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Supervisor mode is deliberately restricted in terms of interactions with
+underlying physical hardware, such as physical memory and device
+interrupts, to support clean virtualization. In this spirit, certain
+supervisor-level facilities, including requests for timer and
+interprocessor interrupts, are provided by implementation-specific
+mechanisms. In some systems, a supervisor execution environment (SEE)
+provides these facilities in a manner specified by a supervisor binary
+interface (SBI). Other systems supply these facilities directly, through
+some other implementation-defined mechanism.
+===='''
+zh = '''
+[NOTE]
+====
+监管模式在与底层物理硬件（如物理内存和设备中断）交互方面受到刻意限制，以支持干净的虚拟化。本着这一精神，某些监管级设施（包括定时器和处理器间中断请求）由实现特定的机制提供。在某些系统中，监管执行环境（SEE）按监管二进制接口（SBI）规定的方式提供这些设施。其他系统则通过某种其他实现定义的机制直接提供这些设施。
+===='''

@@ -1,0 +1,11 @@
+unit_id = "8ff43238a458354ea522cc8196c09fb7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `RCID` and `MCID` in `srmcfg` apply across all privilege levels on the hart.
+Typically, higher-privilege modes don't modify `srmcfg`, as they often serve
+lower-privileged tasks. If differentiation is needed, higher privilege code can
+update `srmcfg` and restore it before returning to a lower privilege level.'''
+zh = '''
+`srmcfg` 中的 `RCID` 和 `MCID` 适用于该硬件线程上的所有特权级。通常，较高特权模式不会修改 `srmcfg`，因为它们通常为较低特权任务提供服务。若需要进行区分，较高特权代码可更新 `srmcfg`，并在返回较低特权级之前将其恢复。'''

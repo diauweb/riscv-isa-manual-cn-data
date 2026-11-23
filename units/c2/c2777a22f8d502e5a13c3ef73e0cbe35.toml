@@ -1,0 +1,14 @@
+unit_id = "c2777a22f8d502e5a13c3ef73e0cbe35"
+kind = "code"
+translatable = false
+en = '''
+[source,SAIL]
+----
+0001080e <processMarkers>:
+   1080e:       73a012ef                jal     t0,11f48 <__riscv_save_12>
+   10812:       1101                    addi    sp,sp,-32
+...
+   10862:       4501                    li      a0,0
+   10864:       6105                    addi    sp,sp,32
+   10866:       71e0106f                j       11f84 <__riscv_restore_12>
+----'''

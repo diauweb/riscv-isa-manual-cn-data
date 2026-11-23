@@ -1,0 +1,13 @@
+unit_id = "7b224f435e95b828c4b719ebfeea8f05"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The base machine-level architecture supports only unresumable
+non-maskable interrupts (UNMIs), where the NMI jumps to a handler in
+machine mode, overwriting the current `mepc` and `mcause` register
+values. If the hart had been executing machine-mode code in a trap
+handler, the previous values in `mepc` and `mcause` would not be
+recoverable and so execution is not generally resumable.'''
+zh = '''
+基础机器级架构仅支持不可恢复的不可屏蔽中断（UNMI），其中 NMI 跳转到机器模式的处理程序，覆盖当前 `mepc` 和 `mcause` 寄存器值。若硬件线程当时正在陷阱处理程序中执行机器模式代码，则 `mepc` 和 `mcause` 中的先前值将无法恢复，因此执行通常不可恢复。'''

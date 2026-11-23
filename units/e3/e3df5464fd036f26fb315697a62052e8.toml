@@ -1,0 +1,15 @@
+unit_id = "e3df5464fd036f26fb315697a62052e8"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Channel 1 is used to provide global strong ordering across all I/O
+regions. Any accesses by a hart to any I/O region associated with
+channel 1 can only be observed to have occurred in program order by all
+other harts and I/O devices, including relative to accesses made by that
+hart to relaxed I/O regions or strongly ordered I/O regions with
+different channel numbers. In other words, any access to a region in
+channel 1 is equivalent to executing a `fence io,io` instruction before
+and after the instruction.'''
+zh = '''
+通道 1 用于在所有 I/O 区域之间提供全局强排序。硬件线程对与通道 1 关联的任何 I/O 区域的任何访问，只能被所有其他硬件线程和 I/O 设备观察到按程序顺序发生，包括相对于该硬件线程对宽松 I/O 区域或具有不同通道号的强排序 I/O 区域的访问。换言之，对通道 1 中某区域的任何访问等效于在该指令前后各执行一条 `fence io,io` 指令。'''

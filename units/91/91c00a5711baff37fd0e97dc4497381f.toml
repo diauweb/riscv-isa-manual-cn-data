@@ -1,0 +1,26 @@
+unit_id = "91c00a5711baff37fd0e97dc4497381f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Defined the `misa`.B field to reflect that the B extension has been
+implemented.
+* Defined the `misa`.V field to reflect that the V extension has been
+implemented.
+* Defined the RV32-only `medelegh` and `hedelegh` CSRs.
+* Defined the misaligned atomicity granule PMA, superseding the proposed Zam
+  extension.
+* Allocated interrupt 13 for Sscofpmf LCOFI interrupt.
+* Defined hardware error and software check exception codes.
+* Specified synchronization requirements when changing the PBMTE fields
+in `menvcfg` and `henvcfg`.
+* Exposed count-overflow interrups to VS-mode via the Shlcofideleg extension.'''
+zh = '''
+* 定义了 `misa`.B 字段，以反映 B 扩展已实现。
+* 定义了 `misa`.V 字段，以反映 V 扩展已实现。
+* 定义了仅 RV32 的 `medelegh` 和 `hedelegh` CSR。
+* 定义了非对齐原子性粒度 PMA，取代了先前提出的 Zam 扩展。
+* 为 Sscofpmf LCOFI 中断分配了中断号 13。
+* 定义了硬件错误和软件检查异常代码。
+* 规定了更改 `menvcfg` 和 `henvcfg` 中 PBMTE 字段时的同步要求。
+* 通过 Shlcofideleg 扩展向 VS 模式暴露了计数溢出中断。'''

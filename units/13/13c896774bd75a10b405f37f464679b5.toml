@@ -1,0 +1,32 @@
+unit_id = "13c896774bd75a10b405f37f464679b5"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* Push to the shadow stack (See <<SS_PUSH>>)
+** [#norm:zicfiss_sspush_enc]#`SSPUSH x1` and `SSPUSH x5` - encoded using `MOP.RR.7`#
+** [#norm:zicfiss_c-sspush_enc]#`C.SSPUSH x1` - encoded using `C.MOP.1`#
+
+* Pop from the shadow stack (See <<SS_POP>>)
+** [#norm:zicfiss_sspopchk_enc]#`SSPOPCHK x1` and `SSPOPCHK x5` - encoded using `MOP.R.28`#
+** [#norm:zicfiss_c-sspopchk_enc]#`C.SSPOPCHK x5` - encoded using `C.MOP.5`#
+
+* Read the value of `ssp` into a register (See <<SSP_READ>>)
+** [#norm:zicfiss_ssrdp_enc]#`SSRDP` - encoded using `MOP.R.28`#
+
+* [#norm:zicfiss_atomic_swap]#Perform an atomic swap from a shadow stack location (See <<SSAMOSWAP>>)#
+** `SSAMOSWAP.W` and `SSAMOSWAP.D`'''
+zh = '''
+* 压入影子栈（见 <<SS_PUSH>>）
+** [#norm:zicfiss_sspush_enc]##`SSPUSH x1` 和 `SSPUSH x5` — 使用 `MOP.RR.7` 编码##
+** [#norm:zicfiss_c-sspush_enc]##`C.SSPUSH x1` — 使用 `C.MOP.1` 编码##
+
+* 从影子栈弹出（见 <<SS_POP>>）
+** [#norm:zicfiss_sspopchk_enc]##`SSPOPCHK x1` 和 `SSPOPCHK x5` — 使用 `MOP.R.28` 编码##
+** [#norm:zicfiss_c-sspopchk_enc]##`C.SSPOPCHK x5` — 使用 `C.MOP.5` 编码##
+
+* 将 `ssp` 的值读入寄存器（见 <<SSP_READ>>）
+** [#norm:zicfiss_ssrdp_enc]##`SSRDP` — 使用 `MOP.R.28` 编码##
+
+* [#norm:zicfiss_atomic_swap]##从影子栈位置执行原子交换（见 <<SSAMOSWAP>>）##
+** `SSAMOSWAP.W` 和 `SSAMOSWAP.D`'''

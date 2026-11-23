@@ -1,0 +1,11 @@
+unit_id = "a9d078b5e257b9ba7eafb5a3218221a8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: When the fault-only-first instruction would trigger a debug
+data-watchpoint trap on an element after the first, implementations
+should not reduce csr:vl[] but instead should trigger the debug trap as
+otherwise the event might be lost.'''
+zh = '''
+NOTE: 当仅首错指令将在第一个元素之后的某个元素上触发调试数据观察点陷阱时，实现宜不减小 csr:vl[]，而应改为触发调试陷阱，否则该事件可能丢失。'''

@@ -1,0 +1,13 @@
+unit_id = "a1021e9317bfa5ca1374c77e7fe799a0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Machine and Supervisor modes share a single copy of the FS, VS, and XS
+bits. Supervisor-level software normally uses the FS, VS, and XS bits
+directly to record the status with respect to the supervisor-level saved
+context. Machine-level software must be more conservative in saving and
+restoring the extension state in their corresponding version of the
+context.'''
+zh = '''
+机器模式和监管模式共享 FS、VS 和 XS 位的单一副本。监管级软件通常直接使用 FS、VS 和 XS 位来记录相对于监管级保存上下文的状态。机器级软件在其相应版本的上下文中保存和恢复扩展状态时必须更加保守。'''

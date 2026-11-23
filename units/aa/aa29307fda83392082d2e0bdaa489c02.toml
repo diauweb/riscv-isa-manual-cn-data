@@ -1,0 +1,74 @@
+unit_id = "aa29307fda83392082d2e0bdaa489c02"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* *ATB*: Arm trace bus
+* *branch*: an instruction which conditionally changes the execution
+flow
+* *CSR*: control/status register
+* *decoder*: a piece of software that takes the trace packets emitted by
+the encoder and reconstructs the execution flow of the code executed by
+the RISC-V hart
+* *delta*: a change in the program counter that is other than the
+difference between two instructions placed consecutively in memory
+* *discontinuity*: another name for ’delta’ (see above)
+* *ELF*: executable and linkable format
+* *encoder*: a piece of hardware that takes in instruction execution
+information from a RISC-V hart and transforms it into trace packets
+* *EPC*: exception program counter
+* *exception*: an unusual condition occurring at run time associated
+with an instruction in a RISC-V hart
+* *hart*: a RISC-V hardware thread
+* *interrupt*: an external asynchronous event that may cause a RISC-V
+hart to experience an unexpected transfer of control
+* *ISA*: instruction set architecture
+* *jump*: an instruction which unconditionally changes the execution
+flow
+* *direct jump*: an instruction which unconditionally changes the
+execution flow by changing the PC by a constant value
+* *indirect jump*: an instruction which unconditionally changes the
+execution flow by changing the PC to a computed value
+* *inferable jump*: a jump where the target address is supplied via a
+constant embedded within the jump opcode
+* *uninferable jump*: a jump which is not inferable (see above)
+* *LSB*: least significant bit
+* *MSB*: most significant bit
+* *packet*: the atomic unit of encoded trace information emitted by the
+encoder
+* *PC*: program counter
+* *program counter*: a register containing the address of the
+instruction being executed
+* *retire*: the final stage of executing an instruction, when the
+machine state is updated (sometimes referred to as ’commit’ or
+’graduate’)
+* *trap*: the transfer of control to a trap handler caused by either an
+exception or an interrupt
+* *updiscon*: contraction of ’uninferable PC discontinuity’'''
+zh = '''
+* *ATB*：Arm 跟踪总线
+* *分支*：有条件改变执行流的指令
+* *CSR*：控制/状态寄存器
+* *解码器*：一种软件，接收编码器发出的跟踪包，并重建 RISC-V 硬件线程所执行代码的执行流
+* *增量（delta）*：程序计数器的改变，且不同于内存中连续放置的两条指令之间的差值
+* *不连续*：’delta’ 的另一个名称（见上文）
+* *ELF*：可执行与可链接格式
+* *编码器*：一种硬件，从 RISC-V 硬件线程接收指令执行信息并将其转换为跟踪包
+* *EPC*：异常程序计数器
+* *异常*：在 RISC-V 硬件线程中与某条指令相关、在运行时发生的不寻常条件
+* *硬件线程*：RISC-V 硬件线程
+* *中断*：可能导致 RISC-V 硬件线程经历非预期控制转移的外部异步事件
+* *ISA*：指令集架构
+* *跳转*：无条件改变执行流的指令
+* *直接跳转*：通过将 PC 改变一个常量值来无条件改变执行流的指令
+* *间接跳转*：通过将 PC 改变为计算值来无条件改变执行流的指令
+* *可推断跳转*：目标地址由跳转操作码内嵌常量提供的跳转
+* *不可推断跳转*：不可推断的跳转（见上文）
+* *LSB*：最低有效位
+* *MSB*：最高有效位
+* *包*：编码器发出的编码跟踪信息的原子单元
+* *PC*：程序计数器
+* *程序计数器*：包含正在执行指令地址的寄存器
+* *退休*：执行指令的最后阶段，此时机器状态被更新（有时称为“提交”或“毕业”）
+* *陷阱*：由异常或中断引起的到陷阱处理程序的控制转移
+* *updiscon*：’uninferable PC discontinuity’ 的缩合词'''

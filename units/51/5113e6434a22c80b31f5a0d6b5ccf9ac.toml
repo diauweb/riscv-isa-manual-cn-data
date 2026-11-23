@@ -1,0 +1,15 @@
+unit_id = "5113e6434a22c80b31f5a0d6b5ccf9ac"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In addition, except for mask load instructions, any element in the
+tail of a mask result can also be written with the value the
+mask-producing operation would have calculated with csr:vl[]=VLMAX.
+Furthermore, for mask-logical instructions and insn:vmsbf.m[], insn:vmsif.m[],
+insn:vmsof.m[] mask-manipulation instructions, any element in the tail of
+the result can be written with the value the mask-producing operation
+would have calculated with csr:vl[]=VLEN, SEW=8, and LMUL=8 (i.e., all
+bits of the mask register can be overwritten).'''
+zh = '''
+此外，除掩码加载指令外，掩码结果尾部的任何元素也可写入掩码生成操作在 csr:vl[]=VLMAX 时计算出的值。此外，对于掩码逻辑指令和 insn:vmsbf.m[]、insn:vmsif.m[]、insn:vmsof.m[] 掩码操作指令，结果尾部的任何元素也可写入掩码生成操作在 csr:vl[]=VLEN、SEW=8 和 LMUL=8 时计算出的值（即，掩码寄存器的所有位都可被覆盖）。'''

@@ -1,0 +1,15 @@
+unit_id = "49fe6afa154554de86a4d935826fbe7f"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Call and return instructions may optionally be handled as described in the <<Implicit Return Optimization,Implicit Return Optimization>> chapter and may generate no trace.
+. By default, the target of an indirect unconditional jump is always considered an uninferable PC discontinuity. However, if the register that specifies the jump target was loaded with a constant
+then it can be considered inferable under some circumstances.
+** Such instruction sequences may be detected and in such a case no trace is generated.
+** This optional feature is described in detail in the <<Sequential Jump Optimization,Sequential Jump Optimization>> chapter.'''
+zh = '''
+. 调用和返回指令可选地按 <<Implicit Return Optimization,Implicit Return Optimization>> 章所述处理，并且可不生成跟踪。
+. 默认情况下，间接无条件跳转的目标始终被视为不可推断的 PC 不连续。然而，如果指定跳转目标的寄存器被加载了常量，则在某些情况下可将其视为可推断。
+** 可检测此类指令序列，在这种情况下不生成跟踪。
+** 此可选功能在 <<Sequential Jump Optimization,Sequential Jump Optimization>> 章中详细描述。'''

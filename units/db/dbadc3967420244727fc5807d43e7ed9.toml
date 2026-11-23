@@ -1,0 +1,13 @@
+unit_id = "dbadc3967420244727fc5807d43e7ed9"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+However, the SHA-512 and SM3 instructions have an `EGW`=256. Implementations with `VLEN` = 128, require that
+`LMUL` is doubled for these instructions in order to create 256-bit elements across a pair of registers.
+Code written with this doubling of `LMUL` will not affect the results returned by implementations with `VLEN` {ge} 256
+because `vl` controls how many element groups are processed. Therefore, we recommend that libraries that implement
+SHA-512 and SM3 employ this doubling of `LMUL` to ensure that the software can run on all implementation
+with `VLEN` {ge} 128.'''
+zh = '''
+然而，SHA-512 和 SM3 指令的 `EGW`=256。`VLEN` = 128 的实现要求这些指令的 `LMUL` 加倍，以便跨一对寄存器创建 256 位元素。以这种 `LMUL` 加倍编写的代码不会影响 `VLEN` {ge} 256 实现返回的结果，因为 `vl` 控制处理多少个元素组。因此，我们建议实现 SHA-512 和 SM3 的库采用这种 `LMUL` 加倍，以确保软件能在所有 `VLEN` {ge} 128 的实现上运行。'''

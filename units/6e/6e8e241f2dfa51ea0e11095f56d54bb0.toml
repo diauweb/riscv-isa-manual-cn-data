@@ -1,0 +1,17 @@
+unit_id = "6e8e241f2dfa51ea0e11095f56d54bb0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Executions of the test in <<litmus-rsw>> in
+which `a1` does not equal `a2` do in fact require that (g) appears
+before (h) in the global memory order. Allowing (h) to appear before (g)
+in the global memory order would in that case result in a violation of
+CoRR, because then (h) would return an older value than that returned by
+(g). Therefore, <<overlapping-ordering, rule 2>> forbids this CoRR violation
+from occurring. As such, <<overlapping-ordering, rule 2>> strikes a careful
+balance between enforcing CoRR in all cases while simultaneously being
+weak enough to permit "`RSW`" and "`fri-rfi`" patterns that commonly
+appear in real microarchitectures.'''
+zh = '''
+在 <<litmus-rsw>> 的测试执行中，若 `a1` 不等于 `a2`，则实际上要求 (g) 在全局内存顺序中出现在 (h) 之前。若允许 (h) 在全局内存顺序中出现在 (g) 之前，则在那种情况下会导致违反 CoRR，因为此时 (h) 将返回比 (g) 所返回的值更旧的值。因此，<<overlapping-ordering, 规则 2>> 禁止发生这种 CoRR 违反。这样，<<overlapping-ordering, 规则 2>> 在针对所有情况强制执行 CoRR 与同时保持足够弱以允许实际微体系结构中常见的“RSW”和“fri-rfi”模式之间取得了谨慎的平衡。'''

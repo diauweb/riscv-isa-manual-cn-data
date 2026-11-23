@@ -1,0 +1,13 @@
+unit_id = "f852c518cec3653a5ebfb4cdd6631f6f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If a PMP entry matches all bytes of a memory operation, then the L, R, W, and X
+bits determine whether the operation succeeds or fails. If the L bit is
+clear and the privilege mode of the access is M, the operation succeeds.
+Otherwise, if the L bit is set or the privilege mode of the access is S
+or U, then the operation succeeds only if the R, W, or X bit corresponding
+to the access type is set.'''
+zh = '''
+若 PMP 条目匹配内存操作的所有字节，则由 L、R、W 和 X 位决定该操作成功还是失败。若 L 位为 0 且访问的特权模式为 M，则该操作成功。否则，若 L 位置位或访问的特权模式为 S 或 U，则仅当对应于该访问类型的 R、W 或 X 位置位时，该操作才成功。'''

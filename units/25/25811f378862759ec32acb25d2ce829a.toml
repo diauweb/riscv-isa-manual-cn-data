@@ -1,0 +1,12 @@
+unit_id = "25811f378862759ec32acb25d2ce829a"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* When the Smrnmi extension is not implemented, or if the Smrnmi extension is
+  implemented and `mnstatus.NMIE` is 0, the hart enters a critical-error state
+  without updating any architectural state including the `pc`. This state
+  involves ceasing execution, disabling all interrupts (including NMIs), and
+  asserting a `critical-error` signal to the platform.'''
+zh = '''
+* 当未实现 Smrnmi 扩展，或实现了 Smrnmi 扩展且 `mnstatus.NMIE` 为 0 时，硬件线程进入关键错误状态，且不更新任何架构状态（包括 `pc`）。此状态包括停止执行、禁用所有中断（包括 NMI），并向平台置有效 `critical-error` 信号。'''

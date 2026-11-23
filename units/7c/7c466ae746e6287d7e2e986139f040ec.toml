@@ -1,0 +1,64 @@
+unit_id = "7c466ae746e6287d7e2e986139f040ec"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+An example sequence to restore the shadow stack pointer from the new shadow
+stack and save the old shadow stack pointer on the old shadow stack is as
+follows:
+
+[listing]
+----
+# a0 hold pointer to top of new shadow stack to switch to
+stack_switch:
+   ssrdp ra
+   beqz ra, 2f                    # skip if Zicfiss not active
+   ssamoswap.d ra, x0,  (a0)      # ra=*[a0] and *[a0]=0
+   beq         ra, a0,  1f        # [a0] must be == [ra]
+   unimp                          # else crash
+1: addi        ra, ra,  XLEN/8    # pop the checkpoint
+   csrrw       ra, ssp, ra        # swap ssp: ra=ssp, ssp=ra
+   addi        ra, ra,  -(XLEN/8) # checkpoint = "old ssp - XLEN/8"
+   ssamoswap.d x0, ra,  (ra)      # Save checkpoint at "old ssp - XLEN/8"
+2:
+----
+
+This sequence uses the `ra` register. If the privilege mode at which this
+sequence is executed can be interrupted, then the trap handler should save the
+`ra` on the shadow stack itself. There it is guarded against tampering and
+can be restored prior to returning from the trap.
+
+When a new shadow stack is created by the supervisor, it needs to store a
+checkpoint at the highest address on that stack. This enables the shadow stack
+pointer to be switched using the process outlined in this note. The
+`SSAMOSWAP.W/D` instruction can be used to store this checkpoint. When the old
+value at the memory location operated on by `SSAMOSWAP.W/D` is not required,
+`rd` can be set to `x0`.
+===='''
+zh = '''
+[NOTE]
+====
+从新影子栈恢复影子栈指针并在旧影子栈上保存旧影子栈指针的示例序列如下：
+
+[listing]
+----
+# a0 hold pointer to top of new shadow stack to switch to
+stack_switch:
+   ssrdp ra
+   beqz ra, 2f                    # skip if Zicfiss not active
+   ssamoswap.d ra, x0,  (a0)      # ra=*[a0] and *[a0]=0
+   beq         ra, a0,  1f        # [a0] must be == [ra]
+   unimp                          # else crash
+1: addi        ra, ra,  XLEN/8    # pop the checkpoint
+   csrrw       ra, ssp, ra        # swap ssp: ra=ssp, ssp=ra
+   addi        ra, ra,  -(XLEN/8) # checkpoint = "old ssp - XLEN/8"
+   ssamoswap.d x0, ra,  (ra)      # Save checkpoint at "old ssp - XLEN/8"
+2:
+----
+
+该序列使用 `ra` 寄存器。如果执行该序列的特权模式可被中断，则陷阱处理程序宜将 `ra` 保存在影子栈本身上。在那里它受到防篡改保护，并可在从陷阱返回之前恢复。
+
+当监管者创建新影子栈时，需要在该栈的最高地址处存储一个检查点。这使影子栈指针能够使用本注中概述的过程进行切换。可使用 `SSAMOSWAP.W/D` 指令存储该检查点。当不需要 `SSAMOSWAP.W/D` 所操作内存位置处的旧值时，可将 `rd` 置为 `x0`。
+===='''

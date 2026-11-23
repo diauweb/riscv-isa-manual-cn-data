@@ -1,0 +1,15 @@
+unit_id = "86056f68f1779b35ecc60156cc62effe"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* 00: predict not taken, transition to 01 if prediction fails;
+* 01: predict not taken, transition to 00 if prediction succeeds, else
+11;
+* 11: predict taken, transition to 10 if prediction fails;
+* 10: predict taken, transition to 11 if prediction succeeds, else 00.'''
+zh = '''
+* 00：预测不发生转移，若预测失败则转换为 01；
+* 01：预测不发生转移，若预测成功则转换为 00，否则转换为 11；
+* 11：预测发生转移，若预测失败则转换为 10；
+* 10：预测发生转移，若预测成功则转换为 11，否则转换为 00。'''

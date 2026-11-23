@@ -1,0 +1,43 @@
+unit_id = "0cdea2c7720092b679d7b580a3a7c0c0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Make haltsum0 optional if there is only one hart.
+https://github.com/riscv/riscv-debug-spec/pull/505[#505]
+. System bus autoincrement only happens if an access actually takes place.
+({dm-sbdata0}) https://github.com/riscv/riscv-debug-spec/pull/507[#507]
+. Bump {tinfo-version} to 3. https://github.com/riscv/riscv-debug-spec/pull/512[#512]
+. Require debugger to poll {dmcontrol-dmactive} after lowering it.
+https://github.com/riscv/riscv-debug-spec/pull/566[#566]
+. Add {icount-pending} to {csr-icount}. https://github.com/riscv/riscv-debug-spec/pull/574[#574]
+. When a selected trigger is disabled, {csr-tdata2} and {csr-tdata3} can be written with any value supported by any of the types this trigger supports.
+https://github.com/riscv/riscv-debug-spec/pull/721[#721]
+. {csr-tcontrol} fields only apply to breakpoint traps, not any trap.
+https://github.com/riscv/riscv-debug-spec/pull/723[#723]
+. If {tinfo-version} is greater than 0, then {mcontrol6-hit0} (previously called {csr-mcontrol6}.``hit``) now contains 0 when a trigger fires more than one instruction after the
+instruction that matched. (This information is now reflected in {mcontrol6-hit1}.)
+https://github.com/riscv/riscv-debug-spec/pull/795[#795]
+. If {tinfo-version} is greater than 0, then bit 20 of {csr-mcontrol6} is no longer used for timing information. (Previously the bit was called {csr-mcontrol6}.``timing``.)
+https://github.com/riscv/riscv-debug-spec/pull/807[#807]
+. If {tinfo-version} is greater than 0, then the encodings of {mcontrol6-size} for sizes greater than 64 bit have changed.
+https://github.com/riscv/riscv-debug-spec/pull/807[#807]'''
+zh = '''
+. 若只有一个硬件线程，使 haltsum0 变为可选。
+https://github.com/riscv/riscv-debug-spec/pull/505[#505]
+. 系统总线自动递增仅在确实发生访问时才会生效。
+（{dm-sbdata0}）https://github.com/riscv/riscv-debug-spec/pull/507[#507]
+. 将 {tinfo-version} 提升至 3。https://github.com/riscv/riscv-debug-spec/pull/512[#512]
+. 要求调试器在将 {dmcontrol-dmactive} 降低后对其进行轮询。
+https://github.com/riscv/riscv-debug-spec/pull/566[#566]
+. 向 {csr-icount} 添加 {icount-pending}。https://github.com/riscv/riscv-debug-spec/pull/574[#574]
+. 当所选触发器被禁用时，{csr-tdata2} 和 {csr-tdata3} 可写入该触发器所支持任一类型可支持的任何值。
+https://github.com/riscv/riscv-debug-spec/pull/721[#721]
+. {csr-tcontrol} 字段仅适用于断点陷阱，而不适用于任何陷阱。
+https://github.com/riscv/riscv-debug-spec/pull/723[#723]
+. 若 {tinfo-version} 大于 0，则当触发器在匹配指令之后多于一条指令才触发时，{mcontrol6-hit0}（原称为 {csr-mcontrol6}.``hit``）现包含 0。（此信息现反映在 {mcontrol6-hit1} 中。）
+https://github.com/riscv/riscv-debug-spec/pull/795[#795]
+. 若 {tinfo-version} 大于 0，则 {csr-mcontrol6} 的第 20 位不再用于时序信息。（此前该位称为 {csr-mcontrol6}.``timing``。）
+https://github.com/riscv/riscv-debug-spec/pull/807[#807]
+. 若 {tinfo-version} 大于 0，则大于 64 位的 {mcontrol6-size} 编码已变更。
+https://github.com/riscv/riscv-debug-spec/pull/807[#807]'''

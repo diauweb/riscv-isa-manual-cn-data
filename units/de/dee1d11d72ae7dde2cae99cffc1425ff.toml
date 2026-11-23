@@ -1,0 +1,45 @@
+unit_id = "dee1d11d72ae7dde2cae99cffc1425ff"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Earlier versions of this extension did not define the behavior of feeding
+the results of narrower or wider operands into an operation, except to
+require that wider saves and restores would preserve the value of a
+narrower operand. The new definition removes this
+implementation-specific behavior, while still accommodating both
+non-recoded and recoded implementations of the floating-point unit. The
+new definition also helps catch software errors by propagating NaNs if
+values are used incorrectly.
+
+Non-recoded implementations unpack and pack the operands to IEEE
+standard format on the input and output of every floating-point
+operation. The NaN-boxing cost to a non-recoded implementation is
+primarily in checking if the upper bits of a narrower operation
+represent a legal NaN-boxed value, and in writing all 1s to the upper
+bits of a result.
+
+Recoded implementations use a more convenient internal format to
+represent floating-point values, with an added exponent bit to allow all
+values to be held normalized. The cost to the recoded implementation is
+primarily the extra tagging needed to track the internal types and sign
+bits, but this can be done without adding new state bits by recoding
+NaNs internally in the exponent field. Small modifications are needed to
+the pipelines used to transfer values in and out of the recoded format,
+but the datapath and latency costs are minimal. The recoding process has
+to handle shifting of input subnormal values for wide operands in any
+case, and extracting the NaN-boxed value is a similar process to
+normalization except for skipping over leading-1 bits instead of
+skipping over leading-0 bits, allowing the datapath multiplexing to be shared.
+===='''
+zh = '''
+[NOTE]
+====
+本扩展的早期版本未定义将较窄或较宽操作数的结果送入操作时的行为，仅要求较宽的保存和恢复会保留较窄操作数的值。新定义消除了这一与实现相关的行为，同时仍兼顾浮点单元的非重编码实现和重编码实现。新定义还通过在值被错误使用时传播 NaN 来帮助捕获软件错误。
+
+非重编码实现在每个浮点操作的输入和输出处将操作数解包并打包为 IEEE 标准格式。非重编码实现的 NaN 装箱成本主要在于检查较窄操作的高位是否表示合法的 NaN 装箱值，以及将结果的高位写为全 1。
+
+重编码实现使用更方便的内部格式表示浮点值，并增加一个阶码位以使所有值都能保持规格化。重编码实现的成本主要在于跟踪内部类型和符号位所需的额外标记，但这可以通过在阶码字段内对 NaN 进行重编码来完成，而无须增加新的状态位。用于将值传入和传出重编码格式的流水线需要小幅修改，但数据通路和延迟成本极小。无论如何，重编码过程都需要处理宽操作数输入非规格化值的移位；提取 NaN 装箱值与规格化过程类似，只是跳过前导 1 位而不是跳过前导 0 位，从而可共享数据通路多路复用。
+===='''

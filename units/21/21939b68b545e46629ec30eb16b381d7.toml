@@ -1,0 +1,20 @@
+unit_id = "21939b68b545e46629ec30eb16b381d7"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Write 0 to {csr-tselect}. If this results in an illegal instruction exception, then there are no triggers implemented.
+. Read back {csr-tselect} and check that it contains the written value. If not, exit the loop.
+. Read {csr-tinfo}.
+. If that caused an exception, the debugger must read {csr-tdata1} to discover the type. (If {tdata1-type} is 0, this trigger doesn't exist. Exit the loop.)
+. If {tinfo-info} is 1, this trigger doesn't exist. Exit the loop.
+. Otherwise, the selected trigger supports the types discovered in {tinfo-info}.
+. Repeat, incrementing the value in {csr-tselect}.'''
+zh = '''
+. 向 {csr-tselect} 写 0。若这导致非法指令异常，则未实现任何触发器。
+. 回读 {csr-tselect} 并检查它是否包含所写入的值。若非如此，则退出循环。
+. 读取 {csr-tinfo}。
+. 若这引发异常，则调试器必须读取 {csr-tdata1} 以发现类型。（若 {tdata1-type} 为 0，则此触发器不存在。退出循环。）
+. 若 {tinfo-info} 为 1，则此触发器不存在。退出循环。
+. 否则，所选触发器支持 {tinfo-info} 中所发现的类型。
+. 重复，递增 {csr-tselect} 中的值。'''

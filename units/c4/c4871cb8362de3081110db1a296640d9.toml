@@ -1,0 +1,126 @@
+unit_id = "c4871cb8362de3081110db1a296640d9"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.RV32F Standard Extension
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |Source Registers |Destination Registers |Accumulating CSRs |
+
+
+|FLW† |_rs1_ ^A^ |_rd_ | |
+
+|FSW |_rs1_ ^A^, _rs2_^D^ | | |
+
+|FMADD.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|FMSUB.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|FNMSUB.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|FNMADD.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|FADD.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^if rm=111
+
+|FSUB.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^if rm=111
+
+|FMUL.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^if rm=111
+
+|FDIV.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, DZ, OF, UF, NX |^*^if rm=111
+
+|FSQRT.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|FSGNJ.S |_rs1_, _rs2_ |_rd_ | |
+
+|FSGNJN.S |_rs1_, _rs2_ |_rd_ | |
+
+|FSGNJX.S |_rs1_, _rs2_ |_rd_ | |
+
+|FMIN.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FMAX.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FCVT.W.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|FCVT.WU.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^if rm=111
+
+|FMV.X.W |_rs1_ |_rd_ | |
+
+|FEQ.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FLT.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FLE.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FCLASS.S |_rs1_ |_rd_ | |
+
+|FCVT.S.W |_rs1_, frm^*^ |_rd_ |NX |^*^if rm=111
+
+|FCVT.S.WU |_rs1_, frm^*^ |_rd_ |NX |^*^if rm=111
+
+|FMV.W.X |_rs1_ |_rd_ | |
+
+|==='''
+zh = '''
+.RV32F 标准扩展
+[%autowidth.stretch,float="center",align="center",cols="<,<,<,<,<",options="header"]
+|===
+
+| |源寄存器 |目标寄存器 |累积 CSR |
+
+
+|FLW† |_rs1_ ^A^ |_rd_ | |
+
+|FSW |_rs1_ ^A^, _rs2_^D^ | | |
+
+|FMADD.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|FMSUB.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|FNMSUB.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|FNMADD.S |_rs1_, _rs2_, _rs3_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|FADD.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^如果 rm=111
+
+|FSUB.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, NX |^*^如果 rm=111
+
+|FMUL.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, OF, UF, NX |^*^如果 rm=111
+
+|FDIV.S |_rs1_, _rs2_, frm^*^ |_rd_ |NV, DZ, OF, UF, NX |^*^如果 rm=111
+
+|FSQRT.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|FSGNJ.S |_rs1_, _rs2_ |_rd_ | |
+
+|FSGNJN.S |_rs1_, _rs2_ |_rd_ | |
+
+|FSGNJX.S |_rs1_, _rs2_ |_rd_ | |
+
+|FMIN.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FMAX.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FCVT.W.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|FCVT.WU.S |_rs1_, frm^*^ |_rd_ |NV, NX |^*^如果 rm=111
+
+|FMV.X.W |_rs1_ |_rd_ | |
+
+|FEQ.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FLT.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FLE.S |_rs1_, _rs2_ |_rd_ |NV |
+
+|FCLASS.S |_rs1_ |_rd_ | |
+
+|FCVT.S.W |_rs1_, frm^*^ |_rd_ |NX |^*^如果 rm=111
+
+|FCVT.S.WU |_rs1_, frm^*^ |_rd_ |NX |^*^如果 rm=111
+
+|FMV.W.X |_rs1_ |_rd_ | |
+
+|==='''

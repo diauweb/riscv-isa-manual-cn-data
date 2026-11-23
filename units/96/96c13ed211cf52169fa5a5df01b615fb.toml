@@ -1,0 +1,13 @@
+unit_id = "96c13ed211cf52169fa5a5df01b615fb"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Implementations sometimes perform _implicit_ reads of CSRs. (For
+example, all S-mode instruction fetches implicitly read the `satp` CSR.)
+Unless otherwise specified, the value returned by an implicit read of a
+CSR is the same value that would have been returned by an explicit read
+of the CSR, using a CSR-access instruction in a sufficient privilege
+mode.'''
+zh = '''
+实现有时会执行 CSR 的__隐式__读取。（例如，所有 S 模式取指都隐式读取 `satp` CSR。）除非另有规定，对 CSR 进行隐式读取所返回的值，与在特权级足够的情况下使用 CSR 访问指令对该 CSR 进行显式读取所会返回的值相同。'''

@@ -1,0 +1,14 @@
+unit_id = "305756ec72eeacf9115a69c7509f80ac"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The rationale for this choice is that delivering the additional bits may add overheads in some hardware implementations. Further, pointer masking is configured per privilege mode, so all trap handlers in supervisor mode would need to be careful to configure pointer masking the same way as user mode or manually unmask (which is expensive).
+===='''
+zh = '''
+[NOTE]
+====
+此选择的理由是，递送额外位可能在某些硬件实现中增加开销。此外，指针掩码按特权模式配置，因此监管模式中的所有陷阱处理程序都需要小心地以与用户模式相同的方式配置指针掩码，或手动去除掩码（代价高昂）。
+===='''

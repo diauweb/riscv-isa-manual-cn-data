@@ -1,0 +1,22 @@
+unit_id = "525458b7365c737167a7d08caf23c5c0"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+If supervisor mode is implemented, bits `mip`.SEIP and `mie`.SEIE are
+the interrupt-pending and interrupt-enable bits for supervisor-level
+external interrupts. SEIP is writable in `mip`, and may be written by
+M-mode software to indicate to S-mode that an external interrupt is
+pending. Additionally, the platform-level interrupt controller may
+generate supervisor-level external interrupts. Supervisor-level external
+interrupts are made pending based on the logical-OR of the
+software-writable SEIP bit and the signal from the external interrupt
+controller. When `mip` is read with a CSR instruction, the value of the
+SEIP bit returned in the `rd` destination register is the logical-OR of
+the software-writable bit and the interrupt signal from the interrupt
+controller, but the signal from the interrupt controller is not used to
+calculate the value written to SEIP. Only the software-writable SEIP bit
+participates in the read-modify-write sequence of a CSRRS or CSRRC
+instruction.'''
+zh = '''
+若实现了监管模式，则 `mip`.SEIP 和 `mie`.SEIE 位是监管级外部中断的中断挂起位和中断使能位。SEIP 在 `mip` 中可写，且可由 M 模式软件写入，以向 S 模式指示外部中断挂起。此外，平台级中断控制器可生成监管级外部中断。监管级外部中断根据软件可写的 SEIP 位与来自外部中断控制器的信号的逻辑或而成为挂起。当使用 CSR 指令读取 `mip` 时，`rd` 目标寄存器中返回的 SEIP 位值是软件可写位与来自中断控制器的中断信号的逻辑或，但来自中断控制器的信号不用于计算写入 SEIP 的值。只有软件可写的 SEIP 位参与 CSRRS 或 CSRRC 指令的读-改-写序列。'''

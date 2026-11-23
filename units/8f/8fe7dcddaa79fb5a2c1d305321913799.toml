@@ -1,0 +1,14 @@
+unit_id = "8fe7dcddaa79fb5a2c1d305321913799"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+An OS or hypervisor running in HS-mode uses the supervisor CSRs to
+interact with the exception, interrupt, and address-translation
+subsystems. [#norm:H_csrs_hs_not_vs]#Additional CSRs are provided to HS-mode, but not to VS-mode,
+to manage two-stage address translation and to control the behavior of a
+VS-mode guest: `hstatus`, `hedeleg`, `hideleg`, `hvip`, `hip`, `hie`,
+`hgeip`, `hgeie`, `henvcfg`, `henvcfgh`, `hcounteren`, `htimedelta`,
+`htimedeltah`, `htval`, `htinst`, and `hgatp`.#'''
+zh = '''
+运行在 HS 模式的操作系统或虚拟机监控器使用监管 CSR 与异常、中断和地址转换子系统交互。[#norm:H_csrs_hs_not_vs]##为 HS 模式而非 VS 模式提供附加 CSR，以管理两阶段地址转换并控制 VS 模式客户机的行为：`hstatus`、`hedeleg`、`hideleg`、`hvip`、`hip`、`hie`、`hgeip`、`hgeie`、`henvcfg`、`henvcfgh`、`hcounteren`、`htimedelta`、`htimedeltah`、`htval`、`htinst` 和 `hgatp`。##'''

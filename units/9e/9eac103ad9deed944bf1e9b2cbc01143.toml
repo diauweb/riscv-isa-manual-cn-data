@@ -1,0 +1,12 @@
+unit_id = "9eac103ad9deed944bf1e9b2cbc01143"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vsm4k-vi_op_sm4k]#Four round keys are read in as a 4-element group from _vs2_. Each of the next four round keys are generated
+by iteratively XORing the last three round keys with a constant that is indexed by the Round Group Number,
+performing a byte-wise substitution, and then performing XORs between rotated versions of this value
+and the corresponding current round key.#'''
+zh = '''
+[#norm:vsm4k-vi_op_sm4k]##从 _vs2_ 中以 4 元素组形式读入四个轮密钥。接下来的四个轮密钥中的每一个均通过以下方式生成：
+将最后三个轮密钥与由轮组编号索引的常量迭代异或，执行按字节替换，然后将该值的旋转版本与对应的当前轮密钥进行异或。##'''

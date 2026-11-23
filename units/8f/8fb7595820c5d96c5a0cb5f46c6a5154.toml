@@ -1,0 +1,18 @@
+unit_id = "8fb7595820c5d96c5a0cb5f46c6a5154"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The more natural CSR number for mcyclecfg would be 0x320, but that was allocated to mcountinhibit.
+
+This register format matches that specified for programmable counters by Sscofpmf.  The bit position for the OF bit (bit 63) is read-only 0, since these counters do not generate local counter overflow interrupts on overflow.
+===='''
+zh = '''
+[NOTE]
+====
+mcyclecfg 更自然的 CSR 编号是 0x320，但该编号已分配给 mcountinhibit。
+
+此寄存器格式与 Sscofpmf 为可编程计数器规定的格式一致。OF 位（位 63）的位位置为只读 0，因为这些计数器在溢出时不产生本地计数器溢出中断。
+===='''

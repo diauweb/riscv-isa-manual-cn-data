@@ -1,0 +1,9 @@
+unit_id = "33c396292f229a082c360d6f76b790d5"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mstatush_sz_acc]#For RV32 only, csr:mstatush[] is a 32-bit read/write register formatted as shown in <<mstatushreg>>.#
+[#norm:mstatush_enc]#Bits 30:4 of csr:mstatush[] generally contain the same fields found in bits 62:36 of csr:mstatus[] for RV64. Fields csr::[sd], csr::[sxl], and csr::[uxl] do not exist in `mstatush`.#'''
+zh = '''
+[#norm:mstatush_sz_acc]##仅对于 RV32，csr:mstatush[] 是一个 32 位读写寄存器，格式如 <<mstatushreg>> 所示。##[#norm:mstatush_enc]##csr:mstatush[] 的位 30:4 通常包含与 RV64 下 csr:mstatus[] 的位 62:36 相同的字段。字段 csr::[sd]、csr::[sxl] 和 csr::[uxl] 不存在于 `mstatush` 中。##'''

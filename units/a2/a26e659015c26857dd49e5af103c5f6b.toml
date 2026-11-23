@@ -1,0 +1,16 @@
+unit_id = "a26e659015c26857dd49e5af103c5f6b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+To support nested traps, [#norm:mstatus_xpie_xpp_op]#each privilege mode _x_ that can respond to
+interrupts has a two-level stack of interrupt-enable bits and privilege modes.
+__x__PIE holds the value of the interrupt-enable bit active prior
+to the trap, and __x__PP holds the previous privilege mode.#
+[#norm:mstatus_xpp_enc]#The __x__PP fields can only hold privilege modes up to _x_#, so
+[#norm:mstatus_mpp_sz]#csr::[mpp] is two bits wide# and [#norm:mstatus_spp_sz]#csr::[spp] is one bit wide.#
+[#norm:mstatus_xpie_xie_xpp_trap_op]#When a trap is taken from privilege mode _y_
+into privilege mode _x_, __x__PIE is set to the value of __x__IE; __x__IE is
+set to 0; and __x__PP is set to _y_.#'''
+zh = '''
+为支持嵌套陷阱，[#norm:mstatus_xpie_xpp_op]##每个能响应中断的特权模式 _x_ 都有一个两级的中断使能位与特权模式栈。__x__PIE 保存陷阱发生前活动的中断使能位的值，__x__PP 保存先前的特权模式。##[#norm:mstatus_xpp_enc]##__x__PP 字段只能保存不超过 _x_ 的特权模式##，因此[#norm:mstatus_mpp_sz]##csr::[mpp] 为两位宽##，[#norm:mstatus_spp_sz]##csr::[spp] 为一位宽。##[#norm:mstatus_xpie_xie_xpp_trap_op]##当从特权模式 _y_ 陷入特权模式 _x_ 时，__x__PIE 被设置为 __x__IE 的值；__x__IE 被设置为 0；__x__PP 被设置为 _y_。##'''

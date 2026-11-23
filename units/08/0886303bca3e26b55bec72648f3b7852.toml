@@ -1,0 +1,14 @@
+unit_id = "0886303bca3e26b55bec72648f3b7852"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Machine-mode standard read-write CSRs `0x7A0`{endash}``0x7BF`` are reserved for
+use by the debug system. Of these CSRs, `0x7A0`{endash}``0x7AF`` are accessible
+to machine mode, whereas
+[#norm:Zicsr_debug_illegal]#`0x7B0`{endash}``0x7BF`` are only visible to debug mode.
+Implementations should raise illegal-instruction exceptions on
+machine-mode access to the latter set of registers.#'''
+zh = '''
+机器模式标准读写 CSR `0x7A0`{endash}``0x7BF`` 保留供调试系统使用。在这些 CSR 中，`0x7A0`{endash}``0x7AF`` 可由机器模式访问，而
+[#norm:Zicsr_debug_illegal]##`0x7B0`{endash}``0x7BF`` 仅对调试模式可见。实现宜在机器模式访问后一组寄存器时引发非法指令异常。##'''

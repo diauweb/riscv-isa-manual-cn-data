@@ -1,0 +1,24 @@
+unit_id = "072d2ba426c10983715d4054995c7fdb"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The address space and virtual machine IDs (*ASID* and *VMID*
+respectively). Where present it is recommended these values be wired to
+bits [15:0] and [29:16];
+* The software thread ID;
+* The process ID from an operating system;
+* It could be used to convey the values of CSRs to the decoder by
+setting *context* to the CSR number and value when a CSR is written;
+* In cases where a single encoder is being shared amongst multiple harts
+(see <<sec:relationship>>), it could also be used to
+indicate the hart ID, in cases where the hart ID can be changed
+dynamically.
+* Time from within the hart'''
+zh = '''
+* 地址空间和虚拟机 ID（分别为 *ASID* 和 *VMID*）。若存在，宜将这些值连接到位 [15:0] 和 [29:16]；
+* 软件线程 ID；
+* 来自操作系统的进程 ID；
+* 可用于向解码器传递 CSR 的值：当写入 CSR 时，将 *context* 设置为该 CSR 编号和值；
+* 在单个编码器由多个硬件线程共享的情况下（见 <<sec:relationship>>），也可在硬件线程 ID 可动态改变的情况下用于指示硬件线程 ID。
+* 来自硬件线程内部的时间'''

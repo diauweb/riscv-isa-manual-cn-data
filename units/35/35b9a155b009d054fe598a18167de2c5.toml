@@ -1,0 +1,13 @@
+unit_id = "35b9a155b009d054fe598a18167de2c5"
+kind = "code"
+translatable = false
+en = '''
+[source,sail]
+--
+function clause execute (AES64KS2(rs2, rs1, rd)) = {
+  let w0 : bits(32) = X(rs1)[63..32] ^ X(rs2)[31..0];
+  let w1 : bits(32) = X(rs1)[63..32] ^ X(rs2)[31..0] ^ X(rs2)[63..32];
+  X(rd)  = w1 @ w0;
+  RETIRE_SUCCESS
+}
+--'''

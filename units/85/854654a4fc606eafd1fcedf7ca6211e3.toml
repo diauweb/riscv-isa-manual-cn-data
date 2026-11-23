@@ -1,0 +1,13 @@
+unit_id = "854654a4fc606eafd1fcedf7ca6211e3"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:nmi_mcause_val2]#The values written to `mcause` on an NMI are implementation-defined.#
+[#norm:nmi_mcause_restrictions]#The high Interrupt bit of `mcause` should be set to indicate
+that this was an interrupt. An Exception Code of 0 is reserved to mean "`unknown
+cause`" and implementations that do not distinguish sources of NMIs via
+the `mcause` register should return 0 in the Exception Code.#'''
+zh = '''
+[#norm:nmi_mcause_val2]##NMI 时写入 `mcause` 的值由实现定义。##
+[#norm:nmi_mcause_restrictions]##`mcause` 的高 Interrupt 位宜置位，以指示这是一次中断。Exception Code 0 保留表示“未知原因”，不通过 `mcause` 寄存器区分 NMI 来源的实现宜在 Exception Code 中返回 0。##'''

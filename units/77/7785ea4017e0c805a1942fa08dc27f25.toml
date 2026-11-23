@@ -1,0 +1,58 @@
+unit_id = "7785ea4017e0c805a1942fa08dc27f25"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[cols="1,1,1,1"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+| Input (_x_) | Rounding Mode | Output (_y_ {approx} _1/x_) | Exceptions raised
+
+| -{inf}                                              | _any_         | -0.0                      |
+| -2^B+1^ < _x_ {le} -2^B^ (normal)                   | _any_         | -2^-(B+1)^ {ge} _y_ > -2^-B^ (subnormal, sig=01...) |
+| -2^B^ < _x_ {le} -2^B-1^ (normal)                   | _any_         | -2^-B^ {ge} _y_ > -2^-B+1^ (subnormal, sig=1...) |
+| -2^B-1^ < _x_ {le} -2^-B+1^ (normal)                | _any_         | -2^-B+1^ {ge} _y_ > -2^B-1^ (normal) |
+| -2^-B+1^ < _x_ {le} -2^-B^ (subnormal, sig=1...)    | _any_         | -2^B-1^ {ge} _y_ > -2^B^ (normal) |
+| -2^-B^ < _x_ {le} -2^-(B+1)^ (subnormal, sig=01...) | _any_         | -2^B^ {ge} _y_ > -2^B+1^ (normal) |
+| -2^-(B+1)^ < _x_ < -0.0 (subnormal, sig=00...)      | RUP, RTZ      | greatest-mag. negative finite value | NX, OF
+| -2^-(B+1)^ < _x_ < -0.0 (subnormal, sig=00...)      | RDN, RNE, RMM | -{inf}                    | NX, OF
+| -0.0                                                | _any_         | -{inf}                    | DZ
+| +0.0                                                | _any_         | +{inf}                    | DZ
+| +0.0 < _x_ < 2^-(B+1)^ (subnormal, sig=00...)       | RUP, RNE, RMM | +{inf}                    | NX, OF
+| +0.0 < _x_ < 2^-(B+1)^ (subnormal, sig=00...)       | RDN, RTZ      | greatest finite value     | NX, OF
+| 2^-(B+1)^ {le} _x_ < 2^-B^ (subnormal, sig=01...)   | _any_         | 2^B+1^ > _y_ {ge} 2^B^ (normal) |
+| 2^-B^ {le} _x_ < 2^-B+1^ (subnormal, sig=1...)      | _any_         | 2^B^ > _y_ {ge} 2^B-1^ (normal) |
+| 2^-B+1^ {le} _x_ < 2^B-1^ (normal)                  | _any_         | 2^B-1^ > _y_ {ge} 2^-B+1^ (normal) |
+| 2^B-1^ {le} _x_ < 2^B^ (normal)                     | _any_         | 2^-B+1^ > _y_ {ge} 2^-B^ (subnormal, sig=1...) |
+| 2^B^ {le} _x_ < 2^B+1^ (normal)                     | _any_         | 2^-B^ > _y_ {ge} 2^-(B+1)^ (subnormal, sig=01...) |
+| +{inf}                                              | _any_         | +0.0                      |
+| qNaN                                                | _any_         | canonical NaN             |
+| sNaN                                                | _any_         | canonical NaN             | NV
+|==='''
+zh = '''
+[cols="1,1,1,1"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+| 输入 (_x_) | 舍入模式 | 输出 (_y_ {approx} _1/x_) | 产生的异常
+
+| -{inf}                                              | _任意_         | -0.0                      |
+| -2^B+1^ < _x_ {le} -2^B^（规格化）                   | _任意_         | -2^-(B+1)^ {ge} _y_ > -2^-B^（非规格化，sig=01...） |
+| -2^B^ < _x_ {le} -2^B-1^（规格化）                   | _任意_         | -2^-B^ {ge} _y_ > -2^-B+1^（非规格化，sig=1...） |
+| -2^B-1^ < _x_ {le} -2^-B+1^（规格化）                | _任意_         | -2^-B+1^ {ge} _y_ > -2^B-1^（规格化） |
+| -2^-B+1^ < _x_ {le} -2^-B^（非规格化，sig=1...）    | _任意_         | -2^B-1^ {ge} _y_ > -2^B^（规格化） |
+| -2^-B^ < _x_ {le} -2^-(B+1)^（非规格化，sig=01...） | _任意_         | -2^B^ {ge} _y_ > -2^B+1^（规格化） |
+| -2^-(B+1)^ < _x_ < -0.0（非规格化，sig=00...）      | RUP、RTZ      | 最大幅度负有限值 | NX、OF
+| -2^-(B+1)^ < _x_ < -0.0（非规格化，sig=00...）      | RDN、RNE、RMM | -{inf}                    | NX、OF
+| -0.0                                                | _任意_         | -{inf}                    | DZ
+| +0.0                                                | _任意_         | +{inf}                    | DZ
+| +0.0 < _x_ < 2^-(B+1)^（非规格化，sig=00...）       | RUP、RNE、RMM | +{inf}                    | NX、OF
+| +0.0 < _x_ < 2^-(B+1)^（非规格化，sig=00...）       | RDN、RTZ      | 最大有限值     | NX、OF
+| 2^-(B+1)^ {le} _x_ < 2^-B^（非规格化，sig=01...）   | _任意_         | 2^B+1^ > _y_ {ge} 2^B^（规格化） |
+| 2^-B^ {le} _x_ < 2^-B+1^（非规格化，sig=1...）      | _任意_         | 2^B^ > _y_ {ge} 2^B-1^（规格化） |
+| 2^-B+1^ {le} _x_ < 2^B-1^（规格化）                  | _任意_         | 2^B-1^ > _y_ {ge} 2^-B+1^（规格化） |
+| 2^B-1^ {le} _x_ < 2^B^（规格化）                     | _任意_         | 2^-B+1^ > _y_ {ge} 2^-B^（非规格化，sig=1...） |
+| 2^B^ {le} _x_ < 2^B+1^（规格化）                     | _任意_         | 2^-B^ > _y_ {ge} 2^-(B+1)^（非规格化，sig=01...） |
+| +{inf}                                              | _任意_         | +0.0                      |
+| qNaN                                                | _任意_         | 规范 NaN             |
+| sNaN                                                | _任意_         | 规范 NaN             | NV
+|==='''

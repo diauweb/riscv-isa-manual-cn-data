@@ -1,0 +1,14 @@
+unit_id = "f022b7fc688fc6d8494dd71086eb8987"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The three PPO rules above also apply when the memory accesses in
+question only overlap partially. This can occur, for example, when
+accesses of different sizes are used to access the same object. Note
+also that the base addresses of two overlapping memory operations need
+not necessarily be the same for two memory accesses to overlap. When
+misaligned memory accesses are being used, the overlapping-address PPO
+rules apply to each of the component memory accesses independently.'''
+zh = '''
+当所涉及的内存访问仅部分重叠时，上述三条 PPO 规则也适用。例如，当使用不同大小的访问来访问同一对象时，就可能发生这种情况。另请注意，两次内存访问重叠并不一定要求两个重叠内存操作的基址相同。当使用非对齐内存访问时，重叠地址 PPO 规则分别独立适用于每个组成内存访问。'''

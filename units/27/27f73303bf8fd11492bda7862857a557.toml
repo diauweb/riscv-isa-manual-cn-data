@@ -1,0 +1,33 @@
+unit_id = "27f73303bf8fd11492bda7862857a557"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* The _prestart_ elements are those whose element index is less than the
+initial value in the csr:vstart[] register.  [#norm:vector_prestart_element]#The prestart elements do not raise exceptions and do not update the destination vector register.#
+
+* The _body_ elements are those whose element index is greater than or equal
+to the initial value in the csr:vstart[] register, and less than the current
+vector length setting in `vl`. The body can be split into two disjoint subsets:
+
+** The _active_ elements during a vector instruction's execution are the
+elements within the body and where the current mask is enabled at that element
+position.  [#norm:vector_active_element]#The active elements can raise exceptions and update the destination vector register group.#
+
+** The _inactive_ elements are the elements within the body
+but where the current mask is disabled at that element
+position.  [#norm:vector_inactive_element]#The inactive elements do not raise exceptions and do not update any destination vector register group unless masked agnostic is specified (csr:vtype[vma]=1), in which case inactive elements may be overwritten with 1s.#
+
+* The _tail_ elements during a vector instruction's execution are the
+elements past the current vector length setting specified in `vl`.
+[#norm:vector_tail_element]#The tail elements do not raise exceptions, and do not update any destination vector register group unless tail agnostic is specified (csr:vtype[vta]=1), in which case tail elements may be overwritten with 1s, or with the result of the instruction in the case of mask-producing instructions except for mask loads.  When LMUL < 1, the tail includes the elements past VLMAX that are held in the same vector register.#'''
+zh = '''
+* _预启动_ 元素是其元素索引小于 csr:vstart[] 寄存器中初始值的元素。[#norm:vector_prestart_element]#预启动元素不产生异常，也不更新目标向量寄存器。#
+
+* _主体_ 元素是其元素索引大于或等于 csr:vstart[] 寄存器中初始值、且小于 `vl` 中当前向量长度设置的元素。主体可分为两个不相交的子集：
+
+** 在向量指令执行期间的 _活跃_ 元素是主体内且当前掩码在该元素位置使能的元素。[#norm:vector_active_element]#活跃元素可产生异常并更新目标向量寄存器组。#
+
+** _非活跃_ 元素是主体内但当前掩码在该元素位置禁用的元素。[#norm:vector_inactive_element]#非活跃元素不产生异常，且不更新任何目标向量寄存器组，除非指定了掩码未知（csr:vtype[vma]=1），此时非活跃元素可用 1 覆盖。#
+
+* 在向量指令执行期间的 _尾部_ 元素是超过 `vl` 中指定的当前向量长度设置的元素。[#norm:vector_tail_element]#尾部元素不产生异常，且不更新任何目标向量寄存器组，除非指定了尾部未知（csr:vtype[vta]=1），此时尾部元素可用 1 覆盖，或在产生掩码的指令（掩码加载除外）情况下用该指令的结果覆盖。当 LMUL < 1 时，尾部包括保存在同一向量寄存器中的超过 VLMAX 的元素。#'''

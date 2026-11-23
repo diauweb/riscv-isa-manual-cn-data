@@ -1,0 +1,27 @@
+unit_id = "dc11e0a85f5c7c99a00e110fae15f0a8"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+Typically, PTEs are marked as Valid by the operating system following a
+page-fault exception or during system calls for memory mapping. In such cases,
+the trap handler commonly employs an `SRET` instruction to return from the trap.
+When Svvptc is implemented, the stores it executes to change the Valid bit
+of the PTEs from 0 to 1 then become visible to implicit references to those PTEs
+within a bounded timeframe. This visibility pertains to the instructions like
+the one causing the page-fault or those accessing new memory regions. A
+memory-management fence can be used to force immediate visibility of these PTE
+updates to all implicit references associated with instructions following the
+memory-management fence. However, when Svvptc is implemented, visibility (in a
+bounded amount of time) is guaranteed and use of a memory-management fence is
+not required in these scenarios. While this approach might lead to an occasional
+gratuitous page-fault, the performance benefit of omitting the memory-management
+fence instructions outweighs the occasional cost of a gratuitous page-fault.
+===='''
+zh = '''
+[NOTE]
+====
+通常，操作系统在页错误异常之后或在用于内存映射的系统调用期间将 PTE 标记为有效。在此类情况下，陷阱处理程序通常使用 `SRET` 指令从陷阱返回。当实现了 Svvptc 时，其执行以将 PTE 的有效位从 0 改为 1 的存储随后会在有界时间范围内对此类 PTE 的隐式引用变为可见。该可见性适用于引发页错误的指令或访问新内存区域的指令等。内存管理屏障可用于强制这些 PTE 更新立即对内存管理屏障之后指令相关的所有隐式引用可见。然而，当实现了 Svvptc 时，可见性（在有界时间内）是有保证的，且在这些场景中无须使用内存管理屏障。虽然这种做法可能导致偶发的无谓页错误，但省略内存管理屏障指令的性能收益超过偶发无谓页错误的代价。
+===='''

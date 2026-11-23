@@ -1,0 +1,38 @@
+unit_id = "045ee7f9f212e2d3b34d6355b3d451e0"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* If an invalidate operation _i_ precedes a load _r_ and operates on a byte _x_
+  returned by _r_, and no store to _x_ appears between _i_ and _r_ in program
+  order or in the global memory order, then _r_ returns any of the following
+  values for _x_:
+
+. [#norm:invalidate_load_val1]#If no clean or flush operations on _x_ precede _i_ in the global memory order,
+  either the initial value of _x_ or the value of any store to _x_ that precedes
+  _i_#
+
+. [#norm:invalidate_load_val2]#If no store to _x_ precedes a clean or flush operation on _x_ in the global
+  memory order and if the clean or flush operation on _x_ precedes _i_ in the
+  global memory order, either the initial value of _x_ or the value of any store
+  to _x_ that precedes _i_#
+
+. [#norm:invalidate_load_val3]#If a store to _x_ precedes a clean or flush operation on _x_ in the global
+  memory order and if the clean or flush operation on _x_ precedes _i_ in the
+  global memory order, either the value of the latest store to _x_ that precedes
+  the latest clean or flush operation on _x_ or the value of any store to _x_
+  that both precedes _i_ and succeeds the latest clean or flush operation on _x_
+  that precedes _i_#
+
+. [#norm:invalidate_load_val4]#The value of any store to _x_ by a non-coherent agent regardless of the above
+  conditions#'''
+zh = '''
+* 若使无效操作 __i__ 先于加载 __r__，且操作于由 __r__ 返回的字节 __x__，并且在程序顺序或全局内存顺序中，__i__ 与 __r__ 之间没有出现对 __x__ 的存储，则 __r__ 对 __x__ 返回以下值之一：
+
+. [#norm:invalidate_load_val1]##若在全局内存顺序中没有对 __x__ 的清洁或冲刷操作先于 __i__，则返回 __x__ 的初始值或先于 __i__ 的对 __x__ 的任何存储的值##
+
+. [#norm:invalidate_load_val2]##若在全局内存顺序中没有对 __x__ 的存储先于对 __x__ 的清洁或冲刷操作，并且在全局内存顺序中对 __x__ 的清洁或冲刷操作先于 __i__，则返回 __x__ 的初始值或先于 __i__ 的对 __x__ 的任何存储的值##
+
+. [#norm:invalidate_load_val3]##若在全局内存顺序中对 __x__ 的存储先于对 __x__ 的清洁或冲刷操作，并且在全局内存顺序中对 __x__ 的清洁或冲刷操作先于 __i__，则返回先于对 __x__ 最近一次清洁或冲刷操作的、对 __x__ 的最新存储的值，或者返回既先于 __i__ 又后于先于 __i__ 的对 __x__ 最近一次清洁或冲刷操作的、对 __x__ 的任何存储的值##
+
+. [#norm:invalidate_load_val4]##无论上述条件如何，返回非一致代理对 __x__ 的任何存储的值##'''

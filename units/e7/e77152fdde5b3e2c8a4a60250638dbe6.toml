@@ -1,0 +1,77 @@
+unit_id = "e77152fdde5b3e2c8a4a60250638dbe6"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+. Add halt groups and external triggers in <<hrgroups>>.
+https://github.com/riscv/riscv-debug-spec/pull/404[#404]
+. Reserve some DMI space for non-standard use. See {dm-custom}, and {dm-custom0} through `custom15`.
+https://github.com/riscv/riscv-debug-spec/pull/406[#406]
+. Reserve trigger {tdata1-type} values for non-standard use.
+https://github.com/riscv/riscv-debug-spec/pull/417[#417]
+. Add {itrigger-nmi} bit to {csr-itrigger}. https://github.com/riscv/riscv-debug-spec/pull/408[#408]
+and https://github.com/riscv/riscv-debug-spec/pull/709[#709]
+. Recommend matching on every accessed address.
+https://github.com/riscv/riscv-debug-spec/pull/449[#449]
+. Add resume groups in <<hrgroups>>.
+https://github.com/riscv/riscv-debug-spec/pull/506[#506]
+. Add {abstractcs-relaxedpriv}. https://github.com/riscv/riscv-debug-spec/pull/536[#536]
+. Move {csr-scontext}, renaming original to {csr-mscontext}, and create {csr-hcontext}.
+https://github.com/riscv/riscv-debug-spec/pull/535[#535]
+. Add {csr-mcontrol6}, deprecating {csr-mcontrol}.
+https://github.com/riscv/riscv-debug-spec/pull/538[#538]
+. Add hypervisor support: {dcsr-ebreakvs}, {dcsr-ebreakvu}, {dcsr-v}, {csr-hcontext}, {csr-mcontrol}, {csr-mcontrol6}, and {virt-priv}.
+https://github.com/riscv/riscv-debug-spec/pull/549[#549]
+. Optionally make {dmstatus-anyunavail} and {dmstatus-allunavail} sticky, controlled by {dmstatus-stickyunavail}.
+https://github.com/riscv/riscv-debug-spec/pull/520[#520]
+. Add {csr-tmexttrigger} to support trigger module external trigger inputs.
+https://github.com/riscv/riscv-debug-spec/pull/543[#543]
+. Describe {csr-mcontrol} and {csr-mcontrol6} behavior with atomic instructions.
+https://github.com/riscv/riscv-debug-spec/pull/561[#561]
+. Trigger hit bits must be set on fire, may be set on match.
+https://github.com/riscv/riscv-debug-spec/pull/593[#593]
+. Add {textra32-sbytemask} and {textra64-sbytemask} to {csr-textra32} and {csr-textra64}.
+https://github.com/riscv/riscv-debug-spec/pull/588[#588]
+. Allow debugger to request harts stay alive with keepalive bit in
+{dmcontrol-setkeepalive}.
+https://github.com/riscv/riscv-debug-spec/pull/592[#592]
+. Add {dmstatus-ndmresetpending} to allow a debugger to determine when ndmreset is complete.
+https://github.com/riscv/riscv-debug-spec/pull/594[#594]
+. Add {tmexttrigger-intctl} to support triggers from an interrupt controller.
+https://github.com/riscv/riscv-debug-spec/pull/599[#599]'''
+zh = '''
+. 在 <<hrgroups>> 中添加停机组和外部触发器。
+https://github.com/riscv/riscv-debug-spec/pull/404[#404]
+. 为非标准用途保留一些 DMI 空间。见 {dm-custom} 以及 `custom15` 之前的 {dm-custom0}。
+https://github.com/riscv/riscv-debug-spec/pull/406[#406]
+. 为非标准用途保留触发器 {tdata1-type} 值。
+https://github.com/riscv/riscv-debug-spec/pull/417[#417]
+. 向 {csr-itrigger} 添加 {itrigger-nmi} 位。https://github.com/riscv/riscv-debug-spec/pull/408[#408]
+以及 https://github.com/riscv/riscv-debug-spec/pull/709[#709]
+. 建议在每个被访问的地址上匹配。
+https://github.com/riscv/riscv-debug-spec/pull/449[#449]
+. 在 <<hrgroups>> 中添加恢复组。
+https://github.com/riscv/riscv-debug-spec/pull/506[#506]
+. 添加 {abstractcs-relaxedpriv}。https://github.com/riscv/riscv-debug-spec/pull/536[#536]
+. 移动 {csr-scontext}，将原始版本重命名为 {csr-mscontext}，并创建 {csr-hcontext}。
+https://github.com/riscv/riscv-debug-spec/pull/535[#535]
+. 添加 {csr-mcontrol6}，弃用 {csr-mcontrol}。
+https://github.com/riscv/riscv-debug-spec/pull/538[#538]
+. 添加虚拟机监控器支持：{dcsr-ebreakvs}、{dcsr-ebreakvu}、{dcsr-v}、{csr-hcontext}、{csr-mcontrol}、{csr-mcontrol6} 和 {virt-priv}。
+https://github.com/riscv/riscv-debug-spec/pull/549[#549]
+. 可选地使 {dmstatus-anyunavail} 和 {dmstatus-allunavail} 变为粘滞，由 {dmstatus-stickyunavail} 控制。
+https://github.com/riscv/riscv-debug-spec/pull/520[#520]
+. 添加 {csr-tmexttrigger} 以支持触发器模块外部触发输入。
+https://github.com/riscv/riscv-debug-spec/pull/543[#543]
+. 描述 {csr-mcontrol} 和 {csr-mcontrol6} 在原子指令下的行为。
+https://github.com/riscv/riscv-debug-spec/pull/561[#561]
+. 触发器命中位必须在触发时置位，可在匹配时置位。
+https://github.com/riscv/riscv-debug-spec/pull/593[#593]
+. 向 {csr-textra32} 和 {csr-textra64} 添加 {textra32-sbytemask} 和 {textra64-sbytemask}。
+https://github.com/riscv/riscv-debug-spec/pull/588[#588]
+. 允许调试器使用 {dmcontrol-setkeepalive} 中的 keepalive 位请求硬件线程保持活动。
+https://github.com/riscv/riscv-debug-spec/pull/592[#592]
+. 添加 {dmstatus-ndmresetpending}，使调试器能够确定 ndmreset 何时完成。
+https://github.com/riscv/riscv-debug-spec/pull/594[#594]
+. 添加 {tmexttrigger-intctl} 以支持来自中断控制器的触发器。
+https://github.com/riscv/riscv-debug-spec/pull/599[#599]'''

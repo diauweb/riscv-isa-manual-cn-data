@@ -1,0 +1,15 @@
+unit_id = "1514276a1790a343dc4d0cdbebd77c12"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:vmadc_vmsbc_op_masked]#insn:vmadc[] and insn:vmsbc[] add or subtract the source operands, optionally
+add the carry-in or subtract the borrow-in if masked (`vm=0`), and
+write the resulting carry-out or borrow-out back to mask register `vd`.#
+[#norm:vmadc_vmsbc_op_unmasked]#If unmasked (`vm=1`), there is no carry-in or borrow-in.#  [#norm:vmadc_vmsbc_masked_write_all_elem]#These instructions
+operate on and write back all body elements, even if masked.#  [#norm:vmadc_vmsbc_tail_agnostic]#Because these
+instructions produce a mask value, they always operate with a
+tail-agnostic policy.#'''
+zh = '''
+[#norm:vmadc_vmsbc_op_masked]#insn:vmadc[] 和 insn:vmsbc[] 对源操作数进行加或减；如果受掩码（`vm=0`），则可选地加上进位输入或减去借位输入，并将所得进位输出或借位输出写回掩码寄存器 `vd`。#
+[#norm:vmadc_vmsbc_op_unmasked]#如果未掩码（`vm=1`），则没有进位输入或借位输入。# [#norm:vmadc_vmsbc_masked_write_all_elem]#这些指令对所有主体元素操作并写回，即使受掩码。# [#norm:vmadc_vmsbc_tail_agnostic]#因为这些指令产生掩码值，所以它们始终按尾部未知策略操作。#'''

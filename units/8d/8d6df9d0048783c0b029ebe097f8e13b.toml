@@ -1,0 +1,12 @@
+unit_id = "8d6df9d0048783c0b029ebe097f8e13b"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The `WRS.NTO` and `WRS.STO` instructions cause the hart to temporarily stall
+execution in a low-power state as long as the reservation set is valid and no
+pending interrupts, even if disabled, are observed. For `WRS.STO` the stall
+duration is bounded by an implementation defined short timeout. These
+instructions are available in all privilege modes.'''
+zh = '''
+`WRS.NTO` 和 `WRS.STO` 指令使硬件线程暂时以低功耗状态停顿执行，只要保留集有效且未观察到任何挂起中断（即使这些中断被禁用）。对于 `WRS.STO`，停顿持续时间受实现定义的短超时限制。这些指令在所有特权模式下均可用。'''

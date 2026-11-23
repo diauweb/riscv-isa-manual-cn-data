@@ -1,0 +1,8 @@
+unit_id = "aeccc34f6115b6102c01bd4481b99238"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+In case when on-board circuitry is used for debugging, that circuitry should monitor the GNDDetect pin (MIPI20/MIPI10 #9). In case GND is detected there, it means that external debug probe is connected to that connector and in such a case on-board debug chip should tri-state all its outputs and disable all pull-up/pull-down on all pins, so external debug probe operation will not be disturbed by on-board debug circuitry.'''
+zh = '''
+当使用板载电路进行调试时，该电路宜监测 GNDDetect 引脚（MIPI20/MIPI10 #9）。若在该引脚检测到 GND，说明外部调试探针已连接到该连接器，此时板载调试芯片宜将其所有输出置为三态，并禁用所有引脚上的上拉/下拉，从而使外部调试探针的工作不受板载调试电路干扰。'''

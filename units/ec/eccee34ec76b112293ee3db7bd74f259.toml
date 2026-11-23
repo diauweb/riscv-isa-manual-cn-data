@@ -1,0 +1,16 @@
+unit_id = "eccee34ec76b112293ee3db7bd74f259"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+(((RV64I-only, SLLW)))
+(((RV64I-only, SRLW)))
+(((RV64I-only, SRAW)))
+[#norm:sllw_srlw_sraw_op]#SLLW, SRLW, and SRAW are RV64I-only instructions that are analogously
+defined but operate on 32-bit values and sign-extend their 32-bit
+results to 64 bits. The shift amount is given by _rs2[4:0]_.#'''
+zh = '''
+(((RV64I-only, SLLW)))
+(((RV64I-only, SRLW)))
+(((RV64I-only, SRAW)))
+[#norm:sllw_srlw_sraw_op]##SLLW、SRLW 和 SRAW 是仅限 RV64I 的指令，其定义类似，但对 32 位值进行运算并将其 32 位结果符号扩展至 64 位。移位量由 _rs2[4:0]_ 给出。##'''

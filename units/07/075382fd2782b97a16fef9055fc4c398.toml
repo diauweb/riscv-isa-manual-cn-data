@@ -1,0 +1,20 @@
+unit_id = "075382fd2782b97a16fef9055fc4c398"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+We required the counters be 64 bits wide, even when XLEN=32, as
+otherwise it is very difficult for software to determine if values have
+overflowed. For a low-end implementation, the upper 32 bits of each
+counter can be implemented using software counters incremented by a trap
+handler triggered by overflow of the lower 32 bits. The sample code
+given below shows how the full 64-bit width value can be safely read
+using the individual 32-bit width pseudoinstructions.
+===='''
+zh = '''
+[NOTE]
+====
+我们要求计数器即使在 XLEN=32 时也是 64 位宽，否则软件很难确定值是否已上溢。对于低端实现，每个计数器的高 32 位可用软件计数器实现，该软件计数器由低 32 位上溢触发的陷阱处理程序递增。下面给出的示例代码展示了如何使用各 32 位宽的伪指令安全地读取完整的 64 位宽值。
+===='''

@@ -1,0 +1,16 @@
+unit_id = "2473685e62f4156058da626153dd8891"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The EEI will define what I/O operations are possible, and in particular,
+which memory addresses when accessed by load and store instructions will
+be treated and ordered as device input and device output operations
+respectively rather than memory reads and writes. For example,
+memory-mapped I/O devices will typically be accessed with uncached loads
+and stores that are ordered using the I and O bits rather than the R and
+W bits. Instruction-set extensions might also describe new I/O
+instructions that will also be ordered using the I and O bits in a
+FENCE instruction.'''
+zh = '''
+EEI 将定义可执行哪些 I/O 操作，特别是指定哪些内存地址在由加载和存储指令访问时，将分别被视为设备输入和设备输出操作并按其排序，而不是作为内存读和内存写。例如，内存映射 I/O 设备通常通过非缓存加载和存储访问，这些访问使用 I 和 O 位而不是 R 和 W 位排序。指令集扩展还可能描述新的 I/O 指令，这些指令也将使用 FENCE 指令中的 I 和 O 位排序。'''

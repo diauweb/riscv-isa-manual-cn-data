@@ -1,0 +1,80 @@
+unit_id = "2cc1c2ba0fa0ad7c368b98c19dedf2be"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.Synchronous exception priority when the hypervisor extension is implemented.
+[%autowidth,float="center",align="center",cols="<,>,<",options="header"]
+|===
+|Priority |Exc.Code |Description
+|_Highest_ |3 |Instruction address breakpoint
+
+| .>|12, 20, 1 |During instruction address translation: +
+&#160;&#160;&#160;First encountered page fault, guest-page fault, or access
+fault
+
+| .>|1 |With physical address for instruction: +
+&#160;&#160;&#160;Instruction access fault
+
+| |2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3|Illegal instruction +
+Virtual instruction +
+Instruction address misaligned +
+Environment call +
+Environment break +
+&#160;&#160;&#160;Load/store/AMO address breakpoint
+
+| .>|4,6 |Optionally: +
+&#160;&#160;&#160;Load/store/AMO address misaligned
+
+| .>|13, 15, 21, 23, 5, 7 |During address translation for an explicit memory access: +
+&#160;&#160;&#160;First encountered page fault, guest-page fault,
+or access fault
+
+| .>|5, 7 |With physical address for an explicit memory access: +
+&#160;&#160;&#160;Load/store/AMO access fault
+
+.>|_Lowest_ .>|4, 6 |If not higher priority: +
+&#160;&#160;&#160;Load/store/AMO address misaligned
+|==='''
+zh = '''
+.实现虚拟机监控器扩展时的同步异常优先级
+[%autowidth,float="center",align="center",cols="<,>,<",options="header"]
+|===
+|优先级 |异常码 |描述
+|__最高__ |3 |指令地址断点
+
+| .>|12, 20, 1 |在指令地址转换期间： +
+&#160;&#160;&#160;首次遇到的页错误、客户机页错误或访问错误
+
+| .>|1 |具有指令的物理地址时： +
+&#160;&#160;&#160;指令访问错误
+
+| |2 +
+22 +
+0 +
+8, 9, 10, 11 +
+3 +
+3|非法指令 +
+虚拟指令 +
+指令地址非对齐 +
+环境调用 +
+环境断点 +
+&#160;&#160;&#160;加载/存储/AMO 地址断点
+
+| .>|4,6 |可选： +
+&#160;&#160;&#160;加载/存储/AMO 地址非对齐
+
+| .>|13, 15, 21, 23, 5, 7 |在针对显式内存访问的地址转换期间： +
+&#160;&#160;&#160;首次遇到的页错误、客户机页错误或访问错误
+
+| .>|5, 7 |具有显式内存访问的物理地址时： +
+&#160;&#160;&#160;加载/存储/AMO 访问错误
+
+.>|__最低__ .>|4, 6 |若非更高优先级： +
+&#160;&#160;&#160;加载/存储/AMO 地址非对齐
+|==='''

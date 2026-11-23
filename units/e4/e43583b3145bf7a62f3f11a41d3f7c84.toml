@@ -1,0 +1,24 @@
+unit_id = "e43583b3145bf7a62f3f11a41d3f7c84"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+.AVL used in `vsetvli` and `vsetvl` instructions
+[cols="2,2,10,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|  `rd`  | `rs1`  | AVL value         | Effect on `vl`
+|  -     | !x0    | Value in `x[rs1]` | Normal stripmining
+| !x0    |  x0    | ~0                | Set `vl` to VLMAX
+|  x0    |  x0    | Value in `vl` register | Keep existing `vl` (of course, `vtype` may change)
+|==='''
+zh = '''
+.`vsetvli` 和 `vsetvl` 指令中使用的 AVL
+[cols="2,2,10,10"]
+[%autowidth,float="center",align="center",options="header"]
+|===
+|  `rd`  | `rs1`  | AVL 值         | 对 `vl` 的影响
+|  -     | !x0    | `x[rs1]` 中的值 | 常规条带挖掘
+| !x0    |  x0    | ~0                | 将 `vl` 设置为 VLMAX
+|  x0    |  x0    | `vl` 寄存器中的值 | 保持现有 `vl`（当然，`vtype` 可能改变）
+|==='''

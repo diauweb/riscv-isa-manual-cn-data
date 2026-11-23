@@ -1,0 +1,14 @@
+unit_id = "ca70c8e7045d9c6ad8e3ed1677bb27ef"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+Load and store operations may also carry one or more ordering
+annotations from the following set: "acquire-RCpc", "acquire-RCsc",
+"release-RCpc", and "release-RCsc". An AMO or LR instruction with
+_aq_ set has an "acquire-RCsc" annotation. An AMO or SC instruction
+with _rl_ set has a "release-RCsc" annotation. An AMO, LR, or SC
+instruction with both _aq_ and _rl_ set has both "acquire-RCsc" and
+"release-RCsc" annotations.'''
+zh = '''
+加载和存储操作还可带有一个或多个来自以下集合的排序标注：“acquire-RCpc”、“acquire-RCsc”、“release-RCpc”和“release-RCsc”。置位 _aq_ 的 AMO 或 LR 指令具有“acquire-RCsc”标注。置位 _rl_ 的 AMO 或 SC 指令具有“release-RCsc”标注。同时置位 _aq_ 和 _rl_ 的 AMO、LR 或 SC 指令同时具有“acquire-RCsc”和“release-RCsc”标注。'''

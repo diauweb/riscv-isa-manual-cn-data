@@ -1,0 +1,12 @@
+unit_id = "7a596cb51b03eda75698395c4016cecc"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When the `SDT` bit is set to 1 by an explicit CSR write, the `SIE` (Supervisor
+Interrupt Enable) bit is cleared to 0. This clearing occurs regardless of the
+value written, if any, to the `SIE` bit by the same write. The `SIE` bit can
+only be set to 1 by an explicit CSR write if the `SDT` bit is being set to 0 by
+the same write or is already 0.'''
+zh = '''
+当通过显式 CSR 写入将 `SDT` 位置为 1 时，`SIE`（监管中断使能）位清零为 0。无论同一写入是否向 `SIE` 位写入任何值，该清零都会发生。仅当同一写入将 `SDT` 位置为 0 或 `SDT` 已为 0 时，才可通过显式 CSR 写入将 `SIE` 位置为 1。'''

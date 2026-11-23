@@ -1,0 +1,12 @@
+unit_id = "5404ec680e930fd5e181c677447f3d94"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+The PMP must not disallow fetches, loads, or stores in the address range
+associated with the Debug Module when the hart is in Debug Mode,
+regardless of how the PMP is configured. The same is true of PMA.
+Without this guarantee, the park loop would enter an infinite loop of
+traps and debug would not be possible.'''
+zh = '''
+当硬件线程处于调试模式时，无论 PMP 如何配置，PMP 都不应禁止在与调试模块关联的地址范围内取指、加载或存储。PMA 亦如此。若无此保证，停驻循环将进入反复陷入陷阱的无限循环，调试将无法进行。'''

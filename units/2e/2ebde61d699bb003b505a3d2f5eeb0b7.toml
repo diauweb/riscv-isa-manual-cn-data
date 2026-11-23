@@ -1,0 +1,20 @@
+unit_id = "2ebde61d699bb003b505a3d2f5eeb0b7"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:pmp_exec_fault]#Attempting to fetch an instruction from a PMP region that does not have
+execute permissions raises an instruction access-fault exception.#
+[#norm:pmp_load_fault]#Attempting to execute a load or load-reserved instruction that accesses
+a physical address within a PMP region without read permissions raises a
+load access-fault exception.# [#norm:pmp_store_fault]#Attempting to execute a store,
+store-conditional, AMO, or cache-block zero instruction that accesses a physical address
+within a PMP region without write permissions raises a store
+access-fault exception.#
+[#norm:pmp_cbm_fault]#The permissions required for a cache-block management instruction to access
+a PMP region are defined in <<cmo>>; when such access is not permitted, the instruction raises a
+store access-fault exception.#'''
+zh = '''
+[#norm:pmp_exec_fault]##试图从没有执行权限的 PMP 区域取指会引发指令访问错误异常。##
+[#norm:pmp_load_fault]##试图执行访问 PMP 区域内物理地址但没有读权限的加载或加载保留指令会引发加载访问错误异常。## [#norm:pmp_store_fault]##试图执行访问 PMP 区域内物理地址但没有写权限的存储、存储条件、AMO 或缓存块零指令会引发存储访问错误异常。##
+[#norm:pmp_cbm_fault]##缓存块管理指令访问 PMP 区域所需的权限在 <<cmo>> 中定义；当不允许此类访问时，该指令引发存储访问错误异常。##'''

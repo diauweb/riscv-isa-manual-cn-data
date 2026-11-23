@@ -1,0 +1,28 @@
+unit_id = "fa88e9224670cfae38588605098d3f15"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+RISC-V has been designed to support extensive customization and
+specialization. Each base integer ISA can be extended with one or more
+optional instruction-set extensions. An extension may be categorized as
+either standard, custom, or non-conforming. For this purpose, we divide
+each RISC-V instruction-set encoding space (and related encoding spaces
+such as the CSRs) into three disjoint categories: _standard_,
+_reserved_, and _custom_. Standard extensions and encodings are defined
+by RISC-V International; any extensions not defined by RISC-V International are
+_non-standard_. Each base ISA and its standard extensions use only
+standard encodings.
+Reserved encodings are currently not defined but are
+saved for future standard extensions; once thus used, they become
+standard encodings. Custom encodings shall never be used for standard
+extensions and are made available for vendor-specific non-standard
+extensions. Non-standard extensions are either custom extensions, that
+use only custom encodings, or _non-conforming_ extensions, that use any
+standard or reserved encoding. Instruction-set extensions are generally
+shared but may provide slightly different functionality depending on the
+base ISA. We have also developed a naming convention
+for RISC-V base instructions and instruction-set extensions, described
+in detail in <<naming>>.'''
+zh = '''
+RISC-V 的设计支持广泛的定制与专用化。每个基础整数 ISA 都可用一个或多个可选指令集扩展来扩展。扩展可分为标准、定制或非符合。为此，我们将每个 RISC-V 指令集编码空间（以及 CSR 等相关编码空间）划分为三个互不相交的类别：__标准__、__保留__和__定制__。标准扩展和编码由 RISC-V International 定义；任何未由 RISC-V International 定义的扩展都是__非标准__扩展。每个基础 ISA 及其标准扩展仅使用标准编码。保留编码目前尚未定义，但保留给未来标准扩展；一旦如此使用，它们就成为标准编码。定制编码不得用于标准扩展，并可用于厂商特定的非标准扩展。非标准扩展要么是仅使用定制编码的定制扩展，要么是使用任何标准或保留编码的__非符合__扩展。指令集扩展通常是共享的，但可能根据基础 ISA 提供略有不同的功能。我们还为 RISC-V 基础指令和指令集扩展制定了命名约定，详见 <<naming>>。'''

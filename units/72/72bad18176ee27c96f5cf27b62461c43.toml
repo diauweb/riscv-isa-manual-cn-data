@@ -1,0 +1,16 @@
+unit_id = "72bad18176ee27c96f5cf27b62461c43"
+kind = "list"
+translatable = true
+status = "machine"
+en = '''
+* attempts to access any `sireg*` when `menvcfg`.CDE = 0;
+* attempts to access `sireg3` or `sireg6`;
+* attempts to access `sireg4` or `sireg5` when XLEN = 64;
+* attempts to access `sireg*` when `siselect` = 0x41, or when the counter
+selected by `siselect` is not delegated to S-mode (the corresponding bit
+in `mcounteren` = 0).'''
+zh = '''
+* 在 `menvcfg`.CDE = 0 时尝试访问任何 `sireg*`；
+* 尝试访问 `sireg3` 或 `sireg6`；
+* 在 XLEN = 64 时尝试访问 `sireg4` 或 `sireg5`；
+* 在 `siselect` = 0x41 时，或在 `siselect` 选定的计数器未委托给 S 模式（`mcounteren` 中的对应位 = 0）时，尝试访问 `sireg*`。'''

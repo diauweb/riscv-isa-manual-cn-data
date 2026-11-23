@@ -1,0 +1,58 @@
+unit_id = "164d31ff6252cf70b795ec5fd5fa0b2f"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+[NOTE]
+====
+The instruction-fetch atomicity rule supports concurrent code modification.
+When a hart modifies instruction memory and either it or another hart executes
+the modified instructions without first having executing a inst:fence.i[], the
+modifying hart should adhere to the following rules to ensure predictable
+behavior:
+
+- Modification stores must be single-copy atomic, hence must be naturally
+aligned.
+
+- The modified instruction must not span an aligned `M`-byte boundary,
+unless it is replaced with a shorter unconditional control transfer
+(e.g., insn:c.ebreak[] or insn:c.j[]) that does not itself span an `M`-byte
+boundary.
+
+- Modification stores must alter a complete instruction or complete
+instructions that do not collectively span an `M`-byte boundary,
+modulo the exception above that the first part of an instruction may be
+replaced with an unconditional control transfer instruction.
+
+- Modifications must not combine smaller instructions into a larger
+instruction but may convert a larger instruction to some number of
+smaller instructions.
+
+- Modified instruction memory must have the coherence PMA.
+
+Other well-defined code-modification strategies exist, but these rules provide
+a safe harbor.
+
+Note that the software modifying the code need not know the value of `M`.
+Because ILEN must be at least the width of the instruction being modified,
+a lower bound on `M` can be inferred from the instruction's width and XLEN.
+===='''
+zh = '''
+[NOTE]
+====
+取指原子性规则支持并发的代码修改。当某硬件线程修改指令存储器，且该硬件线程或其他硬件线程在未先执行 insn:fence.i[] 的情况下执行被修改的指令时，修改硬件线程宜遵守以下规则以确保可预测的行为：
+
+- 修改存储应是单副本原子的，因此应自然对齐。
+
+- 被修改的指令不应跨越对齐的 `M` 字节边界，除非将其替换为更短的无条件控制转移（例如 insn:c.ebreak[] 或 insn:c.j[]），且该控制转移本身不跨越 `M` 字节边界。
+
+- 修改存储应改变一条完整指令或若干完整指令，且这些指令合计不应跨越 `M` 字节边界，但上述例外除外，即指令的第一部分可替换为无条件控制转移指令。
+
+- 修改不应将较小的指令合并为较大的指令，但可将较大的指令转换为若干较小的指令。
+
+- 被修改的指令存储器应具有一致性 PMA。
+
+还存在其他定义良好的代码修改策略，但这些规则提供了一个安全港。
+
+注意，修改代码的软件无需知道 `M` 的值。由于 ILEN 必须至少为被修改指令的宽度，可从指令宽度和 XLEN 推断出 `M` 的下界。
+===='''

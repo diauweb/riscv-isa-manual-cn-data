@@ -1,0 +1,13 @@
+unit_id = "302f145d829acf794aeaaae07613b670"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+[#norm:mnstatus_wfi]#For the purposes of the WFI instruction, NMIE is a global
+interrupt enable, meaning that the setting of NMIE does not affect which
+interrupts are locally enabled.
+Furthermore, RNMIs are always considered to be locally enabled; hence, WFI is
+required to resume execution if an RNMI becomes pending when NMIE=0,
+or to take the interrupt if an RNMI becomes pending when NMIE=1.#'''
+zh = '''
+[#norm:mnstatus_wfi]##就 WFI 指令而言，NMIE 是全局中断使能，这意味着 NMIE 的设置不影响哪些中断在本地使能。此外，RNMI 始终被视为本地使能；因此，若在 NMIE=0 时有 RNMI 变为待处理，WFI 应恢复执行，或者若在 NMIE=1 时有 RNMI 变为待处理，应接受该中断。##'''

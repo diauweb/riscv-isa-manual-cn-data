@@ -1,0 +1,12 @@
+unit_id = "7ea9da894bfff079c9f704874ee0b99f"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When `USEED` is 0, access to the `seed` CSR in U-mode raises an
+illegal-instruction exception. When `USEED` is 1, read-write access to the
+`seed` CSR from U-mode is allowed; all other types of accesses raise an
+illegal-instruction exception. If Zkr or U-mode is not implemented, `USEED` is
+read-only zero.'''
+zh = '''
+当 `USEED` 为 0 时，在 U 模式下访问 `seed` CSR 引发非法指令异常。当 `USEED` 为 1 时，允许从 U 模式对 `seed` CSR 进行读写访问；所有其他类型的访问引发非法指令异常。若未实现 Zkr 或 U 模式，则 `USEED` 为只读零。'''

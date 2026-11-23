@@ -1,0 +1,8 @@
+unit_id = "08fcf6c85184dffe46b0a9715cbf5998"
+kind = "paragraph"
+translatable = true
+status = "machine"
+en = '''
+When Smstateen is implemented, the `mstateen0`.CTR bit controls access to CTR register state from privilege modes less privileged than M-mode.  When `mstateen0`.CTR=1, accesses to CTR register state behave as described in <<CSRs>> and <<Entry Registers>> above, while SCTRCLR behaves as described in <<Supervisor CTR Clear Instruction>>.  When `mstateen0`.CTR=0 and the privilege mode is less privileged than M-mode, the following operations raise an illegal-instruction exception:'''
+zh = '''
+当实现 Smstateen 时，`mstateen0`.CTR 位控制来自低于 M 模式的特权模式对 CTR 寄存器状态的访问。[#norm:mstateen_ctr1]##当 `mstateen0`.CTR=1 时，对 CTR 寄存器状态的访问按上文 <<CSRs>> 和 <<Entry Registers>> 所述执行，而 SCTRCLR 按 <<Supervisor CTR Clear Instruction>> 所述执行。## [#norm:mstateen_ctr0]##当 `mstateen0`.CTR=0 且特权模式低于 M 模式时，以下操作触发非法指令异常：##'''

@@ -1,0 +1,14 @@
+unit_id = "7bcf0cc75782ccd843589cc1dad223dd"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+NOTE: The insn:vmmv.m[] instruction was previously called insn:vmcpy.m[], but
+with new layout it is more consistent to name as a insn:mv[] because bits
+are copied without interpretation.  The csr:vmcpy.m[] assembler
+pseudoinstruction can be retained for compatibility.  For
+implementations that internally rearrange bits according to EEW, a
+csr:vmmv.m[] instruction with same source and destination can be used as
+idiom to force an internal reformat into a mask vector.'''
+zh = '''
+NOTE: insn:vmmv.m[] 指令以前称为 insn:vmcpy.m[]，但采用新布局后，命名为 insn:mv[] 更一致，因为位被复制而不作解释。为兼容性可保留 csr:vmcpy.m[] 汇编伪指令。对于在内部根据 EEW 重排位的实现，具有相同源和目标的 csr:vmmv.m[] 指令可用作强制内部重新格式化为掩码向量的惯用法。'''

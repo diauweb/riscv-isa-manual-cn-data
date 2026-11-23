@@ -1,0 +1,36 @@
+unit_id = "d5c9ccfd67ad5fcb7f2ef294ae7eb274"
+kind = "table"
+translatable = true
+status = "machine"
+en = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|Register
+|Direction
+|EGW
+|EGS
+|EEW
+|Definition
+
+| _vd_  | input  | 4*SEW  | 4 | SEW | Message words {W[3],  W[2],  W[1],  W[0]}
+| _vs2_ | input  | 4*SEW  | 4 | SEW | Message words {W[11], W[10], W[9],  W[4]}
+| _vs1_ | input  | 4*SEW  | 4 | SEW | Message words {W[15], W[14], --, W[12]}
+| _vd_  | output | 4*SEW  | 4 | SEW | Message words {W[19], W[18], W[17], W[16]}
+|==='''
+zh = '''
+[%autowidth]
+[%header,cols="4,2,2,2,2,2"]
+|===
+|寄存器
+|方向
+|EGW
+|EGS
+|EEW
+|定义
+
+| _vd_  | 输入  | 4*SEW  | 4 | SEW | 消息字 {W[3],  W[2],  W[1],  W[0]}
+| _vs2_ | 输入  | 4*SEW  | 4 | SEW | 消息字 {W[11], W[10], W[9],  W[4]}
+| _vs1_ | 输入  | 4*SEW  | 4 | SEW | 消息字 {W[15], W[14], --, W[12]}
+| _vd_  | 输出 | 4*SEW  | 4 | SEW | 消息字 {W[19], W[18], W[17], W[16]}
+|==='''

@@ -1,0 +1,18 @@
+unit_id = "b4155f5d2fa5d8c13b0f3510780d789c"
+kind = "block"
+translatable = true
+status = "machine"
+en = '''
+====
+image::es_state.svg[title="Entropy Source state transition diagram.", align="center",scaledwidth=40%]
+Normally the operational state alternates between `WAIT`
+(no data) and `ES16`, which means that 16 bits of randomness (csr::[entropy])
+have been polled. `BIST` (Built-in Self-Test) only occurs after reset
+or to signal a non-fatal self-test alarm (if reached after `WAIT` or
+`ES16`). `DEAD` is an unrecoverable error state.
+===='''
+zh = '''
+====
+image::es_state.svg[title="熵源状态转换图。", align="center",scaledwidth=40%]
+通常，运行状态在 `WAIT`（无数据）和 `ES16` 之间交替，后者表示已轮询到 16 位随机性（csr::[entropy]）。`BIST`（内置自测试）仅在复位后出现，或用于发出非致命自检告警信号（若在 `WAIT` 或 `ES16` 之后到达）。`DEAD` 是不可恢复的错误状态。
+===='''
