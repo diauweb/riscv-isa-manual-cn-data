@@ -1,0 +1,89 @@
+name: Deploy Viewer
+
+# Versioned in the engine repo at templates/data-repo/.github/workflows/deploy.yml.
+# Every step is a local command: reproduce locally with
+#   DATA_REPO=<owner>/riscv-isa-manual-cn-data bun run job:deploy && bun run preview
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'deploy' }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout engine repository
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ vars.ENGINE_REPO || format('{0}/riscv-isa-manual-cn', github.repository_owner) }}
+          persist-credentials: false
+
+      - name: Checkout data repository
+        uses: actions/checkout@v7
+        with:
+          path: .work/data
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v6
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: ${{ runner.os }}-bun-
+
+      - name: Check upstream HEAD for cache key
+        id: upstream
+        env:
+          FALLBACK_KEY: ${{ github.run_id }}
+        run: |
+          sha=$(git ls-remote https://github.com/riscv/riscv-isa-manual.git HEAD 2>/dev/null | cut -f1 || true)
+          echo "sha=${sha:-$FALLBACK_KEY}" >> "$GITHUB_OUTPUT"
+
+      - name: Restore upstream mirror (.work/upstream.git)
+        uses: actions/cache@v6
+        with:
+          path: .work/upstream.git
+          key: upstream-mirror-${{ steps.upstream.outputs.sha }}
+          restore-keys: upstream-mirror-
+
+      - run: bun install --frozen-lockfile
+
+      - name: bun run job:deploy
+        run: bun run job:deploy
+        env:
+          DATA_REPO: ${{ github.repository }}
+          DOTENV: ${{ secrets.DOTENV }}
+
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: packages/viewer/dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
